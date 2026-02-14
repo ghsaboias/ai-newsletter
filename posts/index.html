@@ -1,0 +1,40 @@
+---
+layout: default
+title: The Innermost Loop
+---
+<style>
+  .post-list {
+    list-style: none;
+  }
+  .post-list li {
+    padding: 1.2rem 0;
+    border-bottom: 1px solid #eee;
+  }
+  .post-list li:last-child {
+    border-bottom: none;
+  }
+  .post-list a {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  .post-list a:hover {
+    color: #1a5276;
+  }
+  .post-list .date {
+    color: #888;
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 0.2rem;
+  }
+</style>
+
+<ul class="post-list">
+  {% for post in site.posts %}
+  <li>
+    <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    <span class="date">{{ post.date | date: "%B %-d, %Y" }}</span>
+  </li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,61 @@
+---
+layout: default
+---
+<style>
+  article h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+  .post-date {
+    color: #888;
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+  }
+  article p {
+    margin-bottom: 1.4rem;
+    font-size: 1.05rem;
+  }
+  article p:first-of-type {
+    font-size: 1.15rem;
+    font-style: italic;
+    color: #333;
+  }
+  article a {
+    color: #1a5276;
+    text-decoration: underline;
+    text-decoration-color: #aaa;
+    text-underline-offset: 2px;
+  }
+  article a:hover {
+    text-decoration-color: #1a5276;
+  }
+  article p:last-of-type {
+    font-style: italic;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+  }
+  .back-link {
+    margin-top: 3rem;
+    font-size: 0.85rem;
+  }
+  .back-link a {
+    color: #888;
+    text-decoration: none;
+  }
+  .back-link a:hover {
+    color: #1a1a1a;
+  }
+</style>
+
+<article>
+  <h1>{{ page.title }}</h1>
+  <div class="post-date">{{ page.date | date: "%B %-d, %Y" }}</div>
+  {{ content }}
+</article>
+
+<div class="back-link">
+  <a href="{{ site.baseurl }}/">&larr; All posts</a>
+</div>
