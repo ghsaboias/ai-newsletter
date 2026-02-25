@@ -1,0 +1,263 @@
+---
+layout: default
+title: Sources
+---
+<style>
+  .source-nav {
+    list-style: none;
+    margin-bottom: 2rem;
+  }
+  .source-nav li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #eee;
+  }
+  .source-nav li:last-child { border-bottom: none; }
+  .source-nav a {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .source-nav a:hover { color: #1a5276; }
+  .source-nav .meta {
+    color: #888;
+    font-size: 0.85rem;
+    margin-left: 0.5rem;
+  }
+  .source-date-header {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.02em;
+  }
+  .source-date-header a {
+    color: #1a5276;
+    text-decoration: underline;
+    text-decoration-color: #aaa;
+    text-underline-offset: 2px;
+    font-size: 0.85rem;
+    font-weight: 400;
+  }
+  .source-date-header a:hover { text-decoration-color: #1a5276; }
+  .source-stats {
+    color: #888;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+  .entity-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1rem;
+    background: #fff;
+  }
+  .entity-card.breaking {
+    border-left: 3px solid #c0392b;
+  }
+  .entity-headline {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    line-height: 1.3;
+  }
+  .entity-summary {
+    font-size: 0.95rem;
+    color: #333;
+    margin-bottom: 0.6rem;
+    line-height: 1.5;
+  }
+  .entity-bullets {
+    list-style: disc;
+    padding-left: 1.2rem;
+    margin-bottom: 0.6rem;
+    font-size: 0.9rem;
+    color: #444;
+    display: none;
+  }
+  .entity-bullets.open { display: block; }
+  .entity-bullets li { margin-bottom: 0.3rem; line-height: 1.4; }
+  .entity-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    background: #eef;
+    color: #336;
+  }
+  .tag.breaking {
+    background: #fde8e8;
+    color: #c0392b;
+    font-weight: 600;
+  }
+  .entity-sources {
+    font-size: 0.8rem;
+    margin-top: 0.4rem;
+  }
+  .entity-sources a {
+    color: #1a5276;
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .entity-sources a:hover { text-decoration: underline; }
+  .toggle-btn {
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 0.8rem;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 0.4rem;
+  }
+  .toggle-btn:hover { color: #1a1a1a; }
+  .entity-people {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.4rem;
+  }
+  #sources-container { display: none; }
+  .back-link {
+    margin-top: 3rem;
+    font-size: 0.85rem;
+  }
+  .back-link a {
+    color: #888;
+    text-decoration: none;
+  }
+  .back-link a:hover { color: #1a1a1a; }
+</style>
+
+<h1 style="font-size:1.4rem; margin-bottom:1.5rem;">Sources</h1>
+
+<ul class="source-nav" id="source-list"></ul>
+
+<div id="sources-container"></div>
+
+<div class="back-link">
+  <a href="{{ site.baseurl }}/">&larr; All posts</a>
+</div>
+
+<script>
+// Build manifest from Jekyll static files
+var sourceFiles = [
+  {% for file in site.static_files %}
+    {% if file.path contains '/sources/' and file.extname == '.json' %}
+      "{{ file.path }}",
+    {% endif %}
+  {% endfor %}
+];
+
+// Sort descending by date
+sourceFiles.sort().reverse();
+
+var nav = document.getElementById('source-list');
+var container = document.getElementById('sources-container');
+
+if (sourceFiles.length === 0) {
+  nav.innerHTML = '<li>No sources available yet.</li>';
+}
+
+sourceFiles.forEach(function(path) {
+  var filename = path.split('/').pop();
+  var date = filename.replace('.json', '');
+
+  var li = document.createElement('li');
+  var a = document.createElement('a');
+  a.href = '#' + date;
+  a.textContent = date;
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    loadSources(path, date);
+  });
+  li.appendChild(a);
+  nav.appendChild(li);
+});
+
+// Auto-load if hash present
+if (window.location.hash) {
+  var date = window.location.hash.slice(1);
+  var match = sourceFiles.find(function(f) { return f.includes(date); });
+  if (match) loadSources(match, date);
+}
+
+function loadSources(path, date) {
+  window.location.hash = date;
+  fetch('{{ site.baseurl }}' + path)
+    .then(function(r) { return r.json(); })
+    .then(function(data) { renderSources(data, date); });
+}
+
+function renderSources(data, date) {
+  var c = document.getElementById('sources-container');
+  c.style.display = 'block';
+
+  // Find matching newsletter post URL
+  var postLinks = {
+    {% for post in site.posts %}
+      "{{ post.date | date: '%Y-%m-%d' }}": "{{ post.url | prepend: site.baseurl }}",
+    {% endfor %}
+  };
+
+  var html = '<div class="source-date-header">' + date;
+  if (postLinks[date]) {
+    html += ' <a href="' + postLinks[date] + '">read newsletter &rarr;</a>';
+  }
+  html += '</div>';
+  html += '<div class="source-stats">' + data.source_count + ' sources, ' + data.url_count + ' URLs</div>';
+
+  data.news_entities.forEach(function(entity, i) {
+    var isBreaking = entity.is_breaking;
+    html += '<div class="entity-card' + (isBreaking ? ' breaking' : '') + '">';
+    html += '<div class="entity-meta">';
+    if (isBreaking) html += '<span class="tag breaking">BREAKING</span>';
+    entity.category.forEach(function(cat) {
+      html += '<span class="tag">' + cat + '</span>';
+    });
+    html += '</div>';
+    html += '<div class="entity-headline">' + entity.headline + '</div>';
+    html += '<div class="entity-summary">' + entity.summary + '</div>';
+
+    // People and orgs
+    var people = entity.entities.people || [];
+    var orgs = entity.entities.organizations || [];
+    var places = entity.entities.places || [];
+    var parts = [];
+    if (people.length) parts.push(people.join(', '));
+    if (orgs.length) parts.push(orgs.join(', '));
+    if (places.length) parts.push(places.join(', '));
+    if (parts.length) {
+      html += '<div class="entity-people">' + parts.join(' &middot; ') + '</div>';
+    }
+
+    // Expandable bullets
+    if (entity.bullets && entity.bullets.length) {
+      html += '<button class="toggle-btn" onclick="this.nextElementSibling.classList.toggle(\'open\'); this.textContent = this.nextElementSibling.classList.contains(\'open\') ? \'\\u25B4 hide details\' : \'\\u25BE show details\';">&#9662; show details</button>';
+      html += '<ul class="entity-bullets">';
+      entity.bullets.forEach(function(b) {
+        html += '<li>' + b + '</li>';
+      });
+      html += '</ul>';
+    }
+
+    // Source URLs
+    if (entity.source_urls && entity.source_urls.length) {
+      html += '<div class="entity-sources">';
+      entity.source_urls.forEach(function(url, j) {
+        var domain = url.replace(/https?:\/\//, '').split('/')[0];
+        if (j > 0) html += ' &middot; ';
+        html += '<a href="' + url + '" target="_blank">' + domain + '</a>';
+      });
+      html += '</div>';
+    }
+
+    html += '</div>';
+  });
+
+  c.innerHTML = html;
+  c.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+</script>
