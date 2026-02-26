@@ -2,9 +2,26 @@
 
 Public Jekyll site for Fast Takeoff. Deploys to GitHub Pages via Actions.
 
-## Source articles
+## Pipeline
 
-Raw articles and generation instructions live in `~/ai` (private repo). See `~/ai/INNERLOOP_UPDATE.md` for generation process.
+Full newsletter generation pipeline lives in `pipeline/`.
+
+```
+pipeline/run-all.sh [YYYY-MM-DD] --execute   # Full cycle (all 6 steps)
+pipeline/generate.sh [YYYY-MM-DD]             # Step 1: Generate EN article
+pipeline/translate.sh YYYY-MM-DD              # Step 2: Translate EN → PT-BR
+pipeline/extract.sh YYYY-MM-DD               # Step 3: Extract sources → .sources.json
+npx tsx scripts/ingest.ts <file> --execute    # Step 4: Ingest into DB (run from ~/daily-journal-platform)
+pipeline/rewrite-links.sh YYYY-MM-DD         # Step 5: Replace URLs with DJ links
+pipeline/publish.sh YYYY-MM-DD               # Step 6: Push to Jekyll site
+```
+
+Prompts: `pipeline/prompts/` (INNERLOOP_UPDATE.md, TRANSLATION.md, SOURCE_EXTRACTION.md)
+Output: `pipeline/output/` (per-date .md, .pt.md, .sources.json, .links.json, .final.md)
+
+Each step skips if output already exists. Delete the output file to rerun.
+Step 4 (ingest) is dry-run by default — pass `--execute` to write to DB.
+Step 6 (publish) commits and pushes immediately unless `--dry-run`.
 
 ## Publishing
 
