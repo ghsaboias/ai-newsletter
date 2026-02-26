@@ -53,7 +53,11 @@ while IFS=$'\t' read -r source_url dj_url; do
   escaped_dj=$(printf '%s' "$dj_url" | sed 's/[&]/\\&/g')
 
   if grep -qF "$source_url" "$FINAL_FILE"; then
-    sed -i '' "s|${escaped_source}|${escaped_dj}|g" "$FINAL_FILE"
+    if [[ "$(uname)" == "Darwin" ]]; then
+      sed -i '' "s|${escaped_source}|${escaped_dj}|g" "$FINAL_FILE"
+    else
+      sed -i "s|${escaped_source}|${escaped_dj}|g" "$FINAL_FILE"
+    fi
     replaced=$((replaced + 1))
   else
     skipped=$((skipped + 1))
