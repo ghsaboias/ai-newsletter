@@ -4,7 +4,7 @@ Translate the newsletter article from English to Brazilian Portuguese. The outpu
 
 ## Input
 
-A finished newsletter markdown file from `innermost-loop/YYYY-MM-DD.md`.
+A finished newsletter markdown file from `pipeline/output/YYYY-MM-DD.md`.
 
 ## Voice & Tone
 
@@ -52,7 +52,7 @@ Preserve exactly:
 
 ## Output format
 
-Save to `innermost-loop/YYYY-MM-DD.pt.md` with the same frontmatter, adding `language: pt-br`:
+Save to `pipeline/output/YYYY-MM-DD.pt.md` with the same frontmatter, adding `language: pt-br`:
 
 ```markdown
 ---

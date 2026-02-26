@@ -135,7 +135,7 @@ For each grouped source (one per news event), output a JSON object with two leve
 
 ## Output format
 
-Save to `innermost-loop/YYYY-MM-DD.sources.json`:
+Save to `pipeline/output/YYYY-MM-DD.sources.json`:
 
 ```json
 {

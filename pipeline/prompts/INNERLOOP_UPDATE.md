@@ -1,10 +1,10 @@
 # Innermost Loop Daily Article — Generation Instructions
 
-Generate a daily article in the style of **The Innermost Loop** by Dr. Alex Wissner-Gross. The article should be indistinguishable from a real edition. Save it to `innermost-loop/YYYY-MM-DD.md` with the same frontmatter format as existing files.
+Generate a daily article in the style of **The Innermost Loop** by Dr. Alex Wissner-Gross. The article should be indistinguishable from a real edition. Save it to `pipeline/output/YYYY-MM-DD.md` with the same frontmatter format as existing files.
 
 ## Reference Material
 
-Read 3-5 recent posts from `innermost-loop/` before writing. These are your style bible. Match them exactly.
+Read 3-5 recent posts from `pipeline/output/` before writing. These are your style bible. Match them exactly.
 
 **Always read yesterday's post.** The blog has running narrative threads that carry across days — the Dyson Swarm, OpenClaw/lobsters, agent wallets, Musk's lunar plans, etc. Don't repeat yesterday's stories. Do pick up ongoing arcs and advance them with new developments.
 
@@ -186,7 +186,7 @@ Focus on stories that fit the Singularity narrative — breakthroughs, milestone
 
 ## Output Format
 
-Save to `innermost-loop/YYYY-MM-DD.md`:
+Save to `pipeline/output/YYYY-MM-DD.md`:
 
 ```markdown
 ---
