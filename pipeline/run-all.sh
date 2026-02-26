@@ -12,8 +12,6 @@
 set -euo pipefail
 
 DIR="$(cd "$(dirname "$0")" && pwd)"
-DJ_DIR="$HOME/daily-journal-platform"
-LOOP_DIR="$DIR/output"
 
 # --- Args ---
 DATE=""
@@ -60,23 +58,12 @@ EXTRACT_ARGS=("$DATE")
 "$DIR/extract.sh" "${EXTRACT_ARGS[@]}"
 
 # --- Step 4: Ingest ---
-if [[ -n "$LIMIT_URLS" ]]; then
-  SOURCES_FILE="$LOOP_DIR/$DATE.sources.test.json"
-else
-  SOURCES_FILE="$LOOP_DIR/$DATE.sources.json"
-fi
-
-if [[ ! -f "$SOURCES_FILE" ]]; then
-  echo ""
-  echo "Error: Sources file not found: $SOURCES_FILE"
-  exit 1
-fi
-
-INGEST_ARGS=("$SOURCES_FILE")
+INGEST_ARGS=("$DATE")
 [[ "$EXECUTE" == true ]] && INGEST_ARGS+=("--execute")
 [[ -n "$INGEST_LIMIT" ]] && INGEST_ARGS+=("--limit" "$INGEST_LIMIT")
+[[ -n "$LIMIT_URLS" ]] && INGEST_ARGS+=("--test")
 
-(cd "$DJ_DIR" && npx tsx scripts/ingest.ts "${INGEST_ARGS[@]}")
+"$DIR/ingest.sh" "${INGEST_ARGS[@]}"
 
 # --- Step 5: Rewrite links ---
 "$DIR/rewrite-links.sh" "$DATE"
