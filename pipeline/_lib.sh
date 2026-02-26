@@ -30,6 +30,21 @@ show_progress() {
     # Log every line
     echo "$line" >> "$LOG_FILE"
 
+    # Show thinking blocks (truncated to 200 chars)
+    thinking=$(echo "$line" | jq -r '
+      if .type == "assistant" then
+        (.message.content[]? | select(.type == "thinking") | .thinking) // empty
+      else
+        empty
+      end
+    ' 2>/dev/null || true)
+
+    if [[ -n "$thinking" ]]; then
+      truncated="${thinking:0:200}"
+      [[ ${#thinking} -gt 200 ]] && truncated="${truncated}..."
+      echo "      [$step_name] 💭 $truncated"
+    fi
+
     # Try to extract tool_use events (Claude starting a tool call)
     tool_name=$(echo "$line" | jq -r '
       if .type == "assistant" then
