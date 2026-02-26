@@ -59,6 +59,7 @@ echo "  Title:  $TITLE"
 # --- Generate Jekyll filename ---
 # Slugify: lowercase, replace spaces/special chars with hyphens, trim
 SLUG=$(echo "$TITLE" | tr '[:upper:]' '[:lower:]' | \
+  sed 's/([^)]*)//g' | \
   sed 's/[àáâã]/a/g; s/[éê]/e/g; s/[íî]/i/g; s/[óôõ]/o/g; s/[úû]/u/g; s/ç/c/g' | \
   sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-//; s/-$//')
 
