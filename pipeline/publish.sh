@@ -68,7 +68,16 @@ echo "  Output: $POST_FILE"
 
 # --- Build Jekyll post ---
 # Strip original frontmatter, prepend Jekyll frontmatter
-BODY=$(awk 'BEGIN{n=0} /^---$/{n++; next} n>=2{print}' "$SOURCE_FILE")
+# Strip frontmatter, then remove leading "# Title" heading (Jekyll renders title from frontmatter)
+BODY=$(awk '
+  BEGIN { n=0 }
+  /^---$/ { n++; next }
+  n < 2 { next }
+  first == "" { first=1; if ($0 == "") next }       # skip leading blank
+  first == 1 { first=2; if ($0 ~ /^# /) next }      # skip # Title heading
+  second == "" { second=1; if ($0 == "") next }       # skip blank after heading
+  { print }
+' "$SOURCE_FILE")
 
 JEKYLL_POST="---
 layout: post
@@ -100,3 +109,4 @@ git push
 
 echo ""
 echo "  ✓ Pushed to GitHub — will auto-deploy to Pages"
+echo "  🔗 https://ghsaboias.github.io/ai-newsletter/${DATE//-//}/${SLUG}/"

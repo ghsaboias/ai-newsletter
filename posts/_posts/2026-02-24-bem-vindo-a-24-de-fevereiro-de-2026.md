@@ -4,8 +4,6 @@ date: 2026-02-24
 title: "Bem-vindo a 24 de Fevereiro de 2026"
 ---
 
-# Bem-vindo a 24 de Fevereiro de 2026
-
 A Singularidade está sendo contrabandeada através de fronteiras.
 
 A Anthropic publicou evidências de [ataques de destilação em escala industrial](https://www.wsj.com/tech/ai/anthropic-accuses-chinese-companies-of-siphoning-data-from-claude-63a13afc) por DeepSeek, Moonshot AI e MiniMax, alegando que os três laboratórios chineses criaram [24.000 contas fraudulentas](https://the-decoder.com/anthropic-accuses-deepseek-moonshot-and-minimax-of-stealing-claudes-ai-data-through-16-million-queries/) e geraram mais de [16 milhões de trocas com o Claude](https://www.businessinsider.com/anthropic-deepseek-distillation-minimax-moonshot-ai-2026-2) para extrair suas capacidades de raciocínio, código e uso de ferramentas. Os ataques cresceram em [intensidade e sofisticação](https://x.com/AnthropicAI/status/2025997931589881921), com laboratórios roteando queries através de proxies para escapar da detecção. O timing não é coincidência: a Reuters reporta que o [próximo modelo da DeepSeek foi treinado em chips Nvidia Blackwell](https://www.reuters.com/world/china/chinas-deepseek-trained-ai-model-nvidias-best-chip-despite-us-ban-official-says-2026-02-24/) — o silício de IA mais avançado do planeta — provavelmente [concentrado em um data center na Mongólia Interior](https://en.sedaily.com/international/2026/02/24/deepseek-allegedly-trained-new-ai-model-on-nvidias) em violação dos controles de exportação dos EUA. Um oficial do governo Trump confirmou que os chips estão lá, mas não soube explicar como chegaram. Controles de exportação são um memorando político; contrabando é um problema logístico.
