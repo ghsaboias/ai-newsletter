@@ -72,7 +72,7 @@ if [[ $skipped -gt 0 ]]; then
 fi
 
 # --- Validate: check for remaining external links ---
-remaining=$(grep -oE 'https?://[^)]+' "$FINAL_FILE" | grep -v 'dailyjournal.news' | sort -u | wc -l | tr -d ' ')
+remaining=$(grep -oE 'https?://[^)]+' "$FINAL_FILE" | grep -v 'dailyjournal.news' | sort -u | wc -l | tr -d ' ' || true)
 if [[ "$remaining" -gt 0 ]]; then
   echo ""
   echo "  ⚠ $remaining external links still in final output:"
