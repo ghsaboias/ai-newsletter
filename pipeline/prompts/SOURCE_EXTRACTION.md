@@ -23,12 +23,12 @@ This grouping maps directly to how Daily Journal creates news entities — **one
 
 ### Step 3: Fetch source content (parallel, best effort)
 
-**Use subagents to fetch in parallel.** Split the URLs into batches of up to 5 and launch one Task subagent per batch. Each subagent must use `model: "opus"` (Opus 4.6). Pass each subagent:
+**Use subagents to fetch in parallel.** Split the URLs into batches of up to 7 and launch one Task subagent per batch. Each subagent must use `model: "opus"` (Opus 4.6). Pass each subagent:
 - The batch of URLs to fetch
 - The anchor text and surrounding sentence for each URL (from Step 1)
 - Instructions to return per URL: **title**, **published date**, **image URL** (og:image or article thumbnail), **key facts**, and a **one-sentence summary**
 
-Example: 36 URLs → 8 subagents of 4-5 URLs each, all running in parallel.
+Example: 35 URLs → 5 subagents of 7 URLs each, all running in parallel.
 
 Each subagent should fetch and extract:
 - **News articles** (Reuters, AP, TechCrunch, etc.) — title, published date, og:image, first paragraphs, key facts

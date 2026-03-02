@@ -40,12 +40,7 @@ Generate today's article for $DATE." \
     --output-format stream-json \
     --verbose \
     --allowedTools "Write,Read,Edit,WebFetch,WebSearch,mcp__exa__web_search_exa,Bash(bird *)" \
-    2>&1 | show_progress "generate" || \
-  claude -p "$(cat "$GENERATE_PROMPT")
-
-Generate today's article for $DATE." \
-    --allowedTools "Write,Read,Edit,WebFetch,WebSearch,mcp__exa__web_search_exa,Bash(bird *)" \
-    2>&1 | tail -5
+    2>&1 | show_progress "generate"
 
 STEP_END=$(date +%s)
 STEP_DURATION=$((STEP_END - STEP_START))
