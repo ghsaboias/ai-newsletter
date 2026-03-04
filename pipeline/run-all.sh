@@ -1,10 +1,9 @@
 #!/bin/bash
 #
-# Full newsletter pipeline: Generate → Translate → Extract → Ingest → Rewrite → Publish
+# Full newsletter pipeline: Research → Generate → Extract → Ingest → Rewrite → Publish
 #
 # Usage: ./run-all.sh              # today's date
 #        ./run-all.sh 2026-02-24   # specific date
-#        ./run-all.sh 2026-02-24 --limit-urls 5
 #        ./run-all.sh 2026-02-24 --execute
 #        ./run-all.sh 2026-02-24 --limit 3 --execute
 #
@@ -18,21 +17,17 @@ mkdir -p "$LOG_DIR"
 # --- Args ---
 DATE=""
 EXECUTE=false
-LIMIT_URLS=""
 INGEST_LIMIT=""
 prev_arg=""
 
 for arg in "$@"; do
   case "$arg" in
     --execute)    EXECUTE=true ;;
-    --limit-urls) ;; # value handled below
     --limit)      ;; # value handled below
     20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]) DATE="$arg" ;;
     test) DATE="test" ;;
     *)
-      if [[ "$prev_arg" == "--limit-urls" ]]; then
-        LIMIT_URLS="$arg"
-      elif [[ "$prev_arg" == "--limit" ]]; then
+      if [[ "$prev_arg" == "--limit" ]]; then
         INGEST_LIMIT="$arg"
       fi
       ;;
@@ -64,21 +59,19 @@ step_timer() {
   echo ""
 }
 
-# --- Step 1: Generate ---
+# --- Step 1: Research ---
+S=$(date +%s)
+"$DIR/research.sh" "$DATE"
+step_timer "research" "$S"
+
+# --- Step 2: Generate ---
 S=$(date +%s)
 "$DIR/generate.sh" "$DATE"
 step_timer "generate" "$S"
 
-# --- Step 2: Translate ---
-S=$(date +%s)
-"$DIR/translate.sh" "$DATE"
-step_timer "translate" "$S"
-
 # --- Step 3: Extract ---
 S=$(date +%s)
-EXTRACT_ARGS=("$DATE")
-[[ -n "$LIMIT_URLS" ]] && EXTRACT_ARGS+=("--limit-urls" "$LIMIT_URLS")
-"$DIR/extract.sh" "${EXTRACT_ARGS[@]}"
+"$DIR/extract.sh" "$DATE"
 step_timer "extract" "$S"
 
 # --- Step 4: Ingest ---
@@ -86,7 +79,6 @@ S=$(date +%s)
 INGEST_ARGS=("$DATE")
 [[ "$EXECUTE" == true ]] && INGEST_ARGS+=("--execute")
 [[ -n "$INGEST_LIMIT" ]] && INGEST_ARGS+=("--limit" "$INGEST_LIMIT")
-[[ -n "$LIMIT_URLS" ]] && INGEST_ARGS+=("--test")
 "$DIR/ingest.sh" "${INGEST_ARGS[@]}"
 step_timer "ingest" "$S"
 

@@ -1,93 +1,74 @@
 # Newsletter Source Extraction — Instructions
 
-Given a finished newsletter article (PT-BR markdown with inline links), extract structured source data for each unique URL. This data will be used to create news entities and article records on Daily Journal.
+Given a finished PT-BR newsletter article and its research data, produce structured source data for Daily Journal. **Do not fetch any URLs** — all metadata comes from the research file.
 
 ## Input
 
-You will receive the translated PT-BR newsletter markdown (`YYYY-MM-DD.pt.md`). Each link follows the pattern `[anchor text](url)`. All anchor text and paragraph context is already in Portuguese.
+You will receive two files:
+- `YYYY-MM-DD.research.json` — structured research with per-story metadata (URLs, titles, dates, images, key facts, categories, entities)
+- `YYYY-MM-DD.pt.md` — the finished PT-BR newsletter with inline links
 
 ## Process
 
-### Step 1: Parse all unique URLs
+### Step 1: Parse URLs from the article
 
-Extract every URL from the article. Deduplicate (some URLs appear twice). For each, capture:
-- The **anchor text** (the linked phrase)
-- The **surrounding sentence** (the full sentence containing the link)
-- The **paragraph theme** (what the paragraph is about)
+Extract every URL from the article markdown. Deduplicate. For each, capture:
+- The **anchor text** (the linked phrase, in Portuguese)
+- The **surrounding sentence**
+- The **paragraph theme**
 
 ### Step 2: Group URLs by story
 
-Multiple links about the same event should be grouped into one source entry. For example, 3 links about "Anthropic vs DeepSeek distillation" — WSJ, The Decoder, Business Insider — all become one entry with multiple sources.
+Multiple links about the same event become one news entity. Use the article's paragraph structure as the primary grouping signal — links in the same paragraph about the same topic belong together.
 
-This grouping maps directly to how Daily Journal creates news entities — **one event = one entity**, backed by multiple source articles.
+One event = one entity, backed by multiple source articles.
 
-### Step 3: Fetch source content (parallel, best effort)
+### Step 3: Match with research data
 
-**Use subagents to fetch in parallel.** Split the URLs into batches of up to 7 and launch one Task subagent per batch. Each subagent must use `model: "opus"` (Opus 4.6). Pass each subagent:
-- The batch of URLs to fetch
-- The anchor text and surrounding sentence for each URL (from Step 1)
-- Instructions to return per URL: **title**, **published date**, **image URL** (og:image or article thumbnail), **key facts**, and a **one-sentence summary**
+For each URL, look it up in `research.json` to pull:
+- `title` — from the source's `title` field
+- `published_at` — from the source's `published_at` field
+- `image_url` — from the source's `image_url` field
+- `outlet` — from the source's `outlet` field
+- `key_facts` — from the parent story's `key_facts`
+- `category` — from the parent story's `category`
+- `entities` — from the parent story's `entities`
 
-Example: 35 URLs → 5 subagents of 7 URLs each, all running in parallel.
-
-Each subagent should fetch and extract:
-- **News articles** (Reuters, AP, TechCrunch, etc.) — title, published date, og:image, first paragraphs, key facts
-- **X/Twitter posts** — tweet text, author, post date. Title = "Tweet de @handle: [first 80 chars]". No image_url.
-- **Company blogs** (OpenAI, Waymo, etc.) — announcement title, date, og:image, details
-- **YouTube** — video title, upload date, thumbnail URL, description
-- **Paywalled sources** (WSJ, Bloomberg, FT) — use the anchor text + paragraph context as primary source. Search for the same story on non-paywalled outlets if needed. Title and summary from context; image_url from og:image if the page loads at all.
-
-**Do not block on failed fetches.** The article text itself contains enough context for most sources — the anchor text is descriptive and the surrounding paragraph provides facts and numbers.
-
-Once all subagents return, merge their results and proceed to Step 4.
+If a URL from the article doesn't appear in research.json (edge case), use the anchor text and paragraph context to fill in the fields as best you can.
 
 ### Step 4: Produce structured output
 
-For each grouped source (one per news event), output a JSON object with two levels: the **news entity** (grouped story) and **per-source article data**.
+For each news entity, write the DJ fields in PT-BR using the article text and research data.
 
 ```json
 {
-  "headline": "Anthropic acusa DeepSeek, Moonshot e MiniMax de ataque de destilação em escala industrial",
-  "summary": "Labs chineses criaram 24 mil contas falsas e fizeram 16 milhões de consultas ao Claude para extrair capacidades de raciocínio e código.",
+  "headline": "Objetos atingem data center da AWS nos Emirados e derrubam serviços em todo o Oriente Médio",
+  "summary": "Incêndio forçou corte de energia em duas zonas de disponibilidade, derrubando S3, DynamoDB e mais de 60 serviços.",
   "bullets": [
-    "DeepSeek, Moonshot AI e MiniMax criaram 24.000 contas falsas na Anthropic",
-    "16 milhões de consultas ao Claude para extrair capacidades de raciocínio, código e uso de ferramentas",
-    "Labs rotearam consultas por proxies para evadir detecção",
-    "Ataques cresceram em intensidade e sofisticação ao longo do tempo"
+    "Objetos não identificados atingiram data center da AWS nos EAU no domingo",
+    "Bombeiros cortaram energia de duas zonas de disponibilidade",
+    "S3, DynamoDB e mais de 60 serviços ficaram fora do ar"
   ],
-  "body": "A Anthropic publicou evidências de que três laboratórios chineses — DeepSeek, Moonshot AI e MiniMax — criaram mais de 24 mil contas fraudulentas para extrair capacidades do Claude em escala industrial. Ao todo, foram 16 milhões de consultas focadas em raciocínio, código e uso de ferramentas, com os labs roteando tráfego por proxies comerciais para evadir detecção.\n\nOs ataques cresceram em intensidade ao longo dos últimos meses, com a MiniMax liderando o volume de requisições. A Anthropic afirma que os dados extraídos foram usados para treinar modelos concorrentes, configurando destilação em violação dos termos de uso.",
+  "body": "Objetos não identificados atingiram um data center da Amazon Web Services nos Emirados Árabes Unidos...",
   "category": ["technology", "world"],
   "entities": {
     "people": [],
-    "organizations": ["Anthropic", "DeepSeek", "Moonshot AI", "MiniMax"],
-    "places": []
+    "organizations": ["Amazon Web Services"],
+    "places": ["UAE"]
   },
   "is_breaking": false,
   "sensitivity": "normal",
   "sources": [
     {
-      "url": "https://www.wsj.com/tech/ai/anthropic-accuses-chinese-companies-of-siphoning-data-from-claude-63a13afc",
-      "title": "Anthropic acusa empresas chinesas de extrair dados do Claude",
-      "summary": "WSJ: DeepSeek, Moonshot e MiniMax criaram 24 mil contas falsas para extrair capacidades de raciocínio do Claude via 16 milhões de consultas.",
+      "url": "https://www.reuters.com/...",
+      "title": "AWS reporta queda após data center nos EAU ser atingido por 'objetos'",
+      "summary": "Reuters: Objetos não identificados provocaram incêndio no data center da AWS nos EAU.",
       "bullets": [
-        "24 mil contas falsas criadas por três labs chineses",
-        "16 milhões de consultas focadas em raciocínio, código e uso de ferramentas",
-        "Anthropic detectou e bloqueou as campanhas, publicando relatório detalhado"
+        "Objetos atingiram data center por volta das 7h30 ET",
+        "Bombeiros cortaram energia; restauração esperada para várias horas"
       ],
-      "published_at": "2026-02-23",
-      "image_url": "https://images.wsj.net/im-12345/social"
-    },
-    {
-      "url": "https://the-decoder.com/anthropic-accuses-deepseek-moonshot-and-minimax-of-stealing-claudes-ai-data-through-16-million-queries/",
-      "title": "Anthropic acusa DeepSeek, Moonshot e MiniMax de roubo de dados via 16 milhões de queries",
-      "summary": "The Decoder: três labs chineses usaram proxies para esconder consultas em massa ao Claude, focando em raciocínio e código.",
-      "bullets": [
-        "MiniMax liderou com 13 milhões de requisições, migrando para novos modelos em 24h",
-        "Moonshot AI focou em raciocínio de agentes e uso de ferramentas",
-        "Labs usaram proxies comerciais para evadir detecção"
-      ],
-      "published_at": "2026-02-23",
-      "image_url": "https://the-decoder.com/wp-content/uploads/2026/02/anthropic-deepseek.jpg"
+      "published_at": "2026-03-02",
+      "image_url": ""
     }
   ]
 }
@@ -97,41 +78,36 @@ For each grouped source (one per news event), output a JSON object with two leve
 
 | Field | Type | Description |
 |---|---|---|
-| `headline` | string | Título factual: o que aconteceu, quem, quando. Máximo 100 caracteres. |
+| `headline` | string | Título factual em PT-BR: o que aconteceu, quem, quando. Máximo 100 caracteres. |
 | `summary` | string | Frase direta com o fato principal e consequência imediata. Máximo 150 caracteres. |
 | `bullets` | string[] | 3-8 fatos específicos. Cada bullet = 1 fato concreto com número, nome ou data. |
-| `body` | string | 1-3 parágrafos sintetizando a notícia em narrativa coesa. Não repita o headline ou summary — expanda com contexto, consequências e detalhes dos sources. Separe parágrafos com `\n\n`. |
-| `category` | string[] | One or more editorial categories (see reference below). Primary category first. |
-| `entities` | object | `{people: string[], organizations: string[], places: string[]}`. Only named entities explicitly mentioned. |
-| `is_breaking` | boolean | `true` only for genuinely breaking news (first report of a major event). Default `false`. |
-| `sensitivity` | string | `"normal"`, `"violent"`, `"adult"`, or `"political_high_risk"`. Most sources are `"normal"`. Use `"violent"` for graphic military/attack content, `"political_high_risk"` for stories that need editorial caution. |
+| `body` | string | 1-3 parágrafos sintetizando a notícia. Não repita headline ou summary — expanda com contexto e detalhes. Separe parágrafos com `\n\n`. |
+| `category` | string[] | Editorial categories from research.json. Primary category first. |
+| `entities` | object | `{people: string[], organizations: string[], places: string[]}` from research.json, supplemented by article context. |
+| `is_breaking` | boolean | `true` only for genuinely breaking news. Default `false`. |
+| `sensitivity` | string | `"normal"`, `"violent"`, `"adult"`, or `"political_high_risk"`. |
 
 ### Per-source article fields
 
 | Field | Type | Description |
 |---|---|---|
-| `url` | string | Original URL from the newsletter. |
-| `title` | string | Article title in PT-BR. Translate from English if needed. Should read as a standalone headline. |
-| `summary` | string | One sentence describing what **this specific source** reports. Start with outlet name (e.g. "Reuters: ..."). Different from the parent entity summary — this is about what this one article says. |
-| `bullets` | string[] | 2-5 fatos específicos deste source individual. Devem ser diferentes dos bullets da entity — foque no que **este artigo em particular** reporta, não no evento geral. Cada bullet = 1 fato concreto com número, nome ou data. |
-| `published_at` | string | Publication date in `YYYY-MM-DD` format. Extract from the page, or use the newsletter date as fallback. |
-| `image_url` | string | The article's og:image or main thumbnail URL. If not found, use `""` (empty string). |
+| `url` | string | Original URL from the article. |
+| `title` | string | Headline in PT-BR. Translate from research.json `title` if needed. |
+| `summary` | string | One sentence: what **this specific source** reports. Start with outlet name. |
+| `bullets` | string[] | 2-5 fatos from this source. Different from entity bullets — focus on what this article specifically covers. |
+| `published_at` | string | From research.json. Fall back to newsletter date. |
+| `image_url` | string | From research.json. Use `""` if not available. |
 
 ## Quality bar
 
-- **Every link in the article must appear in the output.** Count the unique URLs in the markdown. Count the URLs across all `sources` arrays. They must match. A missing URL means a missing source — go back and add it.
-- **Grouping must be correct.** URLs about the same event go together. URLs about different events stay separate — even if they mention the same company. "Anthropic acusa DeepSeek de destilação" and "Pentágono convoca CEO da Anthropic" are different events, different source entries.
-- **headline must read as a news headline.** Factual, specific, under 100 characters. If you read just the headline, you know what happened.
-- **summary must add context beyond the headline.** Not a rephrasing — it should include the key consequence or number that the headline omits. Under 150 characters.
-- **bullets must contain at least 3 concrete details per source.** Numbers, dates, dollar amounts, percentages, names. If you can't find 3, re-read the paragraph context and try fetching the source again.
-- **Entities must be exhaustive for what's mentioned.** Don't list 2 people when the paragraph names 4. Scan the surrounding text carefully.
-- **Per-source title must be a real headline.** Not a URL slug, not anchor text verbatim. A proper title that describes the article.
-- **Per-source summary must be source-specific.** "Reuters: X happened" — not a copy of the parent summary. Each source covers a slightly different angle or detail.
-- **Per-source image_url must be a direct image URL** (ending in .jpg, .png, .webp, or from a known CDN like images.wsj.net, static.reuters.com). If the page doesn't load or has no image, use `""`.
-- **Per-source published_at must be accurate.** Extract from the page's date metadata. If genuinely unavailable, use the newsletter date.
-- **Fetch before falling back.** Try to crawl every URL. Only fall back to article context when the fetch genuinely fails (paywall, 403, timeout). The fetched content will have details the article omits.
-- **All text fields must be in PT-BR.** The input is already in Portuguese — match it. Source titles from English outlets should be translated.
-- **category must use DJ's vocabulary.** See reference below. A source can have multiple categories — list the most specific first.
+- **Every URL in the article must appear in the output.** Count unique URLs in the markdown vs URLs across all `sources` arrays. They must match.
+- **Grouping must be correct.** Same event → same entity. Different events → different entities, even if same company.
+- **headline must read as a news headline.** Factual, specific, under 100 characters.
+- **summary must add context beyond the headline.** Key consequence or number the headline omits.
+- **Per-source title must be a proper headline** in PT-BR, not a URL slug or raw anchor text.
+- **Per-source summary must be source-specific.** "Reuters: X happened" — each source covers a different angle.
+- **All text fields must be in PT-BR.**
+- **category must use DJ's vocabulary** (see reference below).
 
 ## Output format
 
@@ -139,18 +115,17 @@ Save to `pipeline/output/YYYY-MM-DD.sources.json`:
 
 ```json
 {
-  "date": "2026-02-24",
-  "newsletter_file": "2026-02-24.pt.md",
-  "source_count": 12,
-  "url_count": 35,
+  "date": "2026-03-02",
+  "newsletter_file": "2026-03-02.pt.md",
+  "source_count": 8,
+  "url_count": 29,
   "news_entities": [
-    { ... },
     { ... }
   ]
 }
 ```
 
-`source_count` = number of entries in `news_entities` (grouped stories).
+`source_count` = number of entries in `news_entities`.
 `url_count` = total URLs across all `sources` arrays (must match unique URLs in the article).
 
 ## Categories reference
@@ -169,4 +144,4 @@ Use ONLY these exact English values (same as Daily Journal database):
 | sports | Sports-related stories |
 | entertainment | Entertainment, media, culture |
 
-Assign 1-3 categories per entity. Most AI newsletter stories will use `technology` as primary, combined with `world`, `economy`, `business`, or `politics` as secondary.
+Assign 1-3 categories per entity.

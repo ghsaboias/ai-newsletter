@@ -1,10 +1,10 @@
 #!/bin/bash
 #
-# Step 1: Generate EN newsletter article
+# Step 2: Generate PT-BR newsletter article from research
 #
-# Usage: ./generate.sh              # today's date
-#        ./generate.sh 2026-02-24   # specific date
-#        ./generate.sh test         # use test.md
+# Usage: ./generate.sh 2026-02-24   # specific date
+#        ./generate.sh              # today's date
+#        ./generate.sh test         # use test label
 #
 
 set -euo pipefail
@@ -12,8 +12,9 @@ set -euo pipefail
 source "$(cd "$(dirname "$0")" && pwd)/_lib.sh"
 
 DATE=$(parse_date_arg "$@")
-EN_FILE="$LOOP_DIR/$DATE.md"
-GENERATE_PROMPT="$DIR/prompts/INNERLOOP_UPDATE.md"
+RESEARCH_FILE="$LOOP_DIR/$DATE.research.json"
+PT_FILE="$LOOP_DIR/$DATE.pt.md"
+GENERATE_PROMPT="$DIR/prompts/GENERATION.md"
 
 init_log "$DATE"
 
@@ -21,38 +22,47 @@ echo ""
 echo "=== Generate: $DATE ==="
 echo ""
 
-if [[ -f "$EN_FILE" ]]; then
-  EN_WORDS=$(wc -w < "$EN_FILE" | tr -d ' ')
-  echo "  ⚠ $EN_FILE already exists ($EN_WORDS words)"
+# --- Validate ---
+if [[ ! -f "$RESEARCH_FILE" ]]; then
+  echo "Error: $RESEARCH_FILE not found (run research.sh first)"
+  exit 1
+fi
+
+if [[ -f "$PT_FILE" ]]; then
+  PT_WORDS=$(wc -w < "$PT_FILE" | tr -d ' ')
+  echo "  ⚠ $PT_FILE already exists ($PT_WORDS words)"
   echo "  Delete it first to regenerate."
   exit 0
 fi
 
+STORY_COUNT=$(jq '.story_count' "$RESEARCH_FILE" 2>/dev/null || echo "?")
+SOURCE_COUNT=$(jq '.source_count' "$RESEARCH_FILE" 2>/dev/null || echo "?")
+
 STEP_START=$(date +%s)
-echo "  Output:  $EN_FILE"
+echo "  Input:   $RESEARCH_FILE ($STORY_COUNT stories, $SOURCE_COUNT sources)"
+echo "  Output:  $PT_FILE"
 echo "  Started: $(date '+%H:%M:%S')"
-echo "  (research + writing — this is the longest step)"
 echo ""
 
 claude -p "$(cat "$GENERATE_PROMPT")
 
-Generate today's article for $DATE." \
+Write today's article for $DATE. The research file is at pipeline/output/$DATE.research.json." \
     --output-format stream-json \
     --verbose \
-    --allowedTools "Write,Read,Edit,WebFetch,WebSearch,mcp__exa__web_search_exa,Bash(bird *)" \
+    --allowedTools "Write,Read,Edit" \
     2>&1 | show_progress "generate"
 
 STEP_END=$(date +%s)
 STEP_DURATION=$((STEP_END - STEP_START))
 
-if [[ ! -f "$EN_FILE" ]]; then
+if [[ ! -f "$PT_FILE" ]]; then
   echo ""
-  echo "Error: Generation did not produce $EN_FILE"
+  echo "Error: Generation did not produce $PT_FILE"
   exit 1
 fi
 
-EN_WORDS=$(wc -w < "$EN_FILE" | tr -d ' ')
-EN_LINKS=$(grep -oE 'https?://[^)]+' "$EN_FILE" | sort -u | wc -l | tr -d ' ')
+PT_WORDS=$(wc -w < "$PT_FILE" | tr -d ' ')
+PT_LINKS=$(grep -oE 'https?://[^)]+' "$PT_FILE" | sort -u | wc -l | tr -d ' ')
 echo ""
 echo "  Done in ${STEP_DURATION}s"
-echo "  Words: $EN_WORDS | Links: $EN_LINKS unique URLs"
+echo "  Words: $PT_WORDS | Links: $PT_LINKS unique URLs"

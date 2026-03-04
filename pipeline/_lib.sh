@@ -66,22 +66,47 @@ show_progress() {
       echo "      [$step_name] $error_msg"
     fi
 
-    if [[ -n "$tool_name" && "$tool_name" != "$last_tool" ]]; then
+    if [[ -n "$tool_name" ]]; then
       tool_count=$((tool_count + 1))
-      last_tool="$tool_name"
+
+      # Extract detail from tool input
+      detail=$(echo "$line" | jq -r '
+        .message.content[]? | select(.type == "tool_use") |
+        if .name == "Read" or .name == "Write" or .name == "Edit" then
+          (.input.file_path // "" | split("/") | last)
+        elif .name == "Glob" then
+          .input.pattern // ""
+        elif .name == "Grep" then
+          .input.pattern // ""
+        elif .name == "WebFetch" then
+          (.input.url // "" | split("/") | .[2] // "")
+        elif .name == "WebSearch" then
+          .input.query // ""
+        elif .name == "mcp__exa__web_search_exa" then
+          .input.query // ""
+        elif .name == "Bash" then
+          (.input.command // "" | .[0:60])
+        else empty
+        end
+      ' 2>/dev/null || true)
 
       # Format tool name for display
       case "$tool_name" in
-        Write)     display="Writing file" ;;
-        Read)      display="Reading file" ;;
-        Edit)      display="Editing file" ;;
-        WebFetch)  display="Fetching URL" ;;
-        WebSearch) display="Searching web" ;;
-        mcp__exa__web_search_exa) display="Searching (Exa)" ;;
+        Write)     display="Write" ;;
+        Read)      display="Read" ;;
+        Edit)      display="Edit" ;;
+        WebFetch)  display="Fetch" ;;
+        WebSearch) display="Search" ;;
+        mcp__exa__web_search_exa) display="Exa" ;;
+        Bash)      display="Bash" ;;
         *)         display="$tool_name" ;;
       esac
 
-      echo "      [$step_name] #$tool_count $display ($(date '+%H:%M:%S'))"
+      if [[ -n "$detail" ]]; then
+        echo "      [$step_name] #$tool_count $display: $detail ($(date '+%H:%M:%S'))"
+      else
+        echo "      [$step_name] #$tool_count $display ($(date '+%H:%M:%S'))"
+      fi
     fi
   done
 }
