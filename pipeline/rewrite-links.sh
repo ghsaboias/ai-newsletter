@@ -5,9 +5,9 @@
 # Usage: ./rewrite-links.sh 2026-02-24
 #        ./rewrite-links.sh test
 #
-# Reads:  YYYY-MM-DD.pt.md   (PT-BR newsletter)
-#         YYYY-MM-DD.links.json (source URL → DJ URL mapping, from ingest.ts)
-# Writes: YYYY-MM-DD.final.md (newsletter with DJ links)
+# Reads:  pt.md        (PT-BR newsletter)
+#         links.json   (source URL → DJ URL mapping, from ingest.ts)
+# Writes: final.md     (newsletter with DJ links)
 #
 
 set -euo pipefail
@@ -15,9 +15,10 @@ set -euo pipefail
 source "$(cd "$(dirname "$0")" && pwd)/_lib.sh"
 
 DATE=$(parse_date_arg "$@")
-PT_FILE="$LOOP_DIR/$DATE.pt.md"
-LINKS_FILE="$LOOP_DIR/$DATE.links.json"
-FINAL_FILE="$LOOP_DIR/$DATE.final.md"
+init_day_dir
+PT_FILE="$DAY_DIR/pt.md"
+LINKS_FILE="$DAY_DIR/links.json"
+FINAL_FILE="$DAY_DIR/final.md"
 
 echo ""
 echo "=== Rewrite Links: $DATE ==="

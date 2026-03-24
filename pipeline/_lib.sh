@@ -7,6 +7,12 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 LOOP_DIR="$DIR/output"
 DJ_DIR="$HOME/daily-journal-platform"
 
+# Set DAY_DIR for per-date output. Call after DATE is set.
+init_day_dir() {
+  DAY_DIR="$LOOP_DIR/$DATE"
+  mkdir -p "$DAY_DIR"
+}
+
 # --- Logging ---
 LOG_DIR="$DIR/logs"
 mkdir -p "$LOG_DIR"

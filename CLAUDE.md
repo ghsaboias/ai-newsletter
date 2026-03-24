@@ -1,29 +1,43 @@
 # AI Newsletter
 
-Public Jekyll site for Fast Takeoff. Deploys to GitHub Pages via Actions.
+The pipeline is recursive self-improvement. LLM handles facts, recency, accuracy. Human handles taste, writing, relevance. Learnings feed back into prompts so future generations need fewer corrections.
 
 ## Pipeline
 
-Full newsletter generation pipeline lives in `pipeline/`.
+Two-phase pipeline. Draft generates and quality-checks. You review with Claude and fix pt.md. Finalize handles mechanical post-processing.
 
 ```
-pipeline/run-all.sh [YYYY-MM-DD] --execute   # Full cycle (all 6 steps)
-pipeline/research.sh [YYYY-MM-DD]             # Step 1: Research → .research.json
-pipeline/generate.sh [YYYY-MM-DD]             # Step 2: Generate PT-BR article → .pt.md
-pipeline/extract.sh YYYY-MM-DD               # Step 3: Extract sources → .sources.json
-pipeline/ingest.sh YYYY-MM-DD --execute       # Step 4: Ingest into DB
-pipeline/rewrite-links.sh YYYY-MM-DD         # Step 5: Replace URLs with DJ links
-pipeline/publish.sh YYYY-MM-DD               # Step 6: Push to Jekyll site
+pipeline/draft.sh [YYYY-MM-DD]                 # Phase 1: Research → Generate → Repetition check → Audit
+                                                #   (review repetition.json + audit.json, fix pt.md)
+pipeline/finalize.sh YYYY-MM-DD [--execute]    # Phase 2: Extract → Ingest → Rewrite links → Substack
 ```
 
-Prompts: `pipeline/prompts/` (RESEARCH.md, GENERATION.md, SOURCE_EXTRACTION.md)
-Output: `pipeline/output/` (per-date .research.json, .pt.md, .sources.json, .links.json, .final.md)
+### Phase 1: draft.sh
 
-Research (step 1) does all web fetching and outputs structured JSON. Generate (step 2) writes the article from research data only — no web access, fast iteration. Extract (step 3) assembles DJ source data from research.json + article — no re-fetching.
+Runs four sequential steps, each a separate Claude process:
+
+1. `research.sh` — web research → `research.json`
+2. `generate.sh` — PT-BR article from research data → `pt.md`
+3. `repetition-check.sh` — compare against previous 3 editions → `repetition.json`
+4. `audit.sh` — freshness check (flags stale news) → `audit.json`
+
+After draft completes, open a Claude session to review repetition.json + audit.json and fix pt.md. **Read memory files first**: `~/.claude/projects/-Users-guilherme-ai-newsletter/memory/`
+
+### Phase 2: finalize.sh
+
+Runs four mechanical steps (no human judgment needed):
+
+1. `extract.sh` — extract sources from research + article → `sources.json`
+2. `ingest.sh` — ingest into DB → `links.json` (dry-run by default, `--execute` to write)
+3. `rewrite-links.sh` — replace URLs with DJ links → `final.md`
+4. `substack.sh` — convert to Substack HTML → `substack.html`
+
+### Notes
+
+Prompts: `pipeline/prompts/` (RESEARCH.md, GENERATION.md, REPETITION_CHECK.md, AUDIT.md, SOURCE_EXTRACTION.md)
+Output: `pipeline/output/YYYY-MM-DD/`
 
 Each step skips if output already exists. Delete the output file to rerun.
-Step 4 (ingest) is dry-run by default — pass `--execute` to write to DB.
-Step 6 (publish) commits and pushes immediately unless `--dry-run`.
 
 ### Prompt sampling
 
@@ -37,16 +51,6 @@ pipeline/sample.sh source_extraction 2026-03-03 -q "List the 5 most important st
 ```
 
 Saves to `pipeline/output/samples/` and prints all results at the end.
-
-## Substack
-
-Convert a generated article to Substack-ready HTML with pandoc:
-
-```
-pandoc pipeline/output/YYYY-MM-DD.pt.md --from markdown-tex_math_dollars --to html -o pipeline/output/YYYY-MM-DD.substack.html
-```
-
-`-tex_math_dollars` prevents `$` amounts from being parsed as LaTeX. Paste the output into Substack's HTML editor (`</>` button).
 
 ## Publishing
 

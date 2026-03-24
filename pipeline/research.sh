@@ -12,8 +12,12 @@ set -euo pipefail
 source "$(cd "$(dirname "$0")" && pwd)/_lib.sh"
 
 DATE=$(parse_date_arg "$@")
-RESEARCH_FILE="$LOOP_DIR/$DATE.research.json"
+PREV_DATE=$(date -j -v-1d -f "%Y-%m-%d" "$DATE" "+%Y-%m-%d" 2>/dev/null || date -d "$DATE - 1 day" "+%Y-%m-%d")
+init_day_dir
+RESEARCH_FILE="$DAY_DIR/research.json"
 RESEARCH_PROMPT="$(cat "$DIR/prompts/RESEARCH.md")"
+RESEARCH_PROMPT="${RESEARCH_PROMPT//\{\{DATE\}\}/$DATE}"
+RESEARCH_PROMPT="${RESEARCH_PROMPT//\{\{PREV_DATE\}\}/$PREV_DATE}"
 
 init_log "$DATE"
 
@@ -34,6 +38,17 @@ echo "  Output:  $RESEARCH_FILE"
 echo "  Started: $(date '+%H:%M:%S')"
 echo ""
 
+# --- Extract previous headlines for dedup (avoids 3 agents each reading 88K) ---
+PREV_HEADLINES=""
+PREV_RESEARCH="$LOOP_DIR/$PREV_DATE/research.json"
+if [[ -f "$PREV_RESEARCH" ]]; then
+  PREV_HEADLINES=$(jq -r '.stories[] | "- " + .id + ": " + .headline' "$PREV_RESEARCH")
+  echo "  Previous: $(echo "$PREV_HEADLINES" | wc -l | tr -d ' ') headlines from $PREV_DATE"
+else
+  echo "  Previous: none found"
+fi
+echo ""
+
 ALLOWED_TOOLS="Write,Read,WebFetch,WebSearch,mcp__exa__web_search_exa,Bash(bird *)"
 
 # --- Cluster definitions ---
@@ -48,7 +63,7 @@ NAMES=()
 run_cluster() {
   local name="$1"
   local categories="$2"
-  local outfile="$LOOP_DIR/$DATE.research-${name}.json"
+  local outfile="$DAY_DIR/research-${name}.json"
 
   if [[ -f "$outfile" ]]; then
     echo "  [$name] already exists, skipping"
@@ -63,7 +78,10 @@ run_cluster() {
 ---
 **Your categories:** $categories
 **Date:** $DATE
-**Output file:** $outfile" \
+**Output file:** $outfile
+${PREV_HEADLINES:+
+**Previous edition headlines (skip unless genuinely new development):**
+$PREV_HEADLINES}" \
       --output-format stream-json \
       --verbose \
       --allowedTools "$ALLOWED_TOOLS" \
@@ -95,7 +113,7 @@ echo "  Clusters done in ${STEP_DURATION}s ($FAILURES failures)"
 # --- Merge partial files ---
 PARTIALS=()
 for name in ai hw world; do
-  f="$LOOP_DIR/$DATE.research-${name}.json"
+  f="$DAY_DIR/research-${name}.json"
   if [[ -f "$f" ]] && jq empty "$f" 2>/dev/null; then
     PARTIALS+=("$f")
   else

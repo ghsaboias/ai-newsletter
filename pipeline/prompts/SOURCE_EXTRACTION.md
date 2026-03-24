@@ -1,12 +1,12 @@
-# Newsletter Source Extraction — Instructions
+# Newsletter Source Extraction
 
-Given a finished PT-BR newsletter article and its research data, produce structured source data for Daily Journal. **Do not fetch any URLs** — all metadata comes from the research file.
+The user will provide a **target date**. Given the finished PT-BR newsletter article and its research data, produce structured source data for Daily Journal. **Do not fetch any URLs** — all metadata comes from the research file.
 
 ## Input
 
-You will receive two files:
-- `YYYY-MM-DD.research.json` — structured research with per-story metadata (URLs, titles, dates, images, key facts, categories, entities)
-- `YYYY-MM-DD.pt.md` — the finished PT-BR newsletter with inline links
+Read these files:
+- `pipeline/output/{date}/research.json` — structured research with per-story metadata (URLs, titles, dates, images, key facts, categories, entities)
+- `pipeline/output/{date}/pt.md` — the finished PT-BR newsletter with inline links
 
 ## Process
 
@@ -109,14 +109,14 @@ For each news entity, write the DJ fields in PT-BR using the article text and re
 - **All text fields must be in PT-BR.**
 - **category must use DJ's vocabulary** (see reference below).
 
-## Output format
+## Output
 
-Save to `pipeline/output/YYYY-MM-DD.sources.json`:
+Save to `pipeline/output/{date}/sources.json`:
 
 ```json
 {
-  "date": "2026-03-02",
-  "newsletter_file": "2026-03-02.pt.md",
+  "date": "YYYY-MM-DD",
+  "newsletter_file": "YYYY-MM-DD/pt.md",
   "source_count": 8,
   "url_count": 29,
   "news_entities": [

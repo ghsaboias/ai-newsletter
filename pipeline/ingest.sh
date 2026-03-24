@@ -7,8 +7,8 @@
 # Usage: ./ingest.sh 2026-02-24
 #        ./ingest.sh 2026-02-24 --execute
 #        ./ingest.sh 2026-02-24 --limit 3 --execute
-#        ./ingest.sh 2026-02-24 --test   # uses .sources.test.json
-#        ./ingest.sh test                # also uses .sources.test.json
+#        ./ingest.sh 2026-02-24 --test   # uses sources.test.json
+#        ./ingest.sh test                # also uses sources.test.json
 #
 
 set -euo pipefail
@@ -43,11 +43,13 @@ if [[ -z "$DATE" ]]; then
   DATE=$(date +%Y-%m-%d)
 fi
 
-# Pick sources file — .test.json if --test or DATE is "test"
+DAY_DIR="$LOOP_DIR/$DATE"
+
+# Pick sources file — sources.test.json if --test or DATE is "test"
 if [[ "$TEST" == true ]]; then
-  SOURCES_FILE="$LOOP_DIR/$DATE.sources.test.json"
+  SOURCES_FILE="$DAY_DIR/sources.test.json"
 else
-  SOURCES_FILE="$LOOP_DIR/$DATE.sources.json"
+  SOURCES_FILE="$DAY_DIR/sources.json"
 fi
 
 if [[ ! -f "$SOURCES_FILE" ]]; then

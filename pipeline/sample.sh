@@ -74,7 +74,7 @@ for i in $(seq 1 "$NUM"); do
 
   claude -p "$(cat "$PROMPT_FILE")
 
-Date: $DATE. Research file: pipeline/output/$DATE.research.json.
+Date: $DATE. Research file: pipeline/output/$DATE/research.json.
 
 $QUERY" \
     --allowedTools "Read" \

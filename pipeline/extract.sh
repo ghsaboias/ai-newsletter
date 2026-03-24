@@ -14,9 +14,10 @@ set -euo pipefail
 source "$(cd "$(dirname "$0")" && pwd)/_lib.sh"
 
 DATE=$(parse_date_arg "$@")
-RESEARCH_FILE="$LOOP_DIR/$DATE.research.json"
-PT_FILE="$LOOP_DIR/$DATE.pt.md"
-SOURCES_FILE="$LOOP_DIR/$DATE.sources.json"
+init_day_dir
+RESEARCH_FILE="$DAY_DIR/research.json"
+PT_FILE="$DAY_DIR/pt.md"
+SOURCES_FILE="$DAY_DIR/sources.json"
 EXTRACTION_PROMPT="$DIR/prompts/SOURCE_EXTRACTION.md"
 
 init_log "$DATE"
@@ -55,8 +56,8 @@ claude -p "$(cat "$EXTRACTION_PROMPT")
 ---
 
 Extract sources for $DATE.
-- Research file: pipeline/output/$DATE.research.json
-- Article file: pipeline/output/$DATE.pt.md" \
+- Research file: pipeline/output/$DATE/research.json
+- Article file: pipeline/output/$DATE/pt.md" \
   --output-format stream-json \
   --verbose \
   --allowedTools "Write,Read,Edit" \

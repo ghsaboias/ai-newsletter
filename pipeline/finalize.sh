@@ -1,11 +1,11 @@
 #!/bin/bash
 #
-# Full newsletter pipeline: Research → Generate → Extract → Ingest → Rewrite → Publish
+# Finalize: Extract → Ingest → Rewrite links → Substack
 #
-# Usage: ./run-all.sh              # today's date
-#        ./run-all.sh 2026-02-24   # specific date
-#        ./run-all.sh 2026-02-24 --execute
-#        ./run-all.sh 2026-02-24 --limit 3 --execute
+# Run this after reviewing and fixing pt.md.
+#
+# Usage: ./finalize.sh 2026-03-11              # dry-run ingest
+#        ./finalize.sh 2026-03-11 --execute    # write to DB
 #
 
 set -euo pipefail
@@ -23,9 +23,8 @@ prev_arg=""
 for arg in "$@"; do
   case "$arg" in
     --execute)    EXECUTE=true ;;
-    --limit)      ;; # value handled below
+    --limit)      ;;
     20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]) DATE="$arg" ;;
-    test) DATE="test" ;;
     *)
       if [[ "$prev_arg" == "--limit" ]]; then
         INGEST_LIMIT="$arg"
@@ -35,19 +34,30 @@ for arg in "$@"; do
   prev_arg="$arg"
 done
 
-# Default to today
 if [[ -z "$DATE" ]]; then
   DATE=$(date +%Y-%m-%d)
 fi
 
-# --- Unified run log (tee all output to terminal + log file) ---
-RUN_LOG="$LOG_DIR/$DATE-run.log"
+DAY_DIR="$DIR/output/$DATE"
+
+if [[ ! -f "$DAY_DIR/pt.md" ]]; then
+  echo "  Error: $DAY_DIR/pt.md not found. Run draft.sh first."
+  exit 1
+fi
+
+# --- Unified log ---
+RUN_LOG="$LOG_DIR/$DATE-finalize.log"
 exec > >(tee -a "$RUN_LOG") 2>&1
 
 PIPELINE_START=$(date +%s)
-echo "=== Full Newsletter Pipeline: $DATE ==="
+echo "=== Finalize: $DATE ==="
 echo "  Started: $(date '+%Y-%m-%d %H:%M:%S')"
-echo "  Run log: $RUN_LOG"
+echo "  Log:     $RUN_LOG"
+if [[ "$EXECUTE" == true ]]; then
+  echo "  Mode:    EXECUTE (will write to DB)"
+else
+  echo "  Mode:    dry-run (pass --execute to write to DB)"
+fi
 echo ""
 
 step_timer() {
@@ -59,22 +69,12 @@ step_timer() {
   echo ""
 }
 
-# --- Step 1: Research ---
-S=$(date +%s)
-"$DIR/research.sh" "$DATE"
-step_timer "research" "$S"
-
-# --- Step 2: Generate ---
-S=$(date +%s)
-"$DIR/generate.sh" "$DATE"
-step_timer "generate" "$S"
-
-# --- Step 3: Extract ---
+# --- Step 1: Extract ---
 S=$(date +%s)
 "$DIR/extract.sh" "$DATE"
 step_timer "extract" "$S"
 
-# --- Step 4: Ingest ---
+# --- Step 2: Ingest ---
 S=$(date +%s)
 INGEST_ARGS=("$DATE")
 [[ "$EXECUTE" == true ]] && INGEST_ARGS+=("--execute")
@@ -82,22 +82,23 @@ INGEST_ARGS=("$DATE")
 "$DIR/ingest.sh" "${INGEST_ARGS[@]}"
 step_timer "ingest" "$S"
 
-# --- Step 5: Rewrite links ---
+# --- Step 3: Rewrite links ---
 S=$(date +%s)
 "$DIR/rewrite-links.sh" "$DATE"
-step_timer "rewrite" "$S"
+step_timer "rewrite-links" "$S"
 
-# --- Step 6: Publish ---
+# --- Step 4: Substack ---
 S=$(date +%s)
-"$DIR/publish.sh" "$DATE"
-step_timer "publish" "$S"
+"$DIR/substack.sh" "$DATE"
+step_timer "substack" "$S"
 
 # --- Summary ---
 PIPELINE_END=$(date +%s)
 TOTAL=$((PIPELINE_END - PIPELINE_START))
+
 echo ""
-echo "=== Pipeline Complete ==="
+echo "=== Finalize Complete ==="
 echo "  Date:     $DATE"
 echo "  Duration: ${TOTAL}s ($(( TOTAL / 60 ))m $(( TOTAL % 60 ))s)"
-echo "  Finished: $(date '+%Y-%m-%d %H:%M:%S')"
-echo "  Run log:  $RUN_LOG"
+echo "  Output:   $DAY_DIR/final.md"
+echo "  Substack: $DAY_DIR/substack.html"

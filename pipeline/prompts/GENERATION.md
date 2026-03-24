@@ -1,12 +1,8 @@
 # Daily Newsletter — Generation
 
-Write today's newsletter article in Brazilian Portuguese using the research file as your sole source material. Do not search the web. Every fact and link must come from `pipeline/output/YYYY-MM-DD.research.json`.
+The user will provide a **target date**. Write that day's newsletter article in Brazilian Portuguese using the research file as your sole source material. Do not search the web. Every fact and link must come from `pipeline/output/{date}/research.json`.
 
-Save output to `pipeline/output/YYYY-MM-DD.pt.md`.
-
-## Input
-
-Read `pipeline/output/YYYY-MM-DD.research.json`. This contains today's verified stories with URLs, key facts, and metadata.
+Read the research file first. Save output to `pipeline/output/{date}/pt.md`.
 
 ## Structure
 
@@ -14,7 +10,7 @@ Read `pipeline/output/YYYY-MM-DD.research.json`. This contains today's verified 
 `Bem-vindo(a) a [Dia] de [Mês] de [Ano]`
 
 ### Opening Line
-A single sentence that introduces and summarizes the day.
+A single sentence that introduces and summarizes the day. Max ~180 characters — this doubles as the Substack subtitle. Use abbreviations ($2bi, 5GW) to stay tight.
 
 ### Body
 5-8 thematic paragraphs. Each paragraph:
@@ -46,7 +42,7 @@ Target: **550-800 words**. Err on the side of density over length.
 
 ## Output Format
 
-Save to `pipeline/output/YYYY-MM-DD.pt.md`:
+Save to `pipeline/output/{date}/pt.md`:
 
 ```markdown
 ---

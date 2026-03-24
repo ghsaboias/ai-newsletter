@@ -12,8 +12,9 @@ set -euo pipefail
 source "$(cd "$(dirname "$0")" && pwd)/_lib.sh"
 
 DATE=$(parse_date_arg "$@")
-RESEARCH_FILE="$LOOP_DIR/$DATE.research.json"
-PT_FILE="$LOOP_DIR/$DATE.pt.md"
+init_day_dir
+RESEARCH_FILE="$DAY_DIR/research.json"
+PT_FILE="$DAY_DIR/pt.md"
 GENERATE_PROMPT="$DIR/prompts/GENERATION.md"
 
 init_log "$DATE"
@@ -46,7 +47,7 @@ echo ""
 
 claude -p "$(cat "$GENERATE_PROMPT")
 
-Write today's article for $DATE. The research file is at pipeline/output/$DATE.research.json." \
+Write today's article for $DATE. The research file is at pipeline/output/$DATE/research.json." \
     --output-format stream-json \
     --verbose \
     --allowedTools "Write,Read,Edit" \
