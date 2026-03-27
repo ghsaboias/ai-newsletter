@@ -7,7 +7,7 @@ Read the research file first. Save output to `pipeline/output/{date}/pt.md`.
 ## Structure
 
 ### Title
-`Bem-vindo(a) a [Dia] de [Mês] de [Ano]`
+`[Tech] - Bem-vindo(a) a [Dia] de [Mês] de [Ano]`
 
 ### Opening Line
 A single sentence that introduces and summarizes the day. Max ~180 characters — this doubles as the Substack subtitle. Use abbreviations ($2bi, 5GW) to stay tight.
@@ -48,13 +48,13 @@ Save to `pipeline/output/{date}/pt.md`:
 ---
 date: YYYY-MM-DD
 url:
-title: "Bem-vindo(a) a [Dia] de [Mês] de [Ano]"
+title: "[Tech] - Bem-vindo(a) a [Dia] de [Mês] de [Ano]"
 wordcount: NNN
 generated: true
 language: pt-br
 ---
 
-# Bem-vindo(a) a [Dia] de [Mês] de [Ano]
+# [Tech] - Bem-vindo(a) a [Dia] de [Mês] de [Ano]
 
 [Article body]
 ```

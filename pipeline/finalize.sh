@@ -87,6 +87,20 @@ S=$(date +%s)
 "$DIR/rewrite-links.sh" "$DATE"
 step_timer "rewrite-links" "$S"
 
+# --- Step 3.5: Inject byline ---
+BYLINE="Por: Guilherme Saboia e Vinicius Gushiken"
+FINAL_MD="$DAY_DIR/final.md"
+if [[ -f "$FINAL_MD" ]] && ! grep -qF "$BYLINE" "$FINAL_MD"; then
+  python3 -c "
+import re, sys
+content = open('$FINAL_MD').read()
+# Insert byline after subtitle (first line after '# Title\n\n')
+content = re.sub(r'(# .+\n\n.+\n)', r'\1\n$BYLINE\n', content, count=1)
+open('$FINAL_MD', 'w').write(content)
+"
+  echo "  Byline injected into final.md"
+fi
+
 # --- Step 4: Substack ---
 S=$(date +%s)
 "$DIR/substack.sh" "$DATE"

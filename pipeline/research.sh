@@ -96,6 +96,37 @@ run_cluster "ai"    "$CLUSTER_AI"
 run_cluster "hw"    "$CLUSTER_HW"
 run_cluster "world" "$CLUSTER_WORLD"
 
+# --- Seeds (user-submitted URLs) ---
+SEEDS_FILE="$DAY_DIR/seeds.md"
+if [[ -f "$SEEDS_FILE" ]] && [[ -s "$SEEDS_FILE" ]]; then
+  SEEDS_PROMPT="$(cat "$DIR/prompts/SEEDS.md")"
+  SEEDS_URLS="$(cat "$SEEDS_FILE")"
+  SEEDS_OUT="$DAY_DIR/research-seeds.json"
+
+  if [[ -f "$SEEDS_OUT" ]]; then
+    echo "  [seeds] already exists, skipping"
+  else
+    echo "  [seeds] $(grep -c 'http' "$SEEDS_FILE") URLs found"
+    (
+      LOG_FILE="$LOG_DIR/$DATE-research-seeds.log"
+      claude -p "$SEEDS_PROMPT
+---
+**Date:** $DATE
+**Output file:** $SEEDS_OUT
+**URLs to research:**
+$SEEDS_URLS" \
+        --output-format stream-json \
+        --verbose \
+        --allowedTools "$ALLOWED_TOOLS" \
+        2>&1 | show_progress "seeds"
+    ) &
+    PIDS+=($!)
+    NAMES+=("seeds")
+  fi
+else
+  echo "  [seeds] no seeds.md found, skipping"
+fi
+
 # --- Wait for all clusters ---
 FAILURES=0
 for i in "${!PIDS[@]}"; do
@@ -112,7 +143,7 @@ echo "  Clusters done in ${STEP_DURATION}s ($FAILURES failures)"
 
 # --- Merge partial files ---
 PARTIALS=()
-for name in ai hw world; do
+for name in ai hw world seeds; do
   f="$DAY_DIR/research-${name}.json"
   if [[ -f "$f" ]] && jq empty "$f" 2>/dev/null; then
     PARTIALS+=("$f")
