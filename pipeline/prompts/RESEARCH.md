@@ -25,14 +25,11 @@ Your output will be merged with other clusters into the final research file.
 | `bird search "query"` | X/Twitter. Use specific terms or `from:` queries — broad queries return noise. |
 | `bird read <url>` | Fetch full tweet text. |
 
-**Techmeme** (`WebFetch https://www.techmeme.com/`, timeout: 15000) — curated tech headlines, good landscape scan.
-
-Key X accounts: `sama`, `elonmusk`, `OpenAI`, `AnthropicAI`, `GoogleDeepMind`, `scaling01`, `metr_evals`, `epochairesearch`, `arcprize`, `xaborsa`
 
 ## Workflow
 
 1. Check the previous edition headlines at the end of this prompt to know what's already covered.
-2. **Landscape scan**: Start broad — fetch Techmeme, run 3-5 Exa searches across your categories. This gives you the map.
+2. **Landscape scan**: Start broad — review the Techmeme scan below, then run 5 Exa searches to fill gaps. This gives you the map.
 3. **Go deeper on what matters**: For the most important stories, fetch source URLs to get exact facts, quotes, and numbers. Skip fetching for minor stories where search results already gave you enough.
 4. **No duplicate work**: Never re-run a search you already ran. Never re-fetch a URL. If a search didn't return what you need, try a *different* query, don't repeat.
 5. Write the JSON output file.
