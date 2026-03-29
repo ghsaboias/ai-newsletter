@@ -1,0 +1,2598 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Review — 2026-03-06</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/diff/dist/diff.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      color: #1a1a1a;
+      background: #fafafa;
+      line-height: 1.7;
+    }
+
+    /* --- Stats bar --- */
+    .stats-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #1a1a1a;
+      color: #ccc;
+      padding: 0.5rem 1.5rem;
+      font-family: -apple-system, system-ui, sans-serif;
+      font-size: 0.8rem;
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .stats-bar .title {
+      color: #fff;
+      font-weight: 600;
+      margin-right: auto;
+    }
+    .stats-bar .stat { white-space: nowrap; }
+    .stats-bar .stat b { color: #fff; }
+
+    /* --- Date nav --- */
+    .date-nav {
+      display: flex;
+      gap: 0.15rem;
+      align-items: center;
+      margin-right: 0.5rem;
+    }
+    .date-nav a, .date-nav span {
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-variant-numeric: tabular-nums;
+    }
+    .date-nav a {
+      color: #999;
+    }
+    .date-nav a:hover {
+      color: #fff;
+      background: rgba(255,255,255,0.1);
+    }
+    .date-nav span.current {
+      color: #fff;
+      background: #1a5276;
+    }
+
+    /* --- Tabs (mobile) --- */
+    .tab-bar {
+      display: none;
+      position: sticky;
+      top: 33px;
+      z-index: 99;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      font-family: -apple-system, system-ui, sans-serif;
+      font-size: 0.85rem;
+    }
+    .tab-bar button {
+      background: none;
+      border: none;
+      padding: 0.6rem 1rem;
+      cursor: pointer;
+      color: #888;
+      font-family: inherit;
+      font-size: inherit;
+      border-bottom: 2px solid transparent;
+    }
+    .tab-bar button.active {
+      color: #1a5276;
+      border-bottom-color: #1a5276;
+    }
+
+    /* --- Three-column grid --- */
+    .columns {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr 1fr;
+      gap: 0;
+      min-height: calc(100vh - 33px);
+    }
+    .col {
+      padding: 1.5rem;
+      overflow-y: auto;
+      max-height: calc(100vh - 33px);
+      border-right: 1px solid #e5e5e5;
+    }
+    .col:last-child { border-right: none; }
+    .col-header {
+      font-family: -apple-system, system-ui, sans-serif;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    /* --- Research cards --- */
+    .story-card {
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      margin-bottom: 0.75rem;
+      background: #fff;
+      transition: box-shadow 0.15s;
+      cursor: pointer;
+    }
+    .story-card:hover { box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+    .story-card.highlighted {
+      border-color: #1a5276;
+      box-shadow: 0 0 0 2px rgba(26,82,118,0.15);
+    }
+    .story-card-head {
+      padding: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .story-card-head h3 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      line-height: 1.3;
+      flex: 1;
+    }
+    .story-card-head .toggle {
+      font-size: 0.7rem;
+      color: #888;
+      flex-shrink: 0;
+      user-select: none;
+    }
+    .story-card-body {
+      display: none;
+      padding: 0 0.75rem 0.75rem;
+      font-size: 0.8rem;
+    }
+    .story-card.open .story-card-body { display: block; }
+    .story-card.open .toggle::after { content: '▲'; }
+    .story-card .toggle::after { content: '▼'; }
+    .story-categories {
+      display: flex;
+      gap: 0.25rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+    .category-tag {
+      background: #f0f0f0;
+      color: #666;
+      font-family: -apple-system, system-ui, sans-serif;
+      font-size: 0.65rem;
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .fact-list { list-style: none; margin: 0.5rem 0; }
+    .fact-list li {
+      padding: 0.3rem 0;
+      border-bottom: 1px solid #f0f0f0;
+      line-height: 1.4;
+    }
+    .fact-list li:last-child { border-bottom: none; }
+    .source-list {
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+    .source-list li { padding: 0.15rem 0; }
+    .source-list a {
+      color: #1a5276;
+      font-size: 0.75rem;
+      text-decoration: none;
+    }
+    .source-list a:hover { text-decoration: underline; }
+    .source-outlet {
+      color: #888;
+      font-family: -apple-system, system-ui, sans-serif;
+      font-size: 0.65rem;
+    }
+
+    /* --- Article --- */
+    .article-content p {
+      margin-bottom: 1.4rem;
+      font-size: 1rem;
+    }
+    .article-content p:first-of-type {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: #333;
+    }
+    .article-content a {
+      color: #1a5276;
+      text-decoration: underline;
+      text-decoration-color: #aaa;
+      text-underline-offset: 2px;
+    }
+    .article-content a:hover {
+      text-decoration-color: #1a5276;
+    }
+    .article-content h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    /* --- Audit annotations --- */
+    a.audit-unsupported {
+      text-decoration-color: #e67e22 !important;
+      text-decoration-thickness: 2px !important;
+      background: rgba(230,126,34,0.08);
+    }
+    a.audit-contradicted {
+      text-decoration-color: #c0392b !important;
+      text-decoration-thickness: 2px !important;
+      background: rgba(192,57,43,0.08);
+    }
+    a.audit-outside_window {
+      text-decoration-color: #e67e22 !important;
+      text-decoration-style: dashed !important;
+      text-decoration-thickness: 2px !important;
+    }
+    a.audit-source_unavailable {
+      text-decoration-color: #999 !important;
+      text-decoration-style: dotted !important;
+      text-decoration-thickness: 2px !important;
+    }
+
+    /* --- Reviewed (dismissed) audit state --- */
+    a.audit-reviewed {
+      text-decoration-color: #ccc !important;
+      text-decoration-style: solid !important;
+      text-decoration-thickness: 1px !important;
+      background: none !important;
+      opacity: 0.5;
+    }
+
+    /* --- Audit tooltip --- */
+    .audit-tooltip {
+      display: none;
+      position: fixed;
+      z-index: 200;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      max-width: 400px;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      font-family: -apple-system, system-ui, sans-serif;
+    }
+    .audit-tooltip.visible { display: block; }
+    .audit-tooltip .flag-type {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.1rem 0.4rem;
+      border-radius: 3px;
+      margin-bottom: 0.4rem;
+    }
+    .flag-type.unsupported { background: #fdebd0; color: #b7770a; }
+    .flag-type.contradicted { background: #f9d6d0; color: #922b21; }
+    .flag-type.outside_window { background: #fef5e7; color: #b7770a; }
+    .flag-type.source_unavailable { background: #f0f0f0; color: #666; }
+
+    .audit-tooltip .review-btn {
+      display: block;
+      margin-top: 0.5rem;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.7rem;
+      font-family: -apple-system, system-ui, sans-serif;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      background: #fafafa;
+      color: #666;
+      cursor: pointer;
+      text-align: center;
+    }
+    .audit-tooltip .review-btn:hover {
+      background: #f0f0f0;
+      border-color: #bbb;
+    }
+
+    /* --- Paragraph highlight --- */
+    .article-content p.highlight-para {
+      background: rgba(26,82,118,0.06);
+      border-left: 3px solid #1a5276;
+      padding-left: 0.75rem;
+      margin-left: -0.75rem;
+      border-radius: 2px;
+      transition: background 0.3s;
+    }
+
+    /* --- Right column tabs --- */
+    .right-tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    .right-tabs button {
+      background: none;
+      border: none;
+      padding: 0.4rem 0.75rem;
+      font-family: -apple-system, system-ui, sans-serif;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #888;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+    }
+    .right-tabs button.active {
+      color: #1a5276;
+      border-bottom-color: #1a5276;
+    }
+    .right-panel { display: none; }
+    .right-panel.active { display: block; }
+
+    /* --- Audit findings list --- */
+    .audit-item {
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      margin-bottom: 0.6rem;
+      background: #fff;
+      padding: 0.6rem 0.75rem;
+      font-size: 0.8rem;
+      transition: opacity 0.2s, border-color 0.15s;
+      cursor: pointer;
+    }
+    .audit-item:hover {
+      border-color: #ccc;
+    }
+    .audit-item.reviewed {
+      opacity: 0.4;
+    }
+    .audit-item .audit-item-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .audit-item .anchor-text {
+      font-weight: 600;
+      flex: 1;
+      line-height: 1.3;
+      color: #1a5276;
+    }
+    .audit-item .review-toggle {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      border: 1.5px solid #ccc;
+      border-radius: 3px;
+      background: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      color: transparent;
+      transition: all 0.15s;
+    }
+    .audit-item .review-toggle:hover {
+      border-color: #999;
+    }
+    .audit-item.reviewed .review-toggle {
+      background: #1a5276;
+      border-color: #1a5276;
+      color: #fff;
+    }
+    .audit-item .claim-text {
+      margin-top: 0.35rem;
+      color: #555;
+      line-height: 1.4;
+    }
+    .audit-item .detail-text {
+      margin-top: 0.35rem;
+      color: #888;
+      font-size: 0.75rem;
+      line-height: 1.4;
+    }
+    .audit-empty {
+      color: #aaa;
+      font-style: italic;
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+
+    /* --- Rewrite column --- */
+    .rewrite-empty {
+      color: #aaa;
+      font-style: italic;
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+    .diff-content ins {
+      background: #d4edda;
+      text-decoration: none;
+      padding: 0 1px;
+    }
+    .diff-content del {
+      background: #f8d7da;
+      text-decoration: line-through;
+      padding: 0 1px;
+      color: #888;
+    }
+
+    /* --- Mobile --- */
+    @media (max-width: 900px) {
+      .tab-bar { display: flex; }
+      .columns {
+        grid-template-columns: 1fr;
+      }
+      .col { display: none; max-height: none; border-right: none; }
+      .col.active { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="stats-bar">
+  <span class="title">Review</span>
+  <div class="date-nav"><a href="../2026-03-02/review.html">03-02</a> <a href="../2026-03-03/review.html">03-03</a> <a href="../2026-03-04/review.html">03-04</a> <a href="../2026-03-05/review.html">03-05</a> <span class="current">03-06</span> <a href="../2026-03-07/review.html">03-07</a> <a href="../2026-03-08/review.html">03-08</a></div>
+  <span class="stat" id="stat-stories"></span>
+  <span class="stat" id="stat-sources"></span>
+  <span class="stat" id="stat-flags"></span>
+  <button id="save-btn" style="display:none; background:#1a5276; color:#fff; border:none; padding:0.25rem 0.6rem; border-radius:3px; font-family:-apple-system,system-ui,sans-serif; font-size:0.75rem; cursor:pointer; white-space:nowrap;">Save</button>
+</div>
+
+<div class="tab-bar">
+  <button class="active" data-col="research">Research</button>
+  <button data-col="article">Article</button>
+  <button data-col="rewrite">Audit</button>
+</div>
+
+<div class="columns">
+  <!-- Left: Research -->
+  <div class="col active" id="col-research">
+    <div class="col-header">Research</div>
+    <div id="research-cards"></div>
+  </div>
+
+  <!-- Center: Article -->
+  <div class="col" id="col-article">
+    <div class="col-header">Article</div>
+    <div class="article-content" id="article-content"></div>
+  </div>
+
+  <!-- Right: Audit + Rewrite -->
+  <div class="col" id="col-rewrite">
+    <div class="right-tabs">
+      <button class="active" data-panel="audit">Audit</button>
+      <button data-panel="rewrite">Rewrite</button>
+    </div>
+    <div class="right-panel active" id="panel-audit">
+      <div id="audit-list"></div>
+    </div>
+    <div class="right-panel" id="panel-rewrite">
+      <div id="rewrite-content"></div>
+    </div>
+  </div>
+</div>
+
+<div class="audit-tooltip" id="audit-tooltip"></div>
+
+<script>
+// --- Data (injected by review.sh) ---
+const DATA_RESEARCH = {
+  "date": "2026-03-06",
+  "stories": [
+    {
+      "id": "openai-gpt-5-4-launch-reasoning-computer-use",
+      "headline": "OpenAI launches GPT-5.4 with native computer use, 1M-token context, and record benchmarks",
+      "key_facts": [
+        "OpenAI released GPT-5.4 on March 5 in three configurations: standard, Thinking (for ChatGPT Plus/Team/Pro), and Pro (for ChatGPT Pro and Enterprise), also available via API and Codex",
+        "On GDPval, a benchmark assessing knowledge work across 44 professions in nine industries, GPT-5.4 matches or exceeds human professionals in 83% of comparisons, up from 70.9% for GPT-5.2",
+        "On OSWorld-Verified desktop navigation benchmark, GPT-5.4 scores 75% success rate versus 72.4% human benchmark and GPT-5.2's 47.3%",
+        "API supports up to 1 million tokens context window, double GPT-5.3's 400,000 tokens, with premium pricing at 2x rate after 272,000 tokens",
+        "Introduces native computer use for software operation and file navigation, and a reworked tool-calling system with Tool Search that reduces token usage 47% on large agent systems",
+        "Hallucinations reduced by 33% fewer incorrect factual claims and 18% fewer overall errors versus GPT-5.2",
+        "OpenAI published a new Chain-of-Thought Controllability evaluation finding GPT-5.4 Thinking shows low ability to obscure its reasoning, suggesting CoT monitoring remains a useful safety tool",
+        "Release comes just two days after GPT-5.3 Instant and amid user cancellations over OpenAI's Pentagon contract"
+      ],
+      "sources": [
+        {
+          "url": "https://thenextweb.com/news/openai-gpt-54-launch-computer-use-benchmarks",
+          "outlet": "The Next Web",
+          "title": "OpenAI's GPT-5.4 sets new records on professional benchmarks",
+          "published_at": "2026-03-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://english.news.cn/20260306/d206b5943278461b9d30bb57953ecf35/c.html",
+          "outlet": "Xinhua",
+          "title": "OpenAI releases GPT-5.4 with enhanced reasoning, coding, AI agent capabilities",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.helpnetsecurity.com/2026/03/06/openai-chatgpt-gpt%E2%80%915-4-model-release/",
+          "outlet": "Help Net Security",
+          "title": "OpenAI's GPT-5.4 doubles down on safety as competition heats up",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://x.com/OpenAI/status/2029620619743219811",
+          "outlet": "X (Twitter)",
+          "title": "Tweet by @OpenAI: GPT-5.4 Thinking and GPT-5.4 Pro are rolling out now in ChatGPT...",
+          "published_at": "2026-03-05",
+          "image_url": "",
+          "type": "tweet"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "OpenAI"
+        ],
+        "people": [
+          "Sam Altman"
+        ],
+        "places": [
+          "San Francisco"
+        ]
+      }
+    },
+    {
+      "id": "anthropic-claude-firefox-22-vulnerabilities",
+      "headline": "Claude Opus 4.6 finds 22 Firefox security vulnerabilities in two weeks, 14 high-severity",
+      "key_facts": [
+        "Anthropic's Claude Opus 4.6 discovered 22 security vulnerabilities in Firefox during a two-week test in January 2026, with 14 classified as high-severity by Mozilla",
+        "Claude found its first vulnerability — a Use After Free flaw in Firefox's JavaScript engine — within 20 minutes of initial exploration",
+        "Anthropic scanned nearly 6,000 C++ files and submitted 112 unique reports to Mozilla's Bugzilla tracker, including roughly 90 non-security bugs like crashes and logic errors",
+        "The 14 high-severity bugs represent nearly one-fifth of all high-severity Firefox vulnerabilities remediated throughout 2025",
+        "All vulnerabilities were patched in Firefox 148.0, which rolled out to hundreds of millions of users",
+        "Anthropic spent approximately $4,000 in API credits attempting to generate proof-of-concept exploits, succeeding in only 2 cases that required sandbox removal to function",
+        "Anthropic also announced Claude Code Security, an automated vulnerability-discovery and patching tool in limited research preview for Enterprise and Team customers",
+        "Anthropic reported finding over 500 previously unknown vulnerabilities across open-source projects during broader Opus 4.6 testing"
+      ],
+      "sources": [
+        {
+          "url": "https://www.anthropic.com/news/mozilla-firefox-security",
+          "outlet": "Anthropic",
+          "title": "Mozilla Firefox security partnership",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://blog.mozilla.org/en/firefox/hardening-firefox-anthropic-red-team/",
+          "outlet": "Mozilla Blog",
+          "title": "Hardening Firefox with Anthropic's Red Team",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://techcrunch.com/2026/03/06/anthropics-claude-found-22-vulnerabilities-in-firefox-over-two-weeks/",
+          "outlet": "TechCrunch",
+          "title": "Anthropic's Claude found 22 vulnerabilities in Firefox over two weeks",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.axios.com/2026/03/06/anthropic-mozilla-claude-opus-bug-hunting",
+          "outlet": "Axios",
+          "title": "Mozilla fixes 22 security flaws flagged by Anthropic's AI",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Anthropic",
+          "Mozilla"
+        ],
+        "people": [
+          "Logan Graham",
+          "Brian Grinstead",
+          "Christian Holler"
+        ],
+        "places": [
+          "San Francisco"
+        ]
+      }
+    },
+    {
+      "id": "cursor-automations-always-on-agents",
+      "headline": "Cursor launches Automations: event-driven AI agents that run without developer prompts",
+      "key_facts": [
+        "Cursor launched Automations on March 4, enabling always-on AI agents triggered by external events — Slack messages, GitHub pull requests, PagerDuty alerts, or scheduled timers",
+        "The system replaces the manual prompt-and-response model with a conveyor belt of digital triggers that activate coding agents without human initiation",
+        "Cursor's annualized revenue surpassed $2 billion in February 2026, doubling from $1 billion in November 2025",
+        "Enterprise customers now account for 60% of revenue, with Nvidia and Stripe deploying Cursor across thousands of engineers",
+        "Cursor is valued at $29.3 billion following a $2.3 billion funding round in late 2025",
+        "Use cases include automated code review, security scanning, incident response, bug triage, and weekly change summaries",
+        "Cursor positions Automations as the 'Third Era' of AI development — beyond autocomplete and chat toward continuous autonomous agent operation"
+      ],
+      "sources": [
+        {
+          "url": "https://www.thedeepview.com/articles/cursor-expands-coding-agents-beyond-coding",
+          "outlet": "The Deep View",
+          "title": "Cursor expands coding agents beyond coding",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.objectwire.org/cursor/automations-event-driven-ai-coding",
+          "outlet": "ObjectWire",
+          "title": "Cursor Launches Automations: Event-Driven AI Agents Replace Prompt-Based Coding",
+          "published_at": "2026-03-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://aichief.com/news/cursors-new-ai-agent-transforms-coding/",
+          "outlet": "AI Chief",
+          "title": "Cursor's New AI Agent Transforms Coding",
+          "published_at": "2026-03-05",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Anysphere",
+          "Cursor",
+          "Nvidia",
+          "Stripe"
+        ],
+        "people": [
+          "Jonas Nelle"
+        ],
+        "places": [
+          "San Francisco"
+        ]
+      }
+    },
+    {
+      "id": "luma-agents-unified-intelligence-creative-ai",
+      "headline": "Luma launches creative AI agents on Uni-1 model for end-to-end multimodal production",
+      "key_facts": [
+        "Luma AI launched Luma Agents on March 5, built on its new Uni-1 model — a decoder-only autoregressive transformer trained on audio, video, image, language, and spatial reasoning",
+        "Agents handle end-to-end creative workflows from brief to final delivery across text, image, video, and audio, coordinating multiple external models",
+        "Integrates with 8+ external models including Luma's Ray 3.14, Google Veo 3, ByteDance Seedream, and ElevenLabs voice models",
+        "Launch partners include Publicis Groupe, Serviceplan Group, Adidas, and Mazda as enterprise customers",
+        "CEO Amit Jain described Uni-1 as a model that can 'think in language and imagine and render in pixels' — what Luma calls 'intelligence in pixels'",
+        "Beta tested with over 100 clients since December 2025; API access open now with gradual rollout"
+      ],
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/03/05/exclusive-luma-launches-creative-ai-agents-powered-by-its-new-unified-intelligence-models/",
+          "outlet": "TechCrunch",
+          "title": "Luma launches creative AI agents powered by its new 'Unified Intelligence' models",
+          "published_at": "2026-03-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20260305354123/en/Luma-Launches-Luma-Agents-Powered-by-Unified-Intelligence-for-Creative-Work",
+          "outlet": "Business Wire",
+          "title": "Luma Launches Luma Agents Powered by Unified Intelligence for Creative Work",
+          "published_at": "2026-03-05",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.adweek.com/media/luma-ai-agents-promise-to-end-the-multi-tool-mess/",
+          "outlet": "Adweek",
+          "title": "Luma AI's AI Agents Promise to End the Multi-Tool Mess",
+          "published_at": "2026-03-05",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Luma AI",
+          "Publicis Groupe",
+          "Serviceplan Group",
+          "Adidas",
+          "Mazda",
+          "Google",
+          "ByteDance",
+          "ElevenLabs"
+        ],
+        "people": [
+          "Amit Jain",
+          "Caroline Ingeborn"
+        ],
+        "places": [
+          "Palo Alto, California"
+        ]
+      }
+    },
+    {
+      "id": "softbank-40-billion-loan-openai-stake",
+      "headline": "SoftBank seeks record $40 billion loan to finance OpenAI stake",
+      "key_facts": [
+        "SoftBank is seeking a bridge loan of up to $40 billion — the largest dollar-denominated corporate borrowing ever — to finance its investment in OpenAI, per Bloomberg",
+        "The bridge loan has a tenor of about 12 months, with four lenders including JPMorgan Chase underwriting the facility",
+        "SoftBank's $30 billion investment in OpenAI is part of a broader $110 billion funding round that also includes $30 billion from Nvidia and $50 billion from Amazon",
+        "SoftBank has already invested over $30 billion in OpenAI prior to this round, bringing its total commitment past $60 billion",
+        "S&P lowered SoftBank's credit outlook, citing danger that its OpenAI investments may hurt the company's liquidity and credit quality",
+        "The loan highlights founder Masayoshi Son's aggressive positioning of SoftBank as central to the AI infrastructure boom"
+      ],
+      "sources": [
+        {
+          "url": "https://www.japantimes.co.jp/business/2026/03/06/companies/softbank-openai-record-loan/",
+          "outlet": "The Japan Times",
+          "title": "SoftBank seeks record loan of up to $40 billion for OpenAI stake",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://techstartups.com/2026/03/06/softbank-seeks-40b-loan-to-fund-massive-openai-bet-after-chatgpt-maker-hits-730b-valuation/",
+          "outlet": "Tech Startups",
+          "title": "SoftBank seeks $40B loan to fund massive OpenAI bet after ChatGPT maker hits $730B valuation",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://americanbazaaronline.com/2026/03/06/softbank-seeks-up-to-40-billion-loan-to-fund-openai-investment-476413/",
+          "outlet": "American Bazaar",
+          "title": "SoftBank seeks up to $40 billion loan to fund OpenAI investment",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "finance",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "SoftBank",
+          "OpenAI",
+          "JPMorgan Chase",
+          "Nvidia",
+          "Amazon",
+          "S&P"
+        ],
+        "people": [
+          "Masayoshi Son"
+        ],
+        "places": [
+          "Tokyo, Japan",
+          "San Francisco"
+        ]
+      }
+    },
+    {
+      "id": "uk-fundamental-ai-research-lab-40m",
+      "headline": "UK launches £40 million Fundamental AI Research Lab targeting hallucination and reasoning flaws",
+      "key_facts": [
+        "The UK government announced a new Fundamental AI Research Lab backed by up to £40 million over six years, plus substantial computing access worth tens of millions of pounds",
+        "Lab will target fundamental AI limitations including hallucinations, unreliable memory, and unpredictable reasoning to create more accurate and trustworthy systems",
+        "Part of the broader UKRI AI Strategy allocating £1.6 billion over four years for AI research",
+        "Peer review panel chaired by Raia Hadsell, Vice President of Research at Google DeepMind and DSIT AI Ambassador",
+        "Research areas include improving medical diagnostics, building resilient infrastructure, accelerating scientific discovery, and enhancing public service tools",
+        "Framed as a push for UK 'sovereign AI' to reduce reliance on American technology companies like Google, Anthropic, and OpenAI"
+      ],
+      "sources": [
+        {
+          "url": "https://www.gov.uk/government/news/government-to-create-new-lab-to-keep-uk-in-the-fast-lane-on-ai-breakthroughs",
+          "outlet": "UK Government (GOV.UK)",
+          "title": "Government to create new lab to keep UK in the fast lane on AI breakthroughs",
+          "published_at": "2026-03-04",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://capacityglobal.com/news/uk-launches-40m-moonshot-ai-lab-to-challenge-the-us-and-china/",
+          "outlet": "Capacity",
+          "title": "UK launches £40m 'Moonshot' AI lab to challenge the US and China",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "UK Research and Innovation",
+          "Google DeepMind",
+          "Department for Science Innovation and Technology"
+        ],
+        "people": [
+          "Raia Hadsell"
+        ],
+        "places": [
+          "United Kingdom"
+        ]
+      }
+    },
+    {
+      "id": "ginkgo-openai-autonomous-lab-protein-synthesis",
+      "headline": "OpenAI's GPT-5 runs 36,000 experiments in Ginkgo Bioworks autonomous lab, cuts protein costs 40%",
+      "key_facts": [
+        "Ginkgo Bioworks and OpenAI demonstrated a closed-loop autonomous lab where GPT-5 designed, executed, analyzed, and refined 36,000 cell-free protein synthesis experiments over six iterative cycles",
+        "The system achieved a 40% reduction in protein production cost and 57% improvement in reagent cost versus state of the art, producing superfolder GFP at $422 per gram",
+        "GPT-5 was given internet access, a computer with data analysis packages, and experimental metadata, operating like an experimental scientist with minimal human intervention",
+        "Ginkgo's cloud laboratory in Boston uses reconfigurable automation carts (RAC) and Catalyst automation software for physical execution",
+        "The preprint was released February 5, 2026 on bioRxiv, sparking debate over whether chatbot-controlled robots could replace human biologists",
+        "Ginkgo is now commercially selling the AI-improved reaction mix in its reagents store, demonstrating commercial viability of AI-driven science"
+      ],
+      "sources": [
+        {
+          "url": "https://openai.com/index/gpt-5-lowers-protein-synthesis-cost/",
+          "outlet": "OpenAI",
+          "title": "GPT-5 lowers the cost of cell-free protein synthesis",
+          "published_at": "2026-02-05",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/ginkgo-bioworks-autonomous-laboratory-driven-by-openais-gpt-5-achieves-40-improvement-over-state-of-the-art-scientific-benchmark-302680619.html",
+          "outlet": "PR Newswire / Ginkgo Bioworks",
+          "title": "Ginkgo Bioworks' Autonomous Laboratory Driven by OpenAI's GPT-5 Achieves 40% Improvement Over State-of-the-Art Scientific Benchmark",
+          "published_at": "2026-02-05",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.rdworldonline.com/openais-gpt-5-autonomously-ran-36000-protein-synthesis-experiments-in-ginkgo-bioworks-cloud-lab/",
+          "outlet": "R&D World",
+          "title": "OpenAI's GPT-5 autonomously ran 36,000 protein synthesis experiments in Ginkgo Bioworks' cloud lab",
+          "published_at": "2026-02-05",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Ginkgo Bioworks",
+          "OpenAI"
+        ],
+        "people": [],
+        "places": [
+          "Boston, Massachusetts"
+        ]
+      }
+    },
+    {
+      "id": "iclr-2026-recursive-self-improvement-workshop",
+      "headline": "ICLR 2026 workshop marks recursive self-improvement's shift from theory to deployed systems",
+      "key_facts": [
+        "The ICLR 2026 Workshop on AI with Recursive Self-Improvement brings together researchers to build algorithmic foundations for reliable self-improving AI systems",
+        "Workshop organizers note RSI has moved from thought experiments to deployed systems: LLM agents rewriting their own codebases, scientific discovery pipelines scheduling continual fine-tuning, and robotics stacks patching controllers from streaming telemetry",
+        "Contributions organized around five lenses: change targets inside the system, temporal regime of adaptation, mechanisms and drivers, operating contexts, and evidence of improvement",
+        "Workshop covers self-improvement across experience learning, synthetic data pipelines, multimodal agentic systems, weak-to-strong generalization, and inference-time scaling",
+        "Author notifications were sent March 1, 2026 with public release of accepted papers; workshop takes place at ICLR 2026 in Singapore",
+        "Workshop is paradigm-agnostic: welcoming work on foundation models, agent frameworks, robots, learning algorithms, optimizers, control and program synthesis"
+      ],
+      "sources": [
+        {
+          "url": "https://openreview.net/pdf?id=OsPQ6zTQXV",
+          "outlet": "OpenReview / ICLR",
+          "title": "ICLR 2026 Workshop on AI with Recursive Self-Improvement",
+          "published_at": "2026-03-01",
+          "image_url": "",
+          "type": "paper"
+        },
+        {
+          "url": "https://iclr.cc/virtual/2026/workshop/10000796",
+          "outlet": "ICLR",
+          "title": "ICLR 2026 Workshop on AI with Recursive Self-Improvement",
+          "published_at": "2026-03-01",
+          "image_url": "",
+          "type": "paper"
+        },
+        {
+          "url": "https://recursive-workshop.github.io/",
+          "outlet": "Recursive Workshop",
+          "title": "ICLR 2026 Workshop on Recursive Self-Improvement",
+          "published_at": "2026-03-01",
+          "image_url": "",
+          "type": "blog_post"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "ICLR"
+        ],
+        "people": [],
+        "places": [
+          "Singapore"
+        ]
+      }
+    },
+    {
+      "id": "us-drafts-global-ai-chip-export-permit-rules",
+      "headline": "US drafts rules requiring permits for all Nvidia, AMD AI chip exports worldwide",
+      "key_facts": [
+        "The US Commerce Department has written a 129-page draft regulation that would require government approval for virtually all exports of AI accelerators from Nvidia and AMD to any country",
+        "The proposed tiered framework sets thresholds: under 1,000 chips get streamlined review, up to 100,000 require government-to-government assurances, and 200,000+ trigger on-site US inspections and investment commitments in US AI infrastructure",
+        "A White House official stated the draft 'does not reflect what President Trump has said on export controls nor does it reflect the direction of the Trump administration'",
+        "The Commerce Department posted it will 'not' return to Biden's AI Diffusion rule, calling it 'burdensome, overreaching, and disastrous,' but did not confirm or deny the new draft",
+        "The rules would give Washington broad control over whether other countries can build AI training and inference facilities and under what conditions",
+        "Nvidia shares fell 1.9% and AMD also declined on the news"
+      ],
+      "sources": [
+        {
+          "url": "https://www.theregister.com/2026/03/06/us_ai_chips_restrictions/",
+          "outlet": "The Register",
+          "title": "Washington reportedly moves to tighten leash on AI chip exports",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.trendforce.com/news/2026/03/06/news-u-s-reportedly-mulls-tiered-ai-chip-export-rules-200k-units-need-investment-government-assurances/",
+          "outlet": "TrendForce",
+          "title": "U.S. Reportedly Mulls Tiered AI Chip Export Rules, 200K+ Units Need Investment, Government Assurances",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.digitimes.com/news/a20260306VL201/chips-exports-investment-nvidia-government.html",
+          "outlet": "Digitimes",
+          "title": "US considers global licensing regime for AI chips, tying exports to investment pledges",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "US Commerce Department",
+          "Nvidia",
+          "AMD"
+        ],
+        "people": [
+          "Donald Trump"
+        ],
+        "places": [
+          "Washington, D.C."
+        ]
+      }
+    },
+    {
+      "id": "pentagon-drone-dominance-first-orders-30000",
+      "headline": "Pentagon places first Drone Dominance orders for 30,000 attack drones at $5,000 each",
+      "key_facts": [
+        "The Department of Defense placed its first Drone Dominance program orders this week for approximately 30,000 small one-way attack drones at $5,000 per unit in Phase 1",
+        "Deliveries are slated for 17 military units beginning in March 2026, with Army and Marine units designated for live training exercises",
+        "The $1.1 billion total program targets 300,000+ domestically-produced weaponized drones by 2027, with a goal of reducing unit cost to under $2,000",
+        "25 drone companies competed in a two-week 'Gauntlet' exercise at Fort Benning, where approximately 100 service members evaluated the systems",
+        "Phase 2 testing begins in August with 50,000-60,000 additional drones and will include GPS/communications denial and electronic warfare challenges",
+        "Program manager Travis Metz said 'We asked all the military operators to evaluate whether they would take it to war, and we are buying based on those criteria'"
+      ],
+      "sources": [
+        {
+          "url": "https://defensescoop.com/2026/03/05/dod-drone-dominance-program-orders-deliveries-military-units/",
+          "outlet": "DefenseScoop",
+          "title": "DOD placing first Drone Dominance orders this week, with deliveries slated for 17 military units in March",
+          "published_at": "2026-03-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://breakingdefense.com/2026/03/drone-dominance-pentagon-to-order-30000-one-way-drones-in-next-few-days/",
+          "outlet": "Breaking Defense",
+          "title": "Drone Dominance: Pentagon to order 30,000 one-way drones in 'next few days'",
+          "published_at": "2026-03-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://dronelife.com/2026/03/06/pentagon-drone-dominance-program-small-attack-drones/",
+          "outlet": "DRONELIFE",
+          "title": "30,000 Attack Drones: Inside the Pentagon's New Drone Dominance Strategy",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "Department of Defense",
+          "US Army",
+          "US Marine Corps"
+        ],
+        "people": [
+          "Travis Metz",
+          "Owen West"
+        ],
+        "places": [
+          "Fort Benning, Georgia"
+        ]
+      }
+    },
+    {
+      "id": "bmw-humanoid-robot-leipzig-europe-first",
+      "headline": "BMW deploys humanoid robots at Leipzig plant, first in European auto production",
+      "key_facts": [
+        "BMW launched a pilot project deploying Hexagon Robotics' AEON humanoid robot at its Leipzig plant in Germany, marking the first use of humanoid robots in European automotive production",
+        "The AEON robot, which moves on wheels, completed initial test deployment in December 2025 with a further testing phase from April 2026 and full pilot starting summer 2026",
+        "The Leipzig deployment builds on a 10-month pilot at BMW's Spartanburg USA plant where Figure 02 robots worked 10-hour shifts and supported production of over 30,000 BMW X3s",
+        "At Spartanburg, the robots handled over 90,000 components across approximately 1,250 operating hours and 1.2 million steps",
+        "BMW established a new Munich-based Center of Competence for Physical AI in Production to accelerate global integration of AI and robotics",
+        "Target tasks include high-voltage battery assembly and component manufacturing for exterior parts"
+      ],
+      "sources": [
+        {
+          "url": "https://www.press.bmwgroup.com/global/article/detail/T0455864EN/bmw-group-to-deploy-humanoid-robots-in-production-in-germany-for-the-first-time?language=en",
+          "outlet": "BMW Group",
+          "title": "BMW Group to deploy humanoid robots in production in Germany for the first time",
+          "published_at": "2026-02-27",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.bmwblog.com/2026/03/03/bmw-hexagon-aeon-humanoid-robot-leipzig-pilot/",
+          "outlet": "BMW Blog",
+          "title": "Inside BMW's Humanoid Robot Reveal: What We Saw at the Talent Campus in Munich",
+          "published_at": "2026-03-03",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://boingboing.net/2026/03/05/bmw-brings-humanoid-robots-to-its-german-factory.html",
+          "outlet": "Boing Boing",
+          "title": "BMW brings humanoid robots to its German factory",
+          "published_at": "2026-03-05",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "BMW Group",
+          "Hexagon Robotics",
+          "Figure AI"
+        ],
+        "people": [],
+        "places": [
+          "Leipzig, Germany",
+          "Spartanburg, USA",
+          "Munich, Germany"
+        ]
+      }
+    },
+    {
+      "id": "chinese-humanoid-makers-aw-2026-seoul",
+      "headline": "China's top humanoid robot makers showcase at AW 2026 in Seoul as global shipments hit 18,600",
+      "key_facts": [
+        "Five major Chinese humanoid developers — Unitree, AgiBot, Fourier, Leju, and Huawei — held the China Humanoid Conference at AW Summit 2026 in Seoul on March 4",
+        "AgiBot demonstrated its X2 and G2 humanoids, Unitree showed the G1, and Leju displayed the Kuavo 4th Generation Pro robots",
+        "Global humanoid robot shipments reached approximately 18,600 units in 2025, a 508% year-over-year surge according to UBS analyst Phyllis Wang",
+        "Chinese manufacturers dominate the market with Unitree and AgiBot each shipping roughly 5,000 units in 2025",
+        "The AW 2026 event attracted 500 global companies across 2,300 booths at the Coex venue in Seoul from March 4-6",
+        "Chinese firms hold over 70% of Korea's domestic service robot market and 54% of the robot vacuum cleaner market"
+      ],
+      "sources": [
+        {
+          "url": "https://www.therobotreport.com/automation-world-seoul-features-china-humanoid-makers/",
+          "outlet": "The Robot Report",
+          "title": "Automation World in Seoul to feature Chinese humanoid makers",
+          "published_at": "2026-03-04",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.koreatimes.co.kr/business/tech-science/20260305/china-increases-presence-in-koreas-advanced-robot-market",
+          "outlet": "The Korea Times",
+          "title": "China increases presence in Korea's advanced robot market",
+          "published_at": "2026-03-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.digitimes.com/news/a20260306PD201/china-humanoid-robot-development-2026.html",
+          "outlet": "Digitimes",
+          "title": "Unitree, Leju, and AgiBot showcase humanoid robots at AW 2026",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Unitree Robotics",
+          "AgiBot",
+          "Fourier Intelligence",
+          "Leju Robotics",
+          "Huawei"
+        ],
+        "people": [
+          "Jiang Chengyi",
+          "Zhou Bin",
+          "Ren Guangjie",
+          "Phyllis Wang"
+        ],
+        "places": [
+          "Seoul, South Korea"
+        ]
+      }
+    },
+    {
+      "id": "rocket-lab-83rd-launch-confidential-satellite",
+      "headline": "Rocket Lab completes 83rd Electron launch, deploys confidential satellite to LEO",
+      "key_facts": [
+        "Rocket Lab launched the 'Insight At Speed Is A Friend Indeed' mission on March 6 at 12:53 p.m. NZDT from Launch Complex 1 in Mahia, New Zealand",
+        "The Electron rocket deployed a single commercial satellite to a 470 km low Earth orbit for a confidential customer",
+        "This was Rocket Lab's 83rd launch overall and 4th launch of 2026, coming less than a week after a HASTE hypersonic test mission from Virginia",
+        "The launch webcast ended before satellite deployment at the customer's request",
+        "Rocket Lab used its Motorized Lightband separation system, which maintains a 100% mission success rate"
+      ],
+      "sources": [
+        {
+          "url": "https://investors.rocketlabcorp.com/news-releases/news-release-details/mission-success-rocket-lab-completes-83rd-launch",
+          "outlet": "Rocket Lab",
+          "title": "Mission Success: Rocket Lab Completes 83rd Launch",
+          "published_at": "2026-03-05",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.space.com/space-exploration/launches-spacecraft/rocket-lab-electron-launch-confidential-commercial-customer",
+          "outlet": "Space.com",
+          "title": "Rocket Lab launches mystery satellite for confidential commercial customer",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Rocket Lab"
+        ],
+        "people": [],
+        "places": [
+          "Mahia, New Zealand"
+        ]
+      }
+    },
+    {
+      "id": "ses-o3b-mpower-10-satellite-milestone",
+      "headline": "SES activates O3b mPOWER satellites 9 and 10, reaching 10-unit operational milestone",
+      "key_facts": [
+        "SES announced on March 5 that its newest pair of MEO satellites entered commercial service, bringing the O3b mPOWER fleet to 10 operational units",
+        "Satellites 9 and 10 were launched by SpaceX in July 2025 and provide terabit-level capacity with low-latency, fiber-like performance",
+        "The fully software-defined payloads built by Boeing on the 702X bus feature dynamic real-time power and bandwidth allocation",
+        "Three remaining satellites (11, 12, 13) are in final manufacturing stages with launch scheduled for the second half of 2026 to complete the 13-unit constellation",
+        "The milestone follows SES's €1.8 billion in new business wins during 2025 and the company's consolidation of Intelsat",
+        "Target applications include cruise ships, commercial aviation, military operations, and humanitarian missions"
+      ],
+      "sources": [
+        {
+          "url": "https://satnews.com/2026/03/05/ses-activates-latest-o3b-mpower-satellites-constellation-reaches-10-unit-operational-milestone/",
+          "outlet": "SatNews",
+          "title": "SES Activates Latest O3b mPOWER Satellites; Constellation Reaches 10-Unit Operational Milestone",
+          "published_at": "2026-03-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.satellitetoday.com/connectivity/2026/03/05/two-satellites-in-sess-o3b-mpower-meo-constellation-come-online/",
+          "outlet": "Via Satellite",
+          "title": "Two Satellites in SES's O3b mPOWER MEO Constellation Come Online",
+          "published_at": "2026-03-05",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "SES",
+          "Boeing",
+          "SpaceX",
+          "Intelsat"
+        ],
+        "people": [],
+        "places": [
+          "Luxembourg"
+        ]
+      }
+    },
+    {
+      "id": "waymo-robotaxi-blocks-ambulance-austin-shooting",
+      "headline": "Waymo robotaxi blocks ambulance responding to deadly Austin mass shooting",
+      "key_facts": [
+        "A Waymo autonomous vehicle obstructed ambulance crews responding to a mass shooting in downtown Austin near West 6th Street early Sunday March 3 around 2 a.m.",
+        "Footage showed the self-driving car stopped sideways across the road as an ambulance approached with flashing lights; an Austin police officer eventually entered the vehicle and drove it to a nearby garage",
+        "Waymo stated the vehicle had been hailed for pickup when it 'identified a road blockage and began executing a U-turn' before the ambulance appeared",
+        "Austin-Travis County EMS Chief Robert Luckritz said the agency was 'on scene within 57 seconds' and does not believe the incident impacted patient outcomes",
+        "The shooting killed three people and wounded 13 others; the suspect was identified as 53-year-old Ndiaga Diagne",
+        "This is the second Waymo safety incident in Austin within months, following an NTSB finding that a remote operator told a robotaxi to illegally pass a stopped school bus in January"
+      ],
+      "sources": [
+        {
+          "url": "https://www.foxnews.com/us/waymo-autonomous-car-blocks-ambulance-crew-responding-deadly-austin-mass-shooting",
+          "outlet": "Fox News",
+          "title": "Waymo self-driving car blocks ambulance during Austin mass shooting",
+          "published_at": "2026-03-05",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Waymo",
+          "Austin-Travis County EMS",
+          "Austin Police Department"
+        ],
+        "people": [
+          "Robert Luckritz",
+          "Ndiaga Diagne"
+        ],
+        "places": [
+          "Austin, Texas"
+        ]
+      }
+    },
+    {
+      "id": "generac-epc-power-data-center-energy-solutions",
+      "headline": "Generac and EPC Power partner to deploy integrated energy solutions for AI data centers",
+      "key_facts": [
+        "Generac Power Systems and EPC Power Corp announced on March 5 an engagement to deploy fully integrated energy solutions for data center applications",
+        "The systems combine Generac SBE Block battery systems and ARC Controller with EPC Power M-System inverters for behind-the-meter energy management",
+        "Solutions enable ultra-fast response times for load smoothing in AI data center applications with ride-through and recovery during grid disturbances",
+        "The integrated systems support seamless connection with onsite generators, turbines, and other resources in grid-tied or off-grid configurations",
+        "The partnership follows Generac's recent acquisition of Enercon to accelerate growth in data center and switchgear markets"
+      ],
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/generac-and-epc-power-to-deploy-fully-integrated-energy-solutions-for-data-center-applications-302704734.html",
+          "outlet": "PR Newswire / Generac",
+          "title": "Generac and EPC Power to Deploy Fully Integrated Energy Solutions for Data Center Applications",
+          "published_at": "2026-03-05",
+          "image_url": "",
+          "type": "press_release"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Generac Power Systems",
+          "EPC Power Corp",
+          "Enercon"
+        ],
+        "people": [],
+        "places": [
+          "Waukesha, Wisconsin",
+          "Poway, California"
+        ]
+      }
+    },
+    {
+      "id": "russia-providing-iran-intelligence-us-forces",
+      "headline": "Russia providing Iran with targeting intelligence on US warships and aircraft positions",
+      "key_facts": [
+        "Russia is sharing intelligence with Iran including locations of American warships and aircraft in the Middle East, according to three US officials familiar with the intelligence",
+        "The assistance marks the first indication that another major US adversary is participating, even indirectly, in the Iran war",
+        "Iran's own ability to locate US forces has been degraded since the US and Israel launched strikes against Tehran on February 28",
+        "Russian intelligence may include satellite imagery and data helping Iran target American military infrastructure including command centers and radar installations",
+        "The White House did not directly comment on the alleged Russian support, with spokeswoman Anna Kelly stating Iran's capabilities are 'being absolutely crushed'",
+        "NBC News reported there is no indication Moscow is helping direct Iranian missile or drone strikes, but the data could help Iran locate warships, radar, or communication systems"
+      ],
+      "sources": [
+        {
+          "url": "https://www.washingtonpost.com/national-security/2026/03/06/russia-iran-intelligence-us-targets/",
+          "outlet": "Washington Post",
+          "title": "Russia is providing Iran intelligence to target U.S. forces, officials say",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.reuters.com/world/middle-east/russia-is-providing-iran-intelligence-target-us-forces-washington-post-reports-2026-03-06/",
+          "outlet": "Reuters",
+          "title": "Russia is providing Iran intelligence to target US forces, Washington Post reports",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.nbcnews.com/politics/national-security/russia-providing-intelligence-iran-location-us-forces-sources-say-rcna262115",
+          "outlet": "NBC News",
+          "title": "Russia is providing intelligence to Iran on the location of U.S. forces, sources say",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "world",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "US Central Command",
+          "Russian military",
+          "IRGC"
+        ],
+        "people": [
+          "Anna Kelly"
+        ],
+        "places": [
+          "Russia",
+          "Iran",
+          "Middle East",
+          "Bahrain"
+        ]
+      }
+    },
+    {
+      "id": "house-rejects-iran-war-powers-resolution-212-219",
+      "headline": "House narrowly rejects Iran war powers resolution 212-219, second congressional defeat in two days",
+      "key_facts": [
+        "The US House voted 212-219 to reject a war powers resolution that would have curbed President Trump's authority to continue military operations against Iran",
+        "The vote follows the Senate's 53-47 defeat of a similar measure the previous day",
+        "House Speaker Mike Johnson called it 'dangerous' to limit the president's authority while the military is already in conflict",
+        "Rep. Gregory Meeks, top Democrat on the House Foreign Affairs Committee, said 'Donald Trump is not a king' and must come to Congress to make the case for war",
+        "The narrow margin reflected unease among some Republicans, with the conflict drawing echoes of the long wars in Afghanistan and Iraq",
+        "Johnson contradicted himself by saying 'We are not at war' while arguing for wartime presidential authority"
+      ],
+      "sources": [
+        {
+          "url": "https://www.opb.org/article/2026/03/05/house-narrowly-rejects-war-powers-resolution-to-halt-trump-s-attacks-on-iran/",
+          "outlet": "OPB / AP",
+          "title": "House narrowly rejects war powers resolution to halt Trump's attacks on Iran",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://wtop.com/government/2026/03/house-to-vote-on-iran-war-powers-resolution-in-a-test-of-trumps-strategy/",
+          "outlet": "WTOP / AP",
+          "title": "House narrowly rejects Iran war powers resolution in test of Trump's strategy",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "politics",
+        "world"
+      ],
+      "entities": {
+        "organizations": [
+          "US House of Representatives",
+          "US Congress"
+        ],
+        "people": [
+          "Donald Trump",
+          "Mike Johnson",
+          "Gregory Meeks"
+        ],
+        "places": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "trump-demands-iran-unconditional-surrender",
+      "headline": "Trump demands Iran's 'unconditional surrender' as Israel announces 'new phase' of strikes",
+      "key_facts": [
+        "Trump posted on Truth Social: 'There will be no deal with Iran except UNCONDITIONAL SURRENDER!' on the war's seventh day",
+        "Trump said after surrender, the US would help select 'a GREAT & ACCEPTABLE Leader(s)' and work to 'MAKE IRAN GREAT AGAIN (MIGA!)'",
+        "Iranian Foreign Minister Abbas Araghchi told NBC that Iran is 'not asking for a ceasefire' and is ready for any US ground invasion",
+        "Trump told NBC News a ground invasion would be a 'waste of time'",
+        "Israeli military announced a 'broad wave' of strikes on Tehran targeting regime infrastructure, with approximately 50 jets striking Khamenei's underground bunker",
+        "IDF said it destroyed the underground bunker beneath Khamenei's residence that was being used by senior military officials after his killing on February 28",
+        "More than 1,300 people have been killed in Iran since the war began, according to the Iranian Red Crescent",
+        "More than 95,000 people have fled Beirut's suburbs and southern Lebanon after sweeping Israeli evacuation warnings"
+      ],
+      "sources": [
+        {
+          "url": "https://www.aljazeera.com/news/2026/3/6/no-deal-with-iran-except-unconditional-surrender-trump-says",
+          "outlet": "Al Jazeera",
+          "title": "'No deal with Iran except unconditional surrender,' Trump says",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.npr.org/2026/03/06/nx-s1-5738448/iran-us-israel-war",
+          "outlet": "NPR",
+          "title": "Israel strikes Beirut and Tehran as Trump demands Iran's 'unconditional surrender'",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://report.az/en/other-countries/idf-says-it-destroyed-khamenei-s-underground-bunker",
+          "outlet": "Report.az",
+          "title": "IDF says it destroyed Khamenei's underground bunker",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.nbcnews.com/world/iran/live-blog/live-updates-iran-war-israel-strikes-tehran-beirut-trump-leader-rcna262018",
+          "outlet": "NBC News",
+          "title": "Live updates: Trump says no deal in Iran without 'unconditional surrender'; IDF says it destroyed Khamenei's bunker",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "world",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "IDF",
+          "Israeli Air Force",
+          "Iranian Red Crescent"
+        ],
+        "people": [
+          "Donald Trump",
+          "Abbas Araghchi",
+          "Ali Khamenei",
+          "Pete Hegseth"
+        ],
+        "places": [
+          "Iran",
+          "Tehran",
+          "Israel",
+          "Lebanon",
+          "Beirut"
+        ]
+      }
+    },
+    {
+      "id": "us-february-jobs-report-92000-lost",
+      "headline": "US economy unexpectedly shed 92,000 jobs in February as unemployment rises to 4.4%",
+      "key_facts": [
+        "US employers cut 92,000 jobs in February, far below economists' forecast of 55,000-60,000 new jobs",
+        "Unemployment rate rose to 4.4% from 4.3% in January",
+        "Prior months revised down by a combined 69,000 jobs from December and January payrolls",
+        "Labor force participation fell to 62.0%, the lowest since December 2021",
+        "Health care, professional and business services, and financial activities saw positive job growth while retail trade and leisure and hospitality drove losses",
+        "Stocks tumbled after the report, with Dow futures losing more than 600 points as traders also weighed Iran war developments and oil prices near $90/barrel",
+        "January payrolls were revised from 130,000 to 126,000 added jobs"
+      ],
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2026/03/06/february-2026-jobs-report.html",
+          "outlet": "CNBC",
+          "title": "U.S. payrolls unexpectedly fell by 92,000 in February; unemployment rate rises to 4.4%",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.cnn.com/2026/03/06/economy/us-jobs-report-february",
+          "outlet": "CNN",
+          "title": "The US economy lost 92,000 jobs in February and the unemployment rate rose to 4.4%",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.cbsnews.com/news/jobs-report-today-february-2026-economy-layoffs-bls/",
+          "outlet": "CBS News",
+          "title": "U.S. labor market lost 92,000 jobs in February, marking an unexpected setback for the economy",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "economy"
+      ],
+      "entities": {
+        "organizations": [
+          "Bureau of Labor Statistics",
+          "Department of Labor"
+        ],
+        "people": [],
+        "places": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "oil-surges-90-stocks-worst-week-november",
+      "headline": "Brent crude clears $90 as Dow drops 900 points; S&P 500 heads for worst week since November",
+      "key_facts": [
+        "Brent crude surged past $90 per barrel on March 6, its highest price since 2023, driven by the escalating Iran war",
+        "US benchmark WTI crude jumped 8.5% on Thursday to settle at $81.01, then continued rising Friday",
+        "The S&P 500 fell 1% on Friday, erasing its year-to-date gains, heading for its worst week since November",
+        "The Dow Jones Industrial Average dropped more than 900 points on Friday after the weak jobs report compounded oil fears",
+        "Average US gasoline prices rose 9% in one week to $3.25 per gallon from $2.98",
+        "Markets faced a dual shock of rising oil prices and weak employment data, raising fears of stagflation with no easy central bank fix",
+        "Dow had already dropped 784 points on Thursday after oil spiked to its highest since summer 2024"
+      ],
+      "sources": [
+        {
+          "url": "https://www.thestreet.com/latest-news/stock-market-today-march-6-2026",
+          "outlet": "TheStreet",
+          "title": "Stock Market Today, Mar. 6: Stocks fall again as Brent clears $90/barrel, payrolls disappoint",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://adn.com/business-economy/2026/03/05/stocks-drop-after-oil-spikes-to-its-highest-price-since-the-summer-of-2024/",
+          "outlet": "Anchorage Daily News / AP",
+          "title": "Stocks drop after oil spikes to highest price since summer 2024",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.greenwichtime.com/news/world/article/asia-shares-are-mixed-following-wall-street-s-21958767.php",
+          "outlet": "AP / Greenwich Time",
+          "title": "Oil surges to its highest price since 2023, and stocks drop after data shows a weaker US job market",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "finance",
+        "economy"
+      ],
+      "entities": {
+        "organizations": [
+          "Federal Reserve"
+        ],
+        "people": [],
+        "places": [
+          "United States",
+          "Strait of Hormuz"
+        ]
+      }
+    },
+    {
+      "id": "oracle-plans-30000-layoffs-ai-data-center-cash-crunch",
+      "headline": "Oracle planning up to 30,000 layoffs amid cash crunch from massive AI data center expansion",
+      "key_facts": [
+        "Oracle is planning to cut 20,000 to 30,000 employees across multiple divisions, according to Bloomberg",
+        "The layoffs could begin as early as March 2026 and would be wider-reaching than typical rolling job cuts",
+        "The cash crunch stems from Oracle's $300 billion partnership with OpenAI requiring massive data center buildout",
+        "Some cuts target job categories the company expects will shrink due to AI automation",
+        "Oracle's capital expenditures for fiscal 2026 are projected at $50 billion, up from an initial $35 billion estimate",
+        "Oracle's stock has fallen 54% from its September 2025 peak",
+        "Oracle is scheduled to report fiscal third-quarter earnings on March 10"
+      ],
+      "sources": [
+        {
+          "url": "http://www.firstpost.com/tech/oracle-layoffs-company-plans-thousands-of-job-cuts-as-data-center-costs-rise-13986749.html",
+          "outlet": "Firstpost / Reuters",
+          "title": "Oracle layoffs: Software company plans thousands of job cuts as data center costs rise",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://trib.al/k0ugb3Z",
+          "outlet": "Hindu BusinessLine / Bloomberg",
+          "title": "Oracle plans to cut thousands of jobs amid AI data centre cash crunch",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "http://www.news18.com/business/markets/oracle-may-cut-up-to-30000-jobs-as-costly-ai-push-with-openai-strains-finances-ws-l-9945356.html",
+          "outlet": "News18",
+          "title": "Oracle Layoffs: Tech Giant May Cut Up To 30,000 Jobs As Costly AI Push With OpenAI Strains Finances",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "business",
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Oracle",
+          "OpenAI",
+          "xAI",
+          "Meta",
+          "Amazon",
+          "Microsoft"
+        ],
+        "people": [
+          "Larry Ellison",
+          "Sam Altman"
+        ],
+        "places": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "morgan-stanley-cuts-2500-jobs",
+      "headline": "Morgan Stanley lays off 2,500 employees across all divisions despite record 2025 revenue",
+      "key_facts": [
+        "Morgan Stanley cut approximately 2,500 employees, roughly 3% of its global workforce, starting in early March",
+        "The layoffs span all three major divisions: institutional securities, wealth management, and investment management",
+        "Financial advisors are not affected by the cuts",
+        "The cuts stem from shifting business priorities, a revised global location strategy, and performance reviews — not AI-related reforms",
+        "Morgan Stanley posted record full-year 2025 revenues of $70.6 billion with a 47% surge in Q4 revenues",
+        "The bank laid off 2,000 employees in a similar round last spring"
+      ],
+      "sources": [
+        {
+          "url": "https://finance.yahoo.com/news/morgan-stanley-cuts-2-500-051141739.html",
+          "outlet": "Yahoo Finance / Simply Wall St",
+          "title": "Morgan Stanley Cuts 2,500 Roles To Prioritize AI Efficiency And Margins",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://hr.economictimes.indiatimes.com/news/industry/morgan-stanley-lays-off-2500-employees-across-divisions/129078846",
+          "outlet": "ET HRWorld / Reuters",
+          "title": "Morgan Stanley lays off 2,500 employees across divisions",
+          "published_at": "2026-03-05",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "business",
+        "economy"
+      ],
+      "entities": {
+        "organizations": [
+          "Morgan Stanley"
+        ],
+        "people": [],
+        "places": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "nature-aging-pep-metabolite-anti-aging-mechanism",
+      "headline": "Nature Aging: glycolytic metabolite PEP identified as natural anti-aging mechanism that inhibits inflammation",
+      "key_facts": [
+        "A study published in Nature Aging on March 6 shows phosphoenolpyruvate (PEP), a glycolytic metabolite, acts as a protective factor against age-related chronic inflammation",
+        "PEP works by competitively binding to cGAS, inhibiting the cGAS-STING inflammatory pathway that drives inflammaging",
+        "Longitudinal analyses in mice and humans reveal a biphasic PEP trajectory: initial accumulation during aging followed by progressive decline",
+        "Administering PEP before its natural decline promoted healthy aging in mice; blocking PEP accumulation accelerated aging phenotypes",
+        "In aged humans, high PEP levels strongly correlate with lower inflammation and healthier traits",
+        "PEP also alleviated neuroinflammation and improved cognitive function in an Alzheimer's disease mouse model",
+        "The findings position PEP as a promising intervention target for aging and age-related diseases including neurodegeneration"
+      ],
+      "sources": [
+        {
+          "url": "https://www.nature.com/articles/s43587-026-01087-1",
+          "outlet": "Nature Aging",
+          "title": "The glycolytic metabolite phosphoenolpyruvate restricts cGAS-driven inflammation to promote healthy aging",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "paper"
+        },
+        {
+          "url": "https://www.nature.com/articles/s43587-026-01094-2",
+          "outlet": "Nature Aging",
+          "title": "A glycolytic metabolite puts the brakes on cGAS-driven aging",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "paper"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [],
+        "people": [],
+        "places": []
+      }
+    },
+    {
+      "id": "buck-institute-healthspan-horizons-launch",
+      "headline": "Buck Institute launches Healthspan Horizons to link wearable data with aging biology research",
+      "key_facts": [
+        "The Buck Institute for Research on Aging announced Healthspan Horizons, a federated data initiative to measure, understand, and extend healthspan",
+        "The platform links real-world longitudinal data from wearables, sleep, activity, nutrition, and labs with deep biological measurements",
+        "The initiative aims to detect disease decades before clinical diagnosis by identifying early biological shifts",
+        "Healthspan Horizons uses responsible AI and federated data architecture to combine heterogeneous multimodal datasets",
+        "The project addresses the gap where people live longer but spend added years managing chronic disease rather than in good health",
+        "The Buck Institute is a California-based research institute dedicated to aging research"
+      ],
+      "sources": [
+        {
+          "url": "https://www.buckinstitute.org/news/buck-institute-launches-healthspan-horizons-to-turn-long-term-health-data-into-actionable-healthspan-insights/",
+          "outlet": "Buck Institute",
+          "title": "Buck Institute Launches Healthspan Horizons to Turn Long-Term Health Data into Actionable Healthspan Insights",
+          "published_at": "2026-03-05",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://longevity.technology/news/healthspan-horizons-aims-to-map-healthy-aging/",
+          "outlet": "Longevity.Technology",
+          "title": "Healthspan Horizons aims to map healthy aging",
+          "published_at": "2026-03-05",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Buck Institute for Research on Aging"
+        ],
+        "people": [],
+        "places": [
+          "California",
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "iran-data-centers-military-targets-aws-uae",
+      "headline": "Iran drone strikes hit AWS data centers in Bahrain and UAE, causing regional digital service outages",
+      "key_facts": [
+        "AWS data centers in the UAE were hit by Iranian drone strikes on Sunday, causing outages for banking, payments, enterprise, and consumer services",
+        "An AWS facility in Bahrain was also damaged by a nearby drone strike",
+        "Iranian state media said the Bahrain facility was targeted for Amazon's support of the US military",
+        "The strikes represent a new category of military targets as data centers become strategic infrastructure in modern warfare",
+        "US hyperscalers had invested heavily in Middle East data center capacity in recent years due to cheap energy and land",
+        "Digital services disruptions affected multiple countries across the Gulf region"
+      ],
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2026/03/06/iran-war-data-centers.html",
+          "outlet": "CNBC",
+          "title": "The Tech Download: Data centers become military targets in Iran war",
+          "published_at": "2026-03-06",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "world"
+      ],
+      "entities": {
+        "organizations": [
+          "Amazon Web Services",
+          "Amazon"
+        ],
+        "people": [],
+        "places": [
+          "Bahrain",
+          "United Arab Emirates",
+          "Iran"
+        ]
+      }
+    }
+  ],
+  "story_count": 26,
+  "source_count": 68
+};
+const DATA_ARTICLE  = "---\ndate: 2026-03-06\nurl:\ntitle: \"Bem-vindo(a) a 6 de Mar\u00e7o de 2026\"\nwordcount: 788\ngenerated: true\nlanguage: pt-br\n---\n\n# Bem-vindo(a) a 6 de Mar\u00e7o de 2026\n\nA OpenAI lan\u00e7a o GPT-5.4 dois dias depois do 5.3, drones iranianos derrubam data centers da AWS no Golfo, e a economia americana perde 92 mil empregos num \u00fanico m\u00eas.\n\nA OpenAI soltou o [GPT-5.4 com uso nativo de computadores](https://thenextweb.com/news/openai-gpt-54-launch-computer-use-benchmarks), janela de contexto de 1 milh\u00e3o de tokens e um sistema de Tool Search que [reduz consumo de tokens em 47%](https://english.news.cn/20260306/d206b5943278461b9d30bb57953ecf35/c.html) em sistemas de agentes. No benchmark OSWorld-Verified de navega\u00e7\u00e3o desktop, o modelo [marca 75% contra 72,4% dos humanos](https://www.helpnetsecurity.com/2026/03/06/openai-chatgpt-gpt%E2%80%915-4-model-release/) \u2014 enquanto o GPT-5.2 ficava em 47,3%. No GDPval, que avalia trabalho de conhecimento em 44 profiss\u00f5es, [iguala ou supera profissionais humanos em 83% das compara\u00e7\u00f5es](https://thenextweb.com/news/openai-gpt-54-launch-computer-use-benchmarks). Alucina\u00e7\u00f5es ca\u00edram 33%. A cad\u00eancia \u00e9 absurda: dois dias entre vers\u00f5es maiores, enquanto [usu\u00e1rios cancelam assinaturas](https://x.com/OpenAI/status/2029620619743219811) em protesto contra o contrato com o Pent\u00e1gono.\n\nDo outro lado, o Claude Opus 4.6 da Anthropic [encontrou 22 vulnerabilidades de seguran\u00e7a no Firefox](https://techcrunch.com/2026/03/06/anthropics-claude-found-22-vulnerabilities-in-firefox-over-two-weeks/) em duas semanas \u2014 14 de alta severidade, quase [um quinto de todas as vulnerabilidades graves remediadas ao longo de 2025](https://www.anthropic.com/news/mozilla-firefox-security). O primeiro bug, um Use After Free no motor JavaScript, apareceu [em 20 minutos de explora\u00e7\u00e3o](https://blog.mozilla.org/en/firefox/hardening-firefox-anthropic-red-team/). A Anthropic varreu quase 6.000 arquivos C++ e submeteu 112 relat\u00f3rios ao Bugzilla da Mozilla, gastando [cerca de US$ 4.000 em cr\u00e9ditos de API](https://www.axios.com/2026/03/06/anthropic-mozilla-claude-opus-bug-hunting) tentando gerar provas de conceito \u2014 com sucesso em apenas dois casos. Tudo j\u00e1 foi corrigido no Firefox 148.0, que atingiu centenas de milh\u00f5es de usu\u00e1rios. Em paralelo, a Anthropic anunciou o Claude Code Security e reportou mais de [500 vulnerabilidades in\u00e9ditas encontradas em projetos open-source](https://www.anthropic.com/news/mozilla-firefox-security).\n\nO Cursor lan\u00e7ou [Automations: agentes de IA always-on](https://www.thedeepview.com/articles/cursor-expands-coding-agents-beyond-coding) disparados por mensagens no Slack, pull requests no GitHub, alertas do PagerDuty ou timers agendados \u2014 sem prompt humano. A empresa chama de [\"Terceira Era\" do desenvolvimento](https://www.objectwire.org/cursor/automations-event-driven-ai-coding), al\u00e9m de autocomplete e chat. O timing faz sentido: receita anualizada [ultrapassou US$ 2 bilh\u00f5es em fevereiro](https://aichief.com/news/cursors-new-ai-agent-transforms-coding/), dobrando desde novembro de 2025, com Nvidia e Stripe entre os clientes enterprise. Enquanto isso, a Luma AI lan\u00e7ou [Luma Agents sobre o modelo Uni-1](https://techcrunch.com/2026/03/05/exclusive-luma-launches-creative-ai-agents-powered-by-its-new-unified-intelligence-models/) \u2014 um transformer autorregressivo que processa \u00e1udio, v\u00eddeo, imagem, linguagem e racioc\u00ednio espacial para [workflows criativos end-to-end](https://www.businesswire.com/news/home/20260305354123/en/Luma-Launches-Luma-Agents-Powered-by-Unified-Intelligence-for-Creative-Work), integrando 8+ modelos externos incluindo Google Veo 3 e ElevenLabs. Publicis Groupe, Adidas e Mazda j\u00e1 s\u00e3o [clientes enterprise](https://www.adweek.com/media/luma-ai-agents-promise-to-end-the-multi-tool-mess/).\n\nNo dinheiro que financia tudo isso, Masayoshi Son busca um [empr\u00e9stimo-ponte de US$ 40 bilh\u00f5es](https://www.japantimes.co.jp/business/2026/03/06/companies/softbank-openai-record-loan/) \u2014 o maior empr\u00e9stimo corporativo em d\u00f3lares da hist\u00f3ria \u2014 para bancar a fatia da SoftBank na rodada de US$ 110 bilh\u00f5es da OpenAI, com JPMorgan entre os quatro credores. A S&P [rebaixou o outlook de cr\u00e9dito da SoftBank](https://techstartups.com/2026/03/06/softbank-seeks-40b-loan-to-fund-massive-openai-bet-after-chatgpt-maker-hits-730b-valuation/). Na outra ponta da curva, a Oracle [planeja cortar at\u00e9 30.000 funcion\u00e1rios](http://www.firstpost.com/tech/oracle-layoffs-company-plans-thousands-of-job-cuts-as-data-center-costs-rise-13986749.html) para financiar US$ 50 bilh\u00f5es em capex de data centers \u2014 a\u00e7\u00f5es ca\u00edram [54% desde o pico de setembro](http://www.news18.com/business/markets/oracle-may-cut-up-to-30000-jobs-as-costly-ai-push-with-openai-strains-finances-ws-l-9945356.html). Morgan Stanley cortou [2.500 pessoas apesar de receita recorde de US$ 70,6 bilh\u00f5es](https://finance.yahoo.com/news/morgan-stanley-cuts-2-500-051141739.html) em 2025.\n\nA guerra no Ir\u00e3 entrou no s\u00e9timo dia com Trump exigindo [\"rendi\u00e7\u00e3o incondicional\"](https://www.aljazeera.com/news/2026/3/6/no-deal-with-iran-except-unconditional-surrender-trump-says) e prometendo escolher \"um GRANDE & ACEIT\u00c1VEL L\u00edder\" ap\u00f3s a capitula\u00e7\u00e3o. Israel anunciou uma [nova fase de bombardeios sobre Teer\u00e3](https://www.npr.org/2026/03/06/nx-s1-5738448/iran-us-israel-war), com ~50 jatos destruindo o [bunker subterr\u00e2neo de Khamenei](https://report.az/en/other-countries/idf-says-it-destroyed-khamenei-s-underground-bunker). Mais de [1.300 mortos no Ir\u00e3](https://www.nbcnews.com/world/iran/live-blog/live-updates-iran-war-israel-strikes-tehran-beirut-trump-leader-rcna262018) segundo a Cruz Vermelha iraniana. A R\u00fassia agora [fornece intelig\u00eancia ao Ir\u00e3 com localiza\u00e7\u00f5es de navios e aeronaves americanas](https://www.washingtonpost.com/national-security/2026/03/06/russia-iran-intelligence-us-targets/) \u2014 a primeira indica\u00e7\u00e3o de participa\u00e7\u00e3o indireta de outro advers\u00e1rio. A C\u00e2mara [rejeitou por 212-219](https://www.opb.org/article/2026/03/05/house-narrowly-rejects-war-powers-resolution-to-halt-trump-s-attacks-on-iran/) a resolu\u00e7\u00e3o de War Powers, segunda derrota congressual em dois dias. Drones iranianos [atingiram data centers da AWS no Bahrein e nos Emirados](https://www.cnbc.com/2026/03/06/iran-war-data-centers.html), causando apag\u00f5es em servi\u00e7os banc\u00e1rios e corporativos \u2014 data centers viraram alvos militares.\n\nA economia sente o impacto: os EUA [perderam 92 mil empregos em fevereiro](https://www.cnbc.com/2026/03/06/february-2026-jobs-report.html), contra previs\u00e3o de +55 a 60 mil, com desemprego subindo para [4,4% e participa\u00e7\u00e3o na for\u00e7a de trabalho no menor n\u00edvel desde dezembro de 2021](https://www.cnn.com/2026/03/06/economy/us-jobs-report-february). Brent [ultrapassou US$ 90/barril](https://www.thestreet.com/latest-news/stock-market-today-march-6-2026) pela primeira vez desde 2023, gasolina americana subiu [9% em uma semana para US$ 3,25/gal\u00e3o](https://www.greenwichtime.com/news/world/article/asia-shares-are-mixed-following-wall-street-s-21958767.php), e o Dow [despencou 900 pontos](https://adn.com/business-economy/2026/03/05/stocks-drop-after-oil-spikes-to-its-highest-price-since-the-summer-of-2024/) com o duplo choque de petr\u00f3leo e emprego. O espectro da estagfla\u00e7\u00e3o \u2014 infla\u00e7\u00e3o de commodities com mercado de trabalho contraindo \u2014 \u00e9 o tipo de problema para o qual nenhum banco central tem resposta f\u00e1cil.\n\nNa rob\u00f3tica, a BMW [implantou humanoides Hexagon AEON em Leipzig](https://www.press.bmwgroup.com/global/article/detail/T0455864EN/bmw-group-to-deploy-humanoid-robots-in-production-in-germany-for-the-first-time?language=en) \u2014 primeira vez na produ\u00e7\u00e3o automotiva europeia \u2014 ap\u00f3s rob\u00f4s Figure 02 acumularem [1.250 horas operacionais em Spartanburg](https://www.bmwblog.com/2026/03/03/bmw-hexagon-aeon-humanoid-robot-leipzig-pilot/). Em Seul, Unitree e AgiBot [dominaram a AW 2026](https://www.therobotreport.com/automation-world-seoul-features-china-humanoid-makers/) com embarques globais de humanoides em [18.600 unidades \u2014 alta de 508%](https://www.koreatimes.co.kr/business/tech-science/20260305/china-increases-presence-in-koreas-advanced-robot-market). Na biologia, a Nature Aging revelou que o metab\u00f3lito [PEP inibe a via inflamat\u00f3ria cGAS-STING](https://www.nature.com/articles/s43587-026-01087-1) e [melhora cogni\u00e7\u00e3o em modelo de Alzheimer](https://www.nature.com/articles/s43587-026-01094-2). O UK lan\u00e7ou um [laborat\u00f3rio de IA fundamental de \u00a340 milh\u00f5es](https://www.gov.uk/government/news/government-to-create-new-lab-to-keep-uk-in-the-fast-lane-on-ai-breakthroughs) chefiado por Raia Hadsell do DeepMind, parte de uma [estrat\u00e9gia de \u00a31,6 bilh\u00e3o em IA soberana](https://capacityglobal.com/news/uk-launches-40m-moonshot-ai-lab-to-challenge-the-us-and-china/).\n";
+const DATA_AUDIT    = {
+  "issues": [
+    {
+      "url": "https://thenextweb.com/news/openai-gpt-54-launch-computer-use-benchmarks",
+      "anchor_text": "GPT-5.4 com uso nativo de computadores",
+      "claim": "A OpenAI soltou o GPT-5.4 com uso nativo de computadores, janela de contexto de 1 milhão de tokens e um sistema de Tool Search",
+      "flags": [
+        {
+          "type": "source_unavailable",
+          "severity": "warning",
+          "detail": "Source returned 502 Bad Gateway. Cannot verify claims about 1 million token context window or Tool Search system."
+        }
+      ]
+    },
+    {
+      "url": "https://english.news.cn/20260306/d206b5943278461b9d30bb57953ecf35/c.html",
+      "anchor_text": "reduz consumo de tokens em 47%",
+      "claim": "um sistema de Tool Search que reduz consumo de tokens em 47% em sistemas de agentes",
+      "flags": [
+        {
+          "type": "unsupported",
+          "severity": "warning",
+          "detail": "Xinhua source discusses GPT-5.4 improvements in reasoning, coding, and workflows but does not mention a 47% token reduction or a 'Tool Search' system."
+        }
+      ]
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2029620619743219811",
+      "anchor_text": "usuários cancelam assinaturas",
+      "claim": "usuários cancelam assinaturas em protesto contra o contrato com o Pentágono",
+      "flags": [
+        {
+          "type": "source_unavailable",
+          "severity": "warning",
+          "detail": "X/Twitter page returned an error and no usable content. Cannot verify claim about subscription cancellations over Pentagon contract."
+        }
+      ]
+    },
+    {
+      "url": "https://blog.mozilla.org/en/firefox/hardening-firefox-anthropic-red-team/",
+      "anchor_text": "em 20 minutos de exploração",
+      "claim": "O primeiro bug, um Use After Free no motor JavaScript, apareceu em 20 minutos de exploração",
+      "flags": [
+        {
+          "type": "unsupported",
+          "severity": "warning",
+          "detail": "Mozilla blog post describes the collaboration and mentions Claude identifying bugs in the JavaScript engine, but does not mention '20 minutes' or a specific Use After Free vulnerability as the first find."
+        }
+      ]
+    },
+    {
+      "url": "https://www.axios.com/2026/03/06/anthropic-mozilla-claude-opus-bug-hunting",
+      "anchor_text": "cerca de US$ 4.000 em créditos de API",
+      "claim": "gastando cerca de US$ 4.000 em créditos de API tentando gerar provas de conceito — com sucesso em apenas dois casos",
+      "flags": [
+        {
+          "type": "source_unavailable",
+          "severity": "warning",
+          "detail": "Axios page returned Cloudflare challenge ('Just a moment...'). However, the $4,000 and two successful PoCs claim is confirmed by the TechCrunch source on the same topic."
+        }
+      ]
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20260305354123/en/Luma-Launches-Luma-Agents-Powered-by-Unified-Intelligence-for-Creative-Work",
+      "anchor_text": "workflows criativos end-to-end",
+      "claim": "um transformer autorregressivo que processa áudio, vídeo, imagem, linguagem e raciocínio espacial para workflows criativos end-to-end, integrando 8+ modelos externos incluindo Google Veo 3 e ElevenLabs",
+      "flags": [
+        {
+          "type": "source_unavailable",
+          "severity": "warning",
+          "detail": "BusinessWire returned 'Access Denied'. Cannot verify claims through this source."
+        },
+        {
+          "type": "unsupported",
+          "severity": "warning",
+          "detail": "The TechCrunch Luma source lists 5 external models by name (Ray 3.14, Veo 3, Nano Banana Pro, Seedream, ElevenLabs). The article's claim of '8+ modelos externos' is not supported by any available source."
+        }
+      ]
+    },
+    {
+      "url": "https://www.adweek.com/media/luma-ai-agents-promise-to-end-the-multi-tool-mess/",
+      "anchor_text": "clientes enterprise",
+      "claim": "Publicis Groupe, Adidas e Mazda já são clientes enterprise",
+      "flags": [
+        {
+          "type": "unsupported",
+          "severity": "warning",
+          "detail": "Adweek source mentions 'Serviceplan Group and Publicis Groupe Middle East & Turkey' as launch partners. Adidas and Mazda are not mentioned anywhere in the available source content."
+        }
+      ]
+    },
+    {
+      "url": "https://www.japantimes.co.jp/business/2026/03/06/companies/softbank-openai-record-loan/",
+      "anchor_text": "empréstimo-ponte de US$ 40 bilhões",
+      "claim": "Masayoshi Son busca um empréstimo-ponte de US$ 40 bilhões — o maior empréstimo corporativo em dólares da história — para bancar a fatia da SoftBank na rodada de US$ 110 bilhões da OpenAI, com JPMorgan entre os quatro credores",
+      "flags": [
+        {
+          "type": "source_unavailable",
+          "severity": "warning",
+          "detail": "Japan Times returned Cloudflare challenge ('Just a moment...'). The TechStartups source confirms $40B loan and JPMorgan involvement, and describes it as 'among the largest dollar-denominated borrowings' — but the article calls it 'o maior empréstimo corporativo em dólares da história' (the largest corporate dollar loan in history), which is a stronger claim than 'among the largest'."
+        }
+      ]
+    },
+    {
+      "url": "https://techstartups.com/2026/03/06/softbank-seeks-40b-loan-to-fund-massive-openai-bet-after-chatgpt-maker-hits-730b-valuation/",
+      "anchor_text": "rebaixou o outlook de crédito da SoftBank",
+      "claim": "A S&P rebaixou o outlook de crédito da SoftBank",
+      "flags": [
+        {
+          "type": "unsupported",
+          "severity": "warning",
+          "detail": "TechStartups article discusses the $40B loan and OpenAI valuation but does not mention an S&P credit outlook downgrade for SoftBank."
+        }
+      ]
+    },
+    {
+      "url": "https://finance.yahoo.com/news/morgan-stanley-cuts-2-500-051141739.html",
+      "anchor_text": "2.500 pessoas apesar de receita recorde de US$ 70,6 bilhões",
+      "claim": "Morgan Stanley cortou 2.500 pessoas apesar de receita recorde de US$ 70,6 bilhões em 2025",
+      "flags": [
+        {
+          "type": "unsupported",
+          "severity": "warning",
+          "detail": "Source confirms 2,500 job cuts but does not mention '$70.6 billion' revenue or 'record revenue' for 2025. The fetched content discusses cost efficiency and AI adoption but includes no revenue figures."
+        }
+      ]
+    },
+    {
+      "url": "https://adn.com/business-economy/2026/03/05/stocks-drop-after-oil-spikes-to-its-highest-price-since-the-summer-of-2024/",
+      "anchor_text": "despencou 900 pontos",
+      "claim": "o Dow despencou 900 pontos com o duplo choque de petróleo e emprego",
+      "flags": [
+        {
+          "type": "contradicted",
+          "severity": "error",
+          "detail": "Source says the Dow 'briefly dropped more than 1,100 points before finishing with a loss of 784' (1.6%). The article's '900 pontos' matches neither the intraday drop (>1,100) nor the closing loss (784)."
+        }
+      ]
+    },
+    {
+      "url": "https://www.thestreet.com/latest-news/stock-market-today-march-6-2026",
+      "anchor_text": "ultrapassou US$ 90/barril",
+      "claim": "Brent ultrapassou US$ 90/barril pela primeira vez desde 2023",
+      "flags": [
+        {
+          "type": "source_unavailable",
+          "severity": "warning",
+          "detail": "TheStreet returned 'Please enable JS' — no usable content."
+        },
+        {
+          "type": "contradicted",
+          "severity": "error",
+          "detail": "Another source in this article (adn.com) reports Brent crude at $85.41 per barrel, well below the $90 claimed. The article states Brent 'ultrapassou US$ 90/barril' which is directly contradicted by the available data."
+        }
+      ]
+    },
+    {
+      "url": "https://www.greenwichtime.com/news/world/article/asia-shares-are-mixed-following-wall-street-s-21958767.php",
+      "anchor_text": "9% em uma semana para US$ 3,25/galão",
+      "claim": "gasolina americana subiu 9% em uma semana para US$ 3,25/galão",
+      "flags": [
+        {
+          "type": "source_unavailable",
+          "severity": "warning",
+          "detail": "Greenwich Time returned 'Access to this page has been denied'. Cannot verify gas price claim."
+        }
+      ]
+    },
+    {
+      "url": "https://www.cnbc.com/2026/03/06/february-2026-jobs-report.html",
+      "anchor_text": "perderam 92 mil empregos em fevereiro",
+      "claim": "os EUA perderam 92 mil empregos em fevereiro, contra previsão de +55 a 60 mil",
+      "flags": [
+        {
+          "type": "unsupported",
+          "severity": "warning",
+          "detail": "CNBC source says the estimate was 50,000, not '55 to 60 mil'. CNN source says consensus was 60,000. The article's range of '55 a 60 mil' doesn't match either source precisely — CNBC says 50K, CNN says 60K."
+        }
+      ]
+    },
+    {
+      "url": "https://www.cnn.com/2026/03/06/economy/us-jobs-report-february",
+      "anchor_text": "4,4% e participação na força de trabalho no menor nível desde dezembro de 2021",
+      "claim": "desemprego subindo para 4,4% e participação na força de trabalho no menor nível desde dezembro de 2021",
+      "flags": [
+        {
+          "type": "unsupported",
+          "severity": "warning",
+          "detail": "CNN source confirms unemployment rose to 4.4% but does not mention labor force participation rate or a comparison to December 2021 in the fetched content."
+        }
+      ]
+    },
+    {
+      "url": "https://www.washingtonpost.com/national-security/2026/03/06/russia-iran-intelligence-us-targets/",
+      "anchor_text": "fornece inteligência ao Irã com localizações de navios e aeronaves americanas",
+      "claim": "A Rússia agora fornece inteligência ao Irã com localizações de navios e aeronaves americanas — a primeira indicação de participação indireta de outro adversário",
+      "flags": [
+        {
+          "type": "source_unavailable",
+          "severity": "warning",
+          "detail": "Washington Post source fetch failed entirely (STATUS: failed, empty content). Cannot verify claims about Russian intelligence sharing with Iran."
+        }
+      ]
+    },
+    {
+      "url": "https://www.bmwblog.com/2026/03/03/bmw-hexagon-aeon-humanoid-robot-leipzig-pilot/",
+      "anchor_text": "1.250 horas operacionais em Spartanburg",
+      "claim": "após robôs Figure 02 acumularem 1.250 horas operacionais em Spartanburg",
+      "flags": [
+        {
+          "type": "unsupported",
+          "severity": "warning",
+          "detail": "BMWBlog source mentions Spartanburg pilot with '30,000 X3s built, 90,000 parts moved' but does not mention 1,250 operational hours or Figure 02 specifically."
+        }
+      ]
+    },
+    {
+      "url": "https://www.press.bmwgroup.com/global/article/detail/T0455864EN/bmw-group-to-deploy-humanoid-robots-in-production-in-germany-for-the-first-time?language=en",
+      "anchor_text": "implantou humanoides Hexagon AEON em Leipzig",
+      "claim": "a BMW implantou humanoides Hexagon AEON em Leipzig — primeira vez na produção automotiva europeia",
+      "flags": [
+        {
+          "type": "outside_window",
+          "severity": "warning",
+          "detail": "BMW press release was published 2026-02-27, and describes a deployment announcement from that date. The event predates the research window of 2026-03-05 to 2026-03-06."
+        }
+      ]
+    },
+    {
+      "url": "https://www.koreatimes.co.kr/business/tech-science/20260305/china-increases-presence-in-koreas-advanced-robot-market",
+      "anchor_text": "18.600 unidades — alta de 508%",
+      "claim": "embarques globais de humanoides em 18.600 unidades — alta de 508%",
+      "flags": [
+        {
+          "type": "unsupported",
+          "severity": "warning",
+          "detail": "Korea Times source discusses Chinese robots expanding into Korea (exoskeletons, humanoids) but does not mention 18,600 global humanoid shipments or 508% growth in the fetched content."
+        }
+      ]
+    },
+    {
+      "url": "https://www.therobotreport.com/automation-world-seoul-features-china-humanoid-makers/",
+      "anchor_text": "dominaram a AW 2026",
+      "claim": "Unitree e AgiBot dominaram a AW 2026",
+      "flags": [
+        {
+          "type": "source_unavailable",
+          "severity": "warning",
+          "detail": "The Robot Report returned Cloudflare challenge ('Just a moment...'). Cannot verify claims about AW 2026 event."
+        },
+        {
+          "type": "outside_window",
+          "severity": "warning",
+          "detail": "Source published 2026-03-04, reporting on an event (Automation World Seoul) that took place before the research window of 2026-03-05 to 2026-03-06."
+        }
+      ]
+    },
+    {
+      "url": "https://www.nature.com/articles/s43587-026-01094-2",
+      "anchor_text": "melhora cognição em modelo de Alzheimer",
+      "claim": "o metabólito PEP...melhora cognição em modelo de Alzheimer",
+      "flags": [
+        {
+          "type": "unsupported",
+          "severity": "warning",
+          "detail": "This Nature Aging News & Views piece mentions 'inflammaging and neurodegeneration' in the context of PEP and cGAS, but does not mention Alzheimer's disease or cognition improvement in any animal model. The primary research article (s43587-026-01087-1) also doesn't mention Alzheimer's in its fetched abstract."
+        }
+      ]
+    },
+    {
+      "url": "https://www.gov.uk/government/news/government-to-create-new-lab-to-keep-uk-in-the-fast-lane-on-ai-breakthroughs",
+      "anchor_text": "laboratório de IA fundamental de £40 milhões",
+      "claim": "o UK lançou um laboratório de IA fundamental de £40 milhões chefiado por Raia Hadsell do DeepMind",
+      "flags": [
+        {
+          "type": "unsupported",
+          "severity": "warning",
+          "detail": "GOV.UK source confirms the £40M Fundamental AI Research Lab but does not mention Raia Hadsell or DeepMind as heading the lab."
+        },
+        {
+          "type": "outside_window",
+          "severity": "warning",
+          "detail": "Published 4 March 2026, before the research window of 2026-03-05 to 2026-03-06."
+        }
+      ]
+    },
+    {
+      "url": "https://capacityglobal.com/news/uk-launches-40m-moonshot-ai-lab-to-challenge-the-us-and-china/",
+      "anchor_text": "estratégia de £1,6 bilhão em IA soberana",
+      "claim": "parte de uma estratégia de £1,6 bilhão em IA soberana",
+      "flags": [
+        {
+          "type": "unsupported",
+          "severity": "warning",
+          "detail": "Capacity Global source discusses the £40M lab but does not mention a £1.6 billion sovereign AI strategy in the fetched content."
+        }
+      ]
+    }
+  ],
+  "date": "2026-03-06",
+  "window": "2026-03-05 10:00 → 2026-03-06 10:00 BRT",
+  "urls_audited": 39,
+  "urls_flagged": 23
+};
+const DATA_REWRITE  = null;
+const DATA_REVIEWED = [];
+const REVIEWED_PATH = '/Users/guilherme/ai-newsletter/pipeline/output/2026-03-06/audit-reviewed.json';
+
+// --- Normalize key_facts: handle both string[] and {fact, source_url}[] ---
+DATA_RESEARCH.stories.forEach(story => {
+  story.key_facts = (story.key_facts || []).map(f =>
+    typeof f === 'string' ? { fact: f } : f
+  );
+});
+
+// --- Build URL → story index for cross-linking ---
+const urlToStoryIdx = {};
+DATA_RESEARCH.stories.forEach((story, idx) => {
+  (story.sources || []).forEach(s => { urlToStoryIdx[s.url] = idx; });
+  story.key_facts.forEach(f => { if (f.source_url) urlToStoryIdx[f.source_url] = idx; });
+});
+
+// --- Build URL → audit flags ---
+const urlToAudit = {};
+if (DATA_AUDIT && DATA_AUDIT.issues) {
+  DATA_AUDIT.issues.forEach(issue => {
+    urlToAudit[issue.url] = issue;
+  });
+}
+
+// --- Reviewed state (localStorage + file) ---
+const REVIEW_KEY = 'audit-reviewed-2026-03-06';
+// Merge file-persisted reviewed URLs with localStorage
+const fileReviewed = Array.isArray(DATA_REVIEWED) ? DATA_REVIEWED : [];
+const localReviewed = JSON.parse(localStorage.getItem(REVIEW_KEY) || '[]');
+let reviewedUrls = new Set([...fileReviewed, ...localReviewed]);
+let dirty = false; // true when reviewed state differs from saved file
+
+function saveReviewed() {
+  localStorage.setItem(REVIEW_KEY, JSON.stringify([...reviewedUrls]));
+  // Check if state differs from what was loaded from file
+  const current = [...reviewedUrls].sort();
+  const fromFile = [...fileReviewed].sort();
+  dirty = JSON.stringify(current) !== JSON.stringify(fromFile);
+  updateSaveBtn();
+}
+
+function toggleReviewed(url) {
+  if (reviewedUrls.has(url)) {
+    reviewedUrls.delete(url);
+  } else {
+    reviewedUrls.add(url);
+  }
+  saveReviewed();
+  applyReviewedState();
+  updateStats();
+}
+
+function applyReviewedState() {
+  document.querySelectorAll('.article-content a[data-audit-url]').forEach(a => {
+    const url = a.dataset.auditUrl;
+    a.classList.toggle('audit-reviewed', reviewedUrls.has(url));
+  });
+  document.querySelectorAll('.audit-item[data-url]').forEach(item => {
+    item.classList.toggle('reviewed', reviewedUrls.has(item.dataset.url));
+  });
+}
+
+// --- Save button ---
+const saveBtn = document.getElementById('save-btn');
+
+function updateSaveBtn() {
+  saveBtn.style.display = dirty ? 'inline-block' : 'none';
+}
+
+saveBtn.addEventListener('click', () => {
+  const data = JSON.stringify([...reviewedUrls].sort(), null, 2);
+  const blob = new Blob([data + '\n'], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'audit-reviewed.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
+  // Also copy a move command to clipboard for convenience
+  const cmd = 'mv ~/Downloads/audit-reviewed.json ' + REVIEWED_PATH;
+  navigator.clipboard.writeText(cmd).then(() => {
+    saveBtn.textContent = 'Saved! (mv command copied)';
+    dirty = false;
+    setTimeout(() => { saveBtn.textContent = 'Save'; updateSaveBtn(); }, 3000);
+  }).catch(() => {
+    saveBtn.textContent = 'Downloaded!';
+    dirty = false;
+    setTimeout(() => { saveBtn.textContent = 'Save'; updateSaveBtn(); }, 3000);
+  });
+});
+
+// --- Stats ---
+const storyCount = DATA_RESEARCH.stories.length;
+const sourceCount = DATA_RESEARCH.stories.reduce((n, s) => n + (s.sources || []).length, 0);
+const flagCount = DATA_AUDIT ? (DATA_AUDIT.issues || []).length : 0;
+
+function updateStats() {
+  const reviewed = reviewedUrls.size;
+  const open = flagCount - reviewed;
+  document.getElementById('stat-stories').innerHTML = '<b>' + storyCount + '</b> stories';
+  document.getElementById('stat-sources').innerHTML = '<b>' + sourceCount + '</b> sources';
+  document.getElementById('stat-flags').innerHTML = '<b>' + open + '</b> flags' + (reviewed ? ' <span style="color:#666">(' + reviewed + ' reviewed)</span>' : '');
+}
+updateStats();
+
+// --- Research cards ---
+function renderResearchCards() {
+  const container = document.getElementById('research-cards');
+  DATA_RESEARCH.stories.forEach((story, idx) => {
+    const card = document.createElement('div');
+    card.className = 'story-card';
+    card.dataset.storyIdx = idx;
+
+    // Collect URLs for this story
+    const storyUrls = new Set();
+    (story.sources || []).forEach(s => storyUrls.add(s.url));
+    (story.key_facts || []).forEach(f => { if (f.source_url) storyUrls.add(f.source_url); });
+    card.dataset.urls = JSON.stringify([...storyUrls]);
+
+    const categories = (story.category || []).map(c =>
+      '<span class="category-tag">' + escHtml(c) + '</span>'
+    ).join('');
+
+    const facts = (story.key_facts || []).map(f =>
+      '<li>' + escHtml(f.fact) + '</li>'
+    ).join('');
+
+    const sources = (story.sources || []).map(s =>
+      '<li><a href="' + escHtml(s.url) + '" target="_blank">' + escHtml(s.title || s.url) + '</a> <span class="source-outlet">' + escHtml(s.outlet || '') + '</span></li>'
+    ).join('');
+
+    card.innerHTML =
+      '<div class="story-card-head">' +
+        '<h3>' + escHtml(story.headline) + '</h3>' +
+        '<span class="toggle"></span>' +
+      '</div>' +
+      '<div class="story-card-body">' +
+        (categories ? '<div class="story-categories">' + categories + '</div>' : '') +
+        (facts ? '<div><strong style="font-size:0.75rem;color:#888">Key facts</strong><ul class="fact-list">' + facts + '</ul></div>' : '') +
+        (sources ? '<div style="margin-top:0.5rem"><strong style="font-size:0.75rem;color:#888">Sources</strong><ul class="source-list">' + sources + '</ul></div>' : '') +
+      '</div>';
+
+    // Toggle expand
+    card.querySelector('.story-card-head').addEventListener('click', (e) => {
+      e.stopPropagation();
+      card.classList.toggle('open');
+    });
+
+    // Click card → highlight article paragraphs
+    card.addEventListener('click', () => {
+      highlightArticleByStory(idx);
+    });
+
+    container.appendChild(card);
+  });
+}
+
+// --- Article rendering ---
+function renderArticle() {
+  // Strip YAML frontmatter
+  let md = DATA_ARTICLE;
+  const fmMatch = md.match(/^---\n[\s\S]*?\n---\n/);
+  if (fmMatch) md = md.slice(fmMatch[0].length);
+
+  // Fallback if marked.js didn't load from CDN
+  const html = (typeof marked !== 'undefined')
+    ? marked.parse(md)
+    : '<pre style="white-space:pre-wrap;font-family:inherit">' + escHtml(md) + '</pre>';
+  document.getElementById('article-content').innerHTML = html;
+
+  // Annotate audited links
+  document.querySelectorAll('.article-content a').forEach(a => {
+    const href = a.getAttribute('href');
+    if (urlToAudit[href]) {
+      const issue = urlToAudit[href];
+      const firstFlag = issue.flags[0];
+      a.classList.add('audit-' + firstFlag.type);
+      a.dataset.auditUrl = href;
+    }
+
+    // Make article links clickable → scroll to research card
+    a.addEventListener('click', (e) => {
+      if (urlToStoryIdx[href] !== undefined) {
+        e.preventDefault();
+        scrollToStoryCard(urlToStoryIdx[href]);
+      }
+    });
+  });
+}
+
+// --- Audit tooltip ---
+const tooltip = document.getElementById('audit-tooltip');
+let tooltipTarget = null;
+let tooltipHovered = false;
+
+function showTooltip(link) {
+  const url = link.dataset.auditUrl;
+  const issue = urlToAudit[url];
+  if (!issue) return;
+
+  const isReviewed = reviewedUrls.has(url);
+
+  const flagsHtml = issue.flags.map(f =>
+    '<div><span class="flag-type ' + f.type + '">' + f.type.replace('_', ' ') + '</span></div>' +
+    '<p style="margin:0.3rem 0 0.5rem">' + escHtml(f.detail) + '</p>'
+  ).join('');
+
+  const btnLabel = isReviewed ? 'Undo review' : 'Mark reviewed';
+
+  tooltip.innerHTML =
+    '<div style="margin-bottom:0.3rem;font-size:0.7rem;color:#888;word-break:break-all">' + escHtml(issue.url) + '</div>' +
+    flagsHtml +
+    '<button class="review-btn" data-review-url="' + escHtml(url) + '">' + btnLabel + '</button>';
+
+  const rect = link.getBoundingClientRect();
+  tooltip.style.left = Math.min(rect.left, window.innerWidth - 420) + 'px';
+  tooltip.style.top = (rect.bottom + 8) + 'px';
+  tooltip.classList.add('visible');
+  tooltipTarget = link;
+}
+
+function hideTooltip() {
+  // Small delay so mouse can travel from link to tooltip
+  setTimeout(() => {
+    if (!tooltipHovered) {
+      tooltip.classList.remove('visible');
+      tooltipTarget = null;
+    }
+  }, 100);
+}
+
+document.addEventListener('mouseover', (e) => {
+  const link = e.target.closest('a[data-audit-url]');
+  if (link) {
+    showTooltip(link);
+    return;
+  }
+  if (e.target.closest('.audit-tooltip')) {
+    tooltipHovered = true;
+  }
+});
+
+document.addEventListener('mouseout', (e) => {
+  if (e.target.closest('.audit-tooltip')) {
+    tooltipHovered = false;
+    hideTooltip();
+    return;
+  }
+  const link = e.target.closest('a[data-audit-url]');
+  if (link && link === tooltipTarget) {
+    tooltipHovered = false;
+    hideTooltip();
+  }
+});
+
+// Review button click inside tooltip
+tooltip.addEventListener('click', (e) => {
+  const btn = e.target.closest('.review-btn');
+  if (!btn) return;
+  e.stopPropagation();
+  const url = btn.dataset.reviewUrl;
+  toggleReviewed(url);
+  // Re-render tooltip to update button label
+  if (tooltipTarget) showTooltip(tooltipTarget);
+});
+
+// --- Cross-linking: story → article paragraphs ---
+function highlightArticleByStory(storyIdx) {
+  // Clear previous highlights
+  document.querySelectorAll('.article-content p.highlight-para').forEach(p => {
+    p.classList.remove('highlight-para');
+  });
+  document.querySelectorAll('.story-card.highlighted').forEach(c => {
+    c.classList.remove('highlighted');
+  });
+
+  // Highlight clicked card
+  const card = document.querySelector('.story-card[data-story-idx="' + storyIdx + '"]');
+  if (card) card.classList.add('highlighted');
+
+  // Find story URLs
+  const story = DATA_RESEARCH.stories[storyIdx];
+  const storyUrls = new Set();
+  (story.sources || []).forEach(s => storyUrls.add(s.url));
+  (story.key_facts || []).forEach(f => { if (f.source_url) storyUrls.add(f.source_url); });
+
+  // Find paragraphs containing links to those URLs
+  let firstMatch = null;
+  document.querySelectorAll('.article-content p').forEach(p => {
+    const links = p.querySelectorAll('a');
+    for (const a of links) {
+      if (storyUrls.has(a.getAttribute('href'))) {
+        p.classList.add('highlight-para');
+        if (!firstMatch) firstMatch = p;
+        break;
+      }
+    }
+  });
+
+  // Scroll article to first match
+  if (firstMatch) {
+    // On mobile, switch to article tab
+    activateTab('article');
+    firstMatch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
+// --- Cross-linking: article link → research card ---
+function scrollToStoryCard(storyIdx) {
+  // On mobile, switch to research tab
+  activateTab('research');
+
+  const card = document.querySelector('.story-card[data-story-idx="' + storyIdx + '"]');
+  if (!card) return;
+
+  // Clear previous highlights
+  document.querySelectorAll('.story-card.highlighted').forEach(c => c.classList.remove('highlighted'));
+  card.classList.add('highlighted');
+  card.classList.add('open');
+  card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// --- Right column tabs ---
+document.querySelectorAll('.right-tabs button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.right-tabs button').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.right-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + btn.dataset.panel).classList.add('active');
+  });
+});
+
+// --- Audit findings list ---
+function renderAuditList() {
+  const container = document.getElementById('audit-list');
+  if (!DATA_AUDIT || !DATA_AUDIT.issues || DATA_AUDIT.issues.length === 0) {
+    container.innerHTML = '<div class="audit-empty">No audit findings</div>';
+    return;
+  }
+
+  DATA_AUDIT.issues.forEach(issue => {
+    const item = document.createElement('div');
+    item.className = 'audit-item' + (reviewedUrls.has(issue.url) ? ' reviewed' : '');
+    item.dataset.url = issue.url;
+
+    const flagBadges = issue.flags.map(f =>
+      '<span class="flag-type ' + f.type + '">' + f.type.replace('_', ' ') + '</span>'
+    ).join(' ');
+
+    item.innerHTML =
+      '<div class="audit-item-head">' +
+        '<span class="anchor-text">' + escHtml(issue.anchor_text) + '</span>' +
+        '<span class="review-toggle">&#10003;</span>' +
+      '</div>' +
+      '<div style="margin-top:0.3rem">' + flagBadges + '</div>' +
+      '<div class="claim-text">' + escHtml(issue.claim) + '</div>' +
+      '<div class="detail-text">' + issue.flags.map(f => escHtml(f.detail)).join(' ') + '</div>';
+
+    // Click anchor text → scroll to link in article
+    item.querySelector('.anchor-text').addEventListener('click', (e) => {
+      e.stopPropagation();
+      const articleLink = document.querySelector('.article-content a[data-audit-url="' + CSS.escape(issue.url) + '"]');
+      if (articleLink) {
+        activateTab('article');
+        // Highlight the parent paragraph
+        document.querySelectorAll('.article-content p.highlight-para').forEach(p => p.classList.remove('highlight-para'));
+        const para = articleLink.closest('p');
+        if (para) para.classList.add('highlight-para');
+        articleLink.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+
+    // Click checkbox → toggle reviewed
+    item.querySelector('.review-toggle').addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleReviewed(issue.url);
+    });
+
+    container.appendChild(item);
+  });
+}
+
+// --- Rewrite column ---
+function renderRewrite() {
+  const container = document.getElementById('rewrite-content');
+  if (!DATA_REWRITE) {
+    container.innerHTML = '<div class="rewrite-empty">No rewrite yet</div>';
+    return;
+  }
+
+  // Strip frontmatter from both
+  function stripFm(text) {
+    const m = text.match(/^---\n[\s\S]*?\n---\n/);
+    return m ? text.slice(m[0].length).trim() : text.trim();
+  }
+
+  const original = stripFm(DATA_ARTICLE);
+  const rewritten = stripFm(DATA_REWRITE);
+
+  if (typeof Diff === 'undefined') {
+    container.innerHTML = '<div class="rewrite-empty">Diff library not loaded</div>';
+    return;
+  }
+  const diff = Diff.diffWords(original, rewritten);
+  let html = '<div class="diff-content" style="font-size:0.9rem">';
+  diff.forEach(part => {
+    if (part.added) {
+      html += '<ins>' + escHtml(part.value) + '</ins>';
+    } else if (part.removed) {
+      html += '<del>' + escHtml(part.value) + '</del>';
+    } else {
+      html += escHtml(part.value);
+    }
+  });
+  html += '</div>';
+  container.innerHTML = html;
+}
+
+// --- Mobile tabs ---
+function activateTab(name) {
+  // Only on mobile
+  if (window.innerWidth > 900) return;
+  document.querySelectorAll('.tab-bar button').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.col === name);
+  });
+  document.querySelectorAll('.col').forEach(col => {
+    col.classList.toggle('active', col.id === 'col-' + name);
+  });
+}
+
+document.querySelectorAll('.tab-bar button').forEach(btn => {
+  btn.addEventListener('click', () => activateTab(btn.dataset.col));
+});
+
+// --- Util ---
+function escHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+// --- Init (each step isolated so one failure doesn't kill the rest) ---
+[renderResearchCards, renderArticle, renderAuditList, applyReviewedState, renderRewrite].forEach(fn => {
+  try { fn(); } catch(e) { console.error(fn.name + ':', e); }
+});
+</script>
+</body>
+</html>

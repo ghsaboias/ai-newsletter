@@ -1,0 +1,344 @@
+{
+  "stories": [
+    {
+      "id": "nvidia-nemotron-3-super-120b-agentic-model",
+      "headline": "NVIDIA releases Nemotron 3 Super, a 120B open model with 5x throughput for agentic AI",
+      "key_facts": [
+        {
+          "fact": "NVIDIA released Nemotron 3 Super on March 11, a 120-billion-parameter open model with only 12 billion active parameters, designed specifically for multi-agent AI systems. Weights, training data, and fine-tuning recipes are all published on Hugging Face.",
+          "source_url": "https://developer.nvidia.com/blog/introducing-nemotron-3-super-an-open-hybrid-mamba-transformer-moe-for-agentic-reasoning/",
+          "excerpt": "Today, we are releasing Nemotron 3 Super to address these limitations. The new Super model is a 120B total, 12B active-parameter model that delivers maximum compute efficiency and accuracy for complex multi-agent applications."
+        },
+        {
+          "fact": "The model uses a hybrid architecture combining Mamba-2 state-space layers, Transformer attention layers, and a latent Mixture-of-Experts (LatentMoE) routing system, delivering over 5x throughput compared to the previous Nemotron Super and a native 1M-token context window.",
+          "source_url": "https://developer.nvidia.com/blog/introducing-nemotron-3-super-an-open-hybrid-mamba-transformer-moe-for-agentic-reasoning/",
+          "excerpt": "Super addresses the 'thinking tax' with its hybrid mixture-of-experts (MoE) architecture. It delivers over 5x throughput than the previous Nemotron Super. This model tackles the 'context explosion' with a native 1M-token context window."
+        },
+        {
+          "fact": "NVIDIA framed the model as solving two key problems in multi-agent systems: 'context explosion' (agents generating up to 15x more tokens than standard chat) and the 'thinking tax' (using large reasoning models for every subtask being too expensive).",
+          "source_url": "https://blogs.nvidia.com/blog/nemotron-3-super-agentic-ai",
+          "excerpt": "Multi-agent workflows generate up to 15x more tokens than standard chat because each interaction requires resending full histories, including tool outputs and intermediate reasoning... Complex agents must reason at every step, but using large models for every subtask makes multi-agent applications too expensive."
+        },
+        {
+          "fact": "The model was pretrained on 25 trillion tokens (10 trillion unique curated), with additional training on 10 billion reasoning tokens and 15 million coding problems. It scored 85.6% on PinchBench and 91.75% on RULER@1M for long-context evaluation.",
+          "source_url": "https://developer.nvidia.com/blog/introducing-nemotron-3-super-an-open-hybrid-mamba-transformer-moe-for-agentic-reasoning/",
+          "excerpt": "Pretraining tokens: 25 trillion total seen (10 trillion unique curated). Score: 85.6% across full test suite on PinchBench. 91.75% on RULER@1M vs 22.30% for GPT-OSS-120B."
+        },
+        {
+          "fact": "Launch partners include Perplexity (for search and its Computer product), software development agents CodeRabbit, Factory and Greptile, enterprise platforms Palantir, Cadence, Dassault Systemes and Siemens, and life sciences firms Edison Scientific and Lila Sciences.",
+          "source_url": "https://blogs.nvidia.com/blog/nemotron-3-super-agentic-ai",
+          "excerpt": "Perplexity offers its users access to Nemotron 3 Super for search and as one of 20 orchestrated models in Computer. Companies offering software development agents like CodeRabbit, Factory and Greptile are integrating the model. Enterprise Software Platforms: Industry leaders such as Amdocs, Palantir, Cadence, Dassault Systèmes and Siemens are deploying and customizing the model."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://developer.nvidia.com/blog/introducing-nemotron-3-super-an-open-hybrid-mamba-transformer-moe-for-agentic-reasoning/",
+          "outlet": "NVIDIA Technical Blog",
+          "title": "Introducing Nemotron 3 Super: An Open Hybrid Mamba-Transformer MoE for Agentic Reasoning",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://blogs.nvidia.com/blog/nemotron-3-super-agentic-ai",
+          "outlet": "NVIDIA Blog",
+          "title": "New NVIDIA Nemotron 3 Super Delivers 5x Higher Throughput for Agentic AI",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://awesomeagents.ai/news/nvidia-nemotron-3-super-120b-agentic-ai/",
+          "outlet": "Awesome Agents",
+          "title": "NVIDIA Ships Nemotron 3 Super - 120B Open Model for Agents",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology"],
+      "entities": {
+        "organizations": ["NVIDIA", "Perplexity", "Palantir", "CodeRabbit", "Cadence", "Dassault Systèmes", "Siemens"],
+        "people": ["Bryan Catanzaro"],
+        "places": []
+      }
+    },
+    {
+      "id": "anthropic-claude-interactive-inline-visualizations",
+      "headline": "Anthropic adds interactive charts, diagrams and visualizations to Claude responses",
+      "key_facts": [
+        {
+          "fact": "On March 12, Anthropic rolled out inline visualization support for Claude, enabling it to generate interactive charts, diagrams, and other custom visualizations directly within conversation responses rather than relying solely on text.",
+          "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+          "excerpt": "March 12, 2026 — Claude creates interactive charts, diagrams and visualizations. Claude can now create custom charts, diagrams and other visualizations in-line in its responses."
+        },
+        {
+          "fact": "The feature builds on 'Imagine with Claude,' an experimental tool previewed last year that lets users create interactive software in real time. The new inline visuals work directly in chat without requiring separate tools or workflows.",
+          "source_url": "https://www.digitaltrends.com/computing/claudes-responses-get-interactive-inline-visuals-to-help-you-understand-complex-topics-faster/",
+          "excerpt": "According to Anthropic, the new feature builds on Imagine with Claude. Previewed last year, this experimental tool lets users create interactive software in real time."
+        },
+        {
+          "fact": "Claude can now generate spending dashboards, monthly recaps, category breakdowns, and data cleanup suggestions all within a single conversation, turning complex data into interactive visual outputs without external tools.",
+          "source_url": "https://techtiff.substack.com/p/claude-interactive-visuals-guide",
+          "excerpt": "The spending dashboard Claude built from my spreadsheet did not require a tutorial, a separate tool, or a new workflow. Monthly recaps, category breakdowns, cleanup suggestions, and one very specific callout about my taco situation. All of it, inside one conversation."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://support.claude.com/en/articles/12138966-release-notes",
+          "outlet": "Claude Help Center",
+          "title": "Release notes",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.digitaltrends.com/computing/claudes-responses-get-interactive-inline-visuals-to-help-you-understand-complex-topics-faster/",
+          "outlet": "Digital Trends",
+          "title": "Claude's responses get interactive inline visuals to help you understand complex topics faster",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://techtiff.substack.com/p/claude-interactive-visuals-guide",
+          "outlet": "TechTiff / Substack",
+          "title": "Claude is Tired of Talking: Testing Claude's New Visual Features",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "blog_post"
+        }
+      ],
+      "category": ["technology"],
+      "entities": {
+        "organizations": ["Anthropic"],
+        "people": [],
+        "places": []
+      }
+    },
+    {
+      "id": "replit-400m-series-d-9b-valuation",
+      "headline": "Replit raises $400M Series D at $9B valuation to scale AI agent-driven software creation",
+      "key_facts": [
+        {
+          "fact": "Georgian led a $400 million Series D investment in Replit, valuing the company at $9 billion. The round included G Squared, Prysm Capital, Coatue, Andreessen Horowitz (a16z), Craft Ventures, Y Combinator, Accenture Ventures, Okta Ventures, and Databricks Ventures.",
+          "source_url": "https://www.prnewswire.com/news-releases/georgian-leads-400m-series-d-investment-in-replit-to-support-continued-investment-in-replit-agent-302711218.html",
+          "excerpt": "Georgian, a growth-stage B2B investor, today announced it has led a $400 million Series D investment in Replit, valuing the company at $9 billion."
+        },
+        {
+          "fact": "Replit now has over 50 million users, with users from over 85% of Fortune 500 companies building on the platform. Enterprise clients include Zillow, Labcorp, Atlassian, PayPal, and Adobe.",
+          "source_url": "https://www.prnewswire.com/news-releases/georgian-leads-400m-series-d-investment-in-replit-to-support-continued-investment-in-replit-agent-302711218.html",
+          "excerpt": "50+ million users. Enterprise clients include Zillow, Labcorp, Atlassian, PayPal, and Adobe. Users from over 85% of Fortune 500 companies build on Replit."
+        },
+        {
+          "fact": "The investment will accelerate development of Replit Agent 4, which combines design and code within a unified environment, supporting the company's vision of 'prompt-to-production' AI-powered software creation.",
+          "source_url": "https://www.prnewswire.com/news-releases/georgian-leads-400m-series-d-investment-in-replit-to-support-continued-investment-in-replit-agent-302711218.html",
+          "excerpt": "Follow-on financing values the company at $9B showing market conviction in the emerging 'prompt-to-production' era of AI-powered software."
+        },
+        {
+          "fact": "CEO Amjad Masad stated: 'Every human with an idea and an Internet connection should be able to build any app they want.' Georgian's Margaret Wu said: 'Software creation is expanding beyond traditional developers and Replit has built a platform that allows people to move from idea to production.'",
+          "source_url": "https://www.prnewswire.com/news-releases/georgian-leads-400m-series-d-investment-in-replit-to-support-continued-investment-in-replit-agent-302711218.html",
+          "excerpt": "Amjad Masad, Replit CEO: 'Every human with an idea and an Internet connection should be able to build any app they want.' Margaret Wu, Georgian: 'Software creation is expanding beyond traditional developers and Replit has built a platform that allows people to move from idea to production.'"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/georgian-leads-400m-series-d-investment-in-replit-to-support-continued-investment-in-replit-agent-302711218.html",
+          "outlet": "PR Newswire / Georgian",
+          "title": "Georgian Leads $400M Series D Investment in Replit to Support Continued Investment in Replit Agent",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "press_release"
+        }
+      ],
+      "category": ["technology", "business"],
+      "entities": {
+        "organizations": ["Replit", "Georgian", "Andreessen Horowitz", "G Squared", "Coatue", "Y Combinator"],
+        "people": ["Amjad Masad", "Margaret Wu"],
+        "places": []
+      }
+    },
+    {
+      "id": "zendesk-acquires-forethought-agentic-customer-service",
+      "headline": "Zendesk acquires agentic AI startup Forethought to automate customer service",
+      "key_facts": [
+        {
+          "fact": "Zendesk announced the acquisition of Forethought, an AI startup that builds software to automate customer service interactions using autonomous agents, on March 11. The deal is expected to close by end of March.",
+          "source_url": "https://techcrunch.com/2026/03/11/zendesk-acquires-agentic-customer-service-startup-forethought/",
+          "excerpt": "Zendesk is acquiring Forethought, a company that builds software to automate customer service interactions, the companies announced on Wednesday. The deal is expected to close by the end of March."
+        },
+        {
+          "fact": "Forethought was the 2018 winner of TechCrunch Battlefield, positioning it as a pioneer in AI-driven customer service automation years before ChatGPT launched in late 2022.",
+          "source_url": "https://techcrunch.com/2026/03/11/zendesk-acquires-agentic-customer-service-startup-forethought/",
+          "excerpt": "Forethought was years ahead of its time. In fact, it was the 2018 winner of TechCrunch Battlefield, our iconic startup pitch competition. For context, ChatGPT didn't launch until late 2022."
+        },
+        {
+          "fact": "Forethought had landed marquee customers including Upwork, Grammarly, Airtable, and Datadog, and by 2025 was supporting enterprise-scale customer service automation.",
+          "source_url": "https://techcrunch.com/2026/03/11/zendesk-acquires-agentic-customer-service-startup-forethought/",
+          "excerpt": "Following its Battlefield win, Forethought landed marquee customers like Upwork, Grammarly, Airtable, and Datadog."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/03/11/zendesk-acquires-agentic-customer-service-startup-forethought/",
+          "outlet": "TechCrunch",
+          "title": "Zendesk acquires agentic customer service startup Forethought",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology", "business"],
+      "entities": {
+        "organizations": ["Zendesk", "Forethought", "Upwork", "Grammarly", "Airtable", "Datadog"],
+        "people": [],
+        "places": []
+      }
+    },
+    {
+      "id": "google-maps-ask-maps-gemini-conversational",
+      "headline": "Google launches Gemini-powered 'Ask Maps' conversational feature for 2B+ Maps users",
+      "key_facts": [
+        {
+          "fact": "Google launched 'Ask Maps' on March 12, a Gemini-powered conversational feature in Google Maps that lets users ask complex natural language questions about locations and receive personalized recommendations, rolling out on mobile in the US and India.",
+          "source_url": "https://blog.google/products-and-platforms/products/maps/ask-maps-immersive-navigation/",
+          "excerpt": "Ask Maps answers your real-world questions with a conversation. Rolling out now in the U.S. and India on Android and iOS."
+        },
+        {
+          "fact": "Gemini's recommendations draw upon a database of more than 300 million places and reviews from more than 500 million contributors. Google executives declined to say whether ads will eventually appear in Ask Maps results.",
+          "source_url": "https://www.wsmv.com/2026/03/12/google-unveils-major-changes-its-maps-app/",
+          "excerpt": "Gemini's recommendations will draw upon a database spanning more than 300 million places and reviews from more than 500 million contributors. Google executives declined to answer a question about whether the company eventually plans to sell ads."
+        },
+        {
+          "fact": "Google also launched 'Immersive Navigation,' a Gemini-generated 3D view that includes landmarks, medians, and terrain details for a more intuitive driving experience, described as the biggest change to Maps driving directions ever.",
+          "source_url": "https://techcrunch.com/2026/03/12/google-maps-is-getting-an-ai-ask-maps-feature-and-upgraded-immersive-navigation/",
+          "excerpt": "Google announced on Thursday that Google Maps is introducing a Gemini-powered conversational 'Ask Maps' feature along with an updated 'Immersive Navigation' experience that brings a 3D view, road details, natural voice guidance."
+        },
+        {
+          "fact": "Google Maps is used by more than 2 billion people worldwide. Users cannot opt out of Ask Maps, which appears as the first tab in the app, following Google's strategy of embedding Gemini across all its products.",
+          "source_url": "https://www.wired.com/story/google-maps-ask-maps-gemini-powered-tool/",
+          "excerpt": "You can't opt out of Ask Maps or hide it, just like many of the new AI features from Google. Ask Maps appears as the first tab."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://blog.google/products-and-platforms/products/maps/ask-maps-immersive-navigation/",
+          "outlet": "Google Blog",
+          "title": "How we're reimagining Maps with Gemini",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://techcrunch.com/2026/03/12/google-maps-is-getting-an-ai-ask-maps-feature-and-upgraded-immersive-navigation/",
+          "outlet": "TechCrunch",
+          "title": "Google Maps is getting an AI 'Ask Maps' feature and upgraded 'immersive' navigation",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.wired.com/story/google-maps-ask-maps-gemini-powered-tool/",
+          "outlet": "Wired",
+          "title": "Google Maps Gets Chatty With a New Gemini-Powered Interface",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.wsmv.com/2026/03/12/google-unveils-major-changes-its-maps-app/",
+          "outlet": "AP / WSMV",
+          "title": "Google unveils major changes to its Maps app",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology"],
+      "entities": {
+        "organizations": ["Google", "Google DeepMind"],
+        "people": ["Miriam Daniel"],
+        "places": ["United States", "India"]
+      }
+    },
+    {
+      "id": "kai-cyber-125m-agent-driven-security",
+      "headline": "Cybersecurity startup Kai raises $125M at launch to build autonomous AI security agents",
+      "key_facts": [
+        {
+          "fact": "Kai Cyber launched on March 11 with $125 million in funding to develop an AI-driven cybersecurity platform that uses autonomous agents to monitor, analyze, and defend enterprise environments without continuous human intervention.",
+          "source_url": "https://siliconangle.com/2026/03/11/cybersecurity-startup-kai-raises-125m-build-agent-driven-ai-security-platform/",
+          "excerpt": "Cybersecurity startup Kai Cyber Inc. today launched with an announcement that it has raised $125 million in new funding to develop and scale up its platform."
+        },
+        {
+          "fact": "Kai was founded in 2025 by Galina Antova (co-founder of industrial cybersecurity firm Claroty) and Damiano Bolzoni (co-founder of SecurityMatter). CEO Antova said: 'Cybersecurity is quickly becoming a contest between AI systems.'",
+          "source_url": "https://siliconangle.com/2026/03/11/cybersecurity-startup-kai-raises-125m-build-agent-driven-ai-security-platform/",
+          "excerpt": "Founded in 2025 by Galina Antova, a co-founder of industrial cybersecurity company Claroty Ltd., and Damiano Bolzoni, a co-founder of SecurityMatter Ltd. Antova said: 'Cybersecurity is quickly becoming a contest between AI systems.'"
+        },
+        {
+          "fact": "Evolution Equity Partners led the seed and Series A round, with N47 Ventures participating. Despite just launching, Kai has signed multiple large enterprise customers across energy, pharma, automotive, and hospitality, generating over seven figures in bookings.",
+          "source_url": "https://siliconangle.com/2026/03/11/cybersecurity-startup-kai-raises-125m-build-agent-driven-ai-security-platform/",
+          "excerpt": "Evolution Equity Partners led the seed and Series A round, with N47 Ventures and unnamed strategic investors participating. Kai has already signed multiple large enterprise customers across energy, pharmaceuticals, automotive, and hospitality sectors, generating over seven figures in bookings."
+        },
+        {
+          "fact": "The AI agents ingest data from enterprise networks, cloud environments, endpoints, and security tools to detect anomalies and can automatically trigger containment or remediation actions through integrations with existing security infrastructure.",
+          "source_url": "https://siliconangle.com/2026/03/11/cybersecurity-startup-kai-raises-125m-build-agent-driven-ai-security-platform/",
+          "excerpt": "The autonomous agents ingest data from enterprise networks, cloud environments, endpoints, and security tools to detect anomalies, vulnerabilities, and compromise indicators. The system can automatically trigger containment or remediation actions."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://siliconangle.com/2026/03/11/cybersecurity-startup-kai-raises-125m-build-agent-driven-ai-security-platform/",
+          "outlet": "SiliconANGLE",
+          "title": "Cybersecurity startup Kai raises $125M to build agent-driven AI security platform",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology", "business"],
+      "entities": {
+        "organizations": ["Kai Cyber", "Evolution Equity Partners", "Claroty", "SecurityMatter"],
+        "people": ["Galina Antova", "Damiano Bolzoni"],
+        "places": []
+      }
+    },
+    {
+      "id": "bota-saion-ai-autonomous-bio-manufacturing",
+      "headline": "Bota launches SAION AI platform connecting AI reasoning to robotic bio-manufacturing labs",
+      "key_facts": [
+        {
+          "fact": "Bota introduced SAION AI, a software and laboratory platform that connects AI reasoning systems with physical experiments in bio-manufacturing research, operating through cognition, orchestration, and execution layers.",
+          "source_url": "https://techhq.com/news/next-gen-biotechnology-ai-research-robotic-labs-powered/",
+          "excerpt": "Bota has introduced SAION AI, a software and laboratory platform designed to connect AI reasoning systems with the physical experiments taking place in bio-manufacturing research."
+        },
+        {
+          "fact": "The platform includes over 300 scientific tools covering tasks like sequence analysis and experimental design, coordinated by a multi-agent LLM framework that converts AI-generated plans into robotic laboratory instructions using Bota's Biological Protocol Language.",
+          "source_url": "https://techhq.com/news/next-gen-biotechnology-ai-research-robotic-labs-powered/",
+          "excerpt": "The platform includes more than three hundred scientific tools that cover tasks like sequence analysis and experimental design. Converts AI-generated plans into laboratory instructions using Bota's Biological Protocol Language."
+        },
+        {
+          "fact": "SAION AI enables closed-loop experimentation where AI proposes experiments, robotic systems execute them, and results inform subsequent hypotheses, achieving reported 88.2% accuracy on DNA/RNA/protein sequencing reasoning tasks and above 90% on complete research workflows.",
+          "source_url": "https://techhq.com/news/next-gen-biotechnology-ai-research-robotic-labs-powered/",
+          "excerpt": "88.2% accuracy on DNA/RNA/protein sequencing reasoning tasks. Above 90% accuracy on complete research workflows. Closed-loop experimentation where AI proposes experiments, robotic systems execute them, and results inform subsequent hypotheses."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://techhq.com/news/next-gen-biotechnology-ai-research-robotic-labs-powered/",
+          "outlet": "TechHQ",
+          "title": "Next-gen bio-tech research: Robotic labs powered by AI",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology"],
+      "entities": {
+        "organizations": ["Bota"],
+        "people": [],
+        "places": []
+      }
+    }
+  ]
+}

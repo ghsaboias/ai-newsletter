@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Review — 2026-03-02</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/diff/dist/diff.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      color: #1a1a1a;
+      background: #fafafa;
+      line-height: 1.7;
+    }
+
+    /* --- Stats bar --- */
+    .stats-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #1a1a1a;
+      color: #ccc;
+      padding: 0.5rem 1.5rem;
+      font-family: -apple-system, system-ui, sans-serif;
+      font-size: 0.8rem;
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .stats-bar .title {
+      color: #fff;
+      font-weight: 600;
+      margin-right: auto;
+    }
+    .stats-bar .stat { white-space: nowrap; }
+    .stats-bar .stat b { color: #fff; }
+
+    /* --- Date nav --- */
+    .date-nav {
+      display: flex;
+      gap: 0.15rem;
+      align-items: center;
+      margin-right: 0.5rem;
+    }
+    .date-nav a, .date-nav span {
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-variant-numeric: tabular-nums;
+    }
+    .date-nav a {
+      color: #999;
+    }
+    .date-nav a:hover {
+      color: #fff;
+      background: rgba(255,255,255,0.1);
+    }
+    .date-nav span.current {
+      color: #fff;
+      background: #1a5276;
+    }
+
+    /* --- Tabs (mobile) --- */
+    .tab-bar {
+      display: none;
+      position: sticky;
+      top: 33px;
+      z-index: 99;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      font-family: -apple-system, system-ui, sans-serif;
+      font-size: 0.85rem;
+    }
+    .tab-bar button {
+      background: none;
+      border: none;
+      padding: 0.6rem 1rem;
+      cursor: pointer;
+      color: #888;
+      font-family: inherit;
+      font-size: inherit;
+      border-bottom: 2px solid transparent;
+    }
+    .tab-bar button.active {
+      color: #1a5276;
+      border-bottom-color: #1a5276;
+    }
+
+    /* --- Three-column grid --- */
+    .columns {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr 1fr;
+      gap: 0;
+      min-height: calc(100vh - 33px);
+    }
+    .col {
+      padding: 1.5rem;
+      overflow-y: auto;
+      max-height: calc(100vh - 33px);
+      border-right: 1px solid #e5e5e5;
+    }
+    .col:last-child { border-right: none; }
+    .col-header {
+      font-family: -apple-system, system-ui, sans-serif;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    /* --- Research cards --- */
+    .story-card {
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      margin-bottom: 0.75rem;
+      background: #fff;
+      transition: box-shadow 0.15s;
+      cursor: pointer;
+    }
+    .story-card:hover { box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+    .story-card.highlighted {
+      border-color: #1a5276;
+      box-shadow: 0 0 0 2px rgba(26,82,118,0.15);
+    }
+    .story-card-head {
+      padding: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .story-card-head h3 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      line-height: 1.3;
+      flex: 1;
+    }
+    .story-card-head .toggle {
+      font-size: 0.7rem;
+      color: #888;
+      flex-shrink: 0;
+      user-select: none;
+    }
+    .story-card-body {
+      display: none;
+      padding: 0 0.75rem 0.75rem;
+      font-size: 0.8rem;
+    }
+    .story-card.open .story-card-body { display: block; }
+    .story-card.open .toggle::after { content: '▲'; }
+    .story-card .toggle::after { content: '▼'; }
+    .story-categories {
+      display: flex;
+      gap: 0.25rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+    .category-tag {
+      background: #f0f0f0;
+      color: #666;
+      font-family: -apple-system, system-ui, sans-serif;
+      font-size: 0.65rem;
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .fact-list { list-style: none; margin: 0.5rem 0; }
+    .fact-list li {
+      padding: 0.3rem 0;
+      border-bottom: 1px solid #f0f0f0;
+      line-height: 1.4;
+    }
+    .fact-list li:last-child { border-bottom: none; }
+    .source-list {
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+    .source-list li { padding: 0.15rem 0; }
+    .source-list a {
+      color: #1a5276;
+      font-size: 0.75rem;
+      text-decoration: none;
+    }
+    .source-list a:hover { text-decoration: underline; }
+    .source-outlet {
+      color: #888;
+      font-family: -apple-system, system-ui, sans-serif;
+      font-size: 0.65rem;
+    }
+
+    /* --- Article --- */
+    .article-content p {
+      margin-bottom: 1.4rem;
+      font-size: 1rem;
+    }
+    .article-content p:first-of-type {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: #333;
+    }
+    .article-content a {
+      color: #1a5276;
+      text-decoration: underline;
+      text-decoration-color: #aaa;
+      text-underline-offset: 2px;
+    }
+    .article-content a:hover {
+      text-decoration-color: #1a5276;
+    }
+    .article-content h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    /* --- Audit annotations --- */
+    a.audit-unsupported {
+      text-decoration-color: #e67e22 !important;
+      text-decoration-thickness: 2px !important;
+      background: rgba(230,126,34,0.08);
+    }
+    a.audit-contradicted {
+      text-decoration-color: #c0392b !important;
+      text-decoration-thickness: 2px !important;
+      background: rgba(192,57,43,0.08);
+    }
+    a.audit-outside_window {
+      text-decoration-color: #e67e22 !important;
+      text-decoration-style: dashed !important;
+      text-decoration-thickness: 2px !important;
+    }
+    a.audit-source_unavailable {
+      text-decoration-color: #999 !important;
+      text-decoration-style: dotted !important;
+      text-decoration-thickness: 2px !important;
+    }
+
+    /* --- Reviewed (dismissed) audit state --- */
+    a.audit-reviewed {
+      text-decoration-color: #ccc !important;
+      text-decoration-style: solid !important;
+      text-decoration-thickness: 1px !important;
+      background: none !important;
+      opacity: 0.5;
+    }
+
+    /* --- Audit tooltip --- */
+    .audit-tooltip {
+      display: none;
+      position: fixed;
+      z-index: 200;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      max-width: 400px;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      font-family: -apple-system, system-ui, sans-serif;
+    }
+    .audit-tooltip.visible { display: block; }
+    .audit-tooltip .flag-type {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.1rem 0.4rem;
+      border-radius: 3px;
+      margin-bottom: 0.4rem;
+    }
+    .flag-type.unsupported { background: #fdebd0; color: #b7770a; }
+    .flag-type.contradicted { background: #f9d6d0; color: #922b21; }
+    .flag-type.outside_window { background: #fef5e7; color: #b7770a; }
+    .flag-type.source_unavailable { background: #f0f0f0; color: #666; }
+
+    .audit-tooltip .review-btn {
+      display: block;
+      margin-top: 0.5rem;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.7rem;
+      font-family: -apple-system, system-ui, sans-serif;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      background: #fafafa;
+      color: #666;
+      cursor: pointer;
+      text-align: center;
+    }
+    .audit-tooltip .review-btn:hover {
+      background: #f0f0f0;
+      border-color: #bbb;
+    }
+
+    /* --- Paragraph highlight --- */
+    .article-content p.highlight-para {
+      background: rgba(26,82,118,0.06);
+      border-left: 3px solid #1a5276;
+      padding-left: 0.75rem;
+      margin-left: -0.75rem;
+      border-radius: 2px;
+      transition: background 0.3s;
+    }
+
+    /* --- Right column tabs --- */
+    .right-tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    .right-tabs button {
+      background: none;
+      border: none;
+      padding: 0.4rem 0.75rem;
+      font-family: -apple-system, system-ui, sans-serif;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #888;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+    }
+    .right-tabs button.active {
+      color: #1a5276;
+      border-bottom-color: #1a5276;
+    }
+    .right-panel { display: none; }
+    .right-panel.active { display: block; }
+
+    /* --- Audit findings list --- */
+    .audit-item {
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      margin-bottom: 0.6rem;
+      background: #fff;
+      padding: 0.6rem 0.75rem;
+      font-size: 0.8rem;
+      transition: opacity 0.2s, border-color 0.15s;
+      cursor: pointer;
+    }
+    .audit-item:hover {
+      border-color: #ccc;
+    }
+    .audit-item.reviewed {
+      opacity: 0.4;
+    }
+    .audit-item .audit-item-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .audit-item .anchor-text {
+      font-weight: 600;
+      flex: 1;
+      line-height: 1.3;
+      color: #1a5276;
+    }
+    .audit-item .review-toggle {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      border: 1.5px solid #ccc;
+      border-radius: 3px;
+      background: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      color: transparent;
+      transition: all 0.15s;
+    }
+    .audit-item .review-toggle:hover {
+      border-color: #999;
+    }
+    .audit-item.reviewed .review-toggle {
+      background: #1a5276;
+      border-color: #1a5276;
+      color: #fff;
+    }
+    .audit-item .claim-text {
+      margin-top: 0.35rem;
+      color: #555;
+      line-height: 1.4;
+    }
+    .audit-item .detail-text {
+      margin-top: 0.35rem;
+      color: #888;
+      font-size: 0.75rem;
+      line-height: 1.4;
+    }
+    .audit-empty {
+      color: #aaa;
+      font-style: italic;
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+
+    /* --- Rewrite column --- */
+    .rewrite-empty {
+      color: #aaa;
+      font-style: italic;
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+    .diff-content ins {
+      background: #d4edda;
+      text-decoration: none;
+      padding: 0 1px;
+    }
+    .diff-content del {
+      background: #f8d7da;
+      text-decoration: line-through;
+      padding: 0 1px;
+      color: #888;
+    }
+
+    /* --- Mobile --- */
+    @media (max-width: 900px) {
+      .tab-bar { display: flex; }
+      .columns {
+        grid-template-columns: 1fr;
+      }
+      .col { display: none; max-height: none; border-right: none; }
+      .col.active { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="stats-bar">
+  <span class="title">Review</span>
+  <div class="date-nav"><span class="current">03-02</span> <a href="../2026-03-03/review.html">03-03</a> <a href="../2026-03-04/review.html">03-04</a> <a href="../2026-03-05/review.html">03-05</a> <a href="../2026-03-06/review.html">03-06</a> <a href="../2026-03-07/review.html">03-07</a> <a href="../2026-03-08/review.html">03-08</a></div>
+  <span class="stat" id="stat-stories"></span>
+  <span class="stat" id="stat-sources"></span>
+  <span class="stat" id="stat-flags"></span>
+</div>
+
+<div class="tab-bar">
+  <button class="active" data-col="research">Research</button>
+  <button data-col="article">Article</button>
+  <button data-col="rewrite">Audit</button>
+</div>
+
+<div class="columns">
+  <!-- Left: Research -->
+  <div class="col active" id="col-research">
+    <div class="col-header">Research</div>
+    <div id="research-cards"></div>
+  </div>
+
+  <!-- Center: Article -->
+  <div class="col" id="col-article">
+    <div class="col-header">Article</div>
+    <div class="article-content" id="article-content"></div>
+  </div>
+
+  <!-- Right: Audit + Rewrite -->
+  <div class="col" id="col-rewrite">
+    <div class="right-tabs">
+      <button class="active" data-panel="audit">Audit</button>
+      <button data-panel="rewrite">Rewrite</button>
+    </div>
+    <div class="right-panel active" id="panel-audit">
+      <div id="audit-list"></div>
+    </div>
+    <div class="right-panel" id="panel-rewrite">
+      <div id="rewrite-content"></div>
+    </div>
+  </div>
+</div>
+
+<div class="audit-tooltip" id="audit-tooltip"></div>
+
+<script>
+// --- Data (injected by review.sh) ---
+const DATA_RESEARCH = {
+  "date": "2026-03-02",
+  "story_count": 14,
+  "source_count": 42,
+  "stories": [
+    {
+      "id": "iran-war-day-3-trump-timeline",
+      "headline": "Iran war Day 3: Trump says 4-5 weeks, 6 US killed, Kuwait downs 3 US F-15s in friendly fire",
+      "key_facts": [
+        "Trump says Iran operations projected to last 4-5 weeks, has 'capability to go far longer'",
+        "US Central Command confirms 6 US service members killed in action",
+        "Kuwait 'mistakenly shot down' 3 American F-15E Strike Eagles; all 6 crew ejected safely",
+        "Iranian Red Crescent reports at least 555 killed in US-Israeli strikes, including schoolchildren",
+        "Qatar shoots down 2 Iranian Su-24 bombers, 7 ballistic missiles, and 5 drones",
+        "Israel reports 11 killed; Lebanon reports 31+ killed and 149 wounded",
+        "Joint Chiefs Chairman Dan Caine calls operations 'difficult and gritty work'"
+      ],
+      "sources": [
+        {
+          "url": "https://www.aljazeera.com/news/liveblog/2026/3/2/us-israel-attack-iran-live",
+          "outlet": "Al Jazeera",
+          "title": "Iran live news: Trump says war to last 4-5 weeks; Israel under fire",
+          "published_at": "2026-03-02",
+          "image_url": "https://www.aljazeera.com/wp-content/uploads/2026/03/epa_69a5fecfdcc4-1772486351.jpg?resize=1920%2C1440",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/3/2/trump-says-iran-war-projected-to-last-4-to-5-weeks-could-go-far-longer",
+          "outlet": "Al Jazeera",
+          "title": "Trump says Iran war projected to last 4 to 5 weeks, could go 'far longer'",
+          "published_at": "2026-03-02",
+          "image_url": "https://www.aljazeera.com/wp-content/uploads/2026/03/ap_69a5d11c6b1b9-1772474652.jpg?resize=1200%2C630",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.cbsnews.com/news/us-f-15-jets-mistakenly-shot-down-kuwait-riendly-fire-crew-safe/",
+          "outlet": "CBS News",
+          "title": "3 American F-15 jets 'mistakenly shot down' by Kuwait but all crew safe, U.S. military says",
+          "published_at": "2026-03-02",
+          "image_url": "https://assets2.cbsnewsstatic.com/hub/i/r/2026/03/02/843e0734-f6d1-4232-b432-ae76b82d31eb/thumbnail/1200x630g1/6998bd690f2eec2a1be6b8422615a9a1/2026-03-02t100618z-1275163915-rc2awjalvbci-rtrmadp-3-iran-crisis-gulf-kuwait.jpg",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/03/02/us-iran-live-updates-trump-oil-gold.html",
+          "outlet": "CNBC",
+          "title": "US-Iran live updates: Trump says war could last 4-5 weeks",
+          "published_at": "2026-03-02",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["world", "politics"],
+      "entities": {
+        "organizations": ["US Central Command", "US Air Force", "Kuwait Defense Ministry", "Iranian Red Crescent", "Qatar Air Force"],
+        "people": ["Donald Trump", "Dan Caine"],
+        "places": ["Iran", "Kuwait", "Qatar", "Israel", "Lebanon", "UAE", "Bahrain"]
+      }
+    },
+    {
+      "id": "qatarenergy-halts-lng-iran-drones",
+      "headline": "QatarEnergy halts all LNG production after Iranian drone strikes; European gas prices surge 45%",
+      "key_facts": [
+        "QatarEnergy halted LNG production at Ras Laffan after two Iranian drones hit Mesaieed power plant and energy facility",
+        "Qatar supplies approximately 12-14% of Europe's LNG imports",
+        "Dutch TTF benchmark gas price rose 45% to ~EUR46/MWh",
+        "Asian LNG prices jumped approximately 39%",
+        "EU gas storage sits below 30% capacity; Germany at 20.5%, France at 21%",
+        "Satellite data shows oil tanker transit 'virtually halted over the weekend'"
+      ],
+      "sources": [
+        {
+          "url": "https://www.euronews.com/business/2026/03/02/european-gas-prices-jump-by-as-much-as-45-as-qatar-stops-lng-production",
+          "outlet": "Euronews",
+          "title": "European gas prices jump by as much as 45% as Qatar stops LNG production",
+          "published_at": "2026-03-02",
+          "image_url": "https://images.euronews.com/articles/stories/09/67/10/01/1440x810_cmsv2_8b37e21e-18f2-5fda-8170-b7b5b37b4c5c-9671001.jpg",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/03/02/qatars-state-owned-energy-company-halts-lng-production-after-iran-drone-attacks.html",
+          "outlet": "CNBC",
+          "title": "Qatar's state-owned energy company halts LNG production after Iran drone attacks",
+          "published_at": "2026-03-02",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/3/2/qatarenergy-worlds-largest-lng-firm-halts-production-after-iran-attacks",
+          "outlet": "Al Jazeera",
+          "title": "QatarEnergy, world's largest LNG firm, halts production after Iran attacks",
+          "published_at": "2026-03-02",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["economy", "world"],
+      "entities": {
+        "organizations": ["QatarEnergy"],
+        "people": [],
+        "places": ["Qatar", "Ras Laffan", "Mesaieed", "Iran", "Netherlands", "Germany", "France"]
+      }
+    },
+    {
+      "id": "strait-of-hormuz-shipping-crisis",
+      "headline": "Strait of Hormuz de facto closed: 150 ships stranded, tankers damaged, insurers cancel war risk",
+      "key_facts": [
+        "At least 150 vessels including oil and LNG tankers anchored around Strait of Hormuz",
+        "At least 5 tankers damaged and 2 seafarers killed in retaliatory attacks",
+        "Maersk, MSC, Hapag-Lloyd, and CMA CGM suspend all Gulf transits",
+        "Insurance companies cancelling war risk coverage for vessels in the Gulf",
+        "Only 4 supertankers transited on March 1, down from 22 the previous day",
+        "Strait carries approximately 20% of globally consumed oil",
+        "Brent crude up as much as 13% to ~$80/barrel; Mideast-China shipping rates at 6+ year high",
+        "Iran declared navigation closed through the waterway"
+      ],
+      "sources": [
+        {
+          "url": "https://www.reuters.com/business/energy/iran-conflict-disrupts-global-shipping-tankers-are-stranded-damaged-2026-03-02/",
+          "outlet": "Reuters",
+          "title": "Iran conflict disrupts global shipping as tankers are stranded, damaged",
+          "published_at": "2026-03-02",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.reuters.com/world/middle-east/ship-insurers-cancel-war-risk-cover-due-iran-conflict-2026-03-02/",
+          "outlet": "Reuters",
+          "title": "Marine insurers cancel war risk cover, tanker costs to rise as Iran conflict intensifies",
+          "published_at": "2026-03-02",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.insurancejournal.com/news/international/2026/03/02/860030.htm",
+          "outlet": "Insurance Journal",
+          "title": "Waiting for Hormuz, More Oil Tankers Gather in the Persian Gulf",
+          "published_at": "2026-03-02",
+          "image_url": "https://www.insurancejournal.com/app/uploads/2025/06/oil-tanker-in-strait-of-hormuz-getty.jpg",
+          "type": "news_article"
+        }
+      ],
+      "category": ["economy", "world"],
+      "entities": {
+        "organizations": ["Maersk", "MSC", "Hapag-Lloyd", "CMA CGM", "Fearnley Securities", "Kpler"],
+        "people": [],
+        "places": ["Strait of Hormuz", "Persian Gulf", "Iran", "Oman", "Dubai", "Saudi Arabia", "UAE", "Iraq", "Kuwait"]
+      }
+    },
+    {
+      "id": "openai-110b-funding-round",
+      "headline": "OpenAI closes record $110B funding round from Amazon, Nvidia, and SoftBank at $840B valuation",
+      "key_facts": [
+        "$110B round at $730B pre-money valuation (~$840B post-money), largest private capital raise in tech history",
+        "Amazon leads with $50B ($15B upfront, $35B conditional on IPO or AGI milestone), Nvidia $30B, SoftBank $30B",
+        "AWS becomes exclusive third-party cloud provider for OpenAI Frontier enterprise platform",
+        "OpenAI commits to consuming ~2 gigawatts of AWS Trainium capacity",
+        "ChatGPT at 900M+ weekly active users, $20B annual recurring revenue, projected $14B losses in 2026",
+        "Microsoft issued joint statement confirming partnership unchanged"
+      ],
+      "sources": [
+        {
+          "url": "https://www.reuters.com/business/retail-consumer/openais-110-billion-funding-round-draws-investment-amazon-nvidia-softbank-2026-02-27/",
+          "outlet": "Reuters",
+          "title": "OpenAI's $110 billion funding round draws investment from Amazon, Nvidia, SoftBank",
+          "published_at": "2026-02-27",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/02/27/open-ai-funding-round-amazon.html",
+          "outlet": "CNBC",
+          "title": "OpenAI closes $110 billion funding round with Amazon, Nvidia, SoftBank",
+          "published_at": "2026-02-27",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.businessinsider.com/openai-110-billion-funding-nvidia-amazon-softbank-2026-2",
+          "outlet": "Business Insider",
+          "title": "OpenAI just closed its biggest funding round, raising $110 billion from Amazon, Nvidia, and SoftBank",
+          "published_at": "2026-02-27",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://awesomeagents.ai/news/openai-110b-funding-round-closes/",
+          "outlet": "Awesome Agents",
+          "title": "OpenAI Closes $110 Billion Round at $730 Billion - The Largest Private Deal in History",
+          "published_at": "2026-02-27",
+          "image_url": "https://awesomeagents.ai/images/news/openai-110b-funding-round-closes.jpg",
+          "type": "news_article"
+        }
+      ],
+      "category": ["business", "technology", "finance"],
+      "entities": {
+        "organizations": ["OpenAI", "Amazon", "AWS", "Nvidia", "SoftBank", "Microsoft"],
+        "people": ["Sam Altman"],
+        "places": ["San Francisco"]
+      }
+    },
+    {
+      "id": "alibaba-qwen-3-5-small-models",
+      "headline": "Alibaba releases Qwen 3.5 small model series (0.8B-9B) with native multimodal and 262K context",
+      "key_facts": [
+        "Four dense models: 0.8B, 2B, 4B, and 9B parameters, all Apache 2.0 licensed",
+        "Natively multimodal (text, images, video) from same weights; no separate vision model needed",
+        "262K native context window; 9B model supports YaRN extension to ~1M tokens",
+        "Gated DeltaNet hybrid architecture with 3:1 linear-to-full attention ratio, multi-token prediction",
+        "9B model beats previous-gen Qwen3-30B on most benchmarks and GPT-5-Nano on MMMU-Pro (70.1 vs 57.2)",
+        "0.8B runs on ~1.6GB VRAM (BF16), fits on phones with 4-bit quantization",
+        "248K token vocabulary covering 201 languages"
+      ],
+      "sources": [
+        {
+          "url": "https://awesomeagents.ai/news/qwen-3-5-small-models-series/",
+          "outlet": "Awesome Agents",
+          "title": "Qwen 3.5 Small Series Ships Four Models From 0.8B to 9B",
+          "published_at": "2026-03-02",
+          "image_url": "https://awesomeagents.ai/images/news/qwen-3-5-small-models-series.jpg",
+          "type": "news_article"
+        },
+        {
+          "url": "https://ainewshome.com/article/alibaba-launches-qwen-35-small-model-series-with-sub-1b-edge-options/",
+          "outlet": "AI News Home",
+          "title": "Alibaba launches Qwen 3.5 small model series with sub-1B edge options",
+          "published_at": "2026-03-02",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology"],
+      "entities": {
+        "organizations": ["Alibaba", "Alibaba Cloud", "Qwen"],
+        "people": [],
+        "places": ["Hangzhou"]
+      }
+    },
+    {
+      "id": "minimax-m2-5-swebench-coding",
+      "headline": "MiniMax M2.5 hits 80.2% SWE-Bench Verified at 1/20th the cost of frontier models",
+      "key_facts": [
+        "230B total parameters, 10B active (Mixture-of-Experts); smallest Tier-1 frontier model",
+        "80.2% SWE-Bench Verified (vs Claude Opus 4.6 at 80.8%), 51.3% Multi-SWE-Bench (state of the art)",
+        "$0.15/$1.20 per M tokens (Standard), $0.30/$2.40 (Lightning at 100 TPS) — 10-20x cheaper than Opus",
+        "Trained via RL in 200K+ real-world environments using proprietary 'Forge' agent-native RL framework",
+        "Open-source weights confirmed on Hugging Face",
+        "Released February 12, roughly one month after MiniMax's Hong Kong IPO"
+      ],
+      "sources": [
+        {
+          "url": "https://www.minimax.io/news/minimax-m25",
+          "outlet": "MiniMax",
+          "title": "MiniMax M2.5: Built for Real-World Productivity",
+          "published_at": "2026-02-12",
+          "image_url": "https://filecdn.minimax.chat/public/58eca777-e31f-448a-9823-e2220e49b426.png",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.verdent.ai/guides/minimax-m2-5-vs-claude-opus-4-coding",
+          "outlet": "Verdent AI",
+          "title": "MiniMax M2.5: Coding Benchmarks",
+          "published_at": "2026-02-22",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://www.techbooky.com/minimax-unveils-m2-5-models-to-cut-frontier-ai-costs/",
+          "outlet": "TechBooky",
+          "title": "MiniMax Unveils M2.5 Models to Cut Frontier AI Costs",
+          "published_at": "2026-02-12",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology", "business"],
+      "entities": {
+        "organizations": ["MiniMax", "Anthropic", "Google", "OpenAI"],
+        "people": [],
+        "places": ["Shanghai", "Hong Kong"]
+      }
+    },
+    {
+      "id": "chrome-gemini-vulnerability-hijack",
+      "headline": "Chrome vulnerability let malicious extensions hijack Gemini AI panel, access camera and files",
+      "key_facts": [
+        "CVE-2026-0628, CVSS 8.8 (High), insufficient policy enforcement in WebView tag",
+        "Malicious extensions with basic permissions could hijack Chrome's Gemini Live panel via declarativeNetRequests API",
+        "Enabled unauthorized access to camera, microphone, screenshots, and local files",
+        "Patched in Chrome 143.0.7499.192/.193 (January 2026)",
+        "Discovered by Palo Alto Networks Unit 42 researcher Gal Weizman; disclosed October 2025",
+        "Highlights emerging attack surface as browsers integrate AI assistants with privileged system access"
+      ],
+      "sources": [
+        {
+          "url": "https://unit42.paloaltonetworks.com/gemini-live-in-chrome-hijacking/",
+          "outlet": "Unit 42 (Palo Alto Networks)",
+          "title": "Taming Agentic Browsers: Vulnerability in Chrome Allowed Extensions to Hijack New Gemini Panel",
+          "published_at": "2026-03-02",
+          "image_url": "https://unit42.paloaltonetworks.com/wp-content/uploads/2026/01/AdobeStock_799983387-300x300.jpeg",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://thehackernews.com/2026/03/new-chrome-vulnerability-let-malicious.html",
+          "outlet": "The Hacker News",
+          "title": "New Chrome Vulnerability Let Malicious Extensions Escalate Privileges via Gemini Panel",
+          "published_at": "2026-03-02",
+          "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhGvdv2as5vfPUJybxkOOX1bDflJKOb5b1uVw9SHrVOo6TD5GKc0JbMB2p2yxxpwj4UlZK680ZnF4J8Ccie6G13W8cklnxDOs-E74-jy3fuIyr53UWuGuwhSM8HvHUIhilChdeRdF3yz9ObuHMHlKGUHI4TMWachzuvWJ3aZdEmz_fPNaIRm_IYDKiqUl1G/s1700-e365/gemini-chrome.jpg",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.securityweek.com/vulnerability-allowed-hijacking-chromes-gemini-live-ai-assistant/",
+          "outlet": "SecurityWeek",
+          "title": "Vulnerability Allowed Hijacking Chrome's Gemini Live AI Assistant",
+          "published_at": "2026-03-02",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology"],
+      "entities": {
+        "organizations": ["Google", "Palo Alto Networks", "Unit 42"],
+        "people": ["Gal Weizman"],
+        "places": []
+      }
+    },
+    {
+      "id": "anduril-yfq44a-midflight-ai-swap",
+      "headline": "Anduril YFQ-44A swaps AI autonomy systems midflight in first semi-autonomous CCA test",
+      "key_facts": [
+        "YFQ-44A switched from Shield AI Hivemind to Anduril Lattice for Mission Autonomy without landing",
+        "First semi-autonomous flight of a fighter-class Collaborative Combat Aircraft (CCA)",
+        "Achieved 556 days after April 2024 contract award",
+        "Enabled by Autonomy Government Reference Architecture (A-GRA) providing modular software interfaces",
+        "USAF selected Shield AI's Hivemind for CCA Increment 1",
+        "Test occurred Feb 24, 2026; revealed at AFA Warfare Symposium by Col. Timothy Helfrich"
+      ],
+      "sources": [
+        {
+          "url": "https://www.airandspaceforces.com/anduril-cca-switches-ai-pilots-midflight/",
+          "outlet": "Air & Space Forces Magazine",
+          "title": "Anduril CCA Switches AI Pilots Midflight",
+          "published_at": "2026-02-25",
+          "image_url": "https://www.airandspaceforces.com/app/uploads/2026/02/YFQ-44A-in-Flight-scaled.jpg",
+          "type": "news_article"
+        },
+        {
+          "url": "https://interestingengineering.com/ai-robotics/anduril-drone-swaps-ai-system-midflight",
+          "outlet": "Interesting Engineering",
+          "title": "US Air Force drone swaps AI software midflight in successful mission autonomy test",
+          "published_at": "2026-02-25",
+          "image_url": "https://cms.interestingengineering.com/wp-content/uploads/2026/02/Untitled-design-2026-02-26T050714.081.jpg",
+          "type": "news_article"
+        },
+        {
+          "url": "https://defence-industry.eu/andurils-yfq-44a-completes-flight-with-dual-mission-autonomy-software-from-anduril-and-shield-ai-in-cca-test/",
+          "outlet": "Defence Industry Europe",
+          "title": "Anduril's YFQ-44A completes flight with dual mission autonomy software from Anduril and Shield AI in CCA test",
+          "published_at": "2026-02-27",
+          "image_url": "https://defence-industry.eu/wp-content/uploads/2026/02/andurils-yfq-44a-completes-flight-with-dual-mission-autonomy-software-from-anduril-and-shield-ai-in-cca-test.jpeg",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology", "world"],
+      "entities": {
+        "organizations": ["Anduril Industries", "Shield AI", "US Air Force"],
+        "people": ["Col. Timothy Helfrich"],
+        "places": ["Aurora, CO"]
+      }
+    },
+    {
+      "id": "nvidia-h200-china-cap-75k",
+      "headline": "US considers capping Nvidia H200 chip sales to China at 75,000 per customer",
+      "key_facts": [
+        "Trump administration discussing limiting Chinese firms to 75,000 H200 chips per customer",
+        "AMD MI325 chips with similar capabilities would also count toward the cap",
+        "H200 exports approved in January 2026 with conditions (third-party testing, 50% domestic allocation, no military use)",
+        "A 25% tariff was imposed on H200 exports the day after approval",
+        "Over 2 million H200s ordered by Chinese firms; Nvidia hasn't fully ramped shipments yet",
+        "Huawei and Moore Threads gaining ground as domestic chip alternatives"
+      ],
+      "sources": [
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-03-02/us-mulls-capping-nvidia-h200-sales-at-75-000-per-chinese-customer",
+          "outlet": "Bloomberg",
+          "title": "US Mulls Capping Nvidia H200 Sales at 75,000 per Chinese Customer",
+          "published_at": "2026-03-02",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://newsable.asianetnews.com/markets/nvidia-h200-sales-may-be-capped-per-chinese-customer-report-articleshow-sddgtlq",
+          "outlet": "Asianet Newsable",
+          "title": "Nvidia H200 Sales May Be Capped Per Chinese Customer: Report",
+          "published_at": "2026-03-03",
+          "image_url": "https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-external,imgname-image-d8511d80-890c-4f4e-90f3-a24f3120d565.webp",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.nbcnews.com/world/asia/us-approves-nvidia-h200-chip-exports-china-conditions-rcna253948",
+          "outlet": "NBC News",
+          "title": "U.S. approves Nvidia H200 chip exports to China with some conditions",
+          "published_at": "2026-01-14",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology", "politics", "business"],
+      "entities": {
+        "organizations": ["Nvidia", "AMD", "Huawei", "Moore Threads", "Bureau of Industry and Security"],
+        "people": ["Jensen Huang", "Donald Trump"],
+        "places": ["United States", "China"]
+      }
+    },
+    {
+      "id": "xiaomi-humanoid-robot-ev-factory",
+      "headline": "Xiaomi humanoid robot works 3 hours autonomously on EV assembly line with 90.2% success rate",
+      "key_facts": [
+        "Achieved 3 consecutive hours of autonomous operation at self-tapping nut assembly station",
+        "90.2% success rate for simultaneous installation on both sides; met 76-second fastest cycle time",
+        "Built on Xiaomi's in-house VLA foundation model Xiaomi-Robotics-0 with multimodal perception and RL",
+        "Lei Jun announced plan to deploy humanoid robots at scale across factories over next 5 years",
+        "Positioned in competition with Tesla Optimus and Xpeng's Iron humanoid robot"
+      ],
+      "sources": [
+        {
+          "url": "https://cnevpost.com/2026/03/02/xiaomi-deploys-humanoid-robots-ev-factory/",
+          "outlet": "CnEVPost",
+          "title": "Xiaomi deploys humanoid robots in EV factory for auto assembly",
+          "published_at": "2026-03-02",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://autonews.gasgoo.com/articles/icv/2028404814071730177",
+          "outlet": "Gasgoo",
+          "title": "Xiaomi's humanoid robots go into operations on auto factory floors",
+          "published_at": "2026-03-02",
+          "image_url": "https://gascloud.gasgoo.com/production/2026/03/b08e513e-15ed-43ef-834a-c7b356029f4a-1772473155.png",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology", "business"],
+      "entities": {
+        "organizations": ["Xiaomi"],
+        "people": ["Lei Jun"],
+        "places": ["China"]
+      }
+    },
+    {
+      "id": "bmw-humanoid-robots-leipzig",
+      "headline": "BMW deploys Hexagon AEON humanoid robots at Leipzig — first in European auto production",
+      "key_facts": [
+        "First humanoid robot deployment in European automotive production at BMW Plant Leipzig",
+        "Partner: Hexagon Robotics (Zurich-based), AEON robot with wheeled mobility and interchangeable grippers",
+        "Focus on high-voltage battery assembly and component manufacturing",
+        "Full pilot launching summer 2026; follows successful Figure 02 pilot at Spartanburg (USA)",
+        "Figure 02 at Spartanburg supported 30,000+ BMW X3s, 1,250 operating hours, 90,000+ components moved",
+        "BMW establishing Center of Competence for Physical AI in Production"
+      ],
+      "sources": [
+        {
+          "url": "https://www.press.bmwgroup.com/global/article/detail/T0455864EN/bmw-group-to-deploy-humanoid-robots-in-production-in-germany-for-the-first-time",
+          "outlet": "BMW Group PressClub",
+          "title": "BMW Group to deploy humanoid robots in production in Germany for the first time",
+          "published_at": "2026-02-27",
+          "image_url": "https://mediapool.bmwgroup.com/download/edown/tvFootageDownload?square=0&dokNo=PF0010116&attachment=0&actEvent=scaleTvFootageBig&quality=90",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.bmwblog.com/2026/02/27/bmw-humanoid-robots-leipzig-europe-pilot/",
+          "outlet": "BMWBlog",
+          "title": "BMW Deploys Humanoid Robots in Europe for the First Time",
+          "published_at": "2026-02-27",
+          "image_url": "https://cdn.bmwblog.com/wp-content/uploads/2026/02/bmw-humanoid-robots-06.jpg",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://robotics.hexagon.com/bmw-deploys-aeon-hexagon-robotics-humanoid/",
+          "outlet": "Hexagon Robotics",
+          "title": "BMW deploys the humanoid robot AEON in production sites in Germany",
+          "published_at": "2026-02-27",
+          "image_url": "https://robotics.hexagon.com/wp-content/uploads/2026/02/BMW-Factory-x-AEON_.jpg",
+          "type": "press_release"
+        }
+      ],
+      "category": ["technology", "business"],
+      "entities": {
+        "organizations": ["BMW Group", "Hexagon Robotics", "Figure AI"],
+        "people": ["Milan Nedeljkovic"],
+        "places": ["Leipzig, Germany", "Spartanburg, USA", "Zurich, Switzerland"]
+      }
+    },
+    {
+      "id": "nasa-artemis-overhaul-2027-leo",
+      "headline": "NASA overhauls Artemis: adds 2027 LEO docking test, scraps SLS Block 1B upper stage",
+      "key_facts": [
+        "NASA Administrator Jared Isaacman announced major Artemis restructuring on Feb 27",
+        "New Artemis 3 (2027): LEO docking test with SpaceX/Blue Origin landers and Axiom spacesuit",
+        "Artemis 4 becomes first crewed lunar landing attempt in 2028; possible Artemis 5 in late 2028",
+        "SLS Block 1B Exploration Upper Stage cancelled; standardizing on Block 1 architecture",
+        "Target launch cadence: one mission every 10 months (vs current ~3 years)",
+        "Isaacman: 'Launching a rocket as complex as SLS every three years is not a path to success'",
+        "Context: China plans 2030 crewed moon landing; Artemis II SLS rolled back for helium repairs"
+      ],
+      "sources": [
+        {
+          "url": "https://spacenews.com/nasa-revises-plans-for-future-artemis-missions-cancels-upgrades-to-sls/",
+          "outlet": "SpaceNews",
+          "title": "NASA revises plans for future Artemis missions, cancels upgrades to SLS",
+          "published_at": "2026-02-27",
+          "image_url": "https://i0.wp.com/spacenews.com/wp-content/uploads/2026/02/art2-20260202.jpeg",
+          "type": "news_article"
+        },
+        {
+          "url": "https://spaceflightnow.com/2026/02/27/nasa-announces-major-overhaul-of-artemis-moon-program/",
+          "outlet": "Spaceflight Now",
+          "title": "NASA announces major overhaul of Artemis moon program: 'We've got to get back to basics'",
+          "published_at": "2026-02-27",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://reuters.com/science/nasa-shakes-up-moon-program-with-new-test-mission-before-astronaut-lunar-landing-2026-02-27/",
+          "outlet": "Reuters",
+          "title": "NASA shakes up moon program with new test mission before astronaut lunar landing",
+          "published_at": "2026-02-27",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology", "world"],
+      "entities": {
+        "organizations": ["NASA", "SpaceX", "Blue Origin", "Axiom Space", "Boeing"],
+        "people": ["Jared Isaacman"],
+        "places": ["Kennedy Space Center, FL"]
+      }
+    },
+    {
+      "id": "eth-zurich-quantum-lattice-surgery",
+      "headline": "ETH Zurich demonstrates fault-tolerant lattice surgery on 17-qubit superconducting chip",
+      "key_facts": [
+        "First demonstration of lattice surgery on superconducting quantum circuits, published in Nature Physics",
+        "17 flux-tunable transmon qubits: 9 data qubits + 8 auxiliary for stabilizer measurements",
+        "Split single surface-code logical qubit into two entangled logical qubits while maintaining error correction",
+        "1.66 microsecond stabilizer readout cycle; beyond-breakeven fidelity vs unprotected qubits",
+        "Led by Prof. Andreas Wallraff (ETH Zurich) with Paul Scherrer Institute",
+        "Lattice surgery is the fundamental operation for scalable fault-tolerant quantum computing",
+        "Next step: ~41 physical qubits needed for full phase-flip error correction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.nature.com/articles/s41567-025-03090-6",
+          "outlet": "Nature Physics",
+          "title": "Lattice surgery realized on two distance-three repetition codes with superconducting qubits",
+          "published_at": "2026-01-30",
+          "image_url": "",
+          "type": "paper"
+        },
+        {
+          "url": "https://quantumcomputingreport.com/paul-scherrer-institute-and-eth-zurich-demonstrate-fault-tolerant-lattice-surgery-on-superconducting-qubits/",
+          "outlet": "Quantum Computing Report",
+          "title": "Paul Scherrer Institute and ETH Zurich Demonstrate Fault-Tolerant Lattice Surgery on Superconducting Qubits",
+          "published_at": "2026-02-07",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.phys.ethz.ch/news-and-events/d-phys-news/2026/01/surgery-for-quantum-bits.html",
+          "outlet": "ETH Zurich Department of Physics",
+          "title": "Surgery for quantum bits",
+          "published_at": "2026-01-30",
+          "image_url": "",
+          "type": "press_release"
+        }
+      ],
+      "category": ["technology"],
+      "entities": {
+        "organizations": ["ETH Zurich", "Paul Scherrer Institute", "RWTH Aachen University"],
+        "people": ["Andreas Wallraff", "Markus Muller"],
+        "places": ["Zurich, Switzerland"]
+      }
+    },
+    {
+      "id": "ai-job-displacement-citrini-debate",
+      "headline": "AI job displacement debate intensifies as Citrini doomsday essay projects 10.2% unemployment by 2028",
+      "key_facts": [
+        "Citrini Research '2028 Global Intelligence Crisis' essay projects S&P 500 down 38%, unemployment at 10.2%",
+        "Introduces 'ghost GDP' concept: AI output benefiting compute owners but not circulating through human economy",
+        "Matt Shumer's parallel warning essay viewed 85M times on X",
+        "Citadel Securities rebuttal: software engineer demand actually up 11% YoY; AI adoption 'unexpectedly stable'",
+        "Block (Jack Dorsey) announced 40% downsizing citing AI; stock rose 14% next day",
+        "NBER/Brookings study: 6.1M workers in high-exposure, low-adaptive-capacity roles, 86% women",
+        "Albert Edwards (SocGen): 'The AI macro doomsday scenario is not for 2028. It's here right now!'"
+      ],
+      "sources": [
+        {
+          "url": "https://www.citriniresearch.com/p/2028gic",
+          "outlet": "Citrini Research",
+          "title": "THE 2028 GLOBAL INTELLIGENCE CRISIS",
+          "published_at": "2026-02-22",
+          "image_url": "https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9ede0b37-f3be-4787-90ff-10cb24719fdc_710x1119.jpeg",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://fortune.com/2026/02/28/ai-scare-trade-mass-layoffs-white-collar-recession-citrini-shumer-viral-doomsday-essays/",
+          "outlet": "Fortune",
+          "title": "The week the AI scare turned real and America realized maybe it isn't ready for what's coming",
+          "published_at": "2026-02-28",
+          "image_url": "https://fortune.com/img-assets/wp-content/uploads/2026/02/GettyImages-1186712099-e1772230034418.jpg",
+          "type": "news_article"
+        },
+        {
+          "url": "https://fortune.com/2026/02/26/citadel-demolishes-viral-doomsday-ai-essay-citrini-macro-fundamentals-engels-pause/",
+          "outlet": "Fortune",
+          "title": "Citadel Securities demolishes viral AI doomsday essay, arguing the real 'Global Intelligence Crisis' is ignorance of macro fundamentals",
+          "published_at": "2026-02-26",
+          "image_url": "https://fortune.com/img-assets/wp-content/uploads/2026/02/GettyImages-2262712446-e1772130629808.jpg",
+          "type": "news_article"
+        }
+      ],
+      "category": ["economy", "technology", "finance"],
+      "entities": {
+        "organizations": ["Citrini Research", "Citadel Securities", "Block", "Societe Generale", "NBER"],
+        "people": ["Matt Shumer", "Jack Dorsey", "Albert Edwards"],
+        "places": ["United States"]
+      }
+    }
+  ]
+};
+const DATA_ARTICLE  = "---\ndate: 2026-03-02\nurl:\ntitle: \"Bem-vindo a 2 de Mar\u00e7o de 2026\"\nwordcount: 780\ngenerated: true\nlanguage: pt-br\n---\n\n# Bem-vindo a 2 de Mar\u00e7o de 2026\n\nA Singularidade acaba de receber seu primeiro fogo inimigo.\n\n\"Objetos\" n\u00e3o identificados [atingiram um data center da Amazon Web Services nos Emirados \u00c1rabes Unidos](https://www.reuters.com/world/middle-east/amazon-cloud-unit-flags-issues-bahrain-uae-data-centers-amid-iran-strikes-2026-03-02/) no domingo, provocando fa\u00edscas e inc\u00eandio que [for\u00e7aram as autoridades a cortar a energia de duas zonas de disponibilidade](https://www.crn.com/news/cloud/2026/objects-strike-spark-fire-at-aws-data-center-in-the-middle-east), derrubando S3, DynamoDB e [mais de 60 servi\u00e7os essenciais](https://business.outlookindia.com/deeptech/aws-uae-data-center-hit-amid-iran-israel-war-regional-services-disrupted) em toda a regi\u00e3o do Oriente M\u00e9dio. A AWS [n\u00e3o confirma se o ataque tem rela\u00e7\u00e3o com a retalia\u00e7\u00e3o iraniana](https://www.businessinsider.com/amazon-web-services-data-center-fire-objects-middle-east-strikes-2026-3), mas a cronologia n\u00e3o deixa espa\u00e7o para d\u00favida \u2014 a instala\u00e7\u00e3o apagou horas depois de m\u00edsseis e drones iranianos [atingirem aeroportos, portos e torres residenciais por todo o Golfo](https://www.cnbc.com/2026/03/02/us-iran-live-updates-trump-oil-gold.html). O Rest of World [decretou o fim da tese do Golfo](https://restofworld.org/2026/amazon-uae-data-center-fire-iran-strike/) como porto seguro para os dados do mundo. O CSIS j\u00e1 havia alertado que [se computa\u00e7\u00e3o \u00e9 o novo petr\u00f3leo, guerra no Golfo eleva as apostas](https://www.csis.org/analysis/if-compute-new-oil-war-gulf-significantly-raises-stakes) al\u00e9m de qualquer coisa que as hyperscalers precificaram. Pela primeira vez na hist\u00f3ria, infraestrutura de Big Tech \u00e9 baixa direta de a\u00e7\u00e3o militar cin\u00e9tica.\n\n**A guerra se expande mais r\u00e1pido do que as siglas conseguem acompanhar.** A QatarEnergy [suspendeu toda a produ\u00e7\u00e3o de g\u00e1s natural liquefeito](https://www.aljazeera.com/news/2026/3/2/qatarenergy-worlds-largest-lng-firm-halts-production-after-iran-attacks) depois que drones iranianos atingiram instala\u00e7\u00f5es em Ras Laffan e Mesaieed, disparando os futuros de g\u00e1s europeus em [quase 50%](https://www.dailysabah.com/business/energy/european-gas-prices-spike-nearly-50-as-qatar-halts-lng-output/amp). A Saudi Aramco [fechou sua refinaria de Ras Tanura](https://www.bloomberg.com/news/articles/2026-03-02/saudi-arabia-s-ras-tanura-refinery-shuts-down-after-drone-attack), a maior do reino, depois que estilha\u00e7os de drone incendiaram a planta. O Brent [tocou $82 por barril](https://www.gulf-times.com/article/721645/business/oil-prices-surge-7), maior patamar desde janeiro de 2025. Defesas a\u00e9reas do Kuwait [derrubaram tr\u00eas F-15E Strike Eagles americanos](https://www.defensenews.com/news/your-military/2026/03/02/3-f-15s-shot-down-by-kuwait-in-friendly-fire-incident-pilots-safe-us-says/) em fogo amigo \u2014 as seis tripula\u00e7\u00f5es ejetaram em seguran\u00e7a. Quatro militares americanos [est\u00e3o agora confirmados mortos](https://www.cbsnews.com/live-updates/iran-us-war-day-3-american-deaths-israel-gulf-allies-hit-missile-strikes/). Trump disse ao New York Post que [n\u00e3o descarta tropas terrestres](https://www.cbsnews.com/live-updates/iran-us-war-day-3-american-deaths-israel-gulf-allies-hit-missile-strikes/) e sugeriu que a opera\u00e7\u00e3o pode durar \"quatro semanas ou menos\". O Congresso [vota esta semana uma resolu\u00e7\u00e3o bipartid\u00e1ria sobre poderes de guerra](https://www.nhpr.org/2026-03-02/congress-gears-up-for-vote-on-trumps-war-powers-in-iran-after-the-battle-began), embora esfor\u00e7os anteriores para reassumir autoridade sobre guerras n\u00e3o declaradas tenham um hist\u00f3rico perfeito de fracasso.\n\n**O novo contratante de IA do Pent\u00e1gono j\u00e1 est\u00e1 sob escrut\u00ednio.** O The Verge publicou uma an\u00e1lise detalhada argumentando que a [OpenAI cedeu ao Pent\u00e1gono na quest\u00e3o da vigil\u00e2ncia](https://www.theverge.com/ai-artificial-intelligence/887309/openai-anthropic-dod-military-pentagon-contract-sam-altman-hegseth) \u2014 que a alega\u00e7\u00e3o de Altman de que seu contrato pro\u00edbe vigil\u00e2ncia dom\u00e9stica em massa se apoia na [conformidade com a Executive Order 12333](https://www.theverge.com/ai-artificial-intelligence/887309/openai-anthropic-dod-military-pentagon-contract-sam-altman-hegseth), uma diretiva da era Reagan que defensores de liberdades civis passaram d\u00e9cadas argumentando que [n\u00e3o diz o que o governo alega que diz](https://www.theregister.com/2026/03/02/open_ai_dow_anthropic_ai_ethics/). Altman fez seu AMA de s\u00e1bado no X [chamando a exclus\u00e3o da Anthropic de \"um precedente extremamente assustador\"](https://x.com/sama/status/2027957684625150444) enquanto simultaneamente defendia o contrato que assinou para substitu\u00ed-los. O Wall Street Journal reportou que Altman [reconheceu que a \u00f3ptica foi \"apressada\"](https://trib.al/RoNSEqK). A empresa que copiou as linhas vermelhas da Anthropic ficou com o contrato classificado; a empresa que as escreveu levou o tratamento Huawei; e as letras mi\u00fadas podem n\u00e3o dizer o que nenhum dos lados alega.\n\n**A resposta da China ao embargo de chips cai esta semana.** O DeepSeek V4 [deve ser lan\u00e7ado at\u00e9 4 de mar\u00e7o](https://technode.com/2026/03/02/deepseek-plans-v4-multimodal-model-release-this-week-sources-say/), cronometrado para chegar antes das sess\u00f5es parlamentares chinesas \u2014 um [modelo mixture-of-experts de um trilh\u00e3o de par\u00e2metros](https://awesomeagents.ai/models/deepseek-v4/) com gera\u00e7\u00e3o multimodal nativa em texto, imagem, v\u00eddeo e \u00e1udio, janela de contexto de um milh\u00e3o de tokens, e otimiza\u00e7\u00e3o completa para [chips Huawei Ascend e Cambricon](https://recodechinaai.substack.com/p/deepseeks-next-move-what-v4-will). O DeepSeek [n\u00e3o compartilhou o V4 com a Nvidia ou a AMD](https://www.aol.com/news/deepseek-release-long-awaited-ai-162425973.html), quebrando a pr\u00e1tica padr\u00e3o do setor. Benchmarks vazados sugerem [performance competitiva com modelos de fronteira](https://awesomeagents.ai/models/deepseek-v4/) a uma fra\u00e7\u00e3o dos custos de infer\u00eancia ocidentais. A cadeia global de suprimentos de IA n\u00e3o se bifurcou apenas \u2014 j\u00e1 despachou.\n\n**A frota aut\u00f4noma cruzou a linha da lucratividade.** A Pony.ai anunciou que seu Robotaxi Gen-7 alcan\u00e7ou [lucro operacional mensal positivo por ve\u00edculo em Shenzhen](https://www.globenewswire.com/news-release/2026/03/02/3246991/0/en/PONY-AI-Inc-Achieved-Gen-7-Robotaxi-UE-Breakeven-in-Shenzhen-Strengthening-Path-to-Scalable-Commercialization.html), com m\u00e9dia de [338 yuan de receita l\u00edquida di\u00e1ria em 23 corridas por ve\u00edculo](https://cnevpost.com/2026/03/02/pony-ai-hits-unit-profitability-in-2nd-chinese-city/) \u2014 sua segunda megacidade chinesa depois de Guangzhou. Enquanto isso, a Waymo estaria [comprando 50.000 Hyundai Ioniq 5 por $2,5 bilh\u00f5es](https://electrek.co/2026/02/11/hyundai-supply-waymo-50000-ioniq-5-robotaxis/) para abastecer a expans\u00e3o para vinte cidades at\u00e9 o fim do ano, embora o SF Standard aponte que o Ioniq 5 tem um [problema bem documentado de falha no ICCU](https://sfstandard.com/2026/03/02/robot-turtles-waymo-s-next-gen-cars-could-buggy-hyundai-evs/) que deixa os carros inoperantes. O carro aut\u00f4nomo acaba de atingir unit economics; agora precisa chegar \u00e0 concession\u00e1ria para conseguir pe\u00e7as.\n\n**A Apple abriu sua \"grande semana\" com o melhor contra-argumento da economia de consumo.** O [iPhone 17e foi lan\u00e7ado a $599](https://www.apple.com/newsroom/2026/03/apple-introduces-iphone-17e/) com chip A19, MagSafe, c\u00e2mera Fusion de 48MP e 256GB de armazenamento base \u2014 o dobro da gera\u00e7\u00e3o anterior. O [iPad Air ganhou M4](https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-ipad-air-powered-by-m4/) com 12GB de mem\u00f3ria unificada e Wi-Fi 7 pelo mesmo pre\u00e7o inicial de $599. A CNBC reporta que um [MacBook econ\u00f4mico de $699](https://www.cnbc.com/2026/03/02/apple-iphone-17e-ipad-air-m4-chip.html) \u00e9 esperado para esta semana ainda. Cupertino continua despachando c\u00e2meras e teclados enquanto a economia de intelig\u00eancia [decide qual modelo recebe os c\u00f3digos nucleares](https://www.theverge.com/ai-artificial-intelligence/887309/openai-anthropic-dod-military-pentagon-contract-sam-altman-hegseth).\n\nO data center levou um m\u00edssil, a refinaria levou um drone, o mercado de g\u00e1s levou 50%, e o fogo amigo levou tr\u00eas jatos \u2014 mas pelo menos o iPhone novo tem MagSafe.\n";
+const DATA_AUDIT    = null;
+const DATA_REWRITE  = null;
+
+// --- Build URL → story index for cross-linking ---
+const urlToStoryIdx = {};
+DATA_RESEARCH.stories.forEach((story, idx) => {
+  (story.sources || []).forEach(s => { urlToStoryIdx[s.url] = idx; });
+  (story.key_facts || []).forEach(f => { if (f.source_url) urlToStoryIdx[f.source_url] = idx; });
+});
+
+// --- Build URL → audit flags ---
+const urlToAudit = {};
+if (DATA_AUDIT && DATA_AUDIT.issues) {
+  DATA_AUDIT.issues.forEach(issue => {
+    urlToAudit[issue.url] = issue;
+  });
+}
+
+// --- Reviewed state (localStorage) ---
+const REVIEW_KEY = 'audit-reviewed-2026-03-02';
+let reviewedUrls = new Set(JSON.parse(localStorage.getItem(REVIEW_KEY) || '[]'));
+
+function saveReviewed() {
+  localStorage.setItem(REVIEW_KEY, JSON.stringify([...reviewedUrls]));
+}
+
+function toggleReviewed(url) {
+  if (reviewedUrls.has(url)) {
+    reviewedUrls.delete(url);
+  } else {
+    reviewedUrls.add(url);
+  }
+  saveReviewed();
+  applyReviewedState();
+  updateStats();
+}
+
+function applyReviewedState() {
+  document.querySelectorAll('.article-content a[data-audit-url]').forEach(a => {
+    const url = a.dataset.auditUrl;
+    a.classList.toggle('audit-reviewed', reviewedUrls.has(url));
+  });
+  document.querySelectorAll('.audit-item[data-url]').forEach(item => {
+    item.classList.toggle('reviewed', reviewedUrls.has(item.dataset.url));
+  });
+}
+
+// --- Stats ---
+const storyCount = DATA_RESEARCH.stories.length;
+const sourceCount = DATA_RESEARCH.stories.reduce((n, s) => n + (s.sources || []).length, 0);
+const flagCount = DATA_AUDIT ? (DATA_AUDIT.issues || []).length : 0;
+
+function updateStats() {
+  const reviewed = reviewedUrls.size;
+  const open = flagCount - reviewed;
+  document.getElementById('stat-stories').innerHTML = '<b>' + storyCount + '</b> stories';
+  document.getElementById('stat-sources').innerHTML = '<b>' + sourceCount + '</b> sources';
+  document.getElementById('stat-flags').innerHTML = '<b>' + open + '</b> flags' + (reviewed ? ' <span style="color:#666">(' + reviewed + ' reviewed)</span>' : '');
+}
+updateStats();
+
+// --- Research cards ---
+function renderResearchCards() {
+  const container = document.getElementById('research-cards');
+  DATA_RESEARCH.stories.forEach((story, idx) => {
+    const card = document.createElement('div');
+    card.className = 'story-card';
+    card.dataset.storyIdx = idx;
+
+    // Collect URLs for this story
+    const storyUrls = new Set();
+    (story.sources || []).forEach(s => storyUrls.add(s.url));
+    (story.key_facts || []).forEach(f => { if (f.source_url) storyUrls.add(f.source_url); });
+    card.dataset.urls = JSON.stringify([...storyUrls]);
+
+    const categories = (story.category || []).map(c =>
+      '<span class="category-tag">' + escHtml(c) + '</span>'
+    ).join('');
+
+    const facts = (story.key_facts || []).map(f =>
+      '<li>' + escHtml(f.fact) + '</li>'
+    ).join('');
+
+    const sources = (story.sources || []).map(s =>
+      '<li><a href="' + escHtml(s.url) + '" target="_blank">' + escHtml(s.title || s.url) + '</a> <span class="source-outlet">' + escHtml(s.outlet || '') + '</span></li>'
+    ).join('');
+
+    card.innerHTML =
+      '<div class="story-card-head">' +
+        '<h3>' + escHtml(story.headline) + '</h3>' +
+        '<span class="toggle"></span>' +
+      '</div>' +
+      '<div class="story-card-body">' +
+        (categories ? '<div class="story-categories">' + categories + '</div>' : '') +
+        (facts ? '<div><strong style="font-size:0.75rem;color:#888">Key facts</strong><ul class="fact-list">' + facts + '</ul></div>' : '') +
+        (sources ? '<div style="margin-top:0.5rem"><strong style="font-size:0.75rem;color:#888">Sources</strong><ul class="source-list">' + sources + '</ul></div>' : '') +
+      '</div>';
+
+    // Toggle expand
+    card.querySelector('.story-card-head').addEventListener('click', (e) => {
+      e.stopPropagation();
+      card.classList.toggle('open');
+    });
+
+    // Click card → highlight article paragraphs
+    card.addEventListener('click', () => {
+      highlightArticleByStory(idx);
+    });
+
+    container.appendChild(card);
+  });
+}
+
+// --- Article rendering ---
+function renderArticle() {
+  // Strip YAML frontmatter
+  let md = DATA_ARTICLE;
+  const fmMatch = md.match(/^---\n[\s\S]*?\n---\n/);
+  if (fmMatch) md = md.slice(fmMatch[0].length);
+
+  const html = marked.parse(md);
+  document.getElementById('article-content').innerHTML = html;
+
+  // Annotate audited links
+  document.querySelectorAll('.article-content a').forEach(a => {
+    const href = a.getAttribute('href');
+    if (urlToAudit[href]) {
+      const issue = urlToAudit[href];
+      const firstFlag = issue.flags[0];
+      a.classList.add('audit-' + firstFlag.type);
+      a.dataset.auditUrl = href;
+    }
+
+    // Make article links clickable → scroll to research card
+    a.addEventListener('click', (e) => {
+      if (urlToStoryIdx[href] !== undefined) {
+        e.preventDefault();
+        scrollToStoryCard(urlToStoryIdx[href]);
+      }
+    });
+  });
+}
+
+// --- Audit tooltip ---
+const tooltip = document.getElementById('audit-tooltip');
+let tooltipTarget = null;
+let tooltipHovered = false;
+
+function showTooltip(link) {
+  const url = link.dataset.auditUrl;
+  const issue = urlToAudit[url];
+  if (!issue) return;
+
+  const isReviewed = reviewedUrls.has(url);
+
+  const flagsHtml = issue.flags.map(f =>
+    '<div><span class="flag-type ' + f.type + '">' + f.type.replace('_', ' ') + '</span></div>' +
+    '<p style="margin:0.3rem 0 0.5rem">' + escHtml(f.detail) + '</p>'
+  ).join('');
+
+  const btnLabel = isReviewed ? 'Undo review' : 'Mark reviewed';
+
+  tooltip.innerHTML =
+    '<div style="margin-bottom:0.3rem;font-size:0.7rem;color:#888;word-break:break-all">' + escHtml(issue.url) + '</div>' +
+    flagsHtml +
+    '<button class="review-btn" data-review-url="' + escHtml(url) + '">' + btnLabel + '</button>';
+
+  const rect = link.getBoundingClientRect();
+  tooltip.style.left = Math.min(rect.left, window.innerWidth - 420) + 'px';
+  tooltip.style.top = (rect.bottom + 8) + 'px';
+  tooltip.classList.add('visible');
+  tooltipTarget = link;
+}
+
+function hideTooltip() {
+  // Small delay so mouse can travel from link to tooltip
+  setTimeout(() => {
+    if (!tooltipHovered) {
+      tooltip.classList.remove('visible');
+      tooltipTarget = null;
+    }
+  }, 100);
+}
+
+document.addEventListener('mouseover', (e) => {
+  const link = e.target.closest('a[data-audit-url]');
+  if (link) {
+    showTooltip(link);
+    return;
+  }
+  if (e.target.closest('.audit-tooltip')) {
+    tooltipHovered = true;
+  }
+});
+
+document.addEventListener('mouseout', (e) => {
+  if (e.target.closest('.audit-tooltip')) {
+    tooltipHovered = false;
+    hideTooltip();
+    return;
+  }
+  const link = e.target.closest('a[data-audit-url]');
+  if (link && link === tooltipTarget) {
+    tooltipHovered = false;
+    hideTooltip();
+  }
+});
+
+// Review button click inside tooltip
+tooltip.addEventListener('click', (e) => {
+  const btn = e.target.closest('.review-btn');
+  if (!btn) return;
+  e.stopPropagation();
+  const url = btn.dataset.reviewUrl;
+  toggleReviewed(url);
+  // Re-render tooltip to update button label
+  if (tooltipTarget) showTooltip(tooltipTarget);
+});
+
+// --- Cross-linking: story → article paragraphs ---
+function highlightArticleByStory(storyIdx) {
+  // Clear previous highlights
+  document.querySelectorAll('.article-content p.highlight-para').forEach(p => {
+    p.classList.remove('highlight-para');
+  });
+  document.querySelectorAll('.story-card.highlighted').forEach(c => {
+    c.classList.remove('highlighted');
+  });
+
+  // Highlight clicked card
+  const card = document.querySelector('.story-card[data-story-idx="' + storyIdx + '"]');
+  if (card) card.classList.add('highlighted');
+
+  // Find story URLs
+  const story = DATA_RESEARCH.stories[storyIdx];
+  const storyUrls = new Set();
+  (story.sources || []).forEach(s => storyUrls.add(s.url));
+  (story.key_facts || []).forEach(f => { if (f.source_url) storyUrls.add(f.source_url); });
+
+  // Find paragraphs containing links to those URLs
+  let firstMatch = null;
+  document.querySelectorAll('.article-content p').forEach(p => {
+    const links = p.querySelectorAll('a');
+    for (const a of links) {
+      if (storyUrls.has(a.getAttribute('href'))) {
+        p.classList.add('highlight-para');
+        if (!firstMatch) firstMatch = p;
+        break;
+      }
+    }
+  });
+
+  // Scroll article to first match
+  if (firstMatch) {
+    // On mobile, switch to article tab
+    activateTab('article');
+    firstMatch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
+// --- Cross-linking: article link → research card ---
+function scrollToStoryCard(storyIdx) {
+  // On mobile, switch to research tab
+  activateTab('research');
+
+  const card = document.querySelector('.story-card[data-story-idx="' + storyIdx + '"]');
+  if (!card) return;
+
+  // Clear previous highlights
+  document.querySelectorAll('.story-card.highlighted').forEach(c => c.classList.remove('highlighted'));
+  card.classList.add('highlighted');
+  card.classList.add('open');
+  card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// --- Right column tabs ---
+document.querySelectorAll('.right-tabs button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.right-tabs button').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.right-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + btn.dataset.panel).classList.add('active');
+  });
+});
+
+// --- Audit findings list ---
+function renderAuditList() {
+  const container = document.getElementById('audit-list');
+  if (!DATA_AUDIT || !DATA_AUDIT.issues || DATA_AUDIT.issues.length === 0) {
+    container.innerHTML = '<div class="audit-empty">No audit findings</div>';
+    return;
+  }
+
+  DATA_AUDIT.issues.forEach(issue => {
+    const item = document.createElement('div');
+    item.className = 'audit-item' + (reviewedUrls.has(issue.url) ? ' reviewed' : '');
+    item.dataset.url = issue.url;
+
+    const flagBadges = issue.flags.map(f =>
+      '<span class="flag-type ' + f.type + '">' + f.type.replace('_', ' ') + '</span>'
+    ).join(' ');
+
+    item.innerHTML =
+      '<div class="audit-item-head">' +
+        '<span class="anchor-text">' + escHtml(issue.anchor_text) + '</span>' +
+        '<span class="review-toggle">&#10003;</span>' +
+      '</div>' +
+      '<div style="margin-top:0.3rem">' + flagBadges + '</div>' +
+      '<div class="claim-text">' + escHtml(issue.claim) + '</div>' +
+      '<div class="detail-text">' + issue.flags.map(f => escHtml(f.detail)).join(' ') + '</div>';
+
+    // Click anchor text → scroll to link in article
+    item.querySelector('.anchor-text').addEventListener('click', (e) => {
+      e.stopPropagation();
+      const articleLink = document.querySelector('.article-content a[data-audit-url="' + CSS.escape(issue.url) + '"]');
+      if (articleLink) {
+        activateTab('article');
+        // Highlight the parent paragraph
+        document.querySelectorAll('.article-content p.highlight-para').forEach(p => p.classList.remove('highlight-para'));
+        const para = articleLink.closest('p');
+        if (para) para.classList.add('highlight-para');
+        articleLink.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+
+    // Click checkbox → toggle reviewed
+    item.querySelector('.review-toggle').addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleReviewed(issue.url);
+    });
+
+    container.appendChild(item);
+  });
+}
+
+// --- Rewrite column ---
+function renderRewrite() {
+  const container = document.getElementById('rewrite-content');
+  if (!DATA_REWRITE) {
+    container.innerHTML = '<div class="rewrite-empty">No rewrite yet</div>';
+    return;
+  }
+
+  // Strip frontmatter from both
+  function stripFm(text) {
+    const m = text.match(/^---\n[\s\S]*?\n---\n/);
+    return m ? text.slice(m[0].length).trim() : text.trim();
+  }
+
+  const original = stripFm(DATA_ARTICLE);
+  const rewritten = stripFm(DATA_REWRITE);
+
+  const diff = Diff.diffWords(original, rewritten);
+  let html = '<div class="diff-content" style="font-size:0.9rem">';
+  diff.forEach(part => {
+    if (part.added) {
+      html += '<ins>' + escHtml(part.value) + '</ins>';
+    } else if (part.removed) {
+      html += '<del>' + escHtml(part.value) + '</del>';
+    } else {
+      html += escHtml(part.value);
+    }
+  });
+  html += '</div>';
+  container.innerHTML = html;
+}
+
+// --- Mobile tabs ---
+function activateTab(name) {
+  // Only on mobile
+  if (window.innerWidth > 900) return;
+  document.querySelectorAll('.tab-bar button').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.col === name);
+  });
+  document.querySelectorAll('.col').forEach(col => {
+    col.classList.toggle('active', col.id === 'col-' + name);
+  });
+}
+
+document.querySelectorAll('.tab-bar button').forEach(btn => {
+  btn.addEventListener('click', () => activateTab(btn.dataset.col));
+});
+
+// --- Util ---
+function escHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+// --- Init ---
+renderResearchCards();
+renderArticle();
+renderAuditList();
+applyReviewedState();
+renderRewrite();
+</script>
+</body>
+</html>

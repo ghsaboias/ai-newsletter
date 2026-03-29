@@ -1,0 +1,649 @@
+{
+  "date": "2026-03-26",
+  "newsletter_file": "2026-03-26/pt.md",
+  "source_count": 15,
+  "url_count": 26,
+  "news_entities": [
+    {
+      "headline": "ARC-AGI-3 abandona puzzles e LLMs de fronteira não passam de 1%",
+      "summary": "Novo benchmark interativo exige que agentes descubram regras sem instrução; CNNs simples alcançam 12,58% enquanto humanos mantêm 100%.",
+      "bullets": [
+        "ARC-AGI-3 lançado em 25 de março com ambientes interativos em vez de puzzles estáticos",
+        "GPT-5, Claude e Gemini marcaram menos de 1% no novo benchmark",
+        "CNNs simples e busca em grafos alcançaram 12,58%; humanos mantêm 100%",
+        "Mais de $2 milhões em prêmios, com $700 mil para quem atingir 100%",
+        "Benchmark contém mais de 1.000 níveis em 150+ ambientes feitos à mão"
+      ],
+      "body": "O ARC-AGI-3, lançado em 25 de março, representa a transformação mais radical do benchmark desde sua criação por François Chollet em 2019. Em vez de puzzles estáticos em grade, agentes entram em ambientes interativos de 64x64 pixels com 16 cores e precisam descobrir regras, definir objetivos e resolver problemas sem instrução alguma.\n\nOs resultados iniciais expõem uma lacuna brutal: LLMs de fronteira como GPT-5 e Claude ficaram abaixo de 1%, enquanto abordagens simples com CNNs e busca em grafos chegaram a 12,58%. Humanos mantêm 100%. O benchmark mede inteligência ao longo do tempo — horizontes de planejamento, compressão de memória e capacidade de atualizar crenças diante de novas evidências.",
+      "category": ["technology"],
+      "entities": {
+        "people": ["François Chollet"],
+        "organizations": ["ARC Prize"],
+        "places": []
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://arcprize.org/arc-agi/3/",
+          "title": "ARC-AGI-3: o primeiro benchmark de raciocínio interativo",
+          "summary": "ARC Prize: página oficial apresenta o formato interativo do benchmark e os critérios de avaliação.",
+          "bullets": [
+            "Benchmark mede inteligência ao longo do tempo, não apenas respostas finais",
+            "Captura horizontes de planejamento e compressão de memória"
+          ],
+          "published_at": "2026-03-25",
+          "image_url": ""
+        },
+        {
+          "url": "https://dev.to/codepawl/gpt-5-claude-gemini-all-score-below-1-arc-agi-3-just-broke-every-frontier-model-5dbj",
+          "title": "GPT-5, Claude e Gemini ficam abaixo de 1% no ARC-AGI-3",
+          "summary": "DEV Community: análise detalhada dos resultados iniciais mostra que todos os LLMs de fronteira falharam no novo benchmark.",
+          "bullets": [
+            "GPT-5, Claude e Gemini marcaram menos de 1%",
+            "CNNs simples alcançaram 12,58%",
+            "Competição oferece mais de $2 milhões em prêmios",
+            "Submissões até 2 de novembro de 2026"
+          ],
+          "published_at": "2026-03-26",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Google lança TurboQuant: 6x menos memória e 8x mais velocidade em LLMs",
+      "summary": "Framework comprime caches de key-value a 3 bits sem perda de precisão, viabilizando modelos potentes em dispositivos de 16GB.",
+      "bullets": [
+        "TurboQuant comprime caches KV a 3 bits por valor",
+        "Redução de 6x na memória e até 8x de aceleração na inferência",
+        "Não requer calibração específica por dataset (data-oblivious)",
+        "Testado em modelos Gemma e Mistral em GPUs NVIDIA H100",
+        "Permite rodar modelos grandes em Mac Mini de 16GB"
+      ],
+      "body": "O Google Research publicou o TurboQuant, um framework de quantização que combina duas técnicas: PolarQuant, que converte vetores cartesianos em coordenadas polares eliminando overhead de normalização, e QJL (Quantized Johnson-Lindenstrauss), que reduz erros residuais a bits de sinal sem custo de memória.\n\nO resultado é uma compressão de caches de key-value a 3 bits por valor — 6x menos memória e até 8x mais velocidade em GPUs H100, sem perda de precisão. O algoritmo foi validado em benchmarks como LongBench, Needle In A Haystack e RULER. A compressão é suficiente para rodar modelos potentes localmente em dispositivos como Mac Mini de 16GB ou smartphones.",
+      "category": ["technology"],
+      "entities": {
+        "people": [],
+        "organizations": ["Google Research", "NVIDIA"],
+        "places": []
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/03/25/google-turboquant-ai-model-compression/",
+          "title": "TurboQuant do Google reduz uso de memória em IA sem perder precisão",
+          "summary": "Help Net Security: detalha as técnicas PolarQuant e QJL que compõem o framework TurboQuant.",
+          "bullets": [
+            "Combina PolarQuant (coordenadas polares) com QJL (bits de sinal)",
+            "Testado em Gemma e Mistral em H100",
+            "Não requer calibração por dataset"
+          ],
+          "published_at": "2026-03-25",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/googles-turboquant-compresses-llm-kv-caches-to-3-bits-with-no-accuracy-loss",
+          "title": "TurboQuant do Google reduz requisitos de memória de cache de LLM em 6x",
+          "summary": "Tom's Hardware: destaca a viabilidade de rodar modelos grandes em dispositivos de consumo como Mac Mini de 16GB.",
+          "bullets": [
+            "Compressão permite modelos potentes em dispositivos de consumo",
+            "Até 8x de ganho de performance em GPUs NVIDIA H100"
+          ],
+          "published_at": "2026-03-25",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Claude Code ganha auto mode com classificador que bloqueia ações perigosas",
+      "summary": "Novo modo avalia cada chamada de ferramenta em tempo real, bloqueando deleções em massa e exfiltração de dados.",
+      "bullets": [
+        "Auto mode lançado em 24 de março como research preview",
+        "Classificador embutido analisa cada ação antes da execução",
+        "Bloqueia deleções em massa, exfiltração e injeção de prompts",
+        "Disponível para planos Team, com rollout para Enterprise e API",
+        "Compatível com Claude Sonnet 4.6 e Opus 4.6"
+      ],
+      "body": "A Anthropic lançou o auto mode para o Claude Code, posicionado entre supervisionar cada ação manualmente e o arriscado flag --dangerously-skip-permissions. Um classificador de IA embutido revisa cada chamada de ferramenta antes da execução, verificando deleções em massa de arquivos, tentativas de exfiltração de dados, execução de código malicioso e injeção de prompts.\n\nAções seguras prosseguem automaticamente, enquanto as perigosas são bloqueadas. O recurso está disponível como research preview para planos Team, com expansão para Enterprise e API nos próximos dias. A Anthropic recomenda uso em ambientes isolados devido a possíveis falsos positivos.",
+      "category": ["technology"],
+      "entities": {
+        "people": [],
+        "organizations": ["Anthropic"],
+        "places": []
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/03/24/anthropic-hands-claude-code-more-control-but-keeps-it-on-a-leash/",
+          "title": "Anthropic dá mais controle ao Claude Code, mas mantém rédeas curtas",
+          "summary": "TechCrunch: descreve como o auto mode usa salvaguardas de IA para revisar ações antes de executá-las.",
+          "bullets": [
+            "Auto mode fica entre supervisão manual e flag de pular permissões",
+            "Classificador verifica cada ação em busca de comportamentos perigosos",
+            "Ações seguras procedem; perigosas são bloqueadas automaticamente"
+          ],
+          "published_at": "2026-03-24",
+          "image_url": ""
+        },
+        {
+          "url": "https://mlq.ai/news/anthropic-expands-claude-code-with-auto-mode/",
+          "title": "Anthropic expande Claude Code com auto mode",
+          "summary": "MLQ.ai: detalha compatibilidade com modelos e requisitos de ativação do auto mode.",
+          "bullets": [
+            "Compatível com Claude Sonnet 4.6 e Opus 4.6",
+            "Desabilitado por padrão no app desktop",
+            "Requer configuração de admin para CLI e VS Code"
+          ],
+          "published_at": "2026-03-25",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Índice Econômico da Anthropic: usuários veteranos têm 4-5pp mais sucesso",
+      "summary": "Relatório de março mostra que usuários com 6+ meses de uso escolhem tarefas mais complexas e obtêm melhores resultados.",
+      "bullets": [
+        "Usuários de alta experiência (6+ meses) têm 4-5 pontos percentuais a mais de sucesso",
+        "Top 10 tarefas caíram de 24% para 19% das conversas entre novembro e fevereiro",
+        "Uso pessoal subiu de 35% para 42% no mesmo período",
+        "A cada $10 a mais no valor-hora da tarefa, uso do Opus sobe 2,8pp na API"
+      ],
+      "body": "O relatório de março do Índice Econômico da Anthropic, baseado em dados de uso do Claude entre 5 e 12 de fevereiro, revela que usuários veteranos não apenas tentam tarefas de maior valor, como também obtêm respostas mais bem-sucedidas — com vantagem de 4-5 pontos percentuais sobre novatos.\n\nO uso no Claude.ai se diversificou significativamente: as 10 tarefas mais comuns passaram de 24% para 19% das conversas entre novembro de 2025 e fevereiro de 2026, enquanto uso pessoal subiu de 35% para 42%. A taxa de augmentação (interação colaborativa IA-humano) aumentou ligeiramente tanto no Claude.ai quanto na API.",
+      "category": ["technology", "economy"],
+      "entities": {
+        "people": [],
+        "organizations": ["Anthropic"],
+        "places": []
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.anthropic.com/research/economic-index-march-2026-report",
+          "title": "Relatório do Índice Econômico da Anthropic: curvas de aprendizado",
+          "summary": "Anthropic: relatório completo sobre como a experiência dos usuários impacta a qualidade e o tipo de uso do Claude.",
+          "bullets": [
+            "Usuários veteranos têm 4-5pp a mais de sucesso",
+            "Uso se diversificou — top 10 tarefas caíram de 24% para 19%",
+            "A cada $10 a mais no valor-hora, uso do Opus sobe 1,5pp no Claude.ai e 2,8pp na API",
+            "Augmentação supera automação pura no uso observado"
+          ],
+          "published_at": "2026-03-24",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "OpenAI Foundation compromete $1 bilhão em grants — aumento de 130x",
+      "summary": "Braço sem fins lucrativos saltou de $7,6 milhões em 2024 para compromisso de $1 bilhão em ciências da vida, resiliência e impacto econômico.",
+      "bullets": [
+        "OpenAI Foundation gastou $7,6 milhões em 2024; agora compromete $1 bilhão",
+        "Cofundador Wojciech Zaremba lidera programa de resiliência de IA",
+        "Montante é primeira parcela dos $25 bilhões prometidos na recapitalização",
+        "Quatro áreas: ciências da vida, empregos, resiliência de IA e programas comunitários",
+        "Robert Kaiden (ex-Deloitte, Twitter) entra como CFO"
+      ],
+      "body": "A OpenAI Foundation comprometeu-se a investir pelo menos $1 bilhão em grants ao longo do próximo ano — um salto de 130x em relação aos $7,6 milhões distribuídos em 2024. Os recursos serão divididos em quatro programas: ciências da vida (liderado por Jacob Trefethen, ex-$500M+ em grants na Coefficient Giving), resiliência de IA (liderado pelo cofundador Wojciech Zaremba), empregos e impacto econômico, e programas comunitários.\n\nO montante representa a primeira parcela dos $25 bilhões que a Foundation prometeu quando a OpenAI concluiu sua recapitalização como public benefit corporation avaliada em ~$130 bilhões em outubro.",
+      "category": ["technology", "business"],
+      "entities": {
+        "people": ["Wojciech Zaremba", "Robert Kaiden", "Jacob Trefethen"],
+        "organizations": ["OpenAI", "OpenAI Foundation"],
+        "places": []
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://thenextweb.com/news/openai-foundation-1-billion-invest",
+          "title": "A OpenAI Foundation planeja gastar pelo menos $1 bilhão este ano",
+          "summary": "The Next Web: contextualiza o salto de 130x nos gastos e a conexão com os $25 bilhões da recapitalização.",
+          "bullets": [
+            "Foundation gastou apenas $7,6 milhões em 2024 segundo registros do IRS",
+            "Compromisso de $1 bilhão é primeira parcela dos $25 bilhões prometidos",
+            "Recapitalização avaliou a OpenAI em ~$130 bilhões"
+          ],
+          "published_at": "2026-03-25",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.reuters.com/business/openai-non-profit-names-leaders-plans-spend-1-billion-this-year-bloomberg-news-2026-03-24/",
+          "title": "Braço sem fins lucrativos da OpenAI nomeia líderes e planeja gastar $1 bilhão",
+          "summary": "Reuters: reporta nomeações de liderança incluindo Zaremba para resiliência de IA e Kaiden como CFO.",
+          "bullets": [
+            "Wojciech Zaremba lidera programa de resiliência de IA",
+            "Robert Kaiden (ex-Deloitte, Twitter, Inspirato) entra como CFO",
+            "Investimento de $1 bilhão em quatro áreas programáticas"
+          ],
+          "published_at": "2026-03-25",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "OpenAI publica filosofia do Model Spec — documento de 100 páginas aberto ao público",
+      "summary": "Blog post detalha estrutura, filosofia e mecânica do documento que governa o comportamento do ChatGPT.",
+      "bullets": [
+        "Model Spec tem 100 páginas definindo como o ChatGPT deve se comportar",
+        "Documento serve como descrição do comportamento atual e meta de melhoria",
+        "OpenAI abriu o documento ao escrutínio público",
+        "Define como modelos devem seguir instruções, resolver conflitos e respeitar liberdade do usuário"
+      ],
+      "body": "A OpenAI publicou um blog post explicando a filosofia e os mecanismos por trás do Model Spec, o documento de 100 páginas que define como o ChatGPT deve se comportar em todas as interações. O Model Spec funciona tanto como descrição do comportamento atual quanto como alvo de melhoria contínua.\n\nA empresa enquadra o documento como uma interface para que pesquisadores, legisladores e o público possam ler, inspecionar e debater o comportamento pretendido dos modelos — em vez de mantê-lo escondido dentro do processo de treinamento.",
+      "category": ["technology"],
+      "entities": {
+        "people": [],
+        "organizations": ["OpenAI"],
+        "places": []
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://openai.com/index/our-approach-to-the-model-spec/",
+          "title": "Nossa abordagem ao Model Spec",
+          "summary": "OpenAI: blog post oficial explica a filosofia, estrutura e evolução do Model Spec.",
+          "bullets": [
+            "Model Spec define comportamento do ChatGPT em todas as consultas",
+            "Documento serve como descrição atual e meta futura",
+            "Aberto para inspeção pública por pesquisadores e legisladores"
+          ],
+          "published_at": "2026-03-25",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Harvey levanta $200 milhões a valuation de $11 bilhões para IA jurídica",
+      "summary": "Startup de IA legal tem 25 mil agentes em operação e captou rodada liderada por GIC e Sequoia.",
+      "bullets": [
+        "Rodada de $200 milhões liderada por GIC e Sequoia Capital",
+        "Valuation de $11 bilhões",
+        "Mais de 25 mil agentes de IA customizados em operação",
+        "Clientes incluem Ashurst, Baker Donelson, Cuatrecasas e GSK Stockmann",
+        "Capital expandirá infraestrutura de agentes e equipes de engenharia jurídica"
+      ],
+      "body": "A Harvey, startup de IA jurídica, levantou $200 milhões em rodada de crescimento que avaliou a empresa em $11 bilhões, co-liderada por GIC e Sequoia Capital. Investidores adicionais incluem Andreessen Horowitz, Coatue, Conviction Partners, Elad Gil, Evantic e Kleiner Perkins.\n\nA plataforma tem mais de 25 mil agentes de IA customizados em operação, servindo escritórios de advocacia como Ashurst, Baker Donelson, Cuatrecasas e GSK Stockmann. O capital será usado para expandir a infraestrutura de agentes e escalar equipes de engenharia jurídica embarcadas nos principais escritórios e departamentos jurídicos.",
+      "category": ["technology", "business"],
+      "entities": {
+        "people": [],
+        "organizations": ["Harvey", "GIC", "Sequoia Capital", "Andreessen Horowitz", "Coatue", "Kleiner Perkins"],
+        "places": []
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.harvey.ai/blog/harvey-raises-growth-round-at-dollar11-billion-valuation-co-led-by-gic-and-sequoia",
+          "title": "Harvey levanta rodada de crescimento a valuation de $11 bilhões",
+          "summary": "Harvey AI: anúncio oficial detalha investidores, número de agentes em operação e planos de expansão.",
+          "bullets": [
+            "Mais de 25 mil agentes customizados em operação",
+            "Investidores adicionais: a16z, Coatue, Kleiner Perkins",
+            "Capital para infraestrutura de agentes e equipes embarcadas"
+          ],
+          "published_at": "2026-03-25",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.cnbc.com/2026/03/25/legal-ai-startup-harvey-raises-200-million-at-11-billion-valuation.html",
+          "title": "Startup de IA jurídica Harvey levanta $200 milhões a valuation de $11 bilhões",
+          "summary": "CNBC: reporta o tamanho da rodada e a avaliação da empresa no contexto do mercado de IA jurídica.",
+          "bullets": [
+            "Rodada de $200 milhões a valuation de $11 bilhões",
+            "GIC e Sequoia Capital co-lideram o investimento"
+          ],
+          "published_at": "2026-03-25",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Meta reorganiza mil funcionários em 'pods AI-nativos' e demite 700 no mesmo dia",
+      "summary": "Reality Labs substitui cargos tradicionais por três funções — AI Builder, Pod Lead, Org Lead — enquanto empresa corta centenas em outras divisões.",
+      "bullets": [
+        "Mil funcionários do Reality Labs reorganizados em pods AI-nativos",
+        "Três novos cargos: AI Builder, AI Pod Lead e AI Org Lead",
+        "Meta diz que reestruturação não tem relação com as 700 demissões do mesmo dia",
+        "Demissões atingiram Facebook, Global Operations e Recruiting",
+        "Meta orçou $115-135 bilhões em capex para 2026, focado em IA"
+      ],
+      "body": "A Meta reorganizou uma equipe de mil funcionários do Reality Labs em 'pods AI-nativos', substituindo cargos tradicionais por três títulos: AI Builder, AI Pod Lead e AI Org Lead. A reestruturação busca criar uma organização mais plana focada em produtividade de engenharia — estrutura que Mark Zuckerberg tem defendido.\n\nNo mesmo dia, a Meta demitiu aproximadamente 700 pessoas em divisões como Facebook, Global Operations, Recruiting e vendas. A empresa afirmou que a reorganização em pods não tem relação com os cortes. A mudança faz parte da estratégia AI-first da Meta, que orçou entre $115 e $135 bilhões em capex para 2026, majoritariamente para servidores de IA e infraestrutura de data centers.",
+      "category": ["technology", "business"],
+      "entities": {
+        "people": ["Mark Zuckerberg"],
+        "organizations": ["Meta", "Meta Reality Labs"],
+        "places": []
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.businessinsider.com/metas-reality-labs-shifts-to-ai-native-pods-efficiency-2026-3",
+          "title": "Meta transforma funcionários em 'AI builders' e reorganiza times em pods",
+          "summary": "Business Insider: detalha o memo interno que descreve os novos cargos e a estrutura de pods AI-nativos.",
+          "bullets": [
+            "Memo descreve reestruturação de equipe de mil funcionários",
+            "Três títulos substituem hierarquia tradicional",
+            "Objetivo é 'mudança de patamar em produtividade de engenharia'"
+          ],
+          "published_at": "2026-03-25",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.pymnts.com/meta/2026/meta-prepares-hundreds-of-layoffs-as-part-of-regular-restructuring/",
+          "title": "Meta prepara centenas de demissões como parte de reestruturação regular",
+          "summary": "PYMNTS: reporta as ~700 demissões em múltiplas divisões no mesmo dia da reorganização em pods.",
+          "bullets": [
+            "Demissões atingem Reality Labs, mídias sociais, recrutamento e vendas",
+            "Meta classifica os cortes como parte de reestruturação regular"
+          ],
+          "published_at": "2026-03-25",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "CEO da Figure AI lança Hark com $100 milhões e designer do iPhone Air",
+      "summary": "Brett Adcock financia lab de IA pessoal com 45 engenheiros de Apple, Meta, Google e Tesla; Abidur Chowdhury é diretor de design.",
+      "bullets": [
+        "Brett Adcock, CEO da Figure AI de $39bi, lançou o Hark",
+        "$100 milhões investidos do próprio bolso",
+        "45 engenheiros recrutados de Apple, Meta, Google e Tesla",
+        "Abidur Chowdhury, designer do iPhone Air na Apple, é diretor de design",
+        "Primeiros modelos de IA previstos para o verão de 2026"
+      ],
+      "body": "Brett Adcock, CEO da Figure AI (avaliada em $39 bilhões), lançou publicamente o Hark, um laboratório de IA pessoal que vem financiando com $100 milhões do próprio bolso desde o final de 2025. A empresa, sediada em San Jose, tem 45 engenheiros e designers vindos de Apple, Meta, Google e Tesla.\n\nA contratação mais notável é Abidur Chowdhury, o designer industrial que liderou a equipe do iPhone Air na Apple e apresentou o dispositivo no keynote. Chowdhury deixou a Apple no outono passado para ser diretor de design do Hark. O lab está construindo modelos de fala, texto e visão com memória persistente, além de dispositivos de hardware nativos para IA.",
+      "category": ["technology", "business"],
+      "entities": {
+        "people": ["Brett Adcock", "Abidur Chowdhury"],
+        "organizations": ["Hark", "Figure AI", "Apple"],
+        "places": ["San Jose"]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://aihola.com/article/hark-ai-lab-launch",
+          "title": "Hark AI Lab é lançado com $100 milhões e designer do iPhone Air",
+          "summary": "aiHola: reporta o lançamento do Hark, os $100M de Adcock e a contratação de Chowdhury da Apple.",
+          "bullets": [
+            "Adcock financia com $100 milhões do próprio bolso desde 2025",
+            "Chowdhury liderou equipe do iPhone Air e apresentou no keynote",
+            "Ceticismo sobre wearables atuais como pins e câmeras faciais",
+            "Plano de escalar para 100 funcionários até meados de 2026"
+          ],
+          "published_at": "2026-03-25",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "LiteLLM comprometido no PyPI com malware que rouba chaves SSH e credenciais",
+      "summary": "Versões 1.82.7 e 1.82.8 do pacote com 95 milhões de downloads mensais saíram com código malicioso da campanha TeamPCP.",
+      "bullets": [
+        "Versões maliciosas publicadas em 24 de março via conta de mantenedor comprometida",
+        "Malware roubava chaves SSH, credenciais AWS/GCP/Azure, carteiras cripto e histórico de shell",
+        "Pacote tem ~95 milhões de downloads mensais; é dependência do DSPy e CrewAI",
+        "Descoberto por acidente quando fork bomb estourou RAM de um desenvolvedor",
+        "PyPI quarentenou o pacote inteiro; LiteLLM pausou novos releases",
+        "Ataque faz parte de campanha de 5 dias que também atingiu Trivy e Checkmarx KICS"
+      ],
+      "body": "Versões 1.82.7 e 1.82.8 do LiteLLM no PyPI foram publicadas com código malicioso em 24 de março, através de uma conta de mantenedor comprometida como parte da campanha TeamPCP. O pacote, com aproximadamente 95 milhões de downloads mensais, serve como gateway universal de API para mais de 100 provedores de LLM e é dependência de frameworks importantes como DSPy e CrewAI.\n\nO malware usava um arquivo .pth que se auto-executava em cada invocação do Python — sem necessidade de import — roubando variáveis de ambiente, chaves SSH privadas, credenciais de nuvem (AWS, GCP, Azure, Kubernetes), configurações git, histórico de shell e arquivos de carteiras cripto. O ataque foi descoberto por acidente quando um bug no próprio malware disparou um fork bomb exponencial que estourou a RAM de um desenvolvedor. O PyPI quarentenou o pacote e o LiteLLM pausou novos releases até completar uma revisão de supply chain.",
+      "category": ["technology"],
+      "entities": {
+        "people": [],
+        "organizations": ["LiteLLM", "BerriAI", "Datadog", "TeamPCP", "PyPI"],
+        "places": []
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://securitylabs.datadoghq.com/articles/litellm-compromised-pypi-teampcp-supply-chain-campaign/",
+          "title": "LiteLLM comprometido no PyPI: rastreando a campanha TeamPCP de março de 2026",
+          "summary": "Datadog Security Labs: investigação técnica rastreia ataque a campanha de 5 dias começando pelo Trivy.",
+          "bullets": [
+            "Campanha TeamPCP começou em 19 de março com o Trivy",
+            "Seguiu para CanisterWorm no npm e Checkmarx KICS antes do LiteLLM",
+            "Versões maliciosas publicadas via conta de mantenedor comprometida"
+          ],
+          "published_at": "2026-03-25",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.armosec.io/blog/litellm-supply-chain-attack-backdoor-analysis/",
+          "title": "A biblioteca que guarda todas as suas chaves de IA foi comprometida",
+          "summary": "ARMO: análise do backdoor destaca os 95 milhões de downloads mensais e o raio de explosão via DSPy e CrewAI.",
+          "bullets": [
+            "LiteLLM tem ~95 milhões de downloads mensais no PyPI",
+            "Gateway universal para mais de 100 provedores de LLM",
+            "Dependência de frameworks como DSPy e CrewAI amplifica impacto"
+          ],
+          "published_at": "2026-03-24",
+          "image_url": ""
+        },
+        {
+          "url": "https://aimodelsmap.com/litellm-supply-chain-attack",
+          "title": "Ataque de supply chain ao LiteLLM no PyPI: o que aconteceu e o que fazer",
+          "summary": "AI Models Map: relata como a descoberta acidental via fork bomb levou à identificação do malware.",
+          "bullets": [
+            "Máquina de desenvolvedor travou por exaustão de RAM",
+            "Bug no malware causou fork bomb exponencial",
+            "Descoberta acidental levou à quarentena do pacote"
+          ],
+          "published_at": "2026-03-24",
+          "image_url": ""
+        },
+        {
+          "url": "https://docs.litellm.ai/blog/security-update-march-2026",
+          "title": "Atualização de segurança: incidente suspeito de supply chain",
+          "summary": "LiteLLM: comunicado oficial confirma pausa em novos releases até conclusão de revisão de segurança.",
+          "bullets": [
+            "LiteLLM pausou novos releases até concluir revisão de supply chain",
+            "PyPI quarentenou o pacote inteiro"
+          ],
+          "published_at": "2026-03-25",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "NASA cancela estação orbital e anuncia base lunar de $20 bilhões",
+      "summary": "Lunar Gateway é cancelada para redirecionar recursos a base na superfície da Lua, com espaçonave nuclear rumo a Marte até 2028.",
+      "bullets": [
+        "Lunar Gateway cancelada; componentes redirecionados para base na superfície",
+        "Base lunar custará $20 bilhões em três fases ao longo de sete anos",
+        "Fase 1 (2026-28): missões robóticas e scouting no polo sul lunar",
+        "Espaçonave nuclear Space Reactor 1 Freedom lançada a Marte até fim de 2028",
+        "Administrador Jared Isaacman anuncia na corrida contra China, que planeja astronautas lunares por volta de 2030"
+      ],
+      "body": "A NASA cancelou a Lunar Gateway, estação espacial que seria posicionada em órbita lunar, e redirecionará seus componentes para construir uma base na superfície da Lua de $20 bilhões ao longo de sete anos. O plano prevê três fases: Fase 1 (2026-28) focada em missões robóticas e scouting no polo sul, Fase 2 (2029-31) com início de construção e duas missões tripuladas por ano, e Fase 3 (2032+) com presença humana sustentada.\n\nO administrador Jared Isaacman também revelou planos de lançar a Space Reactor 1 Freedom, espaçonave com propulsão nuclear, rumo a Marte antes do fim de 2028. O anúncio acontece na corrida contra a China, que planeja enviar astronautas à Lua por volta de 2030.",
+      "category": ["technology", "world"],
+      "entities": {
+        "people": ["Jared Isaacman"],
+        "organizations": ["NASA"],
+        "places": ["Washington D.C.", "lunar south pole"]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.reuters.com/science/nasa-cancel-orbiting-lunar-station-build-moon-base-instead-2026-03-24/",
+          "title": "NASA planeja base lunar e espaçonave nuclear em expansão do programa Artemis",
+          "summary": "Reuters: reporta o cancelamento da Gateway, o plano de $20 bilhões e a espaçonave nuclear para Marte.",
+          "bullets": [
+            "Gateway cancelada; componentes usados na base de superfície",
+            "Plano inclui frota de drones e energia nuclear na superfície lunar",
+            "Space Reactor 1 Freedom lançada a Marte até fim de 2028"
+          ],
+          "published_at": "2026-03-24",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.cnbc.com/2026/03/24/nasa-to-spend-20-billion-on-moon-base-cancel-orbiting-lunar-station.html",
+          "title": "NASA gastará $20 bilhões em base lunar e cancela estação orbital",
+          "summary": "CNBC: contextualiza o anúncio na corrida espacial contra a China e seus planos lunares para 2030.",
+          "bullets": [
+            "Isaacman fez anúncio no evento 'Ignition' na sede da NASA",
+            "EUA querem chegar antes da China, que planeja astronautas lunares por volta de 2030"
+          ],
+          "published_at": "2026-03-24",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Irã rejeita cessar-fogo americano e responde com cinco contra-demandas",
+      "summary": "Porta-voz militar declarou que 'nunca faremos acordo'; Brent caiu mais de 20% na semana e fechou a $100,40.",
+      "bullets": [
+        "Irã rejeitou plano de cessar-fogo de 15 pontos dos EUA",
+        "Cinco contra-demandas incluem soberania sobre Ormuz e reparações",
+        "Porta-voz militar: 'pessoas como nós nunca farão acordo com pessoas como vocês'",
+        "Brent caiu 3,9% no dia para $100,40; acumula queda de mais de 20% na semana",
+        "Mediadores buscam conversas presenciais no Paquistão, possivelmente na sexta"
+      ],
+      "body": "O Irã rejeitou o plano de cessar-fogo americano de 15 pontos e respondeu com cinco contra-demandas transmitidas pela televisão estatal: fim das mortes de autoridades iranianas, garantias de segurança contra futuras guerras, reparações por danos, cessação de hostilidades e soberania sobre o Estreito de Ormuz. Um porta-voz militar sênior declarou que 'pessoas como nós nunca podem se entender com pessoas como vocês — ninguém como nós fará acordo com vocês. Nem agora. Nem nunca.'\n\nO petróleo reagiu com queda de 3,9% no Brent para $100,40/barril, parte de um prêmio de guerra que inflou os preços em mais de 30% desde o início do conflito em fevereiro. Mediadores tentam viabilizar conversas presenciais na sexta-feira no Paquistão, mas obstáculos permanecem devido à autoridade fragmentada dentro do governo iraniano.",
+      "category": ["world", "politics"],
+      "entities": {
+        "people": ["Donald Trump"],
+        "organizations": ["IRGC", "US State Department"],
+        "places": ["Iran", "United States", "Pakistan", "Strait of Hormuz"]
+      },
+      "is_breaking": false,
+      "sensitivity": "political_high_risk",
+      "sources": [
+        {
+          "url": "https://www.post-gazette.com/news/world/2026/03/25/iran-war-update-latest-today-march-25-2026/stories/202603250045",
+          "title": "Guerra com Irã, dia 26: Teerã rejeita plano americano e apresenta contrapropostas",
+          "summary": "Pittsburgh Post-Gazette: detalha as cinco contra-demandas iranianas e o status das negociações via mediadores.",
+          "bullets": [
+            "Irã rejeitou plano de 15 pontos e apresentou 5 contra-demandas",
+            "Exigências incluem soberania sobre Ormuz e reparações de guerra",
+            "Mediadores buscam encontro no Paquistão na sexta-feira"
+          ],
+          "published_at": "2026-03-25",
+          "image_url": ""
+        },
+        {
+          "url": "https://oilprice.com/Energy/Energy-General/Crude-Drops-4-on-Iran-News-Just-as-Dallas-Fed-Signals-Oil-Rebound.html",
+          "title": "Petróleo cai 4% com notícias do Irã enquanto Dallas Fed sinaliza recuperação",
+          "summary": "OilPrice.com: reporta queda de ~4% no petróleo, a declaração do porta-voz militar e os indicadores do Dallas Fed.",
+          "bullets": [
+            "Brent caiu 3,9% para $100,40; WTI caiu 3,77% para $88,87",
+            "Prêmio de guerra inflou preços em mais de 30% desde fevereiro",
+            "Porta-voz militar: 'nunca faremos acordo com vocês'",
+            "S&P 500 subiu 0,7%; Nasdaq subiu 1,1%"
+          ],
+          "published_at": "2026-03-25",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Drones iranianos atingem tanque de combustível no Aeroporto de Kuwait",
+      "summary": "IRGC assumiu responsabilidade por ataques a bases com forças americanas no Kuwait, Jordânia e Bahrein.",
+      "bullets": [
+        "Drones atingiram tanque de combustível no Aeroporto Internacional de Kuwait",
+        "Incêndio gerou grande coluna de fumaça; sem vítimas",
+        "IRGC assumiu responsabilidade pelo ataque",
+        "Aeroporto já estava fechado para voos comerciais desde 28 de fevereiro"
+      ],
+      "body": "Drones atingiram um tanque de combustível no Aeroporto Internacional de Kuwait em 25 de março, provocando um incêndio que gerou uma grande coluna de fumaça. A Diretoria Geral de Aviação Civil do Kuwait reportou apenas 'danos limitados' sem vítimas. Os Guardas Revolucionários do Irã assumiram responsabilidade, afirmando que lançaram mísseis e drones contra bases militares com forças americanas no Kuwait, Jordânia e Bahrein.\n\nO aeroporto já estava fechado para voos comerciais desde o início da guerra regional em 28 de fevereiro, tendo sofrido ataques anteriores em 8 e 14 de março.",
+      "category": ["world"],
+      "entities": {
+        "people": [],
+        "organizations": ["IRGC", "Kuwait Directorate General of Civil Aviation"],
+        "places": ["Kuwait", "Kuwait International Airport", "Iran", "Jordan", "Bahrain"]
+      },
+      "is_breaking": false,
+      "sensitivity": "violent",
+      "sources": [
+        {
+          "url": "https://www.khaleejtimes.com/business/aviation/fire-at-kuwait-airport-after-iranian-drones-hit-fuel-tank",
+          "title": "Incêndio no aeroporto de Kuwait após drones iranianos atingirem tanque de combustível",
+          "summary": "Khaleej Times: reporta o ataque com drones, a resposta do IRGC e o histórico de ataques ao aeroporto.",
+          "bullets": [
+            "Drones atingiram tanque de combustível no aeroporto",
+            "IRGC reivindicou ataques a bases no Kuwait, Jordânia e Bahrein",
+            "Terceiro ataque ao aeroporto desde início da guerra em fevereiro",
+            "Danos limitados, sem vítimas"
+          ],
+          "published_at": "2026-03-25",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Drones russos danificam centro histórico de Lviv, patrimônio da UNESCO",
+      "summary": "Ataque atingiu complexo do Mosteiro Bernardino; vários feridos enquanto Rússia dispara quase 400 drones na ofensiva de primavera.",
+      "bullets": [
+        "Drones russos atingiram centro histórico de Lviv em 25 de março",
+        "Complexo do Mosteiro Bernardino danificado — patrimônio da UNESCO",
+        "Vários feridos; bombeiros combateram incêndios no centro",
+        "Rússia lançou quase 400 drones contra a Ucrânia no mesmo dia"
+      ],
+      "body": "Drones russos atingiram o centro histórico de Lviv em 25 de março, danificando edifícios ligados ao complexo do Mosteiro Bernardino na área listada como Patrimônio Mundial da UNESCO. Vários civis ficaram feridos e equipes de emergência foram mobilizadas para conter incêndios na região.\n\nO ataque faz parte da ofensiva de primavera russa, que incluiu o lançamento de quase 400 drones contra a Ucrânia no mesmo dia. Outras regiões como Donetsk e Vinnytsia também reportaram ataques e vítimas.",
+      "category": ["world"],
+      "entities": {
+        "people": [],
+        "organizations": ["UNESCO"],
+        "places": ["Lviv", "Ukraine", "Russia"]
+      },
+      "is_breaking": false,
+      "sensitivity": "violent",
+      "sources": [
+        {
+          "url": "https://www.euronews.com/video/2026/03/25/russian-drone-strike-damages-historic-center-of-lviv-ukraine",
+          "title": "Ataque de drone russo danifica centro histórico de Lviv, Ucrânia",
+          "summary": "Euronews: reporta os danos ao complexo do Mosteiro Bernardino e os feridos no centro da cidade.",
+          "bullets": [
+            "Edifícios do Mosteiro Bernardino danificados",
+            "Vários feridos; bombeiros combateram incêndios",
+            "Donetsk e Vinnytsia também reportaram ataques"
+          ],
+          "published_at": "2026-03-25",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "FDA aprova AVLAYAH da Denali, primeiro tratamento para síndrome de Hunter em 20 anos",
+      "summary": "Droga usa plataforma TransportVehicle para cruzar barreira hematoencefálica e reduziu heparan sulfato cerebral em 91%.",
+      "bullets": [
+        "FDA aprovou AVLAYAH (tividenofusp alfa-eknm) em 25 de março",
+        "Primeiro novo tratamento para síndrome de Hunter em quase 20 anos",
+        "Redução de 91% no heparan sulfato no líquido cefalorraquidiano",
+        "93% dos pacientes (41 de 44) atingiram níveis normais",
+        "Usa plataforma TransportVehicle para cruzar barreira hematoencefálica",
+        "Doença rara afeta ~500 indivíduos nos EUA"
+      ],
+      "body": "A FDA aprovou o AVLAYAH (tividenofusp alfa-eknm) da Denali Therapeutics para manifestações neurológicas da síndrome de Hunter (MPS II) em pacientes pediátricos — o primeiro novo tratamento para a doença em quase 20 anos. No ensaio clínico de Fase 1/2 com 47 participantes, a droga reduziu o heparan sulfato no líquido cefalorraquidiano em 91% até a semana 24, com 93% dos pacientes (41 de 44) atingindo níveis dentro da faixa normal.\n\nO AVLAYAH usa a plataforma TransportVehicle da Denali, que se liga a receptores de transferrina para cruzar a barreira hematoencefálica via transcitose mediada por receptor — entregando a enzima de reposição diretamente ao sistema nervoso central. A Denali recebeu um voucher de revisão prioritária para doença pediátrica rara.",
+      "category": ["technology"],
+      "entities": {
+        "people": [],
+        "organizations": ["Denali Therapeutics", "FDA"],
+        "places": ["United States"]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.globenewswire.com/news-release/2026/03/25/3262412/0/en/Denali-Therapeutics-Announces-U-S-FDA-Approval-of-AVLAYAH-tividenofusp-alfa-eknm-for-",
+          "title": "Denali Therapeutics anuncia aprovação da FDA para AVLAYAH",
+          "summary": "GlobeNewsWire (Denali): comunicado de imprensa detalha resultados clínicos, mecanismo TransportVehicle e voucher de revisão prioritária.",
+          "bullets": [
+            "Redução de 91% no heparan sulfato cerebral até semana 24",
+            "93% dos pacientes atingiram níveis normais",
+            "Plataforma TransportVehicle cruza barreira hematoencefálica",
+            "Doença rara afeta ~500 pessoas nos EUA",
+            "Denali recebeu voucher de revisão prioritária pediátrica"
+          ],
+          "published_at": "2026-03-25",
+          "image_url": ""
+        }
+      ]
+    }
+  ]
+}

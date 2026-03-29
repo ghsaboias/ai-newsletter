@@ -1,0 +1,806 @@
+{
+  "date": "2026-03-17",
+  "newsletter_file": "2026-03-17/pt.md",
+  "source_count": 19,
+  "url_count": 31,
+  "news_entities": [
+    {
+      "headline": "Nvidia lança Dynamo 1.0, Agent Toolkit e AI-Q Blueprint na GTC",
+      "summary": "Sistema de inferência open-source multiplica throughput das Blackwell por 7x; Agent Toolkit estreia com 17 parceiros enterprise incluindo Adobe e Salesforce.",
+      "bullets": [
+        "Dynamo 1.0 é sistema de inferência open-source adotado por AWS, Azure, Google Cloud, Cursor e Perplexity",
+        "Boost de até 7x no throughput de GPUs Blackwell via serving desagregado e paralelismo de experts",
+        "Agent Toolkit lançado com 17 parceiros: Adobe, Salesforce, SAP, ServiceNow, CrowdStrike e mais",
+        "AI-Q Blueprint com LangChain lidera os dois DeepResearch Benchmarks cortando custos pela metade",
+        "Jensen Huang citou Claude Code e OpenClaw como catalisadores do 'ponto de inflexão dos agentes'"
+      ],
+      "body": "Na GTC 2026, a Nvidia apresentou o Dynamo 1.0, sistema operacional de inferência open-source que eleva o desempenho das GPUs Blackwell em até 7x via serving desagregado e paralelismo amplo de experts, conforme demonstrado no benchmark SemiAnalysis InferenceX. A plataforma já conta com adoção de AWS, Microsoft Azure, Google Cloud, Oracle Cloud, além de empresas como Cursor, Perplexity, ByteDance e PayPal.\n\nO Agent Toolkit estreou com 17 gigantes enterprise — Adobe, Salesforce, SAP, ServiceNow, CrowdStrike, Atlassian, Palantir, entre outras — incluindo o OpenShell, runtime open-source com guardrails de segurança e privacidade. O AI-Q Blueprint, construído com a LangChain, alcançou o primeiro lugar nos dois DeepResearch Benchmarks, usando arquitetura híbrida que combina modelos frontier e abertos para cortar custos de consulta pela metade.",
+      "category": ["technology"],
+      "entities": {
+        "people": ["Jensen Huang"],
+        "organizations": ["Nvidia", "AWS", "Microsoft", "Google Cloud", "Adobe", "Salesforce", "SAP", "ServiceNow", "CrowdStrike", "Cursor", "Perplexity", "LangChain", "PayPal"],
+        "places": ["San Jose"]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://nvidianews.nvidia.com/news/nvidia-enters-production-with-dynamo-the-broadly-adopted-inference-operating-system-for-ai-factories",
+          "title": "Nvidia entra em produção com Dynamo, sistema de inferência amplamente adotado para fábricas de IA",
+          "summary": "NVIDIA Newsroom: Dynamo 1.0 atinge produção com adoção de AWS, Azure, Google Cloud e mais de 20 parceiros para inferência em escala.",
+          "bullets": [
+            "Dynamo 1.0 adotado por AWS, Azure, Google Cloud, Oracle Cloud, Alibaba Cloud e CoreWeave",
+            "Empresas AI-native como Cursor, Perplexity, ByteDance e PayPal integram a plataforma",
+            "Inclui ModelExpress para startup 7x mais rápido e otimização de KV cache"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://developer.nvidia.com/blog/nvidia-dynamo-1-production-ready/",
+          "title": "Como o Dynamo 1.0 da Nvidia potencializa inferência multi-nó em escala de produção",
+          "summary": "NVIDIA Developer Blog: detalhamento técnico do Dynamo 1.0 mostrando boost de 7x no throughput das Blackwell via serving desagregado.",
+          "bullets": [
+            "Boost de até 7x no throughput em GPUs Blackwell no benchmark SemiAnalysis InferenceX",
+            "Integração nativa com frameworks open-source: LangChain, SGLang, vLLM",
+            "Serving desagregado de encode/prefill/decode e paralelismo amplo de experts"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://venturebeat.com/technology/nvidia-launches-enterprise-ai-agent-platform-with-adobe-salesforce-sap-among",
+          "title": "Nvidia lança plataforma enterprise de agentes IA com Adobe, Salesforce e SAP entre 17 adotantes",
+          "summary": "VentureBeat: Agent Toolkit estreia com 17 empresas enterprise incluindo Adobe, Salesforce, SAP, ServiceNow e CrowdStrike.",
+          "bullets": [
+            "17 empresas adotam o Agent Toolkit na GTC 2026",
+            "Toolkit inclui modelos Nemotron, AI-Q Blueprint, cuOpt skills e runtime OpenShell",
+            "Jensen Huang declara chegada do 'ponto de inflexão dos agentes'"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        },
+        {
+          "url": "http://nvidianews.nvidia.com/news/ai-agents",
+          "title": "Nvidia acende a próxima revolução industrial no trabalho do conhecimento com plataforma aberta de agentes",
+          "summary": "NVIDIA Newsroom: AI-Q Blueprint lidera DeepResearch Benchmarks; OpenShell aplica guardrails de segurança e privacidade para agentes autônomos.",
+          "bullets": [
+            "AI-Q Blueprint alcança #1 nos dois DeepResearch Benchmarks (55,95 e 54,50)",
+            "Abordagem híbrida com modelos frontier e abertos corta custos de consulta pela metade",
+            "OpenShell é runtime open-source que aplica guardrails de segurança, rede e privacidade"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Nvidia revela Groq 3 LPU e Vera CPU para inferência agêntica",
+      "summary": "Groq 3 com 500 MB de SRAM on-chip entrega 35x mais throughput por megawatt; Vera CPU com 88 núcleos Olympus sustenta 22.500 ambientes simultâneos.",
+      "bullets": [
+        "Groq 3 LPU tem 500 MB de SRAM on-chip com 150 TB/s de bandwidth de memória",
+        "Rack LPX com 256 LPUs entrega 315 PFLOPS (FP8) e 128 GB de SRAM total",
+        "GPUs processam prompts enquanto LPUs geram tokens a latência ultrabaixa",
+        "Throughput 35x maior por megawatt em comparação com sistemas anteriores",
+        "Vera CPU com 88 núcleos Olympus é 50% mais rápido que x86",
+        "Rack Vera sustenta 22.500+ ambientes simultâneos para agentes de IA"
+      ],
+      "body": "O Groq 3 LPU, primeiro chip resultante da aquisição de US$ 20 bilhões da Groq Inc. em dezembro de 2025, utiliza arquitetura baseada em SRAM com 500 MB de memória on-chip a 150 TB/s de bandwidth. O rack líquido-refrigerado LPX empilha 256 LPUs entregando 315 PFLOPS (FP8) e 40 PB/s de bandwidth on-chip. A arquitetura complementar coloca GPUs no prefill e LPUs na geração de tokens, alcançando velocidades próximas a 1.000 tokens por segundo por usuário.\n\nO Vera CPU, primeiro processador próprio da Nvidia, traz 88 núcleos Olympus com tecnologia Spatial Multithreading, 50% mais rápidos e duas vezes mais eficientes que CPUs x86. Seu subsistema LPDDR5X entrega 1,2 TB/s de bandwidth — o dobro de CPUs tradicionais pela metade da energia. Um rack com 256 chips sustenta mais de 22.500 ambientes simultâneos para agentes de IA.",
+      "category": ["technology"],
+      "entities": {
+        "people": ["Jensen Huang", "Ian Buck"],
+        "organizations": ["Nvidia", "Groq"],
+        "places": ["San Jose"]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.datacenterdynamics.com/en/news/nvidia-announces-groq-3-lpu-ai-inference-chip-plans-256-lpu-rack/",
+          "title": "Nvidia anuncia chip de inferência Groq 3 LPU e rack com 256 LPUs",
+          "summary": "DatacenterDynamics: Nvidia revela Groq 3 LPU nascido da aquisição de US$ 20 bi da Groq, com rack de 256 LPUs para inferência de latência extrema.",
+          "bullets": [
+            "Groq 3 LPU nasce da aquisição de US$ 20 bilhões da Groq Inc.",
+            "Ian Buck explica complementaridade: GPUs para throughput, LPUs para latência extrema",
+            "Rack LPX de 256 LPUs gera milhares de tokens por segundo por usuário"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://developer.nvidia.com/blog/inside-nvidia-groq-3-lpx-the-low-latency-inference-accelerator-for-the-nvidia-vera-rubin-platform/",
+          "title": "Por dentro do Groq 3 LPX: acelerador de inferência de baixa latência para a plataforma Vera Rubin",
+          "summary": "NVIDIA Developer Blog: especificações técnicas do Groq 3 LPX — 315 PFLOPS, 128 GB SRAM, 40 PB/s de bandwidth on-chip por rack.",
+          "bullets": [
+            "500 MB de SRAM on-chip com 150 TB/s de bandwidth por LPU",
+            "96 links C2C a 112 Gbps cada, totalizando 2,5 TB/s bidirecionais",
+            "Disaggregação atenção-FFN permite 35x mais throughput por megawatt",
+            "Co-design com Vera Rubin NVL72 para arquitetura heterogênea de inferência"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://siliconangle.com/2026/03/16/nvidia-reinvents-cpu-age-agentic-ai/",
+          "title": "Nvidia reinventa a CPU para a era da IA agêntica",
+          "summary": "SiliconANGLE: Vera CPU com 88 núcleos Olympus customizados é o primeiro chip projetado para workloads de IA agêntica e aprendizado por reforço.",
+          "bullets": [
+            "88 núcleos Olympus com Spatial Multithreading executam duas tarefas simultaneamente",
+            "50% mais rápido e 2x mais eficiente que CPUs x86 tradicionais",
+            "LPDDR5X entrega 1,2 TB/s de bandwidth pelo dobro da eficiência energética",
+            "NVL72 conecta 72 GPUs Rubin a 36 Vera CPUs via NVLink 6 a 1,8 TB/s"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Nvidia lança GR00T N2, Cosmos 3 e Alpamayo 1.5 para robótica",
+      "summary": "GR00T N2 supera modelos VLA líderes em 2x; Cosmos 3 serve FANUC, ABB e KUKA; Alpamayo 1.5 aceita prompts em linguagem natural para direção autônoma.",
+      "bullets": [
+        "GR00T N2 usa arquitetura World Action Model baseada em DreamZero para humanoides",
+        "Supera modelos de visão-linguagem-ação líderes por mais de 2x em novas tarefas",
+        "Cosmos 3 une geração de mundos sintéticos a simulação de ações para robótica industrial",
+        "FANUC, ABB, YASKAWA e KUKA integram Cosmos 3 com frameworks de simulação Nvidia",
+        "Alpamayo 1.5 aceita prompts em linguagem natural para guiar veículos autônomos",
+        "Mais de 100 mil downloads dos modelos Alpamayo"
+      ],
+      "body": "O GR00T N2 para humanoides utiliza a arquitetura World Action Model baseada na pesquisa DreamZero e supera modelos de visão-linguagem-ação líderes por mais de 2x em tarefas inéditas. O Cosmos 3 combina geração de mundos sintéticos, raciocínio visual e simulação de ações para robótica industrial, com FANUC, ABB, YASKAWA e KUKA entre os integradores.\n\nO Alpamayo 1.5, modelo open-source para direção autônoma, aceita vídeo de direção, histórico de movimento, dados de navegação e instruções em linguagem natural, permitindo que desenvolvedores guiem o comportamento do veículo via prompts de texto. A Nvidia também lançou o Physical AI Data Factory Blueprint, arquitetura que automatiza pipelines de dados para transformar o problema de dados da robótica em problema de computação.",
+      "category": ["technology"],
+      "entities": {
+        "people": ["Jensen Huang"],
+        "organizations": ["Nvidia", "FANUC", "ABB", "KUKA", "YASKAWA", "Figure", "Agility", "Medtronic", "Universal Robots", "Skild AI"],
+        "places": ["San Jose"]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://the-decoder.com/gtc-2026-nvidia-wants-to-swap-robotics-data-problem-for-a-compute-problem/",
+          "title": "GTC 2026: Nvidia quer trocar o problema de dados da robótica por problema de computação",
+          "summary": "The Decoder: GR00T N2 supera modelos VLA em 2x, Cosmos 3 combina mundos sintéticos com simulação de ações, e Alpamayo 1.5 aceita prompts naturais.",
+          "bullets": [
+            "GR00T N2 supera modelos VLA líderes por mais de 2x em tarefas novas",
+            "Cosmos 3 combina geração sintética, raciocínio visual e simulação de ações",
+            "Alpamayo 1.5 com 100 mil downloads aceita prompts de texto para direção autônoma"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        },
+        {
+          "url": "http://nvidianews.nvidia.com/news/nvidia-announces-open-physical-ai-data-factory-blueprint-to-accelerate-robotics-vision-ai-agents-and-autonomous-vehicle-development",
+          "title": "Nvidia anuncia blueprint aberto de fábrica de dados para IA física e robótica",
+          "summary": "NVIDIA Newsroom: Physical AI Data Factory Blueprint automatiza pipelines de dados via Cosmos Curator, Transfer e Evaluator para robótica e veículos autônomos.",
+          "bullets": [
+            "Blueprint automatiza processamento e curadoria de dados em escala massiva",
+            "Pipeline inclui Cosmos Curator, Cosmos Transfer e Cosmos Evaluator",
+            "Projetado para robótica, agentes de visão IA e veículos autônomos"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        },
+        {
+          "url": "http://nvidianews.nvidia.com/news/nvidia-expands-open-model-families-to-power-the-next-wave-of-agentic-physical-and-healthcare-ai",
+          "title": "Nvidia expande famílias de modelos abertos para IA agêntica, física e de saúde",
+          "summary": "NVIDIA Newsroom: expansão das famílias de modelos abertos incluindo Alpamayo 1.5 para direção autônoma e modelos para saúde.",
+          "bullets": [
+            "Alpamayo 1.5 aceita vídeo, histórico de movimento, navegação e linguagem natural",
+            "Mais de 100 mil desenvolvedores baixaram modelos Alpamayo",
+            "Modelos expandidos cobrem IA agêntica, física e de saúde"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Nature publica framework open-source conectando LLMs ao ROS",
+      "summary": "Paper na Nature Machine Intelligence apresenta sistema que traduz instruções em linguagem natural para ações robóticas via Robot Operating System.",
+      "bullets": [
+        "Framework conecta agente LLM ao Robot Operating System (ROS) para inteligência corporificada",
+        "Traduz automaticamente outputs do LLM em ações robóticas com modos intercambiáveis",
+        "Aprende novas habilidades atômicas por imitação e refina via otimização e feedback",
+        "Código completo liberado como open-source"
+      ],
+      "body": "Artigo publicado na Nature Machine Intelligence em 16 de março apresenta framework open-source que conecta um agente de modelo de linguagem grande ao Robot Operating System (ROS), criando um sistema versátil de inteligência corporificada. O framework traduz automaticamente outputs do LLM em ações robóticas com modos de execução intercambiáveis (código inline ou árvores de comportamento), aprende novas habilidades atômicas por imitação e as refina continuamente via otimização automatizada e reflexão a partir de feedback humano ou ambiental.\n\nExperimentos extensivos validaram robustez, escalabilidade e versatilidade em cenários e embodiments diversos, incluindo tarefas de horizonte longo que exigem encadeamento autônomo de múltiplas habilidades.",
+      "category": ["technology"],
+      "entities": {
+        "people": [],
+        "organizations": ["Nature Machine Intelligence"],
+        "places": []
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.nature.com/articles/s42256-026-01186-z",
+          "title": "Framework de robot operating system para uso de LLMs em IA corporificada",
+          "summary": "Nature Machine Intelligence: framework open-source conecta LLMs ao ROS com modos intercambiáveis e aprendizado por imitação.",
+          "bullets": [
+            "Conecta agente LLM ao ROS para inteligência corporificada",
+            "Suporta modos de execução intercambiáveis: código inline ou árvores de comportamento",
+            "Validado em cenários diversos incluindo tarefas de horizonte longo"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "NC AI demonstra K-world model com 80% de sucesso em robótica",
+      "summary": "Modelo da sul-coreana NC AI gera ações diretamente do espaço latente, dispensando raciocínio sobre vídeo e ganhando eficiência.",
+      "bullets": [
+        "World Foundation Model (WFM) para robótica alcança 80% de sucesso em tarefas avançadas",
+        "Gera ações diretamente do espaço latente em vez de gerar vídeo e depois raciocinar",
+        "Abordagem garante maior eficiência e precisão que WFMs baseados em vídeo",
+        "Construído com infraestrutura de computação de larga escala própria da NC AI"
+      ],
+      "body": "A sul-coreana NC AI demonstrou um World Foundation Model (WFM) para inteligência robótica que alcançou 80% de sucesso em tarefas avançadas. Diferente de WFMs existentes que geram vídeo, raciocinam sobre ele com modelos visão-linguagem e então selecionam ações, o K-world model gera ações diretamente a partir da informação do espaço latente que precede a geração de vídeo, garantindo maior eficiência e precisão.\n\nO modelo foi construído usando infraestrutura de computação própria da NC AI, desafiando concorrentes globais no mercado de IA física onde world models são considerados tecnologia-chave para a próxima geração de inteligência robótica.",
+      "category": ["technology"],
+      "entities": {
+        "people": [],
+        "organizations": ["NC AI"],
+        "places": ["South Korea"]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.digitaltoday.co.kr/en/view/39188/nc-ai-unveils-k-world-model-research-achieves-80-percent-success-rate-in-advanced-robot-tasks",
+          "title": "NC AI revela pesquisa do K-world model com 80% de sucesso em tarefas robóticas avançadas",
+          "summary": "Digital Today: NC AI demonstra WFM que gera ações direto do espaço latente, alcançando 80% de sucesso em tarefas robóticas.",
+          "bullets": [
+            "80% de sucesso em tarefas avançadas de robótica",
+            "Ações geradas diretamente do espaço latente, sem intermediação de vídeo",
+            "Infraestrutura de computação própria em larga escala"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Nature Medicine proclama chegada do cocientista de IA",
+      "summary": "Hipóteses geradas por IA já alcançam validação em organoides, animais e ensaios clínicos de fase inicial, segundo feature da Nature Medicine.",
+      "bullets": [
+        "Modelos de IA evoluem de chats para geração autônoma de hipóteses científicas",
+        "Hipóteses de IA validadas em organoides, modelos animais e ensaios clínicos iniciais",
+        "Sistema do Google DeepMind citado como referência de cocientista de IA",
+        "Pipeline da hipótese IA ao tratamento de pacientes está encurtando"
+      ],
+      "body": "Feature publicada na Nature Medicine em 16 de março documenta como modelos de IA estão evoluindo de ferramentas conversacionais para sistemas que geram hipóteses científicas — agora sendo validadas em organoides, modelos animais e ensaios clínicos de fase inicial. O artigo referencia o sistema AI co-scientist do Google DeepMind e traça a trajetória desde ferramentas de mineração de literatura dos anos 1980 até sistemas agênticos modernos que geram, testam e validam hipóteses biomédicas autonomamente.\n\nA feature destaca resultados concretos da descoberta de drogas com IA, incluindo trabalhos sobre descoberta de antibióticos e aplicações clínicas, demonstrando que o pipeline da hipótese de IA ao tratamento de pacientes está cada vez mais curto.",
+      "category": ["technology"],
+      "entities": {
+        "people": [],
+        "organizations": ["Google DeepMind", "Nature Medicine"],
+        "places": []
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.nature.com/articles/s41591-026-04275-z",
+          "title": "O cocientista de IA chegou",
+          "summary": "Nature Medicine: feature documenta evolução de modelos de IA de chats a geradores de hipóteses validadas em ensaios clínicos.",
+          "bullets": [
+            "IA evolui de chats para hipóteses validadas em organoides e animais",
+            "Referencia AI co-scientist do Google DeepMind",
+            "Pipeline de hipótese IA a tratamento clínico está encurtando"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "FERMIACC comprime ciclos de física de partículas de semanas para minutos",
+      "summary": "Sistema da UC Santa Barbara usa Agents SDK da OpenAI para gerar e testar hipóteses sobre anomalias do Large Hadron Collider automaticamente.",
+      "bullets": [
+        "Pipeline fecha ciclo: gera hipóteses, roda simulações, compara com dados experimentais",
+        "Geração de hipóteses em segundos; ciclo completo de simulação em menos de 10 minutos",
+        "Construído com OpenAI Agents SDK e ferramentas de física: FeynRules, MadGraph, Pythia",
+        "Aborda anomalias em dados do Large Hadron Collider"
+      ],
+      "body": "Pesquisadores da UC Santa Barbara e do Kavli Institute for Theoretical Physics desenvolveram o FERMIACC, um pipeline de agente IA em ciclo fechado que usa modelos da OpenAI em conjunto com ferramentas de física de colisores (FeynRules, MadGraph, Pythia) para gerar e testar hipóteses sobre anomalias experimentais. O sistema comprime a geração de hipóteses a segundos e o ciclo completo de simulação e análise a menos de dez minutos — contra semanas de trabalho por métodos tradicionais.\n\nConstruído com o OpenAI Agents SDK, o pipeline gera hipóteses teóricas, roda simulações, compara assinaturas de partículas previstas com observações experimentais e avalia a precisão dos modelos contra resultados observados no Large Hadron Collider.",
+      "category": ["technology"],
+      "entities": {
+        "people": ["Amalia Madden", "Inigo Valenzuela Lombera", "Nathaniel Craig"],
+        "organizations": ["UC Santa Barbara", "Kavli Institute for Theoretical Physics", "OpenAI"],
+        "places": ["Santa Barbara"]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.edtechinnovationhub.com/news/uc-santa-barbara-physicists-test-openai-models-to-accelerate-particle-physics-research",
+          "title": "Físicos da UC Santa Barbara testam modelos da OpenAI para acelerar pesquisa em física de partículas",
+          "summary": "EdTech Innovation Hub: FERMIACC usa Agents SDK da OpenAI para comprimir ciclos de hipótese-simulação de semanas para minutos.",
+          "bullets": [
+            "Geração de hipóteses em segundos, ciclo completo em menos de 10 minutos",
+            "Usa FeynRules, MadGraph e Pythia integrados via OpenAI Agents SDK",
+            "Equipe inclui pesquisadores do Kavli Institute e UC Santa Barbara"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Japão aprova primeiras terapias do mundo com células iPS",
+      "summary": "ReHeart para insuficiência cardíaca e Amshepli para Parkinson são os primeiros tratamentos aprovados com células humanas reprogramadas.",
+      "bullets": [
+        "Ministério da Saúde do Japão concede autorização condicional a duas terapias com células iPS",
+        "ReHeart (Cuorips) trata insuficiência cardíaca por cardiomiopatia isquêmica",
+        "Amshepli (Sumitomo Pharma/RACTHERA) trata Parkinson resistente a medicamentos existentes",
+        "Aprovação ocorre 20 anos após Shinya Yamanaka reprogramar as primeiras células em camundongos",
+        "4 de 6 pacientes com Parkinson melhoraram escores motores em 24 meses"
+      ],
+      "body": "O Ministério da Saúde do Japão concedeu autorização condicional e limitada a dois tratamentos feitos com células-tronco pluripotentes induzidas (iPS) — as primeiras aprovações globais desse tipo. O ReHeart, desenvolvido pela Cuorips, trata insuficiência cardíaca grave por cardiomiopatia isquêmica; em estudo com 8 pacientes, 4 mostraram melhora com aumento de VO2 pico superior a 10% em 52 semanas.\n\nO Amshepli (laguneprocel), desenvolvido por Sumitomo Pharma e RACTHERA, trata doença de Parkinson não responsiva a medicamentos existentes; 4 de 6 pacientes avaliáveis melhoraram em escores motores em 24 meses, com sobrevivência do enxerto confirmada em todos os casos. Shinya Yamanaka, pioneiro das células iPS na Universidade de Kyoto, celebrou o marco como 'um grande passo para a implementação social' no vigésimo aniversário da reprogramação celular em camundongos.",
+      "category": ["technology"],
+      "entities": {
+        "people": ["Shinya Yamanaka"],
+        "organizations": ["Cuorips", "Sumitomo Pharma", "RACTHERA", "Kyoto University"],
+        "places": ["Japan"]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://dailygalaxy.com/2026/03/japan-approves-first-reprogrammed-human-cell-treatments/",
+          "title": "Japão aprova os primeiros tratamentos do mundo feitos com células humanas reprogramadas",
+          "summary": "Daily Galaxy: Japão concede primeira aprovação global de terapias com células iPS — ReHeart para o coração e Amshepli para Parkinson.",
+          "bullets": [
+            "Autorização condicional para duas terapias com células iPS",
+            "ReHeart trata insuficiência cardíaca; 4 de 8 pacientes melhoraram em 52 semanas",
+            "Amshepli trata Parkinson; 4 de 6 melhoraram escores motores em 24 meses",
+            "Marco ocorre 20 anos após descoberta de iPS em camundongos por Yamanaka"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Pílula oral GLP-1 da Structure atinge 16,3% de perda de peso",
+      "summary": "Aleniglipron supera orforglipron da Eli Lilly (~11% em 72 semanas) com 16,3% em 44 semanas no ensaio Phase 2 ACCESS II.",
+      "bullets": [
+        "Aleniglipron alcançou 16,3% de perda de peso ajustada a placebo (39 lbs) a 180 mg em 44 semanas",
+        "Sem evidência de platô na perda de peso ao fim do período",
+        "Apenas 1 de 27 participantes (3,7%) descontinuou por eventos adversos",
+        "Supera orforglipron da Eli Lilly que mostrou ~11% em 72 semanas",
+        "Phase 3 planejada para H2 2026, reunião com FDA no Q2 2026"
+      ],
+      "body": "A Structure Therapeutics reportou que sua pílula oral GLP-1 aleniglipron alcançou 16,3% de perda de peso ajustada a placebo (39 libras) na dose de 180 mg e 16,0% (37 libras) a 240 mg após 44 semanas no ensaio Phase 2 ACCESS II, sem evidência de platô. O resultado posiciona o aleniglipron como o agonista oral de receptor GLP-1 mais eficaz até o momento, superando o orforglipron da Eli Lilly que demonstrou apenas ~11% de perda de peso em 72 semanas de ensaio.\n\nO perfil de segurança foi favorável: apenas 1 de 27 participantes (3,7%) descontinuou por eventos adversos em doses ≥120 mg, sem lesão hepática induzida por droga, sem elevações persistentes de enzimas hepáticas e sem prolongamento de QTc. A empresa planeja reunião de fim de Phase 2 com a FDA no Q2 2026 e início de Phase 3 no segundo semestre.",
+      "category": ["technology", "business"],
+      "entities": {
+        "people": [],
+        "organizations": ["Structure Therapeutics", "Eli Lilly", "FDA"],
+        "places": []
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.globenewswire.com/news-release/2026/03/16/3256111/0/en/Structure-Therapeutics-Reports-Positive-Topline-Data-from-Phase-2-ACCESS-II-Trial-with-Once-Daily-Oral-Small-Molecule-GLP-1-Receptor-Agonist-Aleniglipron.html",
+          "title": "Structure Therapeutics reporta dados positivos do ensaio Phase 2 ACCESS II com aleniglipron",
+          "summary": "GlobeNewsWire: aleniglipron alcança 16,3% de perda de peso em 44 semanas com perfil de segurança favorável no ensaio ACCESS II.",
+          "bullets": [
+            "16,3% de perda de peso ajustada a placebo (39 lbs) a 180 mg em 44 semanas",
+            "Apenas 1 de 27 participantes (3,7%) descontinuou por eventos adversos",
+            "Sem lesão hepática, sem prolongamento de QTc",
+            "Phase 3 planejada para H2 2026"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.statnews.com/2026/03/16/structure-therapeutics-obesity-pill-aleniglipron-weight-loss/",
+          "title": "Pílula de obesidade da Structure mostra promessa em ensaio Phase 2",
+          "summary": "STAT News: aleniglipron supera orforglipron da Eli Lilly (~11%) com 16,3% de perda de peso, posicionando-se como líder entre pílulas GLP-1.",
+          "bullets": [
+            "Comparação direta: aleniglipron 16,3% em 44 semanas vs. orforglipron ~11% em 72 semanas",
+            "Competição no mercado bilionário de pílulas orais para obesidade"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Tegoprubart leva 100% dos pacientes com diabetes tipo 1 à independência de insulina",
+      "summary": "No ensaio da UChicago com 12 pacientes (mediana de 33 anos de doença), zero rejeições após transplante de ilhotas com tegoprubart.",
+      "bullets": [
+        "100% de independência de insulina em 10 pacientes com mais de 4 semanas pós-transplante",
+        "HbA1C caiu de ~8,0% para ~5,35% com seguimento médio de 8 meses",
+        "Zero episódios de rejeição e zero anticorpos HLA doador-específicos de novo",
+        "Sem nefrotoxicidade, hipertensão ou neurotoxicidade tipicamente vistas com tacrolimus",
+        "Mediana de 33 anos de diabetes tipo 1 nos pacientes tratados"
+      ],
+      "body": "Em ensaio com 12 pacientes na UChicago Medicine, o tegoprubart (anticorpo anti-CD40L) da Eledon Pharmaceuticals levou 100% dos 10 pacientes com mais de 4 semanas pós-transplante de ilhotas pancreáticas à independência total de insulina. Os pacientes, com mediana de 33 anos de diabetes tipo 1, viram a HbA1C cair de ~8,0% para ~5,35% com seguimento médio de aproximadamente 8 meses.\n\nNenhum episódio de rejeição foi registrado, sem anticorpos HLA doador-específicos de novo e sem evidência de nefrotoxicidade, hipertensão ou neurotoxicidade — efeitos colaterais típicos do tacrolimus. A Breakthrough T1D comprometeu-se a financiar um segundo estudo avaliando tegoprubart em pacientes com diabetes tipo 1 e doença renal crônica.",
+      "category": ["technology"],
+      "entities": {
+        "people": ["Piotr Witkowski"],
+        "organizations": ["Eledon Pharmaceuticals", "Breakthrough T1D", "University of Chicago Medicine"],
+        "places": ["Chicago"]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.breakthrought1d.org/for-the-media/press-releases/eledon-announces-updated-data-from-investigator-initiated-islet-transplant-trial-of-tegoprubart-in-patients-with-type-1-diabetes-at-uchicago-medicine/",
+          "title": "Eledon anuncia dados atualizados de ensaio de transplante de ilhotas com tegoprubart em diabetes tipo 1",
+          "summary": "Breakthrough T1D: 100% de independência de insulina e zero rejeições em 10 pacientes com diabetes tipo 1 tratados com tegoprubart pós-transplante.",
+          "bullets": [
+            "100% de independência de insulina em 10 pacientes pós-transplante",
+            "HbA1C caiu de ~8,0% para ~5,35%",
+            "Zero rejeições e zero anticorpos HLA doador-específicos de novo",
+            "Breakthrough T1D financiará segundo estudo em pacientes com doença renal"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Aliados rejeitam coalizão em Hormuz e Trump ameaça OTAN",
+      "summary": "Alemanha, Japão e Austrália recusam enviar navios ao Estreito; Trump adverte que a OTAN terá 'futuro muito ruim' sem cooperação.",
+      "bullets": [
+        "Chanceler alemão Johann Wadephul: 'essa guerra não tem nada a ver com a OTAN'",
+        "Trump ameaça OTAN com 'futuro muito ruim' em entrevista ao Financial Times",
+        "Japão, Austrália e nações da UE rejeitam enviar navios para escoltar petroleiros",
+        "Ministros da UE em Bruxelas reforçam que não querem escalar o conflito",
+        "Trump cita China, França, Japão, Coreia do Sul e Reino Unido como países que espera ajuda"
+      ],
+      "body": "Vários aliados dos EUA, incluindo Japão, Austrália e nações da UE, rejeitaram em 16 de março a convocação de Trump para enviar navios de guerra ao Estreito de Hormuz para escoltar petroleiros. O chanceler alemão Johann Wadephul foi direto ao declarar que 'essa guerra não tem nada a ver com a OTAN' e que a Alemanha não participará enquanto o conflito continuar.\n\nTrump respondeu em entrevista ao Financial Times alertando que a OTAN enfrentará 'um futuro muito ruim' sem cooperação, e sinalizou possível adiamento de cúpula com Xi Jinping. Ministros de relações exteriores da UE reunidos em Bruxelas reforçaram cautela sobre redirecionar até mesmo a missão naval existente no Mar Vermelho para o Estreito de Hormuz.",
+      "category": ["world", "politics"],
+      "entities": {
+        "people": ["Donald Trump", "Johann Wadephul", "Xi Jinping"],
+        "organizations": ["NATO", "EU"],
+        "places": ["Strait of Hormuz", "Germany", "Japan", "Australia", "Brussels"]
+      },
+      "is_breaking": false,
+      "sensitivity": "political_high_risk",
+      "sources": [
+        {
+          "url": "https://www.politico.eu/article/germany-to-trump-this-not-nato-war-strait-hormuz-iran/",
+          "title": "Alemanha a Trump: não ajudaremos a reabrir o Estreito de Hormuz",
+          "summary": "Politico EU: Alemanha rejeita participação na coalizão de Hormuz; Wadephul afirma que 'essa guerra não é da OTAN'.",
+          "bullets": [
+            "Wadephul declara que a guerra não tem relação com a OTAN",
+            "Alemanha descarta envolvimento enquanto conflito continuar",
+            "Chanceler se diz 'muito cético' sobre qualquer missão em Hormuz"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.politico.eu/article/donald-trump-warns-nato-very-bad-future-allies-iran-strait-of-hormuz/",
+          "title": "Trump adverte OTAN de 'futuro muito ruim' se aliados não protegerem Hormuz",
+          "summary": "Politico EU: Trump ameaça OTAN em entrevista ao Financial Times e cita China, França, Japão, Coreia do Sul e Reino Unido como países que devem ajudar.",
+          "bullets": [
+            "Trump alerta para 'futuro muito ruim' da OTAN sem cooperação",
+            "Pode adiar cúpula com Xi Jinping sobre a questão",
+            "China obtém 90% do seu petróleo pelo Estreito de Hormuz"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Drones iranianos atingem campo de gás Shah e terminal de Fujairah nos EAU",
+      "summary": "Ataques suspendem 1,28 bi de pés cúbicos/dia de gás no Shah e incendeiam hub petrolífero de Fujairah pela segunda vez em dois dias.",
+      "bullets": [
+        "Campo de gás Shah suspenso: 1,28 bilhão de pés cúbicos/dia e 5% da produção global de enxofre",
+        "Shah é joint venture de ADNOC e Occidental Petroleum, 180 km a sudoeste de Abu Dhabi",
+        "Terminal de Fujairah incendiado pelo segundo dia consecutivo — principal hub de exportação da costa leste",
+        "Petroleiro atingido perto do Estreito de Hormuz",
+        "EAU fecharam espaço aéreo brevemente após drone atingir tanque perto do aeroporto de Dubai"
+      ],
+      "body": "Drones iranianos atingiram o campo de gás Shah dos Emirados Árabes em 16 de março, provocando incêndio e suspensão de operações na instalação operada em joint venture por ADNOC e Occidental Petroleum. O campo, localizado 180 km a sudoeste de Abu Dhabi, produz 1,28 bilhão de pés cúbicos de gás por dia e responde por cerca de 5% da produção global de enxofre.\n\nEm ataque separado, drones incendiaram a Zona Industrial Petrolífera de Fujairah, único terminal de exportação de petróleo da costa leste dos EAU e hub crítico para exportações de crude e abastecimento — pelo segundo dia consecutivo. Um petroleiro também foi atingido perto do Estreito de Hormuz, e os EAU fecharam brevemente seu espaço aéreo após drone atingir tanque de combustível perto do Aeroporto Internacional de Dubai.",
+      "category": ["world", "economy"],
+      "entities": {
+        "people": [],
+        "organizations": ["ADNOC", "Occidental Petroleum"],
+        "places": ["United Arab Emirates", "Shah gas field", "Fujairah", "Abu Dhabi", "Dubai", "Strait of Hormuz"]
+      },
+      "is_breaking": false,
+      "sensitivity": "violent",
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2026/03/17/iran-war-uae-energy-gas-field-oil-fujairah-strait-of-hormuz.html",
+          "title": "Irã atinge suprimentos energéticos dos EAU; petroleiro atingido perto do Estreito de Hormuz",
+          "summary": "CNBC: campo de gás Shah suspenso após ataque de drone iraniano; EAU fecharam espaço aéreo após drone atingir tanque perto de Dubai.",
+          "bullets": [
+            "Shah: 1,28 bi pés cúbicos/dia suspensos, joint venture ADNOC-Occidental",
+            "Petroleiro atingido perto do Estreito de Hormuz",
+            "Espaço aéreo dos EAU fechado brevemente por drone perto de Dubai"
+          ],
+          "published_at": "2026-03-17",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.upi.com/Top_News/World-News/2026/03/16/UAE-Iran-drones-set-oil-complex-ablaze/4261773663691/",
+          "title": "Ataque de drone iraniano incendeia hub petrolífero estratégico de Fujairah nos EAU",
+          "summary": "UPI: equipes de emergência combatem grande incêndio em Fujairah após segundo ataque de drone em dois dias no principal hub de exportação.",
+          "bullets": [
+            "Segundo ataque a Fujairah em dois dias",
+            "Fujairah é único terminal de exportação de petróleo da costa leste dos EAU",
+            "Hub é crítico para exportações de crude e abastecimento de navios"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Operation Epic Fury entra na terceira semana com reforço massivo",
+      "summary": "EUA deployam 18 bombardeiros e 2.200 fuzileiros navais em trânsito enquanto B-2 furtivos atacam Irã em missões intercontinentais.",
+      "bullets": [
+        "3 B-52H adicionais elevam força de bombardeiros a 18 aeronaves (12 B-1B + 6 B-52)",
+        "10 F-35A deployados de Hill AFB para RAF Lakenheath para operações no Oriente Médio",
+        "Ao menos 2 B-2 furtivos realizaram missões ida-e-volta dos EUA ao Irã",
+        "USS Tripoli com 2.200 Marines da 31ª MEU navega do Pacífico ao Oriente Médio",
+        "Israel planeja continuar Operation Rising Lion por mais três semanas"
+      ],
+      "body": "A Operation Epic Fury entrou em sua terceira semana com reforço significativo das forças americanas. Três bombardeiros B-52H adicionais chegaram à RAF Fairford em 13 de março, elevando a força total a 18 aeronaves — 12 B-1B Lancers e 6 B-52s. Dez caças F-35A foram deployados de Hill Air Force Base para RAF Lakenheath, e ao menos dois bombardeiros furtivos B-2 realizaram missões ida-e-volta intercontinentais dos EUA ao Irã.\n\nA 31ª Unidade Expedicionária de Fuzileiros Navais, com aproximadamente 2.200 Marines e marinheiros a bordo do USS Tripoli (LHA-7), navega do Pacífico ao Oriente Médio. Paralelamente, as Forças de Defesa de Israel planejam continuar sua Operation Rising Lion por mais três semanas.",
+      "category": ["world"],
+      "entities": {
+        "people": [],
+        "organizations": ["US Air Force", "US Marine Corps", "IDF"],
+        "places": ["Iran", "Middle East", "RAF Fairford", "RAF Lakenheath"]
+      },
+      "is_breaking": false,
+      "sensitivity": "violent",
+      "sources": [
+        {
+          "url": "https://theaviationist.com/2026/03/16/epic-fury-enters-third-week/",
+          "title": "Epic Fury entra na terceira semana com deploy de mais B-52s, F-35s e Marines",
+          "summary": "The Aviationist: operação ultrapassa previsão inicial de poucos dias; 18 bombardeiros e 2.200 fuzileiros em trânsito reforçam campanha.",
+          "bullets": [
+            "Força de bombardeiros: 12 B-1B Lancers + 6 B-52H",
+            "10 F-35A deployados para Lakenheath; B-2 furtivos em missões intercontinentais",
+            "USS Tripoli com 31ª MEU e ~2.200 Marines navega ao Oriente Médio",
+            "IDF planeja continuar Rising Lion por mais 3 semanas"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Rússia reivindica 12 localidades na Ucrânia; defesa aérea derruba 194 drones",
+      "summary": "Avanço russo em duas semanas na linha de frente leste; Ucrânia neutraliza 194 de 211 drones em uma única noite incluindo mais de 100 Shaheds.",
+      "bullets": [
+        "General Gerasimov reporta controle de 12 localidades nas duas primeiras semanas de março",
+        "167 confrontos em um dia na linha de frente; setor de Pokrovsk mais ativo com 36 assaltos",
+        "Rússia deployou 9.122 drones kamikaze e 287 bombas guiadas em 24 horas",
+        "Defesa aérea ucraniana derrubou 194 de 211 drones incluindo 100+ Shaheds em uma noite",
+        "Zelensky afirma que negociações de paz dependem de prontidão dos parceiros"
+      ],
+      "body": "O general russo Valery Gerasimov reportou em 16 de março que a Rússia assumiu controle de 12 localidades na Ucrânia nas duas primeiras semanas de março. Em um único dia (15-16 de março), foram registrados 167 confrontos na linha de frente, com o setor de Pokrovsk como o mais ativo (36 assaltos). A Rússia deployou 9.122 drones kamikaze e 287 bombas guiadas.\n\nA defesa aérea ucraniana respondeu derrubando 194 de 211 drones russos — incluindo mais de 100 Shaheds — lançados em uma única noite de múltiplas direções. O presidente Zelensky contra-argumentou que as forças ucranianas perturbaram a ofensiva russa e que negociações de paz não estão atrasadas, mas dependem da prontidão dos parceiros.",
+      "category": ["world", "politics"],
+      "entities": {
+        "people": ["Valery Gerasimov", "Volodymyr Zelensky"],
+        "organizations": ["Russian Armed Forces", "Ukrainian Armed Forces"],
+        "places": ["Ukraine", "Pokrovsk"]
+      },
+      "is_breaking": false,
+      "sensitivity": "violent",
+      "sources": [
+        {
+          "url": "https://www.ukrinform.net/rubric-ato/4102026-war-update-167-clashes-on-front-lines-pokrovsk-sector-is-most-active.html",
+          "title": "Atualização da guerra: 167 confrontos na linha de frente, setor de Pokrovsk mais ativo",
+          "summary": "Ukrinform: 167 confrontos em 24 horas na linha de frente; Pokrovsk lidera com 36 assaltos; Rússia usa 9.122 drones e 287 bombas guiadas.",
+          "bullets": [
+            "167 confrontos em 24 horas na linha de frente",
+            "Setor de Pokrovsk mais ativo com 36 assaltos",
+            "9.122 drones kamikaze e 287 bombas guiadas deployados pela Rússia"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://en.interfax.com.ua/news/general/1151949.html",
+          "title": "Defesa aérea da Ucrânia neutraliza 194 drones inimigos; 16 ataques em 10 localidades",
+          "summary": "Interfax-Ukraine: defesa aérea ucraniana derruba ou suprime 194 de 211 drones russos incluindo mais de 100 Shaheds em uma noite.",
+          "bullets": [
+            "194 de 211 drones derrubados ou suprimidos",
+            "Mais de 100 drones Shahed entre os neutralizados",
+            "Ataques lançados de múltiplas direções"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "S&P 500 tem melhor sessão desde início da guerra; petróleo volta a subir",
+      "summary": "WTI caiu 5,3% a $93,50 na segunda-feira, mas Brent voltou a $103 na terça; gasolina nos EUA bate $3,79/galão, máxima desde outubro de 2023.",
+      "bullets": [
+        "S&P 500 subiu 1% — maior ganho em cinco semanas — com Nasdaq +1,2% e Dow +387 pontos",
+        "WTI caiu 5,3% a $93,50/barril na segunda após superar $102",
+        "Brent voltou a subir 3% para $103 na terça-feira",
+        "Gasolina nos EUA atingiu $3,79/galão, máxima desde outubro de 2023",
+        "Petróleo subiu ~40% durante a guerra EUA-Irã, de ~$70 antes dos ataques"
+      ],
+      "body": "O S&P 500 subiu 1% em 16 de março — maior ganho em cinco semanas — acompanhado pelo Nasdaq (+1,2%) e Dow Jones (+387 pontos), impulsionados pela queda do petróleo. O WTI recuou 5,3% a $93,50/barril após ter superado $102, enquanto o Brent caiu 2,8% a $100,21 após atingir $106,50. O secretário do Tesouro Bessent disse que os EUA estão permitindo passagem de petroleiros iranianos pelo Estreito.\n\nO alívio durou pouco: na terça-feira o Brent voltou a subir 3% para cerca de $103 e o WTI avançou 3,7% a $97, enquanto a gasolina americana atingiu $3,79/galão — máxima desde outubro de 2023. O petróleo acumula alta de aproximadamente 40% desde o início do conflito com o Irã.",
+      "category": ["finance", "economy"],
+      "entities": {
+        "people": ["Scott Bessent"],
+        "organizations": [],
+        "places": ["United States"]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.ajc.com/news/2026/03/easing-of-crude-oil-prices-sends-us-stocks-higher/",
+          "title": "Bolsas dos EUA sobem para melhor dia desde o início da guerra com Irã após alívio no petróleo",
+          "summary": "Associated Press: S&P 500 sobe 1% e Nasdaq 1,2% com WTI caindo 5,3% a $93,50 — maior ganho em cinco semanas.",
+          "bullets": [
+            "S&P 500 +1%, Dow +387 pontos, Nasdaq +1,2%",
+            "WTI caiu 5,3% a $93,50; Brent caiu 2,8% a $100,21",
+            "Petróleo subiu ~40% durante a guerra com Irã"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.cnn.com/2026/03/17/business/oil-prices-strait-iran-attacks-intl",
+          "title": "Petróleo salta com Irã alertando que Estreito de Hormuz 'não pode ser o mesmo'",
+          "summary": "CNN: Brent volta a subir 3% para $103 na terça; gasolina nos EUA bate $3,79/galão, máxima desde outubro de 2023.",
+          "bullets": [
+            "Brent sobe 3% para ~$103 na terça-feira",
+            "WTI avança 3,7% a $97",
+            "Gasolina nos EUA atinge $3,79/galão"
+          ],
+          "published_at": "2026-03-17",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "China surpreende com produção industrial de +6,3% e varejo de +2,8%",
+      "summary": "Dados do bimestre janeiro-fevereiro superam expectativas; produção industrial bate previsão de 5% com folga, impulsionada por demanda externa.",
+      "bullets": [
+        "Produção industrial cresceu 6,3% a/a no bimestre, acima da expectativa de 5%",
+        "Vendas no varejo subiram 2,8% a/a impulsionadas por gastos de feriado",
+        "Investimento em ativos fixos avançou 1,8% a/a",
+        "Taxa de desemprego urbano subiu para 5,3%"
+      ],
+      "body": "Dados econômicos da China para janeiro-fevereiro de 2026 superaram expectativas em indicadores-chave. A produção industrial cresceu 6,3% em relação ao ano anterior, significativamente acima da previsão de 5%, impulsionada por forte demanda externa. As vendas no varejo subiram 2,8% a/a, beneficiadas por gastos durante o feriado do Ano Novo Lunar.\n\nO investimento em ativos fixos, incluindo imóveis, avançou 1,8% em relação ao ano anterior, enquanto a taxa de desemprego urbano subiu ligeiramente para 5,3% nos dois primeiros meses do ano.",
+      "category": ["economy"],
+      "entities": {
+        "people": [],
+        "organizations": [],
+        "places": ["China"]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2026/03/16/china-data-today-retail-sales-property-industrial-production.html",
+          "title": "Gastos de feriado e demanda de exportação impulsionam momento econômico da China no início do ano",
+          "summary": "CNBC: produção industrial da China sobe 6,3% e varejo 2,8% no bimestre, superando previsões dos analistas.",
+          "bullets": [
+            "Produção industrial +6,3% a/a vs. expectativa de +5%",
+            "Varejo +2,8% a/a com impulso de gastos de feriado",
+            "Investimento em ativos fixos +1,8% a/a; desemprego urbano em 5,3%"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "BCE anuncia data center de US$ 1,7 bi e 300 MW em Saskatchewan",
+      "summary": "Maior data center do Canadá terá Cerebras e CoreWeave como inquilinos, com capacidade reservada para empresas e governos canadenses.",
+      "bullets": [
+        "Investimento de US$ 1,7 bilhão para 300 MW em Sherwood, perto de Regina",
+        "Cerebras Systems e CoreWeave como principais inquilinos americanos",
+        "Capacidade restante reservada para empresas, governos e pesquisadores canadenses",
+        "Receita anual projetada de US$ 500 milhões e EBITDA de US$ 400 milhões",
+        "Construção começa na primavera de 2026; primeira capacidade online no H1 2027",
+        "Criará 800 empregos na construção e 80 posições permanentes"
+      ],
+      "body": "A BCE, controladora da Bell Canada, anunciou investimento de US$ 1,7 bilhão em um data center de 300 megawatts no município rural de Sherwood, perto de Regina, Saskatchewan — que será o maior data center do Canadá quando concluído. Os dois principais inquilinos americanos são Cerebras Systems e CoreWeave, com parcela significativa da capacidade restante reservada para empresas, governos e pesquisadores canadenses.\n\nA construção começa na primavera de 2026, com primeira capacidade operacional prevista para o primeiro semestre de 2027. A BCE projeta US$ 500 milhões em receita anual, US$ 400 milhões de EBITDA e US$ 250 milhões de fluxo de caixa livre. O projeto criará ao menos 800 empregos na construção e 80 posições permanentes, com energia fornecida pela Saskatchewan Power Corp.",
+      "category": ["technology", "business"],
+      "entities": {
+        "people": [],
+        "organizations": ["BCE", "Bell Canada", "Cerebras Systems", "CoreWeave", "Saskatchewan Power Corp."],
+        "places": ["Saskatchewan", "Regina", "Canada"]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.theglobeandmail.com/business/article-bce-plans-to-build-saskatchewan-ai-data-centre/",
+          "title": "BCE planeja construir data center de IA em Saskatchewan",
+          "summary": "Globe and Mail: BCE investirá US$ 1,7 bi em data center de 300 MW com Cerebras e CoreWeave, projetando US$ 500 mi/ano em receita.",
+          "bullets": [
+            "US$ 1,7 bilhão de investimento para 300 MW",
+            "Cerebras e CoreWeave como inquilinos principais",
+            "Receita anual projetada de US$ 500 mi; EBITDA de US$ 400 mi",
+            "Construção inicia primavera 2026; capacidade online H1 2027"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Reino Unido investe £45M no supercomputador Sunrise para fusão nuclear",
+      "summary": "Sistema com 6,76 exaFLOPS de performance acelerada por IA modelará turbulência de plasma no campus Culham do UKAEA, operacional em junho.",
+      "bullets": [
+        "Investimento de £45 milhões (~US$ 60 mi) pelo Departamento de Energia do Reino Unido",
+        "Sunrise entrega até 6,76 exaFLOPS de performance de modelagem acelerada por IA",
+        "Usa CPUs AMD EPYC, GPUs AMD Instinct e 192 nós de Intel Sapphire Rapids",
+        "Modelará turbulência de plasma, materiais de reatores e breeding de trítio",
+        "Primeiro componente de infraestrutura da AI Growth Zone de Culham",
+        "Operacional até junho de 2026"
+      ],
+      "body": "O governo britânico anunciou investimento de £45 milhões (~US$ 60 milhões) no Sunrise, supercomputador dedicado à pesquisa de energia de fusão nuclear, a ser instalado no campus Culham do UKAEA em Oxfordshire. O sistema, com 1,4 MW de consumo, entregará até 6,76 exaFLOPS de performance de modelagem acelerada por IA usando CPUs AMD EPYC, aceleradores GPU AMD Instinct, 192 nós de Intel Sapphire Rapids dual-socket, e infraestrutura Dell PowerEdge com armazenamento WEKA.\n\nO Sunrise modelará turbulência de plasma, desenvolverá materiais para reatores e avançará tecnologias de breeding de trítio necessárias para futuros sistemas de fusão, apoiando o projeto STEP do Reino Unido — protótipo de tokamak esférico com meta para os anos 2040. O supercomputador é o primeiro componente de infraestrutura da planejada AI Growth Zone em Culham.",
+      "category": ["technology"],
+      "entities": {
+        "people": [],
+        "organizations": ["UKAEA", "AMD", "Intel", "Dell"],
+        "places": ["Culham", "Oxfordshire", "United Kingdom"]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.theregister.com/2026/03/16/uk_splurges_45m_on_ai/",
+          "title": "Reino Unido investe £45M em supercomputador de IA para desvendar a fusão nuclear",
+          "summary": "The Register: Sunrise com 6,76 exaFLOPS modelará física de fusão no campus Culham, operacional no verão de 2026.",
+          "bullets": [
+            "£45 milhões financiados pelo Departamento de Energia e Net Zero",
+            "6,76 exaFLOPS com AMD EPYC, AMD Instinct e Intel Sapphire Rapids",
+            "Modelará turbulência de plasma e breeding de trítio para projeto STEP",
+            "Primeiro componente da AI Growth Zone de Culham"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "SpaceX ultrapassa 10 mil satélites Starlink em órbita simultânea",
+      "summary": "Marco atingido com lançamento de 25 satélites V2 Mini da Vandenberg; Starlink tem 10 milhões de clientes em 160 países.",
+      "bullets": [
+        "Mais de 10.000 satélites Starlink em órbita baixa simultaneamente pela primeira vez",
+        "Marco atingido menos de 7 anos após primeiro lote lançado em maio de 2019",
+        "Lançamento Starlink Group 17-24 com 25 satélites V2 Mini Optimized da Vandenberg",
+        "615º voo de um Falcon 9; booster B1088 completou seu 14º voo",
+        "10 milhões de clientes ativos em 160 países",
+        "SpaceX lança em média a cada 2,3 dias em 2026"
+      ],
+      "body": "A SpaceX ultrapassou o marco de 10 mil satélites Starlink em órbita baixa simultânea pela primeira vez, menos de sete anos após lançar o primeiro lote em maio de 2019. O lançamento que atingiu o marco, Starlink Group 17-24, decolou às 22:19 PDT de 16 de março da Base da Força Espacial de Vandenberg, deployando 25 satélites Starlink V2 Mini Optimized.\n\nFoi o 615º voo de um Falcon 9, coincidindo com o centenário do lançamento do primeiro foguete de propulsão líquida por Robert Goddard. O booster B1088 completou seu 14º voo e pousou no drone ship 'Of Course I Still Love You'. A SpaceX mantém cadência média de um lançamento a cada 2,3 dias em 2026, com 26 dos 33 voos de Falcon 9 no ano carregando satélites Starlink. O serviço contava com mais de 10 milhões de clientes ativos em 160 países em fevereiro.",
+      "category": ["technology"],
+      "entities": {
+        "people": [],
+        "organizations": ["SpaceX"],
+        "places": ["Vandenberg Space Force Base", "California"]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://spaceflightnow.com/2026/03/16/live-coverage-spacex-to-launch-25-starlink-satellites-on-falcon-9-rocket-from-california/",
+          "title": "SpaceX atinge 10 mil satélites Starlink em órbita simultânea após lançamento Falcon 9 da Califórnia",
+          "summary": "Spaceflight Now: SpaceX cruza marco de 10 mil satélites com lançamento de 25 V2 Mini; booster B1088 completa 14º voo.",
+          "bullets": [
+            "10 mil satélites em órbita simultânea pela primeira vez",
+            "Lançamento Group 17-24 com 25 satélites V2 Mini Optimized",
+            "615º voo de Falcon 9; coincide com centenário do foguete de Goddard",
+            "10 milhões de clientes em 160 países; média de 1 lançamento a cada 2,3 dias em 2026"
+          ],
+          "published_at": "2026-03-16",
+          "image_url": ""
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,364 @@
+{
+  "stories": [
+    {
+      "id": "nvidia-groq-3-lpu-lpx-rack-gtc",
+      "headline": "Nvidia unveils Groq 3 LPU inference chip and liquid-cooled LPX rack at GTC 2026",
+      "key_facts": [
+        {
+          "fact": "Nvidia announced the Groq 3 LPU (Language Processing Unit) at GTC 2026 on March 16, an SRAM-based inference accelerator born from Nvidia's $20 billion Groq acquihire on Christmas Eve 2025.",
+          "source_url": "https://www.datacenterdynamics.com/en/news/nvidia-announces-groq-3-lpu-ai-inference-chip-plans-256-lpu-rack/",
+          "excerpt": "Nvidia has announced the much-expected Language Processing Unit (LPU) chip, which came out of its semi-acquisition of chip designer Groq."
+        },
+        {
+          "fact": "Each Groq 3 LPU contains 500 MB of high-speed on-chip SRAM with 150 TB/s on-chip memory bandwidth and 2.5 TB/s aggregate bi-directional C2C bandwidth via 96 links at 112 Gbps each.",
+          "source_url": "https://developer.nvidia.com/blog/inside-nvidia-groq-3-lpx-the-low-latency-inference-accelerator-for-the-nvidia-vera-rubin-platform/",
+          "excerpt": "500 MB of high-speed on-chip SRAM serves as the primary working storage... 96 C2C links running at 112 Gbps each... 2.5 TB/s aggregate bi-directional bandwidth per LPU."
+        },
+        {
+          "fact": "The liquid-cooled LPX rack packs 256 LPUs delivering 315 PFLOPS (FP8), 128 GB total SRAM, 40 PB/s on-chip bandwidth, and 640 TB/s scale-up bandwidth, optimized for extreme low-latency token generation.",
+          "source_url": "https://developer.nvidia.com/blog/inside-nvidia-groq-3-lpx-the-low-latency-inference-accelerator-for-the-nvidia-vera-rubin-platform/",
+          "excerpt": "Total compute: 315 PFLOPS (FP8). Total SRAM: 128 GB. On-chip bandwidth: 40 PB/s. Scale-up bandwidth: 640 TB/s."
+        },
+        {
+          "fact": "The LPX uses attention-FFN disaggregation (AFD) to complement Vera Rubin NVL72 GPUs, with GPUs handling prefill and decode attention while LPUs execute latency-sensitive FFN/MoE layers, enabling up to 35x higher inference throughput per megawatt at high interactivity.",
+          "source_url": "https://developer.nvidia.com/blog/inside-nvidia-groq-3-lpx-the-low-latency-inference-accelerator-for-the-nvidia-vera-rubin-platform/",
+          "excerpt": "This attention-FFN disaggregation (AFD) approach enables up to 35x higher inference throughput per megawatt versus prior systems at high interactivity levels."
+        },
+        {
+          "fact": "Nvidia data center head Ian Buck explained the complementary architecture: GPUs for high throughput and large memory workloads, LPUs for extreme low latency with thousands of tokens per second per user.",
+          "source_url": "https://www.datacenterdynamics.com/en/news/nvidia-announces-groq-3-lpu-ai-inference-chip-plans-256-lpu-rack/",
+          "excerpt": "This other processor, the LPU, is optimized strictly for that extreme low latency token generation, offering token rates in the thousands of tokens per second."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.datacenterdynamics.com/en/news/nvidia-announces-groq-3-lpu-ai-inference-chip-plans-256-lpu-rack/",
+          "outlet": "DatacenterDynamics",
+          "title": "Nvidia announces Groq 3 LPU AI inference chip, plans 256-LPU rack",
+          "published_at": "2026-03-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://developer.nvidia.com/blog/inside-nvidia-groq-3-lpx-the-low-latency-inference-accelerator-for-the-nvidia-vera-rubin-platform/",
+          "outlet": "NVIDIA Developer Blog",
+          "title": "Inside NVIDIA Groq 3 LPX: The Low-Latency Inference Accelerator for the NVIDIA Vera Rubin Platform",
+          "published_at": "2026-03-16",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://www.tomshardware.com/pc-components/gpus/nvidia-groq-3-lpu-and-groq-lpx-racks-join-rubin-platform-at-gtc-sram-packed-accelerator-boosts-every-layer-of-the-ai-model-on-every-token",
+          "outlet": "Tom's Hardware",
+          "title": "Nvidia Groq 3 LPU and Groq LPX racks join Rubin platform at GTC",
+          "published_at": "2026-03-16",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology"],
+      "entities": {
+        "organizations": ["Nvidia", "Groq"],
+        "people": ["Jensen Huang", "Ian Buck"],
+        "places": ["San Jose"]
+      }
+    },
+    {
+      "id": "nvidia-vera-cpu-agentic-ai-gtc",
+      "headline": "Nvidia launches Vera CPU with 88 Olympus cores, first chip designed for agentic AI workloads",
+      "key_facts": [
+        {
+          "fact": "At GTC 2026 on March 16, Nvidia announced the Vera CPU, featuring 88 custom-designed Olympus cores with Spatial Multithreading technology that runs two tasks simultaneously with predictable performance.",
+          "source_url": "https://siliconangle.com/2026/03/16/nvidia-reinvents-cpu-age-agentic-ai/",
+          "excerpt": "It announced the all-new Vera CPU, said to be the first chip of its kind designed specifically for agentic AI workloads and reinforcement learning... 88 custom-designed Olympus cores."
+        },
+        {
+          "fact": "Vera is 50% faster and twice as energy-efficient as traditional x86 CPUs, with an LPDDR5X memory subsystem delivering 1.2 TB/s bandwidth — double that of general-purpose CPUs at half the power.",
+          "source_url": "https://siliconangle.com/2026/03/16/nvidia-reinvents-cpu-age-agentic-ai/",
+          "excerpt": "50% faster and twice as efficient as traditional x86-based CPUs... LPDDR5X... 1.2 terabytes-per-second... approximately double the bandwidth of general-purpose CPUs while consuming half the power."
+        },
+        {
+          "fact": "A liquid-cooled Vera CPU rack contains 256 chips sustaining 22,500+ concurrent CPU environments; the NVL72 system pairs 72 Rubin GPUs with 36 Vera CPUs via NVLink 6 at 1.8 TB/s coherent bandwidth (7x faster than PCIe Gen 6).",
+          "source_url": "https://siliconangle.com/2026/03/16/nvidia-reinvents-cpu-age-agentic-ai/",
+          "excerpt": "256 liquid-cooled chips per system... sustains 22,500+ concurrent CPU environments... 1.8 TB/second coherent bandwidth (7x faster than PCIe Gen 6)."
+        },
+        {
+          "fact": "Jensen Huang stated: 'The CPU is no longer simply supporting the model; it's driving it. With breakthrough performance and energy efficiency, Vera unlocks AI systems that think faster and scale further.'",
+          "source_url": "https://siliconangle.com/2026/03/16/nvidia-reinvents-cpu-age-agentic-ai/",
+          "excerpt": "The CPU is no longer simply supporting the model; it's driving it. With breakthrough performance and energy efficiency, Vera unlocks AI systems that think faster and scale further."
+        },
+        {
+          "fact": "Nvidia head of AI infrastructure Dion Harris told CNBC that 'CPUs are becoming the bottleneck in terms of growing out this AI and agentic workflow,' calling the Vera CPU an 'exciting opportunity.'",
+          "source_url": "https://www.cnbc.com/2026/03/13/nvidia-gtc-ai-jensen-huang-cpu-gpu.html",
+          "excerpt": "CPUs are becoming the bottleneck in terms of growing out this AI and agentic workflow... exciting opportunity."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://siliconangle.com/2026/03/16/nvidia-reinvents-cpu-age-agentic-ai/",
+          "outlet": "SiliconANGLE",
+          "title": "Nvidia reinvents the CPU for the age of agentic AI",
+          "published_at": "2026-03-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/03/13/nvidia-gtc-ai-jensen-huang-cpu-gpu.html",
+          "outlet": "CNBC",
+          "title": "Nvidia GTC 2026 preview: Why the CPU is taking center stage",
+          "published_at": "2026-03-13",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.storagereview.com/news/nvidia-gtc-2026-rubin-gpus-groq-lpus-vera-cpus-and-what-nvidia-is-building-for-trillion-parameter-inference",
+          "outlet": "StorageReview",
+          "title": "NVIDIA GTC 2026: Rubin GPUs, Groq LPUs, Vera CPUs, and What NVIDIA Is Building for Trillion-Parameter Inference",
+          "published_at": "2026-03-16",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology"],
+      "entities": {
+        "organizations": ["Nvidia"],
+        "people": ["Jensen Huang", "Dion Harris"],
+        "places": ["San Jose"]
+      }
+    },
+    {
+      "id": "nvidia-physical-ai-models-groot-cosmos-alpamayo",
+      "headline": "Nvidia releases GR00T N2, Cosmos 3, and Alpamayo 1.5 open models for robotics and autonomous driving",
+      "key_facts": [
+        {
+          "fact": "Nvidia released GR00T N2 at GTC 2026 on March 16, a humanoid robot model using a 'World Action Model' architecture based on DreamZero research that outperforms leading vision-language-action models by more than 2x on new tasks.",
+          "source_url": "https://the-decoder.com/gtc-2026-nvidia-wants-to-swap-robotics-data-problem-for-a-compute-problem/",
+          "excerpt": "GR00T N2 for humanoid robots — which Nvidia says outperforms leading vision-language-action models by more than 2x on new tasks."
+        },
+        {
+          "fact": "Cosmos 3 combines synthetic world generation, visual reasoning, and action simulation for industrial robotics; manufacturers FANUC, ABB, YASKAWA, and KUKA are integrating it with Nvidia's simulation frameworks.",
+          "source_url": "https://the-decoder.com/gtc-2026-nvidia-wants-to-swap-robotics-data-problem-for-a-compute-problem/",
+          "excerpt": "Cosmos 3 combines synthetic world generation, visual reasoning, and action simulation... major manufacturers like FANUC, ABB, and KUKA integrating Nvidia's simulation and inference tools."
+        },
+        {
+          "fact": "Alpamayo 1.5 is an open-source autonomous driving model that accepts driving video, motion history, navigation data, and natural language instructions, allowing developers to steer driving behavior through text prompts. Over 100,000 developers have downloaded Alpamayo models.",
+          "source_url": "https://the-decoder.com/gtc-2026-nvidia-wants-to-swap-robotics-data-problem-for-a-compute-problem/",
+          "excerpt": "Alpamayo 1.5... accepts driving video, motion history, navigation data, and natural language instructions as inputs... developers can steer driving behavior directly through text prompts."
+        },
+        {
+          "fact": "Nvidia also released the Physical AI Data Factory Blueprint, an open-source architecture that automates data pipelines through Cosmos Curator, Cosmos Transfer, and Cosmos Evaluator stages, aiming to turn robotics' data problem into a compute problem.",
+          "source_url": "http://nvidianews.nvidia.com/news/nvidia-announces-open-physical-ai-data-factory-blueprint-to-accelerate-robotics-vision-ai-agents-and-autonomous-vehicle-development",
+          "excerpt": "Blueprint enables massive-scale data processing and curation, synthetic data generation, reinforcement learning and evaluation of physical AI models for vision AI agents, robotics and autonomous vehicles."
+        },
+        {
+          "fact": "Physical AI partners building on Nvidia technology include ABB Robotics, AGIBOT, Agility, Figure, FANUC, Hexagon Robotics, KUKA, Medtronic, Skild AI, Universal Robots, and YASKAWA.",
+          "source_url": "http://nvidianews.nvidia.com/news/nvidia-and-global-robotics-leaders-take-physical-ai-to-the-real-world",
+          "excerpt": "Physical AI leaders across robot brain developers, industrial, and surgical robot giants and humanoid pioneers including ABB Robotics, AGIBOT, Agility, CMR Surgical, FANUC, Figure, Hexagon Robotics, KUKA, Medtronic, Skild AI, Universal Robots, World Labs and YASKAWA are building on NVIDIA technology."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://the-decoder.com/gtc-2026-nvidia-wants-to-swap-robotics-data-problem-for-a-compute-problem/",
+          "outlet": "The Decoder",
+          "title": "GTC 2026: Nvidia wants to swap robotics' data problem for a compute problem",
+          "published_at": "2026-03-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "http://nvidianews.nvidia.com/news/nvidia-announces-open-physical-ai-data-factory-blueprint-to-accelerate-robotics-vision-ai-agents-and-autonomous-vehicle-development",
+          "outlet": "NVIDIA Newsroom",
+          "title": "NVIDIA Announces Open Physical AI Data Factory Blueprint to Accelerate Robotics, Vision AI Agents and Autonomous Vehicle Development",
+          "published_at": "2026-03-16",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "http://nvidianews.nvidia.com/news/nvidia-and-global-robotics-leaders-take-physical-ai-to-the-real-world",
+          "outlet": "NVIDIA Newsroom",
+          "title": "NVIDIA and Global Robotics Leaders Take Physical AI to the Real World",
+          "published_at": "2026-03-16",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "http://nvidianews.nvidia.com/news/nvidia-expands-open-model-families-to-power-the-next-wave-of-agentic-physical-and-healthcare-ai",
+          "outlet": "NVIDIA Newsroom",
+          "title": "NVIDIA Expands Open Model Families to Power the Next Wave of Agentic, Physical and Healthcare AI",
+          "published_at": "2026-03-16",
+          "image_url": "",
+          "type": "press_release"
+        }
+      ],
+      "category": ["technology"],
+      "entities": {
+        "organizations": ["Nvidia", "FANUC", "ABB", "KUKA", "YASKAWA", "Figure", "Agility", "Medtronic", "Universal Robots", "Skild AI"],
+        "people": ["Jensen Huang"],
+        "places": ["San Jose"]
+      }
+    },
+    {
+      "id": "skorpios-tru-siph-optical-engines-ai-data-centers",
+      "headline": "Skorpios unveils 1.6 and 6.4 Tbps optical engines for AI data centers, claims 30%+ cost reduction",
+      "key_facts": [
+        {
+          "fact": "Skorpios Technologies announced its Tru-SiPh optical engine platform on March 15, featuring 1.6 Tbps PIC and optical engine with the lowest cost per bit, smallest form factor, and lowest power consumption for hyperscale AI data centers.",
+          "source_url": "https://heraldnews.com/press-release/story/125426/skorpios-unveils-revolutionary-1-6-tbps-and-6-4-tbps-optical-engines-to-deliver-lowest-cost-per-bit-for-ai-data-centers/",
+          "excerpt": "Skorpios Technologies... today announced its breakthrough Tru-SiPh Optical Engine platform, featuring the industry's most advanced 1.6 Tbps PIC and Optical Engine, offering the lowest cost per bit, smallest form factor, and lowest power consumption."
+        },
+        {
+          "fact": "The 1.6 Tbps optical engine reduces cost per bit for hyperscaler transceiver deployments by more than 30% compared to legacy silicon photonics solutions.",
+          "source_url": "https://heraldnews.com/press-release/story/125426/skorpios-unveils-revolutionary-1-6-tbps-and-6-4-tbps-optical-engines-to-deliver-lowest-cost-per-bit-for-ai-data-centers/",
+          "excerpt": "Lowering the cost per bit for hyperscaler transceiver deployments in large-scale AI data centers by more than 30%."
+        },
+        {
+          "fact": "The high-density 6.4 Tbps optical engine is designed to power next-generation 102.4 Tbps Ethernet switches in hyperscale AI data centers and GPU fabrics.",
+          "source_url": "https://heraldnews.com/press-release/story/125426/skorpios-unveils-revolutionary-1-6-tbps-and-6-4-tbps-optical-engines-to-deliver-lowest-cost-per-bit-for-ai-data-centers/",
+          "excerpt": "The high-density 6.4 Tbps Optical Engine to power next-generation 102.4 Tbps Ethernet switches in hyperscale AI data centers and GPU fabrics."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://heraldnews.com/press-release/story/125426/skorpios-unveils-revolutionary-1-6-tbps-and-6-4-tbps-optical-engines-to-deliver-lowest-cost-per-bit-for-ai-data-centers/",
+          "outlet": "The Herald News / EIN Presswire",
+          "title": "Skorpios Unveils Revolutionary 1.6 Tbps and 6.4 Tbps Optical Engines to Deliver Lowest Cost-per-Bit for AI Data Centers",
+          "published_at": "2026-03-16",
+          "image_url": "",
+          "type": "press_release"
+        }
+      ],
+      "category": ["technology"],
+      "entities": {
+        "organizations": ["Skorpios Technologies"],
+        "people": [],
+        "places": ["Temecula"]
+      }
+    },
+    {
+      "id": "spacex-10000-starlink-satellites-orbit-milestone",
+      "headline": "SpaceX crosses 10,000 simultaneous Starlink satellites in orbit for the first time",
+      "key_facts": [
+        {
+          "fact": "SpaceX crossed the threshold of 10,000 Starlink satellites in low Earth orbit simultaneously for the first time, less than seven years after launching its first batch in May 2019.",
+          "source_url": "https://spaceflightnow.com/2026/03/16/live-coverage-spacex-to-launch-25-starlink-satellites-on-falcon-9-rocket-from-california/",
+          "excerpt": "SpaceX crossed the threshold of having more than 10,000 Starlink satellites in low Earth orbit simultaneously for the first time. The milestone comes less than seven years after launching its first batch of satellites in May 2019."
+        },
+        {
+          "fact": "The milestone launch, Starlink Group 17-24, lifted off at 10:19 PM PDT March 16 (1:19 AM EDT / 0619 UTC March 17) from Space Launch Complex 4 East at Vandenberg Space Force Base, deploying 25 Starlink V2 Mini Optimized satellites.",
+          "source_url": "https://spaceflightnow.com/2026/03/16/live-coverage-spacex-to-launch-25-starlink-satellites-on-falcon-9-rocket-from-california/",
+          "excerpt": "Liftoff of the mission that put SpaceX over the 10,000-satellite threshold, dubbed Starlink Group 17-24, happened at 10:19:09 p.m. PDT (1:19:09 a.m. EDT / 0619:09 UTC on Tuesday, Mar. 17)."
+        },
+        {
+          "fact": "The launch was the 615th Falcon 9 flight and coincided with the 100th anniversary of Robert Goddard's launch of the first liquid-propelled rocket. Booster B1088 completed its 14th flight and landed on drone ship 'Of Course I Still Love You.'",
+          "source_url": "https://spaceflightnow.com/2026/03/16/live-coverage-spacex-to-launch-25-starlink-satellites-on-falcon-9-rocket-from-california/",
+          "excerpt": "The Monday night launch also coincided with the 100th anniversary of Robert Goddard's launch of the first liquid-propelled rocket... This was its 14th flight... B1088 landed on the drone ship, 'Of Course I Still Love You.'"
+        },
+        {
+          "fact": "SpaceX has been averaging a launch every 2.3 days in 2026, with 26 out of 33 Falcon 9 launches this year sending Starlink satellites. The service had more than 10 million active customers across 160 countries as of February 13.",
+          "source_url": "https://spaceflightnow.com/2026/03/16/live-coverage-spacex-to-launch-25-starlink-satellites-on-falcon-9-rocket-from-california/",
+          "excerpt": "The company has been averaging a launch every 2.3 days in 2026, with 26 out of its 33 Falcon 9 rocket launches this year sending Starlink satellites into orbit... more than 10 million active customers across 160 countries."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://spaceflightnow.com/2026/03/16/live-coverage-spacex-to-launch-25-starlink-satellites-on-falcon-9-rocket-from-california/",
+          "outlet": "Spaceflight Now",
+          "title": "SpaceX reaches 10,000 simultaneous Starlink satellites in orbit following Falcon 9 launch from California",
+          "published_at": "2026-03-16",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology"],
+      "entities": {
+        "organizations": ["SpaceX"],
+        "people": [],
+        "places": ["Vandenberg Space Force Base", "California"]
+      }
+    },
+    {
+      "id": "uk-sunrise-supercomputer-fusion-energy",
+      "headline": "UK invests \u00a345M in Sunrise AI supercomputer to model nuclear fusion at Culham campus",
+      "key_facts": [
+        {
+          "fact": "The UK government announced a \u00a345 million ($60 million) investment in Sunrise, an AI-driven supercomputer dedicated to fusion energy research, to be operational by June 2026 at the UKAEA's Culham campus in Oxfordshire.",
+          "source_url": "https://www.theregister.com/2026/03/16/uk_splurges_45m_on_ai/",
+          "excerpt": "The UK government is splashing out \u00a345 million on a new AI-driven supercomputer designed to help scientists model the chaotic physics of nuclear fusion, with the system expected to come online this summer."
+        },
+        {
+          "fact": "Sunrise will deliver up to 6.76 exaFLOPS of AI-accelerated modeling performance using AMD EPYC CPUs, AMD Instinct GPU accelerators, 192 nodes of dual-socket Intel Sapphire Rapids processors, and Dell PowerEdge infrastructure with WEKA storage.",
+          "source_url": "https://www.theregister.com/2026/03/16/uk_splurges_45m_on_ai/",
+          "excerpt": "Up to 6.76 exaFLOPS of AI-accelerated modeling performance... AMD EPYC and Instinct GPU accelerators... Intel Sapphire Rapids CPUs (192 nodes of dual socket 56-core)."
+        },
+        {
+          "fact": "The 1.4MW system will model plasma turbulence, develop reactor materials, and advance tritium fuel breeding technologies needed for future fusion systems, supporting the UK's STEP prototype spherical tokamak project targeting the 2040s.",
+          "source_url": "https://www.theregister.com/2026/03/16/uk_splurges_45m_on_ai/",
+          "excerpt": "Modeling plasma turbulence, developing reactor materials, and advancing tritium fuel breeding technologies needed for future fusion systems."
+        },
+        {
+          "fact": "Sunrise is the first major infrastructure piece in the UK's planned AI Growth Zone at Culham, funded by the Department for Energy Security and Net Zero.",
+          "source_url": "https://www.theregister.com/2026/03/16/uk_splurges_45m_on_ai/",
+          "excerpt": "Sunrise represents the first major infrastructure piece in the UK's planned 'AI Growth Zone' at Culham."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.theregister.com/2026/03/16/uk_splurges_45m_on_ai/",
+          "outlet": "The Register",
+          "title": "UK splashes \u00a345M on AI supercomputer to help crack fusion power",
+          "published_at": "2026-03-16",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology"],
+      "entities": {
+        "organizations": ["UKAEA", "AMD", "Intel", "Dell"],
+        "people": [],
+        "places": ["Culham", "Oxfordshire", "United Kingdom"]
+      }
+    },
+    {
+      "id": "bce-1-7b-ai-data-center-saskatchewan",
+      "headline": "BCE plans $1.7B, 300MW AI data center in Saskatchewan with Cerebras and CoreWeave as tenants",
+      "key_facts": [
+        {
+          "fact": "Bell Canada parent BCE announced a $1.7 billion investment to build a 300-megawatt AI data center in the rural municipality of Sherwood outside Regina, Saskatchewan, which will be the largest data center in Canada once completed.",
+          "source_url": "https://www.theglobeandmail.com/business/article-bce-plans-to-build-saskatchewan-ai-data-centre/",
+          "excerpt": "BCE Inc. is planning to spend $1.7-billion to build a 300-megawatt artificial-intelligence data centre outside Regina, the latest addition to the telecom's AI ambitions."
+        },
+        {
+          "fact": "The two main U.S. tenants are Cerebras Systems and CoreWeave, with a significant portion of remaining capacity reserved for Canadian companies, governments, and researchers.",
+          "source_url": "https://www.theglobeandmail.com/business/article-bce-plans-to-build-saskatchewan-ai-data-centre/",
+          "excerpt": "The data centre will be rented by two main U.S. tenants... Cerebras Systems... CoreWeave Inc."
+        },
+        {
+          "fact": "Construction begins spring 2026 with first capacity online in H1 2027. BCE expects the facility to generate $500 million in annual revenue, $400 million EBITDA, and $250 million in annual free cash flow once operational.",
+          "source_url": "https://www.theglobeandmail.com/business/article-bce-plans-to-build-saskatchewan-ai-data-centre/",
+          "excerpt": "$500 million in annual revenue... $400 million EBITDA... $250 million in annual free cash flow."
+        },
+        {
+          "fact": "Power will be supplied by Saskatchewan Power Corp. BCE plans to spend $1.3 billion in 2026 alone, with the project creating at least 800 construction jobs and 80 permanent positions.",
+          "source_url": "https://www.theglobeandmail.com/business/article-bce-plans-to-build-saskatchewan-ai-data-centre/",
+          "excerpt": "At least 80 full-time permanent jobs... At least 800 construction trades positions."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.theglobeandmail.com/business/article-bce-plans-to-build-saskatchewan-ai-data-centre/",
+          "outlet": "The Globe and Mail",
+          "title": "BCE plans to build Saskatchewan AI data centre",
+          "published_at": "2026-03-16",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology", "business"],
+      "entities": {
+        "organizations": ["BCE", "Bell Canada", "Cerebras Systems", "CoreWeave", "Saskatchewan Power Corp."],
+        "people": ["Mirko Bibic"],
+        "places": ["Saskatchewan", "Regina", "Canada"]
+      }
+    }
+  ]
+}

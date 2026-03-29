@@ -1,0 +1,1539 @@
+{
+  "date": "2026-03-12",
+  "stories": [
+    {
+      "id": "nvidia-nemotron-3-super-120b-agentic-model",
+      "headline": "NVIDIA releases Nemotron 3 Super, a 120B open model with 5x throughput for agentic AI",
+      "key_facts": [
+        {
+          "fact": "NVIDIA released Nemotron 3 Super on March 11, a 120-billion-parameter open model with only 12 billion active parameters, designed specifically for multi-agent AI systems. Weights, training data, and fine-tuning recipes are all published on Hugging Face.",
+          "source_url": "https://developer.nvidia.com/blog/introducing-nemotron-3-super-an-open-hybrid-mamba-transformer-moe-for-agentic-reasoning/",
+          "excerpt": "Today, we are releasing Nemotron 3 Super to address these limitations. The new Super model is a 120B total, 12B active-parameter model that delivers maximum compute efficiency and accuracy for complex multi-agent applications."
+        },
+        {
+          "fact": "The model uses a hybrid architecture combining Mamba-2 state-space layers, Transformer attention layers, and a latent Mixture-of-Experts (LatentMoE) routing system, delivering over 5x throughput compared to the previous Nemotron Super and a native 1M-token context window.",
+          "source_url": "https://developer.nvidia.com/blog/introducing-nemotron-3-super-an-open-hybrid-mamba-transformer-moe-for-agentic-reasoning/",
+          "excerpt": "Super addresses the 'thinking tax' with its hybrid mixture-of-experts (MoE) architecture. It delivers over 5x throughput than the previous Nemotron Super. This model tackles the 'context explosion' with a native 1M-token context window."
+        },
+        {
+          "fact": "NVIDIA framed the model as solving two key problems in multi-agent systems: 'context explosion' (agents generating up to 15x more tokens than standard chat) and the 'thinking tax' (using large reasoning models for every subtask being too expensive).",
+          "source_url": "https://blogs.nvidia.com/blog/nemotron-3-super-agentic-ai",
+          "excerpt": "Multi-agent workflows generate up to 15x more tokens than standard chat because each interaction requires resending full histories, including tool outputs and intermediate reasoning... Complex agents must reason at every step, but using large models for every subtask makes multi-agent applications too expensive."
+        },
+        {
+          "fact": "The model was pretrained on 25 trillion tokens (10 trillion unique curated), with additional training on 10 billion reasoning tokens and 15 million coding problems. It scored 85.6% on PinchBench and 91.75% on RULER@1M for long-context evaluation.",
+          "source_url": "https://developer.nvidia.com/blog/introducing-nemotron-3-super-an-open-hybrid-mamba-transformer-moe-for-agentic-reasoning/",
+          "excerpt": "Pretraining tokens: 25 trillion total seen (10 trillion unique curated). Score: 85.6% across full test suite on PinchBench. 91.75% on RULER@1M vs 22.30% for GPT-OSS-120B."
+        },
+        {
+          "fact": "Launch partners include Perplexity (for search and its Computer product), software development agents CodeRabbit, Factory and Greptile, enterprise platforms Palantir, Cadence, Dassault Systemes and Siemens, and life sciences firms Edison Scientific and Lila Sciences.",
+          "source_url": "https://blogs.nvidia.com/blog/nemotron-3-super-agentic-ai",
+          "excerpt": "Perplexity offers its users access to Nemotron 3 Super for search and as one of 20 orchestrated models in Computer. Companies offering software development agents like CodeRabbit, Factory and Greptile are integrating the model. Enterprise Software Platforms: Industry leaders such as Amdocs, Palantir, Cadence, Dassault Systèmes and Siemens are deploying and customizing the model."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://developer.nvidia.com/blog/introducing-nemotron-3-super-an-open-hybrid-mamba-transformer-moe-for-agentic-reasoning/",
+          "outlet": "NVIDIA Technical Blog",
+          "title": "Introducing Nemotron 3 Super: An Open Hybrid Mamba-Transformer MoE for Agentic Reasoning",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://blogs.nvidia.com/blog/nemotron-3-super-agentic-ai",
+          "outlet": "NVIDIA Blog",
+          "title": "New NVIDIA Nemotron 3 Super Delivers 5x Higher Throughput for Agentic AI",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://awesomeagents.ai/news/nvidia-nemotron-3-super-120b-agentic-ai/",
+          "outlet": "Awesome Agents",
+          "title": "NVIDIA Ships Nemotron 3 Super - 120B Open Model for Agents",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "NVIDIA",
+          "Perplexity",
+          "Palantir",
+          "CodeRabbit",
+          "Cadence",
+          "Dassault Systèmes",
+          "Siemens"
+        ],
+        "people": [
+          "Bryan Catanzaro"
+        ],
+        "places": []
+      }
+    },
+    {
+      "id": "anthropic-claude-interactive-inline-visualizations",
+      "headline": "Anthropic adds interactive charts, diagrams and visualizations to Claude responses",
+      "key_facts": [
+        {
+          "fact": "On March 12, Anthropic rolled out inline visualization support for Claude, enabling it to generate interactive charts, diagrams, and other custom visualizations directly within conversation responses rather than relying solely on text.",
+          "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+          "excerpt": "March 12, 2026 — Claude creates interactive charts, diagrams and visualizations. Claude can now create custom charts, diagrams and other visualizations in-line in its responses."
+        },
+        {
+          "fact": "The feature builds on 'Imagine with Claude,' an experimental tool previewed last year that lets users create interactive software in real time. The new inline visuals work directly in chat without requiring separate tools or workflows.",
+          "source_url": "https://www.digitaltrends.com/computing/claudes-responses-get-interactive-inline-visuals-to-help-you-understand-complex-topics-faster/",
+          "excerpt": "According to Anthropic, the new feature builds on Imagine with Claude. Previewed last year, this experimental tool lets users create interactive software in real time."
+        },
+        {
+          "fact": "Claude can now generate spending dashboards, monthly recaps, category breakdowns, and data cleanup suggestions all within a single conversation, turning complex data into interactive visual outputs without external tools.",
+          "source_url": "https://techtiff.substack.com/p/claude-interactive-visuals-guide",
+          "excerpt": "The spending dashboard Claude built from my spreadsheet did not require a tutorial, a separate tool, or a new workflow. Monthly recaps, category breakdowns, cleanup suggestions, and one very specific callout about my taco situation. All of it, inside one conversation."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://support.claude.com/en/articles/12138966-release-notes",
+          "outlet": "Claude Help Center",
+          "title": "Release notes",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.digitaltrends.com/computing/claudes-responses-get-interactive-inline-visuals-to-help-you-understand-complex-topics-faster/",
+          "outlet": "Digital Trends",
+          "title": "Claude's responses get interactive inline visuals to help you understand complex topics faster",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://techtiff.substack.com/p/claude-interactive-visuals-guide",
+          "outlet": "TechTiff / Substack",
+          "title": "Claude is Tired of Talking: Testing Claude's New Visual Features",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "blog_post"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Anthropic"
+        ],
+        "people": [],
+        "places": []
+      }
+    },
+    {
+      "id": "replit-400m-series-d-9b-valuation",
+      "headline": "Replit raises $400M Series D at $9B valuation to scale AI agent-driven software creation",
+      "key_facts": [
+        {
+          "fact": "Georgian led a $400 million Series D investment in Replit, valuing the company at $9 billion. The round included G Squared, Prysm Capital, Coatue, Andreessen Horowitz (a16z), Craft Ventures, Y Combinator, Accenture Ventures, Okta Ventures, and Databricks Ventures.",
+          "source_url": "https://www.prnewswire.com/news-releases/georgian-leads-400m-series-d-investment-in-replit-to-support-continued-investment-in-replit-agent-302711218.html",
+          "excerpt": "Georgian, a growth-stage B2B investor, today announced it has led a $400 million Series D investment in Replit, valuing the company at $9 billion."
+        },
+        {
+          "fact": "Replit now has over 50 million users, with users from over 85% of Fortune 500 companies building on the platform. Enterprise clients include Zillow, Labcorp, Atlassian, PayPal, and Adobe.",
+          "source_url": "https://www.prnewswire.com/news-releases/georgian-leads-400m-series-d-investment-in-replit-to-support-continued-investment-in-replit-agent-302711218.html",
+          "excerpt": "50+ million users. Enterprise clients include Zillow, Labcorp, Atlassian, PayPal, and Adobe. Users from over 85% of Fortune 500 companies build on Replit."
+        },
+        {
+          "fact": "The investment will accelerate development of Replit Agent 4, which combines design and code within a unified environment, supporting the company's vision of 'prompt-to-production' AI-powered software creation.",
+          "source_url": "https://www.prnewswire.com/news-releases/georgian-leads-400m-series-d-investment-in-replit-to-support-continued-investment-in-replit-agent-302711218.html",
+          "excerpt": "Follow-on financing values the company at $9B showing market conviction in the emerging 'prompt-to-production' era of AI-powered software."
+        },
+        {
+          "fact": "CEO Amjad Masad stated: 'Every human with an idea and an Internet connection should be able to build any app they want.' Georgian's Margaret Wu said: 'Software creation is expanding beyond traditional developers and Replit has built a platform that allows people to move from idea to production.'",
+          "source_url": "https://www.prnewswire.com/news-releases/georgian-leads-400m-series-d-investment-in-replit-to-support-continued-investment-in-replit-agent-302711218.html",
+          "excerpt": "Amjad Masad, Replit CEO: 'Every human with an idea and an Internet connection should be able to build any app they want.' Margaret Wu, Georgian: 'Software creation is expanding beyond traditional developers and Replit has built a platform that allows people to move from idea to production.'"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/georgian-leads-400m-series-d-investment-in-replit-to-support-continued-investment-in-replit-agent-302711218.html",
+          "outlet": "PR Newswire / Georgian",
+          "title": "Georgian Leads $400M Series D Investment in Replit to Support Continued Investment in Replit Agent",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "press_release"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Replit",
+          "Georgian",
+          "Andreessen Horowitz",
+          "G Squared",
+          "Coatue",
+          "Y Combinator"
+        ],
+        "people": [
+          "Amjad Masad",
+          "Margaret Wu"
+        ],
+        "places": []
+      }
+    },
+    {
+      "id": "zendesk-acquires-forethought-agentic-customer-service",
+      "headline": "Zendesk acquires agentic AI startup Forethought to automate customer service",
+      "key_facts": [
+        {
+          "fact": "Zendesk announced the acquisition of Forethought, an AI startup that builds software to automate customer service interactions using autonomous agents, on March 11. The deal is expected to close by end of March.",
+          "source_url": "https://techcrunch.com/2026/03/11/zendesk-acquires-agentic-customer-service-startup-forethought/",
+          "excerpt": "Zendesk is acquiring Forethought, a company that builds software to automate customer service interactions, the companies announced on Wednesday. The deal is expected to close by the end of March."
+        },
+        {
+          "fact": "Forethought was the 2018 winner of TechCrunch Battlefield, positioning it as a pioneer in AI-driven customer service automation years before ChatGPT launched in late 2022.",
+          "source_url": "https://techcrunch.com/2026/03/11/zendesk-acquires-agentic-customer-service-startup-forethought/",
+          "excerpt": "Forethought was years ahead of its time. In fact, it was the 2018 winner of TechCrunch Battlefield, our iconic startup pitch competition. For context, ChatGPT didn't launch until late 2022."
+        },
+        {
+          "fact": "Forethought had landed marquee customers including Upwork, Grammarly, Airtable, and Datadog, and by 2025 was supporting enterprise-scale customer service automation.",
+          "source_url": "https://techcrunch.com/2026/03/11/zendesk-acquires-agentic-customer-service-startup-forethought/",
+          "excerpt": "Following its Battlefield win, Forethought landed marquee customers like Upwork, Grammarly, Airtable, and Datadog."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/03/11/zendesk-acquires-agentic-customer-service-startup-forethought/",
+          "outlet": "TechCrunch",
+          "title": "Zendesk acquires agentic customer service startup Forethought",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Zendesk",
+          "Forethought",
+          "Upwork",
+          "Grammarly",
+          "Airtable",
+          "Datadog"
+        ],
+        "people": [],
+        "places": []
+      }
+    },
+    {
+      "id": "google-maps-ask-maps-gemini-conversational",
+      "headline": "Google launches Gemini-powered 'Ask Maps' conversational feature for 2B+ Maps users",
+      "key_facts": [
+        {
+          "fact": "Google launched 'Ask Maps' on March 12, a Gemini-powered conversational feature in Google Maps that lets users ask complex natural language questions about locations and receive personalized recommendations, rolling out on mobile in the US and India.",
+          "source_url": "https://blog.google/products-and-platforms/products/maps/ask-maps-immersive-navigation/",
+          "excerpt": "Ask Maps answers your real-world questions with a conversation. Rolling out now in the U.S. and India on Android and iOS."
+        },
+        {
+          "fact": "Gemini's recommendations draw upon a database of more than 300 million places and reviews from more than 500 million contributors. Google executives declined to say whether ads will eventually appear in Ask Maps results.",
+          "source_url": "https://www.wsmv.com/2026/03/12/google-unveils-major-changes-its-maps-app/",
+          "excerpt": "Gemini's recommendations will draw upon a database spanning more than 300 million places and reviews from more than 500 million contributors. Google executives declined to answer a question about whether the company eventually plans to sell ads."
+        },
+        {
+          "fact": "Google also launched 'Immersive Navigation,' a Gemini-generated 3D view that includes landmarks, medians, and terrain details for a more intuitive driving experience, described as the biggest change to Maps driving directions ever.",
+          "source_url": "https://techcrunch.com/2026/03/12/google-maps-is-getting-an-ai-ask-maps-feature-and-upgraded-immersive-navigation/",
+          "excerpt": "Google announced on Thursday that Google Maps is introducing a Gemini-powered conversational 'Ask Maps' feature along with an updated 'Immersive Navigation' experience that brings a 3D view, road details, natural voice guidance."
+        },
+        {
+          "fact": "Google Maps is used by more than 2 billion people worldwide. Users cannot opt out of Ask Maps, which appears as the first tab in the app, following Google's strategy of embedding Gemini across all its products.",
+          "source_url": "https://www.wired.com/story/google-maps-ask-maps-gemini-powered-tool/",
+          "excerpt": "You can't opt out of Ask Maps or hide it, just like many of the new AI features from Google. Ask Maps appears as the first tab."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://blog.google/products-and-platforms/products/maps/ask-maps-immersive-navigation/",
+          "outlet": "Google Blog",
+          "title": "How we're reimagining Maps with Gemini",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://techcrunch.com/2026/03/12/google-maps-is-getting-an-ai-ask-maps-feature-and-upgraded-immersive-navigation/",
+          "outlet": "TechCrunch",
+          "title": "Google Maps is getting an AI 'Ask Maps' feature and upgraded 'immersive' navigation",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.wired.com/story/google-maps-ask-maps-gemini-powered-tool/",
+          "outlet": "Wired",
+          "title": "Google Maps Gets Chatty With a New Gemini-Powered Interface",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.wsmv.com/2026/03/12/google-unveils-major-changes-its-maps-app/",
+          "outlet": "AP / WSMV",
+          "title": "Google unveils major changes to its Maps app",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Google",
+          "Google DeepMind"
+        ],
+        "people": [
+          "Miriam Daniel"
+        ],
+        "places": [
+          "United States",
+          "India"
+        ]
+      }
+    },
+    {
+      "id": "kai-cyber-125m-agent-driven-security",
+      "headline": "Cybersecurity startup Kai raises $125M at launch to build autonomous AI security agents",
+      "key_facts": [
+        {
+          "fact": "Kai Cyber launched on March 11 with $125 million in funding to develop an AI-driven cybersecurity platform that uses autonomous agents to monitor, analyze, and defend enterprise environments without continuous human intervention.",
+          "source_url": "https://siliconangle.com/2026/03/11/cybersecurity-startup-kai-raises-125m-build-agent-driven-ai-security-platform/",
+          "excerpt": "Cybersecurity startup Kai Cyber Inc. today launched with an announcement that it has raised $125 million in new funding to develop and scale up its platform."
+        },
+        {
+          "fact": "Kai was founded in 2025 by Galina Antova (co-founder of industrial cybersecurity firm Claroty) and Damiano Bolzoni (co-founder of SecurityMatter). CEO Antova said: 'Cybersecurity is quickly becoming a contest between AI systems.'",
+          "source_url": "https://siliconangle.com/2026/03/11/cybersecurity-startup-kai-raises-125m-build-agent-driven-ai-security-platform/",
+          "excerpt": "Founded in 2025 by Galina Antova, a co-founder of industrial cybersecurity company Claroty Ltd., and Damiano Bolzoni, a co-founder of SecurityMatter Ltd. Antova said: 'Cybersecurity is quickly becoming a contest between AI systems.'"
+        },
+        {
+          "fact": "Evolution Equity Partners led the seed and Series A round, with N47 Ventures participating. Despite just launching, Kai has signed multiple large enterprise customers across energy, pharma, automotive, and hospitality, generating over seven figures in bookings.",
+          "source_url": "https://siliconangle.com/2026/03/11/cybersecurity-startup-kai-raises-125m-build-agent-driven-ai-security-platform/",
+          "excerpt": "Evolution Equity Partners led the seed and Series A round, with N47 Ventures and unnamed strategic investors participating. Kai has already signed multiple large enterprise customers across energy, pharmaceuticals, automotive, and hospitality sectors, generating over seven figures in bookings."
+        },
+        {
+          "fact": "The AI agents ingest data from enterprise networks, cloud environments, endpoints, and security tools to detect anomalies and can automatically trigger containment or remediation actions through integrations with existing security infrastructure.",
+          "source_url": "https://siliconangle.com/2026/03/11/cybersecurity-startup-kai-raises-125m-build-agent-driven-ai-security-platform/",
+          "excerpt": "The autonomous agents ingest data from enterprise networks, cloud environments, endpoints, and security tools to detect anomalies, vulnerabilities, and compromise indicators. The system can automatically trigger containment or remediation actions."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://siliconangle.com/2026/03/11/cybersecurity-startup-kai-raises-125m-build-agent-driven-ai-security-platform/",
+          "outlet": "SiliconANGLE",
+          "title": "Cybersecurity startup Kai raises $125M to build agent-driven AI security platform",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Kai Cyber",
+          "Evolution Equity Partners",
+          "Claroty",
+          "SecurityMatter"
+        ],
+        "people": [
+          "Galina Antova",
+          "Damiano Bolzoni"
+        ],
+        "places": []
+      }
+    },
+    {
+      "id": "bota-saion-ai-autonomous-bio-manufacturing",
+      "headline": "Bota launches SAION AI platform connecting AI reasoning to robotic bio-manufacturing labs",
+      "key_facts": [
+        {
+          "fact": "Bota introduced SAION AI, a software and laboratory platform that connects AI reasoning systems with physical experiments in bio-manufacturing research, operating through cognition, orchestration, and execution layers.",
+          "source_url": "https://techhq.com/news/next-gen-biotechnology-ai-research-robotic-labs-powered/",
+          "excerpt": "Bota has introduced SAION AI, a software and laboratory platform designed to connect AI reasoning systems with the physical experiments taking place in bio-manufacturing research."
+        },
+        {
+          "fact": "The platform includes over 300 scientific tools covering tasks like sequence analysis and experimental design, coordinated by a multi-agent LLM framework that converts AI-generated plans into robotic laboratory instructions using Bota's Biological Protocol Language.",
+          "source_url": "https://techhq.com/news/next-gen-biotechnology-ai-research-robotic-labs-powered/",
+          "excerpt": "The platform includes more than three hundred scientific tools that cover tasks like sequence analysis and experimental design. Converts AI-generated plans into laboratory instructions using Bota's Biological Protocol Language."
+        },
+        {
+          "fact": "SAION AI enables closed-loop experimentation where AI proposes experiments, robotic systems execute them, and results inform subsequent hypotheses, achieving reported 88.2% accuracy on DNA/RNA/protein sequencing reasoning tasks and above 90% on complete research workflows.",
+          "source_url": "https://techhq.com/news/next-gen-biotechnology-ai-research-robotic-labs-powered/",
+          "excerpt": "88.2% accuracy on DNA/RNA/protein sequencing reasoning tasks. Above 90% accuracy on complete research workflows. Closed-loop experimentation where AI proposes experiments, robotic systems execute them, and results inform subsequent hypotheses."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://techhq.com/news/next-gen-biotechnology-ai-research-robotic-labs-powered/",
+          "outlet": "TechHQ",
+          "title": "Next-gen bio-tech research: Robotic labs powered by AI",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Bota"
+        ],
+        "people": [],
+        "places": []
+      }
+    },
+    {
+      "id": "intel-core-ultra-200s-plus-desktop-cpus",
+      "headline": "Intel announces Core Ultra 200S Plus desktop CPUs with up to 24 cores for $300",
+      "key_facts": [
+        {
+          "fact": "Intel unveiled the Core Ultra 7 270K Plus (24 cores, 5.5GHz turbo, $300) and Core Ultra 5 250K Plus (18 cores, 5.3GHz, $200) desktop processors, shipping March 26.",
+          "source_url": "https://www.theverge.com/tech/892838/intel-core-ultra-270k-plus-250k-plus-fastest-gaming-cpu-ever",
+          "excerpt": "Intel claims it has finally surpassed both predecessors with 'Intel's fastest gaming desktop processors ever': the Intel Core Ultra 7 270K Plus and 250K Plus, shipping March 26th."
+        },
+        {
+          "fact": "The Arrow Lake refresh adds more efficiency cores and up to 900 MHz higher clocks vs predecessors, delivering 100% improvement in multithread performance and 15% faster gaming.",
+          "source_url": "https://newsroom.intel.com/client-computing/intel-announces-new-intel-core-ultra-200s-plus-series-desktop-processors",
+          "excerpt": "The Intel Core Ultra 200S Plus series will feature more cores and up to 900 MHz die-to-die frequency increase compared to the Core Ultra 7 265K/KF and Core Ultra 5 245K/KF, powering significant boosts to multithread performance."
+        },
+        {
+          "fact": "Intel introduced its Binary Optimization Tool, a first-of-its-kind binary translation layer that can improve native game performance, and added DDR5 7200 MT/s support (up from 6400 MT/s).",
+          "source_url": "https://newsroom.intel.com/client-computing/intel-announces-new-intel-core-ultra-200s-plus-series-desktop-processors",
+          "excerpt": "These chips are the first to feature the new Intel Binary Optimization Tool, a first-of-its-kind binary translation layer optimization capability that can improve native performance in select games."
+        },
+        {
+          "fact": "Intel's strategy undercuts AMD on cores-per-dollar: 24 cores for $300 vs AMD's 8-core Ryzen 7 9700X at $299, though AMD's 3D V-Cache chips retain a gaming lead.",
+          "source_url": "http://www.theregister.com/2026/03/11/intel_core_200_plus/",
+          "excerpt": "Intel has a new strategy for shoring up its eroding market share: Offering PC buyers more cores per dollar than arch-rival AMD... 24 cores for a hair under $300 or 18 cores for just shy of $200."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://newsroom.intel.com/client-computing/intel-announces-new-intel-core-ultra-200s-plus-series-desktop-processors",
+          "outlet": "Intel Newsroom",
+          "title": "Intel Announces New Intel Core Ultra 200S Plus Series Desktop Processors",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.theverge.com/tech/892838/intel-core-ultra-270k-plus-250k-plus-fastest-gaming-cpu-ever",
+          "outlet": "The Verge",
+          "title": "Intel announces Core Ultra 270K Plus and 250K Plus, its 'fastest gaming desktop processors ever'",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "http://www.theregister.com/2026/03/11/intel_core_200_plus/",
+          "outlet": "The Register",
+          "title": "Intel finds its Zen undercutting AMD with Arrow Lake refresh",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Intel",
+          "AMD"
+        ],
+        "people": [
+          "Robert Hallock",
+          "Lip-Bu Tan"
+        ],
+        "places": []
+      }
+    },
+    {
+      "id": "tsmc-record-february-revenue-70pct-foundry-share",
+      "headline": "TSMC posts record February revenue on AI chip demand, nears 70% foundry market share",
+      "key_facts": [
+        {
+          "fact": "TSMC reported consolidated February sales of NT$317.66 billion (US$9.98 billion), the highest ever for the month, up 22.2% year-over-year, driven by robust 3nm chip demand.",
+          "source_url": "https://www.taipeitimes.com/News/biz/archives/2026/03/11/2003853593",
+          "excerpt": "Taiwan Semiconductor Manufacturing Co yesterday reported consolidated sales last month reached NT$317.66 billion (US$9.98 billion), the highest ever for the month of February, driven by robust demand for chips built using the company's advanced 3-nanometer process."
+        },
+        {
+          "fact": "For the first two months of 2026, TSMC posted cumulative sales of NT$718.91 billion, up 29.9% from a year earlier, with full-year revenue projected to grow about 30% in US dollar terms.",
+          "source_url": "https://www.taipeitimes.com/News/biz/archives/2026/03/11/2003853593",
+          "excerpt": "For the first two months of the year, TSMC posted cumulative sales of NT$718.91 billion, up 29.9 percent from a year earlier."
+        },
+        {
+          "fact": "TrendForce data shows TSMC achieved 69.9% global foundry market share in 2025 with revenue of $122.54 billion (up 36.1% YoY), while Samsung fell to 7.2% with a 3.9% revenue decline.",
+          "source_url": "http://tvp.mk.co.kr/en/business/11986719",
+          "excerpt": "TSMC, the industry leader, posted revenue of 122.54 billion dollars last year and achieved a market share of 69.9 percent. Runner-up Samsung Electronics recorded annual revenue of 12.63 billion dollars, with a market share of just 7.2 percent."
+        },
+        {
+          "fact": "The market share gap between TSMC and Samsung widened from 55 percentage points in 2024 to 62.7 percentage points in 2025, driven by AI GPU and Google TPU demand.",
+          "source_url": "http://tvp.mk.co.kr/en/business/11986719",
+          "excerpt": "The annual market share gap with TSMC widened sharply from 55 percentage points in 2024 to 62.7 percentage points last year."
+        },
+        {
+          "fact": "Nvidia contributed NT$726.9 billion, about 19% of TSMC's total 2025 sales, making it the chipmaker's largest single customer.",
+          "source_url": "https://www.taipeitimes.com/News/biz/archives/2026/03/11/2003853593",
+          "excerpt": "AI chip giant Nvidia Corp has become a key driver of TSMC's revenue, contributing NT$726.9 billion, or about 19 percent, to TSMC's total sales last year."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.taipeitimes.com/News/biz/archives/2026/03/11/2003853593",
+          "outlet": "Taipei Times",
+          "title": "TSMC reports sales hit record high last month",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "http://tvp.mk.co.kr/en/business/11986719",
+          "outlet": "MK (Maeil Business Newspaper)",
+          "title": "The Gap With Samsung Electronics Has Widened... TSMC Nears 70% Foundry Market Share",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.ainvest.com/news/tsmc-surges-2-15-ai-expansion-analyst-upgrades-drive-16th-highest-3-75b-trading-volume-2603/",
+          "outlet": "AInvest",
+          "title": "TSMC Surges 2.15% as AI Expansion and Analyst Upgrades Drive 16th-Highest $3.75B Trading Volume",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "TSMC",
+          "Samsung Electronics",
+          "Nvidia",
+          "TrendForce"
+        ],
+        "people": [],
+        "places": [
+          "Taiwan"
+        ]
+      }
+    },
+    {
+      "id": "renault-350-wandercraft-calvin-humanoid-robots",
+      "headline": "Renault to deploy 350 Wandercraft Calvin humanoid robots on factory lines",
+      "key_facts": [
+        {
+          "fact": "At Renault's 2026 strategy day on March 11, the company announced it will deploy 350 Calvin humanoid robots over the next 18 months, developed by French robotics firm Wandercraft.",
+          "source_url": "https://www.autoexpress.co.uk/renault/369151/renault-calvin-industry-first-humanoid-robot-thats-already-helping-build-cars",
+          "excerpt": "He'll be joined by another 350 fellow humanoids over the next 18 months, as Renault experiments with AI-trained exoskeletons that understand their environment, navigate it autonomously and select different parts."
+        },
+        {
+          "fact": "Calvin is already working on the Douai factory supply line hauling tyres for electric cars like the Scenic and Renault 5, at a plant producing 1 car per minute.",
+          "source_url": "https://www.autoexpress.co.uk/renault/369151/renault-calvin-industry-first-humanoid-robot-thats-already-helping-build-cars",
+          "excerpt": "Calvin is a humanoid robot, developed by French robotics firm Wandercraft, that's already doing shifts on the Douai factory supply line. It's hauling tyres for electric cars such as the Scenic and Renault 5."
+        },
+        {
+          "fact": "Wandercraft CEO Jean-Louis Constanza called it an industry first: 'This is the day when France and Europe would take up the challenge in humanoids... Now we start deploying robots, the race is on and we have stolen a march on competition.'",
+          "source_url": "https://www.linkedin.com/posts/jeanlouisconstanza_humanoid-robots-humanoids-activity-7437828488172249090-xoOC",
+          "excerpt": "While Renault was explaining their productivity strategy two things happened: On the screen, they showed Calvin, Wandercraft's humanoid, working in conditions of production... Thierry Charvet announced they are deploying 350 units. This is a first."
+        },
+        {
+          "fact": "Calvin-40 leverages 12 years of exoskeleton development, can carry 120 kg loads, and uses Vision Language Action (VLA) AI. Wandercraft holds 30+ patents and has 100 medical exoskeletons deployed on four continents.",
+          "source_url": "https://www.linkedin.com/posts/jeanlouisconstanza_humanoid-robots-humanoids-activity-7437828488172249090-xoOC",
+          "excerpt": "One year ago we were revealing our first humanoid, Calvin-40, developed in 40 days but leveraging 12 years of developing the most reliable and powerful exoskeletons then robots."
+        },
+        {
+          "fact": "Renault industrial boss Thierry Charvet emphasized cost efficiency over novelty: 'I'm not interested in having a humanoid robot, but having efficient and low cost automation devices.'",
+          "source_url": "https://www.autoexpress.co.uk/renault/369151/renault-calvin-industry-first-humanoid-robot-thats-already-helping-build-cars",
+          "excerpt": "'I'm not interested in having a humanoid robot, but having efficient and low cost automation devices,' says the supply chain chief."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.autoexpress.co.uk/renault/369151/renault-calvin-industry-first-humanoid-robot-thats-already-helping-build-cars",
+          "outlet": "Auto Express",
+          "title": "Renault Calvin is an industry-first humanoid robot that's already helping build cars",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.linkedin.com/posts/jeanlouisconstanza_humanoid-robots-humanoids-activity-7437828488172249090-xoOC",
+          "outlet": "LinkedIn",
+          "title": "Tweet by @jeanlouisconstanza: At Wandercraft we are used to announcing premieres, but this is a big one",
+          "published_at": "2026-03-12",
+          "type": "blog_post"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Renault",
+          "Wandercraft"
+        ],
+        "people": [
+          "Jean-Louis Constanza",
+          "Thierry Charvet"
+        ],
+        "places": [
+          "Douai",
+          "France"
+        ]
+      }
+    },
+    {
+      "id": "zoox-uber-robotaxi-partnership-las-vegas",
+      "headline": "Amazon's Zoox partners with Uber for robotaxi rides in Las Vegas and Los Angeles",
+      "key_facts": [
+        {
+          "fact": "Zoox and Uber announced a multi-year strategic partnership to make Zoox's purpose-built, steering-wheel-free robotaxis available on the Uber app, starting in Las Vegas this summer.",
+          "source_url": "https://techcrunch.com/2026/03/11/zoox-plans-to-put-its-robotaxis-on-the-uber-app-in-vegas-this-year/",
+          "excerpt": "Amazon-owned Zoox plans to make its robotaxis available to hail on the Uber app in Las Vegas later this year, the two companies announced Wednesday."
+        },
+        {
+          "fact": "The partnership includes plans to expand to Los Angeles by mid-2027. Zoox will continue offering rides on its own app as well.",
+          "source_url": "https://electrek.co/2026/03/11/zoox-uber-partner-driverless-rides/",
+          "excerpt": "Zoox and Uber Technologies have announced a strategic partnership to deploy Zoox's purpose-built robotaxis on Uber's rideshare network."
+        },
+        {
+          "fact": "Zoox still needs NHTSA approval to commercially deploy its vehicles; on the same day, NHTSA began taking public comment on Zoox's exemption application for up to 2,500 steering-wheel-free vehicles.",
+          "source_url": "https://techcrunch.com/2026/03/11/zoox-plans-to-put-its-robotaxis-on-the-uber-app-in-vegas-this-year/",
+          "excerpt": "On Wednesday, the National Highway Traffic Safety Administration (NHTSA) began taking public comment on Zoox's application for those exemptions."
+        },
+        {
+          "fact": "Waymo, the current US robotaxi leader, surpassed 400,000 weekly rides across six metro areas in February and aims to exceed 1 million weekly rides by end of 2026.",
+          "source_url": "https://www.cnbc.com/2026/03/11/uber-amazon-zoox-partnership-robotaxi-demand.html",
+          "excerpt": "Waymo said in February that it had surpassed 400,000 weekly rides across six U.S. metro areas."
+        },
+        {
+          "fact": "Zoox is also mapping and building presence in eight other US cities including Dallas and Phoenix. This is its first third-party platform partnership.",
+          "source_url": "https://techcrunch.com/2026/03/11/zoox-plans-to-put-its-robotaxis-on-the-uber-app-in-vegas-this-year/",
+          "excerpt": "It's also mapping and building up a presence in eight other U.S. cities, including Dallas and Phoenix. This is Zoox's first third-party partnership with a platform like Uber."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/03/11/zoox-plans-to-put-its-robotaxis-on-the-uber-app-in-vegas-this-year/",
+          "outlet": "TechCrunch",
+          "title": "Zoox plans to put its robotaxis on the Uber app in Vegas this year",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/03/11/uber-amazon-zoox-partnership-robotaxi-demand.html",
+          "outlet": "CNBC",
+          "title": "Amazon's Zoox partners with Uber to reach more robotaxi riders",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://electrek.co/2026/03/11/zoox-uber-partner-driverless-rides/",
+          "outlet": "Electrek",
+          "title": "Zoox and Uber partner to begin driverless rides in two major cities",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Zoox",
+          "Amazon",
+          "Uber",
+          "Waymo",
+          "NHTSA"
+        ],
+        "people": [],
+        "places": [
+          "Las Vegas",
+          "Los Angeles"
+        ]
+      }
+    },
+    {
+      "id": "creekstone-energy-10gw-data-center-utah-solar",
+      "headline": "Creekstone Energy secures 13,000-acre lease for 1 GW solar powering 10 GW data center campus in Utah",
+      "key_facts": [
+        {
+          "fact": "Creekstone Energy signed the largest solar lease by acreage in Utah history — 13,000 acres in Millard County — to power the Delta Gigasite, a 10 GW data center campus on 1,100 acres.",
+          "source_url": "https://pv-magazine-usa.com/2026/03/11/creekstone-energy-secures-13000-acre-lease-for-1-gw-solar-project-in-utah/",
+          "excerpt": "The contract represents the largest solar lease by acreage in the history of the state. The site is planned for 10 GW of capacity to support artificial intelligence and computing tasks."
+        },
+        {
+          "fact": "The first phase develops 1 GW of solar capacity, which will increase Utah's total solar footprint by approximately 21%. Site preparation begins immediately, with electricity production scheduled for 2027.",
+          "source_url": "https://pv-magazine-usa.com/2026/03/11/creekstone-energy-secures-13000-acre-lease-for-1-gw-solar-project-in-utah/",
+          "excerpt": "Millard County officials issued zoning approval for the first phase of the project, which involves the development of 1 GW of solar capacity... electricity production scheduled for 2027."
+        },
+        {
+          "fact": "The power infrastructure combines 1 GW solar, 280 MW solar plus long-duration storage with Zeo Energy, 300 MW gas capacity, and Torus battery and flywheel systems for load smoothing.",
+          "source_url": "https://pv-magazine-usa.com/2026/03/11/creekstone-energy-secures-13000-acre-lease-for-1-gw-solar-project-in-utah/",
+          "excerpt": "Creekstone Energy partnered with Zeo Energy to develop 280 MW of solar and long-duration storage capacity at the site. The infrastructure also features 300 MW of gas-powered capacity and utilizes Torus battery and flywheel systems for load smoothing."
+        },
+        {
+          "fact": "Revenue from the state trust land lease goes to Utah's public education system. Millard County has issued zoning approval for the first phase.",
+          "source_url": "https://pv-magazine-usa.com/2026/03/11/creekstone-energy-secures-13000-acre-lease-for-1-gw-solar-project-in-utah/",
+          "excerpt": "Revenue from the land lease goes to Utah's public education system."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://pv-magazine-usa.com/2026/03/11/creekstone-energy-secures-13000-acre-lease-for-1-gw-solar-project-in-utah/",
+          "outlet": "pv magazine USA",
+          "title": "Creekstone Energy secures 13,000-acre lease for 1 GW solar project in Utah",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Creekstone Energy",
+          "Zeo Energy",
+          "Torus"
+        ],
+        "people": [],
+        "places": [
+          "Millard County",
+          "Utah"
+        ]
+      }
+    },
+    {
+      "id": "syos-sa200-autonomous-helicopter-serial-production",
+      "headline": "SYOS SA200 autonomous heavy-lift helicopter clears endurance trials, enters serial production",
+      "key_facts": [
+        {
+          "fact": "UK-based SYOS Aerospace announced on March 11 that its SA200 uncrewed autonomous helicopter completed fully autonomous endurance trials, including take-off and landing from a moving platform, clearing it for serial production.",
+          "source_url": "https://defence-blog.com/syos-aerospace-approves-sa200-heavy-lift-drone-for-serial-production/",
+          "excerpt": "UK-based SYOS Aerospace said on March 11, 2026, that its SA200 heavy-lift uncrewed helicopter has completed endurance trials and fully autonomous mission testing, clearing the aircraft for serial production."
+        },
+        {
+          "fact": "The SA200 can carry up to 200 kg over 180 km and is designed for cargo transport, ISR, and electronic warfare missions in contested environments.",
+          "source_url": "https://defence-blog.com/syos-aerospace-approves-sa200-heavy-lift-drone-for-serial-production/",
+          "excerpt": "The SA200 UAV can carry up to 200 kilograms over 180 kilometers and is designed for cargo transport, ISR, and electronic warfare missions."
+        },
+        {
+          "fact": "The helicopter is powered by the AAIMS autonomy stack and represents the culmination of a five-year development programme, offering what SYOS calls the best cost-to-capability ratio in market.",
+          "source_url": "https://business.scoop.co.nz/2026/03/12/syos-autonomous-uncrewed-heavy-lift-helicopter-aces-endurance-trials-now-ready-for-serial-production/",
+          "excerpt": "SYOS SA200 UAV powered by AAIMS autonomy stack and the culmination of five years of development, offers best cost-to-capability ratio in market."
+        },
+        {
+          "fact": "Moving-platform autonomous landing is a key milestone for maritime and expeditionary operations, replicating ship-borne and vehicle-based use cases.",
+          "source_url": "https://www.defenceconnect.com.au/air/17830-syos-aerospaces-sa200-uah-completes-fully-autonomous-mission-trials",
+          "excerpt": "The trials have reportedly proved the heavy-lift aircraft's ability to execute fully autonomous operations, including take-off and landing, from a moving platform, replicating ship-borne and vehicle-based operations."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://defence-blog.com/syos-aerospace-approves-sa200-heavy-lift-drone-for-serial-production/",
+          "outlet": "Defence Blog",
+          "title": "SYOS Aerospace approves SA200 heavy-lift drone for serial production",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://business.scoop.co.nz/2026/03/12/syos-autonomous-uncrewed-heavy-lift-helicopter-aces-endurance-trials-now-ready-for-serial-production/",
+          "outlet": "Scoop Business",
+          "title": "Syos Autonomous Uncrewed Heavy-Lift Helicopter Aces Endurance Trials, Now Ready For Serial Production",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.defenceconnect.com.au/air/17830-syos-aerospaces-sa200-uah-completes-fully-autonomous-mission-trials",
+          "outlet": "Defence Connect",
+          "title": "SYOS Aerospace's SA200 UAH completes fully autonomous mission trials",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "SYOS Aerospace"
+        ],
+        "people": [
+          "Sam Vye"
+        ],
+        "places": [
+          "United Kingdom"
+        ]
+      }
+    },
+    {
+      "id": "firefly-alpha-flight-7-orbit-lockheed-payload",
+      "headline": "Firefly Aerospace's Alpha rocket reaches orbit on Flight 7 with Lockheed Martin payload",
+      "key_facts": [
+        {
+          "fact": "Firefly Aerospace's Alpha rocket successfully launched on its 'Stairway to Seven' mission from Vandenberg Space Force Base at 5:50 PM PDT on March 11, completing orbital insertion and delivering a demonstrator payload for Lockheed Martin.",
+          "source_url": "https://fireflyspace.com/news/firefly-aerospace-successfully-launches-alpha-flight-7/",
+          "excerpt": "Firefly Aerospace today announced the successful launch of its Alpha Flight 7 Stairway to Seven mission. Alpha lifted off from Space Launch Complex 2 at the Vandenberg Space Force Base at 5:50 pm PDT on March 11."
+        },
+        {
+          "fact": "The flight tested and validated key Alpha Block II upgrades including a new in-house avionics suite and enhanced thermal protection system.",
+          "source_url": "https://fireflyspace.com/news/firefly-aerospace-successfully-launches-alpha-flight-7/",
+          "excerpt": "Firefly's Alpha rocket also performed a stage two engine relight and validated key Alpha Block II upgrades, including a new in-house avionics suite and enhanced thermal protection system."
+        },
+        {
+          "fact": "This was Alpha's first launch in 10 months, following explosive accidents last year. CEO Jason Kim said: 'Alpha Flight 7 was flawlessly executed with all mission requirements completed.'",
+          "source_url": "https://www.space.com/space-exploration/launches-spacecraft/firefly-aerospaces-alpha-rocket-reaches-orbit-on-1st-mission-since-explosive-accidents-last-year-video",
+          "excerpt": "Firefly Aerospace's Alpha rocket reaches orbit on 1st launch since explosive accidents last year."
+        },
+        {
+          "fact": "Flight 8 will feature the full Block II configuration with a 7-foot length increase, consolidated in-house batteries and avionics, and stronger carbon composite structures.",
+          "source_url": "https://fireflyspace.com/news/firefly-aerospace-successfully-launches-alpha-flight-7/",
+          "excerpt": "The upgrades include a 7-foot increase to Alpha's length, consolidated batteries and avionics built in house, improved thermal protection."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://fireflyspace.com/news/firefly-aerospace-successfully-launches-alpha-flight-7/",
+          "outlet": "Firefly Aerospace",
+          "title": "Firefly Aerospace Successfully Launches Alpha Flight 7",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.space.com/space-exploration/launches-spacecraft/firefly-aerospaces-alpha-rocket-reaches-orbit-on-1st-mission-since-explosive-accidents-last-year-video",
+          "outlet": "Space.com",
+          "title": "Firefly Aerospace's Alpha rocket reaches orbit on 1st launch since explosive accidents last year",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Firefly Aerospace",
+          "Lockheed Martin"
+        ],
+        "people": [
+          "Jason Kim"
+        ],
+        "places": [
+          "Vandenberg Space Force Base",
+          "California"
+        ]
+      }
+    },
+    {
+      "id": "northrop-grumman-cygnus-xl-departs-iss",
+      "headline": "Northrop Grumman's first Cygnus XL cargo spacecraft departs ISS after delivering 11,000 lbs",
+      "key_facts": [
+        {
+          "fact": "Northrop Grumman's Cygnus XL spacecraft, the first flight of the larger cargo variant, departed the International Space Station on March 12 at 7:06 AM EDT while orbiting 262 miles above the Atlantic.",
+          "source_url": "https://www.space.com/space-exploration/international-space-station/northrop-grumman-first-cygnus-xl-cargo-spacecraft-leave-iss",
+          "excerpt": "Northrop Grumman's 1st 'Cygnus XL' cargo spacecraft departs the space station."
+        },
+        {
+          "fact": "The Cygnus XL delivered more than 11,000 pounds (5,000 kg) of science experiments, supplies, and research materials to the ISS Expedition 73 crew.",
+          "source_url": "https://www.nasa.gov/blogs/spacestation/2026/03/12/cygnus-xl-spacecraft-departing-station-soon-live-on-nasa/",
+          "excerpt": "Cygnus XL is Northrop Grumman's expanded version of its previous Cygnus cargo craft increasing its payload capacity and pressurized cargo volume."
+        },
+        {
+          "fact": "The spacecraft was released from the Unity module using the Canadarm2 robotic arm, with ESA astronaut Sophie Adenot monitoring systems. It will deorbit on March 14 to burn up over the Pacific with thousands of pounds of station trash.",
+          "source_url": "https://www.nasa.gov/blogs/spacestation/2026/03/12/cygnus-xl-spacecraft-departing-station-soon-live-on-nasa/",
+          "excerpt": "Flight controllers on the ground will send commands for the Canadarm2 robotic arm to detach the Cygnus XL from the Unity module's Earth-facing port. Cygnus XL will be commanded to deorbit on Saturday, March 14."
+        },
+        {
+          "fact": "Named the S.S. William 'Willie' McCool, the spacecraft launched in September 2025 on a SpaceX Falcon 9. This was the second ground-controlled robotic release from the station following JAXA's HTVX1 departure the previous week.",
+          "source_url": "https://www.nasa.gov/blogs/spacestation/2026/03/12/cygnus-xl-spacecraft-departing-station-soon-live-on-nasa/",
+          "excerpt": "The Northrop Grumman spacecraft launched in September 2025 on a SpaceX Falcon 9 rocket. Today's departure marks the second ground controlled robotic release of a cargo ship to leave station following the departure of JAXA's HTVX1 last week."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.nasa.gov/blogs/spacestation/2026/03/12/cygnus-xl-spacecraft-departing-station-soon-live-on-nasa/",
+          "outlet": "NASA",
+          "title": "Cygnus XL Spacecraft Departing Station Soon Live on NASA+",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://www.space.com/space-exploration/international-space-station/northrop-grumman-first-cygnus-xl-cargo-spacecraft-leave-iss",
+          "outlet": "Space.com",
+          "title": "Northrop Grumman's 1st 'Cygnus XL' cargo spacecraft departs the space station",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Northrop Grumman",
+          "NASA",
+          "SpaceX",
+          "ESA",
+          "JAXA"
+        ],
+        "people": [
+          "Sophie Adenot"
+        ],
+        "places": []
+      }
+    },
+    {
+      "id": "iran-attacks-commercial-ships-hormuz-gulf",
+      "headline": "Iran strikes commercial ships in Hormuz; tankers hit near Iraq as war spreads to Gulf shipping",
+      "key_facts": [
+        {
+          "fact": "Three commercial ships were struck by projectiles in and around the Strait of Hormuz on March 11, including the Thai-flagged bulk carrier Mayuree Naree (hit 11 nautical miles north of Oman), which caught fire and forced crew evacuation with 3 mariners reported missing.",
+          "source_url": "https://abcnews.com/International/attacks-strait-hormuz-intensify-iran-targeted-commercial-ships/story?id=130962627",
+          "excerpt": "The conflict in the Strait of Hormuz intensified on Wednesday as the Iranian navy confirmed it targeted at least two of three ships struck by projectiles in the critical passage for the oil and shipping trades."
+        },
+        {
+          "fact": "Iran's IRGC confirmed targeting the Express Room (Liberian-flagged) and Mayuree Naree, claiming both vessels 'ignored alerts and warnings from the IRGC Navy.' IRGC Commander Adm. Alireza Tangsiri declared: 'Every vessel intending to pass must obtain permission from Iran.'",
+          "source_url": "https://abcnews.com/International/attacks-strait-hormuz-intensify-iran-targeted-commercial-ships/story?id=130962627",
+          "excerpt": "IRGC Commander Adm. Alireza Tangsiri declared: 'Every vessel intending to pass must obtain permission from Iran.' An IRGC spokesperson asserted the Strait was 'under the intelligent management of the brave naval forces.'"
+        },
+        {
+          "fact": "A Japanese container vessel owned by Mitsui was among the ships hit. Kpler analyst Dimitris Ampatzidis warned: 'This increasingly points to a sustained pattern rather than isolated incidents. The pace of attacks does not suggest any intention to de-escalate.'",
+          "source_url": "https://www.nytimes.com/2026/03/11/world/middleeast/ships-attack-strait-hormuz-iran.html",
+          "excerpt": "'This increasingly points to a sustained pattern rather than isolated incidents,' said Dimitris Ampatzidis, a senior risk and compliance analyst at Kpler. 'The pace of attacks does not suggest any intention to de-escalate.'"
+        },
+        {
+          "fact": "On March 12, two fuel tankers were attacked near the Iraqi port of Umm Qasr by what appeared to be Iranian boats rigged with explosives, killing one person with 38 rescued. Iraqi oil ports stopped operations following the attack.",
+          "source_url": "https://www.stage.bbc.co.uk/news/articles/cr5l988qr47o",
+          "excerpt": "One person was killed and another 38 people were rescued after the incident near the Iraqi port of Umm Qasr, which Reuters and CNN reported appeared to be caused by Iranian boats rigged with explosives."
+        },
+        {
+          "fact": "The attacks bring the total vessels struck since the start of the war on Feb 28 to at least 16, with the Strait of Hormuz carrying about 20% of global petroleum liquids consumption.",
+          "source_url": "http://www.military.com/daily-news/headlines/2026/03/11/iran-takes-war-sea-attacks-ships-strait-of-hormuz.html",
+          "excerpt": "The strait carries about 20% of global petroleum liquids consumption and serves as the primary export route for Gulf oil producers."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://abcnews.com/International/attacks-strait-hormuz-intensify-iran-targeted-commercial-ships/story?id=130962627",
+          "outlet": "ABC News",
+          "title": "Attacks in the Strait of Hormuz intensify as Iran says it targeted commercial ships",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.nytimes.com/2026/03/11/world/middleeast/ships-attack-strait-hormuz-iran.html",
+          "outlet": "The New York Times",
+          "title": "At Least 3 Ships Are Struck Around Strait of Hormuz, and Iran Claims One",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "http://www.theguardian.com/news/2026/mar/11/us-iran-strait-of-hormuz-mine-boat-attacks",
+          "outlet": "The Guardian",
+          "title": "Three merchant ships struck as tensions rise in Hormuz strait amid Iran war",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/03/11/cargo-ship-struck-strait-of-hormuz-uk-iran-war.html",
+          "outlet": "CNBC",
+          "title": "Cargo ship struck by a projectile in the Strait of Hormuz: UK",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "http://www.military.com/daily-news/headlines/2026/03/11/iran-takes-war-sea-attacks-ships-strait-of-hormuz.html",
+          "outlet": "Military.com",
+          "title": "World's Oil Lifeline: Iran Attacks Shipping Boats in Strait of Hormuz",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.stage.bbc.co.uk/news/articles/cr5l988qr47o",
+          "outlet": "BBC News",
+          "title": "Ships hit in Strait of Hormuz as countries agree to release emergency oil reserves",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "world",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "IRGC",
+          "UKMTO",
+          "Mitsui",
+          "Kpler",
+          "CENTCOM"
+        ],
+        "people": [
+          "Alireza Tangsiri",
+          "Dimitris Ampatzidis"
+        ],
+        "places": [
+          "Strait of Hormuz",
+          "Oman",
+          "Iraq",
+          "Umm Qasr",
+          "Ras Al Khaimah",
+          "Dubai"
+        ]
+      }
+    },
+    {
+      "id": "un-security-council-resolution-2817-condemns-iran",
+      "headline": "UN Security Council adopts Resolution 2817 condemning Iran's attacks on Gulf states, 13-0-2",
+      "key_facts": [
+        {
+          "fact": "The UN Security Council adopted Resolution 2817 on March 11 condemning Iran's 'egregious attacks' against Bahrain, Kuwait, Oman, Qatar, Saudi Arabia, UAE, and Jordan, with 13 votes in favor, none against, and China and Russia abstaining.",
+          "source_url": "https://press.un.org/en/2026/sc16315.doc.htm",
+          "excerpt": "The 15-member Council adopted resolution 2817 (2026) by a vote of 13 in favour to none against, with 2 abstentions (China, Russian Federation)."
+        },
+        {
+          "fact": "The Bahrain-led resolution was cosponsored by approximately 135 UN member states, described as the largest number of countries ever to cosponsor a Security Council draft resolution.",
+          "source_url": "https://www.aljazeera.com/news/2026/3/12/un-security-council-adopts-resolution-condemning-irans-attacks-in-the-gulf",
+          "excerpt": "'We believe that this is the largest number of countries ever to cosponsor a Security Council draft resolution,' he said."
+        },
+        {
+          "fact": "The resolution demands immediate cessation of Iranian attacks, halt to threats and provocations, cessation of interference with maritime trade, and discontinuation of support to proxy groups. Iran called it 'a manifest injustice against my country.'",
+          "source_url": "https://press.un.org/en/2026/sc16315.doc.htm",
+          "excerpt": "Iran called the resolution 'a manifest injustice against my country.'"
+        },
+        {
+          "fact": "A second draft resolution tabled by the Russian Federation, described by Moscow as an 'impartial document' that intentionally avoided naming specific parties, was rejected with only 4 votes in favor, 2 against, and 9 abstentions.",
+          "source_url": "https://press.un.org/en/2026/sc16315.doc.htm",
+          "excerpt": "Moscow presented a second resolution it described as an 'impartial document' that intentionally avoided naming specific parties. This draft was rejected 4-2 with 9 abstentions."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://press.un.org/en/2026/sc16315.doc.htm",
+          "outlet": "UN Press",
+          "title": "Security Council Adopts Resolution 2817 (2026) Condemning Iran's 'Egregious Attacks' Against Neighbours",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/3/12/un-security-council-adopts-resolution-condemning-irans-attacks-in-the-gulf",
+          "outlet": "Al Jazeera",
+          "title": "UN Security Council adopts resolution condemning Iran's attacks in the Gulf",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://gulfnews.com/world/mena/un-security-council-resolution-condemning-irans-missile-drone-attacks-on-gulf-arab-countries-1.500471672",
+          "outlet": "Gulf News",
+          "title": "UN Security Council resolution condemning Iran's missile, drone attacks on Gulf, Arab countries",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "world",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "United Nations Security Council",
+          "Gulf Cooperation Council"
+        ],
+        "people": [],
+        "places": [
+          "Bahrain",
+          "Kuwait",
+          "Oman",
+          "Qatar",
+          "Saudi Arabia",
+          "United Arab Emirates",
+          "Jordan"
+        ]
+      }
+    },
+    {
+      "id": "oil-surges-100-iran-hormuz-shut-supply-disruption",
+      "headline": "Oil surges above $100 as Iran vows to keep Hormuz shut; IEA calls it largest supply disruption ever",
+      "key_facts": [
+        {
+          "fact": "Brent crude surged more than 9% to briefly cross $100/barrel (touching $101.59) on March 12, while WTI rose nearly 9% above $95, after Iran's new Supreme Leader Mojtaba Khamenei said the Strait of Hormuz would remain closed as a 'tool of pressure.'",
+          "source_url": "https://www.cnn.com/2026/03/12/energy/oil-jump-record-reserves-release-intl-hnk",
+          "excerpt": "Brent crude oil hovered around $100 a barrel Thursday, after Iran's new leader purportedly said the Strait of Hormuz would remain shut... Mojtaba Khamenei warned that the strait would remain closed as a 'tool of pressure.'"
+        },
+        {
+          "fact": "The IEA said the war in Iran is 'creating the largest supply disruption in the history of the global oil market,' noting that 7.5% of global supply has now been disrupted. This came just 24 hours after the IEA announced a record 400 million barrel reserve release.",
+          "source_url": "https://finance.yahoo.com/news/oil-prices-surge-toward-100-as-iea-calls-war-in-iran-the-largest-supply-disruption-in-history-144223536.html",
+          "excerpt": "The war in Iran is now 'creating the largest supply disruption in the history of the global oil market,' the IEA said in a report on Thursday, noting that 7.5% of global supply has now been disrupted."
+        },
+        {
+          "fact": "The S&P 500 fell 1.1%, the Dow dropped 553 points (1.2%), and the Nasdaq fell 1.4%. US crude oil prices have risen more than 40% since the start of the war, with retail gas prices up nearly 70 cents to $3.59/gallon.",
+          "source_url": "https://www.nbcnews.com/business/energy/iran-war-oil-prices-supply-trump-rcna263135",
+          "excerpt": "U.S. crude oil prices have now risen more than 40% since the start of the war, bringing retail gas prices along with them. Since March 1, gas prices have risen nearly 70 cents to $3.59 per gallon."
+        },
+        {
+          "fact": "The price spike occurred despite the historic 400 million barrel reserve release by G7 nations announced the previous day, underscoring the severity of the disruption as tanker traffic through Hormuz has 'all but stopped.'",
+          "source_url": "https://www.upi.com/Top_News/World-News/2026/03/12/iran-oil-prices-climb-100-Persian-Gulf-ship-attacks/6401773297264/",
+          "excerpt": "Oil prices climbed back above $100 per barrel Thursday after attacks on commercial shipping in the Persian Gulf raised fears of further disruptions to global energy supplies, despite a record release of emergency reserves by major consuming nations."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.cnn.com/2026/03/12/energy/oil-jump-record-reserves-release-intl-hnk",
+          "outlet": "CNN",
+          "title": "Oil soars above $100 after Iran says Strait of Hormuz will remain shut",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://finance.yahoo.com/news/oil-prices-surge-toward-100-as-iea-calls-war-in-iran-the-largest-supply-disruption-in-history-144223536.html",
+          "outlet": "Yahoo Finance",
+          "title": "Oil prices surge toward $100 as IEA calls war in Iran 'the largest supply disruption' in history",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://apnews.com/article/oil-stocks-markets-iran-crude-trump-45f78a8cfe9a5c7e1a2279150a2f90f1",
+          "outlet": "AP News",
+          "title": "Oil jumps to $100 per barrel and stocks sink worldwide with no clear end in sight for the Iran war",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.nbcnews.com/business/energy/iran-war-oil-prices-supply-trump-rcna263135",
+          "outlet": "NBC News",
+          "title": "Oil prices jump as Iran war causes the 'largest supply disruption' in history",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.upi.com/Top_News/World-News/2026/03/12/iran-oil-prices-climb-100-Persian-Gulf-ship-attacks/6401773297264/",
+          "outlet": "UPI",
+          "title": "Oil prices surge above $100 as Iran-linked attacks hit Gulf shipping",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "economy",
+        "finance"
+      ],
+      "entities": {
+        "organizations": [
+          "IEA",
+          "OPEC"
+        ],
+        "people": [
+          "Mojtaba Khamenei"
+        ],
+        "places": [
+          "Strait of Hormuz",
+          "Iran"
+        ]
+      }
+    },
+    {
+      "id": "russia-sharing-drone-tactics-iran-western-intel",
+      "headline": "Russia giving Iran specific drone tactics from Ukraine war to hit US and Gulf targets, intel says",
+      "key_facts": [
+        {
+          "fact": "Russia is helping Iran with advanced drone tactics drawn from its war in Ukraine to hit US and Gulf nation targets in the Middle East, according to a Western intelligence official cited by CNN on March 11.",
+          "source_url": "https://www.cnn.com/2026/03/11/middleeast/russia-iran-advice-drone-tactics-intl",
+          "excerpt": "Russia is helping Iran with advanced drone tactics from its war in Ukraine to hit US and Gulf nation targets in the Middle East, according to a Western intelligence official."
+        },
+        {
+          "fact": "Shahed drones, designed by Iran but mass-produced by Moscow for use in Ukraine, have been unexpectedly successful in penetrating air defenses in the Gulf conflict. Russia is sharing specific tactical advice that marks a new level of Kremlin support for Iran.",
+          "source_url": "https://www.cnn.com/2026/03/11/middleeast/russia-iran-advice-drone-tactics-intl",
+          "excerpt": "Shahed drones, designed by Iran but mass-produced by Moscow for use in Ukraine, have been unexpectedly successful in penetrating the air defenses."
+        },
+        {
+          "fact": "The intelligence revelation coincides with Russia abstaining rather than vetoing the UN Security Council resolution condemning Iran's attacks on Gulf states, suggesting a nuanced Kremlin approach of providing covert military support while avoiding overt diplomatic confrontation.",
+          "source_url": "https://www.cnn.com/2026/03/11/middleeast/russia-iran-advice-drone-tactics-intl",
+          "excerpt": "The specific tactical advice marks a new level of support from the Kremlin."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.cnn.com/2026/03/11/middleeast/russia-iran-advice-drone-tactics-intl",
+          "outlet": "CNN",
+          "title": "Exclusive: Russia is giving Iran specific advice on drone tactics, Western intelligence source tells CNN",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "world",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "Kremlin",
+          "IRGC"
+        ],
+        "people": [],
+        "places": [
+          "Russia",
+          "Iran",
+          "Ukraine"
+        ]
+      }
+    },
+    {
+      "id": "ukraine-first-territorial-gains-since-2023",
+      "headline": "Ukraine records first net territorial gains since 2023, reclaims 400+ sq km in counterattacks",
+      "key_facts": [
+        {
+          "fact": "For the first time since the summer 2023 counteroffensive, Ukrainian forces liberated more territory than they lost during the final weeks of February 2026, according to ISW data published March 11. Ukrainian forces have reclaimed approximately 257 square kilometers since January 1, 2026.",
+          "source_url": "https://www.aljazeera.com/news/2026/3/11/ukraine-records-first-territorial-gains-since-2023-amid-russian-army-woes",
+          "excerpt": "For the first time in almost three years, Kyiv began regaining some territory."
+        },
+        {
+          "fact": "ISW data shows net gains of nearly 33 square kilometers between February 14-20, followed by approximately 57 square kilometers from February 21-27. The last comparable gains were during the Summer 2023 counteroffensive.",
+          "source_url": "https://www.ukrinform.net/rubric-ato/4097824-ukraine-regains-more-ground-than-it-loses-in-february-first-time-in-three-years-isw.html",
+          "excerpt": "Between February 14 and 20, Ukrainian troops achieved a net gain of nearly 33 square kilometers, while from February 21 to 27 they recorded a net gain of approximately 57 square kilometers."
+        },
+        {
+          "fact": "Ukraine's Gen. Staff official Oleksandr Komarenko said Ukrainian airborne assault troops and mechanized brigades have liberated more than 400 square kilometers, nearly restoring full control of Dnipropetrovsk region with only a handful of small settlements remaining.",
+          "source_url": "https://www.politico.eu/article/ukraine-retakes-territory-as-russias-buffer-zone-strategy-falters-official-says/",
+          "excerpt": "Oleksandr Komarenko, head of the main operational directorate of the general staff of Ukraine's armed forces, told local media that Ukrainian airborne assault troops and mechanized brigades had already liberated more than 400 square kilometers of territory."
+        },
+        {
+          "fact": "The gains undermine Russia's buffer zone strategy along parts of the border and could disrupt Russian plans for a spring-summer offensive.",
+          "source_url": "https://www.politico.eu/article/ukraine-retakes-territory-as-russias-buffer-zone-strategy-falters-official-says/",
+          "excerpt": "Pushing Russian forces back undermines Moscow's attempts to establish buffer zones along parts of the border, and could disrupt Russian plans for fresh attacks in the spring and summer."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.aljazeera.com/news/2026/3/11/ukraine-records-first-territorial-gains-since-2023-amid-russian-army-woes",
+          "outlet": "Al Jazeera",
+          "title": "Ukraine records first territorial gains since 2023 amid Russian army woes",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.ukrinform.net/rubric-ato/4097824-ukraine-regains-more-ground-than-it-loses-in-february-first-time-in-three-years-isw.html",
+          "outlet": "Ukrinform",
+          "title": "Ukraine regains more ground than it loses in February, first time in three years – ISW",
+          "published_at": "2026-03-04",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.politico.eu/article/ukraine-retakes-territory-as-russias-buffer-zone-strategy-falters-official-says/",
+          "outlet": "POLITICO Europe",
+          "title": "Ukraine retakes territory as Russia's buffer zone strategy falters, official says",
+          "published_at": "2026-03-10",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-11-2026/",
+          "outlet": "Institute for the Study of War (ISW)",
+          "title": "Russian Offensive Campaign Assessment, March 11, 2026",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "world",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "Ukrainian Armed Forces",
+          "ISW"
+        ],
+        "people": [
+          "Oleksandr Komarenko"
+        ],
+        "places": [
+          "Ukraine",
+          "Dnipropetrovsk",
+          "Donetsk"
+        ]
+      }
+    },
+    {
+      "id": "kremlin-expands-demands-istanbul-proposals-outdated",
+      "headline": "Kremlin signals expanded demands on Ukraine, says 2022 Istanbul proposals 'no longer correspond to reality'",
+      "key_facts": [
+        {
+          "fact": "Kremlin Spokesperson Dmitry Peskov stated on March 11 that Russia's 2022 Istanbul ceasefire proposals are outdated, saying 'the whole reality has changed.' Russian state media framed Peskov's statement as saying the proposals no longer 'correspond to the changed situation.'",
+          "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-11-2026/",
+          "excerpt": "Kremlin Spokesperson Dmitry Peskov responded to a question on March 11 about whether Russia remains committed to the 2022 Istanbul proposals, stating that 'the whole reality has changed.'"
+        },
+        {
+          "fact": "Russian Federation Council International Affairs Committee Chairperson Grigory Karasin called the 2022 Istanbul proposals and the 'caravan of international relations' now 'irrelevant' as four years have passed, calling on Ukraine to 'end this adventure' — meaning capitulation.",
+          "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-11-2026/",
+          "excerpt": "Karasin claimed that the 2022 Istanbul proposals and the 'caravan of international relations' are now 'irrelevant' as four years have passed and Ukraine's leadership was and remains 'unwilling to negotiate.'"
+        },
+        {
+          "fact": "ISW assessed the Kremlin is 'likely setting informational conditions to expand Russian demands of Ukraine and NATO by making it clear that its current demands are no longer sufficient,' with multiple Russian officials and state media amplifying the messaging.",
+          "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-11-2026/",
+          "excerpt": "The Kremlin is likely setting informational conditions to expand Russian demands of Ukraine and NATO by making it clear that its current demands are no longer sufficient."
+        },
+        {
+          "fact": "Separately, Zelenskyy told POLITICO on March 11 that Ukraine needs 'more pressure on Russia, not on me,' urging Trump to stop pushing Ukraine toward Russia's terms. Zelenskyy said Ukrainians are 'tired' but not ready to accept Russia's ultimatums.",
+          "source_url": "https://politi.co/46RW3FX",
+          "excerpt": "'We need negotiations. We support them,' Zelenskyy said. 'We don't trust Russia, but I think, and I trust that Americans really want to finish with this war. I hope that they will help us, but we need more pressure on Russia, not on me.'"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-11-2026/",
+          "outlet": "Institute for the Study of War (ISW)",
+          "title": "Russian Offensive Campaign Assessment, March 11, 2026",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://politi.co/46RW3FX",
+          "outlet": "POLITICO",
+          "title": "Zelenskyy to Trump: Put more pressure on Putin, 'not on me'",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.themoscowtimes.com/2026/03/11/kremlin-tempers-expectations-for-ukraine-peace-talks-says-it-awaits-kyivs-response-to-proposals",
+          "outlet": "The Moscow Times",
+          "title": "Kremlin Tempers Expectations for Ukraine Peace Talks, Says It Awaits Kyiv's Response to Proposals",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "world",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "Kremlin",
+          "NATO",
+          "ISW"
+        ],
+        "people": [
+          "Dmitry Peskov",
+          "Grigory Karasin",
+          "Volodymyr Zelenskyy",
+          "Donald Trump",
+          "Vladimir Putin"
+        ],
+        "places": [
+          "Russia",
+          "Ukraine",
+          "Istanbul"
+        ]
+      }
+    },
+    {
+      "id": "trump-section-301-trade-probes-16-economies",
+      "headline": "Trump launches Section 301 trade probes into 16 economies to rebuild tariff regime after Supreme Court loss",
+      "key_facts": [
+        {
+          "fact": "The Trump administration on March 11 announced new trade investigations under Section 301 of the Trade Act of 1974 into 16 economies: China, the EU, Singapore, Switzerland, Norway, Indonesia, Malaysia, Cambodia, Thailand, South Korea, Vietnam, Taiwan, Bangladesh, Mexico, Japan, and India.",
+          "source_url": "https://www.smh.com.au/world/north-america/new-tariffs-coming-trump-fires-fresh-trade-salvo-at-15-countries-20260312-p5o9oo.html",
+          "excerpt": "Those being investigated are China, the EU, Singapore, Switzerland, Norway, Indonesia, Malaysia, Cambodia, Thailand, Korea, Vietnam, Taiwan, Bangladesh, Mexico, Japan and India."
+        },
+        {
+          "fact": "US Trade Representative Jamieson Greer said the probes will focus on 'excess capacity and production' leading to persistent trade surpluses with the United States, as the administration works to rebuild its tariff authority after the Supreme Court struck down IEEPA-based reciprocal tariffs.",
+          "source_url": "https://www.smh.com.au/world/north-america/new-tariffs-coming-trump-fires-fresh-trade-salvo-at-15-countries-20260312-p5o9oo.html",
+          "excerpt": "The probes will focus on 'excess capacity and production' of foreign nations which Trade Representative Jamieson Greer said was leading to persistent trade surpluses with the United States."
+        },
+        {
+          "fact": "Treasury Secretary Scott Bessent predicted that by August, US tariffs would return to the levels that existed before the Supreme Court's ruling that struck down the IEEPA-based tariffs.",
+          "source_url": "https://www.cnbc.com/2026/03/11/trump-trade-investigations-ieepa-tariffs.html",
+          "excerpt": "Treasury Secretary Scott Bessent recently predicted that by August, U.S. tariffs would return to the levels that existed before the Supreme Court's ruling."
+        },
+        {
+          "fact": "The announcement came just weeks before a planned Beijing summit between Trump and Xi Jinping, raising the stakes on US-China trade relations. The probes are expected to be expanded to additional nations.",
+          "source_url": "https://www.cnbc.com/2026/03/12/section-301-trade-probe-china-trump-xi-beijing-summit.html",
+          "excerpt": "Trump raises the stakes on China with Section 301 trade probe, weeks before Beijing summit."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.nytimes.com/2026/03/11/business/economy/trump-trade-investigations-tariffs.html",
+          "outlet": "The New York Times",
+          "title": "Trump Targets Major Trading Partners With New Investigation",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/03/11/trump-trade-investigations-ieepa-tariffs.html",
+          "outlet": "CNBC",
+          "title": "Trump Section 301 trade probes to replace IEEPA tariffs",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.smh.com.au/world/north-america/new-tariffs-coming-trump-fires-fresh-trade-salvo-at-15-countries-20260312-p5o9oo.html",
+          "outlet": "The Sydney Morning Herald",
+          "title": "Trump tariffs: US opens trade investigations into 15 countries including China and the EU",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/03/12/section-301-trade-probe-china-trump-xi-beijing-summit.html",
+          "outlet": "CNBC",
+          "title": "Trump raises China stakes with Section 301 trade probe before Beijing Xi meeting",
+          "published_at": "2026-03-12",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "economy",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "USTR",
+          "US Treasury",
+          "Supreme Court"
+        ],
+        "people": [
+          "Donald Trump",
+          "Jamieson Greer",
+          "Scott Bessent",
+          "Xi Jinping"
+        ],
+        "places": [
+          "United States",
+          "China",
+          "European Union",
+          "Singapore",
+          "Mexico",
+          "Japan",
+          "India"
+        ]
+      }
+    },
+    {
+      "id": "immorta-bio-combination-therapy-doubles-mouse-lifespan",
+      "headline": "Immorta Bio reports combination senolytic-stem cell therapy achieved 84% lifespan extension in mice",
+      "key_facts": [
+        {
+          "fact": "Immorta Bio announced on March 11 that its combination of SenoVax (first-in-class senolytic immunotherapy) and StemCellRevivify (personalized mesenchymal stem cell platform) achieved approximately 73% increase in mean survival and 84% extension of median lifespan in validated murine aging models.",
+          "source_url": "https://www.prnewswire.com/news-releases/immorta-bio-demonstrates-dramatic-lifespan-extension-in-aging-mouse-models-research-accepted-for-presentation-at-aais-immunology2026-302711019.html",
+          "excerpt": "Immorta Bio Inc. today announced breakthrough preclinical results demonstrating dramatic lifespan extension in validated murine aging models using a novel dual-platform therapeutic strategy."
+        },
+        {
+          "fact": "The combination therapy significantly outperformed either monotherapy, reducing senescence-associated secretory phenotype (SASP) inflammatory markers and boosting regenerative biomarkers including Klotho, FGF-2, and GDF-11, with improved liver function and enhanced physical performance.",
+          "source_url": "https://www.nad.com/news/biotech-company-unveils-data-showing-combining-its-two-therapies-doubles-lifespan-in-mouse-model",
+          "excerpt": "Combining Immorta Bio's vaccine and stem cell therapy doubled lifespan in a mouse model of aging... The combination also reduced markers of the SASP—inflammatory markers."
+        },
+        {
+          "fact": "The research has been accepted for presentation at IMMUNOLOGY2026, the annual meeting of the American Association of Immunologists, to be held April 15-19 in Boston. CSO Dr. Thomas Ichim said the approach aims to 'address both the damage caused by aging and the decline in the body's ability to repair itself.'",
+          "source_url": "https://www.prnewswire.com/news-releases/immorta-bio-demonstrates-dramatic-lifespan-extension-in-aging-mouse-models-research-accepted-for-presentation-at-aais-immunology2026-302711019.html",
+          "excerpt": "Dr. Thomas Ichim: 'By combining immune-mediated clearance of senescent cells with regenerative cell therapy, we aim to address both the damage caused by aging and the decline in the body's ability to repair itself.'"
+        },
+        {
+          "fact": "The company is rapidly advancing toward IND-enabling studies, with initial clinical focus on liver disease and cancer. Studies used doxorubicin-induced systemic senescence and carbon tetrachloride-induced liver injury mouse models.",
+          "source_url": "https://www.prnewswire.com/news-releases/immorta-bio-demonstrates-dramatic-lifespan-extension-in-aging-mouse-models-research-accepted-for-presentation-at-aais-immunology2026-302711019.html",
+          "excerpt": "Rapidly advancing toward IND-enabling studies. Initial clinical focus on liver disease and cancer."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/immorta-bio-demonstrates-dramatic-lifespan-extension-in-aging-mouse-models-research-accepted-for-presentation-at-aais-immunology2026-302711019.html",
+          "outlet": "PR Newswire",
+          "title": "Immorta Bio Demonstrates Dramatic Lifespan Extension in Aging Mouse Models; Research Accepted for Presentation at AAI's IMMUNOLOGY2026",
+          "published_at": "2026-03-11",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.nad.com/news/biotech-company-unveils-data-showing-combining-its-two-therapies-doubles-lifespan-in-mouse-model",
+          "outlet": "NAD.com",
+          "title": "Biotech Company Unveils Data Showing Combining Its Two Therapies Doubles Lifespan in Mouse Model",
+          "published_at": "2026-03-09",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Immorta Bio",
+          "American Association of Immunologists"
+        ],
+        "people": [
+          "Boris Reznik",
+          "Thomas Ichim"
+        ],
+        "places": [
+          "Miami",
+          "Boston"
+        ]
+      }
+    }
+  ],
+  "story_count": 23,
+  "source_count": 61
+}

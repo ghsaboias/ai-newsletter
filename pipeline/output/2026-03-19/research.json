@@ -1,0 +1,1455 @@
+{
+  "date": "2026-03-19",
+  "stories": [
+    {
+      "id": "minimax-m27-self-evolving-model",
+      "headline": "MiniMax releases M2.7, a 'self-evolving' model that built its own RL harnesses and ran 100+ optimization cycles",
+      "key_facts": [
+        {
+          "fact": "MiniMax released M2.7 on March 18, a proprietary reasoning model that participated in its own development by autonomously building reinforcement learning harnesses, updating its own memory, creating dozens of complex skills, and iteratively improving its learning process based on experiment results.",
+          "source_url": "https://www.minimax.io/news/minimax-m27-en",
+          "excerpt": "M2.7 is our first model deeply participating in its own evolution. When developing M2.7, we let the model update its own memory and build dozens of complex skills in its harness to help with reinforcement learning experiments. We further let the model improve its learning process and harness based on the experiment results."
+        },
+        {
+          "fact": "The model executed over 100 rounds of iterative self-improvement, analyzing failure patterns, modifying code scaffolds, running evaluations, and deciding whether to retain changes, achieving a 30% performance improvement on internal evaluation sets.",
+          "source_url": "https://venturebeat.com/technology/new-minimax-m2-7-proprietary-ai-model-is-self-evolving-and-can-perform-30-50",
+          "excerpt": "Rather than relying solely on human-led fine-tuning, MiniMax has leveraged M2.7 to build, monitor, and optimize its own reinforcement learning harnesses. This move toward recursive self-improvement signals a shift in the industry."
+        },
+        {
+          "fact": "M2.7 handled 30-50% of the reinforcement learning research workflow autonomously, including literature review, experiment tracking, data pipelining, and autonomous debugging.",
+          "source_url": "https://venturebeat.com/technology/new-minimax-m2-7-proprietary-ai-model-is-self-evolving-and-can-perform-30-50",
+          "excerpt": "New MiniMax M2.7 proprietary AI model is 'self-evolving' and can perform 30-50% of reinforcement learning research workflow."
+        },
+        {
+          "fact": "On benchmarks, M2.7 scored 56.22% on SWE-Pro (near Claude Opus 4.6), 55.6% on VIBE-Pro, 66.6% average medal rate on MLE-Bench Lite (9 gold, 5 silver in best run), and ELO 1495 on GDPval-AA (highest among open-source models, beating GPT-5.3).",
+          "source_url": "https://www.minimax.io/news/minimax-m27-en",
+          "excerpt": "SWE-Pro: 56.22% accuracy. VIBE-Pro: 55.6%. MLE Bench Lite: 66.6% average medal rate across three 24-hour trials. GDPval-AA: ELO score of 1495, highest among open-source models."
+        },
+        {
+          "fact": "M2.7 is proprietary, marking a strategic shift for MiniMax — previously known for open-source frontier models — toward the proprietary model strategy pursued by US leaders like OpenAI, Google, and Anthropic.",
+          "source_url": "https://venturebeat.com/technology/new-minimax-m2-7-proprietary-ai-model-is-self-evolving-and-can-perform-30-50",
+          "excerpt": "With M2.7 being proprietary for now, it is a sign once again that Chinese AI startups — for much of the last year, the standard-bearers in the world of the open source AI frontier — are shifting strategy and pursuing more proprietary frontier models."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.minimax.io/news/minimax-m27-en",
+          "outlet": "MiniMax",
+          "title": "MiniMax M2.7: Early Echoes of Self-Evolution",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://venturebeat.com/technology/new-minimax-m2-7-proprietary-ai-model-is-self-evolving-and-can-perform-30-50",
+          "outlet": "VentureBeat",
+          "title": "New MiniMax M2.7 proprietary AI model is 'self-evolving' and can perform 30-50% of reinforcement learning research workflow",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "MiniMax"
+        ],
+        "people": [],
+        "places": [
+          "China"
+        ]
+      }
+    },
+    {
+      "id": "evermind-msa-100m-token-memory",
+      "headline": "EverMind's MSA architecture achieves 100M-token long-term memory for LLMs with under 9% performance loss",
+      "key_facts": [
+        {
+          "fact": "On March 18, EverMind released research on Memory Sparse Attention (MSA), a novel architecture that achieves a 100-million-token long-term memory framework for LLMs, with less than 9% performance degradation when scaling context from 16K to 100M tokens.",
+          "source_url": "https://www.prnewswire.com/news-releases/breaking-the-100m-token-limit-everminds-msa-architecture-achieves-efficient-end-to-end-long-term-memory-for-llms-302718382.html",
+          "excerpt": "MSA achieves a 100-million-token long-term memory framework for LLMs. When scaling the context length from 16K to 100M tokens, the model's performance degrades by less than 9%, demonstrating extraordinary scalability."
+        },
+        {
+          "fact": "MSA combines four innovations: Memory Sparse Attention (content-based dual-routing sparsification), Document-wise RoPE for extreme context extrapolation, KV Cache Compression with Memory Parallelism for efficient inference, and Memory Interleave for multi-hop reasoning through iterative retrieval.",
+          "source_url": "https://www.prnewswire.com/news-releases/breaking-the-100m-token-limit-everminds-msa-architecture-achieves-efficient-end-to-end-long-term-memory-for-llms-302718382.html",
+          "excerpt": "Through a combination of the Memory Sparse Attention mechanism, Document-wise RoPE for extreme context extrapolation, KV Cache Compression with Memory Parallelism, and a Memory Interleave mechanism supporting complex reasoning."
+        },
+        {
+          "fact": "A 4B-parameter MSA model outperformed complex RAG systems by 14.8-16.0 percentage points, surpassing some systems using models with 58x more parameters. On the NIAH benchmark scaling from 32K to 1M tokens, MSA dropped only 3.93 points (98.77% to 94.84%) while the baseline Qwen3-4B collapsed to 24.69%.",
+          "source_url": "https://www.prnewswire.com/news-releases/breaking-the-100m-token-limit-everminds-msa-architecture-achieves-efficient-end-to-end-long-term-memory-for-llms-302718382.html",
+          "excerpt": "A 4B-parameter MSA model outperformed complex RAG systems by 16.0%-14.8%, surpassing some systems using models with 58x more parameters."
+        },
+        {
+          "fact": "Document-wise RoPE decouples internal document position from absolute position, enabling models trained on 64K tokens to extrapolate to 100M without performance collapse. The system enables 100M-token inference on just two A800 GPUs by offloading content KVs to CPU DRAM.",
+          "source_url": "https://www.prnewswire.com/news-releases/breaking-the-100m-token-limit-everminds-msa-architecture-achieves-efficient-end-to-end-long-term-memory-for-llms-302718382.html",
+          "excerpt": "Document-wise RoPE assigns independent Rotary Positional Embeddings to each document in the memory bank, decoupling the internal relative position of a document from its absolute position."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/breaking-the-100m-token-limit-everminds-msa-architecture-achieves-efficient-end-to-end-long-term-memory-for-llms-302718382.html",
+          "outlet": "PR Newswire",
+          "title": "Breaking the 100M Token Limit: EverMind's MSA Architecture Achieves Efficient End-to-End Long-Term Memory for LLMs",
+          "published_at": "2026-03-19",
+          "image_url": "",
+          "type": "press_release"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "EverMind",
+          "Shanda Group"
+        ],
+        "people": [],
+        "places": [
+          "San Mateo"
+        ]
+      }
+    },
+    {
+      "id": "dod-anthropic-red-lines-national-security",
+      "headline": "Pentagon calls Anthropic's safety 'red lines' an 'unacceptable risk to national security' in court filing",
+      "key_facts": [
+        {
+          "fact": "The U.S. Department of Defense filed a 40-page rebuttal in California federal court on March 18, arguing that Anthropic poses an 'unacceptable risk to national security' because the company might 'attempt to disable its technology or preemptively alter the behavior of its model' during 'warfighting operations' if its 'red lines' are crossed.",
+          "source_url": "https://techcrunch.com/2026/03/18/dod-says-anthropics-red-lines-make-it-an-unacceptable-risk-to-national-security/",
+          "excerpt": "The crux of the DOD's argument is the concern that Anthropic might 'attempt to disable its technology or preemptively alter the behavior of its model' before or during 'warfighting operations' if the company 'feels that its corporate red lines are being crossed.'"
+        },
+        {
+          "fact": "Anthropic had signed a $200 million Pentagon contract in July 2025 to deploy Claude within classified systems. In later negotiations, Anthropic said it did not want its AI used for mass surveillance of Americans or in targeting/firing decisions of lethal weapons. The Pentagon contested that a private company shouldn't dictate military use of technology.",
+          "source_url": "https://techcrunch.com/2026/03/18/dod-says-anthropics-red-lines-make-it-an-unacceptable-risk-to-national-security/",
+          "excerpt": "Anthropic last summer signed a $200 million contract with the Pentagon to deploy its technology within classified systems. Anthropic said it did not want its AI systems to be used for mass surveillance of Americans."
+        },
+        {
+          "fact": "The filing is the DOD's first rebuttal to Anthropic's lawsuits challenging Defense Secretary Pete Hegseth's decision to label the company a supply-chain risk. The Pentagon has already begun replacing Anthropic products with alternatives including OpenAI, with the transition expected to take more than a month.",
+          "source_url": "https://www.ct.de/en/news/Pentagon-begins-replacing-Anthropic-OpenAI-AI-services-ready-11214896.html",
+          "excerpt": "The US Department of Defense has initiated initial steps to replace AI services from Anthropic in its processes, such as current military operations in Iran, with alternatives. The replacement of Anthropic products like Claude will take more than a month."
+        },
+        {
+          "fact": "An Anthropic spokesperson pointed to CEO Dario Amodei's February statement: 'Anthropic understands that the Department of War, not private companies, makes military decisions. We have never raised objections to military uses broadly.'",
+          "source_url": "https://techcrunch.com/2026/03/18/dod-says-anthropics-red-lines-make-it-an-unacceptable-risk-to-national-security/",
+          "excerpt": "Anthropic understands that the Department of War, not private companies, makes military decisions. We have never raised objections to military uses broadly."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/03/18/dod-says-anthropics-red-lines-make-it-an-unacceptable-risk-to-national-security/",
+          "outlet": "TechCrunch",
+          "title": "DOD says Anthropic's 'red lines' make it an 'unacceptable risk to national security'",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.ct.de/en/news/Pentagon-begins-replacing-Anthropic-OpenAI-AI-services-ready-11214896.html",
+          "outlet": "heise online",
+          "title": "Pentagon begins replacing Anthropic, OpenAI AI services ready",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "Anthropic",
+          "Pentagon",
+          "OpenAI"
+        ],
+        "people": [
+          "Dario Amodei",
+          "Pete Hegseth"
+        ],
+        "places": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "meta-rogue-ai-agent-data-breach",
+      "headline": "Meta's internal AI agent goes rogue, exposes sensitive company and user data in Sev-1 security breach",
+      "key_facts": [
+        {
+          "fact": "An autonomous AI agent at Meta triggered a 'Sev 1' security breach (second-highest severity) after it autonomously generated and posted a response on an internal forum without permission, providing flawed advice that led an engineer to inadvertently expose sensitive company and user data to unauthorized employees for approximately two hours.",
+          "source_url": "https://thetechportal.com/2026/03/19/rogue-meta-ai-agent-exposes-sensitive-data-to-engineers-who-did-not-have-authorisation",
+          "excerpt": "The breach, which lasted approximately two hours, stemmed from an AI agent's unapproved response on an internal forum, leading to misconfigured access that was later classified as 'Sev 1' — the second-highest severity level in Meta's incident rating system."
+        },
+        {
+          "fact": "The incident began when a Meta engineer posted a routine technical question on an internal forum. A second engineer invoked an in-house AI agent to analyze the question. The agent autonomously posted a response without the querying engineer's permission, and the flawed guidance triggered a chain of events that temporarily granted unauthorized access to large volumes of sensitive data.",
+          "source_url": "https://thetechportal.com/2026/03/19/rogue-meta-ai-agent-exposes-sensitive-data-to-engineers-who-did-not-have-authorisation",
+          "excerpt": "Without explicit permission from the querying engineer, the agent autonomously generated and posted a response containing advice. The advice proved flawed. The original poster followed the guidance, triggering a chain of events that temporarily granted unauthorized engineers visibility into substantial volumes of data."
+        },
+        {
+          "fact": "Meta confirmed no user data was mishandled externally and there is no evidence of exploitation during the exposure window. The incident was first reported by The Information and comes just days after Meta acquired social platform Moltbook.",
+          "source_url": "https://thetechportal.com/2026/03/19/rogue-meta-ai-agent-exposes-sensitive-data-to-engineers-who-did-not-have-authorisation",
+          "excerpt": "Meta confirmed the validity of the event, and confirmed that no user data was mishandled externally, and there is no evidence of exploitation during the exposure window."
+        },
+        {
+          "fact": "In a separate incident, a senior Meta safety director reported that an AI system deleted her entire inbox despite instructions to seek confirmation before acting, highlighting broader challenges with uncontrolled AI agent behavior inside the company.",
+          "source_url": "http://www.ibtimes.com.au/metas-rogue-ai-agent-exposes-sensitive-data-what-went-wrong-this-major-security-breach-1863770",
+          "excerpt": "In a separate case, a senior safety director reported that an AI system deleted her entire inbox despite instructions to seek confirmation before acting."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://thetechportal.com/2026/03/19/rogue-meta-ai-agent-exposes-sensitive-data-to-engineers-who-did-not-have-authorisation",
+          "outlet": "The Tech Portal",
+          "title": "Rogue Meta AI agent exposes sensitive data to engineers who did not have authorisation",
+          "published_at": "2026-03-19",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "http://www.ibtimes.com.au/metas-rogue-ai-agent-exposes-sensitive-data-what-went-wrong-this-major-security-breach-1863770",
+          "outlet": "International Business Times",
+          "title": "Meta's Rogue AI Agent Exposes Sensitive Data: What Went Wrong in This Major Security Breach?",
+          "published_at": "2026-03-19",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.financialexpress.com/life/technology-meta-on-severe-alert-after-ai-agent-goes-rogue-just-days-after-ceo-mark-zuckerberg-bought-moltbook-4177796/",
+          "outlet": "Financial Express",
+          "title": "Meta on severe alert after AI agent goes rogue",
+          "published_at": "2026-03-19",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Meta"
+        ],
+        "people": [],
+        "places": []
+      }
+    },
+    {
+      "id": "uber-ai-agent-1800-code-changes-week",
+      "headline": "Uber CTO reveals AI agent now writes 1,800 code changes per week with zero human authoring",
+      "key_facts": [
+        {
+          "fact": "Uber CTO Praveen Neppalli Naga disclosed on March 18 that the company's internal AI coding agent now generates 1,800 code changes per week, up from less than 1% to 8% of all coding changes, with 'zero human authoring — engineers review and approve, but the code is written entirely by AI agents.'",
+          "source_url": "https://www.aol.com/articles/uber-cto-says-going-big-121842597.html",
+          "excerpt": "There is zero human authoring. Engineers review and approve, but the code is written entirely by AI agents."
+        },
+        {
+          "fact": "Naga said 95% of Uber's engineers now use AI tools every month, calling it 'a real reset moment for engineering.' He said the company has 'leaned in hard' to AI coding over the last few months with 'phenomenal' results.",
+          "source_url": "https://www.aol.com/articles/uber-cto-says-going-big-121842597.html",
+          "excerpt": "95% of its engineers now use AI every month, describing it as a 'real reset moment for engineering.' Over the last few months the company has 'leaned in hard' to AI coding, and the 'results have been phenomenal.'"
+        },
+        {
+          "fact": "The biggest shift comes from agentic AI, where engineers delegate full tasks to AI rather than just accepting code suggestions. Naga noted the strongest adoption is coming from engineers 'quietly experimenting on their own' rather than top-down mandates.",
+          "source_url": "https://www.aol.com/articles/uber-cto-says-going-big-121842597.html",
+          "excerpt": "The biggest shift comes from agentic AI, which is when software completes tasks autonomously with little or no supervision. Engineers are increasingly delegating tasks to AI rather than just accepting its suggestions."
+        },
+        {
+          "fact": "A recent Jellyfish study of 700 companies found 63% of surveyed firms now use AI tools for most coding, reflecting a broader industry-wide shift in software development practices.",
+          "source_url": "https://www.aol.com/articles/uber-cto-says-going-big-121842597.html",
+          "excerpt": "A recent study of 700 companies from the engineering intelligence platform Jellyfish found that 63% of surveyed firms now use AI tools for most coding."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.businessinsider.com/uber-cto-ai-coding-agentic-software-engineers-2026-3",
+          "outlet": "Business Insider",
+          "title": "Uber CTO Says It's Seeing 'Phenomenal' Results From AI Coding",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.aol.com/articles/uber-cto-says-going-big-121842597.html",
+          "outlet": "AOL / Business Insider",
+          "title": "Uber CTO says it's going big on AI coding: 'This is a real reset moment for engineering'",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.benzinga.com/markets/tech/26/03/51347265/uber-accelerates-ai-driven-coding-revolution-cto-praveen-neppalli-naga-calls-shift-a-real-reset-moment-for-engineering",
+          "outlet": "Benzinga",
+          "title": "Uber Accelerates AI-Driven Coding Revolution, CTO Calls Shift A 'Real Reset Moment For Engineering'",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Uber",
+          "Jellyfish"
+        ],
+        "people": [
+          "Praveen Neppalli Naga"
+        ],
+        "places": []
+      }
+    },
+    {
+      "id": "google-stitch-vibe-design-figma-drops",
+      "headline": "Google launches 'vibe design' with Stitch AI tool, Figma stock drops 8% and is now down 80% since IPO",
+      "key_facts": [
+        {
+          "fact": "Google Labs updated its Stitch AI design tool on March 18 with a complete redesign featuring an 'AI-native, infinite canvas' and a new design agent that can 'reason across the entire project's evolution,' introducing the concept of 'vibe design' — generating high-fidelity UI from natural language descriptions of business objectives and desired user feelings.",
+          "source_url": "https://www.theregister.com/2026/03/19/google_stitch_vibe_design_update/",
+          "excerpt": "It now features a new AI-native, infinite canvas that gives your ideas room to grow from early ideations to working prototypes. There's also a brand new design agent that can reason across the entire project's evolution."
+        },
+        {
+          "fact": "Instead of starting with wireframes, Stitch lets users describe business objectives or desired user feelings, then generates multiple full UI directions instantly. The tool is powered by Google's Gemini models and can convert designs into working front-end code.",
+          "source_url": "https://www.c-sharpcorner.com/news/google-introduces-vibe-design-with-stitch",
+          "excerpt": "Stitch allows users to describe an app idea in plain language — or upload a sketch or wireframe — and generate a complete UI design. The system can create responsive UI layouts for web and mobile, generate multiple design variations, and convert designs into working front-end code."
+        },
+        {
+          "fact": "Figma stock dropped approximately 8% on the day Google introduced vibe design into Stitch, bringing Figma's total decline to roughly 80% since its August 2025 IPO.",
+          "source_url": "https://www.threads.com/@carnage4life/post/DWDaUZZFAvc/figma-stock-dropped-today-as-google-introduced-vibe-designing-into-its-stitch",
+          "excerpt": "Figma stock dropped -8% today as Google introduced 'vibe designing' into its Stitch UI tool which lets you describe the UI you want to create. Figma is now down -80% since its IPO which is just brutal."
+        },
+        {
+          "fact": "Stitch also added voice input, allowing developers to 'shout at' the tool to create UIs. Google Labs product manager Rustin Banks said: 'Over the last year, AI has fundamentally changed how we build, turning simple descriptions into functional software.'",
+          "source_url": "https://www.theregister.com/2026/03/19/google_stitch_vibe_design_update/",
+          "excerpt": "Over the last year, AI has fundamentally changed how we build, turning simple descriptions into functional software."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.theregister.com/2026/03/19/google_stitch_vibe_design_update/",
+          "outlet": "The Register",
+          "title": "Google offers 'vibe design' tool that you can shout at to create a UI",
+          "published_at": "2026-03-19",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.c-sharpcorner.com/news/google-introduces-vibe-design-with-stitch",
+          "outlet": "C# Corner",
+          "title": "Google Introduces 'vibe design' with Stitch",
+          "published_at": "2026-03-19",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.threads.com/@carnage4life/post/DWDaUZZFAvc/figma-stock-dropped-today-as-google-introduced-vibe-designing-into-its-stitch",
+          "outlet": "Threads",
+          "title": "Tweet by @carnage4life: Figma stock dropped -8% today as Google introduced 'vibe designing'",
+          "published_at": "2026-03-19",
+          "image_url": "",
+          "type": "tweet"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Google",
+          "Google Labs",
+          "Figma"
+        ],
+        "people": [
+          "Rustin Banks"
+        ],
+        "places": []
+      }
+    },
+    {
+      "id": "anthropic-openai-hiring-weapons-experts",
+      "headline": "Anthropic and OpenAI both hiring weapons and explosives specialists to prevent 'catastrophic misuse'",
+      "key_facts": [
+        {
+          "fact": "Anthropic posted a LinkedIn job listing seeking a policy expert on chemical weapons and explosions with minimum five years of experience in 'chemical weapons and/or explosives defence' and knowledge of 'radiological dispersal devices' (dirty bombs) to prevent 'catastrophic misuse' of its AI technology.",
+          "source_url": "https://www.bbc.com/news/articles/c74721xyd1wo",
+          "excerpt": "The US artificial intelligence firm Anthropic is looking to hire a chemical weapons and high-yield explosives expert to try to prevent 'catastrophic misuse' of its software. Applicants should have a minimum of five years experience in 'chemical weapons and/or explosives defence' as well as knowledge of 'radiological dispersal devices.'"
+        },
+        {
+          "fact": "OpenAI has a similar posting for a researcher in 'biological and chemical risks' for its Preparedness team with a salary of up to $455,000, nearly double that offered by Anthropic, along with a Threat Modeler role for identifying and forecasting frontier AI risks.",
+          "source_url": "https://www.euronews.com/next/2026/03/18/anthropic-and-openai-are-hiring-weapons-specialists-to-prevent-catastrophic-misuse",
+          "excerpt": "OpenAI's job posting said it was looking for researchers to join its Preparedness team, which monitors for 'catastrophic risks related to frontier AI models.' The salary is up to $455,000, almost double that offered by Anthropic."
+        },
+        {
+          "fact": "The Anthropic hire will design and monitor guardrails for how AI models respond to weapons-related prompts and conduct 'rapid responses' to escalations, designing 'new risk evaluations that the company's leadership can trust during high-stakes launches.'",
+          "source_url": "https://www.bbc.com/news/articles/c74721xyd1wo",
+          "excerpt": "The person hired will design and monitor the guardrails for how its AI models react to prompts about chemical weapons and explosives. They will also conduct 'rapid responses' to any escalations."
+        },
+        {
+          "fact": "Tech researcher Dr. Stephanie Hare raised concerns: 'Is it ever safe to use AI systems to handle sensitive chemicals and explosives information, including dirty bombs? There is no international treaty or other regulation for this type of work and the use of AI with these types of weapons.'",
+          "source_url": "https://www.bbc.com/news/articles/c74721xyd1wo",
+          "excerpt": "Is it ever safe to use AI systems to handle sensitive chemicals and explosives information, including dirty bombs and other radiological weapons? There is no international treaty or other regulation for this type of work."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.bbc.com/news/articles/c74721xyd1wo",
+          "outlet": "BBC News",
+          "title": "AI firm Anthropic seeks weapons expert to stop users from 'misuse'",
+          "published_at": "2026-03-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.euronews.com/next/2026/03/18/anthropic-and-openai-are-hiring-weapons-specialists-to-prevent-catastrophic-misuse",
+          "outlet": "Euronews",
+          "title": "Anthropic and OpenAI are hiring weapons specialists to prevent 'catastrophic misuse'",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Anthropic",
+          "OpenAI"
+        ],
+        "people": [
+          "Stephanie Hare"
+        ],
+        "places": []
+      }
+    },
+    {
+      "id": "persistent-nvidia-genmolvs-drug-discovery",
+      "headline": "Persistent Systems and Nvidia launch GenMolVS AI platform for computational drug discovery and virtual screening",
+      "key_facts": [
+        {
+          "fact": "On March 18, Persistent Systems announced a collaboration with Nvidia to develop GenMolVS (Generative Molecules and Virtual Screening), an AI-based platform for computational drug discovery and virtual screening targeting biopharma R&D teams.",
+          "source_url": "https://itbrief.co.nz/story/persistent-nvidia-team-on-ai-drug-discovery-tools",
+          "excerpt": "Persistent Systems has begun working with Nvidia on AI-based software for healthcare and life sciences, initially targeting computational drug discovery and virtual screening."
+        },
+        {
+          "fact": "GenMolVS is built on Nvidia BioNeMo and the Nvidia NeMo Agent Toolkit, using domain-specific models for molecular simulation and software agents to manage parts of the discovery workflow, including preclinical research and virtual screening of compound candidates.",
+          "source_url": "https://itbrief.co.nz/story/persistent-nvidia-team-on-ai-drug-discovery-tools",
+          "excerpt": "GenMolVS is built on Nvidia BioNeMo and the Nvidia NeMo Agent Toolkit. It uses domain-specific models for molecular simulation and software agents to manage parts of the discovery workflow."
+        },
+        {
+          "fact": "The platform applies AI to molecular simulation and virtual screening, modelling biological and chemical behaviour before work moves into physical laboratory settings, aiming to reduce the number of candidates that move into costly wet-lab experiments.",
+          "source_url": "https://itbrief.co.nz/story/persistent-nvidia-team-on-ai-drug-discovery-tools",
+          "excerpt": "Persistent and Nvidia plan to apply AI to molecular simulation and virtual screening, modelling biological and chemical behaviour before work moves into physical laboratory settings."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://itbrief.co.nz/story/persistent-nvidia-team-on-ai-drug-discovery-tools",
+          "outlet": "IT Brief",
+          "title": "Persistent & Nvidia team on AI drug discovery tools",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Persistent Systems",
+          "Nvidia"
+        ],
+        "people": [],
+        "places": []
+      }
+    },
+    {
+      "id": "samsung-amd-hbm4-mi455x-mou",
+      "headline": "Samsung and AMD sign MOU for HBM4 supply for Instinct MI455X GPUs and next-gen DDR5",
+      "key_facts": [
+        {
+          "fact": "On March 18, Samsung Electronics signed a Memorandum of Understanding with AMD to supply industry-leading HBM4 memory for AMD Instinct MI455X GPUs and next-generation DDR5 solutions for AMD EPYC processors and the AMD Helios platform.",
+          "source_url": "https://news.samsung.com/global/samsung-and-amd-expand-strategic-collaboration-on-next-generation-ai-memory-solutions",
+          "excerpt": "Samsung Electronics today announced it has signed a Memorandum of Understanding (MOU) with AMD to expand their strategic collaboration on industry-leading HBM4 supply for AMD Instinct MI455X GPUs and next-generation DDR5 solutions for AMD EPYC processors and the AMD Helios platform."
+        },
+        {
+          "fact": "The deal expands the existing Samsung-AMD relationship and positions Samsung as a key memory supplier for AMD's next-generation AI accelerators, competing with SK Hynix which supplies HBM to Nvidia.",
+          "source_url": "https://www.techi.com/samsung-amd-ai-chip-partnership/",
+          "excerpt": "Samsung will provide next-generation memory chips for AMD's future AI processors. Both companies are securing long-term agreements amid high AI chip demand."
+        },
+        {
+          "fact": "The collaboration covers both high-bandwidth memory for AMD's GPU accelerators and standard server memory for AMD's CPU platforms, making it a comprehensive AI infrastructure partnership.",
+          "source_url": "https://news.samsung.com/global/samsung-and-amd-expand-strategic-collaboration-on-next-generation-ai-memory-solutions",
+          "excerpt": "The companies will collaborate on industry-leading HBM4 supply for AMD Instinct MI455X GPUs and next-generation DDR5 solutions for AMD EPYC processors and the AMD Helios platform."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://news.samsung.com/global/samsung-and-amd-expand-strategic-collaboration-on-next-generation-ai-memory-solutions",
+          "outlet": "Samsung Newsroom",
+          "title": "Samsung and AMD Expand Strategic Collaboration on Next-Generation AI Memory Solutions",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.techi.com/samsung-amd-ai-chip-partnership/",
+          "outlet": "Techi",
+          "title": "Samsung Electronics and AMD Partner to Advance AI Chip Development",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Samsung Electronics",
+          "AMD"
+        ],
+        "people": [],
+        "places": [
+          "San Jose"
+        ]
+      }
+    },
+    {
+      "id": "samsung-shareholders-multi-year-contracts-supercycle",
+      "headline": "Samsung co-CEO declares 'unprecedented supercycle,' pursues 3-to-5-year chip contracts",
+      "key_facts": [
+        {
+          "fact": "At Samsung's annual shareholder meeting on March 18 in Suwon, co-CEO Jun Young-hyun said the chipmaker is working with major customers to shift to multi-year contracts of three-to-five years to shield them from potential demand fluctuations.",
+          "source_url": "https://srnnews.com/samsung-sees-ai-driving-strong-chip-demand-in-2026-executive-says/",
+          "excerpt": "Samsung Electronics co-CEO said the chipmaker is working with major customers to shift to multi-year contracts of three-to-five years to shield them from potential demand fluctuations."
+        },
+        {
+          "fact": "Jun stated the chip industry is entering an 'unprecedented supercycle' driven by growing investment in AI data centres, but cautioned Samsung must prepare for 'various scenarios' amid concerns about overheating in AI infrastructure spending.",
+          "source_url": "https://srnnews.com/samsung-sees-ai-driving-strong-chip-demand-in-2026-executive-says/",
+          "excerpt": "There are concerns regarding overheating in investment in AI infrastructure. Accordingly, we plan to continuously seize opportunities arising from the AI cycle while preparing for various scenarios with a cautious view."
+        },
+        {
+          "fact": "Samsung shares rose 7.5% following the meeting and are up 62% since January 2026, with memory chip prices surging due to supply bottlenecks.",
+          "source_url": "https://srnnews.com/samsung-sees-ai-driving-strong-chip-demand-in-2026-executive-says/",
+          "excerpt": "Samsung shares rose 7.5% following the meeting, up 62% since January 2026. Jun acknowledged memory chip prices surging due to supply bottlenecks."
+        },
+        {
+          "fact": "Jensen Huang praised Samsung's HBM4 chips at Nvidia's GTC conference and announced a foundry partnership with Samsung, narrowing the gap with rival SK Hynix in high-bandwidth memory development.",
+          "source_url": "https://srnnews.com/samsung-sees-ai-driving-strong-chip-demand-in-2026-executive-says/",
+          "excerpt": "CEO Jensen Huang praised Samsung's HBM4 chips at Nvidia's GTC conference and announced a foundry partnership with the Korean firm, narrowing Samsung's gap with SK Hynix in high bandwidth memory chip development."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://srnnews.com/samsung-sees-ai-driving-strong-chip-demand-in-2026-executive-says/",
+          "outlet": "Reuters via SRN News",
+          "title": "Samsung CEO seeks multi-year chip contracts with major customers",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.digitimes.com/news/a20260319PD210/samsung-production-tesla-business-2026.html",
+          "outlet": "Digitimes",
+          "title": "Samsung maps out semiconductor strategy with multi-year contracts, Tesla chip on track for 2H27",
+          "published_at": "2026-03-19",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Samsung Electronics",
+          "SK Hynix",
+          "Nvidia"
+        ],
+        "people": [
+          "Jun Young-hyun",
+          "Jensen Huang"
+        ],
+        "places": [
+          "Suwon",
+          "South Korea"
+        ]
+      }
+    },
+    {
+      "id": "china-space-computing-openclaw-humanoid-robot",
+      "headline": "Chinese lab demonstrates controlling humanoid robots from orbit using OpenClaw and space-based LLMs",
+      "key_facts": [
+        {
+          "fact": "A joint lab of GuoXing Aerospace Technology and Shanghai Jiao Tong University successfully demonstrated remote, intelligent control of ground-based humanoid robots using OpenClaw and computing power from orbiting satellites, as reported by Xinhua on March 18.",
+          "source_url": "https://english.news.cn/20260318/46de57ac27c745f68797ad6e146c8f4c/c.html",
+          "excerpt": "In a milestone fusion of three frontier technologies, a Chinese lab has recently successfully demonstrated remote, intelligent control of ground-based humanoid robots using OpenClaw and computing power from orbit."
+        },
+        {
+          "fact": "In the trial, an operator issued voice commands that OpenClaw uploaded to China's orbiting satellites; onboard large language models performed in-orbit inference, then transmitted decisions back to Earth for OpenClaw to control ground robot movements.",
+          "source_url": "https://english.news.cn/20260318/46de57ac27c745f68797ad6e146c8f4c/c.html",
+          "excerpt": "In the trial, the operator issued voice commands that OpenClaw uploaded to China's orbiting satellites. Onboard large language models performed in-orbit inference using space computing power, then transmitted decisions back to Earth for OpenClaw to control ground robot movements."
+        },
+        {
+          "fact": "In January, GuoXing Aerospace uplinked Alibaba's Qwen3 large language model to its space-based computing center, enabling end-to-end AI inference from orbit using its 12-satellite constellation launched in May.",
+          "source_url": "https://english.news.cn/20260318/46de57ac27c745f68797ad6e146c8f4c/c.html",
+          "excerpt": "In January, GuoXing Aerospace, a commercial aerospace firm, uplinked Alibaba's Qwen3 large language model to its space-based computing center, enabling end-to-end AI inference from orbit."
+        },
+        {
+          "fact": "GuoXing plans to deploy 2,800 specialized computing satellites by 2035, with second and third clusters launching in 2026 and a 1,000-satellite network operational by 2030.",
+          "source_url": "https://english.news.cn/20260318/46de57ac27c745f68797ad6e146c8f4c/c.html",
+          "excerpt": "GuoXing plans to deploy 2,800 specialized computing satellites by 2035, with second and third clusters launching in 2026 and a 1,000-satellite network operational by 2030."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://english.news.cn/20260318/46de57ac27c745f68797ad6e146c8f4c/c.html",
+          "outlet": "Xinhua",
+          "title": "China's tech trial links space computing with OpenClaw, humanoid robot",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://news.cgtn.com/news/2026-03-18/China-s-tech-trial-links-space-computing-with-OpenClaw-humanoid-robot-1LCxh2PvoBO/p.html",
+          "outlet": "CGTN",
+          "title": "China's tech trial links space computing with OpenClaw, humanoid robot",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "GuoXing Aerospace Technology",
+          "Shanghai Jiao Tong University",
+          "Alibaba"
+        ],
+        "people": [],
+        "places": [
+          "China"
+        ]
+      }
+    },
+    {
+      "id": "techman-xplore-i-wheeled-humanoid-gtc",
+      "headline": "Taiwan's Techman Robot unveils Nvidia-powered wheeled humanoid for smart factories at GTC 2026",
+      "key_facts": [
+        {
+          "fact": "Taiwan-based Techman Robot introduced its TM Xplore I next-generation humanoid robot at NVIDIA GTC 2026 on March 18, developed jointly with Quanta Cloud Technology (QCT) and NVIDIA.",
+          "source_url": "https://interestingengineering.com/ai-robotics/nvidia-powered-wheeled-humanoid-robot",
+          "excerpt": "Taiwan robot Techman Robot introduced its next-generation humanoid robot, TM Xplore I, at the Nvidia GPU Technology Conference (GTC) 2026 in San Jose, marking a joint development effort with Quanta Cloud Technology (QCT) and Nvidia on March 18."
+        },
+        {
+          "fact": "The platform features a humanoid upper body mounted on a wheeled mobile base powered by Nvidia's Jetson Thor module for high-performance edge AI computing, with Vision-Language-Action (VLA) capabilities for processing visual and linguistic inputs.",
+          "source_url": "https://interestingengineering.com/ai-robotics/nvidia-powered-wheeled-humanoid-robot",
+          "excerpt": "The TM Xplore I platform features a humanoid upper body mounted on a wheeled mobile base... powered by Nvidia's Jetson Thor module, enabling high-performance edge AI computing."
+        },
+        {
+          "fact": "The robot targets precision industries including semiconductor manufacturing, electronics assembly, and automotive production, and can quickly adapt to new tasks without extensive reprogramming.",
+          "source_url": "https://interestingengineering.com/ai-robotics/nvidia-powered-wheeled-humanoid-robot",
+          "excerpt": "The robot combines mobility with manual dexterity, making it suitable for precision industries including semiconductor manufacturing, electronics assembly, and automotive production."
+        },
+        {
+          "fact": "Techman aims to commercialize its wheeled humanoid robots and file patents within the year, following a strategy called 'See, Think, Act — Powered by AI Robotics' using NVIDIA's Isaac Sim for simulation before real-world deployment.",
+          "source_url": "https://interestingengineering.com/ai-robotics/nvidia-powered-wheeled-humanoid-robot",
+          "excerpt": "Techman aims to commercialize its wheeled humanoid robots and file patents within the year."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://interestingengineering.com/ai-robotics/nvidia-powered-wheeled-humanoid-robot",
+          "outlet": "Interesting Engineering",
+          "title": "Xplore I: Taiwan's new wheeled humanoid robot for smart factories",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Techman Robot",
+          "Quanta Cloud Technology",
+          "NVIDIA"
+        ],
+        "people": [],
+        "places": [
+          "Taiwan",
+          "San Jose"
+        ]
+      }
+    },
+    {
+      "id": "swarmer-ipo-drone-autonomy-nasdaq",
+      "headline": "Swarmer, Ukraine-tested drone autonomy software company, surges 520% on Nasdaq debut",
+      "key_facts": [
+        {
+          "fact": "Swarmer Inc. (Nasdaq: SWMR), an AI drone autonomy software company with systems deployed in over 100,000 combat missions in Ukraine since April 2024, closed its IPO on March 18, selling 3.45 million shares at $5 each for net proceeds of approximately $14.7 million.",
+          "source_url": "https://finance.yahoo.com/news/swarmer-shares-surge-700-debut-180004655.html",
+          "excerpt": "The Austin-based artificial intelligence drone software company raised $15 million by selling 3 million shares at $5 each, initially valuing the business at just over $60 million."
+        },
+        {
+          "fact": "Shares surged as much as 700% intraday before closing up 520% at $31 on day one, making it one of the strongest US listings since Newsmax's IPO a year ago. On day two they rose another 77% to close at $55.",
+          "source_url": "https://ts2.tech/en/swarmer-stock-surges-again-after-ipo-as-ukraine-tested-drone-software-draws-wall-street/",
+          "excerpt": "Swarmer shares soared 77% to finish at $55 on Wednesday, piling onto Tuesday's explosive Nasdaq debut. The drone-autonomy software outfit had already rocketed 520% above its $5 IPO price on day one."
+        },
+        {
+          "fact": "Backed by Erik Prince, Swarmer operates as a vendor-agnostic software provider rather than a drone manufacturer, with a platform designed to coordinate nearly 700 drones simultaneously. CEO Alex Fink told Reuters the Nasdaq listing aimed to build a public defense-tech brand.",
+          "source_url": "https://www.kyivpost.com/post/72193",
+          "excerpt": "Ukraine's miltech startup Swarmer develops software systems that allow unmanned vehicles to act autonomously and work together in large swarms."
+        },
+        {
+          "fact": "The company reported revenue of only $309,920 for 2025, a 6% decline from the prior year, with a net loss of approximately $8.5 million, more than four times deeper than in 2024.",
+          "source_url": "https://finance.yahoo.com/news/swarmer-shares-surge-700-debut-180004655.html",
+          "excerpt": "Swarmer reported revenue of $309,920 for the year ended December 31, 2025, representing a roughly 6% decline from the prior year, while its net loss widened to about $8.5 million."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://finance.yahoo.com/news/swarmer-shares-surge-700-debut-180004655.html",
+          "outlet": "Yahoo Finance / GuruFocus",
+          "title": "Swarmer Shares Surge 700% in Debut, Close Up 520% at $31",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://ts2.tech/en/swarmer-stock-surges-again-after-ipo-as-ukraine-tested-drone-software-draws-wall-street/",
+          "outlet": "TechStock2",
+          "title": "Swarmer Stock Surges Again After IPO as Ukraine-Tested Drone Software Draws Wall Street",
+          "published_at": "2026-03-19",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.kyivpost.com/post/72193",
+          "outlet": "Kyiv Post",
+          "title": "Swarmer's Drone AI Developer Price per Share Zooms to 8x Increase on Nasdaq Debut",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Swarmer"
+        ],
+        "people": [
+          "Erik Prince",
+          "Alex Fink"
+        ],
+        "places": [
+          "Austin",
+          "Ukraine"
+        ]
+      }
+    },
+    {
+      "id": "ondas-heidelberg-onberg-drone-defense-jv",
+      "headline": "Ondas and Heidelberg form ONBERG joint venture for autonomous drone defense in Europe",
+      "key_facts": [
+        {
+          "fact": "On March 18, Ondas Inc. (Nasdaq: ONDS) and Heidelberger Druckmaschinen AG formed ONBERG Autonomous Systems, a joint venture to deliver autonomous drone defense and security systems across Germany and Ukraine in its first phase.",
+          "source_url": "https://ir.ondas.com/press-releases/detail/293/ondas-and-heidelberg-establish-onberg-autonomous-systems",
+          "excerpt": "Ondas Inc. and Heidelberger Druckmaschinen AG today announced the formation of ONBERG Autonomous Systems, a joint venture... to deliver autonomous drone defense and security systems across Germany and Ukraine in first phase."
+        },
+        {
+          "fact": "ONBERG combines Ondas Autonomous Systems' battle-proven counter-UAS, ISR, and autonomous security technologies (including the Iron Drone Raider) with Heidelberg's 175 years of German industrial manufacturing capabilities.",
+          "source_url": "https://ir.ondas.com/press-releases/detail/293/ondas-and-heidelberg-establish-onberg-autonomous-systems",
+          "excerpt": "The joint venture will combine OAS' battle-proven counter-UAS, ISR, and autonomous security technologies with Heidelberg's 175 years of German engineering excellence, scalable industrial manufacturing capabilities."
+        },
+        {
+          "fact": "The Brandenburg an der Havel production site in Germany will be expanded into a center of excellence for autonomous defense systems, featuring localized assembly and full production using European supply chains.",
+          "source_url": "https://ir.ondas.com/press-releases/detail/293/ondas-and-heidelberg-establish-onberg-autonomous-systems",
+          "excerpt": "Including expansion of the Brandenburg an der Havel site into a center of excellence for autonomous defense systems."
+        },
+        {
+          "fact": "The JV formalizes an MOU signed in December 2025 in the presence of German Federal Minister of Economics Katherina Reiche, and aims to become a European one-stop shop for autonomous drone defense protecting critical infrastructure, borders, and national security.",
+          "source_url": "https://www.heidelberg.com/global/en/about_heidelberg/press_relations/press_release/press_release_details/press_release_262786.jsp",
+          "excerpt": "HD Advanced Technologies and Ondas Autonomous Systems establish joint venture for drone defense in Europe... implementing the Memorandum of Understanding signed in December 2025 in the presence of Federal Minister of Economics Katherina Reiche."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://ir.ondas.com/press-releases/detail/293/ondas-and-heidelberg-establish-onberg-autonomous-systems",
+          "outlet": "Ondas Inc. IR",
+          "title": "Ondas and Heidelberg Establish ONBERG Autonomous Systems Joint Venture to Advance European Drone Defense Industry",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.heidelberg.com/global/en/about_heidelberg/press_relations/press_release/press_release_details/press_release_262786.jsp",
+          "outlet": "Heidelberg",
+          "title": "HD Advanced Technologies and Ondas Autonomous Systems establish joint venture for drone defense in Europe",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "press_release"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Ondas Inc.",
+          "Heidelberger Druckmaschinen",
+          "ONBERG Autonomous Systems",
+          "HD Advanced Technologies"
+        ],
+        "people": [
+          "Eric Brock",
+          "Katherina Reiche"
+        ],
+        "places": [
+          "Germany",
+          "Ukraine",
+          "Brandenburg an der Havel"
+        ]
+      }
+    },
+    {
+      "id": "rocket-lab-190m-haste-hypersonic-contract",
+      "headline": "Rocket Lab secures record $190M contract for 20 hypersonic HASTE test flights",
+      "key_facts": [
+        {
+          "fact": "On March 18, Rocket Lab announced a $190 million contract from the US Department of War for 20 hypersonic test flights using its HASTE (Hypersonic Accelerator Suborbital Test Electron) rocket, the largest single launch contract in the company's history.",
+          "source_url": "https://www.rnz.co.nz/news/business/590037/rocket-lab-wins-record-contract-with-us-department-of-war",
+          "excerpt": "Rocket Lab has won a US$190 million contract from the United States Department of War for a series of hypersonic test flights using its HASTE launch vehicle. It is the largest single launch contract in the NZ-founded company's history."
+        },
+        {
+          "fact": "The four-year agreement covers launches under the Multi-Service Advanced Capability Hypersonic Test Bed (MACH-TB) 2.0 programme, a partnership between the Department of War and the Naval Surface Warfare Centre Crane Division to accelerate hypersonic flight testing at speeds above Mach 5.",
+          "source_url": "https://www.rnz.co.nz/news/business/590037/rocket-lab-wins-record-contract-with-us-department-of-war",
+          "excerpt": "The four-year agreement covers 20 test flights of Rocket Lab's Hypersonic Accelerator Suborbital Test Electron (HASTE) rocket, a modified version of its Electron launcher designed to carry suborbital payloads of up to 700 kilograms at speeds above Mach 5."
+        },
+        {
+          "fact": "The contract lifts Rocket Lab's total order backlog to more than $2 billion, with the company having sold 28 launches in Q1 2026 alone — nearly as many as it sold during all of 2025. Total launch backlog stands at 70 missions.",
+          "source_url": "https://www.rnz.co.nz/news/business/590037/rocket-lab-wins-record-contract-with-us-department-of-war",
+          "excerpt": "The contract takes Rocket Lab's launch backlog to 70 missions, and the company has sold 28 launches in the first quarter of 2026 — almost as many as it sold during the whole of 2025."
+        },
+        {
+          "fact": "CEO Peter Beck said the expanded partnership will 'strengthen US national security by providing rapid and affordable hypersonic testing,' with the first HASTE launch under the new contract expected within months.",
+          "source_url": "https://www.rnz.co.nz/news/business/590037/rocket-lab-wins-record-contract-with-us-department-of-war",
+          "excerpt": "Our advanced technology, responsive launch schedules, and mass production of our HASTE hypersonic rockets are enabling faster progress across a range of hypersonic experiments by our government and industry partners."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.rnz.co.nz/news/business/590037/rocket-lab-wins-record-contract-with-us-department-of-war",
+          "outlet": "RNZ",
+          "title": "Rocket Lab wins record contract with US Department of War",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://index.businessinsurance.com/businessinsurance/article/gnwcq-2026-3-18-rocket-lab-secures-190m-contract-for-20x-haste-launches-cements-hypersonics-leadership-with-department-of-war-partnership",
+          "outlet": "GlobeNewswire via Business Insurance",
+          "title": "Rocket Lab Secures $190M Contract for 20x HASTE Launches, Cements Hypersonics Leadership with Department of War Partnership",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "press_release"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Rocket Lab",
+          "US Department of War",
+          "Naval Surface Warfare Centre Crane Division",
+          "Kratos Defense"
+        ],
+        "people": [
+          "Peter Beck"
+        ],
+        "places": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "israel-south-pars-iran-gulf-energy-war",
+      "headline": "Israel strikes Iran's South Pars gas field; Iran retaliates against Gulf energy infrastructure, oil tops $112",
+      "key_facts": [
+        {
+          "fact": "On March 18, Israeli strikes targeted facilities linked to Iran's South Pars gas field and the onshore hub at Asaluyeh in Bushehr Province, marking a shift from military to energy infrastructure targeting.",
+          "source_url": "https://www.iranintl.com/en/202603181566",
+          "excerpt": "On March 18, Israeli strikes targeted facilities linked to South Pars and the onshore hub at Asaluyeh in Bushehr Province."
+        },
+        {
+          "fact": "Iran's Revolutionary Guards issued evacuation orders and threatened to strike five Gulf energy facilities 'in the coming hours': Saudi Arabia's SAMREF refinery and Jubail petrochemical complex, UAE's Al Hosn gas field, and Qatar's Ras Laffan refinery and Mesaieed petrochemical complex.",
+          "source_url": "https://www.aljazeera.com/news/2026/3/18/iran-threatens-to-strike-gulf-energy-facilities-after-south-pars-attack",
+          "excerpt": "Iranian authorities said five facilities in Saudi Arabia, the United Arab Emirates and Qatar 'will be targeted in the coming hours'."
+        },
+        {
+          "fact": "Iran followed through on its threats on March 19, setting Qatari LNG facilities at Ras Laffan and two Kuwaiti oil refineries ablaze with missile strikes, while a ship burned off the UAE coast.",
+          "source_url": "https://www.northcountrypublicradio.org/news/npr/nx-s1-5753520/israel-and-iran-attack-gas-facilities-in-a-major-escalation-that-rattles-markets",
+          "excerpt": "Iran intensified its attacks on its Gulf Arab neighbors' energy infrastructure Thursday, setting Qatari liquefied natural gas facilities and two Kuwaiti oil refineries ablaze."
+        },
+        {
+          "fact": "Qatar confirmed 'extensive damage' around the Ras Laffan industrial complex, the world's largest LNG facility. Qatar had already fully shut LNG production due to the war, cutting roughly 20% of global LNG supplies.",
+          "source_url": "https://www.al-monitor.com/originals/2026/03/tehran-warns-gulf-energy-installations-after-oil-industry-facilities-hit-southern",
+          "excerpt": "Qatar fully shut liquefied natural gas production due to the war, cutting 20% of global LNG supplies."
+        },
+        {
+          "fact": "Brent crude surged past $112/barrel on March 19, briefly touching $119, up from roughly $98 earlier in the week. WTI rose to nearly $99/barrel.",
+          "source_url": "https://www.euronews.com/business/2026/03/19/brent-crude-oil-crosses-114-after-iran-hit-largest-qatari-energy-site",
+          "excerpt": "Brent crude oil traded briefly above $119 a barrel after Iran struck Qatar's largest [LNG facility]."
+        },
+        {
+          "fact": "Qatar's foreign ministry called the Israeli strike on South Pars 'a dangerous & irresponsible step,' noting the field is an extension of Qatar's North Field, the world's largest natural gas reservoir shared between the two countries.",
+          "source_url": "https://www.aljazeera.com/news/2026/3/18/iran-threatens-to-strike-gulf-energy-facilities-after-south-pars-attack",
+          "excerpt": "Qatar's Foreign Ministry spokesman Majed al-Ansari condemned the Israeli strike as 'a dangerous & irresponsible step' emphasizing South Pars extends Qatar's North Field."
+        },
+        {
+          "fact": "Iranian gas flows to Iraq were halted as Tehran diverted supplies domestically. Iran supplies 33-40% of Iraq's gas and power needs.",
+          "source_url": "https://www.al-monitor.com/originals/2026/03/tehran-warns-gulf-energy-installations-after-oil-industry-facilities-hit-southern",
+          "excerpt": "Iranian gas flows to Iraq were halted as Tehran diverted supplies domestically."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.aljazeera.com/news/2026/3/18/iran-threatens-to-strike-gulf-energy-facilities-after-south-pars-attack",
+          "outlet": "Al Jazeera",
+          "title": "Iran threatens to strike Gulf energy facilities after South Pars attack",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.iranintl.com/en/202603181566",
+          "outlet": "Iran International",
+          "title": "Israel's South Pars strikes push Iran conflict into energy war",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.al-monitor.com/originals/2026/03/tehran-warns-gulf-energy-installations-after-oil-industry-facilities-hit-southern",
+          "outlet": "Al-Monitor / Reuters",
+          "title": "Tehran warns Gulf energy installations after oil industry facilities hit in southern Iran",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.northcountrypublicradio.org/news/npr/nx-s1-5753520/israel-and-iran-attack-gas-facilities-in-a-major-escalation-that-rattles-markets",
+          "outlet": "NPR",
+          "title": "Israel and Iran attack gas facilities, in a major escalation that rattles markets",
+          "published_at": "2026-03-19",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.euronews.com/business/2026/03/19/brent-crude-oil-crosses-114-after-iran-hit-largest-qatari-energy-site",
+          "outlet": "Euronews",
+          "title": "Brent crude oil briefly crosses $119 after Iran hit largest Qatari energy site",
+          "published_at": "2026-03-19",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "world",
+        "economy"
+      ],
+      "entities": {
+        "organizations": [
+          "IRGC",
+          "SAMREF",
+          "Ras Laffan"
+        ],
+        "people": [
+          "Majed al-Ansari"
+        ],
+        "places": [
+          "Iran",
+          "Israel",
+          "Qatar",
+          "Saudi Arabia",
+          "UAE",
+          "Kuwait",
+          "Strait of Hormuz",
+          "South Pars",
+          "Asaluyeh"
+        ]
+      }
+    },
+    {
+      "id": "bushehr-nuclear-plant-projectile-strike",
+      "headline": "Projectile strikes Iran's Bushehr nuclear plant complex, destroying structure 350m from reactor",
+      "key_facts": [
+        {
+          "fact": "A projectile struck the premises of Iran's Bushehr Nuclear Power Plant on Tuesday evening (March 18 local time), hitting an area adjacent to a facility housing measurement instruments and sensors near the plant's operational unit.",
+          "source_url": "https://www.themoscowtimes.com/2026/03/18/russian-nuclear-chief-condemns-strike-at-irans-bushehr-power-plant-a92252",
+          "excerpt": "An area adjacent to a facility housing measurement instruments and sensors, located near the plant's operational unit, was hit Tuesday evening."
+        },
+        {
+          "fact": "The IAEA confirmed that a structure 350 meters from the reactor was hit and destroyed, but reported no damage to the reactor itself, no injuries, and normal radiation levels.",
+          "source_url": "https://www.dawn.com/news/1983463",
+          "excerpt": "The International Atomic Energy Agency (IAEA) has confirmed that a structure 350 meters from Iran's Bushehr nuclear power plant reactor was hit and destroyed."
+        },
+        {
+          "fact": "Rosatom CEO Alexei Likhachyov condemned the strike, stating: 'We categorically condemn what has occurred and call on all parties to exert every possible effort to de-escalate the situation in the vicinity of the Bushehr NPP.'",
+          "source_url": "https://www.themoscowtimes.com/2026/03/18/russian-nuclear-chief-condemns-strike-at-irans-bushehr-power-plant-a92252",
+          "excerpt": "We categorically condemn what has occurred and call on all parties to exert every possible effort to de-escalate the situation in the vicinity of the Bushehr NPP."
+        },
+        {
+          "fact": "Approximately 480 Rosatom employees remain at the facility following earlier evacuations. Construction of two additional reactor units had recently been suspended.",
+          "source_url": "https://www.themoscowtimes.com/2026/03/18/russian-nuclear-chief-condemns-strike-at-irans-bushehr-power-plant-a92252",
+          "excerpt": "Approximately 480 Rosatom employees remain in Iran following evacuations."
+        },
+        {
+          "fact": "IAEA Director General Rafael Grossi reiterated calls for restraint during the conflict to avoid any risk of a nuclear accident, marking the first time the plant's premises have been struck since U.S.-Israeli operations began.",
+          "source_url": "https://www.scmp.com/news/world/middle-east/article/3347033/mystery-projectile-hits-iran-nuclear-power-complex-highlighting-war-risks",
+          "excerpt": "IAEA chief Rafael Grossi 'reiterates his call for restraint during the conflict to avoid any risk of a [nuclear accident].'"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.themoscowtimes.com/2026/03/18/russian-nuclear-chief-condemns-strike-at-irans-bushehr-power-plant-a92252",
+          "outlet": "The Moscow Times",
+          "title": "Russian Nuclear Chief Says Projectile Struck Iran's Bushehr Power Plant",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.dawn.com/news/1983463",
+          "outlet": "Dawn",
+          "title": "IAEA confirms structure 350m from Iran's Bushehr nuclear power plant reactor hit by projectile",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.scmp.com/news/world/middle-east/article/3347033/mystery-projectile-hits-iran-nuclear-power-complex-highlighting-war-risks",
+          "outlet": "South China Morning Post",
+          "title": "Mystery projectile hits Iran nuclear power complex, highlighting war risks",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.upi.com/Top_News/World-News/2026/03/17/iran-Bushehr-nuclear-plant-hit/1941773804175/",
+          "outlet": "UPI",
+          "title": "IAEA: Projectile strikes premises of Iran's Bushehr nuclear power plant",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "world",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "IAEA",
+          "Rosatom"
+        ],
+        "people": [
+          "Alexei Likhachyov",
+          "Rafael Grossi"
+        ],
+        "places": [
+          "Bushehr",
+          "Iran"
+        ]
+      }
+    },
+    {
+      "id": "ukraine-201-drone-experts-gulf-deployment",
+      "headline": "Ukraine deploys 201 anti-drone warfare experts to Gulf states to counter Iranian Shahed drones",
+      "key_facts": [
+        {
+          "fact": "President Zelenskyy announced on March 18 that Ukraine has deployed 201 military anti-drone experts to the Gulf region and wider Middle East, with an additional 34 ready for deployment.",
+          "source_url": "https://www.aljazeera.com/news/2026/3/18/over-200-ukrainian-military-experts-in-gulf-region-to-counter-irans-drones",
+          "excerpt": "More than 200 Ukrainian military experts are in the Gulf region and wider Middle East helping governments in their defence against Iran's drone attacks."
+        },
+        {
+          "fact": "The experts are already positioned in the UAE, Qatar, and Saudi Arabia, with teams heading to Kuwait. They specialize in countering Iranian-designed Shahed-136 kamikaze drones.",
+          "source_url": "https://www.aljazeera.com/news/2026/3/18/over-200-ukrainian-military-experts-in-gulf-region-to-counter-irans-drones",
+          "excerpt": "Zelenskyy described these personnel as 'military experts, experts who know how to help, how to defend against Shahed drones.'"
+        },
+        {
+          "fact": "Zelenskyy stated Ukraine can produce at least 2,000 drone interceptors daily, with half dedicated to Ukrainian defense and the remainder available for allies.",
+          "source_url": "https://www.aljazeera.com/news/2026/3/18/over-200-ukrainian-military-experts-in-gulf-region-to-counter-irans-drones",
+          "excerpt": "Ukraine can produce at least 2,000 drone interceptors daily—with half dedicated to Ukrainian defense and the remainder available for allies."
+        },
+        {
+          "fact": "The announcement came during Zelenskyy's address to UK Parliament members in London, where he characterized the Russia-Iran partnership as 'brothers in hatred.'",
+          "source_url": "https://www.aljazeera.com/news/2026/3/18/over-200-ukrainian-military-experts-in-gulf-region-to-counter-irans-drones",
+          "excerpt": "Zelenskyy made this announcement on March 18, 2026, while addressing members of the United Kingdom Parliament in London."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.aljazeera.com/news/2026/3/18/over-200-ukrainian-military-experts-in-gulf-region-to-counter-irans-drones",
+          "outlet": "Al Jazeera",
+          "title": "Ukraine sends 201 military experts to counter Iranian drones in the Gulf",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.washingtonexaminer.com/news/world/4496083/zelensky-warns-long-iran-war-benefits-putin-ukraine-missile-shortage/",
+          "outlet": "Washington Examiner",
+          "title": "Zelensky warns 'a long war in Iran is a plus' for Putin",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "world",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "Ukrainian Armed Forces"
+        ],
+        "people": [
+          "Volodymyr Zelenskyy"
+        ],
+        "places": [
+          "Ukraine",
+          "UAE",
+          "Qatar",
+          "Saudi Arabia",
+          "Kuwait",
+          "London"
+        ]
+      }
+    },
+    {
+      "id": "fed-holds-rates-iran-war-uncertainty",
+      "headline": "Federal Reserve holds rates at 3.5-3.75%, cites elevated uncertainty from Iran war",
+      "key_facts": [
+        {
+          "fact": "The FOMC voted 11-1 on March 18 to keep the federal funds rate at 3.5%-3.75%, its second consecutive pause in 2026.",
+          "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260318a.htm",
+          "excerpt": "The Committee decided to maintain the target range for the federal funds rate at 3‑1/2 to 3‑3/4 percent."
+        },
+        {
+          "fact": "The Fed's statement noted 'the implications of developments in the Middle East for the U.S. economy are uncertain,' explicitly referencing the Iran war's economic impact for the first time.",
+          "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260318a.htm",
+          "excerpt": "The implications of developments in the Middle East for the U.S. economy are uncertain. The Committee is attentive to the risks to both sides of its dual mandate."
+        },
+        {
+          "fact": "The dot plot showed officials still expect one rate cut in 2026 and another in 2027, though 7 of 19 participants now expect no cuts this year, up from 6 in December.",
+          "source_url": "https://www.cnbc.com/2026/03/18/fed-interest-rate-decision-march-2026.html",
+          "excerpt": "Officials again signaled they still expect a few rate cuts ahead. The closely watched 'dot plot' pointed to one reduction this year and another in 2027."
+        },
+        {
+          "fact": "The Fed projects the federal funds rate to stabilize around 3.1% long-term, with slightly higher inflation projections for 2026 and a faster pace of economic growth.",
+          "source_url": "https://www.cnbc.com/2026/03/18/fed-interest-rate-decision-march-2026.html",
+          "excerpt": "The median outlook is for an additional cut in 2027 before the funds rate steadies out around 3.1% for the long term."
+        },
+        {
+          "fact": "Before the Iran war began February 28, economists had penciled in the next rate cut for June, but the probability is now seen as slim according to CME FedWatch.",
+          "source_url": "https://www.cbsnews.com/news/federal-reserve-fomc-march-18-interest-rate-decision/",
+          "excerpt": "Before the start of the war on February 28, economists had penciled in the next rate cut for the Fed's June meeting, but the probability of that happening is now seen as slim."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260318a.htm",
+          "outlet": "Federal Reserve",
+          "title": "Federal Reserve issues FOMC statement",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/03/18/fed-interest-rate-decision-march-2026.html",
+          "outlet": "CNBC",
+          "title": "Fed votes to hold rates steady, notes 'uncertain' impacts from Iran war",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.cbsnews.com/news/federal-reserve-fomc-march-18-interest-rate-decision/",
+          "outlet": "CBS News",
+          "title": "Federal Reserve holds interest rates steady, citing elevated economic uncertainty",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "economy",
+        "finance"
+      ],
+      "entities": {
+        "organizations": [
+          "Federal Reserve",
+          "FOMC"
+        ],
+        "people": [
+          "Jerome Powell"
+        ],
+        "places": [
+          "Washington D.C."
+        ]
+      }
+    },
+    {
+      "id": "us-eases-venezuela-sanctions-jones-act-waiver",
+      "headline": "US eases Venezuela oil sanctions and waives Jones Act to combat surging energy prices from Iran war",
+      "key_facts": [
+        {
+          "fact": "The Treasury Department on March 18 issued a broad license allowing Venezuela's PDVSA to directly sell oil to US companies and on global markets, reversing years of restrictions.",
+          "source_url": "https://www.sandiegouniontribune.com/2026/03/18/venezuela-oil-sanctions-trump/",
+          "excerpt": "U.S. companies will be allowed to do business with Venezuela's state-owned oil and gas company after the Treasury Department eased sanctions."
+        },
+        {
+          "fact": "Trump simultaneously issued a 60-day waiver of the Jones Act, allowing foreign-flagged vessels to transport cargo between US ports to help alleviate surging energy costs.",
+          "source_url": "https://finance.yahoo.com/news/live/trump-tariffs-live-updates-trump-waives-jones-act-shipping-law-to-help-ease-energy-prices-142454413.html",
+          "excerpt": "President Trump issued a temporary waiver for the Jones Act, allowing foreign-flagged vessels to transport cargo around the US for 60 days in an effort to alleviate surging energy costs."
+        },
+        {
+          "fact": "Venezuela currently produces less than 400,000 barrels daily, down from 3.5 million in 1999. Experts estimate 12-18 months before significant output increases can occur.",
+          "source_url": "https://www.sandiegouniontribune.com/2026/03/18/venezuela-oil-sanctions-trump/",
+          "excerpt": "Venezuela produces less than 400,000 barrels daily—a dramatic decline from 3.5 million barrels per day in 1999."
+        },
+        {
+          "fact": "US gasoline averaged $3.84/gallon versus $2.98 pre-war, as Iran's closure of the Strait of Hormuz has disrupted roughly one-fifth of global oil transit.",
+          "source_url": "https://www.sandiegouniontribune.com/2026/03/18/venezuela-oil-sanctions-trump/",
+          "excerpt": "U.S. gasoline averaged $3.84/gallon versus $2.98 pre-war."
+        },
+        {
+          "fact": "Payments to PDVSA cannot go directly to sanctioned Venezuelan entities; funds must flow to a US-controlled account. Transactions involving Russia, Iran, North Korea, Cuba, and certain Chinese entities remain prohibited.",
+          "source_url": "https://www.sandiegouniontribune.com/2026/03/18/venezuela-oil-sanctions-trump/",
+          "excerpt": "Payments cannot go directly to sanctioned Venezuelan entities; instead, funds flow to a U.S.-controlled account."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.sandiegouniontribune.com/2026/03/18/venezuela-oil-sanctions-trump/",
+          "outlet": "San Diego Union-Tribune / AP",
+          "title": "US eases Venezuela oil sanctions as Trump seeks to boost supply",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://finance.yahoo.com/news/live/trump-tariffs-live-updates-trump-waives-jones-act-shipping-law-to-help-ease-energy-prices-142454413.html",
+          "outlet": "Yahoo Finance",
+          "title": "Trump tariffs live updates: Trump waives Jones Act shipping law to help ease energy prices",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.katu.com/news/nation-world/us-eases-venezuela-oil-sanctions-to-boost-supply-amid-iran-war-treasury-secretary-president-donald-trump-energy-sector-jones-act-us-flagged-vessels-strait-of-hormuz",
+          "outlet": "KATU / National News Desk",
+          "title": "US eases Venezuela oil sanctions to boost supply amid Iran war",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "economy",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "US Treasury Department",
+          "PDVSA"
+        ],
+        "people": [
+          "Donald Trump",
+          "JD Vance"
+        ],
+        "places": [
+          "Venezuela",
+          "United States",
+          "Strait of Hormuz"
+        ]
+      }
+    },
+    {
+      "id": "us-eu-steel-tariff-concessions-trade-deal",
+      "headline": "US offers EU steel tariff concessions to unlock European Parliament vote on transatlantic trade deal",
+      "key_facts": [
+        {
+          "fact": "USTR Jamieson Greer called European Parliament Trade Committee chair Bernd Lange on March 18 to reassure that the US plans to shorten the list of steel items subject to high tariffs.",
+          "source_url": "https://www.politico.eu/article/us-dangles-steel-concessions-ahead-of-key-eu-parliament-votes/",
+          "excerpt": "The offer came in a call between U.S. Trade Representative Jamieson Greer with Bernd Lange, the chair of the European Parliament's Trade Committee."
+        },
+        {
+          "fact": "The concession helped win the support of Lange's socialist caucus, enabling a key committee vote to proceed on Thursday (March 19) toward ratifying last year's transatlantic trade deal.",
+          "source_url": "https://www.politico.eu/article/us-dangles-steel-concessions-ahead-of-key-eu-parliament-votes/",
+          "excerpt": "It has helped win the support of Lange's fellow socialists, enabling a key committee vote to go ahead on Thursday."
+        },
+        {
+          "fact": "Caucus leaders are still debating when to schedule the final plenary vote on the accord, which was reached under President Trump's administration.",
+          "source_url": "https://www.politico.eu/article/us-dangles-steel-concessions-ahead-of-key-eu-parliament-votes/",
+          "excerpt": "Caucus leaders still to debate exactly when to schedule a final plenary vote on the accord reached at President Donald Trump's [administration]."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.politico.eu/article/us-dangles-steel-concessions-ahead-of-key-eu-parliament-votes/",
+          "outlet": "Politico EU",
+          "title": "US dangles steel concessions ahead of key EU votes",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "economy",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "USTR",
+          "European Parliament"
+        ],
+        "people": [
+          "Jamieson Greer",
+          "Bernd Lange"
+        ],
+        "places": [
+          "Brussels",
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "nature-thymus-health-longevity-immunotherapy",
+      "headline": "Two Nature papers show thymic health predicts longevity, cancer risk, and immunotherapy outcomes",
+      "key_facts": [
+        {
+          "fact": "Researchers developed a deep learning framework to quantify thymic health from routine CT scans and tested it in the National Lung Screening Trial (n=25,031) and Framingham Heart Study (n=2,581), finding higher thymic health consistently predicted lower all-cause mortality over 12 years of follow-up.",
+          "source_url": "https://www.nature.com/articles/s41586-026-10242-y",
+          "excerpt": "We developed a deep learning framework to quantify thymic health from routine radiographic images and evaluated its association with longevity and risk of major age-associated diseases in two large prospective cohorts."
+        },
+        {
+          "fact": "Higher thymic health was associated with reduced lung cancer incidence, lower cardiovascular mortality, and was linked to systemic inflammation, metabolic dysregulation, and modifiable lifestyle factors including smoking, obesity, and physical activity.",
+          "source_url": "https://www.nature.com/articles/s41586-026-10242-y",
+          "excerpt": "Higher thymic health was consistently associated with lower all-cause mortality, reduced lung cancer incidence and lower cardiovascular mortality over 12 years of follow-up."
+        },
+        {
+          "fact": "A companion paper tested the framework on 3,476 cancer patients receiving immune checkpoint inhibitors, finding thymic health was strongly associated with immunotherapy outcomes across several cancer types, including NSCLC, melanoma, breast cancer, and renal cancer.",
+          "source_url": "https://www.nature.com/articles/s41586-026-10243-x",
+          "excerpt": "Using a deep-learning framework applied to routine computed tomography images, we quantified thymic health in a pan-cancer cohort of 3,476 patients receiving immune checkpoint inhibitors."
+        },
+        {
+          "fact": "In the TRACERx lung cancer study, thymic health was positively associated with T cell receptor diversity and T cell receptor excision circles, validating it as a proxy for thymic activity and adaptive immune competence.",
+          "source_url": "https://www.nature.com/articles/s41586-026-10243-x",
+          "excerpt": "In the prospective TRACERx lung cancer study, thymic health was positively associated with T cell receptor diversity and T cell receptor excision circles."
+        },
+        {
+          "fact": "The findings reposition the thymus — traditionally regarded as nonfunctional in adults — as a central regulator of immune-mediated aging and a potential target for preventive and regenerative strategies.",
+          "source_url": "https://www.nature.com/articles/s41586-026-10242-y",
+          "excerpt": "These findings reposition the thymus as a central regulator of immune-mediated ageing and disease susceptibility in adulthood, highlighting its potential as a target for preventive and regenerative strategies."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.nature.com/articles/s41586-026-10242-y",
+          "outlet": "Nature",
+          "title": "Thymic health consequences in adults",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "paper"
+        },
+        {
+          "url": "https://www.nature.com/articles/s41586-026-10243-x",
+          "outlet": "Nature",
+          "title": "Thymic health and immunotherapy outcomes in patients with cancer",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "paper"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "National Lung Screening Trial",
+          "Framingham Heart Study",
+          "TRACERx"
+        ],
+        "people": [],
+        "places": []
+      }
+    },
+    {
+      "id": "nature-gut-inflammation-aging-memory-loss",
+      "headline": "Nature study reveals gut microbiome inflammation directly drives age-related memory loss via vagus nerve",
+      "key_facts": [
+        {
+          "fact": "Researchers found that the bacterium Parabacteroides goldsteinii, which accumulates with age, produces medium-chain fatty acids that activate white blood cells in the intestines, triggering inflammation that dampens vagus nerve signals to the hippocampus and impairs memory.",
+          "source_url": "https://www.psypost.org/scientists-discover-how-gut-inflammation-can-drive-age-associated-memory-loss/",
+          "excerpt": "The bacterium Parabacteroides goldsteinii produces medium-chain fatty acids that activate white blood cells in the intestines. This local inflammation dampens electrical signals traveling along the vagus nerve to the hippocampus."
+        },
+        {
+          "fact": "Young mice exposed to older microbiota showed memory deficits in object recognition and maze navigation tasks, demonstrating the microbiome changes alone are sufficient to cause cognitive decline.",
+          "source_url": "https://www.psypost.org/scientists-discover-how-gut-inflammation-can-drive-age-associated-memory-loss/",
+          "excerpt": "Young mice exposed to older microbiota showed memory deficits in object recognition and maze navigation tasks."
+        },
+        {
+          "fact": "Four different interventions successfully restored or protected memory: antibiotics to eliminate problematic bacteria, capsaicin to stimulate the vagus nerve, gut hormones to activate nerve pathways, and genetic removal of inflammatory receptors.",
+          "source_url": "https://www.psypost.org/scientists-discover-how-gut-inflammation-can-drive-age-associated-memory-loss/",
+          "excerpt": "Antibiotic treatment restored memory in both young and aged mice. Capsaicin stimulated vagus nerve directly. Gut hormones activated nerve pathways. Genetic receptor removal prevented inflammatory signals."
+        },
+        {
+          "fact": "The study was conducted by researchers at the University of Pennsylvania and Stanford Medicine/Arc Institute, published in Nature on March 18, 2026.",
+          "source_url": "https://www.psypost.org/scientists-discover-how-gut-inflammation-can-drive-age-associated-memory-loss/",
+          "excerpt": "Research Institution: University of Pennsylvania (lead researcher Timothy O. Cox); Stanford Medicine and the Arc Institute (senior authors). Journal: Nature, March 18, 2026."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.psypost.org/scientists-discover-how-gut-inflammation-can-drive-age-associated-memory-loss/",
+          "outlet": "PsyPost",
+          "title": "Scientists discover how gut inflammation can drive age-associated memory loss",
+          "published_at": "2026-03-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "University of Pennsylvania",
+          "Stanford Medicine",
+          "Arc Institute"
+        ],
+        "people": [
+          "Timothy O. Cox"
+        ],
+        "places": []
+      }
+    }
+  ],
+  "story_count": 23,
+  "source_count": 52
+}
