@@ -52,6 +52,29 @@ pipeline/sample.sh source_extraction 2026-03-03 -q "List the 5 most important st
 
 Saves to `pipeline/output/samples/` and prints all results at the end.
 
+## Editorial Principles
+
+1. **Freshness honesty** — never imply simultaneity between stories from different dates. Use "Separadamente" or acknowledge timing explicitly.
+2. **No political editorializing** — don't frame political positions as deficiencies. Present facts neutrally.
+3. **Explain jargon inline** — acronyms get brief parenthetical explainers on first use (RLHF, ARR, TCEQ). Technical terms like "yield" need plain-language rewrites.
+4. **Clarity of reference** — vague terms need specifics ("plataformas" → "redes sociais"). Pronouns and verbs must be unambiguous about who does what to whom.
+5. **Say what the company does** — don't assume the reader knows. One clause is enough.
+7. **Repetition = reframe, not repeat** — if a number or narrative ran in recent editions, convey continuity or find the genuinely new angle. Don't present stale facts as fresh.
+8. **Paragraph coherence** — stories live with their thematic neighbors. China trade investigations go with US-China tech friction, not the Iran thread.
+9. **Kill low-signal items** — cut quotes and stories that add noise, not signal. No guilt.
+
+## Review Workflow
+
+1. **One finding at a time** — present context, get a decision, move on. Don't batch.
+2. **Always show updated text after every change** — no exceptions.
+3. **"Unclear" = propose 3 rewrites** — don't explain, don't ask what's wrong, just offer options.
+4. **Don't fix until told** — flag, discuss, get approval, then edit.
+5. **Show full text without links for proofreading** — links are visual noise when reviewing prose.
+6. **Spell things out** — show the before, show the after, show what changed. Don't summarize.
+7. **3-5 options at decision points** — Guilherme picks. He has strong taste and drives.
+8. **Portuguese precision** — gender agreement (elas not eles), prepositions (na *Science* not em *Science*), cadence matters as much as content.
+9. **Cadence is real** — if a sentence is technically correct but reads clunky, restructure: invert order, break into shorter sentences, vary rhythm.
+
 ## Publishing
 
 Drop a new markdown file into `posts/_posts/` with the naming convention `YYYY-MM-DD-title.md`. Push. Auto-deploys.
