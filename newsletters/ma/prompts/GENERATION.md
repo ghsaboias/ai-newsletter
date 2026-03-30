@@ -34,6 +34,17 @@ Stories within a paragraph must relate to each other. Natural groupings:
 - **Zero filler** — every word earns its place
 - **Only what's in the research** — all claims come from research-slim.json.
 
+## Editorial Principles
+
+1. **Freshness honesty** — never imply simultaneity between stories from different dates. Use "Separadamente" or acknowledge timing explicitly.
+2. **No political editorializing** — don't frame political positions as deficiencies. Present facts neutrally.
+3. **Explain jargon inline** — acronyms and terms get brief parenthetical explainers on first use (EBITDA, CFIUS, break-up fee, poison pill). Financial terms like "multiple" or "premium" need plain-language context for general readers.
+4. **Clarity of reference** — vague terms need specifics. Pronouns and verbs must be unambiguous about who acquires whom.
+5. **Say what the company does** — don't assume the reader knows the target or acquirer. One clause is enough.
+6. **Repetition = reframe, not repeat** — if a deal or narrative ran in recent editions, convey continuity or find the genuinely new angle. Don't present stale facts as fresh.
+7. **Paragraph coherence** — stories live with their thematic neighbors. Antitrust goes with antitrust, not the advisory section.
+8. **Kill low-signal items** — cut stories that add noise, not signal. No guilt.
+
 ## Link Density & Formatting
 
 - **15-30 inline links per article** — factual claims link to sources
