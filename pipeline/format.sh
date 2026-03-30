@@ -18,7 +18,7 @@ init_day_dir
 
 FORMAT_PROMPT="$TOPIC_PROMPTS_DIR/FORMAT.md"
 FINAL_FILE="$DAY_DIR/final.md"
-OUTPUT_FILE="$DAY_DIR/substack.html"
+OUTPUT_FILE="$DAY_DIR/substack-formatted.html"
 
 init_log "$DATE"
 

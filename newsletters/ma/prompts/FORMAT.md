@@ -2,7 +2,7 @@
 
 Reformat the M&A newsletter from `{day_dir}/final.md` into structured, section-based HTML for Substack. **Keep every link intact.** Do not change any wording, facts, or links — only restructure and style.
 
-Read the markdown file first. Save output to `{day_dir}/substack.html`.
+Read the markdown file first. Save output to `{day_dir}/substack-formatted.html`.
 
 ## Sections
 
