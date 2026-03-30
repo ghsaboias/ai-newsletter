@@ -15,13 +15,16 @@ source "$(cd "$(dirname "$0")" && pwd)/_lib.sh"
 DATE=$(parse_date_arg "$@")
 PREV_DATE=$(date -j -v-1d -f "%Y-%m-%d" "$DATE" "+%Y-%m-%d" 2>/dev/null || date -d "$DATE - 1 day" "+%Y-%m-%d")
 
-# Previous headlines always come from real output
-PREV_RESEARCH="$LOOP_DIR/$PREV_DATE/research.json"
-
+# Previous headlines: check test output first, fall back to real output
 if [[ "$*" == *"--test"* ]]; then
   LOOP_DIR="$DIR/../tests/output"
 fi
 init_day_dir
+
+PREV_RESEARCH="$LOOP_DIR/$PREV_DATE/research.json"
+if [[ ! -f "$PREV_RESEARCH" ]]; then
+  PREV_RESEARCH="$DIR/output/$PREV_DATE/research.json"
+fi
 RESEARCH_FILE="$DAY_DIR/research.json"
 RESEARCH_PROMPT="$(cat "$DIR/prompts/RESEARCH.md")"
 RESEARCH_PROMPT="${RESEARCH_PROMPT//\{\{DATE\}\}/$DATE}"
@@ -63,7 +66,7 @@ TM_COUNT=$(echo "$TECHMEME" | head -1 | grep -oE '[0-9]+' || echo "0")
 echo "  Techmeme: $TM_COUNT stories"
 echo ""
 
-ALLOWED_TOOLS="Write,Read,WebFetch,WebSearch,mcp__exa__web_search_exa,Bash(bird *)"
+ALLOWED_TOOLS="Write,Read,WebFetch,WebSearch,mcp__exa__web_search_exa,mcp__exa__crawling_exa,Bash(bird *)"
 
 # --- Cluster definitions ---
 read -r -d '' CLUSTER_AI << 'EOF' || true
@@ -143,13 +146,25 @@ $TECHMEME" \
   NAMES+=("$name")
 }
 
-run_cluster "ai"    "$CLUSTER_AI"
-run_cluster "hw"    "$CLUSTER_HW"
-run_cluster "world" "$CLUSTER_WORLD"
+# --- Mini mode: 1 cluster, capped stories ---
+if [[ "${PIPELINE_MINI:-}" == "1" ]]; then
+  MINI_CLUSTER="${PIPELINE_CLUSTERS:-ai}"
+  echo "  [mini] Running cluster: $MINI_CLUSTER (3-story cap)"
+  RESEARCH_PROMPT="$RESEARCH_PROMPT
+
+**MINI MODE: Return at most 3 stories. Pick the 3 most important.**"
+  run_cluster "$MINI_CLUSTER" "$(eval echo "\$CLUSTER_$(echo "$MINI_CLUSTER" | tr '[:lower:]' '[:upper:]')")"
+else
+  run_cluster "ai"    "$CLUSTER_AI"
+  run_cluster "hw"    "$CLUSTER_HW"
+  run_cluster "world" "$CLUSTER_WORLD"
+fi
 
 # --- Seeds (user-submitted URLs) ---
 SEEDS_FILE="$DAY_DIR/seeds.md"
-if [[ -f "$SEEDS_FILE" ]] && [[ -s "$SEEDS_FILE" ]]; then
+if [[ "${PIPELINE_MINI:-}" == "1" ]]; then
+  echo "  [seeds] skipped (mini mode)"
+elif [[ -f "$SEEDS_FILE" ]] && [[ -s "$SEEDS_FILE" ]]; then
   SEEDS_PROMPT="$(cat "$DIR/prompts/SEEDS.md")"
   SEEDS_URLS="$(cat "$SEEDS_FILE")"
   SEEDS_OUT="$DAY_DIR/research-seeds.json"

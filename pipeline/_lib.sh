@@ -4,7 +4,7 @@
 #
 
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-LOOP_DIR="$DIR/output"
+LOOP_DIR="${PIPELINE_OUTPUT:-$DIR/output}"
 DJ_DIR="$HOME/daily-journal-platform"
 
 # Set DAY_DIR for per-date output. Call after DATE is set.

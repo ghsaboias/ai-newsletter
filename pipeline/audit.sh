@@ -54,6 +54,7 @@ echo ""
 
 AUDIT_PROMPT="$(cat "$DIR/prompts/AUDIT.md")"
 AUDIT_PROMPT="${AUDIT_PROMPT//\{date\}/$DATE}"
+AUDIT_PROMPT="${AUDIT_PROMPT//\{day_dir\}/$DAY_DIR}"
 
 LOG_FILE="$LOG_DIR/$DATE-audit.log"
 

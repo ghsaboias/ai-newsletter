@@ -5,8 +5,8 @@ The user will provide a **target date**. Given the finished PT-BR newsletter art
 ## Input
 
 Read these files:
-- `pipeline/output/{date}/research.json` — structured research with per-story metadata (URLs, titles, dates, images, key facts, categories, entities)
-- `pipeline/output/{date}/pt.md` — the finished PT-BR newsletter with inline links
+- `{day_dir}/research.json` — structured research with per-story metadata (URLs, titles, dates, images, key facts, categories, entities)
+- `{day_dir}/pt.md` — the finished PT-BR newsletter with inline links
 
 ## Process
 
@@ -111,7 +111,7 @@ For each news entity, write the DJ fields in PT-BR using the article text and re
 
 ## Output
 
-Save to `pipeline/output/{date}/sources.json`:
+Save to `{day_dir}/sources.json`:
 
 ```json
 {

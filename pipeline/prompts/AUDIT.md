@@ -7,8 +7,8 @@ The research window is: **previous day 10:00 BRT** to **target date 10:00 BRT**.
 ## Inputs
 
 Read these files:
-- **Article**: `pipeline/output/{date}/pt.md`
-- **Research**: `pipeline/output/{date}/research.json` (for source context — dates, excerpts)
+- **Article**: `{day_dir}/pt.md`
+- **Research**: `{day_dir}/research.json` (for source context — dates, excerpts)
 
 ## Process
 
@@ -22,7 +22,7 @@ Read these files:
 
 ## Output
 
-Write `pipeline/output/{date}/audit.json`:
+Write `{day_dir}/audit.json`:
 
 ```json
 {

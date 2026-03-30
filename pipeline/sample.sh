@@ -56,6 +56,7 @@ if [[ -z "$PROMPT_FILE" ]]; then
   exit 1
 fi
 
+init_day_dir
 OUTDIR="$LOOP_DIR/samples"
 mkdir -p "$OUTDIR"
 TIMESTAMP=$(date +%H%M%S)
@@ -74,7 +75,7 @@ for i in $(seq 1 "$NUM"); do
 
   claude -p "$(cat "$PROMPT_FILE")
 
-Date: $DATE. Research file: pipeline/output/$DATE/research.json.
+Date: $DATE. Research file: $DAY_DIR/research.json.
 
 $QUERY" \
     --allowedTools "Read" \

@@ -39,15 +39,24 @@ fi
 STORY_COUNT=$(jq '.story_count' "$RESEARCH_FILE" 2>/dev/null || echo "?")
 SOURCE_COUNT=$(jq '.source_count' "$RESEARCH_FILE" 2>/dev/null || echo "?")
 
+# --- Slim research for generation (strips excerpts, source metadata, dedupes) ---
+SLIM_FILE="$DAY_DIR/research-slim.json"
+python3 "$DIR/tools/slim_research.py" "$DAY_DIR"
+echo ""
+
 STEP_START=$(date +%s)
-echo "  Input:   $RESEARCH_FILE ($STORY_COUNT stories, $SOURCE_COUNT sources)"
+echo "  Input:   $SLIM_FILE ($STORY_COUNT stories)"
 echo "  Output:  $PT_FILE"
 echo "  Started: $(date '+%H:%M:%S')"
 echo ""
 
-claude -p "$(cat "$GENERATE_PROMPT")
+GENERATE_BODY="$(cat "$GENERATE_PROMPT")"
+GENERATE_BODY="${GENERATE_BODY//\{date\}/$DATE}"
+GENERATE_BODY="${GENERATE_BODY//\{day_dir\}/$DAY_DIR}"
 
-Write today's article for $DATE. The research file is at pipeline/output/$DATE/research.json." \
+claude -p "$GENERATE_BODY
+
+Write today's article for $DATE. The research file is at $DAY_DIR/research-slim.json." \
     --output-format stream-json \
     --verbose \
     --allowedTools "Write,Read,Edit" \

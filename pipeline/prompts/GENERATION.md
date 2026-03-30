@@ -1,8 +1,8 @@
 # Daily Newsletter — Generation
 
-The user will provide a **target date**. Write that day's newsletter article in Brazilian Portuguese using the research file as your sole source material. Do not search the web. Every fact and link must come from `pipeline/output/{date}/research.json`.
+The user will provide a **target date**. Write that day's newsletter article in Brazilian Portuguese using the research file as your sole source material. Do not search the web. Every fact and link must come from `{day_dir}/research-slim.json`.
 
-Read the research file first. Save output to `pipeline/output/{date}/pt.md`.
+Read the research file first. Save output to `{day_dir}/pt.md`.
 
 ## Structure
 
@@ -27,14 +27,14 @@ Stories within a paragraph must relate to each other. Each paragraph cluster sho
 - **Named actors** — specific names: Musk, Altman, researchers, companies
 - **Juxtaposition as a signature move** — the best sentences pair a grand claim with an absurd or contradictory detail in the same breath. This tension between the sublime and the ridiculous is core to the voice
 - **Zero filler** — every word earns its place
-- **Only what's in the research** — all claims come from research.json.
+- **Only what's in the research** — all claims come from research-slim.json.
 
 ## Link Density & Formatting
 
 - **20-40 inline links per article** — nearly every factual claim links to a source
 - Links go on the most descriptive phrase, not on "aqui" or "isso"
 - Format: `[descriptive phrase](url)` — the linked text should make sense even without clicking
-- Every URL must come from `research.json`. Do not invent or guess URLs.
+- Every URL must come from `research-slim.json`. Do not invent or guess URLs.
 
 ## Word Count
 
@@ -42,7 +42,7 @@ Target: **550-800 words**. Err on the side of density over length.
 
 ## Output Format
 
-Save to `pipeline/output/{date}/pt.md`:
+Save to `{day_dir}/pt.md`:
 
 ```markdown
 ---

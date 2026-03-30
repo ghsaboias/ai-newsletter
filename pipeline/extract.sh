@@ -51,13 +51,17 @@ echo "  Output:   $SOURCES_FILE"
 echo "  Started:  $(date '+%H:%M:%S')"
 echo ""
 
-claude -p "$(cat "$EXTRACTION_PROMPT")
+EXTRACTION_BODY="$(cat "$EXTRACTION_PROMPT")"
+EXTRACTION_BODY="${EXTRACTION_BODY//\{date\}/$DATE}"
+EXTRACTION_BODY="${EXTRACTION_BODY//\{day_dir\}/$DAY_DIR}"
+
+claude -p "$EXTRACTION_BODY
 
 ---
 
 Extract sources for $DATE.
-- Research file: pipeline/output/$DATE/research.json
-- Article file: pipeline/output/$DATE/pt.md" \
+- Research file: $DAY_DIR/research.json
+- Article file: $DAY_DIR/pt.md" \
   --output-format stream-json \
   --verbose \
   --allowedTools "Write,Read,Edit" \
