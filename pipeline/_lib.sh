@@ -5,12 +5,12 @@
 
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "$DIR/.." && pwd)"
-LOOP_DIR="${PIPELINE_OUTPUT:-$DIR/output}"
 DJ_DIR="$HOME/daily-journal-platform"
 
 # --- Topic loading ---
 # Defaults to "ai". Override with --topic <name> in script args.
 TOPIC="${PIPELINE_TOPIC:-ai}"
+LOOP_DIR="${PIPELINE_OUTPUT:-$DIR/output/$TOPIC}"
 TOPIC_DIR="$ROOT_DIR/newsletters/$TOPIC"
 TOPIC_PROMPTS_DIR="$TOPIC_DIR/prompts"
 
@@ -26,7 +26,7 @@ init_day_dir() {
 }
 
 # --- Logging ---
-LOG_DIR="$DIR/logs"
+LOG_DIR="$DIR/logs/$TOPIC"
 mkdir -p "$LOG_DIR"
 
 # Initialize log file for a given date

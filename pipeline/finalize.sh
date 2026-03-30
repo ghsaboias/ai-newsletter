@@ -11,9 +11,6 @@
 set -euo pipefail
 
 source "$(cd "$(dirname "$0")" && pwd)/_lib.sh"
-# finalize.sh keeps its own DIR/DAY_DIR setup for --execute/--limit parsing
-LOG_DIR="$DIR/logs"
-mkdir -p "$LOG_DIR"
 
 # --- Args ---
 DATE=""
@@ -39,7 +36,7 @@ if [[ -z "$DATE" ]]; then
   DATE=$(date +%Y-%m-%d)
 fi
 
-DAY_DIR="$DIR/output/$DATE"
+init_day_dir
 
 if [[ ! -f "$DAY_DIR/pt.md" ]]; then
   echo "  Error: $DAY_DIR/pt.md not found. Run draft.sh first."

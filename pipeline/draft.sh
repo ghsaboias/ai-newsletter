@@ -11,9 +11,7 @@
 
 set -euo pipefail
 
-DIR="$(cd "$(dirname "$0")" && pwd)"
-LOG_DIR="$DIR/logs"
-mkdir -p "$LOG_DIR"
+source "$(cd "$(dirname "$0")" && pwd)/_lib.sh"
 
 # --- Args ---
 DATE=""
@@ -27,7 +25,7 @@ if [[ -z "$DATE" ]]; then
   DATE=$(date +%Y-%m-%d)
 fi
 
-DAY_DIR="$DIR/output/$DATE"
+init_day_dir
 
 # --- Unified log ---
 RUN_LOG="$LOG_DIR/$DATE-draft.log"
