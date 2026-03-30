@@ -9,12 +9,16 @@ newsletters/
   ai/                          # AI & Tech newsletter (default)
     config.sh                  # clusters, byline, tools, title prefix
     prompts/                   # RESEARCH.md, GENERATION.md, SEEDS.md
-    output/YYYY-MM-DD/         # (future: per-topic output)
+  ma/                          # M&A newsletter
+    config.sh                  # deals, regulatory, advisors clusters
+    prompts/                   # M&A-specific voice, structure, editorial
 pipeline/                      # topic-agnostic engine
   _lib.sh                      # loads topic config, shared utilities
   draft.sh / finalize.sh       # orchestrators
   research.sh / generate.sh    # steps (read config, not hardcode)
   prompts/                     # shared: AUDIT.md, REPETITION_CHECK.md, SOURCE_EXTRACTION.md
+  output/<topic>/YYYY-MM-DD/   # namespaced by topic
+  logs/<topic>/                # namespaced by topic
 ```
 
 All scripts default to `--topic ai`. Override with `PIPELINE_TOPIC=ma` env var or `--topic ma` arg (when wired).
@@ -54,7 +58,7 @@ Runs four mechanical steps (no human judgment needed):
 Topic prompts: `newsletters/<topic>/prompts/` (RESEARCH.md, GENERATION.md, SEEDS.md)
 Shared prompts: `pipeline/prompts/` (AUDIT.md, REPETITION_CHECK.md, SOURCE_EXTRACTION.md)
 Topic config: `newsletters/<topic>/config.sh` (clusters, byline, tools, pre-research)
-Output: `pipeline/output/YYYY-MM-DD/`
+Output: `pipeline/output/<topic>/YYYY-MM-DD/`
 
 Each step skips if output already exists. Delete the output file to rerun.
 
