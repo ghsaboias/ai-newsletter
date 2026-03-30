@@ -9,7 +9,7 @@
 
 set -euo pipefail
 
-DIR="$(cd "$(dirname "$0")" && pwd)"
+source "$(cd "$(dirname "$0")" && pwd)/_lib.sh"
 
 DATE=""
 URLS=()
@@ -34,8 +34,7 @@ if [[ ${#URLS[@]} -eq 0 ]]; then
   exit 1
 fi
 
-DAY_DIR="$DIR/output/$DATE"
-mkdir -p "$DAY_DIR"
+init_day_dir
 SEEDS_FILE="$DAY_DIR/seeds.md"
 
 for url in "${URLS[@]}"; do
