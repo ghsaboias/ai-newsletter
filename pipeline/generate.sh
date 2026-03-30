@@ -15,7 +15,12 @@ DATE=$(parse_date_arg "$@")
 init_day_dir
 RESEARCH_FILE="$DAY_DIR/research.json"
 PT_FILE="$DAY_DIR/pt.md"
-GENERATE_PROMPT="$DIR/prompts/GENERATION.md"
+# Prompt: prefer topic-specific, fall back to shared
+if [[ -f "$TOPIC_PROMPTS_DIR/GENERATION.md" ]]; then
+  GENERATE_PROMPT="$TOPIC_PROMPTS_DIR/GENERATION.md"
+else
+  GENERATE_PROMPT="$DIR/prompts/GENERATION.md"
+fi
 
 init_log "$DATE"
 
