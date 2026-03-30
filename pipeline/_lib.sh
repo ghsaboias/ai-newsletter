@@ -4,8 +4,20 @@
 #
 
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT_DIR="$(cd "$DIR/.." && pwd)"
 LOOP_DIR="${PIPELINE_OUTPUT:-$DIR/output}"
 DJ_DIR="$HOME/daily-journal-platform"
+
+# --- Topic loading ---
+# Defaults to "ai". Override with --topic <name> in script args.
+TOPIC="${PIPELINE_TOPIC:-ai}"
+TOPIC_DIR="$ROOT_DIR/newsletters/$TOPIC"
+TOPIC_PROMPTS_DIR="$TOPIC_DIR/prompts"
+
+# Load topic config if it exists (adds TOPIC_* variables)
+if [[ -f "$TOPIC_DIR/config.sh" ]]; then
+  source "$TOPIC_DIR/config.sh"
+fi
 
 # Set DAY_DIR for per-date output. Call after DATE is set.
 init_day_dir() {
@@ -128,4 +140,16 @@ parse_date_arg() {
   done
   # Default to today
   date +%Y-%m-%d
+}
+
+# Parse --topic from args. Call before parse_date_arg if needed.
+parse_topic_arg() {
+  local next_is_topic=false
+  for arg in "$@"; do
+    if [[ "$next_is_topic" == true ]]; then
+      echo "$arg"; return
+    fi
+    [[ "$arg" == "--topic" ]] && next_is_topic=true
+  done
+  echo "${PIPELINE_TOPIC:-ai}"
 }
