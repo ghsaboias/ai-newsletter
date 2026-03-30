@@ -26,12 +26,12 @@ if [[ ! -f "$PREV_RESEARCH" ]]; then
   PREV_RESEARCH="$DIR/output/$PREV_DATE/research.json"
 fi
 RESEARCH_FILE="$DAY_DIR/research.json"
-# Prompt: prefer topic-specific, fall back to shared
-if [[ -f "$TOPIC_PROMPTS_DIR/RESEARCH.md" ]]; then
-  RESEARCH_PROMPT="$(cat "$TOPIC_PROMPTS_DIR/RESEARCH.md")"
-else
-  RESEARCH_PROMPT="$(cat "$DIR/prompts/RESEARCH.md")"
+# Prompt: topic-specific (required)
+if [[ ! -f "$TOPIC_PROMPTS_DIR/RESEARCH.md" ]]; then
+  echo "Error: $TOPIC_PROMPTS_DIR/RESEARCH.md not found"
+  exit 1
 fi
+RESEARCH_PROMPT="$(cat "$TOPIC_PROMPTS_DIR/RESEARCH.md")"
 RESEARCH_PROMPT="${RESEARCH_PROMPT//\{\{DATE\}\}/$DATE}"
 RESEARCH_PROMPT="${RESEARCH_PROMPT//\{\{PREV_DATE\}\}/$PREV_DATE}"
 
@@ -145,11 +145,7 @@ SEEDS_FILE="$DAY_DIR/seeds.md"
 if [[ "${PIPELINE_MINI:-}" == "1" ]]; then
   echo "  [seeds] skipped (mini mode)"
 elif [[ -f "$SEEDS_FILE" ]] && [[ -s "$SEEDS_FILE" ]]; then
-  if [[ -f "$TOPIC_PROMPTS_DIR/SEEDS.md" ]]; then
-    SEEDS_PROMPT="$(cat "$TOPIC_PROMPTS_DIR/SEEDS.md")"
-  else
-    SEEDS_PROMPT="$(cat "$DIR/prompts/SEEDS.md")"
-  fi
+  SEEDS_PROMPT="$(cat "$TOPIC_PROMPTS_DIR/SEEDS.md" 2>/dev/null || cat "$DIR/prompts/SEEDS.md")"
   SEEDS_URLS="$(cat "$SEEDS_FILE")"
   SEEDS_OUT="$DAY_DIR/research-seeds.json"
 

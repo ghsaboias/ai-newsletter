@@ -1,6 +1,23 @@
-# AI Newsletter
+# Newsletter Platform
 
-The pipeline is recursive self-improvement. LLM handles facts, recency, accuracy. Human handles taste, writing, relevance. Learnings feed back into prompts so future generations need fewer corrections.
+Multi-topic newsletter engine. Same pipeline, different configs. LLM handles facts, recency, accuracy. Human handles taste, writing, relevance. Learnings feed back into prompts so future generations need fewer corrections.
+
+## Architecture
+
+```
+newsletters/
+  ai/                          # AI & Tech newsletter (default)
+    config.sh                  # clusters, byline, tools, title prefix
+    prompts/                   # RESEARCH.md, GENERATION.md, SEEDS.md
+    output/YYYY-MM-DD/         # (future: per-topic output)
+pipeline/                      # topic-agnostic engine
+  _lib.sh                      # loads topic config, shared utilities
+  draft.sh / finalize.sh       # orchestrators
+  research.sh / generate.sh    # steps (read config, not hardcode)
+  prompts/                     # shared: AUDIT.md, REPETITION_CHECK.md, SOURCE_EXTRACTION.md
+```
+
+All scripts default to `--topic ai`. Override with `PIPELINE_TOPIC=ma` env var or `--topic ma` arg (when wired).
 
 ## Pipeline
 
@@ -34,7 +51,9 @@ Runs four mechanical steps (no human judgment needed):
 
 ### Notes
 
-Prompts: `pipeline/prompts/` (RESEARCH.md, GENERATION.md, REPETITION_CHECK.md, AUDIT.md, SOURCE_EXTRACTION.md)
+Topic prompts: `newsletters/<topic>/prompts/` (RESEARCH.md, GENERATION.md, SEEDS.md)
+Shared prompts: `pipeline/prompts/` (AUDIT.md, REPETITION_CHECK.md, SOURCE_EXTRACTION.md)
+Topic config: `newsletters/<topic>/config.sh` (clusters, byline, tools, pre-research)
 Output: `pipeline/output/YYYY-MM-DD/`
 
 Each step skips if output already exists. Delete the output file to rerun.
@@ -74,6 +93,13 @@ Saves to `pipeline/output/samples/` and prints all results at the end.
 7. **3-5 options at decision points** — Guilherme picks. He has strong taste and drives.
 8. **Portuguese precision** — gender agreement (elas not eles), prepositions (na *Science* not em *Science*), cadence matters as much as content.
 9. **Cadence is real** — if a sentence is technically correct but reads clunky, restructure: invert order, break into shorter sentences, vary rhythm.
+
+## Adding a New Topic
+
+1. `cp -r newsletters/ai newsletters/<topic>`
+2. Edit `config.sh`: clusters, byline, title prefix, allowed tools, pre-research command
+3. Edit prompts: voice, structure, domain rules
+4. Run: `PIPELINE_TOPIC=<topic> pipeline/draft.sh`
 
 ## Publishing
 
