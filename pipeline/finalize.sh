@@ -10,7 +10,8 @@
 
 set -euo pipefail
 
-DIR="$(cd "$(dirname "$0")" && pwd)"
+source "$(cd "$(dirname "$0")" && pwd)/_lib.sh"
+# finalize.sh keeps its own DIR/DAY_DIR setup for --execute/--limit parsing
 LOG_DIR="$DIR/logs"
 mkdir -p "$LOG_DIR"
 
@@ -88,7 +89,7 @@ S=$(date +%s)
 step_timer "rewrite-links" "$S"
 
 # --- Step 3.5: Inject byline ---
-BYLINE="Por: Guilherme Saboia e Vinicius Gushiken"
+BYLINE="${TOPIC_BYLINE:-Por: Guilherme Saboia e Vinicius Gushiken}"
 FINAL_MD="$DAY_DIR/final.md"
 if [[ -f "$FINAL_MD" ]] && ! grep -qF "$BYLINE" "$FINAL_MD"; then
   python3 -c "
