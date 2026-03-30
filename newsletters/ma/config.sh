@@ -22,11 +22,11 @@ TOPIC_CLUSTERS="deals regulatory advisors"
 read -r -d '' TOPIC_CLUSTER_DEALS << 'EOF' || true
 - Announced mergers and acquisitions: acquirer, target, deal value, structure (cash/stock/mixed), premium to last close, expected close date
 - Pricing and valuation: EV/EBITDA multiple, EV/Revenue multiple, P/E, % stake acquired, implied equity value, target revenue/EBITDA/margins when disclosed
-- Completed deals: final terms, regulatory approvals obtained, price adjustments from announcement
+- Completed deals: final terms, regulatory approvals obtained
 - Failed/withdrawn deals: why it fell apart, breakup fees, regulatory blocks
 - Hostile bids and unsolicited offers: activist pressure, poison pills, defense tactics
 - Cross-border M&A: US-EU, US-China, emerging market deals, foreign investment reviews (CFIUS, EU FDI screening)
-- Divestitures and spinoffs: strategic rationale, who's buying the carved-out unit, valuation of carved-out business
+- Divestitures and spinoffs: strategic rationale, who's buying the carved-out unit
 - Major sectors: tech, healthcare/pharma, energy, financial services, industrials, media/telecom
 Key sources: Reuters, Bloomberg, FT, WSJ, The Deal, Mergermarket, Dealogic
 EOF
@@ -37,17 +37,12 @@ read -r -d '' TOPIC_CLUSTER_REGULATORY << 'EOF' || true
 - New antitrust policy: guidelines updates, enforcement priorities, leadership changes
 - Sector-specific regulation: banking (Fed/OCC approvals), healthcare (FTC pharma focus), tech (digital markets)
 - CFIUS and foreign investment: national security reviews, forced divestitures, blocked acquisitions
-- Shareholder litigation: appraisal rights, fiduciary duty challenges, deal price disputes
 Key sources: FTC.gov, DOJ Antitrust Division, European Commission competition, CMA, Law360, Global Competition Review
 EOF
 
 read -r -d '' TOPIC_CLUSTER_ADVISORS << 'EOF' || true
 - Investment bank mandates: who's advising whom on major deals
-- League tables and market share: quarterly/annual rankings shifts
-- Advisory fee disclosures and notable engagement terms
-- Law firm roles: counsel to acquirer, target, or special committee
 - Activist investors: new positions, campaigns, board fights, settlement agreements
 - M&A market trends: deal volume, valuation multiples, sector momentum, dry powder, financing conditions
-- Notable hires and departures in M&A advisory (bankers, lawyers, activists)
 Key sources: Bloomberg, Dealogic, Refinitiv, PitchBook, Activist Insight, WSJ, FT
 EOF
