@@ -23,7 +23,7 @@ init_day_dir
 
 PREV_RESEARCH="$LOOP_DIR/$PREV_DATE/research.json"
 if [[ ! -f "$PREV_RESEARCH" ]]; then
-  PREV_RESEARCH="$DIR/output/$PREV_DATE/research.json"
+  PREV_RESEARCH="$DIR/output/$TOPIC/$PREV_DATE/research.json"
 fi
 RESEARCH_FILE="$DAY_DIR/research.json"
 # Prompt: topic-specific (required)
