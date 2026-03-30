@@ -13,9 +13,7 @@
 
 set -euo pipefail
 
-DIR="$(cd "$(dirname "$0")" && pwd)"
-DJ_DIR="$HOME/daily-journal-platform"
-LOOP_DIR="$DIR/output"
+source "$(cd "$(dirname "$0")" && pwd)/_lib.sh"
 
 DATE=""
 EXECUTE=false
@@ -43,7 +41,7 @@ if [[ -z "$DATE" ]]; then
   DATE=$(date +%Y-%m-%d)
 fi
 
-DAY_DIR="$LOOP_DIR/$DATE"
+init_day_dir
 
 # Pick sources file — sources.test.json if --test or DATE is "test"
 if [[ "$TEST" == true ]]; then
