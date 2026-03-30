@@ -26,7 +26,12 @@ if [[ ! -f "$PREV_RESEARCH" ]]; then
   PREV_RESEARCH="$DIR/output/$PREV_DATE/research.json"
 fi
 RESEARCH_FILE="$DAY_DIR/research.json"
-RESEARCH_PROMPT="$(cat "$DIR/prompts/RESEARCH.md")"
+# Prompt: prefer topic-specific, fall back to shared
+if [[ -f "$TOPIC_PROMPTS_DIR/RESEARCH.md" ]]; then
+  RESEARCH_PROMPT="$(cat "$TOPIC_PROMPTS_DIR/RESEARCH.md")"
+else
+  RESEARCH_PROMPT="$(cat "$DIR/prompts/RESEARCH.md")"
+fi
 RESEARCH_PROMPT="${RESEARCH_PROMPT//\{\{DATE\}\}/$DATE}"
 RESEARCH_PROMPT="${RESEARCH_PROMPT//\{\{PREV_DATE\}\}/$PREV_DATE}"
 
@@ -59,53 +64,27 @@ else
 fi
 echo ""
 
-# --- Techmeme scan (shared across all clusters) ---
-echo "  Fetching Techmeme..."
-TECHMEME=$(python3 "$DIR/tools/techmeme.py" 2>/dev/null || echo "[Techmeme fetch failed]")
-TM_COUNT=$(echo "$TECHMEME" | head -1 | grep -oE '[0-9]+' || echo "0")
-echo "  Techmeme: $TM_COUNT stories"
+# --- Pre-research scan (topic-specific, e.g. Techmeme for AI) ---
+PRE_RESEARCH=""
+if [[ -n "${TOPIC_PRE_RESEARCH_CMD:-}" ]]; then
+  echo "  Fetching pre-research..."
+  PRE_RESEARCH=$(eval "$TOPIC_PRE_RESEARCH_CMD")
+  PR_COUNT=$(echo "$PRE_RESEARCH" | head -1 | grep -oE '[0-9]+' || echo "0")
+  echo "  Pre-research: $PR_COUNT stories"
+else
+  echo "  Pre-research: none configured"
+fi
 echo ""
 
-ALLOWED_TOOLS="Write,Read,WebFetch,WebSearch,mcp__exa__web_search_exa,mcp__exa__crawling_exa,Bash(bird *)"
+ALLOWED_TOOLS="${TOPIC_ALLOWED_TOOLS:-Write,Read,WebFetch,WebSearch,mcp__exa__web_search_exa,mcp__exa__crawling_exa,Bash(bird *)}"
 
-# --- Cluster definitions ---
-read -r -d '' CLUSTER_AI << 'EOF' || true
-- AI capabilities: new model releases, updates, benchmark results (frontier and open-source)
-- Reasoning, coding, and multimodal capability jumps
-- Agentic systems: tool use, computer use, autonomous coding, long-horizon tasks
-- AI safety: alignment, evaluations, red-teaming, governance proposals
-- AI in science: protein folding, drug discovery, materials, math proofs
-- AI economics: pricing, API changes, adoption metrics, enterprise deals
-- Recursive self-improvement: AI training AI, automated ML research
-Key X accounts: @sama, @AnthropicAI, @OpenAI, @GoogleDeepMind, @scaling01, @metr_evals, @epochairesearch, @arcprize
-EOF
-
-read -r -d '' CLUSTER_HW << 'EOF' || true
-- Chips & semiconductors: Nvidia, AMD, Intel, Broadcom, custom silicon (Google TPU, Amazon Trainium, Microsoft Maia)
-- Foundries: TSMC, Samsung, Intel Foundry — capacity, process nodes, orders
-- Data centers: new builds, power deals, cooling tech, geographic expansion
-- Energy for compute: nuclear, solar, grid upgrades, power purchase agreements
-- Export controls: US-China chip restrictions, ASML/EUV, sanctions
-- Robotics: humanoids (Tesla Optimus, Figure, Unitree), industrial automation, warehouse robots
-- Drones: military, commercial, autonomous delivery, counter-drone systems
-- Autonomous vehicles: Waymo, Cruise, Tesla FSD, Chinese players
-- Space: launches, satellite constellations, orbital compute, space-based infrastructure
-Key X accounts: @elonmusk, @jimfanAI, @chilobrandt
-EOF
-
-read -r -d '' CLUSTER_WORLD << 'EOF' || true
-- Geopolitics: conflicts, alliances, sanctions, trade wars, diplomatic shifts
-- Military: operations, weapons systems, defense deals, intelligence
-- Economics: jobs reports, GDP, inflation, central bank moves, oil/energy prices
-- Labor & AI displacement: layoffs citing AI, hiring freezes, workforce shifts
-- Markets: major moves in equities, commodities, crypto tied to news events
-- Funding: major rounds, IPOs, acquisitions, SPAC deals
-- Biotech: drug approvals, clinical trial results, CRISPR/gene therapy, longevity research
-- Health policy: FDA decisions, pandemic preparedness, health system changes
-- Climate/energy: transition milestones, extreme events, policy moves
-Key X accounts: @xaborsa
-Key sources: Reuters, AP, BBC, Al Jazeera, FT, STAT News, BioPharma Dive, Nature Medicine
-EOF
+# --- Cluster definitions (from topic config) ---
+# Config provides TOPIC_CLUSTER_<NAME> variables and TOPIC_CLUSTERS list.
+# Map them to the CLUSTER_<NAME> variables that run_cluster expects.
+for _cluster_name in ${TOPIC_CLUSTERS:-ai hw world}; do
+  _upper=$(echo "$_cluster_name" | tr '[:lower:]' '[:upper:]')
+  eval "CLUSTER_${_upper}=\${TOPIC_CLUSTER_${_upper}:-}"
+done
 
 # --- Launch parallel cluster searches ---
 PIDS=()
@@ -134,8 +113,8 @@ ${PREV_HEADLINES:+
 **Previous edition headlines (skip unless genuinely new development):**
 $PREV_HEADLINES}
 
-**Techmeme scan:**
-$TECHMEME" \
+**Pre-research scan:**
+$PRE_RESEARCH" \
       --output-format stream-json \
       --verbose \
       --allowedTools "$ALLOWED_TOOLS" \
@@ -155,9 +134,10 @@ if [[ "${PIPELINE_MINI:-}" == "1" ]]; then
 **MINI MODE: Return at most 3 stories. Pick the 3 most important.**"
   run_cluster "$MINI_CLUSTER" "$(eval echo "\$CLUSTER_$(echo "$MINI_CLUSTER" | tr '[:lower:]' '[:upper:]')")"
 else
-  run_cluster "ai"    "$CLUSTER_AI"
-  run_cluster "hw"    "$CLUSTER_HW"
-  run_cluster "world" "$CLUSTER_WORLD"
+  for _cluster_name in ${TOPIC_CLUSTERS:-ai hw world}; do
+    _upper=$(echo "$_cluster_name" | tr '[:lower:]' '[:upper:]')
+    run_cluster "$_cluster_name" "$(eval echo "\$CLUSTER_${_upper}")"
+  done
 fi
 
 # --- Seeds (user-submitted URLs) ---
@@ -165,7 +145,11 @@ SEEDS_FILE="$DAY_DIR/seeds.md"
 if [[ "${PIPELINE_MINI:-}" == "1" ]]; then
   echo "  [seeds] skipped (mini mode)"
 elif [[ -f "$SEEDS_FILE" ]] && [[ -s "$SEEDS_FILE" ]]; then
-  SEEDS_PROMPT="$(cat "$DIR/prompts/SEEDS.md")"
+  if [[ -f "$TOPIC_PROMPTS_DIR/SEEDS.md" ]]; then
+    SEEDS_PROMPT="$(cat "$TOPIC_PROMPTS_DIR/SEEDS.md")"
+  else
+    SEEDS_PROMPT="$(cat "$DIR/prompts/SEEDS.md")"
+  fi
   SEEDS_URLS="$(cat "$SEEDS_FILE")"
   SEEDS_OUT="$DAY_DIR/research-seeds.json"
 
@@ -209,7 +193,7 @@ echo "  Clusters done in ${STEP_DURATION}s ($FAILURES failures)"
 
 # --- Merge partial files ---
 PARTIALS=()
-for name in ai hw world seeds; do
+for name in ${TOPIC_CLUSTERS:-ai hw world} seeds; do
   f="$DAY_DIR/research-${name}.json"
   if [[ -f "$f" ]] && jq empty "$f" 2>/dev/null; then
     PARTIALS+=("$f")
