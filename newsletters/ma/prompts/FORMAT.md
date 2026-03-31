@@ -23,46 +23,24 @@ You don't need all sections every edition. 3-5 is typical. Merge small sections.
 <p class="subtitle">[opening line / subtitle]</p>
 <p class="byline">[byline if present]</p>
 
-<!-- Deal summary table: every deal/event in the edition -->
-<table style="width:100%; border-collapse:collapse; margin:1.5em 0;">
-  <tr style="border-bottom:2px solid #333; text-align:left;">
-    <th style="padding:8px 12px;">Deal</th>
-    <th style="padding:8px 12px;">Valor</th>
-    <th style="padding:8px 12px;">Status</th>
-  </tr>
-  <tr style="border-bottom:1px solid #ddd;">
-    <td style="padding:8px 12px;"><strong>Sysco</strong> → Jetro Restaurant Depot</td>
-    <td style="padding:8px 12px;">US$ 29,1 bi</td>
-    <td style="padding:8px 12px;">Anunciado</td>
-  </tr>
-  <!-- ... one row per deal ... -->
-</table>
-
-<hr>
-
 <h2>🤝 Deals</h2>
 <p>[paragraph with inline links preserved]</p>
 
 <h2>⚖️ Regulatório</h2>
-<ul>
-  <li><strong>Nexstar / Tegna</strong> — [description with links]</li>
-  <li><strong>DOJ / Paramount-WBD</strong> — [description with links]</li>
-</ul>
+<p>[paragraph]</p>
 
-<!-- etc. Use <hr> between sections -->
+<!-- etc. -->
 ```
 
 ## Rules
 
 - **Every link in the original must appear in the output.** No links dropped, no links added.
 - **No wording changes.** Copy sentences verbatim. You are reformatting, not rewriting.
-- **Deal summary table at the top.** One row per deal or major event. Columns: Deal (acquirer → target or description), Valor (deal value or "-" if undisclosed), Status (Anunciado / Concluído / Bloqueado / Em revisão / etc.).
-- **Bold key actors.** Company names, regulators, and people get `<strong>` on first mention in each section.
-- **Use `<ul>/<li>` lists** when a section has 3+ short items (especially regulatory actions, cross-border updates). Use `<p>` for longer narrative items with context.
-- **Split long paragraphs** that cover multiple deals into one `<p>` or `<li>` per deal.
-- **Bold the deal value or key number** in each item: `<strong>US$ 29,1 bilhões</strong>`.
+- **Split long paragraphs** that cover multiple deals into one `<p>` per deal when it improves readability.
+- **Bold the deal value or key number** in each deal paragraph: `<strong>US$ 29,1 bilhões</strong>`.
+- **Bold key actors** — company names, regulators, and people get `<strong>` on first mention in each section.
 - **`<hr>` between sections** for visual breathing room.
-- **`<blockquote>` for notable quotes** — pull out direct quotes that add color (e.g. regulator statements, activist critiques).
 - **Strip the YAML frontmatter** — output is pure HTML, no markdown.
 - Convert markdown links `[text](url)` to HTML `<a href="url">text</a>`.
 - Preserve `<em>` for italics where the original uses them.
+- **No `<table>`, `<div>`, `<span>`, or inline `style=`** — Substack strips them.
