@@ -24,9 +24,17 @@ You don't need all sections every edition. 3-5 is typical. Merge small sections.
 <p class="byline">[byline if present]</p>
 
 <!-- Deal summary table: every deal/event in the edition -->
-<table>
-  <tr><th>Deal</th><th>Valor</th><th>Status</th></tr>
-  <tr><td><strong>Sysco</strong> → Jetro Restaurant Depot</td><td>US$ 29,1 bi</td><td>Anunciado</td></tr>
+<table style="width:100%; border-collapse:collapse; margin:1.5em 0;">
+  <tr style="border-bottom:2px solid #333; text-align:left;">
+    <th style="padding:8px 12px;">Deal</th>
+    <th style="padding:8px 12px;">Valor</th>
+    <th style="padding:8px 12px;">Status</th>
+  </tr>
+  <tr style="border-bottom:1px solid #ddd;">
+    <td style="padding:8px 12px;"><strong>Sysco</strong> → Jetro Restaurant Depot</td>
+    <td style="padding:8px 12px;">US$ 29,1 bi</td>
+    <td style="padding:8px 12px;">Anunciado</td>
+  </tr>
   <!-- ... one row per deal ... -->
 </table>
 
