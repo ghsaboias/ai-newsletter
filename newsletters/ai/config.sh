@@ -56,6 +56,7 @@ read -r -d '' TOPIC_CLUSTER_WORLD << 'EOF' || true
 - Funding: major rounds, IPOs, acquisitions, SPAC deals
 - Biotech: drug approvals, clinical trial results, CRISPR/gene therapy, longevity research
 - Health policy: FDA decisions, pandemic preparedness, health system changes
+- Space: launches, missions, orbital debris, satellite constellations, exploration milestones
 - Climate/energy: transition milestones, extreme events, policy moves
 Key X accounts: @xaborsa
 Key sources: Reuters, AP, BBC, Al Jazeera, FT, STAT News, BioPharma Dive, Nature Medicine
