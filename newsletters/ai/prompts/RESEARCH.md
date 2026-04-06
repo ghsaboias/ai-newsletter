@@ -6,14 +6,12 @@ Your output will be merged with other clusters into the final research file.
 
 ## Rules
 
-- **At least 7 stories.** If you have fewer, search more.
+- Up to 7 stories. Fewer is fine if the news day is thin for your cluster.
 - Every URL must come from a search result or fetched page. Never invent URLs.
 - **Recency: the underlying event must have occurred within the research window ({{PREV_DATE}} 10:00 BRT to {{DATE}} 10:00 BRT).** Sources published shortly after the window closes are acceptable, but the event itself must fall within it. Skip stories about events from before the window.
 - Every fact in `key_facts` must come from a **listed source** — one that appears in the story's `sources` array. No background knowledge, no facts from pages you visited but didn't cite. If you found a fact via a tweet, search snippet, or secondary article, add that URL to `sources`.
-- At least one source with a real URL per story.
 - `headline` and `key_facts` in English.
 - The previous edition's headlines are listed at the end of this prompt. Skip stories already covered unless there's a genuinely new development.
-- **Date-scope all searches** to {{PREV_DATE}} and {{DATE}}. This is critical when researching past editions.
 
 ## Tools
 
@@ -21,21 +19,21 @@ Your output will be merged with other clusters into the final research file.
 |---|---|
 | `mcp__exa__web_search_exa` | Best for dated news. Use single-topic queries — multi-topic loses focus. |
 | `mcp__exa__crawling_exa` | Fetch full article text from URLs. Accepts an array of URLs in one call. Use for **all news sites** — especially those that block WebFetch. |
-| `WebFetch` | Fetch non-news URLs only (press releases, gov sites, blogs). **Always pass `timeout: 15000`.** |
+| `WebFetch` | Fetch non-news URLs only (press releases, gov sites, blogs). |
 | `WebSearch` | Broader web search. Supplement to Exa. |
 | `bird search "query"` | X/Twitter. Use specific terms or `from:` queries — broad queries return noise. |
 | `bird read <url>` | Fetch full tweet text. |
 
 **Do NOT WebFetch these domains** (blocked/paywalled — use `crawling_exa` instead):
-reuters.com, bloomberg.com, axios.com, cnbc.com, politico.eu, seekingalpha.com, businessinsider.com, wired.com, business-standard.com, datacenterdynamics.com, etnownews.com, archynewsy.com, wccftech.com
+reuters.com, bloomberg.com, axios.com, cnbc.com, politico.eu, seekingalpha.com, businessinsider.com, wired.com, business-standard.com, datacenterdynamics.com, etnownews.com, archynewsy.com, wccftech.com, openai.com, cybernews.com, coindesk.com, appleinsider.com, aninews.in
 
 
 ## Workflow
 
-1. Check the previous edition headlines at the end of this prompt to know what's already covered.
-2. **Landscape scan**: Start broad — review the Techmeme scan below, then run 5 Exa searches to fill gaps. This gives you the map.
-3. **Go deeper on what matters**: For the most important stories, fetch source URLs to get exact facts, quotes, and numbers. Skip fetching for minor stories where search results already gave you enough.
-4. **No duplicate work**: Never re-run a search you already ran. Never re-fetch a URL. If a search didn't return what you need, try a *different* query, don't repeat.
+1. Check the previous edition headlines at the end of this prompt.
+2. **Landscape scan**: Review the Techmeme scan, then run 5 searches to fill gaps. Stop searching.
+3. **Pick your 7 stories.** From what you found, choose 7. This is your final list — do not add stories after this point.
+4. **Fetch only where needed**: For stories where search snippets lack exact numbers or quotes, fetch the source. Most stories won't need this.
 5. Write the JSON output file.
 
 ## Output
@@ -52,7 +50,7 @@ Write to the file path given below. Format:
         {
           "fact": "Specific claim with numbers/names/dates",
           "source_url": "https://...",
-          "excerpt": "Exact quote or close paraphrase from the source supporting this fact"
+          "excerpt": "Supporting detail from the source (search snippets are fine)"
         }
       ],
       "sources": [

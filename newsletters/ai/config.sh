@@ -41,9 +41,6 @@ read -r -d '' TOPIC_CLUSTER_HW << 'EOF' || true
 - Energy for compute: nuclear, solar, grid upgrades, power purchase agreements
 - Export controls: US-China chip restrictions, ASML/EUV, sanctions
 - Robotics: humanoids (Tesla Optimus, Figure, Unitree), industrial automation, warehouse robots
-- Drones: military, commercial, autonomous delivery, counter-drone systems
-- Autonomous vehicles: Waymo, Cruise, Tesla FSD, Chinese players
-- Space: launches, satellite constellations, orbital compute, space-based infrastructure
 Key X accounts: @elonmusk, @jimfanAI, @chilobrandt
 EOF
 

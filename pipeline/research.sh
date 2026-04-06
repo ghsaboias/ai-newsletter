@@ -117,6 +117,7 @@ $PREV_HEADLINES}
 $PRE_RESEARCH" \
       --output-format stream-json \
       --verbose \
+      ${PIPELINE_MODEL:+--model "$PIPELINE_MODEL"} \
       --allowedTools "$ALLOWED_TOOLS" \
       2>&1 | show_progress "$name"
   ) &
@@ -134,7 +135,7 @@ if [[ "${PIPELINE_MINI:-}" == "1" ]]; then
 **MINI MODE: Return at most 3 stories. Pick the 3 most important.**"
   run_cluster "$MINI_CLUSTER" "$(eval echo "\$CLUSTER_$(echo "$MINI_CLUSTER" | tr '[:lower:]' '[:upper:]')")"
 else
-  for _cluster_name in ${TOPIC_CLUSTERS:-ai hw world}; do
+  for _cluster_name in ${PIPELINE_CLUSTERS:-${TOPIC_CLUSTERS:-ai hw world}}; do
     _upper=$(echo "$_cluster_name" | tr '[:lower:]' '[:upper:]')
     run_cluster "$_cluster_name" "$(eval echo "\$CLUSTER_${_upper}")"
   done
@@ -208,7 +209,7 @@ echo "  Merging ${#PARTIALS[@]} clusters..."
 
 jq -s '{
   date: "'"$DATE"'",
-  stories: [.[].stories[]],
+  stories: [.[].stories[] | {id, headline, key_facts, sources, category, entities}] | unique_by(.id),
 } | .story_count = (.stories | length)
   | .source_count = ([.stories[].sources | length] | add)' \
   "${PARTIALS[@]}" > "$RESEARCH_FILE"
