@@ -7,6 +7,12 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "$DIR/.." && pwd)"
 DJ_DIR="$HOME/daily-journal-platform"
 
+# --- Pi config ---
+PI_CMD="pi"
+PI_MODEL="${PIPELINE_MODEL:-anthropic/claude-opus-4-6}"
+PI_EXTENSIONS_DIR="$DIR/extensions"
+PI_BLOCK_DOMAINS="-e $PI_EXTENSIONS_DIR/block-domains.ts"
+
 # --- Topic loading ---
 # Defaults to "ai". Override with --topic <name> in script args.
 TOPIC="${PIPELINE_TOPIC:-ai}"
@@ -37,95 +43,62 @@ init_log() {
   echo "  Log: $LOG_FILE"
 }
 
-# --- Progress filter: parse stream-json and show tool activity ---
-# Tees full output to log file, shows tool summaries to terminal
-show_progress() {
-  local step_name="$1"
-  local tool_count=0
-  local last_tool=""
+# --- Pi runner ---
+# Run pi in print mode with common flags.
+# Usage: run_pi [--tools tool1,tool2] [--web] [--no-ext] "prompt"
+#   --web       include exa tools + domain blocker (default: no extensions)
+#   --no-ext    explicitly disable all extensions
+#   --tools     override built-in tools (default: read,write,edit)
+run_pi() {
+  local tools="read,write,edit"
+  local ext_flags="--no-extensions"
+  local prompt=""
 
-  while IFS= read -r line; do
-    # Log every line
-    echo "$line" >> "$LOG_FILE"
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --tools)  tools="$2"; shift 2 ;;
+      --web)    ext_flags="$PI_BLOCK_DOMAINS"; shift ;;
+      --no-ext) ext_flags="--no-extensions"; shift ;;
+      *)        prompt="$1"; shift ;;
+    esac
+  done
 
-    # Show thinking blocks (truncated to 200 chars)
-    thinking=$(echo "$line" | jq -r '
-      if .type == "assistant" then
-        (.message.content[]? | select(.type == "thinking") | .thinking) // empty
-      else
-        empty
-      end
-    ' 2>/dev/null || true)
+  $PI_CMD -p \
+    --model "$PI_MODEL" \
+    --tools "$tools" \
+    $ext_flags \
+    "$prompt"
+}
 
-    if [[ -n "$thinking" ]]; then
-      truncated="${thinking:0:200}"
-      [[ ${#thinking} -gt 200 ]] && truncated="${truncated}..."
-      echo "      [$step_name] 💭 $truncated"
-    fi
+# --- Tmux helpers for parallel research ---
+# Launch a pi agent in a tmux pane and signal when done.
+# Usage: launch_pane "window" "name" "prompt" [extra pi flags...]
+# The pane signals "done-$name" when finished.
+launch_pane() {
+  local window="$1"
+  local name="$2"
+  local prompt="$3"
+  shift 3
 
-    # Try to extract tool_use events (Claude starting a tool call)
-    tool_name=$(echo "$line" | jq -r '
-      if .type == "assistant" then
-        (.message.content[]? | select(.type == "tool_use") | .name) // empty
-      else
-        empty
-      end
-    ' 2>/dev/null || true)
+  local log="$LOG_DIR/$DATE-research-${name}.log"
+  local cmd="$PI_CMD -p --no-session --model $PI_MODEL --tools read,write,bash $PI_BLOCK_DOMAINS $* \"$prompt\" 2>&1 | tee $log; tmux wait-for -S done-$name"
 
-    # Log errors and result messages
-    error_msg=$(echo "$line" | jq -r '
-      if .type == "error" then .error.message // .error // "unknown error"
-      elif .type == "result" then "EXIT: cost=\(.cost_usd // "?") duration=\(.duration_ms // "?")ms turns=\(.num_turns // "?")"
-      else empty
-      end
-    ' 2>/dev/null || true)
+  # First pane reuses the window, subsequent panes split
+  if tmux list-panes -t "$window" 2>/dev/null | grep -q .; then
+    tmux split-window -t "$window" -v -d "$cmd"
+  else
+    tmux new-window -n "$window" -d "$cmd"
+  fi
 
-    if [[ -n "$error_msg" ]]; then
-      echo "      [$step_name] $error_msg"
-    fi
+  # Even out the layout
+  tmux select-layout -t "$window" tiled 2>/dev/null || true
+}
 
-    if [[ -n "$tool_name" ]]; then
-      tool_count=$((tool_count + 1))
-
-      # Extract detail from tool input
-      detail=$(echo "$line" | jq -r '
-        .message.content[]? | select(.type == "tool_use") |
-        if .name == "Read" or .name == "Write" or .name == "Edit" then
-          (.input.file_path // "" | split("/") | last)
-        elif .name == "Glob" then
-          .input.pattern // ""
-        elif .name == "Grep" then
-          .input.pattern // ""
-        elif .name == "WebFetch" then
-          (.input.url // "" | split("/") | .[2] // "")
-        elif .name == "WebSearch" then
-          .input.query // ""
-        elif .name == "mcp__exa__web_search_exa" then
-          .input.query // ""
-        elif .name == "Bash" then
-          (.input.command // "" | .[0:60])
-        else empty
-        end
-      ' 2>/dev/null || true)
-
-      # Format tool name for display
-      case "$tool_name" in
-        Write)     display="Write" ;;
-        Read)      display="Read" ;;
-        Edit)      display="Edit" ;;
-        WebFetch)  display="Fetch" ;;
-        WebSearch) display="Search" ;;
-        mcp__exa__web_search_exa) display="Exa" ;;
-        Bash)      display="Bash" ;;
-        *)         display="$tool_name" ;;
-      esac
-
-      if [[ -n "$detail" ]]; then
-        echo "      [$step_name] #$tool_count $display: $detail ($(date '+%H:%M:%S'))"
-      else
-        echo "      [$step_name] #$tool_count $display ($(date '+%H:%M:%S'))"
-      fi
-    fi
+# Wait for all named panes to finish.
+# Usage: wait_panes name1 name2 name3
+wait_panes() {
+  for name in "$@"; do
+    tmux wait-for "done-$name"
   done
 }
 

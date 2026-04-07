@@ -21,12 +21,10 @@ Your output will be merged with other clusters into the final research file.
 
 | Tool | Use for |
 |---|---|
-| `mcp__exa__web_search_exa` | Best for dated news. Use single-topic queries — multi-topic loses focus. |
-| `mcp__exa__crawling_exa` | Fetch full article text from URLs. Accepts an array of URLs in one call. Use for **all news sites** — especially those that block WebFetch. |
-| `WebFetch` | Fetch non-news URLs only (press releases, gov sites, SEC filings, regulatory sites). **Always pass `timeout: 15000`.** |
-| `WebSearch` | Broader web search. Supplement to Exa. |
+| `exa_search` | Best for dated news. Use single-topic queries — multi-topic loses focus. Set `startPublishedDate`/`endPublishedDate` for date scoping. Pass `contents: {text: true}` to get full article text inline — avoids a separate fetch. |
+| `exa_get_contents` | Fetch full text from URLs you already have (e.g. from press releases, SEC filings, or a source you want to read in full). Pass an array of URLs. |
 
-**Do NOT WebFetch these domains** (blocked/paywalled — use `crawling_exa` instead):
+**Do NOT fetch these domains** (blocked/paywalled — use `exa_search` snippets instead):
 reuters.com, bloomberg.com, axios.com, cnbc.com, politico.eu, seekingalpha.com, businessinsider.com, wired.com, wsj.com, ft.com, law360.com, mergermarket.com
 
 ## Workflow

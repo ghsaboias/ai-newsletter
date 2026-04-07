@@ -77,17 +77,20 @@ CONTEXT="$CONTEXT
 
 Write your analysis to: $OUTPUT_FILE"
 
-LOG_FILE="$LOG_DIR/$DATE-repetition.log"
-
 echo "  Analyzing..."
 
-claude -p "$PROMPT
+PROMPT_FILE="$DAY_DIR/.prompt-repetition.md"
+printf '%s' "$PROMPT
 ---
-$CONTEXT" \
-  --output-format stream-json \
-  --verbose \
-  --allowedTools "Read,Write" \
-  2>&1 | show_progress "repetition"
+$CONTEXT" > "$PROMPT_FILE"
+
+TMUX_WIN="repetition-$DATE"
+tmux new-window -n "$TMUX_WIN" -d "cd $ROOT_DIR && $DIR/tools/run-agent.sh $OUTPUT_FILE done-repetition $PI_CMD --model $PI_MODEL --no-extensions --tools read,write @$PROMPT_FILE"
+
+echo "  Watch live: tmux select-window -t $TMUX_WIN"
+tmux wait-for done-repetition
+tmux kill-window -t "$TMUX_WIN" 2>/dev/null || true
+rm -f "$PROMPT_FILE"
 
 # --- Verify ---
 STEP_END=$(date +%s)
@@ -95,7 +98,7 @@ STEP_DURATION=$((STEP_END - STEP_START))
 
 if [[ ! -f "$OUTPUT_FILE" ]]; then
   echo ""
-  echo "  Error: Claude did not produce $OUTPUT_FILE"
+  echo "  Error: did not produce $OUTPUT_FILE"
   exit 1
 fi
 

@@ -17,14 +17,12 @@ Your output will be merged with other clusters into the final research file.
 
 | Tool | Use for |
 |---|---|
-| `mcp__exa__web_search_exa` | Best for dated news. Use single-topic queries — multi-topic loses focus. |
-| `mcp__exa__crawling_exa` | Fetch full article text from URLs. Accepts an array of URLs in one call. Use for **all news sites** — especially those that block WebFetch. |
-| `WebFetch` | Fetch non-news URLs only (press releases, gov sites, blogs). |
-| `WebSearch` | Broader web search. Supplement to Exa. |
-| `bird search "query"` | X/Twitter. Use specific terms or `from:` queries — broad queries return noise. |
-| `bird read <url>` | Fetch full tweet text. |
+| `exa_search` | Best for dated news. Use single-topic queries — multi-topic loses focus. Set `startPublishedDate`/`endPublishedDate` for date scoping. Pass `contents: {text: true}` to get full article text inline — avoids a separate fetch. |
+| `exa_get_contents` | Fetch full text from URLs you already have (e.g. from tweets, press releases, or a source you want to read in full). Pass an array of URLs. |
+| `bash` with `bird search "query"` | X/Twitter. Use specific terms or `from:` queries — broad queries return noise. |
+| `bash` with `bird read <url>` | Fetch full tweet text. |
 
-**Do NOT WebFetch these domains** (blocked/paywalled — use `crawling_exa` instead):
+**Do NOT fetch these domains** (blocked/paywalled — use `exa_search` snippets instead):
 reuters.com, bloomberg.com, axios.com, cnbc.com, politico.eu, seekingalpha.com, businessinsider.com, wired.com, business-standard.com, datacenterdynamics.com, etnownews.com, archynewsy.com, wccftech.com, openai.com, cybernews.com, coindesk.com, appleinsider.com, aninews.in
 
 

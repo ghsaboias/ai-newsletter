@@ -46,18 +46,14 @@ echo ""
 FORMAT_BODY="$(cat "$FORMAT_PROMPT")"
 FORMAT_BODY="${FORMAT_BODY//\{day_dir\}/$DAY_DIR}"
 
-claude -p "$FORMAT_BODY" \
-  --output-format stream-json \
-  --verbose \
-  --allowedTools "Read,Write" \
-  2>&1 | show_progress "format"
+run_pi --tools read,write "$FORMAT_BODY"
 
 STEP_END=$(date +%s)
 STEP_DURATION=$((STEP_END - STEP_START))
 
 if [[ ! -f "$OUTPUT_FILE" ]]; then
   echo ""
-  echo "  Error: Claude did not produce $OUTPUT_FILE"
+  echo "  Error: did not produce $OUTPUT_FILE"
   exit 1
 fi
 

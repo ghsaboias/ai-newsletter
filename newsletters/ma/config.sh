@@ -10,7 +10,7 @@ TOPIC_TITLE_PREFIX="[M&A]"
 TOPIC_BYLINE="Por: Guilherme Saboia e Vinicius Gushiken"
 
 # --- Research ---
-TOPIC_ALLOWED_TOOLS="Write,Read,WebFetch,WebSearch,mcp__exa__web_search_exa,mcp__exa__crawling_exa"
+# Tools are now managed by pi: built-in (read,write,bash) + extensions (exa_search,exa_get_contents)
 
 # No pre-research scan for M&A (no Techmeme equivalent)
 TOPIC_PRE_RESEARCH_CMD=""

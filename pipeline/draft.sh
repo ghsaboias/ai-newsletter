@@ -2,7 +2,7 @@
 #
 # Draft: Research → Generate → Repetition check → Audit
 #
-# After this completes, review repetition.json + audit.json and fix pt.md.
+# After this completes, review repetition.json and fix pt.md.
 # Then run finalize.sh.
 #
 # Usage: ./draft.sh              # today's date
@@ -66,11 +66,6 @@ S=$(date +%s)
 "$DIR/repetition-check.sh" "$DATE"
 step_timer "repetition-check" "$S"
 
-# --- Step 4: Audit ---
-S=$(date +%s)
-"$DIR/audit.sh" "$DATE"
-step_timer "audit" "$S"
-
 # --- Summary ---
 PIPELINE_END=$(date +%s)
 TOTAL=$((PIPELINE_END - PIPELINE_START))
@@ -81,16 +76,11 @@ echo "  Date:     $DATE"
 echo "  Duration: ${TOTAL}s ($(( TOTAL / 60 ))m $(( TOTAL % 60 ))s)"
 echo ""
 
-# Show repetition + audit summaries
+# Show repetition summary
 if [[ -f "$DAY_DIR/repetition.json" ]]; then
   REP_COUNT=$(jq '.issues | length' "$DAY_DIR/repetition.json" 2>/dev/null || echo "?")
   echo "  Repetition issues: $REP_COUNT"
 fi
 
-if [[ -f "$DAY_DIR/audit.json" ]]; then
-  AUDIT_COUNT=$(jq '.issues | length' "$DAY_DIR/audit.json" 2>/dev/null || echo "?")
-  echo "  Audit issues:      $AUDIT_COUNT"
-fi
-
 echo ""
-echo "  Review repetition.json + audit.json, fix pt.md, then run finalize.sh"
+echo "  Review repetition.json, fix pt.md, then run finalize.sh"

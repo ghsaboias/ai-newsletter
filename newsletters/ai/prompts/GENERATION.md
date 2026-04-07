@@ -14,10 +14,10 @@ A single sentence that introduces and summarizes the day. Max ~180 characters �
 
 ### Body
 5-8 thematic paragraphs. Each paragraph:
-1. Chains 2-4 related stories with **inline links on key phrases**
+1. Groups related stories (typically 2-4) with **inline links on key phrases**
 2. Weaves stories into a narrative arc — not a bullet list disguised as prose
 
-Stories within a paragraph must relate to each other. Each paragraph cluster should represent a distinct domain — ensure hardware, geopolitics, and biotech all get at least one paragraph.
+Stories within a paragraph should relate to each other. Prioritize clusters that the research naturally supports — typically AI/infrastructure, hardware/semiconductors, geopolitics, and biotech. If a domain has no stories in the research, skip it. Don't force coverage.
 
 ## Voice & Tone
 
@@ -76,7 +76,7 @@ If a technical concept can't be explained in a clause, either simplify to its co
 
 ## Word Count
 
-Target: **550-800 words**. Err on the side of density over length.
+Target: **550-800 words**. When research yields more stories than fit, cut the weakest — stories with less concrete data, less reader impact, or weaker connections to the day's main threads. Don't try to mention everything.
 
 ## Self-Check Before Saving
 

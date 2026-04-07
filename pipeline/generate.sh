@@ -59,13 +59,20 @@ GENERATE_BODY="$(cat "$GENERATE_PROMPT")"
 GENERATE_BODY="${GENERATE_BODY//\{date\}/$DATE}"
 GENERATE_BODY="${GENERATE_BODY//\{day_dir\}/$DAY_DIR}"
 
-claude -p "$GENERATE_BODY
+# Run in a visible tmux pane
+RUNNER="$DIR/tools/run-agent.sh"
+PROMPT_FILE="$DAY_DIR/.prompt-generate.md"
+printf '%s' "$GENERATE_BODY
 
-Write today's article for $DATE. The research file is at $DAY_DIR/research-slim.json." \
-    --output-format stream-json \
-    --verbose \
-    --allowedTools "Write,Read,Edit" \
-    2>&1 | show_progress "generate"
+Write today's article for $DATE. The research file is at $DAY_DIR/research-slim.json." > "$PROMPT_FILE"
+
+TMUX_WIN="generate-$DATE"
+tmux new-window -n "$TMUX_WIN" -d "cd $ROOT_DIR && $RUNNER $PT_FILE done-generate $PI_CMD --model $PI_MODEL --no-extensions --tools read,write,edit @$PROMPT_FILE"
+
+echo "  Watch live: tmux select-window -t $TMUX_WIN"
+tmux wait-for done-generate
+tmux kill-window -t "$TMUX_WIN" 2>/dev/null || true
+rm -f "$PROMPT_FILE"
 
 STEP_END=$(date +%s)
 STEP_DURATION=$((STEP_END - STEP_START))

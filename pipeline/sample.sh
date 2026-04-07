@@ -73,13 +73,12 @@ for i in $(seq 1 "$NUM"); do
   OUTFILE="$OUTDIR/$DATE-$STEP-$TIMESTAMP-$i.txt"
   echo "  [$i/$NUM] running..."
 
-  claude -p "$(cat "$PROMPT_FILE")
+  $PI_CMD -p --model $PI_MODEL --no-extensions --tools read \
+    "$(cat "$PROMPT_FILE")
 
 Date: $DATE. Research file: $DAY_DIR/research.json.
 
 $QUERY" \
-    --allowedTools "Read" \
-    --output-format text \
     2>/dev/null > "$OUTFILE"
 
   echo "  [$i/$NUM] done → $OUTFILE"

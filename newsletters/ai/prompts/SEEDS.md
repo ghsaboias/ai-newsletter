@@ -4,8 +4,8 @@ You are given a list of URLs that must be included in the newsletter research. F
 
 ## Rules
 
-- **Fetch every URL** in the seeds list. Use `WebFetch` with `timeout: 15000`.
-- For tweets (x.com/twitter.com URLs), use `bird read <url>` instead.
+- **Fetch every URL** in the seeds list. Use `exa_get_contents`.
+- For tweets (x.com/twitter.com URLs), use `bird read <url>` via bash instead.
 - Extract the same level of detail as a normal research story: headline, 3-8 key facts with source URLs and excerpts, entities.
 - The seed URL is your primary source. Search for 1-2 additional sources to corroborate or add context if useful.
 - `headline` and `key_facts` in English.

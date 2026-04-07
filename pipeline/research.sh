@@ -1,6 +1,8 @@
 #!/bin/bash
 #
-# Step 1: Research today's news via 3 parallel cluster searches + merge
+# Step 1: Research today's news via parallel cluster searches + merge
+#
+# Launches each cluster as a tmux pane so you can watch progress live.
 #
 # Usage: ./research.sh              # today's date
 #        ./research.sh 2026-02-24   # specific date
@@ -26,6 +28,7 @@ if [[ ! -f "$PREV_RESEARCH" ]]; then
   PREV_RESEARCH="$DIR/output/$TOPIC/$PREV_DATE/research.json"
 fi
 RESEARCH_FILE="$DAY_DIR/research.json"
+
 # Prompt: topic-specific (required)
 if [[ ! -f "$TOPIC_PROMPTS_DIR/RESEARCH.md" ]]; then
   echo "Error: $TOPIC_PROMPTS_DIR/RESEARCH.md not found"
@@ -54,7 +57,7 @@ echo "  Output:  $RESEARCH_FILE"
 echo "  Started: $(date '+%H:%M:%S')"
 echo ""
 
-# --- Extract previous headlines for dedup (avoids 3 agents each reading 88K) ---
+# --- Extract previous headlines for dedup ---
 PREV_HEADLINES=""
 if [[ -f "$PREV_RESEARCH" ]]; then
   PREV_HEADLINES=$(jq -r '.stories[] | "- " + .id + ": " + .headline' "$PREV_RESEARCH")
@@ -76,18 +79,16 @@ else
 fi
 echo ""
 
-ALLOWED_TOOLS="${TOPIC_ALLOWED_TOOLS:-Write,Read,WebFetch,WebSearch,mcp__exa__web_search_exa,mcp__exa__crawling_exa,Bash(bird *)}"
-
 # --- Cluster definitions (from topic config) ---
-# Config provides TOPIC_CLUSTER_<NAME> variables and TOPIC_CLUSTERS list.
-# Map them to the CLUSTER_<NAME> variables that run_cluster expects.
 for _cluster_name in ${TOPIC_CLUSTERS:-ai hw world}; do
   _upper=$(echo "$_cluster_name" | tr '[:lower:]' '[:upper:]')
   eval "CLUSTER_${_upper}=\${TOPIC_CLUSTER_${_upper}:-}"
 done
 
+# --- Tmux window name ---
+TMUX_WIN="research-$DATE"
+
 # --- Launch parallel cluster searches ---
-PIDS=()
 NAMES=()
 
 run_cluster() {
@@ -100,11 +101,9 @@ run_cluster() {
     return
   fi
 
-  echo "  [$name] starting..."
+  echo "  [$name] starting in tmux pane..."
 
-  (
-    LOG_FILE="$LOG_DIR/$DATE-research-${name}.log"
-    claude -p "$RESEARCH_PROMPT
+  local prompt="$RESEARCH_PROMPT
 ---
 **Your categories:** $categories
 **Date:** $DATE
@@ -114,15 +113,23 @@ ${PREV_HEADLINES:+
 $PREV_HEADLINES}
 
 **Pre-research scan:**
-$PRE_RESEARCH" \
-      --output-format stream-json \
-      --verbose \
-      ${PIPELINE_MODEL:+--model "$PIPELINE_MODEL"} \
-      --allowedTools "$ALLOWED_TOOLS" \
-      2>&1 | show_progress "$name"
-  ) &
+$PRE_RESEARCH"
 
-  PIDS+=($!)
+  # Write prompt to temp file to avoid shell escaping issues
+  local prompt_file="$DAY_DIR/.prompt-${name}.md"
+  printf '%s' "$prompt" > "$prompt_file"
+
+  local runner="$DIR/tools/run-agent.sh"
+  local cmd="cd $ROOT_DIR && $runner $outfile done-$name $PI_CMD --model $PI_MODEL --tools read,write,bash $PI_BLOCK_DOMAINS @$prompt_file"
+
+  # First cluster creates the window, rest split into panes
+  if ! tmux list-windows -F '#{window_name}' 2>/dev/null | grep -qx "$TMUX_WIN"; then
+    tmux new-window -n "$TMUX_WIN" -d "$cmd"
+  else
+    tmux split-window -t "$TMUX_WIN" -v -d "$cmd"
+    tmux select-layout -t "$TMUX_WIN" tiled 2>/dev/null || true
+  fi
+
   NAMES+=("$name")
 }
 
@@ -154,20 +161,20 @@ elif [[ -f "$SEEDS_FILE" ]] && [[ -s "$SEEDS_FILE" ]]; then
     echo "  [seeds] already exists, skipping"
   else
     echo "  [seeds] $(grep -c 'http' "$SEEDS_FILE") URLs found"
-    (
-      LOG_FILE="$LOG_DIR/$DATE-research-seeds.log"
-      claude -p "$SEEDS_PROMPT
+
+    local prompt_file="$DAY_DIR/.prompt-seeds.md"
+    printf '%s' "$SEEDS_PROMPT
 ---
 **Date:** $DATE
 **Output file:** $SEEDS_OUT
 **URLs to research:**
-$SEEDS_URLS" \
-        --output-format stream-json \
-        --verbose \
-        --allowedTools "$ALLOWED_TOOLS" \
-        2>&1 | show_progress "seeds"
-    ) &
-    PIDS+=($!)
+$SEEDS_URLS" > "$prompt_file"
+
+    local runner="$DIR/tools/run-agent.sh"
+    local cmd="cd $ROOT_DIR && $runner $SEEDS_OUT done-seeds $PI_CMD --model $PI_MODEL --tools read,write,bash $PI_BLOCK_DOMAINS @$prompt_file"
+
+    tmux split-window -t "$TMUX_WIN" -v -d "$cmd"
+    tmux select-layout -t "$TMUX_WIN" tiled 2>/dev/null || true
     NAMES+=("seeds")
   fi
 else
@@ -175,17 +182,24 @@ else
 fi
 
 # --- Wait for all clusters ---
+echo ""
+echo "  Waiting for ${#NAMES[@]} agents: ${NAMES[*]}"
+echo "  Watch live: tmux select-window -t $TMUX_WIN"
+echo ""
+
 FAILURES=0
-for i in "${!PIDS[@]}"; do
-  if ! wait "${PIDS[$i]}"; then
-    echo "  ⚠ [${NAMES[$i]}] failed"
+for name in "${NAMES[@]}"; do
+  if ! tmux wait-for "done-$name" 2>/dev/null; then
+    echo "  ⚠ [$name] signal failed"
     ((FAILURES++)) || true
   fi
 done
 
+# Clean up tmux window
+tmux kill-window -t "$TMUX_WIN" 2>/dev/null || true
+
 STEP_END=$(date +%s)
 STEP_DURATION=$((STEP_END - STEP_START))
-echo ""
 echo "  Clusters done in ${STEP_DURATION}s ($FAILURES failures)"
 
 # --- Merge partial files ---

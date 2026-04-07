@@ -158,7 +158,6 @@ if [[ "$SKIP_RESEARCH" != true ]]; then
 fi
 run_step "generate"           "generate.sh"
 run_step "repetition-check"   "repetition-check.sh"
-run_step "audit"              "audit.sh"
 
 PIPELINE_END=$(date +%s)
 TOTAL=$((PIPELINE_END - PIPELINE_START))

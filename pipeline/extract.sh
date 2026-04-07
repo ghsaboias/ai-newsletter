@@ -55,17 +55,22 @@ EXTRACTION_BODY="$(cat "$EXTRACTION_PROMPT")"
 EXTRACTION_BODY="${EXTRACTION_BODY//\{date\}/$DATE}"
 EXTRACTION_BODY="${EXTRACTION_BODY//\{day_dir\}/$DAY_DIR}"
 
-claude -p "$EXTRACTION_BODY
+PROMPT_FILE="$DAY_DIR/.prompt-extract.md"
+printf '%s' "$EXTRACTION_BODY
 
 ---
 
 Extract sources for $DATE.
 - Research file: $DAY_DIR/research.json
-- Article file: $DAY_DIR/pt.md" \
-  --output-format stream-json \
-  --verbose \
-  --allowedTools "Write,Read,Edit" \
-  2>&1 | show_progress "extract"
+- Article file: $DAY_DIR/pt.md" > "$PROMPT_FILE"
+
+TMUX_WIN="extract-$DATE"
+tmux new-window -n "$TMUX_WIN" -d "cd $ROOT_DIR && $DIR/tools/run-agent.sh $SOURCES_FILE done-extract $PI_CMD --model $PI_MODEL --no-extensions --tools read,write,edit @$PROMPT_FILE"
+
+echo "  Watch live: tmux select-window -t $TMUX_WIN"
+tmux wait-for done-extract
+tmux kill-window -t "$TMUX_WIN" 2>/dev/null || true
+rm -f "$PROMPT_FILE"
 
 STEP_END=$(date +%s)
 STEP_DURATION=$((STEP_END - STEP_START))

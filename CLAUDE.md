@@ -16,7 +16,7 @@ pipeline/                      # topic-agnostic engine
   _lib.sh                      # loads topic config, shared utilities
   draft.sh / finalize.sh       # orchestrators
   research.sh / generate.sh    # steps (read config, not hardcode)
-  prompts/                     # shared: AUDIT.md, REPETITION_CHECK.md, SOURCE_EXTRACTION.md
+  prompts/                     # shared: REPETITION_CHECK.md, SOURCE_EXTRACTION.md
   output/<topic>/YYYY-MM-DD/   # namespaced by topic
   logs/<topic>/                # namespaced by topic
 ```
@@ -28,8 +28,8 @@ All scripts default to `--topic ai`. Override with `PIPELINE_TOPIC=ma` env var o
 Two-phase pipeline. Draft generates and quality-checks. You review with Claude and fix pt.md. Finalize handles mechanical post-processing.
 
 ```
-pipeline/draft.sh [YYYY-MM-DD]                 # Phase 1: Research → Generate → Repetition check → Audit
-                                                #   (review repetition.json + audit.json, fix pt.md)
+pipeline/draft.sh [YYYY-MM-DD]                 # Phase 1: Research → Generate → Repetition check
+                                                #   (review repetition.json, fix pt.md)
 pipeline/finalize.sh YYYY-MM-DD [--execute]    # Phase 2: Extract → Ingest → Rewrite links → Substack
 ```
 
@@ -40,9 +40,8 @@ Runs four sequential steps, each a separate Claude process:
 1. `research.sh` — web research → `research.json`
 2. `generate.sh` — PT-BR article from research data → `pt.md`
 3. `repetition-check.sh` — compare against previous 3 editions → `repetition.json`
-4. `audit.sh` — freshness check (flags stale news) → `audit.json`
 
-After draft completes, open a Claude session to review repetition.json + audit.json and fix pt.md. **Read memory files first**: `~/.claude/projects/-Users-guilherme-ai-newsletter/memory/`
+After draft completes, open a Claude session to review repetition.json and fix pt.md. **Read memory files first**: `~/.claude/projects/-Users-guilherme-ai-newsletter/memory/`
 
 ### Phase 2: finalize.sh
 
@@ -56,7 +55,7 @@ Runs four mechanical steps (no human judgment needed):
 ### Notes
 
 Topic prompts: `newsletters/<topic>/prompts/` (RESEARCH.md, GENERATION.md, SEEDS.md)
-Shared prompts: `pipeline/prompts/` (AUDIT.md, REPETITION_CHECK.md, SOURCE_EXTRACTION.md)
+Shared prompts: `pipeline/prompts/` (REPETITION_CHECK.md, SOURCE_EXTRACTION.md)
 Topic config: `newsletters/<topic>/config.sh` (clusters, byline, tools, pre-research)
 Output: `pipeline/output/<topic>/YYYY-MM-DD/`
 
