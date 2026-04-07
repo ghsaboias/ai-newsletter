@@ -29,6 +29,44 @@ Stories within a paragraph must relate to each other. Each paragraph cluster sho
 - **Zero filler** — every word earns its place
 - **Only what's in the research** — all claims come from research-slim.json.
 
+## Accessibility — Write for Non-Specialists
+
+The audience is educated but not technical. Every sentence must be clear to someone who doesn't work in tech, finance, or defense.
+
+### Explain every entity on first mention
+
+If a company, organization, or person isn't a household name, add a descriptor clause. Use the `entities` field in the research data to identify actors. Check the `key_facts` for context about what they do.
+
+- ✅ `a FANUC, maior fabricante de robôs industriais do Japão`
+- ✅ `Karen Hao, jornalista de tecnologia do Wall Street Journal`
+- ✅ `o Drift Protocol, plataforma de derivativos na blockchain Solana`
+- ✅ `a Shimizu, construtora japonesa`
+- ❌ `a FANUC colabora com a NVIDIA` (reader doesn't know what FANUC is)
+- ❌ `Karen Hao publicou...` (reader doesn't know who she is)
+
+Names that don't need explanation: OpenAI, Google, Microsoft, Apple, Meta, Amazon, Tesla, Nvidia, Samsung, SpaceX, NASA, Elon Musk, Sam Altman, Trump.
+
+### Simplify technical terms
+
+Never assume the reader knows jargon. Rewrite or add inline context:
+
+- ✅ `máquinas de litografia ultravioleta extrema (EUV)` on first use, then `EUV`
+- ✅ `um recurso da Solana que permite pré-assinar transações sem prazo de validade`
+- ✅ `certificação de segurança de dados (SOC 2)`
+- ❌ `DRAM 1c`, `HBM4`, `plataforma Rubin` (meaningless to non-specialists)
+- ❌ `durable nonce`, `dual listing`, `misbranding` (English jargon without context)
+
+If a technical concept can't be explained in a clause, either simplify to its consequence ("chips de memória mais rápidos") or cut it.
+
+### Formatting rules
+
+- **Currency**: always `US$` — never bare `$`, never `¥`, `€`, `₩`, or "trilhões de wons". Convert foreign currencies to US$ using the research data.
+- **Approximation**: `por volta de`, `cerca de`, `aproximadamente` — never `~`
+- **Abbreviations**: `quarto trimestre` not `Q4`. `primeiro semestre` not `H1`. `ano contra ano` → `em relação ao mesmo período do ano anterior` or just state both numbers.
+- **Outlet names**: `Wall Street Journal` not `WSJ`. `New York Times` not `NYT`. Spell out on first use.
+- **Units**: kilometers, not miles. Celsius, not Fahrenheit. Convert if the source uses imperial.
+- **English words**: use Portuguese equivalents when they exist. `diferença` not `gap`. `delator` not `whistleblower`. `listagem dupla` not `dual listing`.
+
 ## Link Density & Formatting
 
 - **20-40 inline links per article** — nearly every factual claim links to a source
@@ -39,6 +77,18 @@ Stories within a paragraph must relate to each other. Each paragraph cluster sho
 ## Word Count
 
 Target: **550-800 words**. Err on the side of density over length.
+
+## Self-Check Before Saving
+
+After writing the article, re-read it once and fix:
+
+1. **Every company/person has a descriptor on first mention?** Scan each entity name — if a reader wouldn't know who they are, add a clause.
+2. **Any unexplained technical term?** If you'd need a glossary to understand it, rewrite.
+3. **All currency is US$?** No bare $, no foreign currencies without conversion.
+4. **No English jargon?** Read each sentence — any word a Portuguese-speaking non-specialist wouldn't know?
+5. **Every sentence would make sense read aloud to someone with no tech background?**
+
+Fix problems in place. Do not leave notes or TODOs.
 
 ## Output Format
 

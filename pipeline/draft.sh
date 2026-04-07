@@ -11,6 +11,11 @@
 
 set -euo pipefail
 
+# Prevent macOS idle sleep while pipeline runs
+if [[ -z "${CAFFEINATED:-}" ]] && command -v caffeinate &>/dev/null; then
+  exec env CAFFEINATED=1 caffeinate -i "$0" "$@"
+fi
+
 source "$(cd "$(dirname "$0")" && pwd)/_lib.sh"
 
 # --- Args ---

@@ -30,7 +30,7 @@ def dedupe_stories(stories: list) -> list:
 
 
 def slim_story(story: dict) -> dict:
-    return {
+    out = {
         "id": story["id"],
         "headline": story["headline"],
         "category": story.get("category", []),
@@ -39,6 +39,11 @@ def slim_story(story: dict) -> dict:
             for kf in story.get("key_facts", [])
         ],
     }
+    # Keep entities — generation needs them to explain who/what each actor is
+    entities = story.get("entities", {})
+    if any(entities.get(k) for k in ("organizations", "people", "places")):
+        out["entities"] = entities
+    return out
 
 
 def main():

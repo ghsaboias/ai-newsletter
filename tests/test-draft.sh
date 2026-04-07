@@ -20,6 +20,11 @@
 
 set -euo pipefail
 
+# Prevent macOS idle sleep while pipeline runs
+if [[ -z "${CAFFEINATED:-}" ]] && command -v caffeinate &>/dev/null; then
+  exec env CAFFEINATED=1 caffeinate -i "$0" "$@"
+fi
+
 TESTS_DIR="$(cd "$(dirname "$0")" && pwd)"
 PIPELINE_DIR="$TESTS_DIR/../pipeline"
 
