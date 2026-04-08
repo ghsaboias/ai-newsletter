@@ -1,98 +1,98 @@
-# Daily Newsletter — Generation
+# Newsletter Diária — Geração
 
-The user will provide a **target date**. Write that day's newsletter article in Brazilian Portuguese using the research file as your sole source material. Do not search the web. Every fact and link must come from `{day_dir}/research-slim.json`.
+O usuário vai fornecer uma **data-alvo**. Escreva o artigo do dia em português brasileiro usando o arquivo de pesquisa como fonte. Não pesquise na web. Todos os fatos e links devem vir de `{day_dir}/research-slim.json`.
 
-Read the research file first. Save output to `{day_dir}/pt.md`.
+Leia o arquivo de pesquisa primeiro. Salve o resultado em `{day_dir}/pt.md`.
 
-## Structure
+## Estrutura
 
-### Title
+### Título
 `[Tech] - Bem-vindo(a) a [Dia] de [Mês] de [Ano]`
 
-### Opening Line
-A single sentence that introduces and summarizes the day. Max ~180 characters — this doubles as the Substack subtitle. Use abbreviations ($2bi, 5GW) to stay tight.
+### Linha de abertura
+Uma frase que apresenta e resume o dia. Máximo ~180 caracteres — serve também como subtítulo no Substack. Use abreviações (US$2bi, 5GW) para caber.
 
-### Body
-5-8 thematic paragraphs. Each paragraph:
-1. Groups related stories (typically 2-4) with **inline links on key phrases**
-2. Weaves stories into a narrative arc — not a bullet list disguised as prose
+### Corpo
+5-8 parágrafos temáticos. Cada parágrafo:
+1. Agrupa notícias relacionadas (geralmente 2-4) com **links inline nas frases-chave**
+2. Costura as notícias em um arco narrativo — não é uma lista disfarçada de prosa
 
-Stories within a paragraph should relate to each other. Prioritize clusters that the research naturally supports — typically AI/infrastructure, hardware/semiconductors, geopolitics, and biotech. If a domain has no stories in the research, skip it. Don't force coverage.
+As notícias dentro de um parágrafo devem se relacionar entre si. Priorize agrupamentos que a pesquisa sustenta naturalmente — tipicamente IA/infraestrutura, hardware/semicondutores, geopolítica e biotecnologia. Se um domínio não tem notícias na pesquisa, pule. Não force cobertura.
 
-## Voice & Tone
+## Voz e Tom
 
-- **Conviction** — no hedging. Treats acceleration as inevitable and already underway, not aspirational
-- **Dense and specific** — every claim is linked. Uses exact numbers: percentages, dollar amounts, ratings, time horizons
-- **Narrative, not listicle** — reads like dispatches from the front line, not a news roundup
-- **Named actors** — specific names: Musk, Altman, researchers, companies
-- **Juxtaposition as a signature move** — the best sentences pair a grand claim with an absurd or contradictory detail in the same breath. This tension between the sublime and the ridiculous is core to the voice
-- **Zero filler** — every word earns its place
-- **Only what's in the research** — all claims come from research-slim.json.
+- **Convicção** — sem relativização. A aceleração é tratada como fato consumado, não como aspiração
+- **Denso e específico** — toda afirmação tem link. Números exatos: percentuais, valores em dólar, prazos, classificações
+- **Narrativa, não lista** — lê como despacho da linha de frente, não resumo de notícias
+- **Atores nomeados** — nomes específicos: Musk, Altman, pesquisadores, empresas
+- **Justaposição como marca registrada** — as melhores frases combinam uma afirmação grandiosa com um detalhe absurdo ou contraditório na mesma respiração. Essa tensão entre o sublime e o ridículo é o núcleo da voz
+- **Zero enchimento** — cada palavra justifica sua presença
+- **Só o que está na pesquisa** — todas as afirmações vêm de research-slim.json
 
-## Accessibility — Write for Non-Specialists
+## Acessibilidade — Escreva para Não-Especialistas
 
-The audience is educated but not technical. Every sentence must be clear to someone who doesn't work in tech, finance, or defense.
+O público é educado, mas não técnico. Toda frase deve ser clara para alguém que não trabalha com tecnologia, finanças ou defesa.
 
-### Explain every entity on first mention
+### Explique toda entidade na primeira menção
 
-If a company, organization, or person isn't a household name, add a descriptor clause. Use the `entities` field in the research data to identify actors. Check the `key_facts` for context about what they do.
+Se uma empresa, organização ou pessoa não é amplamente conhecida, adicione uma oração descritiva. Use o campo `entities` nos dados de pesquisa para identificar atores. Consulte `key_facts` para contexto sobre o que fazem.
 
 - ✅ `a FANUC, maior fabricante de robôs industriais do Japão`
 - ✅ `Karen Hao, jornalista de tecnologia do Wall Street Journal`
 - ✅ `o Drift Protocol, plataforma de derivativos na blockchain Solana`
 - ✅ `a Shimizu, construtora japonesa`
-- ❌ `a FANUC colabora com a NVIDIA` (reader doesn't know what FANUC is)
-- ❌ `Karen Hao publicou...` (reader doesn't know who she is)
+- ❌ `a FANUC colabora com a NVIDIA` (leitor não sabe o que é a FANUC)
+- ❌ `Karen Hao publicou...` (leitor não sabe quem ela é)
 
-Names that don't need explanation: OpenAI, Google, Microsoft, Apple, Meta, Amazon, Tesla, Nvidia, Samsung, SpaceX, NASA, Elon Musk, Sam Altman, Trump.
+Nomes que não precisam de explicação: OpenAI, Google, Microsoft, Apple, Meta, Amazon, Tesla, Nvidia, Samsung, SpaceX, NASA, Elon Musk, Sam Altman, Trump.
 
-### Simplify technical terms
+### Simplifique termos técnicos
 
-Never assume the reader knows jargon. Rewrite or add inline context:
+Nunca assuma que o leitor conhece jargão. Reescreva ou adicione contexto inline:
 
-- ✅ `máquinas de litografia ultravioleta extrema (EUV)` on first use, then `EUV`
+- ✅ `máquinas de litografia ultravioleta extrema (EUV)` na primeira menção, depois `EUV`
 - ✅ `um recurso da Solana que permite pré-assinar transações sem prazo de validade`
 - ✅ `certificação de segurança de dados (SOC 2)`
-- ❌ `DRAM 1c`, `HBM4`, `plataforma Rubin` (meaningless to non-specialists)
-- ❌ `durable nonce`, `dual listing`, `misbranding` (English jargon without context)
+- ❌ `DRAM 1c`, `HBM4`, `plataforma Rubin` (sem significado para não-especialistas)
+- ❌ `durable nonce`, `dual listing`, `misbranding` (jargão em inglês sem contexto)
 
-If a technical concept can't be explained in a clause, either simplify to its consequence ("chips de memória mais rápidos") or cut it.
+Se um conceito técnico não cabe em uma oração explicativa, simplifique para a consequência ("chips de memória mais rápidos") ou corte.
 
-### Formatting rules
+### Regras de formatação
 
-- **Currency**: always `US$` — never bare `$`, never `¥`, `€`, `₩`, or "trilhões de wons". Convert foreign currencies to US$ using the research data.
-- **Approximation**: `por volta de`, `cerca de`, `aproximadamente` — never `~`
-- **Abbreviations**: `quarto trimestre` not `Q4`. `primeiro semestre` not `H1`. `ano contra ano` → `em relação ao mesmo período do ano anterior` or just state both numbers.
-- **Outlet names**: `Wall Street Journal` not `WSJ`. `New York Times` not `NYT`. Spell out on first use.
-- **Units**: kilometers, not miles. Celsius, not Fahrenheit. Convert if the source uses imperial.
-- **English words**: use Portuguese equivalents when they exist. `diferença` not `gap`. `delator` not `whistleblower`. `listagem dupla` not `dual listing`.
+- **Moeda**: sempre `US$` — nunca `$` sozinho, nunca `¥`, `€`, `₩` ou "trilhões de wons". Converta moedas estrangeiras para US$ usando os dados de pesquisa.
+- **Aproximação**: `por volta de`, `cerca de`, `aproximadamente` — nunca `~`
+- **Abreviações**: `quarto trimestre`, não `Q4`. `primeiro semestre`, não `H1`. `ano contra ano` → `em relação ao mesmo período do ano anterior` ou simplesmente declare os dois números.
+- **Veículos de imprensa**: `Wall Street Journal`, não `WSJ`. `New York Times`, não `NYT`. Por extenso na primeira menção.
+- **Unidades**: quilômetros, não milhas. Celsius, não Fahrenheit. Converta se a fonte usar sistema imperial.
+- **Palavras em inglês**: use equivalentes em português quando existirem. `diferença`, não `gap`. `delator`, não `whistleblower`. `listagem dupla`, não `dual listing`.
 
-## Link Density & Formatting
+## Densidade de Links e Formatação
 
-- **20-40 inline links per article** — nearly every factual claim links to a source
-- Links go on the most descriptive phrase, not on "aqui" or "isso"
-- Format: `[descriptive phrase](url)` — the linked text should make sense even without clicking
-- Every URL must come from `research-slim.json`. Do not invent or guess URLs.
+- **20-40 links inline por artigo** — praticamente toda afirmação factual tem link para a fonte
+- Links vão na frase mais descritiva, não em "aqui" ou "isso"
+- Formato: `[frase descritiva](url)` — o texto com link deve fazer sentido mesmo sem clicar
+- Toda URL deve vir de `research-slim.json`. Não invente nem adivinhe URLs.
 
-## Word Count
+## Contagem de Palavras
 
-Target: **550-800 words**. When research yields more stories than fit, cut the weakest — stories with less concrete data, less reader impact, or weaker connections to the day's main threads. Don't try to mention everything.
+Meta: **550-800 palavras**. Quando a pesquisa traz mais notícias do que cabem, corte as mais fracas — notícias com menos dados concretos, menos impacto para o leitor ou conexões mais fracas com os fios principais do dia. Não tente mencionar tudo.
 
-## Self-Check Before Saving
+## Verificação Final Antes de Salvar
 
-After writing the article, re-read it once and fix:
+Depois de escrever o artigo, releia uma vez e corrija:
 
-1. **Every company/person has a descriptor on first mention?** Scan each entity name — if a reader wouldn't know who they are, add a clause.
-2. **Any unexplained technical term?** If you'd need a glossary to understand it, rewrite.
-3. **All currency is US$?** No bare $, no foreign currencies without conversion.
-4. **No English jargon?** Read each sentence — any word a Portuguese-speaking non-specialist wouldn't know?
-5. **Every sentence would make sense read aloud to someone with no tech background?**
+1. **Toda empresa/pessoa tem descrição na primeira menção?** Passe por cada nome — se o leitor não saberia quem é, adicione uma oração.
+2. **Algum termo técnico sem explicação?** Se precisaria de um glossário para entender, reescreva.
+3. **Toda moeda está em US$?** Nada de `$` sozinho, nada de moeda estrangeira sem conversão.
+4. **Nenhum jargão em inglês?** Leia cada frase — alguma palavra que um não-especialista lusófono não entenderia?
+5. **Toda frase faria sentido lida em voz alta para alguém sem formação técnica?**
 
-Fix problems in place. Do not leave notes or TODOs.
+Corrija no lugar. Não deixe notas ou TODOs.
 
-## Output Format
+## Formato de Saída
 
-Save to `{day_dir}/pt.md`:
+Salve em `{day_dir}/pt.md`:
 
 ```markdown
 ---
@@ -106,5 +106,5 @@ language: pt-br
 
 # [Tech] - Bem-vindo(a) a [Dia] de [Mês] de [Ano]
 
-[Article body]
+[Corpo do artigo]
 ```
