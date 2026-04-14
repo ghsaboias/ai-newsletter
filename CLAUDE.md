@@ -104,16 +104,12 @@ Saves to `pipeline/output/samples/` and prints all results at the end.
 3. Edit prompts: voice, structure, domain rules
 4. Run: `PIPELINE_TOPIC=<topic> pipeline/draft.sh`
 
-## Publishing
+## vibe-review (prototype)
 
-Drop a new markdown file into `posts/_posts/` with the naming convention `YYYY-MM-DD-title.md`. Push. Auto-deploys.
+Web UI for the draft review loop. Prototype — under active testing, expect rough edges.
 
-Frontmatter:
+Location: `~/tools/vibe-review/` (sibling to `ai-newsletter`; server `cwd`s into this repo so CLAUDE.md, memory, and the `newsletter-review` skill load automatically).
 
-```yaml
----
-layout: post
-date: YYYY-MM-DD
-title: "Welcome to Month Day, Year"
----
-```
+Run: `cd ~/tools/vibe-review && npm start` → http://localhost:4175/review/YYYY-MM-DD.
+
+Backend spawns `claude --print --output-format stream-json --resume <id>` per turn; session id persisted to `pipeline/output/ai/<date>/.review-session`.
