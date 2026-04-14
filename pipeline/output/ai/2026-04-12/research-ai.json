@@ -1,0 +1,365 @@
+{
+  "stories": [
+    {
+      "id": "openai-axios-supply-chain-security-breach",
+      "headline": "OpenAI Discloses North Korean Supply Chain Attack via Compromised Axios Library",
+      "key_facts": [
+        {
+          "fact": "A GitHub Actions workflow used to sign OpenAI's macOS apps downloaded a malicious version of the Axios JavaScript library on March 31, during a ~3-hour window when the package was compromised.",
+          "source_url": "https://www.newsdefused.com/openai-warns-macos-users-to-update-apps-after-supply-chain-security-breach/",
+          "excerpt": "A GitHub Actions workflow, an automated process used in software development, downloaded and executed a malicious version of Axios, OpenAI said."
+        },
+        {
+          "fact": "The compromised workflow had access to certificate and notarisation material used to sign macOS applications including ChatGPT Desktop, Codex, Codex-cli, and Atlas.",
+          "source_url": "https://www.newsdefused.com/openai-warns-macos-users-to-update-apps-after-supply-chain-security-breach/",
+          "excerpt": "That workflow had access to certificate and notarisation material used to sign macOS applications including ChatGPT Desktop, Codex, Codex-cli, and Atlas, the company confirmed."
+        },
+        {
+          "fact": "OpenAI said the signing certificate was likely not successfully extracted by the malicious payload and found no evidence that user data, systems, or IP were compromised.",
+          "source_url": "https://www.newsdefused.com/openai-warns-macos-users-to-update-apps-after-supply-chain-security-breach/",
+          "excerpt": "OpenAI said its analysis concluded the signing certificate present in the workflow was likely not successfully extracted by the malicious payload."
+        },
+        {
+          "fact": "Google's Threat Intelligence Group attributed the Axios npm package compromise to a suspected North Korean threat actor tracked as UNC1069, who hijacked a maintainer's account via AI-enabled social engineering.",
+          "source_url": "https://www.theregister.co.uk/2026/04/11/trivy_axios_supply_chain_attacks/?td=keepreading",
+          "excerpt": "Google's Threat Intelligence Group attributed the attack to a suspected North Korean threat actor it tracks as UNC1069."
+        },
+        {
+          "fact": "Axios, one of npm's most widely used HTTP client libraries with ~100 million weekly downloads, was compromised for about three hours after attackers slipped a remote-access trojan into two releases.",
+          "source_url": "https://www.theregister.co.uk/2026/04/11/trivy_axios_supply_chain_attacks/?td=keepreading",
+          "excerpt": "Axios, an open-source JavaScript library that has about 100 million weekly downloads and runs in 80 percent of cloud and code environments."
+        },
+        {
+          "fact": "OpenAI attributed the root cause to a misconfiguration in its GitHub Actions workflow, which has since been corrected. All macOS users are required to update to the latest app versions.",
+          "source_url": "https://www.newsdefused.com/openai-warns-macos-users-to-update-apps-after-supply-chain-security-breach/",
+          "excerpt": "OpenAI attributed the root cause to a misconfiguration in the GitHub Actions workflow, which it said has since been corrected. As a precautionary measure, the company is updating its security certifications and is requiring all macOS users to update their OpenAI applications."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.newsdefused.com/openai-warns-macos-users-to-update-apps-after-supply-chain-security-breach/",
+          "outlet": "Defused News",
+          "title": "OpenAI warns macOS users to update apps after supply chain security breach",
+          "published_at": "2026-04-11",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.theregister.co.uk/2026/04/11/trivy_axios_supply_chain_attacks/?td=keepreading",
+          "outlet": "The Register",
+          "title": "Two different attackers poisoned popular open source tools — and showed us the future of supply chain compromise",
+          "published_at": "2026-04-11",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology"],
+      "entities": {
+        "organizations": ["OpenAI", "Google Threat Intelligence Group", "Axios"],
+        "people": ["Jason Saayman"],
+        "places": []
+      }
+    },
+    {
+      "id": "linux-kernel-ai-code-guidelines-published",
+      "headline": "Linux Kernel Publishes Official AI Coding Guidelines: Humans Must Own Every Line",
+      "key_facts": [
+        {
+          "fact": "The Linux kernel project published new documentation allowing AI-generated code contributions, provided they comply with existing kernel guidelines, licensing, and attribution requirements.",
+          "source_url": "https://www.xda-developers.com/linux-kernel-now-allows-ai-written-code/",
+          "excerpt": "The document reveals that people can use AI-generated code, as long as it complies with the guidelines for submitting to the Linux kernel, fits within the license Linux uses, and is attributed to the bot correctly."
+        },
+        {
+          "fact": "AI agents are explicitly banned from adding Signed-off-by tags. Only humans can legally certify the Developer Certificate of Origin (DCO), and the submitter takes full responsibility for all AI-generated code.",
+          "source_url": "https://www.xda-developers.com/linux-kernel-now-allows-ai-written-code/",
+          "excerpt": "AI agents MUST NOT add Signed-off-by tags. Only humans can legally certify the Developer Certificate of Origin (DCO). The human submitter is responsible for: Reviewing all AI-generated code, Ensuring compliance with licensing requirements, Adding their own Signed-off-by tag to certify the DCO, Taking full responsibility for the contribution."
+        },
+        {
+          "fact": "A new 'Assisted-by: AGENT_NAME:MODEL_VERSION' attribution tag is required when AI played a meaningful role, creating a disclosure mechanism to track AI-assisted contributions across the kernel.",
+          "source_url": "https://www.neowin.net/news/linux-kernel-allows-ai-assisted-code-as-long-as-you-follow-these-rules/",
+          "excerpt": "Pull requests should use the Assissted-by tag in the following convention: AGENT_NAME:MODEL_VERSION [TOOL1] [TOOL2]."
+        },
+        {
+          "fact": "Linus Torvalds said he doesn't want the documentation to become a 'political battlefield' over AI, noting 'zero point in talking about AI slop' since bad actors who submit garbage AI code won't disclose it anyway.",
+          "source_url": "https://dev.to/adioof/the-linux-kernel-just-published-ai-coding-guidelines-the-rest-of-us-should-pay-attention-4h7d",
+          "excerpt": "His exact take: there's 'zero point in talking about AI slop' in the docs, because bad actors who submit garbage AI code won't disclose it anyway. The guidelines are for good actors."
+        },
+        {
+          "fact": "All AI-assisted code must comply with the kernel's existing GPL-2.0-only licensing, use appropriate SPDX license identifiers, and follow the same processes as human-written code.",
+          "source_url": "https://www.neowin.net/news/linux-kernel-allows-ai-assisted-code-as-long-as-you-follow-these-rules/",
+          "excerpt": "All code must comply with the Linux kernel's existing compliance requirements, such as compatibility with GPL-2.0-only, leverage appropriate SPDX license identifiers, and conform to all the rules outlined in license-rules.rst."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.xda-developers.com/linux-kernel-now-allows-ai-written-code/",
+          "outlet": "XDA Developers",
+          "title": "The Linux kernel now allows AI-written code, but you're on the hook for it",
+          "published_at": "2026-04-12",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.neowin.net/news/linux-kernel-allows-ai-assisted-code-as-long-as-you-follow-these-rules/",
+          "outlet": "Neowin",
+          "title": "Linux kernel allows AI-assisted code, as long as you follow these rules",
+          "published_at": "2026-04-11",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://dev.to/adioof/the-linux-kernel-just-published-ai-coding-guidelines-the-rest-of-us-should-pay-attention-4h7d",
+          "outlet": "DEV Community",
+          "title": "The Linux Kernel Just Published AI Coding Guidelines. The Rest of Us Should Pay Attention.",
+          "published_at": "2026-04-11",
+          "image_url": "",
+          "type": "blog_post"
+        }
+      ],
+      "category": ["technology"],
+      "entities": {
+        "organizations": ["Linux Kernel Organization", "Linux Foundation"],
+        "people": ["Linus Torvalds"],
+        "places": []
+      }
+    },
+    {
+      "id": "japan-approves-4b-rapidus-chip-subsidies",
+      "headline": "Japan Approves $4B More for Rapidus, Bringing Total State AI Chip Backing to $16.3B",
+      "key_facts": [
+        {
+          "fact": "Japan's METI approved an additional ¥631.5 billion (~$4 billion) in subsidies for Rapidus on April 11, bringing cumulative government R&D support to ¥2.354 trillion (~$14.8 billion).",
+          "source_url": "https://manufacturing.economictimes.indiatimes.com/news/hi-tech/japan-approves-additional-4-billion-for-chipmaker-rapidus/130190046",
+          "excerpt": "Japan's industry ministry said on Saturday it has approved an additional 631.5 billion yen ($3.96 billion) to accelerate research and development at chipmaker Rapidus."
+        },
+        {
+          "fact": "Total state investment and fees in Rapidus will reach ¥2.6 trillion ($16.3 billion) by the end of the fiscal year ending March 2027.",
+          "source_url": "https://finance.biggo.com/news/iogle50BQ45Y7dX6lwpB",
+          "excerpt": "The new funds will be used to refine prototypes and strengthen development systems for mass production of 2-nanometer semiconductors, targeted for the latter half of fiscal year 2027."
+        },
+        {
+          "fact": "Rapidus is targeting mass production of 2-nanometer semiconductors in the latter half of fiscal year 2027, aiming to reduce Japan's dependence on TSMC.",
+          "source_url": "https://manufacturing.economictimes.indiatimes.com/news/hi-tech/japan-approves-additional-4-billion-for-chipmaker-rapidus/130190046",
+          "excerpt": "Rapidus is working on the development of next-generation logic semiconductors at the 2-nanometre scale and plans to start mass production in the fiscal year 2027."
+        },
+        {
+          "fact": "METI's subordinate organization NEDO also decided to support semiconductor design-related projects by Fujitsu and IBM Japan alongside the Rapidus funding.",
+          "source_url": "https://manufacturing.economictimes.indiatimes.com/news/hi-tech/japan-approves-additional-4-billion-for-chipmaker-rapidus/130190046",
+          "excerpt": "The ministry also said that NEDO, its subordinate organisation, the New Energy and Industrial Technology Development Organization, has decided to support semiconductor design-related projects by Fujitsu and IBM Japan."
+        },
+        {
+          "fact": "Rapidus opened a newly built semiconductor analysis center and R&D base in Chitose, Hokkaido on the same day, with METI Minister Ryosei Akazawa attending and pledging continued support.",
+          "source_url": "https://finance.biggo.com/news/iogle50BQ45Y7dX6lwpB",
+          "excerpt": "On the same day, Rapidus held an opening ceremony for a newly built semiconductor analysis center and R&D base adjacent to its own factory in Chitose City, Hokkaido. Attending the ceremony, METI Minister Ryosei Akazawa stated, 'We will spare no necessary support for the success of the plan.'"
+        },
+        {
+          "fact": "Rapidus plans an IPO around fiscal year 2031 and aims to raise approximately ¥3 trillion in private funding, partly through government-backed loan guarantees.",
+          "source_url": "https://finance.biggo.com/news/iogle50BQ45Y7dX6lwpB",
+          "excerpt": "The company, which plans to conduct an IPO around fiscal year 2031, aims to raise approximately 3 trillion yen in private funding, partly through government-backed loan guarantees."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://manufacturing.economictimes.indiatimes.com/news/hi-tech/japan-approves-additional-4-billion-for-chipmaker-rapidus/130190046",
+          "outlet": "ET Manufacturing",
+          "title": "Japan approves additional $4 billion for chipmaker Rapidus",
+          "published_at": "2026-04-11",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://finance.biggo.com/news/iogle50BQ45Y7dX6lwpB",
+          "outlet": "BigGo Finance",
+          "title": "Japan Approves Over ¥630 Billion in Additional Support for Rapidus to Mass-Produce Domestic 2nm Semiconductors",
+          "published_at": "2026-04-11",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology", "economy"],
+      "entities": {
+        "organizations": ["Rapidus", "METI", "NEDO", "Fujitsu", "IBM Japan", "TSMC"],
+        "people": ["Ryosei Akazawa"],
+        "places": ["Japan", "Chitose", "Hokkaido"]
+      }
+    },
+    {
+      "id": "openai-accuses-musk-legal-ambush-trial",
+      "headline": "OpenAI Accuses Musk of 'Legal Ambush' as $100B+ Trial Set for April 27",
+      "key_facts": [
+        {
+          "fact": "OpenAI filed a court response on April 11 describing Elon Musk's recent lawsuit amendments as a 'legal ambush' that is 'legally improper and factually unsupported.'",
+          "source_url": "https://news.lavx.hu/article/openai-accuses-elon-musk-of-legal-ambush-in-revised-lawsuit",
+          "excerpt": "OpenAI has filed a court response to Elon Musk's amended lawsuit, describing the revisions as a 'legal ambush' that is 'legally improper and factually unsupported.'"
+        },
+        {
+          "fact": "Musk shifted his stance to ask that any financial award be returned directly to OpenAI rather than to himself, after previously seeking $79–134 billion in personal damages.",
+          "source_url": "https://www.timesnownews.com/technology-science/how-elon-musks-legal-shift-in-openai-case-is-confusing-article-154053912",
+          "excerpt": "Previously, Musk urged the court that he wanted to seek between $79 billion and $134 billion as damages. However, Musk has shifted his stance. He is now asking the court that any financial award should be directly returned to OpenAI, and not to him."
+        },
+        {
+          "fact": "Musk expanded his lawsuit to explicitly target Microsoft, alleging wrongful gains from OpenAI's shift toward a for-profit model, and proposed structural changes including leadership changes at OpenAI.",
+          "source_url": "https://www.timesnownews.com/technology-science/how-elon-musks-legal-shift-in-openai-case-is-confusing-article-154053912",
+          "excerpt": "The legal team of Musk proposed major changes in the financial decisions of OpenAI and requested structural changes, including the top leadership changes at the San Francisco-based company."
+        },
+        {
+          "fact": "OpenAI argued the amendments introduce 'entirely new theories of liability' and prejudice OpenAI's ability to prepare a defense, requiring new proof and witnesses.",
+          "source_url": "https://news.lavx.hu/article/openai-accuses-elon-musk-of-legal-ambush-in-revised-lawsuit",
+          "excerpt": "'The amendments represent a fundamental departure from the original claims and introduce entirely new theories of liability,' OpenAI's legal team stated in their court filing."
+        },
+        {
+          "fact": "The trial between OpenAI and Musk is scheduled for April 27, with damages potentially exceeding $100 billion, making it one of the largest trials in US history.",
+          "source_url": "https://opentools.ai/news/openai-fires-back-at-musk-amidst-looming-dollar100-billion-trial",
+          "excerpt": "These proceedings are set against the backdrop of a promising yet fiercely competitive AI industry, where Musk has accused OpenAI of capitalizing on his foundational contributions. Demands for reparations exceeding $100 billion."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://news.lavx.hu/article/openai-accuses-elon-musk-of-legal-ambush-in-revised-lawsuit",
+          "outlet": "LavX News",
+          "title": "OpenAI Accuses Elon Musk of 'Legal Ambush' in Revised Lawsuit",
+          "published_at": "2026-04-11",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.timesnownews.com/technology-science/how-elon-musks-legal-shift-in-openai-case-is-confusing-article-154053912",
+          "outlet": "Times Now",
+          "title": "How Elon Musk's Legal Shift In OpenAI Case Is 'Confusing'",
+          "published_at": "2026-04-11",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://opentools.ai/news/openai-fires-back-at-musk-amidst-looming-dollar100-billion-trial",
+          "outlet": "OpenTools AI",
+          "title": "OpenAI Fires Back at Musk Amidst Looming $100 Billion Trial!",
+          "published_at": "2026-04-11",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology", "business"],
+      "entities": {
+        "organizations": ["OpenAI", "xAI", "Microsoft"],
+        "people": ["Elon Musk", "Sam Altman"],
+        "places": []
+      }
+    },
+    {
+      "id": "central-banks-coordinate-mythos-cyber-response",
+      "headline": "Bank of Canada and Bank of England Mobilize on AI Cyber Risks After Mythos",
+      "key_facts": [
+        {
+          "fact": "The Bank of Canada met with major financial firms on Friday (April 11) to discuss cybersecurity implications of Anthropic's Mythos model, and the Bank of England is preparing its own meeting with banking and insurance executives.",
+          "source_url": "https://www.iclarified.com/100514/anthropics-mythos-ai-triggers-urgent-washington-warning-to-bank-ceos",
+          "excerpt": "Bloomberg reports that the Bank of Canada met Friday with major financial firms to discuss the cybersecurity implications of Mythos, and the Bank of England is preparing its own meeting with banking and insurance executives."
+        },
+        {
+          "fact": "US Treasury Secretary Scott Bessent and Federal Reserve Chair Jerome Powell had convened an emergency meeting earlier in the week with CEOs of Goldman Sachs, Morgan Stanley, Citigroup, Bank of America, and Wells Fargo at Treasury headquarters.",
+          "source_url": "https://www.newsdefused.com/treasury-and-fed-summon-bank-ceos-for-emergency-meeting-over-anthropics-new-ai-model/",
+          "excerpt": "Jane Fraser of Citigroup, Brian Moynihan of Bank of America, Ted Pick of Morgan Stanley, Charlie Scharf of Wells Fargo, and David Solomon of Goldman Sachs all attended."
+        },
+        {
+          "fact": "The meetings were triggered by Anthropic's Claude Mythos Preview, which the company says can identify and exploit vulnerabilities across every major operating system and browser, and autonomously discovered a 27-year-old flaw in OpenBSD.",
+          "source_url": "https://www.iclarified.com/100514/anthropics-mythos-ai-triggers-urgent-washington-warning-to-bank-ceos",
+          "excerpt": "The concerns center on Mythos, which Anthropic says is capable of identifying and exploiting vulnerabilities across every major operating system and web browser when directed by a user."
+        },
+        {
+          "fact": "Anthropic launched Mythos Preview on April 7 in deliberately limited capacity via Project Glasswing, with partners including AWS, Apple, Google, Microsoft, NVIDIA, Cisco, CrowdStrike, JPMorganChase, and Palo Alto Networks.",
+          "source_url": "https://www.newsdefused.com/treasury-and-fed-summon-bank-ceos-for-emergency-meeting-over-anthropics-new-ai-model/",
+          "excerpt": "The company said it would extend access to around 40 organisations that build or deploy critical software infrastructure, alongside a group of major technology and financial partners, including JPMorgan Chase, Amazon, Apple, Google, and Nvidia."
+        },
+        {
+          "fact": "Anthropic committed up to $100 million in Mythos usage credits to Project Glasswing partners. The model is priced at $25/$125 per million input/output tokens for participants.",
+          "source_url": "https://www.newsdefused.com/treasury-and-fed-summon-bank-ceos-for-emergency-meeting-over-anthropics-new-ai-model/",
+          "excerpt": "Anthropic committed up to $100 million in Mythos usage credits to partners in the programme."
+        },
+        {
+          "fact": "Powell's participation signaled that AI-driven cyber threats are being treated as a systemic risk to the financial system, not a narrow industry concern, according to people familiar with the discussions.",
+          "source_url": "https://bloomberglinea.com.br/2026/04/11/novo-modelo-de-ia-da-anthropic-acende-alerta-de-risco-cibernetico-entre-bancos-dos-eua/",
+          "excerpt": "A participação de Powell indicou que a preocupação é de risco sistêmico, e não está ligada a embates anteriores entre o governo Trump e a Anthropic."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.iclarified.com/100514/anthropics-mythos-ai-triggers-urgent-washington-warning-to-bank-ceos",
+          "outlet": "iClarified",
+          "title": "Anthropic's 'Mythos' AI Triggers Urgent Washington Warning to Bank CEOs",
+          "published_at": "2026-04-11",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.newsdefused.com/treasury-and-fed-summon-bank-ceos-for-emergency-meeting-over-anthropics-new-ai-model/",
+          "outlet": "Defused News",
+          "title": "Treasury and Fed summon bank CEOs for emergency meeting over Anthropic's new AI model",
+          "published_at": "2026-04-11",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://bloomberglinea.com.br/2026/04/11/novo-modelo-de-ia-da-anthropic-acende-alerta-de-risco-cibernetico-entre-bancos-dos-eua/",
+          "outlet": "Bloomberg Línea",
+          "title": "Novo modelo de IA da Anthropic acende alerta de risco cibernético entre bancos dos EUA",
+          "published_at": "2026-04-11",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology", "finance"],
+      "entities": {
+        "organizations": ["Bank of Canada", "Bank of England", "Federal Reserve", "US Treasury", "Anthropic", "Goldman Sachs", "Morgan Stanley", "Citigroup", "Bank of America", "Wells Fargo", "JPMorgan Chase"],
+        "people": ["Scott Bessent", "Jerome Powell", "Jane Fraser", "Brian Moynihan", "Ted Pick", "Charlie Scharf", "David Solomon"],
+        "places": ["Washington", "Canada", "United Kingdom"]
+      }
+    },
+    {
+      "id": "anthropic-claude-for-word-public-beta",
+      "headline": "Anthropic Launches Claude for Word Beta With AI-Powered Tracked Changes",
+      "key_facts": [
+        {
+          "fact": "Anthropic launched Claude for Word in public beta, bringing AI-powered editing directly into Microsoft Word as a native sidebar add-in for Team and Enterprise users on Mac and Windows.",
+          "source_url": "https://cybersecuritynews.com/claude-beta-for-word/",
+          "excerpt": "Anthropic has officially launched Claude for Word in public beta, bringing its AI assistant directly into Microsoft Word as a native sidebar add-in for Team and Enterprise users on both Mac and Windows platforms."
+        },
+        {
+          "fact": "All AI-generated edits surface as Microsoft Word's tracked changes, enabling users to accept or reject each suggestion as they would a human collaborator's markup.",
+          "source_url": "https://cybersecuritynews.com/claude-beta-for-word/",
+          "excerpt": "The integration preserves native document formatting and surfaces all AI-generated edits as Microsoft Word's tracked changes, keeping the revision history intact and fully reviewable by human editors."
+        },
+        {
+          "fact": "Claude for Word shares context across Anthropic's Office add-in family — a single conversation thread can span Word, Excel, and PowerPoint documents simultaneously.",
+          "source_url": "https://cybersecuritynews.com/claude-beta-for-word/",
+          "excerpt": "Claude for Word connects directly with Claude for Excel and Claude for PowerPoint, meaning a single conversation thread can span all three open documents simultaneously."
+        },
+        {
+          "fact": "The add-in can interpret existing Word comment threads and deliver revisions that directly address each note, returning an updated document with tracked changes.",
+          "source_url": "https://cybersecuritynews.com/claude-beta-for-word/",
+          "excerpt": "Claude can also interpret existing comment threads and deliver revisions that directly address each note, returning an updated document with tracked changes showing every edit made."
+        },
+        {
+          "fact": "The launch positions Anthropic in direct competition with Microsoft's own 365 Copilot, though early users noted Claude's smoother document-handling and more coherent multi-app context flow.",
+          "source_url": "https://cybersecuritynews.com/claude-beta-for-word/",
+          "excerpt": "Microsoft's own 365 Copilot already offers deep Word integration, but early users of Claude for Word have noted its smoother document-handling and more coherent multi-app context flow as differentiators."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://cybersecuritynews.com/claude-beta-for-word/",
+          "outlet": "Cyber Security News",
+          "title": "Anthropic Launches Claude Beta for Word, Bringing AI-Powered Editing to Microsoft Docs",
+          "published_at": "2026-04-11",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology", "business"],
+      "entities": {
+        "organizations": ["Anthropic", "Microsoft"],
+        "people": [],
+        "places": []
+      }
+    }
+  ]
+}
