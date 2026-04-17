@@ -14,8 +14,9 @@ Uma frase que apresenta e resume o dia. Máximo ~180 caracteres — serve també
 
 ### Corpo
 5-8 parágrafos temáticos. Cada parágrafo:
-1. Agrupa notícias relacionadas (geralmente 2-4) com **links inline nas frases-chave**
-2. Costura as notícias em um arco narrativo
+1. Começa com um rótulo curto em negrito (1-3 palavras) + ponto, inline no corpo do parágrafo. Exemplos usados em edições recentes: `**Modelos & agentes.**`, `**Big techs.**`, `**Semicondutores.**`, `**Energia & data centers.**`, `**Geopolítica.**`, `**Biotech.**`, `**M&A biotech.**`. O rótulo emerge do agrupamento do dia — se a pesquisa puxa pra outro tema, nomeie de acordo; não force encaixe nos exemplos.
+2. Agrupa notícias relacionadas (geralmente 2-4) com **links inline nas frases-chave**
+3. Costura as notícias em um arco narrativo
 
 As notícias dentro de um parágrafo devem se relacionar entre si. Priorize agrupamentos que a pesquisa sustenta naturalmente — tipicamente IA/infraestrutura, hardware/semicondutores, geopolítica e biotecnologia. Se um domínio não tem notícias na pesquisa, pule. Não force cobertura.
 

@@ -90,7 +90,7 @@ S=$(date +%s)
 "$DIR/rewrite-links.sh" "$DATE"
 step_timer "rewrite-links" "$S"
 
-# --- Step 3.5: Inject byline ---
+# --- Step 3.5: Inject byline + recomendações section ---
 BYLINE="${TOPIC_BYLINE:-Por: Guilherme Saboia e Vinicius Gushiken}"
 FINAL_MD="$DAY_DIR/final.md"
 if [[ -f "$FINAL_MD" ]] && ! grep -qF "$BYLINE" "$FINAL_MD"; then
@@ -102,6 +102,11 @@ content = re.sub(r'(# .+\n\n.+\n)', r'\1\n$BYLINE\n', content, count=1)
 open('$FINAL_MD', 'w').write(content)
 "
   echo "  Byline injected into final.md"
+fi
+
+if [[ -f "$FINAL_MD" ]] && ! grep -qF "Recomendações de hoje" "$FINAL_MD"; then
+  printf '\n**Recomendações de hoje:**\n' >> "$FINAL_MD"
+  echo "  Recomendações section appended to final.md"
 fi
 
 # --- Step 4: Substack ---

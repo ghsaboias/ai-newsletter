@@ -66,6 +66,11 @@ S=$(date +%s)
 "$DIR/repetition-check.sh" "$DATE"
 step_timer "repetition-check" "$S"
 
+# --- Step 4: Draft rewrite (apply repetition findings surgically) ---
+S=$(date +%s)
+"$DIR/draft-rewrite.sh" "$DATE"
+step_timer "draft-rewrite" "$S"
+
 # --- Summary ---
 PIPELINE_END=$(date +%s)
 TOTAL=$((PIPELINE_END - PIPELINE_START))
@@ -82,5 +87,13 @@ if [[ -f "$DAY_DIR/repetition.json" ]]; then
   echo "  Repetition issues: $REP_COUNT"
 fi
 
+# Show rewrite summary
+if [[ -f "$DAY_DIR/rewrite-notes.json" ]]; then
+  RW_APPLIED=$(jq '[.findings[] | select(.action == "applied")] | length' "$DAY_DIR/rewrite-notes.json" 2>/dev/null || echo "?")
+  RW_SKIPPED=$(jq '[.findings[] | select(.action == "skipped")] | length' "$DAY_DIR/rewrite-notes.json" 2>/dev/null || echo "?")
+  RW_FLAGGED=$(jq '[.findings[] | select(.action == "flagged")] | length' "$DAY_DIR/rewrite-notes.json" 2>/dev/null || echo "?")
+  echo "  Rewrites: $RW_APPLIED applied, $RW_SKIPPED skipped, $RW_FLAGGED flagged"
+fi
+
 echo ""
-echo "  Review repetition.json, fix pt.md, then run finalize.sh"
+echo "  Review rewrite-notes.json, diff pt-original.md vs pt.md, then run finalize.sh"
