@@ -25,7 +25,14 @@ As notícias dentro de um parágrafo devem se relacionar entre si. Priorize agru
 - **Convicção** — a aceleração é tratada como fato consumado, não como aspiração
 - **Denso e específico** — números exatos: percentuais, valores em dólar, prazos, classificações
 - **Agrupamento temático** — cada parágrafo reúne notícias relacionadas em ordem de relevância. Continuidade entre edições é implícita: destaque o ângulo novo; leitor recorrente reconhece o arco.
+- **Aberturas concretas** — abra cada frase pelo ator concreto ou por um marco temporal/causal específico. Ex: "A Microsoft fechou...", "Em Bruxelas, a Comissão...", "Depois da suspensão no Reino Unido...".
 - **Só o que está na pesquisa** — todas as afirmações vêm de research-slim.json
+
+**Exemplos de frases que funcionam** (de edições finalizadas):
+
+- "A TSMC fechou o primeiro trimestre com lucro recorde de cerca de US$17,8 bilhões, 58% acima do mesmo trimestre de 2025, e margem bruta de 66,2%."
+- "A Eli Lilly, farmacêutica americana líder em remédios para diabetes e obesidade, fechou a compra da biotech CrossBridge Bio, de Houston, por até US$300 milhões."
+- "As ações da Intel subiram 53% em cerca de duas semanas, a maior alta da história da empresa, acrescentando mais de US$100 bilhões ao valor de mercado."
 
 ## Acessibilidade — Escreva para Não-Especialistas
 
@@ -64,6 +71,7 @@ Se um conceito técnico não cabe em uma oração explicativa, simplifique para 
 - **Veículos de imprensa**: `Wall Street Journal`, não `WSJ`. `New York Times`, não `NYT`. Por extenso na primeira menção.
 - **Unidades**: quilômetros, não milhas. Celsius, não Fahrenheit. Converta se a fonte usar sistema imperial.
 - **Palavras em inglês**: use equivalentes em português quando existirem. `diferença`, não `gap`. `delator`, não `whistleblower`. `listagem dupla`, não `dual listing`.
+- **Pontuação**: prefira ponto, dois-pontos e vírgula. Em dash (—) apenas em apostos onde vírgulas ambiguariam.
 
 ## Densidade de Links e Formatação
 

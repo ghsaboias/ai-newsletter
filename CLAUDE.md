@@ -28,8 +28,8 @@ All scripts default to `--topic ai`. Override with `PIPELINE_TOPIC=ma` env var o
 Two-phase pipeline. Draft generates and quality-checks. You review with Claude and fix pt.md. Finalize handles mechanical post-processing.
 
 ```
-pipeline/draft.sh [YYYY-MM-DD]                 # Phase 1: Research → Generate → Repetition check
-                                                #   (review repetition.json, fix pt.md)
+pipeline/draft.sh [YYYY-MM-DD]                 # Phase 1: Research → Generate → Repetition check → Draft rewrite
+                                                #   (review pt.md paragraph by paragraph)
 pipeline/finalize.sh YYYY-MM-DD [--execute]    # Phase 2: Extract → Ingest → Rewrite links → Substack
 ```
 
@@ -40,8 +40,9 @@ Runs four sequential steps, each a separate Claude process:
 1. `research.sh` — web research → `research.json`
 2. `generate.sh` — PT-BR article from research data → `pt.md`
 3. `repetition-check.sh` — compare against previous 3 editions → `repetition.json`
+4. `draft-rewrite.sh` — apply repetition findings surgically → `pt.md` (overwritten), `pt-original.md` (backup), `rewrite-notes.json`
 
-After draft completes, open a Claude session to review repetition.json and fix pt.md. **Read memory files first**: `~/.claude/projects/-Users-guilherme-ai-newsletter/memory/`
+After draft completes, open a Claude session to review pt.md. Flow: Claude presents the subtitle for Gui's review → Gui comments → when Gui says move on, Claude presents paragraph 1 → and so on through the article. One block at a time, Gui drives the pace. **Read memory files first**: `~/.claude/projects/-Users-guilherme-ai-newsletter/memory/`
 
 ### Phase 2: finalize.sh
 
