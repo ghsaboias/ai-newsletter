@@ -1,0 +1,34 @@
+---
+date: 2026-04-24
+url:
+title: "[Tech] - Bem-vindo(a) a 24 de abril de 2026"
+wordcount: 730
+generated: true
+language: pt-br
+---
+
+# [Tech] - Bem-vindo(a) a 24 de abril de 2026
+
+DeepSeek V4 e GPT-5.5 lançados no mesmo dia; EUA acusam China (novamente) de "destilação industrial" de modelos; Meta corta 8 mil empregos e planeja US$135bi em IA.
+
+Por: Guilherme Saboia e Vinicius Gushiken
+
+**Modelos.** A chinesa DeepSeek lançou o [V4-Pro e o V4-Flash](https://dailyjournal.news/news/2026-04-24/deepseek-lanca-v4-pro-e-v4-flash-maiores-modelos-de-codigo-aberto-ate-hoje), os maiores modelos de código aberto até hoje. O V4-Pro tem 1,6 trilhão de parâmetros no total, dos quais 49 bilhões são ativados por vez, e janela de contexto de 1 milhão de tokens; o V4-Flash, com 284 bilhões (13 bilhões ativos), [custa US$0,14 por milhão de tokens de input](https://dailyjournal.news/news/2026-04-24/deepseek-lanca-v4-pro-e-v4-flash-maiores-modelos-de-codigo-aberto-ate-hoje) — o mais barato dentre os modelos pequenos na fronteira. A Huawei confirmou que seu supercomputador SuperPod, baseado em chips Ascend 950, [já roda o V4](https://dailyjournal.news/news/2026-04-24/deepseek-lanca-v4-pro-e-v4-flash-maiores-modelos-de-codigo-aberto-ate-hoje). A DeepSeek admite estar de três a seis meses atrás dos melhores modelos fechados, mas lidera em código e matemática entre os abertos. Alibaba, ByteDance e Tencent compraram centenas de milhares dos chips para oferecer os modelos via nuvem.
+
+No mesmo dia, a OpenAI lançou o [GPT-5.5](https://dailyjournal.news/news/2026-04-24/openai-lanca-gpt-55-com-827-no-terminal-bench-mas-fica-atras-do-opus-47-em-bugs), que alcançou 82,7% no Terminal-Bench 2.0, embora em bugs reais do GitHub o resultado ainda fique aquém: 58,6% contra [64,3% do Opus 4.7 da Anthropic](https://dailyjournal.news/news/2026-04-24/openai-lanca-gpt-55-com-827-no-terminal-bench-mas-fica-atras-do-opus-47-em-bugs).
+
+**Geopolítica.** A Casa Branca [acusou a China de conduzir "destilação em escala industrial"](https://dailyjournal.news/news/2026-04-24/eua-acusam-china-de-destilacao-industrial-de-modelos-pequim-ordena-rejeicao-de-c) de modelos americanos de IA — usar as respostas de um modelo avançado para treinar outro mais barato — por meio de dezenas de milhares de contas falsas. Na China, [reguladores ordenaram](https://dailyjournal.news/news/2026-04-24/eua-acusam-china-de-destilacao-industrial-de-modelos-pequim-ordena-rejeicao-de-c) que empresas de tecnologia, de ByteDance a startups de IA, rejeitem capital americano sem aprovação do Estado, reagindo à compra da startup chinesa Manus pela Meta. A escalada dupla acontece semanas antes de uma visita planejada de Trump a Pequim.
+
+**Código.** A Cursor, editor de código com IA negociada pela SpaceX por até US$60 bilhões, [atingiu US$2,7 bilhões em receita anualizada](https://dailyjournal.news/news/2026-04-24/cursor-atinge-us27-bi-em-receita-anualizada-e-ve-margens-brutas-ficarem-positiva) em março — 14 vezes mais que um ano atrás — e viu suas margens brutas ficarem positivas pela primeira vez. A Cognition AI, criadora do Devin, agente autônomo de programação usado por Dell e Cisco, [negocia captação a uma avaliação de US$25 bilhões](https://dailyjournal.news/news/2026-04-24/cognition-ai-criadora-do-devin-negocia-captacao-a-us25-bilhoes-de-avaliacao), mais que o dobro dos US$10,2 bilhões de setembro de 2025. A Anthropic, por sua vez, [publicou análise detalhada](https://dailyjournal.news/news/2026-04-24/anthropic-publica-post-mortem-de-tres-bugs-que-degradaram-o-claude-code) de três bugs que degradaram o Claude Code nas últimas semanas — incluindo uma instrução interna que limitava respostas a 25 palavras — e corrigiu todos na versão 2.1.116.
+
+**Mercado.** A Cohere, startup canadense que vende modelos de IA para empresas, [fechou acordo para se unir à alemã Aleph Alpha](https://dailyjournal.news/news/2026-04-24/cohere-fecha-acordo-para-adquirir-alema-aleph-alpha-em-transacao-de-us20-bilhoes), num acordo que formará uma entidade avaliada em US$20 bilhões. Os clientes-alvo são governos e empresas europeias que buscam alternativas às gigantes americanas de tecnologia: o Grupo Schwarz, dono da rede Lidl, investirá US$600 milhões e a Alemanha será cliente-âncora.
+
+**Infraestrutura.** A Meta [vai demitir cerca de 8 mil funcionários](https://dailyjournal.news/news/2026-04-24/meta-demite-8-mil-funcionarios-e-projeta-ate-us135-bilhoes-em-investimento-em-ia) — 10% da força de trabalho — em 20 de maio e congelar 6 mil vagas abertas; novos cortes estão previstos para o segundo semestre. A empresa projeta investimento de [US$115 a US$135 bilhões em infraestrutura de IA](https://dailyjournal.news/news/2026-04-24/meta-demite-8-mil-funcionarios-e-projeta-ate-us135-bilhoes-em-investimento-em-ia) neste ano, 73% acima de 2025. Para alimentar esses data centers, a empresa fechou acordo com a TerraPower — fundada por Bill Gates — que ontem [iniciou a construção](https://dailyjournal.news/news/2026-04-24/terrapower-inicia-construcao-da-primeira-usina-nuclear-de-proxima-geracao-dos-eu) da primeira usina nuclear de próxima geração dos EUA, um reator de sódio de 345 megawatts em Wyoming.
+
+**Semicondutores.** A Intel [fechou o primeiro trimestre com receita de US$13,58 bilhões](https://dailyjournal.news/news/2026-04-24/intel-fecha-1-tri-com-receita-9-acima-das-estimativas-puxada-por-data-centers-e), 9% acima da estimativa dos analistas, puxada pela divisão de data centers e IA, que cresceu 22%. O Google assinou contrato multianual para processadores Xeon, voltados a rodar modelos de IA. As ações subiram 15% no pós-mercado e acumulam alta de mais de 80% no ano.
+
+Na China, a Zhongji Innolight, principal fabricante de módulos ópticos que conectam servidores em data centers de IA, [ultrapassou 1 trilhão de yuans em valor de mercado](https://dailyjournal.news/news/2026-04-24/zhongji-innolight-ultrapassa-1-trilhao-de-yuans-em-valor-de-mercado-com-demanda) (cerca de US$146 bilhões) — a ação multiplicou por 12 em um ano. Corretoras estimam que a empresa fornece 80% dos módulos ópticos de alta velocidade comprados pela Nvidia.
+
+**Biotech.** O FDA aprovou o [Otarmeni, da Regeneron](https://dailyjournal.news/news/2026-04-24/fda-aprova-primeira-terapia-genica-para-surdez-hereditaria-regeneron-vai-oferece), farmacêutica americana: é a primeira terapia gênica para surdez hereditária e a primeira a restaurar uma função sensorial a níveis normais. No ensaio clínico, 80% dos pacientes pediátricos atingiram a meta principal de audição em 24 semanas; 42% alcançaram audição normal. A condição é ultrarara — afeta de 20 a 50 recém-nascidos por ano nos EUA — e a Regeneron [vai oferecer o tratamento gratuitamente](https://dailyjournal.news/news/2026-04-24/fda-aprova-primeira-terapia-genica-para-surdez-hereditaria-regeneron-vai-oferece) no país.
+
+**Recomendações de hoje:**

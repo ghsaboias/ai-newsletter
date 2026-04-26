@@ -1,0 +1,34 @@
+---
+date: 2026-04-26
+url:
+title: "[Tech] - Bem-vindo(a) a 26 de abril de 2026"
+wordcount: 725
+generated: true
+language: pt-br
+---
+
+# [Tech] - Bem-vindo(a) a 26 de abril de 2026
+
+Musk abandona acusações de fraude contra a OpenAI às vésperas do julgamento; Google detém um quarto dos datacenters de IA do mundo; Salão do Automóvel de Pequim abre com destaque para humanoides.
+
+Por: Guilherme Saboia e Vinicius Gushiken
+
+**Semicondutores.** A holandesa ASML [vai fabricar pelo menos 60 máquinas de litografia EUV em 2026](https://dailyjournal.news/news/2026-04-26/asml-vai-produzir-ao-menos-60-maquinas-euv-em-2026-alta-de-36-sobre-2025) — 36% a mais que em 2025 — e prevê até 80 em 2027. Cada uma usa luz ultravioleta extrema para gravar os circuitos dos chips mais avançados e custa mais de US$350 milhões. [Metade dos pedidos no primeiro trimestre](https://dailyjournal.news/news/2026-04-26/asml-vai-produzir-ao-menos-60-maquinas-euv-em-2026-alta-de-36-sobre-2025) veio de fabricantes de memória, com a SK Hynix sozinha reservando 20 máquinas para a próxima geração de memória de alta banda para processadores de IA.
+
+A divisão de dispositivos móveis da Samsung [pode registrar o primeiro prejuízo anual da história](https://dailyjournal.news/news/2026-04-26/divisao-mobile-da-samsung-pode-ter-primeiro-prejuizo-anual-da-historia), com a memória já respondendo por mais de um terço do custo de um aparelho básico. A título de comparação: um rack de servidores com 36 processadores Vera, da Nvidia, consome memória equivalente à de 4.600 Galaxy S26 Ultra. Na outra ponta, a divisão de semicondutores da Samsung lucrou cerca de US$38 bilhões no trimestre, contra cerca de US$5,4 bilhões no mesmo período de 2025.
+
+**Datacenters.** O Google detém cerca de um quarto de toda a capacidade de computação de IA do mundo — o maior estoque individual do planeta —, segundo a [Epoch AI](https://dailyjournal.news/news/2026-04-26/google-detem-cerca-de-25-da-computacao-de-ia-do-mundo-diz-epoch-ai), instituto de pesquisa que rastreia recursos computacionais globais. Três quartos dessa capacidade vêm de TPUs, os processadores de IA do Google, não de chips da Nvidia. No total, cinco empresas — Amazon, Google, Meta, Microsoft e Oracle — [controlam 71% da computação global de IA](https://dailyjournal.news/news/2026-04-26/google-detem-cerca-de-25-da-computacao-de-ia-do-mundo-diz-epoch-ai), comparado com 63% no início de 2024; laboratórios como OpenAI e Anthropic dependem quase inteiramente delas para treinar e rodar seus modelos.
+
+Em Wisconsin, reguladores [aprovaram por unanimidade](https://dailyjournal.news/news/2026-04-26/wisconsin-obriga-data-centers-a-pagar-100-do-custo-de-novas-usinas-de-energia) uma tarifa que obriga data centers a pagar 100% do custo de novas usinas a gás, rejeitando um plano que repassaria a conta a consumidores residenciais. A decisão afeta projetos da Microsoft (900 megawatts) e de OpenAI e Oracle (até 3,5 gigawatts, num investimento de US$15 bilhões).
+
+**IA.** A Thinking Machines Lab, fundada pela ex-CTO da OpenAI Mira Murati, [chegou a cerca de 140 funcionários](https://dailyjournal.news/news/2026-04-26/thinking-machines-lab-de-mira-murati-chega-a-140-funcionarios-maioria-vinda-da-m) — e a maioria vem da Meta, segundo análise de perfis no LinkedIn. A startup levantou US$2 bilhões em rodada inicial a US$12 bilhões de avaliação, num momento em que a Meta elimina 8 mil posições e oferece até US$1 bilhão para reter pesquisadores-chave de IA.
+
+Às vésperas do julgamento que começa amanhã em Oakland, Elon Musk [retirou as acusações de fraude](https://dailyjournal.news/news/2026-04-26/musk-retira-acusacoes-de-fraude-contra-openai-as-vesperas-do-julgamento) contra a OpenAI. Das 26 alegações originais, restam duas: enriquecimento indevido e violação do compromisso filantrópico original. Musk pede até US$134 bilhões em danos e diz que destinará o valor ao braço filantrópico da empresa se vencer.
+
+**Defesa.** A Força Espacial dos EUA [distribuiu cerca de US$3,2 bilhões em contratos](https://dailyjournal.news/news/2026-04-26/forca-espacial-dos-eua-distribui-us32-bi-para-golden-dome-estoque-de-misseis-cai) para a fase inicial do Golden Dome, programa de defesa antimísseis que substitui radares terrestres por centenas de satélites em órbita baixa. Entre as 12 empresas selecionadas estão SpaceX, para comunicação a laser entre satélites; Anduril, startup americana de defesa, para comando e controle com IA; além de Palantir, Scale AI, Lockheed Martin e Northrop Grumman. Os contratos chegam enquanto analistas alertam que os EUA [já consumiram metade do estoque](https://dailyjournal.news/news/2026-04-26/forca-espacial-dos-eua-distribui-us32-bi-para-golden-dome-estoque-de-misseis-cai) dos mísseis furtivos mais caros no conflito com o Irã, com reposição estimada em até quatro anos — o que levanta dúvidas sobre a capacidade de dissuasão frente à China em Taiwan.
+
+**Robótica.** O Salão do Automóvel de Pequim abriu como o [maior evento automotivo do mundo](https://dailyjournal.news/news/2026-04-26/salao-do-automovel-de-pequim-abre-como-maior-do-mundo-com-humanoides-em-todos-os): 1.451 veículos em 380 mil metros quadrados, com 181 estreias mundiais. A presença mais marcante não roda sobre rodas: robôs humanoides apareceram em praticamente todos os estandes. A XPeng, fabricante chinesa de carros elétricos, planeja a produção em massa do robô humanoide IRON no fim do ano; a Geely, dona da Volvo, apresentou o primeiro protótipo nativo de robotáxi da China. Até a Dreame, fabricante de aspiradores-robô, exibiu um conceito de carro esportivo elétrico.
+
+**Biotech.** A Intellia Therapeutics, empresa de biotecnologia de Cambridge, Massachusetts, [divulga amanhã os resultados](https://dailyjournal.news/news/2026-04-26/intellia-divulga-amanha-primeiro-estudo-de-fase-3-com-crispr-aplicado-no-corpo-d) do primeiro estudo de fase 3 do mundo com edição genética CRISPR aplicada diretamente no corpo do paciente — sem retirar células para modificar em laboratório. O tratamento é uma infusão única que edita um gene no fígado para bloquear crises de inchaço em pacientes com angioedema hereditário, doença rara. Nos testes anteriores, [31 dos 32 pacientes tratados](https://dailyjournal.news/news/2026-04-26/intellia-divulga-amanha-primeiro-estudo-de-fase-3-com-crispr-aplicado-no-corpo-d) ficaram livres de crises por até três anos sem medicação contínua. As ações subiram 19% no pós-mercado; se os dados forem positivos, a empresa planeja pedir aprovação nos EUA no segundo semestre.
+
+**Recomendações de hoje:**

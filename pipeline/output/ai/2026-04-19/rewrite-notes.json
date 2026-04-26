@@ -1,0 +1,78 @@
+{
+  "date": "2026-04-19",
+  "findings": [
+    {
+      "index": 0,
+      "type": "phrasing",
+      "action": "applied",
+      "before": "o Sora, gerador de vídeo encerrado no mês passado, foi desligado para redirecionar capacidade computacional ao novo modelo",
+      "after": "o Sora foi desligado para redirecionar capacidade computacional ao Spud",
+      "reason": "Aposto idêntico ao da edição de ontem; leitor recorrente já sabe o que é o Sora. Cortado e substituído 'novo modelo' pelo codinome concreto.",
+      "chosen_path": null
+    },
+    {
+      "index": 1,
+      "type": "story",
+      "action": "applied",
+      "before": "A diretora financeira Sarah Friar confirmou que o Sora, gerador de vídeo encerrado no mês passado, foi desligado para redirecionar capacidade computacional ao novo modelo. Clientes corporativos já respondem por 40% da receita da OpenAI — o dobro de quando Friar foi contratada, em 2024 — e devem chegar a 50% até o fim do ano.",
+      "after": "A diretora financeira Sarah Friar confirmou que o Sora foi desligado para redirecionar capacidade computacional ao Spud — sinal de que a empresa concentra fichas nos clientes corporativos, que já respondem por 40% da receita.",
+      "reason": "Arco 'OpenAI foca em enterprise' era o centro da edição de ontem. Comprimido o contexto enterprise (cortou dobro/meta de 50%) e fundido com o Sora shutdown numa frase que coloca o Spud como pivô.",
+      "chosen_path": null
+    },
+    {
+      "index": 2,
+      "type": "story",
+      "action": "applied",
+      "before": "a Anthropic reportou receita anualizada superior à da OpenAI",
+      "after": null,
+      "reason": "Menção solta sem cifra ou fonte soa vaga; Anthropic já apareceu nas três edições anteriores. Cortado. Valuations da OpenAI e Anthropic preservados na frase anterior como contexto factual.",
+      "chosen_path": "cut"
+    },
+    {
+      "index": 3,
+      "type": "story",
+      "action": "applied",
+      "before": "a [fábrica da Samsung em Taylor, no Texas, começou a receber equipamentos](https://sammyguru.com/samsung-us-taylor-fab-ready-for-operations/) após mais de três anos de obras, com produção prevista para o segundo semestre. A Samsung garantiu encomendas dos chips de IA de próxima geração da Tesla — o contrato do chip AI6 vale cerca de US$16,5 bilhões.",
+      "after": "a Samsung garantiu o contrato do AI6, chip de IA de próxima geração da Tesla, num acordo de cerca de US$16,5 bilhões. A [fábrica em Taylor, no Texas, começou a receber equipamentos](https://sammyguru.com/samsung-us-taylor-fab-ready-for-operations/), com produção prevista para o segundo semestre.",
+      "reason": "Samsung-Taylor-Tesla apareceu há dois dias. Reordenado para liderar com o fato genuinamente novo (contrato AI6 de US$16,5bi) e cortado 'após mais de três anos de obras' (contexto já coberto).",
+      "chosen_path": "reframe"
+    },
+    {
+      "index": 4,
+      "type": "story",
+      "action": "flagged",
+      "before": "o Tesouro americano [estendeu até 16 de maio a licença que permite transações com petróleo russo](https://www.kyivpost.com/post/74241), provocando críticas bipartidárias no Senado.",
+      "after": "o Tesouro americano [estendeu até 16 de maio a licença que permite transações com petróleo russo](https://www.kyivpost.com/post/74241), revertendo a posição do secretário Scott Bessent, que dias antes declarou que as isenções não seriam renovadas. A decisão provocou críticas bipartidárias no Senado.",
+      "reason": "Sem contexto de reversão, contradiz a edição de 17/04 (Bessent disse que não renovaria). Adicionada oração explicando o giro. Flagged porque o contexto do Bessent vem da edição anterior, não do research de hoje — verificar se research-slim.json sustenta.",
+      "chosen_path": null
+    },
+    {
+      "index": 5,
+      "type": "framing",
+      "action": "applied",
+      "before": "incluindo projetos de Microsoft, Oracle e OpenAI. Falta de eletricistas, equipamentos de energia e tarifas sobre transformadores chineses agravam o quadro. O estado de Maine aprovou a primeira moratória estadual do país para data centers acima de 20 megawatts, válida até outubro de 2027 — e [pelo menos onze outros estados estudam restrições semelhantes](https://www.arkansasonline.com/news/2026/apr/19/maine-eyes-pause-on-data-centers/). Em 2025, ao menos US$156 bilhões em projetos de data centers foram barrados ou atrasados por oposição local.",
+      "after": "incluindo projetos de Microsoft, Oracle e OpenAI — ao todo, mais de US$156 bilhões em projetos foram barrados ou adiados desde 2025. Falta de eletricistas, equipamentos de energia e tarifas sobre transformadores chineses agravam o quadro. Em Maine, o estado aprovou a primeira moratória estadual para data centers acima de 20 megawatts, válida até outubro de 2027, e [pelo menos onze outros estados estudam restrições semelhantes](https://www.arkansasonline.com/news/2026/apr/19/maine-eyes-pause-on-data-centers/).",
+      "reason": "Quarta edição com bloco 'data centers enfrentam obstáculos'. Variado o ângulo: moveu o número de US$156bi para junto do 40% (enquadra como escala do problema, não lista de restrições), e Maine virou exemplo concreto no fechamento em vez de item solto.",
+      "chosen_path": "reframe"
+    },
+    {
+      "index": 6,
+      "type": "framing",
+      "action": "applied",
+      "before": "Tanto a OpenAI (avaliada em US$852 bilhões) quanto a Anthropic (US$380 bilhões) ainda gastam mais do que faturam e caminham para abertura de capital; a Anthropic reportou receita anualizada superior à da OpenAI.",
+      "after": "A OpenAI (avaliada em US$852 bilhões) e a Anthropic (US$380 bilhões) ainda gastam mais do que faturam.",
+      "reason": "Terceira edição consecutiva com 'empresa de IA caminha para IPO'. Cortado 'caminham para abertura de capital' (framing repetido) e a menção vaga à receita da Anthropic (finding 2). Valuations preservados como contexto factual útil.",
+      "chosen_path": "cut"
+    },
+    {
+      "index": 7,
+      "type": "phrasing",
+      "action": "applied",
+      "before": "O petróleo atingiu US$100 o barril pela primeira vez em quatro anos",
+      "after": "O petróleo rompeu US$100 o barril pela primeira vez em quatro anos — havia recuado a US$90 na sexta, com a breve reabertura do estreito",
+      "reason": "Preço do barril aparece em quatro edições seguidas. Adicionado delta (de US$90 a US$100) para mostrar a volatilidade em vez de reportar preço isolado.",
+      "chosen_path": null
+    }
+  ],
+  "summary": "7 applied, 0 skipped, 1 flagged out of 8 findings"
+}

@@ -1,0 +1,1758 @@
+{
+  "date": "2026-04-24",
+  "stories": [
+    {
+      "id": "anthropic-1-trillion-secondary-market-valuation",
+      "headline": "Anthropic Hits $1 Trillion Valuation on Secondary Markets, Surpassing OpenAI's $880B on Forge Global",
+      "key_facts": [
+        {
+          "fact": "Anthropic's valuation on Forge Global, a leading private marketplace exchange, has hit approximately $1 trillion, surpassing OpenAI which trades at $880 billion on the same platform.",
+          "source_url": "https://www.businessinsider.com/anthropic-trillion-dollar-valuation-on-secondary-markets-2026",
+          "excerpt": "Desperate buyers are in a race to secure a dwindling supply of secondary shares in Anthropic. One shareholder recently offered to sell shares at a $1.15 trillion valuation."
+        },
+        {
+          "fact": "On Hiive, another secondary marketplace, Anthropic share prices surged 211% to roughly $900 over the past three months, while OpenAI shares rose only 8.5% to $608 in the same period.",
+          "source_url": "https://breakingtampa.com/with-jaw-dropping-1-trillion-valuation-anthropic-overtakes-openai-in-market-cap-race/",
+          "excerpt": "Private stock market Hiive informed The Post that the price for Anthropic shares has surged 211% to roughly $900 over the previous three months. Shares of OpenAI have risen just 8.5% to $608 over the same period."
+        },
+        {
+          "fact": "The surge is driven by Anthropic's rapid revenue growth — from $9 billion at end of 2025 to over $30 billion by end of March 2026 — and strong adoption of Claude Code.",
+          "source_url": "https://breakingtampa.com/with-jaw-dropping-1-trillion-valuation-anthropic-overtakes-openai-in-market-cap-race/",
+          "excerpt": "Anthropic has also seen enormous income growth, from $9 billion at the finish of 2025 to over $30 billion by the finish of March. The company credited widespread adoption of its commercially accessible Claude services for the surge."
+        },
+        {
+          "fact": "Glen Anderson, CEO of Rainmaker Securities, said he received an offer to buy Anthropic shares at a $960 billion valuation — 'an unthinkable price even just weeks ago.' A separate offer from a 'very well-known growth fund' came in at $1.05 trillion.",
+          "source_url": "https://breakingtampa.com/with-jaw-dropping-1-trillion-valuation-anthropic-overtakes-openai-in-market-cap-race/",
+          "excerpt": "'It's been an epic run for Anthropic,' Glen Anderson, CEO of Rainmaker Securities, said. 'Everybody desires to be half of a generational alternative in AI, and proper now, Anthropic is in the pole place.'"
+        },
+        {
+          "fact": "Anthropic's last primary funding round valued the company at $380 billion; the secondary market premium implies ~2.6x that valuation. OpenAI's last primary round was $852 billion.",
+          "source_url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-surpasses-biggest-rival-openai-in-secondary-market-valuation-surges-to-usd1-trillion-amid-frantic-investor-interest",
+          "excerpt": "Anthropic has a $1 trillion secondary market valuation compared to a $380 billion actual valuation, possibly signaling more room for growth. Meanwhile, OpenAI's secondary valuation of $880 billion is just $30 billion less than the actual $850 billion valuation."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.businessinsider.com/anthropic-trillion-dollar-valuation-on-secondary-markets-2026",
+          "outlet": "Business Insider",
+          "title": "Anthropic has surged to a trillion-dollar valuation on secondary markets, overtaking OpenAI",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-surpasses-biggest-rival-openai-in-secondary-market-valuation-surges-to-usd1-trillion-amid-frantic-investor-interest",
+          "outlet": "Tom's Hardware",
+          "title": "Anthropic surpasses biggest rival OpenAI in secondary market valuation — surges to $1 trillion amid frantic investor interest",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://breakingtampa.com/with-jaw-dropping-1-trillion-valuation-anthropic-overtakes-openai-in-market-cap-race/",
+          "outlet": "New York Post",
+          "title": "With jaw-dropping $1 trillion valuation, Anthropic overtakes OpenAI in market cap race",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "finance"
+      ],
+      "entities": {
+        "organizations": [
+          "Anthropic",
+          "OpenAI",
+          "Forge Global",
+          "Hiive",
+          "Rainmaker Securities",
+          "Saints Capital"
+        ],
+        "people": [
+          "Dario Amodei",
+          "Glen Anderson",
+          "Ken Sawyer",
+          "Kelly Rodriques"
+        ],
+        "places": []
+      }
+    },
+    {
+      "id": "anthropic-claude-code-quality-postmortem",
+      "headline": "Anthropic Publishes Postmortem on Claude Code Quality Drop: Three Bugs Fixed, Usage Limits Reset",
+      "key_facts": [
+        {
+          "fact": "Anthropic traced Claude Code quality complaints to three separate changes: reduced default reasoning effort (March 4), a caching bug that cleared thinking every turn (March 26), and a system prompt limiting responses to ≤25 words between tool calls (April 16).",
+          "source_url": "https://www.anthropic.com/engineering/april-23-postmortem",
+          "excerpt": "We've traced these reports to three separate changes that affected Claude Code, the Claude Agent SDK, and Claude Cowork. The API was not impacted."
+        },
+        {
+          "fact": "The reasoning effort change reduced default from 'high' to 'medium' to cut latency; Anthropic called it 'the wrong tradeoff' and reverted on April 7. All users now default to 'xhigh' for Opus 4.7 and 'high' for other models.",
+          "source_url": "https://www.anthropic.com/engineering/april-23-postmortem",
+          "excerpt": "We changed Claude Code's default reasoning effort from 'high' to 'medium' to reduce the very long latency. This was the wrong tradeoff. We reverted this change on April 7."
+        },
+        {
+          "fact": "The caching bug was meant to clear old thinking from idle sessions once, but instead cleared it every turn, making Claude 'forgetful and repetitive.' It passed multiple layers of review before being caught.",
+          "source_url": "https://www.anthropic.com/engineering/april-23-postmortem",
+          "excerpt": "A bug caused this to keep happening every turn for the rest of the session instead of just once, which made Claude seem forgetful and repetitive."
+        },
+        {
+          "fact": "The verbosity-reduction system prompt caused a measurable 3% drop in coding benchmarks for both Opus 4.6 and 4.7, and was reverted on April 20. All issues resolved in v2.1.116.",
+          "source_url": "https://www.anthropic.com/engineering/april-23-postmortem",
+          "excerpt": "One of these evaluations showed a 3% drop for both Opus 4.6 and 4.7. We immediately reverted the prompt as part of the April 20 release."
+        },
+        {
+          "fact": "As compensation, Anthropic reset usage limits for all subscribers. The company also set up the @ClaudeDevs X account for more transparent communication of product decisions.",
+          "source_url": "https://the-decoder.com/anthropic-confirms-claude-code-problems-and-promises-stricter-quality-controls/",
+          "excerpt": "Anthropics also set up the X account @ClaudeDevs to communicate product decisions more transparently."
+        },
+        {
+          "fact": "Anthropic is adding tighter controls: broader per-model eval suites for every system prompt change, soak periods, gradual rollouts, and new tooling to make prompt changes easier to review and audit.",
+          "source_url": "https://www.anthropic.com/engineering/april-23-postmortem",
+          "excerpt": "We're also adding tighter controls on system prompt changes. We will run a broad suite of per-model evals for every system prompt change to Claude Code."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+          "outlet": "Anthropic",
+          "title": "An update on recent Claude Code quality reports",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://the-decoder.com/anthropic-confirms-claude-code-problems-and-promises-stricter-quality-controls/",
+          "outlet": "The Decoder",
+          "title": "Anthropic confirms Claude Code problems and promises stricter quality controls",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.theregister.com/2026/04/23/anthropic_says_it_has_fixed/",
+          "outlet": "The Register",
+          "title": "Anthropic admits it dumbed down Claude with 'upgrades'",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Anthropic"
+        ],
+        "people": [],
+        "places": []
+      }
+    },
+    {
+      "id": "applied-digital-7-5b-lease-delta-forge-1",
+      "headline": "Applied Digital Lands $7.5B 15-Year Lease for 300MW AI Data Center With US Hyperscaler",
+      "key_facts": [
+        {
+          "fact": "Applied Digital signed a 15-year lease with an unnamed US investment-grade hyperscaler for 300MW of capacity at its Delta Forge 1 campus, worth approximately $7.5 billion in total contracted value",
+          "source_url": "https://ir.applieddigital.com/news-events/press-releases/detail/149/applied-digital-announces-new-u-s-based-high",
+          "excerpt": "This lease represents approximately $7.5 billion in total contracted value over an estimated 15-year lease term and covers 300 megawatts (MW) of critical IT load, purpose-built to support the hyperscaler's artificial intelligence (AI) and high-performance compute (HPC) infrastructure."
+        },
+        {
+          "fact": "The deal expands Applied Digital's total contracted lease revenue to over $23 billion, with more than 50% now backed by investment-grade customers",
+          "source_url": "https://ir.applieddigital.com/news-events/press-releases/detail/149/applied-digital-announces-new-u-s-based-high",
+          "excerpt": "This addition expands total contracted lease revenue to over $23 billion and further diversifies the company's customer base with a third hyperscale tenant. More than 50% of total contracted revenue is now backed by investment-grade customers."
+        },
+        {
+          "fact": "Delta Forge 1 is a 430MW AI Factory campus in the southern United States designed for AI and high-performance computing workloads",
+          "source_url": "https://constructionreviewonline.com/delta-forge-1-ai-data-center-campus-secures-7-5-billion-15-year-lease-says-applied-digital/",
+          "excerpt": "The southern United States data center campus also positions Applied Digital to compete in the hyperscale cloud and AI compute segment alongside major infrastructure developers in North America. The leased capacity forms part of a 430 MW campus designed specifically for AI and high-performance computing workloads."
+        },
+        {
+          "fact": "Applied Digital shares rose 9-14% intraday on the announcement, reflecting investor enthusiasm for long-term AI infrastructure demand",
+          "source_url": "https://constructionreviewonline.com/delta-forge-1-ai-data-center-campus-secures-7-5-billion-15-year-lease-says-applied-digital/",
+          "excerpt": "The announcement also triggered a sharp market reaction, with Applied Digital shares rising between 9% and 14% intraday, reflecting investor enthusiasm for long-term AI infrastructure demand and recurring revenue visibility."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://ir.applieddigital.com/news-events/press-releases/detail/149/applied-digital-announces-new-u-s-based-high",
+          "outlet": "Applied Digital",
+          "title": "Applied Digital Announces New U.S. Based High Investment-Grade Hyperscaler Tenant at Delta Forge 1, a 430 MW AI Factory Campus",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://constructionreviewonline.com/delta-forge-1-ai-data-center-campus-secures-7-5-billion-15-year-lease-says-applied-digital/",
+          "outlet": "Construction Review Online",
+          "title": "Delta Forge 1 AI Data Center Campus Secures $7.5 Billion 15-Year Lease, Says Applied Digital",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Applied Digital"
+        ],
+        "people": [
+          "Wes Cummins"
+        ],
+        "places": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "cognition-ai-25b-valuation-funding-talks",
+      "headline": "AI Coding Startup Cognition in Early Funding Talks at $25B Valuation, Up From $10.2B in September",
+      "key_facts": [
+        {
+          "fact": "Cognition AI is in early talks to raise hundreds of millions of dollars or more at a $25 billion valuation, more than doubling its $10.2 billion valuation from September 2025.",
+          "source_url": "https://siliconangle.com/2026/04/23/cognition-creator-ai-software-engineer-devin-talks-raise-hundreds-millions-25b-valuation/",
+          "excerpt": "Cognition AI Inc. is reportedly in discussions with investors for a significant funding round that would more than double its valuation to $25 billion."
+        },
+        {
+          "fact": "Cognition is best known for Devin, which the company bills as an autonomous AI software engineer that automates code creation, debugging, and deployment. Customers include Dell and Cisco.",
+          "source_url": "https://siliconangle.com/2026/04/23/cognition-creator-ai-software-engineer-devin-talks-raise-hundreds-millions-25b-valuation/",
+          "excerpt": "Cognition is known for its AI software engineer, Devin, which automates complex engineering tasks. The firm's customers include Dell Technologies Inc., Cisco Systems Inc. and numerous tech giants."
+        },
+        {
+          "fact": "The company acquired Windsurf in July 2025 and annual recurring revenue has more than doubled since that acquisition. Devin's ARR grew from $1M in September 2024 to $73M by June 2025.",
+          "source_url": "https://techfundingnews.com/cognition-ai-25b-valuation-funding-talks-devin-software-engineer/",
+          "excerpt": "In July 2025, it bought Windsurf, its product Devin grew annual recurring revenue from $1 million in September 2024 to $73 million by June 2025. Since buying Windsurf, Cognition's annual recurring revenue has more than doubled."
+        },
+        {
+          "fact": "The funding talks were already underway when SpaceX announced its $60 billion deal for Cursor, adding fuel to AI coding valuations.",
+          "source_url": "https://siliconangle.com/2026/04/23/cognition-creator-ai-software-engineer-devin-talks-raise-hundreds-millions-25b-valuation/",
+          "excerpt": "Cognition is trying to tap into the growing momentum around AI-generated code that's primarily driven by competitors such as Anthropic PBC and OpenAI Group PBC."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-04-23/ai-coding-firm-cognition-in-funding-talks-at-25-billion-value",
+          "outlet": "Bloomberg",
+          "title": "AI Coding Firm Cognition in Funding Talks at $25 Billion Value",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://siliconangle.com/2026/04/23/cognition-creator-ai-software-engineer-devin-talks-raise-hundreds-millions-25b-valuation/",
+          "outlet": "SiliconANGLE",
+          "title": "Cognition, creator of the AI software engineer Devin, in talks to raise 'hundreds of millions' at $25B valuation",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://techfundingnews.com/cognition-ai-25b-valuation-funding-talks-devin-software-engineer/",
+          "outlet": "Tech Funding News",
+          "title": "Coding startup Cognition AI eyes $25B valuation after Windsurf acquisition: report",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Cognition AI",
+          "Windsurf",
+          "Dell",
+          "Cisco",
+          "SpaceX"
+        ],
+        "people": [
+          "Scott Wu"
+        ],
+        "places": []
+      }
+    },
+    {
+      "id": "cohere-acquires-aleph-alpha-20b-sovereign-ai",
+      "headline": "Cohere Acquires Germany's Aleph Alpha in $20B Sovereign AI Deal, Schwarz Group Invests $600M",
+      "key_facts": [
+        {
+          "fact": "Canadian AI startup Cohere agreed to acquire German AI startup Aleph Alpha in a deal valuing the combined entity at approximately $20 billion. Cohere shareholders receive ~90% of the combined company, Aleph Alpha's ~10%.",
+          "source_url": "https://thenextweb.com/news/cohere-aleph-alpha-merger-20-billion",
+          "excerpt": "Cohere's shareholders will receive approximately 90% of the combined entity, while Aleph's shareholders are expected to receive approximately 10%. The combined valuation of $20 billion reflects a significant premium over both companies' last known marks."
+        },
+        {
+          "fact": "Schwarz Group, which owns retailers Lidl and Kaufland, will invest $600 million in Cohere's upcoming Series E round as part of the deal. Cohere was last valued at $6.8 billion in August 2025.",
+          "source_url": "https://www.cnbc.com/2026/04/24/cohere-aleph-alpha-germany-ai-europe-expansion.html",
+          "excerpt": "Schwarz Group — a key backer of Aleph Alpha — plans to invest $600 million in Cohere's upcoming Series E round. Cohere last raised $500 million in fresh capital in August 2025, bringing its valuation to $6.8 billion."
+        },
+        {
+          "fact": "Global HQ stays in Toronto, European HQ in Berlin. Cohere CEO Aidan Gomez remains CEO. Germany's Digital Minister Karsten Wildberger and Canada's AI Minister Evan Solomon attended the Berlin announcement.",
+          "source_url": "https://www.theglobeandmail.com/business/article-canadian-ai-firm-cohere-germanys-aleph-alpha-announce-merger/",
+          "excerpt": "The combined entity will have its global headquarters in Toronto and its European headquarters in Berlin. The deal is supported by the Canadian and German governments."
+        },
+        {
+          "fact": "The deal targets sovereign AI for regulated sectors — public sector, finance, defense, energy, healthcare — giving Cohere access to Aleph Alpha's existing German government contracts including the ministry for digital affairs.",
+          "source_url": "https://www.cnbc.com/2026/04/24/cohere-aleph-alpha-germany-ai-europe-expansion.html",
+          "excerpt": "Cohere will look to boost its offering of secure customized AI for highly-regulated sectors. Aleph Alpha's existing commercial contracts with the German public sector were also an attraction."
+        },
+        {
+          "fact": "Cohere CFO Francois Chadwick told Reuters: 'We are going to commit to working with European infrastructure and maintain the sovereignty requirements that are being addressed in Europe.'",
+          "source_url": "https://whbl.com/2026/04/24/canadas-ai-startup-cohere-buys-germanys-aleph-alpha-to-expand-in-europe/",
+          "excerpt": "'We are bringing Aleph Alpha into Cohere, and we are going to merge the two entities,' Cohere CFO Francois Chadwick told Reuters. 'We are going to commit to working with European infrastructure … and maintain the sovereignty requirements.'"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2026/04/24/cohere-aleph-alpha-germany-ai-europe-expansion.html",
+          "outlet": "CNBC",
+          "title": "Cohere to acquire German AI company Aleph Alpha",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://thenextweb.com/news/cohere-aleph-alpha-merger-20-billion",
+          "outlet": "The Next Web",
+          "title": "Cohere and Aleph Alpha merge into a $20B transatlantic AI company",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.theglobeandmail.com/business/article-canadian-ai-firm-cohere-germanys-aleph-alpha-announce-merger/",
+          "outlet": "Globe and Mail",
+          "title": "Canadian AI firm Cohere, Germany's Aleph Alpha announce merger",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://whbl.com/2026/04/24/canadas-ai-startup-cohere-buys-germanys-aleph-alpha-to-expand-in-europe/",
+          "outlet": "Reuters",
+          "title": "Canada's AI startup Cohere buys Germany's Aleph Alpha to expand in Europe",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Cohere",
+          "Aleph Alpha",
+          "Schwarz Group",
+          "Lidl"
+        ],
+        "people": [
+          "Aidan Gomez",
+          "Ilhan Scheer",
+          "Francois Chadwick",
+          "Karsten Wildberger",
+          "Evan Solomon"
+        ],
+        "places": [
+          "Toronto",
+          "Berlin",
+          "Heidelberg",
+          "Germany",
+          "Canada"
+        ]
+      }
+    },
+    {
+      "id": "cohere-aleph-alpha-merge-20b-sovereign-ai",
+      "headline": "Cohere and Aleph Alpha Merge Into $20B Transatlantic AI Company for Sovereign AI",
+      "key_facts": [
+        {
+          "fact": "Canada's Cohere and Germany's Aleph Alpha agreed to merge into a combined entity valued at approximately $20 billion, intended as an alternative to US AI providers for governments and enterprises.",
+          "source_url": "https://thenextweb.com/news/cohere-aleph-alpha-merger-20-billion",
+          "excerpt": "Cohere and Aleph Alpha have agreed to merge, creating what Handelsblatt described as a combined entity valued at approximately $20 billion."
+        },
+        {
+          "fact": "Cohere shareholders will receive approximately 90% of the combined entity and Aleph Alpha shareholders ~10%, making it effectively a Cohere acquisition. CEO Aidan Gomez will lead the combined company.",
+          "source_url": "https://thenextweb.com/news/cohere-aleph-alpha-merger-20-billion",
+          "excerpt": "Cohere's shareholders are set to receive approximately 90% of the combined company; Aleph Alpha's shareholders approximately 10%."
+        },
+        {
+          "fact": "The combined company will have its global headquarters in Toronto and its European headquarters in Berlin. Germany's Digital Minister Karsten Wildberger and Canada's Evan Solomon attended the announcement.",
+          "source_url": "https://www.theglobeandmail.com/business/article-canadian-ai-firm-cohere-germanys-aleph-alpha-announce-merger/",
+          "excerpt": "The combined entity will have its global headquarters in Toronto and its European headquarters in Berlin. The deal is supported by the Canadian and German governments."
+        },
+        {
+          "fact": "Aleph Alpha backer Schwarz Group will invest $600 million in Cohere's upcoming Series E funding round.",
+          "source_url": "https://www.theglobeandmail.com/business/article-canadian-ai-firm-cohere-germanys-aleph-alpha-announce-merger/",
+          "excerpt": "Cohere also announced that the Schwarz Group, a German conglomerate, will invest US$600-million in financing for an upcoming funding round."
+        },
+        {
+          "fact": "The German government is set to become an anchor customer of the merged entity as part of a broader European push for digital sovereignty and reduced dependence on US tech giants.",
+          "source_url": "https://thenextweb.com/news/cohere-aleph-alpha-merger-20-billion",
+          "excerpt": "The German government is set to become an anchor customer. The move is seen as a political move by both Canada and Germany to counterbalance their dependence on American AI."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://thenextweb.com/news/cohere-aleph-alpha-merger-20-billion",
+          "outlet": "The Next Web",
+          "title": "Cohere and Aleph Alpha merge into a $20B transatlantic AI company",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.theglobeandmail.com/business/article-canadian-ai-firm-cohere-germanys-aleph-alpha-announce-merger/",
+          "outlet": "The Globe and Mail",
+          "title": "Canadian AI firm Cohere, Germany's Aleph Alpha announce merger",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.reuters.com/legal/transactional/canadas-cohere-germanys-aleph-alpha-announce-merger-handelsblatt-reports-2026-04-24/",
+          "outlet": "Reuters",
+          "title": "Canada's Cohere and Germany's Aleph Alpha to announce merger, Handelsblatt reports",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Cohere",
+          "Aleph Alpha",
+          "Schwarz Group"
+        ],
+        "people": [
+          "Aidan Gomez",
+          "Karsten Wildberger",
+          "Evan Solomon"
+        ],
+        "places": [
+          "Canada",
+          "Germany",
+          "Toronto",
+          "Berlin"
+        ]
+      }
+    },
+    {
+      "id": "cursor-2-7b-arr-margins-turn-positive",
+      "headline": "Cursor Hit $2.7B Annualized Revenue in March, Up 14x YoY, as Gross Margins Turn Positive",
+      "key_facts": [
+        {
+          "fact": "Cursor hit $2.7 billion in annualized revenue in March 2026, 14 times higher than a year ago. Investors expect annualized revenue to exceed $7 billion by year-end.",
+          "source_url": "https://www.theinformation.com/briefings/cursors-revenue-pace-recently-passed-2-7-billion-helping-margins-turn-positive",
+          "excerpt": "AI coding startup Cursor last month hit $2.7 billion in annualized revenue, 14 times higher than that revenue pace a year ago. Some investors expected annualized revenue to hit more than $7 billion by year's end."
+        },
+        {
+          "fact": "Cursor's gross margins have turned positive after being at -23% in January 2026, helped by cost structure optimizations and the launch of the Composer model.",
+          "source_url": "https://www.tradingkey.com/analysis/stocks/us-stocks/261808564-spacex-ipo-elon-musk-cursor-60-billion-tradingkey",
+          "excerpt": "Following the launch of the Composer model in November 2025 and cost structure optimizations, the company recently turned gross margin positive, with its enterprise business—which accounts for approximately 60% of revenue—already achieving positive gross margins."
+        },
+        {
+          "fact": "Cursor recently agreed to a potential $60 billion acquisition by SpaceX, or a $10 billion collaboration fee. SpaceX isn't acquiring immediately due to its imminent IPO targeting a $2 trillion valuation.",
+          "source_url": "https://finance.yahoo.com/sectors/technology/articles/spacex-deal-acquire-cursor-60-003344236.html",
+          "excerpt": "SpaceX said it has an agreement giving it the right to acquire artificial intelligence startup Cursor for $60 billion later this year or to pay $10 billion for the companies' work together."
+        },
+        {
+          "fact": "Cursor had been days from closing a separate $2 billion funding round at a $50 billion valuation when the SpaceX deal halted those talks. Microsoft had also looked at a Cursor acquisition before SpaceX moved and chose not to proceed.",
+          "source_url": "https://giganectar.com/spacex-cursor-60-billion-acquisition-microsoft-passed-ai-coding-deal/",
+          "excerpt": "Cursor was days from closing a separate $2 billion funding round at a $50 billion valuation — investors including Andreessen Horowitz, Nvidia, and Thrive Capital were caught off guard. Microsoft had also looked at a potential acquisition of Cursor before SpaceX moved, and chose not."
+        },
+        {
+          "fact": "Cursor pays retail prices to Anthropic and OpenAI — the same companies competing against it with Claude Code and Codex. SpaceX's compute infrastructure would restructure those unit economics.",
+          "source_url": "https://www.teslarati.com/spacex-cursor-ai-coding/",
+          "excerpt": "Cursor currently pays retail prices to Anthropic and OpenAI to the same companies competing directly against it with Claude Code and Codex. That means every dollar of revenue Cursor earns partially funds its own competition."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.theinformation.com/briefings/cursors-revenue-pace-recently-passed-2-7-billion-helping-margins-turn-positive",
+          "outlet": "The Information",
+          "title": "Cursor's Revenue Pace Recently Passed $2.7 Billion, Helping Margins Turn Positive",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://finance.yahoo.com/sectors/technology/articles/spacex-deal-acquire-cursor-60-003344236.html",
+          "outlet": "Bloomberg",
+          "title": "SpaceX Has Deal for Right to Acquire Cursor for $60 Billion",
+          "published_at": "2026-04-22",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/261808564-spacex-ipo-elon-musk-cursor-60-billion-tradingkey",
+          "outlet": "TradingKey",
+          "title": "SpaceX IPO: Musk Weighs $60 Billion Cursor Deal, and Can It Save xAI?",
+          "published_at": "2026-04-22",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://giganectar.com/spacex-cursor-60-billion-acquisition-microsoft-passed-ai-coding-deal/",
+          "outlet": "GigaNectar",
+          "title": "SpaceX Locks $60B Right to Buy Cursor After Microsoft Passed — Investors in $2B Round Caught Off Guard",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.teslarati.com/spacex-cursor-ai-coding/",
+          "outlet": "Teslarati",
+          "title": "Why SpaceX just made a $60 billion bet on AI coding ahead of historic IPO",
+          "published_at": "2026-04-22",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Cursor",
+          "Anysphere",
+          "SpaceX",
+          "xAI",
+          "Microsoft",
+          "Anthropic",
+          "OpenAI",
+          "Nvidia",
+          "Andreessen Horowitz"
+        ],
+        "people": [
+          "Elon Musk",
+          "Oskar Schulz"
+        ],
+        "places": []
+      }
+    },
+    {
+      "id": "deepseek-v4-pro-flash-open-source-1m-context",
+      "headline": "DeepSeek Releases V4-Pro (1.6T Params) and V4-Flash, Largest Open-Source Models With 1M Context",
+      "key_facts": [
+        {
+          "fact": "DeepSeek-V4-Pro has 1.6T total parameters with 49B active (MoE), pre-trained on 33T tokens. V4-Flash has 284B total with 13B active, trained on 32T tokens. Both support 1M token context.",
+          "source_url": "https://api-docs.deepseek.com/news/news260424",
+          "excerpt": "DeepSeek-V4-Pro: 1.6T total / 49B active params. Performance rivaling the world's top closed-source models. DeepSeek-V4-Flash: 284B total / 13B active params. Your fast, efficient, and economical choice."
+        },
+        {
+          "fact": "V4-Pro is the largest open-weights model released, bigger than Kimi K2.6 (1.1T) and GLM-5.1 (754B), and more than twice the size of DeepSeek V3.2 (685B).",
+          "source_url": "https://simonwillison.net/2026/Apr/24/deepseek-v4/",
+          "excerpt": "I think this makes DeepSeek-V4-Pro the new largest open weights model. It's larger than Kimi K2.6 (1.1T) and GLM-5.1 (754B) and more than twice the size of DeepSeek V3.2 (685B)."
+        },
+        {
+          "fact": "V4-Pro API pricing is $1.74/1M input tokens and $3.48/1M output; V4-Flash is $0.14/1M input and $0.28/1M output — the cheapest in both model tiers.",
+          "source_url": "https://simonwillison.net/2026/Apr/24/deepseek-v4/",
+          "excerpt": "DeepSeek-V4-Flash is the cheapest of the small models, beating even OpenAI's GPT-5.4 Nano. DeepSeek-V4-Pro is the cheapest of the larger frontier models."
+        },
+        {
+          "fact": "DeepSeek says V4-Pro trails state-of-the-art frontier models (GPT-5.4 and Gemini 3.1-Pro) by approximately 3 to 6 months, and is the strongest open-source model in coding and math benchmarks.",
+          "source_url": "https://thenextweb.com/news/deepseek-v4-pro-flash-launch-open-source",
+          "excerpt": "Against the current closed-source frontier, OpenAI's GPT-5.4 and Gemini 3.1-Pro — the company says V4-Pro falls only 'marginally short,' and offers a candid self-assessment: its 'developmental trajectory' trails state-of-the-art frontier models by approximately 3 to 6 months."
+        },
+        {
+          "fact": "V4 introduces a hybrid attention mechanism (Compressed Sparse Attention + Heavily Compressed Attention) that reduces KV cache to 10% and single-token FLOPs to 27% of V3.2 at 1M context.",
+          "source_url": "https://simonwillison.net/2026/Apr/24/deepseek-v4/",
+          "excerpt": "In the scenario of 1M-token context, even DeepSeek-V4-Pro attains only 27% of the single-token FLOPs and 10% of the KV cache size relative to DeepSeek-V3.2."
+        },
+        {
+          "fact": "Both models are open-sourced under the MIT license on Hugging Face. The release was timed to coincide with OpenAI's GPT-5.5 launch on the same day.",
+          "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash",
+          "excerpt": "This repository and the model weights are licensed under the MIT License."
+        },
+        {
+          "fact": "Huawei announced its Ascend supernode based on the Ascend 950 AI chips will fully support DeepSeek V4. DeepSeek says V4-Pro throughput is currently limited by high-end compute supply, with prices expected to drop when Huawei Ascend 950 super nodes ship at scale in H2.",
+          "source_url": "https://thenextweb.com/news/deepseek-v4-pro-flash-launch-open-source",
+          "excerpt": "DeepSeek worked with Chinese AI chipmakers Huawei and Cambricon to optimise V4 for their latest hardware. The company did not give Nvidia or AMD early access for optimisation."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://api-docs.deepseek.com/news/news260424",
+          "outlet": "DeepSeek",
+          "title": "DeepSeek V4 Preview Release",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash",
+          "outlet": "Hugging Face",
+          "title": "deepseek-ai/DeepSeek-V4-Flash",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://simonwillison.net/2026/Apr/24/deepseek-v4/",
+          "outlet": "Simon Willison's Weblog",
+          "title": "DeepSeek V4—almost on the frontier, a fraction of the price",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://thenextweb.com/news/deepseek-v4-pro-flash-launch-open-source",
+          "outlet": "The Next Web",
+          "title": "DeepSeek returns with V4-Pro and V4-Flash, a year after its 'Sputnik moment'",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://officechai.com/ai/deepseek-v4-pro-deepseek-v4-flash-benchmarks-pricing/",
+          "outlet": "OfficeChai",
+          "title": "DeepSeek Releases DeepSeek V4-Pro & V4-Flash, Delivers GPT 5.4 & Opus 4.6-Level Performance At Fraction Of The Price",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "DeepSeek",
+          "Huawei",
+          "Cambricon",
+          "OpenAI"
+        ],
+        "people": [],
+        "places": [
+          "Hangzhou",
+          "China"
+        ]
+      }
+    },
+    {
+      "id": "eu-approves-90b-ukraine-loan-20th-russia-sanctions",
+      "headline": "EU Approves €90B Loan for Ukraine and 20th Sanctions Package After Hungary Lifts Veto",
+      "key_facts": [
+        {
+          "fact": "The EU approved a €90 billion ($106 billion) loan package for Ukraine to cover economic and military needs for the next two years, after Hungary lifted its veto.",
+          "source_url": "http://www.timesfreepress.com/news/2026/apr/23/eu-close-to-approving-a-106b-loan-for-ukraine-after-months-of-deadlock/",
+          "excerpt": "Ukraine desperately needs the 90-billion-euro ($106 billion) loan package to prop up its war-ravaged economy and help keep Russian forces at bay. Hungary angered its EU partners by reneging on a December deal to provide the funds."
+        },
+        {
+          "fact": "Russian oil resumed flowing through the Druzhba pipeline to Slovakia after a three-month halt, removing the key obstacle to Hungary and Slovakia lifting their veto.",
+          "source_url": "http://www.timesfreepress.com/news/2026/apr/23/eu-close-to-approving-a-106b-loan-for-ukraine-after-months-of-deadlock/",
+          "excerpt": "The flow resumed after three months at 2 a.m. Thursday, the Slovak economy ministry said, lifting a major obstacle to approving the EU funds for Ukraine later Thursday."
+        },
+        {
+          "fact": "The 20th sanctions package targets Russian energy revenues, shadow fleet, crypto, and military-industrial complex, banning transactions with 20 Russian banks and imposing a sectoral ban on Russian crypto providers.",
+          "source_url": "https://www.eeas.europa.eu/eeas/russian-energy-revenues-trade-crypto-and-military-industries-targeted-20th-round-eu-sanctions_en",
+          "excerpt": "Transaction ban on 20 Russian banks. Sectoral ban on Russian crypto providers/platforms. Ban on transactions in RUBx (Russian crypto) and EU operators access for the digital rouble."
+        },
+        {
+          "fact": "46 additional vessels were banned (total: 632), and the EU activated its anti-circumvention tool for the first time, restricting exports to Kyrgyzstan over re-exports of sanctioned goods to Russia.",
+          "source_url": "https://www.eeas.europa.eu/eeas/russian-energy-revenues-trade-crypto-and-military-industries-targeted-20th-round-eu-sanctions_en",
+          "excerpt": "46 additional vessels banned (total: 632), targeting shadow fleet tankers. Ban for EU operators to export CNC machines and certain radios to Kyrgyzstan (high re-export risk to Russia)."
+        },
+        {
+          "fact": "The sanctions include expanded export bans worth €360M+ and import bans worth €570M+, covering lab glassware, lubricants, chemicals, metals, and minerals.",
+          "source_url": "https://www.eeas.europa.eu/eeas/russian-energy-revenues-trade-crypto-and-military-industries-targeted-20th-round-eu-sanctions_en",
+          "excerpt": "Expanded export bans (€360M+ value): Laboratory glassware, high-performance lubricants, energetic materials, chemicals. Expanded import bans (€570M+ value): Raw materials, metals, minerals, steel scraps."
+        },
+        {
+          "fact": "16 entities in third countries (China, UAE, Uzbekistan, Kazakhstan, Belarus) face sanctions for supplying dual-use goods or weapons to Russia.",
+          "source_url": "https://www.eeas.europa.eu/eeas/russian-energy-revenues-trade-crypto-and-military-industries-targeted-20th-round-eu-sanctions_en",
+          "excerpt": "Including 16 entities in third countries (China, UAE, Uzbekistan, Kazakhstan, Belarus) supplying dual-use goods/weapons to Russia."
+        }
+      ],
+      "sources": [
+        {
+          "url": "http://www.timesfreepress.com/news/2026/apr/23/eu-close-to-approving-a-106b-loan-for-ukraine-after-months-of-deadlock/",
+          "outlet": "AP via Chattanooga Times Free Press",
+          "title": "EU approves a $106 billion loan package to help Ukraine after Hungary lifts its veto",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.eeas.europa.eu/eeas/russian-energy-revenues-trade-crypto-and-military-industries-targeted-20th-round-eu-sanctions_en",
+          "outlet": "EEAS",
+          "title": "Russian energy revenues, trade, crypto and military industries targeted in 20th round of EU sanctions",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://thediplomat.com/2026/04/eu-aims-sanctions-anti-circumvention-tool-at-kyrgyzstan/",
+          "outlet": "The Diplomat",
+          "title": "EU Aims Sanctions 'Anti-circumvention Tool' at Kyrgyzstan",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "world",
+        "politics",
+        "economy"
+      ],
+      "entities": {
+        "organizations": [
+          "European Union",
+          "European Commission",
+          "EEAS"
+        ],
+        "people": [
+          "Viktor Orbán",
+          "Robert Fico",
+          "Kaja Kallas",
+          "Makis Keravnos"
+        ],
+        "places": [
+          "Ukraine",
+          "Hungary",
+          "Slovakia",
+          "Russia",
+          "Kyrgyzstan",
+          "Cyprus"
+        ]
+      }
+    },
+    {
+      "id": "huawei-ascend-950-superpod-deepseek-v4",
+      "headline": "Huawei Says Ascend 950 SuperPod Fully Supports DeepSeek V4, Achieves 20ms Inference Latency",
+      "key_facts": [
+        {
+          "fact": "Huawei announced its entire Ascend SuperPod product line now supports the DeepSeek V4 series models, following the V4-Pro and V4-Flash open-source release",
+          "source_url": "http://www.aastocks.com/en/stocks/news/aafn-news/NOW.1520164/2",
+          "excerpt": "Huawei stated that Ascend has consistently supported the DeepSeek series models. Through close collaboration between the two parties' chip and model technologies, the entire Ascend SuperPod product line now supports the DeepSeek V4 series models."
+        },
+        {
+          "fact": "The Ascend 950 SuperPod achieves low-latency inference of 20ms for DeepSeek V4-Pro and 10ms for DeepSeek V4-Flash, redefining performance ceiling for long context inference",
+          "source_url": "http://www.aastocks.com/en/stocks/news/aafn-news/NOW.1520164/2",
+          "excerpt": "The Ascend 950 SuperPod redefines the performance ceiling for long context inference, achieving low-latency inference of 20ms for DeepSeek V4-Pro and 10ms for DeepSeek V4-Flash."
+        },
+        {
+          "fact": "DeepSeek V4-Pro has 1.6 trillion total parameters with 49 billion active, trained on 33 trillion tokens with a 1 million token context window, released under MIT license",
+          "source_url": "https://economictimes.indiatimes.com/tech/artificial-intelligence/huawei-ascend-supernode-to-support-deepseek-v4/articleshow/130484961.cms",
+          "excerpt": "Huawei Technologies said on Friday its Ascend supernode based on Ascend 950 AI chips would fully support Deepseek's V4 versions after the Chinese artificial intelligence startup launched a preview of its new model."
+        },
+        {
+          "fact": "Alibaba, ByteDance, and Tencent have purchased hundreds of thousands of Ascend 950PR chips for cloud services to sell DeepSeek models; prices of the chip have risen 20% due to demand",
+          "source_url": "https://finance.sina.com.cn/stock/relnews/cn/2026-04-23/doc-inhvnaik5503613.shtml",
+          "excerpt": "即将发布的DeepSeek-V4会完全适配于华为的昇腾950PR芯片，阿里、字节、腾讯等大厂已经采购了数十万颗这款芯片，用来提供给云服务以便销售DeepSeek模型。因为供需关系的变化，昇腾950PR芯片已经涨价20%"
+        },
+        {
+          "fact": "DeepSeek V4 also supports Cambricon chips as an alternative to Huawei's Ascend, diversifying China's domestic AI chip ecosystem",
+          "source_url": "https://finance.sina.com.cn/stock/relnews/cn/2026-04-23/doc-inhvnaik5503613.shtml",
+          "excerpt": "出于分摊风险的考虑，DeepSeek-V4也适配了寒武纪的芯片"
+        }
+      ],
+      "sources": [
+        {
+          "url": "http://www.aastocks.com/en/stocks/news/aafn-news/NOW.1520164/2",
+          "outlet": "AAStocks",
+          "title": "Huawei Announces Full Support for DeepSeek V4 Across Ascend SuperPod Series Products",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://economictimes.indiatimes.com/tech/artificial-intelligence/huawei-ascend-supernode-to-support-deepseek-v4/articleshow/130484961.cms",
+          "outlet": "The Economic Times",
+          "title": "Huawei Ascend supernode to support Deepseek V4",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://finance.sina.com.cn/stock/relnews/cn/2026-04-23/doc-inhvnaik5503613.shtml",
+          "outlet": "Sina Finance",
+          "title": "中际旭创市值破万亿 老实业家如何逆袭硅谷",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Huawei",
+          "DeepSeek",
+          "Alibaba",
+          "ByteDance",
+          "Tencent",
+          "Cambricon"
+        ],
+        "people": [],
+        "places": [
+          "China"
+        ]
+      }
+    },
+    {
+      "id": "intel-q1-beat-datacenter-foundry-surge",
+      "headline": "Intel Q1 Revenue Beats by 9% at $13.6B as Data Center Jumps 22% and Foundry Grows 16%",
+      "key_facts": [
+        {
+          "fact": "Intel Q1 2026 revenue was $13.58 billion, up 7.2% YoY and well above the $12.42 billion analyst estimate; adjusted EPS was $0.29 vs $0.01 expected",
+          "source_url": "https://www.digitaltoday.co.kr/en/view/50597/intel-shares-surge-15-percent-after-hours-on-q1-beat-strong-q2-outlook-data-center-foundry-sales-rise",
+          "excerpt": "Intel's first-quarter revenue rose 7.2 percent from a year earlier to $13.58 billion, topping a forecast of $12.42 billion. Given that it posted revenue declines in 5 of the past 7 quarters, it was seen as a sign the trend is changing."
+        },
+        {
+          "fact": "Data Center and AI segment revenue rose 22% YoY to $5.1 billion, driven by Xeon CPU demand and 10-15% server CPU price increases",
+          "source_url": "https://longbridge.com/en/topics/40156400",
+          "excerpt": "Q1 2026 Data Center & AI revenue was $5.05bn, +22% YoY. Growth accelerated on stronger AI server CPU demand."
+        },
+        {
+          "fact": "Intel Foundry revenue was $5.4 billion, up 16% YoY, though external foundry revenue was only about $170 million (~3% of total)",
+          "source_url": "https://longbridge.com/en/topics/40156400",
+          "excerpt": "Q1 2026 foundry revenue was $5.42bn, +16% YoY. Intersegment eliminations totaled $5.25bn, implying external foundry revenue of about $170mn (~3%)."
+        },
+        {
+          "fact": "Q2 guidance of $13.8-14.8B revenue and $0.20 adjusted EPS exceeded analyst estimates of $13.07B and $0.09 respectively",
+          "source_url": "https://www.digitaltoday.co.kr/en/view/50597/intel-shares-surge-15-percent-after-hours-on-q1-beat-strong-q2-outlook-data-center-foundry-sales-rise",
+          "excerpt": "Intel forecast second-quarter revenue of $13.8 billion to $14.8 billion and adjusted earnings per share of $0.20. That exceeded market forecasts of $13.07 billion in revenue and $0.09 in earnings per share."
+        },
+        {
+          "fact": "Intel shares surged 15%+ after hours; the stock has risen more than 80% this year, with CEO Lip-Bu Tan citing the shift from foundational models to inference and agentic workloads as driving CPU demand",
+          "source_url": "https://www.barchart.com/story/news/1484823/intel-reports-first-quarter-2026-financial-results",
+          "excerpt": "The next wave of AI will bring intelligence closer to the end user, moving from foundational models to inference to agentic. This shift is significantly increasing the need for Intel's CPUs and wafer and advanced packaging offerings."
+        },
+        {
+          "fact": "Google signed a multi-year contract to use Xeon CPUs for AI inference and other workloads; latest PC and data-center chips are being produced on the 18A process at a new Arizona plant",
+          "source_url": "https://www.digitaltoday.co.kr/en/view/50597/intel-shares-surge-15-percent-after-hours-on-q1-beat-strong-q2-outlook-data-center-foundry-sales-rise",
+          "excerpt": "Google later decided to use multiple generations of Intel CPUs to handle AI workloads at its data centers. The latest PC and data-center chips are being produced on an 18A process at a new plant in Arizona."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.digitaltoday.co.kr/en/view/50597/intel-shares-surge-15-percent-after-hours-on-q1-beat-strong-q2-outlook-data-center-foundry-sales-rise",
+          "outlet": "Digital Today",
+          "title": "Intel shares surge 15 percent after hours on Q1 beat, strong Q2 outlook; data center and foundry sales rise",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.barchart.com/story/news/1484823/intel-reports-first-quarter-2026-financial-results",
+          "outlet": "Barchart / Intel",
+          "title": "Intel Reports First-Quarter 2026 Financial Results",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://longbridge.com/en/topics/40156400",
+          "outlet": "Longbridge / Dolphin Research",
+          "title": "INTC: Past the Darkest Hour, Old Guard Strikes Back",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://longbridge.com/en/news/283920889",
+          "outlet": "Longbridge",
+          "title": "Intel Q1 Earnings: A Stinging Rebuke to Wall Street",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Intel",
+          "Google",
+          "Nvidia",
+          "SoftBank"
+        ],
+        "people": [
+          "Lip-Bu Tan",
+          "David Zinsner"
+        ],
+        "places": [
+          "Arizona"
+        ]
+      }
+    },
+    {
+      "id": "meta-cuts-8000-jobs-10pct-workforce-ai-spending",
+      "headline": "Meta Cuts 8,000 Jobs and Closes 6,000 Roles as AI Capital Spending Hits $135B",
+      "key_facts": [
+        {
+          "fact": "Meta will lay off approximately 8,000 employees (10% of workforce) on May 20 and close 6,000 open roles, bringing the effective headcount reduction to 14,000 positions.",
+          "source_url": "https://thenextweb.com/news/meta-layoffs-8000-ai-restructuring-may-2026",
+          "excerpt": "Meta is cutting approximately 8,000 employees (10% of its workforce) beginning 20 May, cancelling 6,000 open roles, and planning additional cuts for H2 2026."
+        },
+        {
+          "fact": "The layoffs were announced in an internal memo by CPO Janelle Gale, who said they are part of 'our continued effort to run the company more efficiently and to allow us to offset the other investments we're making.'",
+          "source_url": "https://www.moneycontrol.com/news/business/companies/meta-tells-staff-it-will-cut-10-of-jobs-in-push-for-efficiency-13898004.html",
+          "excerpt": "We're doing this as part of our continued effort to run the company more efficiently and to allow us to offset the other investments we're making."
+        },
+        {
+          "fact": "Meta's guided capital expenditure for 2026 is $115B to $135B, a 73% increase over the $72.2B spent in 2025, largely directed at AI infrastructure.",
+          "source_url": "https://thenextweb.com/news/meta-layoffs-8000-ai-restructuring-may-2026",
+          "excerpt": "The company's capital expenditure for 2026 is a 73% increase over the $72.2 billion it spent in 2025, largely directed at AI infrastructure."
+        },
+        {
+          "fact": "Additional job cuts are planned for H2 2026; if the second wave matches the first, Meta will have eliminated roughly 20% of its pre-2026 workforce.",
+          "source_url": "https://sfist.com/2026/04/23/mass-layoffs-at-meta-begin-with-8-000-let-go-6-000-roles-frozen/",
+          "excerpt": "Further layoffs are being planned 'in the second half of the year,' with the numbers still to be determined based on how well AI systems in the company are able to create efficiencies."
+        },
+        {
+          "fact": "Meta also told employees earlier this week that a new tracking tool will capture keystrokes and mouse movements from work computers to train AI agents.",
+          "source_url": "https://tech.yahoo.com/ai/meta-ai/articles/meta-track-employee-keystrokes-clicks-050000865.html",
+          "excerpt": "Meta employees received a memo stating that the company is installing new software on their computers that will track click locations, keystrokes, and mouse movements in an effort to train AI models."
+        },
+        {
+          "fact": "CEO Mark Zuckerberg said on Meta's January earnings call that 2026 would be 'the year that AI starts to dramatically change the way that we work.'",
+          "source_url": "https://keyt.com/news/money-and-business/cnn-business-consumer/2026/04/23/meta-to-cut-10-of-staff-as-it-pours-billions-into-ai/",
+          "excerpt": "On Meta's January earnings call, he called 2026 'the year that AI starts to dramatically change the way that we work.'"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://thenextweb.com/news/meta-layoffs-8000-ai-restructuring-may-2026",
+          "outlet": "The Next Web",
+          "title": "Meta cuts 8,000 jobs and cancels 6,000 open roles as $135B AI spending reshapes the company from the inside",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.moneycontrol.com/news/business/companies/meta-tells-staff-it-will-cut-10-of-jobs-in-push-for-efficiency-13898004.html",
+          "outlet": "Moneycontrol / Bloomberg",
+          "title": "Meta tells staff it will cut 10% of jobs in push for efficiency",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.france24.com/en/live-news/20260423-meta-plans-10-layoffs-as-ai-spending-soars-source",
+          "outlet": "France 24 / AFP",
+          "title": "Meta plans 10% layoffs as AI spending soars: source",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://sfist.com/2026/04/23/mass-layoffs-at-meta-begin-with-8-000-let-go-6-000-roles-frozen/",
+          "outlet": "SFist",
+          "title": "Mass Layoffs at Meta Begin With 8,000 Let Go; 6,000 Roles Frozen",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://tech.yahoo.com/ai/meta-ai/articles/meta-track-employee-keystrokes-clicks-050000865.html",
+          "outlet": "Yahoo Tech",
+          "title": "Meta to track employee keystrokes and clicks to train AI, memo reveals",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business",
+        "economy"
+      ],
+      "entities": {
+        "organizations": [
+          "Meta",
+          "Meta Superintelligence Labs"
+        ],
+        "people": [
+          "Mark Zuckerberg",
+          "Janelle Gale",
+          "Dan Ives"
+        ],
+        "places": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "nokia-q1-optical-networks-ai-datacenter-surge",
+      "headline": "Nokia Q1 Profit Jumps 54% as Optical Networks for AI Data Centers Drive €1B in Hyperscaler Orders",
+      "key_facts": [
+        {
+          "fact": "Nokia's Q1 2026 comparable operating profit was €281 million, up 54% YoY; shares rose 7% in Helsinki to their highest level since 2010, up 63% year-to-date",
+          "source_url": "https://www.digitaltoday.co.kr/en/view/50674/nokia-q1-results-beat-fibre-optic-business-ai-datacentres",
+          "excerpt": "Nokia's comparable operating profit for the first quarter was 281 million euros, up 54 percent from a year earlier. On the back of the strong results, its shares rose about 7 percent in Helsinki, reaching their highest level since 2010. The stock is up 63 percent this year."
+        },
+        {
+          "fact": "Optical networks segment grew 20% in Q1, the fastest of all Nokia divisions; Nokia secured about €1 billion in new orders from hyperscalers including Amazon, Google, and Microsoft",
+          "source_url": "https://www.digitaltoday.co.kr/en/view/50674/nokia-q1-results-beat-fibre-optic-business-ai-datacentres",
+          "excerpt": "Growth was led by optical networks within the network infrastructure division. That business grew 20 percent in the first quarter. Nokia secured about 1 billion euros of new orders from those customers in the first quarter."
+        },
+        {
+          "fact": "Revenue exposure to AI and cloud customers expanded to 8% of total and rose 49% YoY as hyperscalers build large-scale AI training infrastructure",
+          "source_url": "https://www.digitaltoday.co.kr/en/view/50674/nokia-q1-results-beat-fibre-optic-business-ai-datacentres",
+          "excerpt": "Revenue exposure to AI and cloud customers expanded to 8 percent and rose 49 percent from a year earlier."
+        },
+        {
+          "fact": "Nokia raised its 2026 network infrastructure growth guidance from 6-8% to 12-14%, driven by optical and IP networks demand from AI customers",
+          "source_url": "https://www.digitaltoday.co.kr/en/view/50674/nokia-q1-results-beat-fibre-optic-business-ai-datacentres",
+          "excerpt": "It increased its 2026 growth guidance for the network infrastructure division to 12 to 14 percent from 6 to 8 percent."
+        },
+        {
+          "fact": "Nokia forecasts the AI and cloud-related network market will grow at a 27% CAGR through 2028, nearly double last year's forecast",
+          "source_url": "https://www.digitaltoday.co.kr/en/view/50674/nokia-q1-results-beat-fibre-optic-business-ai-datacentres",
+          "excerpt": "Nokia forecast that the AI and cloud-related network market it supplies will grow at a compound annual rate of 27 percent through 2028. That is almost double the level of the forecast it presented last year."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.digitaltoday.co.kr/en/view/50674/nokia-q1-results-beat-fibre-optic-business-ai-datacentres",
+          "outlet": "Digital Today",
+          "title": "Nokia beats market expectations as fibre optic business for AI data centres lifts results",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Nokia",
+          "Amazon",
+          "Google",
+          "Microsoft",
+          "Infinera"
+        ],
+        "people": [
+          "Justin Hotard"
+        ],
+        "places": [
+          "Helsinki",
+          "Finland"
+        ]
+      }
+    },
+    {
+      "id": "openai-gpt-5-5-launch-agentic-coding",
+      "headline": "OpenAI Launches GPT-5.5 With Gains in Agentic Coding and Computer Use, Priced at $5/$30 Per 1M Tokens",
+      "key_facts": [
+        {
+          "fact": "GPT-5.5 released April 23, six weeks after GPT-5.4. It scores 82.7% on Terminal-Bench 2.0, beating Claude Opus 4.7 (69.4%) and Gemini 3.1 Pro (68.5%). On OSWorld-Verified it scores 78.7% vs Claude Opus 4.7 at 78.0%.",
+          "source_url": "https://dev.to/_53fb7c03dd741a6124e4e/gpt-55-is-out-what-the-numbers-actually-say-42l",
+          "excerpt": "Terminal-Bench 2.0: GPT-5.5 82.7%, GPT-5.4 75.1%, Claude Opus 4.7 69.4%, Gemini 3.1 Pro 68.5%. OSWorld-Verified: GPT-5.5 78.7%, Claude Opus 4.7 78.0%, GPT-5.4 75.0%."
+        },
+        {
+          "fact": "On SWE-Bench Pro (real GitHub issue resolution), GPT-5.5 scores 58.6%, while Claude Opus 4.7 scores 64.3% — Anthropic still leads in production coding.",
+          "source_url": "https://cryptonews.net/news/other/32756279/",
+          "excerpt": "On SWE-Bench Pro, which grades real-world GitHub issue resolution, it reaches 58.6%. Claude Opus 4.7 scores higher at 64.3%."
+        },
+        {
+          "fact": "API pricing is $5/1M input tokens and $30/1M output tokens — double GPT-5.4. GPT-5.5 Pro costs $30/1M input and $180/1M output. Both have a 1M token context window.",
+          "source_url": "https://azure.microsoft.com/en-us/blog/openais-gpt-5-5-in-microsoft-foundry-frontier-intelligence-on-an-enterprise-ready-platform/",
+          "excerpt": "GPT-5.5: $5.00 input, $0.50 cached input, $30.00 output per million tokens. GPT-5.5 Pro: $30.00 input, $3.00 cached input, $180.00 output."
+        },
+        {
+          "fact": "OpenAI claims GPT-5.5 uses ~40% fewer output tokens for equivalent tasks, bringing the effective net cost increase to around 20% despite the doubled per-token price.",
+          "source_url": "https://renovateqr.com/blog/gpt-5-5-review-benchmarks-2026",
+          "excerpt": "It uses about 40% fewer output tokens for equivalent tasks, which keeps the real net cost increase closer to 20%. The five distinct effort levels also give you flexible cost control."
+        },
+        {
+          "fact": "Rolling out to Plus, Pro, Business, and Enterprise users in ChatGPT and Codex. GPT-5.5 was co-designed and trained on Nvidia's GB200 and GB300 NVL72 systems.",
+          "source_url": "https://finance.biggo.com/news/ll0OvZ0BDPbb-ItTXvTN",
+          "excerpt": "GPT-5.5 is now available to paying users of ChatGPT and the coding tool Codex across the Plus, Pro, Business, and Enterprise tiers. GPT-5.5 was co-designed and trained on Nvidia's next-generation AI chips, the GB200 and GB300 NVL72 systems."
+        },
+        {
+          "fact": "GPT-5.5 matches GPT-5.4 per-token latency in real-world serving despite higher capability. OpenAI leads the Artificial Analysis Intelligence Index with a score of 60, three points ahead of Claude Opus 4.7 and Gemini 3.1 Pro at 57.",
+          "source_url": "https://renovateqr.com/blog/gpt-5-5-review-benchmarks-2026",
+          "excerpt": "GPT-5.5 is OpenAI's new flagship model, released April 23, 2026. It leads the Artificial Analysis Intelligence Index with a score of 60, putting it three points ahead of Claude Opus 4.7 and Gemini 3.1 Pro at 57."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://dev.to/_53fb7c03dd741a6124e4e/gpt-55-is-out-what-the-numbers-actually-say-42l",
+          "outlet": "DEV Community",
+          "title": "GPT-5.5 Is Out — What the Numbers Actually Say",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://cryptonews.net/news/other/32756279/",
+          "outlet": "Decrypt",
+          "title": "OpenAI Releases GPT-5.5: Faster, Smarter—And Pricier",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://azure.microsoft.com/en-us/blog/openais-gpt-5-5-in-microsoft-foundry-frontier-intelligence-on-an-enterprise-ready-platform/",
+          "outlet": "Microsoft Azure Blog",
+          "title": "OpenAI's GPT-5.5 in Microsoft Foundry: Frontier intelligence on an enterprise ready platform",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://renovateqr.com/blog/gpt-5-5-review-benchmarks-2026",
+          "outlet": "RenovateQR",
+          "title": "GPT-5.5 Review: OpenAI's Smartest Model Yet, the Double Price Tag, and the Honest Benchmark Story",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://finance.biggo.com/news/ll0OvZ0BDPbb-ItTXvTN",
+          "outlet": "BigGo Finance",
+          "title": "OpenAI Launches GPT-5.5, Bringing 'Autonomous Intelligence' to Enterprise Workflows",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://economictimes.indiatimes.com/magazines/panache/openai-aunches-gpt-5-5-with-api-pricing-starting-at-5-per-1-million-tokens/articleshow/130485887.cms",
+          "outlet": "The Economic Times",
+          "title": "OpenAI launches GPT-5.5 with API pricing starting at $5 per 1 million tokens",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "OpenAI",
+          "Microsoft",
+          "Anthropic",
+          "Google",
+          "Nvidia"
+        ],
+        "people": [
+          "Sam Altman",
+          "Greg Brockman",
+          "Jakub Pachocki"
+        ],
+        "places": []
+      }
+    },
+    {
+      "id": "pudu-robotics-150m-raise-1-5b-valuation",
+      "headline": "China's Pudu Robotics Raises ~$150M at $1.5B+ Valuation, Opens US HQ in Texas",
+      "key_facts": [
+        {
+          "fact": "Pudu Robotics raised nearly $150 million in a new funding round, bringing cumulative funding past $300 million and valuation above $1.5 billion",
+          "source_url": "https://www.prnewswire.com/news-releases/pudu-robotics-raises-nearly-usd-150-million-exceeds-usd-1-5-billion-valuation-302751139.html",
+          "excerpt": "Pudu Robotics, a global leader in commercial service robotics, today announced that it has raised nearly USD 150 million in a new funding round. Following this round, the company's valuation has exceeded USD 1.5 billion."
+        },
+        {
+          "fact": "The company achieved 100% year-over-year revenue growth in 2025, with commercial cleaning now representing over 70% of total revenue",
+          "source_url": "https://www.prnewswire.com/news-releases/pudu-robotics-raises-nearly-usd-150-million-exceeds-usd-1-5-billion-valuation-302751139.html",
+          "excerpt": "This multi-sector approach resulted in a remarkable 100% year-over-year revenue surge in 2025. Notably, the company's commercial cleaning segment has grown to represent over 70% of total revenue."
+        },
+        {
+          "fact": "Pudu holds 23% global market share in commercial service robotics according to Frost & Sullivan, ranking first worldwide; customers include Carrefour, Walmart, and EDEKA",
+          "source_url": "https://www.prnewswire.com/news-releases/pudu-robotics-raises-nearly-usd-150-million-exceeds-usd-1-5-billion-valuation-302751139.html",
+          "excerpt": "According to Frost & Sullivan's 'Market Research on Global Commercial Service Robotics (2023)', Pudu Robotics commands a 23% global market share, ranking first worldwide."
+        },
+        {
+          "fact": "Pudu relocated its US headquarters from Santa Clara to Richardson, Texas, with nearly 15,000 robots deployed across the Americas and ambitions to serve one million US users in five years",
+          "source_url": "https://dallasinnovates.com/chinas-pudu-robotics-to-open-u-s-hq-in-north-texas/",
+          "excerpt": "Pudu Robotics, a global leader in service robotics based in Shenzhen, China, will open its new U.S. headquarters in Richardson's Sherman Tech Center Thursday as part of a 'global strategic expansion.' With nearly 15,000 of its robots deployed across the Americas to date."
+        },
+        {
+          "fact": "Industrial delivery robots saw rapid adoption with over 4,000 units shipped within one year of market launch; funds will accelerate embodied AI technologies and manufacturing capacity",
+          "source_url": "https://www.prnewswire.com/news-releases/pudu-robotics-raises-nearly-usd-150-million-exceeds-usd-1-5-billion-valuation-302751139.html",
+          "excerpt": "Its industrial delivery robots have seen rapid adoption with over 4,000 units shipped within just one year of their market launch. Proceeds from the financing will be strategically deployed to accelerate the development of embodied AI technologies."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/pudu-robotics-raises-nearly-usd-150-million-exceeds-usd-1-5-billion-valuation-302751139.html",
+          "outlet": "PR Newswire / Pudu Robotics",
+          "title": "Pudu Robotics Raises Nearly USD 150 Million, Exceeds USD 1.5 Billion Valuation",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://dallasinnovates.com/chinas-pudu-robotics-to-open-u-s-hq-in-north-texas/",
+          "outlet": "Dallas Innovates",
+          "title": "China's Pudu Robotics To Open U.S. HQ in North Texas",
+          "published_at": "2026-04-22",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Pudu Robotics",
+          "Frost & Sullivan",
+          "Walmart",
+          "Carrefour",
+          "EDEKA",
+          "NASA"
+        ],
+        "people": [
+          "Raymond Pan"
+        ],
+        "places": [
+          "Shenzhen",
+          "Richardson",
+          "Texas"
+        ]
+      }
+    },
+    {
+      "id": "regeneron-otarmeni-fda-gene-therapy-hearing-loss-free",
+      "headline": "FDA Approves Regeneron's Otarmeni, First Gene Therapy for Genetic Hearing Loss, Free in the US",
+      "key_facts": [
+        {
+          "fact": "The FDA granted accelerated approval for Otarmeni (lunsotogene parvec-cwha), the first gene therapy for genetic hearing loss and the first FDA-approved gene therapy to restore a neurosensory function to normal levels.",
+          "source_url": "https://www.gurufocus.com/news/8813251/otarmeni-lunsotogene-parveccwha-approved-by-fda-as-first-and",
+          "excerpt": "Regeneron Pharmaceuticals, Inc. has received accelerated approval for OtarmeniTM, the first gene therapy and second new molecular entity approved under the FDA Commissioner's National Priority Voucher program."
+        },
+        {
+          "fact": "In the CHORD trial, 80% of the 20 evaluable pediatric patients achieved or surpassed the primary hearing endpoint at week 24, and with longer follow-up, 42% achieved normal hearing.",
+          "source_url": "https://www.gurufocus.com/news/8813251/otarmeni-lunsotogene-parveccwha-approved-by-fda-as-first-and",
+          "excerpt": "Pivotal results of the CHORD trial demonstrating 80% of participants achieved or surpassed a hearing level meeting the primary endpoint, and with longer follow-up, 42% achieved normal hearing."
+        },
+        {
+          "fact": "Regeneron will make Otarmeni available for free in the United States and announced a drug pricing deal with the White House.",
+          "source_url": "https://whbl.com/2026/04/23/fda-approves-regenerons-gene-therapy-for-inherited-deafness/",
+          "excerpt": "Regeneron said the therapy Otarmeni will be available for free to patients in the United States. Regeneron is also set to announce a drug pricing deal with the White House this afternoon."
+        },
+        {
+          "fact": "OTOF-related hearing loss is ultra-rare, affecting 20-50 newborns per year in the US. Otarmeni delivers a functioning OTOF gene to inner ear hair cells via an infusion into the cochlea under general anesthesia.",
+          "source_url": "https://medcitynews.com/2026/04/regeneron-gene-therapy-hearing-loss-otarmeni-fda-approval-otof-otoferlin-db-oto-regn/",
+          "excerpt": "OTOF hearing loss is ultra-rare, diagnosed in about 50 newborns per year in the U.S., according to Regeneron."
+        },
+        {
+          "fact": "The FDA approved Otarmeni just 61 days after Regeneron submitted its biologics license application, making it the sixth approval under the National Priority Voucher program and the first for a gene therapy.",
+          "source_url": "https://medcitynews.com/2026/04/regeneron-gene-therapy-hearing-loss-otarmeni-fda-approval-otof-otoferlin-db-oto-regn/",
+          "excerpt": "The FDA said it approved Otarmeni 61 days after Regeneron submitted its biologics license application. It's the sixth approval under this program and the first for a gene therapy."
+        },
+        {
+          "fact": "Regeneron acquired Decibel Therapeutics, which originally developed the therapy (then called DB-OTO), in 2023 for up to $213 million including milestones.",
+          "source_url": "https://medcitynews.com/2026/04/regeneron-gene-therapy-hearing-loss-otarmeni-fda-approval-otof-otoferlin-db-oto-regn/",
+          "excerpt": "In 2023, Regeneron acquired Decibel in a deal set to pay out $213 million including milestone payments."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.gurufocus.com/news/8813251/otarmeni-lunsotogene-parveccwha-approved-by-fda-as-first-and",
+          "outlet": "GuruFocus / GlobeNewswire",
+          "title": "OtarmeniTM Approved by FDA as First and Only Gene Therapy for Genetic Hearing Loss",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://medcitynews.com/2026/04/regeneron-gene-therapy-hearing-loss-otarmeni-fda-approval-otof-otoferlin-db-oto-regn/",
+          "outlet": "MedCity News",
+          "title": "Regeneron Gets Landmark FDA Approval for First Gene Therapy for Hearing Loss",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://whbl.com/2026/04/23/fda-approves-regenerons-gene-therapy-for-inherited-deafness/",
+          "outlet": "Reuters via WHBL",
+          "title": "Regeneron wins FDA approval for first gene therapy for genetic hearing loss",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Regeneron Pharmaceuticals",
+          "FDA",
+          "Decibel Therapeutics"
+        ],
+        "people": [
+          "George Yancopoulos",
+          "Marty Makary"
+        ],
+        "places": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "terrapower-begins-natrium-nuclear-construction",
+      "headline": "TerraPower Begins Construction on First Next-Gen Nuclear Plant in the US, a 345MW Natrium Reactor",
+      "key_facts": [
+        {
+          "fact": "TerraPower officially started construction on Kemmerer Unit 1 in Wyoming on April 23, the first utility-scale advanced nuclear power plant in the United States",
+          "source_url": "https://www.prnewswire.com/news-releases/terrapower-commences-construction-on-americas-first-utility-scale-advanced-nuclear-power-plant-302751734.html",
+          "excerpt": "TerraPower, a nuclear innovation company, today, announced the official start of construction on its flagship Natrium® plant, Kemmerer Unit 1. Kemmerer Unit 1 is on track to be the first utility-scale advanced nuclear power plant in the United States."
+        },
+        {
+          "fact": "The NRC construction permit issued in March 2026 was the first for a commercial non-light water reactor in more than 40 years and the first for any commercial reactor in nearly a decade",
+          "source_url": "https://www.powermag.com/terrapowers-kemmerer-1-enters-construction-timeline-of-the-natrium-projects-road-to-first-power/",
+          "excerpt": "The construction start follows the U.S. Nuclear Regulatory Commission's (NRC's) issuance of a construction permit on March 4, 2026—the first the agency has granted for a commercial non–light water reactor in more than 40 years and the first for any commercial reactor in nearly a decade."
+        },
+        {
+          "fact": "The Natrium plant features a 345MW sodium-cooled fast reactor with molten salt thermal storage that can boost output to 500MW for over 5 hours during peak demand",
+          "source_url": "https://www.prnewswire.com/news-releases/terrapower-commences-construction-on-americas-first-utility-scale-advanced-nuclear-power-plant-302751734.html",
+          "excerpt": "The facility includes a 345-megawatt, sodium-cooled fast reactor equipped with a system that captures excess heat within the molten salt. Tapping a thermal salt battery can boost the plant's power to 500 megawatts for more than five hours."
+        },
+        {
+          "fact": "The project is backed by up to $2 billion in cost-shared federal support through DOE's Advanced Reactor Demonstration Program; founded by Bill Gates",
+          "source_url": "https://www.powermag.com/terrapowers-kemmerer-1-enters-construction-timeline-of-the-natrium-projects-road-to-first-power/",
+          "excerpt": "Founded by Bill Gates and backed by up to $2 billion in cost-shared federal support through DOE's Advanced Reactor Demonstration Program (ARDP)."
+        },
+        {
+          "fact": "TerraPower aims for nuclear fission reactor operational by end of 2030; about 1,600 workers during construction and 250 permanent once operational",
+          "source_url": "https://tradesbuilt.com/construction-begins-on-terrapower-natrium-nuclear-project-in-kemmerer-wyoming/",
+          "excerpt": "At peak construction, the project is expected to employ around 1,600 workers. Once operational, it is projected to support approximately 250 permanent jobs at the facility."
+        },
+        {
+          "fact": "TerraPower already has an agreement with Meta to build 8 Natrium reactors in the US, with the first two intended to come online in 2032",
+          "source_url": "https://twinogamez.com/nuclear-first-terrapower-officially-begins-construction-on-the-next-sodium-plant-in-wyoming/",
+          "excerpt": "In January, the company reached an agreement with Meta to build 8 Natrium reactors in the US, the first two of which are intended to come online in 2032."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/terrapower-commences-construction-on-americas-first-utility-scale-advanced-nuclear-power-plant-302751734.html",
+          "outlet": "PR Newswire / TerraPower",
+          "title": "TerraPower Commences Construction on America's First Utility-Scale Advanced Nuclear Power Plant",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.powermag.com/terrapowers-kemmerer-1-enters-construction-timeline-of-the-natrium-projects-road-to-first-power/",
+          "outlet": "POWER Magazine",
+          "title": "TerraPower's Kemmerer 1 Enters Construction: Timeline of the Natrium Project's Road to First Power",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://tradesbuilt.com/construction-begins-on-terrapower-natrium-nuclear-project-in-kemmerer-wyoming/",
+          "outlet": "TradesBuilt",
+          "title": "Construction Begins on TerraPower Natrium Nuclear Project in Kemmerer, Wyoming",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://twinogamez.com/nuclear-first-terrapower-officially-begins-construction-on-the-next-sodium-plant-in-wyoming/",
+          "outlet": "Twinogamez",
+          "title": "Nuclear first: TerraPower officially begins construction on the next Sodium plant in Wyoming",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "economy"
+      ],
+      "entities": {
+        "organizations": [
+          "TerraPower",
+          "NRC",
+          "DOE",
+          "Meta",
+          "GE Hitachi Nuclear Energy",
+          "Bechtel"
+        ],
+        "people": [
+          "Bill Gates",
+          "Chris Levesque",
+          "Mark Gordon"
+        ],
+        "places": [
+          "Kemmerer",
+          "Wyoming"
+        ]
+      }
+    },
+    {
+      "id": "trump-threatens-uk-big-tariff-digital-services-tax",
+      "headline": "Trump Threatens 'Big Tariff' on UK If It Doesn't Drop Its 2% Digital Services Tax",
+      "key_facts": [
+        {
+          "fact": "Trump told reporters at the White House that the US will 'put a big tariff on the UK' if Britain does not drop its digital services tax, which he views as unfairly targeting American tech companies like Apple, Google, and Meta.",
+          "source_url": "https://uk.finance.yahoo.com/news/uk-face-big-tariff-doesnt-235730013.html",
+          "excerpt": "U.S. President Donald Trump said the United States will retaliate with a 'big tariff' if Britain continues to target companies like Apple, Alphabet's Google and Meta with its technology tax."
+        },
+        {
+          "fact": "The UK's 2% digital services tax, introduced in 2020, generated £944 million in the 2025-26 fiscal year (up 17% YoY) and is projected to raise £1.4 billion annually by 2030.",
+          "source_url": "https://timesofindia.indiatimes.com/technology/tech-news/donald-trump-to-uk-pm-keir-starmer-on-digital-services-tax-us-will-put-big-tariff-on-the-uk-if/articleshow/130491022.cms",
+          "excerpt": "Recent data from HM Revenue and Customs showed that the DST generated £944 million in the 2025–26 fiscal year, up 17% from the previous year. Official projections suggest the tax could raise £1.4 billion annually by 2030."
+        },
+        {
+          "fact": "The warning comes ahead of King Charles III's state visit to the US next week; Trump said the monarch could help repair Washington's relationship with Britain, which has become strained.",
+          "source_url": "https://uk.finance.yahoo.com/news/uk-face-big-tariff-doesnt-235730013.html",
+          "excerpt": "His comments come ahead of a visit by Britain's head of state, King Charles, next week. Trump said he believes the monarch could help repair the Washington's relationship with the British."
+        },
+        {
+          "fact": "Trump said: 'I don't like it when they target American companies, because basically, you're talking about our great American companies... We've been looking at it, and we can meet that very easily by just putting a big tariff on the UK.'",
+          "source_url": "https://timesofindia.indiatimes.com/technology/tech-news/donald-trump-to-uk-pm-keir-starmer-on-digital-services-tax-us-will-put-big-tariff-on-the-uk-if/articleshow/130491022.cms",
+          "excerpt": "I don't like it when they target American companies, because basically, you're talking about our great American companies, whether we like those companies that don't like them, they're American companies and the top companies in the world."
+        },
+        {
+          "fact": "The DST has been criticized by both Trump and his predecessor Joe Biden. The UK has so far resisted Washington's calls to drop the tax, maintaining it ensures digital businesses contribute fairly based on their economic activity in the country.",
+          "source_url": "https://uk.finance.yahoo.com/news/uk-face-big-tariff-doesnt-235730013.html",
+          "excerpt": "The United Kingdom rolled out its 2% digital services tax in 2020, a move that has been criticized by Trump and his predecessor Democrat Joe Biden."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://uk.finance.yahoo.com/news/uk-face-big-tariff-doesnt-235730013.html",
+          "outlet": "Reuters via Yahoo Finance",
+          "title": "UK to face 'big tariff' if it doesn't drop tech tax, Trump says",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://timesofindia.indiatimes.com/technology/tech-news/donald-trump-to-uk-pm-keir-starmer-on-digital-services-tax-us-will-put-big-tariff-on-the-uk-if/articleshow/130491022.cms",
+          "outlet": "Times of India",
+          "title": "Donald Trump to UK PM Keir Starmer on digital services tax: US will put big tariff on the UK if...",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://one.news18.com/english/article/world/trump-threatens-big-tariffs-on-uk-over-digital-service-tax-dispute-mfp-6914003792",
+          "outlet": "News18 / Firstpost",
+          "title": "Trump Threatens 'Big Tariffs' on UK Over Digital Service Taxes Under Starmer Government",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "politics",
+        "economy",
+        "world"
+      ],
+      "entities": {
+        "organizations": [
+          "Apple",
+          "Alphabet",
+          "Google",
+          "Meta",
+          "HM Revenue and Customs"
+        ],
+        "people": [
+          "Donald Trump",
+          "Keir Starmer",
+          "King Charles III"
+        ],
+        "places": [
+          "United States",
+          "United Kingdom"
+        ]
+      }
+    },
+    {
+      "id": "us-china-ai-escalation-distillation-capital-restrictions",
+      "headline": "US Accuses China of Industrial-Scale AI Distillation; Beijing Orders Tech Firms to Reject US Capital",
+      "key_facts": [
+        {
+          "fact": "White House OSTP Director Michael Kratsios wrote in a memo that the US has intelligence indicating 'foreign entities, principally based in China' are conducting 'industrial-scale distillation' of American AI models using tens of thousands of surrogate accounts.",
+          "source_url": "https://www.aol.com/articles/white-house-accuses-china-copying-182627738.html",
+          "excerpt": "Foreign entities primarily based in China have conducted 'industrial-scale' campaigns to crib frontier AI models from US companies, Michael Kratsios, White House director of the office of science and technology policy, said in a memo."
+        },
+        {
+          "fact": "The White House plans to share intelligence with US AI companies, coordinate private-sector defenses, develop best practices, and explore measures to hold foreign actors accountable for distillation campaigns.",
+          "source_url": "https://www.semafor.com/article/04/23/2026/us-accuses-china-of-ai-theft",
+          "excerpt": "The administration said it would work with US AI firms to counter such campaigns; the companies themselves recently banded together to share information about so-called adversarial distillation attempts."
+        },
+        {
+          "fact": "In a parallel move, Chinese regulators including the NDRC told tech firms such as ByteDance, Moonshot AI, and StepFun to reject US capital without state approval, responding to Meta's acquisition of Chinese AI startup Manus.",
+          "source_url": "https://thenextweb.com/news/china-us-investment-ai-startups-approval",
+          "excerpt": "China plans to restrict its leading technology companies, including top AI startups, from accepting US capital without first obtaining government approval... The move was reportedly in response to Meta's controversial acquisition of startup Manus."
+        },
+        {
+          "fact": "The House Foreign Affairs Committee advanced bipartisan export control bills on April 22 that would close loopholes allowing China to access US AI technology, including considering listing distillation entities on the Entity List.",
+          "source_url": "https://news.bloomberglaw.com/artificial-intelligence/ai-export-control-measures-aimed-at-china-gain-steam-in-us-house",
+          "excerpt": "The House Foreign Affairs Committee advanced a slate of bipartisan export control bills Wednesday that show a growing appetite in Congress for restricting the flow of artificial intelligence technology to China."
+        },
+        {
+          "fact": "Anthropic has previously accused DeepSeek, Moonshot, and MiniMax of conducting distillation attacks against Claude; OpenAI has made similar accusations against DeepSeek for using GPT outputs to train its models.",
+          "source_url": "https://ca.news.yahoo.com/white-house-memo-claims-mass-231322330.html",
+          "excerpt": "Earlier this year, Anthropic described distillation 'attacks' by three AI laboratories, DeepSeek, Moonshot, and MiniMax, saying it had found them all to be working to copy Anthropic models through distillation campaigns."
+        },
+        {
+          "fact": "The dual escalation came weeks before a planned Trump visit to Beijing, with China's embassy responding that its AI development 'is the result of its own dedication and effort as well as international cooperation.'",
+          "source_url": "https://ca.news.yahoo.com/white-house-memo-claims-mass-231322330.html",
+          "excerpt": "A representative of China's US embassy in Washington DC said its development was 'the result of its own dedication and effort as well as international cooperation'."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.aol.com/articles/white-house-accuses-china-copying-182627738.html",
+          "outlet": "CNN via AOL",
+          "title": "White House accuses China of copying American AI models in 'industrial-scale' campaign",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.semafor.com/article/04/23/2026/us-accuses-china-of-ai-theft",
+          "outlet": "Semafor",
+          "title": "US accuses China of AI theft",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://thenextweb.com/news/china-us-investment-ai-startups-approval",
+          "outlet": "The Next Web",
+          "title": "China plans to block US investment in its top AI firms without government approval",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://news.bloomberglaw.com/artificial-intelligence/ai-export-control-measures-aimed-at-china-gain-steam-in-us-house",
+          "outlet": "Bloomberg Law",
+          "title": "AI Export Control Measures Aimed at China Gain Steam in US House",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://ca.news.yahoo.com/white-house-memo-claims-mass-231322330.html",
+          "outlet": "BBC via Yahoo News",
+          "title": "White House memo claims mass AI theft by Chinese firms",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "politics",
+        "world"
+      ],
+      "entities": {
+        "organizations": [
+          "White House",
+          "NDRC",
+          "OpenAI",
+          "Anthropic",
+          "DeepSeek",
+          "Moonshot AI",
+          "StepFun",
+          "Meta",
+          "ByteDance",
+          "House Foreign Affairs Committee"
+        ],
+        "people": [
+          "Michael Kratsios",
+          "Donald Trump"
+        ],
+        "places": [
+          "United States",
+          "China",
+          "Beijing"
+        ]
+      }
+    },
+    {
+      "id": "us-soldier-arrested-polymarket-insider-bet-maduro",
+      "headline": "DOJ Arrests US Soldier for $400K+ Polymarket Insider Bet on Maduro Capture He Helped Plan",
+      "key_facts": [
+        {
+          "fact": "Gannon Ken Van Dyke, a 38-year-old Army special forces soldier at Fort Bragg, was charged with wire fraud, commodities fraud, and theft of nonpublic government information — the first criminal case in the US tied to prediction market wagers.",
+          "source_url": "https://time.news/u-s-army-soldier-charged-with-insider-trading-on-prediction-market-over-classified-raid/",
+          "excerpt": "The Justice Department and CFTC unsealed an indictment charging Van Dyke with wire fraud, commodities fraud, theft of nonpublic government information — marking the first criminal case in the U.S. tied to prediction market wagers."
+        },
+        {
+          "fact": "Van Dyke participated in the planning and execution of the January 2026 predawn raid that captured Maduro, then bet approximately $33,034 across 13 wagers on Polymarket that Maduro would be removed from power, earning over $409,000 in profits.",
+          "source_url": "https://www.cnbc.com/2026/04/23/doj-soldier-polymarket-bets-venezuela-maduro.html",
+          "excerpt": "The soldier, Gannon Ken Van Dyke, 'participated in the planning and execution of the' operation to capture Maduro, the DOJ said."
+        },
+        {
+          "fact": "The CFTC separately filed a civil complaint seeking restitution, disgorgement, trading bans, and a permanent injunction against further violations of the Commodity Exchange Act.",
+          "source_url": "https://time.news/u-s-army-soldier-charged-with-insider-trading-on-prediction-market-over-classified-raid/",
+          "excerpt": "The CFTC is also pursuing civil penalties, seeking restitution, disgorgement, trading bans, and a permanent injunction against further violations of the Commodity Exchange Act."
+        },
+        {
+          "fact": "Van Dyke faces up to 20 years in prison if convicted of the top count (wire fraud) and up to 10 years on each remaining count.",
+          "source_url": "https://www.cnbc.com/2026/04/23/doj-soldier-polymarket-bets-venezuela-maduro.html",
+          "excerpt": "He faces a maximum possible sentence of 20 years in prison if convicted of the top criminal count, wire fraud, and up to 10 years in each of the remaining counts."
+        },
+        {
+          "fact": "Trump, when asked about the arrest, said: 'The whole world, unfortunately, has become somewhat of a casino.' Trump's son Donald Jr. is both an investor in Polymarket and a paid adviser to rival Kalshi.",
+          "source_url": "https://www.cnbc.com/2026/04/23/doj-soldier-polymarket-bets-venezuela-maduro.html",
+          "excerpt": "President Donald Trump, when asked about Van Dyke's arrest and other cases of suspected insider trading on prediction markets, said, 'You know the whole world, unfortunately, has become somewhat of a casino.'"
+        },
+        {
+          "fact": "Israeli authorities in February arrested several people and charged two on suspicion of using classified information to place bets about military operations in Iran on Polymarket.",
+          "source_url": "https://www.npr.org/2026/04/23/nx-s1-5797957/maduro-raid-charges-polymarket-insider",
+          "excerpt": "Israeli authorities in February arrested several people and charged two on suspicion of using classified information to place bets about military operations in Iran on Polymarket."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2026/04/23/doj-soldier-polymarket-bets-venezuela-maduro.html",
+          "outlet": "CNBC",
+          "title": "U.S. soldier arrested for Polymarket bets on Maduro capture",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.npr.org/2026/04/23/nx-s1-5797957/maduro-raid-charges-polymarket-insider",
+          "outlet": "NPR",
+          "title": "U.S. soldier charged with suspected Polymarket insider trading over Maduro raid",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://time.news/u-s-army-soldier-charged-with-insider-trading-on-prediction-market-over-classified-raid/",
+          "outlet": "Time News",
+          "title": "U.S. Army Soldier Charged With Insider Trading on Prediction Market Over Classified Raid",
+          "published_at": "2026-04-24",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.reuters.com/world/americas/us-arrests-soldier-accused-betting-400000-maduro-removal-abc-news-reports-2026-04-23/",
+          "outlet": "Reuters",
+          "title": "US soldier charged with making $400,000 on Maduro removal bets",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "politics",
+        "finance",
+        "world"
+      ],
+      "entities": {
+        "organizations": [
+          "DOJ",
+          "CFTC",
+          "Polymarket",
+          "US Army",
+          "Kalshi"
+        ],
+        "people": [
+          "Gannon Ken Van Dyke",
+          "Nicolás Maduro",
+          "Donald Trump",
+          "Donald Trump Jr.",
+          "Todd Blanche",
+          "Jay Clayton"
+        ],
+        "places": [
+          "Fort Bragg",
+          "Venezuela",
+          "Caracas",
+          "New York"
+        ]
+      }
+    },
+    {
+      "id": "zhongji-innolight-market-cap-1-trillion-yuan",
+      "headline": "Zhongji Innolight Breaks 1 Trillion Yuan Market Cap as AI Optical Module Demand Surges",
+      "key_facts": [
+        {
+          "fact": "Zhongji Innolight's stock crossed ¥900/share on April 23, pushing its market cap past the 1 trillion yuan (~$146B) mark and ranking 13th on the A-share market",
+          "source_url": "https://finance.sina.com.cn/stock/relnews/cn/2026-04-23/doc-inhvnaik5503613.shtml",
+          "excerpt": "4月23日开盘,A股资本市场诞生了一个极具传奇色彩的里程碑:光模块龙头中际旭创(300308.SZ)股价涨至900元/股以上,市值突破万亿大关,在整个A股位列第13名"
+        },
+        {
+          "fact": "The stock surged over 12x in one year, from ¥66.86/share in March 2025 — the fastest journey from 100 billion to 1 trillion yuan market cap in A-share history",
+          "source_url": "https://finance.sina.com.cn/stock/relnews/cn/2026-04-23/doc-inhvnaik5503613.shtml",
+          "excerpt": "中际旭创股价从2025年3月10日的66.86元/股开始一路狂飙,一年间翻超12倍,增速一骑绝尘,是A股历史上市值从千亿到万亿用时最短的企业"
+        },
+        {
+          "fact": "Q1 2026 revenue reached ¥19.5 billion ($2.7B), up 192% YoY, with net profit of ¥5.7 billion, up 262%",
+          "source_url": "https://finance.sina.com.cn/stock/relnews/cn/2026-04-23/doc-inhvnaik5503613.shtml",
+          "excerpt": "2026年一季度再刷新增长纪录:一季度营收达到194.96亿元,增长192%;单季度净利润57.35亿元,同比增幅262.28%"
+        },
+        {
+          "fact": "Broker estimates indicate Zhongji Innolight holds roughly 80% of Nvidia's 1.6T optical module procurement and over 40% of the global 800G market",
+          "source_url": "https://finance.sina.com.cn/stock/relnews/cn/2026-04-23/doc-inhvnaik5503613.shtml",
+          "excerpt": "中际旭创占据英伟达1.6T光模块采购量约80%份额,来自英伟达的订单约占公司总收入的60%...2025年,中际旭创在800G市场的占有率超过40%,全球排名第一"
+        },
+        {
+          "fact": "Morgan Stanley built a major position worth ¥3.7 billion in Q1 2026, entering the top-10 shareholders; Abu Dhabi Investment Authority and Temasek also invested",
+          "source_url": "https://finance.sina.com.cn/stock/relnews/cn/2026-04-23/doc-inhvnaik5503613.shtml",
+          "excerpt": "2026年一季度,摩根士丹利大举建仓,持仓市值高达36.98亿元,进入前十大流通股东。此外,阿布扎比投资局、淡马锡等主权基金也通过其子公司参与了对中际旭创海外业务的直接注资"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://finance.sina.com.cn/stock/relnews/cn/2026-04-23/doc-inhvnaik5503613.shtml",
+          "outlet": "Sina Finance",
+          "title": "中际旭创市值破万亿 老实业家如何逆袭硅谷 (Zhongji Innolight market cap breaks 1 trillion)",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://simplywall.st/stocks/cn/tech/szse-300308/zhongji-innolight-shares/news/exploring-three-high-growth-tech-stocks-in-asia-45",
+          "outlet": "Simply Wall St",
+          "title": "Exploring Three High Growth Tech Stocks In Asia",
+          "published_at": "2026-04-23",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Zhongji Innolight",
+          "Nvidia",
+          "Morgan Stanley",
+          "Abu Dhabi Investment Authority",
+          "Temasek"
+        ],
+        "people": [
+          "Wang Weixiu"
+        ],
+        "places": [
+          "Shenzhen",
+          "China"
+        ]
+      }
+    }
+  ],
+  "story_count": 21,
+  "source_count": 73
+}

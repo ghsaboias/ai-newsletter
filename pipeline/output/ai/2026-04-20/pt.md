@@ -1,0 +1,44 @@
+---
+date: 2026-04-20
+url:
+title: "[Tech] - Bem-vindo(a) a 20 de abril de 2026"
+wordcount: 783
+generated: true
+language: pt-br
+---
+
+# [Tech] - Bem-vindo(a) a 20 de abril de 2026
+
+Mythos gera 181 ataques contra falhas do Firefox em testes internos; Vercel é invadida via fornecedor de IA; Rússia atinge pela primeira vez o prédio do governo em Kiev.
+
+**Cibersegurança.** A NSA, agência de inteligência dos Estados Unidos, está usando o Mythos Preview da Anthropic mesmo depois de o Pentágono tê-la classificado como "risco na cadeia de suprimentos" em fevereiro. [O órgão é um dos cerca de 40 com acesso ao modelo](https://www.axios.com/2026/04/19/nsa-anthropic-mythos-pentagon). A empresa também anunciou que [estenderá o Mythos a instituições financeiras britânicas via Project Glasswing](https://thepaypers.com/fintech/news/anthropic-to-extend-project-glasswing-access-to-uk-financial-institutions), seu programa de acesso restrito para cibersegurança, comprometendo até US$100 milhões em créditos de uso. A urgência ficou mais concreta com um briefing emergencial do SANS Institute e da Cloud Security Alliance, duas das principais entidades globais de cibersegurança: em testes internos, [o Mythos gerou 181 ataques funcionais contra falhas do Firefox](https://gecnewswire.com/sans-institute-and-cloud-security-alliance-releases-the-ai-vulnerability-storm/), contra apenas dois na geração anterior. Segundo o Zero Day Clock, indicador do setor, o intervalo entre uma falha ser divulgada publicamente e ser efetivamente usada em ataques no mundo real caiu de 2,3 anos em 2019 para menos de um dia em 2026.
+
+A Vercel, plataforma de hospedagem usada por milhões de desenvolvedores, [confirmou uma invasão](https://www.bleepingcomputer.com/news/security/vercel-confirms-breach-as-hackers-claim-to-be-selling-stolen-data/) originada em uma ferramenta de IA terceirizada chamada Context.ai. Um funcionário da Context.ai foi infectado em fevereiro com um malware ladrão de senhas após baixar arquivos relacionados ao jogo Roblox; as credenciais comprometidas incluíam acessos ao Google Workspace e ao Supabase, plataforma de banco de dados. Um grupo ligado ao ShinyHunters, coletivo hacker conhecido por grandes vazamentos, postou os dados à venda por US$2 milhões. O CEO da Vercel, Guillermo Rauch, disse que a IA acelerou o trabalho dos atacantes ["de forma significativa"](https://cryptonews.com.au/news/vercel-breach-linked-to-ai-tool-compromise-raises-risk-for-crypto-frontends-133649/).
+
+**Cripto.** A Kelp DAO, plataforma de restaking que permite reusar ETH já aplicado em staking, [perdeu cerca de US$292 milhões em um ataque à sua ponte cross-chain no dia 18](https://cryptobriefing.com/kelpdao-bridge-hack-drains-292m-in-largest-defi-exploit-of-2026/), o maior roubo em finanças descentralizadas do ano. O invasor explorou uma falha no protocolo LayerZero, infraestrutura que conecta diferentes blockchains, e drenou cerca de 116,5 mil tokens rsETH. A LayerZero culpou a configuração de segurança da Kelp, que usava apenas um verificador em vez de múltiplos. O dano se espalhou: o atacante usou os tokens roubados como garantia para pegar empréstimos na Aave, maior protocolo de empréstimos em cripto, que [ficou com entre US$170 milhões e US$200 milhões em dívida impagável](https://www.weex.com/news/detail/full-post-mortem-of-the-kelpdao-incident-why-did-aave-which-was-not-compromised-end-up-in-crisis-situation-690932) depois que a Kelp congelou o rsETH. Mais de US$5,4 bilhões saíram da Aave em poucas horas em meio ao pânico; a LayerZero atribuiu o ataque ao grupo Lazarus, ligado à Coreia do Norte.
+
+---
+
+**Patrocinado**
+
+CONVITE ESPECIAL - Evento gratuito e online sobre como se manter competitivo no mercado em transformação de Inteligência Artificial.
+
+⚡ Conquer AI Summit
+⚡ 22 e 23/04, às 19h30
+⚡ Online e gratuito
+
+A Conquer Business School já impactou mais de 5 milhões de profissionais das maiores empresas do mundo em 130 países.
+
+[Link para inscrição aqui](#)
+
+---
+
+**Semicondutores.** A Intel acelerou pedidos de equipamentos para suas fábricas em [mais de 50% em relação ao ano passado](https://www.trendforce.com/news/2026/04/20/news-intel-foundry-said-to-boost-equipment-orders-by-50-yoy-14a-may-draw-major-customers-by-year-end/), preparando o terreno para o processo de fabricação 14A, sua próxima geração de chips avançados. Segundo o banco UBS, Nvidia, Apple, Google e AMD deram feedback positivo e devem assinar contratos de fabricação no outono americano. A SK Hynix, uma das maiores fabricantes de chips de memória do mundo, começou a produzir em larga escala um [novo módulo de memória de 192 GB feito sob medida para o próximo acelerador de IA da Nvidia, o Vera Rubin](https://en.sedaily.com/business/2026/04/20/sk-hynix-begins-mass-production-of-socamm2-for-nvidia-rubin). O chip tem o dobro da velocidade e gasta 75% menos energia que os módulos usados em servidores comuns. A empresa também fechou parceria com a TSMC para fabricar sua próxima geração de memória de alta performance. Já a Apple [adiou o Mac Studio para outubro e o MacBook Pro com tela OLED para 2027](https://www.newsbytesapp.com/news/science/apple-delays-macbook-pro-until-early-2027-amid-memory-shortages/tldr) por conta da escassez global de chips de memória, agravada pela expansão dos data centers de IA.
+
+**Energia & data centers.** Depois de Maine aprovar a primeira moratória estadual do país contra data centers acima de 20 megawatts, Seattle estuda seguir o mesmo caminho: a prefeita Katie Wilson anunciou que avalia uma [proibição semelhante](https://www.fox13seattle.com/news/seattle-mayor-data-centers) após receber 54 mil cartas de moradores contra projetos que consumiriam um terço da eletricidade da cidade. Na contramão da resistência, a australiana NextDC, operadora de data centers, captou cerca de US$1,4 bilhão depois de ver sua [capacidade contratada saltar 60% em um único trimestre](https://www.reuters.com/world/asia-pacific/australias-nextdc-raise-107-billion-accelerate-sydney-data-centre-rollout-2026-04-20/), puxada por provedores de nuvem e clientes de infraestrutura de IA. Já a Fermi, dona do maior projeto de data center do mundo, no Texas, [perdeu seu CEO cofundador](https://www.prnewswire.com/news-releases/fermi-inc-announces-fermi-2-0-strategic-evolution-new-board-chairman-leadership-transitions-and-new-office-locations-302746951.html), que admitiu ter sido ingênuo sobre a complexidade da construção; as ações da empresa acumulam queda de 75% em seis meses.
+
+**Geopolítica.** A Rússia [atacou Kiev com 810 drones e 13 mísseis](https://en.azvision.az/news/192439/european-leaders-to-visit-us-to-discuss-war-in-ukraine,-trump-says.html), atingindo pela primeira vez o prédio do governo ucraniano. No Golfo de Omã, o destróier americano USS Spruance [disparou contra e apreendeu o navio iraniano Touska](https://wtop.com/national/2026/04/the-latest-us-navy-seizure-of-iranian-ship-cats-doubt-on-fresh-ceasefire-talks-in-pakistan/), na primeira interceptação desde o início do bloqueio naval americano aos portos iranianos. O Irã respondeu com drones e abandonou as negociações em curso; o petróleo Brent, referência internacional, subiu 5,3%, a US$95,62 o barril. No Pacífico, Estados Unidos e Filipinas abriram os exercícios militares Balikatan com [17 mil soldados de sete nações](https://www.reuters.com/world/china/philippines-us-allies-start-military-exercises-testing-realworld-readiness-2026-04-20/), incluindo treinos de ataque marítimo na ilha filipina mais próxima de Taiwan.
+
+**Regulação.** Na feira industrial de Hannover, o chanceler alemão Friedrich Merz [pediu isenção para a IA industrial das regras atuais da União Europeia](https://www.dailymaverick.co.za/article/2026-04-20-germanys-merz-says-industrial-ai-needs-less-stringent-eu-regulation/). A categoria engloba modelos de IA usados em fábricas e linhas de produção, como inspeção automática de qualidade, manutenção preditiva e otimização de processos. O CEO da Siemens, Roland Busch, reforçou o recado: a maior parte do plano de €1 bilhão da empresa para investimentos em IA industrial irá para os Estados Unidos por causa da carga regulatória europeia. A associação da indústria elétrica alemã informou que mais da metade de suas empresas-membro já usa IA industrial em produção.
+
+**Biotech.** A UCB, farmacêutica belga especializada em neurologia, fechou acordo para [adquirir a Neurona Therapeutics por até US$1,15 bilhão](https://www.biospace.com/press-releases/ucb-to-acquire-neurona-therapeutics-advancing-its-innovative-leadership-in-epilepsy-through-regenerative-science). O ativo principal é uma terapia celular regenerativa para epilepsia resistente a medicamentos, atualmente em testes clínicos de fase I/II. O tratamento busca restaurar circuitos neurais comprometidos e já recebeu designações de terapia avançada do FDA americano e da EMA, agência reguladora europeia de medicamentos.

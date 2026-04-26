@@ -1,0 +1,60 @@
+{
+  "date": "2026-04-25",
+  "findings": [
+    {
+      "index": 0,
+      "type": "story",
+      "action": "applied",
+      "before": "A Intel subiu 23,6% ontem e fechou em recorde a US$82,73 — o maior salto em um dia desde outubro de 1987. No mês, as ações acumulam alta de 87% e adicionaram mais de US$190 bilhões ao valor de mercado",
+      "after": "A Intel subiu 23,6% ontem e fechou a US$82,73, novo topo — o maior salto em um dia desde outubro de 1987. O rali adicionou mais de US$190 bilhões ao valor de mercado",
+      "reason": "Dado de alta acumulada no mês (87%) já foi servido na edição anterior como 80%. Cortado para manter foco no salto diário de 23,6%, que é notícia nova. Preservado o dado de US$190bi em valor de mercado, que é novo.",
+      "chosen_path": "cut"
+    },
+    {
+      "index": 1,
+      "type": "phrasing",
+      "action": "applied",
+      "before": "A TSMC, maior fabricante de chips do mundo, vale US$1,8 trilhão sozinha",
+      "after": "Só a TSMC vale US$1,8 trilhão",
+      "reason": "Aposição 'maior fabricante de chips do mundo' apareceu na mesma posição sintática dois dias antes. Leitor recorrente já sabe; trocada por construção com 'Só' que enfatiza o valor sem repetir a descrição.",
+      "chosen_path": null
+    },
+    {
+      "index": 2,
+      "type": "story",
+      "action": "applied",
+      "before": "A X-Energy, startup de energia nuclear apoiada pela Amazon, estreou na Nasdaq com alta de 31% após levantar US$1,02 bilhão em oferta de ações precificada bem acima do esperado.",
+      "after": "A aposta em energia nuclear para data centers chegou à bolsa: a X-Energy, apoiada pela Amazon, estreou na Nasdaq com alta de 31% após levantar US$1,02 bilhão.",
+      "reason": "Terceira edição consecutiva com frame 'startup nuclear + big tech + data centers'. Abertura reconhece a onda sem meta-referência a edições anteriores. Cortado 'em oferta de ações precificada bem acima do esperado' (a alta de 31% já implica demanda forte).",
+      "chosen_path": "reframe"
+    },
+    {
+      "index": 3,
+      "type": "framing",
+      "action": "applied",
+      "before": "Separadamente, a Meta fechou contrato multibilionário com a Amazon para dezenas de milhões de núcleos de processadores Graviton, chips projetados pela Amazon, voltados a rodar modelos de IA.",
+      "after": "A Meta, que projeta investir até US$135 bilhões em infraestrutura de IA neste ano, fechou contrato multibilionário com a Amazon para dezenas de milhões de núcleos de processadores Graviton, chips projetados pela Amazon.",
+      "reason": "Meta aparecia como protagonista isolada de infraestrutura dois dias seguidos. Adicionado contexto de capex como oração subordinada (dado factual, não meta-referência) para situar o contrato no plano maior. Removido 'Separadamente' e 'voltados a rodar modelos de IA' (redundante com o contexto de infraestrutura de IA).",
+      "chosen_path": null
+    },
+    {
+      "index": 4,
+      "type": "framing",
+      "action": "applied",
+      "before": "A Anthropic publicou os resultados do Project Deal, experimento em que 69 funcionários usaram agentes de IA para comprar e vender pertences pessoais num mercado interno, completando 186 transações. Metade dos participantes recebeu o modelo mais avançado (Claude Opus 4.5) e metade o mais compacto (Claude Haiku 4.5), sem saber qual era o seu. Quem tinha Opus vendeu cada item por US$3,64 a mais em média — e ninguém percebeu a vantagem: a nota de justiça percebida foi praticamente idêntica nos dois grupos. Instruções agressivas dos usuários não mudaram os resultados; o que determinou o desfecho foi qual modelo negociava por você.",
+      "after": "A Anthropic publicou os resultados do Project Deal, experimento interno em que agentes de IA negociaram pertences pessoais entre 69 funcionários: quem recebeu o modelo mais avançado (Claude Opus 4.5) vendeu cada item por US$3,64 a mais em média, e nenhum dos participantes percebeu a diferença — o que determinou o desfecho foi qual modelo negociava por você, não as instruções dadas.",
+      "reason": "Anthropic aparece em 4 edições consecutivas. O investimento do Google (US$40bi) já ancora a empresa no dia; Project Deal comprimido de 5 frases para 2, preservando o achado principal (modelo > instruções) e cortando detalhes de menor impacto (186 transações, nota de justiça, Haiku 4.5).",
+      "chosen_path": "reframe"
+    },
+    {
+      "index": 5,
+      "type": "phrasing",
+      "action": "applied",
+      "before": "fechou em recorde a US$82,73 [...] fechou em recorde a US$208,27",
+      "after": "fechou a US$82,73, novo topo [...] bateu máxima histórica a US$208,27",
+      "reason": "'Fechou em recorde' aparecia duas vezes no mesmo parágrafo (Intel e Nvidia). Intel virou 'novo topo', Nvidia virou 'bateu máxima histórica' — variação sem perda de informação.",
+      "chosen_path": null
+    }
+  ],
+  "summary": "6 applied, 0 skipped, 0 flagged out of 6 findings"
+}
