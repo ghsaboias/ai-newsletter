@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Onde os Chips de Ponta São Fabricados</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    background: #FFFFFF;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  .card {
+    width: 720px;
+    background: #FFFFFF;
+    padding: 36px 40px;
+  }
+  .header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 3px solid #044B2E;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.8px;
+    line-height: 24px;
+  }
+  .logo { height: 18px; vertical-align: baseline; }
+  .chart-area { padding: 32px 0 28px; }
+  .stacked-bar {
+    display: flex;
+    width: 100%;
+    height: 92px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #f5f5f5;
+  }
+  .seg {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 14px;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: -0.3px;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+  }
+  .seg .pct {
+    font-size: 22px;
+    font-weight: 800;
+    margin-right: 8px;
+  }
+  .seg.muted { color: #555; }
+  .seg.tight { padding: 0 6px; font-size: 11px; }
+  .seg.tight .pct { font-size: 12px; margin-right: 3px; }
+  .legend {
+    margin-top: 22px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px 24px;
+  }
+  .legend-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+  }
+  .legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .legend-name { font-weight: 700; color: #000; }
+  .legend-pct  { color: #044B2E; font-weight: 700; margin-left: auto; }
+  .trajectory {
+    margin-top: 32px;
+    padding-top: 22px;
+    border-top: 1px solid #E5E5E5;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .trajectory .label {
+    flex: 0 0 200px;
+  }
+  .trajectory .label .kicker {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: #044B2E;
+    margin-bottom: 4px;
+  }
+  .trajectory .label .text {
+    font-size: 13px;
+    line-height: 1.45;
+    color: #333;
+  }
+  .trajectory .traj-chart {
+    flex: 1;
+    height: 110px;
+    position: relative;
+  }
+  .footer {
+    padding-top: 16px;
+    margin-top: 12px;
+    border-top: 1px solid #E5E5E5;
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer span {
+    font-size: 10px;
+    color: #999;
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+<div class="card" id="capture">
+  <div class="header">
+    <h1>Capacidade Avançada (≤7nm): 67% em uma ilha</h1>
+    <img src="../../daily-journal-platform/public/images/logo/logo-green-horizontal.png" class="logo" alt="Daily Journal">
+  </div>
+
+  <div class="chart-area">
+    <div class="stacked-bar" id="stack"></div>
+
+    <div class="legend">
+      <div class="legend-row"><span class="legend-dot" style="background:#044B2E"></span><span class="legend-name">Taiwan</span><span class="legend-pct">67%</span></div>
+      <div class="legend-row"><span class="legend-dot" style="background:#0012bf"></span><span class="legend-name">Coreia do Sul</span><span class="legend-pct">13%</span></div>
+      <div class="legend-row"><span class="legend-dot" style="background:#D7001E"></span><span class="legend-name">China</span><span class="legend-pct">9%</span></div>
+      <div class="legend-row"><span class="legend-dot" style="background:#E88E00"></span><span class="legend-name">EUA</span><span class="legend-pct">6%</span></div>
+      <div class="legend-row"><span class="legend-dot" style="background:#cccccc"></span><span class="legend-name">Outros</span><span class="legend-pct">3%</span></div>
+      <div class="legend-row"><span class="legend-dot" style="background:#E4ABEB"></span><span class="legend-name">Japão</span><span class="legend-pct">2%</span></div>
+    </div>
+
+    <div class="trajectory">
+      <div class="label">
+        <div class="kicker">Trajetória</div>
+        <div class="text">Taiwan tinha 71% da capacidade de ponta em 2021. Projeção é cair para 58% em 2030 — com EUA passando de quase 0% para 22% no mesmo período.</div>
+      </div>
+      <div class="traj-chart"><canvas id="traj"></canvas></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Fonte: TrendForce, SEMI · Estimativas para nós ≤7nm. EUA inclui TSMC Arizona e Intel 18A em ramp.</span>
+    <span>dailyjournal.news</span>
+  </div>
+</div>
+
+<script>
+  const segments = [
+    { country: 'Taiwan',        pct: 67, color: '#044B2E', textColor: '#FFFFFF' },
+    { country: 'Coreia',        pct: 13, color: '#0012bf', textColor: '#FFFFFF' },
+    { country: 'China',         pct:  9, color: '#D7001E', textColor: '#FFFFFF' },
+    { country: 'EUA',           pct:  6, color: '#E88E00', textColor: '#FFFFFF' },
+    { country: 'Outros',        pct:  3, color: '#cccccc', textColor: '#222' },
+    { country: 'Japão',         pct:  2, color: '#E4ABEB', textColor: '#222' }
+  ];
+
+  const stack = document.getElementById('stack');
+  segments.forEach(s => {
+    const div = document.createElement('div');
+    div.className = 'seg' + (s.pct < 8 ? ' tight' : '') + (s.textColor === '#222' ? ' muted' : '');
+    div.style.flexBasis = s.pct + '%';
+    div.style.background = s.color;
+    div.style.color = s.textColor;
+    if (s.pct >= 8) {
+      div.innerHTML = '<span class="pct">' + s.pct + '%</span><span>' + s.country + '</span>';
+    } else {
+      div.innerHTML = '<span class="pct">' + s.pct + '%</span>';
+    }
+    stack.appendChild(div);
+  });
+
+  new Chart(document.getElementById('traj').getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: ['2021', '2025', '2030*'],
+      datasets: [
+        {
+          label: 'Taiwan',
+          data: [71, 67, 58],
+          borderColor: '#044B2E',
+          backgroundColor: '#044B2E',
+          borderWidth: 2.5,
+          pointRadius: 4,
+          pointBackgroundColor: '#044B2E',
+          tension: 0.05,
+        },
+        {
+          label: 'EUA',
+          data: [1, 6, 22],
+          borderColor: '#E88E00',
+          backgroundColor: '#E88E00',
+          borderWidth: 2.5,
+          pointRadius: 4,
+          pointBackgroundColor: '#E88E00',
+          tension: 0.05,
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { enabled: false }
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          border: { display: false },
+          ticks: { font: { family: 'Helvetica Neue', size: 11, weight: '600' }, color: '#666' }
+        },
+        y: {
+          beginAtZero: true,
+          max: 80,
+          grid: { color: '#f0f0f0', drawTicks: false },
+          border: { display: false },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 10 },
+            color: '#999',
+            stepSize: 20,
+            callback: function(v) { return v + '%'; }
+          }
+        }
+      },
+      layout: { padding: { top: 14, right: 8, bottom: 0, left: 0 } }
+    },
+    plugins: [{
+      id: 'endpointLabels',
+      afterDraw(chart) {
+        const { ctx } = chart;
+        chart.data.datasets.forEach((ds, di) => {
+          const meta = chart.getDatasetMeta(di);
+          ds.data.forEach((v, i) => {
+            const pt = meta.data[i];
+            ctx.save();
+            ctx.textAlign = 'center';
+            ctx.font = '700 10px Helvetica Neue';
+            ctx.fillStyle = ds.borderColor;
+            const offsetY = di === 0 ? -10 : 14;
+            ctx.fillText(v + '%', pt.x, pt.y + offsetY);
+            ctx.restore();
+          });
+        });
+        // dataset names at the right edge
+        const meta0 = chart.getDatasetMeta(0);
+        const meta1 = chart.getDatasetMeta(1);
+        const lastTaiwan = meta0.data[meta0.data.length - 1];
+        const lastUS = meta1.data[meta1.data.length - 1];
+        ctx.save();
+        ctx.font = '700 10px Helvetica Neue';
+        ctx.textAlign = 'left';
+        ctx.fillStyle = '#044B2E';
+        ctx.fillText('Taiwan', lastTaiwan.x + 10, lastTaiwan.y + 3);
+        ctx.fillStyle = '#E88E00';
+        ctx.fillText('EUA', lastUS.x + 10, lastUS.y + 3);
+        ctx.restore();
+      }
+    }]
+  });
+</script>
+</body>
+</html>

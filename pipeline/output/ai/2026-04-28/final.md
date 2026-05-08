@@ -1,0 +1,38 @@
+---
+date: 2026-04-28
+url:
+title: "[Tech] - Bem-vindo(a) a 28 de abril de 2026"
+wordcount: 740
+generated: true
+language: pt-br
+---
+
+# [Tech] - Bem-vindo(a) a 28 de abril de 2026
+
+Microsoft e OpenAI encerram exclusividade na nuvem; data centers planejados superam o consumo elétrico dos EUA hoje; 600 funcionários do Google protestam contra contrato sigiloso com o Pentágono.
+
+Por: Guilherme Saboia e Vinicius Gushiken
+
+**OpenAI.** Microsoft e OpenAI [reformularam o acordo de parceria](https://dailyjournal.news/news/2026-04-28/microsoft-e-openai-encerram-exclusividade-na-nuvem-e-eliminam-clausula-de-agi): a OpenAI pode agora vender produtos em qualquer nuvem, encerrando a exclusividade com a Microsoft. A Microsoft mantém licença não exclusiva de propriedade intelectual até 2032, mas perdeu o direito contratual de controlar tecnologias que alcançassem inteligência sobre-humana — cláusula que existia no contrato original. A reestruturação veio após a entrada de US$50 bilhões da Amazon na OpenAI e o compromisso de US$100 bilhões em nuvem. 
+
+Em paralelo, o Wall Street Journal [reportou](https://dailyjournal.news/news/2026-04-28/openai-nao-alcanca-metas-internas-de-receita-e-de-usuarios-antes-do-ipo) que a OpenAI não alcançou metas internas de receita e de usuários — ficou abaixo de metas mensais de receita no início de 2026 e de 1 bilhão de usuários semanais do ChatGPT. A diretora financeira Sarah Friar expressou preocupação de que a empresa não consiga pagar contratos futuros de computação se a receita não crescer rápido o suficiente, e tem reservas sobre os planos de abrir capital até o fim de 2026.
+
+**Google.** A Comissão Europeia [apresentou propostas sob a Lei dos Mercados Digitais](https://dailyjournal.news/news/2026-04-28/ue-propoe-obrigar-google-a-abrir-android-a-servicos-de-ia-rivais) para obrigar o Google a abrir o Android a serviços de IA rivais, permitindo que usuários escolham assistentes alternativos; o Google chamou a medida de "intervenção injustificada".
+
+[Mais de 600 funcionários](https://dailyjournal.news/news/2026-04-28/mais-de-600-funcionarios-do-google-exigem-veto-a-uso-de-ia-pelo-pentagono-em-tra) — incluindo mais de 20 diretores e vice-presidentes do DeepMind e do Cloud — assinaram carta aberta a Sundar Pichai exigindo que o Pentágono seja impedido de usar a IA do Google em trabalhos sigilosos. É o maior protesto interno em anos, ecoando o Projeto Maven de 2018, que levou a empresa a desistir de um programa de análise de imagens de drones para os militares.
+
+**Modelos.** A Xiaomi, fabricante chinesa de smartphones e eletrônicos, [liberou o MiMo-V2.5](https://dailyjournal.news/news/2026-04-28/xiaomi-libera-mimo-v25-sob-licenca-mit-com-1-trilhao-de-parametros) sob licença MIT. A versão Pro tem 1,02 trilhão de parâmetros e janela de contexto de 1 milhão de tokens. Segundo a empresa, em duas demonstrações o modelo [escreveu sozinho um compilador](https://dailyjournal.news/news/2026-04-28/xiaomi-libera-mimo-v25-sob-licenca-mit-com-1-trilhao-de-parametros) — programa que converte código-fonte em software executável — em 4,3 horas, passando todos os 233 testes, e construiu um editor de vídeo com mais de 8 mil linhas de código em 11,5 horas. A API custa US$1 por milhão de tokens de entrada e a empresa ofereceu 100 trilhões de tokens grátis a desenvolvedores.
+
+**Semicondutores & mercados.** A Lightelligence, fabricante de chips fotônicos que usam luz para mover dados em data centers, [estreou em Hong Kong com alta de 408%](https://dailyjournal.news/news/2026-04-28/lightelligence-estreia-em-hong-kong-com-alta-de-408-apos-levantar-us310-milhoes) após levantar US$310 milhões. A Nvidia [fechou a um valor de mercado de US$5,26 trilhões](https://dailyjournal.news/news/2026-04-28/nvidia-fecha-a-us526-trilhoes-e-bate-recorde-historico-de-valor-de-mercado), com alta de 16% no ano. A bolsa da Coreia do Sul [saltou 45% em 2026 para US$4,04 trilhões](https://dailyjournal.news/news/2026-04-28/bolsa-da-coreia-do-sul-salta-45-e-ultrapassa-reino-unido-como-8-maior-do-mundo), ultrapassando a do Reino Unido e chegando à oitava posição global — Samsung Electronics e SK Hynix, fabricantes de chips de memória para data centers de IA, respondem por mais de 40% do índice.
+
+**Follow the money.** A Ineffable Intelligence, startup londrina fundada por David Silver — ex-cientista principal do Google DeepMind e criador do AlphaGo, sistema de IA que derrotou o campeão mundial de Go em 2016 —, [levantou US$1,1 bilhão em um seed round](https://dailyjournal.news/news/2026-04-28/ineffable-intelligence-levanta-us11-bilhao-em-seed-round-recorde-a-us51-bilhoes) a uma avaliação de US$5,1 bilhões, uma das maiores da história. Nvidia, Google, Sequoia e o Fundo Soberano de IA do Reino Unido participaram. A empresa desenvolve sistemas que aprendem de forma autônoma por experiência, sem depender de dados gerados por humanos.
+
+**Energia & data centers.** A [fila de projetos de data centers anunciados nos EUA até 2030 chegou a 780 gigawatts](https://dailyjournal.news/news/2026-04-28/fila-de-data-centers-nos-eua-chega-a-780-gw-e-supera-capacidade-eletrica-total-d) — mais do que toda a capacidade elétrica de pico do país hoje (759 GW), segundo a Aurora Energy Research. Mas boa parte desse número é só promessa. A consultoria Grid Strategies projeta que o crescimento real de demanda elétrica nos próximos cinco anos será de 166 GW, dos quais cerca de 90 GW em data centers — e até essa projeção pode estar alta, por se basear em planos das distribuidoras, não em demanda confirmada.
+
+A construtora McCarthy estima que só um em cada quatro projetos vai sair do papel, e o prazo para iniciar a construção triplicou, de 6 para 18 meses. A Aurora simulou adicionar 10 GW de data center no Texas sem ampliar a rede de transmissão, o que faria o preço da energia subir 34%. Em Archbald, Pensilvânia (cerca de 7 mil habitantes), moradores se opõem a [seis complexos de data centers que cobririam 14% do território da cidade](https://dailyjournal.news/news/2026-04-28/fila-de-data-centers-nos-eua-chega-a-780-gw-e-supera-capacidade-eletrica-total-d).
+
+**Geopolítica.** O Irã [propôs reabrir o Estreito de Ormuz](https://dailyjournal.news/news/2026-04-28/ira-propoe-reabrir-estreito-de-ormuz-em-troca-do-fim-do-bloqueio-trump-rejeita) em troca do fim do bloqueio americano e da guerra, adiando negociações nucleares. O chanceler Abbas Araghchi conduziu uma maratona diplomática de 72 horas por Paquistão, Omã e Rússia, onde se reuniu com Putin. [Trump rejeitou a proposta](https://dailyjournal.news/news/2026-04-28/ira-propoe-reabrir-estreito-de-ormuz-em-troca-do-fim-do-bloqueio-trump-rejeita) e enfrenta o prazo de 1º de maio para obter autorização do Congresso para continuar as operações militares, que começaram há nove semanas.
+
+**Biotech.** A AstraZeneca [recebeu aval da FDA](https://dailyjournal.news/news/2026-04-28/fda-aprova-caneta-autoinjetora-do-saphnelo-da-astrazeneca-para-tratamento-de-lup) para uma caneta autoinjetora do Saphnelo (anifrolumabe), tratamento para lúpus eritematoso sistêmico — doença autoimune crônica que afeta majoritariamente mulheres. A versão semanal aplicada em casa substitui a infusão intravenosa em clínica, único formato disponível desde 2021. No estudo de Fase 3 TULIP-SC, 59,4% dos pacientes que receberam a forma subcutânea atingiram resposta clínica significativa em 52 semanas, contra 40% no grupo placebo. O Saphnelo foi a primeira droga de uma nova classe — antagonista do receptor de interferon tipo I — aprovada para lúpus em décadas; mais de 40 mil pacientes já receberam a versão intravenosa. UE e Japão liberaram a caneta no fim de 2025.
+
+**Recomendações de hoje:**

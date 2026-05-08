@@ -114,3 +114,25 @@ Location: `~/tools/vibe-review/` (sibling to `ai-newsletter`; server `cwd`s into
 Run: `cd ~/tools/vibe-review && npm start` → http://localhost:4175/review/YYYY-MM-DD.
 
 Backend spawns `claude --print --output-format stream-json --resume <id>` per turn; session id persisted to `pipeline/output/ai/<date>/.review-session`.
+
+## Posts (charts for Substack/social)
+
+`posts/` holds per-edition chart HTML + JSON research data. Charts promote a specific edition; data is auditable.
+
+Pattern:
+1. Research data first. Save to `posts/data/<slug>.json` with `sources` (label + url) and `notes` (what's measured vs. estimated).
+2. Build chart at `posts/chart-<slug>.html`. Self-contained. Chart.js via CDN. `animation: false`, `tooltip: { enabled: false }`.
+3. Portuguese titles, source line, captions.
+
+Brand:
+- 720px card, `padding: 36px 40px`, white background
+- H1: Helvetica Neue, 24px, weight 700, `letter-spacing: -0.8px`
+- Header: title left, DJ logo right; `border-bottom: 3px solid #044B2E`
+- Footer: source label left, `dailyjournal.news` right; 10px, `#999`; `border-top: 1px solid #E5E5E5`
+- Palette: `#044B2E` primary, `#7DB89B` projection/forecast, `#0012bf` `#D7001E` `#E88E00` `#E4ABEB` `#ccc` for multi-series
+
+Logo: `<img src="../../daily-journal-platform/public/images/logo/logo-green-horizontal.png">`. Canonical lives in daily-journal-platform; never duplicate into ai-newsletter.
+
+Annotations: label endpoints and milestones only, not every bar. Use a Chart.js `afterDraw` plugin to draw value labels above bars.
+
+Two-panel pattern works for time-series: long arc (annual) on top, recent acceleration (monthly) below — different time signatures, same y-axis unit.

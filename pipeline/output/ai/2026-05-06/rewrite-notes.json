@@ -1,0 +1,69 @@
+{
+  "date": "2026-05-06",
+  "findings": [
+    {
+      "index": 0,
+      "type": "story",
+      "action": "applied",
+      "before": "Trump pausou a operação de escolta de navios retidos no Estreito de Ormuz para abrir espaço a um acordo com o Irã, enquanto Estados Unidos e aliados do Golfo propuseram uma nova resolução no Conselho de Segurança da ONU que pode autorizar sanções ou uso de força caso o Irã não cesse ataques à navegação — um teste direto para China e Rússia, que vetaram resolução semelhante no mês passado. Cerca de 22.500 tripulantes em mais de 1.550 navios comerciais permanecem retidos no Golfo.",
+      "after": "Trump pausou a escolta naval no Golfo para abrir espaço a negociações com o Irã. Estados Unidos e aliados propuseram no Conselho de Segurança da ONU uma resolução que pode autorizar sanções ou uso de força caso Teerã não cesse ataques à navegação — um teste para China e Rússia, que vetaram texto semelhante no mês passado. Cerca de 22.500 tripulantes em mais de 1.550 navios permanecem retidos.",
+      "reason": "Trimmed scene-setting context readers already know (Estreito de Ormuz, navios retidos, navios comerciais no Golfo). Lead preserved on the new pivot (pause in escorts). New developments (UN resolution, crew count) kept intact.",
+      "chosen_path": null
+    },
+    {
+      "index": 1,
+      "type": "story",
+      "action": "applied",
+      "before": "a presidente da Comissão Europeia, Ursula von der Leyen, respondeu à ameaça de Trump de elevar tarifas sobre carros europeus para 25% lembrando que o acordo de Turnberry já fixava a alíquota em 15%, e Macron endossou retaliação.",
+      "after": "Ursula von der Leyen, presidente da Comissão Europeia, invocou o acordo de Turnberry — que fixa a alíquota sobre carros em 15% — para contestar a nova ameaça tarifária de Trump, e Macron endossou retaliação.",
+      "reason": "Dropped the 25% re-explanation (covered yesterday). Foregrounded the new angle: von der Leyen's legal/diplomatic argument invoking the Turnberry deal. 'Invocou' as verb centers her action rather than framing it as a response.",
+      "chosen_path": null
+    },
+    {
+      "index": 2,
+      "type": "story",
+      "action": "applied",
+      "before": "A Anthropic lançou dez modelos prontos de agentes para o setor financeiro, cobrindo tarefas como elaboração de apresentações, verificação de identidade de clientes e fechamento contábil, com integração ao Microsoft 365.",
+      "after": "Removed from Agentes; consolidated into Infraestrutura as: 'A empresa também lançou dez modelos de agentes para o setor financeiro.'",
+      "reason": "Anthropic appeared in 6+ mentions across 3 editions. Consolidated both items into one section (Infraestrutura) to reduce saturation. The $200B cloud deal anchors; the agents catalog becomes a brief coda. Detail trimmed (presentations, KYC, close) since the link carries it.",
+      "chosen_path": "reframe"
+    },
+    {
+      "index": 3,
+      "type": "phrasing",
+      "action": "applied",
+      "before": "alta de 38% em relação ao mesmo período do ano anterior",
+      "after": "crescimento de 38% em doze meses",
+      "reason": "Varied the year-over-year construction used for Palantir yesterday. 'Em doze meses' is shorter and breaks the template.",
+      "chosen_path": null
+    },
+    {
+      "index": 4,
+      "type": "phrasing",
+      "action": "applied",
+      "before": "A Micron, fabricante americana de chips de memória, começou a entregar / A Super Micro, montadora americana de servidores para IA, mais que dobrou a receita trimestral para US$10,24 bilhões",
+      "after": "A americana Micron começou a entregar / A Super Micro mais que dobrou a receita trimestral para US$10,24 bilhões montando servidores para IA",
+      "reason": "Varied 2 of 3 cited '[Company], [nationality] [descriptor]' appositives. Micron: nationality as adjective, descriptor dropped (SSD context + existing 'unidade de armazenamento' gloss identify the business). Super Micro: descriptor woven into revenue clause ('montando servidores para IA'). Kept Infineon's appositive since 'semicondutores de potência' is domain-specific context readers need.",
+      "chosen_path": null
+    },
+    {
+      "index": 5,
+      "type": "framing",
+      "action": "skipped",
+      "before": null,
+      "after": null,
+      "reason": "Merging Semicondutores + Balanços creates a ~200-word, 6-story paragraph that breaks rhythm. Reordering sections to lead with Agentes or Infraestrutura creates a disconnect with the subtitle (which opens on Samsung). Both paths need human judgment on the preferred structure.",
+      "chosen_path": null
+    },
+    {
+      "index": 6,
+      "type": "framing",
+      "action": "skipped",
+      "before": null,
+      "after": null,
+      "reason": "Splitting Iran and EU tariffs into separate sections requires moving content between paragraphs — a heavy restructure that risks breaking coherence in both the geopolitics paragraph and the receiving section. The two stories are also connected by Trump's trade/diplomatic posture, which justifies keeping them together.",
+      "chosen_path": null
+    }
+  ],
+  "summary": "5 applied, 2 skipped out of 7 findings"
+}

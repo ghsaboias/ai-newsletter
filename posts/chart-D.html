@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>O Motor da Curva: CapEx das Big Four × Receita de Chips</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    background: #FFFFFF;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  .card {
+    width: 720px;
+    background: #FFFFFF;
+    padding: 36px 40px;
+  }
+  .header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 3px solid #044B2E;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.8px;
+    line-height: 24px;
+  }
+  .logo { height: 18px; vertical-align: baseline; }
+  .legend-bar {
+    display: flex;
+    gap: 28px;
+    padding: 18px 0 6px;
+  }
+  .legend-bar .item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+  }
+  .legend-bar .swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+  }
+  .chart-area { padding: 12px 0 24px; }
+  .chart-container {
+    width: 100%;
+    height: 320px;
+  }
+  .ratio-strip {
+    margin-top: 22px;
+    padding: 14px 16px;
+    border-left: 3px solid #044B2E;
+    background: #f9f9f7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+  }
+  .ratio-strip .label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #044B2E;
+    margin-bottom: 4px;
+  }
+  .ratio-strip .text {
+    font-size: 12px;
+    color: #333;
+    line-height: 1.4;
+  }
+  .ratio-strip .stat {
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .ratio-strip .stat .big {
+    font-size: 28px;
+    font-weight: 800;
+    color: #044B2E;
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+  .ratio-strip .stat .small {
+    font-size: 11px;
+    color: #999;
+    margin-top: 4px;
+  }
+  .footer {
+    padding-top: 16px;
+    border-top: 1px solid #E5E5E5;
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer span {
+    font-size: 10px;
+    color: #999;
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+<div class="card" id="capture">
+  <div class="header">
+    <h1>O Motor da Curva</h1>
+    <img src="../../daily-journal-platform/public/images/logo/logo-green-horizontal.png" class="logo" alt="Daily Journal">
+  </div>
+
+  <div class="legend-bar">
+    <div class="item"><span class="swatch" style="background:#cfe6da"></span>Receita global de chips</div>
+    <div class="item"><span class="swatch" style="background:#044B2E"></span>CapEx Microsoft + Alphabet + Meta + Amazon</div>
+  </div>
+
+  <div class="chart-area">
+    <div class="chart-container">
+      <canvas id="dual"></canvas>
+    </div>
+  </div>
+
+  <div class="ratio-strip">
+    <div>
+      <div class="label">A leitura</div>
+      <div class="text">Em 2018, o capex das quatro maiores foi 14% do que a indústria de chips faturou. Em 2026, sobe para 62%. As Big Four sozinhas movimentam quase dois terços da receita de toda a cadeia.</div>
+    </div>
+    <div class="stat">
+      <div class="big">62%</div>
+      <div class="small">capex/receita 2026E</div>
+    </div>
+  </div>
+
+  <div class="footer" style="margin-top:18px">
+    <span>Fonte: 10-K filings (Big Four) · WSTS Autumn 2025 · 2026* = guidance/projeção</span>
+    <span>dailyjournal.news</span>
+  </div>
+</div>
+
+<script>
+  const labels = ['2018','2019','2020','2021','2022','2023','2024','2025','2026*'];
+  const chip   = [468.8, 412.3, 440.4, 555.9, 574.1, 526.9, 630.5, 791.7, 1000.0];
+  const capex  = [ 64.0,  69.4,  95.1, 125.5, 150.4, 141.2, 225.1, 378.0,  620.0];
+
+  const ctx = document.getElementById('dual').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Receita de chips',
+          data: chip,
+          backgroundColor: '#cfe6da',
+          borderWidth: 0,
+          borderRadius: 3,
+          borderSkipped: false,
+          barPercentage: 0.92,
+          categoryPercentage: 0.78,
+          order: 2,
+        },
+        {
+          label: 'CapEx Big Four',
+          data: capex,
+          type: 'bar',
+          backgroundColor: labels.map((l, i) => i === labels.length - 1 ? '#7DB89B' : '#044B2E'),
+          borderWidth: 0,
+          borderRadius: 3,
+          borderSkipped: false,
+          barPercentage: 0.55,
+          categoryPercentage: 0.78,
+          order: 1,
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: {
+        x: {
+          stacked: false,
+          grid: { display: false },
+          border: { display: false },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 12, weight: '600' },
+            color: '#444',
+          }
+        },
+        y: {
+          beginAtZero: true,
+          max: 1100,
+          grid: { color: '#f0f0f0', drawTicks: false },
+          border: { display: false },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 11 },
+            color: '#999',
+            stepSize: 250,
+            callback: function(v) { return '$' + v + 'bi'; }
+          }
+        }
+      },
+      layout: { padding: { top: 22 } }
+    },
+    plugins: [{
+      id: 'topLabels',
+      afterDraw(chart) {
+        const { ctx } = chart;
+        const showAt = [0, labels.length - 1];
+
+        const chipMeta = chart.getDatasetMeta(0);
+        showAt.forEach(i => {
+          const bar = chipMeta.data[i];
+          ctx.save();
+          ctx.textAlign = 'center';
+          ctx.font = '700 11px Helvetica Neue';
+          ctx.fillStyle = '#5d8a73';
+          ctx.fillText('$' + Math.round(chip[i]) + 'bi', bar.x, bar.y - 6);
+          ctx.restore();
+        });
+
+        const capexMeta = chart.getDatasetMeta(1);
+        showAt.forEach(i => {
+          const bar = capexMeta.data[i];
+          ctx.save();
+          ctx.textAlign = 'center';
+          ctx.font = '700 11px Helvetica Neue';
+          ctx.fillStyle = '#044B2E';
+          ctx.fillText('$' + Math.round(capex[i]) + 'bi', bar.x, bar.y - 6);
+          ctx.restore();
+        });
+      }
+    }]
+  });
+</script>
+</body>
+</html>

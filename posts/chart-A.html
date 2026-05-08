@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Indústria de Chips: A Curva para US$1 Trilhão</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    background: #FFFFFF;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  .card {
+    width: 720px;
+    background: #FFFFFF;
+    padding: 36px 40px;
+  }
+  .header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 3px solid #044B2E;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.8px;
+    line-height: 24px;
+  }
+  .logo { height: 18px; vertical-align: baseline; }
+  .chart-area {
+    padding: 28px 0 24px;
+  }
+  .chart-container {
+    width: 100%;
+    height: 260px;
+  }
+  .chart-container.monthly {
+    height: 200px;
+    margin-top: 28px;
+  }
+  .subtitle {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: #044B2E;
+    margin-top: 24px;
+    padding-top: 12px;
+    border-top: 1px solid #E5E5E5;
+  }
+  .subtitle .meta {
+    color: #999;
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-left: 6px;
+  }
+  .footer {
+    padding-top: 16px;
+    border-top: 1px solid #E5E5E5;
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer span {
+    font-size: 10px;
+    color: #999;
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+<div class="card" id="capture">
+  <div class="header">
+    <h1>Indústria de Chips: A Curva para US$1 Trilhão</h1>
+    <img src="../../daily-journal-platform/public/images/logo/logo-green-horizontal.png" class="logo" alt="Daily Journal">
+  </div>
+
+  <div class="chart-area">
+    <div class="chart-container">
+      <canvas id="annual"></canvas>
+    </div>
+
+    <div class="subtitle">Aceleração recente <span class="meta">· vendas mensais (média móvel 3 meses), Jan/24 — Mar/26</span></div>
+    <div class="chart-container monthly">
+      <canvas id="monthly"></canvas>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Fonte: WSTS Autumn 2025, SIA · 2026* = projeção (~US$1 trilhão)</span>
+    <span>dailyjournal.news</span>
+  </div>
+</div>
+
+<script>
+  const annual = {
+    labels: ['2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026*'],
+    values: [227.5,247.7,255.6,248.6,226.3,298.3,299.5,291.6,305.6,335.8,335.2,338.9,412.2,468.8,412.3,440.4,555.9,574.1,526.9,630.5,791.7,1000.0]
+  };
+
+  const annualColors = annual.values.map((_, i) => i === annual.values.length - 1 ? '#7DB89B' : '#044B2E');
+
+  new Chart(document.getElementById('annual').getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: annual.labels,
+      datasets: [{
+        data: annual.values,
+        backgroundColor: annualColors,
+        borderWidth: 0,
+        borderRadius: 2,
+        borderSkipped: false,
+        barPercentage: 0.92,
+        categoryPercentage: 0.72,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: {
+        x: {
+          grid: { display: false },
+          border: { display: false },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 8, weight: '600' },
+            color: '#666',
+            maxRotation: 0,
+            autoSkip: false,
+            callback: function(_, idx) {
+              const yr = annual.labels[idx];
+              const yearNum = parseInt(yr);
+              if (yr.includes('*')) return yr;
+              if (yearNum % 5 === 0) return yr;
+              return '';
+            }
+          }
+        },
+        y: {
+          beginAtZero: true,
+          max: 1100,
+          grid: { color: '#f0f0f0', drawTicks: false },
+          border: { display: false },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 11 },
+            color: '#999',
+            padding: 14,
+            stepSize: 250,
+            callback: function(v) { return '$' + v + 'bi'; }
+          }
+        }
+      },
+      layout: { padding: { top: 18, left: 8, right: 24 } }
+    },
+    plugins: [{
+      id: 'highlightLabels',
+      afterDraw(chart) {
+        const { ctx } = chart;
+        const meta = chart.getDatasetMeta(0).data;
+        const highlights = { 2005: true, 2010: true, 2015: true, 2020: true, 2025: true, 2026: true };
+        annual.labels.forEach((lbl, i) => {
+          const yr = parseInt(lbl);
+          if (!highlights[yr]) return;
+          const bar = meta[i];
+          const v = annual.values[i];
+          const txt = i === annual.values.length - 1 ? '~$1tri' : '$' + Math.round(v) + 'bi';
+          ctx.save();
+          ctx.textAlign = 'center';
+          ctx.font = '700 10px Helvetica Neue';
+          ctx.fillStyle = '#044B2E';
+          ctx.fillText(txt, bar.x, bar.y - 6);
+          ctx.restore();
+        });
+      }
+    }]
+  });
+
+  const monthly = {
+    labels: ['Jan/24','Fev/24','Mar/24','Abr/24','Mai/24','Jun/24','Jul/24','Ago/24','Set/24','Out/24','Nov/24','Dez/24','Jan/25','Fev/25','Mar/25','Abr/25','Mai/25','Jun/25','Jul/25','Ago/25','Set/25','Out/25','Nov/25','Dez/25','Jan/26','Fev/26','Mar/26'],
+    values: [47.63,46.17,45.91,47.21,49.15,49.98,51.32,53.13,55.32,56.88,57.64,57.52,56.53,54.92,55.58,56.96,59.01,59.91,62.14,64.91,69.47,72.71,76.78,79.63,82.54,88.80,99.50]
+  };
+
+  new Chart(document.getElementById('monthly').getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: monthly.labels,
+      datasets: [{
+        data: monthly.values,
+        backgroundColor: '#044B2E',
+        borderWidth: 0,
+        borderRadius: 2,
+        borderSkipped: false,
+        barPercentage: 0.92,
+        categoryPercentage: 0.72,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: {
+        x: {
+          grid: { display: false },
+          border: { display: false },
+          afterFit: function(scale) { scale.paddingLeft = 12; },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 9, weight: '600' },
+            color: '#666',
+            maxRotation: 0,
+            autoSkip: false,
+            callback: function(_, idx) {
+              const lbl = monthly.labels[idx];
+              if (lbl.startsWith('Jan') || lbl.startsWith('Mar/26')) return lbl;
+              return '';
+            }
+          }
+        },
+        y: {
+          beginAtZero: true,
+          max: 110,
+          grid: { color: '#f0f0f0', drawTicks: false },
+          border: { display: false },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 11 },
+            color: '#999',
+            padding: 14,
+            stepSize: 25,
+            callback: function(v) { return '$' + v + 'bi'; }
+          }
+        }
+      },
+      layout: { padding: { top: 18, left: 8, right: 24 } }
+    },
+    plugins: [{
+      id: 'monthlyEndpoints',
+      afterDraw(chart) {
+        const { ctx } = chart;
+        const meta = chart.getDatasetMeta(0).data;
+        const showAt = [0, monthly.values.length - 1];
+        showAt.forEach(i => {
+          const bar = meta[i];
+          const v = monthly.values[i];
+          ctx.save();
+          ctx.textAlign = 'center';
+          ctx.font = '700 11px Helvetica Neue';
+          ctx.fillStyle = '#044B2E';
+          ctx.fillText('$' + v.toFixed(1) + 'bi', bar.x, bar.y - 6);
+          ctx.restore();
+        });
+      }
+    }]
+  });
+</script>
+</body>
+</html>

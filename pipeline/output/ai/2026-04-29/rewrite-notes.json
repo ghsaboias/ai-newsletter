@@ -1,0 +1,60 @@
+{
+  "date": "2026-04-29",
+  "findings": [
+    {
+      "index": 0,
+      "type": "story",
+      "action": "applied",
+      "before": "O chefe de IA do Pentágono, Cameron Stanley, disse que o Gemini \"está economizando milhares de horas-homem por semana\" e que dependência de um só fornecedor \"nunca é boa\". [Mais de 700 funcionários do Google](https://prchief.com/pentagon-ai-chief-confirms-dods-expanded-use-of-google-says-reliance-on-one-model-never-a-good-thing/) assinaram carta a Sundar Pichai pedindo que a empresa rejeite trabalhos sigilosos para os militares.",
+      "after": "O chefe de IA do Pentágono, Cameron Stanley, disse que o Gemini \"está economizando milhares de horas-homem por semana\" e que dependência de um só fornecedor \"nunca é boa\" — mesmo com [carta interna de mais de 700 funcionários](https://prchief.com/pentagon-ai-chief-confirms-dods-expanded-use-of-google-says-reliance-on-one-model-never-a-good-thing/) contra o trabalho sigiloso.",
+      "reason": "Compressed the petition from a standalone sentence to a concessive dependent clause, demoting stale context (already covered yesterday with 600 signatures) to a subordinate detail.",
+      "chosen_path": null
+    },
+    {
+      "index": 1,
+      "type": "phrasing",
+      "action": "applied",
+      "before": "O barril de Brent se mantém acima de US$111, mais de 50% acima do preço pré-guerra, impulsionado pelo fechamento do Estreito de Ormuz — não pela decisão dos Emirados.",
+      "after": "O Brent fechou a US$111 por barril, mais de 50% acima do preço pré-guerra, impulsionado pelo fechamento do Estreito de Ormuz — não pela decisão dos Emirados.",
+      "reason": "Replaced recycled 'se mantém acima de' construction with 'fechou a', avoiding verbatim echo from Apr 27.",
+      "chosen_path": null
+    },
+    {
+      "index": 2,
+      "type": "phrasing",
+      "action": "applied",
+      "before": "[Mais de 700 funcionários do Google](https://prchief.com/pentagon-ai-chief-confirms-dods-expanded-use-of-google-says-reliance-on-one-model-never-a-good-thing/) assinaram carta a Sundar Pichai pedindo que a empresa rejeite trabalhos sigilosos para os militares.",
+      "after": "— mesmo com [carta interna de mais de 700 funcionários](https://prchief.com/pentagon-ai-chief-confirms-dods-expanded-use-of-google-says-reliance-on-one-model-never-a-good-thing/) contra o trabalho sigiloso.",
+      "reason": "Eliminated the repeated 'assinaram carta a Sundar Pichai [verbo] que' template by folding into a concessive clause — same edit as finding 0.",
+      "chosen_path": null
+    },
+    {
+      "index": 3,
+      "type": "phrasing",
+      "action": "applied",
+      "before": "Separadamente, a FIDO Alliance",
+      "after": "Em paralelo, a FIDO Alliance",
+      "reason": "Replaced 'Separadamente' (used Apr 27) with 'Em paralelo' to vary transition vocabulary.",
+      "chosen_path": null
+    },
+    {
+      "index": 4,
+      "type": "framing",
+      "action": "skipped",
+      "before": "O Google assinou contrato com o Departamento de Defesa dos EUA para uso do Gemini em projetos sigilosos — terceiro fornecedor de IA, depois de OpenAI e xAI, a preencher o espaço deixado pela Anthropic, colocada na lista negra há dois meses.",
+      "after": null,
+      "reason": "Suggestion proposes 'Depois do protesto revelado ontem' — a meta-reference, which violates feedback_no_meta_references.md. The continuity issue is already addressed by findings 0+2 (protest compressed to dependent clause, contract leads). No in-voice alternative exists that acknowledges prior coverage without self-referencing.",
+      "chosen_path": null
+    },
+    {
+      "index": 5,
+      "type": "framing",
+      "action": "flagged",
+      "before": "Biotech section as final section of the newsletter",
+      "after": null,
+      "reason": "Reordering an entire section is beyond surgical scope — it changes the newsletter's arc and is an editorial judgment call. The pancreatic cancer story is strong enough to move up, but this should be a human decision during review.",
+      "chosen_path": null
+    }
+  ],
+  "summary": "4 applied, 1 skipped, 1 flagged out of 6 findings"
+}

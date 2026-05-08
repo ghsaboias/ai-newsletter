@@ -1,0 +1,78 @@
+{
+  "date": "2026-04-30",
+  "findings": [
+    {
+      "index": 0,
+      "type": "story",
+      "action": "applied",
+      "before": "salto de 49 vezes, puxado pela alta nos preços de memória para IA",
+      "after": "salto de 49 vezes, reflexo da alta nos preços de memória para IA",
+      "reason": "Kept the memory-for-AI causal link (it's the most relevant fact for the 49x jump) but swapped 'puxado' for 'reflexo' to avoid the repeated causal connector and soften the explanatory framing — the 49x figure already carries the weight.",
+      "chosen_path": "reframe"
+    },
+    {
+      "index": 1,
+      "type": "story",
+      "action": "applied",
+      "before": "atingiu US$126, nova máxima desde o início da guerra no Irã, com o Estreito de Ormuz efetivamente fechado; a gasolina",
+      "after": "atingiu US$126, nova máxima desde o início da guerra no Irã; a gasolina",
+      "reason": "Dropped 'com o Estreito de Ormuz efetivamente fechado' — context covered in 3 of the last 4 editions. The price and blockade extension are the new facts; Hormuz closure is assumed knowledge by now.",
+      "chosen_path": null
+    },
+    {
+      "index": 2,
+      "type": "phrasing",
+      "action": "applied",
+      "before": "Separadamente, a Qualcomm, fabricante americana de processadores para celulares, confirmou",
+      "after": "A Qualcomm, que projeta processadores para smartphones, confirmou",
+      "reason": "Removed 'Separadamente' (used April 27) and varied the appositive from 'fabricante [nationality] de [product]' pattern (used 4+ times across editions) to a relative clause. Also dropped nationality — Qualcomm is well-known enough.",
+      "chosen_path": null
+    },
+    {
+      "index": 3,
+      "type": "phrasing",
+      "action": "applied",
+      "before": "puxado pela alta nos preços de memória para IA",
+      "after": "reflexo da alta nos preços de memória para IA",
+      "reason": "Merged with Finding 0 — same text region. Changed 'puxado/a por' causal connector (used April 29) to 'reflexo da'.",
+      "chosen_path": null
+    },
+    {
+      "index": 4,
+      "type": "phrasing",
+      "action": "applied",
+      "before": "a Qualcomm, fabricante americana de processadores para celulares,",
+      "after": "A Qualcomm, que projeta processadores para smartphones,",
+      "reason": "Merged with Finding 2 — same text region. Varied appositive structure from 'fabricante [X] de [Y]' to relative clause.",
+      "chosen_path": null
+    },
+    {
+      "index": 5,
+      "type": "framing",
+      "action": "flagged",
+      "before": "novo recorde — a projeção para 2026 chega a US$725 bilhões, 77% acima do ano anterior",
+      "after": "recorde trimestral — as quatro projetam gastar US$725 bilhões em 2026, 77% acima do ano anterior",
+      "reason": "Shifted from abstract 'a projeção chega a' to concrete 'as quatro projetam gastar' and specified 'recorde trimestral' to ground the framing in execution rather than ambition. Flagging because the suggestion calls for a deeper paragraph-level reframe that a surgical edit can't fully deliver.",
+      "chosen_path": null
+    },
+    {
+      "index": 6,
+      "type": "framing",
+      "action": "skipped",
+      "before": "Duas comissões da Câmara dos EUA abriram investigação sobre o uso de modelos de IA chineses por empresas americanas... Do lado do hardware, o cerco também aperta",
+      "after": null,
+      "reason": "Suggestion proposes explicit pattern-noting ('Terceira medida em uma semana') which borders on meta-reference to prior editions — violates feedback_no_meta_references.md. Current text already signals escalation implicitly via 'o cerco também aperta'.",
+      "chosen_path": null
+    },
+    {
+      "index": 7,
+      "type": "framing",
+      "action": "applied",
+      "before": "O salto é vertiginoso: a última captação da Anthropic",
+      "after": "A última captação da Anthropic",
+      "reason": "Removed editorial phrase 'O salto é vertiginoso' — the $380B→$900B in under three months speaks for itself. The em dash ('— o valor teria mais que dobrado') already delivers the punch.",
+      "chosen_path": null
+    }
+  ],
+  "summary": "6 applied, 1 skipped, 1 flagged out of 8 findings"
+}

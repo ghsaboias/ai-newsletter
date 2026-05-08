@@ -30,6 +30,7 @@ read -r -d '' TOPIC_CLUSTER_AI << 'EOF' || true
 - AI safety: alignment, evaluations, red-teaming, governance proposals
 - AI in science: protein folding, drug discovery, materials, math proofs
 - AI economics: pricing, API changes, adoption metrics, enterprise deals
+- AI startup funding: rounds across stages (seed, Series A/B/C, growth) — model labs, agent startups, AI infra/tooling, applied AI verticals.
 - Recursive self-improvement: AI training AI, automated ML research
 Key X accounts: @sama, @AnthropicAI, @OpenAI, @GoogleDeepMind, @scaling01, @metr_evals, @epochairesearch, @arcprize
 EOF
@@ -41,6 +42,7 @@ read -r -d '' TOPIC_CLUSTER_HW << 'EOF' || true
 - Energy for compute: nuclear, solar, grid upgrades, power purchase agreements
 - Export controls: US-China chip restrictions, ASML/EUV, sanctions
 - Robotics: humanoids (Tesla Optimus, Figure, Unitree), industrial automation, warehouse robots
+- Hardware startup funding: rounds across stages — chip startups, robotics, data center infra, energy/compute.
 Key X accounts: @elonmusk, @jimfanAI, @chilobrandt
 EOF
 
@@ -50,7 +52,7 @@ read -r -d '' TOPIC_CLUSTER_WORLD << 'EOF' || true
 - Economics: jobs reports, GDP, inflation, central bank moves, oil/energy prices
 - Labor & AI displacement: layoffs citing AI, hiring freezes, workforce shifts
 - Markets: major moves in equities, commodities, crypto tied to news events
-- Funding: major rounds, IPOs, acquisitions, SPAC deals
+- Funding: startup rounds across stages (seed through growth), IPOs, acquisitions, SPAC deals
 - Biotech: drug approvals, clinical trial results, CRISPR/gene therapy, longevity research
 - Health policy: FDA decisions, pandemic preparedness, health system changes
 - Space: launches, missions, orbital debris, satellite constellations, exploration milestones
