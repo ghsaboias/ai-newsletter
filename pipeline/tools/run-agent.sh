@@ -1,12 +1,13 @@
 #!/bin/bash
 #
-# Run a pi agent interactively and signal tmux when the output file appears.
+# Run an agent in the foreground and signal tmux when the output file appears.
 #
-# Usage: run-agent.sh <output-file> <signal-name> pi [pi args...]
+# Usage: run-agent.sh <output-file> <signal-name> <command> [args...]
 #
-# Runs pi in the foreground (interactive TUI visible). Polls for the output
-# file in the background. When it appears, signals tmux wait-for.
-# The pane stays open so you can inspect the results.
+# Polls for the output file in the background; signals tmux wait-for when it
+# appears. Stdin is inherited, so callers can redirect a prompt file via
+# `< prompt.md` on the outer invocation. The pane stays open so you can
+# inspect the results.
 #
 
 set -euo pipefail
@@ -28,9 +29,9 @@ shift 2
 ) &
 POLL_PID=$!
 
-# Run pi in foreground (gets the TTY, user sees everything)
+# Run the agent in foreground (inherits TTY/stdin)
 "$@" || true
 
-# If pi exits before the file appeared (error/manual exit), clean up and signal
+# If the agent exits before the file appeared (error/manual exit), clean up and signal
 kill $POLL_PID 2>/dev/null || true
 tmux wait-for -S "$SIGNAL" 2>/dev/null || true

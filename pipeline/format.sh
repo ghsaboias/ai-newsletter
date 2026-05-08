@@ -46,7 +46,7 @@ echo ""
 FORMAT_BODY="$(cat "$FORMAT_PROMPT")"
 FORMAT_BODY="${FORMAT_BODY//\{day_dir\}/$DAY_DIR}"
 
-run_pi --tools read,write "$FORMAT_BODY"
+run_claude --tools "Read,Write" "$FORMAT_BODY"
 
 STEP_END=$(date +%s)
 STEP_DURATION=$((STEP_END - STEP_START))

@@ -120,7 +120,7 @@ $PRE_RESEARCH"
   printf '%s' "$prompt" > "$prompt_file"
 
   local runner="$DIR/tools/run-agent.sh"
-  local cmd="cd $ROOT_DIR && $runner $outfile done-$name $PI_CMD --model $PI_MODEL --tools read,write,bash,exa_search,exa_get_contents $PI_BLOCK_DOMAINS @$prompt_file"
+  local cmd="cd $ROOT_DIR && $runner $outfile done-$name $CLAUDE_CMD --model $CLAUDE_MODEL --allowedTools Read,Write,Bash,mcp__exa__web_search_exa,mcp__exa__web_fetch_exa --settings $CLAUDE_BLOCK_DOMAINS_SETTINGS < $prompt_file"
 
   # First cluster creates the window, rest split into panes
   if ! tmux list-windows -F '#{window_name}' 2>/dev/null | grep -qx "$TMUX_WIN"; then
@@ -171,7 +171,7 @@ elif [[ -f "$SEEDS_FILE" ]] && [[ -s "$SEEDS_FILE" ]]; then
 $SEEDS_URLS" > "$prompt_file"
 
     local runner="$DIR/tools/run-agent.sh"
-    local cmd="cd $ROOT_DIR && $runner $SEEDS_OUT done-seeds $PI_CMD --model $PI_MODEL --tools read,write,bash,exa_search,exa_get_contents $PI_BLOCK_DOMAINS @$prompt_file"
+    local cmd="cd $ROOT_DIR && $runner $SEEDS_OUT done-seeds $CLAUDE_CMD --model $CLAUDE_MODEL --allowedTools Read,Write,Bash,mcp__exa__web_search_exa,mcp__exa__web_fetch_exa --settings $CLAUDE_BLOCK_DOMAINS_SETTINGS < $prompt_file"
 
     tmux split-window -t "$TMUX_WIN" -v -d "$cmd"
     tmux select-layout -t "$TMUX_WIN" tiled 2>/dev/null || true

@@ -125,8 +125,8 @@ Write today's article for $DATE. The research file is at $SAMPLE_DIR/research-sl
 
     STEP_START=$(date +%s)
     echo "  [$i/$NUM] running → $SAMPLE_DIR/pt.md"
-    $PI_CMD -p --model "$PI_MODEL" --no-extensions --tools read,write,edit "@$PROMPT_TMP" \
-      > "$SAMPLE_DIR/.stdout.log" 2>&1 || true
+    $CLAUDE_CMD -p --model "$CLAUDE_MODEL" --allowedTools "Read,Write,Edit" \
+      < "$PROMPT_TMP" > "$SAMPLE_DIR/.stdout.log" 2>&1 || true
     STEP_END=$(date +%s)
     rm -f "$PROMPT_TMP"
 
@@ -165,8 +165,8 @@ for i in $(seq 1 "$NUM"); do
   OUTFILE="$OUTDIR/$DATE-$STEP-$TIMESTAMP-$i.txt"
   echo "  [$i/$NUM] running..."
 
-  $PI_CMD -p --model $PI_MODEL --no-extensions --tools read \
-    "$(cat "$PROMPT_FILE")
+  $CLAUDE_CMD -p --model "$CLAUDE_MODEL" --allowedTools "Read" \
+    <<< "$(cat "$PROMPT_FILE")
 
 Date: $DATE. Research file: $DAY_DIR/research.json.
 

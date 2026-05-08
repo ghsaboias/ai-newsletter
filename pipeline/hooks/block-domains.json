@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__exa__web_fetch_exa",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/pipeline/hooks/block-domains.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

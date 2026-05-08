@@ -85,7 +85,7 @@ printf '%s' "$PROMPT
 $CONTEXT" > "$PROMPT_FILE"
 
 TMUX_WIN="repetition-$DATE"
-tmux new-window -n "$TMUX_WIN" -d "cd $ROOT_DIR && $DIR/tools/run-agent.sh $OUTPUT_FILE done-repetition $PI_CMD --model $PI_MODEL --no-extensions --tools read,write @$PROMPT_FILE"
+tmux new-window -n "$TMUX_WIN" -d "cd $ROOT_DIR && $DIR/tools/run-agent.sh $OUTPUT_FILE done-repetition $CLAUDE_CMD --model $CLAUDE_MODEL --allowedTools Read,Write < $PROMPT_FILE"
 
 echo "  Watch live: tmux select-window -t $TMUX_WIN"
 tmux wait-for done-repetition

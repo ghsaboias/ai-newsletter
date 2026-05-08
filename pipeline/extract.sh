@@ -65,7 +65,7 @@ Extract sources for $DATE.
 - Article file: $DAY_DIR/pt.md" > "$PROMPT_FILE"
 
 TMUX_WIN="extract-$DATE"
-tmux new-window -n "$TMUX_WIN" -d "cd $ROOT_DIR && $DIR/tools/run-agent.sh $SOURCES_FILE done-extract $PI_CMD --model $PI_MODEL --no-extensions --tools read,write,edit @$PROMPT_FILE"
+tmux new-window -n "$TMUX_WIN" -d "cd $ROOT_DIR && $DIR/tools/run-agent.sh $SOURCES_FILE done-extract $CLAUDE_CMD --model $CLAUDE_MODEL --allowedTools Read,Write,Edit < $PROMPT_FILE"
 
 echo "  Watch live: tmux select-window -t $TMUX_WIN"
 tmux wait-for done-extract

@@ -14,7 +14,7 @@ TOPIC_TITLE_PREFIX="[Tech]"
 TOPIC_BYLINE="Por: Guilherme Saboia e Vinicius Gushiken"
 
 # --- Research ---
-# Research tools: read,write,bash,exa_search,exa_get_contents (set in research.sh --tools flag)
+# Research tools managed in research.sh: built-in (Read,Write,Bash) + exa MCP (mcp__exa__web_search_exa, mcp__exa__web_fetch_exa)
 
 # Pre-research sources (run before clusters, output passed to all of them)
 TOPIC_PRE_RESEARCH_CMD="python3 \"\$DIR/tools/techmeme.py\" 2>/dev/null || echo '[Techmeme fetch failed]'"
