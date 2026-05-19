@@ -1,0 +1,69 @@
+{
+  "date": "2026-05-19",
+  "findings": [
+    {
+      "index": 0,
+      "type": "story",
+      "action": "applied",
+      "before": "No fim de semana, Meta avisou cerca de 8 mil funcionários — 10% do quadro — que [seriam demitidos a partir de 20 de maio](https://www.cnbc.com/2026/05/18/metas-layoffs-starting-this-week-underscore-zuckerbergs-ai-reality-.html), com mais 6 mil vagas em aberto canceladas e milhares de cargos de gerência eliminados. Outros 7 mil empregados serão remanejados para quatro novas unidades de IA, entre elas Applied AI Engineering, dedicada a agentes autônomos. A empresa já elevou em até US$10 bilhões o investimento previsto para 2026, agora em até US$145 bilhões, quase todo direcionado para infraestrutura de IA.",
+      "after": "Na segunda-feira, [começaram os cortes de 10% na Meta](https://www.cnbc.com/2026/05/18/metas-layoffs-starting-this-week-underscore-zuckerbergs-ai-reality-.html) — milhares de cargos de gerência eliminados, outros 7 mil empregados remanejados para quatro novas unidades de IA, entre elas a Applied AI Engineering, dedicada a agentes autônomos. O capex de 2026 subiu mais US$10 bilhões, para até US$145 bilhões, quase todo direcionado para infraestrutura de IA.",
+      "reason": "Os números 8.000/10%/6.000/20-mai já apareceram duas vezes nas últimas três semanas; ângulo novo (cortes começaram, gerência atingida, 7 mil remanejados, capex +US$10bi) agora abre o trecho. Recapitulação numérica enxugada.",
+      "chosen_path": null
+    },
+    {
+      "index": 1,
+      "type": "framing",
+      "action": "applied",
+      "before": "Em 2026, 137 empresas de tecnologia já cortaram quase 110 mil pessoas, segundo o Layoffs.fyi.",
+      "after": "A pressão por automação cruza setores: em 2026, 137 empresas de tecnologia já cortaram quase 110 mil pessoas, segundo o Layoffs.fyi, e agora o movimento avança no sistema financeiro.",
+      "reason": "Movi o agregado do Layoffs.fyi para a abertura do parágrafo seguinte (Standard Chartered), transformando-o em ponte entre tech e bancos em vez de aposto solto no rodapé do parágrafo da Meta.",
+      "chosen_path": null
+    },
+    {
+      "index": 2,
+      "type": "story",
+      "action": "applied",
+      "before": "A Anthropic, do outro lado da cadeia, [comprou a Stainless](https://www.anthropic.com/news/anthropic-acquires-stainless), startup nova-iorquina cujo software converte especificações de API em SDKs prontos em TypeScript, Python, Go e outras linguagens; a The Information falou em [mais de US$300 milhões](https://techcrunch.com/2026/05/18/anthropic-has-acquired-the-dev-tools-startup-used-by-openai-google-and-cloudflare/) na conversa. A Anthropic vai encerrar todos os produtos hospedados, inclusive o gerador de SDK que servia OpenAI, Google, Cloudflare, Replicate e Runway — clientes existentes mantêm o que já foi gerado, e a ferramenta sai do mercado para os rivais da Anthropic.",
+      "after": "A Anthropic, do outro lado da cadeia, [fechou a compra da Stainless](https://www.anthropic.com/news/anthropic-acquires-stainless) e vai encerrar o gerador de SDK que hoje serve OpenAI, Google, Cloudflare, Replicate e Runway — clientes existentes mantêm o que já foi gerado, novos desenvolvimentos saem do mercado para os rivais. A The Information falou em [mais de US$300 milhões](https://techcrunch.com/2026/05/18/anthropic-has-acquired-the-dev-tools-startup-used-by-openai-google-and-cloudflare/) pela startup nova-iorquina, que converte especificações de API em SDKs em TypeScript, Python, Go e outras linguagens.",
+      "reason": "Reorganizei para abrir pelo ângulo novo (encerramento da ferramenta para rivais). Preço e caracterização recuam para subordinada — preservados, mas sem liderar.",
+      "chosen_path": null
+    },
+    {
+      "index": 3,
+      "type": "story",
+      "action": "applied",
+      "before": "A Bloomberg Law estima que utilities americanas vão investir mais de US$1,1 trilhão em geração e transmissão nos próximos cinco anos.",
+      "after": "O negócio se encaixa numa onda de capex que a Bloomberg Law calcula em mais de US$1,1 trilhão em geração e transmissão das utilities americanas nos próximos cinco anos.",
+      "reason": "Amarrei explicitamente o número à transação NextEra/Dominion como onda mais ampla, tirando o aposto solto. Escolha de reframe sobre cut para preservar o dado.",
+      "chosen_path": "reframe"
+    },
+    {
+      "index": 4,
+      "type": "phrasing",
+      "action": "applied",
+      "before": "startup nova-iorquina cujo software converte especificações de API em SDKs prontos em TypeScript, Python, Go e outras linguagens",
+      "after": "startup nova-iorquina, que converte especificações de API em SDKs em TypeScript, Python, Go e outras linguagens",
+      "reason": "Resolvido junto com o finding 2 — a reorganização do parágrafo move a aposição para subordinada e reduz a redundância com a edição de 05-13. Mantive caracterização funcional mas aliviada; o ângulo de identidade agora é o impacto sobre rivais (parte anterior da frase), não a descrição do produto.",
+      "chosen_path": null
+    },
+    {
+      "index": 5,
+      "type": "phrasing",
+      "action": "skipped",
+      "before": "perdas acumuladas dos produtores do Golfo já acima de 1 bilhão de barris",
+      "after": null,
+      "reason": "Pesquisa não fornece número fresco da IEA acima de 1 bilhão; a alternativa sugerida ('estimadas em cerca de X no início de maio, agora ultrapassam Y') exigiria invocar enquadramento temporal que tangencia meta-referência editorial. A frase atual já usa atribuição diferente (IEA vs. Aramco) e o framing 'acima de 1 bilhão' carrega progressão temporal implícita. Edit forçado violaria o orçamento de fatos da pesquisa.",
+      "chosen_path": null
+    },
+    {
+      "index": 6,
+      "type": "framing",
+      "action": "applied",
+      "before": "Blackstone bota US$5bi numa nuvem de TPU com o Google",
+      "after": "Google abre TPU fora do Cloud em JV de US$5bi",
+      "reason": "Tirei Blackstone da manchete e levei para o corpo do parágrafo. Subtítulo agora destaca o ângulo estrutural (Google abrindo TPU para fora do próprio Cloud). Caractere count permanece dentro do limite de ~180.",
+      "chosen_path": null
+    }
+  ],
+  "summary": "6 applied, 1 skipped, 0 flagged out of 7 findings"
+}

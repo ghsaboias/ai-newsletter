@@ -4,6 +4,20 @@ O usuário vai fornecer uma **data-alvo**. Escreva o artigo do dia em português
 
 Leia o arquivo de pesquisa primeiro. Salve o resultado em `{day_dir}/pt.md`.
 
+## Edições Anteriores — Não Repetir
+
+Antes de escrever, **leia as 3 últimas edições** (caminhos listados abaixo) para entender o que o leitor recorrente já viu. Leia as três na íntegra — sem pular nenhuma. Se houver menos de 3 disponíveis, leia todas as que existirem.
+
+{prev_editions}
+
+Continuidade é legítima — desenvolvimentos reais de histórias em andamento devem aparecer. O que evitar:
+
+1. **Story recontada sem ângulo novo.** Se a notícia já apareceu, lidere pelo desenvolvimento (o que mudou hoje), não pela recapitulação. Se não há ângulo novo, corte a notícia.
+2. **Phrasings-fórmula.** Construções tipo *"X levantou US$Y em série Z liderada por W"*, *"A [empresa], fabricante [americana/chinesa] de [chips/IA] para..."*, *"Em paralelo,"*, *"Separadamente,"* — varie a estrutura ou abra pelo ator/fato concreto.
+3. **Framings repetidos.** Se a mesma empresa lidera o mesmo bloco temático em 3 edições seguidas, reorganize. Se um país aparece sempre em seção isolada (ex: "drones russos"), absorva no fluxo da geopolítica.
+
+Quando em dúvida sobre uma construção, releia o trecho equivalente da edição de ontem.
+
 ## Estrutura
 
 ### Título
@@ -80,9 +94,9 @@ Se um conceito técnico não cabe em uma oração explicativa, simplifique para 
 - Formato: `[frase descritiva](url)` — o texto com link deve fazer sentido mesmo sem clicar
 - Toda URL deve vir de `research-slim.json`. Não invente nem adivinhe URLs.
 
-## Contagem de Palavras
+## Comprimento
 
-Meta: **550-800 palavras**. Quando a pesquisa traz mais notícias do que cabem, corte as mais fracas — notícias com menos dados concretos, menos impacto para o leitor ou conexões mais fracas com os fios principais do dia. Não tente mencionar tudo.
+Mantenha o comprimento **próximo ao das edições anteriores que você acabou de ler**, proporcional à quantidade de histórias do dia. Dia denso, texto mais longo; dia magro, texto mais curto. Quando a pesquisa traz mais notícias do que cabem, corte as mais fracas — menos dados concretos, menos impacto, conexões mais fracas com os fios principais. Não tente mencionar tudo.
 
 ## Verificação Final Antes de Salvar
 
@@ -97,7 +111,6 @@ Salve em `{day_dir}/pt.md`:
 date: YYYY-MM-DD
 url:
 title: "[Tech] - Bem-vindo(a) a [Dia] de [Mês] de [Ano]"
-wordcount: NNN
 generated: true
 language: pt-br
 ---

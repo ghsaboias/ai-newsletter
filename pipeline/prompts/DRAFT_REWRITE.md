@@ -40,7 +40,10 @@ Pick the less destructive path: reframe over cut. Preserve information readers h
 If applying a suggestion would require off-voice phrasing, break paragraph rhythm, or violate a feedback memory and you can't find an in-voice alternative, skip it. Set `"action": "skipped"` with a specific `reason`. Don't force a bad edit.
 
 ### 6. Frontmatter
-Preserve the YAML frontmatter verbatim. Do not touch the `wordcount` field even if the body got shorter.
+Preserve the YAML frontmatter verbatim.
+
+### 7. Caracterizações: varie antes de cortar
+Aposições que identificam uma empresa/pessoa não-óbvia ("a Cerebras, fabricante americana de chips") cumprem a regra de primeira menção do GENERATION.md. Se a aposição se repete, prefira mudar o ângulo (produto, escala, geografia, fundador) a removê-la. Só remova se a entidade estiver na skip list de GENERATION.md ("Nomes que não precisam de explicação").
 
 ## Notes schema
 

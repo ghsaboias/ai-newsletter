@@ -1,0 +1,60 @@
+{
+  "date": "2026-05-09",
+  "findings": [
+    {
+      "index": 0,
+      "type": "story",
+      "action": "applied",
+      "before": "Apollo e Blackstone [discutem com a Broadcom um financiamento privado de cerca de US$35 bilhões](https://www.bloomberg.com/news/articles/2026-05-08/apollo-blackstone-weigh-35-billion-financing-for-broadcom) — um dos maiores empréstimos privados já estruturados — para custear 3,5 gigawatts de TPUs (chips customizados desenhados pelo Google) a partir de 2027, atrelados a compromissos com a própria Anthropic.",
+      "after": "Apollo e Blackstone [discutem com a Broadcom um financiamento privado de cerca de US$35 bilhões](https://www.bloomberg.com/news/articles/2026-05-08/apollo-blackstone-weigh-35-billion-financing-for-broadcom) — um dos maiores empréstimos privados já estruturados — para custear os 3,5 gigawatts de TPUs do Google que a Anthropic contratou para 2027.",
+      "reason": "Reframe: financing structure ($35bn private loan) is now the foreground; the 3.5 GW TPU figure is treated as already-contracted background, removing the redundant ground reset. Combined with finding 1 in a single edit.",
+      "chosen_path": "reframe"
+    },
+    {
+      "index": 1,
+      "type": "phrasing",
+      "action": "applied",
+      "before": "TPUs (chips customizados desenhados pelo Google)",
+      "after": "TPUs do Google",
+      "reason": "Cut the gloss — the explainer ran two editions ago and on 05-06; reader has it. Folded into the same sentence as finding 0.",
+      "chosen_path": null
+    },
+    {
+      "index": 2,
+      "type": "story",
+      "action": "applied",
+      "before": "o primeiro ataque em solo iraniano desde o cessar-fogo de um mês; o secretário de Estado Marco Rubio aguarda em Roma a resposta de Teerã à proposta americana de catorze pontos, que exige suspensão do enriquecimento de urânio por pelo menos doze anos.",
+      "after": "o primeiro ataque em solo iraniano desde o cessar-fogo de um mês; em Roma, o secretário de Estado Marco Rubio aguarda a resposta de Teerã à proposta americana de catorze pontos, cuja exigência central é suspender o enriquecimento de urânio por pelo menos doze anos.",
+      "reason": "Promote the genuinely new piece (12-year enrichment suspension) from a subordinate clause to the central demand of the proposal; demote the 14-point memo from headline to passing reference.",
+      "chosen_path": null
+    },
+    {
+      "index": 3,
+      "type": "framing",
+      "action": "applied",
+      "before": "O CEO Dario Amodei diz que a receita anualizada do Claude cresceu 80 vezes.",
+      "after": null,
+      "reason": "Cut. The 80x figure ran on 05-07 with ambiguous attribution (projection vs. realized); without research-side verification of an update, the safest move is to drop. Any reframe to 'the projection materialized' would require a meta-reference to the prior edition, which violates the no-meta-references rule.",
+      "chosen_path": "cut"
+    },
+    {
+      "index": 4,
+      "type": "phrasing",
+      "action": "applied",
+      "before": "No mesmo dia, a Cerebras... ; No mesmo dia, o FDA aprovou o Bizengri",
+      "after": "A Cerebras... ; Também na sexta, o FDA aprovou o Bizengri",
+      "reason": "Two instances of 'No mesmo dia' in one edition becomes a crutch. Dropped the first (Cerebras intro carries on its own as a new entity) and varied the second to 'Também na sexta' (May 8 was Friday, anchoring the timestamp without recycling the phrase).",
+      "chosen_path": null
+    },
+    {
+      "index": 5,
+      "type": "framing",
+      "action": "skipped",
+      "before": "A Anthropic, criadora do Claude, fechou um contrato de sete anos e US$1,8 bilhão com a Akamai... O CEO Dario Amodei diz que a receita anualizada do Claude cresceu 80 vezes. Em paralelo, Apollo e Blackstone discutem com a Broadcom um financiamento privado de cerca de US$35 bilhões... atrelados a compromissos com a própria Anthropic.",
+      "after": null,
+      "reason": "The suggested synthesis ('Anthropic já comprometeu X gigawatts em quatro fornecedores em uma semana') would require either invoking prior-edition coverage (a meta-reference, banned) or aggregating numbers not present in this day's research. The CDN-vs-hyperscaler angle the suggestion calls out is already in the current text ('venceu hyperscalers e neoclouds pela escala distribuída e baixa latência'). Safety valve.",
+      "chosen_path": null
+    }
+  ],
+  "summary": "5 applied, 1 skipped, 0 flagged out of 6 findings"
+}

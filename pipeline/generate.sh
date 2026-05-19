@@ -59,6 +59,22 @@ GENERATE_BODY="$(cat "$GENERATE_PROMPT")"
 GENERATE_BODY="${GENERATE_BODY//\{date\}/$DATE}"
 GENERATE_BODY="${GENERATE_BODY//\{day_dir\}/$DAY_DIR}"
 
+# --- Previous editions for repetition awareness ---
+PREV_EDITIONS=""
+CHECK_DATE="$DATE"
+for i in 1 2 3; do
+  CHECK_DATE=$(date -j -v-1d -f "%Y-%m-%d" "$CHECK_DATE" "+%Y-%m-%d" 2>/dev/null || date -d "$CHECK_DATE - 1 day" "+%Y-%m-%d")
+  PREV_PT="$LOOP_DIR/$CHECK_DATE/pt.md"
+  if [[ -f "$PREV_PT" ]]; then
+    PREV_EDITIONS="${PREV_EDITIONS}- ${CHECK_DATE}: ${PREV_PT}
+"
+  fi
+done
+if [[ -z "$PREV_EDITIONS" ]]; then
+  PREV_EDITIONS="(nenhuma edição anterior encontrada)"
+fi
+GENERATE_BODY="${GENERATE_BODY//\{prev_editions\}/$PREV_EDITIONS}"
+
 # Run in a visible tmux pane
 RUNNER="$DIR/tools/run-agent.sh"
 PROMPT_FILE="$DAY_DIR/.prompt-generate.md"
