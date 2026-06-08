@@ -34,11 +34,11 @@ DJ="$HOME/daily-journal-platform"            # holds .env.local for sstats
 ARCHIVE="$REPO/recommendations/RECOMMENDATIONS.md"
 EXTRACT="$REPO/recommendations/extract_recs.py"
 
-# How many days back to scan (the listing endpoint is range-based, by date).
+# How many recent editions to scan.
 case "${1:-}" in
-    all)         DAYS=800 ;;   # whole archive
-    ''|*[!0-9]*) DAYS=14 ;;    # daily default: covers weekends + a few catch-up days
-    *)           DAYS="$1" ;;
+    all)         MAX=2000 ;;   # whole archive (paginated)
+    ''|*[!0-9]*) MAX=20 ;;     # daily default: covers weekends + a few catch-up days
+    *)           MAX="$1" ;;
 esac
 
 log() { echo "[$(date '+%Y-%m-%d %H:%M:%S %z')] $*"; }
@@ -70,15 +70,26 @@ HEADER
     log "Created $ARCHIVE"
 fi
 
-# List recent editions as "YYYY-MM-DD<TAB>post_id", oldest first. We use the
-# range-based events endpoint: the emails endpoint caps its limit and returns an
-# error shape above ~24 rows, which is useless for a backfill.
-editions=$(cd "$DJ" && sstats events "$DAYS" 2>/dev/null \
-    | jq -r '.pubEvents[]? | select(.id != null) | [(.date[0:10]), (.id|tostring)] | @tsv' \
-    | sort)
+# List recent editions as "YYYY-MM-DD<TAB>post_id", oldest first. The emails
+# endpoint caps its page size (~24) but supports --offset and — unlike the
+# events/growth feed, which trails by a few days — includes posts published
+# minutes ago, so we paginate it.
+PAGE=20
+editions=""
+offset=0
+while (( offset < MAX )); do
+    page=$(cd "$DJ" && sstats emails -n "$PAGE" --offset "$offset" 2>/dev/null \
+        | jq -r '.rows[]? | select(.post_id != null) | [(.post_date[0:10]), (.post_id|tostring)] | @tsv')
+    [[ -z "$page" ]] && break
+    editions+="${page}"$'\n'
+    (( $(printf '%s\n' "$page" | grep -c .) < PAGE )) && break   # last (short) page
+    offset=$(( offset + PAGE ))
+    sleep 1                                                      # gentle between listing pages
+done
+editions=$(printf '%s' "$editions" | sort -u)
 
 if [[ -z "$editions" ]]; then
-    log "ERROR: no editions returned from sstats events"
+    log "ERROR: no editions returned from sstats emails"
     exit 1
 fi
 
