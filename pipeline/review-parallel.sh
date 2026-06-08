@@ -125,7 +125,7 @@ Você é um revisor paralelo do draft de newsletter de **$DATE**. Outros Claudes
 
 ## Setup imediato (faz em paralelo)
 
-Invoca a skill \`newsletter-review\` e lê estes arquivos em paralelo:
+Lê estes arquivos em paralelo:
 
 - \`pipeline/output/ai/$DATE/pt.md\` — draft completo, para contexto de cadência e tom (NÃO edita este arquivo)
 - \`pipeline/output/ai/$DATE/review/p${nn}.in.md\` — **o SEU parágrafo** (a fonte congelada)
@@ -168,7 +168,7 @@ Cheque, em ordem de severidade:
 9. **Em-dashes**: reduzir quando não são aposto genuíno — colon se elabora, ponto se é pensamento novo
 10. **Links preservados**: todos os \`[texto](url)\` do .in.md devem continuar no .out.md (ajuste só o texto âncora se o phrasing mudar)
 
-## Loop de review (segue a skill newsletter-review)
+## Loop de review
 
 Um achado por vez, na ordem de severidade acima. Para cada um:
 
@@ -347,7 +347,7 @@ Passada final serial do draft de newsletter de **$DATE**. Os parágrafos individ
 
 ## Setup imediato (faz em paralelo)
 
-Invoca a skill \`newsletter-review\` e lê:
+Lê:
 
 - \`pipeline/output/ai/$DATE/pt.md\` — draft já mergeado (edita este agora)
 - \`pipeline/output/ai/$DATE/repetition.json\`

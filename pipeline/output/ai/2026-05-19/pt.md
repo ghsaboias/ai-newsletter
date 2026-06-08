@@ -8,7 +8,7 @@ language: pt-br
 
 # [Tech] - Bem-vindo(a) a 19 de Maio de 2026
 
-NextEra compra Dominion por US$67bi para alimentar IA, Google abre TPU fora do Cloud em JV de US$5bi, e Vaticano marca encíclica papal sobre IA para 25 de maio.
+NextEra compra Dominion por US$67bi; Google e Blackstone lançam joint-venture de US$5bi; Vaticano marca encíclica papal sobre IA para 25 de maio.
 
 **Energia & data centers.** A NextEra Energy comprou a Dominion Energy [em troca de ações por cerca de US$67 bilhões](https://www.cbsnews.com/news/nextera-dominion-67-billion-deal-ai-data-centers/), a maior aquisição já feita no setor elétrico americano. A nova companhia, com 10 milhões de clientes na Flórida, Virgínia, Carolinas do Norte e do Sul, sai com aproximadamente 130 gigawatts de demanda contratada por data centers buscando conexão à rede: só a Dominion já tem perto de 51 GW reservados por Alphabet, Amazon, Microsoft e Meta.
 

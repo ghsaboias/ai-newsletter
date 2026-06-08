@@ -109,7 +109,7 @@ Saves to `pipeline/output/samples/` and prints all results at the end.
 
 Web UI for the draft review loop. Prototype — under active testing, expect rough edges.
 
-Location: `~/tools/vibe-review/` (sibling to `ai-newsletter`; server `cwd`s into this repo so CLAUDE.md, memory, and the `newsletter-review` skill load automatically).
+Location: `~/tools/vibe-review/` (sibling to `ai-newsletter`; server `cwd`s into this repo so CLAUDE.md and memory load automatically).
 
 Run: `cd ~/tools/vibe-review && npm start` → http://localhost:4175/review/YYYY-MM-DD.
 

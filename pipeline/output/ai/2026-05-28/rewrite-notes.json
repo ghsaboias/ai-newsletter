@@ -1,0 +1,51 @@
+{
+  "date": "2026-05-28",
+  "findings": [
+    {
+      "index": 0,
+      "type": "phrasing",
+      "action": "applied",
+      "before": "**Biotech.** A FDA, agência reguladora de medicamentos dos Estados Unidos, [aprovou o Decnupaz, da farmacêutica americana AbbVie, contra um câncer de sangue raro e agressivo](...) — a neoplasia de células dendríticas plasmocitoides blásticas (BPDCN), que tinha poucas opções de tratamento.",
+      "after": "**Biotech.** A neoplasia de células dendríticas plasmocitoides blásticas (BPDCN), um câncer de sangue raro e agressivo com poucas opções de tratamento, ganhou um novo remédio: a FDA [aprovou o Decnupaz, da farmacêutica americana AbbVie](...).",
+      "reason": "Quebrei o molde da FDA (abertura idêntica ao bloco Biotech de 25/05) abrindo pela doença e encurtando o explicador da FDA; mantive a aposição da AbbVie por não estar na skip list.",
+      "chosen_path": null
+    },
+    {
+      "index": 1,
+      "type": "story",
+      "action": "applied",
+      "before": "A empresa testa duas arquiteturas ao mesmo tempo — uma da Arm, outra no padrão aberto RISC-V —, e a iniciativa vem dias depois de fechar a compra de milhões de chips sob medida da fabricante americana Qualcomm.",
+      "after": "A empresa testa duas arquiteturas ao mesmo tempo — uma da Arm, outra no padrão aberto RISC-V —, projeto que corre em paralelo aos milhões de chips sob medida que já encomendou da Qualcomm.",
+      "reason": "Reframei o acordo da Qualcomm como contexto já dado (\"que já encomendou\") em vez de reapresentá-lo como compra recente; continuidade implícita, sem meta-referência.",
+      "chosen_path": "reframe"
+    },
+    {
+      "index": 2,
+      "type": "phrasing",
+      "action": "applied",
+      "before": "[levantou mais de US$1 bilhão a um valor de US$26 bilhões](...), mais que o dobro dos US$10,2 bilhões de oito meses antes, com receita anualizada de US$492 milhões, ante US$37 milhões em maio de 2025.",
+      "after": "[levantou mais de US$1 bilhão a um valor de US$26 bilhões](...). A empresa valia US$10,2 bilhões oito meses atrás, e a receita anualizada saltou de US$37 milhões em maio de 2025 para US$492 milhões.",
+      "reason": "Desfiz a fórmula \"X a um valor de Y, mais que o dobro dos Z de M meses\" separando em duas orações e ancorando a aceleração na receita; preservei todos os números.",
+      "chosen_path": null
+    },
+    {
+      "index": 3,
+      "type": "framing",
+      "action": "applied",
+      "before": "Forças americanas [atacaram uma base naval e um aeroporto iranianos na região do Estreito de Ormuz](...) ontem à noite, ação que Washington descreveu como \"defensiva\";",
+      "after": "Forças americanas [atacaram uma base naval e um aeroporto iranianos](...) ontem à noite, ação que Washington descreveu como \"defensiva\";",
+      "reason": "Removi a âncora redundante \"na região do Estreito de Ormuz\" (o estreito reaparece logo em \"controle do estreito\"); o parágrafo já assume a continuidade e foca nos fatos novos.",
+      "chosen_path": null
+    },
+    {
+      "index": 4,
+      "type": "framing",
+      "action": "applied",
+      "before": "pressionado por uma inflação de 2,6% em abril, a mais alta em 21 meses, puxada pela alta do petróleo desde o início do confronto entre EUA e Irã.",
+      "after": "pressionado por uma inflação de 2,6% em abril, a mais alta em 21 meses e puxada pela alta do petróleo.",
+      "reason": "Mantive só o gancho do petróleo e cortei a re-explicação da cadeia causal; \"O conflito já se sente na economia asiática\" no início da frase já estabelece o elo guerra→economia.",
+      "chosen_path": null
+    }
+  ],
+  "summary": "5 applied, 0 skipped, 0 flagged out of 5 findings."
+}

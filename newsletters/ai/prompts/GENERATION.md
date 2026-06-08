@@ -24,15 +24,30 @@ Quando em dúvida sobre uma construção, releia o trecho equivalente da ediçã
 `[Tech] - Bem-vindo(a) a [Dia] de [Mês] de [Ano]`
 
 ### Linha de abertura
-Uma frase que apresenta e resume o dia. Máximo ~180 caracteres — serve também como subtítulo no Substack. Use abreviações (US$2bi, 5GW) para caber.
+Uma frase que apresenta e resume o dia. Máximo ~180 caracteres — serve também como subtítulo no Substack. Use abreviações (US$2bi, 5GW) para caber. 3 ou 4 frases sobre eventos diferentes, separadas por ";".
 
 ### Corpo
 5-8 parágrafos temáticos. Cada parágrafo:
-1. Começa com um rótulo curto em negrito (1-3 palavras) + ponto, inline no corpo do parágrafo. Exemplos usados em edições recentes: `**Modelos & agentes.**`, `**Big techs.**`, `**Semicondutores.**`, `**Energia & data centers.**`, `**Geopolítica.**`, `**Biotech.**`, `**M&A biotech.**`. O rótulo emerge do agrupamento do dia — se a pesquisa puxa pra outro tema, nomeie de acordo; não force encaixe nos exemplos.
-2. Agrupa notícias relacionadas (geralmente 2-4) com **links inline nas frases-chave**
-3. Costura as notícias em um arco narrativo
+1. Começa com um rótulo curto em negrito (1-3 palavras) + ponto, inline no corpo do parágrafo. Exemplos usados em edições recentes: `**Modelos & agentes.**`, `**Big techs.**`, `**Semicondutores.**`, `**Energia & data centers.**`, `**Geopolítica.**`, `**Biotech.**`, `**Biotech.**`. O rótulo emerge do agrupamento do dia — se a pesquisa puxa pra outro tema, nomeie de acordo; não force encaixe nos exemplos.
+2. Agrupe notícias relacionadas (geralmente 2-4) com **links inline nas frases-chave**. Se o agrupamento reúne dois arcos distintos, quebre (ver "Tamanho do parágrafo")
 
 As notícias dentro de um parágrafo devem se relacionar entre si. Priorize agrupamentos que a pesquisa sustenta naturalmente — tipicamente IA/infraestrutura, hardware/semicondutores, geopolítica e biotecnologia. Se um domínio não tem notícias na pesquisa, pule. Não force cobertura.
+
+### Bullets — seções com 3+ itens paralelos
+
+Quando uma seção reúne 3 ou mais itens discretos do mesmo tipo (3 lançamentos numa conferência, 3 captações no dia), use bullets, não parágrafo corrido. Mantém o rótulo de seção em negrito; abaixo, uma frase-lead curta com dois-pontos ou os bullets direto. Cada bullet abre com o **nome próprio** em negrito (`**SpaceX.**`, `**Majorana 2.**`), não uma categoria. O corpo não repete o nome; o link inline vai na descrição. Menos de 3 itens: parágrafo normal.
+
+### Tamanho do parágrafo — um arco por parágrafo
+
+Cada parágrafo cobre **um arco**: uma história e suas ramificações diretas. O gatilho de quebra é qualitativo, não de comprimento — um arco denso (uma captação com todas as métricas, um ensaio de vacina) fica inteiro mesmo com 6-8 frases. Mas quando um bloco com rótulo reúne **dois eventos que se sustentam sozinhos** — ainda que sob o mesmo ator, tema ou rótulo — dê um parágrafo a cada um.
+
+A continuação **não recebe novo rótulo em negrito** (segue sob o do bloco anterior). Abra-a por uma âncora concreta que reposicione o leitor:
+
+- Temporal (honestidade de frescor; nunca sugira simultaneidade entre datas distintas): `Ainda ontem,`, `Hoje em Londres,`, `Separadamente,`
+- Geográfica: `Em Pequim,`, `Na Ucrânia,`, `Em Utah,`
+- Ator: `O governador de Illinois, JB Pritzker,`
+
+Quando o parágrafo introduz um conjunto ("duas frentes", "três apostas"), feche-o com uma frase-placa curta que anuncia a separação e dê um parágrafo a cada membro — ou, se forem 3+ itens paralelos do mesmo tipo, bullets (ver acima). Ex.: "Em duas frentes estaduais, autoridades agem contra os data centers." → um parágrafo para Illinois, outro para Utah.
 
 ## Voz e Tom
 
@@ -50,11 +65,7 @@ As notícias dentro de um parágrafo devem se relacionar entre si. Priorize agru
 
 ## Acessibilidade — Escreva para Não-Especialistas
 
-O público é educado, mas não técnico. Toda frase deve ser clara para alguém que não trabalha com tecnologia, finanças ou defesa.
-
-### Explique toda entidade na primeira menção
-
-Se uma empresa, organização ou pessoa não é amplamente conhecida, adicione uma oração descritiva. Use o campo `entities` nos dados de pesquisa para identificar atores. Consulte `key_facts` para contexto sobre o que fazem.
+O público é educado, mas não técnico. Toda frase deve ser clara para alguém que não trabalha com tecnologia, finanças ou defesa. Se uma empresa, organização ou pessoa não é amplamente conhecida, adicione uma oração descritiva. Use o campo `entities` nos dados de pesquisa para identificar atores. Consulte `key_facts` para contexto sobre o que fazem.
 
 - ✅ `a FANUC, maior fabricante de robôs industriais do Japão`
 - ✅ `Karen Hao, jornalista de tecnologia do Wall Street Journal`
@@ -96,11 +107,7 @@ Se um conceito técnico não cabe em uma oração explicativa, simplifique para 
 
 ## Comprimento
 
-Mantenha o comprimento **próximo ao das edições anteriores que você acabou de ler**, proporcional à quantidade de histórias do dia. Dia denso, texto mais longo; dia magro, texto mais curto. Quando a pesquisa traz mais notícias do que cabem, corte as mais fracas — menos dados concretos, menos impacto, conexões mais fracas com os fios principais. Não tente mencionar tudo.
-
-## Verificação Final Antes de Salvar
-
-Releia o artigo em voz alta. Se uma frase não faria sentido para alguém sem formação técnica, reescreva. Corrija no lugar — não deixe notas ou TODOs.
+Mantenha o comprimento **próximo ao das edições anteriores que você acabou de ler**, proporcional à quantidade de histórias do dia. Dia com muitas histórias importantes, texto mais longo; dia com poucas histórias, texto mais curto. Quando a pesquisa traz mais notícias do que cabem, corte as mais fracas — menos dados concretos, menos impacto, conexões mais fracas com os fios principais. Não tente mencionar tudo.
 
 ## Formato de Saída
 

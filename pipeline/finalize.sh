@@ -109,10 +109,20 @@ if [[ -f "$FINAL_MD" ]] && ! grep -qF "Recomendações de hoje" "$FINAL_MD"; the
   echo "  Recomendações section appended to final.md"
 fi
 
-# --- Step 4: Substack ---
+# --- Step 4: Substack HTML ---
 S=$(date +%s)
 "$DIR/substack.sh" "$DATE"
 step_timer "substack" "$S"
+
+# --- Step 5: Paywall teaser ---
+S=$(date +%s)
+"$DIR/paywall-teaser.sh" "$DATE"
+step_timer "paywall-teaser" "$S"
+
+# --- Step 6: Post draft to Substack ---
+S=$(date +%s)
+"$DIR/substack-post.sh" "$DATE"
+step_timer "substack-post" "$S"
 
 # --- Summary ---
 PIPELINE_END=$(date +%s)

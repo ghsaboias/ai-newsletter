@@ -135,6 +135,7 @@ Use ONLY these exact English values (same as Daily Journal database):
 | Category | Covers |
 |---|---|
 | technology | AI models, benchmarks, LLM releases, hardware, chips, data centers, software platforms, scientific automation, biotech |
+| science | Scientific research, academic papers, space, physics, biology, climate, health breakthroughs |
 | world | Export controls, sanctions, military policy, international relations, defense, autonomous weapons, geopolitics |
 | economy | Markets, funding rounds, valuations, IPOs, earnings, labor, stock moves, investor sentiment |
 | finance | Banking, interest rates, monetary policy, fiscal policy, analyst reports |

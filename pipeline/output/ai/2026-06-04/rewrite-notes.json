@@ -1,0 +1,69 @@
+{
+  "date": "2026-06-04",
+  "findings": [
+    {
+      "index": 0,
+      "type": "story",
+      "action": "applied",
+      "before": "Em São Petersburgo, três distritos foram atingidos, o aeroporto suspendeu voos brevemente e o sinal de internet móvel foi cortado; os ataques aconteceram na abertura do Fórum Econômico Internacional da cidade (SPIEF), evento em que Vladimir Putin discursa nesta sexta-feira.",
+      "after": "Em São Petersburgo, três distritos foram atingidos, o aeroporto suspendeu voos brevemente e o sinal de internet móvel foi cortado horas antes do discurso de Vladimir Putin no Fórum Econômico Internacional desta sexta-feira.",
+      "reason": "Aplicado apenas o corte da redundância 'abertura do SPIEF' (já estabelecida na edição anterior), absorvendo o ângulo novo (discurso de Putin) na mesma frase. Rejeitada a parte da sugestão que abria com 'Dois dias depois do ataque coordenado contra São Petersburgo' por funcionar como sinal de continuidade explícito; a primeira frase já lidera com os novos alvos confirmados (corveta Boikiy, fábrica Progress, terminal de petróleo).",
+      "chosen_path": "reframe"
+    },
+    {
+      "index": 1,
+      "type": "framing",
+      "action": "applied",
+      "before": "O Comando Central dos Estados Unidos (CENTCOM) disse que nova leva de drones iranianos contra forças americanas no Kuwait falhou e desmentiu como falsa a reivindicação da Guarda Revolucionária do Irã de que mísseis iranianos teriam atingido a Quinta Frota americana no Bahrein.",
+      "after": "Os Estados Unidos negaram a reivindicação da Guarda Revolucionária iraniana de que mísseis teriam atingido a Quinta Frota americana no Bahrein, e o Comando Central (CENTCOM) informou que nova leva de drones contra forças americanas no Kuwait falhou.",
+      "reason": "Inverte a ordem para abrir pelo desmentido específico ao invés do framing 'CENTCOM disse que [ataque iraniano] falhou' usado na edição anterior. CENTCOM agora aparece como fonte da informação secundária, não como abertura do bloco.",
+      "chosen_path": null
+    },
+    {
+      "index": 2,
+      "type": "framing",
+      "action": "applied",
+      "before": "Drones israelenses [mataram pelo menos seis pessoas no sul do Líbano e atingiram um carro pouco ao sul de Beirute](https://www.defensenews.com/news/your-military/2026/06/03/gulf-tensions-escalate-as-iran-hits-kuwait-us-strikes-near-hormuz/), o ataque mais próximo da capital libanesa desde o cessar-fogo parcial mediado pelos Estados Unidos no início da semana.",
+      "after": "Pela primeira vez desde o cessar-fogo parcial mediado pelos Estados Unidos no início da semana, drones israelenses [atingiram um carro ao sul de Beirute](https://www.defensenews.com/news/your-military/2026/06/03/gulf-tensions-escalate-as-iran-hits-kuwait-us-strikes-near-hormuz/); outras seis pessoas morreram em ataques no sul do Líbano.",
+      "reason": "Promove o ângulo novo (proximidade de Beirute desde o cessar-fogo) para o início da frase e demove as seis mortes — fato repetido do dia anterior — para a oração secundária. Link reposicionado na descrição mais curiosa.",
+      "chosen_path": null
+    },
+    {
+      "index": 3,
+      "type": "phrasing",
+      "action": "applied",
+      "before": "A Broadcom, fabricante americana de chips de rede e aceleradores customizados de IA",
+      "after": "A Broadcom, que projeta os aceleradores customizados de IA do Google e da Meta",
+      "reason": "Variou o ângulo da aposição usando escala/clientes (Google e Meta) em vez de geografia+produto, evitando o eco da fórmula 'fabricante americana de chips de rede e ...' usada na Marvell ontem. Preserva a identificação da empresa (regra de primeira menção).",
+      "chosen_path": null
+    },
+    {
+      "index": 4,
+      "type": "phrasing",
+      "action": "applied",
+      "before": "proíbe qualquer obrigação de licenciamento ou pré-aprovação",
+      "after": "veta qualquer exigência de autorização prévia",
+      "reason": "Substitui o par lexical 'licenciamento ... ou pré-aprovação' (palavra a palavra na edição anterior) por sinônimo equivalente em sentido.",
+      "chosen_path": null
+    },
+    {
+      "index": 5,
+      "type": "framing",
+      "action": "flagged",
+      "before": "**Captações.** As maiores rodadas do dia incluíram fintech, IA para ciência, neurociência e a estreia em bolsa da computação quântica:\n\n- **Ramp.** ...\n- **Lila Sciences.** ...\n- **Flourish.** ...\n- **Quantinuum.** ...",
+      "after": "**Neurociência.** [parágrafo dedicado à Flourish/Bezos antes de Captações]\n\n**Captações.** As maiores rodadas do dia incluíram fintech, IA para ciência e a estreia em bolsa da computação quântica:\n\n- **Ramp.** ...\n- **Lila Sciences.** ...\n- **Quantinuum.** ...",
+      "reason": "Aplicada a opção (b) da sugestão: Flourish virou parágrafo dedicado de Neurociência (posicionado entre Robótica e Captações, conectando com o fio de arquitetura/eficiência) e o bullet ficou com Ramp/Lila/Quantinuum. Reestruturação não-trivial — revisão humana recomendada para validar o novo posicionamento e o label 'Neurociência'.",
+      "chosen_path": "reframe"
+    },
+    {
+      "index": 6,
+      "type": "phrasing",
+      "action": "applied",
+      "before": "Hock Tan, presidente-executivo, disse que a Broadcom deve embarcar mais de 10 gigawatts de capacidade de processamento de IA em 2027 e \"muito mais\" em 2028.",
+      "after": "Hock Tan, à frente da Broadcom, disse que a empresa deve embarcar mais de 10 gigawatts de capacidade de processamento de IA em 2027 e \"muito mais\" em 2028.",
+      "reason": "Quebra o padrão 'cargo posposto presidente-executivo' que vinha em três edições seguidas (Huang/Murphy/Wei). 'À frente da Broadcom' carrega a mesma função sem o cargo explícito; 'a empresa' substitui 'a Broadcom' para evitar repetição. Data específica ('desde 2006') deixada de fora por não estar na pesquisa.",
+      "chosen_path": null
+    }
+  ],
+  "summary": "6 applied, 0 skipped, 1 flagged out of 7 findings"
+}

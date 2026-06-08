@@ -1,0 +1,17 @@
+Abaixo, apenas para assinantes:
+
+**Captações.** A captação que avaliou em bilhões a startup de IA ainda secreta de Brett Adcock, fundador da Figure.
+
+**Captações.** A receita anualizada que a Cursor cruzou às vésperas de a SpaceX ganhar a opção de comprá-la.
+
+**Energia & data centers.** O contrato de dez anos pelo qual a Bloom Energy vai abastecer os data centers de IA da Nebius fora da rede elétrica.
+
+**Quantum & chips.** Os bilhões que o governo americano destinou a nove empresas de computação quântica, em troca de uma fatia em cada uma.
+
+**Bruxelas.** A sanção a uma fabricante chinesa de chips que a União Europeia quer suspender semanas depois de impô-la, para não parar suas montadoras.
+
+**Geopolítica.** A ordem do líder supremo do Irã que esfriou a esperança de um fim rápido da guerra, com o Estreito de Ormuz no centro do impasse.
+
+**Cripto.** As centenas de milhões em criptomoedas que, segundo o Wall Street Journal, chegaram à Guarda Revolucionária do Irã pela Binance.
+
+**Biotech.** A miniproteína desenhada por IA que igualou um remédio em uso num teste com camundongos, abrindo uma das classes de alvos mais difíceis.

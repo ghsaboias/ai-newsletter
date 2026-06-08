@@ -1,0 +1,51 @@
+{
+  "date": "2026-05-25",
+  "findings": [
+    {
+      "index": 0,
+      "type": "phrasing",
+      "action": "applied",
+      "before": "Ainda assim, [as ações de fabricantes chineses dispararam](...), com a SMIC subindo mais de 17% em Xangai e a Piotech, mais de 18%.",
+      "after": "Ainda assim, [as ações de fabricantes chineses reagiram com força](...), com a SMIC subindo mais de 17% em Xangai e a Piotech, mais de 18%.",
+      "reason": "Trocado o verbo-padrão 'dispararam' (repetido em 05-22) por 'reagiram com força'; a estrutura com gerúndio já diferia do colon da edição anterior, então o eco era só o verbo.",
+      "chosen_path": null
+    },
+    {
+      "index": 1,
+      "type": "phrasing",
+      "action": "applied",
+      "before": "A [Index Ventures liderou um aporte de US$78 milhões na Moment](...), criada por ex-operadores quantitativos da Citadel Securities, uma das maiores formadoras de mercado dos Estados Unidos; a empresa vende",
+      "after": "A Moment, criada por ex-operadores quantitativos da Citadel Securities, uma das maiores formadoras de mercado dos Estados Unidos, [levantou US$78 milhões liderados pela Index Ventures](...); a empresa vende",
+      "reason": "Invertida a frase para abrir pela empresa, quebrando a fórmula '[fundo] liderou um aporte de US$X na [empresa]' de 05-22; 'liderados pela Index Ventures' preserva o sentido de rodada liderada (não aporte solo).",
+      "chosen_path": "reframe"
+    },
+    {
+      "index": 2,
+      "type": "phrasing",
+      "action": "applied",
+      "before": "A Vifan, desmembrada de um laboratório de chips bioinspirados da Universidade de Pequim, [levantou",
+      "after": "A Vifan, nascida de um laboratório de chips bioinspirados da Universidade de Pequim, [levantou",
+      "reason": "'desmembrada de' reapareceu em edições consecutivas para spin-offs; trocado por 'nascida de', que mantém a caracterização de origem sem o anglicismo 'spin-off'.",
+      "chosen_path": null
+    },
+    {
+      "index": 3,
+      "type": "framing",
+      "action": "flagged",
+      "before": "**Semicondutores.** A China apresentou um novo argumento para contornar as restrições americanas a equipamentos de fabricação de chips. Em um congresso de engenharia em Xangai, a presidente do negócio de semicondutores da Huawei, He Tingbo, revelou a \"Lei de Escala Tau\": em vez de perseguir [...] A mesma busca por autonomia move uma aposta menor em Pequim. A Vifan,",
+      "after": "**Semicondutores.** Em um congresso de engenharia em Xangai, a presidente do negócio de semicondutores da Huawei, He Tingbo, revelou a \"Lei de Escala Tau\", a aposta chinesa para contornar as restrições americanas a equipamentos de fabricação de chips: em vez de perseguir [...] Essa busca por autonomia também alimenta apostas bem menores. A Vifan,",
+      "reason": "Reordenei a abertura para liderar pelo fato novo e específico (He Tingbo/Lei de Escala Tau), com o arco geral 'China contornando sanções' como aposição, e variei a costura entre parágrafos ('A mesma busca... move' -> 'Essa busca... também alimenta'), que ecoava 'No mesmo esforço...' de 05-22. Flagged por ser reestruturação de abertura de parágrafo.",
+      "chosen_path": null
+    },
+    {
+      "index": 4,
+      "type": "phrasing",
+      "action": "applied",
+      "before": "a Elliptic, que rastreia transações em blockchain para ajudar bancos e governos a flagrar lavagem de dinheiro com criptomoedas",
+      "after": "a Elliptic, que rastreia transações em blockchain para ajudar bancos e governos a detectar crimes financeiros com criptomoedas",
+      "reason": "Reformulei a descrição para não reancorar em 'lavagem de dinheiro' (presente em 05-22); 'crimes financeiros' cobre com precisão o escopo de compliance da Elliptic. Valuation/série D já constavam na mesma frase.",
+      "chosen_path": null
+    }
+  ],
+  "summary": "4 applied, 0 skipped, 1 flagged out of 5 findings."
+}

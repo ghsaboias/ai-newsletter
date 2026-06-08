@@ -1,29 +1,32 @@
 # Techmeme vs agentic search — source attribution audit
 
 **Date of analysis:** 2026-05-19
-**Window:** 7 editions (2026-05-09, 05-11, 05-12, 05-13, 05-14, 05-15, 05-18)
-**Method:** 4 parallel sub-agents. For each pt.md, split into distinct stories, matched to research.json by entities/headline/key_facts, then semantically classified against the `**Pre-research scan:**` section of `.prompt-ai.md` (Techmeme's ~30-story morning brief).
-
-Today's edition (2026-05-19) excluded — the skill-flow migration changed file layout and `.prompt-*.md` is not preserved.
+**Window:** 8 editions (2026-05-09, 05-11, 05-12, 05-13, 05-14, 05-15, 05-18, 05-19)
+**Method:** 5 parallel sub-agents. For each pt.md, split into distinct stories, matched to research.json by entities/headline/key_facts, then semantically classified against Techmeme's morning brief (~30-40 stories).
+- For 05-09 through 05-18, the brief was read from each day's `.prompt-ai.md`.
+- For 05-19 the brief was recovered from a sub-agent session log (`9a8a9200`) — the skill-flow migration that day stopped persisting `.prompt-*.md` files. Brief snapshot saved to `/tmp/techmeme-2026-05-19.txt` (ephemeral).
 
 ## Headline
 
-**111 published stories total. 68 from Techmeme (61%) · 43 from agentic search (39%).** Zero ambiguous, zero pt.md stories without a research.json match.
+**128 published stories total. 82 from Techmeme (64%) · 46 from agentic search (36%).** Zero ambiguous, zero pt.md stories without a research.json match.
 
 ## Per-edition breakdown
 
 | Date | Stories | Techmeme | Agentic | % Techmeme |
 |------|--------:|---------:|--------:|----------:|
 | 2026-05-13 | 14 | 13 | 1 | **93%** |
+| 2026-05-19 | 17 | 14 | 3 | 82% |
 | 2026-05-14 | 15 | 12 | 3 | 80% |
 | 2026-05-09 | 15 | 10 | 5 | 67% |
 | 2026-05-18 | 18 | 11 | 7 | 61% |
 | 2026-05-15 | 19 | 11 | 8 | 58% |
 | 2026-05-12 | 15 | 7 | 8 | 47% |
 | 2026-05-11 | 15 | 4 | 11 | **27%** |
-| **Total** | **111** | **68** | **43** | **61%** |
+| **Total** | **128** | **82** | **46** | **64%** |
 
-The headline 61/39 hides a 3.4× spread between best and worst day. Techmeme contribution is volatile, not a steady floor.
+The headline 64/36 hides a 3.4× spread between best and worst day. Techmeme contribution is volatile, not a steady floor.
+
+Today (05-19, the first edition under the new skill-based flow) landed at 82% — comfortably in the upper band. The three agentic stories on 05-19 fit the established pattern exactly: a geopolitics break (Trump postponing the Iran strike), a robotics/manufacturing story (Kia + Boston Dynamics Atlas at Hyundai Georgia), and a crypto/markets story (Strategy's $2.01B BTC purchase) — all clusters where Techmeme has under-indexed across the full window.
 
 ## What each surface actually delivers
 
@@ -58,5 +61,6 @@ The two are complements, not redundancies. Today's skill-flow migration is a goo
 
 - Story-splitting granularity is "one event/announcement = one story." pt.md often packs 2-3 events per paragraph; agents split them. A pt.md paragraph covering "Apple MacBook Neo + Siri beta" was split into two stories, both matching Techmeme.
 - Semantic match criterion: same entity + same event = match. Same entity + different angle = ambiguous (none triggered).
+- For 05-19 the Techmeme brief was reconstructed from a sub-agent session JSONL (`~/.claude/projects/-Users-guilherme-ai-newsletter/9a8a9200*.jsonl`) since the skill-based flow does not persist `.prompt-*.md`. **Worth fixing in the skill** — the brief is the only evidence of what Techmeme delivered that morning, and Techmeme's live page has already moved on by the time anyone checks.
 - Sample agent transcripts in `/private/tmp/claude-501/-Users-guilherme-ai-newsletter/.../tasks/` (ephemeral, not preserved).
 - Per-story classifications with research IDs and Techmeme item numbers live in each agent's output and were not concatenated into a single JSON file — re-run against this doc if needed.
