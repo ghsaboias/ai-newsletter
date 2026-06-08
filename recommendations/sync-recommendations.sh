@@ -34,11 +34,11 @@ DJ="$HOME/daily-journal-platform"            # holds .env.local for sstats
 ARCHIVE="$REPO/recommendations/RECOMMENDATIONS.md"
 EXTRACT="$REPO/recommendations/extract_recs.py"
 
-# How many recent editions to scan.
+# How many days back to scan (the listing endpoint is range-based, by date).
 case "${1:-}" in
-    all)         LIMIT=100 ;;
-    ''|*[!0-9]*) LIMIT=12 ;;
-    *)           LIMIT="$1" ;;
+    all)         DAYS=800 ;;   # whole archive
+    ''|*[!0-9]*) DAYS=14 ;;    # daily default: covers weekends + a few catch-up days
+    *)           DAYS="$1" ;;
 esac
 
 log() { echo "[$(date '+%Y-%m-%d %H:%M:%S %z')] $*"; }
@@ -70,13 +70,15 @@ HEADER
     log "Created $ARCHIVE"
 fi
 
-# List recent editions as "YYYY-MM-DD<TAB>post_id", oldest first.
-editions=$(cd "$DJ" && sstats emails -n "$LIMIT" 2>/dev/null \
-    | jq -r '.rows[] | select(.post_id != null) | [.post_date[0:10], (.post_id|tostring)] | @tsv' \
+# List recent editions as "YYYY-MM-DD<TAB>post_id", oldest first. We use the
+# range-based events endpoint: the emails endpoint caps its limit and returns an
+# error shape above ~24 rows, which is useless for a backfill.
+editions=$(cd "$DJ" && sstats events "$DAYS" 2>/dev/null \
+    | jq -r '.pubEvents[]? | select(.id != null) | [(.date[0:10]), (.id|tostring)] | @tsv' \
     | sort)
 
 if [[ -z "$editions" ]]; then
-    log "ERROR: no editions returned from sstats emails"
+    log "ERROR: no editions returned from sstats events"
     exit 1
 fi
 
