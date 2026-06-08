@@ -15,13 +15,14 @@
 #   sync-recommendations.sh all        # full backfill (scan up to 100 editions)
 #   sync-recommendations.sh 30         # scan the last 30 editions
 #
-# The repo it commits to is derived from this script's own location, so on the
-# Pi it runs from a DEDICATED clone (~/recs-archive) kept separate from the
-# daily-draft clone (~/ai-newsletter), whose cron auto-commits pipeline output
-# locally and must never be pushed.
+# The repo it commits to is derived from this script's own location. On the Pi
+# it runs from ~/ai-newsletter, a clean clone kept in sync with origin. (The old
+# 7am daily-draft cron — which auto-committed pipeline output and never pulled,
+# so it could never push — was retired on 2026-06-08; this is now the only thing
+# that auto-commits there, and it touches only the archive file.)
 #
 # Cron (noon BRT, Pi is America/Sao_Paulo):
-#   0 12 * * * bash ~/recs-archive/recommendations/sync-recommendations.sh >> ~/logs/newsletter-recs.log 2>&1
+#   0 12 * * * bash ~/ai-newsletter/recommendations/sync-recommendations.sh >> ~/logs/newsletter-recs.log 2>&1
 
 set -uo pipefail
 
