@@ -623,3 +623,9 @@ https://www.youtube.com/watch?v=xXsleu4-kd8
 **Uber CEO on AI, Autonomous Vehicles, and the Future of Transportation**
 O CEO da Uber, Dara Khosrowshahi, discute em entrevista ao podcast Invest Like The Best a evolução da empresa, a integração da Inteligência Artificial (IA) nas operações físicas e a estratégia de longo prazo para veículos autônomos (AVs). Khosrowshahi detalha sua transição da Expedia para a Uber, um período marcado por caos organizacional, e como aplicou uma mentalidade de engenharia para estruturar a empresa e restaurar a confiança dos stakeholders
 https://www.youtube.com/watch?v=ThMtheE5eO0
+
+## 2026-06-09
+
+**World Labs’ Fei-Fei Li on Creating Large World Models**
+Fei-Fei Li, cofundadora da World Labs, discute a transição do foco atual em Grandes Modelos de Linguagem (LLMs) para o que ela denomina “Inteligência Espacial”. A premissa central de sua startup é que a inteligência animal e humana evoluiu a partir da capacidade de perceber, navegar e interagir com o mundo físico. Enquanto as LLMs processam texto, os Modelos de Mundo (World Models) visam permitir que máquinas compreendam a física, a dinâmica e a geometria de ambientes 3D e 4D, possibilitando aplicações que vão desde robótica avançada até design industrial e simulações complexas
+https://www.youtube.com/watch?v=pNYVckbCFuk
