@@ -629,3 +629,13 @@ https://www.youtube.com/watch?v=ThMtheE5eO0
 **World Labs’ Fei-Fei Li on Creating Large World Models**
 Fei-Fei Li, cofundadora da World Labs, discute a transição do foco atual em Grandes Modelos de Linguagem (LLMs) para o que ela denomina “Inteligência Espacial”. A premissa central de sua startup é que a inteligência animal e humana evoluiu a partir da capacidade de perceber, navegar e interagir com o mundo físico. Enquanto as LLMs processam texto, os Modelos de Mundo (World Models) visam permitir que máquinas compreendam a física, a dinâmica e a geometria de ambientes 3D e 4D, possibilitando aplicações que vão desde robótica avançada até design industrial e simulações complexas
 https://www.youtube.com/watch?v=pNYVckbCFuk
+
+## 2026-06-11
+
+**Inside Anthropic, the $965 Billion AI Juggernaut | The Circuit**
+O vídeo da Bloomberg Originals explora a trajetória da Anthropic, laboratório de IA fundado por ex-funcionários da OpenAI, liderado pelos irmãos Dario e Daniela Amodei. A empresa se destaca por sua abordagem focada em segurança e alinhamento de IA, tornando-se uma das organizações mais influentes e valiosas do setor, com uma filosofia que busca equilibrar o desenvolvimento tecnológico acelerado com a mitigação de riscos existenciais
+https://www.youtube.com/watch?v=v1wZwxY3CMg
+
+**Can Tech Legends Find the Liar? (Mafia Episode 1)**
+Este vídeo apresenta uma partida de “Mafia”, um jogo de dedução social onde um grupo de jogadores, incluindo personalidades do setor de tecnologia, tenta identificar membros da máfia infiltrados entre eles. O narrador distribui papéis secretos: Mafia (que elimina jogadores à noite), Anjo (que protege um jogador por noite) e Xerife (que investiga a identidade de um jogador). O objetivo da máfia é eliminar civis até igualar o número de membros, enquanto os civis devem identificar e eliminar a máfia através de interrogatórios e votações diurnas
+https://www.youtube.com/watch?v=EDCwQe7P8T0
