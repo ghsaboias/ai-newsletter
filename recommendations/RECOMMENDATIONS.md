@@ -639,3 +639,13 @@ https://www.youtube.com/watch?v=v1wZwxY3CMg
 **Can Tech Legends Find the Liar? (Mafia Episode 1)**
 Este vídeo apresenta uma partida de “Mafia”, um jogo de dedução social onde um grupo de jogadores, incluindo personalidades do setor de tecnologia, tenta identificar membros da máfia infiltrados entre eles. O narrador distribui papéis secretos: Mafia (que elimina jogadores à noite), Anjo (que protege um jogador por noite) e Xerife (que investiga a identidade de um jogador). O objetivo da máfia é eliminar civis até igualar o número de membros, enquanto os civis devem identificar e eliminar a máfia através de interrogatórios e votações diurnas
 https://www.youtube.com/watch?v=EDCwQe7P8T0
+
+## 2026-06-12
+
+**AI That Designs Its Own Chips: Ricursive’s Anna Goldie and Azalia Mirhoseini**
+Anna Goldie e Azalia Mirhoseini, co-criadoras do AlphaChip no Google, apresentam a Recursive Intelligence. A empresa foca na aplicação de inteligência artificial para automatizar e otimizar o design de semicondutores, estabelecendo um ciclo recursivo onde a IA projeta o hardware que, por sua vez, acelera o treinamento de modelos de IA mais potentes. O trabalho baseia-se na experiência das fundadoras com o AlphaChip, que já foi utilizado em diversas gerações de TPUs, CPUs Axion e chips de dispositivos Pixel
+https://www.youtube.com/watch?v=K05Dh-QjM8c
+
+**Reflecting on a year of Claude Code**
+O vídeo apresenta uma retrospectiva de um ano do Claude Code, destacando a transição de ferramentas de auxílio básico para sistemas complexos de agentes autônomos. Os palestrantes discutem como a mentalidade de engenharia mudou: em vez de corrigir erros manualmente, o foco agora é ensinar o agente a aprender com suas falhas, documentando soluções em arquivos de habilidades ou diretrizes. A verificação, antes vista apenas como testes unitários ou linting, evoluiu para a capacidade do próprio agente de executar, testar e corrigir seu código em ambientes reais (como simuladores iOS/Android ou apps desktop)
+https://www.youtube.com/watch?v=Hth_tLaC2j8
