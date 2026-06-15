@@ -649,3 +649,13 @@ https://www.youtube.com/watch?v=K05Dh-QjM8c
 **Reflecting on a year of Claude Code**
 O vídeo apresenta uma retrospectiva de um ano do Claude Code, destacando a transição de ferramentas de auxílio básico para sistemas complexos de agentes autônomos. Os palestrantes discutem como a mentalidade de engenharia mudou: em vez de corrigir erros manualmente, o foco agora é ensinar o agente a aprender com suas falhas, documentando soluções em arquivos de habilidades ou diretrizes. A verificação, antes vista apenas como testes unitários ou linting, evoluiu para a capacidade do próprio agente de executar, testar e corrigir seu código em ambientes reais (como simuladores iOS/Android ou apps desktop)
 https://www.youtube.com/watch?v=Hth_tLaC2j8
+
+## 2026-06-15
+
+**NVIDIA's Jensen Huang on Building the Dynamo of the Intelligence Age**
+Jensen Huang argumenta que a computação vive sua maior virada em 60 anos, de "recuperar" arquivos guardados para "gerar" cada palavra e imagem em tempo real, e compara as AI factories da NVIDIA aos dínamos da Siemens: máquinas que transformam elétrons em tokens de inteligência
+https://www.youtube.com/watch?v=2UpQbeAZuqA
+
+**Google DeepMind's Logan Kilpatrick: Why the Model Eats the Harness**
+O líder de produto da Gemini API crava prazo de validade de ~12 meses para a corrida das startups que constroem "agent harnesses" (os modelos vão absorver o scaffolding e rodá-lo nativamente) e aposta que a superinteligência vertical "irregular" em matemática, finanças e ciência chega bem antes da AGI
+https://www.youtube.com/watch?v=cMAs8z2dehs
