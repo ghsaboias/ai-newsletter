@@ -659,3 +659,13 @@ https://www.youtube.com/watch?v=2UpQbeAZuqA
 **Google DeepMind's Logan Kilpatrick: Why the Model Eats the Harness**
 O líder de produto da Gemini API crava prazo de validade de ~12 meses para a corrida das startups que constroem "agent harnesses" (os modelos vão absorver o scaffolding e rodá-lo nativamente) e aposta que a superinteligência vertical "irregular" em matemática, finanças e ciência chega bem antes da AGI
 https://www.youtube.com/watch?v=cMAs8z2dehs
+
+## 2026-06-16
+
+**President Trump’s $2 Billion Quantum Bet**
+A administração Trump comprou participação acionária em nove empresas de computação quântica, com a IBM levando a maior fatia, mas o ex-CEO Sam Palmisano questiona se cabe ao governo escolher vencedores corporativos e alerta que a adoção comercial ainda pode levar anos
+https://www.youtube.com/watch?v=eZojZqBO2Vk
+
+**How Export Controls Helped Not Hurt China & Power is the Bottleneck to AI**
+O CEO da Perplexity, Aravind Srinivas, que triplicou a receita para mais de US$ 500M em ARR num ano, argumenta que os controles de exportação americanos ajudaram a China em vez de atrapalhar, que energia (não chips) é o verdadeiro gargalo da IA, e por que “o modelo não é o produto”
+https://www.youtube.com/watch?v=OxFyVcO1Yow
