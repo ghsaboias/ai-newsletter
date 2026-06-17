@@ -669,3 +669,13 @@ https://www.youtube.com/watch?v=eZojZqBO2Vk
 **How Export Controls Helped Not Hurt China & Power is the Bottleneck to AI**
 O CEO da Perplexity, Aravind Srinivas, que triplicou a receita para mais de US$ 500M em ARR num ano, argumenta que os controles de exportação americanos ajudaram a China em vez de atrapalhar, que energia (não chips) é o verdadeiro gargalo da IA, e por que “o modelo não é o produto”
 https://www.youtube.com/watch?v=OxFyVcO1Yow
+
+## 2026-06-17
+
+**Sergey Brin: Where Frontier AI Is Headed**
+Em conversa sem roteiro, o cofundador do Google explica por que treinar um modelo em código melhora seu raciocínio matemático, onde a inteligência artificial esbarra em P vs NP, e o que continua sendo território exclusivamente humano
+https://www.youtube.com/watch?v=gsv5o8ANdDo
+
+**O futuro virou mercado: Kalshi transforma previsões em um negócio bilionário**
+Luana Lopes Lara, cofundadora brasileira da Kalshi (mercado preditivo avaliado em mais de US$ 22 bilhões), conta a batalha regulatória travada nos EUA para legalizar apostas sobre o futuro e revela o plano de transformar a plataforma na maior corretora de derivativos do mundo, com o Brasil na mira
+https://www.youtube.com/watch?v=rZbpxDvFriI
