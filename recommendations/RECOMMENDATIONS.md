@@ -679,3 +679,13 @@ https://www.youtube.com/watch?v=gsv5o8ANdDo
 **O futuro virou mercado: Kalshi transforma previsões em um negócio bilionário**
 Luana Lopes Lara, cofundadora brasileira da Kalshi (mercado preditivo avaliado em mais de US$ 22 bilhões), conta a batalha regulatória travada nos EUA para legalizar apostas sobre o futuro e revela o plano de transformar a plataforma na maior corretora de derivativos do mundo, com o Brasil na mira
 https://www.youtube.com/watch?v=rZbpxDvFriI
+
+## 2026-06-18
+
+**Clay's Unusual Path to Building a Multi-Billion Dollar Company**
+Kareem Amin, CEO da Clay, defende construir uma empresa a partir de um lugar de "completude" em vez de "carência", e aplica meditação não-dual, teoria musical e truques de mágico ao desenvolvimento de produto, até propor a ideia de uma "death doula" para empresas que já cumpriram seu propósito
+https://www.youtube.com/watch?v=3bKLiUU2cb8
+
+**Simulating Humans at Scale: Simile's Joon Sung Park**
+O criador do estudo "Smallville" de Stanford argumenta que os modelos de fronteira são só a "CPU da inteligência", ótimos em problemas com resposta certa, péssimos em agir como gente de verdade, e construiu uma "GPU" que simulou 1.000 americanos prevendo seu comportamento com 85% da precisão deles mesmos; a CVS usa pra testar conceitos e clientes simulam as próprias earnings calls
+https://www.youtube.com/watch?v=lfhFmwcESRw
