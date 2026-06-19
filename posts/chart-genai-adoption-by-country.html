@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Brasil é o 4º país que mais usa IA generativa</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    background: #FFFFFF;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 38px;
+  }
+  .card {
+    width: 720px;
+    background: #FFFFFF;
+    padding: 36px 40px;
+  }
+  .header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 3px solid #044B2E;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.8px;
+    line-height: 26px;
+    max-width: 560px;
+  }
+  .logo { height: 18px; vertical-align: baseline; }
+  .chart-area { padding: 26px 0 10px; }
+  .chart-container {
+    width: 100%;
+    height: 640px;
+  }
+  .legend {
+    display: flex;
+    gap: 22px;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid #E5E5E5;
+    font-size: 11px;
+    color: #444;
+  }
+  .legend .swatch {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+    vertical-align: middle;
+    border-radius: 2px;
+  }
+  .caption {
+    font-size: 11px;
+    line-height: 16px;
+    color: #999;
+    margin-top: 14px;
+  }
+  .footer {
+    padding-top: 16px;
+    border-top: 1px solid #E5E5E5;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+  .footer span { font-size: 10px; color: #999; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="card" id="capture">
+  <div class="header">
+    <h1>Brasil é o 4º país que mais usa IA generativa</h1>
+    <img src="../../daily-journal-platform/public/images/logo/logo-green-horizontal.png" class="logo" alt="Daily Journal">
+  </div>
+
+  <div class="chart-area">
+    <div class="chart-container">
+      <canvas id="adoption"></canvas>
+    </div>
+
+    <div class="legend">
+      <span><span class="swatch" style="background:#044B2E"></span>Brasil</span>
+      <span><span class="swatch" style="background:#C9D2CD"></span>Demais países</span>
+      <span><span class="swatch" style="background:#7DB89B"></span>Média dos 20 países (63%)</span>
+    </div>
+
+    <div class="caption">
+      Pergunta: "Usou ferramentas de IA generativa (ChatGPT, Gemini, Claude etc.) nos últimos 12 meses?"
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Fonte: Ipsos / Google — "Our Life With AI 2025" · 20 países · set–out 2025</span>
+    <span>dailyjournal.news</span>
+  </div>
+</div>
+
+<script>
+  const data = {
+    labels: ['Emirados Árabes','Nigéria','Índia','Brasil','Singapura','África do Sul','México','Argentina','Espanha','Coreia do Sul','Polônia','Irlanda','Itália','Reino Unido','Bélgica','Austrália','Canadá','França','Alemanha','Japão'],
+    values: [85,84,83,74,71,70,66,65,64,64,62,62,59,56,56,56,52,51,47,42],
+    flag:   ['','','','br','','','','','','','','','','','','','','','','']
+  };
+  const AVG = 63;
+
+  const barColor   = data.flag.map(f => f==='br' ? '#044B2E' : f==='us' ? '#D7001E' : '#C9D2CD');
+  const labelColor = data.flag.map(f => f==='br' ? '#044B2E' : f==='us' ? '#D7001E' : '#777');
+  const tickColor  = data.flag.map(f => f==='br' ? '#044B2E' : f==='us' ? '#D7001E' : '#333');
+
+  new Chart(document.getElementById('adoption').getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: data.labels,
+      datasets: [{
+        data: data.values,
+        backgroundColor: barColor,
+        borderWidth: 0,
+        borderRadius: 2,
+        borderSkipped: false,
+        barPercentage: 0.74,
+        categoryPercentage: 0.84
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: {
+        x: {
+          beginAtZero: true,
+          max: 100,
+          grid: { color: '#f0f0f0', drawTicks: false },
+          border: { display: false },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 11 },
+            color: '#bbb',
+            padding: 6,
+            stepSize: 25,
+            callback: function(v) { return v + '%'; }
+          }
+        },
+        y: {
+          grid: { display: false },
+          border: { display: false },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 12, weight: '600' },
+            color: tickColor,
+            padding: 8,
+            crossAlign: 'far'
+          }
+        }
+      },
+      layout: { padding: { top: 4, right: 52, left: 0, bottom: 4 } }
+    },
+    plugins: [
+      {
+        id: 'avgLine',
+        beforeDatasetsDraw(chart) {
+          const { ctx, chartArea: { top, bottom }, scales: { x } } = chart;
+          const px = x.getPixelForValue(AVG);
+          ctx.save();
+          ctx.strokeStyle = '#7DB89B';
+          ctx.lineWidth = 1.5;
+          ctx.setLineDash([4, 4]);
+          ctx.beginPath();
+          ctx.moveTo(px, top - 2);
+          ctx.lineTo(px, bottom + 2);
+          ctx.stroke();
+          ctx.setLineDash([]);
+          ctx.font = '700 10px Helvetica Neue';
+          ctx.fillStyle = '#5a9377';
+          ctx.textAlign = 'center';
+          ctx.fillText('média 63%', px, top - 6);
+          ctx.restore();
+        }
+      },
+      {
+        id: 'valueLabels',
+        afterDraw(chart) {
+          const { ctx } = chart;
+          const meta = chart.getDatasetMeta(0).data;
+          data.values.forEach((v, i) => {
+            const bar = meta[i];
+            ctx.save();
+            ctx.textAlign = 'left';
+            ctx.textBaseline = 'middle';
+            ctx.font = (data.flag[i] ? '700 ' : '600 ') + '12px Helvetica Neue';
+            ctx.fillStyle = labelColor[i];
+            ctx.fillText(v + '%', bar.x + 7, bar.y);
+            ctx.restore();
+          });
+        }
+      }
+    ]
+  });
+</script>
+</body>
+</html>

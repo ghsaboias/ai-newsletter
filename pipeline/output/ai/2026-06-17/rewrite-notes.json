@@ -1,0 +1,60 @@
+{
+  "date": "2026-06-17",
+  "findings": [
+    {
+      "index": 0,
+      "type": "phrasing",
+      "action": "applied",
+      "before": "Em Évian, os líderes do G7 adotaram comunicado conjunto endossando o acordo e [comprometendo-se a uma \"missão estritamente defensiva e independente\" para escoltar a navegação comercial e desminar Ormuz](https://www.consilium.europa.eu/en/press/press-releases/2026/06/17/g7-leaders-joint-statements-evian-france-16-17-june-2026/), com mais nove parceiros, entre eles a Austrália.",
+      "after": "Em Évian, os líderes do G7 adotaram comunicado conjunto endossando o acordo, [com mais nove parceiros aderindo à escolta naval, entre eles a Austrália](https://www.consilium.europa.eu/en/press/press-releases/2026/06/17/g7-leaders-joint-statements-evian-france-16-17-june-2026/).",
+      "reason": "Cortei a descrição literal da missão (repetida quase verbatim de ontem) e mudei o ângulo para a adesão dos nove parceiros, que é o que muda hoje. Link narrow no headline.",
+      "chosen_path": null
+    },
+    {
+      "index": 1,
+      "type": "story",
+      "action": "applied",
+      "before": "No mesmo dia saiu o fechamento formal da [aquisição do Cursor por US$60 bilhões totalmente em ações](https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/), exercício da opção que a SpaceX detinha desde abril. O pacote representa diluição de 3,4% no *valuation* do IPO. A Anysphere (nome legal do Cursor) estava prestes a fechar uma rodada de US$2 bilhões com Andreessen Horowitz, Thrive e Nvidia a US$50 bilhões antes da SpaceX intervir. O objetivo declarado é fechar a distância da divisão de IA da SpaceX, construída em torno do Grok após a incorporação da xAI no começo do ano, em relação ao Claude Code da Anthropic e ao Codex da OpenAI.",
+      "after": "No mesmo dia saiu o [fechamento formal da compra do Cursor](https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/) por US$60 bilhões, com diluição de 3,4% no *valuation* do IPO. A Anysphere (nome legal do Cursor) estava prestes a fechar uma rodada de US$2 bilhões com Andreessen Horowitz, Thrive e Nvidia a US$50 bilhões antes da SpaceX intervir.",
+      "reason": "Cortei o 'exercício da opção desde abril' (mencionado ontem) e toda a frase explicando o objetivo Grok-vs-Claude-Code-vs-Codex (já implícita ontem). Mantém o que é novo: closing formal, diluição de 3,4%, rodada A16z/Thrive/Nvidia preterida.",
+      "chosen_path": null
+    },
+    {
+      "index": 2,
+      "type": "story",
+      "action": "applied",
+      "before": "A preocupação técnica é que o Fable 5 possa ser jailbroken para liberar as capacidades cibernéticas plenas do Mythos 5;",
+      "after": "A preocupação técnica gira em torno do uso do Fable 5 para destravar o Mythos 5;",
+      "reason": "Comprimi a explicação técnica sem usar meta-referência (a sugestão original propunha 'a mesma da semana passada', que violaria a regra de não-meta-referência). Mantém contexto para leitores novos, sem repetir 'jailbroken' nem 'capacidades cibernéticas plenas'.",
+      "chosen_path": null
+    },
+    {
+      "index": 3,
+      "type": "framing",
+      "action": "applied",
+      "before": "**Geopolítica.** O Brent fechou ontem 5% abaixo, em US$78,96 por barril, [primeira vez abaixo de US$80 desde março](https://www.cnbc.com/2026/06/16/us-iran-peace-agreement-oil-prices-tankers-strait-of-hormuz-transit.html); o WTI cai quase 20% desde o começo de junho.",
+      "after": "**Geopolítica.** [O Brent caiu mais 5% ontem para US$78,96 por barril](https://www.cnbc.com/2026/06/16/us-iran-peace-agreement-oil-prices-tankers-strait-of-hormuz-transit.html), com o WTI acumulando queda de quase 20% desde o começo de junho.",
+      "reason": "Substituí o gesto 'primeira vez abaixo de US$80 desde março' (mesmo molde do '10 de março' de 06-15) pela continuidade da queda, com 'mais 5%' implicando que vem caindo.",
+      "chosen_path": null
+    },
+    {
+      "index": 4,
+      "type": "phrasing",
+      "action": "applied",
+      "before": "construída em torno do Grok após a incorporação da xAI no começo do ano",
+      "after": null,
+      "reason": "A aposição inteira foi removida no rewrite do finding 1 (a frase 'O objetivo declarado...' inteira saiu). Resolve a repetição da aposição SpaceX-xAI por eliminação.",
+      "chosen_path": null
+    },
+    {
+      "index": 5,
+      "type": "framing",
+      "action": "skipped",
+      "before": "Em Bruxelas, a [Binance está prestes a perder permissão para operar na União Europeia]",
+      "after": null,
+      "reason": "Marcado pela própria revisão como 'nota editorial, não como issue de repetição'. A estrutura atual segue o padrão de âncoras geográficas (Bruxelas → Washington) do GENERATION.md; adicionar conectivo tipo 'na outra ponta do espectro regulatório' soaria editorializante e prolixo.",
+      "chosen_path": null
+    }
+  ],
+  "summary": "5 applied, 1 skipped, 0 flagged out of 6 findings"
+}

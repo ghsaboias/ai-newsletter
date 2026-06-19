@@ -1,0 +1,31 @@
+Abaixo, apenas para assinantes:
+
+**Capital.** OpenAI revela custos bilionários e entra com pedido de IPO.
+
+**Capital.** DeepSeek fecha primeira rodada externa via sociedade limitada do CEO.
+
+**Capital.** Nvidia volta ao mercado de dívida com forte demanda de investidores.
+
+**Semicondutores.** Qualcomm negocia comprar a Tenstorrent, startup de chips de IA de Jim Keller.
+
+**Semicondutores.** AMD compra a MEXT, startup de otimização de memória para data centers.
+
+**Big techs.** Salesforce fecha contrato para comprar a Fin, ex-Intercom.
+
+**Soberania.** França encerra contrato com a Palantir e migra para fornecedor doméstico.
+
+**Energia.** DOJ entra em defesa das turbinas a gás da xAI em ação no Mississippi.
+
+**Data centers.** Google expande data center no Alabama em terreno de antiga usina a carvão.
+
+**Data centers.** Hydra Host capta rodada liderada pela Kindred para marketplace de GPUs.
+
+**Macro.** Banco do Japão sobe juros à máxima em décadas após choque do petróleo.
+
+**Geopolítica.** G7 abre em Évian com foco no Estreito de Ormuz.
+
+**Guerra.** Drones ucranianos atingem a maior refinaria de Moscou, perto do Kremlin.
+
+**Biotech.** FDA aprova combinação inédita da Merck para câncer renal de alto risco.
+
+**Biotech.** Terapia CRISPR da Intellia derruba ataques de angioedema hereditário em ensaio decisivo.

@@ -1,0 +1,25 @@
+Abaixo, apenas para assinantes:
+
+**Hardware.** ByteDance negocia compra de chips de IA com fabricantes chineses.
+
+**Capital.** Enflame, apoiada pela Tencent, obtém aval para IPO em Xangai.
+
+**Memória.** SK Hynix antecipa amostras da próxima geração de HBM.
+
+**Semicondutores.** Japão e Reino Unido firmam cooperação em manufatura de chips.
+
+**Data centers.** SWI Group compra plataforma de mineração nos EUA para converter em IA.
+
+**Óptica.** IQE e Tower fecham acordo de fotônica para data centers.
+
+**Robótica.** Subsidiária da Samsung testa robô industrial em centro da Coupang.
+
+**Startups.** Espanhola de agentes para RH operacional capta Série A.
+
+**Regulação.** Reino Unido prepara banimento de redes sociais para menores.
+
+**Comércio.** Trump ameaça tarifa sobre vinhos franceses por causa da taxa digital.
+
+**Defesa.** Royal Marines abordam petroleiro da frota sombra russa no Canal da Mancha.
+
+**Front russo.** Rússia ataca Kyiv e outras cidades ucranianas com mísseis e drones.

@@ -1,0 +1,29 @@
+Abaixo, apenas para assinantes:
+
+**Agentes.** OpenAI compra a Ona para dar ao Codex ambientes de nuvem para agentes.
+
+**Modelos.** Xiaomi abre o código de seu assistente de programação para o terminal.
+
+**Capital.** Genspark capta extensão de Série B e amplia sua avaliação em poucos meses.
+
+**IA física.** Prometheus, de Bezos, fecha nova Série B bilionária.
+
+**Robótica.** Theker, de Barcelona, levanta a maior Série A de robótica da Europa.
+
+**Robótica.** EngineAI, fabricante chinesa de robôs humanoides, entra com pedido sigiloso de IPO em Hong Kong.
+
+**Data centers.** Anthropic negocia com o Google uma garantia para alugar capacidade em data centers.
+
+**Capital.** KKR, Nvidia, Vistra e o fundo soberano do Kuwait lançam um veículo para infraestrutura de IA.
+
+**Data centers.** Crusoe é tirada de um campus de IA no Wyoming após o Google levantar preocupações.
+
+**Semicondutores.** Google contrata a Samsung para fabricar parte do seu próximo TPU.
+
+**Semicondutores.** Nvidia oferece sua nova CPU para data centers de IA a clientes chineses.
+
+**Geopolítica.** Trump cancela ataques ao Irã e fala em acordo iminente para reabrir Ormuz.
+
+**Biotech.** Johnson & Johnson apresenta dados de fase tardia em uma anemia autoimune rara.
+
+**Biotech.** Roche consegue revisão prioritária para uso adjuvante do Tecentriq em câncer de cólon.

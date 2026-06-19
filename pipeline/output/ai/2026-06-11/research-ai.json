@@ -1,0 +1,485 @@
+{
+  "stories": [
+    {
+      "id": "anthropic-fable-5-policy-backtrack",
+      "headline": "Anthropic walks back covert Fable 5 limits on rival-AI work, makes safeguards visible",
+      "key_facts": [
+        {
+          "fact": "Anthropic reversed a policy that secretly degraded or refused Claude Fable 5 requests aimed at building competing AI models after backlash from researchers.",
+          "source_url": "https://www.wired.com/story/anthropic-responds-to-backlash-on-claudes-secret-sabotage-on-ai-research/",
+          "excerpt": "Anthropic is backtracking on a policy that would have covertly limited competitors from using its new AI model, Claude Fable 5, to develop other AI models. The company changed course after the move received significant backlash from the AI research community."
+        },
+        {
+          "fact": "Starting this week flagged requests will visibly fall back to Opus 4.8, and API calls will return an explicit refusal reason every time it happens, Anthropic said.",
+          "source_url": "https://www.theregister.com/ai-and-ml/2026/06/10/anthropic-claude-fable-5-refuses-innocuous-prompts/5253754",
+          "excerpt": "Starting this week, flagged requests will visibly fall back to Opus 4.8. On the API, any flagged requests will return a reason for their refusal. You will see this every time it happens."
+        },
+        {
+          "fact": "Anthropic apologized for the original hidden setup, saying it 'made the wrong tradeoff' on the visibility-versus-narrowness call.",
+          "source_url": "https://www.engadget.com/2192004/anthropic-walks-back-policy-sabotaging-research/",
+          "excerpt": "We're changing Fable 5's safeguards for frontier LLM development to make them visible, the company said in a statement. We made the wrong tradeoff and we apologize for not getting the balance right."
+        },
+        {
+          "fact": "Anthropic says the classifier currently triggers on roughly 0.05% of tasks and affects fewer than 0.05% of organizations, but a visible safeguard will have to flag more requests to remain robust.",
+          "source_url": "https://www.theregister.com/ai-and-ml/2026/06/10/anthropic-claude-fable-5-refuses-innocuous-prompts/5253754",
+          "excerpt": "Current usage shows that the classifier triggers on about 0.05% of tasks, affecting less than 0.05% of organizations. A visible safeguard needs to cast a wider net to be more robust, resulting in more requests being incorrectly flagged."
+        },
+        {
+          "fact": "Cybersecurity researchers say Fable 5's guardrails reject innocuous tasks such as reading a blog post or running a code review, pushing many users back to Opus 4.8.",
+          "source_url": "https://techcrunch.com/2026/06/10/cybersecurity-researchers-arent-happy-about-the-guardrails-on-anthropics-fable/",
+          "excerpt": "Fable seems totally unusable currently due to the over zealous rejection classifier, even for non related to cyber security. It rejects any request that could be tangentially cyber related. Even innocuous tasks like reading a blog post."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.wired.com/story/anthropic-responds-to-backlash-on-claudes-secret-sabotage-on-ai-research/",
+          "outlet": "Wired",
+          "title": "Anthropic Walks Back Policy That Could Have 'Sabotaged' AI Researchers Using Claude",
+          "published_at": "2026-06-11",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.theregister.com/ai-and-ml/2026/06/10/anthropic-claude-fable-5-refuses-innocuous-prompts/5253754",
+          "outlet": "The Register",
+          "title": "Anthropic Claude Fable 5 refuses innocuous prompts",
+          "published_at": "2026-06-10",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.engadget.com/2192004/anthropic-walks-back-policy-sabotaging-research/",
+          "outlet": "Engadget",
+          "title": "Anthropic Backtracks On Policy That 'Sabotaged' Researchers' Work",
+          "published_at": "2026-06-11",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://techcrunch.com/2026/06/10/cybersecurity-researchers-arent-happy-about-the-guardrails-on-anthropics-fable/",
+          "outlet": "TechCrunch",
+          "title": "Cybersecurity researchers aren't happy about the guardrails on Anthropic's Fable",
+          "published_at": "2026-06-10",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology"],
+      "entities": {
+        "organizations": ["Anthropic"],
+        "people": ["Dean W. Ball"],
+        "places": []
+      }
+    },
+    {
+      "id": "microsoft-claude-fable-5-internal-block",
+      "headline": "Microsoft blocks Claude Fable 5 in internal Copilot over Anthropic's 30-day data retention",
+      "key_facts": [
+        {
+          "fact": "Microsoft has restricted employees from using Claude Fable 5 in internal GitHub Copilot because Anthropic's new data retention rules conflict with Microsoft's compliance posture.",
+          "source_url": "https://www.theverge.com/report/947575/microsoft-claude-fable-5-restricted-internally",
+          "excerpt": "While Microsoft quickly rolled out Claude Fable 5 to its GitHub Copilot and Foundry customers, I'm told the model isn't available in the model picker that Microsoft employees use for internal versions of GitHub Copilot. All other Claude models are still available internally at Microsoft, because they operate under Zero Data Retention (ZDR) rules."
+        },
+        {
+          "fact": "Fable 5 requires Anthropic to retain prompts and outputs for 30 days to operate its new safety classifiers, with flagged content stored up to two years.",
+          "source_url": "https://www.theverge.com/report/947575/microsoft-claude-fable-5-restricted-internally",
+          "excerpt": "Claude Fable 5 requires data retention to operate Anthropic's new safety classifiers, meaning Anthropic retains prompts and outputs and deletes this data after 30 days. Some prompts and outputs can even be stored for up to two years if they're flagged as violating Anthropic's usage policy."
+        },
+        {
+          "fact": "Microsoft's legal team is evaluating the policy and has not committed to a timeline for approving Fable 5 internally; concerns center on customer data and confidential information.",
+          "source_url": "https://www.freepressjournal.in/tech/microsoft-tells-employees-to-avoid-anthropics-claude-fable-5-over-data-retention-concerns",
+          "excerpt": "For Microsoft, which handles sensitive customer data and proprietary code, the retention window raises compliance and confidentiality concerns. The company has told employees that its lawyers are evaluating whether these requirements align with Microsoft's own standards for data protection."
+        },
+        {
+          "fact": "Anthropic has said the retention policy applies on first- and third-party surfaces, and that retained data will not be used to train new Claude models or for purposes unrelated to safety.",
+          "source_url": "https://www.freepressjournal.in/tech/microsoft-tells-employees-to-avoid-anthropics-claude-fable-5-over-data-retention-concerns",
+          "excerpt": "Anthropic has said the new 30-day retention policy applies to both first- and third-party surfaces, adding that it will ensure data deletion after 30 days in almost all cases, and that it will not use this data to train new Claude models or for any purpose unrelated to safety."
+        },
+        {
+          "fact": "For external GitHub Copilot customers, Fable 5 is opt-in and disabled by default, so enterprise admins must explicitly enable it.",
+          "source_url": "https://aiweekly.co/alerts/microsoft-pulls-claude-fable-5-from-internal-copilot",
+          "excerpt": "Fable 5 is the only model in Copilot's Claude lineup that breaks Zero Data Retention because Anthropic's safety classifiers require retaining prompts and outputs for up to 30 days and flagged items for up to two years. For external GitHub Copilot customers, the policy is opt-in and disabled by default; enterprise admins must explicitly enable it."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.theverge.com/report/947575/microsoft-claude-fable-5-restricted-internally",
+          "outlet": "The Verge",
+          "title": "Microsoft restricts Claude Fable for employees over data retention concerns",
+          "published_at": "2026-06-10",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.freepressjournal.in/tech/microsoft-tells-employees-to-avoid-anthropics-claude-fable-5-over-data-retention-concerns",
+          "outlet": "Free Press Journal",
+          "title": "Microsoft Tells Employees To Avoid Anthropic's Claude Fable 5 Over Data Retention Concerns",
+          "published_at": "2026-06-11",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://aiweekly.co/alerts/microsoft-pulls-claude-fable-5-from-internal-copilot",
+          "outlet": "AI Weekly",
+          "title": "Microsoft Pulls Claude Fable 5 From Internal Copilot",
+          "published_at": "2026-06-10",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology", "business"],
+      "entities": {
+        "organizations": ["Microsoft", "Anthropic", "GitHub"],
+        "people": ["Tom Warren"],
+        "places": []
+      }
+    },
+    {
+      "id": "anthropic-policy-on-ai-exponential-350m",
+      "headline": "Anthropic publishes AI policy framework, pledges $350M for evaluations and fellowship",
+      "key_facts": [
+        {
+          "fact": "Anthropic released two policy proposals on June 10: an Advanced AI Framework for governing frontier models and an Economic Policy Framework for managing labor-market disruption.",
+          "source_url": "https://www.anthropic.com/policy-on-the-ai-exponential/aaif",
+          "excerpt": "We are sharing two policy proposals to prepare for AI progress. The first, our Advanced AI Framework, offers a roadmap for governing increasingly capable systems, from transparency and independent evaluation to government authority to block or deter dangerous deployments. The second, our Economic Policy Framework, turns to the question of how to prepare workers and the economy for AI's impact and ensure the financial benefits of AI are broadly shared."
+        },
+        {
+          "fact": "The framework would give a regulator authority to block or deter deployment of models that pose a significant risk of catastrophic harm, with safeguards to prevent misuse of that power.",
+          "source_url": "https://www.anthropic.com/policy-on-the-ai-exponential/aaif",
+          "excerpt": "Enforcement and regulatory authority [should] be able to block or deter the deployment of models that pose a significant risk of catastrophic harm. We [are not proposing] heavy-handed regulatory power. Our [framework includes] a mechanism for blocking dangerous deployments, [with] concrete safeguards that would prevent that power from being misused."
+        },
+        {
+          "fact": "Anthropic committed $200 million to a new Economic Futures Research Fund to back research trials and program evaluation on public policies for AI's labor impact.",
+          "source_url": "https://abcnews.com/Politics/wireStory/anthropic-pledges-200-million-research-ais-economic-impact-133763972",
+          "excerpt": "The company said it will go to what it calls an Economic Futures Research Fund that will back research trials and 'program evaluation' on public policies it deems promising."
+        },
+        {
+          "fact": "Anthropic is also funding a $150 million national fellowship program for early-career professionals to 'extend the benefits of AI to communities across America.'",
+          "source_url": "https://www.thedeepview.com/articles/anthropic-policy-push-reflects-its-growing-dilemma",
+          "excerpt": "The company is committing $350 million in total for two programs to help: $150 million to a national fellowship program for early-career people to 'extend the benefits of AI to communities across America,' and $200 million to its Economic Futures Research Fund."
+        },
+        {
+          "fact": "The Economic Policy Framework proposes responses keyed to three scenarios: U.S. unemployment hitting 5%, 10%, and an unspecified 'unprecedented' level; in the worst case it floats universal basic income, sovereign wealth models, and equity-sharing.",
+          "source_url": "https://uat.apnews.com/article/anthropic-dario-amodei-ai-afeb5279eef406980dffa46ff91495e0",
+          "excerpt": "The economic policy framework Anthropic proposed Wednesday set recommendations for how the U.S. government could respond to three levels of economic disruption caused by AI: one in which the national unemployment rate reaches 5%, 10% and an unspecified, 'unprecedented' level. In the 'unprecedented' scenario, the company wrote that more permanent support will be necessary, and it listed several ways to generate and share revenue broadly, including basic income, sovereign wealth models and equity-sharing mechanisms."
+        },
+        {
+          "fact": "CEO Dario Amodei published a companion essay 'Policy on the AI Exponential' arguing policy is no longer fast enough for AI's pace, and proposing mandatory third-party testing for cyber, bio, and autonomy risks.",
+          "source_url": "https://abcnews.com/Politics/wireStory/anthropic-pledges-200-million-research-ais-economic-impact-133763972",
+          "excerpt": "Alongside new policy proposals from the maker of the Claude chatbot, Anthropic CEO and co-founder Dario Amodei published an essay on his personal website that expanded on his position that the government should promise economic support for those financially impacted by AI."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.anthropic.com/policy-on-the-ai-exponential/aaif",
+          "outlet": "Anthropic",
+          "title": "Policy on the AI Exponential",
+          "published_at": "2026-06-10",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://abcnews.com/Politics/wireStory/anthropic-pledges-200-million-research-ais-economic-impact-133763972",
+          "outlet": "ABC News",
+          "title": "Anthropic pledges $200M to research AI's economic impact",
+          "published_at": "2026-06-10",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://uat.apnews.com/article/anthropic-dario-amodei-ai-afeb5279eef406980dffa46ff91495e0",
+          "outlet": "Associated Press",
+          "title": "Anthropic CEO says universal basic income might be necessary as AI displaces jobs",
+          "published_at": "2026-06-10",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.thedeepview.com/articles/anthropic-policy-push-reflects-its-growing-dilemma",
+          "outlet": "The Deep View",
+          "title": "Anthropic policy push reflects its growing dilemma",
+          "published_at": "2026-06-11",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://darioamodei.com/post/policy-on-the-ai-exponential",
+          "outlet": "Dario Amodei",
+          "title": "Policy on the AI Exponential",
+          "published_at": "2026-06-10",
+          "image_url": "",
+          "type": "blog_post"
+        }
+      ],
+      "category": ["technology", "politics"],
+      "entities": {
+        "organizations": ["Anthropic"],
+        "people": ["Dario Amodei"],
+        "places": ["United States"]
+      }
+    },
+    {
+      "id": "google-diffusion-gemma-26b-open-release",
+      "headline": "Google open-sources DiffusionGemma, a 26B text-diffusion model that generates 4x faster",
+      "key_facts": [
+        {
+          "fact": "Google released DiffusionGemma, an experimental open Mixture-of-Experts model that uses text diffusion to generate entire blocks of text in parallel instead of token by token.",
+          "source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/",
+          "excerpt": "Today, we're introducing DiffusionGemma, an experimental open model that explores text diffusion, an exceptionally fast approach to text generation. Released under an Apache 2.0 license, this 26B Mixture of Experts (MoE) model moves beyond the sequential token-by-token processing of typical autoregressive Large Language Models (LLMs). Instead, it generates entire blocks of text simultaneously, delivering up to 4x faster text generation on GPUs."
+        },
+        {
+          "fact": "The model has 26 billion total parameters but activates only 3.8 billion per inference, and fits in 18GB of VRAM when quantized — running on a single RTX 5090 consumer GPU.",
+          "source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/",
+          "excerpt": "Operating as a 26B total Mixture of Experts (MoE) model that activates only 3.8B parameters during inference, DiffusionGemma fits comfortably within 18GB VRAM limits of high-end dedicated consumer GPUs when quantized."
+        },
+        {
+          "fact": "DiffusionGemma reaches 1000+ tokens per second on a single NVIDIA H100 and 700+ tokens per second on an RTX 5090.",
+          "source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/",
+          "excerpt": "By shifting the decode bottleneck from memory-bandwidth to compute, DiffusionGemma generates up to 4x faster token output on dedicated GPUs. (1000+ tokens per second on a single NVIDIA H100, 700+ tokens per second on NVIDIA GeForce RTX 5090)."
+        },
+        {
+          "fact": "The weights are on Hugging Face under an Apache 2.0 license and the model is the first diffusion LLM natively supported in vLLM.",
+          "source_url": "https://developers.googleblog.com/diffusiongemma-the-developer-guide/",
+          "excerpt": "Download the Weights: Access the weights of the experimental model(released under the Apache 2.0 license) directly on Hugging Face. Use Your Favorite Inference Frameworks: Run the model efficiently using vLLM, Hugging Face Transformers, and MLX."
+        },
+        {
+          "fact": "On benchmarks DiffusionGemma underperforms the same-size autoregressive Gemma 4 26B A4B, a trade-off Google explicitly accepts for speed-critical use cases.",
+          "source_url": "https://thenewstack.io/google-diffusiongemma-text-diffusion/",
+          "excerpt": "The experimental model trails standard Gemma 4 on every benchmark, a tradeoff Google says is worth it for tasks like code infilling and in-line editing. For applications that demand maximum quality, we recommend deploying standard Gemma 4."
+        },
+        {
+          "fact": "DiffusionGemma denoises 256-token blocks in parallel using bidirectional attention, designed for inline editing, code infilling, and other interactive local workflows.",
+          "source_url": "https://siliconangle.com/2026/06/10/google-open-sources-speedy-diffusiongemma-text-diffusion-model/",
+          "excerpt": "To facilitate text diffusion, the search giant replaced the latter model's attention mechanism, the software module it uses to interpret prompts. The original mechanism inferred the meaning of each word in a prompt by analyzing the preceding text. The new attention module also reviews the text that follows a given word."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/",
+          "outlet": "Google",
+          "title": "DiffusionGemma: 4x faster text generation",
+          "published_at": "2026-06-10",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://developers.googleblog.com/diffusiongemma-the-developer-guide/",
+          "outlet": "Google Developers Blog",
+          "title": "DiffusionGemma: The Developer Guide",
+          "published_at": "2026-06-10",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://thenewstack.io/google-diffusiongemma-text-diffusion/",
+          "outlet": "The New Stack",
+          "title": "Google's DiffusionGemma is 4x faster than its other Gemma models",
+          "published_at": "2026-06-10",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://siliconangle.com/2026/06/10/google-open-sources-speedy-diffusiongemma-text-diffusion-model/",
+          "outlet": "SiliconANGLE",
+          "title": "Google open-sources speedy DiffusionGemma text diffusion model",
+          "published_at": "2026-06-11",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology", "science"],
+      "entities": {
+        "organizations": ["Google", "Google DeepMind", "Hugging Face", "Nvidia"],
+        "people": ["Sundar Pichai"],
+        "places": []
+      }
+    },
+    {
+      "id": "openai-considers-drastic-token-price-cuts",
+      "headline": "OpenAI weighs drastic token price cuts to head off an Anthropic price war",
+      "key_facts": [
+        {
+          "fact": "OpenAI is considering drastically lowering its prices for tokens, the central unit for measuring AI inference costs, according to the Wall Street Journal.",
+          "source_url": "https://www.wsj.com/tech/ai/openai-considers-drastic-price-cuts-anticipating-war-for-users-with-anthropic-9b8c178e",
+          "excerpt": "Sources: OpenAI is considering drastically lowering its price for tokens in anticipation of similar cuts the company expects at Anthropic. The company might lower prices for tokens, the central unit for gauging AI costs, though the discussions are still in flux."
+        },
+        {
+          "fact": "The discussions are framed internally as preparation for cuts OpenAI expects Anthropic to make, with both sides chasing developer and enterprise share.",
+          "source_url": "https://www.wsj.com/tech/ai/openai-considers-drastic-price-cuts-anticipating-war-for-users-with-anthropic-9b8c178e",
+          "excerpt": "OpenAI Considers Drastic Price Cuts, Anticipating War for Users With Anthropic. The company might lower prices for tokens, the central unit for gauging AI costs, though the discussions are still in flux."
+        },
+        {
+          "fact": "Markets read the report as a threat to margins and to OpenAI's profitability ahead of a potential IPO.",
+          "source_url": "https://www.zerohedge.com/markets/openai-price-cuts-could-threaten-margins-profits-ahead-potential-ipo-sources-say-wsj",
+          "excerpt": "*OpenAI Price Cuts Could Threaten Margins, Profits Ahead of Potential IPO, Sources Say — WSJ maybe should have rushed that IPO out while nobody was checking their token bills."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.wsj.com/tech/ai/openai-considers-drastic-price-cuts-anticipating-war-for-users-with-anthropic-9b8c178e",
+          "outlet": "Wall Street Journal",
+          "title": "OpenAI Considers Drastic Price Cuts, Anticipating War for Users With Anthropic",
+          "published_at": "2026-06-10",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.zerohedge.com/markets/openai-price-cuts-could-threaten-margins-profits-ahead-potential-ipo-sources-say-wsj",
+          "outlet": "ZeroHedge",
+          "title": "OpenAI Price Cuts Could Threaten Margins, Profits Ahead of Potential IPO",
+          "published_at": "2026-06-10",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology", "business", "economy"],
+      "entities": {
+        "organizations": ["OpenAI", "Anthropic"],
+        "people": [],
+        "places": []
+      }
+    },
+    {
+      "id": "neura-robotics-1-4b-series-c-tether-led",
+      "headline": "Neura Robotics raises up to $1.4B Series C led by Tether, valuing the German firm at ~$7B",
+      "key_facts": [
+        {
+          "fact": "Germany-based Neura Robotics announced a Series C of up to $1.4 billion led by Tether Investments, in what it calls one of the largest private rounds ever in humanoid robotics.",
+          "source_url": "https://tether.io/news/tether-to-lead-neura-robotics-series-c-financing-one-of-the-largest-up-to-1-4bn-robotics-physical-ai-investment-rounds-on-record-to-power-the-financial-and-intelligence-layer/",
+          "excerpt": "Tether Investments announced today its role as the lead investor in one of the largest private investment rounds in humanoid robotics. By supporting the raise of up to $1.4bn from a diversified group of strategic and financial investors into NEURA Robotics."
+        },
+        {
+          "fact": "Co-investors include Nvidia, Amazon, Qualcomm Technologies, Bosch, Schaeffler, imec.xpand, the European Investment Bank, Lingotto Horizon, and InterAlpen Partners.",
+          "source_url": "https://via.tt.se/pressmeddelande/4431526/neura-robotics-announces-record-series-c-of-up-to-dollar14-billion-to-accelerate-the-worlds-leading-physical-ai-platform?lang=en&publisherId=259167",
+          "excerpt": "The financing brings together global leaders across AI, robotics, compute, manufacturing and industrial infrastructure, including Tether, Qualcomm Technologies, Inc., Amazon, NVIDIA, imec.xpand, Bosch, Schaeffler, European Investment Bank, Lingotto Horizon, InterAlpen Partners and others."
+        },
+        {
+          "fact": "The round values Neura at roughly $7 billion.",
+          "source_url": "https://headlinesbriefing.com/market/ft-companies/neuras-14b-funding-round-values-german-robot-startup-at-7b-1f93fcf2",
+          "excerpt": "German robotics start-up Neura has secured $1.4 billion in new funding from an unlikely cast of investors including crypto group Tether, Amazon, and chipmaker Nvidia. The fundraising values the Munich-based company at approximately $7 billion."
+        },
+        {
+          "fact": "Neura's 4NE1 humanoid moves at up to 3.1 miles per hour and can carry up to 220 pounds for tasks ranging from folding laundry to assembling cars.",
+          "source_url": "https://siliconangle.com/2026/06/10/neura-robotics-raise-1-4b-nvidia-backed-consortium/",
+          "excerpt": "The company's newest system, the 4NE1, is a humanoid robot that can cover 3.1 miles per hour and carry up to 220 pounds. Neura says the robot lends itself to a variety of tasks ranging from folding laundry to assembling cars."
+        },
+        {
+          "fact": "The full $1.4 billion is contingent on Neura hitting unspecified operational milestones; the company says its orderbook and strategic deployment pipeline exceed $1 billion.",
+          "source_url": "https://startupfortune.com/german-humanoid-startup-neura-robotics-closes-the-largest-robotics-funding-round-in-history-as-tether-redeploys-its-stablecoin-war-chest-into-physical-ai/",
+          "excerpt": "The round does carry a performance condition. The full $1.4 billion is contingent on Neura hitting certain operational milestones, a structure that keeps management accountable and signals investors are not simply writing a blank check on the category."
+        },
+        {
+          "fact": "Founded in 2019 and headquartered in Metzingen, Germany, Neura is a multi-form-factor cognitive robotics company building humanoids, robotic arms, autonomous mobile robots and service robots.",
+          "source_url": "https://tether.io/news/tether-to-lead-neura-robotics-series-c-financing-one-of-the-largest-up-to-1-4bn-robotics-physical-ai-investment-rounds-on-record-to-power-the-financial-and-intelligence-layer/",
+          "excerpt": "Founded in 2019 and headquartered in Metzingen, Germany, NEURA Robotics is a global Physical AI company building the technologies that enable intelligent machines to learn, adapt and work alongside humans in the real world."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://tether.io/news/tether-to-lead-neura-robotics-series-c-financing-one-of-the-largest-up-to-1-4bn-robotics-physical-ai-investment-rounds-on-record-to-power-the-financial-and-intelligence-layer/",
+          "outlet": "Tether",
+          "title": "Tether to Lead NEURA Robotics' Series C Financing, One of the Largest Robotics & Physical AI Rounds on Record",
+          "published_at": "2026-06-10",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://via.tt.se/pressmeddelande/4431526/neura-robotics-announces-record-series-c-of-up-to-dollar14-billion-to-accelerate-the-worlds-leading-physical-ai-platform?lang=en&publisherId=259167",
+          "outlet": "Business Wire",
+          "title": "NEURA Robotics Announces Record Series C of up to $1.4 Billion to Accelerate the World's Leading Physical AI Platform",
+          "published_at": "2026-06-10",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://siliconangle.com/2026/06/10/neura-robotics-raise-1-4b-nvidia-backed-consortium/",
+          "outlet": "SiliconANGLE",
+          "title": "Neura Robotics to raise up to $1.4B from Nvidia-backed consortium",
+          "published_at": "2026-06-10",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://headlinesbriefing.com/market/ft-companies/neuras-14b-funding-round-values-german-robot-startup-at-7b-1f93fcf2",
+          "outlet": "Financial Times",
+          "title": "Neura's $1.4B Funding Round Values German Robot Startup at $7B",
+          "published_at": "2026-06-10",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://startupfortune.com/german-humanoid-startup-neura-robotics-closes-the-largest-robotics-funding-round-in-history-as-tether-redeploys-its-stablecoin-war-chest-into-physical-ai/",
+          "outlet": "Startup Fortune",
+          "title": "German humanoid startup Neura Robotics closes the largest robotics funding round in history",
+          "published_at": "2026-06-10",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology", "business", "finance"],
+      "entities": {
+        "organizations": ["Neura Robotics", "Tether", "Nvidia", "Amazon", "Qualcomm", "Bosch", "Schaeffler", "European Investment Bank"],
+        "people": ["Paolo Ardoino", "Nakul Duggal", "Nafea Bshara"],
+        "places": ["Metzingen", "Germany"]
+      }
+    },
+    {
+      "id": "openai-altman-ipo-tender-rsi",
+      "headline": "Altman tells OpenAI staff a public listing could come within a year, plans a tender at $687.69",
+      "key_facts": [
+        {
+          "fact": "Sam Altman told OpenAI staff the company expects to go public 'within the next year,' according to The Information.",
+          "source_url": "https://www.theinformation.com/briefings/exclusive-openai-preps-new-ai-model-expects-go-public-within-next-year",
+          "excerpt": "Sources: Sam Altman told staff that OpenAI is expected to go public 'within the next year' and OpenAI plans a tender offer 'very soon' at a $687.69 share price."
+        },
+        {
+          "fact": "OpenAI is preparing an employee tender 'very soon' at a $687.69 per-share price.",
+          "source_url": "https://www.theinformation.com/briefings/exclusive-openai-preps-new-ai-model-expects-go-public-within-next-year",
+          "excerpt": "OpenAI plans a tender offer 'very soon' at a $687.69 share price."
+        },
+        {
+          "fact": "Altman left the IPO timeline conditional on whether recursive self-improvement starts to look near-term, in which case staying private might make more strategic sense.",
+          "source_url": "https://x.com/kimmonismus/status/2064775959020879872",
+          "excerpt": "OpenAI appears to be preparing for a possible IPO within the next year, but Sam Altman is keeping the door open. If recursive self-improvement starts looking real, staying private could become the sma[rter option]."
+        },
+        {
+          "fact": "Commentators read Altman's remarks as flagging that OpenAI may be less than six months away from recursive self-improvement scenarios.",
+          "source_url": "https://x.com/andrewcurran_/status/2064775020247548132",
+          "excerpt": "The most significant part of this report to me was Sam Altman admitting OpenAI may be less than six months away from Recursive Self Improvement."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.theinformation.com/briefings/exclusive-openai-preps-new-ai-model-expects-go-public-within-next-year",
+          "outlet": "The Information",
+          "title": "Exclusive: OpenAI Preps New AI Model, Expects to Go Public Within Next Year",
+          "published_at": "2026-06-10",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://x.com/kimmonismus/status/2064775959020879872",
+          "outlet": "X",
+          "title": "Tweet by @kimmonismus: OpenAI appears to be preparing for a possible IPO within the next year",
+          "published_at": "2026-06-10",
+          "image_url": "",
+          "type": "tweet"
+        },
+        {
+          "url": "https://x.com/andrewcurran_/status/2064775020247548132",
+          "outlet": "X",
+          "title": "Tweet by @andrewcurran_: Sam Altman admitting OpenAI may be less than six months away from Recursive Self Improvement",
+          "published_at": "2026-06-10",
+          "image_url": "",
+          "type": "tweet"
+        }
+      ],
+      "category": ["technology", "business", "finance"],
+      "entities": {
+        "organizations": ["OpenAI"],
+        "people": ["Sam Altman"],
+        "places": []
+      }
+    }
+  ]
+}

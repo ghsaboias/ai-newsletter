@@ -1,0 +1,23 @@
+Abaixo, apenas para assinantes:
+
+**Modelos.** Anthropic recua de política oculta que rebaixava pedidos rivais ao Claude.
+
+**Big techs.** Microsoft restringe o Fable 5 no Copilot por causa da nova política de retenção da Anthropic.
+
+**Regulação.** Anthropic propõe frameworks regulatórios e mecanismos de renda para cenários extremos de desemprego.
+
+**Regulação.** Canadá apresenta projeto que barra menores em redes sociais e regula chatbots de IA.
+
+**Data centers.** Texas determina que data centers paguem pela própria infraestrutura elétrica.
+
+**Robótica.** Tether lidera rodada da alemã Neura Robotics, com Nvidia e Amazon entrando.
+
+**Semicondutores.** Applied Materials inaugura campus em Cingapura e dobra a capacidade local.
+
+**Hardware.** Nvidia corta a capacidade de memória por chip no Vera Rubin diante da escassez de LPDDR5X.
+
+**Startups.** Ex-líderes do AlphaChip da Google levantam capital para um modelo de IA dedicado a projetar chips.
+
+**Geopolítica.** EUA e Irã trocam ataques perto do Estreito de Ormuz, e Teerã anuncia o fechamento da via.
+
+**Defesa.** Rússia ataca Ucrânia com mísseis e drones, e drones ucranianos atingem refinaria russa.
