@@ -689,3 +689,9 @@ https://www.youtube.com/watch?v=3bKLiUU2cb8
 **Simulating Humans at Scale: Simile's Joon Sung Park**
 O criador do estudo "Smallville" de Stanford argumenta que os modelos de fronteira são só a "CPU da inteligência", ótimos em problemas com resposta certa, péssimos em agir como gente de verdade, e construiu uma "GPU" que simulou 1.000 americanos prevendo seu comportamento com 85% da precisão deles mesmos; a CVS usa pra testar conceitos e clientes simulam as próprias earnings calls
 https://www.youtube.com/watch?v=lfhFmwcESRw
+
+## 2026-06-19
+
+**Google DeepMind Distinguished Eng (L9): How To Land a Job at a Frontier Lab**
+Vlad Feinberg, que lidera a área de pré-treinamento da Google DeepMind, fala sobre o que realmente diferencia quem é contratado em labs de fronteira como DeepMind, Anthropic e OpenAI
+https://www.youtube.com/watch?v=cDyi91onoJ8
