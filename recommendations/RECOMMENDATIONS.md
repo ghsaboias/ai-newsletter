@@ -695,3 +695,13 @@ https://www.youtube.com/watch?v=lfhFmwcESRw
 **Google DeepMind Distinguished Eng (L9): How To Land a Job at a Frontier Lab**
 Vlad Feinberg, que lidera a área de pré-treinamento da Google DeepMind, fala sobre o que realmente diferencia quem é contratado em labs de fronteira como DeepMind, Anthropic e OpenAI
 https://www.youtube.com/watch?v=cDyi91onoJ8
+
+## 2026-06-22
+
+**SoftBank x OpenAI: “Patching as a Service” Live Demo & Masayoshi Son Fireside Chat**
+O vídeo apresenta o “Daybreak”, uma iniciativa de cibersegurança da OpenAI focada em proteger sistemas corporativos de ponta a ponta. O conteúdo traz uma demonstração prática de como modelos de IA podem identificar, priorizar e corrigir vulnerabilidades de segurança de forma autônoma, além de um diálogo entre representantes da OpenAI e Masayoshi Son (SoftBank) sobre o futuro da inteligência artificial, o papel do poder computacional e a corrida armamentista cibernética
+https://www.youtube.com/watch?v=wUFBFjnSArw
+
+**The data black hole at the center of AI**
+Neste vídeo, o podcaster e analista Dwarkesh Patel discute a natureza da inteligência artificial moderna, argumentando que o progresso atual não se deve a uma melhoria na eficiência de aprendizado (sample efficiency), mas sim à capacidade de processar volumes massivos de dados e computação. Patel descreve os modelos atuais como “monstros de Frankenstein” construídos a partir de bilhões de exemplos específicos, em vez de agentes que aprendem de forma orgânica como humanos
+https://www.youtube.com/watch?v=4pG3SJQPAwk
