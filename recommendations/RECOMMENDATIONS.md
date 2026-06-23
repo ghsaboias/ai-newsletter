@@ -705,3 +705,13 @@ https://www.youtube.com/watch?v=wUFBFjnSArw
 **The data black hole at the center of AI**
 Neste vídeo, o podcaster e analista Dwarkesh Patel discute a natureza da inteligência artificial moderna, argumentando que o progresso atual não se deve a uma melhoria na eficiência de aprendizado (sample efficiency), mas sim à capacidade de processar volumes massivos de dados e computação. Patel descreve os modelos atuais como “monstros de Frankenstein” construídos a partir de bilhões de exemplos específicos, em vez de agentes que aprendem de forma orgânica como humanos
 https://www.youtube.com/watch?v=4pG3SJQPAwk
+
+## 2026-06-23
+
+**The Future of AI Agents with Andrew Ng | Interrupt 26**
+Andrew Ng, pioneiro em IA e fundador da DeepLearning.AI, discute em uma conversa informal no evento Interrupt da LangChain a evolução dos agentes de IA, o impacto na engenharia de software e as estratégias de adoção corporativa. Ng analisa como a velocidade de desenvolvimento alterou os gargalos produtivos e compartilha sua visão sobre o futuro da educação e da infraestrutura de dados
+https://www.youtube.com/watch?v=OaRhpwz_TGM
+
+**Opening Keynote | Compile 26**
+O evento Compile 26 marca a apresentação de Michael, cofundador da Cursor, que detalha a evolução da empresa desde sua fundação em 2022 até a atual transição para uma plataforma focada em agentes autônomos. O foco central é a filosofia de “desenvolvedores construindo para desenvolvedores”, visando criar ferramentas que funcionem como colegas de equipe, não apenas assistentes de código
+https://www.youtube.com/watch?v=fWa7uxyhVDE
