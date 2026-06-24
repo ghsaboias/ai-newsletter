@@ -715,3 +715,9 @@ https://www.youtube.com/watch?v=OaRhpwz_TGM
 **Opening Keynote | Compile 26**
 O evento Compile 26 marca a apresentação de Michael, cofundador da Cursor, que detalha a evolução da empresa desde sua fundação em 2022 até a atual transição para uma plataforma focada em agentes autônomos. O foco central é a filosofia de “desenvolvedores construindo para desenvolvedores”, visando criar ferramentas que funcionem como colegas de equipe, não apenas assistentes de código
 https://www.youtube.com/watch?v=fWa7uxyhVDE
+
+## 2026-06-24
+
+**Closer to the Material, Ryo Lu | Compile 26**
+Ryo Lu, da Cursor, defende que produzir output com IA não é o mesmo que tocar o “material” do software; ele aponta o risco da caixa-preta, mostra a Glass (interface que prototipou no próprio Cursor) e relembra a época em que o software “parecia vivo”
+https://www.youtube.com/watch?v=az6OEZV8iHw
