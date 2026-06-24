@@ -703,9 +703,61 @@ teaser meta** — which is the decision-(d) gap the `paywall-teaser` agent now c
 through the skill on a fresh un-shipped day (the first real `ingest --execute` + live
 paywalled push). Then → **Deletion**.
 
+### 2026-06-24 — full inventory + bucket-(a) deletion (new session)
+
+Did the ACTIVE track: re-derived the whole-surface wiring map fresh (the prior
+map was flagged stale), partitioned into (a)/(b)/(c), backed everything up to git,
+deleted bucket (a). Commits on `origin/main`: `f236923` (backup of the entire
+migration surface — agents, new scripts/tools/prompts, edition text artifacts),
+`b9bdce6` (the deletion).
+
+**Inventory — the live `.sh` path and the agent path coexist; nothing in prod uses
+the agents yet** (`cron.sh → draft.sh`/`finalize.sh` still orchestrate the headless
+`.sh` steps via `tools/run-agent.sh`).
+
+**Partition:**
+- **(c) keep** — `_lib.sh`, `config.sh`, `ingest.sh`, `rewrite-links.sh`,
+  `substack-preview.sh`, tools `dedup-research.py`/`link-tokens.py`/`substack_post.py`/
+  `substack_upload.py`/`techmeme`/`techmeme.py`, `RESEARCH.md`, all 9 agents, skills
+  `newsletter-research`/`newsletter-draft-v2`/`newsletter-no-dashes`.
+- **(b) cutover-gated** — `cron.sh`, `draft.sh`, `finalize.sh`, `research.sh`,
+  `generate.sh`, `repetition-check.sh`, `draft-rewrite.sh`, `facts.sh`,
+  `v2-generate.sh`, `extract.sh`, `substack.sh`, `substack-post.sh`,
+  `paywall-teaser.sh`, `sample.sh`; tools `run-agent.sh`, `slim_research.py`; prompts
+  `GENERATION.md`/`DRAFT_REWRITE.md`/`SEEDS.md`/`FACTS.md`/`V2_GENERATION.md`/
+  `REPETITION_CHECK.md`/`PAYWALL_TEASER.md`/`PAYWALL_TEASER_V2.md`/`SOURCE_EXTRACTION.md`;
+  skills `newsletter-draft`/`-finalize`/`-generate`/`-draft-review`/`-rewrite`/
+  `-paywall-teaser`.
+- **(a) deleted now** — `tools/merge-research.sh`, `review.sh`, `review-parallel.sh`,
+  `seed.sh` (all zero-caller, verified whole-repo).
+
+**Two corrections to this doc (re-derivation caught both):**
+1. **`merge-research.sh` was NOT "keep"** — nothing calls it; `dedup-research.py`
+   (the research skill's merger) superseded it. Deleted.
+2. **The old prompt briefs are bucket (b), not "keep as agent briefs."** The built
+   agents inline all methodology and read **none** of `REPETITION_CHECK.md` /
+   `PAYWALL_TEASER_V2.md` / etc. (only the researchers read `RESEARCH.md`, injected by
+   the skill). Those prompts die with their `.sh` at cutover; zero cost to retain as docs.
+
+**Notes / flags:**
+- `substack_upload.py` is **not** an orphan — `substack_post.py` imports it. Kept.
+- `format.sh` + `FORMAT.md` are **M&A-only**, outside the AI migration — kept, out of scope.
+- `cron.sh → draft.sh` is the only production *entrypoint*; no crontab on this Mac and no
+  recent `Auto: draft` commits — the daily auto-draft may already be dormant (Pi draft
+  cron retired 2026-06-08). Verify Pi-side before retiring `draft.sh`; doesn't change the
+  partition.
+- `.gitignore` gained `.env.local` (Substack `SUBSTACK_SID` secret — was **not** ignored,
+  nearly got pushed) + the `.eval-runs/`/`.shipped-backups/` local-scratch dirs. Edition
+  image scratch (`images/_c*`) stays ignored; edition **text** artifacts are committed
+  per the existing convention (18 text files/edition, zero images).
+
 ## Next
 
 ### ▶ ACTIVE — inventory + reliable-now deletion (cutover PARKED)
+
+> **Step 1 (inventory) + step 3 (delete bucket (a)) DONE 2026-06-24** — see the progress
+> entry above (commits `f236923` backup, `b9bdce6` deletion). Bucket (b) waits for the
+> cutover; bucket (c) stays. What remains under this track is now just the cutover itself.
 
 **Decision (2026-06-24, Gui): the cutover full-run is NOT the next step — parked.**
 The whole agent chain is built, eval'd, and wired (LINK+PUSH entry above; the
@@ -907,5 +959,7 @@ Safe-deletion sequence (do in order):
    `merge-research.sh`.
 5. Then retire `draft.sh` itself (skill fully orchestrates Phase 1–2 + publish).
 
-Already removed (per log): the v1 single-shared-prompt `researcher.md`. The
-repo-root `facts_*.md` are reference fixtures — keep.
+Already removed (per log): the v1 single-shared-prompt `researcher.md`; and the
+bucket-(a) orphans `tools/merge-research.sh`, `review.sh`, `review-parallel.sh`,
+`seed.sh` (2026-06-24, commit `b9bdce6`). The repo-root `facts_*.md` are reference
+fixtures — keep.
