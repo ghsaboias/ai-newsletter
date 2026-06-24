@@ -3,7 +3,7 @@
 Post a newsletter draft to Substack via their internal API.
 
 Usage:
-  python3 substack_post.py <html_file> <sid> <pub_host> [paywall_meta_json]
+  python3 substack_post.py <html_file> <sid> <pub_host> [paywall_meta_json] [banner_json]
 
 Reads:  substack.html, optionally paywall-meta.json
 Effect: creates a draft post on Substack (not published)
@@ -260,16 +260,86 @@ def build_teaser_blockquote(teasers: list) -> dict:
     return {"type": "blockquote", "content": paragraphs}
 
 
-def inject_paywall(doc: dict, cut_after: int, teasers: list) -> dict:
-    """Insert teaser blockquote + paywall node after the given paragraph index."""
+def build_banner_node(banner: dict) -> dict:
+    """Build a Substack captionedImage node for a pre-uploaded partner banner.
+
+    `banner` is the spec stored in the topic's paywall-banner.json (CDN src +
+    dims + optional href). The image must already live on Substack's CDN — use
+    pipeline/tools/substack_upload.py to (re)upload the art and regenerate the
+    spec if it ever changes.
+    """
+    return {
+        "type": "captionedImage",
+        "content": [{
+            "type": "image2",
+            "attrs": {
+                "src": banner["src"],
+                "srcNoWatermark": None,
+                "fullscreen": None,
+                "imageSize": None,
+                "height": banner.get("height"),
+                "width": banner.get("width"),
+                "resizeWidth": banner.get("resizeWidth"),
+                "bytes": banner.get("bytes"),
+                "alt": banner.get("alt"),
+                "title": None,
+                "type": banner.get("type"),
+                "href": banner.get("href"),
+                "belowTheFold": False,
+                "topImage": False,
+                "internalRedirect": None,
+                "isProcessing": False,
+                "align": None,
+                "offset": False,
+            },
+        }],
+    }
+
+
+def wrap_section_in_callout(doc: dict, heading_text: str) -> dict:
+    """Wrap a section (a heading + everything up to the next divider/end) in a
+    calloutBlock — Substack's gray boxed style. Used for the v2 "Leia também"
+    box. No-op if no heading matches `heading_text`.
+    """
+    nodes = doc["content"]
+    start = None
+    for i, n in enumerate(nodes):
+        if n.get("type") == "heading":
+            txt = "".join(c.get("text", "") for c in n.get("content", []))
+            if txt.strip() == heading_text.strip():
+                start = i
+                break
+    if start is None:
+        return doc
+
+    # Section runs from the heading to the next horizontal_rule (exclusive) or end.
+    end = len(nodes)
+    for j in range(start + 1, len(nodes)):
+        if nodes[j].get("type") == "horizontal_rule":
+            end = j
+            break
+
+    callout = {"type": "calloutBlock", "content": nodes[start:end]}
+    new_nodes = nodes[:start] + [callout] + nodes[end:]
+    return {"type": "doc", "content": new_nodes}
+
+
+def inject_paywall(doc: dict, cut_after: int, teasers: list, banner: dict = None) -> dict:
+    """Insert teaser blockquote, optional partner banner, then paywall node.
+
+    Order mirrors the manual workflow: the "Abaixo, apenas para assinantes:"
+    teaser, then the partner banner image, then the paywall cut.
+    """
     nodes = doc["content"]
     insert_at = cut_after + 1  # insert after the node at cut_after
     insert_at = max(1, min(insert_at, len(nodes)))  # clamp to valid range
 
-    teaser_bq = build_teaser_blockquote(teasers)
-    paywall_node = {"type": "paywall"}
+    inserted = [build_teaser_blockquote(teasers)]
+    if banner:
+        inserted.append(build_banner_node(banner))
+    inserted.append({"type": "paywall"})
 
-    new_nodes = nodes[:insert_at] + [teaser_bq, paywall_node] + nodes[insert_at:]
+    new_nodes = nodes[:insert_at] + inserted + nodes[insert_at:]
     return {"type": "doc", "content": new_nodes}
 
 
@@ -277,7 +347,8 @@ def inject_paywall(doc: dict, cut_after: int, teasers: list) -> dict:
 # Main
 # ---------------------------------------------------------------------------
 
-def post_draft(html_file, sid, pub_host, paywall_meta_file=None):
+def post_draft(html_file, sid, pub_host, paywall_meta_file=None, banner_file=None,
+               draft_id=None, callout_heading=None, paywall_after_grandes=False):
     with open(html_file, "r", encoding="utf-8") as f:
         html_content = f.read()
 
@@ -295,6 +366,10 @@ def post_draft(html_file, sid, pub_host, paywall_meta_file=None):
     converter.feed(body_html)
     pm_doc = converter.get_doc()
 
+    # Wrap a named section (e.g. "Leia também") in a callout box, if requested.
+    if callout_heading:
+        pm_doc = wrap_section_in_callout(pm_doc, callout_heading)
+
     # Inject paywall if meta file provided
     paywall_meta = None
     if paywall_meta_file and os.path.exists(paywall_meta_file):
@@ -302,10 +377,24 @@ def post_draft(html_file, sid, pub_host, paywall_meta_file=None):
             paywall_meta = json.load(f)
 
     if paywall_meta:
-        cut_after = paywall_meta.get("cut_after", 3)
         teasers = paywall_meta.get("teasers", [])
-        pm_doc = inject_paywall(pm_doc, cut_after, teasers)
-        print(f"  Paywall:  after node {cut_after}, {len(teasers)} teasers")
+        if paywall_after_grandes:
+            # Cut right after the Grandes: the first horizontal_rule is the
+            # divider that closes the lead block in the v2 format.
+            cut_after = next((i for i, n in enumerate(pm_doc["content"])
+                              if n.get("type") == "horizontal_rule"),
+                             paywall_meta.get("cut_after", 3))
+        else:
+            cut_after = paywall_meta.get("cut_after", 3)
+        banner = None
+        if banner_file and os.path.exists(banner_file):
+            with open(banner_file, "r", encoding="utf-8") as f:
+                banner = json.load(f)
+        pm_doc = inject_paywall(pm_doc, cut_after, teasers, banner)
+        msg = f"  Paywall:  after node {cut_after}, {len(teasers)} teasers"
+        if banner:
+            msg += f", + banner (link: {banner.get('href') or 'none'})"
+        print(msg)
 
     draft_body = json.dumps(pm_doc, ensure_ascii=False)
 
@@ -326,13 +415,20 @@ def post_draft(html_file, sid, pub_host, paywall_meta_file=None):
         "type": "newsletter",
     }
 
-    url = f"https://{pub_host}/api/v1/drafts"
+    # Update an existing draft in place (PUT) when a draft_id is given;
+    # otherwise create a new one (POST).
+    if draft_id:
+        url = f"https://{pub_host}/api/v1/drafts/{draft_id}"
+        method = "PUT"
+    else:
+        url = f"https://{pub_host}/api/v1/drafts"
+        method = "POST"
     data = json.dumps(payload).encode("utf-8")
 
     req = urllib.request.Request(
         url,
         data=data,
-        method="POST",
+        method=method,
         headers={
             "Content-Type": "application/json",
             "Cookie": f"substack.sid={sid}",
@@ -347,28 +443,59 @@ def post_draft(html_file, sid, pub_host, paywall_meta_file=None):
 
 
 def main():
-    if len(sys.argv) < 4:
-        print(f"Usage: {sys.argv[0]} <html_file> <sid> <pub_host> [paywall_meta_json]",
+    # Pull optional flags out of argv, leaving the positional args intact so
+    # existing callers (html sid host [meta] [banner]) keep working unchanged.
+    #   --draft-id <id>  update that draft in place (PUT) instead of creating
+    #   --id-out <path>  write the resulting draft id to <path>
+    argv = sys.argv[1:]
+    draft_id = None
+    id_out = None
+    callout_heading = None
+    paywall_after_grandes = False
+    pos = []
+    i = 0
+    while i < len(argv):
+        if argv[i] == "--draft-id" and i + 1 < len(argv):
+            draft_id = argv[i + 1]; i += 2
+        elif argv[i] == "--id-out" and i + 1 < len(argv):
+            id_out = argv[i + 1]; i += 2
+        elif argv[i] == "--callout-heading" and i + 1 < len(argv):
+            callout_heading = argv[i + 1]; i += 2
+        elif argv[i] == "--paywall-after-grandes":
+            paywall_after_grandes = True; i += 1
+        else:
+            pos.append(argv[i]); i += 1
+
+    if len(pos) < 3:
+        print(f"Usage: {sys.argv[0]} <html_file> <sid> <pub_host> [paywall_meta_json] [banner_json] "
+              f"[--draft-id <id>] [--id-out <path>] [--callout-heading <text>] [--paywall-after-grandes]",
               file=sys.stderr)
         sys.exit(1)
 
-    html_file = sys.argv[1]
-    sid = sys.argv[2]
-    pub_host = sys.argv[3]
-    paywall_meta_file = sys.argv[4] if len(sys.argv) > 4 else None
+    html_file = pos[0]
+    sid = pos[1]
+    pub_host = pos[2]
+    paywall_meta_file = pos[3] if len(pos) > 3 else None
+    banner_file = pos[4] if len(pos) > 4 else None
 
     try:
-        result = post_draft(html_file, sid, pub_host, paywall_meta_file)
+        result = post_draft(html_file, sid, pub_host, paywall_meta_file, banner_file,
+                            draft_id=draft_id, callout_heading=callout_heading,
+                            paywall_after_grandes=paywall_after_grandes)
     except urllib.error.HTTPError as e:
         body = e.read().decode("utf-8", errors="replace")
         print(f"  HTTP {e.code}: {e.reason}", file=sys.stderr)
         print(f"  Response: {body[:500]}", file=sys.stderr)
         sys.exit(1)
 
-    draft_id = result.get("id")
-    draft_url = f"https://{pub_host}/publish/post/{draft_id}"
+    result_id = result.get("id")
+    draft_url = f"https://{pub_host}/publish/post/{result_id}"
 
-    print(f"  Draft ID: {draft_id}")
+    if id_out and result_id:
+        with open(id_out, "w") as f:
+            f.write(str(result_id))
+
+    print(f"  Draft ID: {result_id}")
     print(f"  URL:      {draft_url}")
     return draft_url
 

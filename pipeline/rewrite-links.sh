@@ -1,13 +1,21 @@
 #!/bin/bash
 #
-# Step 5: Rewrite source links in PT-BR newsletter with Daily Journal URLs
+# Step 5: Rewrite source links in a PT-BR newsletter file with Daily Journal URLs
 #
 # Usage: ./rewrite-links.sh 2026-02-24
 #        ./rewrite-links.sh test
+#        ./rewrite-links.sh 2026-06-22 --in pt.md --out final.md   # explicit
+#        ./rewrite-links.sh 2026-06-22 --in v2.md --out v2-final.md --quiet
 #
-# Reads:  pt.md        (PT-BR newsletter)
-#         links.json   (source URL → DJ URL mapping, from ingest.ts)
-# Writes: final.md     (newsletter with DJ links)
+# Reads:  <input>     (PT-BR newsletter, default pt.md)
+#         links.json  (source URL → DJ URL mapping, from ingest.ts)
+# Writes: <output>    (newsletter with DJ links, default final.md)
+#
+# Options:
+#   --in <file>   input markdown   (default: pt.md)
+#   --out <file>  output markdown  (default: final.md)
+#   --quiet       suppress per-link "not found in markdown" warnings (for the
+#                 v2 pass, whose links are a subset of links.json)
 #
 
 set -euo pipefail
@@ -16,17 +24,28 @@ source "$(cd "$(dirname "$0")" && pwd)/_lib.sh"
 
 DATE=$(parse_date_arg "$@")
 init_day_dir
-PT_FILE="$DAY_DIR/pt.md"
+
+IN_FILE="$DAY_DIR/pt.md"
+OUT_FILE="$DAY_DIR/final.md"
+QUIET=false
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --in)    IN_FILE="$2"; shift 2 ;;
+    --out)   OUT_FILE="$2"; shift 2 ;;
+    --quiet) QUIET=true; shift ;;
+    *)       shift ;;
+  esac
+done
+
 LINKS_FILE="$DAY_DIR/links.json"
-FINAL_FILE="$DAY_DIR/final.md"
 
 echo ""
 echo "=== Rewrite Links: $DATE ==="
 echo ""
 
 # --- Validate ---
-if [[ ! -f "$PT_FILE" ]]; then
-  echo "Error: $PT_FILE not found (run translate.sh first)"
+if [[ ! -f "$IN_FILE" ]]; then
+  echo "Error: $IN_FILE not found"
   exit 1
 fi
 
@@ -36,13 +55,13 @@ if [[ ! -f "$LINKS_FILE" ]]; then
 fi
 
 MAPPING_COUNT=$(jq 'length' "$LINKS_FILE")
-echo "  Input:    $PT_FILE"
+echo "  Input:    $IN_FILE"
 echo "  Links:    $LINKS_FILE ($MAPPING_COUNT mappings)"
-echo "  Output:   $FINAL_FILE"
+echo "  Output:   $OUT_FILE"
 echo ""
 
 # --- Rewrite ---
-cp "$PT_FILE" "$FINAL_FILE"
+cp "$IN_FILE" "$OUT_FILE"
 
 replaced=0
 skipped=0
@@ -53,16 +72,16 @@ while IFS=$'\t' read -r source_url dj_url; do
   escaped_source=$(printf '%s' "$source_url" | sed 's/[&]/\\&/g')
   escaped_dj=$(printf '%s' "$dj_url" | sed 's/[&]/\\&/g')
 
-  if grep -qF "$source_url" "$FINAL_FILE"; then
+  if grep -qF "$source_url" "$OUT_FILE"; then
     if [[ "$(uname)" == "Darwin" ]]; then
-      sed -i '' "s|${escaped_source}|${escaped_dj}|g" "$FINAL_FILE"
+      sed -i '' "s|${escaped_source}|${escaped_dj}|g" "$OUT_FILE"
     else
-      sed -i "s|${escaped_source}|${escaped_dj}|g" "$FINAL_FILE"
+      sed -i "s|${escaped_source}|${escaped_dj}|g" "$OUT_FILE"
     fi
     replaced=$((replaced + 1))
   else
     skipped=$((skipped + 1))
-    echo "  ⚠ Not found in markdown: $source_url"
+    [[ "$QUIET" == true ]] || echo "  ⚠ Not found in markdown: $source_url"
   fi
 done < <(jq -r 'to_entries[] | "\(.key)\t\(.value)"' "$LINKS_FILE")
 
@@ -73,14 +92,14 @@ if [[ $skipped -gt 0 ]]; then
 fi
 
 # --- Validate: check for remaining external links ---
-remaining=$(grep -oE 'https?://[^)]+' "$FINAL_FILE" | grep -v 'dailyjournal.news' | sort -u | wc -l | tr -d ' ' || true)
+remaining=$(grep -oE 'https?://[^)]+' "$OUT_FILE" | grep -v 'dailyjournal.news' | sort -u | wc -l | tr -d ' ' || true)
 if [[ "$remaining" -gt 0 ]]; then
   echo ""
   echo "  ⚠ $remaining external links still in final output:"
-  grep -oE 'https?://[^)]+' "$FINAL_FILE" | grep -v 'dailyjournal.news' | sort -u | while read -r url; do
+  grep -oE 'https?://[^)]+' "$OUT_FILE" | grep -v 'dailyjournal.news' | sort -u | while read -r url; do
     echo "    $url"
   done
 fi
 
 echo ""
-echo "  ✓ Output: $FINAL_FILE"
+echo "  ✓ Output: $OUT_FILE"

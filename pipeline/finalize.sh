@@ -109,6 +109,16 @@ if [[ -f "$FINAL_MD" ]] && ! grep -qF "Recomendações de hoje" "$FINAL_MD"; the
   echo "  Recomendações section appended to final.md"
 fi
 
+# --- Step 3.6: Rewrite v2 draft links (source → DJ), if present (non-fatal) ---
+V2_FILE="$DAY_DIR/v2.md"
+V2_FINAL="$DAY_DIR/v2-final.md"
+if [[ -f "$V2_FILE" ]]; then
+  S=$(date +%s)
+  "$DIR/rewrite-links.sh" "$DATE" --in "$V2_FILE" --out "$V2_FINAL" --quiet \
+    || echo "  ⚠ v2 link rewrite failed (non-fatal)"
+  step_timer "rewrite-links-v2" "$S"
+fi
+
 # --- Step 4: Substack HTML ---
 S=$(date +%s)
 "$DIR/substack.sh" "$DATE"
@@ -124,6 +134,33 @@ S=$(date +%s)
 "$DIR/substack-post.sh" "$DATE"
 step_timer "substack-post" "$S"
 
+# --- Step 7: Make the v2 draft publish-ready (DJ links + paywall + recs) ---
+# Posts v2-final.md to the same v2 draft draft.sh created (suffix "v2").
+if [[ -f "$V2_FINAL" ]]; then
+  # 7a — paywall teasers for the v2 paid section (médias + Leia também).
+  S=$(date +%s)
+  "$DIR/paywall-teaser.sh" "$DATE" --v2 || echo "  ⚠ v2 paywall teaser failed (non-fatal)"
+  step_timer "paywall-teaser-v2" "$S"
+
+  # 7b — Recomendações footer (videos added by hand in the editor). The leading
+  # '---' closes the Leia também callout so recs renders outside the box.
+  if ! grep -qF "Recomendações de hoje" "$V2_FINAL"; then
+    printf '\n---\n\n**Recomendações de hoje:**\n' >> "$V2_FINAL"
+    echo "  Recomendações section appended to v2-final.md"
+  fi
+
+  # 7c — post: DJ links + "Leia também" callout + paywall after the grandes.
+  S=$(date +%s)
+  V2_PAYWALL_ARGS=()
+  if [[ -f "$DAY_DIR/paywall-v2-meta.json" ]]; then
+    V2_PAYWALL_ARGS=(--paywall-meta "$DAY_DIR/paywall-v2-meta.json" --paywall-after-grandes)
+  fi
+  "$DIR/substack-preview.sh" "$DATE" "$V2_FINAL" v2 "v2 format" "Leia também" \
+    ${V2_PAYWALL_ARGS[@]+"${V2_PAYWALL_ARGS[@]}"} \
+    || echo "  ⚠ v2 draft update failed (non-fatal)"
+  step_timer "substack-v2" "$S"
+fi
+
 # --- Summary ---
 PIPELINE_END=$(date +%s)
 TOTAL=$((PIPELINE_END - PIPELINE_START))
@@ -134,3 +171,4 @@ echo "  Date:     $DATE"
 echo "  Duration: ${TOTAL}s ($(( TOTAL / 60 ))m $(( TOTAL % 60 ))s)"
 echo "  Output:   $DAY_DIR/final.md"
 echo "  Substack: $DAY_DIR/substack.html"
+[[ -f "$DAY_DIR/substack-v2.json" ]] && echo "  v2 draft: $(jq -r .url "$DAY_DIR/substack-v2.json") (DJ links)"

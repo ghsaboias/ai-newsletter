@@ -71,6 +71,35 @@ S=$(date +%s)
 "$DIR/draft-rewrite.sh" "$DATE"
 step_timer "draft-rewrite" "$S"
 
+# --- v2 track (additive, non-fatal): facts → v2 format → two Substack drafts ---
+# These run after pt.md is final, so a failure here never costs the draft work
+# above. Both drafts use the ORIGINAL source links; finalize.sh later rewrites
+# the "orig" draft's links to DJ links in place.
+
+# --- Step 5: Facts base ---
+S=$(date +%s)
+"$DIR/facts.sh" "$DATE" || echo "  ⚠ facts step failed (non-fatal)"
+step_timer "facts" "$S"
+
+# --- Step 6: v2 generate (Grandes/Médias/Leia também) ---
+S=$(date +%s)
+"$DIR/v2-generate.sh" "$DATE" || echo "  ⚠ v2-generate step failed (non-fatal)"
+step_timer "v2-generate" "$S"
+
+# --- Step 7: Post original draft (source links, for comparison) ---
+S=$(date +%s)
+"$DIR/substack-preview.sh" "$DATE" "$DAY_DIR/pt.md" orig "Original" || echo "  ⚠ original draft post failed (non-fatal)"
+step_timer "substack-orig" "$S"
+
+# --- Step 8: Post v2 draft ---
+S=$(date +%s)
+if [[ -f "$DAY_DIR/v2.md" ]]; then
+  "$DIR/substack-preview.sh" "$DATE" "$DAY_DIR/v2.md" v2 "v2 format" "Leia também" || echo "  ⚠ v2 draft post failed (non-fatal)"
+else
+  echo "  ⚠ v2.md missing — skipping v2 draft post"
+fi
+step_timer "substack-v2" "$S"
+
 # --- Summary ---
 PIPELINE_END=$(date +%s)
 TOTAL=$((PIPELINE_END - PIPELINE_START))
@@ -93,6 +122,14 @@ if [[ -f "$DAY_DIR/rewrite-notes.json" ]]; then
   RW_SKIPPED=$(jq '[.findings[] | select(.action == "skipped")] | length' "$DAY_DIR/rewrite-notes.json" 2>/dev/null || echo "?")
   RW_FLAGGED=$(jq '[.findings[] | select(.action == "flagged")] | length' "$DAY_DIR/rewrite-notes.json" 2>/dev/null || echo "?")
   echo "  Rewrites: $RW_APPLIED applied, $RW_SKIPPED skipped, $RW_FLAGGED flagged"
+fi
+
+# Show Substack draft URLs (original + v2 format)
+if [[ -f "$DAY_DIR/substack-orig.json" ]] || [[ -f "$DAY_DIR/substack-v2.json" ]]; then
+  echo ""
+  echo "  Substack drafts:"
+  [[ -f "$DAY_DIR/substack-orig.json" ]] && echo "    Original: $(jq -r .url "$DAY_DIR/substack-orig.json")"
+  [[ -f "$DAY_DIR/substack-v2.json" ]]   && echo "    v2:       $(jq -r .url "$DAY_DIR/substack-v2.json")"
 fi
 
 echo ""

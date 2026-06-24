@@ -48,14 +48,32 @@ if [[ -z "${SUBSTACK_SID:-}" ]] || [[ -z "${SUBSTACK_PUB_HOST:-}" ]]; then
 fi
 
 META_FILE="$DAY_DIR/paywall-meta.json"
+BANNER_FILE="${TOPIC_PAYWALL_BANNER:-$TOPIC_DIR/paywall-banner.json}"
 
 echo "  Publication: $SUBSTACK_PUB_HOST"
 echo "  Input:       $HTML_FILE"
 [[ -f "$META_FILE" ]] && echo "  Paywall:     $META_FILE" || echo "  Paywall:     (none — run paywall-teaser.sh to add)"
+if [[ -f "$META_FILE" ]]; then
+  [[ -f "$BANNER_FILE" ]] && echo "  Banner:      $BANNER_FILE" || echo "  Banner:      (none — no $BANNER_FILE)"
+fi
 echo ""
 
+# Banner rides with the paywall (between teaser and cut), so only pass it when
+# a paywall meta exists — substack_post.py reads it as the 5th positional arg.
 ARGS=("$HTML_FILE" "$SUBSTACK_SID" "$SUBSTACK_PUB_HOST")
-[[ -f "$META_FILE" ]] && ARGS+=("$META_FILE")
+if [[ -f "$META_FILE" ]]; then
+  ARGS+=("$META_FILE")
+  [[ -f "$BANNER_FILE" ]] && ARGS+=("$BANNER_FILE")
+fi
+
+# If draft.sh already created the source-linked original draft, update THAT one
+# in place (its links become DJ links here) instead of spawning a new draft.
+ORIG_ID_FILE="$DAY_DIR/.substack-orig-id"
+if [[ -f "$ORIG_ID_FILE" ]] && [[ -s "$ORIG_ID_FILE" ]]; then
+  ARGS+=(--draft-id "$(cat "$ORIG_ID_FILE")" --id-out "$ORIG_ID_FILE")
+  echo "  Updating draft.sh draft $(cat "$ORIG_ID_FILE") (source links → DJ links)"
+  echo ""
+fi
 
 python3 "$DIR/tools/substack_post.py" "${ARGS[@]}"
 

@@ -3,4 +3,13 @@ node_modules/
 pipeline/logs/
 pipeline/output/samples/
 pipeline/output/ai/**/.review-session
+# newsletter-images scratch (downloaded photos + contact sheets); keep only images-final.json
+pipeline/output/ai/**/images/_c*
+pipeline/output/ai/**/images/sheet-*.png
+pipeline/output/ai/**/images/candidates.json
 tests/output/
+# secrets — Substack session id etc. (never commit)
+.env.local
+# local scratch/backup of editions (persistent, not versioned)
+pipeline/output/ai/.eval-runs/
+pipeline/output/ai/.shipped-backups/

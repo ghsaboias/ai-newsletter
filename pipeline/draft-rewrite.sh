@@ -88,7 +88,7 @@ PROMPT_FILE="$DAY_DIR/.prompt-rewrite.md"
 printf '%s' "$PROMPT_BODY" > "$PROMPT_FILE"
 
 TMUX_WIN="rewrite-$DATE"
-tmux new-window -n "$TMUX_WIN" -d "cd $ROOT_DIR && $DIR/tools/run-agent.sh $NOTES_FILE done-rewrite $CLAUDE_CMD --model $CLAUDE_MODEL --allowedTools Read,Write,Edit < $PROMPT_FILE"
+tmux new-window -n "$TMUX_WIN" -d "cd $ROOT_DIR && $DIR/tools/run-agent.sh $NOTES_FILE done-rewrite $CLAUDE_CMD --model $CLAUDE_MODEL --allowedTools Read,Write,Edit,Bash < $PROMPT_FILE"
 
 echo "  Watch live: tmux select-window -t $TMUX_WIN"
 tmux wait-for done-rewrite

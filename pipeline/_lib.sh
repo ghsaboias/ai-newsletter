@@ -9,7 +9,7 @@ DJ_DIR="$HOME/daily-journal-platform"
 
 # --- Claude config ---
 CLAUDE_CMD="claude"
-CLAUDE_MODEL="${PIPELINE_MODEL:-claude-opus-4-7}"
+CLAUDE_MODEL="${PIPELINE_MODEL:-claude-opus-4-8}"
 CLAUDE_HOOKS_DIR="$DIR/hooks"
 CLAUDE_BLOCK_DOMAINS_SETTINGS="$CLAUDE_HOOKS_DIR/block-domains.json"
 

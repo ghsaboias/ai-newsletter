@@ -1,0 +1,91 @@
+{
+  "slug": "top500-fastest-supercomputer",
+  "title_pt": "O supercomputador nº 1 do mundo, 2010–2026: a China reassume o topo",
+  "edition": "2026-06-23",
+  "metric": "Rmax (desempenho máximo sustentado no benchmark High Performance Linpack) do sistema nº 1 de cada lista TOP500 de junho, em PFlop/s",
+  "definition": "TOP500: ranking semestral dos supercomputadores mais rápidos do mundo medido pelo HPL (High Performance Linpack). Plotamos o sistema nº 1 da lista de JUNHO de cada ano (uma lista por ano, mesma métrica), de 2010 a 2026, com o Rmax daquela lista específica. 1 EFlop/s = 1.000 PFlop/s.",
+  "series": [
+    { "year": 2010, "system": "Jaguar",            "country": "US", "rmax_pf": 1.759,   "preliminary": false, "source_ref": "top500-wiki" },
+    { "year": 2011, "system": "K computer",         "country": "JP", "rmax_pf": 8.162,   "preliminary": false, "source_ref": "top500-wiki" },
+    { "year": 2012, "system": "Sequoia",            "country": "US", "rmax_pf": 16.325,  "preliminary": false, "source_ref": "top500-wiki" },
+    { "year": 2013, "system": "Tianhe-2",           "country": "CN", "rmax_pf": 33.863,  "preliminary": false, "source_ref": "top500-wiki" },
+    { "year": 2014, "system": "Tianhe-2",           "country": "CN", "rmax_pf": 33.863,  "preliminary": false, "source_ref": "top500-wiki" },
+    { "year": 2015, "system": "Tianhe-2",           "country": "CN", "rmax_pf": 33.863,  "preliminary": false, "source_ref": "top500-wiki" },
+    { "year": 2016, "system": "Sunway TaihuLight",  "country": "CN", "rmax_pf": 93.015,  "preliminary": false, "source_ref": "top500-wiki" },
+    { "year": 2017, "system": "Sunway TaihuLight",  "country": "CN", "rmax_pf": 93.015,  "preliminary": false, "source_ref": "top500-wiki" },
+    { "year": 2018, "system": "Summit",             "country": "US", "rmax_pf": 122.300, "preliminary": false, "source_ref": "top500-wiki" },
+    { "year": 2019, "system": "Summit",             "country": "US", "rmax_pf": 148.600, "preliminary": false, "source_ref": "top500-2019-06" },
+    { "year": 2020, "system": "Fugaku",             "country": "JP", "rmax_pf": 415.530, "preliminary": false, "source_ref": "top500-wiki" },
+    { "year": 2021, "system": "Fugaku",             "country": "JP", "rmax_pf": 442.010, "preliminary": false, "source_ref": "top500-2026-06" },
+    { "year": 2022, "system": "Frontier",           "country": "US", "rmax_pf": 1102.00, "preliminary": false, "source_ref": "top500-wiki" },
+    { "year": 2023, "system": "Frontier",           "country": "US", "rmax_pf": 1194.00, "preliminary": false, "source_ref": "top500-2023-06" },
+    { "year": 2024, "system": "Frontier",           "country": "US", "rmax_pf": 1206.00, "preliminary": false, "source_ref": "top500-2024-06" },
+    { "year": 2025, "system": "El Capitan",         "country": "US", "rmax_pf": 1742.00, "preliminary": false, "source_ref": "top500-2025-06" },
+    { "year": 2026, "system": "LineShine",          "country": "CN", "rmax_pf": 2198.00, "preliminary": false, "source_ref": "top500-2026-06" }
+  ],
+  "country_colors": { "US": "#0012bf", "CN": "#044B2E", "JP": "#E88E00" },
+  "milestones": {
+    "2017": "Última vez que a China liderou antes de 2026 (Sunway TaihuLight).",
+    "2022": "Frontier: primeira máquina a oficialmente ultrapassar 1 exaflop (1.000 PFlop/s).",
+    "2026": "LineShine: primeira a superar 2 exaflops e primeiro nº 1 chinês desde 2017; ~21% à frente do El Capitan (1,809 EF), com ~13,8 milhões de núcleos e processadores 100% domésticos, sem aceleradores estrangeiros."
+  },
+  "edition_context": {
+    "lineshine_rmax_ef": 2.198,
+    "lineshine_peak_ef": 2.736,
+    "no2_el_capitan_ef": 1.809,
+    "cores_millions": 13.79,
+    "ai_caveat": "No teste voltado a IA (HPL-MxP/mixed precision), o LineShine ficou apenas em 4º — projetado para HPL de dupla precisão, não para cargas de IA. Vai no caption, não na prosa principal do gráfico."
+  },
+  "sources": [
+    {
+      "id": "top500-2026-06",
+      "label": "TOP500 — lista de junho de 2026",
+      "url": "https://top500.org/lists/top500/2026/06/",
+      "provides": "LineShine 2.198 EF (#1); El Capitan 1.809 EF (#2); Frontier 1.353 EF (#3); Fugaku 442.01 PF (confirma 2021)"
+    },
+    {
+      "id": "top500-lineshine-news",
+      "label": "TOP500 — \"LineShine Debuts at No. 1 as the TOP500 Enters a New Global Exascale Era\" (jun/2026)",
+      "url": "https://top500.org/news/lineshine-debuts-no-1-top500-enters-new-global-exascale-era/",
+      "provides": "2.198 EF, ~13,79 mi de núcleos, primeiro nº 1 chinês desde 2017, primeiro a passar de 2 EF, CPUs domésticas"
+    },
+    {
+      "id": "top500-2024-06",
+      "label": "TOP500 — lista de junho de 2024",
+      "url": "https://top500.org/lists/top500/2024/06/",
+      "provides": "Frontier 1.206 EF (#1, 2024)"
+    },
+    {
+      "id": "top500-2023-06",
+      "label": "TOP500 — lista de junho de 2023",
+      "url": "https://top500.org/lists/top500/2023/06/",
+      "provides": "Frontier 1.194 EF (#1, 2023)"
+    },
+    {
+      "id": "top500-2025-06",
+      "label": "TOP500 — lista de junho de 2025",
+      "url": "https://top500.org/lists/top500/2025/06/",
+      "provides": "El Capitan 1.742 EF (#1, 2025)"
+    },
+    {
+      "id": "top500-2019-06",
+      "label": "TOP500 — lista de junho de 2019",
+      "url": "https://top500.org/lists/top500/2019/06/",
+      "provides": "Summit 148.60 PF (#1, 2019)"
+    },
+    {
+      "id": "top500-wiki",
+      "label": "Wikipedia \"TOP500\" (consolida o histórico das listas TOP500)",
+      "url": "https://en.wikipedia.org/wiki/TOP500",
+      "provides": "Líderes históricos das listas de junho 2010–2022: Jaguar 1.759 PF, K computer 8.162 PF, Sequoia 16.325 PF, Tianhe-2 33.863 PF, Sunway 93.015 PF, Summit 122.3 PF, Fugaku 415.53 PF, Frontier 1.102 EF"
+    }
+  ],
+  "notes": [
+    "Medido: Rmax (HPL), o desempenho sustentado de dupla precisão — não o pico teórico (Rpeak).",
+    "Uma lista por ano (junho), de 2010 a 2026. Tianhe-2 (2013–2015) e Sunway TaihuLight (2016–2017) mantiveram o mesmo Rmax durante o reinado — os pontos repetidos são fiéis às listas.",
+    "Escala logarítmica no eixo Y: o salto é de ~1,76 PFlop/s (2010) a 2.198 PFlop/s (2026), cerca de três ordens de grandeza, então o eixo linear achataria tudo antes de 2022.",
+    "Linha (não barras): em escala log a barra não começa no zero, então o comprimento engana. A linha mostra a escalada; a cor do ponto mostra o país líder.",
+    "O LineShine lidera o HPL de dupla precisão, mas ficou só em 4º no teste voltado a IA (precisão mista). Essa ressalva vai no caption.",
+    "El Capitan aparece em 2025 com 1,742 EF (sua estreia na lista de junho); na lista de junho de 2026 já figura com 1,809 EF como nº 2."
+  ]
+}

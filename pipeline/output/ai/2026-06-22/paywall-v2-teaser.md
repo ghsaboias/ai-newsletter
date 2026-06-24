@@ -1,0 +1,27 @@
+Abaixo, apenas para assinantes:
+
+**Big techs.** Samsung reverte um veto antigo e adota o ChatGPT entre seus funcionários.
+
+**Imagens.** Getty fecha parceria com a OpenAI para exibir suas fotos no ChatGPT.
+
+**Modelos.** MiniMax lança uma atualização de seu modelo voltada a código.
+
+**Big techs.** Tencent testa um assistente de IA dentro do WeChat.
+
+**Capital.** Startups de defesa atraem forte aporte de capital de risco.
+
+**Defesa.** Anduril negocia abrir operação em Israel com a Elbit Systems.
+
+**Robótica.** Coowa, apoiada pela SoftBank, prepara IPO em Hong Kong.
+
+**IPO.** Lingyi iTech, fornecedora da Apple, estreia na bolsa de Hong Kong.
+
+**Hardware.** Toto, fabricante de vasos sanitários, investe em materiais para chips.
+
+**Biotech.** FDA aprova um novo antibiótico oral licenciado pela GSK.
+
+**Eleições.** Abelardo de la Espriella vence a eleição presidencial na Colômbia.
+
+**Política.** Keir Starmer renuncia ao cargo de primeiro-ministro do Reino Unido.
+
+**Clima.** Onda de calor leva a França a restringir atividades ao ar livre.

@@ -13,6 +13,15 @@ TOPIC_LABEL="AI & Tech"
 TOPIC_TITLE_PREFIX="[Tech]"
 TOPIC_BYLINE="Por: Guilherme Saboia e Vinicius Gushiken"
 
+# --- Publishing ---
+# Partner banner inserted between the paywall teaser ("Abaixo, apenas para
+# assinantes:") and the paywall cut. Spec = Substack CDN src + dims + link.
+# Refresh after changing the art:
+#   python3 pipeline/tools/substack_upload.py ~/abacatepay-parceria.png \
+#     --href https://abacatepay.com > "$TOPIC_DIR/paywall-banner.json"
+# Unset this (or delete the file) to skip the banner.
+TOPIC_PAYWALL_BANNER="$TOPIC_DIR/paywall-banner.json"
+
 # --- Research ---
 # Research tools managed in research.sh: built-in (Read,Write,Bash) + exa MCP (mcp__exa__web_search_exa, mcp__exa__web_fetch_exa)
 
@@ -43,7 +52,7 @@ read -r -d '' TOPIC_CLUSTER_HW << 'EOF' || true
 - Export controls: US-China chip restrictions, ASML/EUV, sanctions
 - Robotics: humanoids (Tesla Optimus, Figure, Unitree), industrial automation, warehouse robots
 - Hardware startup funding: rounds across stages — chip startups, robotics, data center infra, energy/compute.
-Key X accounts: @elonmusk, @jimfanAI, @chilobrandt
+Key X accounts: @elonmusk
 EOF
 
 read -r -d '' TOPIC_CLUSTER_WORLD << 'EOF' || true
@@ -57,6 +66,5 @@ read -r -d '' TOPIC_CLUSTER_WORLD << 'EOF' || true
 - Health policy: FDA decisions, pandemic preparedness, health system changes
 - Space: launches, missions, orbital debris, satellite constellations, exploration milestones
 - Climate/energy: transition milestones, extreme events, policy moves
-Key X accounts: @xaborsa
 Key sources: Reuters, AP, BBC, Al Jazeera, FT, STAT News, BioPharma Dive, Nature Medicine
 EOF

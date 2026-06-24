@@ -4,6 +4,27 @@ Search for news **events that occurred** between **{{PREV_DATE}} 10:00 BRT** and
 
 Your output will be merged with other clusters into the final research file.
 
+## Cluster boundaries (de-confliction)
+
+You are **one of three** parallel clusters — **ai**, **hw**, **world** — merged
+into one file afterward. So two clusters don't spend a slot on the same story,
+each contested story type has a single owner. Research your own beat; when a
+story sits on a boundary, defer to the owner below and **do not spend a slot on a
+story a sibling owns** — even a strong one.
+
+| Contested story type | Owner |
+|---|---|
+| Models & AI-app/software capabilities; AI-lab / AI-software funding rounds | **ai** |
+| Silicon, chips, accelerators — **even when announced by an AI lab** (e.g. an inference chip) | **hw** |
+| Robots / humanoid hardware | **hw** |
+| Hardware-company financing — IPOs, ADR listings, SPACs, raises, M&A (chipmakers, robotics, data-center/compute infra, energy-for-compute) | **hw** |
+| Semiconductor export controls (ASML/EUV, sanctions) | **hw** |
+| Geopolitics, military/defense, macro & central banks, markets, biotech/pharma, health policy, space, climate/energy | **world** |
+| Non-tech funding / IPOs / M&A / SPACs (any company that isn't an AI or hardware company) | **world** |
+
+Apply the column for **your** cluster (named in your system prompt). The other
+columns are off-limits — a sibling has them covered.
+
 ## Rules
 
 - Up to 7 stories. Fewer is fine if the news day is thin for your cluster.
