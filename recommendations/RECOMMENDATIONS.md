@@ -721,3 +721,13 @@ https://www.youtube.com/watch?v=fWa7uxyhVDE
 **Closer to the Material, Ryo Lu | Compile 26**
 Ryo Lu, da Cursor, defende que produzir output com IA não é o mesmo que tocar o “material” do software; ele aponta o risco da caixa-preta, mostra a Glass (interface que prototipou no próprio Cursor) e relembra a época em que o software “parecia vivo”
 https://www.youtube.com/watch?v=az6OEZV8iHw
+
+## 2026-06-25
+
+**The Media Game Has Changed**
+uma conversa entre Ben Horowitz, Marc Andreessen e Gabi Cacciotti (da a16z) sobre a mudança fundamental na forma como empresas e fundadores devem se comunicar. O consenso é que a mídia tradicional, focada em neutralidade e defesa, tornou-se obsoleta para a construção de narrativas estratégicas, sendo substituída por uma abordagem de “ataque” e comunicação direta através de novos canais
+https://www.youtube.com/watch?v=XROaLetSxg0
+
+**Into the night with Garry Kasparov and Peter Thiel**
+uma conversa entre o ex-campeão mundial de xadrez Garry Kasparov e o investidor Peter Thiel. O diálogo transita entre tecnologia, política global, direitos humanos e o papel da inovação na civilização moderna. Ambos compartilham uma visão crítica sobre o estado atual do desenvolvimento tecnológico e a eficácia das instituições políticas contemporâneas
+https://www.youtube.com/watch?v=9rOvEPYNEsc
