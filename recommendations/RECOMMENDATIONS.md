@@ -731,3 +731,13 @@ https://www.youtube.com/watch?v=XROaLetSxg0
 **Into the night with Garry Kasparov and Peter Thiel**
 uma conversa entre o ex-campeão mundial de xadrez Garry Kasparov e o investidor Peter Thiel. O diálogo transita entre tecnologia, política global, direitos humanos e o papel da inovação na civilização moderna. Ambos compartilham uma visão crítica sobre o estado atual do desenvolvimento tecnológico e a eficácia das instituições políticas contemporâneas
 https://www.youtube.com/watch?v=9rOvEPYNEsc
+
+## 2026-06-26
+
+**Why AI Hasn’t Cured Anything... Yet, According to Jennifer Doudna**
+A Nobel que co-inventou o CRISPR (ferramenta de edição genética) explica por que o Vale do Silício entende biologia errado, e por que, apesar de toda a euforia, a IA ainda não curou uma única doença
+https://www.youtube.com/watch?v=n-hWHV2ZKOA
+
+**Jane Street on GPUs, Trading, and Hiring: A Conversation with Dwarkesh**
+Uma conversa entre Dwarkesh Patel e representantes da Jane Street (Ron Minsky, chefe de tecnologia, e Dan Pontecorvo, chefe de engenharia física) durante uma visita a um dos data centers da empresa no Texas. A discussão aborda a infraestrutura computacional, o uso de GPUs e FPGAs para trading, a estratégia de contratação e o papel da inteligência artificial na empresa
+https://www.youtube.com/watch?v=xKZ_8ULR91Y
