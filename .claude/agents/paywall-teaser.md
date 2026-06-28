@@ -9,8 +9,8 @@ description: >-
   structural (always after the Grandes, applied by substack_post.py
   --paywall-after-grandes), so this agent only produces the teasers, not the cut
   index. Writes paywall-v2-meta.json (for automatic Substack injection) +
-  paywall-v2-teaser.md (for inspection). Migrates paywall-teaser.sh --v2 /
-  PAYWALL_TEASER_V2.md. The run's date and the input/output file paths come in
+  paywall-v2-teaser.md (for inspection). Migrates paywall-teaser.sh --v2.
+  The run's date and the input/output file paths come in
   the task prompt.
 tools: Read, Write
 ---

@@ -9,7 +9,7 @@ description: >-
   (title, published_at, image_url, outlet, category, entities) joined from
   research.json by URL. PT-BR entity + source fields synthesized from the atomic
   facts. This is the facts.md-driven extract that replaces the prose-parse
-  extract.sh + SOURCE_EXTRACTION.md. The run's date and the input/output file
+  extract.sh. The run's date and the input/output file
   paths come in the task prompt.
 tools: Read, Write, Bash
 ---
