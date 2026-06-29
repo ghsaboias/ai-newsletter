@@ -741,3 +741,13 @@ https://www.youtube.com/watch?v=n-hWHV2ZKOA
 **Jane Street on GPUs, Trading, and Hiring: A Conversation with Dwarkesh**
 Uma conversa entre Dwarkesh Patel e representantes da Jane Street (Ron Minsky, chefe de tecnologia, e Dan Pontecorvo, chefe de engenharia física) durante uma visita a um dos data centers da empresa no Texas. A discussão aborda a infraestrutura computacional, o uso de GPUs e FPGAs para trading, a estratégia de contratação e o papel da inteligência artificial na empresa
 https://www.youtube.com/watch?v=xKZ_8ULR91Y
+
+## 2026-06-29
+
+**The $10B Satellite Empire Putting AI in Orbit, Why Chips Beat Rockets & China's #1 Open Model | #266**
+Peter H. Diamandis e convidados (Will Marshall, Salim Ismail, Dave Blundin e Dr. Alexander Wissner-Gross) discutem a convergência entre inteligência artificial, infraestrutura espacial e a nova economia de dados planetários. O foco central é como a integração de sensores orbitais com modelos de IA está criando uma “inteligência planetária” capaz de monitorar e otimizar a Terra em escala global
+https://www.youtube.com/watch?v=kPSLLeccrik
+
+**Mark Zuckerberg on AI’s Job Impact, Government Regulation, & How Meta Glasses Changed His Routine**
+Mark Zuckerberg, CEO da Meta, discute com Noah Callahan-Bever, no programa Idea Generation, a evolução da inteligência artificial, a visão estratégica por trás dos óculos inteligentes da Meta e sua filosofia de liderança após duas décadas de inovação
+https://www.youtube.com/watch?v=u-vH31VD7GE
