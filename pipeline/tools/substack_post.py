@@ -298,7 +298,7 @@ def build_banner_node(banner: dict) -> dict:
 
 def wrap_section_in_callout(doc: dict, heading_text: str) -> dict:
     """Wrap a section (a heading + everything up to the next divider/end) in a
-    calloutBlock — Substack's gray boxed style. Used for the v2 "Leia também"
+    calloutBlock — Substack's gray boxed style. Used for the three-tier "Leia também"
     box. No-op if no heading matches `heading_text`.
     """
     nodes = doc["content"]
@@ -380,7 +380,7 @@ def post_draft(html_file, sid, pub_host, paywall_meta_file=None, banner_file=Non
         teasers = paywall_meta.get("teasers", [])
         if paywall_after_grandes:
             # Cut right after the Grandes: the first horizontal_rule is the
-            # divider that closes the lead block in the v2 format.
+            # divider that closes the lead block in the three-tier format.
             cut_after = next((i for i, n in enumerate(pm_doc["content"])
                               if n.get("type") == "horizontal_rule"),
                              paywall_meta.get("cut_after", 3))

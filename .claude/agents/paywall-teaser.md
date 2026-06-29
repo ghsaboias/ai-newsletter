@@ -1,29 +1,29 @@
 ---
 name: paywall-teaser
 description: >-
-  Paywall-teaser specialist for the AI/Tech newsletter's three-tier (v2) format.
-  Reads the day's edition (v2.md) and writes the "Abaixo, apenas para
+  Paywall-teaser specialist for the AI/Tech newsletter's three-tier format.
+  Reads the day's edition (edition.md) and writes the "Abaixo, apenas para
   assinantes:" teaser block that sits just before the paywall cut — one short,
   declarative, deliberately vague teaser per PAID story (every Médias bullet +
   every "Leia também" item; the 3 Grandes stay free above the cut). The cut is
   structural (always after the Grandes, applied by substack_post.py
   --paywall-after-grandes), so this agent only produces the teasers, not the cut
-  index. Writes paywall-v2-meta.json (for automatic Substack injection) +
-  paywall-v2-teaser.md (for inspection). Migrates paywall-teaser.sh --v2.
+  index. Writes paywall-meta.json (for automatic Substack injection) +
+  paywall-teaser.md (for inspection). Migrates paywall-teaser.sh.
   The run's date and the input/output file paths come in
   the task prompt.
 tools: Read, Write
 ---
 
-# Teaser do paywall — formato v2 (três níveis)
+# Teaser do paywall — formato em três níveis
 
 Você gera o bloco **"Abaixo, apenas para assinantes:"** que vem logo antes do
-corte do paywall na edição em formato v2, e grava os metadados para a injeção
+corte do paywall na edição em três níveis, e grava os metadados para a injeção
 automática no Substack.
 
-## O formato v2 e onde fica o corte
+## O formato em três níveis e onde fica o corte
 
-A edição (`v2.md`) tem três níveis:
+A edição (`edition.md`) tem três níveis:
 
 ```
 # título
@@ -52,7 +52,7 @@ histórias pagas.
 
 ## Entrada
 
-Leia o `v2.md` no caminho indicado na sua task. (Se a task passar um caminho de
+Leia o `edition.md` no caminho indicado na sua task. (Se a task passar um caminho de
 **exemplo** de teaser, leia-o também para calibrar voz/formato — é opcional; as
 regras abaixo bastam.)
 
@@ -91,7 +91,7 @@ Abaixo, apenas para assinantes:
 
 ## Saídas a gravar
 
-**Arquivo 1 — `paywall-v2-meta.json`** (JSON, para injeção automática), neste
+**Arquivo 1 — `paywall-meta.json`** (JSON, para injeção automática), neste
 schema exato:
 
 ```json
@@ -110,13 +110,13 @@ schema exato:
   assinantes:" (o cabeçalho é adicionado na injeção). Cada item no formato
   `**Categoria.** Frase.`, na ordem do documento.
 
-**Arquivo 2 — `paywall-v2-teaser.md`** (markdown, para inspeção): o bloco teaser
+**Arquivo 2 — `paywall-teaser.md`** (markdown, para inspeção): o bloco teaser
 completo, com o cabeçalho `**Abaixo, apenas para assinantes:**` no topo, seguido
 de uma linha por teaser.
 
 ## Processo
 
-1. Leia o `v2.md` (e o exemplo, se houver).
+1. Leia o `edition.md` (e o exemplo, se houver).
 2. Liste, na ordem, cada bullet de média (`**Entidade.**`) e cada item de "Leia
    também" — essas são as histórias pagas. As 3 grandes NÃO entram.
 3. Redija um teaser por história paga.

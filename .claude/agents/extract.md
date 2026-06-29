@@ -21,7 +21,7 @@ estruturada que a ingestão do Daily Journal consome. Esta é a rota
 **facts-driven**: o agrupamento já está feito (cada seção `##` do `facts.md` é
 uma entidade de notícia), as fontes de cada história já vêm listadas no bloco
 `**Fontes:**`, e os fatos atômicos já estão em PT-BR, traduzidos e glosados. Você
-**não lê prosa** (`pt.md`/`v2.md`) — trabalha do `facts.md` + `research.json`.
+**não lê prosa** (`pt.md`/`edition.md`) — trabalha do `facts.md` + `research.json`.
 
 **Não busque nenhuma URL.** Toda a metadata vem do `research.json`.
 
@@ -72,7 +72,7 @@ que a `ingest.ts` consome hoje):
 ```json
 {
   "date": "YYYY-MM-DD",
-  "newsletter_file": "YYYY-MM-DD/v2.md",
+  "newsletter_file": "YYYY-MM-DD/edition.md",
   "source_count": 21,
   "url_count": 65,
   "news_entities": [ { ...entidade... } ]
@@ -113,7 +113,7 @@ que a `ingest.ts` consome hoje):
   array `sources` da saída. `url_count` = nº de URLs de Fontes (deduplicadas).
   **Verifique** ao final: conte as URLs de Fontes vs as URLs na saída — devem bater.
 - **Cobertura total de histórias.** TODA seção `##` vira uma entidade. Nenhuma
-  seleção editorial aqui (a poda/tiering já aconteceu antes, no v2-generate; a
+  seleção editorial aqui (a poda/tiering já aconteceu antes, no generator; a
   ingestão cria uma página DJ por entidade). Uma seção = uma entidade.
 - **Agrupamento fiel.** Mesma seção → mesma entidade; seções distintas → entidades
   distintas, ainda que da mesma empresa. Respeite os `##` do `facts.md`.

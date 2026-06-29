@@ -2,10 +2,10 @@
 name: repetition-checker
 description: >-
   Repetition specialist for the AI/Tech newsletter. Compares the day's edition
-  (v2.md) against the previous editions and flags repeated stories, phrasing, and
+  (edition.md) against the previous editions and flags repeated stories, phrasing, and
   framing as structured findings (repetition.json). Advisory-only: it never
   rewrites or cuts anything — the findings feed the human review (there is no
-  auto-apply step in the research→facts→v2 path). Migrates repetition-check.sh.
+  auto-apply step in the research→facts→edition path). Migrates repetition-check.sh.
   The run's date, the current-edition path, the list of previous-edition paths,
   and the output path all come in the task prompt.
 tools: Read, Write
@@ -25,10 +25,10 @@ revisor, depois.
 Tudo vem na sua task:
 
 - **Data** da edição (`YYYY-MM-DD`).
-- **Edição atual** — caminho do `v2.md` do dia (o que vai ao ar: formato em três
+- **Edição atual** — caminho do `edition.md` do dia (o que vai ao ar: formato em três
   níveis, itemizado).
 - **Edições anteriores** — uma lista de `DATA: caminho` (em geral as 3 mais
-  recentes que existem). Podem estar no formato novo (`v2.md`) ou, para datas
+  recentes que existem). Podem estar no formato novo (`edition.md`) ou, para datas
   antes da virada, no formato antigo (`pt.md`). Compare contra o que vier.
 - **Caminho de saída** do `repetition.json`.
 

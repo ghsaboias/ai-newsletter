@@ -6,6 +6,15 @@ around the **v2 format** that started shipping **2026-06-24**.
 
 Worked across multiple sessions. Update the Progress log as we go.
 
+> **Rename (2026-06-28):** the "v2" labels were dropped now that the three-tier
+> format is the only pipeline. The historical text below still says "v2" — that
+> was its real name during the migration. Current canonical names: `v2-generator`
+> agent → **`generator`**; `newsletter-draft-v2` skill → **`newsletter-draft`**;
+> artifacts `v2.md` → **`edition.md`**, `v2-final.md` → **`edition-final.md`**,
+> `paywall-v2-meta.json` → **`paywall-meta.json`**, `paywall-v2-teaser.md` →
+> **`paywall-teaser.md`**. Prior editions already on disk keep their old `v2.md`
+> filenames; the repetition lookback falls back to them.
+
 ---
 
 ## North star

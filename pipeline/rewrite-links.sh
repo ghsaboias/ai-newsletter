@@ -5,7 +5,7 @@
 # Usage: ./rewrite-links.sh 2026-02-24
 #        ./rewrite-links.sh test
 #        ./rewrite-links.sh 2026-06-22 --in pt.md --out final.md   # explicit
-#        ./rewrite-links.sh 2026-06-22 --in v2.md --out v2-final.md --quiet
+#        ./rewrite-links.sh 2026-06-22 --in edition.md --out edition-final.md --quiet
 #
 # Reads:  <input>     (PT-BR newsletter, default pt.md)
 #         links.json  (source URL → DJ URL mapping, from ingest.ts)
@@ -15,7 +15,7 @@
 #   --in <file>   input markdown   (default: pt.md)
 #   --out <file>  output markdown  (default: final.md)
 #   --quiet       suppress per-link "not found in markdown" warnings (for the
-#                 v2 pass, whose links are a subset of links.json)
+#                 edition pass, whose links are a subset of links.json)
 #
 
 set -euo pipefail

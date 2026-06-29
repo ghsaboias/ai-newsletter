@@ -2,7 +2,7 @@
 #
 # Post a markdown file to Substack as a draft (create-or-update in place).
 #
-# Used by draft.sh to publish review/comparison drafts (original + v2 format)
+# Used by the newsletter-draft skill to publish the edition as a Substack draft
 # with their ORIGINAL source links. The draft id is persisted per-suffix so
 # re-runs update the same draft (stable URL) instead of spawning duplicates —
 # and finalize.sh later updates the same "orig" draft with the DJ links.

@@ -7,7 +7,7 @@ description: >-
   jargon on first use, one section per story, each section closed by a per-story
   Fontes block (source provenance for downstream link re-attachment), covering
   EVERY story with no editorial selection (tiering happens downstream at
-  v2-generate). This is the straight research→facts path that skips the
+  generator). This is the straight research→facts path that skips the
   full-prose generator/pt.md. The run's date and the input/output file paths
   come in the task prompt.
 tools: Read, Write
@@ -68,7 +68,7 @@ Escreva o `facts.md` no caminho indicado, com esta estrutura exata:
 
 1. **Cobertura total — sem seleção editorial.** TODA história de `stories[]` vira
    uma seção. Não corte nenhuma; a escolha do que vira Grande/Média/Leia também
-   acontece depois, no v2-generate. Esta base é o conjunto completo.
+   acontece depois, no generator. Esta base é o conjunto completo.
 2. **Preserve tudo:** todo número, valor, percentual, data, ticker, nome próprio,
    cargo e citação literal presente nos `key_facts`. Não arredonde nem resuma a
    ponto de perder dados.
@@ -93,7 +93,7 @@ Escreva o `facts.md` no caminho indicado, com esta estrutura exata:
    - **Copie as URLs exatamente** como estão no `research.json` — nunca invente,
      encurte, normalize nem altere uma URL.
    - Liste as fontes da própria história (todas as de `sources[]`); na dúvida
-     sobre relevância, mantenha. É a procedência que o `v2-generate` usa depois
+     sobre relevância, mantenha. É a procedência que o `generator` usa depois
      para reaplicar os links nos itens.
    - O bloco vem **depois** dos bullets de fato, sem linha em branco entre o
      último fato e a linha `**Fontes:**`.

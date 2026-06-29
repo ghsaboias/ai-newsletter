@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Source-link tokens for the newsletter draft chain (research → facts → v2).
+"""Source-link tokens for the newsletter draft chain (research → facts → edition).
 
 Takes URL transcription away from the content agents. URLs live in facts.md's
-`**Fontes:**` blocks; the v2-generator agent cites a short token (`S12`) instead
+`**Fontes:**` blocks; the generator agent cites a short token (`S12`) instead
 of retyping the URL, and a deterministic step resolves tokens → real URLs. The
 agent copies a 3-char tag, never an 80-char opaque string, so it cannot corrupt a
 URL (the failure that shipped a broken Qualcomm link — sibling-slug contamination).
@@ -14,9 +14,9 @@ Two subcommands:
       Deterministic + idempotent: strips any existing tags and re-numbers 1..N
       top-to-bottom, so re-running is a no-op on already-tokenized input.
 
-  expand <v2.md> <facts.md>
+  expand <edition.md> <facts.md>
       Build the token→URL map from facts.md, then replace every `](S<n>)` link
-      target in v2.md with the real URL, in place. HARD-FAILS (exit 1) on:
+      target in edition.md with the real URL, in place. HARD-FAILS (exit 1) on:
         - an unknown token (`](S99)` with no S99 in facts.md) — a typo/hallucination
         - a raw URL as a link target (`](https://…)`) — the agent regressed to
           pasting URLs instead of citing tokens
@@ -26,7 +26,7 @@ Two subcommands:
 
 Usage:
     link-tokens.py tokenize  /path/to/facts.md
-    link-tokens.py expand    /path/to/v2.md  /path/to/facts.md
+    link-tokens.py expand    /path/to/edition.md  /path/to/facts.md
 """
 import re
 import sys
@@ -92,20 +92,20 @@ def build_map(facts_path):
     return token_map
 
 
-def expand(v2_path, facts_path):
+def expand(edition_path, facts_path):
     token_map = build_map(facts_path)
     if not token_map:
         sys.exit(f'expand — ERROR: no source tokens found in {facts_path}; run tokenize first')
 
-    with open(v2_path, encoding='utf-8') as f:
+    with open(edition_path, encoding='utf-8') as f:
         text = f.read()
 
-    # Idempotency: a v2.md with no `S<n>` token targets is already expanded (or
+    # Idempotency: a edition.md with no `S<n>` token targets is already expanded (or
     # link-free). Re-running must be a clean no-op — NOT a raw-URL failure, since
     # post-expansion every target is a real URL.
     targets = [t.strip() for t in LINK_TARGET_RE.findall(text)]
     if not any(re.fullmatch(r'S\d+', t) for t in targets):
-        print(f'expand — 0 tokens to resolve in {v2_path} (already expanded or link-free); no change')
+        print(f'expand — 0 tokens to resolve in {edition_path} (already expanded or link-free); no change')
         return 0
 
     unknown, raw, n = [], [], 0
@@ -134,11 +134,11 @@ def expand(v2_path, facts_path):
     if raw:
         problems.append(f'{len(raw)} raw-URL target(s) (agent pasted a URL instead of a token): ' + ', '.join(sorted(set(raw))[:5]))
     if problems:
-        sys.exit('expand — FAIL:\n  ' + '\n  '.join(problems) + '\n  (v2.md NOT modified)')
+        sys.exit('expand — FAIL:\n  ' + '\n  '.join(problems) + '\n  (edition.md NOT modified)')
 
-    with open(v2_path, 'w', encoding='utf-8') as f:
+    with open(edition_path, 'w', encoding='utf-8') as f:
         f.write(new_text)
-    print(f'expand — {n} tokens resolved to URLs in {v2_path}; 0 unknown, 0 raw-URL regressions')
+    print(f'expand — {n} tokens resolved to URLs in {edition_path}; 0 unknown, 0 raw-URL regressions')
     return n
 
 
@@ -150,7 +150,7 @@ def main():
         tokenize(sys.argv[2])
     elif cmd == 'expand':
         if len(sys.argv) < 4:
-            sys.exit('expand needs: <v2.md> <facts.md>')
+            sys.exit('expand needs: <edition.md> <facts.md>')
         expand(sys.argv[2], sys.argv[3])
     else:
         sys.exit(f'unknown command: {cmd}\n{__doc__}')

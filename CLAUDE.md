@@ -11,7 +11,7 @@ newsletters/
     prompts/RESEARCH.md        # research brief (injected into the researcher agents)
   ma/                          # M&A newsletter (dormant)
 .claude/agents/                # the in-session pipeline:
-                               #   researcher-{ai,hw,world}, facts, v2-generator,
+                               #   researcher-{ai,hw,world}, facts, generator,
                                #   extract, paywall-teaser, repetition-checker, fact-verifier
 pipeline/                      # topic-agnostic helpers the agents call
   _lib.sh                      # loads topic config, shared utilities
@@ -20,16 +20,16 @@ pipeline/                      # topic-agnostic helpers the agents call
   output/<topic>/YYYY-MM-DD/   # namespaced by topic
 ```
 
-Skills (global, `~/.claude/skills/`): `newsletter-research`, `newsletter-draft-v2`, `newsletter-no-dashes`.
+Skills (global, `~/.claude/skills/`): `newsletter-research`, `newsletter-draft`, `newsletter-no-dashes`.
 All scripts default to topic `ai`. Override with `PIPELINE_TOPIC=ma`.
 
 ## Pipeline
 
-One in-session agent chain, orchestrated by the `newsletter-draft-v2` skill (`/newsletter-draft-v2 [YYYY-MM-DD] [mini]`). No intermediate prose (`pt.md`); the product is a three-tier edition (**Grandes** / **Médias** / **Leia também**).
+One in-session agent chain, orchestrated by the `newsletter-draft` skill (`/newsletter-draft [YYYY-MM-DD] [mini]`). No intermediate prose (`pt.md`); the product is a three-tier edition (**Grandes** / **Médias** / **Leia também**).
 
 1. **research** — `newsletter-research` skill spawns 3 de-conflicted cluster researchers (ai / hw / world) + dedup → `research.json`
 2. **facts** — `facts` agent atomizes research into a sourced fact base → `facts.md`
-3. **v2** — `v2-generator` agent writes the tiered edition → `v2.md`
+3. **edition** — `generator` agent writes the tiered edition → `edition.md`
 4. **link + paywall + push** — `extract` ∥ `paywall-teaser` → `ingest --execute` → `rewrite-links` → `substack-preview.sh` pushes **one** DJ-linked, paywalled Substack draft
 5. **advisory checks** (non-gating, parallel) — `repetition-checker` ∥ `fact-verifier` → `repetition.json` + `fact-check.json`
 
