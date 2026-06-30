@@ -751,3 +751,13 @@ https://www.youtube.com/watch?v=kPSLLeccrik
 **Mark Zuckerberg on AI’s Job Impact, Government Regulation, & How Meta Glasses Changed His Routine**
 Mark Zuckerberg, CEO da Meta, discute com Noah Callahan-Bever, no programa Idea Generation, a evolução da inteligência artificial, a visão estratégica por trás dos óculos inteligentes da Meta e sua filosofia de liderança após duas décadas de inovação
 https://www.youtube.com/watch?v=u-vH31VD7GE
+
+## 2026-06-30
+
+**OpenAI Codex lead on the new shape of product work | Andrew Ambrosino**
+Andrew Ambrosino, líder de desenvolvimento do aplicativo desktop Codex na OpenAI, discute como a inteligência artificial está transformando fundamentalmente o processo de desenvolvimento de produtos. Com um histórico que abrange engenharia, design e gestão de produtos, Ambrosino detalha como a OpenAI utiliza o Codex internamente, com quase 100% de adesão dos funcionários, para automatizar fluxos de trabalho e acelerar a inovação
+https://www.youtube.com/watch?v=P3KDebPTUrw
+
+**Building The World’s First AI Software Engineer | Cognition’s Scott Wu**
+Scott Wu é cofundador e CEO da Cognition, empresa responsável pelo Devin, apresentado como o primeiro engenheiro de software de IA do mundo. O vídeo, conduzido por David Senra, explora a trajetória de Wu, marcada por uma competitividade extrema desde a infância, e sua visão sobre o futuro da inteligência artificial como uma interface fundamental entre humanos e computadores
+https://www.youtube.com/watch?v=PYobZzjW_ic
