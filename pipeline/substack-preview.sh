@@ -23,10 +23,16 @@ source "$(cd "$(dirname "$0")" && pwd)/_lib.sh"
 POS=()
 PAYWALL_META=""
 PAYWALL_AFTER_GRANDES=false
+# Partner banner (image injected between the teaser and the paywall cut). Defaults
+# to the topic's spec from config.sh ($TOPIC_PAYWALL_BANNER), so every paywalled
+# edition gets it deterministically. --banner <file> overrides; --no-banner skips.
+BANNER="${TOPIC_PAYWALL_BANNER:-}"
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --paywall-meta)          PAYWALL_META="$2"; shift 2 ;;
     --paywall-after-grandes) PAYWALL_AFTER_GRANDES=true; shift ;;
+    --banner)                BANNER="$2"; shift 2 ;;
+    --no-banner)             BANNER=""; shift ;;
     *)                       POS+=("$1"); shift ;;
   esac
 done
@@ -65,9 +71,18 @@ pandoc "$MD_FILE" --from markdown-tex_math_dollars --to html -o "$HTML_FILE"
 
 # --- Post (create or update in place) ---
 ID_FILE="$DAY_DIR/.substack-${SUFFIX}-id"
-# paywall meta is a positional arg to substack_post.py (4th), so it comes first
+# substack_post.py positionals: html sid host [paywall_meta] [banner]. The banner
+# (5th) is only meaningful with the paywall meta (4th) present — it's injected
+# between the teaser and the paywall cut — so append it only inside that guard to
+# keep the positions aligned.
 ARGS=("$HTML_FILE" "$SUBSTACK_SID" "$SUBSTACK_PUB_HOST")
-[[ -n "$PAYWALL_META" ]] && [[ -f "$PAYWALL_META" ]] && ARGS+=("$PAYWALL_META")
+if [[ -n "$PAYWALL_META" ]] && [[ -f "$PAYWALL_META" ]]; then
+  ARGS+=("$PAYWALL_META")
+  if [[ -n "$BANNER" ]] && [[ -f "$BANNER" ]]; then
+    ARGS+=("$BANNER")
+    echo "  Banner:   $BANNER"
+  fi
+fi
 ARGS+=(--id-out "$ID_FILE")
 [[ -n "$CALLOUT_HEADING" ]] && ARGS+=(--callout-heading "$CALLOUT_HEADING")
 [[ "$PAYWALL_AFTER_GRANDES" == true ]] && ARGS+=(--paywall-after-grandes)
