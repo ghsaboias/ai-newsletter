@@ -5,10 +5,16 @@
 # Wrapper around daily-journal-platform/scripts/ingest.ts
 #
 # Usage: ./ingest.sh 2026-02-24
-#        ./ingest.sh 2026-02-24 --execute
+#        ./ingest.sh 2026-02-24 --propose   # write cluster-candidates.json (no DB writes)
+#        ./ingest.sh 2026-02-24 --execute   # apply cluster-decisions.json (if present) + write
 #        ./ingest.sh 2026-02-24 --limit 3 --execute
 #        ./ingest.sh 2026-02-24 --test   # uses sources.test.json
 #        ./ingest.sh test                # also uses sources.test.json
+#
+# Clustering: --propose finds, per entity, the top existing-news candidates it might
+# belong to (so the newsletter can reuse that news's image + avoid crowding the homepage)
+# and writes cluster-candidates.json. A human/Claude picks the real matches into
+# cluster-decisions.json. --execute then attaches to the chosen news, or creates as before.
 #
 
 set -euo pipefail
@@ -17,6 +23,7 @@ source "$(cd "$(dirname "$0")" && pwd)/_lib.sh"
 
 DATE=""
 EXECUTE=false
+PROPOSE=false
 TEST=false
 LIMIT=""
 prev_arg=""
@@ -24,6 +31,7 @@ prev_arg=""
 for arg in "$@"; do
   case "$arg" in
     --execute) EXECUTE=true ;;
+    --propose) PROPOSE=true ;;
     --test)    TEST=true ;;
     --limit)   ;; # value handled below
     20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]) DATE="$arg" ;;
@@ -57,6 +65,7 @@ fi
 
 INGEST_ARGS=("$SOURCES_FILE")
 [[ "$EXECUTE" == true ]] && INGEST_ARGS+=("--execute")
+[[ "$PROPOSE" == true ]] && INGEST_ARGS+=("--propose")
 [[ -n "$LIMIT" ]] && INGEST_ARGS+=("--limit" "$LIMIT")
 
 (cd "$DJ_DIR" && npx tsx scripts/ingest.ts "${INGEST_ARGS[@]}")

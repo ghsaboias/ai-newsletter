@@ -87,7 +87,7 @@ que a `ingest.ts` consome hoje):
 
 | Campo | Tipo | Descrição |
 |---|---|---|
-| `headline` | string | Título factual em PT-BR: o quê, quem, quando. **Máx. 100 caracteres.** Sintetize dos bullets de fato da seção. |
+| `headline` | string | Título factual em PT-BR: o quê, quem, quando. **Ideal ≤65, máx. 80 caracteres.** Sintetize dos bullets de fato da seção. Siga as **Regras de manchete** abaixo (tom/caso/formato). |
 | `summary` | string | Uma frase com o fato principal + consequência/número que o headline omite. **Máx. 150 caracteres.** |
 | `bullets` | string[] | 3–8 fatos concretos (número, nome ou data cada). Vêm dos bullets atômicos da seção, condensados. |
 | `body` | string | 1–3 parágrafos sintetizando a notícia a partir dos fatos. Não repita headline/summary — expanda com contexto. Separe parágrafos com `\n\n`. |
@@ -120,12 +120,40 @@ que a `ingest.ts` consome hoje):
 - **URLs nunca alteradas.** Copie verbatim do bloco Fontes (ignore o `[S<n>]`).
 - **Sem invenção.** Todo número/nome/data/valor vem do `facts.md` (fatos) ou do
   `research.json` (metadata). Glosas já estão nos fatos — não adicione novas.
-- **`headline` lê como manchete** — factual, específico, < 100 caracteres.
+- **`headline` lê como manchete** — factual, específico, **neutro**, ≤80 caracteres. Ver **Regras de manchete**.
 - **`summary` agrega** além do headline (consequência ou número que ele omite).
 - **`title`/`summary` por fonte específicos da fonte** — não repita o título da
   entidade; cada fonte, seu ângulo, começando pelo outlet.
 - **Tudo em PT-BR** (exceto `entities`, que são nomes próprios verbatim do research).
 - **`category` só do vocabulário DJ** (abaixo).
+
+## Regras de manchete (`headline`)
+
+A manchete da entidade vira o título da página do Daily Journal **verbatim** (a
+ingestão copia `headline` direto, sem reescrever), então ela precisa passar no
+mesmo padrão editorial do editor de notícias do DJ:
+
+- **Tom neutro e jornalístico, sem editorialização.** Descreva o fato, não o
+  dramatize. Evite verbos sensacionalistas/carregados ("desmorona", "incendeia",
+  "detona", "arrasa", "explode", "dispara", "humilha"); prefira o verbo factual
+  ("ataca", "atinge", "recua", "cai", "sobe", "anuncia", "fecha acordo").
+- **Sentence case** — só a primeira palavra e nomes próprios em maiúscula. Nunca
+  Title Case ("Preços Do Petróleo Sobem").
+- **NÃO use o formato "Assunto: descrição"** (manchete com dois-pontos partindo
+  tema + glosa, ex.: "Cessar-fogo EUA-Irã desmorona: Irã ataca bases"). Escreva
+  **uma oração única e direta**.
+- **Comprimento:** ideal ≤65 caracteres, **máximo 80**. Corte o secundário — o
+  número/ângulo que sobra vai pro `summary`, não na manchete.
+- Foque nos fatos principais: o quê, quem, quando, por que importa.
+
+Bons exemplos (tom-alvo):
+- "Preços do petróleo sobem 5% com ameaças de Trump ao Irã"
+- "Samsung e SK Hynix investem US$ 519 bi em complexo de memória na Coreia"
+- "Ataques ucranianos atingem refinarias e agravam déficit de combustível na Rússia"
+
+Maus exemplos (não faça):
+- "Cessar-fogo EUA-Irã desmorona: Irã ataca bases dos EUA e reivindica Ormuz" — colon-subtitle + "desmorona" + longo demais.
+- "Ucrânia incendeia refinarias russas enquanto Putin admite 'certo déficit'" — "incendeia" sensacionalista + longo demais.
 
 ## Vocabulário de categorias (use SÓ estes valores em inglês)
 

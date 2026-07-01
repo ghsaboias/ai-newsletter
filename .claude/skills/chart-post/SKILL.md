@@ -76,9 +76,10 @@ Spec de marca completa no **CLAUDE.md "Posts"** (card 720px, H1 Helvetica 24px/7
 
 - **Header = só o título, largura cheia (`max-width: none`).** A logo DJ **não** vai no header — ela rouba largura e quebra o título em duas linhas. A logo entra DENTRO do gráfico como marca d'água (Step 5).
 
-- **Título factual/descritivo, não editorial.** "Startups de defesa já captaram mais em 2026 do que em todo 2025" ✅; "como o VC descobriu a defesa" ❌ (editorial, foi rejeitado).
+- **Título factual/descritivo, não editorial.** "Startups de defesa já captaram mais em 2026 do que em todo 2025" ✅; "como o VC descobriu a defesa" ❌ (editorial, foi rejeitado). Pode ser o nome da métrica ("Remessas globais de smartphones do grupo Xiaomi") — o ângulo da notícia mora no subtítulo.
 - **Não duplique no chart o que o título já diz.** Se o título carrega o "recorde", corte a linha de anotação "recorde" redundante.
-- **Todas as ressalvas vão no CAPTION**, não no título nem na prosa: o que é medido (fluxo vs estoque), preço/método, o que é parcial/estimado, a ponte pro outro recorte. Ressalva de moeda mora no label da legenda.
+- **Caption/footnote = SÓ fonte.** O footnote fica APENAS com dados sobre fontes: qual relatório/órgão dá cada número e a ponte de fonte (ex.: "2025: 170 mi conforme a Nikkei; o IDC mediu 165,3 mi"). Nada de caracterização da história ali. Ressalva de moeda mora no label da legenda. (Regra do Gui, 2026-06-30.)
+- **Caracterização interessante sobre os dados → SUBTÍTULO (kicker), não o caption.** O que é medido (fluxo vs estoque, escopo/marcas), o que é meta vs realizado, o "cortou pela segunda vez no ano", o contexto setorial (Oppo/Vivo também cortaram) — tudo isso é a história e vai no subtítulo, com os números-chave em `<b>` (verde). O caption não conta história.
 - **Dual-axis:** alinhe as frações dos ticks pra ambos os eixos caírem nas MESMAS gridlines (ex.: esq max 75 step 25 = 0/25/50/75; dir max 18 step 6 = 0/6/12/18). `grid` só num eixo.
 
 ## Step 5: Renderizar e inspecionar (julgamento dos labels)
@@ -130,7 +131,8 @@ As demais histórias do dia estão na [edição completa](<url da edição no Su
 - **Sem frase-moldura editorializante** (pigarro analítico): não abra parágrafo com "A mudança reflete...", "O movimento sinaliza...". Abra com o **fato**, mostre não conte. Ver memória `feedback_no_framing_sentences`.
 - **Deixe o escopo do número explícito** (mundo vs EUA vs uma empresa). Se a série é global, diga "no mundo"; se um recorte é só-EUA, diga.
 - **Glose o jargão uma vez** ("o venture capital, o capital de risco que financia startups").
-- **Curto.** Posts são bem curtos (3 parágrafos é normal). Mande o texto puro (sem a barra de metadados) quando o Gui for colar.
+- **Curto.** Posts são bem curtos (3 parágrafos é normal).
+- **Ao mandar o texto no chat, mande SÓ o texto, sem NENHUMA formatação** — sem blockquote (`>`), sem barra de metadados, sem negrito, sem aspas de cerca. Texto cru, pronto pra copiar e colar direto. (Gui, 2026-06-30.)
 
 **Antes de dar OK pra postar, releia fato a fato + gramática** e confirme que cada número casa com o `posts/data/<slug>.json`.
 
@@ -142,7 +144,7 @@ Posts são commitados (charts + `posts/data/*.json` = dados auditáveis). `origi
 
 - **Garimpo automático, escolha humana.** Candidato de gráfico, fonte, fork de método, labels e prosa passam pelo Gui. Nunca publique sozinho.
 - **Citable > derived.** Plote números reportados, não interpolados/computados. Largue a série problemática em vez de fudge.
-- **Todas as ressalvas no caption**, nunca na prosa nem no título.
+- **Caption/footnote = só fonte; caracterização da história → subtítulo.** O footnote fica só com de-onde-vem-cada-número (e a ponte de fonte). O que é medido, meta vs realizado, contexto setorial = subtítulo. Nunca na prosa nem no título. (Gui, 2026-06-30.)
 - **Render via browser-tools (`render.sh`), não headless.** Brave headless trava no setup de perfil.
 - **Não duplique a logo DJ** — referencie de `daily-journal-platform`.
 - **Título factual, voz neutra, sem frase-moldura.** Os três erros que o Gui corrigiu — não os repita.

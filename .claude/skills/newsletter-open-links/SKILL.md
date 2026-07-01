@@ -1,13 +1,13 @@
 ---
 name: newsletter-open-links
 description: >-
-  Abre no navegador todos os links de um pt.md da newsletter. Extrai as URLs dos links markdown `[texto](url)`, dedupa preservando a ordem do documento, imprime a lista numerada e abre cada uma no Brave (macOS `open -a "Brave Browser"`). Por padrão atua no pt.md de hoje; aceita arg de path explícito, data (YYYY-MM-DD), ou a flag `lista` pra só listar sem abrir. Aciona quando o usuário diz "abrir os links", "abre todos os links do pt.md", "open all links", "/newsletter-open-links".
+  Abre no navegador todos os links de um edition.md da newsletter. Extrai as URLs dos links markdown `[texto](url)`, dedupa preservando a ordem do documento, imprime a lista numerada e abre cada uma no Brave (macOS `open -a "Brave Browser"`). Por padrão atua no edition.md de hoje (as fontes originais, antes do rewrite-links pro DJ); aceita arg de path explícito, data (YYYY-MM-DD), ou a flag `lista` pra só listar sem abrir. Aciona quando o usuário diz "abrir os links", "abre todos os links da edição", "open all links", "/newsletter-open-links".
 allowed-tools: Read, Bash
 ---
 
 ## Quando essa skill roda
 
-Durante a revisão humana do `pt.md` — pra conferir as fontes de cada história abrindo todas de uma vez no navegador. Pode rodar a qualquer momento; não muda nenhum arquivo.
+Durante a revisão humana da edição — pra conferir as fontes de cada história abrindo todas de uma vez no navegador. Atua no `edition.md` (links das fontes originais), **não** no `edition-final.md` (que já tem os links trocados pelos do DJ). Pode rodar a qualquer momento; não muda nenhum arquivo.
 
 Só lê o arquivo e dispara o navegador. **Nenhuma escrita, nenhum efeito no repo.**
 
@@ -15,9 +15,9 @@ Só lê o arquivo e dispara o navegador. **Nenhuma escrita, nenhum efeito no rep
 
 Invocada como `/newsletter-open-links [args]`. Parse do user message:
 
-- (sem args) — atua no `pt.md` de hoje
+- (sem args) — atua no `edition.md` de hoje
 - Path absoluto `/Users/.../alguma-pasta/arquivo.md` — atua nesse arquivo
-- `YYYY-MM-DD` — atua no `pt.md` daquela data
+- `YYYY-MM-DD` — atua no `edition.md` daquela data
 - `lista` (sozinho ou junto com data/path) — **só lista** as URLs, não abre
 
 ## Step 0: Estabelecer a data (se necessário)
@@ -25,7 +25,7 @@ Invocada como `/newsletter-open-links [args]`. Parse do user message:
 Se não veio arg de path nem data, rode `date '+%Y-%m-%d'` pra montar o path default:
 
 ```
-TARGET = /Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>/pt.md
+TARGET = /Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>/edition.md
 ```
 
 Se veio path explícito, use ele direto. Se veio data, monte o path equivalente.
@@ -46,7 +46,7 @@ E pare.
 
 ## Step 2: Extrair, dedupar e listar
 
-URLs só aparecem em links markdown inline `[texto](url)` no pt.md (sem reference-style, sem bare URLs). Extraia o miolo do `](...)`, dedupe preservando a ordem do documento:
+URLs só aparecem em links markdown inline `[texto](url)` no edition.md (sem reference-style, sem bare URLs). Extraia o miolo do `](...)`, dedupe preservando a ordem do documento:
 
 ```bash
 grep -oE '\]\(https?://[^)]+\)' "$TARGET" \
@@ -83,7 +83,7 @@ Tight, sem narração de passos intermediários:
 
 ## Regras de comportamento
 
-- **Read-only.** Essa skill nunca escreve nem edita nada. Só lê o pt.md e dispara o Brave.
+- **Read-only.** Essa skill nunca escreve nem edita nada. Só lê o edition.md e dispara o Brave.
 - **Brave é o navegador alvo.** Sempre `open -a "Brave Browser"`, independente do navegador padrão do sistema.
 - **Sempre liste antes de abrir.** O usuário vê a lista numerada antes de 20+ abas aparecerem.
 - **Dedupe preservando ordem.** URLs repetidas abrem uma vez só, na ordem em que aparecem no documento.
