@@ -20,7 +20,7 @@ pipeline/                      # topic-agnostic helpers the agents call
   output/<topic>/YYYY-MM-DD/   # namespaced by topic
 ```
 
-Skills (global, `~/.claude/skills/`): `newsletter-research`, `newsletter-draft`, `newsletter-no-dashes`.
+Skills in-repo (`.claude/skills/`): `newsletter-draft`, `chart-post`, `newsletter-images`, `newsletter-open-links`. Still global (`~/.claude/skills/`): `newsletter-research`, `newsletter-no-dashes` — note `newsletter-draft` invokes the global `newsletter-research` at its research step.
 All scripts default to topic `ai`. Override with `PIPELINE_TOPIC=ma`.
 
 ## Pipeline
