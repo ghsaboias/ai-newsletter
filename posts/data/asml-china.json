@@ -1,0 +1,48 @@
+{
+  "slug": "asml-china",
+  "edition": "2026-06-25",
+  "title": "China: de 49% a 19% das vendas de sistemas da ASML",
+  "metric": "China como % das vendas líquidas de SISTEMAS da ASML, por trimestre (ship-to location)",
+  "definition": "ASML divulga, em cada apresentação trimestral de resultados, a quebra das vendas líquidas de SISTEMAS por região de destino ('Region — ship to location'). Esta é a métrica que a edição cita (19% no 1T26 vs 36% no 4T25). NÃO é % do total de vendas líquidas (que inclui serviço/Installed Base Management e dá número diferente).",
+  "series": {
+    "quarters": ["1T22","2T22","3T22","4T22","1T23","2T23","3T23","4T23","1T24","2T24","3T24","4T24","1T25","2T25","3T25","4T25","1T26"],
+    "china_pct": [10, 34, 15, 9, 8, 24, 46, 39, 49, 49, 47, 27, 27, 27, 42, 36, 19]
+  },
+  "forward": {
+    "label_x": "FY26",
+    "china_pct": 20,
+    "value_label": "~20%",
+    "basis": "Expectativa da própria administração da ASML para o ano cheio de 2026, declarada na teleconferência do 1T26: a queda a 19% no 1T26 é 'consistent with management's expectation of ~20% for the full year, in line with backlog composition'. É guidance, não resultado.",
+    "marked_preliminary": true,
+    "plotted": false,
+    "plotted_note": "Decisão editorial: a barra de projeção de 2026 foi REMOVIDA do gráfico (que mostra só dado reportado, 1T22–1T26). A previsão de ~20% fica na prosa, não no chart."
+  },
+  "milestones": [
+    { "at_quarter": "4T22", "label": "out/2022: EUA restringem chips", "note": "Controles de exportação dos EUA de 7 de outubro de 2022 — dispararam a antecipação de compras de DUV pelas fabricantes chinesas." },
+    { "at_quarter": "3T23", "label": "set/2023: Holanda restringe DUV de imersão", "note": "Licenciamento holandês para DUV de imersão (anunciado jun/2023, em vigor 1º set/2023); EUA ampliaram os controles em out/2023. China bate o pico (46%) nesse trimestre, com remessas contra backlog acumulado." },
+    { "at_quarter": "1T26", "label": "2026: MATCH Act (proposto)", "note": "Projeto bipartidário no Congresso dos EUA que estenderia a restrição às máquinas de DUV de imersão da ASML, além dos controles de EUV já existentes — o gancho da edição." }
+  ],
+  "narrative": "China era um mercado menor e irregular para sistemas da ASML em 2022 (9-15%, com um pico isolado de 34% no 2T22). Em 2023 disparou — de 8% (1T23) a 46% (3T23) — com fabricantes chinesas estocando DUV antes dos controles de exportação. Manteve-se no topo em 2024 (49/49/47%) e oscilou em 2025 com remessas irregulares de backlog (27/27/42/36%). No 1T26 caiu a 19%, e a ASML projeta ~20% para o ano cheio de 2026.",
+  "notes": [
+    "Métrica única e consistente em toda a série: China como % das VENDAS DE SISTEMAS (ship-to location), exatamente o número que a ASML reporta a cada trimestre e que a edição cita. Não misturar com '% do total de vendas líquidas' nem com a fatia anual — confusão comum em resumos de imprensa (uma busca chegou a devolver o número CHEIO de 2024 como se fosse um trimestre).",
+    "3T22 (15%) e 4T22 (9%) lidos DIRETAMENTE do gráfico 'Region (ship to location)' da apresentação de resultados do 4T22 da ASML (6-K na SEC, slide 8).",
+    "1T24 (49%) e 2T24 (49%) lidos DIRETAMENTE do gráfico da apresentação do 2T24 (6-K na SEC, slide 7).",
+    "1T22 (10%) e 2T22 (34%) das apresentações trimestrais da ASML (2T22: China 34%, Coreia do Sul 29%, Taiwan 22%, EUA 6%, Japão 7%).",
+    "2023 (8/24/46/39%): apresentações trimestrais da ASML, transcritas em resumos de resultados (TrendForce, DigiTimes, MBI Deep Dives). 4T23 = 39%.",
+    "3T24 (47%) e 4T24 (27%): apresentação do 3T24 e slides do 1T25 ('China 27% no 1T25, igual ao 4T24').",
+    "2025 (27/27/42/36%): apresentações trimestrais; 3T25 = 42% (pico de remessas contra backlog), 4T25 = 36% — ambos confirmados pelos slides do 1T26.",
+    "1T26 (19%): apresentação de resultados do 1T26 da ASML (15/abr/2026) — mesma fonte da edição.",
+    "FY2022 China ≈ 15% das vendas; FY2024 China ≈ 36% do total de receita (referência anual; o gráfico usa a métrica TRIMESTRAL de sistemas).",
+    "Ressalva: a fatia da China em sistemas é dominada por DUV (litografia ultravioleta profunda); EUV nunca foi autorizado para a China. O MATCH Act miraria justamente o DUV de imersão. Tudo isso fica no caption/prosa, não no gráfico.",
+    "Continuidade com o post de 19/jun (máquinas de EUV): aquele gráfico deixou de fora o fio 'China 36%→19%' por ser DUV, não EUV — este post é esse fio."
+  ],
+  "sources": [
+    { "id": "asml-ir", "label": "ASML — resultados financeiros trimestrais (arquivo)", "url": "https://www.asml.com/investors/financial-results", "provides": "apresentações trimestrais com a quebra 'Region (ship to location)' das vendas de sistemas" },
+    { "id": "asml-q4-22", "label": "ASML — apresentação 4T22 (slide 8: 3T22 China 15%, 4T22 China 9%)", "url": "https://www.sec.gov/Archives/edgar/data/937966/000093796623000003/presentationinvestorrela.htm", "provides": "3T22, 4T22 lidos do gráfico" },
+    { "id": "asml-q2-24", "label": "ASML — apresentação 2T24 (slide 7: 1T24 e 2T24 China 49%)", "url": "https://www.sec.gov/Archives/edgar/data/937966/000093796624000019/presentationinvestorrela.htm", "provides": "1T24, 2T24 lidos do gráfico" },
+    { "id": "asml-q1-26", "label": "ASML — resultados 1T 2026 (China 19% das vendas de sistemas; guidance ~20% FY26)", "url": "https://www.asml.com/en/news/press-releases/2026/q1-2026-financial-results", "provides": "1T26, guidance FY26" },
+    { "id": "mbi-china", "label": "MBI Deep Dives — 'ASML's China question' (1T/2T25 = 27%, 3T25 = 42%)", "url": "https://www.mbi-deepdives.com/asmls-china-question/", "provides": "trimestres de 2025" },
+    { "id": "trendforce-q3-23", "label": "TrendForce — ASML 3T23: 46% de receita da China", "url": "https://www.trendforce.com/news/2023/10/19/news-asmls-q3-orders-plummet-40-46-revenue-from-china-u-s-bans-long-term-impact/", "provides": "3T23" },
+    { "id": "stockopine-q1-26", "label": "StockOpine — ASML 1T26 (China 19%, de 36% no 4T25; ~20% esperado no ano)", "url": "https://www.stockopine.com/p/asml-q1-2026-surging-euv-demand-drives", "provides": "1T26, 4T25, guidance" }
+  ]
+}

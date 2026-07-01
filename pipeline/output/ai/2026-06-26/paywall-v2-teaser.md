@@ -1,0 +1,17 @@
+**Abaixo, apenas para assinantes:**
+
+**Capital.** General Intuition capta rodada para treinar agentes de IA com horas de videogame.
+**Capital.** Warp levanta Série B para automatizar folha de pagamento com agentes de IA.
+**Capital.** Patronus AI capta rodada para testar agentes de IA em mundos digitais simulados.
+**IPO.** OpenAI inclina-se a adiar a abertura de capital para o próximo ano.
+**Capital.** Bumble explora venda com o Morgan Stanley em meio à queda de usuários.
+**Chips.** Departamento de Comércio dos EUA fecha acordo com a I-Pulse para semicondutores de potência.
+**Hardware.** Apple cancela os chips M6 Pro e Max e adia a alta gama para o M7.
+**Segurança.** Meta contrata cofundadores da Virtue AI para sua equipe de segurança em IA.
+**Trabalho.** Califórnia lança ferramenta que liga seguro-desemprego à exposição à IA.
+**Cripto.** Binance suspende serviços em países europeus após não obter licença sob o MiCA.
+**Geopolítica.** Porta-contêineres é atingido por projétil no Estreito de Ormuz e o petróleo sobe.
+**Comércio.** Conselho Europeu aprova em definitivo o acordo comercial entre UE e EUA.
+**Defesa.** OTAN prepara anúncio de novos contratos de defesa em cúpula em Ancara.
+**Capital.** Netris capta da a16z para acelerar a entrada em operação de neoclouds de IA.
+**Biotech.** Centanafadina da Otsuka atinge objetivo primário em estudo para TDAH com ansiedade.

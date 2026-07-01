@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Exportações de chips da Coreia do Sul</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    background: #FFFFFF;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 38px;
+  }
+  .card {
+    width: 720px;
+    background: #FFFFFF;
+    padding: 36px 40px;
+  }
+  .header {
+    padding-bottom: 24px;
+    border-bottom: 3px solid #044B2E;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.8px;
+    line-height: 28px;
+    max-width: none;
+  }
+  .kicker {
+    font-size: 13px;
+    line-height: 18px;
+    color: #444;
+    margin-top: 18px;
+  }
+  .kicker b { color: #044B2E; }
+  .chart-area { padding: 18px 0 4px; }
+  .chart-container {
+    position: relative;
+    width: 100%;
+    height: 430px;
+  }
+  .chart-logo {
+    position: absolute;
+    height: 15px;
+    left: 70px;
+    top: 50px;
+    opacity: 0.92;
+  }
+  .legend {
+    display: flex;
+    gap: 22px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid #E5E5E5;
+    font-size: 11px;
+    color: #444;
+  }
+  .legend .swatch {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+    vertical-align: middle;
+    border-radius: 2px;
+  }
+  .caption {
+    font-size: 11px;
+    line-height: 16px;
+    color: #999;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid #E5E5E5;
+  }
+  .caption i { font-style: italic; }
+  .footer {
+    padding-top: 14px;
+    border-top: 1px solid #E5E5E5;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
+  }
+  .footer span { font-size: 10px; color: #999; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="card" id="capture">
+  <div class="header">
+    <h1>Exportações de chips da Coreia do Sul batem recorde</h1>
+  </div>
+
+  <div class="kicker">
+    As exportações de semicondutores da Coreia do Sul atingiram <b>US$173,4 bilhões</b> em 2025 e <b>US$141,9 bilhões</b> em 2024, recordes consecutivos puxados pela demanda por chips de IA, depois da queda a <b>US$98,6 bilhões</b> em 2023.
+  </div>
+
+  <div class="chart-area">
+    <div class="chart-container">
+      <canvas id="korea"></canvas>
+      <img src="../../daily-journal-platform/public/images/logo/logo-green-horizontal.png" class="chart-logo" alt="Daily Journal">
+    </div>
+  </div>
+
+  <div class="caption">
+    Exportações anuais de semicondutores da Coreia do Sul (memória, sistema/lógica e ópticos/discretos), em US$ bilhões.
+  </div>
+
+  <div class="footer">
+    <span>Fonte: MOTIE (Ministério do Comércio, Indústria e Energia da Coreia do Sul) — balanços anuais</span>
+    <span>dailyjournal.news</span>
+  </div>
+</div>
+
+<script>
+  const data = {
+    labels: ['2018','2019','2020','2021','2022','2023','2024','2025'],
+    values: [126.8, 93.9, 99.2, 128.0, 129.2, 98.6, 141.9, 173.4]
+  };
+
+  new Chart(document.getElementById('korea').getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: data.labels,
+      datasets: [{
+        data: data.values,
+        backgroundColor: '#044B2E',
+        borderWidth: 0,
+        borderRadius: 3,
+        borderSkipped: false,
+        barPercentage: 0.64,
+        categoryPercentage: 0.9
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 200,
+          grid: { color: '#f0f0f0', drawTicks: false },
+          border: { display: false },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 13, weight: '700' },
+            color: '#999',
+            padding: 8,
+            stepSize: 40,
+            callback: function(v) { return '$' + v + ' bi'; }
+          }
+        },
+        x: {
+          grid: { display: false },
+          border: { color: '#ccc' },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 13, weight: '600' },
+            color: '#333',
+            padding: 6
+          }
+        }
+      },
+      layout: { padding: { top: 30, right: 4, left: 0, bottom: 0 } }
+    },
+    plugins: [
+      {
+        id: 'valueLabels',
+        afterDatasetsDraw(chart) {
+          const { ctx } = chart;
+          const bars = chart.getDatasetMeta(0).data;
+          data.values.forEach((v, i) => {
+            const bar = bars[i];
+            ctx.save();
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'bottom';
+            ctx.font = '700 13px Helvetica Neue';
+            ctx.fillStyle = '#044B2E';
+            ctx.fillText(v.toFixed(1).replace('.', ','), bar.x, bar.y - 6);
+            ctx.restore();
+          });
+        }
+      }
+    ]
+  });
+</script>
+</body>
+</html>

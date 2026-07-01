@@ -1,0 +1,18 @@
+**Abaixo, apenas para assinantes:**
+
+**Big techs.** A Amazon explora a OpenAI e seus próprios modelos Nova após renegociar o contrato com a Anthropic.
+**Negócios.** A dona do ranking Chatbot Arena passa a faturar com seu serviço pago de avaliações de IA.
+**Capital.** Chamath Palihapitiya levanta uma Série A para sua startup de codificação por IA e assume como CEO.
+**Capital.** A Higgsfield, startup de vídeo por IA, negocia uma rodada que multiplica seu valuation.
+**Capital.** A Straiker, de segurança para agentes de IA, levanta uma Série A liderada pela Marathon Management Partners.
+**Data centers.** A Digital Realty compra a participação da Blackstone em três data centers no norte da Virgínia.
+**Energia.** A Reed Semiconductor levanta uma rodada para soluções de energia prontas para data centers e IA.
+**IPO.** Cinco fabricantes chinesas de tecnologia avançada lançam ofertas para listar em Hong Kong.
+**Hardware.** Xiaomi, Oppo e Vivo voltam a cortar suas metas de remessa de smartphones, citando custos e escassez de componentes.
+**Espaço.** A Rocket Lab vai adquirir a operadora de satélites Iridium Communications.
+**Defesa.** A sueca Saab assina contrato para fornecer submarinos à Polônia, e os países lançam um pacto de defesa no Báltico.
+**Regulação.** A Suprema Corte mantém a demissão de uma comissária da FTC por Trump e derruba o precedente que blindava agências independentes.
+**Privacidade.** A Suprema Corte decide que mandados de geofence, que varrem todos os dispositivos de uma área, exigem proteção da Quarta Emenda.
+**Geopolítica.** EUA e Irã pausam as ações no Golfo Pérsico, mas divergem sobre uma reunião em Doha.
+**Biotech.** A Genmab relata resultados positivos de Fase 3 do epcoritamabe em um tipo de linfoma.
+**Biotech.** A Abivax divulga resultados positivos de Fase 3 do obefazimode em colite ulcerativa.

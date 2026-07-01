@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Xiaomi corta a meta de smartphones de 2026</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    background: #FFFFFF;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 38px;
+  }
+  .card {
+    width: 720px;
+    background: #FFFFFF;
+    padding: 36px 40px;
+  }
+  .header {
+    padding-bottom: 24px;
+    border-bottom: 3px solid #044B2E;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.8px;
+    line-height: 26px;
+    max-width: none;
+  }
+  .kicker {
+    font-size: 13px;
+    line-height: 18px;
+    color: #444;
+    margin-top: 18px;
+  }
+  .kicker b { color: #044B2E; }
+  .chart-area { padding: 18px 0 4px; }
+  .chart-container {
+    position: relative;
+    width: 100%;
+    height: 430px;
+  }
+  .chart-logo {
+    position: absolute;
+    height: 15px;
+    top: 52px;
+    right: 4px;
+    opacity: 0.92;
+  }
+  .legend {
+    display: flex;
+    gap: 22px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid #E5E5E5;
+    font-size: 11px;
+    color: #444;
+  }
+  .legend .swatch {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+    vertical-align: middle;
+    border-radius: 2px;
+  }
+  .caption {
+    font-size: 11px;
+    line-height: 16px;
+    color: #999;
+    margin-top: 14px;
+  }
+  .footer {
+    padding-top: 14px;
+    border-top: 1px solid #E5E5E5;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
+  }
+  .footer span { font-size: 10px; color: #999; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="card" id="capture">
+  <div class="header">
+    <h1>Remessas globais de smartphones do grupo Xiaomi</h1>
+  </div>
+
+  <div class="kicker">
+    A Xiaomi (incluindo Redmi e POCO) entregou <b>170 milhões</b> de aparelhos em 2025. Para 2026, cortou sua meta interna de remessas pela segunda vez no ano, de <b>135 milhões</b> para cerca de <b>95 milhões</b>. Oppo e Vivo também reduziram as suas, para menos de 90 milhões cada.
+  </div>
+
+  <div class="chart-area">
+    <div class="chart-container">
+      <canvas id="xiaomi"></canvas>
+      <img src="../../daily-journal-platform/public/images/logo/logo-green-horizontal.png" class="chart-logo" alt="Daily Journal">
+    </div>
+
+    <div class="legend">
+      <span><span class="swatch" style="background:#044B2E"></span>Remessas globais anuais (milhões de aparelhos)</span>
+      <span><span class="swatch" style="background:#7DB89B"></span>Meta de 2026 cortada (de 135 para ~95 mi)</span>
+    </div>
+  </div>
+
+  <div class="caption">
+    Remessas (2022–2024): IDC Worldwide Quarterly Mobile Phone Tracker. 2025: 170 milhões conforme a Nikkei Asia; o IDC mediu 165,3 milhões e a Xiaomi reportou 165,2 milhões (Omdia). Metas internas de 2026: Nikkei Asia.
+  </div>
+
+  <div class="footer">
+    <span>Fonte: IDC (2022–2024); Nikkei Asia (remessas de 2025 e metas de 2026)</span>
+    <span>dailyjournal.news</span>
+  </div>
+</div>
+
+<script>
+  const labels = ['2022', '2023', '2024', '2025', '2026'];
+  const base = [153.1, 145.9, 168.4, 170, 95];   // remessas + meta atual de 2026
+  const cut  = [null, null, null, null, 40];       // corte: 95 -> 135 (meta inicial)
+  const TARGET_IDX = 4;
+
+  new Chart(document.getElementById('xiaomi').getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          data: base,
+          backgroundColor: '#044B2E',
+          borderWidth: 0,
+          // 2026 base: topo reto pra encaixar no segmento claro (fundo arredondado, igual às outras);
+          // demais barras: arredondamento normal nos 4 cantos
+          borderRadius: (ctx) => ctx.dataIndex === TARGET_IDX
+            ? { topLeft: 0, topRight: 0, bottomLeft: 3, bottomRight: 3 }
+            : 3,
+          borderSkipped: false,
+          barPercentage: 0.62,
+          categoryPercentage: 0.9,
+          stack: 's'
+        },
+        {
+          data: cut,
+          backgroundColor: '#7DB89B',
+          borderWidth: 0,
+          // segmento claro (corte): só o topo arredondado; base reta pra juntar na barra escura
+          borderRadius: { topLeft: 3, topRight: 3, bottomLeft: 0, bottomRight: 0 },
+          borderSkipped: false,
+          barPercentage: 0.62,
+          categoryPercentage: 0.9,
+          stack: 's'
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 180,
+          stacked: true,
+          grid: { color: '#f0f0f0', drawTicks: false },
+          border: { display: false },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 13, weight: '700' },
+            color: '#999',
+            padding: 8,
+            stepSize: 45
+          }
+        },
+        x: {
+          stacked: true,
+          grid: { display: false },
+          border: { color: '#ccc' },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 13, weight: '600' },
+            color: '#333',
+            padding: 6
+          }
+        }
+      },
+      layout: { padding: { top: 34, right: 4, left: 0, bottom: 0 } }
+    },
+    plugins: [
+      {
+        id: 'valueLabels',
+        afterDatasetsDraw(chart) {
+          const { ctx } = chart;
+          const m0 = chart.getDatasetMeta(0).data;
+          const m1 = chart.getDatasetMeta(1).data;
+
+          // remessas 2022-2025
+          ctx.save();
+          ctx.textAlign = 'center';
+          for (let i = 0; i < TARGET_IDX; i++) {
+            const bar = m0[i];
+            ctx.textBaseline = 'bottom';
+            ctx.font = '700 13px Helvetica Neue';
+            ctx.fillStyle = '#044B2E';
+            ctx.fillText(Math.round(base[i]).toString(), bar.x, bar.y - 6);
+          }
+          ctx.restore();
+
+          // 2026: meta atual (base escura, rótulo branco perto do topo do segmento)
+          const baseBar = m0[TARGET_IDX];
+          ctx.save();
+          ctx.textAlign = 'center';
+          ctx.fillStyle = '#FFFFFF';
+          ctx.textBaseline = 'top';
+          ctx.font = '700 14px Helvetica Neue';
+          ctx.fillText('95', baseBar.x, baseBar.y + 7);
+          ctx.font = '600 9px Helvetica Neue';
+          ctx.fillText('meta atual', baseBar.x, baseBar.y + 24);
+          ctx.restore();
+
+          // 2026: meta inicial (topo do segmento de corte)
+          const capBar = m1[TARGET_IDX];
+          ctx.save();
+          ctx.textAlign = 'center';
+          ctx.fillStyle = '#5a9377';
+          ctx.textBaseline = 'bottom';
+          ctx.font = '700 13px Helvetica Neue';
+          ctx.fillText('135', capBar.x, capBar.y - 18);
+          ctx.font = '600 9px Helvetica Neue';
+          ctx.fillText('meta inicial', capBar.x, capBar.y - 6);
+          ctx.restore();
+        }
+      }
+    ]
+  });
+</script>
+</body>
+</html>
