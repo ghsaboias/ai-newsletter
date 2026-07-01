@@ -1,0 +1,25 @@
+{
+  "slug": "emprego-por-intensidade-ia",
+  "title_pt": "Efeito da adoção de IA no emprego, por intensidade de gasto",
+  "edition": "2026-07-01",
+  "metric": "Mudança média no total de funcionários nos 24 meses após adotar IA, ante empresas que ainda não adotaram (%)",
+  "definition": "Estudo de evento comparando empresas que adotaram IA com empresas semelhantes que ainda não adotaram. Intensidade = gasto em IA por funcionário nos 3 primeiros meses após a adoção; terço superior = alta intensidade, os demais = baixa. O efeito é a média da mudança de headcount nos 24 meses seguintes à adoção.",
+  "series": [
+    { "group": "Alta intensidade de gasto em IA", "pct": 10.2, "significant": true, "note": "*** significativo" },
+    { "group": "Baixa intensidade de gasto em IA", "pct": -0.6, "significant": false, "note": "sem significância estatística" }
+  ],
+  "baseline": "Empresas que ainda não adotaram IA = 0 (linha de base da comparação).",
+  "sources": [
+    {
+      "id": "revelio",
+      "label": "Ramp x Revelio Labs — \"The Companies Spending the Most on AI Are Also Spending the Most on Humans\" (30 jun 2026)",
+      "url": "https://www.reveliolabs.com/news/ai-and-work/greater-ai-investment-more-hiring/",
+      "provides": "gráfico \"High-intensity adopters grow employment, no impact on low-intensity adopters\"; médias rotuladas +10,2%*** (alta) e -0,6% (baixa)"
+    }
+  ],
+  "notes": [
+    "Plotamos apenas as MÉDIAS rotuladas pela Revelio (+10,2% e -0,6%); a curva mensal do estudo de evento não foi reproduzida porque a Revelio não publica os valores ponto a ponto (evita dado estimado/interpolado).",
+    "Correlação, não causa: os autores alertam que adotantes de IA já eram maiores e cresciam mais rápido ANTES de adotar (crescimento mediano de headcount pré-adoção: 6,0% dos adotantes vs 1,6% dos não-adotantes).",
+    "O item da newsletter citou '+12% em vagas de nível de entrada'; esse número não aparece no estudo da Revelio (cujo achado para entrada é +1,15 p.p. de participação, na alta intensidade). Provável origem: material da própria Ramp — não usar no gráfico."
+  ]
+}

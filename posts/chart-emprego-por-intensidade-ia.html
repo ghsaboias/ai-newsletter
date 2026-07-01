@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Gasto em IA e emprego</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    background: #FFFFFF;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 38px;
+  }
+  .card {
+    width: 720px;
+    background: #FFFFFF;
+    padding: 36px 40px;
+  }
+  .header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 22px;
+    border-bottom: 3px solid #044B2E;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.8px;
+    line-height: 26px;
+  }
+  .logo { height: 18px; vertical-align: baseline; }
+  .kicker {
+    font-size: 13px;
+    line-height: 18px;
+    color: #444;
+    margin-top: 18px;
+  }
+  .kicker b { color: #044B2E; }
+  .chart-area { padding: 22px 0 4px; }
+  .chart-container {
+    width: 100%;
+    height: 400px;
+  }
+  .caption {
+    font-size: 11px;
+    line-height: 16px;
+    color: #999;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid #E5E5E5;
+  }
+  .footer {
+    padding-top: 14px;
+    border-top: 1px solid #E5E5E5;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
+  }
+  .footer span { font-size: 10px; color: #999; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="card" id="capture">
+  <div class="header">
+    <h1>Gasto em IA e emprego</h1>
+    <img src="../../daily-journal-platform/public/images/logo/logo-green-horizontal.png" class="logo" alt="Daily Journal">
+  </div>
+
+  <div class="kicker">
+    Mudança no total de funcionários nos <b>24 meses</b> após adotar IA, ante empresas que ainda não adotaram.
+    Quem investe pesado em IA amplia o emprego em <b>+10,2%</b>; quem investe pouco fica praticamente parado (<b>-0,6%</b>, sem significância estatística).
+    Correlação, não causa: adotantes de IA já cresciam mais rápido antes de adotar.
+  </div>
+
+  <div class="chart-area">
+    <div class="chart-container">
+      <canvas id="intensidade"></canvas>
+    </div>
+  </div>
+
+  <div class="caption">
+    Estudo de evento: empresas adotantes ante empresas semelhantes que ainda não adotaram (linha de base = 0). Intensidade medida pelo gasto em IA por funcionário nos 3 primeiros meses. <i>***</i> estatisticamente significativo.
+  </div>
+
+  <div class="footer">
+    <span>Fonte: Revelio Labs + Ramp AI index (jun 2026)</span>
+    <span>dailyjournal.news</span>
+  </div>
+</div>
+
+<script>
+  const data = {
+    labels: [['Alta intensidade','de gasto em IA'], ['Baixa intensidade','de gasto em IA']],
+    values: [10.2, -0.6],
+    sig:    ['***', '']
+  };
+
+  const barColor   = ['#044B2E', '#C9D2CD'];
+  const labelColor = ['#044B2E', '#777'];
+
+  new Chart(document.getElementById('intensidade').getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: data.labels,
+      datasets: [{
+        data: data.values,
+        backgroundColor: barColor,
+        borderWidth: 0,
+        borderRadius: 3,
+        borderSkipped: false,
+        barPercentage: 0.5,
+        categoryPercentage: 0.7
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: {
+        y: {
+          min: -4,
+          max: 12,
+          grid: {
+            color: (c) => c.tick.value === 0 ? '#999' : '#f0f0f0',
+            lineWidth: (c) => c.tick.value === 0 ? 1.4 : 1,
+            drawTicks: false
+          },
+          border: { display: false },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 12, weight: '700' },
+            color: '#999',
+            padding: 8,
+            stepSize: 4,
+            callback: function(v) { return (v > 0 ? '+' : '') + v + '%'; }
+          }
+        },
+        x: {
+          grid: { display: false },
+          border: { display: false },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 13, weight: '600' },
+            color: '#333',
+            padding: 10
+          }
+        }
+      },
+      layout: { padding: { top: 26, right: 4, left: 0, bottom: 0 } }
+    },
+    plugins: [
+      {
+        id: 'valueLabels',
+        afterDatasetsDraw(chart) {
+          const { ctx } = chart;
+          const bars = chart.getDatasetMeta(0).data;
+          data.values.forEach((v, i) => {
+            const bar = bars[i];
+            const pos = v >= 0;
+            ctx.save();
+            ctx.textAlign = 'center';
+            ctx.textBaseline = pos ? 'bottom' : 'top';
+            ctx.font = '700 16px Helvetica Neue';
+            ctx.fillStyle = labelColor[i];
+            const txt = (pos ? '+' : '') + v.toFixed(1).replace('.', ',') + '%' + (data.sig[i] ? data.sig[i] : '');
+            ctx.fillText(txt, bar.x, pos ? bar.y - 8 : bar.y + 8);
+            ctx.restore();
+          });
+        }
+      }
+    ]
+  });
+</script>
+</body>
+</html>

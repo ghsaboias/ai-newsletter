@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Adoção de IA por setor</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    background: #FFFFFF;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 38px;
+  }
+  .card {
+    width: 720px;
+    background: #FFFFFF;
+    padding: 36px 40px;
+  }
+  .header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 22px;
+    border-bottom: 3px solid #044B2E;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.8px;
+    line-height: 26px;
+  }
+  .logo { height: 18px; vertical-align: baseline; }
+  .kicker {
+    font-size: 13px;
+    line-height: 18px;
+    color: #444;
+    margin-top: 18px;
+  }
+  .kicker b { color: #044B2E; }
+  .chart-area { padding: 20px 0 4px; }
+  .chart-container {
+    width: 100%;
+    height: 620px;
+  }
+  .legend {
+    display: flex;
+    gap: 22px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid #E5E5E5;
+    font-size: 11px;
+    color: #444;
+  }
+  .legend .swatch {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+    vertical-align: middle;
+    border-radius: 2px;
+  }
+  .footer {
+    padding-top: 14px;
+    border-top: 1px solid #E5E5E5;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
+  }
+  .footer span { font-size: 10px; color: #999; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="card" id="capture">
+  <div class="header">
+    <h1>Adoção de IA por setor</h1>
+    <img src="../../daily-journal-platform/public/images/logo/logo-green-horizontal.png" class="logo" alt="Daily Journal">
+  </div>
+
+  <div class="kicker">
+    Fatia de empresas dos EUA que passaram a comprar ferramentas de IA, por setor.
+    <b>Informação (53,7%)</b> e <b>Finanças &amp; Seguros (43,6%)</b> lideram; saúde e serviços presenciais ficam para trás.
+    Amostra de mais de <b>21 mil empresas</b>; cerca de <b>25%</b> já haviam adotado até o fim de 2025.
+  </div>
+
+  <div class="chart-area">
+    <div class="chart-container">
+      <canvas id="setor"></canvas>
+    </div>
+
+    <div class="legend">
+      <span><span class="swatch" style="background:#044B2E"></span>Setores líderes</span>
+      <span><span class="swatch" style="background:#C9D2CD"></span>Demais setores</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Fonte: Ramp AI index · via Revelio Labs (jun 2026)</span>
+    <span>dailyjournal.news</span>
+  </div>
+</div>
+
+<script>
+  const data = {
+    labels: ['Informação','Finanças & Seguros','Serviços Profissionais & Técnicos','Gestão de empresas','Imobiliário','Serviços Administrativos & Apoio','Indústria (manufatura)','Transporte & Armazenagem','Comércio Varejista','Serviços de utilidade pública','Educação','Comércio Atacadista','Mineração & Energia','Agropecuária','Construção','Saúde','Outros Serviços','Alojamento & Alimentação','Artes & Entretenimento'],
+    values: [53.7,43.6,36.0,26.1,24.7,22.8,22.8,22.5,21.7,20.7,19.8,19.1,17.6,17.3,15.1,14.3,13.3,11.5,11.3],
+    hl:     [1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  };
+
+  const barColor   = data.hl.map(h => h ? '#044B2E' : '#C9D2CD');
+  const labelColor = data.hl.map(h => h ? '#044B2E' : '#777');
+  const tickColor  = data.hl.map(h => h ? '#044B2E' : '#333');
+
+  new Chart(document.getElementById('setor').getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: data.labels,
+      datasets: [{
+        data: data.values,
+        backgroundColor: barColor,
+        borderWidth: 0,
+        borderRadius: 2,
+        borderSkipped: false,
+        barPercentage: 0.78,
+        categoryPercentage: 0.86
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: {
+        x: {
+          beginAtZero: true,
+          max: 60,
+          grid: { color: '#f0f0f0', drawTicks: false },
+          border: { display: false },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 11 },
+            color: '#bbb',
+            padding: 6,
+            stepSize: 20,
+            callback: function(v) { return v + '%'; }
+          }
+        },
+        y: {
+          grid: { display: false },
+          border: { display: false },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 11.5, weight: '600' },
+            color: tickColor,
+            padding: 8,
+            crossAlign: 'far',
+            autoSkip: false
+          }
+        }
+      },
+      layout: { padding: { top: 2, right: 54, left: 0, bottom: 2 } }
+    },
+    plugins: [
+      {
+        id: 'valueLabels',
+        afterDraw(chart) {
+          const { ctx } = chart;
+          const meta = chart.getDatasetMeta(0).data;
+          data.values.forEach((v, i) => {
+            const bar = meta[i];
+            ctx.save();
+            ctx.textAlign = 'left';
+            ctx.textBaseline = 'middle';
+            ctx.font = (data.hl[i] ? '700 ' : '600 ') + '11.5px Helvetica Neue';
+            ctx.fillStyle = labelColor[i];
+            ctx.fillText(v.toFixed(1).replace('.', ',') + '%', bar.x + 7, bar.y);
+            ctx.restore();
+          });
+        }
+      }
+    ]
+  });
+</script>
+</body>
+</html>
