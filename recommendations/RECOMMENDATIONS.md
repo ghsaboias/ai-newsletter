@@ -761,3 +761,9 @@ https://www.youtube.com/watch?v=P3KDebPTUrw
 **Building The World’s First AI Software Engineer | Cognition’s Scott Wu**
 Scott Wu é cofundador e CEO da Cognition, empresa responsável pelo Devin, apresentado como o primeiro engenheiro de software de IA do mundo. O vídeo, conduzido por David Senra, explora a trajetória de Wu, marcada por uma competitividade extrema desde a infância, e sua visão sobre o futuro da inteligência artificial como uma interface fundamental entre humanos e computadores
 https://www.youtube.com/watch?v=PYobZzjW_ic
+
+## 2026-07-01
+
+**How Spotify runs agents across 20M+ lines of code, with Niklas Gustavsson**
+O VP de Engenharia do Spotify mostra como qualquer funcionário, técnico ou não, descreve uma ideia e recebe um protótipo funcional em uma ou duas horas, com agentes de IA soltos sobre uma base de mais de 20 milhões de linhas de código
+https://www.youtube.com/watch?v=9DHZLw5653E
