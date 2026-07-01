@@ -38,6 +38,11 @@ você quem decide o nível de cada história e o que sobrevive em cada nível.
 A primeira linha do `facts.md` é `# Fatos — Newsletter [Tech] <data>` — dela você
 tira o prefixo (`[Tech]`) e a data por extenso para o título.
 
+**Grandes recentes (vêm na sua task).** Além do `facts.md`, sua task traz uma
+lista das **manchetes-líder (Grandes) das últimas edições**. Ela serve a uma regra
+só: **não relidere** uma história que já foi Grande há poucos dias (ver "Os três
+níveis" → GRANDES). Se a lista vier vazia (`(nenhuma)`), ignore.
+
 ## Saída
 
 Escreva `edition.md` no caminho indicado, nesta estrutura:
@@ -45,7 +50,7 @@ Escreva `edition.md` no caminho indicado, nesta estrutura:
 ```
 # <título-padrão da edição — ver "Título">
 
-<subtítulo: três perguntas-isca, uma por Grande história — ver "Subtítulo">
+<subtítulo: uma pergunta-isca por Grande história — ver "Subtítulo">
 
 Por: Guilherme Saboia e Vinicius Gushiken
 
@@ -59,7 +64,7 @@ Por: Guilherme Saboia e Vinicius Gushiken
 - **Rótulo.** ...
 - **Rótulo.** ...
 
-### <Manchete da Grande 3>
+### <Manchete da Grande 3 — no máximo 3; menos num dia fraco/repetitivo>
 - **Rótulo.** ...
 - **Rótulo.** ...
 - **Rótulo.** ...
@@ -100,13 +105,25 @@ central **mais** o secundário que dá peso; Leia também = só a manchete. O co
 sempre de glosa e cor terciária — **nunca** do fato que sustenta a notícia (o
 contrato-âncora, a cifra que dá tamanho, o mecanismo quando ele é o ponto).
 
-- **GRANDES — exatamente 3.** As leituras obrigatórias do dia. Cada uma: um `###`
-  com **manchete real e específica** (não um rótulo genérico) + **3 a 4 bullets**
-  com rótulo em negrito (`**Rótulo.**`) que separam as facetas da história (ex.:
-  `**Dívida.** / **Ação.** / **Compute.**`). Densidade máxima: cada bullet carrega
-  não só o fato-manchete daquela faceta, mas também os números, datas e
-  especificidades que o `facts.md` traz para ela. Um leitor que ler só as grandes
-  deve sair com a história praticamente inteira.
+- **GRANDES — as leituras obrigatórias do dia.** As histórias de maior peso, que o
+  leitor não pode perder hoje. **No máximo 3**, e você decide quantas dentro desse
+  teto — deixe o dia mandar. O normal é 3; um dia fraco ou muito repetitivo pode
+  pedir 2 (ou 1). **Nunca ultrapasse 3**, **nunca encha para bater o número** (uma
+  "Grande" fraca dilui as fortes) e **nunca rebaixe uma líder de verdade** só para
+  caber numa cota. Cada uma:
+  um `###` com **manchete real e específica** (não um rótulo genérico) + **3 a 4
+  bullets** com rótulo em negrito (`**Rótulo.**`) que separam as facetas da
+  história (ex.: `**Dívida.** / **Ação.** / **Compute.**`). Densidade máxima: cada
+  bullet carrega não só o fato-manchete daquela faceta, mas também os números,
+  datas e especificidades que o `facts.md` traz para ela. Um leitor que ler só as
+  Grandes deve sair com a história praticamente inteira.
+    - **Não relidere (frescor + não-repetição).** As Grandes são as **novidades**
+      de maior peso *de hoje*. Uma história cujo evento central **já foi Grande** em
+      alguma das edições recentes (a lista vem na sua task) **não volta a ser
+      Grande** — rebaixe para Média. A única exceção é um **desenvolvimento novo e
+      datado dentro da janela** que, sozinho, mereça a liderança; nesse caso
+      **lidere pelo que é novo** (o fato datado de hoje), reformulado — nunca
+      reexpondo o mesmo enquadramento que já rodou.
 - **MÉDIAS — o miolo.** As histórias substanciais que não entraram nas grandes.
   Agrupe em **clusters temáticos** (`####`), cada cluster com bullets que abrem com
   a entidade em negrito (`**Entidade.**`). Cada bullet tem **1 a 2 frases**: a
@@ -126,9 +143,9 @@ Toda história do `facts.md` entra em algum nível. Nenhuma fica de fora.
 ## Subtítulo
 
 Uma linha, em **formato de pergunta** (técnica da *lacuna de curiosidade*): **uma
-pergunta-isca por Grande história**, três no total, na ordem das grandes. Cada
-pergunta enuncia o assunto mas **guarda a resposta** — que o leitor encontra no
-corpo.
+pergunta-isca por Grande história**, na ordem das Grandes — logo, tantas perguntas
+quantas forem as Grandes. Cada pergunta enuncia o assunto mas **guarda a resposta**
+— que o leitor encontra no corpo.
 
 - Varie o interrogativo: *Quanto…? · Por que…? · Qual…? · Como…? · Em que pé…? ·
   O que…?*
@@ -167,11 +184,25 @@ troca cada token pela URL real.
 Neutra, densa, factual — o conteúdo fala por si. Sem frase-moldura ("A mudança
 reflete…"), sem autorreferência ("nas últimas edições"). Abra com o fato.
 
+**Manchetes — tom factual, sem dramatizar.** As manchetes `###` das Grandes e os
+itens de "Leia também" descrevem o fato, não o encenam. A mesma história também
+vira página do Daily Journal — o leitor deve achar o mesmo tom no clique:
+
+- Verbo factual, nunca sensacionalista. Evite "desmorona", "incendeia", "detona",
+  "arrasa", "dispara", "humilha"; use "ataca", "atinge", "recua", "cai", "sobe",
+  "anuncia".
+- Sentence case (só a primeira palavra e nomes próprios em maiúscula), nunca Title Case.
+- Sem o formato "Assunto: descrição" (dois-pontos partindo tema + glosa) — uma
+  oração única e direta.
+- Densidade ≠ comprimento: a manchete fica enxuta (uma oração); o número/ângulo
+  extra mora nos *bullets*, não na manchete.
+
 - O `facts.md` já glosa jargão e siglas uma vez (HBM, ADR, EUV…). **Reaproveite a
   glosa, não duplique.** Se um termo chegar sem glosa e precisar, glose uma vez,
   entre parênteses, no primeiro uso.
 - Termos estrangeiros em itálico: `*valuation*`, `*marketplaces*`, `*circuit
   breaker*`.
+- Sem travessões (—): use vírgula, dois-pontos ou ponto.
 - Português preciso: concordância de gênero, preposições, crase. Cadência limpa —
   se uma frase ficar dura, reestruture.
 - Números e nomes vêm **do `facts.md`**; não invente especificidade que não está
@@ -190,4 +221,4 @@ reflete…"), sem autorreferência ("nas últimas edições"). Abra com o fato.
   da edição.
 
 Escreva apenas o arquivo `edition.md`. Sua mensagem final não é o entregável — retorne
-só uma linha: `edição — 3 grandes, N clusters, M leia também`.
+só uma linha: `edição — <n> grandes, <m> clusters, <k> leia também`.
