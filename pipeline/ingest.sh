@@ -69,3 +69,78 @@ INGEST_ARGS=("$SOURCES_FILE")
 [[ -n "$LIMIT" ]] && INGEST_ARGS+=("--limit" "$LIMIT")
 
 (cd "$DJ_DIR" && npx tsx scripts/ingest.ts "${INGEST_ARGS[@]}")
+
+revalidate_news_paths() {
+  local links_file="$1"
+  local secret="${CRON_SECRET:-}"
+  local env_file line curl_bin path body code failures=0 count=0
+
+  if [[ -z "$secret" ]]; then
+    for env_file in "$DJ_DIR/.env.local" "$DJ_DIR/.env.vercel" "$DJ_DIR/.env.prod.tmp"; do
+      [[ -f "$env_file" ]] || continue
+      line=$(grep -m1 '^CRON_SECRET=' "$env_file" || true)
+      [[ -n "$line" ]] || continue
+      secret="${line#CRON_SECRET=}"
+      secret="${secret%\"}"
+      secret="${secret#\"}"
+      secret="${secret%\'}"
+      secret="${secret#\'}"
+      break
+    done
+  fi
+
+  if [[ -z "$secret" ]]; then
+    echo "Error: CRON_SECRET not found; cannot revalidate Daily Journal news pages"
+    return 1
+  fi
+
+  curl_bin=$(command -v curl || true)
+  if [[ -z "$curl_bin" ]]; then
+    echo "Error: curl not found; cannot revalidate Daily Journal news pages"
+    return 1
+  fi
+
+  while IFS= read -r path; do
+    [[ -n "$path" ]] || continue
+    body=$(printf '{"path":"%s"}' "$path")
+    code=$("$curl_bin" -sS -o /dev/null -w '%{http_code}' \
+      -X POST 'https://dailyjournal.news/api/revalidate' \
+      -H "Authorization: Bearer $secret" \
+      -H 'Content-Type: application/json' \
+      -d "$body")
+    count=$((count + 1))
+    if [[ "$code" == 2* ]]; then
+      echo "  revalidated $path"
+    else
+      echo "  revalidate failed ($code): $path"
+      failures=$((failures + 1))
+    fi
+  done < <(
+    jq -r 'to_entries[].value' "$links_file" \
+      | sed 's#^https://dailyjournal\.news##' \
+      | grep '^/news/' \
+      | sort -u
+  )
+
+  if [[ "$count" -eq 0 ]]; then
+    echo "Error: no Daily Journal news paths found in $links_file"
+    return 1
+  fi
+
+  if [[ "$failures" -gt 0 ]]; then
+    echo "Error: $failures Daily Journal revalidation request(s) failed"
+    return 1
+  fi
+
+  echo "OK revalidate: $count DJ news path(s)"
+}
+
+if [[ "$EXECUTE" == true && "$PROPOSE" == false && "$TEST" == false ]]; then
+  LINKS_FILE="$DAY_DIR/links.json"
+  if [[ -s "$LINKS_FILE" ]]; then
+    revalidate_news_paths "$LINKS_FILE"
+  else
+    echo "Error: links.json missing/empty; cannot revalidate Daily Journal news pages"
+    exit 1
+  fi
+fi

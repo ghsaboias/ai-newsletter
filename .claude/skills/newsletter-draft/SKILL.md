@@ -409,6 +409,12 @@ fi
 review** — the orphan-page risk for any story later cut in review is **accepted**
 (decision (c)).
 
+`ingest.sh --execute` also revalidates every deduped `dailyjournal.news/news/...`
+path in `links.json` via Daily Journal's `/api/revalidate`. If that revalidation
+step fails, treat it as a hard failure and stop before rewriting links or pushing
+the Substack draft; otherwise link previews can cache ISR 404s for freshly-created
+pages.
+
 ### Step 3.5d — rewrite-links → `edition-final.md` (bake DJ links into the md)
 
 ```bash
