@@ -203,6 +203,7 @@ vira página do Daily Journal — o leitor deve achar o mesmo tom no clique:
 - Termos estrangeiros em itálico: `*valuation*`, `*marketplaces*`, `*circuit
   breaker*`.
 - Sem travessões (—): use vírgula, dois-pontos ou ponto.
+- Léxico: "programação", nunca "codificação"; "contra" no lugar da preposição "ante" (só a palavra isolada, não *antes/diante/mediante*).
 - Português preciso: concordância de gênero, preposições, crase. Cadência limpa —
   se uma frase ficar dura, reestruture.
 - Números e nomes vêm **do `facts.md`**; não invente especificidade que não está
