@@ -767,3 +767,13 @@ https://www.youtube.com/watch?v=PYobZzjW_ic
 **How Spotify runs agents across 20M+ lines of code, with Niklas Gustavsson**
 O VP de Engenharia do Spotify mostra como qualquer funcionário, técnico ou não, descreve uma ideia e recebe um protótipo funcional em uma ou duas horas, com agentes de IA soltos sobre uma base de mais de 20 milhões de linhas de código
 https://www.youtube.com/watch?v=9DHZLw5653E
+
+## 2026-07-02
+
+**Why Hardware-Software Co-Design Is AI's Real 100x: Dylan Patel of SemiAnalysis**
+O fundador da SemiAnalysis diz que o maior ganho de eficiência em IA não vem de otimizar chip, kernel ou modelo separados, mas de co-desenhar os três juntos, o que transforma um 8x em ~100x. Ele também explica por que a escolha entre Nvidia e TPU depende do modelo e por que o "moat" do CUDA está caindo, já que os próprios modelos escrevem os kernels
+https://www.youtube.com/watch?v=f6D_aiy8qyU
+
+**Could Open Source AI be Banned?**
+O canal Sentdex rebate o lobby da Anthropic em Washington por restrições à IA aberta e mostra que já dá pra rodar modelos de fronteira em casa com um único GPU, gastando bem menos que a API. Também desmonta as histórias de medo do lobby, como o suposto "hack da NSA" que foi só uma tool call num teste autorizado
+https://www.youtube.com/watch?v=AgpeggCsRH4
