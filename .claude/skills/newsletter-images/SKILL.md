@@ -1,132 +1,142 @@
 ---
 name: newsletter-images
 description: >-
-  Monta a pré-seleção assistida de imagem/vídeo por história da newsletter de AI/Tech. Lê o pt.md, decide o sujeito visual + arquétipo + query de busca por história, junta candidatos via DuckDuckGo (busca de imagem), og:image das fontes e scrape de página (benchmarks), monta um contact sheet por história, e o Claude ranqueia estrito-ao-arquétipo com preferência por paisagem e propõe legenda. Gui aprova/troca; as escolhas viram images-final.json pro editor do Substack. Exclui a seção Recomendações. Aciona quando o usuário diz "escolher as imagens", "rodar images", "montar as imagens", "/newsletter-images".
+  Monta a pré-seleção assistida de imagem/vídeo por história da newsletter de AI/Tech. Lê a edição do dia (edition-final.md), decide o sujeito visual + arquétipo + query de busca por história, junta candidatos (og:image das fontes de research.json + busca por palavra-chave), o Claude ranqueia estrito-ao-arquétipo com preferência por paisagem, propõe legenda e sobe as escolhas no thread do Slack (a imagem em si; vídeo só como link). Gui aprova/troca; as escolhas viram images-final.json, que o substack_mirror.py media empurra pro draft ao vivo do Substack (imagens em 520px, com legenda, na posição de cada história). Exclui a seção Leia também. Aciona quando o usuário diz "escolher as imagens", "rodar images", "montar as imagens", "/newsletter-images".
 allowed-tools: Read, Write, Bash
 ---
 
 ## Quando essa skill roda
 
-Depois do `pt.md` revisado, antes/junto da finalização — a etapa em que Gui hoje abre todos os links na mão, olha cada aba e cai no Google Imagens. Substitui o **garimpo** (a busca tediosa) mantendo a **escolha** (o gosto) com Gui. A seção "Recomendações" (vídeos curados) fica **fora** — essa skill só cuida das imagens/vídeos por história do corpo.
+Depois que a edição foi gerada e o draft do Substack foi criado (pelo `newsletter-draft`), na etapa em que Gui hoje abriria os links na mão e cairia no Google Imagens. Substitui o **garimpo** (a busca tediosa) mantendo a **escolha** (o gosto) com Gui.
 
-`pt.md` → **newsletter-images** → `images-final.json` (entra no editor do Substack a mão; imagens não estão no `substack.html`).
+Fluxo unificado:
+
+> `edition-final.md` → **newsletter-images** → `images-final.json` → `substack_mirror.py media` → **draft ao vivo do Substack** (imagens já posicionadas, 520px, com legenda).
+
+A seção **"Leia também"** (headlines + qualquer embed de recomendação) fica **fora** — essa skill só cuida das imagens/vídeos por história do corpo (Grandes + categorias).
+
+## Fonte da verdade
+
+- **Conteúdo do dia:** `pipeline/output/${PIPELINE_TOPIC:-ai}/<DATE>/edition-final.md` (a edição em três tiers: Grandes / categorias Médias / Leia também). **Não existe mais `pt.md`.**
+- **Proveniência das fontes:** `facts.md` (blocos **Fontes:** por história) e `research.json` (URLs de origem + `key_facts`/`sources` por história) — é daqui que saem as páginas pra puxar `og:image` e as palavras-chave.
+- **O draft do Substack é a fonte da verdade depois do primeiro push.** Nunca se re-empurra pelo HTML (`.substack-draft.html`) — isso reconstruiria o post e apagaria a mídia. Toda atualização vai pelo `substack_mirror.py` (`pull`/`push`/`media`).
 
 ## Args
 
-`/newsletter-images [YYYY-MM-DD]` — sem arg usa hoje (`date '+%Y-%m-%d'`).
+`/newsletter-images [YYYY-MM-DD]` — sem arg usa hoje.
 
-## Por que existe um gather.py
+## Fluxo
 
-Garimpo de imagem é **mecânico** (buscar, baixar, montar); escolha de sujeito/query e o ranqueamento final são **julgamento**. Então: `gather.py` é puro mecanismo, e o Claude faz os dois julgamentos (autorar o plano, ranquear os sheets). Sem API key, sem navegador (browser-tools é gated por aprovação — não serve pra passo desacompanhado). Só `curl` + ImageMagick.
+1. **Mapear** — leia `edition-final.md`, liste as histórias do corpo (Grandes + categorias, sem Leia também) e decida por história: merece mídia? qual sujeito + arquétipo + query? Junte as URLs de fonte por história do `research.json`.
+2. **Garimpar** — dispare os sub-agentes em paralelo (um por história que merece mídia), num tiro só.
+3. **Conferir** — dimensões em lote (paisagem? largura ≥ ~800px?) e **Read em cada imagem** pra confirmar sujeito/qualidade. A conferência visual é da sessão principal, não do sub-agente.
+4. **Propor** — mande as escolhas pro Gui (ver "Proposta pra aprovação") e aguarde o OK.
+5. **Empurrar** — depois do OK, escreva `images-final.json` e rode o `substack_mirror.py media` (um tiro só).
 
-## Step 0: Data e validação
+## Princípios de seleção (o que vale)
 
-```bash
-DATE=${ARG:-$(date '+%Y-%m-%d')}
-BASE=/Users/guilherme/ai-newsletter/pipeline/output/ai/$DATE
-test -f "$BASE/pt.md" || { echo "sem pt.md em $BASE"; ls /Users/guilherme/ai-newsletter/pipeline/output/ai/ | tail -8; }
-```
-Sem `pt.md`, **não invente** — liste as datas e pare.
+Julgamento é seu; garimpo é mecânico. **Uma mídia por bloco forte, não por bullet.** Cada história/categoria recebe no máximo a imagem do seu item mais visual; o resto pula.
 
-## Step 1: Segmentar (scaffolding)
+**Arquétipo → sujeito → arma/query:**
 
-```bash
-python3 .claude/skills/newsletter-images/gather.py segment $DATE
-```
-Imprime cada parágrafo-bloco com label, texto, entidades (people/orgs/places) e categoria, juntando ao `research.json` por sobreposição de URL. **Leia também o `pt.md`** — a decisão de sujeito visual é sua, não das entidades (a primeira pessoa/org listada quase nunca é o sujeito da foto).
-
-## Step 2: Autorar o plano (julgamento)
-
-Decida história por história e escreva `/tmp/plan-$DATE.json` (lista) com as que **recebem imagem**:
-
-```json
-[{ "idx": 4, "label": "Política", "subject": "Abelardo de la Espriella",
-   "archetype": "protagonist", "query": "Abelardo de la Espriella",
-   "og_urls": ["https://..."], "video": false }]
-```
-
-### Pular ou não (a parte que erra fácil)
-
-- **Pular é decisão consciente, com motivo.** Só o subtítulo e a continuação pura da mesma história (2º parágrafo que não abre tópico novo) somem de vez. Toda outra história que você **não** ilustrar entra no `picks.json` (Step 4) como `skip` **com `reason`** — vira a tira "Puladas" pro Gui reverter. Pular em silêncio = ponto cego.
-- **Acordo/parceria ≠ sem sujeito.** Antes de pular um deal por "só logos", olhe as `people`: se tem principais nomeados (CEOs/fundadores), o aperto-de-mão/retrato deles é um `protagonist` limpo (ex.: Samsung×OpenAI → Lee Jae-yong + Sam Altman, foi o que publicamos). Não pule.
-- **Case a imagem com o que a história É.** Negociação/regulação/geopolítica **não** é lançamento de produto — não cole um stock de drone/chip decorativo só pra ter imagem. Se o arquétipo honesto é `scene` ou pessoa, use isso; se nada bate de verdade, **pule com motivo** em vez de enfeitar.
-- **Não repita a mesma empresa em parágrafos vizinhos.** Duas fotos da mesma marca coladas lêem repetitivo. Escolha a mais forte e pule a outra — "drone vs retrato da mesma Anduril" não é variedade.
-
-**`og_urls`** = os links do bloco (o segment/parse já os tem; reaproveite). **Arquétipo → arma → query:**
-
-| Arquétipo | Arma principal | Query |
+| Arquétipo | Sujeito | Arma / query |
 |---|---|---|
-| `protagonist` (pessoa conduz a história) | DuckDuckGo | **nome puro** (+ cargo se ambíguo). Nome+país enviesa pra cobertura de evento — evite |
-| `team` (rodada/funding) | DuckDuckGo | `"{startup} founders"` / fundador nomeado |
-| `official` (anúncio de empresa, Apple-style) | og das fontes | og costuma acertar; query de empresa como fallback |
-| `benchmark` (lançamento de modelo) | DuckDuckGo + scrape do corpo da fonte oficial | `"{modelo} benchmark"` — o gráfico mora no corpo, **não** no og (og oficial costuma ser o card-logo) |
-| `product`/equipment | DuckDuckGo + site do fabricante | `"{empresa} {coisa}"`; produto específico, não genérico |
-| `scene`/geopolítica | og (artigo de agência) ou DuckDuckGo | lugar/instituição/evento |
+| `protagonist` (pessoa conduz a história) | rosto de quem personifica a empresa/decisão | busca pelo **nome puro** (+ cargo se ambíguo). Ex.: Sam Altman, Raja Koduri |
+| `team` (rodada/funding) | fundador(es) nomeado(s) | `"{startup} founders"` / fundador nomeado |
+| `product` / equipamento | o produto físico quando ele é o quê | site do fabricante; `"{empresa} {produto}"` específico. Ex.: robô Apollo 2, chip HBM |
+| `screenshot`/UI (software) | a tela do produto | og oficial / site do produto. Ex.: IDE ZCode |
+| `official` (anúncio de empresa) | asset oficial (slide, arte de lançamento) | `og:image` das fontes; query da empresa como fallback |
+| `scene` / geopolítica / regulação | prédio/instituição/lugar | og de agência ou busca por lugar/instituição. Ex.: a Casa Branca |
 
-`"video": true` quando a regra do Gui bate: **robótica → sempre; demo/lançamento → geralmente; clipe de notícia óbvio → às vezes** (ex.: renúncia de premiê). **Mas vídeo só vale se for específico.** Evento bem-coberto acha o clipe certo (Starmer). Empresa/robô pouco fotografado (ex.: Coowa) só acha vídeo genérico de feira — aí **a regra perde pro pivô**: vá no fundador nomeado (`protagonist`) em vez de forçar vídeo genérico. Regra de bolso: se você não reconheceria a empresa/robô numa busca, não é vídeo — é o fundador.
+**Regras de gosto:**
+- **Paisagem é preferência forte, não corte duro.** Prefira ratio ≥ ~1,3; retrato quase-quadrado só se aceita pra headshot de pessoa. Relaxe se isso esvaziar as opções.
+- **Fonte, em ordem:** asset oficial da empresa › foto de imprensa (Reuters/AP/Bloomberg/Getty) › banco de imagens/Wikimedia. **Sempre com crédito.**
+- **Case a imagem com o que a história É.** Negociação/regulação/geopolítica não é lançamento de produto — não cole stock de chip/drone decorativo só pra ter imagem. Se nada bate de verdade, **pule com motivo**.
+- **Não repita a mesma empresa em blocos vizinhos**, e **contraste vizinhos** (ex.: um rosto ao lado de um prédio quando duas histórias parecidas se encostam — foi Altman + Casa Branca).
+- **Finanças pura / macro / geopolítica pura tendem a ficar sem imagem** (baixo apelo visual). Pular é decisão consciente **com motivo registrado**, nunca em silêncio.
+- **Legenda:** `{Sujeito}, {cargo/contexto}. Imagem: {Fonte}`. Rosto conhecido pode dispensar o crédito. **Não invente fonte** — se não dá pra confirmar, diga "fonte?".
 
-## Step 3: Executar
+**Vídeo** (link do YouTube, embed no draft): quando o produto **é** mídia/gerativo, **ou** quando existe **demo oficial forte** (robótica quase sempre entra; lançamento/demo geralmente). **Só oficial** — vídeo de reviewer/terceiro não conta. Se só existe clipe genérico de feira, pivote pro fundador (`protagonist`) em vez de forçar.
+
+## Garimpo (mecânica)
+
+Duas armas por história, reaproveitando as URLs de `research.json`:
+1. **`og:image`/`twitter:image` das fontes** do bloco (as páginas de research, **não** os links do DJ). `curl` com UA de navegador + `grep` do meta; se a página bloquear, use scrape/screenshot.
+2. **Busca por palavra-chave** (o flow preferido do Gui): as palavras-chave da história em busca de imagem, e pega 2-3 candidatos.
+
+Baixe os candidatos, **Read cada imagem**, e ranqueie estrito ao arquétipo (descarte logo-só, watermark de stock, colagem, <~800px, off-subject). Rodar isso em sub-agentes paralelos (um por história) é o caminho rápido.
+
+**Sub-agentes (mecânica):**
+- Scratch: um dir por edição no scratchpad da sessão (ex.: `<scratchpad>/media-<DATE>/`) — fora do repo.
+- Cada agente grava **um** arquivo com nome-slug fixo (`openai.jpeg`, `apptronik.jpg`, …); esse path entra depois no `images-final.json`.
+- O prompt de cada agente leva: a história (título + fatos-chave), o arquétipo + query já decididos no mapeamento, as URLs de fonte do `research.json`, e os critérios de descarte acima.
+- O agente devolve: o arquivo baixado + de onde veio (página de origem + crédito pra legenda) + candidato a **vídeo oficial** se existir (só o link do YouTube — nunca baixar vídeo).
+
+> Nota: o helper `gather.py` desta pasta é **legado** — ele ainda assume o `pt.md`, paths de Mac (`/Users/guilherme/...`) e injeta em `substack.html`. Não use como está; precisa ser portado pro layout novo (edition-final.md + push via mirror). O garimpo acima (og + busca, em sub-agentes) é o método atual.
+
+## Proposta pra aprovação
+
+O formato que funcionou: **a imagem em si, não descrição dela**. No Slack (o caso normal), suba cada imagem escolhida no thread, na **ordem da edição**, uma por mensagem, com a legenda proposta como comentário:
 
 ```bash
-python3 .claude/skills/newsletter-images/gather.py plan /tmp/plan-$DATE.json $DATE
+cd ~/michael-slack
+npx tsx src/cli-send.ts file <channel> <scratch>/openai.jpeg --thread <thread_ts> \
+  --comment "🟩 GRANDE 1 — OpenAI cede até 5% ao governo · Sam Altman, CEO da OpenAI, em Washington. Imagem: Reuters"
 ```
-Gera `$BASE/images/sheet-NN-slug.png` (um por história, candidatos em ordem do manifesto) e `$BASE/images/candidates.json` (idx → arm/source/w/h/url/`page` por candidato + `videos`). `page` = URL do artigo de origem (pra linkar a thumb). ~1–1,5 min.
 
-## Step 4: Ranquear e autorar picks.json (julgamento)
+(Upload que falhar costuma ser transitório — retente uma vez.)
 
-Leia o `candidates.json` (mapeia posição→fonte/dims; grade do sheet é **4 por linha, row-major**, posição = `#idx`) e **Read cada `sheet-*.png`**. Pra cada história, ordene os candidatos (melhor primeiro) por:
+Depois das imagens, **uma** mensagem de resumo com:
+- as escolhas divididas em **fortes** vs **opcionais** (cada opcional com sua ressalva e alternativa, se houver);
+- os **vídeos como link** do YouTube — nunca subir arquivo de vídeo; o embed acontece só no push, via `videoId`;
+- as histórias **puladas, com motivo** (uma linha cada);
+- as **decisões pendentes** pro Gui (trocas, opcionais entram ou não).
 
-- **Estrito ao arquétipo.** Protagonista → retrato limpo da pessoa; descarte produto/evento/multidão. Benchmark → o gráfico, não o logo. Produto → o produto/fábrica.
-- **Paisagem é preferência forte, não corte duro.** Prefira ratio ≥ ~1,3; se isso esvazia (retratos de gente pouco fotografada vêm retrato), relaxe e pegue o mais largo e limpo.
-- **Descarte** logos/placeholders/marca-d'água ("gettyimages"/card de logo), thumbs com chyron/overlay pesado quando houver opção limpa, e off-subject.
+Fora do Slack, mesmo conteúdo: paths + legendas propostas, e aguarde o OK.
 
-Escreva `$BASE/images/picks.json` (lista, uma entrada por história):
+## Handoff: `images-final.json` → push no draft ao vivo
+
+Depois do OK do Gui, escreva `pipeline/output/${PIPELINE_TOPIC:-ai}/<DATE>/images-final.json` — uma lista, uma entrada por história que **recebe** mídia (as puladas ficam de fora, mas registre-as pro Gui na conversa):
+
 ```json
-{ "idx":4, "label":"Política", "subject":"Abelardo de la Espriella",
-  "archetype":"protagonist", "type":"image",
-  "caption":"Abelardo de la Espriella. Imagem: Reuters",
-  "ranked":[0,1,4,6],
-  "videos_available": false,
-  "shipped": {"url":"https://...","source":"Reuters"} }
-```
-- **`ranked`** = índices `#idx` dos candidatos, melhor primeiro. `ranked[0]` vira a ESCOLHA, `ranked[1]`/`ranked[2]` os alts, o resto vai pra tira "outros".
-- **`type":"video"`** → adicione `"video": {"videoId":"...","title":"..."}` (do `videos` em candidates.json); a ESCOLHA passa a ser o vídeo e os alts viram `ranked[0]`/`ranked[1]` (stills).
-- **`videos_available": true`** quando a história tem vídeo mas você escolheu imagem (marca um badge "vídeo disponível").
-- **`caption`**: `{Sujeito}. Imagem: {Fonte}` — Fonte da marca-d'água ou domínio (agência: Reuters/AFP/AP/Getty/VCG; oficial: nome da empresa). Pessoa às vezes só o nome. **Não invente** — se não dá pra confirmar, ponha "fonte?".
-- **`shipped`** (opcional, só em **backtest** de edição já publicada): pegue as imagens publicadas com `sstats post $DATE --html` (rode de `~/daily-journal-platform`), case cada `<figure>` à história pela legenda/sujeito, e preencha `{url, source}`. Numa run normal (edição nova, ainda não publicada) **omita** — a coluna vira "— não publicada —".
-- **Histórias puladas** (Step 2) entram aqui como `{ "idx":8, "label":"Samsung × OpenAI", "skip":true, "reason":"..." }` — sem `ranked`. Viram a tira "Puladas" no fim da página, pro Gui reverter ("busca imagem pra #N"). **Sempre** registre o skip com motivo; nunca omita uma história em silêncio (menos subtítulo/continuação pura).
+[
+  { "heading": "OpenAI", "file": "/abs/path/openai.jpeg",
+    "alt": "Sam Altman, CEO da OpenAI, em Washington",
+    "caption": "Sam Altman, CEO da OpenAI, em Washington. Imagem: Reuters" },
 
-## Step 5: Montar e abrir a página de review
+  { "heading": "Chips", "after_bullet": "Samsung", "file": "/abs/path/samsung.jpg",
+    "alt": "Samsung Foundry no SAFE Forum 2026",
+    "caption": "Shin Jong-shin, VP executivo (Design Platform) da Samsung Foundry. Imagem: Samsung" },
+
+  { "heading": "Robót", "after_bullet": "Apptronik", "file": "/abs/path/apptronik.jpg",
+    "alt": "Robô humanoide Apollo 2 da Apptronik",
+    "caption": "Robô humanoide Apollo 2, da Apptronik. Imagem: Apptronik",
+    "videoId": "iPyxwELiD9Q" }
+]
+```
+
+Campos:
+- **`heading`** = substring que localiza o título da história na edição (ex.: `"OpenAI"`, `"Casa Branca"`, `"Chips"`, `"Robót"`).
+- **`after_bullet`** = **omita para Grande** (a imagem entra depois do bullet_list inteiro da história). Para uma **categoria** (Médias), é o rótulo em negrito do bullet sob o qual a imagem deve ficar (ex.: `"Samsung"`, `"Oxmiq"`, `"Z.ai"`) — o `media` divide o bullet_list nesse ponto.
+- **`file`** = caminho local da imagem escolhida (é subida pro CDN do Substack a 520px). Omita para entrada **só de vídeo**.
+- **`alt`** / **`caption`** = alt + legenda (`{Sujeito}, {contexto}. Imagem: {Fonte}`).
+- **`videoId`** = id do YouTube (opcional), embutido logo depois da imagem.
+
+Empurra tudo num tiro só (sobe as imagens, monta os nós `captionedImage`+legenda a 520px, divide os bullet_lists, embute os vídeos, e dá PUT preservando byline/paywall/banner):
 
 ```bash
-python3 .claude/skills/newsletter-images/gather.py review $BASE/images/picks.json $DATE
-open "$BASE/images/images-review.html"
+python3 pipeline/tools/substack_mirror.py media --plan pipeline/output/ai/<DATE>/images-final.json
 ```
-Gera **uma** página `images-review.html`: por história, uma linha com **PUBLICADA · ✓ ESCOLHA · alt 2 · alt 3** + tira "outros: #idx" com o resto dos candidatos. Verde = minha escolha, cinza = publicada. As miniaturas **renderizam da URL remota** (com `onerror` que cai pro download local se a fonte bloquear hotlink) e **cada uma linka pra URL do artigo** (`page`) — clicar abre a matéria, não o arquivo de imagem. Gui olha tudo de uma vez e diz, por história, **mantém / troca pro #N / pula**. **Ele dirige** — o gosto é dele (memória `image-video-automation` + princípios de review do CLAUDE.md).
 
-## Step 6: Gravar as escolhas
-
-Depois do OK, escreva `$BASE/images/images-final.json` (lista):
-```json
-{ "idx":4, "label":"Política", "subject":"Abelardo de la Espriella",
-  "type":"image", "url":"https://...", "caption":"Abelardo de la Espriella. Imagem: Reuters",
-  "source":"Reuters", "file":"/.../images/_c04_00.jpg",
-  "anchor":"Na Colômbia, o advogado criminalista" }
-```
-`type:"video"` usa `"embed"` no lugar de `url`. **`file`** = o caminho local do candidato escolhido (já baixado em `candidates.json`) — pra arrastar direto pro editor sem rebaixar. **`anchor`** = início do texto puro do parágrafo da história (pro Step 7 achar onde inserir).
-
-## Step 7: Injetar no substack.html (opcional)
-
-```bash
-python3 .claude/skills/newsletter-images/gather.py inject $BASE/images/images-final.json $DATE
-```
-Insere cada `<figure>` (img+legenda) / embed de vídeo logo depois do `<p>` da história em `substack.html`, gravando `$BASE/substack-images.html` (não-destrutivo; o pandoc `substack.html` fica intacto). O Substack re-hospeda imagens externas no paste (proxy `substackcdn.com/image/fetch/...`) e converte URLs do YouTube em embed — então colar o `substack-images.html` deve trazer as imagens já posicionadas. **Verifique com um paste real** antes de confiar nisso como padrão; se o Substack remover as externas, o fallback é subir os `file` locais a mão (mas a escolha + legenda já estão prontas).
+- Sem `--id`/`--dir` ele pega a edição de **hoje** (lê o `.substack-draft-id`).
+- **Re-rodar:** `--replace` stripa a mídia editorial anterior antes de reinserir (idempotente; preserva o banner do paywall e os embeds de "Leia também"). `--dry-run` mostra os inserts sem empurrar.
+- Para ajustes finos de texto depois, use `pull` → edita `substack-body.json` → `push`.
 
 ## Regras
 
 - **Garimpo automático, escolha humana.** Nunca finalize a seleção sozinho; proponha e deixe Gui decidir.
-- **Recomendações fora de escopo.** Só imagens/vídeos por história do corpo.
-- **Sem navegador, sem key.** Só `gather.py` (curl + ImageMagick). Se montage reclamar de Freetype/ghostscript, é só o `-label` (não usamos) — ignore.
-- **Não invente fonte/legenda.** Se não dá pra confirmar a fonte, diga "fonte?" em vez de chutar.
-- **`$BASE/images/` é scratch** (downloads `_c*` + sheets). Não commitar (direitos autorais + peso); o que vale é `images-final.json` (URLs + legendas).
-- **Pule histórias sem imagem boa.** Nem toda história precisa de imagem; se nada bate o arquétipo, diga e siga.
+- **Leia também / recomendações fora de escopo.** Só imagens/vídeos por história do corpo.
+- **Não invente fonte/legenda.** "fonte?" em vez de chutar.
+- **Pule histórias sem imagem boa, com motivo.** Nem toda história precisa de imagem.
+- **Editorial = 520px; o banner do paywall (com `href`) fica em largura cheia** — o `media` já distingue pelo `href`.
+- **Downloads são scratch** (não commitar — direitos autorais + peso). O que vale é o `images-final.json` (caminhos + legendas) e o draft ao vivo.
