@@ -1,15 +1,15 @@
 ---
 name: chart-post
 description: >-
-  Cria um post de gráfico do Substack a partir de uma história da edição do dia da newsletter de AI/Tech. Lê o pt.md, propõe 3-4 candidatos de gráfico via AskUserQuestion (com previews ASCII), Gui escolhe, pesquisa dados de FONTES PRIMÁRIAS (citable > derived), resolve qualquer divergência de método com Gui, grava os dados auditáveis em posts/data/<slug>.json, constrói o chart copiando o scaffolding de marca de um posts/chart-*.html existente, renderiza em PNG 2× via render.sh (browser-tools, não headless), inspeciona os labels, e escreve a prosa em posts/chart-<slug>.md. Voz neutra/profissional, título factual/descritivo, todas as ressalvas no caption (não na prosa). Aciona quando o usuário diz "fazer um post com gráfico", "post de gráfico do dia", "craft a substack post with a chart", "/chart-post".
+  Cria um post de gráfico do Substack a partir de uma história da edição do dia da newsletter de AI/Tech. Lê o edition-final.md, propõe 3-4 candidatos de gráfico via AskUserQuestion (com previews ASCII), Gui escolhe, pesquisa dados de FONTES PRIMÁRIAS (citable > derived), resolve qualquer divergência de método com Gui, grava os dados auditáveis em posts/data/<slug>.json, constrói o chart copiando o scaffolding de marca de um posts/chart-*.html existente, renderiza em PNG 2× via render.sh (browser-tools, não headless), inspeciona os labels, e escreve a prosa em posts/chart-<slug>.md. Voz neutra/profissional, título factual/descritivo, todas as ressalvas no caption (não na prosa). Aciona quando o usuário diz "fazer um post com gráfico", "post de gráfico do dia", "craft a substack post with a chart", "/chart-post".
 allowed-tools: Read, Write, Edit, Bash, WebSearch, WebFetch, AskUserQuestion
 ---
 
 ## Quando essa skill roda
 
-Tarefa recorrente: "fazer um post de gráfico do Substack" a partir da edição do dia. O gráfico = dado histórico/comparativo confiável que conta a história sozinho e **promove aquela edição**. Os arquivos ficam em `posts/` (spec de marca no CLAUDE.md "Posts"). Roda depois que o `pt.md` do dia existe (não precisa estar finalizado).
+Tarefa recorrente: "fazer um post de gráfico do Substack" a partir da edição do dia. O gráfico = dado histórico/comparativo confiável que conta a história sozinho e **promove aquela edição**. Os arquivos ficam em `posts/` (spec de marca no CLAUDE.md "Posts"). Roda depois que o `edition-final.md` do dia existe (o draft já foi empurrado pro Substack).
 
-`pt.md` → **chart-post** → `posts/data/<slug>.json` (dados auditáveis) + `posts/chart-<slug>.html` (chart) + `posts/chart-<slug>.png` (render 2×) + `posts/chart-<slug>.md` (prosa pra colar como Substack Note).
+`edition-final.md` → **chart-post** → `posts/data/<slug>.json` (dados auditáveis) + `posts/chart-<slug>.html` (chart) + `posts/chart-<slug>.png` (render 2×) + `posts/chart-<slug>.md` (prosa pra colar como Substack Note).
 
 **Garimpo e mecânica são automáticos; gosto e rigor de dado são do Gui.** Os pontos de julgamento (qual gráfico, qual fonte, resolver divergência de método, aprovar labels, aprovar prosa) passam por ele via AskUserQuestion ou apresentação. Não publique sozinho.
 
@@ -22,9 +22,9 @@ Tarefa recorrente: "fazer um post de gráfico do Substack" a partir da edição 
 ```bash
 DATE=${ARG:-$(date '+%Y-%m-%d')}
 BASE=/Users/guilherme/ai-newsletter/pipeline/output/ai/$DATE
-test -f "$BASE/pt.md" || { echo "sem pt.md em $BASE"; ls /Users/guilherme/ai-newsletter/pipeline/output/ai/ | tail -8; }
+test -f "$BASE/edition-final.md" || { echo "sem edition-final.md em $BASE"; ls /Users/guilherme/ai-newsletter/pipeline/output/ai/ | tail -8; }
 ```
-Sem `pt.md`, **não invente** — liste as datas e pare. **Leia o `pt.md` inteiro** (e o `research.json` pra fontes/números): a escolha do gráfico sai da história, não de uma entidade qualquer.
+Sem `edition-final.md`, **não invente** — liste as datas e pare. **Leia o `edition-final.md` inteiro** (e o `research.json` pra fontes/números): a escolha do gráfico sai da história, não de uma entidade qualquer.
 
 ## Step 1: Propor candidatos de gráfico (julgamento do Gui)
 
