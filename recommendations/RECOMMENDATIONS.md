@@ -777,3 +777,13 @@ https://www.youtube.com/watch?v=f6D_aiy8qyU
 **Could Open Source AI be Banned?**
 O canal Sentdex rebate o lobby da Anthropic em Washington por restrições à IA aberta e mostra que já dá pra rodar modelos de fronteira em casa com um único GPU, gastando bem menos que a API. Também desmonta as histórias de medo do lobby, como o suposto "hack da NSA" que foi só uma tool call num teste autorizado
 https://www.youtube.com/watch?v=AgpeggCsRH4
+
+## 2026-07-03
+
+**Gavin Baker: SpaceX Might Be the Greatest Company of All Time**
+Nesta conversa, o investidor Gavin Baker discute a recente abertura de capital (IPO) da SpaceX, o papel da empresa como uma das mais importantes da história e as dinâmicas atuais do mercado de capitais impulsionadas pela infraestrutura de Inteligência Artificial (IA)
+https://www.youtube.com/watch?v=PW5n3ZnEJN0
+
+**Grant Sanderson (3Blue1Brown) – AI and the future of math**
+Grant Sanderson, criador do canal 3Blue1Brown, discute com Dwarkesh Patel o impacto da inteligência artificial na matemática. O vídeo explora como a matemática, sendo um campo com progresso acelerado em IA, serve como um indicador do que ocorrerá em outras áreas do conhecimento e da economia
+https://www.youtube.com/watch?v=TfyPshgMbug
