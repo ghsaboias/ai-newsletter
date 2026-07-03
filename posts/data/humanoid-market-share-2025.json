@@ -1,0 +1,59 @@
+{
+  "slug": "humanoid-market-share-2025",
+  "title_pt": "Participação nas remessas globais de robôs humanoides (2025): AgiBot 39%, Unitree 32%, EUA mal passam de 1% cada",
+  "edition": "2026-07-03",
+  "metric": "Participação de cada fabricante nas REMESSAS (unidades enviadas) globais de robôs humanoides em 2025, em % — base Omdia. Também guardamos as unidades absolutas por fabricante.",
+  "definition": "Robô humanoide = robô com forma antropomórfica (tronco/braços; bípede ou base móvel). Plotamos a participação de cada fabricante sobre o total de ~13.318 unidades remetidas no mundo em 2025, conforme a Omdia. Fonte única, método único (todas as participações e unidades vêm do mesmo relatório da Omdia). Cada barra é % do total global de remessas do ano.",
+  "series": [
+    { "vendor": "AgiBot",     "share_pct": 39, "units": 5168, "country": "CN", "source_ref": "omdia-embodied-2026" },
+    { "vendor": "Unitree",    "share_pct": 32, "units": 4200, "country": "CN", "source_ref": "omdia-embodied-2026" },
+    { "vendor": "UBTech",     "share_pct": 7,  "units": 1000, "country": "CN", "source_ref": "omdia-embodied-2026" },
+    { "vendor": "Leju",       "share_pct": 4,  "units": 500,  "country": "CN", "source_ref": "omdia-embodied-2026" },
+    { "vendor": "EngineAI",   "share_pct": 3,  "units": 400,  "country": "CN", "source_ref": "omdia-embodied-2026" },
+    { "vendor": "Fourier",    "share_pct": 2,  "units": 300,  "country": "CN", "source_ref": "omdia-embodied-2026" },
+    { "vendor": "Figure AI",  "share_pct": 2,  "units": 150,  "country": "US", "source_ref": "omdia-embodied-2026" },
+    { "vendor": "Agility",    "share_pct": 1,  "units": 150,  "country": "US", "source_ref": "omdia-embodied-2026" },
+    { "vendor": "Tesla",      "share_pct": 1,  "units": 150,  "country": "US", "source_ref": "omdia-embodied-2026" },
+    { "vendor": "Outros",     "share_pct": 10, "units": 1300, "country": "XX", "source_ref": "omdia-embodied-2026" }
+  ],
+  "totals": {
+    "global_units_2025": 13318,
+    "yoy_growth_pct": 480,
+    "china_share_pct": 90,
+    "omdia_2035_forecast_units": 2600000
+  },
+  "sources": [
+    {
+      "id": "omdia-embodied-2026",
+      "label": "Omdia — \"General-Purpose Embodied Intelligent Robot 2026\" (relatório publicado em 8/jan/2026)",
+      "url": "https://www.scmp.com/tech/tech-trends/article/3339346/chinese-firms-outpace-us-rivals-2025-humanoid-robot-shipments-agibot-takes-lead",
+      "provides": "Total global 2025 = 13.318 unidades (+~480% a.a.); ranking por remessas: AgiBot 5.168 (39%), Unitree 4.200 (32%), UBTech 1.000 (7%), Leju (4%), EngineAI (3%), Fourier (2%), Figure/Agility/Tesla ~150 cada (2%/1%/1%), Outros ~1.300 (10%). Previsão de 2,6 mi de unidades em 2035."
+    },
+    {
+      "id": "omdia-shares-table",
+      "label": "Robotics & Automation News — reprodução da 'Figure 3: market share by vendor, 2025' da Omdia",
+      "url": "https://roboticsandautomationnews.com/2026/01/21/agibot-claims-top-spot-in-global-humanoid-robot-shipments-in-2025-with-more-than-5100-units-delivered/98223/",
+      "provides": "Tabela de participação por fabricante da Omdia: AgiBot 39%, Unitree 32%, UBTech 7%, Leju 4%, EngineAI 3%, Fourier 2%, Figure 2%, Agility 1%, Tesla 1%, Outros 10%."
+    },
+    {
+      "id": "unitree-prospectus",
+      "label": "Prospecto de IPO da Unitree (STAR Market) — via Caixin/Aju/Rest of World",
+      "url": "https://www.caixinglobal.com/2026-07-03/unitree-robotics-wins-approval-for-618-million-star-market-ipo-102460136.html",
+      "provides": "Número AUTO-REPORTADO da Unitree: 5.500 unidades e 32,4% do mercado global (1º lugar). NÃO usado no gráfico — é a ponte de fonte do caption."
+    }
+  ],
+  "method_fork": {
+    "chosen": "Omdia (terceiro, ranking completo, método único).",
+    "why": "Fonte de terceiro cobre TODOS os fabricantes com um só método, enquanto o prospecto só dá o próprio número da Unitree e é auto-reportado (conflito de interesse num documento de IPO). A regra: citable > derived, fonte única, ponte no caption.",
+    "discrepancy": "Prospecto da Unitree: 5.500 unidades, 32,4%, 1º lugar. Omdia: 4.200 unidades, 32%, 2º lugar (atrás da AgiBot, 5.168 / 39%). As DUAS concordam que a Unitree tem ~32% do mercado; divergem no total (Omdia ~13.318 vs prospecto ~17.000) e em quem lidera. A edição cita '32,4%', consistente com os 32% da Omdia.",
+    "not_mixed": "NÃO usar a tabela da Visual Capitalist, que mistura os 5.500 auto-reportados da Unitree com a cauda da Omdia (métodos diferentes no mesmo eixo)."
+  },
+  "notes": [
+    "Medido: participação de cada fabricante nas REMESSAS (unidades) globais de humanoides em 2025, estimativas Omdia. Fluxo (vendas do ano), não estoque instalado.",
+    "Fonte única (Omdia, relatório de jan/2026), método único — participações e unidades do mesmo relatório. Sem pontos derivados/interpolados.",
+    "As participações somam 101% por arredondamento (cada fabricante arredondado ao % inteiro).",
+    "Cor = país: China (verde), EUA (azul), Outros (cinza) — codifica a dominância chinesa (~90% das remessas).",
+    "Ponte de fonte (vai no caption, não na prosa): o prospecto de IPO da Unitree reporta 5.500 unidades e 32,4% (1º); a Omdia, independente, dá 4.200 e o 1º à AgiBot. Ambas concordam em ~32% para a Unitree.",
+    "Por que promove a edição: o item do dia é a aprovação do IPO de US$618 mi da Unitree no STAR Market; o gráfico mostra onde a Unitree está no mercado global (~32%, vice) e o quão cedo ainda é o setor (mercado inteiro = ~13 mil unidades)."
+  ]
+}
