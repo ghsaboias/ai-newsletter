@@ -5,7 +5,7 @@ INPUT=$(cat)
 URL=$(echo "$INPUT" | jq -r '.tool_input.url')
 DOMAIN=$(echo "$URL" | sed -E 's|https?://(www\.)?([^/]+).*|\2|')
 
-BLOCKED="reuters.com bloomberg.com axios.com cnbc.com politico.eu seekingalpha.com businessinsider.com wired.com business-standard.com datacenterdynamics.com etnownews.com archynewsy.com wccftech.com openai.com cybernews.com coindesk.com appleinsider.com aninews.in"
+BLOCKED="reuters.com bloomberg.com axios.com cnbc.com politico.eu seekingalpha.com businessinsider.com wired.com business-standard.com datacenterdynamics.com etnownews.com archynewsy.com wccftech.com openai.com cybernews.com coindesk.com appleinsider.com aninews.in iea.org"
 
 for b in $BLOCKED; do
   if [[ "$DOMAIN" == "$b" ]]; then
