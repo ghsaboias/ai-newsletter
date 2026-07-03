@@ -1,0 +1,36 @@
+{
+  "slug": "data-center-electricity",
+  "title_pt": "Consumo global de eletricidade dos data centers",
+  "edition": "2026-07-02",
+  "metric": "Consumo mundial de eletricidade dos data centers, em TWh por ano",
+  "definition": "Consumo total de eletricidade de todos os data centers do mundo (IA, computação convencional e cripto, conforme a metodologia da IEA). 2020-2025 = histórico/estimativa (2025 já é ano fechado, dado da atualização da IEA de out. 2025); 2026-2035 = projeção do cenário-base (Base Case) da IEA. O relatório traz quatro cenários; em 2035 o intervalo entre eles vai de 700 TWh (Headwinds) a 1.700 TWh (Lift-Off), com o Base em ~1.200 TWh.",
+  "series": [
+    {"year": 2020, "twh": 275, "phase": "historical", "basis": "read_from_iea_chart", "source_ref": "iea_chart"},
+    {"year": 2024, "twh": 415, "phase": "historical", "basis": "iea_stated_exact", "note": "1,5% da eletricidade mundial", "source_ref": "iea_energy_ai"},
+    {"year": 2025, "twh": 485, "phase": "historical", "basis": "iea_stated_exact", "note": "dado/estimativa de 2025 (IEA, out. 2025); pouco mais de 1,5% da eletricidade mundial. Medido no gráfico de abr/2025 = 482", "source_ref": "iea_key_questions"},
+    {"year": 2026, "twh": 557, "phase": "projection_base", "basis": "measured_from_iea_chart", "source_ref": "iea_chart"},
+    {"year": 2027, "twh": 664, "phase": "projection_base", "basis": "measured_from_iea_chart", "source_ref": "iea_chart"},
+    {"year": 2028, "twh": 770, "phase": "projection_base", "basis": "measured_from_iea_chart", "source_ref": "iea_chart"},
+    {"year": 2029, "twh": 861, "phase": "projection_base", "basis": "measured_from_iea_chart", "source_ref": "iea_chart"},
+    {"year": 2030, "twh": 950, "phase": "projection_base", "basis": "iea_stated_exact", "note": "~3% da eletricidade mundial; IEA out. 2025 declara ~950 (abr. 2025 declarava 945; medido no gráfico = 943)", "source_ref": "iea_key_questions"},
+    {"year": 2031, "twh": 1011, "phase": "projection_base", "basis": "measured_from_iea_chart", "source_ref": "iea_chart"},
+    {"year": 2032, "twh": 1072, "phase": "projection_base", "basis": "measured_from_iea_chart", "source_ref": "iea_chart"},
+    {"year": 2033, "twh": 1116, "phase": "projection_base", "basis": "measured_from_iea_chart", "source_ref": "iea_chart"},
+    {"year": 2034, "twh": 1161, "phase": "projection_base", "basis": "measured_from_iea_chart", "source_ref": "iea_chart"},
+    {"year": 2035, "twh": 1200, "phase": "projection_base", "basis": "iea_stated_exact", "note": "cenário-base; intervalo 700-1.700 entre cenários", "source_ref": "iea_energy_ai"}
+  ],
+  "scenario_range_2035": {"headwinds": 703, "base": 1200, "lift_off": 1715, "basis": "measured_from_iea_chart; IEA texto declara faixa de 700 a 1.700"},
+  "sources": [
+    {"id": "iea_energy_ai", "label": "IEA — Energy and AI, Executive summary + Energy demand from AI (10 abr. 2025)", "url": "https://www.iea.org/reports/energy-and-ai/executive-summary", "provides": "415 TWh em 2024 (1,5% da eletricidade mundial), 945 TWh no cenário-base em 2030 (~3%), ~1.200 TWh em 2035; faixa de 700 a 1.700 TWh entre cenários em 2035"},
+    {"id": "iea_chart", "label": "IEA — Global data centre electricity consumption by sensitivity case, 2020-2035 (gráfico, CC BY 4.0)", "url": "https://www.iea.org/data-and-statistics/charts/global-data-centre-electricity-consumption-by-sensitivity-case-2020-2035", "provides": "trajetória anual do cenário-base e dos cenários Headwinds/Lift-Off, lidos do gráfico publicado"},
+    {"id": "iea_key_questions", "label": "IEA — Key Questions on Energy and AI (out. 2025)", "url": "https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary", "provides": "consumo cresceu >15% em 2024-2025, chegando a ~485 TWh em 2025; projeção de ~950 TWh em 2030 mantida"},
+    {"id": "context_stories", "label": "Edição 2026-07-02 — Switch (rodada a16z, ~US$50 bi) e National Grid/Chevron (Project Kilby, 2,67 GW no Texas para data center da Microsoft)", "url": "https://dailyjournal.news/news/2026-07-02/national-grid-ventures-poe-us175-bi-na-joulent-para-energia-de-data-centers", "provides": "contexto: por que investidores e concessionárias despejam bilhões em energia para data centers"}
+  ],
+  "notes": [
+    "Fluxo anual de consumo (TWh/ano), não capacidade instalada (GW).",
+    "Estamos em jul/2026: 2024 e 2025 são anos fechados. 2024=415 e 2025=485 são dados/estimativas da IEA (485 é da atualização de out/2025). A projeção começa em 2026.",
+    "Só o cenário-base é plotado como linha; a faixa de cenários (700-1.700 TWh em 2035) fica na legenda/subtítulo.",
+    "Âncoras declarados pela IEA: 2024=415 e 2035=1.200 (relatório de abr/2025); 2025=485 e 2030=950 (atualização de out/2025). Anos intermediários (2026-2029, 2031-2034) foram medidos por análise de pixel do gráfico publicado da IEA, calibrada pelas gridlines e validada contra os âncoras (medido 2030=943 vs 950 declarado; Lift-Off/Headwinds 2035 medidos 1.715/703 vs faixa declarada 1.700/700).",
+    "2020 (~275) lido do gráfico; 2021-2023 não plotados (linha liga 2020 a 2024 direto), consistente com o crescimento de ~12%/ano desde 2017 declarado pela IEA."
+  ]
+}

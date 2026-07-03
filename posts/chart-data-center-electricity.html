@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Consumo global de eletricidade dos data centers</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    background: #FFFFFF;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 38px;
+  }
+  .card { width: 720px; background: #FFFFFF; padding: 36px 40px; }
+  .header { padding-bottom: 24px; border-bottom: 3px solid #044B2E; }
+  .header h1 {
+    font-size: 24px; font-weight: 700; color: #000000;
+    letter-spacing: -0.8px; line-height: 28px; max-width: none;
+  }
+  .kicker { font-size: 13px; line-height: 18px; color: #444; margin-top: 18px; }
+  .kicker b { color: #044B2E; }
+  .chart-area { padding: 18px 0 4px; }
+  .chart-container { position: relative; width: 100%; height: 430px; }
+  .chart-logo { position: absolute; height: 15px; right: 8px; bottom: 40px; opacity: 0.92; }
+  .legend {
+    display: flex; gap: 22px; margin-top: 16px; padding-top: 14px;
+    border-top: 1px solid #E5E5E5; font-size: 11px; color: #444;
+  }
+  .legend .swatch {
+    display: inline-block; width: 12px; height: 12px; margin-right: 6px;
+    vertical-align: middle; border-radius: 2px;
+  }
+  .legend .line-swatch {
+    display: inline-block; width: 16px; height: 3px; margin-right: 6px;
+    vertical-align: middle; border-radius: 2px;
+  }
+  .caption {
+    font-size: 11px; line-height: 16px; color: #999;
+    margin-top: 16px; padding-top: 14px; border-top: 1px solid #E5E5E5;
+  }
+  .footer {
+    padding-top: 14px; border-top: 1px solid #E5E5E5;
+    display: flex; justify-content: space-between; margin-top: 14px;
+  }
+  .footer span { font-size: 10px; color: #999; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="card" id="capture">
+  <div class="header">
+    <h1>Consumo global de eletricidade dos data centers</h1>
+  </div>
+
+  <div class="kicker">
+    Os data centers do mundo consumiram cerca de <b>485 TWh</b> de eletricidade em 2025, pouco mais de <b>1,5%</b> de toda a energia elétrica do planeta. A IEA projeta que esse consumo <b>praticamente dobre até 2030</b>, para cerca de <b>950 TWh</b> (~3% do total mundial), puxado pela IA. Conforme o cenário, 2035 fica entre <b>700 e 1.700 TWh</b>.
+  </div>
+
+  <div class="chart-area">
+    <div class="chart-container">
+      <canvas id="dc"></canvas>
+      <img src="../../daily-journal-platform/public/images/logo/logo-green-horizontal.png" class="chart-logo" alt="Daily Journal">
+    </div>
+
+    <div class="legend">
+      <span><span class="line-swatch" style="background:#044B2E"></span>Histórico (até 2025)</span>
+      <span><span class="line-swatch" style="background:#7DB89B"></span>Projeção IEA — cenário-base</span>
+      <span>tracejado = após 2030 (maior incerteza)</span>
+    </div>
+  </div>
+
+  <div class="caption">
+    Consumo mundial de eletricidade dos data centers, em TWh por ano (fluxo anual). Até 2025, dado/estimativa; 2026–2035, projeção do cenário-base da IEA (o relatório traz quatro cenários).
+  </div>
+
+  <div class="footer">
+    <span>Fonte: IEA — Energy and AI (2025) e atualização de out/2025; cenário-base</span>
+    <span>dailyjournal.news</span>
+  </div>
+</div>
+
+<script>
+  const data = {
+    labels: ['2020','2021','2022','2023','2024','2025','2026','2027','2028','2029','2030','2031','2032','2033','2034','2035'],
+    twh:    [275,   null,  null,  null,  415,   485,   557,   664,   770,   861,   950,   1011,  1072,  1116,  1161,  1200],
+    // label endpoints/milestones only
+    marks: { 0:'~275', 5:'485', 10:'950', 15:'1.200' },
+    // hide dots + labels on the dashed tail between 2030 and 2035
+    hideTail: [11, 12, 13, 14]
+  };
+
+  new Chart(document.getElementById('dc').getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: data.labels,
+      datasets: [{
+        data: data.twh,
+        spanGaps: true,
+        borderWidth: 3,
+        tension: 0.25,
+        segment: {
+          borderColor: (c) => c.p0DataIndex < 5 ? '#044B2E' : '#7DB89B',
+          borderDash:  (c) => c.p0DataIndex >= 10 ? [6, 5] : undefined
+        },
+        borderColor: '#7DB89B',
+        pointRadius:      data.twh.map((v, i) => (v == null || data.hideTail.includes(i)) ? 0 : ([0,5,10,15].includes(i) ? 4.5 : 3)),
+        pointHoverRadius: 0,
+        pointBackgroundColor: '#FFFFFF',
+        pointBorderColor: data.twh.map((_, i) => i <= 5 ? '#044B2E' : '#7DB89B'),
+        pointBorderWidth: 2,
+        fill: false
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 1300,
+          grid: { color: '#f0f0f0', drawTicks: false },
+          border: { display: false },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 13, weight: '700' },
+            color: '#999', padding: 8, stepSize: 250,
+            callback: (v) => v.toLocaleString('pt-BR') + ' TWh'
+          }
+        },
+        x: {
+          grid: { display: false },
+          border: { color: '#ccc' },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 12, weight: '600' },
+            color: '#333', padding: 6, autoSkip: false,
+            callback: function(v, i) { return [0,2,4,6,8,10,12,15].includes(i) ? this.getLabelForValue(v) : ''; }
+          }
+        }
+      },
+      layout: { padding: { top: 34, right: 12, left: 0, bottom: 0 } }
+    },
+    plugins: [{
+      id: 'valueLabels',
+      afterDatasetsDraw(chart) {
+        const { ctx } = chart;
+        const pts = chart.getDatasetMeta(0).data;
+        const milestone = new Set([0, 5, 10, 15]);
+        data.twh.forEach((v, i) => {
+          if (v == null || data.hideTail.includes(i)) return;
+          const pt = pts[i];
+          const isM = milestone.has(i);
+          ctx.save();
+          ctx.textAlign = (i === 15) ? 'right' : (i === 0 ? 'left' : 'center');
+          ctx.textBaseline = 'bottom';
+          ctx.font = (isM ? '700 13px' : '600 11px') + ' Helvetica Neue';
+          ctx.fillStyle = i <= 5 ? '#044B2E' : '#5a9377';
+          const dx = i === 15 ? -2 : (i === 0 ? -2 : 0);
+          ctx.fillText(i === 0 ? '~' + v : v.toLocaleString('pt-BR'), pt.x + dx, pt.y - (isM ? 9 : 7));
+          ctx.restore();
+        });
+      }
+    }]
+  });
+</script>
+</body>
+</html>
