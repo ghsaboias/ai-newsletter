@@ -395,6 +395,15 @@ this file.
 
 Idempotency: if `links.json` exists, the day was already ingested — **skip**.
 
+**Run this as ONE foreground Bash call with an explicit `timeout: 600000` (10 min).**
+Ingest takes ~4 min for ~20 entities; the Bash tool's default 2-min timeout kills it
+mid-run, leaving partial DB rows that the retry then collides with (duplicate-key
+noise). **Never** run it with `run_in_background`, `nohup`, or a detached `&`: in the
+headless Slack harness, Bash background tasks are killed the moment the turn ends and
+their completion notification never arrives — a detached ingest finishes with nobody
+watching and the chain stalls. Staying foreground keeps the turn (and the run) alive.
+The same 10-min timeout applies to the `--propose` call in Step 3.5b.
+
 ```bash
 D=/Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>
 [ -f "$D/links.json" ] || /Users/guilherme/ai-newsletter/pipeline/ingest.sh <DATE> --execute
