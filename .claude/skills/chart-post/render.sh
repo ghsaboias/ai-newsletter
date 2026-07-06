@@ -1,29 +1,47 @@
 #!/usr/bin/env bash
-# render.sh <slug>
-# Exporta posts/chart-<slug>.html como PNG 2× (retina), recortado justo no card
-# #capture (sem a margem branca do body), em posts/chart-<slug>.png.
-# Idempotente: navega a aba existente se já houver uma, senão abre. Alvo por
-# substring de URL (-t=chart-<slug>), então NÃO precisa capturar tab ID.
+# render.sh <slug>            → exporta posts/chart-<slug>.html como PNG 2× (retina),
+#                               recortado justo no card #capture, em posts/chart-<slug>.png
+# render.sh <slug> --eval JS  → avalia uma expressão JS na página do chart (medição de
+#                               chartArea p/ posicionar a logo etc.) e imprime o resultado
 #
-# Render via browser-tools (NÃO headless — Brave headless trava no setup de perfil).
-# Roda com o Brave/Chrome real aberto. Se o PNG sair em branco/baixo, rode de novo
-# (o Chart.js às vezes precisa de um segundo passe).
+# Plataforma:
+#  - macOS: browser-tools (Brave REAL via CDP — headless trava no setup de perfil).
+#    Idempotente: navega a aba existente se já houver uma (-t=chart-<slug>).
+#  - Linux (Pi): Chromium headless via headless-render.js (CDP puro, sem deps npm).
+#    Headless funciona no Linux; browser-tools/Brave é só no Mac.
+# Se o PNG sair em branco/baixo, rode de novo (o Chart.js às vezes precisa de 2º passe).
 set -euo pipefail
 
-SLUG="${1:?uso: render.sh <slug>}"
-POSTS="/Users/guilherme/ai-newsletter/posts"
-BT="$HOME/agent-tools/browser-tools"
+SLUG="${1:?uso: render.sh <slug> [--eval 'expressão JS']}"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+REPO="$(cd "$SCRIPT_DIR/../../.." && pwd)"
+POSTS="$REPO/posts"
 HTML="$POSTS/chart-$SLUG.html"
 FILE="file://$HTML"
-SCALE=2   # browser-screenshot.js captura em deviceScaleFactor 2
+SCALE=2   # captura em deviceScaleFactor 2
 
 test -f "$HTML" || { echo "ERRO: sem html em $HTML"; exit 1; }
+
+# ---------- Linux (Pi): Chromium headless ----------
+if [ "$(uname -s)" = "Linux" ]; then
+  if [ "${2:-}" = "--eval" ]; then
+    exec node "$SCRIPT_DIR/headless-render.js" eval "$HTML" "${3:?uso: render.sh <slug> --eval 'expressão JS'}"
+  fi
+  exec node "$SCRIPT_DIR/headless-render.js" render "$HTML" "$POSTS/chart-$SLUG.png"
+fi
+
+# ---------- macOS: browser-tools (Brave real) ----------
+BT="$HOME/agent-tools/browser-tools"
 
 # nav se a aba já existe, senão abre (evita acumular abas duplicadas em re-render)
 if "$BT/browser-list.js" 2>/dev/null | grep -q "chart-$SLUG\.html"; then
   "$BT/browser-nav.js" -t="chart-$SLUG.html" "$FILE" >/dev/null
 else
   "$BT/browser-open.js" "$FILE" >/dev/null
+fi
+
+if [ "${2:-}" = "--eval" ]; then
+  exec "$BT/browser-eval.js" -t="chart-$SLUG.html" "${3:?uso: render.sh <slug> --eval 'expressão JS'}"
 fi
 
 # altura do card (#capture) + 76 (padding do body: ~38px topo + 38px base) p/ dimensionar o viewport

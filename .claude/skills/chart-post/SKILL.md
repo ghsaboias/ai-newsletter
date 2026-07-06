@@ -1,7 +1,7 @@
 ---
 name: chart-post
 description: >-
-  Cria um post de gráfico do Substack a partir de uma história da edição do dia da newsletter de AI/Tech. Lê o edition-final.md, propõe 3-4 candidatos de gráfico via AskUserQuestion (com previews ASCII), Gui escolhe, pesquisa dados de FONTES PRIMÁRIAS (citable > derived), resolve qualquer divergência de método com Gui, grava os dados auditáveis em posts/data/<slug>.json, constrói o chart copiando o scaffolding de marca de um posts/chart-*.html existente, renderiza em PNG 2× via render.sh (browser-tools, não headless), inspeciona os labels, e escreve a prosa em posts/chart-<slug>.md. Voz neutra/profissional, título factual/descritivo, todas as ressalvas no caption (não na prosa). Aciona quando o usuário diz "fazer um post com gráfico", "post de gráfico do dia", "craft a substack post with a chart", "/chart-post".
+  Cria um post de gráfico do Substack a partir de uma história da edição do dia da newsletter de AI/Tech. Lê o edition-final.md, propõe 3-4 candidatos de gráfico via AskUserQuestion (com previews ASCII), Gui escolhe, pesquisa dados de FONTES PRIMÁRIAS (citable > derived), resolve qualquer divergência de método com Gui, grava os dados auditáveis em posts/data/<slug>.json, constrói o chart copiando o scaffolding de marca de um posts/chart-*.html existente, renderiza em PNG 2× via render.sh (Mac: browser-tools no Brave real; Pi/Linux: Chromium headless), inspeciona os labels, e escreve a prosa em posts/chart-<slug>.md. Voz neutra/profissional, título factual/descritivo, todas as ressalvas no caption (não na prosa). Aciona quando o usuário diz "fazer um post com gráfico", "post de gráfico do dia", "craft a substack post with a chart", "/chart-post".
 allowed-tools: Read, Write, Edit, Bash, WebSearch, WebFetch, AskUserQuestion
 ---
 
@@ -21,8 +21,8 @@ Tarefa recorrente: "fazer um post de gráfico do Substack" a partir da edição 
 
 ```bash
 DATE=${ARG:-$(date '+%Y-%m-%d')}
-BASE=/Users/guilherme/ai-newsletter/pipeline/output/ai/$DATE
-test -f "$BASE/edition-final.md" || { echo "sem edition-final.md em $BASE"; ls /Users/guilherme/ai-newsletter/pipeline/output/ai/ | tail -8; }
+BASE=~/ai-newsletter/pipeline/output/ai/$DATE
+test -f "$BASE/edition-final.md" || { echo "sem edition-final.md em $BASE"; ls ~/ai-newsletter/pipeline/output/ai/ | tail -8; }
 ```
 Sem `edition-final.md`, **não invente** — liste as datas e pare. **Leia o `edition-final.md` inteiro** (e o `research.json` pra fontes/números): a escolha do gráfico sai da história, não de uma entidade qualquer.
 
@@ -87,11 +87,14 @@ Spec de marca completa no **CLAUDE.md "Posts"** (card 720px, H1 Helvetica 24px/7
 ```bash
 .claude/skills/chart-post/render.sh <slug>
 ```
-Faz o ciclo 2× retina inteiro (nav-se-existe-senão-abre → mede `#capture` → resize 800×H → screenshot → **recorta no card `#capture`** → grava `posts/chart-<slug>.png`). O PNG sai justo no card, sem a margem branca do body. Re-render depois de editar o HTML = rodar de novo (reaproveita a aba). Browser-tools usa o Brave **real** (headless trava).
+Faz o ciclo 2× retina inteiro (nav-se-existe-senão-abre → mede `#capture` → resize 800×H → screenshot → **recorta no card `#capture`** → grava `posts/chart-<slug>.png`). O PNG sai justo no card, sem a margem branca do body. Re-render depois de editar o HTML = rodar de novo (reaproveita a aba).
+
+**Plataforma:** o render.sh detecta sozinho. No **Mac**, browser-tools no Brave **real** (headless trava no setup de perfil). No **Pi (Linux)**, Chromium headless via `headless-render.js` (CDP puro, sem deps npm; headless funciona no Linux) — mesmo output, mesmo card 1440px. A fonte no Pi cai num clone de Helvetica visualmente equivalente; sem ajuste necessário.
 
 **Read o PNG** pra julgar. Pra ver overlap de label de perto, **crope** (um Read da imagem inteira rebaixa demais):
 ```bash
 magick posts/chart-<slug>.png -crop WxH+X+Y +repage /tmp/x.png   # depois Read /tmp/x.png
+# no Pi (ImageMagick 6): convert no lugar de magick
 ```
 Itere o HTML → `render.sh` → Read até os labels estarem limpos. Se o PNG sair em branco/baixo, rode `render.sh` de novo.
 
@@ -99,9 +102,9 @@ Itere o HTML → `render.sh` → Read até os labels estarem limpos. Se o PNG sa
 
 Primeiro ache o **quadrante vazio do plot**: padrão é o **canto inferior direito** (funciona quando os dados sobem pra direita). Se os dados ocupam esse canto (série decrescente, barras altas à direita), vá pro canto limpo (superior direito/esquerdo).
 
-Depois **alinhe pela geometria do plot, não no olho** — meça com browser-eval e calcule o CSS:
+Depois **alinhe pela geometria do plot, não no olho** — meça com `render.sh --eval` (funciona no Mac e no Pi) e calcule o CSS:
 ```bash
-cd ~/agent-tools/browser-tools && ./browser-eval.js -t="chart-<slug>.html" \
+.claude/skills/chart-post/render.sh <slug> --eval \
   "(function(){var c=Chart.getChart('<canvasId>');var k=document.querySelector('.chart-container');return {areaRight:Math.round(c.chartArea.right),areaBottom:Math.round(c.chartArea.bottom),contW:k.clientWidth,contH:k.clientHeight};})()"
 ```
 Pra inferior-direito: `right = contW − areaRight` (a borda direita da logo encosta no fim da linha do eixo X) e `bottom = contH − areaBottom + ~12` (folga acima da linha do eixo). Re-renderize e confira: a logo respira, sem encostar nos labels do eixo nem nos dados.
@@ -145,6 +148,6 @@ Posts são commitados (charts + `posts/data/*.json` = dados auditáveis). `origi
 - **Garimpo automático, escolha humana.** Candidato de gráfico, fonte, fork de método, labels e prosa passam pelo Gui. Nunca publique sozinho.
 - **Citable > derived.** Plote números reportados, não interpolados/computados. Largue a série problemática em vez de fudge.
 - **Caption/footnote = só fonte; caracterização da história → subtítulo.** O footnote fica só com de-onde-vem-cada-número (e a ponte de fonte). O que é medido, meta vs realizado, contexto setorial = subtítulo. Nunca na prosa nem no título. (Gui, 2026-06-30.)
-- **Render via browser-tools (`render.sh`), não headless.** Brave headless trava no setup de perfil.
+- **Render sempre via `render.sh`** — ele escolhe o backend pela plataforma: Mac = browser-tools no Brave real (headless de Brave trava no setup de perfil), Pi/Linux = Chromium headless (`headless-render.js`). Nunca tente headless no Mac nem browser-tools no Pi.
 - **Não duplique a logo DJ** — referencie de `daily-journal-platform`.
 - **Título factual, voz neutra, sem frase-moldura.** Os três erros que o Gui corrigiu — não os repita.
