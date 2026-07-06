@@ -1,0 +1,40 @@
+{
+  "slug": "concentracao-sp500",
+  "title_pt": "Peso das 10 maiores empresas no S&P 500",
+  "edition": "2026-07-06",
+  "metric": "Participação combinada das 10 maiores empresas no valor de mercado do S&P 500, em % do índice (peso de fim de ano)",
+  "definition": "Peso somado das 10 maiores empresas do índice por valor de mercado, medido no fim de cada ano ('reflects year-end weighting for each year'), conforme RBC Wealth Management/FactSet",
+  "series": [
+    { "year": 1990, "weight_pct": 19, "approximate": true, "note": "'roughly 19 percent' — top 10 incluía IBM, Exxon, GE e Philip Morris", "source_ref": "rbc" },
+    { "year": 2000, "weight_pct": 23, "approximate": true, "note": "'roughly 23 percent' no fim do ano; pico intra-ano de ~27% ('peaking during the year at about 27 percent')", "intra_year_peak_pct": 27, "source_ref": "rbc" },
+    { "year": 2015, "weight_pct": 19, "approximate": true, "note": "'about 19 percent'", "source_ref": "rbc" },
+    { "year": 2025, "weight_pct": 41, "approximate": true, "note": "'nearly 41 percent' no fim do ano; lucros esperados do grupo = ~32% do total do índice", "source_ref": "rbc" }
+  ],
+  "sources": [
+    {
+      "id": "rbc",
+      "label": "RBC Wealth Management / FactSet — \"The 'Great Narrowing': S&P 500 concentration\" (Tyler Frawley, 22/01/2026; dados de 31/12/25, peso de fim de ano)",
+      "url": "https://www.rbcwealthmanagement.com/en-us/insights/the-great-narrowing-sp-500-concentration",
+      "provides": "todos os pontos da série (1990, 2000 + pico intra-ano, 2015, 2025) e o contraste peso ~41% vs lucros ~32% em 2025"
+    },
+    {
+      "id": "apollo",
+      "label": "Apollo Global Management — \"The extreme weight of AI in the S&P 500\" (Torsten Slok, Rajvi Shah e Shruti Galwankar, jan/2026; dados Bloomberg)",
+      "url": "https://www.apolloacademy.com/wp-content/uploads/2026/01/011326-MarketConcentration.pdf",
+      "provides": "corroboração (série mensal jan/1990–2025 do top-10 market cap chegando a ~40%, 'record high'); não usado como fonte de pontos do chart (valores só em imagem)"
+    },
+    {
+      "id": "notus",
+      "label": "NOTUS — relatório interno preliminar do Tesouro dos EUA comparando o mercado de IA à bolha pontocom (06/07/2026)",
+      "url": "https://www.notus.org/economy/treasury-internal-report-warning-dangers-ai-bubble",
+      "provides": "o gancho editorial da edição de 2026-07-06 (não fornece dados do chart)"
+    }
+  ],
+  "notes": [
+    "Todos os valores são declarados em prosa pelo RBC como aproximações ('roughly', 'about', 'nearly') — plotados com '~' nos labels.",
+    "Série = peso de FIM DE ANO; o ~27% de 2000 é pico INTRA-ANO e por isso entra como anotação sobre a barra de 2000, não como barra própria.",
+    "O contraste de 2025 (peso ~41% vs ~32% dos lucros esperados) fica no subtítulo/prosa, não no chart.",
+    "Apollo/Slok mede a mesma série com dados Bloomberg e chega a ~40% (mensal, nov-dez/2025) — consistente com o ~41% de fim de ano do RBC/FactSet; ponte citada apenas se necessário.",
+    "Cenário de Torsten Slok de top 10 chegar a 50% (Seeking Alpha, jan/2026) descartado do chart por ser especulativo e de segunda fonte; pode ir na prosa."
+  ]
+}
