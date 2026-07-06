@@ -787,3 +787,13 @@ https://www.youtube.com/watch?v=PW5n3ZnEJN0
 **Grant Sanderson (3Blue1Brown) – AI and the future of math**
 Grant Sanderson, criador do canal 3Blue1Brown, discute com Dwarkesh Patel o impacto da inteligência artificial na matemática. O vídeo explora como a matemática, sendo um campo com progresso acelerado em IA, serve como um indicador do que ocorrerá em outras áreas do conhecimento e da economia
 https://www.youtube.com/watch?v=TfyPshgMbug
+
+## 2026-07-06
+
+**Riding AGI, AI Anxiety, Who Funded COVID, Defending Taiwan, and California Empire**
+Naval Ravikant recebe Garry Tan (Y Combinator), Daniel Francis (Abel Police) e Farbood Nivi (A-LIST) para uma discussão sobre o estado atual e o futuro da Inteligência Artificial. O grupo explora as implicações da AGI, o impacto no mercado de trabalho, a geopolítica entre EUA e China e a mudança de paradigma na produtividade humana
+https://www.youtube.com/watch?v=6m-ZZBCiiEE
+
+**Sonnet 5 Drops, China’s $4,900 Robot, Fusion’s First Plant Gets Licensed W/ Philip Johnston | #268**
+O episódio 268 do podcast Moonshots reúne Peter H. Diamandis, Salim Ismail, Dave Blundin e Dr. Alexander Wissner-Gross para discutir avanços exponenciais em robótica, energia, computação espacial e inteligência artificial. O convidado especial é Philip Johnston, CEO da StarCloud, que detalha a infraestrutura de data centers em órbita
+https://www.youtube.com/watch?v=XjOLz--C_nQ
