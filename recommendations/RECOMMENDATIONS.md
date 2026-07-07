@@ -797,3 +797,13 @@ https://www.youtube.com/watch?v=6m-ZZBCiiEE
 **Sonnet 5 Drops, China’s $4,900 Robot, Fusion’s First Plant Gets Licensed W/ Philip Johnston | #268**
 O episódio 268 do podcast Moonshots reúne Peter H. Diamandis, Salim Ismail, Dave Blundin e Dr. Alexander Wissner-Gross para discutir avanços exponenciais em robótica, energia, computação espacial e inteligência artificial. O convidado especial é Philip Johnston, CEO da StarCloud, que detalha a infraestrutura de data centers em órbita
 https://www.youtube.com/watch?v=XjOLz--C_nQ
+
+## 2026-07-07
+
+**OpenAI President Greg Brockman: Our Plan To Merge Chat And Agents**
+Greg Brockman, presidente e cofundador da OpenAI, discute a evolução da empresa em direção a uma “AGI pessoal” (Inteligência Artificial Geral). O foco central da conversa é a transição de modelos de linguagem puramente conversacionais para agentes autônomos capazes de realizar tarefas complexas, gerenciar contextos e executar ações em nome do usuário, utilizando ferramentas e sistemas existentes
+https://www.youtube.com/watch?v=VZTmS4B840k
+
+**From Near Death to a $20B NVIDIA Deal | Jonathan Ross, Groq**
+O vídeo apresenta uma entrevista de David Senra com Jonathan Ross, fundador da Groq e inventor da TPU (Tensor Processing Unit) do Google. A conversa explora a trajetória de Ross, a parceria estratégica de US$ 20 bilhões da Groq com a NVIDIA e sua filosofia de liderança baseada em princípios de primeira ordem, autonomia e “descontentamento manufaturado”
+https://www.youtube.com/watch?v=hwY4bfZN8E8
