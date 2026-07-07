@@ -76,16 +76,33 @@ Abaixo, apenas para assinantes:
 
 ## Regras de voz (obrigatórias)
 
-1. **Curta e declarativa.** Sujeito + verbo no presente + complemento mínimo. Sem
-   gancho relativo ("que ancora", "que pode").
-   - ❌ "O contrato bilionário da Hut 8 que ancora um novo campus de IA."
-   - ✅ "Hut 8 fecha contrato bilionário para um campus de IA no Texas."
+1. **Isca curta, NÃO entregue a notícia.** O teste: depois de ler o teaser, o
+   assinante no máximo fica curioso — não pode saber qual é exatamente a história.
+   Pode ser frase curta OU sintagma nominal (sem verbo); um gancho relativo
+   ("que supera...", "para reduzir...") é bem-vindo — é ele que cria curiosidade
+   sem entregar o fato. (Na prática a pessoa ainda pode colar no Google e achar a
+   matéria; o objetivo é dar esse trabalho a mais, não entregar 100% na paywall.)
+   - ❌ (entrega tudo) "Tencent lança um modelo de código aberto e supera rivais chineses em testes cegos."
+   - ✅ (isca vaga)    "Novo modelo de IA de código aberto que supera até os melhores modelos atuais."
+   - ❌ (entrega tudo) "TeraWulf fecha contrato de longo prazo com a Anthropic para um data center em Kentucky."
+   - ✅ (isca vaga)    "Mais uma empresa de data center nos EUA fecha acordo com a Anthropic."
 2. **Factual.** Sem "por que", "à beira de", "pode ser que". Sem editorialização.
-3. **Vaga.** Corte números, percentuais e datas específicas. Nomes próprios
-   (empresa, país) são permitidos.
-4. **Sem em-dashes (—).** Use vírgulas, dois pontos, ponto.
-5. **Frase única.** Pode juntar dois fatos próximos com "e" se a frase ficar curta.
-6. **Rótulo de categoria** em negrito + ponto. Ex.: `**Data centers.**`,
+   Mas vaguidade nunca vira imprecisão: o descritor genérico tem que ser verdadeiro
+   (não troque "fusão nuclear" por "fusão empresarial").
+3. **Vaga — omita o protagonista.** Corte números, percentuais, datas e o detalhe
+   que deixaria achar a matéria (cidade, nome do benchmark, termo exato). **Não
+   nomeie a empresa/protagonista da história** — troque pelo descritor genérico
+   (nacionalidade "chinês", categoria "uma empresa de data center nos EUA", ou
+   nada). Uma contraparte muito conhecida (ex.: Nvidia, Anthropic) PODE ficar
+   quando serve de isca e não identifica a história por si só.
+4. **Agregue as parecidas.** Quando várias histórias pagas são da mesma categoria
+   (várias rodadas de investimento, vários chips), junte numa única linha
+   guarda-chuva ("Principais rodadas de investimento em startups") em vez de uma
+   linha por empresa.
+5. **Sem em-dashes (—).** Use vírgulas, dois pontos, ponto.
+6. **Uma linha por teaser.** Frase única ou sintagma; pode juntar dois fatos com "e"
+   se ficar curto.
+7. **Rótulo de categoria** em negrito + ponto. Ex.: `**Data centers.**`,
    `**Energia.**`, `**Geopolítica.**`, `**Defesa.**`, `**Macro.**`, `**Capital.**`,
    `**Biotech.**`, `**Big techs.**`, `**Regulação.**`, `**Clima.**`,
    `**Robótica.**`, `**Modelos.**`, `**Agentes.**`, `**Hardware.**`, `**IPO.**`,
@@ -121,9 +138,10 @@ de uma linha por teaser.
 1. Leia o `edition.md` (e o exemplo, se houver).
 2. Liste, na ordem, os bullets de média (`**Entidade.**`), candidatos a teaser.
    As Grandes e o "Leia também" NÃO entram.
-3. Redija um teaser por história paga.
-4. Releia cada teaser: curto, declarativo, sem números/percentuais/datas, sem
-   em-dash, frase única, com rótulo de categoria?
+3. Redija um teaser por história paga (agregando as da mesma categoria numa linha só).
+4. Releia cada teaser: **omite o nome do protagonista? não entrega a notícia**
+   (dá pra saber a história só lendo?), sem números/percentuais/datas, sem
+   em-dash, com rótulo de categoria?
 5. Grave os dois arquivos nos caminhos indicados.
 
 Escreva apenas os arquivos de saída. Sua mensagem final não é o entregável —
