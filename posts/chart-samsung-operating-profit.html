@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lucro da Samsung salta para ₩89,4 tri no 2T26</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    background: #FFFFFF;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 38px;
+  }
+  .card {
+    width: 720px;
+    background: #FFFFFF;
+    padding: 36px 40px;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 24px;
+    border-bottom: 3px solid #044B2E;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.8px;
+    line-height: 26px;
+    max-width: none;
+  }
+  .logo {
+    height: 18px;
+    width: auto;
+    flex: 0 0 auto;
+    display: block;
+  }
+  .kicker {
+    font-size: 13px;
+    line-height: 18px;
+    color: #444;
+    margin-top: 18px;
+  }
+  .kicker b { color: #044B2E; }
+  .chart-area { padding: 20px 0 4px; }
+  .chart-container {
+    width: 100%;
+    height: 360px;
+    position: relative;
+  }
+  .legend {
+    display: flex;
+    gap: 22px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid #E5E5E5;
+    font-size: 11px;
+    color: #444;
+  }
+  .legend span {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+  }
+  .legend .swatch {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+    flex: 0 0 auto;
+    border-radius: 2px;
+  }
+  .caption {
+    font-size: 11px;
+    line-height: 16px;
+    color: #999;
+    margin-top: 14px;
+  }
+  .footer {
+    padding-top: 14px;
+    border-top: 1px solid #E5E5E5;
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    margin-top: 14px;
+  }
+  .footer span {
+    font-size: 10px;
+    color: #999;
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+<div class="card" id="capture">
+  <div class="header">
+    <h1>Lucro da Samsung salta para ₩89,4 tri no 2T26</h1>
+    <img src="../../daily-journal-platform/public/images/logo/logo-green-horizontal.png" class="logo" alt="Daily Journal">
+  </div>
+
+  <div class="kicker">
+    Série em trilhões de wons sul-coreanos. O lucro operacional consolidado ficou abaixo de <b>₩7 tri</b> no início de 2025 e chegou a <b>₩57,2 tri</b> no 1T26; o 2T26 ainda é guidance preliminar.
+  </div>
+
+  <div class="chart-area">
+    <div class="chart-container">
+      <canvas id="samsungProfit"></canvas>
+    </div>
+
+    <div class="legend">
+      <span><span class="swatch" style="background:#044B2E"></span>Resultado reportado</span>
+      <span><span class="swatch" style="background:#7DB89B"></span>Guidance preliminar</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Fonte: Samsung Electronics IR; MarketWatch para guidance de 2T26</span>
+    <span>dailyjournal.news</span>
+  </div>
+</div>
+
+<script>
+  const series = {
+    labels: ['3T23','4T23','1T24','2T24','3T24','4T24','1T25','2T25','3T25','4T25','1T26','2T26'],
+    values: [2.43, 2.82, 6.61, 10.44, 9.18, 6.5, 6.7, 4.7, 12.2, 20.1, 57.2, 89.4],
+    prelimIndex: 11,
+    labelsToShow: {
+      0: '₩2,4 tri',
+      7: '₩4,7 tri',
+      10: '₩57,2 tri',
+      11: '₩89,4 tri'
+    },
+    labelOffsets: {
+      0: { dx: 0, dy: 0 },
+      7: { dx: 0, dy: 0 },
+      10: { dx: -4, dy: 0 },
+      11: { dx: 0, dy: 0 }
+    }
+  };
+
+  new Chart(document.getElementById('samsungProfit').getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: series.labels,
+      datasets: [{
+        data: series.values,
+        backgroundColor: series.values.map((_, i) => i === series.prelimIndex ? '#7DB89B' : '#044B2E'),
+        borderWidth: 0,
+        borderRadius: 3,
+        borderSkipped: false,
+        barPercentage: 0.72,
+        categoryPercentage: 0.86
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: {
+        x: {
+          grid: { display: false },
+          border: { color: '#ccc' },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 11, weight: '600' },
+            color: '#333',
+            padding: 7,
+            maxRotation: 0,
+            autoSkip: false
+          }
+        },
+        y: {
+          beginAtZero: true,
+          max: 100,
+          grid: { color: '#f0f0f0', drawTicks: false },
+          border: { display: false },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 12, weight: '700' },
+            color: '#999',
+            padding: 9,
+            stepSize: 25,
+            callback: function(v) { return '₩' + v + ' tri'; }
+          }
+        }
+      },
+      layout: { padding: { top: 30, right: 6, left: 0, bottom: 0 } }
+    },
+    plugins: [{
+      id: 'valueLabels',
+      afterDatasetsDraw(chart) {
+        const { ctx } = chart;
+        const bars = chart.getDatasetMeta(0).data;
+        Object.keys(series.labelsToShow).forEach((key) => {
+          const i = Number(key);
+          const bar = bars[i];
+          const isPrelim = i === series.prelimIndex;
+          const offset = series.labelOffsets[i] || { dx: 0, dy: 0 };
+          ctx.save();
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'bottom';
+          ctx.font = '700 13px Helvetica Neue';
+          ctx.fillStyle = isPrelim ? '#5a9377' : '#044B2E';
+          ctx.fillText(series.labelsToShow[i], bar.x + offset.dx, bar.y - 8 + offset.dy);
+          ctx.restore();
+        });
+      }
+    }]
+  });
+</script>
+</body>
+</html>
