@@ -807,3 +807,13 @@ https://www.youtube.com/watch?v=VZTmS4B840k
 **From Near Death to a $20B NVIDIA Deal | Jonathan Ross, Groq**
 O vídeo apresenta uma entrevista de David Senra com Jonathan Ross, fundador da Groq e inventor da TPU (Tensor Processing Unit) do Google. A conversa explora a trajetória de Ross, a parceria estratégica de US$ 20 bilhões da Groq com a NVIDIA e sua filosofia de liderança baseada em princípios de primeira ordem, autonomia e “descontentamento manufaturado”
 https://www.youtube.com/watch?v=hwY4bfZN8E8
+
+## 2026-07-08
+
+**Inside Zipline's Autonomous System: 140M Miles, Zero Incidents**
+Uma conversa entre Alfred Lin e Pat Grady (Sequoia Capital) e os fundadores da Zipline, Keller Rinaudo Cliffton e Eric Watson. A Zipline é descrita como o maior sistema autônomo comercial do mundo, tendo superado 140 milhões de milhas voadas com zero incidentes de segurança. A empresa evoluiu de entregas de sangue em Ruanda para uma rede logística global que utiliza drones e tecnologia de ponta para realizar entregas rápidas e autônomas, com o objetivo de atingir um milhão de entregas por dia
+https://www.youtube.com/watch?v=6bGxm8gX41o
+
+**Software in the Age of Agents | The a16z Show**
+Este episódio do The a16z Show reúne Seema Amble, Steven Sinofsky e Elena Burger para discutir a transição do software empresarial tradicional para o mundo dos agentes de IA. O debate centraliza-se na ideia de que o software está se tornando "headless" (sem interface), onde o valor reside nos dados e na lógica, não mais na interação humana via interface gráfica (UI)
+https://www.youtube.com/watch?v=Mxs4erDxOEE
