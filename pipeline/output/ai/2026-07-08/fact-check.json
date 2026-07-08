@@ -1,0 +1,27 @@
+{
+  "date": "2026-07-08",
+  "fidelity_issues": [
+    {
+      "severity": "low",
+      "where": "edition",
+      "claim": "É o primeiro teste prático da ordem executiva de 2 de junho, que criou uma checagem voluntária de até 30 dias antes do lançamento para \"modelos de fronteira cobertos\".",
+      "issue": "não traça ao research.json",
+      "expected": "O research.json data em 2 de junho o *arcabouço*, não a ordem executiva: \"The review sits inside a framework the Trump administration established on June 2, which introduced a voluntary pre-release check of up to 30 days for 'covered frontier models'.\" A ordem executiva aparece separadamente e sem data precisa: \"It is the first big test of President Trump's June executive order.\" O facts.md mantém os dois separados (linhas 48-50); a edição funde e atribui a data 2 de junho à ordem executiva."
+    }
+  ],
+  "dropped_facts": [
+    {
+      "severity": "medium",
+      "story": "Microsoft substitui modelos da OpenAI e da Anthropic por IA própria no Excel e no Outlook",
+      "fact": "Os modelos próprios ainda respondem por uma pequena fração do total de requisições. (facts.md linha 87; research.json: \"The in-house models still handle only a small fraction of total requests.\")",
+      "why_load_bearing": "É o fato que dá tamanho à história e o único freio à manchete categórica (\"substitui\"). Sem ele, o leitor entende a troca como consumada, quando a própria reportagem da Bloomberg diz que a substituição é marginal até agora. A edição preserva \"dezenas de milhares de prompts\" — o numerador — mas descarta o denominador, que é o que qualifica a escala."
+    },
+    {
+      "severity": "low",
+      "story": "Meta lança o Muse Image, primeiro gerador de imagens do seu laboratório de superinteligência",
+      "fact": "A Meta apresentou uma prévia de uma ferramenta web para verificar a presença do Content Seal. (facts.md linha 20; research.json: \"Meta previewed a web detection tool to check for it.\")",
+      "why_load_bearing": "O bullet \"Procedência\" descreve a marca d'água e sua incompatibilidade com SynthID/C2PA, mas omite a metade verificadora do mecanismo — a única forma de terceiros usarem o Content Seal. É o fato-título de uma das fontes (Engadget: \"Meta built an AI detection tool to ID images and video\")."
+    }
+  ],
+  "summary": "Fidelidade alta: todo número, nome, citação e data do facts.md e da edição traça ao research.json (20/20 histórias verificadas), com uma única conflação de baixa gravidade — a edição data a ordem executiva em 2 de junho, quando a pesquisa data o arcabouço; nada essencial caiu, exceto o qualificador de escala da história da Microsoft (\"pequena fração do total de requisições\")."
+}
