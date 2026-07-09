@@ -817,3 +817,13 @@ https://www.youtube.com/watch?v=6bGxm8gX41o
 **Software in the Age of Agents | The a16z Show**
 Este episódio do The a16z Show reúne Seema Amble, Steven Sinofsky e Elena Burger para discutir a transição do software empresarial tradicional para o mundo dos agentes de IA. O debate centraliza-se na ideia de que o software está se tornando "headless" (sem interface), onde o valor reside nos dados e na lógica, não mais na interação humana via interface gráfica (UI)
 https://www.youtube.com/watch?v=Mxs4erDxOEE
+
+## 2026-07-09
+
+**Orchestrate the agentic factory of the future**
+Este painel, moderado por Praveen Rao (Google Cloud), discute a transição da manufatura tradicional para a “fábrica agêntica” (agentic factory). O foco central é a evolução da automação baseada em regras para sistemas autônomos, onde agentes de IA orquestram fluxos de trabalho complexos e tomam decisões em tempo real, com a participação de executivos da Renault, GE Appliances e Carrier Corporation
+https://www.youtube.com/watch?v=gC-LHHtsfJE
+
+**Notion’s Ivan Zhao: The Refounder**
+O vídeo apresenta uma entrevista de Ivan Zhao, cofundador e CEO do Notion, conduzida por um parceiro da Sequoia Capital. A conversa explora a trajetória de Zhao como um "refundador": alguém que reinicia a empresa estrategicamente para se adaptar a novas eras tecnológicas, especificamente a transição para a IA generativa. O Notion é destacado como um exemplo canônico de como uma empresa SaaS tradicional pode se transformar em uma organização nativa em IA
+https://www.youtube.com/watch?v=ill76IbVuM8
