@@ -827,3 +827,13 @@ https://www.youtube.com/watch?v=gC-LHHtsfJE
 **Notion’s Ivan Zhao: The Refounder**
 O vídeo apresenta uma entrevista de Ivan Zhao, cofundador e CEO do Notion, conduzida por um parceiro da Sequoia Capital. A conversa explora a trajetória de Zhao como um "refundador": alguém que reinicia a empresa estrategicamente para se adaptar a novas eras tecnológicas, especificamente a transição para a IA generativa. O Notion é destacado como um exemplo canônico de como uma empresa SaaS tradicional pode se transformar em uma organização nativa em IA
 https://www.youtube.com/watch?v=ill76IbVuM8
+
+## 2026-07-10
+
+**Open Source Wins, AGI Is Here, and Scorsese’s AI Toolkit with CEOs of Cerebras & Black Forest Labs**
+O episódio do All-In Podcast traz uma discussão sobre o estado atual da infraestrutura de IA, a corrida pela AGI (Inteligência Artificial Geral) e o futuro da criação de conteúdo visual. Os convidados são Andrew Feldman, CEO da Cerebras, e Robin Rombach, CEO da Black Forest Labs
+https://www.youtube.com/watch?v=Y7p4rUCdqi0
+
+**Kalshi's Tarek Mansour: Chaos by Design**
+O vídeo apresenta uma entrevista com Tarek Mansour, cofundador da Kalshi, uma plataforma de mercados de previsão. Mansour discute a trajetória da empresa, marcada por anos de desafios regulatórios, a decisão estratégica de processar o governo dos EUA (CFTC) e a filosofia de gestão "caótica por design" que ele compartilha com sua cofundadora, Luana Lopes Lara
+https://www.youtube.com/watch?v=l_Boz3KRtBQ
