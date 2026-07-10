@@ -10,7 +10,7 @@ Input (stdin or --in FILE), the schema the skill writes to recs.json:
     {
       "section_title": "Recomendações de hoje:",
       "items": [
-        {"title": "...", "blurb_pt": "...", "youtube_id": "abc123",
+        {"title": "...", "description_pt": "...", "youtube_id": "abc123",
          "start_seconds": 39, "channel": "...", "published_at": "2026-07-05"}
       ]
     }
@@ -59,7 +59,8 @@ def main() -> int:
     out = [f"<h4><strong>{esc(title)}</strong></h4>"]
     items = data.get("items", [])
     for i, it in enumerate(items):
-        out.append(f"<p><strong>{esc(it['title'])}</strong>: {esc(it['blurb_pt'])}:</p>")
+        desc = it.get("description_pt") or it.get("blurb_pt") or ""
+        out.append(f"<p><strong>{esc(it['title'])}</strong>: {esc(desc)}:</p>")
         out.append(embed(it["youtube_id"], it.get("start_seconds")))
         if i < len(items) - 1:
             out.append(SEP)
