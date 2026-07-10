@@ -1,0 +1,17 @@
+**Abaixo, apenas para assinantes:**
+
+**Modelos.** OpenAI lança modelo de voz para conversas mais naturais no ChatGPT.
+**Avaliação.** OpenAI revê benchmark de código e aponta falhas nas tarefas.
+**Modelos.** Cognition lança novo modelo de software no Devin.
+**Agentes.** Prime Intellect levanta rodada para vender stack de agentes empresariais.
+**Agentes.** Alta capta capital para expandir agentes de vendas.
+**IPO.** Luxshare estreia em Hong Kong com expansão para carros e data centers de IA.
+**Hardware.** Iluvatar CoreX faz venda de ações em Hong Kong após forte alta.
+**Chips.** Nexchip prepara venda de ações em Hong Kong.
+**Hardware.** China planeja liberar compras limitadas de chips Nvidia para grandes empresas de IA.
+**Hardware.** Positron negocia rodada para financiar chips de IA.
+**Segurança.** Interpol prende suspeitos e bloqueia contas em operação global contra fraudes.
+**Defesa.** EUA oferecem licença para Ucrânia fabricar sistemas Patriot.
+**Energia.** Petróleo sobe após ataques perto do Estreito de Hormuz.
+**Regulação.** Block fecha acordo para encerrar investigação sobre proteção antifraude do Cash App.
+**Regulação.** FTC e estados fecham acordo de direito ao reparo com a John Deere.
