@@ -19,6 +19,7 @@ import sys
 from difflib import SequenceMatcher
 
 HL_RATIO = 0.55      # headline sequence-similarity threshold
+HL_JACCARD_MIN = 0.35  # minimum content overlap for structural headline matches
 TOK_JACCARD = 0.50   # headline token-overlap threshold
 ENTITY_RATIO = 0.30  # softer headline threshold when org+category also match
 
@@ -50,7 +51,7 @@ def near_dup(a, b):
     # ratio — ratio rewards shared structure ("Anthropic launches…" vs
     # "Anthropic's Mythos…") and would wrongly merge two distinct same-company
     # stories with zero content words in common.
-    if r >= HL_RATIO or jac >= TOK_JACCARD or (
+    if (r >= HL_RATIO and jac >= HL_JACCARD_MIN) or jac >= TOK_JACCARD or (
         same_org and cat_overlap and jac >= ENTITY_RATIO
     ):
         return True, f"hl={r:.2f} jac={jac:.2f} same_org={same_org}"
