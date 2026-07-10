@@ -169,3 +169,33 @@ Both Grandes belonged in Médias; Gui cut both by hand.
 **Root:** the `generator` picks Grandes on *importância* alone — no memory of what recently led, no freshness/source-tier signal (facts.md strips dates). Both preventing signals died before the tiering decision.
 
 **Fix shipped:** (1) `SKILL.md` computes the last ~5 editions' `###` headlines (`RECENT_GRANDES`) and injects them; `generator.md` got a **no-re-lead rule**. (2) `RESEARCH.md` sharpened — "recency = the *event*, not the article" + "a rehash has no primary source" (aggregator-only = find primary or skip). **Gui's durable tiering-quantity call:** don't force a fixed count, but **Grandes are CAPPED AT 3** — the writer picks the number within the cap, never pads, never more than 3.
+
+---
+
+## 2026-07-10 — Clean edition, 5 within-bullet edits (jargon + one embed)
+
+Pulled the live Substack draft (`substack_mirror.py pull`, id `206435958` — still a draft, not yet published) and diffed against local `edition-final.md`. Teaser block + AbacatePay banner + paywall cut are auto-injected pipeline scaffolding (present in the draft, absent from `edition-final.md` by design). **No tiering, ordering, subtitle, or teaser changes** — the 3 Grandes, all Médias clusters, and Leia também came through in place. Every edit is a within-bullet touch-up; the generator's structure held.
+
+**Grande · OpenAI (GPT-5.6) — "Variantes" bullet (two edits):**
+- `Sol, o "cavalo de batalha"` → `Sol, o mais inteligente`
+  (recharacterization — `facts.md` and the source, Axios, called Sol the "cavalo de batalha"/workhorse; Gui overrode it to flagship framing, matching Sol being the priciest tier at US$5/US$30.)
+- `US$5 de entrada e US$30 de saída` → `US$5 de *input* e US$30 de *output*`
+  (token-pricing terms switched from PT calque to the industry English *input*/*output* in itálico.)
+
+**Grande · Meta (Muse Spark) — "Zuckerberg" bullet (link retarget + embed):**
+- Link `[publicou no X pela primeira vez em três anos]`: `…/meta-lanca-api-de-modelos-de-ia…` (DJ article) → `https://x.com/finkd/status/2075218444056707458` (the actual tweet). Pointed the "publicou no X" phrase at the post it describes rather than the DJ story.
+- **Embedded the tweet** (Substack `twitter2` card, Zuckerberg's "a strong agentic and coding model at a very low price") directly below the bullet — the one manual media add this edition.
+
+**Médias · Rodadas & aquisições — "Mercor" bullet (two edits):**
+- `startup de dados para treino de IA` → `startup de dados para treinamento de IA` (`treino` → `treinamento`).
+- `aprendizado por reforço para os agentes` → `aprendizado por reforço (*reinforcement learning*) para os agentes` (added the English gloss in itálico).
+
+**Médias · China — "MiniMax" bullet:**
+- `alcançar a AGI](url) e prometeu` → `alcançar AGI](url) (Inteligência Artificial Geral) e prometeu` — dropped the article ("a AGI" → "AGI") and appended the gloss `(Inteligência Artificial Geral)` **outside** the link boundary. (AGI already glossed lowercase in the Fidji Simo bullet upstream; this re-gloss is capitalized.)
+
+**Médias · Memória & fábricas — "Nanya" bullet:**
+- `DRAM (memória dinâmica de acesso aleatório)` → `DRAM (memória dinâmica)` — shortened the gloss (dropped "de acesso aleatório").
+
+**Pattern:** almost entirely jargon-glossing / term-choice housekeeping (RL, AGI, input/output, treino→treinamento, gloss-trim) plus a source-accurate link retarget + tweet embed. Reinforces the gloss-once and link-boundary principles; no new lever.
+
+**Token-pricing convention (resolved):** the Sol edit first left the edition mixed — OpenAI switched to *input*/*output* while the Meta/"Preço" bullet still read "de **entrada** e … de **saída**". Flagged, and Gui normalized it in the draft by moving Meta to match: **both bullets now use *input*/*output* in itálico**. Standing rule going forward — token pricing uses `*input*`/`*output*` (English, itálico), not the PT `entrada`/`saída` calque.
