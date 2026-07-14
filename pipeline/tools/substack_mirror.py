@@ -202,6 +202,12 @@ def video_node(video_id):
 
 
 def _heading_idx(content, sub):
+    # Exact heading match wins over substring, so a short category name that is
+    # also a substring of an earlier, longer heading resolves to its own section
+    # (e.g. the Médias "OpenAI" category vs the Grande "OpenAI libera o GPT-5.6…").
+    for i, n in enumerate(content):
+        if n.get("type") == "heading" and "".join(c.get("text", "") for c in n.get("content", [])) == sub:
+            return i
     for i, n in enumerate(content):
         if n.get("type") == "heading" and sub in "".join(c.get("text", "") for c in n.get("content", [])):
             return i
