@@ -2,131 +2,76 @@
 # Sync the newsletter's "Recomendações de hoje" video picks into a master
 # Markdown archive, then commit & push.
 #
-# Source of truth is the *published* Substack post (recommendations are added by
-# hand in the editor, so they only exist there) fetched via `sstats post`.
+# Source of truth is the *published* Substack post: recommendations are finalized
+# by hand in the editor, so the generated recs.json is only a proposal. The
+# archive is a pure projection of the published posts, produced by
+# `sync-recommendations.py` (fetch via `sstats post`, extract via extract_recs).
 #
-# Idempotent: an edition already present in the archive (matched by its
-# `## YYYY-MM-DD` header) is skipped, so re-running is safe and weekends — which
-# have no edition — simply append nothing. A late-published edition is picked up
-# by a later run because we always rescan the recent window.
+# NOT append-only: each run re-fetches a recent WINDOW of editions and UPSERTS
+# their sections from the current published HTML, so a recommendation added or
+# changed on a post *after* the first sync is picked up on a later run. Nothing
+# freezes after first sight. Re-running is safe: unchanged editions serialize
+# byte-identically, so weekends (no edition) append nothing and produce no diff.
 #
 # Usage:
-#   sync-recommendations.sh            # scan the last 12 editions (daily cron)
-#   sync-recommendations.sh all        # full backfill (scan up to 100 editions)
-#   sync-recommendations.sh 30         # scan the last 30 editions
+#   sync-recommendations.sh            # upsert the recent window (daily cron)
+#   sync-recommendations.sh all        # full rebuild of the whole archive
+#   sync-recommendations.sh 30         # upsert the last 30 editions
 #
 # The repo it commits to is derived from this script's own location. On the Pi
-# it runs from ~/ai-newsletter, a clean clone kept in sync with origin. (The old
-# 7am daily-draft cron — which auto-committed pipeline output and never pulled,
-# so it could never push — was retired on 2026-06-08; this is now the only thing
-# that auto-commits there, and it touches only the archive file.)
+# it runs from ~/ai-newsletter, a clean clone kept in sync with origin.
 #
 # Cron (noon BRT, Pi is America/Sao_Paulo):
 #   0 12 * * * bash ~/ai-newsletter/recommendations/sync-recommendations.sh >> ~/logs/newsletter-recs.log 2>&1
 
 set -uo pipefail
 
-# Cron has a minimal PATH; make sstats / jq / python3 / git / curl reachable.
+# Cron has a minimal PATH; make sstats / python3 / git reachable.
 export PATH="$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:$HOME/.npm-global/bin:$PATH"
 
 # Repo root = parent of this script's directory (recommendations/..).
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-DJ="$HOME/daily-journal-platform"            # holds .env.local for sstats
 ARCHIVE="$REPO/recommendations/RECOMMENDATIONS.md"
-EXTRACT="$REPO/recommendations/extract_recs.py"
+PY="$REPO/recommendations/sync-recommendations.py"
 
-# How many recent editions to scan.
+# Translate the legacy arg into sync-recommendations.py flags.
 case "${1:-}" in
-    all)         MAX=2000 ;;   # whole archive (paginated)
-    ''|*[!0-9]*) MAX=20 ;;     # daily default: covers weekends + a few catch-up days
-    *)           MAX="$1" ;;
+    all)         PYARGS=(--rebuild --max 400) ;;
+    ''|*[!0-9]*) PYARGS=(--window 14) ;;   # daily default
+    *)           PYARGS=(--window "$1") ;;
 esac
 
 log() { echo "[$(date '+%Y-%m-%d %H:%M:%S %z')] $*"; }
 
 command -v sstats  >/dev/null || { log "ERROR: sstats not found on PATH"; exit 1; }
-command -v jq      >/dev/null || { log "ERROR: jq not found on PATH"; exit 1; }
 command -v python3 >/dev/null || { log "ERROR: python3 not found on PATH"; exit 1; }
-[[ -f "$EXTRACT" ]] || { log "ERROR: extractor missing at $EXTRACT"; exit 1; }
+[[ -f "$PY" ]] || { log "ERROR: sync-recommendations.py missing at $PY"; exit 1; }
 
 # Pull first so we extend the latest archive. This clone only ever commits the
-# archive (and immediately pushes), so it never diverges — a fast-forward is
-# always expected.
+# archive (and immediately pushes), so a fast-forward is always expected.
 if ! git -C "$REPO" pull --ff-only --quiet; then
     log "WARN: git pull --ff-only failed; continuing with local copy"
 fi
 
-# Seed the archive on first run.
-if [[ ! -f "$ARCHIVE" ]]; then
-    cat > "$ARCHIVE" <<'HEADER'
-# Recomendações da Newsletter
-
-Arquivo das recomendações (vídeos e entrevistas) publicadas na newsletter de
-AI/Tech. Cada seção é uma edição; sem edição nos fins de semana.
-
-Atualizado automaticamente ao meio-dia (BRT) por
-`recommendations/sync-recommendations.sh` (cron na Pi). Fonte: post publicado no
-Substack, via `sstats post`.
-HEADER
-    log "Created $ARCHIVE"
-fi
-
-# List recent editions as "YYYY-MM-DD<TAB>post_id", oldest first. The emails
-# endpoint caps its page size (~24) but supports --offset and — unlike the
-# events/growth feed, which trails by a few days — includes posts published
-# minutes ago, so we paginate it.
-PAGE=20
-editions=""
-offset=0
-while (( offset < MAX )); do
-    page=$(cd "$DJ" && sstats emails -n "$PAGE" --offset "$offset" 2>/dev/null \
-        | jq -r '.rows[]? | select(.post_id != null) | [(.post_date[0:10]), (.post_id|tostring)] | @tsv')
-    [[ -z "$page" ]] && break
-    editions+="${page}"$'\n'
-    (( $(printf '%s\n' "$page" | grep -c .) < PAGE )) && break   # last (short) page
-    offset=$(( offset + PAGE ))
-    sleep 1                                                      # gentle between listing pages
-done
-editions=$(printf '%s' "$editions" | sort -u)
-
-if [[ -z "$editions" ]]; then
-    log "ERROR: no editions returned from sstats emails"
+# Run the upsert/rebuild. Its human log goes to stderr (flows to the cron log);
+# the space-separated list of changed dates is the only thing on stdout.
+changed="$(python3 "$PY" "${PYARGS[@]}" --archive "$ARCHIVE")" || {
+    log "ERROR: sync-recommendations.py failed"
     exit 1
-fi
-
-added=0
-added_dates=""
-while IFS=$'\t' read -r date id; do
-    [[ -z "$date" || -z "$id" ]] && continue
-    grep -q "^## ${date}\$" "$ARCHIVE" && continue   # already recorded
-
-    html=$(cd "$DJ" && sstats post "$id" --html 2>/dev/null)
-    sleep 3                                           # be gentle with Substack
-    [[ -z "$html" ]] && { log "WARN: empty HTML for $date ($id)"; continue; }
-
-    block=$(printf '%s' "$html" | python3 "$EXTRACT" --date "$date")
-    [[ -z "$block" ]] && { log "skip $date — no recommendations section"; continue; }
-
-    printf '\n%s\n' "$block" >> "$ARCHIVE"
-    added=$((added + 1))
-    added_dates="${added_dates}${date} "
-    log "added $date ($(printf '%s' "$block" | grep -c '^https://'))  recs"
-done <<< "$editions"
-
-if [[ "$added" -eq 0 ]]; then
-    log "no new editions to add"
-    exit 0
-fi
+}
+changed="$(printf '%s' "$changed" | tr -s ' ' | sed 's/^ *//; s/ *$//')"
 
 # Commit & push only the archive (leave any other working-tree files untouched).
 git -C "$REPO" add "$ARCHIVE"
 if git -C "$REPO" diff --cached --quiet; then
-    log "archive unchanged after staging; nothing to commit"
+    log "archive unchanged; nothing to commit"
     exit 0
 fi
-git -C "$REPO" commit --no-gpg-sign -q -m "recs: sync ${added} edition(s) [${added_dates% }]"
+
+count=$(printf '%s' "$changed" | wc -w | tr -d ' ')
+git -C "$REPO" commit --no-gpg-sign -q -m "recs: sync ${count} edition(s) [${changed}]"
 if git -C "$REPO" push --quiet; then
-    log "committed & pushed ${added} edition(s)"
+    log "committed & pushed ${count} edition(s): ${changed}"
 else
     log "WARN: git push failed; will retry next run"
 fi

@@ -74,16 +74,15 @@ def extract(doc: str):
     return recs
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--date", required=True, help="Edition date, YYYY-MM-DD")
-    args = parser.parse_args()
+def format_block(date: str, recs) -> str:
+    """Render a list of (title, desc, video_id) as the archive's Markdown block.
 
-    recs = extract(sys.stdin.read())
+    Returns the canonical `## DATE` section (no trailing newline). Empty recs
+    yield an empty string so callers can treat "no recommendations" uniformly.
+    """
     if not recs:
-        return 0
-
-    lines = [f"## {args.date}", ""]
+        return ""
+    lines = [f"## {date}", ""]
     for title, desc, video_id in recs:
         if title:
             lines.append(f"**{title}**")
@@ -91,7 +90,18 @@ def main() -> int:
             lines.append(desc)
         lines.append(f"https://www.youtube.com/watch?v={video_id}")
         lines.append("")
-    sys.stdout.write("\n".join(lines).rstrip() + "\n")
+    return "\n".join(lines).rstrip()
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--date", required=True, help="Edition date, YYYY-MM-DD")
+    args = parser.parse_args()
+
+    block = format_block(args.date, extract(sys.stdin.read()))
+    if not block:
+        return 0
+    sys.stdout.write(block + "\n")
     return 0
 
 
