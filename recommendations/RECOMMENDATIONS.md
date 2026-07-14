@@ -843,3 +843,9 @@ https://www.youtube.com/watch?v=l_Boz3KRtBQ
 **The $44 Billion Company Building Self-Driving Money | Eric Glyman, Ramp**
 Este episódio do podcast de David Senra traz uma entrevista com Eric Glyman, cofundador e co-CEO da Ramp. A Ramp é uma plataforma de infraestrutura financeira avaliada em US$ 44 bilhões, que automatiza pagamentos, despesas e contabilidade para mais de 70.000 empresas. O vídeo explora a filosofia de gestão de Glyman, o uso de inteligência artificial para otimizar processos financeiros e a visão de que a Ramp não vende apenas movimentação de dinheiro, mas sim tempo e eficiência.
 https://www.youtube.com/watch?v=lbGX3cbvMI4
+
+## 2026-07-14
+
+**The Trillion-Dollar Industries AI Is Disrupting: Voice, Law & the End of the Billable Hour**
+O episódio do All-In Podcast discute a rápida ascensão de empresas de IA generativa em setores tradicionais, focando na ElevenLabs (voz e áudio) e na Legora (setor jurídico). Os convidados, Mati Staniszewski (CEO da ElevenLabs) e Max Junestrand (CEO da Legora), detalham como suas empresas estão substituindo fluxos de trabalho legados por soluções de IA, eliminando intermediários e alterando modelos de precificação baseados em horas faturáveis
+https://www.youtube.com/watch?v=J0bce9WQJ-g
