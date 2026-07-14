@@ -837,3 +837,9 @@ https://www.youtube.com/watch?v=Y7p4rUCdqi0
 **Kalshi's Tarek Mansour: Chaos by Design**
 O vídeo apresenta uma entrevista com Tarek Mansour, cofundador da Kalshi, uma plataforma de mercados de previsão. Mansour discute a trajetória da empresa, marcada por anos de desafios regulatórios, a decisão estratégica de processar o governo dos EUA (CFTC) e a filosofia de gestão "caótica por design" que ele compartilha com sua cofundadora, Luana Lopes Lara
 https://www.youtube.com/watch?v=l_Boz3KRtBQ
+
+## 2026-07-13
+
+**The $44 Billion Company Building Self-Driving Money | Eric Glyman, Ramp**
+Este episódio do podcast de David Senra traz uma entrevista com Eric Glyman, cofundador e co-CEO da Ramp. A Ramp é uma plataforma de infraestrutura financeira avaliada em US$ 44 bilhões, que automatiza pagamentos, despesas e contabilidade para mais de 70.000 empresas. O vídeo explora a filosofia de gestão de Glyman, o uso de inteligência artificial para otimizar processos financeiros e a visão de que a Ramp não vende apenas movimentação de dinheiro, mas sim tempo e eficiência.
+https://www.youtube.com/watch?v=lbGX3cbvMI4
