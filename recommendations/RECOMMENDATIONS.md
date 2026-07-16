@@ -849,3 +849,13 @@ https://www.youtube.com/watch?v=lbGX3cbvMI4
 **The Trillion-Dollar Industries AI Is Disrupting: Voice, Law & the End of the Billable Hour**
 O episódio do All-In Podcast discute a rápida ascensão de empresas de IA generativa em setores tradicionais, focando na ElevenLabs (voz e áudio) e na Legora (setor jurídico). Os convidados, Mati Staniszewski (CEO da ElevenLabs) e Max Junestrand (CEO da Legora), detalham como suas empresas estão substituindo fluxos de trabalho legados por soluções de IA, eliminando intermediários e alterando modelos de precificação baseados em horas faturáveis
 https://www.youtube.com/watch?v=J0bce9WQJ-g
+
+## 2026-07-15
+
+**More Trillion Dollar IPOs, Anthropic $3T, Zuck's Price War, China Ends Open Source?, Trump Accounts**
+O episódio discute a corrida para o IPO das gigantes de IA, Anthropic e OpenAI, após o sucesso do IPO da SpaceX, que atingiu um valor de mercado de US$ 2 trilhões. Brad Gerstner, investidor em ambas, destaca que o modelo de "lançamento escalonado" da SpaceX serviu como um blueprint para o setor. Embora a OpenAI enfrente complexidades de reestruturação corporativa, a expectativa é que ambas abram capital em breve, impulsionadas por receitas em crescimento acelerado. Chamath Palihapitiya levanta um ponto crítico: a necessidade de ROI (retorno sobre o investimento) para justificar os gastos massivos com tokens, que dobram a cada 45 dias em algumas empresas, enquanto a produtividade real ainda é incerta
+https://www.youtube.com/watch?v=PHL1j2ti420
+
+**General relativity from first principles – Adam Brown**
+Adam Brown, líder da equipe Blueshift no Google DeepMind e ex-físico de Stanford, explica a essência da Relatividade Geral de Einstein. O vídeo desconstrói como Einstein superou a física newtoniana ao unificar a gravidade com a velocidade finita da luz, transformando a gravidade de uma força em uma consequência da curvatura do espaço-tempo
+https://www.youtube.com/watch?v=QbdbAhaJoCQ
