@@ -859,3 +859,13 @@ https://www.youtube.com/watch?v=PHL1j2ti420
 **General relativity from first principles – Adam Brown**
 Adam Brown, líder da equipe Blueshift no Google DeepMind e ex-físico de Stanford, explica a essência da Relatividade Geral de Einstein. O vídeo desconstrói como Einstein superou a física newtoniana ao unificar a gravidade com a velocidade finita da luz, transformando a gravidade de uma força em uma consequência da curvatura do espaço-tempo
 https://www.youtube.com/watch?v=QbdbAhaJoCQ
+
+## 2026-07-16
+
+**Former Intel CEO on What Went Wrong, What's Next + Lovable CEO on the Real Promise of Vibe Coding**
+Pat Gelsinger, ex-CEO da Intel, discute os erros estratégicos que levaram a empresa a perder sua dominância no mercado de semicondutores. Ele aponta que a Intel se afastou de suas raízes técnicas ao ser gerida por executivos focados em finanças ("bean counters") em vez de engenheiros, resultando em uma década sem novas fábricas e na perda de oportunidades cruciais, como a fabricação de chips para o iPhone
+https://www.youtube.com/watch?v=-ILKiOU5iAQ
+
+**Anthropic's Katelyn Lesse & Angela Jiang: Building an Ecosystem, not a Walled Garden**
+Katelyn Lesse e Angela Jiang, líderes da plataforma de desenvolvedores da Anthropic, discutem a estratégia de construção de um ecossistema aberto em vez de um "jardim murado". A plataforma serve tanto para produtos internos da Anthropic quanto para desenvolvedores externos, focando em fornecer primitivas, padrões e abstrações que permitam a criação de agentes inteligentes e escaláveis
+https://www.youtube.com/watch?v=vPnVTHYplrQ
