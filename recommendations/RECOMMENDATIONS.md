@@ -869,3 +869,13 @@ https://www.youtube.com/watch?v=-ILKiOU5iAQ
 **Anthropic's Katelyn Lesse & Angela Jiang: Building an Ecosystem, not a Walled Garden**
 Katelyn Lesse e Angela Jiang, líderes da plataforma de desenvolvedores da Anthropic, discutem a estratégia de construção de um ecossistema aberto em vez de um "jardim murado". A plataforma serve tanto para produtos internos da Anthropic quanto para desenvolvedores externos, focando em fornecer primitivas, padrões e abstrações que permitam a criação de agentes inteligentes e escaláveis
 https://www.youtube.com/watch?v=vPnVTHYplrQ
+
+## 2026-07-17
+
+**Grok 4.5 vs gpt-5.6, Apple Sues OpenAI, and China Catches up to Elon | #270**
+Este episódio do podcast Moonshots, apresentado por Peter H. Diamandis com a participação de Salim Ismail, Dave Blundin e Dr. Alexander Wissner-Gross, analisa a aceleração sem precedentes no desenvolvimento de modelos de IA, a disputa jurídica entre Apple e OpenAI, e os avanços da China na corrida espacial. O grupo discute como a convergência de inteligência artificial, robótica e tecnologias espaciais está moldando o futuro próximo
+https://www.youtube.com/watch?v=CsRx7kFN4bo
+
+**How to Raise a Few Billion Dollars**
+John Kim, ex-diretor de desenvolvimento da General Catalyst e autor de The Tao of Fundraising, discute a psicologia e a estratégia por trás da captação de bilhões de dólares. O argumento central é que o dinheiro se move na velocidade da confiança, e que a persuasão eficaz depende menos de lógica pura e mais da capacidade de reduzir o medo e aumentar o desejo
+https://www.youtube.com/watch?v=zHvY9wzhjpA
