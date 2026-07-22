@@ -879,3 +879,13 @@ https://www.youtube.com/watch?v=CsRx7kFN4bo
 **How to Raise a Few Billion Dollars**
 John Kim, ex-diretor de desenvolvimento da General Catalyst e autor de The Tao of Fundraising, discute a psicologia e a estratégia por trás da captação de bilhões de dólares. O argumento central é que o dinheiro se move na velocidade da confiança, e que a persuasão eficaz depende menos de lógica pura e mais da capacidade de reduzir o medo e aumentar o desejo
 https://www.youtube.com/watch?v=zHvY9wzhjpA
+
+## 2026-07-21
+
+**Urgent Update- AI Sputnik Moment: Kimi K3 Released w/ Emad Mostaque | Ep. 272**
+O vídeo discute o lançamento do modelo Kimi K3, desenvolvido pela chinesa Moonshot AI, que atingiu o topo dos benchmarks globais de IA. Peter Diamandis e seus convidados (Emad Mostaque, Salim Ismail, Dave Blundin e Dr. Alexander Wissner-Gross) analisam como esse modelo, mesmo sob restrições de exportação de chips dos EUA, superou modelos americanos de ponta, marcando uma mudança drástica no cenário competitivo
+https://www.youtube.com/watch?v=pSUyLfirP8Y
+
+**"Being Canceled is a Choice" | Replit CEO with a16z**
+O vídeo apresenta uma conversa entre Erik Torenberg e Amjad Masad, fundador e CEO da Replit, sobre a importância da comunicação direta (founder-led storytelling) para o crescimento de empresas. Masad discute como a construção de uma narrativa pública foi fundamental para a sobrevivência e o sucesso da Replit, defendendo que CEOs devem aprender a se comunicar diretamente com o público em vez de depender exclusivamente de intermediários como a imprensa
+https://www.youtube.com/watch?v=rghTqkclDqA
