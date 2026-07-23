@@ -889,3 +889,13 @@ https://www.youtube.com/watch?v=pSUyLfirP8Y
 **"Being Canceled is a Choice" | Replit CEO with a16z**
 O vídeo apresenta uma conversa entre Erik Torenberg e Amjad Masad, fundador e CEO da Replit, sobre a importância da comunicação direta (founder-led storytelling) para o crescimento de empresas. Masad discute como a construção de uma narrativa pública foi fundamental para a sobrevivência e o sucesso da Replit, defendendo que CEOs devem aprender a se comunicar diretamente com o público em vez de depender exclusivamente de intermediários como a imprensa
 https://www.youtube.com/watch?v=rghTqkclDqA
+
+## 2026-07-22
+
+**Mark Cuban on the AI Bubble: Who Actually Gets Wiped Out?**
+Mark Cuban, empresário e investidor, discute com os apresentadores do All-In Podcast a atual bolha de inteligência artificial, comparando-a com a bolha das pontocom, além de abordar o impacto da IA no ambiente de trabalho, saúde, política e o futuro do esporte
+https://www.youtube.com/watch?v=OY2Sjbjd_VE
+
+**Factory's Matan Grinberg: The Coming ‘Dark Factory’ Where Software Builds Itself**
+Matan Grinberg, cofundador e CEO da Factory, discute a evolução da empresa no desenvolvimento de agentes autônomos para engenharia de software. A Factory, que iniciou suas operações em 2023, passou por um período inicial de adaptação ao mercado (o "deserto") antes de encontrar o ajuste de produto ideal com o lançamento do Droid CLI em 2025
+https://www.youtube.com/watch?v=ZesOukBjPmI
