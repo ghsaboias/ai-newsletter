@@ -899,3 +899,13 @@ https://www.youtube.com/watch?v=OY2Sjbjd_VE
 **Factory's Matan Grinberg: The Coming ‘Dark Factory’ Where Software Builds Itself**
 Matan Grinberg, cofundador e CEO da Factory, discute a evolução da empresa no desenvolvimento de agentes autônomos para engenharia de software. A Factory, que iniciou suas operações em 2023, passou por um período inicial de adaptação ao mercado (o "deserto") antes de encontrar o ajuste de produto ideal com o lançamento do Droid CLI em 2025
 https://www.youtube.com/watch?v=ZesOukBjPmI
+
+## 2026-07-23
+
+**Building a Company in Stealth | Travis Kalanick with a16z**
+Travis Kalanick, fundador da Uber, discute sua trajetória pós-Uber, o período de oito anos operando em stealth com a empresa Atoms e sua nova tese de investimento focada na "digitalização do mundo físico". A conversa, mediada por Ben Horowitz e Erik Torenberg, reflete sobre lições de liderança, a importância de fundadores no comando e a transição para a "Era dos Átomos"
+https://www.youtube.com/watch?v=z6gH_v0buUc
+
+**Mira Murati's 975B Open Model, Ramin Hasani on Post-Transformer AI, and Demis' AI FINRA | EP #271**
+Este episódio do podcast Moonshots reúne Peter H. Diamandis, Salim Ismail, Dave Blundin e Dr. Alexander Wissner-Gross, com a participação especial de Ramin Hasani (CEO da Liquid AI). A discussão foca na rápida evolução da inteligência artificial, o papel da regulação, o surgimento de modelos de pesos abertos (open-weight) e avanços em biotecnologia
+https://www.youtube.com/watch?v=bAoXVyibE6Q
