@@ -909,3 +909,13 @@ https://www.youtube.com/watch?v=z6gH_v0buUc
 **Mira Murati's 975B Open Model, Ramin Hasani on Post-Transformer AI, and Demis' AI FINRA | EP #271**
 Este episódio do podcast Moonshots reúne Peter H. Diamandis, Salim Ismail, Dave Blundin e Dr. Alexander Wissner-Gross, com a participação especial de Ramin Hasani (CEO da Liquid AI). A discussão foca na rápida evolução da inteligência artificial, o papel da regulação, o surgimento de modelos de pesos abertos (open-weight) e avanços em biotecnologia
 https://www.youtube.com/watch?v=bAoXVyibE6Q
+
+## 2026-07-24
+
+**The Philosopher CEO | Clay Co-Founder Kareem Amin**
+Uma conversa entre o anfitrião e Kareem Amin, cofundador e CEO da Clay. Amin é descrito como um "CEO filósofo" que opera de forma contrária aos padrões tradicionais do Vale do Silício, focando em construir a partir de um estado de "plenitude" em vez de escassez ou necessidade de provar algo. A Clay, empresa de software de go-to-market, é destacada pelo seu crescimento acelerado após um longo período de experimentação
+https://www.youtube.com/watch?v=xoE_pE26yDQ
+
+**Why Physical AI Is the Next Frontier | The a16z Show**
+O episódio do a16z Show traz Marc Andreessen e Erik Torenberg em uma conversa com Qasar Younis e Peter Ludwig, cofundadores da Applied Intuition. A empresa é focada em "IA Física" (Physical AI), desenvolvendo software e infraestrutura para tornar máquinas autônomas — de carros e caminhões a sistemas de defesa, mineração e robôs industriais. O foco central da discussão é o lançamento da plataforma Dana, projetada para democratizar o desenvolvimento de sistemas autônomos
+https://www.youtube.com/watch?v=56XgWH9ch0U
