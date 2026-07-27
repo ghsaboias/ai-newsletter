@@ -203,7 +203,7 @@ vira página do Daily Journal — o leitor deve achar o mesmo tom no clique:
 - Termos estrangeiros em itálico: `*valuation*`, `*marketplaces*`, `*circuit
   breaker*`.
 - Sem travessões (—): use vírgula, dois-pontos ou ponto.
-- Léxico: "programação", nunca "codificação"; "contra" no lugar da preposição "ante" (só a palavra isolada, não *antes/diante/mediante*); "stealth" (em itálico: *stealth*), nunca "modo furtivo" — para *stealth mode* / *came out of stealth* use "operava em *stealth*" / "saiu do *stealth*".
+- Léxico: "programação", nunca "codificação"; "contra" no lugar da preposição "ante" (só a palavra isolada, não *antes/diante/mediante*); "stealth" (em itálico: *stealth*), nunca "modo furtivo" — para *stealth mode* / *came out of stealth* use "operava em *stealth*" / "saiu do *stealth*"; "*stack*" (em itálico), nunca "pilha" — para *tech stack* / *full stack* / *AI stack* mantenha "*stack*" (só o sentido de camada de tecnologia; "pilha" no sentido de bateria fica).
 - Português preciso: concordância de gênero, preposições, crase. Cadência limpa —
   se uma frase ficar dura, reestruture.
 - Números e nomes vêm **do `facts.md`**; não invente especificidade que não está

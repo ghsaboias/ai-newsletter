@@ -51,7 +51,12 @@ def heading_node(text):
 
 def rec_paragraph(title, desc):
     # Bold "Title:", then " description:" — the leading space and trailing colon
-    # match the hand-made format (the colon leads into the embed).
+    # match the hand-made format (the colon leads into the embed). Drop a trailing
+    # period on the description so it doesn't read ".:" before the leading colon
+    # (an ellipsis is left alone).
+    desc = desc.rstrip()
+    if desc.endswith(".") and not desc.endswith(".."):
+        desc = desc[:-1]
     return {"type": "paragraph", "attrs": {"textAlign": None}, "content": [
         {"type": "text", "marks": [{"type": "strong"}], "text": f"{title}:"},
         {"type": "text", "text": f" {desc}:"}]}

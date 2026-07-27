@@ -344,7 +344,28 @@ def cmd_media(args):
     imgs = sum(1 for n in doc["content"] if n.get("type") == "captionedImage")
     print(f"\npushed media -> draft {draft_id} | {len(doc['content'])} nodes, {imgs} captionedImage | "
           f"updated_at {r.get('draft_updated_at')}")
+
+    # Verify the server actually retained what we sent (the printed count above is
+    # the LOCAL doc, not a re-fetch). Re-GET and count server-side so a silent
+    # strip surfaces immediately instead of being discovered later in the editor.
+    try:
+        chk = json.loads(get_draft(host, sid, draft_id)["draft_body"])
+        got_img = sum(1 for n in chk["content"] if n.get("type") == "captionedImage")
+        got_vid = sum(1 for n in chk["content"] if n.get("type") in ("youtube2", "video", "twitter2"))
+        want_vid = sum(1 for n in doc["content"] if n.get("type") in ("youtube2", "video", "twitter2"))
+        if got_img >= imgs and got_vid >= want_vid:
+            print(f"  verified server-side: {got_img} captionedImage, {got_vid} embed(s) retained")
+        else:
+            print(f"  !! WARNING: server kept {got_img}/{imgs} images, {got_vid}/{want_vid} embeds — some were dropped on PUT")
+    except Exception as ex:
+        print(f"  (verify skipped: {ex})")
+
     print(f"  editor: https://{host}/publish/post/{draft_id}")
+    print("  IMPORTANT: media lives in draft_body via the API. The Substack web editor")
+    print("  keeps its own live copy and its autosave-on-open OVERWRITES this push if a")
+    print("  warm/stale editor tab was open. To keep the images: fully CLOSE any open")
+    print("  editor tab for this post, then reopen it COLD (hard refresh) so it hydrates")
+    print("  from the server. Never leave a warm editor tab open across a media push.")
 
 
 def main():
