@@ -199,3 +199,49 @@ Pulled the live Substack draft (`substack_mirror.py pull`, id `206435958` — st
 **Pattern:** almost entirely jargon-glossing / term-choice housekeeping (RL, AGI, input/output, treino→treinamento, gloss-trim) plus a source-accurate link retarget + tweet embed. Reinforces the gloss-once and link-boundary principles; no new lever.
 
 **Token-pricing convention (resolved):** the Sol edit first left the edition mixed — OpenAI switched to *input*/*output* while the Meta/"Preço" bullet still read "de **entrada** e … de **saída**". Flagged, and Gui normalized it in the draft by moving Meta to match: **both bullets now use *input*/*output* in itálico**. Standing rule going forward — token pricing uses `*input*`/`*output*` (English, itálico), not the PT `entrada`/`saída` calque.
+
+---
+
+## 2026-07-27 — 22 within-bullet edits, teaser cut 10 → 7
+
+Pulled the live Substack draft (`substack_mirror.py pull`, id `208738161`) before the review and again after, and diffed the two ProseMirror bodies. No structural change: the 3 Grandes, the 8 Médias sections, Leia também and Recomendações kept their order and tiering; title, subtitle and all 10 image captions came through untouched.
+
+**Grande 1 — Nvidia negocia garantia de US$250 bilhões (Ohio)**
+1. `backstop` → `*backstop*`
+2. `À parte, a Nvidia negocia uma estrutura de financiamento` → `Separadamente, a Nvidia negocia uma estrutura de financiamento`
+3. `Anthropic, Microsoft e Google também o procuraram sobre o site.` → `Anthropic, Microsoft e Google também procuraram o secretário nas últimas semanas, interessadas no mesmo terreno.`
+
+**Grande 3 — Claude Opus 5 no ARC-AGI-3**
+4. `US$5 por milhão de tokens de entrada e US$25 na saída` → `US$5 por milhão de tokens de *input* e US$25 de *output*`
+
+**Bloco de teaser (10 → 7 itens)**
+5. `com a Anthropic como a ausência mais visível` → `com a Anthropic como a ausência mais notável`
+6. `**Compute.**` → `**Poder computacional.**`
+7. `**Semicondutores.** Estreia em bolsa de uma fabricante chinesa de memória com uma das maiores altas do ano na Ásia.` → `**Semicondutores.** Estreia em bolsa de uma fabricante chinesa de memória, com a maior captação em semicondutores da história da China.`
+8. `**Memória.** Acordo de longo prazo entre gigantes coreanas e americanas de chips, mais os compromissos de uma cúpula de IA entre os dois países.` → `**Memória.** Acordo de longo prazo entre gigantes coreanas e americanas.`
+9. `**Litografia.** China começa a produzir em massa máquinas de fabricação de chips, e ações europeias do setor recuam.` → (removido)
+10. `**Espaço.** Voo de teste que soltou satélites operacionais pela primeira vez, e um pedido para uma nova constelação de órbita baixa.` → (removido)
+11. `**Mundo.** Trégua no Oriente Médio derruba o preço do petróleo, e um artigo em jornal americano contra as novas tarifas.` → (removido)
+
+**Médias · Segurança — "Microsoft"**
+12. `contra cerca de 83% do Mythos, da Anthropic, e do GPT-5.5-Cyber; o modelo interno executa cerca de 95% do trabalho e a prévia pública chega na semana que vem via Azure AI Foundry.` → `contra cerca de 83% do Mythos, da Anthropic, e do GPT-5.5-Cyber. A prévia pública chega na semana que vem via Azure AI Foundry.`
+
+**Médias · Washington e pesos abertos**
+13. `sem ter sido instruído a isso; o prazo para três agências publicarem o marco voluntário de liberação é 1º de agosto.` → `sem ter sido instruído a isso. O processo de liberação que a OpenAI pretende usar para o modelo ainda não existe: três agências federais têm até 1º de agosto para publicar essas regras voluntárias e definir quais modelos elas cobrem.`
+14. `A Anthropic segue como a ausência mais visível.` → `A Anthropic segue como a ausência mais notável.`
+15. `#### Compute` → `#### Poder computacional`
+
+**Médias · China e semicondutores**
+16. `O IPO levantou US$8,6 bilhões, maior listagem da Ásia em 2026, e apenas 6,73% do capital ampliado era livremente negociável.` → `O IPO levantou US$8,6 bilhões, a maior oferta de semicondutores já feita na China continental, acima dos US$7,5 bilhões da SMIC em 2020.`
+17. `131 sistemas embarcados pela ASML em 2025` → `131 sistemas despachados pela ASML em 2025`
+
+**Médias · Rodadas — "Enigma"**
+18. `saiu do *stealth* com uma seed de US$71 milhões` → `saiu do *stealth* com um *seed* de US$71 milhões`
+
+**Médias · Espaço — "SpaceX"**
+19. `[liberou satélites operacionais pela primeira vez](…), 20 Starlink V3, e a nave sobreviveu inteira à reentrada` → `marcou duas estreias para o programa: [liberou 20 satélites Starlink V3 operacionais](…) e sobreviveu inteira à reentrada`
+20. `caiu duro no Golfo do México` → `caiu no Golfo do México`
+
+**Médias · Mundo — "Irã"**
+21. `EUA e Irã seguraram fogo pelo terceiro dia` → `EUA e Irã mantiveram uma pausa nos ataques pelo terceiro dia`
+22. `semana depois de superar US$100` → `uma semana depois de superar US$100`

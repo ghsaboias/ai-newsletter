@@ -200,10 +200,17 @@ vira página do Daily Journal — o leitor deve achar o mesmo tom no clique:
 - O `facts.md` já glosa jargão e siglas uma vez (HBM, ADR, EUV…). **Reaproveite a
   glosa, não duplique.** Se um termo chegar sem glosa e precisar, glose uma vez,
   entre parênteses, no primeiro uso.
-- Termos estrangeiros em itálico: `*valuation*`, `*marketplaces*`, `*circuit
-  breaker*`.
+- **Todo termo em inglês mantido no texto vai em itálico** — a regra é geral, não
+  uma lista fechada. Se você decidiu não traduzir, marque: `*valuation*`,
+  `*marketplaces*`, `*circuit breaker*`, `*backstop*`, `*seed*`, `*input*`,
+  `*output*`, `*exploit(s)*`, `*post-money*`, `*yield*`, `*stealth*`, `*stack*`,
+  `*cap table*`, `*hyperscalers*`.
+  Exceções — consagrados em PT, **sem** itálico: framework, wafers, IPO, chip,
+  data center, benchmark, startup, smartphone, software, hardware.
+  `site` no sentido de local físico é anglicismo: use "terreno", "local" ou
+  "campus" (só o sentido de página na web fica).
 - Sem travessões (—): use vírgula, dois-pontos ou ponto.
-- Léxico: "programação", nunca "codificação"; "contra" no lugar da preposição "ante" (só a palavra isolada, não *antes/diante/mediante*); "stealth" (em itálico: *stealth*), nunca "modo furtivo" — para *stealth mode* / *came out of stealth* use "operava em *stealth*" / "saiu do *stealth*"; "*stack*" (em itálico), nunca "pilha" — para *tech stack* / *full stack* / *AI stack* mantenha "*stack*" (só o sentido de camada de tecnologia; "pilha" no sentido de bateria fica).
+- Léxico: "programação", nunca "codificação"; "contra" no lugar da preposição "ante" (só a palavra isolada, não *antes/diante/mediante*); "stealth" (em itálico: *stealth*), nunca "modo furtivo" — para *stealth mode* / *came out of stealth* use "operava em *stealth*" / "saiu do *stealth*"; "*stack*" (em itálico), nunca "pilha" — para *tech stack* / *full stack* / *AI stack* mantenha "*stack*" (só o sentido de camada de tecnologia; "pilha" no sentido de bateria fica); **"poder computacional", nunca "compute"** — vale também para nome de cluster de Médias (`#### Poder computacional`, não `#### Compute`), já que o `paywall-teaser` herda o rótulo da seção; **preço de token em `*input*`/`*output*`**, nunca "entrada"/"saída" (`US$5 por milhão de tokens de *input* e US$25 de *output*`) — se o `facts.md` chegar com o calque, converta.
 - Português preciso: concordância de gênero, preposições, crase. Cadência limpa —
   se uma frase ficar dura, reestruture.
 - Números e nomes vêm **do `facts.md`**; não invente especificidade que não está

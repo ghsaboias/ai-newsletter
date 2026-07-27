@@ -75,6 +75,15 @@ Escreva o `facts.md` no caminho indicado, com esta estrutura exata:
 3. **Traduza para PT-BR** com naturalidade (não calque o inglês). Mantenha nomes
    próprios, tickers e siglas como são. Valores em US$ com vírgula decimal
    (US$2,5 bilhões). Siga as convenções de PT do projeto.
+   **Léxico obrigatório** (termos que o inglês empurra para um calque ruim):
+   - **Preço de token: `input`/`output`, nunca "entrada"/"saída".**
+     `input/output tokens` → "tokens de input" e "tokens de output"
+     (ex.: "US$5 por milhão de tokens de input e US$25 por milhão de tokens de
+     output"). O generator aplica o itálico; aqui basta o termo certo.
+   - **`compute` (substantivo) → "poder computacional"**, nunca "compute".
+   - **`seed` é masculino:** "um seed de US$71 milhões", não "uma seed".
+   - `coding` → "programação", nunca "codificação".
+   - `stealth` fica em inglês, nunca "modo furtivo".
 4. **Glosse o jargão uma vez, na primeira ocorrência**, com um parêntese ou
    bullet curto e factual — apenas para siglas/termos técnicos consagrados (HBM,
    ADR, SPAC, OCR, EUV, IPO, FDA, AIEA etc.). Glosa curta e segura; **se tiver
