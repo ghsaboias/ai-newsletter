@@ -1,0 +1,14 @@
+**Abaixo, apenas para assinantes:**
+
+**Modelos.** Novo modelo multimodal que gera clipes de vídeo com áudio sincronizado nativo e ganhou dos rivais em testes de preferência.
+**Produtos.** Duas novidades em um grande assistente de IA: prontuários médicos liberados para os usuários adultos nos EUA e voz no aplicativo de desktop.
+**Hardware.** Uma grande fabricante de chips anunciou processadores de servidor de nova geração, uma parceria de inferência ultrarrápida e uma investida completa em robótica.
+**Semicondutores.** Acordo bilionário de encapsulamento avançado com a Nvidia, estruturado como pagamento antecipado por capacidade futura de fábrica.
+**IPO.** Projetista chinesa de GPUs protocola pedido de listagem em Hong Kong depois de disparar na bolsa doméstica.
+**Robótica.** Um modelo que aprende uma tarefa de manipulação com minutos de dados de robô, já testado por uma montadora alemã, e uma rodada de centenas de milhões para uma desenvolvedora de modelos de fundação para robôs.
+**Defesa.** Startup de humanoides para uso militar apoiada pela família Trump troca de fornecedor de chips e prepara fábrica própria.
+**Agentes.** Startup de agentes de horizonte longo, tocada por três pessoas, é comprada por uma das maiores empresas do setor.
+**Mercados.** As participações privadas de uma big tech quase dobraram no trimestre, puxadas pela reavaliação de sua maior aposta em um laboratório de IA, no mesmo dia em que o Nasdaq caiu com temores sobre os gastos do setor.
+**Energia.** Compromisso voluntário sobre contas de luz e data centers ganha centenas de novos signatários nos EUA, enquanto o Congresso avança com uma versão obrigatória.
+**Comércio.** Nova tarifa americana sobre produtos brasileiros eleva a alíquota total e leva o governo a acionar a OMC.
+**Geopolítica.** Ataques a petroleiros no Mar Vermelho disparam o preço do petróleo, e a campanha americana contra o Irã segue noite após noite.

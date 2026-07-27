@@ -1,0 +1,58 @@
+# [Tech] - Bem-vindo(a) a 15 de Julho de 2026
+
+Quanto a DeepSeek quer captar antes de abrir o capital? O que o Grok Build enviava à nuvem sem o usuário permitir? Por que a ASML elevou de novo sua projeção para 2026?
+
+Por: Guilherme Saboia e Vinicius Gushiken
+
+### DeepSeek prepara IPO na China e negocia nova rodada de US$1,5 bilhão
+- **Rodada.** A DeepSeek começou esta semana negociações para captar ao menos 10 bilhões de yuans (~US$1,5 bilhão) a uma [avaliação pré-money de ~US$71 bilhões](https://www.businesstimes.com.sg/startups-tech/technology/deepseek-prepares-ipo-filing-soon-2026-eyes-us71-billion-valuation-ft). Vem poucas semanas depois de fechar ~US$7 bilhões a uma avaliação de ~US$50 bilhões no início de junho.
+- **IPO.** A empresa trabalha com firmas de contabilidade e bancos para [protocolar pedido de listagem](https://techcrunch.com/2026/07/14/deepseek-reportedly-in-talks-to-raise-1-5b-then-ipo/) no mercado acionário da China continental, possivelmente já no fim de 2026, mirando estreia em 2027.
+- **Receita.** A receita anualizada (run rate) chegou a [US$400 milhões-US$500 milhões](https://www.theinformation.com/articles/deepseeks-annualized-revenue-nears-500-million-boosting-fundraise-ipo-plans), cerca do dobro dos US$200 milhões-US$220 milhões estimados em 2025.
+- **Estratégia.** O fundador Liang Wenfeng disse a investidores que vai [priorizar pesquisa de IA inovadora e modelos de código aberto](https://cryptobriefing.com/deepseek-annualized-revenue-400m-500m/) rumo à inteligência geral artificial (AGI), em vez de comercialização de curto prazo.
+
+### Grok Build, da xAI, enviava repositórios inteiros à nuvem sem permissão
+- **Falha.** Um pesquisador de segurança demonstrou que o Grok Build CLI [empacotava os repositórios rastreados inteiros](https://github.com/cereblab/grok-build-exfil-repro) dos usuários, com histórico completo do git e segredos/arquivos .env, e os enviava como git bundles a um bucket do Google Cloud. O volume era cerca de 27.800x maior do que a tarefa de programação exigia.
+- **Sem opt-out.** O envio ocorria mesmo com o agente instruído a não abrir arquivos, e o [botão de opt-out de privacidade não o impedia](https://thenextweb.com/news/grok-build-uploaded-entire-git-repositories-secrets): só o gitignore ou uma flag do servidor barrava a transferência, contra o marketing "local-first" da xAI.
+- **Resposta.** Em 14 de julho, Musk disse no X que todos os dados enviados antes da mudança seriam ["completa e absolutamente deletados"](https://www.theregister.com/ai-and-ml/2026/07/14/musk-promises-purge-after-grok-build-caught-sending-entire-repos-to-the-cloud/5271123), e a xAI implantou uma correção do servidor que interrompeu os envios de repositórios inteiros.
+- **Reação.** Sam Altman classificou o incidente como ["preocupante"](https://x.com/sama/status/2077053226080436235) e "uma razão para preferir harnesses de código aberto".
+
+### ASML supera estimativas e eleva projeção de 2026 com a demanda por chips de IA
+- **Trimestre.** A ASML reportou [vendas líquidas de €9,33 bilhões](https://wkzo.com/2026/07/15/asml-tops-q2-estimates-on-ai-chip-demand/) no 2º trimestre (alta de 21% no ano), acima dos €8,80 bilhões esperados, com lucro líquido de €2,92 bilhões e margem bruta de 54%.
+- **Projeção.** A empresa [elevou a projeção de vendas de 2026](https://www.asml.com/en/news/press-releases/2026/q2-2026-financial-results) para €43 bilhões-€45 bilhões (US$49 bilhões-US$51 bilhões), ante €36 bilhões-€40 bilhões, e prevê €11,0 bilhões-€12,0 bilhões no 3º trimestre.
+- **Capacidade.** Citando entrada de pedidos "extremamente forte", planeja adicionar ~30% à capacidade de EUV low-NA (litografia ultravioleta extrema) e DUV de imersão para 2027, e [estuda outros 30% para 2028](https://www.asml.com/en/news/press-releases/2026/q2-2026-financial-results).
+
+---
+
+#### Modelos & produtos
+- **Google.** O Google lançou o [DiffusionGemma](https://dev.to/googleai/diffusiongemma-4x-faster-text-generation-fmd), modelo aberto experimental (Apache 2.0) que gera blocos de texto em paralelo via difusão, em vez de token por token, com geração até 4x mais rápida em GPUs. É um Mixture-of-Experts de 26 bilhões de parâmetros que ativa só 3,8 bilhões na inferência e supera 1.000 tokens/s em uma NVIDIA H100, com qualidade abaixo do Gemma 4 padrão.
+- **OpenAI.** O Codex e o ChatGPT Work somam [8 milhões de usuários ativos](https://x.com/thsottiaux/status/2077114635308986427), e a empresa resetou os limites de uso para todos explorarem o GPT-5.6 Sol. Sam Altman disse que "o crescimento do 5.6 sol está insano" e alertou para possíveis "soluços" na escala de inferência; o salto ante 6 milhões cerca de um dia antes reacendeu comparações com o Claude Code, da Anthropic.
+- **Anthropic.** A Anthropic lançou o [Claude for Teachers](https://www.theverge.com/ai-artificial-intelligence/965544/anthropic-introduced-a-claude-product-for-k-12-teachers), que dá a professores verificados do ensino básico (K-12) dos EUA acesso gratuito por um ano a recursos premium do Claude, para quem se inscrever até 30 de junho de 2027. Traz biblioteca de habilidades de ensino e currículos mapeados aos padrões dos 50 estados, entrando na disputa com Google e OpenAI pelas salas de aula.
+
+#### Semicondutores
+- **Intel.** A Intel Foundry entrou em manufatura de alto volume de parte dos processadores Core Ultra Series 3 (Panther Lake) no nó Intel 18A, [a primeira do setor a enviar um produto lógico de alto volume com High NA EUV](https://economictimes.indiatimes.com/tech/technology/intel-turns-to-next-generation-asml-tool-to-help-make-its-laptop-chips/articleshow/132406879.cms). O equipamento High NA custa cerca de US$400 milhões por máquina, o dobro de uma ferramenta EUV padrão, e é usado só em camadas específicas do chip.
+- **Índia.** O Gabinete da União aprovou o [Semicon 2.0](https://indianexpress.com/article/business/cabinet-semiconductor-mission-2-0-10787705/), com dotação de Rs 1,27 lakh crore (cerca de US$13-14 bilhões), forte aumento ante os Rs 76.000 crore da primeira fase de 2021. O programa correrá por 10 a 12 anos e estende incentivos além da fabricação a design, materiais e equipamentos, mirando toda a cadeia de chips.
+
+#### Infraestrutura & energia
+- **Nokia.** A Nokia anunciou, com a Nvidia, o que chama da [primeira plataforma comercial de AI-RAN](https://www.artificialintelligence-news.com/news/nokia-ai-ran-platform-nvidia/) (rede de acesso via rádio acelerada por IA) do setor, com ganhos de eficiência espectral de mais de 20%. As operadoras compram capacidade por assinatura de software, sem troca de hardware; a disponibilidade comercial está prevista para 2027.
+- **PJM.** A PJM, maior operadora de rede elétrica dos EUA, fechou um leilão de capacidade que [adicionará US$6,3 bilhões às contas de luz](https://www.nytimes.com/2026/07/14/business/energy-environment/pjm-electricity-prices-data-centers.html) em três anos, empurrado pela demanda dos data centers. O preço bateu o teto de US$325 por megawatt-dia para 2028 e 2029, e o leilão ficou 6.831 MW abaixo da meta de capacidade.
+- **CoreWeave.** A nuvem de IA CoreWeave [estuda usar derivativos](https://www.channelnewsasia.com/business/exclusive-ai-cloud-company-coreweave-explores-wall-street-playbook-hedge-memory-chip-price-risk-6254781), incluindo opções de venda (puts), para se proteger de uma futura queda nos preços de memória e armazenamento. Ela e outras operadoras assinaram acordos de longo prazo com Micron e SanDisk que fixam um piso de preço, deixando os compradores expostos se os preços caírem.
+
+#### Rodadas
+- **Miles Wang.** O pesquisador da OpenAI Miles Wang está saindo para lançar uma [startup de IA para descoberta de medicamentos](https://techcrunch.com/2026/07/14/openai-researcher-miles-wang-in-talks-to-launch-ai-drug-discovery-startup-valued-at-2b/), em negociações para captar ~US$200 milhões a uma avaliação de US$2 bilhões com a Lightspeed à frente. Wang contestou publicamente esses números sem dar valores corrigidos; a rodada surge na esteira da Chai Discovery (US$400 milhões) e da Isomorphic Labs (US$2,1 bilhões).
+- **Walden Robotics.** A Walden Robotics saiu do *stealth* com [US$300 milhões a uma avaliação de US$1,1 bilhão](https://www.tipranks.com/news/nvidia-backed-wheeled-humanoid-maker-walden-robotics-hits-1-1b-valuation), em rodada co-liderada por Toyota e Deviation Capital, com NVIDIA, Boeing e Samsung Ventures. Spinout do Toyota Research Institute, seus robôs de uso geral (humanoides sobre rodas) já fazem trabalho de produção numa fábrica da Toyota na América do Norte desde fevereiro.
+- **Neko Health.** A Neko Health, de Estocolmo e cofundada por Daniel Ek, do Spotify, levantou uma [Série C de US$700 milhões](https://www.nytimes.com/2026/07/15/business/dealbook/neko-health-ek-funding.html) liderada pela Lightspeed. A empresa opera oito clínicas na Suécia e no Reino Unido com um exame corporal de 60 minutos (£299) e planeja abrir suas primeiras unidades nos EUA, incluindo Nova York, ainda este ano.
+- **InstaLILY.** A InstaLILY fechou uma [Série B de US$60 milhões](https://siliconangle.com/2026/07/14/instalily-developer-ai-teammates-can-automate-complex-business-specific-work-raises-60m/) liderada pela Energize Capital, elevando o total captado para quase US$100 milhões. Sua "Lily", que a empresa chama de primeira "AI Forward Deployed Engineer" do mundo, gerou mais de US$200 milhões em novas vendas anuais num distribuidor nacional.
+
+#### Fusões & aquisições
+- **PayPal.** A Stripe e a firma de private equity Advent International fizeram uma [oferta conjunta de US$60,50 por ação pelo PayPal](https://www.channelnewsasia.com/business/exclusive-stripe-advent-offer-buy-paypal-more-53-billion-sources-say-6255126), que avalia a empresa em mais de US$53 bilhões, prêmio de ~28% sobre o fechamento da véspera. A proposta é lastreada por ~US$50 bilhões em financiamento bancário comprometido; as duas deteriam o PayPal em partes iguais e ainda não tiveram resposta.
+- **Delivery Hero.** A Delivery Hero confirmou [negociações avançadas com a Uber](https://www.independent.co.uk/news/business/uber-delivery-hero-acquisition-b3014889.html) sobre uma possível oferta a todos os acionistas, e suas ações subiram 5,76%, a €39,10 (valor de mercado de ~€11,2 bilhões). A Uber já detém 24,99% e, somados derivativos, chega a ~36,8% de interesse econômico.
+
+#### Macro & mundo
+- **Inflação nos EUA.** O CPI (índice de preços ao consumidor) cheio [caiu 0,4% em junho](https://www.americanbanker.com/news/inflation-slowed-to-3-5-in-june-giving-fed-breathing-room), maior queda mensal desde abril de 2020, levando a inflação anual a 3,5%, ante 4,2% em maio. As chances de alta de juros em 29 de julho despencaram de 47% para 17% na CME FedWatch, com a gasolina (-9,7% no mês) puxando a queda.
+- **Irã.** Os EUA reimpuseram o bloqueio naval ao Irã e [bombardearam um quartel do exército](https://apnews.com/article/iran-us-hormuz-strait-war-july-15-2026-b7c592f269d822407dd6b5641602bf25), matando ao menos sete soldados e ferindo mais de 260, em retaliação a ataques iranianos a navios no Estreito de Ormuz. Teerã declarou o estreito fechado, o Brent subiu acima de US$86 o barril, e Trump ameaçou atingir usinas e pontes na próxima semana caso não haja negociação.
+
+---
+
+#### Leia também
+- [Quatro grandes bancos dos EUA batem recorde com US$43 bilhões de lucro no 2º trimestre](https://www.nytimes.com/2026/07/14/business/jpmorgan-goldman-bofa-wells-fargo-bank-earnings.html)
+- [FDA aprova o Revtorpyk, da Celcuity, para câncer de mama avançado](https://endpoints.news/celcuity-wins-approval-for-breast-cancer-drug-revtorpyk/)

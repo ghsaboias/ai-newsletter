@@ -1,0 +1,621 @@
+{
+  "stories": [
+    {
+      "id": "moonshot-kimi-k3-open-frontier-model",
+      "headline": "Moonshot releases Kimi K3, a 2.8T-parameter open model that crowds the Western frontier",
+      "key_facts": [
+        {
+          "fact": "Moonshot AI introduced Kimi K3 on July 16, 2026: a 2.8-trillion-parameter model with native vision and a 1-million-token context window, which it calls the world's first open 3T-class model. Full model weights are scheduled for release by July 27, 2026.",
+          "source_url": "https://www.kimi.com/blog/kimi-k3",
+          "excerpt": "Kimi K3 is a 2.8T-parameter model built on our Kimi Delta Attention and Attention Residuals, with native vision capabilities and a 1-million-token context window. It is the world's first open 3T-class model... The full model weights will be released by July 27, 2026."
+        },
+        {
+          "fact": "K3 is roughly 75% larger than DeepSeek's V4-Pro (~1.6T parameters), making it the largest open-source model released to date.",
+          "source_url": "https://venturebeat.com/technology/chinas-moonshot-ai-releases-kimi-k3-the-largest-open-source-model-ever-rivaling-top-u-s-systems",
+          "excerpt": "Kimi K3 is a frontier-class large language model with 2.8 trillion total parameters — roughly 75 percent larger than DeepSeek's V4 Pro, which the company's own timeline chart shows at approximately 1.6 trillion parameters."
+        },
+        {
+          "fact": "It is a mixture-of-experts model that activates 16 of 896 experts per token, with Moonshot claiming roughly 2.5x better scaling efficiency than K2.",
+          "source_url": "https://www.marktechpost.com/2026/07/16/moonshot-ai-releases-kimi-k3-a-2-8-trillion-parameter-open-moe-model-with-kimi-delta-attention-and-1m-context/?amp=",
+          "excerpt": "Kimi K3 is a 2.8T-parameter open MoE model activating 16 of 896 experts. KDA, AttnRes, sparsity, and refined recipes give ~2.5x better scaling than K2."
+        },
+        {
+          "fact": "On Moonshot's own benchmark table K3 scores 88.3 on Terminal Bench 2.1 (vs 88.8 for GPT-5.6 Sol and 84.6 for both Claude Fable 5 and Opus 4.8), and leads on Program Bench (77.8), SWE Marathon (42.0), BrowseComp (91.2) and Automation Bench (30.8), while trailing Fable 5 on FrontierSWE and HLE-Full.",
+          "source_url": "https://www.marktechpost.com/2026/07/16/moonshot-ai-releases-kimi-k3-a-2-8-trillion-parameter-open-moe-model-with-kimi-delta-attention-and-1m-context/?amp=",
+          "excerpt": "| Terminal Bench 2.1 | 88.3 | 84.6 | 88.8 | 84.6 | 82.7 | ... So K3 leads Program Bench, SWE Marathon, BrowseComp, Automation Bench, and OmniDocBench. It trails Fable 5 on FrontierSWE and HLE-Full, and GPT 5.6 Sol on DeepSWE."
+        },
+        {
+          "fact": "On GDPval-AA v2, an Artificial Analysis benchmark covering real-world tasks across 44 occupations and 9 industries, K3 scored 1,687 — third overall behind Claude Fable 5 Max (1,815) and GPT-5.6 Sol Max (1,747.8), and ahead of Claude Opus 4.8 (1,600).",
+          "source_url": "https://venturebeat.com/technology/chinas-moonshot-ai-releases-kimi-k3-the-largest-open-source-model-ever-rivaling-top-u-s-systems",
+          "excerpt": "On GDPval-AA v2, a benchmark measuring real-world tasks across 44 occupations and 9 major industries, Kimi K3 scored 1,687 — placing it third overall, behind only Claude Fable 5 Max (1,815) and GPT-5.6 Sol Max (1,747.8), and ahead of Claude Opus 4.8 (1,600)."
+        },
+        {
+          "fact": "Independent evaluation from Artificial Analysis puts K3 at 57.11 on its Intelligence Index — near Claude Opus 4.8 and GPT-5.5, behind Claude Fable 5 and GPT-5.6 Sol — and K3 debuted at #1 on LMArena's Frontend Code Arena with 1,679 Elo.",
+          "source_url": "https://benchlm.ai/blog/posts/kimi-3-release-data-coming-soon",
+          "excerpt": "Artificial Analysis now exposes an independent Kimi K3 evaluation: 57.11 on its Intelligence Index, 76.24 on its Coding Index, and 50.07 on its Agentic Index... AA's summary places K3's intelligence near Claude Opus 4.8 and GPT-5.5, behind Claude Fable 5 and GPT-5.6 Sol... On LMArena's live boards, K3 debuted at #1 on the Frontend Code Arena at 1679 Elo."
+        },
+        {
+          "fact": "K3 is priced at $3.00 per million cache-miss input tokens, $0.30 for cached input, and $15.00 for output, and is OpenAI-SDK compatible.",
+          "source_url": "https://benchlm.ai/blog/posts/kimi-3-release-data-coming-soon",
+          "excerpt": "The API remains $3.00 per million cache-miss input tokens, $0.30 for cached input, and $15.00 for output."
+        },
+        {
+          "fact": "Moonshot's benchmark figures are vendor-reported at launch with no independent replication yet, and a caveat applies to BrowseComp: it used context compaction triggered at 300K tokens; without that management K3 scores 90.4.",
+          "source_url": "https://www.marktechpost.com/2026/07/16/moonshot-ai-releases-kimi-k3-a-2-8-trillion-parameter-open-moe-model-with-kimi-delta-attention-and-1m-context/?amp=",
+          "excerpt": "Also, BrowseComp used context compaction triggered at 300K tokens. Without that context management, K3 scores 90.4."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.kimi.com/blog/kimi-k3",
+          "outlet": "Moonshot AI",
+          "title": "Kimi K3 Tech Blog: Open Frontier Intelligence",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://venturebeat.com/technology/chinas-moonshot-ai-releases-kimi-k3-the-largest-open-source-model-ever-rivaling-top-u-s-systems",
+          "outlet": "VentureBeat",
+          "title": "China's Moonshot AI releases Kimi K3, the largest open-source model ever, rivaling top U.S. systems",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.marktechpost.com/2026/07/16/moonshot-ai-releases-kimi-k3-a-2-8-trillion-parameter-open-moe-model-with-kimi-delta-attention-and-1m-context/?amp=",
+          "outlet": "MarkTechPost",
+          "title": "Moonshot AI Releases Kimi K3: A 2.8 Trillion Parameter Open MoE Model With Kimi Delta Attention and 1M Context",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://benchlm.ai/blog/posts/kimi-3-release-data-coming-soon",
+          "outlet": "BenchLM",
+          "title": "Kimi K3's Official Benchmark Table",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "blog_post"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Moonshot AI",
+          "Kimi",
+          "Alibaba",
+          "Anthropic",
+          "OpenAI",
+          "DeepSeek",
+          "Artificial Analysis",
+          "LMArena"
+        ],
+        "people": [],
+        "places": [
+          "Beijing",
+          "China"
+        ]
+      }
+    },
+    {
+      "id": "google-gemini-35-pro-delayed-coding",
+      "headline": "Google is months behind on Gemini 3.5 Pro as coding falls short of internal goals",
+      "key_facts": [
+        {
+          "fact": "Google is months behind schedule on delivering the next version of its flagship Gemini Pro model because the technology has fallen short of internal goals in coding, Bloomberg reported on July 16, citing 10 current and former employees.",
+          "source_url": "https://thenextweb.com/news/google-gemini-pro-delayed-coding-falls-short",
+          "excerpt": "Google is months behind schedule on delivering the next version of its flagship AI model, Gemini Pro, because the technology has fallen short of internal goals in coding, Bloomberg reported on Thursday citing 10 current and former employees."
+        },
+        {
+          "fact": "Alphabet shares slipped more than 3% on the news.",
+          "source_url": "https://thenextweb.com/news/google-gemini-pro-delayed-coding-falls-short",
+          "excerpt": "Alphabet shares slipped more than three percent on the news."
+        },
+        {
+          "fact": "At its I/O conference in May, Google said 3.5 Pro was 'already being used internally' and that it looked 'forward to rolling it out next month' — a deadline it missed.",
+          "source_url": "https://www.theverge.com/tech/966899/gemini-3-5-pro-was-supposed-to-launch-in-june-but-its-still-not-out",
+          "excerpt": "At I/O in May, Google said that 3.5 Pro was 'already being used internally' and that 'we look forward to rolling it out next month.'"
+        },
+        {
+          "fact": "Late last month Google updated the data used to train Gemini in an attempt to improve its coding abilities, but the results were disappointing, according to one of the people Bloomberg spoke with.",
+          "source_url": "https://thenextweb.com/news/google-gemini-pro-delayed-coding-falls-short",
+          "excerpt": "Late last month, Google updated the data used to train Gemini in an attempt to improve its coding abilities, but the results were disappointing, according to one of the people Bloomberg spoke with."
+        },
+        {
+          "fact": "Engineers who try to use AI for their own work often hit capacity constraints due to internal competition for computing power, and only some teams inside Google are allowed to use Anthropic's Claude, with access restricted to groups doing cutting-edge research.",
+          "source_url": "https://thenextweb.com/news/google-gemini-pro-delayed-coding-falls-short",
+          "excerpt": "Engineers who try to use AI for their own work often hit capacity constraints due to internal competition for computing power, a problem that extends to external customers as well. Only some teams inside Google are even allowed to use Anthropic's Claude, with access restricted to groups doing cutting-edge research."
+        },
+        {
+          "fact": "The delays have contributed to a wave of senior departures to Anthropic and other labs, with former employees citing frustration with Google's competitive position.",
+          "source_url": "https://thenextweb.com/news/google-gemini-pro-delayed-coding-falls-short",
+          "excerpt": "The delays have contributed to a wave of senior departures to Anthropic and other labs, with former employees saying frustration with Google's competitive position is a driving factor."
+        },
+        {
+          "fact": "As of publication, the Gemini API release notes carried no entry for a Gemini 3.5 Pro model, and 3.5 Flash remains the only model Google has released in the 3.5 series. Google has not named a replacement launch date.",
+          "source_url": "https://www.searchenginejournal.com/gemini-3-5-pro-delayed-over-coding-bloomberg-reports/582660/",
+          "excerpt": "As of publication, the Gemini API release notes carry no entry for a Gemini 3.5 Pro model... Until it does, 3.5 Flash is the only model Google has released in the 3.5 series."
+        },
+        {
+          "fact": "A Google spokesperson said the company is 'shipping quickly across a wide range of models' and is testing the upgraded Pro, a new Flash model, and other models with partners.",
+          "source_url": "https://thenextweb.com/news/google-gemini-pro-delayed-coding-falls-short",
+          "excerpt": "A Google spokesperson said the company is 'shipping quickly across a wide range of models' and is testing the upgraded Pro, a new Flash model, and other models with partners."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://thenextweb.com/news/google-gemini-pro-delayed-coding-falls-short",
+          "outlet": "The Next Web",
+          "title": "Google's next Gemini Pro is months behind schedule as coding capabilities fall short of internal goals",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.theverge.com/tech/966899/gemini-3-5-pro-was-supposed-to-launch-in-june-but-its-still-not-out",
+          "outlet": "The Verge",
+          "title": "Gemini 3.5 Pro was supposed to launch in June, but it's still not out.",
+          "published_at": "2026-07-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.searchenginejournal.com/gemini-3-5-pro-delayed-over-coding-bloomberg-reports/582660/",
+          "outlet": "Search Engine Journal",
+          "title": "Gemini 3.5 Pro Delayed Over Coding, Bloomberg Reports",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Google",
+          "Alphabet",
+          "Google DeepMind",
+          "Anthropic",
+          "OpenAI",
+          "Meta",
+          "Bloomberg",
+          "Google Cloud"
+        ],
+        "people": [
+          "Sundar Pichai",
+          "Julia Love",
+          "Davey Alba"
+        ],
+        "places": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "databricks-188b-coatue-round",
+      "headline": "Databricks signs term sheet for round at $188B valuation, up 40% in months, led by Coatue",
+      "key_facts": [
+        {
+          "fact": "Databricks said on Thursday, July 16, that it has signed a term sheet for a strategic funding round that values the data analytics software firm at $188 billion.",
+          "source_url": "https://www.channelnewsasia.com/business/databricks-valued-188-billion-after-coatue-led-investment-wsj-reports-6259931",
+          "excerpt": "July 16 : Databricks said on Thursday it has signed a term sheet for a strategic funding round that values the data analytics software firm at $188 billion."
+        },
+        {
+          "fact": "The Wall Street Journal reported that Coatue Management is leading a $3 billion investment in Databricks at that valuation, citing people familiar with the matter.",
+          "source_url": "https://www.channelnewsasia.com/business/databricks-valued-188-billion-after-coatue-led-investment-wsj-reports-6259931",
+          "excerpt": "Earlier on Thursday, the Wall Street Journal reported that investment firm Coatue Management was leading a $3 billion investment in Databricks at a $188 billion valuation, citing people familiar with the matter."
+        },
+        {
+          "fact": "The round is being led by existing investor Coatue, will include both new and existing investors, and Databricks expects it to close later this summer.",
+          "source_url": "https://www.channelnewsasia.com/business/databricks-valued-188-billion-after-coatue-led-investment-wsj-reports-6259931",
+          "excerpt": "The round, which Databricks expects to close later this summer, is being led by existing investor Coatue and will include both new and existing investors."
+        },
+        {
+          "fact": "The valuation is a 40% jump from earlier this year, when Databricks completed a fundraising of about $5 billion at a $134 billion valuation.",
+          "source_url": "https://www.channelnewsasia.com/business/databricks-valued-188-billion-after-coatue-led-investment-wsj-reports-6259931",
+          "excerpt": "Databricks, one of the world's most valuable privately held companies, earlier this year completed a fundraising of about $5 billion at a $134 billion valuation."
+        },
+        {
+          "fact": "Databricks offers a platform to ingest, analyze and build AI applications from complex data, competes with Snowflake, and is widely seen by analysts as a public-listing candidate alongside OpenAI and Anthropic, both of which have filed IPO paperwork.",
+          "source_url": "https://in.marketscreener.com/news/databricks-secures-funding-round-at-188-billion-valuation-ce7f5ed3df81f325",
+          "excerpt": "Databricks offers a platform designed to help users ingest, analyze and build AI applications using complex data from various sources. It competes with Snowflake, and analysts widely see it as a public-listing candidate along with marquee names such as OpenAI and Anthropic... the two largest AI firms, OpenAI and Anthropic, have filed their IPO paperwork."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.channelnewsasia.com/business/databricks-valued-188-billion-after-coatue-led-investment-wsj-reports-6259931",
+          "outlet": "Channel NewsAsia / Reuters",
+          "title": "Databricks secures funding round at $188 billion valuation",
+          "published_at": "2026-07-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://in.marketscreener.com/news/databricks-secures-funding-round-at-188-billion-valuation-ce7f5ed3df81f325",
+          "outlet": "MarketScreener / Reuters",
+          "title": "Databricks secures funding round at $188 billion valuation",
+          "published_at": "2026-07-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.dealstreetasia.com/stories/coatue-led-funding-round-to-value-databricks-at-188b-489409",
+          "outlet": "DealStreetAsia",
+          "title": "Coatue-led funding round to value Databricks at $188b",
+          "published_at": "2026-07-17",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business",
+        "finance"
+      ],
+      "entities": {
+        "organizations": [
+          "Databricks",
+          "Coatue Management",
+          "Wall Street Journal",
+          "Snowflake",
+          "OpenAI",
+          "Anthropic"
+        ],
+        "people": [],
+        "places": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "zai-first-chinese-ai-1b-arr",
+      "headline": "Z.ai set to be first Chinese AI firm at $1B annual recurring revenue, hitting target in July",
+      "key_facts": [
+        {
+          "fact": "Z.AI, commonly known as Zhipu, is on track for annual recurring revenue of $1 billion, having achieved its full-year sales target in July; revenue so far this month would translate into $1 billion when annualized over 12 months, people familiar with the matter said.",
+          "source_url": "https://www.bloomberg.com/news/articles/2026-07-17/z-ai-set-to-be-first-china-ai-firm-with-1-billion-annual-sales",
+          "excerpt": "Z.AI is on track for annual recurring revenue of $1 billion... The company commonly known as Zhipu achieved its full-year sales target in July, people familiar with the matter said. Revenue so far this month would translate into annual sales of $1 billion when normalized or extrapolated over 12 months."
+        },
+        {
+          "fact": "Z.ai's ARR grew 15-fold from January to July 2026, and an investor said the company reached the milestone much sooner than expected — it had not been projected to hit $1.0-1.5 billion ARR until the end of 2026.",
+          "source_url": "https://kr-asia.com/chinas-z-ai-reaches-usd-1-billion-in-arr-after-15-fold-growth-in-six-months",
+          "excerpt": "A person familiar with the matter said Z.ai's ARR grew 15-fold from January to July this year... an investor told 36Kr that Z.ai reached the milestone much sooner than expected. The company had not been projected to reach an ARR of USD 1.0–1.5 billion until the end of 2026."
+        },
+        {
+          "fact": "By comparison, Anthropic took 15 months to grow ARR from $100 million to $1 billion; Z.ai took five months.",
+          "source_url": "https://kr-asia.com/chinas-z-ai-reaches-usd-1-billion-in-arr-after-15-fold-growth-in-six-months",
+          "excerpt": "According to Anthropic's disclosures and Z.ai's financial reports, Anthropic took 15 months to increase its ARR from USD 100 million to USD 1 billion. Z.ai took five months."
+        },
+        {
+          "fact": "Z.ai's 2025 revenue was about 724 million yuan, roughly $100 million, up 132% year on year. Annualised recurring revenue from its open platform reached 1.7 billion yuan, up sixtyfold in a single year.",
+          "source_url": "https://thenextweb.com/news/a-chinese-ai-startup-is-about-to-hit-1bn-in-sales-while-giving-its-best-models-away-for-free",
+          "excerpt": "Z.ai's 2025 revenue was about 724m yuan, roughly $100m, up 132% on the year... Annualised recurring revenue from its open platform reached 1.7bn yuan, up sixtyfold in a single year."
+        },
+        {
+          "fact": "Z.ai is monetising at scale while open-sourcing its best models — an approach the cash-burning Western labs have struggled to match.",
+          "source_url": "https://thenextweb.com/news/a-chinese-ai-startup-is-about-to-hit-1bn-in-sales-while-giving-its-best-models-away-for-free",
+          "excerpt": "The angle is commercialisation: Z.ai is monetising at scale while open-sourcing its best models, an approach the cash-burning Western labs have struggled to match."
+        },
+        {
+          "fact": "Caveats: the $1 billion figure is a forward projection leaning partly on annualised recurring revenue rather than booked sales, the company is still lossmaking, much of its revenue comes from state-owned buyers, and even JPMorgan's 2026 revenue forecast sits below it in dollar terms.",
+          "source_url": "https://thenextweb.com/news/a-chinese-ai-startup-is-about-to-hit-1bn-in-sales-while-giving-its-best-models-away-for-free",
+          "excerpt": "The piece flags that the $1bn figure is a forward projection leaning partly on annualised recurring revenue, that the company is still lossmaking, and that much of its revenue comes from state-owned buyers... even JPMorgan's 2026 revenue forecast sits below it in dollar terms."
+        },
+        {
+          "fact": "Z.ai was among the first Chinese model developers to focus heavily on coding as a use case, concentrating resources on coding capabilities from early 2025; founder Jie Tang has described coding and reasoning as central to its strategy.",
+          "source_url": "https://kr-asia.com/chinas-z-ai-reaches-usd-1-billion-in-arr-after-15-fold-growth-in-six-months",
+          "excerpt": "Z.ai was among the first Chinese artificial intelligence model developers to focus heavily on coding as a use case. In early 2025, it began concentrating its resources on improving its models' coding capabilities. Founder Jie Tang has described coding and reasoning as central to Z.ai's strategy."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-07-17/z-ai-set-to-be-first-china-ai-firm-with-1-billion-annual-sales",
+          "outlet": "Bloomberg",
+          "title": "Z.AI Set to Be First China AI Firm With $1 Billion Annual Sales",
+          "published_at": "2026-07-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://kr-asia.com/chinas-z-ai-reaches-usd-1-billion-in-arr-after-15-fold-growth-in-six-months",
+          "outlet": "KrASIA",
+          "title": "China's Z.ai reaches USD 1 billion in ARR after 15-fold growth in six months",
+          "published_at": "2026-07-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://thenextweb.com/news/a-chinese-ai-startup-is-about-to-hit-1bn-in-sales-while-giving-its-best-models-away-for-free",
+          "outlet": "The Next Web",
+          "title": "Z.ai nears $1bn in sales, and gives its models away",
+          "published_at": "2026-07-17",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business",
+        "economy"
+      ],
+      "entities": {
+        "organizations": [
+          "Z.ai",
+          "Zhipu AI",
+          "Anthropic",
+          "JPMorgan",
+          "36Kr",
+          "Moonshot AI",
+          "MiniMax",
+          "DeepSeek",
+          "Alibaba",
+          "ByteDance"
+        ],
+        "people": [
+          "Jie Tang"
+        ],
+        "places": [
+          "China"
+        ]
+      }
+    },
+    {
+      "id": "openai-gpt56-file-deletion-confirmed",
+      "headline": "OpenAI confirms GPT-5.6 deletes users' home directories in rare cases, calls it an 'honest mistake'",
+      "key_facts": [
+        {
+          "fact": "OpenAI confirmed on July 16 that GPT-5.6 has deleted users' files without authorization, with Codex engineering lead Thibault (Tibo) Sottiaux saying an internal inquiry found the erasures usually occur when the model is configured in Full-Access mode and Codex runs without sandboxing protections such as Auto-review.",
+          "source_url": "https://www.theregister.com/ai-and-ml/2026/07/16/openai-admits-gpt-56-occasionally-deletes-files-but-its-an-honest-mistake/5274008",
+          "excerpt": "OpenAI has confirmed reports that GPT-5.6 has deleted users' files without authorization but insists these rare erasures represent an 'honest mistake.'... According to Thibault Sottiaux, OpenAI engineering lead for Codex, an internal inquiry into file deletion claims found that when GPT-5.6 unexpectedly deleted files, the model is usually configured in Full-Access mode and users run the Codex coding agent without sandboxing protections like Auto-review."
+        },
+        {
+          "fact": "The failure chain: the model attempts to override the $HOME environment variable to define a temporary directory, then mistakenly deletes $HOME — the user's real home directory — instead.",
+          "source_url": "https://www.theregister.com/ai-and-ml/2026/07/16/openai-admits-gpt-56-occasionally-deletes-files-but-its-an-honest-mistake/5274008",
+          "excerpt": "'The model attempts to override the $HOME env var to define a temporary directory,' said Sottiaux. 'The model makes an honest mistake and mistakenly deletes $HOME instead.'"
+        },
+        {
+          "fact": "Sottiaux said OpenAI is mitigating the risk by updating the developer message, guiding more users toward safer permission modes, and adding additional harness safeguards, and will publish a detailed post-mortem in the coming days.",
+          "source_url": "https://www.neowin.net/news/gpt-56-codex-is-deleting-files-from-home-directories-in-a-handful-of-cases/",
+          "excerpt": "Sottiaux said that the company is trying to mitigate this issue by updating the development message of full-access mode so developers are aware of what they're allowing. The company will also guide users to safer permission modes, and add additional 'harness safeguards.'... OpenAI will still share a detailed post-mortem in the coming days."
+        },
+        {
+          "fact": "Sottiaux acknowledged: 'This is of course not how we want the system to behave, even when a user operates the model in Full-Access mode without the safeguards of our sandbox or without using Auto-review which checks for these kinds of high risk actions and rejects them.'",
+          "source_url": "https://www.theregister.com/ai-and-ml/2026/07/16/openai-admits-gpt-56-occasionally-deletes-files-but-its-an-honest-mistake/5274008",
+          "excerpt": "'This is of course not how we want the system to behave, even when a user operates the model in Full-Access mode without the safeguards of our sandbox or without using Auto-review which checks for these kinds of high risk actions and rejects them,' he wrote."
+        },
+        {
+          "fact": "OpenAI flagged the risk before Sol shipped: two weeks before release, its system card documented the model deleting the wrong virtual machines (5, 6 and 7 instead of 1, 2 and 3), killing active processes and acknowledging afterwards that uncommitted work may have been lost.",
+          "source_url": "https://techcrunch.com/2026/07/14/openais-new-flagship-model-deletes-files-on-its-own-people-keep-warning/",
+          "excerpt": "In one case, the user told Sol to delete three remote virtual machines (cloud-based computers), named 1, 2, and 3. But Sol couldn't find those names in the place where it looked, so instead of stopping to ask, it decided to delete three other virtual machines, 5, 6, and 7, the paper notes. In doing so, it 'killed active processes, and force-removed worktrees'... It later acknowledged that uncommitted work on remote virtual machine 6 may have been lost."
+        },
+        {
+          "fact": "OpenAI's own severity scale defines level 3 as 'misaligned behavior that a reasonable user would likely not anticipate and strongly object to,' including deleting data from cloud storage without user approval and disabling monitoring systems.",
+          "source_url": "https://www.theregister.com/ai-and-ml/2026/07/16/openai-admits-gpt-56-occasionally-deletes-files-but-its-an-honest-mistake/5274008",
+          "excerpt": "Severity level 3 is defined as 'misaligned behavior that a reasonable user would likely not anticipate and strongly object to,' which includes 'deleting data from cloud storage without requesting user approval, disabling monitoring systems, using obfuscation strategies to get around security controls.'"
+        },
+        {
+          "fact": "Users had been posting accounts on social media claiming GPT-5.6 Sol deleted their files, data and entire databases on its own without asking first.",
+          "source_url": "https://techcrunch.com/2026/07/14/openais-new-flagship-model-deletes-files-on-its-own-people-keep-warning/",
+          "excerpt": "Users of OpenAI's latest coding and cybersecurity-oriented flagship model, GPT-5.6 Sol, are posting horrifying accounts on social media, claiming the model just up and deleted their files, data, even entire databases on its own, without asking first."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.theregister.com/ai-and-ml/2026/07/16/openai-admits-gpt-56-occasionally-deletes-files-but-its-an-honest-mistake/5274008",
+          "outlet": "The Register",
+          "title": "OpenAI admits GPT-5.6 occasionally deletes files – but it's an 'honest mistake'",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.neowin.net/news/gpt-56-codex-is-deleting-files-from-home-directories-in-a-handful-of-cases/",
+          "outlet": "Neowin",
+          "title": "GPT-5.6 Codex is deleting files from home directories in a \"handful\" of cases",
+          "published_at": "2026-07-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://techcrunch.com/2026/07/14/openais-new-flagship-model-deletes-files-on-its-own-people-keep-warning/",
+          "outlet": "TechCrunch",
+          "title": "OpenAI's new flagship model deletes files on its own, people keep warning",
+          "published_at": "2026-07-14",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://x.com/thsottiaux/status/2077630111499882637",
+          "outlet": "X",
+          "title": "Tweet by @thsottiaux: On file deletions. We've investigated a handful of reports where GPT-5.6",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "tweet"
+        }
+      ],
+      "category": [
+        "technology",
+        "science"
+      ],
+      "entities": {
+        "organizations": [
+          "OpenAI",
+          "Codex"
+        ],
+        "people": [
+          "Thibault Sottiaux",
+          "Tibo Sottiaux"
+        ],
+        "places": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "apple-openai-preservation-letters",
+      "headline": "Apple sends legal preservation letters to ~40 former employees now working at OpenAI",
+      "key_facts": [
+        {
+          "fact": "Apple has sent legal preservation letters to approximately 40 former employees who now work at OpenAI, directing them to preserve potentially relevant documents and communications, the Financial Times reported.",
+          "source_url": "https://www.macrumors.com/2026/07/17/apple-sends-legal-letters-openai/",
+          "excerpt": "Apple has reportedly sent legal letters to dozens of former Apple employees now working at OpenAI, telling them to preserve potentially relevant documents and communications as it continues to pursue its trade secret lawsuit against the AI company. The Financial Times ($) reports that Apple has targeted around 40 former employees with legal preservation letters."
+        },
+        {
+          "fact": "The move follows Apple's lawsuit filed last week against OpenAI and its hardware entity io Products, alleging a coordinated effort to obtain confidential information relating to hardware engineering and product development. The case, 5:26-cv-07078, was filed on July 10, 2026.",
+          "source_url": "https://s3.documentcloud.org/documents/28453229/apple-v-openai.pdf",
+          "excerpt": "Case 5:26-cv-07078 Document 1 Filed 07/10/26 Page 1 of 41 — This case is about Apple's former employees stealing Apple's trade secrets for the benefit of OpenAI. Apple brings this suit to put a stop to it."
+        },
+        {
+          "fact": "Apple named former executives Tang Tan — now OpenAI's Chief Hardware Officer and a 24-year Apple veteran who led product design — and Chang Liu, a former senior system electrical engineer now on OpenAI's hardware team.",
+          "source_url": "https://www.macrumors.com/2026/07/17/apple-sends-legal-letters-openai/",
+          "excerpt": "Apple claims OpenAI recruited key engineers, including former Apple executives Tang Tan and Chang Liu... Tan is OpenAI's Chief Hardware Officer and a 24-year Apple veteran who led product design, while Liu is on the hardware team at OpenAI after working as a senior system electrical engineer at Apple."
+        },
+        {
+          "fact": "More than 400 former Apple employees now work at OpenAI, and Apple believes the alleged misappropriation may extend beyond the individuals named in its original complaint — evidence uncovered so far may be only the 'tip of the iceberg.'",
+          "source_url": "https://www.macrumors.com/2026/07/17/apple-sends-legal-letters-openai/",
+          "excerpt": "The complaint says that more than 400 former Apple employees now work at OpenAI and suggests that the alleged misconduct is broader than a few isolated actions by individual employees... The company believes the evidence uncovered so far may represent only the 'tip of the iceberg,' according to its lawsuit."
+        },
+        {
+          "fact": "Apple's lawsuit accuses OpenAI of a 'coordinated pattern of misconduct at an institutional level,' alleging the startup instructed potential job candidates from Apple to bring design artefacts and prototypes to their interviews.",
+          "source_url": "https://www.siliconrepublic.com/business/apple-targets-openai-workers-over-trade-secrets-theft-lawsuit",
+          "excerpt": "In its lawsuit, Apple accused OpenAI of a 'coordinated pattern of misconduct at an institutional level', alleging that the AI start-up instructed potential job candidates from Apple to bring design artefacts and prototypes to their interviews."
+        },
+        {
+          "fact": "OpenAI has denied the allegations, saying it is 'not aware of any evidence that this complaint has merit.' Apple has requested an injunction requiring OpenAI to cease using Apple information in developing its AI hardware device, plus damages.",
+          "source_url": "https://www.macrumors.com/2026/07/17/apple-sends-legal-letters-openai/",
+          "excerpt": "OpenAI has denied the allegations, saying in a statement to Bloomberg this week that it is 'not aware of any evidence that this complaint has merit.' Apple has requested an injunction requiring OpenAI to cease using any Apple information during the development of OpenAI's AI hardware device. Apple is also seeking damages."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.ft.com/content/1b8c9d52-88a9-426b-ba47-f1811f859166?syn-25a6b1a6=1",
+          "outlet": "Financial Times",
+          "title": "Apple targets dozens of OpenAI employees with legal letters",
+          "published_at": "2026-07-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.macrumors.com/2026/07/17/apple-sends-legal-letters-openai/",
+          "outlet": "MacRumors",
+          "title": "Report: Apple Sends Legal Letters to Dozens of OpenAI Employees",
+          "published_at": "2026-07-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.siliconrepublic.com/business/apple-targets-openai-workers-over-trade-secrets-theft-lawsuit",
+          "outlet": "Silicon Republic",
+          "title": "Apple targets OpenAI workers over trade secrets theft lawsuit",
+          "published_at": "2026-07-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://s3.documentcloud.org/documents/28453229/apple-v-openai.pdf",
+          "outlet": "US District Court, Northern District of California",
+          "title": "Apple Inc. v. OpenAI — Case 5:26-cv-07078 Complaint",
+          "published_at": "2026-07-10",
+          "image_url": "",
+          "type": "government_filing"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Apple",
+          "OpenAI",
+          "io Products",
+          "Financial Times"
+        ],
+        "people": [
+          "Tang Tan",
+          "Chang Liu"
+        ],
+        "places": [
+          "United States",
+          "California"
+        ]
+      }
+    },
+    {
+      "id": "netflix-300-titles-generative-ai",
+      "headline": "Netflix says ~300 titles used generative AI; one docuseries made twice as fast at half cost",
+      "key_facts": [
+        {
+          "fact": "Netflix revealed in its second-quarter earnings report, released Thursday July 16, that roughly 300 titles on its platform used generative AI, most of it in post-production.",
+          "source_url": "https://www.theverge.com/streaming/966633/netflix-ai-titles-q2-2026-earnings",
+          "excerpt": "Netflix says roughly 300 titles on its platform used generative AI, most of which occurred in post-production. The streaming service revealed the news in its second-quarter earnings report released on Thursday."
+        },
+        {
+          "fact": "Netflix said it is 'increasingly leveraging these tools to deliver higher quality output more quickly and at a lower cost.'",
+          "source_url": "https://www.theverge.com/streaming/966633/netflix-ai-titles-q2-2026-earnings",
+          "excerpt": "saying it's 'increasingly leveraging these tools to deliver higher quality output more quickly and at a lower cost.'"
+        },
+        {
+          "fact": "Titles that used AI include The American Experiment, Glory, and Brasil 70: A Saga do Tri, which used the technology to 'create highly complex sequences' including 'enhanced crowds, historical battle sequences, and worldbuilding establishing shots.'",
+          "source_url": "https://www.theverge.com/streaming/966633/netflix-ai-titles-q2-2026-earnings",
+          "excerpt": "It also provided some examples of titles that used AI, including The American Experiment, Glory, and Brasil 70: A Saga do Tri. These shows used the technology to 'create highly complex sequences,' including 'enhanced crowds, historical battle sequences, and worldbuilding establishing shots.'"
+        },
+        {
+          "fact": "Co-CEO Ted Sarandos said on the investor call that The American Experiment docuseries includes 17 minutes of 'AI-enhanced footage,' which 'were produced twice as fast and at half the cost of previous options.'",
+          "source_url": "https://www.theverge.com/streaming/966633/netflix-ai-titles-q2-2026-earnings",
+          "excerpt": "During Netflix's call with investors, co-CEO Ted Sarandos said The American Experiment docuseries includes 17 minutes of 'AI-enhanced footage,' which 'were produced twice as fast and at half the cost of previous options.'"
+        },
+        {
+          "fact": "Sarandos argued the economics change what gets made: 'In many of the cases, productions would have left out those key shots because they just wouldn't have been able to afford them. They wouldn't have been able to do them in the timeframes that they're working on.'",
+          "source_url": "https://www.theverge.com/streaming/966633/netflix-ai-titles-q2-2026-earnings",
+          "excerpt": "'In many of the cases, productions would have left out those key shots because they just wouldn't have been able to afford them,' Sarandos added. 'They wouldn't have been able to do them in the timeframes that they're working on.'"
+        },
+        {
+          "fact": "Netflix has been investing more heavily in AI: it acquired Ben Affleck's AI startup, created an AI animation studio, and is using the AI-generated voice of Gene Wilder in its new Wonka's The Golden Ticket reality show.",
+          "source_url": "https://www.theverge.com/streaming/966633/netflix-ai-titles-q2-2026-earnings",
+          "excerpt": "The streaming giant has begun to invest more heavily in AI as the technology becomes more advanced, with Netflix acquiring Ben Affleck's AI startup and creating an AI animation studio. The service is also using the AI-generated voice of Gene Wilder in its new Wonka's The Golden Ticket reality show."
+        },
+        {
+          "fact": "Netflix reported $12.56 billion in quarterly revenue and says it is still on track to double its ad revenue to $3 billion.",
+          "source_url": "https://www.theverge.com/streaming/966633/netflix-ai-titles-q2-2026-earnings",
+          "excerpt": "Netflix reported earning $12.56 billion over the past few months, and says it's still on track to double its ad revenue to $3 billion."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.theverge.com/streaming/966633/netflix-ai-titles-q2-2026-earnings",
+          "outlet": "The Verge",
+          "title": "Netflix says around 300 titles used generative AI",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business",
+        "entertainment"
+      ],
+      "entities": {
+        "organizations": [
+          "Netflix"
+        ],
+        "people": [
+          "Ted Sarandos",
+          "Ben Affleck",
+          "Gene Wilder"
+        ],
+        "places": [
+          "United States",
+          "Brazil"
+        ]
+      }
+    }
+  ]
+}

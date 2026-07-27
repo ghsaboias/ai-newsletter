@@ -1,0 +1,307 @@
+<h1 id="tech---bem-vindoa-a-16-de-julho-de-2026">[Tech] - Bem-vindo(a) a
+16 de Julho de 2026</h1>
+<p>O que a Thinking Machines liberou com o seu primeiro modelo próprio?
+Por que a OpenAI treinou um modelo para atacar os seus próprios modelos?
+Quanto a TSMC vai investir a mais no Arizona?</p>
+<p>Por: Guilherme Saboia e Vinicius Gushiken</p>
+<h3
+id="thinking-machines-lança-inkling-primeiro-modelo-próprio-com-pesos-abertos">Thinking
+Machines lança Inkling, primeiro modelo próprio, com pesos abertos</h3>
+<ul>
+<li><strong>Modelo.</strong> A Thinking Machines Lab, fundada por Mira
+Murati, ex-CTO da OpenAI, <a
+href="https://dailyjournal.news/news/2026-07-15/thinking-machines-lab-lanca-inkling-novo-modelo-de-ia-com-975b-de-parametros">lançou
+o Inkling</a> na manhã de 15 de julho, seu primeiro modelo desenvolvido
+internamente: um transformer Mixture-of-Experts (MoE, arquitetura que
+ativa apenas parte dos parâmetros a cada token) com 975 bilhões de
+parâmetros totais e 41 bilhões ativos, janela de contexto de até 1
+milhão de tokens e pré-treino com 45 trilhões de tokens de texto,
+imagens, áudio e vídeo.</li>
+<li><strong>Pesos abertos.</strong> Diferentemente dos modelos
+principais da OpenAI, da Anthropic e do Google, o Inkling é de <a
+href="https://dailyjournal.news/news/2026-07-15/thinking-machines-lab-lanca-inkling-novo-modelo-de-ia-com-975b-de-parametros">pesos
+abertos</a>, sob licença Apache 2.0, considerada amigável a uso
+empresarial: desenvolvedores e empresas de fora podem baixá-lo e
+modificá-lo direto do <a
+href="https://dailyjournal.news/news/2026-07-15/thinking-machines-lab-lanca-inkling-novo-modelo-de-ia-com-975b-de-parametros">Hugging
+Face</a>.</li>
+<li><strong>Desempenho.</strong> Marca 77,6% no SWE-bench Verified,
+benchmark de engenharia de software, contra 71,9% do rival aberto
+norte-americano Nvidia Nemotron 3, e 91,4% no VoiceBench, benchmark de
+compreensão de voz, contra 94,4% do Gemini 3.1 Pro em esforço de
+raciocínio alto. Alto para modelos de pesos abertos, abaixo do estado da
+arte.</li>
+<li><strong>Arquitetura e acesso.</strong> O <a
+href="https://dailyjournal.news/news/2026-07-15/thinking-machines-lab-lanca-inkling-novo-modelo-de-ia-com-975b-de-parametros">design
+MoE segue em boa parte o do DeepSeek-V3</a>, com 256 especialistas
+roteados e 2 compartilhados por camada e 6 roteados ativados por token,
+num decoder-only de 66 camadas nativamente multimodal na entrada. A
+empresa também divulgou prévia do Inkling-Small, MoE de 276 bilhões de
+parâmetros com 12 bilhões ativos que iguala ou supera o irmão maior em
+vários benchmarks, e oferece o Inkling na Tinker com 50% de desconto por
+tempo limitado.</li>
+</ul>
+<h3
+id="openai-treina-o-gpt-red-modelo-que-quebra-quase-todos-os-seus-próprios-modelos">OpenAI
+treina o GPT-Red, modelo que quebra quase todos os seus próprios
+modelos</h3>
+<ul>
+<li><strong>Modelo.</strong> A OpenAI <a
+href="https://dailyjournal.news/news/2026-07-15/openai-apresenta-gpt-red-para-reforcar-seguranca-de-modelos-de-ia">treinou
+o GPT-Red</a>, um modelo de red-teaming automatizado (busca sistemática
+de falhas de segurança simulando um atacante) para encontrar
+vulnerabilidades de injeção de prompt em escala, com o objetivo de
+corrigi-las antes de implantações mais amplas.</li>
+<li><strong>Treino.</strong> O método é aprendizado por reforço em
+self-play: o atacante e um conjunto de LLMs defensores treinam
+simultaneamente em um amplo conjunto de cenários, o atacante
+recompensado por provocar uma falha válida e os defensores por resistir
+e concluir suas tarefas originais. A OpenAI treinou o GPT-Red na escala
+de computação de seus maiores pós-treinamentos e descreve o esforço como
+uma quantidade de computação sem precedentes dedicada puramente a
+melhorar a segurança.</li>
+<li><strong>Resultado.</strong> Ao fim do treino, o GPT-Red conseguia
+quebrar quase todos os modelos contra os quais foi colocado, internos e
+de produção, até o GPT-5.5 inclusive. Em um benchmark independente com
+cenários inéditos, <a
+href="https://dailyjournal.news/news/2026-07-15/openai-apresenta-gpt-red-para-reforcar-seguranca-de-modelos-de-ia">encontrou
+caminhos de ataque bem-sucedidos em 84% dos casos</a>, contra 13% dos
+pesquisadores humanos de segurança no mesmo desafio.</li>
+<li><strong>Novo ataque.</strong> O modelo descobriu um tipo de ataque
+que os pesquisadores não conheciam, batizado de “fake chain of thought”
+(cadeia de raciocínio falsa), em que insere uma entrada falsa na cadeia
+de raciocínio de outro modelo para induzi-lo a agir com base em
+informação forjada. Concluído o treino, a OpenAI usou o GPT-Red para
+gerar injeções de prompt no treinamento do GPT-5.6, que se tornou <a
+href="https://dailyjournal.news/news/2026-07-15/openai-apresenta-gpt-red-para-reforcar-seguranca-de-modelos-de-ia">altamente
+resistente aos seus ataques</a>.</li>
+</ul>
+<h3 id="tsmc-anuncia-mais-us100-bilhões-em-fábricas-no-arizona">TSMC
+anuncia mais US$100 bilhões em fábricas no Arizona</h3>
+<ul>
+<li><strong>Aporte.</strong> O CEO C.C. Wei disse que a TSMC investirá
+<a
+href="https://dailyjournal.news/news/2026-07-16/tsmc-anuncia-investimento-de-us-100-bilhoes-em-fabricas-nos-eua">mais
+US$100 bilhões</a> para ampliar a capacidade de produção no Arizona,
+somando-se às instalações que já tem no estado e elevando a US$265
+bilhões o total prometido pela empresa nos Estados Unidos.</li>
+<li><strong>Fábricas.</strong> O dinheiro financiará quatro novas
+fábricas de chips, direcionadas a <a
+href="https://dailyjournal.news/news/2026-07-16/tsmc-anuncia-investimento-de-us-100-bilhoes-em-fabricas-nos-eua">2
+nanômetros e abaixo</a>, mais empacotamento avançado. A meta final é
+chegar a 10 fábricas de wafers e 2 plantas de empacotamento em solo
+americano; hoje a empresa tem três polos de manufatura no mundo, em
+Taiwan, nos EUA e no Japão.</li>
+<li><strong>Contexto.</strong> A promessa segue o <a
+href="https://dailyjournal.news/news/2026-07-16/tsmc-anuncia-investimento-de-us-100-bilhoes-em-fabricas-nos-eua">acordo
+comercial entre EUA e Taiwan</a> de janeiro de 2026, no qual empresas
+taiwanesas se comprometeram com US$250 bilhões em investimentos nos EUA
+em troca de tarifas menores. O secretário de Comércio, Howard Lutnick,
+disse que esses US$250 bilhões incluem US$100 bilhões já comprometidos
+pela TSMC em 2025 e que os aportes visam impulsionar semicondutores,
+energia e IA nos Estados Unidos.</li>
+</ul>
+<hr />
+<h4 id="chips-e-equipamentos">Chips e equipamentos</h4>
+<ul>
+<li><strong>TSMC.</strong> O lucro líquido do segundo trimestre <a
+href="https://dailyjournal.news/news/2026-07-16/tsmc-anuncia-investimento-de-us-100-bilhoes-em-fabricas-nos-eua">bateu
+recorde de NT$706,56 bilhões</a>, cerca de US$21,98 bilhões, alta de
+77,4% na comparação anual e muito acima da estimativa da Bloomberg de
+NT$623,73 bilhões, no quinto trimestre seguido de lucro recorde, com
+receita de NT$1,27 trilhão e margem bruta de 67,7%. A empresa <a
+href="https://dailyjournal.news/news/2026-07-16/tsmc-tem-lucro-recorde-de-us22-bi-no-2-trimestre-e-eleva-projecao">elevou
+a projeção</a> de crescimento de receita de 2026 a pouco acima de 40% em
+dólares, contra mais de 30% antes, e o investimento de capital a US$60 a
+64 bilhões, contra US$52 a 56 bilhões; a ação caiu 1,55% no after-hours
+com o gasto mais pesado e a projeção de margem menor no trimestre
+corrente.</li>
+<li><strong>ASML.</strong> A empresa <a
+href="https://dailyjournal.news/news/2026-07-16/asml-planeja-elevar-precos-de-maquinas-e-tsmc-resiste">discutiu
+diretamente com a TSMC preços mais altos</a> para seus sistemas EUV
+(litografia ultravioleta extrema, usada para gravar os chips mais
+modernos) e planeja cobrar 10% a mais pelos DUV, a geração anterior,
+segundo The Information, com a TSMC resistindo aos planos. Um resultado
+trimestral acima do esperado encorajou o aumento, <a
+href="https://dailyjournal.news/news/2026-07-16/asml-planeja-elevar-precos-de-maquinas-e-tsmc-resiste">algo
+que a ASML raramente faz</a>, e monta uma confrontação incomum com sua
+maior cliente, que tem poucas alternativas para litografia de
+ponta.</li>
+</ul>
+<h4 id="infraestrutura-de-ia">Infraestrutura de IA</h4>
+<ul>
+<li><strong>Apple.</strong> A empresa <a
+href="https://dailyjournal.news/news/2026-07-16/apple-busca-comprar-startups-de-chips-para-seus-servidores-de-ia">explora
+aquisições de startups de semicondutores</a> para reforçar seus chips de
+servidor de IA, conversando com banqueiros nos últimos meses e sondando
+o interesse de alvos em se vender, segundo The Information. Seus
+servidores internos rodam com M2 Ultra de projeto próprio e sofrem em
+cargas exigentes, o chip Baltra, feito com a Broadcom para inferência no
+processo de 3nm da TSMC, atrasou e não estreia em 2026, e as tarefas
+mais pesadas da nova Siri rodam em um modelo baseado em Gemini em GPUs
+da Nvidia no Google Cloud.</li>
+<li><strong>Csquare.</strong> A operadora de data centers <a
+href="https://dailyjournal.news/news/2026-07-16/csquare-capta-us105-bilhao-em-ipo-precificado-abaixo-da-faixa">precificou
+seu IPO a US$21 por ação</a>, abaixo da faixa divulgada de US$23 a
+US$27, levantando cerca de US$1,05 bilhão com 50 milhões de ações e
+avaliando a empresa de Dallas em US$3,25 bilhões. Fundada em 2019, opera
+64 data centers em 21 mercados metropolitanos na América do Norte e no
+Reino Unido e <a
+href="https://dailyjournal.news/news/2026-07-16/csquare-capta-us105-bilhao-em-ipo-precificado-abaixo-da-faixa">usará
+os recursos</a> para pagar parte da dívida em aberto.</li>
+</ul>
+<h4 id="ia-corporativa-e-ciência">IA corporativa e ciência</h4>
+<ul>
+<li><strong>Ode with Anthropic.</strong> A empresa de implementação de
+IA de US$1,5 bilhão que a Anthropic lançou em maio como joint venture
+com Blackstone, Hellman &amp; Friedman, Goldman Sachs e outros <a
+href="https://dailyjournal.news/news/2026-07-15/startup-ode-recebe-apoio-da-anthropic-e-blackstone-para-implementar-ia">ganhou
+nome e marca oficiais</a>, com 100 engenheiros e um princípio
+“Claude-first” que implementa a tecnologia da Anthropic sempre que
+possível, mas admite produtos de concorrentes quando necessário. É
+construída sobre a Fractional AI, adquirida em maio de 2026, e as
+gestoras de private equity que a apoiam encaminharão suas empresas de
+portfólio como clientes potenciais; a OpenAI tem sua própria versão, a
+The Deployment Company.</li>
+<li><strong>Google DeepMind e Isomorphic Labs.</strong> As empresas
+publicaram uma <a
+href="https://dailyjournal.news/news/2026-07-16/google-deepmind-e-isomorphic-labs-definem-diretrizes-de-biorresiliencia">abordagem
+conjunta de bioresiliência</a> que cobre prevenção, detecção e resposta
+a ameaças biológicas, com o agente AlphaEvolve otimizando algoritmos de
+sequenciamento metagenômico para baratear o rastreamento de doenças em
+escala mundial. A Isomorphic <a
+href="https://dailyjournal.news/news/2026-07-16/google-deepmind-e-isomorphic-labs-definem-diretrizes-de-biorresiliencia">criou
+uma unidade dedicada</a> para projetar contramedidas médicas contra
+pandemias naturais e riscos do uso indevido de IA avançada; no último
+ano a parceria se engajou com mais de 15 agências governamentais,
+organizações de biossegurança e grupos de pesquisa.</li>
+</ul>
+<h4 id="segurança-e-responsabilidade">Segurança e responsabilidade</h4>
+<ul>
+<li><strong>Meta.</strong> A empresa <a
+href="https://dailyjournal.news/news/2026-07-16/meta-passa-a-alertar-pais-sobre-conversas-de-adolescentes-com-seu-chatbot">passará
+a notificar os pais</a> se um filho adolescente falar sobre suicídio ou
+automutilação com o chatbot Meta AI, com um sistema de IA dedicado para
+sinalizar as conversas e revisão manual antes de cada alerta. Os avisos
+já valem para quem usa a Supervisão Parental do Instagram nos EUA, no
+Reino Unido, na Austrália e no Canadá e serão liberados globalmente até
+o fim do ano; a Meta também trabalha na capacidade de acionar serviços
+de emergência quando as conversas sugerirem risco.</li>
+<li><strong>xAI.</strong> A empresa <a
+href="https://dailyjournal.news/news/2026-07-15/xai-processa-usuario-por-gerar-imagens-de-abuso-infantil-com-o-grok">processou
+Terry Wayne Harwood</a>, morador da Carolina do Sul, alegando que ele
+criou múltiplas contas e usou “prompts enganosos” para contornar os
+mecanismos de segurança do Grok e gerar deepfakes sexualmente
+explícitos, incluindo material de abuso sexual infantil. É <a
+href="https://dailyjournal.news/news/2026-07-15/xai-processa-usuario-por-gerar-imagens-de-abuso-infantil-com-o-grok">uma
+das primeiras ações conhecidas</a> de uma empresa de IA contra um de
+seus próprios usuários por conteúdo sexual ilegal gerado por IA; Harwood
+foi preso no início deste ano sob acusações relacionadas ao
+material.</li>
+</ul>
+<h4 id="política-e-regulação">Política e regulação</h4>
+<ul>
+<li><strong>Dario Amodei.</strong> O CEO da Anthropic <a
+href="https://dailyjournal.news/news/2026-07-16/ceo-da-anthropic-doa-us-1-milhao-para-super-pac-focado-em-tecnologia">doou
+US$1 milhão em maio ao Public First</a>, super PAC (comitê de ação
+política que arrecada e gasta sem limites, sem coordenar com campanhas)
+que apoia candidatos favoráveis a regulação de segurança para IA,
+segundo registros da Comissão Federal Eleitoral divulgados no fim da
+quarta-feira. Aparentemente é sua primeira doação política de sete
+dígitos; a Anthropic, como empresa, já havia doado <a
+href="https://dailyjournal.news/news/2026-07-16/ceo-da-anthropic-doa-us-1-milhao-para-super-pac-focado-em-tecnologia">US$20
+milhões ao comitê</a> em fevereiro, e a rede rival Leading the Future
+planeja gastar US$125 milhões neste ano para eleger congressistas
+favoráveis a regras mais leves.</li>
+</ul>
+<h4 id="robótica">Robótica</h4>
+<ul>
+<li><strong>Hyundai.</strong> O grupo <a
+href="https://dailyjournal.news/news/2026-07-16/hyundai-compra-fatia-restante-da-boston-dynamics-e-assume-controle-total">tornará
+a Boston Dynamics subsidiária integral</a> ao comprar a fatia de 9,65%
+do SoftBank, que exerceu uma put option, o direito de vender as ações,
+prevista em contrato de 2020 caso não houvesse IPO nos EUA até junho de
+2026. Os termos não foram divulgados, mas a imprensa local fala em cerca
+de 500 bilhões de wons (US$335 milhões), preço que <a
+href="https://dailyjournal.news/news/2026-07-16/hyundai-compra-fatia-restante-da-boston-dynamics-e-assume-controle-total">implica
+avaliação de 5 trilhões de wons</a> para a Boston Dynamics, que busca a
+produção em massa do humanoide Atlas em 2028.</li>
+</ul>
+<h4 id="negócios">Negócios</h4>
+<ul>
+<li><strong>Uber.</strong> A empresa <a
+href="https://dailyjournal.news/news/2026-07-14/uber-negocia-compra-da-delivery-hero-em-transacao-bilionaria">fechou
+acordo para comprar a Delivery Hero</a> por €41,50 por ação em dinheiro,
+um valor patrimonial totalmente diluído de €13 bilhões e prêmio de 34%
+sobre o preço médio dos três meses anteriores ao anúncio, contra os €33
+por ação oferecidos em maio. A combinação <a
+href="https://dailyjournal.news/news/2026-07-14/uber-negocia-compra-da-delivery-hero-em-transacao-bilionaria">estende
+a plataforma da Uber a 99 países</a>, com GMV (volume bruto de
+mercadorias) pró-forma combinado de US$236 bilhões em 2025; em paralelo,
+a SSW Partners compra por cerca de €1,4 bilhão os negócios da Delivery
+Hero em 14 mercados onde as duas competem, e a conclusão é esperada para
+o segundo semestre de 2027.</li>
+</ul>
+<h4 id="espaço-e-mercados">Espaço e mercados</h4>
+<ul>
+<li><strong>SpaceX.</strong> A ação <a
+href="https://dailyjournal.news/news/2026-07-15/acoes-da-spacex-caem-abaixo-do-valor-de-ipo-pela-primeira-vez">caiu
+brevemente abaixo do preço de IPO de US$135</a> pela primeira vez na
+quarta-feira, na quarta sessão seguida de queda, fechando a US$135,27 e
+mais de 30% abaixo das máximas de cerca de US$225. O IPO de 12 de junho
+levantou quase US$86 bilhões, um recorde, e fez de Elon Musk o primeiro
+trilionário do mundo; a <a
+href="https://dailyjournal.news/news/2026-07-15/acoes-da-spacex-caem-abaixo-do-valor-de-ipo-pela-primeira-vez">reversão
+reflete</a> preocupações com gastos em IA financiados por dívida e com o
+efeito de possíveis altas de juros do Fed sobre avaliações esticadas de
+tecnologia.</li>
+<li><strong>AST SpaceMobile.</strong> A empresa <a
+href="https://dailyjournal.news/news/2026-07-16/ast-spacemobile-adia-servico-de-satelite-para-2027-e-busca-us-1-bilhao">adiou
+para o início de 2027</a> a campanha de lançamento de cerca de 45
+satélites BlueBird, perdendo a meta de serviço comercial no fim de 2026
+depois que o foguete New Glenn, da Blue Origin, explodiu na plataforma
+na Flórida. No mesmo dia anunciou <a
+href="https://dailyjournal.news/news/2026-07-16/ast-spacemobile-adia-servico-de-satelite-para-2027-e-busca-us-1-bilhao">oferta
+privada de US$1 bilhão</a> em notas conversíveis com vencimento em 2034
+a 1,625% ao ano; o caixa caiu 21% no trimestre, para US$2,723 bilhões, e
+a ação recuou a US$58,03 no after-hours com investidores avaliando a
+diluição.</li>
+</ul>
+<h4 id="mundo">Mundo</h4>
+<ul>
+<li><strong>Irã.</strong> Teerã <a
+href="https://dailyjournal.news/news/2026-07-16/ira-declara-acordo-de-paz-nulo-apos-ataques-dos-eua-em-teera">declarou
+nulo o memorando de entendimento de 17 de junho</a> que sustentava o
+cessar-fogo, com o negociador Mohammed Bagher Ghalibaf dizendo que o
+país está “em uma guerra essencial e existencial com os Estados Unidos”
+e que suas forças armadas têm “completa liberdade de ação”. Os EUA <a
+href="https://dailyjournal.news/news/2026-07-16/ira-declara-acordo-de-paz-nulo-apos-ataques-dos-eua-em-teera">intensificaram
+os ataques</a> na madrugada de quinta-feira, atingindo os arredores de
+Teerã e a província de Semnan, onde ficam a produção de mísseis
+balísticos e o programa espacial; autoridades iranianas falam em mais de
+35 mortos e 300 feridos, e o Brent superou brevemente US$86 por barril
+antes de recuar para US$84,93.</li>
+<li><strong>Ucrânia e União Europeia.</strong> Ursula von der Leyen
+visitou Kiev e <a
+href="https://dailyjournal.news/news/2026-07-16/ue-e-ucrania-fecham-acordo-de-drones-horas-antes-de-ataque-a-kiev">anunciou
+um “acordo de drones”</a> que combina a experiência de campo de batalha
+ucraniana com a capacidade industrial europeia para estabelecer projetos
+conjuntos e ampliar rapidamente a produção. Horas depois, mísseis
+balísticos russos atingiram vários distritos de Kiev e mataram duas
+pessoas, com seis feridos, segundo o prefeito Vitali Klitschko.</li>
+</ul>
+<hr />
+<h4 id="leia-também">Leia também</h4>
+<ul>
+<li><a
+href="https://dailyjournal.news/news/2026-07-16/cadence-lanca-aurastack-plataforma-agentica-para-design-de-placas">Cadence
+apresenta o AuraStack, plataforma de IA agêntica para design de placas e
+empacotamento avançado</a></li>
+<li><a
+href="https://dailyjournal.news/news/2026-07-16/alpaca-capta-us435-milhoes-e-avalia-entrar-em-prime-brokerage">Alpaca
+capta US$435 milhões e avalia entrar em prime brokerage</a></li>
+<li><a
+href="https://dailyjournal.news/news/2026-07-16/fed-mantem-postura-com-inflacao-perto-de-4-dizem-williams-e-cook">Williams
+diz que a inflação geral está alta demais, em cerca de 4%, e que o Fed
+está bem posicionado</a></li>
+</ul>

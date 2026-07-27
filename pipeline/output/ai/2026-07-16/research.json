@@ -1,0 +1,1964 @@
+{
+  "date": "2026-07-16",
+  "stories": [
+    {
+      "id": "thinking-machines-inkling-open-weights",
+      "headline": "Thinking Machines releases Inkling, a 975B-parameter open-weights multimodal model under Apache 2.0",
+      "key_facts": [
+        {
+          "fact": "Inkling is a Mixture-of-Experts transformer with 975B total parameters and 41B active, a 1M-token context window, pretrained on 45 trillion tokens of text, images, audio and video.",
+          "source_url": "https://thinkingmachines.ai/news/introducing-inkling/",
+          "excerpt": "Our model, called Inkling, is a Mixture-of-Experts transformer with 975B total parameters, 41B active. It supports a context window of up to 1M tokens. It was pretrained on 45 trillion tokens of text, images, audio and video."
+        },
+        {
+          "fact": "It is the first in-house model from Mira Murati's Thinking Machines Lab, and unlike flagship models from OpenAI, Anthropic or Google it ships open-weight, released Wednesday July 15, 2026.",
+          "source_url": "https://techcrunch.com/2026/07/15/thinking-machines-amps-up-its-bet-against-one-size-fits-all-ai-with-its-first-open-model-inkling/",
+          "excerpt": "Thinking Machines Lab, the AI startup founded by former OpenAI CTO Mira Murati, released its first in-house AI model Wednesday morning, called Inkling. And unlike the flagship models from OpenAI, Anthropic, or Google, it's open-weight, meaning outside developers and companies can download it and modify it directly."
+        },
+        {
+          "fact": "Inkling scores 77.6% on SWE-bench Verified, beating US open rival Nvidia Nemotron 3's 71.9%, and 91.4% on VoiceBench versus 94.4% for Gemini 3.1 Pro on high reasoning effort. It is released under an Apache 2.0 license.",
+          "source_url": "https://venturebeat.com/technology/thinking-machines-open-sources-first-multimodal-language-model-inkling-focused-on-low-cost-and-resistance-to-censorship",
+          "excerpt": "released Inkling, its first major language model under an enterprise-friendly Apache 2.0 open source license, and it boasts high, if sub state-of-the-art, performance for open weights models on third-party benchmarks, specifically software engineering (77.6% on SWE-bench Verified, where it beats fellow U.S. open rival Nvidia Nemotron 3's 71.9%) and voice understanding (91.4% on VoiceBench compared to 94.4% for Gemini 3.1 Pro on high reasoning effort)."
+        },
+        {
+          "fact": "The MoE design largely follows DeepSeek-V3: each MoE layer contains 256 routed experts and 2 shared experts, with 6 routed experts activated per token, using a sigmoid-based router with auxiliary-loss-free load balancing.",
+          "source_url": "https://thinkingmachines.ai/news/introducing-inkling/",
+          "excerpt": "The MoE design largely follows DeepSeek-V3. Each MoE layer contains 256 routed experts and 2 shared experts, with 6 routed experts ... per token. Inkling uses a sigmoid-based router with an auxiliary-loss-free load-balancing bias."
+        },
+        {
+          "fact": "Alongside Inkling the company previewed Inkling-Small, a 276B-parameter MoE model with 12B active parameters that matches or exceeds its larger sibling on many benchmarks.",
+          "source_url": "https://thinkingmachines.ai/news/introducing-inkling/",
+          "excerpt": "Alongside Inkling we are sharing a preview of Inkling-Small, a 276B-parameter Mixture-of-Experts model (12B active, vs. 41B for Inkling) with a different performance/latency trade-off. Inkling-Small matches or exceeds its larger sibling on many benchmarks."
+        },
+        {
+          "fact": "Weights are downloadable on Hugging Face; the model is available on Tinker with 64K and 256K context options at a 50% discount for a limited time.",
+          "source_url": "https://thinkingmachines.ai/news/introducing-inkling/",
+          "excerpt": "Inkling is available on Tinker today with context length options of 64K and 256K tokens. We are offering Inkling at a 50% discount for a limited time, with full pricing information available in our documentation."
+        },
+        {
+          "fact": "The model card lists a release date of July 15, 2026 and describes a 66-layer decoder-only transformer that is natively multimodal on input, with images encoded via a hierarchical patch encoder and audio via discrete token encoding.",
+          "source_url": "https://thinkingmachines.ai/model-card/inkling/",
+          "excerpt": "#### Date of release ... July 15, 2026 ... A 66-layer decoder-only transformer with a sparse Mixture-of-Experts (MoE) feed-forward backbone: each token is routed to 6 of 256 experts, plus 2 shared experts active on every token."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://thinkingmachines.ai/news/introducing-inkling/",
+          "outlet": "Thinking Machines Lab",
+          "title": "Inkling: Our open-weights model",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://thinkingmachines.ai/model-card/inkling/",
+          "outlet": "Thinking Machines Lab",
+          "title": "Inkling Model Card",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://techcrunch.com/2026/07/15/thinking-machines-amps-up-its-bet-against-one-size-fits-all-ai-with-its-first-open-model-inkling/",
+          "outlet": "TechCrunch",
+          "title": "Thinking Machines amps up its bet against one-size-fits-all AI with its first open model, Inkling",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://venturebeat.com/technology/thinking-machines-open-sources-first-multimodal-language-model-inkling-focused-on-low-cost-and-resistance-to-censorship",
+          "outlet": "VentureBeat",
+          "title": "Thinking Machines open sources first multimodal language model, Inkling, focused on low cost and 'resistance to censorship'",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://huggingface.co/thinkingmachines/Inkling",
+          "outlet": "Hugging Face",
+          "title": "thinkingmachines/Inkling",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "press_release"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Thinking Machines Lab",
+          "OpenAI",
+          "Anthropic",
+          "Google",
+          "Nvidia",
+          "Hugging Face",
+          "DeepSeek"
+        ],
+        "people": [
+          "Mira Murati"
+        ],
+        "places": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "openai-gpt-red-automated-red-teamer",
+      "headline": "OpenAI unveils GPT-Red, a self-play red-teaming model that beat human testers 84% to 13%",
+      "key_facts": [
+        {
+          "fact": "GPT-Red is an automated red-teaming model trained to find prompt injection vulnerabilities at scale so OpenAI can fix them before wider deployment.",
+          "source_url": "https://openai.com/index/unlocking-self-improvement-gpt-red/",
+          "excerpt": "We trained GPT-Red, an automated red-teaming model that scales our ability to find vulnerabilities so we can fix them before wider deployment."
+        },
+        {
+          "fact": "GPT-Red is trained with self-play reinforcement learning: the attacker model and a collection of diverse defender LLMs train simultaneously, with GPT-Red rewarded for eliciting failures and defenders rewarded for resisting.",
+          "source_url": "https://openai.com/index/unlocking-self-improvement-gpt-red/",
+          "excerpt": "GPT-Red is trained using self-play reinforcement learning, where the model and a collection of diverse defender LLMs are trained simultaneously on a broad set of red-teaming scenarios. GPT-Red is rewarded for eliciting a valid failure, such as a successful prompt injection, while the defender models are rewarded for resisting the attack and completing their original tasks."
+        },
+        {
+          "fact": "OpenAI trained GPT-Red at the compute scale of some of its largest post-training runs, which it calls an unprecedented amount of compute dedicated purely to improving safety.",
+          "source_url": "https://openai.com/index/unlocking-self-improvement-gpt-red/",
+          "excerpt": "We trained GPT-Red at the compute scale of some of our largest post-training runs at OpenAI—an unprecedented amount of compute dedicated purely for improving safety."
+        },
+        {
+          "fact": "By the end of training GPT-Red could break nearly all models it was pitted against, including production models up to and including GPT-5.5; its attacks were then used to adversarially train GPT-5.6.",
+          "source_url": "https://openai.com/index/unlocking-self-improvement-gpt-red/",
+          "excerpt": "At the end of its training, GPT-Red is a very strong attacker: it can break nearly all models it is pitted against, both internal and production models up to and including GPT-5.5. After GPT-Red completed training, we used it to generate prompt injections for the training of GPT-5.6, resulting in the model becoming highly resistant to GPT-Red's attacks."
+        },
+        {
+          "fact": "On an independent benchmark of scenarios it had not seen in training, GPT-Red found successful attack paths in 84% of cases versus 13% for human security researchers running the same challenge.",
+          "source_url": "https://www.techtimes.com/articles/320656/20260715/openai-built-ai-attack-itself-gpt-red-exposed-flaws-humans-missed.htm",
+          "excerpt": "When OpenAI ran GPT-Red against the same scenarios — scenarios the model had not seen during training — it succeeded on 84% of them. The human red-teamers had succeeded on 13%."
+        },
+        {
+          "fact": "OpenAI says GPT-Red discovered a previously unseen attack type it calls a 'fake chain of thought', inserting a fake entry into another model's reasoning trace to trick it into acting on spoofed information.",
+          "source_url": "https://www.technologyreview.com/2026/07/15/1140514/meet-gpt-red-an-llm-super-hacker-openai-built-to-make-its-models-safer/",
+          "excerpt": "OpenAI claims that GPT-Red found a type of prompt injection attack that the researchers had not seen before, which they call a fake chain of thought... GPT-Red found a way to insert a fake entry into another model's chain of thought that would trick that model into acting on spoofed information."
+        },
+        {
+          "fact": "OpenAI researcher Dylan Hunn said the model systematically varies attacks it discovers: 'Compared to a human red-teamer, the model is very, very good at finding exactly what will work, exactly what's most effective.'",
+          "source_url": "https://www.techtimes.com/articles/320656/20260715/openai-built-ai-attack-itself-gpt-red-exposed-flaws-humans-missed.htm",
+          "excerpt": "\"Compared to a human red-teamer, the model is very, very good at finding exactly what will work, exactly what's most effective,\" Hunn said. \"It's extremely persistent about drilling down into an attack that it has discovered.\""
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://openai.com/index/unlocking-self-improvement-gpt-red/",
+          "outlet": "OpenAI",
+          "title": "GPT-Red: Unlocking Self-Improvement for Robustness",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.technologyreview.com/2026/07/15/1140514/meet-gpt-red-an-llm-super-hacker-openai-built-to-make-its-models-safer/",
+          "outlet": "MIT Technology Review",
+          "title": "Meet GPT-Red, an LLM super-hacker OpenAI built to make its models safer",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.techtimes.com/articles/320656/20260715/openai-built-ai-attack-itself-gpt-red-exposed-flaws-humans-missed.htm",
+          "outlet": "Tech Times",
+          "title": "OpenAI Built an AI to Attack Itself: GPT-Red Exposed Flaws Humans Missed",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.helpnetsecurity.com/2026/07/16/openai-gpt-red-prompt-injection-test/",
+          "outlet": "Help Net Security",
+          "title": "GPT-Red beat human red teamers on a prompt injection test",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "science"
+      ],
+      "entities": {
+        "organizations": [
+          "OpenAI"
+        ],
+        "people": [
+          "Dylan Hunn"
+        ],
+        "places": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "ode-with-anthropic-launch",
+      "headline": "Anthropic and Blackstone launch Ode, a $1.5B AI implementation firm with 100 engineers",
+      "key_facts": [
+        {
+          "fact": "Ode with Anthropic is the $1.5 billion AI implementation company that Anthropic launched in May as a joint venture with Blackstone, Hellman & Friedman, Goldman Sachs and others; it now has an official name and brand.",
+          "source_url": "https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/",
+          "excerpt": "One of those businesses now has a name: Ode with Anthropic is the $1.5 billion, AI implementation company that the AI lab launched in May as part of a joint venture with Blackstone, Hellman & Friedman, Goldman Sachs, and others."
+        },
+        {
+          "fact": "The move follows OpenAI's own version, The Deployment Company, underscoring a growing acknowledgement among frontier labs that winning enterprise customers requires more than shipping better models.",
+          "source_url": "https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/",
+          "excerpt": "The move follows OpenAI's own take on this, The Deployment Company, underscoring a growing acknowledgement among frontier AI labs that winning enterprise customers requires far more than shipping better models."
+        },
+        {
+          "fact": "Ode employs 100 engineers and works closely with Anthropic's applied AI team; it operates under a 'Claude-first' principle but will use rival AI products if needed.",
+          "source_url": "https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/",
+          "excerpt": "Ode currently employs 100 engineers, and works closely with Anthropic's applied AI team... Ode will operate under a \"Claude-first\" principle, meaning it will implement Anthropic's technology, including features like Claude Tag in Slack, whenever possible."
+        },
+        {
+          "fact": "Ode is built on the foundation of Fractional AI, the applied AI services firm acquired in May 2026, whose team plus Anthropic engineers form its operational core.",
+          "source_url": "https://hf.com/anthropic-blackstone-and-hellman-friedman-introduce-ode-with-anthropic-an-enterprise-ai-services-firm/",
+          "excerpt": "Ode is built on the foundation of Fractional AI, the applied AI services firm acquired in May 2026, whose team, alongside engineers from Anthropic, forms its operational core."
+        },
+        {
+          "fact": "Beyond the founding partners, the investor consortium includes Apollo Global Management, General Atlantic, GIC, Goldman Sachs, Leonard Green & Partners and Sequoia Capital.",
+          "source_url": "https://hf.com/anthropic-blackstone-and-hellman-friedman-introduce-ode-with-anthropic-an-enterprise-ai-services-firm/",
+          "excerpt": "Alongside the founding partners, the investor consortium includes Apollo Global Management, General Atlantic, GIC, Goldman Sachs, Leonard Green & Partners, and Sequoia Capital."
+        },
+        {
+          "fact": "Ode is led by Chris Taylor as CEO and Eddie Siegel as CTO, the same roles they held at Fractional AI, which they founded in 2024 with Travis May.",
+          "source_url": "https://www.technology.org/2026/07/16/ode-with-anthropic-blackstone-ai-implementation/",
+          "excerpt": "Taylor and Siegel hold the same CEO and CTO roles they held at Fractional."
+        },
+        {
+          "fact": "The backing private equity firms will funnel their own portfolio companies to Ode as potential customers, though Ode will not limit sales to them.",
+          "source_url": "https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/",
+          "excerpt": "The private equity firms backing Ode will funnel their own portfolio companies to the joint venture as potential customers, though Ode will not limit sales of its services to those companies."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/",
+          "outlet": "TechCrunch",
+          "title": "Anthropic, Blackstone bet the next trillion-dollar AI business is implementation, not models",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://hf.com/anthropic-blackstone-and-hellman-friedman-introduce-ode-with-anthropic-an-enterprise-ai-services-firm/",
+          "outlet": "Hellman & Friedman",
+          "title": "Anthropic, Blackstone, and Hellman & Friedman Introduce Ode with Anthropic, an Enterprise AI Services Firm",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.technology.org/2026/07/16/ode-with-anthropic-blackstone-ai-implementation/",
+          "outlet": "Technology.org",
+          "title": "Anthropic and Blackstone Launch $1.5B AI Firm Ode",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Anthropic",
+          "Blackstone",
+          "Hellman & Friedman",
+          "Goldman Sachs",
+          "Ode with Anthropic",
+          "Fractional AI",
+          "OpenAI",
+          "Sequoia Capital",
+          "Apollo Global Management",
+          "General Atlantic",
+          "GIC",
+          "Leonard Green & Partners"
+        ],
+        "people": [
+          "Chris Taylor",
+          "Eddie Siegel",
+          "Travis May",
+          "Rodney Zemmel",
+          "Garvan Doyle"
+        ],
+        "places": [
+          "San Francisco",
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "deepmind-isomorphic-bioresilience",
+      "headline": "Google DeepMind and Isomorphic Labs launch AI bioresilience program for pathogen surveillance",
+      "key_facts": [
+        {
+          "fact": "Google DeepMind and Isomorphic Labs published a joint approach to bioresilience on July 16, 2026, covering prevention, detection and response to biological threats.",
+          "source_url": "https://deepmind.google/blog/our-approach-to-bioresilience/",
+          "excerpt": "Today, Google DeepMind and [Isomorphic Labs](https://www.isomorphiclabs.com/) are sharing our [joint approach to bioresilience]"
+        },
+        {
+          "fact": "DeepMind's AlphaEvolve agent can optimize the algorithms used to produce and analyze metagenomic sequencing data, making DNA analysis quicker and cheaper so outbreaks can be detected faster at large scale.",
+          "source_url": "https://deepmind.google/blog/our-approach-to-bioresilience/",
+          "excerpt": "We are helping make pathogen surveillance more cost-effective. For example, our agent AlphaEvolve can optimize algorithms used for producing and analyzing metagenomic sequencing data, helping detect new outbreaks faster. This optimization allows for quicker and more accurate DNA analysis, making it cheaper to track diseases worldwide on a large scale."
+        },
+        {
+          "fact": "Isomorphic Labs has established a focused unit to rapidly deploy its drug design engine to design medical countermeasures for both naturally occurring pandemics and risks arising from misuse of advanced AI.",
+          "source_url": "https://deepmind.google/blog/our-approach-to-bioresilience/",
+          "excerpt": "To support government bodies and non-profit organizations during novel outbreaks, Isomorphic Labs has established a focused unit to rapidly deploy its drug design engine to design medical countermeasures that could address both naturally occurring pandemics and potential risks arising from the misuse of advanced AI."
+        },
+        {
+          "fact": "The companies are exploring how AlphaGenome and protein function annotation could detect and characterize pathogens from sequence data, identifying emerging threats faster than traditional methods.",
+          "source_url": "https://deepmind.google/blog/our-approach-to-bioresilience/",
+          "excerpt": "We are also exploring how technologies like AlphaGenome and Protein Function annotation could be used to help detect and characterize pathogens from sequence data, identifying novel patterns and emerging threats faster than traditional methods."
+        },
+        {
+          "fact": "The companies frame AI as both a source of biosecurity risk and a critical tool for response, citing shifting ecosystems, global travel and the potential misuse of AI.",
+          "source_url": "https://www.isomorphiclabs.com/articles/our-approach-to-bioresilience",
+          "excerpt": "The global biosecurity landscape is rapidly evolving. Shifting natural ecosystems, global travel and the potential misuse of AI require greater vigilance — yet AI is also a critical tool for our response."
+        },
+        {
+          "fact": "Over the past year the partnership has engaged more than 15 government agencies, biosecurity organizations and research groups, and grants trusted researchers access to its latest AI systems.",
+          "source_url": "https://blockchain.news/news/google-deepmind-isomorphic-labs-bioresilience-plan",
+          "excerpt": "Over the past year, the partnership has engaged with more than 15 government agencies, biosecurity organizations, and research groups to implement these solutions... DeepMind and Isomorphic Labs are granting trusted researchers access to their latest AI systems."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://deepmind.google/blog/our-approach-to-bioresilience/",
+          "outlet": "Google DeepMind",
+          "title": "Our approach to bioresilience",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.isomorphiclabs.com/articles/our-approach-to-bioresilience",
+          "outlet": "Isomorphic Labs",
+          "title": "Our approach to bioresilience",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://blockchain.news/news/google-deepmind-isomorphic-labs-bioresilience-plan",
+          "outlet": "Blockchain.News",
+          "title": "Google DeepMind, Isomorphic Labs Unveil AI-Powered Bioresilience Plan",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "science"
+      ],
+      "entities": {
+        "organizations": [
+          "Google DeepMind",
+          "Isomorphic Labs",
+          "Google"
+        ],
+        "people": [],
+        "places": []
+      }
+    },
+    {
+      "id": "xai-sues-grok-user-csam-deepfakes",
+      "headline": "xAI sues a Grok user over AI-generated CSAM, one of the first such cases by an AI company",
+      "key_facts": [
+        {
+          "fact": "xAI filed a lawsuit against Terry Wayne Harwood, a South Carolina man, in the US District Court for the Northern District of Texas, alleging he violated its Terms of Service and Acceptable Use Policy.",
+          "source_url": "https://www.ibtimes.sg/xai-sues-south-carolina-man-accused-using-grok-create-child-sexual-abuse-deepfakes-landmark-ai-89867",
+          "excerpt": "The lawsuit, filed in the US District Court for the Northern District of Texas, alleges that South Carolina's Terry Wayne Harwood violated xAI's Terms of Service and Acceptable Use Policy by exploiting Grok's image-generation capabilities to transform non-sexual photographs into sexually explicit images without the knowledge or consent of those depicted."
+        },
+        {
+          "fact": "It marks one of the first known legal actions by an AI company against one of its own users over the alleged creation of illegal AI-generated sexual content.",
+          "source_url": "https://www.ibtimes.sg/xai-sues-south-carolina-man-accused-using-grok-create-child-sexual-abuse-deepfakes-landmark-ai-89867",
+          "excerpt": "marking one of the first known legal actions by an AI company against a user over the alleged creation of illegal AI-generated sexual content."
+        },
+        {
+          "fact": "The complaint alleges Harwood created multiple xAI accounts and used 'misleading prompts' to bypass Grok's built-in safety mechanisms designed to prevent generation of explicit material involving minors.",
+          "source_url": "https://www.ibtimes.sg/xai-sues-south-carolina-man-accused-using-grok-create-child-sexual-abuse-deepfakes-landmark-ai-89867",
+          "excerpt": "According to the lawsuit, Harwood created multiple xAI accounts and used what the company described as \"misleading prompts\" to bypass Grok's built-in safety mechanisms designed to prevent the generation of explicit material involving minors."
+        },
+        {
+          "fact": "xAI alleges Harwood uploaded non-sexual images of both adults and minors and attempted to use Grok to generate sexually explicit deepfakes, including child sexual abuse material.",
+          "source_url": "https://www.ibtimes.sg/xai-sues-south-carolina-man-accused-using-grok-create-child-sexual-abuse-deepfakes-landmark-ai-89867",
+          "excerpt": "The complaint alleges that Harwood uploaded non-sexual images of both adults and minors and attempted to use the AI system to generate sexually explicit deepfakes, including child sexual abuse material."
+        },
+        {
+          "fact": "Harwood was arrested earlier this year on charges related to the material; the suit was filed on July 15, 2026.",
+          "source_url": "https://www.reuters.com/legal/litigation/musks-xai-sues-grok-user-over-sexualized-deepfakes-2026-07-15/",
+          "excerpt": "Elon Musk's artificial-intelligence startup xAI has sued a South Carolina man arrested earlier this year on charges …"
+        },
+        {
+          "fact": "The case arrives amid broader scrutiny of Grok's safety practices; xAI previously apologized after the chatbot generated violent and antisemitic content, blaming a problematic system update.",
+          "source_url": "https://www.ibtimes.sg/xai-sues-south-carolina-man-accused-using-grok-create-child-sexual-abuse-deepfakes-landmark-ai-89867",
+          "excerpt": "The case also arrives as xAI continues to face broader scrutiny over Grok's safety practices. Last year, the company issued a public apology after the chatbot generated violent and antisemitic content, attributing the incident to a problematic system update."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.ibtimes.sg/xai-sues-south-carolina-man-accused-using-grok-create-child-sexual-abuse-deepfakes-landmark-ai-89867",
+          "outlet": "International Business Times",
+          "title": "xAI Sues South Carolina Man Accused of Using Grok to Create Child Sexual Abuse Deepfakes",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.reuters.com/legal/litigation/musks-xai-sues-grok-user-over-sexualized-deepfakes-2026-07-15/",
+          "outlet": "Reuters",
+          "title": "Musk's xAI sues Grok user over sexualized deepfakes",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://oecd.ai/en/incidents/2026-07-15-91fd",
+          "outlet": "OECD.AI",
+          "title": "xAI Sues User for Creating Child Sexual Abuse Deepfakes with Grok AI",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "xAI",
+          "Grok",
+          "US District Court for the Northern District of Texas"
+        ],
+        "people": [
+          "Elon Musk",
+          "Terry Wayne Harwood"
+        ],
+        "places": [
+          "South Carolina",
+          "Texas",
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "amodei-1m-public-first-super-pac",
+      "headline": "Filings: Dario Amodei gave $1M to AI-safety super PAC Public First, his first seven-figure gift",
+      "key_facts": [
+        {
+          "fact": "Anthropic CEO Dario Amodei gave $1 million in May to Public First, a super PAC supporting candidates who share the company's goal of imposing safety regulations on AI, per FEC filings released late Wednesday July 15.",
+          "source_url": "https://www.politico.com/news/2026/07/16/anthropics-ceo-gives-1-million-to-super-pac-amid-feud-of-ai-big-money-groups-01000461",
+          "excerpt": "Anthropic CEO Dario Amodei gave $1 million in May to Public First, a super PAC that supports candidates who share the company's goal of imposing safety regulations on artificial intelligence, according to Federal Election Commission filings released late Wednesday."
+        },
+        {
+          "fact": "It appears to be Amodei's first seven-figure political donation, although he has donated smaller amounts to Democratic politicians.",
+          "source_url": "https://www.politico.com/news/2026/07/16/anthropics-ceo-gives-1-million-to-super-pac-amid-feud-of-ai-big-money-groups-01000461",
+          "excerpt": "It appears to be Amodei's first seven-figure political donation, although he has donated smaller amounts to Democratic politicians."
+        },
+        {
+          "fact": "The donation lands as Public First and other Anthropic-aligned groups battle Leading the Future, a rival industry super PAC network opposed to onerous AI regulation, with each side pouring millions into the race to replace retiring Rep. Jerry Nadler.",
+          "source_url": "https://www.politico.com/news/2026/07/16/anthropics-ceo-gives-1-million-to-super-pac-amid-feud-of-ai-big-money-groups-01000461",
+          "excerpt": "it came as Public First and other Anthropic-aligned organizations were doing battle with Leading the Future, a rival industry super PAC network opposed to onerous AI regulations — with each side pouring millions of dollars into dueling sides of the widely watched race to replace retiring Democratic Rep. Jerry Nadler"
+        },
+        {
+          "fact": "Anthropic the company donated $20 million to Public First in February 2026, backing congressional candidates who favor AI safety rules.",
+          "source_url": "https://www.latimes.com/business/story/2026-02-12/anthropic-pledges-20-million-to-candidates-who-favor-ai-safety",
+          "excerpt": "Anthropic PBC is donating $20 million to a political advocacy group called Public First that's backing congressional candidates who favor safety rules for artificial intelligence, bolstering the company's fight for \"responsible AI\" as Silicon Valley money floods into congressional races across the U.S."
+        },
+        {
+          "fact": "Leading the Future, the billionaire-backed super PAC on the other side, plans to spend $125 million this year to elect members of Congress who support lighter regulation of AI.",
+          "source_url": "https://www.latimes.com/business/story/2026-02-12/anthropic-pledges-20-million-to-candidates-who-favor-ai-safety",
+          "excerpt": "The donation promises to strengthen AI safety advocates' fight against Leading the Future, a billionaire-backed super political action committee that plans to spend $125 million this year to stack Congress with allies who support lighter regulation of the technology."
+        },
+        {
+          "fact": "Public First Action said on June 30 it had raised more than $80 million to date, including $20 million in the preceding 10 days; it is tied to three PACs — Defending Our Values (Republicans), Jobs and Democracy (Democrats) and the bipartisan Public First PAC.",
+          "source_url": "https://www.axios.com/2026/06/30/ai-safeguards-public-first-action-raised-80-million",
+          "excerpt": "Public First Action, an AI safeguards advocacy group with various PACs, said Tuesday it has raised more than $80 million to date, including $20 million in the last 10 days... The group is tied to three PACs: Defending Our Values PAC supporting Republicans, Jobs and Democracy PAC supporting Democrats, and the bipartisan Public First PAC."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.politico.com/news/2026/07/16/anthropics-ceo-gives-1-million-to-super-pac-amid-feud-of-ai-big-money-groups-01000461",
+          "outlet": "Politico",
+          "title": "Anthropic CEO gives $1 million to super PAC amid battle of AI big-money groups",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.latimes.com/business/story/2026-02-12/anthropic-pledges-20-million-to-candidates-who-favor-ai-safety",
+          "outlet": "Los Angeles Times",
+          "title": "Anthropic pledges $20 million to candidates who favor AI safety",
+          "published_at": "2026-02-12",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.axios.com/2026/06/30/ai-safeguards-public-first-action-raised-80-million",
+          "outlet": "Axios",
+          "title": "AI safeguards group Public First Action says it has raised $80 million",
+          "published_at": "2026-06-30",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "Anthropic",
+          "Public First",
+          "Public First Action",
+          "Leading the Future",
+          "Federal Election Commission",
+          "Defending Our Values PAC",
+          "Jobs and Democracy PAC"
+        ],
+        "people": [
+          "Dario Amodei",
+          "Jerry Nadler",
+          "Brad Carson"
+        ],
+        "places": [
+          "United States",
+          "New York"
+        ]
+      }
+    },
+    {
+      "id": "meta-ai-teen-self-harm-parent-alerts",
+      "headline": "Meta will alert parents when teens discuss suicide or self-harm with its AI chatbot",
+      "key_facts": [
+        {
+          "fact": "Meta announced on Thursday July 16 that it will notify parents if their teen discusses suicide or self-harm with the Meta AI chatbot, and is working on the ability to contact emergency services when conversations suggest risk of self-harm.",
+          "source_url": "https://techcrunch.com/2026/07/16/meta-now-alerts-parents-if-their-teen-discussed-suicide-or-self-harm-with-its-ai-chatbot/",
+          "excerpt": "Meta announced on Thursday that it will now notify parents if their teen discusses suicide or self-harm with the company's Meta AI chatbot. Meta says it's also working on the ability to contact emergency services if someone's conversations suggest they may be at risk of self-harm."
+        },
+        {
+          "fact": "Meta says it built a dedicated AI system to identify conversations where a teen makes a clear reference to hurting themselves, and every chat flagged by that AI is manually reviewed before an alert is sent.",
+          "source_url": "https://techcrunch.com/2026/07/16/meta-now-alerts-parents-if-their-teen-discussed-suicide-or-self-harm-with-its-ai-chatbot/",
+          "excerpt": "Meta says it has built a dedicated AI system to identify conversations where a teen makes a clear reference to hurting themselves... \"That's why, as we continue to improve our detection, all chats flagged by our AI will be manually reviewed before an alert is sent.\""
+        },
+        {
+          "fact": "Meta says it will err on the side of caution when a teen's intent is ambiguous: 'While that means we may sometimes notify parents when there may not be real cause for concern, we feel this is the right starting point.'",
+          "source_url": "https://techcrunch.com/2026/07/16/meta-now-alerts-parents-if-their-teen-discussed-suicide-or-self-harm-with-its-ai-chatbot/",
+          "excerpt": "\"If a teen's intent is ambiguous, we'll err on the side of caution and alert the parent. While that means we may sometimes notify parents when there may not be real cause for concern, we feel this is the right starting point, and we'll continue to monitor to help make sure we're in the right place.\""
+        },
+        {
+          "fact": "The alerts are live now for parents using Instagram Parental Supervision in the US, UK, Australia and Canada, and will roll out globally by the end of the year.",
+          "source_url": "https://techcrunch.com/2026/07/16/meta-now-alerts-parents-if-their-teen-discussed-suicide-or-self-harm-with-its-ai-chatbot/",
+          "excerpt": "These alerts are now live for parents using Instagram Parental Supervision in the U.S., U.K., Australia, and Canada, and will roll out globally by the end of the year, Meta says."
+        },
+        {
+          "fact": "Meta's 'Limited Content' setting, which places teens in a more restrictive Instagram experience, now applies to Meta AI as well, making the chatbot decline a broader range of prompts.",
+          "source_url": "https://techcrunch.com/2026/07/16/meta-now-alerts-parents-if-their-teen-discussed-suicide-or-self-harm-with-its-ai-chatbot/",
+          "excerpt": "Meta also announced that its \"Limited Content\" setting—which lets parents place their teens in a more restrictive experience on Instagram—now applies to Meta AI as well... the Limited Content setting expands those safeguards by making the chatbot decline a broader range of prompts."
+        },
+        {
+          "fact": "The changes arrive as Meta and other tech companies face scrutiny from regulators and parents over how AI chatbots respond to users in crisis, a liability question shaping how AI companies design and market products.",
+          "source_url": "https://techcrunch.com/2026/07/16/meta-now-alerts-parents-if-their-teen-discussed-suicide-or-self-harm-with-its-ai-chatbot/",
+          "excerpt": "These changes arrive as Meta and other tech companies face scrutiny from regulators and parents over how AI chatbots respond to users in crisis, particularly teenagers —a liability question that's increasingly shaping how AI companies design and market their products."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/07/16/meta-now-alerts-parents-if-their-teen-discussed-suicide-or-self-harm-with-its-ai-chatbot/",
+          "outlet": "TechCrunch",
+          "title": "Meta now alerts parents if their teen discussed suicide or self-harm with its AI chatbot",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Meta",
+          "Instagram",
+          "Meta AI"
+        ],
+        "people": [],
+        "places": [
+          "United States",
+          "United Kingdom",
+          "Australia",
+          "Canada"
+        ]
+      }
+    },
+    {
+      "id": "tsmc-q2-2026-record-profit-raises-outlook",
+      "headline": "TSMC posts record Q2 profit up 77%, raises 2026 growth outlook above 40% and capex to $64B",
+      "key_facts": [
+        {
+          "fact": "TSMC's Q2 net income hit a record NT$706.56 billion (~$21.98 billion), up 77.4% year over year and far above Bloomberg estimates of NT$623.73 billion — a fifth straight quarter of record profit.",
+          "source_url": "https://www.investing.com/news/earnings/tsmc-q2-profit-blows-past-estimates-on-robust-aifueled-demand-4794650",
+          "excerpt": "TSMC's net income for the three months to June 30 hit a record high of T$706.56 billion ($21.98 billion), much higher than Bloomberg estimates of T$623.73 billion. The figure was a 77.4% jump from the same period a year ago, and marked a fifth straight quarter of record-high profits for the chipmaker."
+        },
+        {
+          "fact": "Quarterly revenue was a record NT$1.27 trillion (~$39-40.2 billion), up 36% year over year and at the high end of guidance, with gross margin of 67.7% beating the company's own forecast.",
+          "source_url": "https://www.investing.com/news/transcripts/earnings-call-transcript-tsmc-lifts-2026-outlook-as-ai-demand-stays-hot-in-q2-2026-93CH-4794777",
+          "excerpt": "TSMC said second-quarter revenue rose to $40.2 billion, topping the company's guidance range and coming in slightly above the $39.94 billion analyst forecast, while gross margin reached 67.7%, above expectations."
+        },
+        {
+          "fact": "TSMC raised its full-year 2026 revenue growth outlook to slightly above 40% in US dollar terms, up from a prior forecast of over 30%.",
+          "source_url": "https://www.investing.com/news/earnings/tsmc-q2-profit-blows-past-estimates-on-robust-aifueled-demand-4794650",
+          "excerpt": "Wei said TSMC's 2026 revenue is now expected to increase by more than 40% in U.S. dollar terms, higher than prior forecasts for growth of over 30%."
+        },
+        {
+          "fact": "The company lifted 2026 capital expenditure guidance to $60-$64 billion from $52-$56 billion, a record high and roughly a 14% increase.",
+          "source_url": "https://www.tradingkey.com/analysis/stocks/more/262034508-tsmc-q2-earnings-beat-expectations-raises-full-year-outlook-tradingkey",
+          "excerpt": "Meanwhile, the company also significantly raised its full-year capital expenditure budget from the previous $52 billion to $56 billion to $60 billion to $64 billion, representing an increase of approximately 14% and hitting a record high."
+        },
+        {
+          "fact": "About 70-80% of the 2026 capital budget goes to advanced process technologies, 10% to specialty nodes and 10-20% to advanced packaging, testing and mask making.",
+          "source_url": "https://finance.biggo.com/news/US_TSM_2026-07-16",
+          "excerpt": "About 70–80% of that will go to advanced process technologies, with 10% for specialty nodes and 10–20% for advanced packaging, testing, and mask making."
+        },
+        {
+          "fact": "CEO C.C. Wei said 'The AI megatrend is stronger and stronger,' citing a 'very big' gap between customer demand and supply, and said agentic AI is reviving CPU demand.",
+          "source_url": "https://finance.biggo.com/news/US_TSM_2026-07-16",
+          "excerpt": "Chairman and CEO C.C. Wei cited surging AI demand, including the rise of agentic AI that is reviving CPU demand, as the overwhelming driver. \"The AI megatrend is stronger and stronger,\" Wei said, adding that the company's multi-year conviction is \"very high.\" ... The aggressive spending commitments reflect what Wei called a \"very big\" gap between customer demand and supply."
+        },
+        {
+          "fact": "TSMC shares closed at $419.48 but fell 1.55% in after-hours trading to $412.99 as investors weighed heavier spending and a forecast for lower margins in the current quarter.",
+          "source_url": "https://www.investing.com/news/transcripts/earnings-call-transcript-tsmc-lifts-2026-outlook-as-ai-demand-stays-hot-in-q2-2026-93CH-4794777",
+          "excerpt": "Shares were little changed during the regular session, closing at $419.48, but fell 1.55% in after-hours trading to $412.99 as investors weighed the company's heavier spending plans and a forecast for lower margins in the current quarter."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.investing.com/news/earnings/tsmc-q2-profit-blows-past-estimates-on-robust-aifueled-demand-4794650",
+          "outlet": "Investing.com",
+          "title": "TSMC Q2 profit soars to record high on AI demand, raised guidance; shares dip",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.investing.com/news/transcripts/earnings-call-transcript-tsmc-lifts-2026-outlook-as-ai-demand-stays-hot-in-q2-2026-93CH-4794777",
+          "outlet": "Investing.com",
+          "title": "Earnings call transcript: TSMC lifts 2026 outlook as AI demand stays hot in Q2 2026",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.tradingkey.com/analysis/stocks/more/262034508-tsmc-q2-earnings-beat-expectations-raises-full-year-outlook-tradingkey",
+          "outlet": "TradingKey",
+          "title": "TSMC Q2 Results Beat Estimates, Raises Full-Year Outlook, Adds $100 Billion Investment in US to Meet AI Boom",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://finance.biggo.com/news/US_TSM_2026-07-16",
+          "outlet": "BiggoFinance",
+          "title": "TSM Q2 2026 Earnings Call: TSMC Raises 2026 Revenue Growth Outlook to 40%-Plus, Boosts CapEx to $64 Billion on AI Surge",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business",
+        "finance"
+      ],
+      "entities": {
+        "organizations": [
+          "TSMC",
+          "Bloomberg",
+          "Samsung",
+          "Intel"
+        ],
+        "people": [
+          "C.C. Wei",
+          "Wendell Huang"
+        ],
+        "places": [
+          "Taiwan",
+          "Hsinchu",
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "tsmc-100b-arizona-265b-total-us-buildout",
+      "headline": "TSMC pledges another $100B for four new Arizona fabs, lifting its US commitment to $265B",
+      "key_facts": [
+        {
+          "fact": "CEO C.C. Wei said TSMC will invest an additional $100 billion to expand production capacity in Arizona, on top of its existing facilities in the state.",
+          "source_url": "https://www.investing.com/news/earnings/tsmc-q2-profit-blows-past-estimates-on-robust-aifueled-demand-4794650",
+          "excerpt": "CEO C.C. Wei said the company will invest an additional $100 billion to increase its production capacity in the U.S. state of Arizona, adding to its facilities in the state. The company has three key manufacturing hubs across the globe-- in Taiwan, the U.S., and Japan."
+        },
+        {
+          "fact": "The new commitment brings TSMC's total pledged US investment to $265 billion, funding four new fabs, with an ultimate goal of 10 wafer fabs and two packaging plants in the US.",
+          "source_url": "https://www.tradingkey.com/analysis/stocks/more/262034508-tsmc-q2-earnings-beat-expectations-raises-full-year-outlook-tradingkey",
+          "excerpt": "Among these, TSMC confirmed an additional investment of $100 billion in Arizona, expanding its total investment scale to $265 billion to construct four chip factories, with the ultimate goal of establishing 10 wafer fabs and 2 packaging plants in the US."
+        },
+        {
+          "fact": "The additional Arizona outlay targets 2-nanometer and below fabs plus advanced packaging.",
+          "source_url": "https://finance.biggo.com/news/US_TSM_2026-07-16",
+          "excerpt": "To meet the demand, TSMC announced an additional $100 billion investment in Arizona for 2-nanometer and below fabs and advanced packaging, bringing its total Arizona outlay to $265 billion."
+        },
+        {
+          "fact": "The new $100 billion commitment would include building four new chip fabrication plants for the contract chipmaker.",
+          "source_url": "https://www.nytimes.com/2026/07/16/business/tsmc-chips-investment-arizona.html",
+          "excerpt": "The new $100 billion commitment from TSMC would include building four new chip fabricating factories, known as fabs, for the company's contract ..."
+        },
+        {
+          "fact": "The pledge follows a January 2026 US-Taiwan trade deal in which Taiwanese companies committed $250 billion in US investment in exchange for lower tariffs; Commerce Secretary Howard Lutnick said the figure included $100 billion already committed by TSMC in 2025.",
+          "source_url": "https://www.reuters.com/world/china/taiwan-aims-be-strategic-ai-partner-with-us-under-tariff-deal-2026-01-16/",
+          "excerpt": "U.S. Commerce Secretary Howard Lutnick said Taiwan companies would invest $250 billion to boost production of semiconductors, energy and artificial intelligence in the United States. The figure includes $100 billion already committed by chipmaker TSMC in 2025, with more to come, he added."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.nytimes.com/2026/07/16/business/tsmc-chips-investment-arizona.html",
+          "outlet": "The New York Times",
+          "title": "TSMC Adds $100 Billion to Its U.S. Spending Plan",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.washingtonpost.com/business/2026/07/16/taiwan-tsmc-chipmaking-ai-arizona-fab/1154d16c-80e3-11f1-8a16-393bd03340b0_story.html",
+          "outlet": "The Washington Post / AP",
+          "title": "Taiwan computer chipmaker TSMC pledges another $100 billion to expand US chipmaking capacity",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.investing.com/news/earnings/tsmc-q2-profit-blows-past-estimates-on-robust-aifueled-demand-4794650",
+          "outlet": "Investing.com",
+          "title": "TSMC Q2 profit soars to record high on AI demand, raised guidance; shares dip",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.tradingkey.com/analysis/stocks/more/262034508-tsmc-q2-earnings-beat-expectations-raises-full-year-outlook-tradingkey",
+          "outlet": "TradingKey",
+          "title": "TSMC Q2 Results Beat Estimates, Raises Full-Year Outlook, Adds $100 Billion Investment in US to Meet AI Boom",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://finance.biggo.com/news/US_TSM_2026-07-16",
+          "outlet": "BiggoFinance",
+          "title": "TSM Q2 2026 Earnings Call: TSMC Raises 2026 Revenue Growth Outlook to 40%-Plus, Boosts CapEx to $64 Billion on AI Surge",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.reuters.com/world/china/taiwan-aims-be-strategic-ai-partner-with-us-under-tariff-deal-2026-01-16/",
+          "outlet": "Reuters",
+          "title": "Taiwan aims to be strategic AI partner in US tariff deal",
+          "published_at": "2026-01-16",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "TSMC",
+          "US Department of Commerce"
+        ],
+        "people": [
+          "C.C. Wei",
+          "Donald Trump",
+          "Howard Lutnick"
+        ],
+        "places": [
+          "Arizona",
+          "Taiwan",
+          "United States",
+          "Japan"
+        ]
+      }
+    },
+    {
+      "id": "hyundai-boston-dynamics-full-ownership-softbank-put",
+      "headline": "Hyundai takes 100% of Boston Dynamics as SoftBank exercises put option on its 9.65% stake",
+      "key_facts": [
+        {
+          "fact": "Hyundai Motor Group disclosed on July 16 that it will make Boston Dynamics a wholly owned subsidiary by acquiring SoftBank Group's stake of around 10%, a move it says will help deploy advanced robotics across its operations.",
+          "source_url": "https://www.channelnewsasia.com/business/hyundai-motor-group-make-boston-dynamics-wholly-owned-purchase-softbank-stake-6257486",
+          "excerpt": "SEOUL, July 16 : Hyundai Motor Group on Thursday disclosed that it would make U.S. robotics company Boston Dynamics a wholly owned subsidiary by acquiring SoftBank Group's stake of around 10 per cent, a move it said would help it deploy advanced robotics across its operations."
+        },
+        {
+          "fact": "SoftBank exercised a put option on its 9.65% stake under a 2020 contract; terms were not disclosed, but local media reported the transaction would likely be worth about 500 billion won ($335 million).",
+          "source_url": "https://www.businesskorea.co.kr/news/articleView.html?idxno=273168",
+          "excerpt": "Hyundai Motor Group announced on July 16 that Japan's SoftBank exercised its put option (right to sell common shares) for its 9.65% stake in Boston Dynamics, in accordance with a contract signed in 2020."
+        },
+        {
+          "fact": "Terms were not disclosed; local media reported the deal would likely be worth about 500 billion won ($335 million), and Kiwoom Securities analyst Shin Yoonchul said the price implied a valuation of about 5 trillion won for Boston Dynamics.",
+          "source_url": "https://www.channelnewsasia.com/business/hyundai-motor-group-make-boston-dynamics-wholly-owned-purchase-softbank-stake-6257486",
+          "excerpt": "Terms of the deal were not disclosed. Local media reported last month that the transaction would likely be worth about 500 billion won ($335 million). ... Shin Yoonchul, an analyst at Kiwoom Securities, said the transaction price implied a valuation of about 5 trillion won for Boston Dynamics."
+        },
+        {
+          "fact": "Hyundai acquired an 80% controlling stake in Boston Dynamics from SoftBank in 2021 for about 1 trillion won ($671 million); the current structure is Hyundai Motor 28%, Chairman Euisun Chung 22.6%, Kia 17.2%, Hyundai Mobis 11.3%, Hyundai Glovis 11.25%.",
+          "source_url": "https://www.businesskorea.co.kr/news/articleView.html?idxno=273168",
+          "excerpt": "The current ownership structure is Hyundai Motor with 28%, Kia with 17.2%, Hyundai Mobis with 11.3%, Hyundai Glovis with 11.25%, Hyundai Motor Group Chairman Euisun Chung with 22.6%, and SoftBank with 9.65%. ... Hyundai Motor Group has come to hold a 100% stake about five years after completing the acquisition of a controlling stake (80%) in Boston Dynamics from Japan's SoftBank for 1 trillion won (about $671 million) in 2021."
+        },
+        {
+          "fact": "Boston Dynamics is pushing commercialization of the Atlas humanoid with a mass-production goal of 2028, and Hyundai is reviewing an IPO including a US Nasdaq listing.",
+          "source_url": "https://www.businesskorea.co.kr/news/articleView.html?idxno=273168",
+          "excerpt": "Boston Dynamics is pushing for the commercialization of the humanoid robot Atlas and is expanding related businesses with the goal of mass production in 2028. ... Hyundai Motor Group is also reported to be reviewing an Initial Public Offering (IPO), including a listing of Boston Dynamics on the US Nasdaq market, from various angles."
+        },
+        {
+          "fact": "Hyundai Motor shares have fallen more than 30% since local media first reported the plan last month; the stock closed down 2.1% on Thursday against a 6.4% decline for the KOSPI benchmark.",
+          "source_url": "https://www.channelnewsasia.com/business/hyundai-motor-group-make-boston-dynamics-wholly-owned-purchase-softbank-stake-6257486",
+          "excerpt": "Hyundai Motor shares have fallen more than 30 per cent since local media first reported last month that the automaker planned to buy SoftBank's remaining stake in Boston Dynamics. On Thursday, Hyundai Motor shares closed down 2.1 per cent, compared with a 6.4 per cent decline for the benchmark KOSPI."
+        },
+        {
+          "fact": "The put option was tied to a condition that SoftBank could sell its remaining stake if a US IPO did not take place by June 2026.",
+          "source_url": "https://en.sedaily.com/international/2026/06/19/hyundai-motor-group-acquires-softbanks-96-percent-stake-in",
+          "excerpt": "When SoftBank sold Boston Dynamics to Hyundai Motor Group in 2021, it retained some of its stake and signed a \"put option\" contract allowing it to sell the remaining stake if a U.S. initial public offering (IPO) did not take place by June this year."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.channelnewsasia.com/business/hyundai-motor-group-make-boston-dynamics-wholly-owned-purchase-softbank-stake-6257486",
+          "outlet": "CNA / Reuters",
+          "title": "Hyundai Motor Group to own Boston Dynamics in full with SoftBank stake buy",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.businesskorea.co.kr/news/articleView.html?idxno=273168",
+          "outlet": "BusinessKorea",
+          "title": "Hyundai Motor Group Secures 100% Stake in Boston Dynamics",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.asiae.co.kr/en/article/2026071610132645049",
+          "outlet": "The Asia Business Daily",
+          "title": "Hyundai Motor Group Acquires SoftBank's Stake... Accelerating 'Physical AI'",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://en.sedaily.com/international/2026/06/19/hyundai-motor-group-acquires-softbanks-96-percent-stake-in",
+          "outlet": "Seoul Economic Daily",
+          "title": "Hyundai Motor Group Acquires SoftBank's 9.6% Stake in Boston Dynamics",
+          "published_at": "2026-06-19",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Hyundai Motor Group",
+          "Boston Dynamics",
+          "SoftBank Group",
+          "Kia",
+          "Hyundai Mobis",
+          "Hyundai Glovis",
+          "Kiwoom Securities",
+          "Nasdaq"
+        ],
+        "people": [
+          "Euisun Chung",
+          "Shin Yoonchul",
+          "Masayoshi Son"
+        ],
+        "places": [
+          "Seoul",
+          "South Korea",
+          "United States",
+          "Japan"
+        ]
+      }
+    },
+    {
+      "id": "csquare-data-center-ipo-below-range",
+      "headline": "Data-center operator Csquare raises $1.05B in IPO, pricing at $21 below its $23-$27 range",
+      "key_facts": [
+        {
+          "fact": "Csquare priced its IPO of 50 million shares at $21.00 each, expecting gross proceeds of approximately $1.05 billion, or $1.2075 billion if underwriters exercise their over-allotment option in full.",
+          "source_url": "https://www.barchart.com/story/news/3308469/csquare-inc-announces-pricing-of-initial-public-offering",
+          "excerpt": "DALLAS, July 16, 2026 /PRNewswire/ -- Csquare, Inc. (\"Csquare\") today announced the pricing of its initial public offering of 50,000,000 shares of its common stock at an initial public offering price of $21.00 per share. ... Csquare expects the gross proceeds of the offering to be approximately $1,050.0 million, before deducting underwriting discounts and commissions, or $1,207.5 million if the underwriters exercise their over-allotment option in full."
+        },
+        {
+          "fact": "The $21 price came in below the marketed range of $23 to $27, valuing the Dallas-based company at about $3.25 billion.",
+          "source_url": "https://www.channelnewsasia.com/business/csquare-ipo-raises-105-billion-investors-bet-ai-boom-6257181",
+          "excerpt": "The Dallas-based company sold 50 million shares at $21 apiece, below its marketed range of $23 to $27, valuing it at about $3.25 billion."
+        },
+        {
+          "fact": "Founded in 2019, Csquare owns and operates 64 data center sites across 21 metropolitan markets in North America and the UK, providing co-location and connectivity to enterprises, cloud providers and telecom companies.",
+          "source_url": "https://www.channelnewsasia.com/business/csquare-ipo-raises-105-billion-investors-bet-ai-boom-6257181",
+          "excerpt": "Founded in 2019, Csquare owns and operates 64 data center sites across 21 metropolitan markets in North America and the UK, providing co-location and connectivity services to enterprises, cloud providers and telecommunications companies, according to its IPO filing."
+        },
+        {
+          "fact": "Shares were expected to begin trading on the New York Stock Exchange under ticker 'CSQR' on July 16, with the offering closing July 17.",
+          "source_url": "https://www.barchart.com/story/news/3308469/csquare-inc-announces-pricing-of-initial-public-offering",
+          "excerpt": "The shares are expected to begin trading on the New York Stock Exchange under the ticker symbol \"CSQR\" on July 16, 2026. The offering is expected to close on July 17, 2026, subject to customary closing conditions."
+        },
+        {
+          "fact": "Csquare intends to use the net proceeds to repay a portion of its outstanding indebtedness and pay offering fees and expenses; backer Brookfield was considering buying a portion of the offering.",
+          "source_url": "https://www.channelnewsasia.com/business/brookfield-backed-csquare-prices-ipo-21-share-bloomberg-news-reports-6257181",
+          "excerpt": "Brookfield the Dallas-based company's backer, is considering buying a portion of the offering, the report added. ... The company said it plans to use most of the IPO proceeds to repay debt, with the remainder allocated for general corporate purposes, including acquisitions, working capital and capital expenditures."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.barchart.com/story/news/3308469/csquare-inc-announces-pricing-of-initial-public-offering",
+          "outlet": "Barchart / PR Newswire",
+          "title": "Csquare, Inc. Announces Pricing of Initial Public Offering",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.channelnewsasia.com/business/csquare-ipo-raises-105-billion-investors-bet-ai-boom-6257181",
+          "outlet": "CNA / Reuters",
+          "title": "Csquare IPO raises $1.05 billion as investors bet on AI boom",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.channelnewsasia.com/business/brookfield-backed-csquare-prices-ipo-21-share-bloomberg-news-reports-6257181",
+          "outlet": "CNA / Bloomberg",
+          "title": "Brookfield-backed Csquare prices IPO at $21 per share, Bloomberg News reports",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://financialpost.com/pmn/business-pmn/brookfield-backed-data-center-firm-raises-1-05-billion-in-ipo",
+          "outlet": "Financial Post / Bloomberg",
+          "title": "Brookfield-Backed Data-Center Firm Raises $1.05 Billion in IPO",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "business",
+        "finance",
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Csquare",
+          "Brookfield",
+          "New York Stock Exchange"
+        ],
+        "people": [],
+        "places": [
+          "Dallas",
+          "United States",
+          "Canada",
+          "United Kingdom"
+        ]
+      }
+    },
+    {
+      "id": "asml-price-hikes-tsmc-resistance",
+      "headline": "ASML plans price hikes on EUV and DUV chipmaking tools, drawing rare resistance from TSMC",
+      "key_facts": [
+        {
+          "fact": "ASML has discussed raising prices for its advanced EUV systems directly with TSMC and plans to charge 10% more for its DUV systems; TSMC is resisting the plans.",
+          "source_url": "https://finance.yahoo.com/markets/stocks/articles/asml-eyes-price-increases-chip-165859035.html",
+          "excerpt": "ASML has discussed higher prices for its advanced EUV systems directly with TSMC, plans to charge 10% more for DUV systems. TSMC is resisting ..."
+        },
+        {
+          "fact": "The Information reported the plans on Wednesday, July 15, citing four sources with knowledge of the discussions.",
+          "source_url": "https://www.marketscreener.com/news/asml-to-raise-equipment-prices-taiwan-semiconductor-pushes-back-ce7f5ed2da8af225",
+          "excerpt": "ASML is planning to raise prices for its chip production equipment, The Information reported Wednesday, citing four sources with knowledge of the discussions. The price increase has elicited a..."
+        },
+        {
+          "fact": "ASML also plans capacity expansion amid surging AI chip demand, according to The Information's report.",
+          "source_url": "https://www.theinformation.com/articles/asml-plans-price-increases-chipmaking-equipment-despite-tsmc-resistance",
+          "excerpt": "Chip toolmaker ASML plans price hikes, sparking resistance from TSMC. ASML plans capacity expansion amid surging AI chip demand. ASML lifted ..."
+        },
+        {
+          "fact": "An AI-fueled earnings beat has emboldened ASML to raise prices on lithography machines — something it rarely does — setting up an unusual confrontation with its largest customer, TSMC.",
+          "source_url": "https://www.digitimes.com/news/a20260716VL201/asml-tsmc-duv-price-chipmakers-earnings.html",
+          "excerpt": "An AI-fueled earnings beat has emboldened ASML to do something it rarely does: raise prices on the lithography machines that are essential to making advanced chips. That plan is now setting up an unusual confrontation with its largest customer, TSMC."
+        },
+        {
+          "fact": "For cutting-edge lithography, customers have few alternatives to ASML's tools; analysts note buyers can still win concessions on service terms, delivery slots or bundle discounts that keep total cost of ownership closer to where it was.",
+          "source_url": "https://finimize.com/content/asml-tests-chip-tool-pricing-power-with-a-planned-hike",
+          "excerpt": "sits in a rare position: for the ... cutting-edge ... customers have few alternatives to its tools, so pricing is one of ... But TSMC's resistance is the reminder that the final bill is often negotiated: buyers can demand better service terms, faster delivery slots, or bundle discounts that keep the total cost of ownership closer to where it was."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.theinformation.com/articles/asml-plans-price-increases-chipmaking-equipment-despite-tsmc-resistance",
+          "outlet": "The Information",
+          "title": "ASML Plans Price Increases for Chipmaking Equipment Despite TSMC Resistance",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://finance.yahoo.com/markets/stocks/articles/asml-eyes-price-increases-chip-165859035.html",
+          "outlet": "Yahoo Finance",
+          "title": "ASML Eyes Price Increases On Chip Tools After Upbeat Q2",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.marketscreener.com/news/asml-to-raise-equipment-prices-taiwan-semiconductor-pushes-back-ce7f5ed2da8af225",
+          "outlet": "MarketScreener / MT Newswires",
+          "title": "ASML to Raise Equipment Prices; Taiwan Semiconductor Pushes Back",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.digitimes.com/news/a20260716VL201/asml-tsmc-duv-price-chipmakers-earnings.html",
+          "outlet": "DigiTimes",
+          "title": "ASML's rumored move to raise lithography prices sets up rare clash with TSMC as AI hands toolmakers pricing power",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://finimize.com/content/asml-tests-chip-tool-pricing-power-with-a-planned-hike",
+          "outlet": "Finimize",
+          "title": "ASML Tests Chip Tool Pricing Power With A Planned Hike",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "ASML",
+          "TSMC",
+          "The Information"
+        ],
+        "people": [],
+        "places": [
+          "Netherlands",
+          "Taiwan"
+        ]
+      }
+    },
+    {
+      "id": "apple-hunts-ai-chip-acquisitions",
+      "headline": "Apple hunts chip acquisitions to fix its AI servers as Baltra chip slips past 2026",
+      "key_facts": [
+        {
+          "fact": "The Information reported on July 15 that Apple has been in talks with bankers over recent months and has approached semiconductor startups to gauge their interest in selling, as it explores acquisitions to boost its AI server chip efforts.",
+          "source_url": "https://9to5mac.com/2026/07/15/report-apple-looking-into-buying-chip-startups-to-strengthen-its-ai-infrastructure/",
+          "excerpt": "According to The Information, Apple has been exploring potential acquisitions of semiconductor startups to \"boost its efforts to build server chips for running AI.\" In recent months, the iPhone maker has talked with bankers about possible deals. It has also approached semiconductor startups to gauge their interest in selling themselves, the people said."
+        },
+        {
+          "fact": "Apple's internal AI servers currently run on its own M2 Ultra chips and have struggled with performance on demanding workloads.",
+          "source_url": "https://9to5mac.com/2026/07/15/report-apple-looking-into-buying-chip-startups-to-strengthen-its-ai-infrastructure/",
+          "excerpt": "Apple's hunt for chip acquisitions comes as the company struggles with the performance of its own internal AI servers, which currently run on internally designed M2 Ultra chips."
+        },
+        {
+          "fact": "Apple's next-generation server chip, code-named Baltra, has slipped past its planned 2026 debut; it is being developed with Broadcom as a custom AI inference processor on TSMC's 3nm process.",
+          "source_url": "https://www.techzine.eu/news/infrastructure/142924/apple-considers-acquiring-server-chip-companies/",
+          "excerpt": "At the heart of the problem is a chip known internally as \"Baltra.\" Apple had planned to release a future version of this AI server chip this year, but that project has been delayed, according to sources speaking to The Information. Baltra is being developed in collaboration with Broadcom as a custom server processor for AI functions in the cloud. The chip is intended for AI inference and was to be built on TSMC's 3nm process."
+        },
+        {
+          "fact": "The more demanding tasks for the new Siri are handled by a Gemini-based model running on Nvidia GPUs in Google Cloud, after Apple's Mac-based chips could not handle the large model.",
+          "source_url": "https://www.techzine.eu/news/infrastructure/142924/apple-considers-acquiring-server-chip-companies/",
+          "excerpt": "Earlier this year, Apple attempted to run Google's Gemini models on its internal servers as part of a revamped Siri. However, the Mac-based chips could not handle the large model. As a result, Apple had to run parts of the revamped assistant on Nvidia chips in Google Cloud."
+        },
+        {
+          "fact": "Apple rarely makes large acquisitions: it bought PA Semi for $278 million in 2008, Beats for $3 billion, and AI startup Q.ai for almost $2 billion this year; it had $45.6 billion in cash and equivalents as of the end of March.",
+          "source_url": "https://www.engadget.com/2215912/apple-is-reportedly-shopping-for-ai-chip-companies/",
+          "excerpt": "It got into making its own chips in the first place after buying PA Semi for $278 million in 2008, but Apple doesn't typically splash much cash on acquisitions. It bought AI startup Q.ai for almost $2 billion this year. That was its second largest acquisition after the $3 billion it paid for Beats over a decade ago. ... As of the end of March, it had $45.6 billion in cash and cash equivalents."
+        },
+        {
+          "fact": "Last week Apple struck a deal with Broadcom to buy $30 billion worth of chips made in the US, and Bloomberg reported this week that an M7 Ultra-based server chip won't be ready until 2029, though Apple will soon upgrade infrastructure with M5 Ultra chips.",
+          "source_url": "https://www.engadget.com/2215912/apple-is-reportedly-shopping-for-ai-chip-companies/",
+          "excerpt": "Bloomberg reported this week that a server chip based on the M7 Ultra won't be ready until 2029, but noted that Apple will soon upgrade its infrastructure with M5 Ultra chips. Apple reportedly planned to debut a next-gen server chip (codenamed \"Baltra\") this year, but that timeline appears to have slipped. Last week, Apple struck a deal with Broadcom to buy $30 billion worth of chips that the latter makes in the US."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.theinformation.com/articles/apple-hunts-ai-chip-acquisitions",
+          "outlet": "The Information",
+          "title": "Apple Hunts for AI Chip Acquisitions",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://9to5mac.com/2026/07/15/report-apple-looking-into-buying-chip-startups-to-strengthen-its-ai-infrastructure/",
+          "outlet": "9to5Mac",
+          "title": "Apple looks into buying AI chip startups to bolster infrastructure",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.engadget.com/2215912/apple-is-reportedly-shopping-for-ai-chip-companies/",
+          "outlet": "Engadget",
+          "title": "Apple Is Reportedly Shopping For AI Chip Companies",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.techzine.eu/news/infrastructure/142924/apple-considers-acquiring-server-chip-companies/",
+          "outlet": "Techzine",
+          "title": "Apple considers acquiring server chip companies",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Apple",
+          "Broadcom",
+          "TSMC",
+          "Nvidia",
+          "Google Cloud",
+          "The Information",
+          "PrismML"
+        ],
+        "people": [
+          "Aaron Tilley",
+          "Valida Pau"
+        ],
+        "places": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "cadence-aurastack-pcb-packaging-agent",
+      "headline": "Cadence launches AuraStack, an agentic AI platform for PCB and advanced chip packaging design",
+      "key_facts": [
+        {
+          "fact": "Cadence introduced the AuraStack AI Super Agent on Allegro AI Studio on July 15, calling it the world's first agentic AI platform for printed circuit board and advanced packaging design, accelerated by Nvidia Blackwell and CUDA-X.",
+          "source_url": "https://www.morningstar.com/news/business-wire/20260715175854/cadence-introduces-aurastack-ai-super-agent-the-worlds-first-agentic-ai-platform-for-pcb-and-advanced-packaging",
+          "excerpt": "Cadence (Nasdaq: CDNS) today introduced the AuraStack™ AI Super Agent on Cadence® Allegro® AI Studio, the world's first agentic AI platform for printed circuit board (PCB) and advanced packaging design, taking designers from system planning to final product in a single AI-native environment. The Cadence AuraStack AI Super Agent, accelerated by NVIDIA Blackwell and NVIDIA CUDA-X, coordinates domain-specific AI agents across planning, implementation and tightly integrated multiphysics analysis domains to compress the system-design cycle through manufacturing."
+        },
+        {
+          "fact": "Cadence says the launch makes it the only provider with agentic AI spanning the full electronic system design flow — from digital and analog silicon design through advanced packaging to PCB design — building on its ChipStack, InnoStack and ViraStack agents.",
+          "source_url": "https://www.morningstar.com/news/business-wire/20260715175854/cadence-introduces-aurastack-ai-super-agent-the-worlds-first-agentic-ai-platform-for-pcb-and-advanced-packaging",
+          "excerpt": "With the AuraStack AI Super Agent, Cadence is now the only provider with agentic AI solutions spanning the full electronic system design flow, from digital and analog silicon design, advanced packaging, through to PCB design, building on its ChipStack™, InnoStack™ and ViraStack™ AI Super Agents."
+        },
+        {
+          "fact": "Cadence claims AuraStack delivers two times faster time to market and 15 times higher productivity, according to corporate VP Ashutosh Mauskar.",
+          "source_url": "https://gamesbeat.com/cadence-introduces-aurastack-ai-to-offload-tasks-so-engineers-can-design-chips/",
+          "excerpt": "The agent can deliver two times faster time to market and 15 times higher productivity, said Ashutosh Mauskar, corporate vice president for product management and business development at Cadence, in an interview with me."
+        },
+        {
+          "fact": "Nvidia reported 20x faster multiphysics performance with AuraStack and the Millennium M2000 platform, while TSMC said years of collaboration with Cadence on substrate auto routing boosted productivity 100x.",
+          "source_url": "https://www.fierceelectronics.com/ai/cadence-aurastack-debuts-boost-pcb-and-packaging-designers",
+          "excerpt": "Nvidia said it has seen a 20X faster multiphysics performance with AuraStack and the Millennium M2000 platform. Nvidia provides Blackwell and CUDA-X accelerators for AuraStack. ... TSMC said it has seen productivity boosted by 100 times over years of collaboration with Cadence on substrate auto routing."
+        },
+        {
+          "fact": "Early customers include Nvidia, TSMC, Schneider Electric and Forvia Hella, which says AI-assisted component placement cut one design task involving roughly 300 components from four days to about four minutes.",
+          "source_url": "https://www.forbes.com/sites/marcochiappetta/2026/07/15/cadence-expands-ai-agents-with-aurastack-for-pcb-and-advanced-chip-packaging/",
+          "excerpt": "That said, several early customer examples suggest there is massive potential. Forvia Hella says AI-assisted component placement reduced one design task involving roughly 300 components, from four days to approximately four minutes."
+        },
+        {
+          "fact": "AuraStack functions as a natural language interface that plans and orchestrates multi-step circuit design and testing workflows running at higher precision on CPUs, GPUs and other accelerators, and integrates with a range of open and proprietary models.",
+          "source_url": "https://www.theregister.com/ai-and-ml/2026/07/15/cadences-aurastack-agent-melds-ai-with-hpc-to-speed-pcb-advanced-packaging-design/5271465",
+          "excerpt": "In other words, the AI model — we're told AuraStack integrates with a wide range of open and proprietary models — functions as a natural language interface capable of planning and orchestrating complex multi-step circuit design and testing workflows that run at higher precision using CPUs, GPUs, and other accelerators."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.morningstar.com/news/business-wire/20260715175854/cadence-introduces-aurastack-ai-super-agent-the-worlds-first-agentic-ai-platform-for-pcb-and-advanced-packaging",
+          "outlet": "Morningstar / Business Wire",
+          "title": "Cadence Introduces AuraStack AI Super Agent, the World's First Agentic AI Platform for PCB and Advanced Packaging",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.theregister.com/ai-and-ml/2026/07/15/cadences-aurastack-agent-melds-ai-with-hpc-to-speed-pcb-advanced-packaging-design/5271465",
+          "outlet": "The Register",
+          "title": "Cadence's AuraStack agent melds AI with HPC to speed PCB, advanced packaging design",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.forbes.com/sites/marcochiappetta/2026/07/15/cadence-expands-ai-agents-with-aurastack-for-pcb-and-advanced-chip-packaging/",
+          "outlet": "Forbes",
+          "title": "Cadence Expands AI Agents With AuraStack For PCB And Advanced Packaging",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.fierceelectronics.com/ai/cadence-aurastack-debuts-boost-pcb-and-packaging-designers",
+          "outlet": "Fierce Electronics",
+          "title": "Cadence AuraStack debuts to boost PCB and packaging designers",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://gamesbeat.com/cadence-introduces-aurastack-ai-to-offload-tasks-so-engineers-can-design-chips/",
+          "outlet": "GamesBeat",
+          "title": "Cadence introduces AuraStack AI to offload tasks so engineers can design chips",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Cadence Design Systems",
+          "Nvidia",
+          "TSMC",
+          "Schneider Electric",
+          "Forvia Hella"
+        ],
+        "people": [
+          "Ashutosh Mauskar",
+          "Aveek Sarkar"
+        ],
+        "places": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "iran-voids-peace-deal-us-strikes-tehran",
+      "headline": "Iran declares June peace deal void as US strikes reach Tehran and Semnan for the first time",
+      "key_facts": [
+        {
+          "fact": "The US intensified strikes early Thursday July 16, hitting targets further north than in previous rounds; Iranian state media reported strikes around Tehran and in Semnan province, home to Iran's ballistic missile production and space program.",
+          "source_url": "https://apnews.com/article/iran-us-hormuz-strait-war-july-16-2026-f98ff56554de2336f0e85bb5fdcae769",
+          "excerpt": "The U.S. strikes early Thursday hit around Tehran, state media reported. It also reported that American attacks targeted Semnan province, home to Iran's ballistic missile production and space program."
+        },
+        {
+          "fact": "US forces also fired into a ship the US accused of trying to break its naval blockade of Iran; Iran retaliated before dawn with missile and drone fire at US allies in the region and warned attacks may escalate.",
+          "source_url": "https://apnews.com/article/iran-us-hormuz-strait-war-july-16-2026-f98ff56554de2336f0e85bb5fdcae769",
+          "excerpt": "American forces also fired into a ship the U.S. accused of trying to break its naval blockade on the Islamic Republic. Iran retaliated with missile and drone fire targeting U.S. allies in the region before dawn and warned its attacks may escalate."
+        },
+        {
+          "fact": "Iranian officials say US strikes have killed more than 35 people and wounded over 300.",
+          "source_url": "https://apnews.com/article/iran-us-hormuz-strait-war-july-16-2026-f98ff56554de2336f0e85bb5fdcae769",
+          "excerpt": "Already, Iranian officials say U.S. strikes have killed more than 35 people and wounded over 300 others."
+        },
+        {
+          "fact": "Tehran said the repeated waves of US attacks voided the memorandum of understanding signed on June 17 that underpinned the ceasefire; top negotiator Mohammed Bagher Ghalibaf said Iran was 'in an essential and existential war with America' and that its armed forces had 'complete freedom of action'.",
+          "source_url": "https://www.aljazeera.com/news/2026/7/15/iran-says-peace-deal-voided-fighting-existential-war-after-us-attacks",
+          "excerpt": "Tehran said the repeated waves of US attacks had voided the memorandum of understanding with Washington that had underpinned the fragile ceasefire. Ghalibaf said Iran was 'in an essential and existential war with America' and had no reason to continue adhering to the terms of the peace agreement."
+        },
+        {
+          "fact": "Iran's IRGC said it targeted the US Fifth Fleet in Bahrain and a major US military logistics hub in Mina Abdullah, Kuwait; US strikes on Wednesday killed seven Iranian troops.",
+          "source_url": "https://www.aljazeera.com/news/2026/7/15/iran-says-peace-deal-voided-fighting-existential-war-after-us-attacks",
+          "excerpt": "On Wednesday morning, Iran's Islamic Revolutionary Guard Corps said it targeted the US Fifth Fleet in Bahrain as part of a 'crushing response'. It said it also targeted a major US military logistics hub in Mina Abdullah, Kuwait."
+        },
+        {
+          "fact": "The US military conducted rare daytime attacks on Wednesday including a 90-minute wave of strikes after reimposing a naval blockade of Iranian ports; Iran threatened to shut off more regional energy exports, saying the US 'must brace for the closure of all other export corridors that benefit the US and its allies'.",
+          "source_url": "https://www.france24.com/en/middle-east/20260715-us-launches-wave-of-strikes-on-iran-tehran-threatens-to-halt-regional-energy-exports",
+          "excerpt": "The US military on Wednesday launched rare daytime attacks on Iran, including a 90-minute wave of strikes, as it reimposed a naval blockade on Iranian ports. Tehran responded with strikes on 'US military targets' in Gulf states and threatened to halt energy exports in the region."
+        },
+        {
+          "fact": "ISW reported US forces struck the Artesh Ground Forces 388th Mechanized Assault Brigade barracks in Iranshahr, roughly 200km inland from Iran's coast, killing seven soldiers and injuring 13, a notable expansion beyond July's coastal strike pattern.",
+          "source_url": "https://understandingwar.org/research/middle-east/iran-update-special-report-july-15-2026/",
+          "excerpt": "Iranian regime media reported on July 15 that US forces struck the Artesh Ground Forces 388th Mechanized Assault Brigade barracks in Iranshahr, Sistan and Baluchistan Province. The strikes reportedly killed seven Artesh soldiers, injured 13 others, and destroyed several buildings. This strike is notable given that the 388th Brigade is located around 200 kilometers from the Iranian coast."
+        },
+        {
+          "fact": "Brent crude briefly topped $86 a barrel on July 15 before easing to $84.93, up 0.2%, after Iran's Revolutionary Guard threatened to halt all Middle East energy exports; the Strait of Hormuz carried about a fifth of global oil and gas shipments before the war.",
+          "source_url": "https://www.ttnews.com/articles/oil-prices-iran-block-exports",
+          "excerpt": "Iran's Revolutionary Guard threatened July 15 to halt all energy exports from the Middle East because of the U.S. military's blockade to prevent tankers carrying Iranian oil from using the Strait of Hormuz. The price for a barrel of Brent crude briefly topped $86 in the morning before falling back to $84.93 per barrel, up 0.2% from the day before."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://apnews.com/article/iran-us-hormuz-strait-war-july-16-2026-f98ff56554de2336f0e85bb5fdcae769",
+          "outlet": "AP News",
+          "title": "US expands strikes into northern Iran and disables ship",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/7/15/iran-says-peace-deal-voided-fighting-existential-war-after-us-attacks",
+          "outlet": "Al Jazeera",
+          "title": "Iran says peace deal voided, fighting 'existential war' after US attacks",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.france24.com/en/middle-east/20260715-us-launches-wave-of-strikes-on-iran-tehran-threatens-to-halt-regional-energy-exports",
+          "outlet": "France 24",
+          "title": "US launches 'wave of strikes' on Iran, Tehran threatens to halt regional energy exports",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-july-15-2026/",
+          "outlet": "Institute for the Study of War",
+          "title": "Iran Update Special Report, July 15, 2026",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://www.ttnews.com/articles/oil-prices-iran-block-exports",
+          "outlet": "Transport Topics",
+          "title": "Oil prices swing as Iran threatens to block energy exports",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "world",
+        "politics",
+        "economy"
+      ],
+      "entities": {
+        "organizations": [
+          "US Central Command",
+          "Islamic Revolutionary Guard Corps",
+          "US Fifth Fleet",
+          "Artesh Ground Forces",
+          "Institute for the Study of War",
+          "Gulf Cooperation Council"
+        ],
+        "people": [
+          "Donald Trump",
+          "Mohammed Bagher Ghalibaf",
+          "Jasem AlBudaiwi"
+        ],
+        "places": [
+          "Iran",
+          "Tehran",
+          "Semnan",
+          "Iranshahr",
+          "Strait of Hormuz",
+          "Bahrain",
+          "Kuwait",
+          "Jordan",
+          "Mina Abdullah"
+        ]
+      }
+    },
+    {
+      "id": "uber-delivery-hero-agreed-13b-takeover",
+      "headline": "Uber agrees €13B takeover of Delivery Hero at €41.50 a share, with 14 markets sold to SSW Partners",
+      "key_facts": [
+        {
+          "fact": "Uber and Delivery Hero entered a business combination agreement on July 16, with Uber offering €41.50 per share in cash, implying a fully diluted equity value of €13.0 billion.",
+          "source_url": "https://www.deliveryhero.com/newsroom/delivery-hero-and-uber-to-join-forces-to-deliver-more-for-customers-vendors-and-riders/",
+          "excerpt": "Berlin, July 16, 2026 – Uber Technologies, Inc. (NYSE:UBER) and one of its affiliates have entered into a business combination agreement with Delivery Hero SE (ETR: DHER)... Uber will offer Delivery Hero shareholders a cash consideration of €41.50 per share (the 'Offer Price'), implying a fully diluted equity value of €13.0 billion."
+        },
+        {
+          "fact": "The offer price is a premium of about 127% on Delivery Hero's unaffected three-month volume-weighted average share price prior to May 8, 2026, and about 34% on the three-month VWAP prior to the announcement.",
+          "source_url": "https://www.deliveryhero.com/newsroom/delivery-hero-and-uber-to-join-forces-to-deliver-more-for-customers-vendors-and-riders/",
+          "excerpt": "The Offer Price represents a premium of approximately 127% on the unaffected three-month volume-weighted average share price prior to May 8, 2026 and of approximately 34% on the three-month volume-weighted average share price prior to today's announcement."
+        },
+        {
+          "fact": "The combination would extend Uber's platform to 99 countries with combined pro-forma GMV of $236 billion in 2025; Uber acquires 50 markets generating $42 billion of GMV in 2025.",
+          "source_url": "https://www.deliveryhero.com/newsroom/delivery-hero-and-uber-to-join-forces-to-deliver-more-for-customers-vendors-and-riders/",
+          "excerpt": "extending the world's largest mobility and delivery platform to a total of 99 countries, with combined pro-forma GMV of $236 billion in 2025... Businesses being acquired by Uber: 50 markets generating $42 billion of GMV in 2025"
+        },
+        {
+          "fact": "In parallel, New York investment firm SSW Partners agreed to buy Delivery Hero's businesses in 14 markets — where Uber Eats and Delivery Hero compete — generating €11 billion of GMV in 2025, for about €1.4 billion, conditioned on completion of the Uber offer.",
+          "source_url": "https://www.deliveryhero.com/newsroom/delivery-hero-and-uber-to-join-forces-to-deliver-more-for-customers-vendors-and-riders/",
+          "excerpt": "SSW Partners will acquire Delivery Hero's businesses in a total of 14 markets, where Uber Eats and Delivery Hero compete, subject to completion of the Uber Takeover Offer and other customary conditions, for a consideration of approximately €1.4 billion."
+        },
+        {
+          "fact": "Uber pledged to retain Delivery Hero's Berlin headquarters and make no changes to its Berlin workforce until at least 2029, and committed to use commercially reasonable efforts to invest €2 billion in Germany through 2031.",
+          "source_url": "https://www.deliveryhero.com/newsroom/delivery-hero-and-uber-to-join-forces-to-deliver-more-for-customers-vendors-and-riders/",
+          "excerpt": "Uber... has pledged to retain Delivery Hero's headquarters and make no changes to its workforce in Berlin until at least 2029. Additionally, Uber committed to use commercially reasonable efforts to invest €2 billion in Germany through 2031."
+        },
+        {
+          "fact": "The offer requires a minimum acceptance of 50% of shares plus one; Uber has irrevocable tender commitments for 16.68% which, with its 24.77% shareholding and 11.74% in instruments, would bring its total economic interest above 53%. Completion is expected in the second half of 2027.",
+          "source_url": "https://www.deliveryhero.com/newsroom/delivery-hero-and-uber-to-join-forces-to-deliver-more-for-customers-vendors-and-riders/",
+          "excerpt": "The Bidder has already received irrevocable tender commitments in relation to the Offer in the amount of 16.68%. Together with its shareholding of 24.77% and holding of instruments of 11.74%, Uber's total economic interest would amount to more than 53%. Completion of the Offer is expected to occur in the second half of 2027."
+        },
+        {
+          "fact": "The deal values Delivery Hero at about $14.8 billion; Uber's earlier offer in May was €33 per share.",
+          "source_url": "https://thenextweb.com/news/uber-delivery-hero-agreed-takeover-41-50",
+          "excerpt": "Uber has agreed a €41.50-per-share takeover of Delivery Hero valuing it at $14.8bn. In May it offered €33. Fourteen markets go to SSW"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.deliveryhero.com/newsroom/delivery-hero-and-uber-to-join-forces-to-deliver-more-for-customers-vendors-and-riders/",
+          "outlet": "Delivery Hero",
+          "title": "Delivery Hero and Uber to Join Forces to Deliver More for Customers, Vendors and Riders",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Acquisition-Offer-for-Delivery-Hero/default.aspx",
+          "outlet": "Uber Investor Relations",
+          "title": "Uber Announces Acquisition Offer for Delivery Hero",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://thenextweb.com/news/uber-delivery-hero-agreed-takeover-41-50",
+          "outlet": "The Next Web",
+          "title": "Uber agrees $14.8bn Delivery Hero takeover, 26% above earlier bid",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-07-16/uber-agrees-to-buy-delivery-hero-as-food-sector-consolidates",
+          "outlet": "Bloomberg",
+          "title": "Uber Agrees to Buy Delivery Hero in $14.8 Billion Deal",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "business",
+        "finance",
+        "economy"
+      ],
+      "entities": {
+        "organizations": [
+          "Uber Technologies",
+          "Delivery Hero",
+          "SSW Partners",
+          "J.P. Morgan",
+          "Sullivan & Cromwell",
+          "BaFin",
+          "Prosus"
+        ],
+        "people": [
+          "Dara Khosrowshahi",
+          "Niklas Östberg",
+          "Kristin Skogen Lund",
+          "Josh Steiner",
+          "Antonio Weiss"
+        ],
+        "places": [
+          "Berlin",
+          "Germany"
+        ]
+      }
+    },
+    {
+      "id": "eu-ukraine-drone-deal-kyiv-missile-strike",
+      "headline": "EU and Ukraine sign drone production deal in Kyiv hours before Russian ballistic missiles kill two",
+      "key_facts": [
+        {
+          "fact": "European Commission President Ursula von der Leyen visited Kyiv and announced a new EU-Ukraine 'drone deal' at a ceremony marking Ukraine's Statehood Day, aiming to combine Kyiv's battlefield expertise with the EU's industrial capacity to scale up production.",
+          "source_url": "https://www.aljazeera.com/news/2026/7/16/kyiv-under-fire-from-russian-missiles-after-eu-ukraine-sign-drone-deal",
+          "excerpt": "The attack came hours after European Commission President Ursula von der Leyen visited Kyiv and announced a new 'drone deal' between Ukraine and the European Union. The agreement aims to combine Kyiv's battlefield expertise with the EU's industrial capacity to establish joint projects and rapidly scale up production."
+        },
+        {
+          "fact": "Von der Leyen said the deal would 'bring together Ukrainian ingenuity and Europe's industrial scale', offering Kyiv 'huge technological and industrial capacity' alongside 'safe and secure production sites'.",
+          "source_url": "https://www.aljazeera.com/news/2026/7/16/kyiv-under-fire-from-russian-missiles-after-eu-ukraine-sign-drone-deal",
+          "excerpt": "Speaking at a ceremony to mark Ukraine's Statehood Day, von der Leyen emphasised the need to 'combine our strengths', stating that the deal would 'bring together Ukrainian ingenuity and Europe's industrial scale'."
+        },
+        {
+          "fact": "Russian ballistic missiles struck multiple districts of Kyiv in the early hours of Thursday July 16, killing two people and injuring six including a 16-year-old boy, according to Mayor Vitali Klitschko.",
+          "source_url": "https://www.aljazeera.com/news/2026/7/16/kyiv-under-fire-from-russian-missiles-after-eu-ukraine-sign-drone-deal",
+          "excerpt": "Writing on Telegram in the early hours of Thursday, Kyiv's Mayor Vitali Klitschko reported that two people were killed in the strikes, while six other residents were injured, including a 16-year-old boy."
+        },
+        {
+          "fact": "Ukraine's military said it struck six Russian tankers and two tugboats in the Black Sea and Sea of Azov overnight, saying the tankers carried Russian oil in circumvention of sanctions and fuel for Moscow's military.",
+          "source_url": "https://www.aljazeera.com/news/2026/7/16/kyiv-under-fire-from-russian-missiles-after-eu-ukraine-sign-drone-deal",
+          "excerpt": "Later on Thursday, Ukraine's military said it struck six Russian tankers and two tugboats in the Black Sea and Sea of Azov overnight. The tankers were being used to transport Russian oil and petroleum products in circumvention of international sanctions, as well as to transport fuel for Moscow's military, the general staff said on Telegram."
+        },
+        {
+          "fact": "Outgoing UK Prime Minister Keir Starmer arrived in Kyiv on Thursday to meet Volodymyr Zelensky, a high-security trip before he is succeeded by Andy Burnham; Russia's defence ministry claimed it hit military and industrial facilities in Kyiv.",
+          "source_url": "https://www.independent.co.uk/news/world/europe/ukraine-russia-war-live-putin-zelensky-ballistic-missile-strikes-b3015875.html",
+          "excerpt": "Keir Starmer, the outgoing Labour leader, arrived in Kyiv to meet Ukrainian president Volodymyr Zelensky on Thursday, a high-security trip before he leaves office. He is expected to assure Mr Zelensky that Britain's commitment to backing Ukraine will continue after he is succeeded by Andy Burnham... Russia's defence ministry claimed on Thursday it hit military and industrial facilities in the Ukrainian capital of Kyiv."
+        },
+        {
+          "fact": "ISW reported that Russian forces resumed a strike campaign against Ukrainian Black Sea port infrastructure; agricultural consultant Bohdan Kostetskyi said on July 15 that recent Russian strikes on Ukrainian ports have effectively stopped deep-water grain exports.",
+          "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-15-2026/",
+          "excerpt": "Bohdan Kostetskyi, an operating partner at agricultural consulting agency Barva Invest, stated on July 15 that the recent Russian strikes against Ukrainian ports have effectively stopped deep-water grain exports."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.aljazeera.com/news/2026/7/16/kyiv-under-fire-from-russian-missiles-after-eu-ukraine-sign-drone-deal",
+          "outlet": "Al Jazeera",
+          "title": "Two killed in Russian missile attacks on Kyiv after Ukraine-EU drone deal",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.independent.co.uk/news/world/europe/ukraine-russia-war-live-putin-zelensky-ballistic-missile-strikes-b3015875.html",
+          "outlet": "The Independent",
+          "title": "Ukraine-Russia war latest: Outgoing UK PM Starmer visits Kyiv after Moscow launches ballistic missile attack",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-15-2026/",
+          "outlet": "Institute for the Study of War",
+          "title": "Russian Offensive Campaign Assessment, July 15, 2026",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "blog_post"
+        }
+      ],
+      "category": [
+        "world",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "European Commission",
+          "European Union",
+          "Russian Ministry of Defence",
+          "Unmanned Systems Forces",
+          "Barva Invest",
+          "Kernel Holding"
+        ],
+        "people": [
+          "Ursula von der Leyen",
+          "Vitali Klitschko",
+          "Keir Starmer",
+          "Volodymyr Zelensky",
+          "Andy Burnham",
+          "Bohdan Kostetskyi"
+        ],
+        "places": [
+          "Kyiv",
+          "Ukraine",
+          "Odesa",
+          "Black Sea",
+          "Sea of Azov",
+          "Russia"
+        ]
+      }
+    },
+    {
+      "id": "ast-spacemobile-delay-2027-1b-convertible",
+      "headline": "AST SpaceMobile delays satellite-to-phone service to 2027 after Blue Origin blast, raises $1B",
+      "key_facts": [
+        {
+          "fact": "In a July 15 stock exchange filing, AST SpaceMobile said its launch campaign is targeting roughly 45 BlueBird satellites in early 2027, missing its late-2026 target for commercial service.",
+          "source_url": "https://www.pcmag.com/news/ast-spacemobile-delays-service-launch-to-2027-eyes-acquisitions",
+          "excerpt": "The Texas-based startup mentioned the delay in a stock exchange filing on Wednesday... in the Wednesday filing, the company writes that 'based on the Company's current expectations regarding launch availability, its launch campaign is targeting approximately 45 of its BlueBird satellites (\"BB satellites\") in early 2027.'"
+        },
+        {
+          "fact": "AST had been banking on Blue Origin to launch and operate 45 BlueBird satellites by the end of 2026, enabling it to serve partners AT&T and Verizon, before Blue Origin's New Glenn rocket exploded on the launch pad in Florida.",
+          "source_url": "https://www.pcmag.com/news/ast-spacemobile-delays-service-launch-to-2027-eyes-acquisitions",
+          "excerpt": "AST was banking on Blue Origin to help it launch and operate 45 'BlueBird' satellites by the end of this year, enabling it to serve partners AT&T and Verizon... weeks after the company's launch provider Blue Origin suffered a major setback with its New Glenn rocket exploding."
+        },
+        {
+          "fact": "On the same day, AST announced a $1 billion private offering of convertible senior notes due Feb. 1, 2034, with an option to add another $150 million.",
+          "source_url": "https://ts2.tech/en/ast-spacemobile-nasdaqasts-looks-to-raise-1-billion-with-convertible-cash-down-21/",
+          "excerpt": "AST SpaceMobile has put forward a $1 billion offering of convertible senior notes maturing in 2034, and could add another $150 million... The notes are due Feb. 1, 2034, and can convert into cash, Class A stock or a mix."
+        },
+        {
+          "fact": "The notes carry a 1.625% annual interest rate and an initial conversion price of about $79.57 per share, a 20% premium to the July 15 closing price of $66.31; AST also entered capped call transactions with an initial cap price of $149.20.",
+          "source_url": "https://www.fxleaders.com/news/2026/07/16/asts-stock-slides-toward-58-after-1b-convertible-deal-revives-dilution-fears/",
+          "excerpt": "The notes carry a 1.625% annual interest rate and an initial conversion price of about $79.57 per share, representing a 20% premium to the July 15 closing price of $66.31. The company also entered capped call transactions with an initial cap price of $149.20 per share, designed to reduce potential dilution if the notes are converted."
+        },
+        {
+          "fact": "Preliminary cash was $2.723 billion at June 30, down from $3.459 billion at March 31 — a drop of about $736 million, or 21%.",
+          "source_url": "https://ts2.tech/en/ast-spacemobile-nasdaqasts-looks-to-raise-1-billion-with-convertible-cash-down-21/",
+          "excerpt": "Preliminary cash and... was $2.723 billion at June 30, down from $3.459 billion at March 31. That's a drop of around $736 million, or 21%."
+        },
+        {
+          "fact": "AST said proceeds could fund partnerships and/or acquisitions to vertically integrate its business and 'mitigate risks associated with third-party launch providers'; shares fell to $58.03 after hours as investors weighed dilution.",
+          "source_url": "https://www.pcmag.com/news/ast-spacemobile-delays-service-launch-to-2027-eyes-acquisitions",
+          "excerpt": "The goal is to use the remaining proceeds to 'to pursue an expanding universe of growth initiatives and secure additional access to orbit for its space-based cellular broadband network, including partnerships and/or acquisitions to further vertically integrate its business and mitigate risks associated with third-party launch providers.'"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.pcmag.com/news/ast-spacemobile-delays-service-launch-to-2027-eyes-acquisitions",
+          "outlet": "PCMag",
+          "title": "AST SpaceMobile Delays Service Launch To 2027, Eyes 'Acquisitions'",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.stocktitan.net/sec-filings/ASTS/8-k-ast-space-mobile-inc-reports-material-event-d73bdb8682f3.html",
+          "outlet": "Stock Titan",
+          "title": "AST SpaceMobile plans $1.0B convertible notes sale | ASTS 8-K Filing",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "government_filing"
+        },
+        {
+          "url": "https://ts2.tech/en/ast-spacemobile-nasdaqasts-looks-to-raise-1-billion-with-convertible-cash-down-21/",
+          "outlet": "TS2",
+          "title": "AST SpaceMobile (NASDAQ:ASTS) Looks to Raise $1 Billion with Convertible, Cash Down 21%",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.fxleaders.com/news/2026/07/16/asts-stock-slides-toward-58-after-1b-convertible-deal-revives-dilution-fears/",
+          "outlet": "FX Leaders",
+          "title": "ASTS Stock Slides Toward $58 After $1B Convertible Deal Revives Dilution Fears",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://spacenews.com/ast-spacemobile-sees-new-glenn-setback-delaying-initial-commercial-service-into-2027/",
+          "outlet": "SpaceNews",
+          "title": "AST SpaceMobile sees New Glenn setback delaying initial commercial service into 2027",
+          "published_at": "2026-06-03",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "business",
+        "science",
+        "finance"
+      ],
+      "entities": {
+        "organizations": [
+          "AST SpaceMobile",
+          "Blue Origin",
+          "SpaceX",
+          "AT&T",
+          "Verizon",
+          "William Blair & Company"
+        ],
+        "people": [],
+        "places": [
+          "Texas",
+          "Florida"
+        ]
+      }
+    },
+    {
+      "id": "spacex-stock-below-ipo-price",
+      "headline": "SpaceX shares dip below their $135 IPO price for the first time as post-listing rally unravels",
+      "key_facts": [
+        {
+          "fact": "SpaceX shares fell for a fourth straight session on Wednesday July 15, briefly dropping below their $135 IPO price for the first time; the stock dipped about 1% and closed at $135.27.",
+          "source_url": "https://www.cnbc.com/2026/07/15/spacex-spcx-stock-ipo-price.html",
+          "excerpt": "SpaceX shares fell for a fourth-straight session on Wednesday, briefly dropping below their $135 initial public offering price for the first time as hype around the reusable rocket maker fizzled. The stock dipped about 1% on Wednesday and closed at $135.27 per share."
+        },
+        {
+          "fact": "SPCX opened at $137.51, hit a low of $132.15 and a high of $139.34, closing at $135.27 on volume of 57.57 million shares.",
+          "source_url": "https://exa.ai/library/markets/stock/SPCX?date=2026-07-15&t=6a58d2110880b00ef466c913",
+          "excerpt": "Open: $137.51, High: $139.34, Low: $132.15, Close: $135.27, Volume: 57.57M"
+        },
+        {
+          "fact": "The June 12 IPO raised nearly $86 billion — a record — and made Elon Musk the world's first trillionaire; the stock initially rose above $200 before losing value nearly every week since.",
+          "source_url": "https://techcrunch.com/2026/07/15/spacex-slips-below-its-135-ipo-price-ahead-of-starship-launch/",
+          "excerpt": "SpaceX's shares fell to just above $135 on Wednesday, the price that CEO Elon Musk and his company chose ahead of its blockbuster June 12 IPO that raked in nearly $86 billion... SpaceX initially saw its stock price rise to more than $200 in the days after it went public, briefly giving it a valuation that rivaled tech giants like Amazon and Microsoft. Its shares have lost value basically every week since reaching that high point."
+        },
+        {
+          "fact": "The reversal reflects investor concern over debt-funded AI spending and potential Fed rate hikes; SpaceX raised $25 billion in the bond market in June to build out technology infrastructure. Its first post-listing earnings report is expected in the first week of August.",
+          "source_url": "https://www.straitstimes.com/business/companies-markets/spacex-shares-slide-below-ipo-price-for-the-first-time-as-blistering-rally-unravels",
+          "excerpt": "The about-face in SpaceX reflects in part investor concern over debt-funded AI spending and what potential Federal Reserve rate hikes might do to stretched tech valuations. SpaceX turned to the bond market in June to raise US$25 billion... Investor focus will shift to the company's first results after listing. Analysts expect the report in the first week of August."
+        },
+        {
+          "fact": "SpaceX joined the Nasdaq-100 last week under a rule change that shortened the eligibility period to 15 trading days for newly public companies, bringing passive index-tracking money into the stock.",
+          "source_url": "https://www.cnbc.com/2026/07/15/spacex-spcx-stock-ipo-price.html",
+          "excerpt": "Last week's induction into the Nasdaq-100 brought passive investors into the stock through index-tracking funds. The company was able to join the exchange due to a recent rule change that shortened the eligibility period to 15 trading days for newly public companies."
+        },
+        {
+          "fact": "The stock has fallen more than 30% from highs of about $225; SpaceX is preparing the 13th test flight of Starship, with a 90-minute window opening at 6:45 p.m. ET Thursday, carrying next-generation Starlink V3 satellites for the first time.",
+          "source_url": "https://www.benzinga.com/trading-ideas/movers/26/07/60481036/spacex-spcx-stock-falls-below-135-ipo-price",
+          "excerpt": "Shares that debuted with enormous fanfare have now surrendered all of their gains from the opening print, falling more than 30% from highs of approximately $225... the company is preparing to conduct the thirteenth test flight of its Starship launch system with a 90-minute window opening at 6:45 p.m. ET on Thursday... while also introducing next-generation Starlink V3 satellites into space for the first time."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2026/07/15/spacex-spcx-stock-ipo-price.html",
+          "outlet": "CNBC",
+          "title": "SpaceX stock sinks below $135 IPO price for the first time",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://techcrunch.com/2026/07/15/spacex-slips-below-its-135-ipo-price-ahead-of-starship-launch/",
+          "outlet": "TechCrunch",
+          "title": "SpaceX falls to $135 IPO price ahead of Starship launch",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.straitstimes.com/business/companies-markets/spacex-shares-slide-below-ipo-price-for-the-first-time-as-blistering-rally-unravels",
+          "outlet": "The Straits Times",
+          "title": "SpaceX shares slide below IPO price for the first time as blistering rally unravels",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.benzinga.com/trading-ideas/movers/26/07/60481036/spacex-spcx-stock-falls-below-135-ipo-price",
+          "outlet": "Benzinga",
+          "title": "SpaceX (SPCX) Stock Falls Below $135 IPO Price",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://exa.ai/library/markets/stock/SPCX?date=2026-07-15&t=6a58d2110880b00ef466c913",
+          "outlet": "Exa Markets",
+          "title": "SPCX — Space Exploration Technologies Corp - Class A | $135.27 on Jul 15, 2026",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "finance",
+        "business",
+        "science"
+      ],
+      "entities": {
+        "organizations": [
+          "SpaceX",
+          "Nasdaq",
+          "Starlink",
+          "Federal Reserve"
+        ],
+        "people": [
+          "Elon Musk"
+        ],
+        "places": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "fed-beige-book-inflation-near-4-percent",
+      "headline": "Fed officials signal no rate move as inflation runs near 4% and AI buildout heats the economy",
+      "key_facts": [
+        {
+          "fact": "The Federal Reserve released its July 2026 Beige Book on July 15, reporting that retail sales improved, the real estate sector was mixed, employment strengthened, wage pressures rose, and outlooks were stable to positive.",
+          "source_url": "https://www.federalreserve.gov/monetarypolicy/files/BeigeBook_20260715.pdf",
+          "excerpt": "Retail sales improved, and the real estate sector was mixed. Employment strengthened, and wage pressures rose. Outlooks were stable to positive"
+        },
+        {
+          "fact": "In remarks in New York City on July 15, New York Fed President John Williams said overall inflation is 'unquestionably too high at about 4 percent,' well above the FOMC's 2 percent longer-run goal, and that 'the current stance of monetary policy is well positioned' to restore it.",
+          "source_url": "https://tellerwindow.newyorkfed.org/2026/07/15/key-takeaways-from-president-williamss-speech-on-the-economic-outlook-and-monetary-policy-27/",
+          "excerpt": "'Growth in the economy is solid and on trend, and the labor market is likewise solid and stable. But with inflation running high, it is imperative that we restore it to the Federal Reserve's 2 percent longer-run goal on a sustained basis. The current stance of monetary policy is well positioned to do that.'... overall inflation is 'unquestionably too high at about 4 percent'"
+        },
+        {
+          "fact": "Williams expects real GDP growth of around 2 to 2-1/4 percent this year and over the next two years, unemployment edging down to 4 percent in 2028, and inflation declining to around 3-1/4 percent by year-end before hitting the 2 percent target in 2028.",
+          "source_url": "https://tellerwindow.newyorkfed.org/2026/07/15/key-takeaways-from-president-williamss-speech-on-the-economic-outlook-and-monetary-policy-27/",
+          "excerpt": "He expects real GDP growth to be around 2 to 2-1/4 percent this year and over the next two years... he expects the unemployment rate to edge down very gradually to 4 percent in 2028. He expects overall inflation to decline to around 3-1/4 percent by year-end, then continue on a glide path toward the FOMC's 2 percent goal in 2027 before landing on target in 2028."
+        },
+        {
+          "fact": "Fed Governor Lisa Cook said on July 15 that risks 'continue to be strongly weighted toward higher inflation,' that she voted to keep rates steady last month because tariffs and the Middle East conflict should produce only short-lived inflation increases, and that the 'data center buildout has added some heat to the economy.'",
+          "source_url": "https://www.federalreserve.gov/newsevents/speech/cook20260715a.htm",
+          "excerpt": "I voted with the rest of the FOMC last month to keep rates steady. I supported this stance, because the two main factors that have pushed up inflation over the past year—tariffs and the conflict in the Middle East—should, in theory, result in only short-lived increases in inflation... Going forward, though, I believe the risks continue to be strongly weighted toward higher inflation... data center buildout has added some heat to the economy."
+        },
+        {
+          "fact": "Cook noted GDP growth in 2025 came in at 2.0 percent and FOMC participants now forecast 2.2 percent for 2026 — both about half a percentage point above last year's forecasts — with labor productivity growing about 2-1/2 percent per year over the past two years. The FOMC next meets in two weeks.",
+          "source_url": "https://www.federalreserve.gov/newsevents/speech/cook20260715a.htm",
+          "excerpt": "GDP growth in 2025 came in at 2.0 percent, and FOMC participants now forecast that 2026 will come in at 2.2 percent. Both readings exceed last year's forecasts by about 1/2 percentage point. Labor productivity is booming, having grown about 2-1/2 percent per year over the past two years... I look forward to engaging with my fellow Committee members at our next meeting in two weeks."
+        },
+        {
+          "fact": "At its June 17 meeting the FOMC maintained the target range for the federal funds rate at 3-1/2 to 3-3/4 percent.",
+          "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+          "excerpt": "The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent, in support of the Federal Reserve's..."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.federalreserve.gov/monetarypolicy/files/BeigeBook_20260715.pdf",
+          "outlet": "Federal Reserve",
+          "title": "Beige Book - July 2026",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "government_filing"
+        },
+        {
+          "url": "https://www.federalreserve.gov/monetarypolicy/beigebook202607.htm",
+          "outlet": "Federal Reserve",
+          "title": "The Fed - Beige Book - July 2026",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "government_filing"
+        },
+        {
+          "url": "https://tellerwindow.newyorkfed.org/2026/07/15/key-takeaways-from-president-williamss-speech-on-the-economic-outlook-and-monetary-policy-27/",
+          "outlet": "Federal Reserve Bank of New York",
+          "title": "Key Takeaways from President Williams's Speech on the Economic Outlook and Monetary Policy",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.federalreserve.gov/newsevents/speech/cook20260715a.htm",
+          "outlet": "Federal Reserve Board",
+          "title": "Speech by Governor Cook on the economic outlook",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "government_filing"
+        },
+        {
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+          "outlet": "Federal Reserve",
+          "title": "Federal Reserve issues FOMC statement",
+          "published_at": "2026-06-17",
+          "image_url": "",
+          "type": "press_release"
+        }
+      ],
+      "category": [
+        "economy",
+        "finance"
+      ],
+      "entities": {
+        "organizations": [
+          "Federal Reserve",
+          "FOMC",
+          "Federal Reserve Bank of New York"
+        ],
+        "people": [
+          "John C. Williams",
+          "Lisa Cook"
+        ],
+        "places": [
+          "United States",
+          "New York City"
+        ]
+      }
+    },
+    {
+      "id": "alpaca-435m-raise-prime-brokerage",
+      "headline": "Brokerage infrastructure firm Alpaca raises $435M led by Peak XV to push into prime brokerage",
+      "key_facts": [
+        {
+          "fact": "Alpaca announced on July 16 a $135 million equity raise led by Peak XV with major participation from Elefund; total new financing reaches $435 million including debt financing primarily from Payward (Kraken's parent) and BMO.",
+          "source_url": "https://lasvegassun.com/news/2026/jul/16/alpaca-raises-135-million-to-scale-agent-first-bro/",
+          "excerpt": "Alpaca, a global leader in agent-first brokerage infrastructure, today announced a $135 million raise led by Peak XV, with major participation from Elefund... The new financing totals $435 million, inclusive of debt financing primarily from Payward, the parent company of global digital asset platform Kraken, and BMO."
+        },
+        {
+          "fact": "The round follows Alpaca's $150 million Series D announced in January 2026, which valued the company at $1.15 billion.",
+          "source_url": "https://lasvegassun.com/news/2026/jul/16/alpaca-raises-135-million-to-scale-agent-first-bro/",
+          "excerpt": "The financing builds on significant business growth as tokenization and AI reshape the industry, following Alpaca's $150 million Series D announced in January 2026, which valued the company at $1.15 billion"
+        },
+        {
+          "fact": "Alpaca said it has doubled revenue year over year for three consecutive years, surpassed $1.5 billion in assets under custody backing tokenized equities, and saw monthly active API users grow nearly 4x in the last six months.",
+          "source_url": "https://lasvegassun.com/news/2026/jul/16/alpaca-raises-135-million-to-scale-agent-first-bro/",
+          "excerpt": "Doubled revenue year over year for three consecutive years. Surpassed $1.5 billion in AUC for the underlying stocks backing tokenized equities. Monthly active API users grew nearly 4x during the last six months as Alpaca expanded agentic AI capabilities."
+        },
+        {
+          "fact": "Alpaca will use the financing to accelerate its agent-first brokerage and API-first prime brokerage infrastructure; CEO Yoshi Yokokawa said Alpaca is 'uniquely positioned to become the default infrastructure layer for tokenized global capital markets and AI-native financial services.'",
+          "source_url": "https://lasvegassun.com/news/2026/jul/16/alpaca-raises-135-million-to-scale-agent-first-bro/",
+          "excerpt": "Alpaca will use the new financing to accelerate its agent-first brokerage and API-first prime brokerage infrastructure, enabling financial companies and institutional clients to build and scale investing products across traditional and onchain markets... 'Alpaca is uniquely positioned to become the default infrastructure layer for tokenized global capital markets and AI-native financial services,' said Yoshi Yokokawa, Co-Founder and CEO of Alpaca."
+        },
+        {
+          "fact": "The company acquired an IFSCA-regulated broker-dealer in GIFT City India and UK/European regulated entities, completing passporting in all 30 EEA countries; it now supports over 10 million brokerage accounts across hundreds of fintechs and institutions in more than 40 countries.",
+          "source_url": "https://lasvegassun.com/news/2026/jul/16/alpaca-raises-135-million-to-scale-agent-first-bro/",
+          "excerpt": "Acquired an IFSCA-regulated broker-dealer and payment service provider in GIFT City, establishing Alpaca's regulated presence in India. Acquired UK and European regulated entities and completed passporting in all 30 EEA countries... Today, Alpaca supports over 10 million brokerage accounts across hundreds of fintechs and institutions in more than 40 countries, backed by $400 million in funding."
+        },
+        {
+          "fact": "Alpaca is exploring entry into prime broking with the $435 million raise.",
+          "source_url": "https://www.bloomberg.com/news/articles/2026-07-16/broker-alpaca-raises-435-million-explores-prime-broking-entry",
+          "excerpt": "Alpaca, which offers brokerage and financial infrastructure, raised $135M in equity and $300M in debt, following a $150M Series D in January"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://lasvegassun.com/news/2026/jul/16/alpaca-raises-135-million-to-scale-agent-first-bro/",
+          "outlet": "Business Wire via Las Vegas Sun",
+          "title": "Alpaca Raises $135 Million to Scale Agent-First Brokerage Infrastructure for Tokenized Markets and AI-Native Financial Services",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-07-16/broker-alpaca-raises-435-million-explores-prime-broking-entry",
+          "outlet": "Bloomberg",
+          "title": "Broker Alpaca Raises $435 Million, Explores Prime Broking Entry",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://fortune.com/2026/01/14/alpaca-fundraise-series-d-brokerage-infrastructure/",
+          "outlet": "Fortune",
+          "title": "Brokerage tech firm Alpaca raises $150 million at $1.15 billion valuation",
+          "published_at": "2026-01-14",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "finance",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Alpaca",
+          "Peak XV Partners",
+          "Elefund",
+          "Payward",
+          "Kraken",
+          "BMO",
+          "Opera Tech Ventures",
+          "BNP Paribas",
+          "Unbound",
+          "Drive Capital"
+        ],
+        "people": [
+          "Yoshi Yokokawa",
+          "Aakash Kapoor"
+        ],
+        "places": [
+          "New York",
+          "San Mateo",
+          "India",
+          "United Kingdom"
+        ]
+      }
+    }
+  ],
+  "story_count": 21,
+  "source_count": 84
+}

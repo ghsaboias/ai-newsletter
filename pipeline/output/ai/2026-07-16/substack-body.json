@@ -1,0 +1,2341 @@
+{
+ "draft_id": "207278652",
+ "title": "[Tech] - Bem-vindo(a) a 16 de Julho de 2026",
+ "subtitle": "O que a Thinking Machines liberou com o seu primeiro modelo próprio? Por que a OpenAI treinou um modelo para atacar os seus próprios modelos? Quanto a TSMC vai investir a mais no Arizona?",
+ "body": {
+  "attrs": {
+   "schemaVersion": "v1"
+  },
+  "type": "doc",
+  "content": [
+   {
+    "content": [
+     {
+      "type": "text",
+      "text": "Por: Guilherme Saboia e Vinicius Gushiken"
+     }
+    ],
+    "type": "paragraph"
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Thinking Machines lança Inkling, primeiro modelo próprio, com pesos abertos"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "content": [
+       {
+        "content": [
+         {
+          "type": "text",
+          "text": "Modelo.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " A Thinking Machines Lab, fundada por Mira Murati, ex-CTO da OpenAI, "
+         },
+         {
+          "type": "text",
+          "text": "lançou o Inkling",
+          "marks": [
+           {
+            "attrs": {
+             "class": null,
+             "href": "https://dailyjournal.news/news/2026-07-15/thinking-machines-lab-lanca-inkling-novo-modelo-de-ia-com-975b-de-parametros",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow"
+            },
+            "type": "link"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " na manhã de 15 de julho, seu primeiro modelo desenvolvido internamente: um transformer Mixture-of-Experts (MoE, arquitetura que ativa apenas parte dos parâmetros a cada token) com 975 bilhões de parâmetros totais e 41 bilhões ativos, janela de contexto de até 1 milhão de tokens e pré-treino com 45 trilhões de tokens de texto, imagens, áudio e vídeo."
+         }
+        ],
+        "type": "paragraph"
+       }
+      ],
+      "type": "list_item"
+     },
+     {
+      "content": [
+       {
+        "content": [
+         {
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "type": "text",
+          "text": "Pesos abertos."
+         },
+         {
+          "type": "text",
+          "text": "  O Inkling tem "
+         },
+         {
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "rel": "noopener noreferrer nofollow",
+             "class": null,
+             "href": "https://dailyjournal.news/news/2026-07-15/thinking-machines-lab-lanca-inkling-novo-modelo-de-ia-com-975b-de-parametros",
+             "target": "_blank"
+            }
+           }
+          ],
+          "text": "pesos abertos",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": ", sob licença Apache 2.0, considerada amigável a uso empresarial: desenvolvedores e empresas de fora podem baixá-lo e modificá-lo direto do "
+         },
+         {
+          "marks": [
+           {
+            "attrs": {
+             "rel": "noopener noreferrer nofollow",
+             "class": null,
+             "target": "_blank",
+             "href": "https://dailyjournal.news/news/2026-07-15/thinking-machines-lab-lanca-inkling-novo-modelo-de-ia-com-975b-de-parametros"
+            },
+            "type": "link"
+           }
+          ],
+          "text": "Hugging Face",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": "."
+         }
+        ],
+        "type": "paragraph"
+       }
+      ],
+      "type": "list_item"
+     },
+     {
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "Desempenho.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " Marca 77,6% no SWE-bench Verified, benchmark de engenharia de software, contra 71,9% do rival aberto norte-americano Nvidia Nemotron 3, e 91,4% no VoiceBench, benchmark de compreensão de voz, contra 94,4% do Gemini 3.1 Pro em esforço de raciocínio alto. Números altos para um modelo de pesos abertos, mas abaixo do estado da arte."
+         }
+        ]
+       }
+      ],
+      "type": "list_item"
+     },
+     {
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "Arquitetura e acesso.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " O "
+         },
+         {
+          "type": "text",
+          "text": "design MoE segue em boa parte o do DeepSeek-V3",
+          "marks": [
+           {
+            "attrs": {
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null,
+             "href": "https://dailyjournal.news/news/2026-07-15/thinking-machines-lab-lanca-inkling-novo-modelo-de-ia-com-975b-de-parametros"
+            },
+            "type": "link"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " e aceita texto, imagem, áudio e vídeo nativamente na entrada. A empresa também divulgou prévia do Inkling-Small, MoE de 276 bilhões de parâmetros com 12 bilhões ativos que iguala ou supera o irmão maior em vários benchmarks, e oferece o Inkling na Tinker com 50% de desconto por tempo limitado."
+         }
+        ]
+       }
+      ],
+      "type": "list_item"
+     }
+    ]
+   },
+   {
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "topImage": false,
+       "srcNoWatermark": null,
+       "bytes": 397613,
+       "href": null,
+       "belowTheFold": false,
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/c38a4f03-054a-4338-a3f6-d2cd3ca450a5_1800x1200.jpeg",
+       "internalRedirect": null,
+       "type": "image/jpeg",
+       "title": null,
+       "width": 1800,
+       "fullscreen": null,
+       "height": 1200,
+       "imageSize": null,
+       "resizeWidth": 520,
+       "alt": "Mira Murati, fundadora e CEO da Thinking Machines Lab"
+      }
+     },
+     {
+      "content": [
+       {
+        "type": "text",
+        "text": "Mira Murati, fundadora e CEO da Thinking Machines Lab. Imagem: Patrick T. Fallon/AFP/Getty Images"
+       }
+      ],
+      "type": "caption"
+     }
+    ],
+    "type": "captionedImage"
+   },
+   {
+    "attrs": {
+     "level": 3
+    },
+    "type": "heading",
+    "content": [
+     {
+      "type": "text",
+      "text": "OpenAI treina o GPT-Red, modelo que quebra quase todos os seus próprios modelos"
+     }
+    ]
+   },
+   {
+    "content": [
+     {
+      "content": [
+       {
+        "content": [
+         {
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Modelo.",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": " A OpenAI "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "target": "_blank",
+             "href": "https://dailyjournal.news/news/2026-07-15/openai-apresenta-gpt-red-para-reforcar-seguranca-de-modelos-de-ia",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "treinou o GPT-Red"
+         },
+         {
+          "type": "text",
+          "text": ", um modelo de red-teaming automatizado (busca sistemática de falhas de segurança simulando um atacante) para encontrar vulnerabilidades de injeção de prompt em escala, com o objetivo de corrigi-las antes de implantações mais amplas."
+         }
+        ],
+        "type": "paragraph"
+       }
+      ],
+      "type": "list_item"
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "content": [
+         {
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Treino.",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": " O método é aprendizado por reforço em self-play: o atacante e um conjunto de LLMs defensores treinam simultaneamente em um amplo conjunto de cenários, o atacante é recompensado por provocar uma falha válida e os defensores por resistir e concluir suas tarefas originais. O treino consumiu computação na escala dos maiores pós-treinamentos da OpenAI, sendo o maior volume já dedicado exclusivamente a segurança, segundo a empresa."
+         }
+        ],
+        "type": "paragraph"
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Resultado."
+         },
+         {
+          "type": "text",
+          "text": " Ao fim do treino, o GPT-Red quebrava quase todos os modelos que enfrentou, internos e de produção, inclusive o GPT-5.5. Em um benchmark independente com cenários inéditos, "
+         },
+         {
+          "type": "text",
+          "text": "encontrou caminhos de ataque bem-sucedidos em 84% dos casos",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "class": null,
+             "href": "https://dailyjournal.news/news/2026-07-15/openai-apresenta-gpt-red-para-reforcar-seguranca-de-modelos-de-ia",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow"
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", contra 13% dos pesquisadores humanos de segurança no mesmo desafio."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "content": [
+       {
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Novo ataque."
+         },
+         {
+          "type": "text",
+          "text": " O modelo descobriu um tipo de ataque que os pesquisadores não conheciam, batizado de “fake chain of thought” (cadeia de raciocínio falsa), em que insere uma entrada falsa na cadeia de raciocínio de outro modelo para induzi-lo a agir com base em informação forjada. Depois, a OpenAI usou os ataques gerados pelo GPT-Red para treinar o GPT-5.6, que se tornou "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "attrs": {
+             "class": null,
+             "rel": "noopener noreferrer nofollow",
+             "target": "_blank",
+             "href": "https://dailyjournal.news/news/2026-07-15/openai-apresenta-gpt-red-para-reforcar-seguranca-de-modelos-de-ia"
+            },
+            "type": "link"
+           }
+          ],
+          "text": "altamente resistente a eles"
+         },
+         {
+          "type": "text",
+          "text": "."
+         }
+        ],
+        "type": "paragraph"
+       }
+      ],
+      "type": "list_item"
+     }
+    ],
+    "type": "bullet_list"
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "topImage": false,
+       "srcNoWatermark": null,
+       "bytes": 219815,
+       "href": null,
+       "width": 1200,
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/209f8544-af60-4c49-ac54-15f501f37070_1200x600.jpeg",
+       "belowTheFold": false,
+       "type": "image/jpeg",
+       "title": null,
+       "internalRedirect": null,
+       "fullscreen": null,
+       "height": 600,
+       "imageSize": null,
+       "resizeWidth": 520,
+       "alt": "Ilustração sobre o GPT-Red, modelo de red-teaming da OpenAI"
+      }
+     },
+     {
+      "content": [
+       {
+        "type": "text",
+        "text": "Ilustração sobre o GPT-Red, modelo de red-teaming da OpenAI. Imagem: MIT Technology Review"
+       }
+      ],
+      "type": "caption"
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "TSMC anuncia mais US$100 bilhões em fábricas no Arizona"
+     }
+    ]
+   },
+   {
+    "content": [
+     {
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "type": "text",
+          "text": "Aporte."
+         },
+         {
+          "type": "text",
+          "text": " O CEO C.C. Wei disse que a TSMC investirá "
+         },
+         {
+          "marks": [
+           {
+            "attrs": {
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null,
+             "href": "https://dailyjournal.news/news/2026-07-16/tsmc-anuncia-investimento-de-us-100-bilhoes-em-fabricas-nos-eua"
+            },
+            "type": "link"
+           }
+          ],
+          "text": "mais US$100 bilhões",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": " para ampliar a capacidade de produção no Arizona, somando-se aos US$165 bilhões que a empresa já havia prometido e elevando a US$265 bilhões o total comprometido nos Estados Unidos."
+         }
+        ]
+       }
+      ],
+      "type": "list_item"
+     },
+     {
+      "content": [
+       {
+        "content": [
+         {
+          "type": "text",
+          "text": "Fábricas.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " O dinheiro financiará quatro novas fábricas de chips, direcionadas a "
+         },
+         {
+          "type": "text",
+          "text": "2 nanômetros e abaixo",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "rel": "noopener noreferrer nofollow",
+             "class": null,
+             "target": "_blank",
+             "href": "https://dailyjournal.news/news/2026-07-16/tsmc-anuncia-investimento-de-us-100-bilhoes-em-fabricas-nos-eua"
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", mais empacotamento avançado. A meta final é chegar a 10 fábricas de wafers e 2 plantas de empacotamento em solo americano; hoje a empresa tem três polos de manufatura no mundo, em Taiwan, nos EUA e no Japão."
+         }
+        ],
+        "type": "paragraph"
+       }
+      ],
+      "type": "list_item"
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Contexto."
+         },
+         {
+          "type": "text",
+          "text": " A promessa segue o "
+         },
+         {
+          "marks": [
+           {
+            "attrs": {
+             "class": null,
+             "href": "https://dailyjournal.news/news/2026-07-16/tsmc-anuncia-investimento-de-us-100-bilhoes-em-fabricas-nos-eua",
+             "rel": "noopener noreferrer nofollow",
+             "target": "_blank"
+            },
+            "type": "link"
+           }
+          ],
+          "text": "acordo comercial entre EUA e Taiwan",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": " de janeiro de 2026, no qual as empresas taiwanesas se comprometeram, em conjunto, com US$250 bilhões em investimentos nos EUA em troca de tarifas menores. Segundo o secretário de Comércio dos EUA, Howard Lutnick, esses US$250 bilhões já incluíam US$100 bilhões prometidos pela TSMC em 2025."
+         }
+        ]
+       }
+      ]
+     }
+    ],
+    "type": "bullet_list"
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "attrs": {
+       "topImage": false,
+       "srcNoWatermark": null,
+       "bytes": 1146714,
+       "href": null,
+       "width": 4095,
+       "fullscreen": null,
+       "belowTheFold": false,
+       "internalRedirect": null,
+       "type": "image/jpeg",
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/3dffeef3-e6e9-42ab-90f6-61756bec0440_4095x2730.jpeg",
+       "title": null,
+       "height": 2730,
+       "imageSize": null,
+       "resizeWidth": 520,
+       "alt": "A fábrica da TSMC em Phoenix, Arizona, em construção"
+      },
+      "type": "image2"
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "A fábrica da TSMC em Phoenix, Arizona, em construção. Imagem: UCG/Universal Images Group/Getty Images"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "content": [
+     {
+      "content": [
+       {
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "text": "Abaixo, apenas para assinantes:",
+        "type": "text"
+       }
+      ],
+      "type": "paragraph"
+     },
+     {
+      "type": "paragraph",
+      "content": [
+       {
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "type": "text",
+        "text": "Chips."
+       },
+       {
+        "type": "text",
+        "text": " Mais um trimestre recorde de lucro na produção de chips, e o fornecedor de equipamentos que decidiu cobrar mais caro pelas máquinas."
+       }
+      ]
+     },
+     {
+      "type": "paragraph",
+      "content": [
+       {
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "type": "text",
+        "text": "Big techs."
+       },
+       {
+        "type": "text",
+        "text": " Uma gigante de consumo caça startups de semicondutores para socorrer os seus chips de servidor de IA."
+       }
+      ]
+     },
+     {
+      "content": [
+       {
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "text": "Mercados.",
+        "type": "text"
+       },
+       {
+        "type": "text",
+        "text": " Uma estreia recente em bolsa cai abaixo do preço de IPO pela primeira vez, e uma operadora de data centers abre capital abaixo da faixa esperada."
+       }
+      ],
+      "type": "paragraph"
+     },
+     {
+      "type": "paragraph",
+      "content": [
+       {
+        "type": "text",
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "text": "IA corporativa."
+       },
+       {
+        "type": "text",
+        "text": " A joint venture de implementação apoiada pela Anthropic ganha nome e marca oficiais."
+       }
+      ]
+     },
+     {
+      "content": [
+       {
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "text": "Biotech.",
+        "type": "text"
+       },
+       {
+        "type": "text",
+        "text": " Uma parceria de IA para prevenir, detectar e responder a ameaças biológicas, barateando o rastreamento de doenças."
+       }
+      ],
+      "type": "paragraph"
+     },
+     {
+      "content": [
+       {
+        "type": "text",
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "text": "Segurança."
+       },
+       {
+        "type": "text",
+        "text": " Uma rede social passa a avisar os pais quando adolescentes falam de suicídio com o seu chatbot."
+       }
+      ],
+      "type": "paragraph"
+     },
+     {
+      "content": [
+       {
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "text": "Justiça.",
+        "type": "text"
+       },
+       {
+        "type": "text",
+        "text": " Uma empresa de IA processa um dos seus próprios usuários por deepfakes sexuais ilegais."
+       }
+      ],
+      "type": "paragraph"
+     },
+     {
+      "type": "paragraph",
+      "content": [
+       {
+        "type": "text",
+        "text": "Eleições.",
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ]
+       },
+       {
+        "type": "text",
+        "text": " A primeira doação milionária de um executivo de IA a um super PAC favorável à regulação."
+       }
+      ]
+     },
+     {
+      "type": "paragraph",
+      "content": [
+       {
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "type": "text",
+        "text": "Robótica."
+       },
+       {
+        "type": "text",
+        "text": " Uma montadora asiática assume o controle total da sua fabricante de humanoides."
+       }
+      ]
+     },
+     {
+      "content": [
+       {
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "text": "Negócios.",
+        "type": "text"
+       },
+       {
+        "type": "text",
+        "text": " Acordo bilionário no delivery que estende uma plataforma a quase 100 países."
+       }
+      ],
+      "type": "paragraph"
+     },
+     {
+      "type": "paragraph",
+      "content": [
+       {
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "type": "text",
+        "text": "Geopolítica."
+       },
+       {
+        "type": "text",
+        "text": " Um cessar-fogo dado como nulo, ataques intensificados e o petróleo reagindo."
+       }
+      ]
+     },
+     {
+      "content": [
+       {
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "type": "text",
+        "text": "Defesa."
+       },
+       {
+        "type": "text",
+        "text": " Um acordo de drones entre a Europa e um país em guerra, horas antes de novos mísseis na capital."
+       }
+      ],
+      "type": "paragraph"
+     }
+    ],
+    "type": "blockquote"
+   },
+   {
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "topImage": false,
+       "srcNoWatermark": null,
+       "bytes": 86036,
+       "href": "https://abacatepay.com",
+       "width": 4700,
+       "internalRedirect": null,
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/f44b2401-8353-4151-945f-a4a7650d073d_4700x649.png",
+       "type": "image/png",
+       "title": null,
+       "fullscreen": null,
+       "belowTheFold": false,
+       "height": 649,
+       "imageSize": null,
+       "resizeWidth": null,
+       "alt": "AbacatePay"
+      }
+     }
+    ],
+    "type": "captionedImage"
+   },
+   {
+    "type": "paywall"
+   },
+   {
+    "type": "heading",
+    "content": [
+     {
+      "type": "text",
+      "text": "Chips e equipamentos"
+     }
+    ],
+    "attrs": {
+     "level": 4
+    }
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "TSMC.",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": " O lucro líquido do segundo trimestre "
+         },
+         {
+          "marks": [
+           {
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-16/tsmc-tem-lucro-recorde-de-us22-bi-no-2-trimestre-e-eleva-projecao",
+             "class": null,
+             "rel": "noopener noreferrer nofollow",
+             "target": "_blank"
+            },
+            "type": "link"
+           }
+          ],
+          "text": "bateu recorde pela quinta vez seguida",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": ": NT$706,6 bilhões (US$22 bilhões), alta de 77,4% em um ano e bem acima do consenso, com margem bruta de 67,7%. A empresa "
+         },
+         {
+          "type": "text",
+          "text": "elevou a projeção",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "class": null,
+             "rel": "noopener noreferrer nofollow",
+             "href": "https://dailyjournal.news/news/2026-07-16/tsmc-tem-lucro-recorde-de-us22-bi-no-2-trimestre-e-eleva-projecao",
+             "target": "_blank"
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " de crescimento de receita de 2026 a pouco acima de 40% em dólares, contra mais de 30% antes, e o investimento de capital a US$60 a 64 bilhões, contra US$52 a 56 bilhões; a ação caiu 1,55% no after-hours com o gasto mais pesado e a projeção de margem menor no trimestre corrente."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "ASML.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " A empresa "
+         },
+         {
+          "type": "text",
+          "text": "discutiu diretamente com a TSMC preços mais altos",
+          "marks": [
+           {
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-16/asml-planeja-elevar-precos-de-maquinas-e-tsmc-resiste",
+             "rel": "noopener noreferrer nofollow",
+             "target": "_blank",
+             "class": null
+            },
+            "type": "link"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " para seus sistemas EUV (litografia ultravioleta extrema, usada para gravar os chips mais modernos) e planeja cobrar 10% a mais pelos DUV, a geração anterior, segundo The Information, com a TSMC resistindo aos planos. Um trimestre acima do esperado encorajou a ASML a subir preços, "
+         },
+         {
+          "type": "text",
+          "text": "algo que raramente faz",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-16/asml-planeja-elevar-precos-de-maquinas-e-tsmc-resiste",
+             "class": null,
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow"
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", e abre um raro embate com sua maior cliente, que tem poucas alternativas em litografia de ponta."
+         }
+        ]
+       }
+      ],
+      "type": "list_item"
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "attrs": {
+       "topImage": false,
+       "srcNoWatermark": null,
+       "bytes": 905931,
+       "href": null,
+       "internalRedirect": null,
+       "fullscreen": null,
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/c7aa52c5-a1ab-40b6-a831-67b807e03b8b_2400x1707.jpeg",
+       "type": "image/jpeg",
+       "title": null,
+       "belowTheFold": false,
+       "width": 2400,
+       "height": 1707,
+       "imageSize": null,
+       "resizeWidth": 520,
+       "alt": "Sistema de litografia High-NA EUV da ASML, em Veldhoven, na Holanda"
+      },
+      "type": "image2"
+     },
+     {
+      "content": [
+       {
+        "type": "text",
+        "text": "Sistema de litografia High-NA EUV da ASML, em Veldhoven, na Holanda. Imagem: ASML"
+       }
+      ],
+      "type": "caption"
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Infraestrutura de IA"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "content": [
+         {
+          "type": "text",
+          "text": "Apple.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " A empresa "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "rel": "noopener noreferrer nofollow",
+             "class": null,
+             "target": "_blank",
+             "href": "https://dailyjournal.news/news/2026-07-16/apple-busca-comprar-startups-de-chips-para-seus-servidores-de-ia"
+            }
+           }
+          ],
+          "text": "explora aquisições de startups de semicondutores"
+         },
+         {
+          "type": "text",
+          "text": " para reforçar seus chips de servidor de IA, conversando com banqueiros nos últimos meses e sondando o interesse de alvos em se vender, segundo The Information. Seus servidores internos rodam com o M2 Ultra, de projeto próprio, e sofrem em cargas exigentes. O Baltra, chip de inferência feito com a Broadcom em 3nm da TSMC, atrasou e não estreia em 2026; enquanto isso, as tarefas mais pesadas da nova Siri rodam em um modelo baseado no Gemini, em GPUs da Nvidia no Google Cloud."
+         }
+        ],
+        "type": "paragraph"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "topImage": false,
+       "srcNoWatermark": null,
+       "bytes": 74921,
+       "href": null,
+       "width": 1960,
+       "fullscreen": null,
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/83bf1150-4827-4466-9f6d-0add792d7e02_1960x1102.jpeg",
+       "internalRedirect": null,
+       "title": null,
+       "belowTheFold": false,
+       "type": "image/jpeg",
+       "height": 1102,
+       "imageSize": null,
+       "resizeWidth": 520,
+       "alt": "O chip M2 Ultra, da Apple"
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "O chip M2 Ultra, da Apple. Imagem: Apple"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "Csquare.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " A operadora de data centers "
+         },
+         {
+          "marks": [
+           {
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-16/csquare-capta-us105-bilhao-em-ipo-precificado-abaixo-da-faixa",
+             "class": null,
+             "rel": "noopener noreferrer nofollow",
+             "target": "_blank"
+            },
+            "type": "link"
+           }
+          ],
+          "text": "precificou seu IPO a US$21 por ação",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": ", abaixo da faixa divulgada de US$23 a US$27, levantando cerca de US$1,05 bilhão com 50 milhões de ações e avaliando a empresa de Dallas em US$3,25 bilhões. Fundada em 2019, opera 64 data centers em 21 mercados metropolitanos na América do Norte e no Reino Unido e "
+         },
+         {
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "class": null,
+             "href": "https://dailyjournal.news/news/2026-07-16/csquare-capta-us105-bilhao-em-ipo-precificado-abaixo-da-faixa",
+             "rel": "noopener noreferrer nofollow",
+             "target": "_blank"
+            }
+           }
+          ],
+          "text": "usará os recursos",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": " para pagar parte da dívida em aberto."
+         }
+        ]
+       }
+      ],
+      "type": "list_item"
+     }
+    ]
+   },
+   {
+    "content": [
+     {
+      "type": "text",
+      "text": "IA corporativa e ciência"
+     }
+    ],
+    "type": "heading",
+    "attrs": {
+     "level": 4
+    }
+   },
+   {
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Ode with Anthropic."
+         },
+         {
+          "type": "text",
+          "text": " A joint venture de implementação de IA de US$1,5 bilhão que a Anthropic lançou em maio com Blackstone, Hellman & Friedman, Goldman Sachs e outros "
+         },
+         {
+          "type": "text",
+          "text": "agora se chama Ode",
+          "marks": [
+           {
+            "attrs": {
+             "class": null,
+             "rel": "noopener noreferrer nofollow",
+             "href": "https://dailyjournal.news/news/2026-07-15/startup-ode-recebe-apoio-da-anthropic-e-blackstone-para-implementar-ia",
+             "target": "_blank"
+            },
+            "type": "link"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ". Tem 100 engenheiros e um princípio “Claude-first”: implementa a tecnologia da Anthropic sempre que possível, mas usa produtos de concorrentes quando necessário. Nasceu da aquisição da Fractional AI, em maio de 2026, e as gestoras de private equity que a apoiam encaminharão suas empresas de portfólio como clientes potenciais; a OpenAI tem sua própria versão, a The Deployment Company."
+         }
+        ],
+        "type": "paragraph"
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Google DeepMind e Isomorphic Labs."
+         },
+         {
+          "type": "text",
+          "text": " As empresas publicaram "
+         },
+         {
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "target": "_blank",
+             "href": "https://dailyjournal.news/news/2026-07-16/google-deepmind-e-isomorphic-labs-definem-diretrizes-de-biorresiliencia",
+             "class": null,
+             "rel": "noopener noreferrer nofollow"
+            }
+           }
+          ],
+          "type": "text",
+          "text": "diretrizes conjuntas de biorresiliência"
+         },
+         {
+          "type": "text",
+          "text": " que cobrem prevenção, detecção e resposta a ameaças biológicas, com o agente AlphaEvolve otimizando algoritmos de sequenciamento metagenômico (leitura do material genético de tudo que há numa amostra) para baratear o rastreamento de doenças em escala mundial. A Isomorphic "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "href": "https://dailyjournal.news/news/2026-07-16/google-deepmind-e-isomorphic-labs-definem-diretrizes-de-biorresiliencia",
+             "class": null
+            }
+           }
+          ],
+          "text": "criou uma unidade dedicada"
+         },
+         {
+          "type": "text",
+          "text": " para projetar contramedidas médicas contra pandemias naturais e riscos do uso indevido de IA avançada; no último ano a parceria trabalhou com mais de 15 agências governamentais, organizações de biossegurança e grupos de pesquisa."
+         }
+        ],
+        "type": "paragraph"
+       }
+      ]
+     }
+    ],
+    "type": "bullet_list"
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "topImage": false,
+       "srcNoWatermark": null,
+       "bytes": 835588,
+       "href": null,
+       "width": 1920,
+       "internalRedirect": null,
+       "belowTheFold": false,
+       "type": "image/jpeg",
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/c1a10aca-9c39-4fcc-a736-ea38539cfe31_1920x1080.jpeg",
+       "title": null,
+       "fullscreen": null,
+       "height": 1080,
+       "imageSize": null,
+       "resizeWidth": 520,
+       "alt": "Arte da publicação conjunta sobre biorresiliência"
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Arte da publicação conjunta sobre biorresiliência. Imagem: Isomorphic Labs"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Segurança e responsabilidade"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Meta.",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": " A empresa "
+         },
+         {
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-16/meta-passa-a-alertar-pais-sobre-conversas-de-adolescentes-com-seu-chatbot",
+             "rel": "noopener noreferrer nofollow",
+             "target": "_blank",
+             "class": null
+            }
+           }
+          ],
+          "type": "text",
+          "text": "passará a notificar os pais"
+         },
+         {
+          "type": "text",
+          "text": " se um filho adolescente falar sobre suicídio ou automutilação com o chatbot Meta AI, com um sistema de IA dedicado para sinalizar as conversas e revisão manual antes de cada alerta. Os avisos já valem para quem usa a Supervisão Parental do Instagram nos EUA, no Reino Unido, na Austrália e no Canadá e serão liberados globalmente até o fim do ano; a Meta também trabalha na capacidade de acionar serviços de emergência quando as conversas sugerirem risco."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "topImage": false,
+       "srcNoWatermark": null,
+       "bytes": 2240770,
+       "href": null,
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/0086cc0e-573a-44bb-a400-e4e24839e4a4_1920x1080.jpeg",
+       "fullscreen": null,
+       "width": 1920,
+       "type": "image/jpeg",
+       "title": null,
+       "internalRedirect": null,
+       "belowTheFold": false,
+       "height": 1080,
+       "imageSize": null,
+       "resizeWidth": 520,
+       "alt": "O aviso aos pais no Family Center, da Meta"
+      }
+     },
+     {
+      "content": [
+       {
+        "type": "text",
+        "text": "O aviso aos pais no Family Center. Imagem: Meta"
+       }
+      ],
+      "type": "caption"
+     }
+    ],
+    "type": "captionedImage"
+   },
+   {
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "xAI."
+         },
+         {
+          "type": "text",
+          "text": " A empresa "
+         },
+         {
+          "type": "text",
+          "text": "processou Terry Wayne Harwood",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "rel": "noopener noreferrer nofollow",
+             "href": "https://dailyjournal.news/news/2026-07-15/xai-processa-usuario-por-gerar-imagens-de-abuso-infantil-com-o-grok",
+             "target": "_blank",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", morador da Carolina do Sul, alegando que ele criou múltiplas contas e usou “prompts enganosos” para contornar os mecanismos de segurança do Grok e gerar deepfakes sexualmente explícitos, incluindo material de abuso sexual infantil. É "
+         },
+         {
+          "type": "text",
+          "text": "uma das primeiras ações conhecidas",
+          "marks": [
+           {
+            "attrs": {
+             "rel": "noopener noreferrer nofollow",
+             "class": null,
+             "target": "_blank",
+             "href": "https://dailyjournal.news/news/2026-07-15/xai-processa-usuario-por-gerar-imagens-de-abuso-infantil-com-o-grok"
+            },
+            "type": "link"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " de uma empresa de IA contra um de seus próprios usuários por conteúdo sexual ilegal gerado por IA; Harwood foi preso no início deste ano sob acusações relacionadas ao material."
+         }
+        ],
+        "type": "paragraph"
+       }
+      ]
+     }
+    ],
+    "type": "bullet_list"
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Política e regulação"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Dario Amodei.",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": " O CEO da Anthropic "
+         },
+         {
+          "marks": [
+           {
+            "attrs": {
+             "rel": "noopener noreferrer nofollow",
+             "href": "https://dailyjournal.news/news/2026-07-16/ceo-da-anthropic-doa-us-1-milhao-para-super-pac-focado-em-tecnologia",
+             "target": "_blank",
+             "class": null
+            },
+            "type": "link"
+           }
+          ],
+          "text": "doou US$1 milhão em maio ao Public First",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": ", super PAC (comitê de ação política que arrecada e gasta sem limites, sem coordenar com campanhas) que apoia candidatos favoráveis a regulação de segurança para IA, segundo registros da Comissão Federal Eleitoral divulgados na noite de quarta-feira. É sua primeira doação política de US$1 milhão ou mais de que se tem notícia; a Anthropic, como empresa, já havia doado "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "rel": "noopener noreferrer nofollow",
+             "href": "https://dailyjournal.news/news/2026-07-16/ceo-da-anthropic-doa-us-1-milhao-para-super-pac-focado-em-tecnologia",
+             "class": null,
+             "target": "_blank"
+            }
+           }
+          ],
+          "text": "US$20 milhões ao comitê"
+         },
+         {
+          "type": "text",
+          "text": " em fevereiro, e a rede rival Leading the Future planeja gastar US$125 milhões neste ano para eleger congressistas favoráveis a regras mais leves."
+         }
+        ]
+       }
+      ],
+      "type": "list_item"
+     }
+    ]
+   },
+   {
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "topImage": false,
+       "srcNoWatermark": null,
+       "bytes": 184460,
+       "href": null,
+       "width": 1800,
+       "internalRedirect": null,
+       "fullscreen": null,
+       "belowTheFold": false,
+       "title": null,
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/90c3cad8-03ef-440e-86f6-eceb88fb56ff_1800x1200.jpeg",
+       "type": "image/jpeg",
+       "height": 1200,
+       "imageSize": null,
+       "resizeWidth": 520,
+       "alt": "Dario Amodei, CEO da Anthropic, na conferência Code with Claude"
+      }
+     },
+     {
+      "content": [
+       {
+        "type": "text",
+        "text": "Dario Amodei, CEO da Anthropic, na conferência Code with Claude. Imagem: Don Feria/AP"
+       }
+      ],
+      "type": "caption"
+     }
+    ],
+    "type": "captionedImage"
+   },
+   {
+    "content": [
+     {
+      "type": "text",
+      "text": "Robótica"
+     }
+    ],
+    "type": "heading",
+    "attrs": {
+     "level": 4
+    }
+   },
+   {
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "type": "text",
+          "text": "Hyundai."
+         },
+         {
+          "type": "text",
+          "text": " O grupo "
+         },
+         {
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null,
+             "href": "https://dailyjournal.news/news/2026-07-16/hyundai-compra-fatia-restante-da-boston-dynamics-e-assume-controle-total"
+            }
+           }
+          ],
+          "type": "text",
+          "text": "tornará a Boston Dynamics subsidiária integral"
+         },
+         {
+          "type": "text",
+          "text": " ao comprar a fatia de 9,65% do SoftBank, que exerceu uma put option (direito de vender suas ações a preço combinado) prevista no contrato de 2020 para o caso de não haver IPO nos EUA até junho de 2026. Os termos não foram divulgados, mas a imprensa local fala em cerca de 500 bilhões de wons (US$335 milhões), preço que "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-16/hyundai-compra-fatia-restante-da-boston-dynamics-e-assume-controle-total",
+             "class": null,
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow"
+            },
+            "type": "link"
+           }
+          ],
+          "text": "implica avaliação de 5 trilhões de wons"
+         },
+         {
+          "type": "text",
+          "text": " para a Boston Dynamics, que busca a produção em massa do humanoide Atlas em 2028."
+         }
+        ]
+       }
+      ]
+     }
+    ],
+    "type": "bullet_list"
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "attrs": {
+       "topImage": false,
+       "srcNoWatermark": null,
+       "bytes": 343951,
+       "href": null,
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/1f8dab48-9225-4db2-98ed-f709e9ba17d2_1280x720.jpeg",
+       "internalRedirect": null,
+       "fullscreen": null,
+       "belowTheFold": false,
+       "title": null,
+       "width": 1280,
+       "type": "image/jpeg",
+       "height": 720,
+       "imageSize": null,
+       "resizeWidth": 520,
+       "alt": "O humanoide Atlas, da Boston Dynamics"
+      },
+      "type": "image2"
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "O humanoide Atlas, da Boston Dynamics. Imagem: Boston Dynamics"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "attrs": {
+     "endTime": null,
+     "startTime": null,
+     "videoId": "rrUHZKlrxms"
+    },
+    "type": "youtube2"
+   },
+   {
+    "content": [
+     {
+      "type": "text",
+      "text": "Negócios"
+     }
+    ],
+    "type": "heading",
+    "attrs": {
+     "level": 4
+    }
+   },
+   {
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "type": "text",
+          "text": "Uber."
+         },
+         {
+          "type": "text",
+          "text": " A empresa "
+         },
+         {
+          "marks": [
+           {
+            "attrs": {
+             "class": null,
+             "href": "https://dailyjournal.news/news/2026-07-14/uber-negocia-compra-da-delivery-hero-em-transacao-bilionaria",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow"
+            },
+            "type": "link"
+           }
+          ],
+          "text": "fechou acordo para comprar a Delivery Hero",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": " por €41,50 por ação em dinheiro, avaliando a Delivery Hero em €13 bilhões, com prêmio de 34% sobre o preço médio dos três meses anteriores ao anúncio, contra os €33 por ação oferecidos em maio. A combinação "
+         },
+         {
+          "marks": [
+           {
+            "attrs": {
+             "target": "_blank",
+             "class": null,
+             "href": "https://dailyjournal.news/news/2026-07-14/uber-negocia-compra-da-delivery-hero-em-transacao-bilionaria",
+             "rel": "noopener noreferrer nofollow"
+            },
+            "type": "link"
+           }
+          ],
+          "text": "estende a plataforma da Uber a 99 países",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": ", com GMV (volume bruto de mercadorias) pró-forma combinado de US$236 bilhões em 2025; em paralelo, a SSW Partners compra por cerca de €1,4 bilhão os negócios da Delivery Hero em 14 mercados onde as duas competem, e a conclusão é esperada para o segundo semestre de 2027."
+         }
+        ]
+       }
+      ]
+     }
+    ],
+    "type": "bullet_list"
+   },
+   {
+    "content": [
+     {
+      "type": "text",
+      "text": "Espaço e mercados"
+     }
+    ],
+    "attrs": {
+     "level": 4
+    },
+    "type": "heading"
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "content": [
+         {
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "SpaceX.",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": " A ação "
+         },
+         {
+          "type": "text",
+          "text": "caiu abaixo do preço de IPO de US$135",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "target": "_blank",
+             "href": "https://dailyjournal.news/news/2026-07-15/acoes-da-spacex-caem-abaixo-do-valor-de-ipo-pela-primeira-vez",
+             "class": null,
+             "rel": "noopener noreferrer nofollow"
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " pela primeira vez durante o pregão de quarta-feira, na quarta sessão seguida de queda, mas fechou um pouco acima, a US$135,27, ainda mais de 30% abaixo das máximas de cerca de US$225. O IPO de 12 de junho levantou quase US$86 bilhões, um recorde, e fez de Elon Musk o primeiro trilionário do mundo; a "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "target": "_blank",
+             "class": null,
+             "href": "https://dailyjournal.news/news/2026-07-15/acoes-da-spacex-caem-abaixo-do-valor-de-ipo-pela-primeira-vez",
+             "rel": "noopener noreferrer nofollow"
+            }
+           }
+          ],
+          "text": "reversão reflete"
+         },
+         {
+          "type": "text",
+          "text": " preocupações com gastos em IA financiados por dívida e com o efeito de possíveis altas de juros do Fed sobre avaliações esticadas de tecnologia."
+         }
+        ],
+        "type": "paragraph"
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "AST SpaceMobile.",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": " A empresa "
+         },
+         {
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null,
+             "href": "https://dailyjournal.news/news/2026-07-16/ast-spacemobile-adia-servico-de-satelite-para-2027-e-busca-us-1-bilhao"
+            }
+           }
+          ],
+          "text": "adiou para o início de 2027",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": " a campanha de lançamento de cerca de 45 satélites BlueBird, perdendo a meta de serviço comercial no fim de 2026 depois que o foguete New Glenn, da Blue Origin, explodiu na plataforma na Flórida. No mesmo dia anunciou "
+         },
+         {
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "target": "_blank",
+             "class": null,
+             "rel": "noopener noreferrer nofollow",
+             "href": "https://dailyjournal.news/news/2026-07-16/ast-spacemobile-adia-servico-de-satelite-para-2027-e-busca-us-1-bilhao"
+            }
+           }
+          ],
+          "text": "oferta privada de US$1 bilhão",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": " em notas conversíveis com vencimento em 2034 a 1,625% ao ano; o caixa caiu 21% no trimestre, para US$2,723 bilhões, e a ação recuou a US$58,03 no after-hours com investidores avaliando a diluição."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "content": [
+     {
+      "attrs": {
+       "topImage": false,
+       "srcNoWatermark": null,
+       "bytes": 466573,
+       "href": null,
+       "belowTheFold": false,
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/02365b1b-f120-420c-afb5-2eba973e297d_2560x1440.jpeg",
+       "fullscreen": null,
+       "internalRedirect": null,
+       "type": "image/jpeg",
+       "width": 2560,
+       "title": null,
+       "height": 1440,
+       "imageSize": null,
+       "resizeWidth": 520,
+       "alt": "Painel do satélite BlueBird desdobrado em órbita"
+      },
+      "type": "image2"
+     },
+     {
+      "content": [
+       {
+        "type": "text",
+        "text": "Painel do satélite BlueBird desdobrado em órbita. Imagem: AST SpaceMobile"
+       }
+      ],
+      "type": "caption"
+     }
+    ],
+    "type": "captionedImage"
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Mundo"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Irã."
+         },
+         {
+          "type": "text",
+          "text": " Teerã "
+         },
+         {
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-16/ira-declara-acordo-de-paz-nulo-apos-ataques-dos-eua-em-teera",
+             "class": null,
+             "rel": "noopener noreferrer nofollow",
+             "target": "_blank"
+            }
+           }
+          ],
+          "text": "declarou nulo o memorando de entendimento de 17 de junho",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": " que sustentava o cessar-fogo, com o negociador Mohammed Bagher Ghalibaf dizendo que o país está “em uma guerra essencial e existencial com os Estados Unidos” e que suas forças armadas têm “completa liberdade de ação”. Os EUA "
+         },
+         {
+          "marks": [
+           {
+            "attrs": {
+             "rel": "noopener noreferrer nofollow",
+             "class": null,
+             "target": "_blank",
+             "href": "https://dailyjournal.news/news/2026-07-16/ira-declara-acordo-de-paz-nulo-apos-ataques-dos-eua-em-teera"
+            },
+            "type": "link"
+           }
+          ],
+          "type": "text",
+          "text": "intensificaram os ataques"
+         },
+         {
+          "type": "text",
+          "text": " na madrugada de quinta-feira, atingindo os arredores de Teerã e a província de Semnan, onde ficam a produção de mísseis balísticos e o programa espacial; autoridades iranianas falam em mais de 35 mortos e 300 feridos, e o Brent superou brevemente US$86 por barril antes de recuar para US$84,93."
+         }
+        ]
+       }
+      ],
+      "type": "list_item"
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "content": [
+         {
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Ucrânia e União Europeia.",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": " Ursula von der Leyen visitou Kiev e "
+         },
+         {
+          "type": "text",
+          "text": "anunciou um “acordo de drones”",
+          "marks": [
+           {
+            "attrs": {
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null,
+             "href": "https://dailyjournal.news/news/2026-07-16/ue-e-ucrania-fecham-acordo-de-drones-horas-antes-de-ataque-a-kiev"
+            },
+            "type": "link"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " que combina a experiência de campo de batalha ucraniana com a capacidade industrial europeia para ampliar rapidamente a produção de drones. Horas depois, mísseis balísticos russos atingiram vários distritos de Kiev e mataram duas pessoas, com seis feridos, segundo o prefeito Vitali Klitschko."
+         }
+        ],
+        "type": "paragraph"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "topImage": false,
+       "srcNoWatermark": null,
+       "bytes": 131034,
+       "href": null,
+       "internalRedirect": null,
+       "fullscreen": null,
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/1cef0264-7806-483a-9a0b-ebdc28bc2516_1140x760.jpeg",
+       "belowTheFold": false,
+       "title": null,
+       "width": 1140,
+       "type": "image/jpeg",
+       "height": 760,
+       "imageSize": null,
+       "resizeWidth": 520,
+       "alt": "Ursula von der Leyen e Volodymyr Zelensky em Kiev, em 15 de julho"
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Ursula von der Leyen e Volodymyr Zelensky em Kiev, em 15 de julho. Imagem: AFP"
+       }
+      ]
+     }
+    ],
+    "type": "captionedImage"
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "content": [
+     {
+      "content": [
+       {
+        "type": "text",
+        "text": "Leia também"
+       }
+      ],
+      "type": "heading",
+      "attrs": {
+       "level": 4
+      }
+     },
+     {
+      "content": [
+       {
+        "type": "list_item",
+        "content": [
+         {
+          "type": "paragraph",
+          "content": [
+           {
+            "marks": [
+             {
+              "attrs": {
+               "target": "_blank",
+               "rel": "noopener noreferrer nofollow",
+               "href": "https://dailyjournal.news/news/2026-07-16/cadence-lanca-aurastack-plataforma-agentica-para-design-de-placas",
+               "class": null
+              },
+              "type": "link"
+             }
+            ],
+            "type": "text",
+            "text": "Cadence apresenta o AuraStack, plataforma de IA agêntica para design de placas e empacotamento avançado"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "list_item",
+        "content": [
+         {
+          "type": "paragraph",
+          "content": [
+           {
+            "marks": [
+             {
+              "type": "link",
+              "attrs": {
+               "href": "https://dailyjournal.news/news/2026-07-16/alpaca-capta-us435-milhoes-e-avalia-entrar-em-prime-brokerage",
+               "class": null,
+               "target": "_blank",
+               "rel": "noopener noreferrer nofollow"
+              }
+             }
+            ],
+            "type": "text",
+            "text": "Alpaca capta US$435 milhões e avalia entrar em prime brokerage"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "list_item",
+        "content": [
+         {
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "attrs": {
+               "href": "https://dailyjournal.news/news/2026-07-16/fed-mantem-postura-com-inflacao-perto-de-4-dizem-williams-e-cook",
+               "rel": "noopener noreferrer nofollow",
+               "target": "_blank",
+               "class": null
+              },
+              "type": "link"
+             }
+            ],
+            "text": "Williams diz que a inflação, em cerca de 4%, está alta demais, e que a política atual do Fed está bem posicionada para devolvê-la à meta"
+           }
+          ],
+          "type": "paragraph"
+         }
+        ]
+       }
+      ],
+      "type": "bullet_list"
+     }
+    ],
+    "type": "calloutBlock"
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "level": 3
+    },
+    "content": [
+     {
+      "marks": [
+       {
+        "type": "strong"
+       }
+      ],
+      "text": "Recomendações de hoje:",
+      "type": "text"
+     }
+    ]
+   },
+   {
+    "type": "paragraph",
+    "content": [
+     {
+      "type": "text",
+      "marks": [
+       {
+        "type": "strong"
+       }
+      ],
+      "text": "Former Intel CEO on What Went Wrong, What's Next + Lovable CEO on the Real Promise of Vibe Coding:"
+     },
+     {
+      "type": "text",
+      "text": " Pat Gelsinger, ex-CEO da Intel, discute os erros estratégicos que levaram a empresa a perder sua dominância no mercado de semicondutores. Ele aponta que a Intel se afastou de suas raízes técnicas ao ser gerida por executivos focados em finanças (\"bean counters\") em vez de engenheiros, resultando em uma década sem novas fábricas e na perda de oportunidades cruciais, como a fabricação de chips para o iPhone.:"
+     }
+    ]
+   },
+   {
+    "attrs": {
+     "videoId": "-ILKiOU5iAQ",
+     "endTime": null,
+     "startTime": null
+    },
+    "type": "youtube2"
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "content": [
+     {
+      "type": "text",
+      "text": "Anthropic's Katelyn Lesse & Angela Jiang: Building an Ecosystem, not a Walled Garden:",
+      "marks": [
+       {
+        "type": "strong"
+       }
+      ]
+     },
+     {
+      "type": "text",
+      "text": " Katelyn Lesse e Angela Jiang, líderes da plataforma de desenvolvedores da Anthropic, discutem a estratégia de construção de um ecossistema aberto em vez de um \"jardim murado\". A plataforma serve tanto para produtos internos da Anthropic quanto para desenvolvedores externos, focando em fornecer primitivas, padrões e abstrações que permitam a criação de agentes inteligentes e escaláveis.:"
+     }
+    ],
+    "type": "paragraph"
+   },
+   {
+    "attrs": {
+     "videoId": "vPnVTHYplrQ",
+     "startTime": "109s",
+     "endTime": null
+    },
+    "type": "youtube2"
+   }
+  ]
+ }
+}

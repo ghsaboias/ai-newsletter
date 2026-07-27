@@ -1,0 +1,601 @@
+{
+  "stories": [
+    {
+      "id": "thinking-machines-inkling-open-weights",
+      "headline": "Thinking Machines releases Inkling, a 975B-parameter open-weights multimodal model under Apache 2.0",
+      "key_facts": [
+        {
+          "fact": "Inkling is a Mixture-of-Experts transformer with 975B total parameters and 41B active, a 1M-token context window, pretrained on 45 trillion tokens of text, images, audio and video.",
+          "source_url": "https://thinkingmachines.ai/news/introducing-inkling/",
+          "excerpt": "Our model, called Inkling, is a Mixture-of-Experts transformer with 975B total parameters, 41B active. It supports a context window of up to 1M tokens. It was pretrained on 45 trillion tokens of text, images, audio and video."
+        },
+        {
+          "fact": "It is the first in-house model from Mira Murati's Thinking Machines Lab, and unlike flagship models from OpenAI, Anthropic or Google it ships open-weight, released Wednesday July 15, 2026.",
+          "source_url": "https://techcrunch.com/2026/07/15/thinking-machines-amps-up-its-bet-against-one-size-fits-all-ai-with-its-first-open-model-inkling/",
+          "excerpt": "Thinking Machines Lab, the AI startup founded by former OpenAI CTO Mira Murati, released its first in-house AI model Wednesday morning, called Inkling. And unlike the flagship models from OpenAI, Anthropic, or Google, it's open-weight, meaning outside developers and companies can download it and modify it directly."
+        },
+        {
+          "fact": "Inkling scores 77.6% on SWE-bench Verified, beating US open rival Nvidia Nemotron 3's 71.9%, and 91.4% on VoiceBench versus 94.4% for Gemini 3.1 Pro on high reasoning effort. It is released under an Apache 2.0 license.",
+          "source_url": "https://venturebeat.com/technology/thinking-machines-open-sources-first-multimodal-language-model-inkling-focused-on-low-cost-and-resistance-to-censorship",
+          "excerpt": "released Inkling, its first major language model under an enterprise-friendly Apache 2.0 open source license, and it boasts high, if sub state-of-the-art, performance for open weights models on third-party benchmarks, specifically software engineering (77.6% on SWE-bench Verified, where it beats fellow U.S. open rival Nvidia Nemotron 3's 71.9%) and voice understanding (91.4% on VoiceBench compared to 94.4% for Gemini 3.1 Pro on high reasoning effort)."
+        },
+        {
+          "fact": "The MoE design largely follows DeepSeek-V3: each MoE layer contains 256 routed experts and 2 shared experts, with 6 routed experts activated per token, using a sigmoid-based router with auxiliary-loss-free load balancing.",
+          "source_url": "https://thinkingmachines.ai/news/introducing-inkling/",
+          "excerpt": "The MoE design largely follows DeepSeek-V3. Each MoE layer contains 256 routed experts and 2 shared experts, with 6 routed experts ... per token. Inkling uses a sigmoid-based router with an auxiliary-loss-free load-balancing bias."
+        },
+        {
+          "fact": "Alongside Inkling the company previewed Inkling-Small, a 276B-parameter MoE model with 12B active parameters that matches or exceeds its larger sibling on many benchmarks.",
+          "source_url": "https://thinkingmachines.ai/news/introducing-inkling/",
+          "excerpt": "Alongside Inkling we are sharing a preview of Inkling-Small, a 276B-parameter Mixture-of-Experts model (12B active, vs. 41B for Inkling) with a different performance/latency trade-off. Inkling-Small matches or exceeds its larger sibling on many benchmarks."
+        },
+        {
+          "fact": "Weights are downloadable on Hugging Face; the model is available on Tinker with 64K and 256K context options at a 50% discount for a limited time.",
+          "source_url": "https://thinkingmachines.ai/news/introducing-inkling/",
+          "excerpt": "Inkling is available on Tinker today with context length options of 64K and 256K tokens. We are offering Inkling at a 50% discount for a limited time, with full pricing information available in our documentation."
+        },
+        {
+          "fact": "The model card lists a release date of July 15, 2026 and describes a 66-layer decoder-only transformer that is natively multimodal on input, with images encoded via a hierarchical patch encoder and audio via discrete token encoding.",
+          "source_url": "https://thinkingmachines.ai/model-card/inkling/",
+          "excerpt": "#### Date of release ... July 15, 2026 ... A 66-layer decoder-only transformer with a sparse Mixture-of-Experts (MoE) feed-forward backbone: each token is routed to 6 of 256 experts, plus 2 shared experts active on every token."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://thinkingmachines.ai/news/introducing-inkling/",
+          "outlet": "Thinking Machines Lab",
+          "title": "Inkling: Our open-weights model",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://thinkingmachines.ai/model-card/inkling/",
+          "outlet": "Thinking Machines Lab",
+          "title": "Inkling Model Card",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://techcrunch.com/2026/07/15/thinking-machines-amps-up-its-bet-against-one-size-fits-all-ai-with-its-first-open-model-inkling/",
+          "outlet": "TechCrunch",
+          "title": "Thinking Machines amps up its bet against one-size-fits-all AI with its first open model, Inkling",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://venturebeat.com/technology/thinking-machines-open-sources-first-multimodal-language-model-inkling-focused-on-low-cost-and-resistance-to-censorship",
+          "outlet": "VentureBeat",
+          "title": "Thinking Machines open sources first multimodal language model, Inkling, focused on low cost and 'resistance to censorship'",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://huggingface.co/thinkingmachines/Inkling",
+          "outlet": "Hugging Face",
+          "title": "thinkingmachines/Inkling",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "press_release"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Thinking Machines Lab",
+          "OpenAI",
+          "Anthropic",
+          "Google",
+          "Nvidia",
+          "Hugging Face",
+          "DeepSeek"
+        ],
+        "people": [
+          "Mira Murati"
+        ],
+        "places": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "openai-gpt-red-automated-red-teamer",
+      "headline": "OpenAI unveils GPT-Red, a self-play red-teaming model that beat human testers 84% to 13%",
+      "key_facts": [
+        {
+          "fact": "GPT-Red is an automated red-teaming model trained to find prompt injection vulnerabilities at scale so OpenAI can fix them before wider deployment.",
+          "source_url": "https://openai.com/index/unlocking-self-improvement-gpt-red/",
+          "excerpt": "We trained GPT-Red, an automated red-teaming model that scales our ability to find vulnerabilities so we can fix them before wider deployment."
+        },
+        {
+          "fact": "GPT-Red is trained with self-play reinforcement learning: the attacker model and a collection of diverse defender LLMs train simultaneously, with GPT-Red rewarded for eliciting failures and defenders rewarded for resisting.",
+          "source_url": "https://openai.com/index/unlocking-self-improvement-gpt-red/",
+          "excerpt": "GPT-Red is trained using self-play reinforcement learning, where the model and a collection of diverse defender LLMs are trained simultaneously on a broad set of red-teaming scenarios. GPT-Red is rewarded for eliciting a valid failure, such as a successful prompt injection, while the defender models are rewarded for resisting the attack and completing their original tasks."
+        },
+        {
+          "fact": "OpenAI trained GPT-Red at the compute scale of some of its largest post-training runs, which it calls an unprecedented amount of compute dedicated purely to improving safety.",
+          "source_url": "https://openai.com/index/unlocking-self-improvement-gpt-red/",
+          "excerpt": "We trained GPT-Red at the compute scale of some of our largest post-training runs at OpenAI—an unprecedented amount of compute dedicated purely for improving safety."
+        },
+        {
+          "fact": "By the end of training GPT-Red could break nearly all models it was pitted against, including production models up to and including GPT-5.5; its attacks were then used to adversarially train GPT-5.6.",
+          "source_url": "https://openai.com/index/unlocking-self-improvement-gpt-red/",
+          "excerpt": "At the end of its training, GPT-Red is a very strong attacker: it can break nearly all models it is pitted against, both internal and production models up to and including GPT-5.5. After GPT-Red completed training, we used it to generate prompt injections for the training of GPT-5.6, resulting in the model becoming highly resistant to GPT-Red's attacks."
+        },
+        {
+          "fact": "On an independent benchmark of scenarios it had not seen in training, GPT-Red found successful attack paths in 84% of cases versus 13% for human security researchers running the same challenge.",
+          "source_url": "https://www.techtimes.com/articles/320656/20260715/openai-built-ai-attack-itself-gpt-red-exposed-flaws-humans-missed.htm",
+          "excerpt": "When OpenAI ran GPT-Red against the same scenarios — scenarios the model had not seen during training — it succeeded on 84% of them. The human red-teamers had succeeded on 13%."
+        },
+        {
+          "fact": "OpenAI says GPT-Red discovered a previously unseen attack type it calls a 'fake chain of thought', inserting a fake entry into another model's reasoning trace to trick it into acting on spoofed information.",
+          "source_url": "https://www.technologyreview.com/2026/07/15/1140514/meet-gpt-red-an-llm-super-hacker-openai-built-to-make-its-models-safer/",
+          "excerpt": "OpenAI claims that GPT-Red found a type of prompt injection attack that the researchers had not seen before, which they call a fake chain of thought... GPT-Red found a way to insert a fake entry into another model's chain of thought that would trick that model into acting on spoofed information."
+        },
+        {
+          "fact": "OpenAI researcher Dylan Hunn said the model systematically varies attacks it discovers: 'Compared to a human red-teamer, the model is very, very good at finding exactly what will work, exactly what's most effective.'",
+          "source_url": "https://www.techtimes.com/articles/320656/20260715/openai-built-ai-attack-itself-gpt-red-exposed-flaws-humans-missed.htm",
+          "excerpt": "\"Compared to a human red-teamer, the model is very, very good at finding exactly what will work, exactly what's most effective,\" Hunn said. \"It's extremely persistent about drilling down into an attack that it has discovered.\""
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://openai.com/index/unlocking-self-improvement-gpt-red/",
+          "outlet": "OpenAI",
+          "title": "GPT-Red: Unlocking Self-Improvement for Robustness",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.technologyreview.com/2026/07/15/1140514/meet-gpt-red-an-llm-super-hacker-openai-built-to-make-its-models-safer/",
+          "outlet": "MIT Technology Review",
+          "title": "Meet GPT-Red, an LLM super-hacker OpenAI built to make its models safer",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.techtimes.com/articles/320656/20260715/openai-built-ai-attack-itself-gpt-red-exposed-flaws-humans-missed.htm",
+          "outlet": "Tech Times",
+          "title": "OpenAI Built an AI to Attack Itself: GPT-Red Exposed Flaws Humans Missed",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.helpnetsecurity.com/2026/07/16/openai-gpt-red-prompt-injection-test/",
+          "outlet": "Help Net Security",
+          "title": "GPT-Red beat human red teamers on a prompt injection test",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "science"
+      ],
+      "entities": {
+        "organizations": [
+          "OpenAI"
+        ],
+        "people": [
+          "Dylan Hunn"
+        ],
+        "places": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "ode-with-anthropic-launch",
+      "headline": "Anthropic and Blackstone launch Ode, a $1.5B AI implementation firm with 100 engineers",
+      "key_facts": [
+        {
+          "fact": "Ode with Anthropic is the $1.5 billion AI implementation company that Anthropic launched in May as a joint venture with Blackstone, Hellman & Friedman, Goldman Sachs and others; it now has an official name and brand.",
+          "source_url": "https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/",
+          "excerpt": "One of those businesses now has a name: Ode with Anthropic is the $1.5 billion, AI implementation company that the AI lab launched in May as part of a joint venture with Blackstone, Hellman & Friedman, Goldman Sachs, and others."
+        },
+        {
+          "fact": "The move follows OpenAI's own version, The Deployment Company, underscoring a growing acknowledgement among frontier labs that winning enterprise customers requires more than shipping better models.",
+          "source_url": "https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/",
+          "excerpt": "The move follows OpenAI's own take on this, The Deployment Company, underscoring a growing acknowledgement among frontier AI labs that winning enterprise customers requires far more than shipping better models."
+        },
+        {
+          "fact": "Ode employs 100 engineers and works closely with Anthropic's applied AI team; it operates under a 'Claude-first' principle but will use rival AI products if needed.",
+          "source_url": "https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/",
+          "excerpt": "Ode currently employs 100 engineers, and works closely with Anthropic's applied AI team... Ode will operate under a \"Claude-first\" principle, meaning it will implement Anthropic's technology, including features like Claude Tag in Slack, whenever possible."
+        },
+        {
+          "fact": "Ode is built on the foundation of Fractional AI, the applied AI services firm acquired in May 2026, whose team plus Anthropic engineers form its operational core.",
+          "source_url": "https://hf.com/anthropic-blackstone-and-hellman-friedman-introduce-ode-with-anthropic-an-enterprise-ai-services-firm/",
+          "excerpt": "Ode is built on the foundation of Fractional AI, the applied AI services firm acquired in May 2026, whose team, alongside engineers from Anthropic, forms its operational core."
+        },
+        {
+          "fact": "Beyond the founding partners, the investor consortium includes Apollo Global Management, General Atlantic, GIC, Goldman Sachs, Leonard Green & Partners and Sequoia Capital.",
+          "source_url": "https://hf.com/anthropic-blackstone-and-hellman-friedman-introduce-ode-with-anthropic-an-enterprise-ai-services-firm/",
+          "excerpt": "Alongside the founding partners, the investor consortium includes Apollo Global Management, General Atlantic, GIC, Goldman Sachs, Leonard Green & Partners, and Sequoia Capital."
+        },
+        {
+          "fact": "Ode is led by Chris Taylor as CEO and Eddie Siegel as CTO, the same roles they held at Fractional AI, which they founded in 2024 with Travis May.",
+          "source_url": "https://www.technology.org/2026/07/16/ode-with-anthropic-blackstone-ai-implementation/",
+          "excerpt": "Taylor and Siegel hold the same CEO and CTO roles they held at Fractional."
+        },
+        {
+          "fact": "The backing private equity firms will funnel their own portfolio companies to Ode as potential customers, though Ode will not limit sales to them.",
+          "source_url": "https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/",
+          "excerpt": "The private equity firms backing Ode will funnel their own portfolio companies to the joint venture as potential customers, though Ode will not limit sales of its services to those companies."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/",
+          "outlet": "TechCrunch",
+          "title": "Anthropic, Blackstone bet the next trillion-dollar AI business is implementation, not models",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://hf.com/anthropic-blackstone-and-hellman-friedman-introduce-ode-with-anthropic-an-enterprise-ai-services-firm/",
+          "outlet": "Hellman & Friedman",
+          "title": "Anthropic, Blackstone, and Hellman & Friedman Introduce Ode with Anthropic, an Enterprise AI Services Firm",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.technology.org/2026/07/16/ode-with-anthropic-blackstone-ai-implementation/",
+          "outlet": "Technology.org",
+          "title": "Anthropic and Blackstone Launch $1.5B AI Firm Ode",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Anthropic",
+          "Blackstone",
+          "Hellman & Friedman",
+          "Goldman Sachs",
+          "Ode with Anthropic",
+          "Fractional AI",
+          "OpenAI",
+          "Sequoia Capital",
+          "Apollo Global Management",
+          "General Atlantic",
+          "GIC",
+          "Leonard Green & Partners"
+        ],
+        "people": [
+          "Chris Taylor",
+          "Eddie Siegel",
+          "Travis May",
+          "Rodney Zemmel",
+          "Garvan Doyle"
+        ],
+        "places": [
+          "San Francisco",
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "deepmind-isomorphic-bioresilience",
+      "headline": "Google DeepMind and Isomorphic Labs launch AI bioresilience program for pathogen surveillance",
+      "key_facts": [
+        {
+          "fact": "Google DeepMind and Isomorphic Labs published a joint approach to bioresilience on July 16, 2026, covering prevention, detection and response to biological threats.",
+          "source_url": "https://deepmind.google/blog/our-approach-to-bioresilience/",
+          "excerpt": "Today, Google DeepMind and [Isomorphic Labs](https://www.isomorphiclabs.com/) are sharing our [joint approach to bioresilience]"
+        },
+        {
+          "fact": "DeepMind's AlphaEvolve agent can optimize the algorithms used to produce and analyze metagenomic sequencing data, making DNA analysis quicker and cheaper so outbreaks can be detected faster at large scale.",
+          "source_url": "https://deepmind.google/blog/our-approach-to-bioresilience/",
+          "excerpt": "We are helping make pathogen surveillance more cost-effective. For example, our agent AlphaEvolve can optimize algorithms used for producing and analyzing metagenomic sequencing data, helping detect new outbreaks faster. This optimization allows for quicker and more accurate DNA analysis, making it cheaper to track diseases worldwide on a large scale."
+        },
+        {
+          "fact": "Isomorphic Labs has established a focused unit to rapidly deploy its drug design engine to design medical countermeasures for both naturally occurring pandemics and risks arising from misuse of advanced AI.",
+          "source_url": "https://deepmind.google/blog/our-approach-to-bioresilience/",
+          "excerpt": "To support government bodies and non-profit organizations during novel outbreaks, Isomorphic Labs has established a focused unit to rapidly deploy its drug design engine to design medical countermeasures that could address both naturally occurring pandemics and potential risks arising from the misuse of advanced AI."
+        },
+        {
+          "fact": "The companies are exploring how AlphaGenome and protein function annotation could detect and characterize pathogens from sequence data, identifying emerging threats faster than traditional methods.",
+          "source_url": "https://deepmind.google/blog/our-approach-to-bioresilience/",
+          "excerpt": "We are also exploring how technologies like AlphaGenome and Protein Function annotation could be used to help detect and characterize pathogens from sequence data, identifying novel patterns and emerging threats faster than traditional methods."
+        },
+        {
+          "fact": "The companies frame AI as both a source of biosecurity risk and a critical tool for response, citing shifting ecosystems, global travel and the potential misuse of AI.",
+          "source_url": "https://www.isomorphiclabs.com/articles/our-approach-to-bioresilience",
+          "excerpt": "The global biosecurity landscape is rapidly evolving. Shifting natural ecosystems, global travel and the potential misuse of AI require greater vigilance — yet AI is also a critical tool for our response."
+        },
+        {
+          "fact": "Over the past year the partnership has engaged more than 15 government agencies, biosecurity organizations and research groups, and grants trusted researchers access to its latest AI systems.",
+          "source_url": "https://blockchain.news/news/google-deepmind-isomorphic-labs-bioresilience-plan",
+          "excerpt": "Over the past year, the partnership has engaged with more than 15 government agencies, biosecurity organizations, and research groups to implement these solutions... DeepMind and Isomorphic Labs are granting trusted researchers access to their latest AI systems."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://deepmind.google/blog/our-approach-to-bioresilience/",
+          "outlet": "Google DeepMind",
+          "title": "Our approach to bioresilience",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.isomorphiclabs.com/articles/our-approach-to-bioresilience",
+          "outlet": "Isomorphic Labs",
+          "title": "Our approach to bioresilience",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://blockchain.news/news/google-deepmind-isomorphic-labs-bioresilience-plan",
+          "outlet": "Blockchain.News",
+          "title": "Google DeepMind, Isomorphic Labs Unveil AI-Powered Bioresilience Plan",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "science"
+      ],
+      "entities": {
+        "organizations": [
+          "Google DeepMind",
+          "Isomorphic Labs",
+          "Google"
+        ],
+        "people": [],
+        "places": []
+      }
+    },
+    {
+      "id": "xai-sues-grok-user-csam-deepfakes",
+      "headline": "xAI sues a Grok user over AI-generated CSAM, one of the first such cases by an AI company",
+      "key_facts": [
+        {
+          "fact": "xAI filed a lawsuit against Terry Wayne Harwood, a South Carolina man, in the US District Court for the Northern District of Texas, alleging he violated its Terms of Service and Acceptable Use Policy.",
+          "source_url": "https://www.ibtimes.sg/xai-sues-south-carolina-man-accused-using-grok-create-child-sexual-abuse-deepfakes-landmark-ai-89867",
+          "excerpt": "The lawsuit, filed in the US District Court for the Northern District of Texas, alleges that South Carolina's Terry Wayne Harwood violated xAI's Terms of Service and Acceptable Use Policy by exploiting Grok's image-generation capabilities to transform non-sexual photographs into sexually explicit images without the knowledge or consent of those depicted."
+        },
+        {
+          "fact": "It marks one of the first known legal actions by an AI company against one of its own users over the alleged creation of illegal AI-generated sexual content.",
+          "source_url": "https://www.ibtimes.sg/xai-sues-south-carolina-man-accused-using-grok-create-child-sexual-abuse-deepfakes-landmark-ai-89867",
+          "excerpt": "marking one of the first known legal actions by an AI company against a user over the alleged creation of illegal AI-generated sexual content."
+        },
+        {
+          "fact": "The complaint alleges Harwood created multiple xAI accounts and used 'misleading prompts' to bypass Grok's built-in safety mechanisms designed to prevent generation of explicit material involving minors.",
+          "source_url": "https://www.ibtimes.sg/xai-sues-south-carolina-man-accused-using-grok-create-child-sexual-abuse-deepfakes-landmark-ai-89867",
+          "excerpt": "According to the lawsuit, Harwood created multiple xAI accounts and used what the company described as \"misleading prompts\" to bypass Grok's built-in safety mechanisms designed to prevent the generation of explicit material involving minors."
+        },
+        {
+          "fact": "xAI alleges Harwood uploaded non-sexual images of both adults and minors and attempted to use Grok to generate sexually explicit deepfakes, including child sexual abuse material.",
+          "source_url": "https://www.ibtimes.sg/xai-sues-south-carolina-man-accused-using-grok-create-child-sexual-abuse-deepfakes-landmark-ai-89867",
+          "excerpt": "The complaint alleges that Harwood uploaded non-sexual images of both adults and minors and attempted to use the AI system to generate sexually explicit deepfakes, including child sexual abuse material."
+        },
+        {
+          "fact": "Harwood was arrested earlier this year on charges related to the material; the suit was filed on July 15, 2026.",
+          "source_url": "https://www.reuters.com/legal/litigation/musks-xai-sues-grok-user-over-sexualized-deepfakes-2026-07-15/",
+          "excerpt": "Elon Musk's artificial-intelligence startup xAI has sued a South Carolina man arrested earlier this year on charges …"
+        },
+        {
+          "fact": "The case arrives amid broader scrutiny of Grok's safety practices; xAI previously apologized after the chatbot generated violent and antisemitic content, blaming a problematic system update.",
+          "source_url": "https://www.ibtimes.sg/xai-sues-south-carolina-man-accused-using-grok-create-child-sexual-abuse-deepfakes-landmark-ai-89867",
+          "excerpt": "The case also arrives as xAI continues to face broader scrutiny over Grok's safety practices. Last year, the company issued a public apology after the chatbot generated violent and antisemitic content, attributing the incident to a problematic system update."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.ibtimes.sg/xai-sues-south-carolina-man-accused-using-grok-create-child-sexual-abuse-deepfakes-landmark-ai-89867",
+          "outlet": "International Business Times",
+          "title": "xAI Sues South Carolina Man Accused of Using Grok to Create Child Sexual Abuse Deepfakes",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.reuters.com/legal/litigation/musks-xai-sues-grok-user-over-sexualized-deepfakes-2026-07-15/",
+          "outlet": "Reuters",
+          "title": "Musk's xAI sues Grok user over sexualized deepfakes",
+          "published_at": "2026-07-15",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://oecd.ai/en/incidents/2026-07-15-91fd",
+          "outlet": "OECD.AI",
+          "title": "xAI Sues User for Creating Child Sexual Abuse Deepfakes with Grok AI",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "xAI",
+          "Grok",
+          "US District Court for the Northern District of Texas"
+        ],
+        "people": [
+          "Elon Musk",
+          "Terry Wayne Harwood"
+        ],
+        "places": [
+          "South Carolina",
+          "Texas",
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "amodei-1m-public-first-super-pac",
+      "headline": "Filings: Dario Amodei gave $1M to AI-safety super PAC Public First, his first seven-figure gift",
+      "key_facts": [
+        {
+          "fact": "Anthropic CEO Dario Amodei gave $1 million in May to Public First, a super PAC supporting candidates who share the company's goal of imposing safety regulations on AI, per FEC filings released late Wednesday July 15.",
+          "source_url": "https://www.politico.com/news/2026/07/16/anthropics-ceo-gives-1-million-to-super-pac-amid-feud-of-ai-big-money-groups-01000461",
+          "excerpt": "Anthropic CEO Dario Amodei gave $1 million in May to Public First, a super PAC that supports candidates who share the company's goal of imposing safety regulations on artificial intelligence, according to Federal Election Commission filings released late Wednesday."
+        },
+        {
+          "fact": "It appears to be Amodei's first seven-figure political donation, although he has donated smaller amounts to Democratic politicians.",
+          "source_url": "https://www.politico.com/news/2026/07/16/anthropics-ceo-gives-1-million-to-super-pac-amid-feud-of-ai-big-money-groups-01000461",
+          "excerpt": "It appears to be Amodei's first seven-figure political donation, although he has donated smaller amounts to Democratic politicians."
+        },
+        {
+          "fact": "The donation lands as Public First and other Anthropic-aligned groups battle Leading the Future, a rival industry super PAC network opposed to onerous AI regulation, with each side pouring millions into the race to replace retiring Rep. Jerry Nadler.",
+          "source_url": "https://www.politico.com/news/2026/07/16/anthropics-ceo-gives-1-million-to-super-pac-amid-feud-of-ai-big-money-groups-01000461",
+          "excerpt": "it came as Public First and other Anthropic-aligned organizations were doing battle with Leading the Future, a rival industry super PAC network opposed to onerous AI regulations — with each side pouring millions of dollars into dueling sides of the widely watched race to replace retiring Democratic Rep. Jerry Nadler"
+        },
+        {
+          "fact": "Anthropic the company donated $20 million to Public First in February 2026, backing congressional candidates who favor AI safety rules.",
+          "source_url": "https://www.latimes.com/business/story/2026-02-12/anthropic-pledges-20-million-to-candidates-who-favor-ai-safety",
+          "excerpt": "Anthropic PBC is donating $20 million to a political advocacy group called Public First that's backing congressional candidates who favor safety rules for artificial intelligence, bolstering the company's fight for \"responsible AI\" as Silicon Valley money floods into congressional races across the U.S."
+        },
+        {
+          "fact": "Leading the Future, the billionaire-backed super PAC on the other side, plans to spend $125 million this year to elect members of Congress who support lighter regulation of AI.",
+          "source_url": "https://www.latimes.com/business/story/2026-02-12/anthropic-pledges-20-million-to-candidates-who-favor-ai-safety",
+          "excerpt": "The donation promises to strengthen AI safety advocates' fight against Leading the Future, a billionaire-backed super political action committee that plans to spend $125 million this year to stack Congress with allies who support lighter regulation of the technology."
+        },
+        {
+          "fact": "Public First Action said on June 30 it had raised more than $80 million to date, including $20 million in the preceding 10 days; it is tied to three PACs — Defending Our Values (Republicans), Jobs and Democracy (Democrats) and the bipartisan Public First PAC.",
+          "source_url": "https://www.axios.com/2026/06/30/ai-safeguards-public-first-action-raised-80-million",
+          "excerpt": "Public First Action, an AI safeguards advocacy group with various PACs, said Tuesday it has raised more than $80 million to date, including $20 million in the last 10 days... The group is tied to three PACs: Defending Our Values PAC supporting Republicans, Jobs and Democracy PAC supporting Democrats, and the bipartisan Public First PAC."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.politico.com/news/2026/07/16/anthropics-ceo-gives-1-million-to-super-pac-amid-feud-of-ai-big-money-groups-01000461",
+          "outlet": "Politico",
+          "title": "Anthropic CEO gives $1 million to super PAC amid battle of AI big-money groups",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.latimes.com/business/story/2026-02-12/anthropic-pledges-20-million-to-candidates-who-favor-ai-safety",
+          "outlet": "Los Angeles Times",
+          "title": "Anthropic pledges $20 million to candidates who favor AI safety",
+          "published_at": "2026-02-12",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.axios.com/2026/06/30/ai-safeguards-public-first-action-raised-80-million",
+          "outlet": "Axios",
+          "title": "AI safeguards group Public First Action says it has raised $80 million",
+          "published_at": "2026-06-30",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "Anthropic",
+          "Public First",
+          "Public First Action",
+          "Leading the Future",
+          "Federal Election Commission",
+          "Defending Our Values PAC",
+          "Jobs and Democracy PAC"
+        ],
+        "people": [
+          "Dario Amodei",
+          "Jerry Nadler",
+          "Brad Carson"
+        ],
+        "places": [
+          "United States",
+          "New York"
+        ]
+      }
+    },
+    {
+      "id": "meta-ai-teen-self-harm-parent-alerts",
+      "headline": "Meta will alert parents when teens discuss suicide or self-harm with its AI chatbot",
+      "key_facts": [
+        {
+          "fact": "Meta announced on Thursday July 16 that it will notify parents if their teen discusses suicide or self-harm with the Meta AI chatbot, and is working on the ability to contact emergency services when conversations suggest risk of self-harm.",
+          "source_url": "https://techcrunch.com/2026/07/16/meta-now-alerts-parents-if-their-teen-discussed-suicide-or-self-harm-with-its-ai-chatbot/",
+          "excerpt": "Meta announced on Thursday that it will now notify parents if their teen discusses suicide or self-harm with the company's Meta AI chatbot. Meta says it's also working on the ability to contact emergency services if someone's conversations suggest they may be at risk of self-harm."
+        },
+        {
+          "fact": "Meta says it built a dedicated AI system to identify conversations where a teen makes a clear reference to hurting themselves, and every chat flagged by that AI is manually reviewed before an alert is sent.",
+          "source_url": "https://techcrunch.com/2026/07/16/meta-now-alerts-parents-if-their-teen-discussed-suicide-or-self-harm-with-its-ai-chatbot/",
+          "excerpt": "Meta says it has built a dedicated AI system to identify conversations where a teen makes a clear reference to hurting themselves... \"That's why, as we continue to improve our detection, all chats flagged by our AI will be manually reviewed before an alert is sent.\""
+        },
+        {
+          "fact": "Meta says it will err on the side of caution when a teen's intent is ambiguous: 'While that means we may sometimes notify parents when there may not be real cause for concern, we feel this is the right starting point.'",
+          "source_url": "https://techcrunch.com/2026/07/16/meta-now-alerts-parents-if-their-teen-discussed-suicide-or-self-harm-with-its-ai-chatbot/",
+          "excerpt": "\"If a teen's intent is ambiguous, we'll err on the side of caution and alert the parent. While that means we may sometimes notify parents when there may not be real cause for concern, we feel this is the right starting point, and we'll continue to monitor to help make sure we're in the right place.\""
+        },
+        {
+          "fact": "The alerts are live now for parents using Instagram Parental Supervision in the US, UK, Australia and Canada, and will roll out globally by the end of the year.",
+          "source_url": "https://techcrunch.com/2026/07/16/meta-now-alerts-parents-if-their-teen-discussed-suicide-or-self-harm-with-its-ai-chatbot/",
+          "excerpt": "These alerts are now live for parents using Instagram Parental Supervision in the U.S., U.K., Australia, and Canada, and will roll out globally by the end of the year, Meta says."
+        },
+        {
+          "fact": "Meta's 'Limited Content' setting, which places teens in a more restrictive Instagram experience, now applies to Meta AI as well, making the chatbot decline a broader range of prompts.",
+          "source_url": "https://techcrunch.com/2026/07/16/meta-now-alerts-parents-if-their-teen-discussed-suicide-or-self-harm-with-its-ai-chatbot/",
+          "excerpt": "Meta also announced that its \"Limited Content\" setting—which lets parents place their teens in a more restrictive experience on Instagram—now applies to Meta AI as well... the Limited Content setting expands those safeguards by making the chatbot decline a broader range of prompts."
+        },
+        {
+          "fact": "The changes arrive as Meta and other tech companies face scrutiny from regulators and parents over how AI chatbots respond to users in crisis, a liability question shaping how AI companies design and market products.",
+          "source_url": "https://techcrunch.com/2026/07/16/meta-now-alerts-parents-if-their-teen-discussed-suicide-or-self-harm-with-its-ai-chatbot/",
+          "excerpt": "These changes arrive as Meta and other tech companies face scrutiny from regulators and parents over how AI chatbots respond to users in crisis, particularly teenagers —a liability question that's increasingly shaping how AI companies design and market their products."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/07/16/meta-now-alerts-parents-if-their-teen-discussed-suicide-or-self-harm-with-its-ai-chatbot/",
+          "outlet": "TechCrunch",
+          "title": "Meta now alerts parents if their teen discussed suicide or self-harm with its AI chatbot",
+          "published_at": "2026-07-16",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Meta",
+          "Instagram",
+          "Meta AI"
+        ],
+        "people": [],
+        "places": [
+          "United States",
+          "United Kingdom",
+          "Australia",
+          "Canada"
+        ]
+      }
+    }
+  ]
+}

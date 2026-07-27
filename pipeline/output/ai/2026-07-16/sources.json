@@ -1,0 +1,1912 @@
+{
+  "date": "2026-07-16",
+  "newsletter_file": "2026-07-16/edition.md",
+  "source_count": 21,
+  "url_count": 84,
+  "news_entities": [
+    {
+      "headline": "Thinking Machines lança Inkling, modelo aberto de 975 bilhões de parâmetros",
+      "summary": "Primeiro modelo próprio da startup de Mira Murati sai sob licença Apache 2.0 e marca 77,6% no SWE-bench Verified.",
+      "bullets": [
+        "A Thinking Machines Lab, fundada pela ex-CTO da OpenAI Mira Murati, lançou o Inkling na manhã de 15 de julho de 2026.",
+        "É um transformer Mixture-of-Experts com 975 bilhões de parâmetros totais e 41 bilhões ativos, com janela de contexto de até 1 milhão de tokens.",
+        "O pré-treinamento usou 45 trilhões de tokens de texto, imagens, áudio e vídeo.",
+        "O modelo marca 77,6% no SWE-bench Verified, acima dos 71,9% do rival aberto Nvidia Nemotron 3.",
+        "No VoiceBench, marca 91,4% contra 94,4% do Gemini 3.1 Pro em esforço de raciocínio alto.",
+        "A empresa também divulgou uma prévia do Inkling-Small, MoE de 276 bilhões de parâmetros com 12 bilhões ativos.",
+        "Os pesos estão no Hugging Face e o modelo está na Tinker com contexto de 64 mil e 256 mil tokens, com 50% de desconto por tempo limitado."
+      ],
+      "body": "Diferentemente dos modelos principais da OpenAI, da Anthropic e do Google, o Inkling é de pesos abertos: desenvolvedores e empresas de fora podem baixá-lo e modificá-lo diretamente, sob licença Apache 2.0, considerada amigável a uso empresarial. O desempenho é alto para modelos abertos, mas fica abaixo do estado da arte.\n\nO design MoE segue em boa parte o do DeepSeek-V3. Cada camada MoE contém 256 especialistas roteados e 2 especialistas compartilhados, com 6 especialistas roteados ativados por token, e o roteamento usa um esquema baseado em sigmoide com viés de balanceamento de carga sem função de perda auxiliar. O model card descreve um transformer decoder-only de 66 camadas, nativamente multimodal na entrada: imagens são codificadas por um encoder hierárquico de patches e áudio por codificação em tokens discretos.",
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "people": [
+          "Mira Murati"
+        ],
+        "organizations": [
+          "Thinking Machines Lab",
+          "OpenAI",
+          "Anthropic",
+          "Google",
+          "Nvidia",
+          "Hugging Face",
+          "DeepSeek"
+        ],
+        "places": [
+          "United States"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://thinkingmachines.ai/news/introducing-inkling/",
+          "title": "Inkling: nosso modelo de pesos abertos",
+          "summary": "Thinking Machines Lab: anúncio oficial do Inkling, transformer MoE de 975 bilhões de parâmetros com 41 bilhões ativos e contexto de 1 milhão de tokens.",
+          "bullets": [
+            "O Inkling é o primeiro modelo desenvolvido internamente pela Thinking Machines Lab.",
+            "Pré-treinado com 45 trilhões de tokens de texto, imagens, áudio e vídeo.",
+            "Distribuído sob licença Apache 2.0, com pesos disponíveis para download.",
+            "Prévia do Inkling-Small, MoE de 276 bilhões de parâmetros com 12 bilhões ativos."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://thinkingmachines.ai/model-card/inkling/",
+          "title": "Model card do Inkling",
+          "summary": "Thinking Machines Lab: o model card detalha a arquitetura de 66 camadas decoder-only e lista 15 de julho de 2026 como data de lançamento.",
+          "bullets": [
+            "Transformer decoder-only de 66 camadas, nativamente multimodal na entrada.",
+            "Imagens codificadas por encoder hierárquico de patches; áudio por tokens discretos.",
+            "Cada camada MoE tem 256 especialistas roteados e 2 compartilhados, com 6 ativados por token.",
+            "Roteador baseado em sigmoide com viés de balanceamento de carga sem perda auxiliar."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://techcrunch.com/2026/07/15/thinking-machines-amps-up-its-bet-against-one-size-fits-all-ai-with-its-first-open-model-inkling/",
+          "title": "Thinking Machines reforça sua aposta contra a IA de tamanho único com o Inkling",
+          "summary": "TechCrunch: o lançamento posiciona a startup de Mira Murati contra a abordagem de modelo único de OpenAI, Anthropic e Google.",
+          "bullets": [
+            "A Thinking Machines Lab foi fundada por Mira Murati, ex-CTO da OpenAI.",
+            "O Inkling é de pesos abertos, ao contrário dos modelos principais de OpenAI, Anthropic e Google.",
+            "Desenvolvedores e empresas de fora podem baixar e modificar o modelo diretamente.",
+            "O modelo está disponível na Tinker com opções de contexto de 64 mil e 256 mil tokens."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://venturebeat.com/technology/thinking-machines-open-sources-first-multimodal-language-model-inkling-focused-on-low-cost-and-resistance-to-censorship",
+          "title": "Thinking Machines abre o código de seu primeiro modelo multimodal, o Inkling",
+          "summary": "VentureBeat: a empresa enfatiza baixo custo e resistência à censura, e o desempenho fica alto para modelos abertos, mas abaixo do estado da arte.",
+          "bullets": [
+            "O Inkling marca 77,6% no SWE-bench Verified, contra 71,9% do Nvidia Nemotron 3.",
+            "No VoiceBench, marca 91,4% contra 94,4% do Gemini 3.1 Pro em raciocínio alto.",
+            "O design MoE segue em boa parte o do DeepSeek-V3.",
+            "A empresa oferece o Inkling com 50% de desconto por tempo limitado."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://huggingface.co/thinkingmachines/Inkling",
+          "title": "thinkingmachines/Inkling",
+          "summary": "Hugging Face: repositório onde os pesos do Inkling estão disponíveis para download.",
+          "bullets": [
+            "Os pesos do modelo estão publicados para download no Hugging Face.",
+            "A licença é Apache 2.0, amigável a uso empresarial.",
+            "O modelo suporta janela de contexto de até 1 milhão de tokens."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "OpenAI apresenta GPT-Red, modelo que acha falhas em 84% dos casos",
+      "summary": "O modelo de red-teaming automatizado superou pesquisadores humanos, que tiveram sucesso em 13% dos casos, e treinou as defesas do GPT-5.6.",
+      "bullets": [
+        "O GPT-Red é treinado com aprendizado por reforço em self-play, com atacante e LLMs defensores treinados simultaneamente.",
+        "A OpenAI treinou o modelo na escala de computação de alguns de seus maiores pós-treinamentos.",
+        "Ao fim do treinamento, o GPT-Red quebrava quase todos os modelos contra os quais foi colocado, até o GPT-5.5 inclusive.",
+        "Em benchmark independente com cenários inéditos, achou caminhos de ataque em 84% dos casos, contra 13% dos pesquisadores humanos.",
+        "O modelo descobriu um ataque desconhecido pelos pesquisadores, o \"fake chain of thought\" (cadeia de raciocínio falsa).",
+        "A OpenAI usou o GPT-Red para gerar injeções de prompt no treinamento do GPT-5.6, que ficou altamente resistente a seus ataques."
+      ],
+      "body": "O GPT-Red busca vulnerabilidades de injeção de prompt em escala, simulando um atacante para que as falhas sejam corrigidas antes de implantações mais amplas. No treinamento, o modelo atacante é recompensado por provocar uma falha válida, enquanto os modelos defensores são recompensados por resistir ao ataque e completar suas tarefas originais. A OpenAI descreve o esforço como uma quantidade de computação sem precedentes dedicada puramente a melhorar a segurança.\n\nNo ataque batizado de \"fake chain of thought\", o GPT-Red insere uma entrada falsa na cadeia de raciocínio de outro modelo, enganando-o para agir com base em informações forjadas. O pesquisador da OpenAI Dylan Hunn disse que, \"comparado a um red-teamer humano, o modelo é muito, muito bom em encontrar exatamente o que vai funcionar, exatamente o que é mais eficaz\", e que ele é \"extremamente persistente em aprofundar um ataque que descobriu\", variando sistematicamente os ataques que encontra.",
+      "category": [
+        "technology",
+        "science"
+      ],
+      "entities": {
+        "people": [
+          "Dylan Hunn"
+        ],
+        "organizations": [
+          "OpenAI"
+        ],
+        "places": [
+          "United States"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://openai.com/index/unlocking-self-improvement-gpt-red/",
+          "title": "GPT-Red: destravando a autoaperfeiçoamento para robustez",
+          "summary": "OpenAI: o anúncio detalha o treinamento em self-play, no qual atacante e defensores evoluem juntos em um amplo conjunto de cenários de red-teaming.",
+          "bullets": [
+            "O GPT-Red é recompensado por provocar uma falha válida, como uma injeção de prompt bem-sucedida.",
+            "Os defensores são recompensados por resistir ao ataque e completar suas tarefas originais.",
+            "O treinamento usou a escala de computação de alguns dos maiores pós-treinamentos da empresa.",
+            "O GPT-5.6 foi treinado com injeções geradas pelo GPT-Red e ficou altamente resistente a elas."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.technologyreview.com/2026/07/15/1140514/meet-gpt-red-an-llm-super-hacker-openai-built-to-make-its-models-safer/",
+          "title": "Conheça o GPT-Red, o super-hacker que a OpenAI criou para tornar seus modelos mais seguros",
+          "summary": "MIT Technology Review: entrevistas com pesquisadores da OpenAI descrevem a persistência do modelo e o ataque inédito que ele descobriu.",
+          "bullets": [
+            "Dylan Hunn: o modelo é \"muito, muito bom em encontrar exatamente o que vai funcionar\".",
+            "Hunn diz que o GPT-Red é \"extremamente persistente em aprofundar um ataque que descobriu\".",
+            "O modelo descobriu o ataque \"fake chain of thought\", desconhecido dos pesquisadores.",
+            "No ataque, uma entrada falsa é inserida na cadeia de raciocínio de outro modelo."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.techtimes.com/articles/320656/20260715/openai-built-ai-attack-itself-gpt-red-exposed-flaws-humans-missed.htm",
+          "title": "A OpenAI criou uma IA para atacar a si mesma e expor falhas que humanos não viram",
+          "summary": "Tech Times: ao fim do treinamento, o GPT-Red conseguia quebrar quase todos os modelos internos e de produção contra os quais foi colocado.",
+          "bullets": [
+            "O GPT-Red quebrou modelos internos e de produção, até o GPT-5.5 inclusive.",
+            "A OpenAI diz que o objetivo é corrigir vulnerabilidades antes de implantações mais amplas.",
+            "A empresa fala em computação sem precedentes dedicada puramente à segurança."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.helpnetsecurity.com/2026/07/16/openai-gpt-red-prompt-injection-test/",
+          "title": "GPT-Red supera red-teamers humanos em teste de injeção de prompt",
+          "summary": "Help Net Security: o benchmark independente com cenários inéditos mostra 84% de sucesso do modelo contra 13% dos pesquisadores humanos.",
+          "bullets": [
+            "Em cenários que o modelo não viu no treinamento, achou ataques bem-sucedidos em 84% dos casos.",
+            "Pesquisadores humanos de segurança tiveram sucesso em 13% dos casos no mesmo desafio.",
+            "O foco do modelo são vulnerabilidades de injeção de prompt em escala."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Anthropic e Blackstone lançam Ode, consultoria de IA de US$1,5 bilhão",
+      "summary": "A joint venture emprega 100 engenheiros, opera sob princípio \"Claude-first\" e segue a The Deployment Company, versão da OpenAI para o mesmo negócio.",
+      "bullets": [
+        "A Ode with Anthropic é a empresa de implementação de IA de US$1,5 bilhão lançada em maio pela Anthropic com Blackstone, Hellman & Friedman, Goldman Sachs e outros; agora tem nome e marca oficiais.",
+        "A Ode emprega 100 engenheiros e trabalha de perto com a equipe de IA aplicada da Anthropic.",
+        "É construída sobre a base da Fractional AI, empresa de serviços de IA aplicada adquirida em maio de 2026.",
+        "É liderada por Chris Taylor como CEO e Eddie Siegel como CTO, que ocupavam os mesmos cargos na Fractional AI.",
+        "O consórcio de investidores inclui Apollo Global Management, General Atlantic, GIC, Goldman Sachs, Leonard Green & Partners e Sequoia Capital.",
+        "As gestoras de private equity encaminharão suas próprias empresas de portfólio à joint venture como clientes potenciais."
+      ],
+      "body": "A Ode opera sob um princípio \"Claude-first\": implementa a tecnologia da Anthropic, incluindo recursos como o Claude Tag no Slack, sempre que possível, mas usará produtos de IA de concorrentes se necessário. A equipe da Fractional AI, fundada em 2024 por Taylor e Siegel ao lado de Travis May, forma o núcleo operacional junto com engenheiros da Anthropic.\n\nO movimento segue a versão da própria OpenAI, a The Deployment Company. Os lançamentos evidenciam o reconhecimento crescente entre laboratórios de IA de fronteira de que conquistar clientes corporativos exige mais do que entregar modelos melhores. A Ode não limitará a venda de seus serviços às empresas de portfólio dos investidores.",
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "people": [
+          "Chris Taylor",
+          "Eddie Siegel",
+          "Travis May",
+          "Rodney Zemmel",
+          "Garvan Doyle"
+        ],
+        "organizations": [
+          "Anthropic",
+          "Blackstone",
+          "Hellman & Friedman",
+          "Goldman Sachs",
+          "Ode with Anthropic",
+          "Fractional AI",
+          "OpenAI",
+          "Sequoia Capital",
+          "Apollo Global Management",
+          "General Atlantic",
+          "GIC",
+          "Leonard Green & Partners"
+        ],
+        "places": [
+          "San Francisco",
+          "United States"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/",
+          "title": "Anthropic e Blackstone apostam que o próximo negócio trilionário de IA é implementação, não modelos",
+          "summary": "TechCrunch: a reportagem enquadra a Ode como resposta ao reconhecimento de que clientes corporativos exigem mais do que modelos melhores.",
+          "bullets": [
+            "A Ode emprega 100 engenheiros e trabalha de perto com a equipe de IA aplicada da Anthropic.",
+            "O movimento segue a The Deployment Company, versão da própria OpenAI.",
+            "A Ode opera sob princípio \"Claude-first\", mas usará produtos de concorrentes se necessário.",
+            "Gestoras de private equity encaminharão empresas de portfólio como clientes potenciais."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://hf.com/anthropic-blackstone-and-hellman-friedman-introduce-ode-with-anthropic-an-enterprise-ai-services-firm/",
+          "title": "Anthropic, Blackstone e Hellman & Friedman apresentam a Ode with Anthropic, empresa de serviços de IA corporativa",
+          "summary": "Hellman & Friedman: o comunicado dos sócios fundadores oficializa o nome e a marca da joint venture de US$1,5 bilhão lançada em maio.",
+          "bullets": [
+            "A joint venture reúne Anthropic, Blackstone, Hellman & Friedman, Goldman Sachs e outros.",
+            "O consórcio inclui Apollo Global Management, General Atlantic, GIC, Leonard Green & Partners e Sequoia Capital.",
+            "Chris Taylor é CEO e Eddie Siegel é CTO.",
+            "A empresa é construída sobre a base da Fractional AI, adquirida em maio de 2026."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.technology.org/2026/07/16/ode-with-anthropic-blackstone-ai-implementation/",
+          "title": "Anthropic e Blackstone lançam a Ode, empresa de IA de US$1,5 bilhão",
+          "summary": "Technology.org: o resumo destaca a origem na Fractional AI e a liderança vinda da startup adquirida.",
+          "bullets": [
+            "Taylor e Siegel fundaram a Fractional AI em 2024 com Travis May.",
+            "A equipe da Fractional AI, com engenheiros da Anthropic, forma o núcleo operacional da Ode.",
+            "A Ode implementa a tecnologia da Anthropic, incluindo o Claude Tag no Slack, sempre que possível."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "DeepMind e Isomorphic Labs lançam programa de bioresiliência com IA",
+      "summary": "A abordagem conjunta cobre prevenção, detecção e resposta a ameaças biológicas, após engajamento com mais de 15 agências e organizações no último ano.",
+      "bullets": [
+        "O Google DeepMind e a Isomorphic Labs publicaram em 16 de julho de 2026 uma abordagem conjunta de bioresiliência.",
+        "O agente AlphaEvolve pode otimizar algoritmos de sequenciamento metagenômico, barateando o rastreamento de doenças em escala mundial.",
+        "A Isomorphic Labs criou uma unidade dedicada para implantar seu motor de design de fármacos e projetar contramedidas médicas.",
+        "As empresas exploram como o AlphaGenome e a anotação de função de proteínas poderiam detectar e caracterizar patógenos a partir de dados de sequência.",
+        "No último ano, a parceria se engajou com mais de 15 agências governamentais, organizações de biossegurança e grupos de pesquisa.",
+        "As empresas concedem a pesquisadores de confiança acesso a seus sistemas de IA mais recentes."
+      ],
+      "body": "A abordagem cobre prevenção, detecção e resposta a ameaças biológicas. A otimização de algoritmos pelo AlphaEvolve permite análise de DNA mais rápida e precisa, ajudando a detectar novos surtos mais cedo. A nova unidade da Isomorphic Labs mira tanto pandemias de ocorrência natural quanto riscos potenciais decorrentes do uso indevido de IA avançada, com objetivo de apoiar órgãos governamentais e organizações sem fins lucrativos durante surtos inéditos.\n\nAs empresas afirmam que o cenário global de biossegurança evolui rapidamente, citando mudanças nos ecossistemas naturais, viagens globais e o potencial uso indevido de IA — e enquadram a própria IA como fonte de risco de biossegurança e, ao mesmo tempo, ferramenta crítica de resposta. A meta declarada é identificar padrões inéditos e ameaças emergentes mais rápido do que os métodos tradicionais.",
+      "category": [
+        "technology",
+        "science"
+      ],
+      "entities": {
+        "people": [],
+        "organizations": [
+          "Google DeepMind",
+          "Isomorphic Labs",
+          "Google"
+        ],
+        "places": []
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://deepmind.google/blog/our-approach-to-bioresilience/",
+          "title": "Nossa abordagem à bioresiliência",
+          "summary": "Google DeepMind: o blog detalha como o AlphaEvolve e o AlphaGenome entram na detecção e caracterização de patógenos.",
+          "bullets": [
+            "O AlphaEvolve otimiza algoritmos de sequenciamento metagenômico para análise de DNA mais rápida e barata.",
+            "AlphaGenome e anotação de função de proteínas poderiam detectar patógenos a partir de dados de sequência.",
+            "A abordagem cobre prevenção, detecção e resposta a ameaças biológicas.",
+            "Pesquisadores de confiança recebem acesso aos sistemas de IA mais recentes."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.isomorphiclabs.com/articles/our-approach-to-bioresilience",
+          "title": "Nossa abordagem à bioresiliência",
+          "summary": "Isomorphic Labs: a empresa anuncia uma unidade dedicada a projetar contramedidas médicas com seu motor de design de fármacos.",
+          "bullets": [
+            "A unidade visa implantar rapidamente o motor de design de fármacos em surtos.",
+            "As contramedidas miram pandemias naturais e riscos do uso indevido de IA avançada.",
+            "O objetivo é apoiar órgãos governamentais e organizações sem fins lucrativos."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://blockchain.news/news/google-deepmind-isomorphic-labs-bioresilience-plan",
+          "title": "Google DeepMind e Isomorphic Labs revelam plano de bioresiliência com IA",
+          "summary": "Blockchain.News: a cobertura destaca o alcance institucional do programa e o duplo papel da IA como risco e resposta.",
+          "bullets": [
+            "A parceria se engajou com mais de 15 agências, organizações de biossegurança e grupos de pesquisa no último ano.",
+            "As empresas citam ecossistemas em mudança, viagens globais e uso indevido de IA como fatores de risco.",
+            "A IA é enquadrada como fonte de risco e ferramenta crítica de resposta ao mesmo tempo."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "xAI processa usuário do Grok por deepfakes sexuais de menores",
+      "summary": "A ação contra Terry Wayne Harwood é uma das primeiras de uma empresa de IA contra o próprio usuário por conteúdo sexual ilegal gerado por IA.",
+      "bullets": [
+        "A xAI abriu processo contra Terry Wayne Harwood, morador da Carolina do Sul, no Tribunal Distrital dos EUA para o Distrito Norte do Texas, em 15 de julho de 2026.",
+        "A ação alega violação dos Termos de Serviço e da Política de Uso Aceitável da xAI.",
+        "Segundo a ação, Harwood transformou fotografias não sexuais em imagens sexualmente explícitas sem conhecimento ou consentimento das pessoas retratadas.",
+        "A ação alega que ele criou múltiplas contas e usou \"prompts enganosos\" para contornar os mecanismos de segurança do Grok.",
+        "A xAI alega que Harwood subiu imagens não sexuais de adultos e de menores e tentou gerar material de abuso sexual infantil.",
+        "Harwood foi preso no início deste ano sob acusações relacionadas ao material."
+      ],
+      "body": "O caso é uma das primeiras ações legais conhecidas de uma empresa de IA contra um de seus próprios usuários pela suposta criação de conteúdo sexual ilegal gerado por IA. Os mecanismos de segurança embutidos no Grok são projetados para impedir a geração de material explícito envolvendo menores, e a xAI sustenta que eles foram contornados por prompts enganosos a partir de múltiplas contas.\n\nO processo chega em meio a um escrutínio mais amplo sobre as práticas de segurança do Grok. No ano passado, a xAI pediu desculpas publicamente depois que o chatbot gerou conteúdo violento e antissemita, atribuindo o episódio a uma atualização problemática do sistema.",
+      "category": [
+        "technology",
+        "politics"
+      ],
+      "entities": {
+        "people": [
+          "Elon Musk",
+          "Terry Wayne Harwood"
+        ],
+        "organizations": [
+          "xAI",
+          "Grok",
+          "US District Court for the Northern District of Texas"
+        ],
+        "places": [
+          "South Carolina",
+          "Texas",
+          "United States"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "adult",
+      "sources": [
+        {
+          "url": "https://www.ibtimes.sg/xai-sues-south-carolina-man-accused-using-grok-create-child-sexual-abuse-deepfakes-landmark-ai-89867",
+          "title": "xAI processa homem da Carolina do Sul acusado de usar o Grok para criar deepfakes de abuso sexual infantil",
+          "summary": "International Business Times: a reportagem detalha as alegações de múltiplas contas e prompts enganosos para burlar as travas do Grok.",
+          "bullets": [
+            "Harwood teria criado múltiplas contas na xAI.",
+            "A ação alega uso de \"prompts enganosos\" para contornar mecanismos de segurança.",
+            "A xAI alega que ele subiu imagens não sexuais de adultos e de menores.",
+            "Harwood foi preso no início deste ano sob acusações relacionadas ao material."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.reuters.com/legal/litigation/musks-xai-sues-grok-user-over-sexualized-deepfakes-2026-07-15/",
+          "title": "xAI, de Musk, processa usuário do Grok por deepfakes sexualizados",
+          "summary": "Reuters: o caso foi protocolado em 15 de julho no Tribunal Distrital dos EUA para o Distrito Norte do Texas.",
+          "bullets": [
+            "A ação alega violação dos Termos de Serviço e da Política de Uso Aceitável da xAI.",
+            "Harwood teria transformado fotos não sexuais em imagens explícitas sem consentimento.",
+            "É uma das primeiras ações de uma empresa de IA contra um de seus próprios usuários."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://oecd.ai/en/incidents/2026-07-15-91fd",
+          "title": "xAI processa usuário por criar deepfakes de abuso sexual infantil com o Grok",
+          "summary": "OECD.AI: o registro do incidente situa o caso no escrutínio mais amplo sobre as práticas de segurança do Grok.",
+          "bullets": [
+            "O caso chega em meio a escrutínio sobre as práticas de segurança do Grok.",
+            "A xAI pediu desculpas no ano passado após o chatbot gerar conteúdo violento e antissemita.",
+            "A empresa atribuiu aquele episódio a uma atualização problemática do sistema."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Amodei doa US$1 milhão a super PAC que defende regulação de IA",
+      "summary": "Aparentemente a primeira doação de sete dígitos do CEO da Anthropic; rede rival planeja gastar US$125 milhões por regras mais leves.",
+      "bullets": [
+        "Dario Amodei, CEO da Anthropic, doou US$1 milhão em maio ao Public First, super PAC que apoia candidatos favoráveis a regulação de segurança de IA.",
+        "A doação consta de registros da Comissão Federal Eleitoral divulgados no fim da quarta-feira, 15 de julho.",
+        "Aparentemente é a primeira doação política de sete dígitos de Amodei, que já doou quantias menores a políticos democratas.",
+        "A Anthropic, como empresa, doou US$20 milhões ao Public First em fevereiro de 2026.",
+        "A rival Leading the Future, financiada por bilionários, planeja gastar US$125 milhões neste ano por uma regulação mais leve.",
+        "O Public First Action disse em 30 de junho que arrecadou mais de US$80 milhões até a data, incluindo US$20 milhões nos 10 dias anteriores."
+      ],
+      "body": "A doação vem enquanto o Public First e outras organizações alinhadas à Anthropic enfrentam a Leading the Future, uma rede rival de super PACs da indústria contrária a regulações onerosas de IA. Cada lado despeja milhões de dólares em lados opostos da disputa, muito acompanhada, pela vaga do deputado democrata Jerry Nadler, que se aposenta.\n\nO Public First Action está ligado a três PACs: o Defending Our Values PAC, que apoia republicanos, o Jobs and Democracy PAC, que apoia democratas, e o bipartidário Public First PAC. Um super PAC é um comitê de ação política que arrecada e gasta sem limites, sem coordenar com campanhas.",
+      "category": [
+        "technology",
+        "politics"
+      ],
+      "entities": {
+        "people": [
+          "Dario Amodei",
+          "Jerry Nadler",
+          "Brad Carson"
+        ],
+        "organizations": [
+          "Anthropic",
+          "Public First",
+          "Public First Action",
+          "Leading the Future",
+          "Federal Election Commission",
+          "Defending Our Values PAC",
+          "Jobs and Democracy PAC"
+        ],
+        "places": [
+          "United States",
+          "New York"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.politico.com/news/2026/07/16/anthropics-ceo-gives-1-million-to-super-pac-amid-feud-of-ai-big-money-groups-01000461",
+          "title": "CEO da Anthropic doa US$1 milhão a super PAC em meio à batalha dos grupos milionários de IA",
+          "summary": "Politico: registros da FEC divulgados em 15 de julho revelam a doação de maio, aparentemente a primeira de sete dígitos de Amodei.",
+          "bullets": [
+            "A doação de US$1 milhão foi feita em maio ao super PAC Public First.",
+            "Amodei já havia doado quantias menores a políticos democratas.",
+            "Cada lado gasta milhões na disputa pela vaga do deputado Jerry Nadler, que se aposenta.",
+            "A Leading the Future planeja gastar US$125 milhões neste ano por regulação mais leve."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.latimes.com/business/story/2026-02-12/anthropic-pledges-20-million-to-candidates-who-favor-ai-safety",
+          "title": "Anthropic promete US$20 milhões a candidatos favoráveis à segurança de IA",
+          "summary": "Los Angeles Times: em fevereiro, a própria Anthropic doou US$20 milhões ao Public First, apoiando candidatos ao Congresso favoráveis a regras de segurança.",
+          "bullets": [
+            "A doação corporativa de US$20 milhões ocorreu em fevereiro de 2026.",
+            "O alvo são candidatos ao Congresso favoráveis a regras de segurança para IA.",
+            "O Public First apoia o objetivo da Anthropic de impor regulação de segurança à IA."
+          ],
+          "published_at": "2026-02-12",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.axios.com/2026/06/30/ai-safeguards-public-first-action-raised-80-million",
+          "title": "Grupo de salvaguardas de IA Public First Action diz ter arrecadado US$80 milhões",
+          "summary": "Axios: o Public First Action informou em 30 de junho o total arrecadado e a estrutura de três PACs ligados a ele.",
+          "bullets": [
+            "Mais de US$80 milhões arrecadados até 30 de junho, incluindo US$20 milhões nos 10 dias anteriores.",
+            "Três PACs ligados: Defending Our Values PAC, Jobs and Democracy PAC e Public First PAC.",
+            "O Defending Our Values apoia republicanos e o Jobs and Democracy apoia democratas."
+          ],
+          "published_at": "2026-06-30",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Meta passa a alertar pais sobre conversas de adolescentes com seu chatbot",
+      "summary": "Os alertas sobre suicídio e automutilação já valem nos EUA, Reino Unido, Austrália e Canadá e serão globais até o fim do ano.",
+      "bullets": [
+        "A Meta anunciou em 16 de julho que notificará os pais se seu filho adolescente falar sobre suicídio ou automutilação com o Meta AI.",
+        "A empresa diz ter construído um sistema de IA dedicado para identificar conversas com referência clara a se machucar.",
+        "Todas as conversas sinalizadas por essa IA passam por revisão manual antes que um alerta seja enviado.",
+        "Os alertas já estão ativos na Supervisão Parental do Instagram nos EUA, no Reino Unido, na Austrália e no Canadá.",
+        "Os alertas serão liberados globalmente até o fim do ano.",
+        "A configuração \"Conteúdo Limitado\" do Instagram agora se aplica também ao Meta AI, fazendo o chatbot recusar uma gama mais ampla de prompts.",
+        "A Meta também trabalha na capacidade de acionar serviços de emergência quando conversas sugerirem risco de automutilação."
+      ],
+      "body": "A Meta diz que agirá com cautela quando a intenção do adolescente for ambígua: \"Embora isso signifique que às vezes podemos notificar os pais quando talvez não haja motivo real de preocupação, achamos que este é o ponto de partida certo.\"\n\nAs mudanças chegam enquanto a Meta e outras empresas de tecnologia enfrentam escrutínio de reguladores e de pais sobre como chatbots de IA respondem a usuários em crise, especialmente adolescentes. A questão de responsabilidade civil vem moldando cada vez mais como as empresas de IA projetam e comercializam seus produtos.",
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "people": [],
+        "organizations": [
+          "Meta",
+          "Instagram",
+          "Meta AI"
+        ],
+        "places": [
+          "United States",
+          "United Kingdom",
+          "Australia",
+          "Canada"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/07/16/meta-now-alerts-parents-if-their-teen-discussed-suicide-or-self-harm-with-its-ai-chatbot/",
+          "title": "Meta agora alerta pais se o filho adolescente falou de suicídio ou automutilação com seu chatbot de IA",
+          "summary": "TechCrunch: o anúncio detalha o sistema de detecção, a revisão manual e o cronograma de liberação global dos alertas.",
+          "bullets": [
+            "Um sistema de IA dedicado identifica referências claras a se machucar.",
+            "Conversas sinalizadas passam por revisão manual antes do alerta aos pais.",
+            "Alertas ativos nos EUA, Reino Unido, Austrália e Canadá; globais até o fim do ano.",
+            "A configuração \"Conteúdo Limitado\" passa a valer também para o Meta AI.",
+            "A Meta trabalha em acionar serviços de emergência em casos de risco."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "TSMC tem lucro recorde de US$22 bi no 2º trimestre e eleva projeção",
+      "summary": "Lucro sobe 77,4% no quinto trimestre recorde seguido; a empresa elevou o capex de 2026 a US$60 a 64 bilhões e a ação caiu 1,55% no after-hours.",
+      "bullets": [
+        "O lucro líquido do 2º trimestre atingiu recorde de NT$706,56 bilhões (cerca de US$21,98 bilhões), alta de 77,4% na comparação anual.",
+        "O resultado ficou muito acima da estimativa da Bloomberg, de NT$623,73 bilhões, no quinto trimestre consecutivo de lucro recorde.",
+        "A receita foi recorde de NT$1,27 trilhão (cerca de US$39 a 40,2 bilhões), alta de 36% na comparação anual.",
+        "A margem bruta alcançou 67,7%, acima das expectativas e da própria projeção da empresa.",
+        "A TSMC elevou a projeção de crescimento de receita de 2026 a pouco acima de 40% em dólares, contra mais de 30% antes.",
+        "O investimento de capital de 2026 subiu para US$60 a 64 bilhões, ante US$52 a 56 bilhões — recorde histórico e alta de cerca de 14%.",
+        "As ações fecharam a US$419,48 e caíram 1,55% no after-hours, para US$412,99."
+      ],
+      "body": "Cerca de 70% a 80% do orçamento de capital de 2026 vai para tecnologias de processo avançadas, cerca de 10% para nós especiais e 10% a 20% para empacotamento avançado, testes e fabricação de máscaras. A receita superou a faixa de projeção da própria empresa e ficou um pouco acima da previsão de analistas, de US$39,94 bilhões.\n\nO CEO C.C. Wei disse que \"a megatendência de IA está cada vez mais forte\", citou uma lacuna \"muito grande\" entre a demanda dos clientes e a oferta e afirmou que a convicção plurianual da empresa é \"muito alta\". Wei disse ainda que a IA agêntica está reavivando a demanda por CPUs. Mesmo assim, investidores avaliaram os planos de gasto mais pesados e a projeção de margens menores no trimestre corrente.",
+      "category": [
+        "technology",
+        "business",
+        "finance"
+      ],
+      "entities": {
+        "people": [
+          "C.C. Wei",
+          "Wendell Huang"
+        ],
+        "organizations": [
+          "TSMC",
+          "Bloomberg",
+          "Samsung",
+          "Intel"
+        ],
+        "places": [
+          "Taiwan",
+          "Hsinchu",
+          "United States"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.investing.com/news/earnings/tsmc-q2-profit-blows-past-estimates-on-robust-aifueled-demand-4794650",
+          "title": "Lucro da TSMC no 2º trimestre dispara a recorde com demanda de IA; ações recuam",
+          "summary": "Investing.com: o resultado supera a estimativa da Bloomberg e vem com guidance elevado, mas a ação cede no after-hours.",
+          "bullets": [
+            "Lucro líquido recorde de NT$706,56 bilhões, alta de 77,4% na comparação anual.",
+            "Estimativa da Bloomberg era de NT$623,73 bilhões.",
+            "Quinto trimestre consecutivo de lucro recorde.",
+            "Ações fecharam a US$419,48 e caíram 1,55% no after-hours, para US$412,99."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.investing.com/news/transcripts/earnings-call-transcript-tsmc-lifts-2026-outlook-as-ai-demand-stays-hot-in-q2-2026-93CH-4794777",
+          "title": "Transcrição da teleconferência: TSMC eleva projeção de 2026 com demanda de IA aquecida",
+          "summary": "Investing.com: a transcrição traz as falas de C.C. Wei sobre a lacuna entre demanda e oferta e a volta da demanda por CPUs.",
+          "bullets": [
+            "C.C. Wei: \"A megatendência de IA está cada vez mais forte.\"",
+            "Wei citou lacuna \"muito grande\" entre demanda dos clientes e oferta.",
+            "A convicção plurianual da empresa é \"muito alta\", segundo Wei.",
+            "Wei disse que a IA agêntica está reavivando a demanda por CPUs."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.tradingkey.com/analysis/stocks/more/262034508-tsmc-q2-earnings-beat-expectations-raises-full-year-outlook-tradingkey",
+          "title": "Resultados do 2º trimestre da TSMC superam estimativas e projeção anual sobe",
+          "summary": "TradingKey: o balanço vem com receita recorde de NT$1,27 trilhão e projeção de crescimento elevada para pouco acima de 40% em dólares.",
+          "bullets": [
+            "Receita trimestral recorde de NT$1,27 trilhão, alta de 36% na comparação anual.",
+            "A receita superou a faixa de projeção da própria empresa.",
+            "Projeção de crescimento de receita de 2026 elevada a pouco acima de 40% em dólares.",
+            "Previsão anterior era de mais de 30%."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://finance.biggo.com/news/US_TSM_2026-07-16",
+          "title": "Teleconferência do 2º trimestre de 2026: TSMC eleva projeção de receita e capex",
+          "summary": "BiggoFinance: o detalhamento do capex mostra para onde vão os US$60 a 64 bilhões de investimento em 2026.",
+          "bullets": [
+            "Capex de 2026 elevado a US$60 a 64 bilhões, ante US$52 a 56 bilhões.",
+            "Cerca de 70% a 80% do orçamento vai para tecnologias de processo avançadas.",
+            "Cerca de 10% vai para nós especiais.",
+            "De 10% a 20% vai para empacotamento avançado, testes e fabricação de máscaras.",
+            "A margem bruta alcançou 67,7%, acima das expectativas."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "TSMC investirá mais US$100 bilhões em quatro novas fábricas no Arizona",
+      "summary": "O aporte eleva o compromisso total da empresa nos EUA a US$265 bilhões, mirando fábricas de 2 nanômetros e abaixo mais empacotamento avançado.",
+      "bullets": [
+        "O CEO C.C. Wei disse que a TSMC investirá US$100 bilhões adicionais para ampliar sua capacidade no Arizona.",
+        "O novo compromisso eleva o investimento total prometido pela TSMC nos EUA a US$265 bilhões.",
+        "O aporte financiará quatro novas fábricas de chips, com meta final de 10 fábricas de wafers e 2 plantas de empacotamento nos EUA.",
+        "O dinheiro é direcionado a fábricas de 2 nanômetros e abaixo, mais empacotamento avançado.",
+        "A promessa segue um acordo comercial EUA-Taiwan de janeiro de 2026, com US$250 bilhões em investimentos taiwaneses em troca de tarifas menores.",
+        "O secretário de Comércio Howard Lutnick disse que os US$250 bilhões incluem US$100 bilhões já comprometidos pela TSMC em 2025."
+      ],
+      "body": "A empresa tem três polos de manufatura no mundo: Taiwan, Estados Unidos e Japão. O novo aporte no Arizona se soma às instalações que ela já mantém no estado e concentra-se nos nós mais avançados, de 2 nanômetros e abaixo, além de empacotamento avançado.\n\nLutnick disse que os investimentos taiwaneses previstos no acordo comercial visam impulsionar a produção de semicondutores, energia e inteligência artificial nos Estados Unidos.",
+      "category": [
+        "technology",
+        "business",
+        "politics"
+      ],
+      "entities": {
+        "people": [
+          "C.C. Wei",
+          "Donald Trump",
+          "Howard Lutnick"
+        ],
+        "organizations": [
+          "TSMC",
+          "US Department of Commerce"
+        ],
+        "places": [
+          "Arizona",
+          "Taiwan",
+          "United States",
+          "Japan"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.nytimes.com/2026/07/16/business/tsmc-chips-investment-arizona.html",
+          "title": "TSMC adiciona US$100 bilhões ao seu plano de gastos nos EUA",
+          "summary": "The New York Times: o novo aporte no Arizona eleva a US$265 bilhões o total prometido pela fabricante nos Estados Unidos.",
+          "bullets": [
+            "O investimento adicional é de US$100 bilhões no Arizona.",
+            "O total prometido pela TSMC nos EUA chega a US$265 bilhões.",
+            "A empresa tem três polos de manufatura: Taiwan, Estados Unidos e Japão.",
+            "A meta final é ter 10 fábricas de wafers e 2 plantas de empacotamento nos EUA."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.washingtonpost.com/business/2026/07/16/taiwan-tsmc-chipmaking-ai-arizona-fab/1154d16c-80e3-11f1-8a16-393bd03340b0_story.html",
+          "title": "Taiwanesa TSMC promete mais US$100 bilhões para expandir capacidade de chips nos EUA",
+          "summary": "The Washington Post / AP: a cobertura detalha as quatro novas fábricas e o vínculo com o acordo comercial de janeiro.",
+          "bullets": [
+            "O aporte financiará quatro novas fábricas de chips.",
+            "O dinheiro vai para fábricas de 2 nanômetros e abaixo, mais empacotamento avançado.",
+            "A promessa segue o acordo comercial EUA-Taiwan de janeiro de 2026.",
+            "O acordo previa US$250 bilhões de empresas taiwanesas em troca de tarifas menores."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.investing.com/news/earnings/tsmc-q2-profit-blows-past-estimates-on-robust-aifueled-demand-4794650",
+          "title": "Lucro da TSMC no 2º trimestre dispara a recorde com demanda de IA; ações recuam",
+          "summary": "Investing.com: o anúncio do Arizona veio junto com o balanço trimestral recorde da empresa.",
+          "bullets": [
+            "C.C. Wei anunciou o investimento adicional durante a divulgação de resultados.",
+            "O capex de 2026 foi elevado a US$60 a 64 bilhões, recorde histórico.",
+            "As ações caíram 1,55% no after-hours, para US$412,99."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.tradingkey.com/analysis/stocks/more/262034508-tsmc-q2-earnings-beat-expectations-raises-full-year-outlook-tradingkey",
+          "title": "Resultados do 2º trimestre da TSMC superam estimativas e projeção anual sobe",
+          "summary": "TradingKey: a nota liga o aporte de US$100 bilhões nos EUA à corrida para atender o boom de IA.",
+          "bullets": [
+            "A TSMC adiciona US$100 bilhões de investimento nos EUA.",
+            "O movimento é enquadrado como resposta à demanda do boom de IA.",
+            "A projeção de crescimento de receita de 2026 subiu para pouco acima de 40%."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://finance.biggo.com/news/US_TSM_2026-07-16",
+          "title": "Teleconferência do 2º trimestre de 2026: TSMC eleva projeção de receita e capex",
+          "summary": "BiggoFinance: a teleconferência detalha como o capex recorde se distribui entre processos avançados e empacotamento.",
+          "bullets": [
+            "Capex de 2026 elevado a US$60 a 64 bilhões, alta de cerca de 14%.",
+            "De 70% a 80% do orçamento vai para tecnologias de processo avançadas.",
+            "De 10% a 20% vai para empacotamento avançado, testes e fabricação de máscaras."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.reuters.com/world/china/taiwan-aims-be-strategic-ai-partner-with-us-under-tariff-deal-2026-01-16/",
+          "title": "Taiwan quer ser parceiro estratégico de IA dos EUA em acordo tarifário",
+          "summary": "Reuters: o acordo de janeiro de 2026 estabeleceu os US$250 bilhões de investimento taiwanês que emolduram a promessa da TSMC.",
+          "bullets": [
+            "Empresas taiwanesas se comprometeram com US$250 bilhões em investimentos nos EUA.",
+            "A contrapartida foram tarifas menores.",
+            "Lutnick disse que o valor inclui US$100 bilhões já comprometidos pela TSMC em 2025.",
+            "Os investimentos visam semicondutores, energia e inteligência artificial nos EUA."
+          ],
+          "published_at": "2026-01-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Hyundai compra fatia do SoftBank e fica com 100% da Boston Dynamics",
+      "summary": "O SoftBank exerceu put option sobre seus 9,65% em transação estimada em US$335 milhões, que implica avaliação de 5 trilhões de wons para a robótica.",
+      "bullets": [
+        "O Hyundai Motor Group divulgou em 16 de julho que tornará a Boston Dynamics subsidiária integral ao comprar a fatia de cerca de 10% do SoftBank.",
+        "O SoftBank exerceu put option sobre sua fatia de 9,65%, conforme contrato assinado em 2020.",
+        "Os termos não foram divulgados, mas a imprensa local reportou transação de cerca de 500 bilhões de wons (US$335 milhões).",
+        "Shin Yoonchul, da Kiwoom Securities, disse que o preço implica avaliação de cerca de 5 trilhões de wons para a Boston Dynamics.",
+        "A Hyundai havia comprado 80% da Boston Dynamics do SoftBank em 2021 por cerca de 1 trilhão de wons (US$671 milhões).",
+        "A put option estava atrelada à condição de que o SoftBank poderia vender caso não ocorresse um IPO nos EUA até junho de 2026.",
+        "As ações da Hyundai Motor caíram mais de 30% desde que a imprensa local noticiou o plano pela primeira vez no mês passado."
+      ],
+      "body": "O grupo diz que a compra ajudará a implantar robótica avançada em suas operações, e chega aos 100% cerca de cinco anos depois de completar a aquisição do controle. A estrutura atual de participação é: Hyundai Motor com 28%, o presidente do grupo Euisun Chung com 22,6%, Kia com 17,2%, Hyundai Mobis com 11,3%, Hyundai Glovis com 11,25% e SoftBank com 9,65%.\n\nA Boston Dynamics busca a comercialização do robô humanoide Atlas, com meta de produção em massa em 2028, e o Hyundai Motor Group avalia um IPO da empresa, incluindo uma listagem na Nasdaq americana. As ações da Hyundai Motor fecharam em queda de 2,1% na quinta-feira, contra queda de 6,4% do índice de referência KOSPI.",
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "people": [
+          "Euisun Chung",
+          "Shin Yoonchul",
+          "Masayoshi Son"
+        ],
+        "organizations": [
+          "Hyundai Motor Group",
+          "Boston Dynamics",
+          "SoftBank Group",
+          "Kia",
+          "Hyundai Mobis",
+          "Hyundai Glovis",
+          "Kiwoom Securities",
+          "Nasdaq"
+        ],
+        "places": [
+          "Seoul",
+          "South Korea",
+          "United States",
+          "Japan"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.channelnewsasia.com/business/hyundai-motor-group-make-boston-dynamics-wholly-owned-purchase-softbank-stake-6257486",
+          "title": "Hyundai Motor Group terá a Boston Dynamics integralmente com compra da fatia do SoftBank",
+          "summary": "CNA / Reuters: o grupo confirma a compra e diz que ela ajudará a implantar robótica avançada em suas operações.",
+          "bullets": [
+            "A Boston Dynamics se torna subsidiária integral do Hyundai Motor Group.",
+            "O SoftBank exerceu put option sobre sua fatia de 9,65%, conforme contrato de 2020.",
+            "Os termos do negócio não foram divulgados.",
+            "As ações da Hyundai Motor fecharam em queda de 2,1%, contra queda de 6,4% do KOSPI."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.businesskorea.co.kr/news/articleView.html?idxno=273168",
+          "title": "Hyundai Motor Group garante 100% da Boston Dynamics",
+          "summary": "BusinessKorea: a imprensa local estima a transação em cerca de 500 bilhões de wons e detalha a estrutura acionária atual.",
+          "bullets": [
+            "A transação deve valer cerca de 500 bilhões de wons (US$335 milhões).",
+            "Estrutura atual: Hyundai Motor 28%, Euisun Chung 22,6%, Kia 17,2%, Hyundai Mobis 11,3%, Hyundai Glovis 11,25%, SoftBank 9,65%.",
+            "A Hyundai comprou 80% da empresa em 2021 por cerca de 1 trilhão de wons (US$671 milhões)."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.asiae.co.kr/en/article/2026071610132645049",
+          "title": "Hyundai Motor Group adquire fatia do SoftBank e acelera a 'IA física'",
+          "summary": "The Asia Business Daily: a leitura local liga a compra à comercialização do humanoide Atlas e ao IPO em avaliação.",
+          "bullets": [
+            "A Boston Dynamics busca comercializar o humanoide Atlas, com produção em massa em 2028.",
+            "O grupo avalia um IPO da Boston Dynamics, incluindo listagem na Nasdaq.",
+            "Shin Yoonchul, da Kiwoom Securities, estima avaliação de cerca de 5 trilhões de wons."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://en.sedaily.com/international/2026/06/19/hyundai-motor-group-acquires-softbanks-96-percent-stake-in",
+          "title": "Hyundai Motor Group adquire fatia de 9,6% do SoftBank na Boston Dynamics",
+          "summary": "Seoul Economic Daily: a cobertura anterior explica a cláusula de put option atrelada ao IPO que não ocorreu até junho de 2026.",
+          "bullets": [
+            "A put option permitia ao SoftBank vender caso não houvesse IPO nos EUA até junho de 2026.",
+            "O contrato que criou a opção foi assinado em 2020.",
+            "As ações da Hyundai Motor caíram mais de 30% desde a primeira notícia local sobre o plano."
+          ],
+          "published_at": "2026-06-19",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Csquare capta US$1,05 bilhão em IPO precificado abaixo da faixa",
+      "summary": "As 50 milhões de ações saíram a US$21, abaixo da faixa de US$23 a US$27, avaliando a operadora de data centers em cerca de US$3,25 bilhões.",
+      "bullets": [
+        "A Csquare precificou seu IPO de 50 milhões de ações a US$21,00 cada, abaixo da faixa divulgada de US$23 a US$27.",
+        "A empresa espera receita bruta de aproximadamente US$1,05 bilhão, ou US$1,2075 bilhão se os coordenadores exercerem integralmente o lote suplementar.",
+        "O preço avalia a empresa, sediada em Dallas, em cerca de US$3,25 bilhões.",
+        "Fundada em 2019, a Csquare possui e opera 64 data centers em 21 mercados metropolitanos na América do Norte e no Reino Unido.",
+        "As ações deveriam começar a ser negociadas na Bolsa de Nova York sob o ticker \"CSQR\" em 16 de julho de 2026.",
+        "A oferta deve ser fechada em 17 de julho de 2026, sujeita às condições habituais.",
+        "A Brookfield, investidora da empresa, avaliava comprar uma parcela da oferta."
+      ],
+      "body": "A empresa fornece serviços de colocation e conectividade a empresas, provedores de nuvem e companhias de telecomunicações. A Csquare pretende usar os recursos líquidos para pagar parte de sua dívida em aberto e cobrir taxas e despesas da oferta; o restante será destinado a fins corporativos gerais, incluindo aquisições, capital de giro e investimentos.\n\nO IPO é uma oferta pública inicial de ações — a estreia da empresa em bolsa. O corte de preço em relação à faixa divulgada contrasta com a leitura de que investidores apostam no boom de IA por meio de infraestrutura de data centers.",
+      "category": [
+        "business",
+        "finance",
+        "technology"
+      ],
+      "entities": {
+        "people": [],
+        "organizations": [
+          "Csquare",
+          "Brookfield",
+          "New York Stock Exchange"
+        ],
+        "places": [
+          "Dallas",
+          "United States",
+          "Canada",
+          "United Kingdom"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.barchart.com/story/news/3308469/csquare-inc-announces-pricing-of-initial-public-offering",
+          "title": "Csquare, Inc. anuncia precificação de oferta pública inicial",
+          "summary": "Barchart / PR Newswire: o comunicado oficial traz os números da oferta, o cronograma de negociação e o uso dos recursos.",
+          "bullets": [
+            "50 milhões de ações precificadas a US$21,00 cada.",
+            "Receita bruta esperada de aproximadamente US$1,05 bilhão, antes de descontos e comissões.",
+            "Chegaria a US$1,2075 bilhão com exercício integral do lote suplementar.",
+            "Negociação na Bolsa de Nova York sob o ticker \"CSQR\" a partir de 16 de julho de 2026.",
+            "Recursos para pagar dívida, cobrir taxas e fins corporativos gerais."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.channelnewsasia.com/business/csquare-ipo-raises-105-billion-investors-bet-ai-boom-6257181",
+          "title": "IPO da Csquare levanta US$1,05 bilhão com investidores apostando no boom de IA",
+          "summary": "CNA / Reuters: a operadora fundada em 2019 tem 64 data centers em 21 mercados metropolitanos na América do Norte e no Reino Unido.",
+          "bullets": [
+            "A Csquare foi fundada em 2019 e é sediada em Dallas.",
+            "Opera 64 data centers em 21 mercados metropolitanos na América do Norte e no Reino Unido.",
+            "Fornece colocation e conectividade a empresas, provedores de nuvem e telecoms.",
+            "A oferta deve ser fechada em 17 de julho de 2026."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.channelnewsasia.com/business/brookfield-backed-csquare-prices-ipo-21-share-bloomberg-news-reports-6257181",
+          "title": "Csquare, apoiada pela Brookfield, precifica IPO a US$21 por ação",
+          "summary": "CNA / Bloomberg: o preço saiu abaixo da faixa de US$23 a US$27 e a Brookfield avaliava comprar parte da oferta.",
+          "bullets": [
+            "O preço de US$21 ficou abaixo da faixa divulgada de US$23 a US$27.",
+            "A Brookfield, investidora da empresa, avaliava comprar uma parcela da oferta.",
+            "O preço avalia a empresa em cerca de US$3,25 bilhões."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://financialpost.com/pmn/business-pmn/brookfield-backed-data-center-firm-raises-1-05-billion-in-ipo",
+          "title": "Empresa de data centers apoiada pela Brookfield levanta US$1,05 bilhão em IPO",
+          "summary": "Financial Post / Bloomberg: a cobertura enquadra a captação no apetite por ativos de infraestrutura ligados à IA.",
+          "bullets": [
+            "A oferta levantou US$1,05 bilhão em receita bruta.",
+            "A avaliação implícita é de cerca de US$3,25 bilhões.",
+            "A empresa usará parte dos recursos para pagar dívida em aberto."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "ASML planeja elevar preços de máquinas e TSMC resiste",
+      "summary": "A fabricante quer cobrar 10% a mais por sistemas DUV e discutiu alta nos EUV, montando confrontação incomum com sua maior cliente.",
+      "bullets": [
+        "A ASML discutiu diretamente com a TSMC preços mais altos para seus sistemas EUV avançados.",
+        "A empresa planeja cobrar 10% a mais por seus sistemas DUV, de geração anterior.",
+        "A TSMC está resistindo aos planos.",
+        "The Information noticiou os planos em 15 de julho, citando quatro fontes com conhecimento das discussões.",
+        "A ASML também planeja expansão de capacidade em meio à demanda crescente por chips de IA.",
+        "Um resultado trimestral acima do esperado, impulsionado por IA, encorajou a alta de preços — algo que a empresa raramente faz."
+      ],
+      "body": "EUV é litografia ultravioleta extrema, usada para gravar os chips mais modernos; DUV é a litografia ultravioleta profunda, da geração anterior. Para litografia de ponta, os clientes têm poucas alternativas às ferramentas da ASML, o que dá à empresa poder de precificação — e monta uma confrontação incomum com sua maior cliente.\n\nAnalistas observam que compradores ainda podem obter concessões em termos de serviço, prazos de entrega ou descontos de pacote que mantêm o custo total de propriedade próximo ao anterior.",
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "people": [],
+        "organizations": [
+          "ASML",
+          "TSMC",
+          "The Information"
+        ],
+        "places": [
+          "Netherlands",
+          "Taiwan"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.theinformation.com/articles/asml-plans-price-increases-chipmaking-equipment-despite-tsmc-resistance",
+          "title": "ASML planeja aumentos de preço em equipamentos de fabricação de chips apesar da resistência da TSMC",
+          "summary": "The Information: quatro fontes com conhecimento das discussões descrevem as conversas diretas sobre preços de EUV e a alta de 10% nos DUV.",
+          "bullets": [
+            "A ASML discutiu diretamente com a TSMC preços mais altos para sistemas EUV.",
+            "A empresa planeja cobrar 10% a mais por seus sistemas DUV.",
+            "A TSMC está resistindo aos planos.",
+            "A ASML também planeja expansão de capacidade com a demanda por chips de IA."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://finance.yahoo.com/markets/stocks/articles/asml-eyes-price-increases-chip-165859035.html",
+          "title": "ASML mira aumentos de preço em ferramentas de chips após 2º trimestre acima do esperado",
+          "summary": "Yahoo Finance: o balanço trimestral impulsionado por IA encorajou a empresa a aumentar preços, algo que ela raramente faz.",
+          "bullets": [
+            "Um resultado trimestral acima do esperado, puxado por IA, encorajou a alta.",
+            "Aumentar preços de máquinas de litografia é algo raro para a ASML.",
+            "The Information noticiou os planos na quarta-feira, 15 de julho."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.marketscreener.com/news/asml-to-raise-equipment-prices-taiwan-semiconductor-pushes-back-ce7f5ed2da8af225",
+          "title": "ASML vai elevar preços de equipamentos; Taiwan Semiconductor resiste",
+          "summary": "MarketScreener / MT Newswires: o plano monta uma confrontação incomum entre a fabricante de equipamentos e sua maior cliente.",
+          "bullets": [
+            "O plano cria uma confrontação incomum com a maior cliente da ASML.",
+            "A TSMC é a maior cliente da ASML.",
+            "Os aumentos abrangem sistemas EUV e DUV."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.digitimes.com/news/a20260716VL201/asml-tsmc-duv-price-chipmakers-earnings.html",
+          "title": "Alta de preços de litografia da ASML monta choque raro com a TSMC",
+          "summary": "DigiTimes: a análise mostra como a demanda de IA transfere poder de precificação para as fabricantes de equipamentos.",
+          "bullets": [
+            "Para litografia de ponta, clientes têm poucas alternativas às ferramentas da ASML.",
+            "A demanda de IA dá poder de precificação às fornecedoras de equipamentos.",
+            "EUV é usada para gravar os chips mais modernos; DUV é a geração anterior."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://finimize.com/content/asml-tests-chip-tool-pricing-power-with-a-planned-hike",
+          "title": "ASML testa seu poder de precificação em ferramentas de chips com alta planejada",
+          "summary": "Finimize: analistas apontam que concessões em serviço e prazos podem neutralizar boa parte do aumento.",
+          "bullets": [
+            "Compradores podem obter concessões em termos de serviço e prazos de entrega.",
+            "Descontos de pacote podem manter o custo total de propriedade próximo ao anterior.",
+            "A ASML raramente aumenta os preços das máquinas de litografia."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Apple busca comprar startups de chips para seus servidores de IA",
+      "summary": "A companhia conversou com banqueiros e sondou alvos depois que o chip Baltra atrasou e os M2 Ultra falharam em cargas de trabalho exigentes.",
+      "bullets": [
+        "The Information noticiou em 15 de julho que a Apple explora aquisições de startups de semicondutores para chips de servidor de IA.",
+        "Nos últimos meses, a Apple conversou com banqueiros sobre possíveis negócios e abordou startups para sondar interesse em se vender.",
+        "Os servidores de IA internos rodam com chips M2 Ultra de projeto próprio e vêm sofrendo com o desempenho em cargas exigentes.",
+        "O chip de servidor de próxima geração, de codinome Baltra, atrasou e não estreará em 2026 como planejado.",
+        "O Baltra é desenvolvido com a Broadcom, destinado a inferência de IA e seria fabricado no processo de 3nm da TSMC.",
+        "A Apple tinha US$45,6 bilhões em caixa e equivalentes no fim de março.",
+        "A Bloomberg noticiou nesta semana que um chip de servidor baseado no M7 Ultra só ficará pronto em 2029."
+      ],
+      "body": "No início deste ano, a Apple tentou rodar modelos Gemini do Google em seus servidores internos como parte de uma Siri reformulada, mas os chips baseados em Mac não deram conta do modelo grande. As tarefas mais exigentes da nova Siri são hoje atendidas por um modelo baseado em Gemini rodando em GPUs da Nvidia no Google Cloud. A empresa deve atualizar em breve sua infraestrutura com chips M5 Ultra.\n\nA Apple raramente faz grandes aquisições: comprou a PA Semi por US$278 milhões em 2008 — negócio que a colocou no ramo de fazer seus próprios chips —, a Beats por US$3 bilhões e a startup de IA Q.ai por quase US$2 bilhões neste ano, sua segunda maior aquisição, atrás da Beats. Na semana passada, fechou acordo com a Broadcom para comprar US$30 bilhões em chips fabricados nos Estados Unidos.",
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "people": [
+          "Aaron Tilley",
+          "Valida Pau"
+        ],
+        "organizations": [
+          "Apple",
+          "Broadcom",
+          "TSMC",
+          "Nvidia",
+          "Google Cloud",
+          "The Information",
+          "PrismML"
+        ],
+        "places": [
+          "United States"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.theinformation.com/articles/apple-hunts-ai-chip-acquisitions",
+          "title": "Apple caça aquisições de chips de IA",
+          "summary": "The Information: a reportagem original revela as conversas com banqueiros e as sondagens a startups de semicondutores.",
+          "bullets": [
+            "A Apple conversou com banqueiros sobre possíveis negócios nos últimos meses.",
+            "A empresa abordou startups de semicondutores para sondar interesse em se vender.",
+            "Os servidores internos rodam com M2 Ultra e sofrem em cargas exigentes.",
+            "O chip Baltra atrasou e não estreará em 2026."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://9to5mac.com/2026/07/15/report-apple-looking-into-buying-chip-startups-to-strengthen-its-ai-infrastructure/",
+          "title": "Apple estuda comprar startups de chips de IA para reforçar sua infraestrutura",
+          "summary": "9to5Mac: o resumo detalha o Baltra, desenvolvido com a Broadcom para inferência e fabricado no processo de 3nm da TSMC.",
+          "bullets": [
+            "O Baltra é feito em colaboração com a Broadcom como processador de servidor customizado.",
+            "É destinado a inferência de IA e seria fabricado no processo de 3nm da TSMC.",
+            "A Bloomberg noticiou que um chip baseado no M7 Ultra só fica pronto em 2029.",
+            "A Apple deve atualizar em breve sua infraestrutura com chips M5 Ultra."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.engadget.com/2215912/apple-is-reportedly-shopping-for-ai-chip-companies/",
+          "title": "Apple estaria procurando empresas de chips de IA",
+          "summary": "Engadget: a cobertura recorda que a Apple raramente faz grandes aquisições e lista os precedentes.",
+          "bullets": [
+            "A Apple comprou a PA Semi por US$278 milhões em 2008.",
+            "A compra da PA Semi colocou a Apple no negócio de fazer seus próprios chips.",
+            "A Beats custou US$3 bilhões e a Q.ai, quase US$2 bilhões neste ano.",
+            "A Q.ai foi a segunda maior aquisição da Apple, atrás da Beats."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.techzine.eu/news/infrastructure/142924/apple-considers-acquiring-server-chip-companies/",
+          "title": "Apple considera adquirir empresas de chips de servidor",
+          "summary": "Techzine: a nota liga a busca ao fracasso dos chips baseados em Mac com o modelo Gemini na Siri reformulada.",
+          "bullets": [
+            "A Apple tentou rodar modelos Gemini em servidores internos para a nova Siri.",
+            "Os chips baseados em Mac não deram conta do modelo grande.",
+            "As tarefas mais exigentes rodam em GPUs da Nvidia no Google Cloud.",
+            "A Apple tinha US$45,6 bilhões em caixa no fim de março.",
+            "Na semana passada, fechou acordo de US$30 bilhões em chips com a Broadcom."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Cadence lança AuraStack, plataforma agêntica para design de placas",
+      "summary": "A empresa diz que o agente entrega tempo até o mercado 2 vezes mais rápido, e a Forvia Hella cortou uma tarefa de quatro dias para quatro minutos.",
+      "bullets": [
+        "A Cadence apresentou em 15 de julho o AuraStack AI Super Agent no Cadence Allegro AI Studio.",
+        "A empresa o chama de primeira plataforma de IA agêntica do mundo para design de placas de circuito impresso (PCB) e empacotamento avançado.",
+        "O AuraStack é acelerado por Nvidia Blackwell e Nvidia CUDA-X.",
+        "Ashutosh Mauskar, VP corporativo da Cadence, disse que o agente entrega tempo até o mercado 2 vezes mais rápido e produtividade 15 vezes maior.",
+        "A Nvidia relatou desempenho multifísico 20 vezes mais rápido com o AuraStack e a plataforma Millennium M2000.",
+        "A TSMC disse que anos de colaboração com a Cadence em roteamento automático de substratos elevaram a produtividade em 100 vezes.",
+        "A Forvia Hella reduziu uma tarefa de projeto com cerca de 300 componentes de quatro dias para aproximadamente quatro minutos."
+      ],
+      "body": "A plataforma leva projetistas do planejamento de sistema ao produto final em um único ambiente nativo de IA, coordenando agentes de IA especializados em planejamento, implementação e análise multifísica integrada, e comprimindo o ciclo de projeto de sistema até a manufatura. O AuraStack se soma aos agentes ChipStack, InnoStack e ViraStack da Cadence — com o que a empresa afirma ser a única fornecedora com soluções de IA agêntica cobrindo todo o fluxo de design de sistemas eletrônicos, do silício digital e analógico ao empacotamento avançado e ao design de PCB.\n\nNa prática, o AuraStack funciona como interface de linguagem natural capaz de planejar e orquestrar fluxos de trabalho de múltiplas etapas de projeto e teste de circuitos, que rodam com maior precisão usando CPUs, GPUs e outros aceleradores, e se integra a uma ampla gama de modelos abertos e proprietários. Clientes iniciais incluem Nvidia, TSMC, Schneider Electric e Forvia Hella.",
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "people": [
+          "Ashutosh Mauskar",
+          "Aveek Sarkar"
+        ],
+        "organizations": [
+          "Cadence Design Systems",
+          "Nvidia",
+          "TSMC",
+          "Schneider Electric",
+          "Forvia Hella"
+        ],
+        "places": [
+          "United States"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.morningstar.com/news/business-wire/20260715175854/cadence-introduces-aurastack-ai-super-agent-the-worlds-first-agentic-ai-platform-for-pcb-and-advanced-packaging",
+          "title": "Cadence apresenta o AuraStack AI Super Agent, primeira plataforma de IA agêntica para PCB e empacotamento avançado",
+          "summary": "Morningstar / Business Wire: o comunicado oficial traz as métricas de produtividade e a lista de clientes iniciais.",
+          "bullets": [
+            "O AuraStack foi apresentado em 15 de julho no Cadence Allegro AI Studio.",
+            "Mauskar cita tempo até o mercado 2 vezes mais rápido e produtividade 15 vezes maior.",
+            "Clientes iniciais incluem Nvidia, TSMC, Schneider Electric e Forvia Hella.",
+            "O agente se soma ao ChipStack, InnoStack e ViraStack."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.theregister.com/ai-and-ml/2026/07/15/cadences-aurastack-agent-melds-ai-with-hpc-to-speed-pcb-advanced-packaging-design/5271465",
+          "title": "Agente AuraStack da Cadence funde IA com HPC para acelerar design de PCB e empacotamento",
+          "summary": "The Register: a análise foca na aceleração por Nvidia Blackwell e CUDA-X e no ganho de 20 vezes em multifísica.",
+          "bullets": [
+            "O AuraStack é acelerado por Nvidia Blackwell e Nvidia CUDA-X.",
+            "A Nvidia relatou desempenho multifísico 20 vezes mais rápido com a plataforma Millennium M2000.",
+            "Os fluxos rodam usando CPUs, GPUs e outros aceleradores."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.forbes.com/sites/marcochiappetta/2026/07/15/cadence-expands-ai-agents-with-aurastack-for-pcb-and-advanced-chip-packaging/",
+          "title": "Cadence expande agentes de IA com o AuraStack para PCB e empacotamento avançado",
+          "summary": "Forbes: a coluna destaca a cobertura de ponta a ponta do fluxo de design de sistemas eletrônicos.",
+          "bullets": [
+            "A Cadence afirma ser a única com IA agêntica em todo o fluxo de design de sistemas eletrônicos.",
+            "A cobertura vai do silício digital e analógico ao empacotamento avançado e design de PCB.",
+            "A plataforma leva do planejamento de sistema ao produto final em um ambiente nativo de IA."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.fierceelectronics.com/ai/cadence-aurastack-debuts-boost-pcb-and-packaging-designers",
+          "title": "AuraStack da Cadence estreia para turbinar projetistas de PCB e empacotamento",
+          "summary": "Fierce Electronics: a reportagem traz os ganhos relatados por clientes como TSMC e Forvia Hella.",
+          "bullets": [
+            "A TSMC diz que a colaboração em roteamento automático de substratos elevou a produtividade em 100 vezes.",
+            "A Forvia Hella cortou uma tarefa de cerca de 300 componentes de quatro dias para quatro minutos.",
+            "O ganho vem do posicionamento de componentes assistido por IA."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://gamesbeat.com/cadence-introduces-aurastack-ai-to-offload-tasks-so-engineers-can-design-chips/",
+          "title": "Cadence apresenta AuraStack para tirar tarefas das mãos de engenheiros de chips",
+          "summary": "GamesBeat: a cobertura explica o agente como interface de linguagem natural que orquestra fluxos de múltiplas etapas.",
+          "bullets": [
+            "O AuraStack funciona como interface de linguagem natural.",
+            "Planeja e orquestra fluxos de trabalho de múltiplas etapas de projeto e teste de circuitos.",
+            "Integra-se a uma ampla gama de modelos abertos e proprietários.",
+            "Coordena agentes especializados em planejamento, implementação e análise multifísica."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Irã declara acordo de paz nulo após ataques dos EUA em Teerã",
+      "summary": "Autoridades iranianas contam mais de 35 mortos e 300 feridos; o Brent superou brevemente US$86 antes de recuar para US$84,93.",
+      "bullets": [
+        "Os EUA intensificaram os ataques na madrugada de 16 de julho, atingindo alvos mais ao norte do que nas rodadas anteriores.",
+        "A mídia estatal iraniana reportou ataques nos arredores de Teerã e na província de Semnan, onde ficam a produção de mísseis balísticos e o programa espacial do país.",
+        "Autoridades iranianas dizem que os ataques dos EUA já mataram mais de 35 pessoas e feriram mais de 300.",
+        "Teerã afirmou que as ondas de ataques anularam o memorando de entendimento de 17 de junho que sustentava o cessar-fogo.",
+        "O IRGC disse ter atacado a Quinta Frota dos EUA no Bahrein e um centro logístico militar americano em Mina Abdullah, no Kuwait.",
+        "O ISW reportou ataque americano ao quartel da 388ª Brigada em Iranshahr, a cerca de 200 km da costa, matando sete soldados e ferindo outros 13.",
+        "O Brent superou brevemente US$86 por barril em 15 de julho antes de recuar para US$84,93, alta de 0,2% sobre o dia anterior."
+      ],
+      "body": "O principal negociador iraniano, Mohammed Bagher Ghalibaf, disse que o país está \"em uma guerra essencial e existencial com os Estados Unidos\", que não tem motivo para continuar cumprindo os termos do acordo de paz e que suas forças armadas têm \"completa liberdade de ação\". O Irã retaliou antes do amanhecer com mísseis e drones contra aliados dos EUA na região e alertou que seus ataques podem escalar. Forças americanas dispararam contra um navio que os EUA acusaram de tentar furar seu bloqueio naval.\n\nO Exército americano conduziu ataques diurnos raros na quarta-feira, incluindo uma onda de 90 minutos, após reimpor um bloqueio naval aos portos iranianos; esses ataques mataram sete militares iranianos. Teerã ameaçou cortar mais exportações de energia da região, dizendo que os EUA \"devem se preparar para o fechamento de todos os outros corredores de exportação que beneficiam os EUA e seus aliados\". A Guarda Revolucionária ameaçou em 15 de julho interromper todas as exportações de energia do Oriente Médio por causa do bloqueio, que impede petroleiros com petróleo iraniano de usar o Estreito de Ormuz — responsável por cerca de um quinto dos embarques globais de petróleo e gás antes da guerra.",
+      "category": [
+        "world",
+        "politics",
+        "economy"
+      ],
+      "entities": {
+        "people": [
+          "Donald Trump",
+          "Mohammed Bagher Ghalibaf",
+          "Jasem AlBudaiwi"
+        ],
+        "organizations": [
+          "US Central Command",
+          "Islamic Revolutionary Guard Corps",
+          "US Fifth Fleet",
+          "Artesh Ground Forces",
+          "Institute for the Study of War",
+          "Gulf Cooperation Council"
+        ],
+        "places": [
+          "Iran",
+          "Tehran",
+          "Semnan",
+          "Iranshahr",
+          "Strait of Hormuz",
+          "Bahrain",
+          "Kuwait",
+          "Jordan",
+          "Mina Abdullah"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "violent",
+      "sources": [
+        {
+          "url": "https://apnews.com/article/iran-us-hormuz-strait-war-july-16-2026-f98ff56554de2336f0e85bb5fdcae769",
+          "title": "EUA ampliam ataques ao norte do Irã e inutilizam navio",
+          "summary": "AP News: a cobertura registra os ataques nos arredores de Teerã e em Semnan e o disparo contra um navio que furava o bloqueio naval.",
+          "bullets": [
+            "Os ataques da madrugada de 16 de julho atingiram alvos mais ao norte que nas rodadas anteriores.",
+            "A mídia estatal reportou ataques nos arredores de Teerã e na província de Semnan.",
+            "Forças americanas dispararam contra um navio acusado de furar o bloqueio naval.",
+            "O Irã retaliou antes do amanhecer com mísseis e drones contra aliados dos EUA."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/7/15/iran-says-peace-deal-voided-fighting-existential-war-after-us-attacks",
+          "title": "Irã diz que acordo de paz foi anulado e que trava 'guerra existencial' após ataques dos EUA",
+          "summary": "Al Jazeera: Mohammed Bagher Ghalibaf declara o memorando de 17 de junho sem efeito e fala em liberdade total de ação militar.",
+          "bullets": [
+            "Teerã diz que os ataques anularam o memorando de entendimento de 17 de junho.",
+            "Ghalibaf: o Irã está \"em uma guerra essencial e existencial com os Estados Unidos\".",
+            "As forças armadas iranianas teriam \"completa liberdade de ação\".",
+            "Autoridades iranianas contam mais de 35 mortos e mais de 300 feridos."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.france24.com/en/middle-east/20260715-us-launches-wave-of-strikes-on-iran-tehran-threatens-to-halt-regional-energy-exports",
+          "title": "EUA lançam 'onda de ataques' contra o Irã e Teerã ameaça interromper exportações regionais de energia",
+          "summary": "France 24: a reportagem detalha a onda de 90 minutos em ataques diurnos raros e a ameaça iraniana aos corredores de exportação.",
+          "bullets": [
+            "O Exército americano conduziu ataques diurnos raros, incluindo uma onda de 90 minutos.",
+            "Os ataques vieram após a reimposição do bloqueio naval aos portos iranianos.",
+            "Ataques de quarta-feira mataram sete militares iranianos.",
+            "Teerã: os EUA \"devem se preparar para o fechamento de todos os outros corredores de exportação\".",
+            "O IRGC disse ter atacado a Quinta Frota no Bahrein e Mina Abdullah, no Kuwait."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-july-15-2026/",
+          "title": "Relatório especial sobre o Irã, 15 de julho de 2026",
+          "summary": "Institute for the Study of War: o instituto documenta o ataque ao quartel da 388ª Brigada em Iranshahr, 200 km terra adentro.",
+          "bullets": [
+            "Forças americanas atingiram o quartel da 388ª Brigada de Assalto Mecanizado em Iranshahr.",
+            "O ataque teria matado sete soldados do Artesh e ferido outros 13, destruindo vários prédios.",
+            "A brigada fica a cerca de 200 quilômetros da costa iraniana.",
+            "É uma expansão notável em relação ao padrão de ataques costeiros de julho."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.ttnews.com/articles/oil-prices-iran-block-exports",
+          "title": "Preços do petróleo oscilam com ameaça iraniana de bloquear exportações de energia",
+          "summary": "Transport Topics: o Brent superou brevemente US$86 antes de recuar, com o mercado avaliando a ameaça ao Estreito de Ormuz.",
+          "bullets": [
+            "O Brent superou brevemente US$86 por barril em 15 de julho.",
+            "Depois recuou para US$84,93, alta de 0,2% sobre o dia anterior.",
+            "A Guarda Revolucionária ameaçou interromper todas as exportações de energia do Oriente Médio.",
+            "O Estreito de Ormuz respondia por cerca de um quinto dos embarques globais de petróleo e gás antes da guerra."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Uber compra Delivery Hero por €13 bilhões a €41,50 por ação",
+      "summary": "A combinação leva a plataforma a 99 países, com GMV pró-forma de US$236 bilhões em 2025, e 14 mercados sobrepostos vão para a SSW Partners.",
+      "bullets": [
+        "A Uber e uma afiliada firmaram em 16 de julho acordo de combinação de negócios com a Delivery Hero, oferecendo €41,50 por ação em dinheiro.",
+        "O preço implica valor patrimonial totalmente diluído de €13,0 bilhões, ou cerca de US$14,8 bilhões.",
+        "O valor representa prêmio de cerca de 127% sobre o VWAP de três meses não afetado, anterior a 8 de maio de 2026, e de cerca de 34% sobre o VWAP de três meses antes do anúncio.",
+        "A oferta anterior da Uber, em maio, era de €33 por ação.",
+        "A combinação estenderia a plataforma da Uber a 99 países, com GMV pró-forma combinado de US$236 bilhões em 2025.",
+        "A Uber adquire 50 mercados que geraram US$42 bilhões de GMV em 2025.",
+        "A SSW Partners comprará os negócios da Delivery Hero em 14 mercados sobrepostos, com €11 bilhões de GMV em 2025, por cerca de €1,4 bilhão."
+      ],
+      "body": "A oferta exige aceitação mínima de 50% das ações mais uma. A Uber já recebeu compromissos irrevogáveis de adesão equivalentes a 16,68% e, somados à participação de 24,77% e a instrumentos de 11,74%, seu interesse econômico total passaria de 53%. A conclusão da oferta é esperada para o segundo semestre de 2027, e a venda à SSW Partners está condicionada a essa conclusão e a outras condições habituais.\n\nA Uber prometeu manter a sede da Delivery Hero em Berlim e não fazer mudanças em sua força de trabalho na cidade até pelo menos 2029, além de empregar esforços comercialmente razoáveis para investir €2 bilhões na Alemanha até 2031. GMV é o volume bruto de mercadorias transacionado na plataforma.",
+      "category": [
+        "business",
+        "finance",
+        "economy"
+      ],
+      "entities": {
+        "people": [
+          "Dara Khosrowshahi",
+          "Niklas Östberg",
+          "Kristin Skogen Lund",
+          "Josh Steiner",
+          "Antonio Weiss"
+        ],
+        "organizations": [
+          "Uber Technologies",
+          "Delivery Hero",
+          "SSW Partners",
+          "J.P. Morgan",
+          "Sullivan & Cromwell",
+          "BaFin",
+          "Prosus"
+        ],
+        "places": [
+          "Berlin",
+          "Germany"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.deliveryhero.com/newsroom/delivery-hero-and-uber-to-join-forces-to-deliver-more-for-customers-vendors-and-riders/",
+          "title": "Delivery Hero e Uber unem forças para entregar mais a clientes, vendedores e entregadores",
+          "summary": "Delivery Hero: o comunicado da alemã traz os compromissos com Berlim e o investimento de €2 bilhões na Alemanha.",
+          "bullets": [
+            "A Uber oferece €41,50 por ação em dinheiro, implicando €13,0 bilhões.",
+            "A sede permanece em Berlim, sem mudanças na força de trabalho local até pelo menos 2029.",
+            "A Uber investirá €2 bilhões na Alemanha até 2031, em esforços comercialmente razoáveis.",
+            "A oferta exige aceitação mínima de 50% das ações mais uma."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Acquisition-Offer-for-Delivery-Hero/default.aspx",
+          "title": "Uber anuncia oferta de aquisição da Delivery Hero",
+          "summary": "Uber Investor Relations: o comunicado da compradora detalha o alcance de 99 países, o GMV pró-forma e os compromissos irrevogáveis já obtidos.",
+          "bullets": [
+            "A combinação estende a plataforma da Uber a um total de 99 países.",
+            "O GMV pró-forma combinado foi de US$236 bilhões em 2025.",
+            "A Uber adquire 50 mercados que geraram US$42 bilhões de GMV em 2025.",
+            "Compromissos irrevogáveis de 16,68%, com interesse econômico total passando de 53%.",
+            "A conclusão é esperada para o segundo semestre de 2027."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://thenextweb.com/news/uber-delivery-hero-agreed-takeover-41-50",
+          "title": "Uber fecha compra da Delivery Hero por US$14,8 bi, 26% acima da oferta anterior",
+          "summary": "The Next Web: a comparação com a proposta de maio, de €33 por ação, mostra o tamanho da elevação até €41,50.",
+          "bullets": [
+            "A oferta anterior da Uber, em maio, era de €33 por ação.",
+            "O negócio avalia a Delivery Hero em cerca de US$14,8 bilhões.",
+            "O prêmio é de cerca de 127% sobre o VWAP de três meses não afetado, anterior a 8 de maio.",
+            "O prêmio sobre o VWAP de três meses antes do anúncio é de cerca de 34%."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-07-16/uber-agrees-to-buy-delivery-hero-as-food-sector-consolidates",
+          "title": "Uber concorda em comprar a Delivery Hero em negócio de US$14,8 bilhões",
+          "summary": "Bloomberg: a cobertura enquadra a compra na consolidação do setor de entrega de comida e detalha a venda paralela à SSW Partners.",
+          "bullets": [
+            "A SSW Partners comprará os negócios da Delivery Hero em 14 mercados sobrepostos.",
+            "Esses mercados geraram €11 bilhões de GMV em 2025 e saem por cerca de €1,4 bilhão.",
+            "São mercados onde Uber Eats e Delivery Hero competem.",
+            "A venda está condicionada à conclusão da oferta da Uber."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "UE e Ucrânia fecham acordo de drones horas antes de ataque a Kiev",
+      "summary": "Mísseis balísticos russos mataram duas pessoas na capital horas depois da visita de von der Leyen, que anunciou produção conjunta de drones.",
+      "bullets": [
+        "A presidente da Comissão Europeia, Ursula von der Leyen, visitou Kiev e anunciou um novo \"acordo de drones\" entre a Ucrânia e a União Europeia.",
+        "O anúncio ocorreu em cerimônia que marcava o Dia da Condição de Estado da Ucrânia.",
+        "O acordo busca combinar a experiência de campo de batalha de Kiev com a capacidade industrial da UE para ampliar rapidamente a produção.",
+        "Mísseis balísticos russos atingiram vários distritos de Kiev nas primeiras horas de 16 de julho, horas depois da visita.",
+        "O prefeito Vitali Klitschko informou duas pessoas mortas e seis feridas, incluindo um garoto de 16 anos.",
+        "O Exército ucraniano disse ter atingido durante a noite seis petroleiros russos e dois rebocadores no Mar Negro e no Mar de Azov.",
+        "O primeiro-ministro britânico de saída, Keir Starmer, chegou a Kiev na quinta-feira para se encontrar com Volodymyr Zelensky."
+      ],
+      "body": "Von der Leyen disse que o acordo vai \"unir a engenhosidade ucraniana e a escala industrial da Europa\" e que oferece a Kiev \"enorme capacidade tecnológica e industrial\" ao lado de \"locais de produção seguros e protegidos\". Starmer deve assegurar a Zelensky que o compromisso britânico de apoiar a Ucrânia continuará depois que ele for sucedido por Andy Burnham.\n\nO estado-maior ucraniano afirmou que os petroleiros atingidos transportavam petróleo e derivados russos burlando sanções internacionais, além de combustível para as forças de Moscou. O Ministério da Defesa da Rússia afirmou na quinta-feira ter atingido instalações militares e industriais em Kiev. O ISW reportou que forças russas retomaram uma campanha de ataques contra a infraestrutura portuária ucraniana no Mar Negro, e Bohdan Kostetskyi, da consultoria agrícola Barva Invest, afirmou em 15 de julho que esses ataques praticamente pararam as exportações de grãos em águas profundas.",
+      "category": [
+        "world",
+        "politics"
+      ],
+      "entities": {
+        "people": [
+          "Ursula von der Leyen",
+          "Vitali Klitschko",
+          "Keir Starmer",
+          "Volodymyr Zelensky",
+          "Andy Burnham",
+          "Bohdan Kostetskyi"
+        ],
+        "organizations": [
+          "European Commission",
+          "European Union",
+          "Russian Ministry of Defence",
+          "Unmanned Systems Forces",
+          "Barva Invest",
+          "Kernel Holding"
+        ],
+        "places": [
+          "Kyiv",
+          "Ukraine",
+          "Odesa",
+          "Black Sea",
+          "Sea of Azov",
+          "Russia"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "violent",
+      "sources": [
+        {
+          "url": "https://www.aljazeera.com/news/2026/7/16/kyiv-under-fire-from-russian-missiles-after-eu-ukraine-sign-drone-deal",
+          "title": "Dois mortos em ataques de mísseis russos a Kiev após acordo de drones entre Ucrânia e UE",
+          "summary": "Al Jazeera: a cobertura junta o anúncio de von der Leyen no Dia da Condição de Estado e o ataque balístico horas depois.",
+          "bullets": [
+            "Von der Leyen anunciou o \"acordo de drones\" em cerimônia do Dia da Condição de Estado.",
+            "O acordo vai \"unir a engenhosidade ucraniana e a escala industrial da Europa\".",
+            "Mísseis balísticos russos atingiram vários distritos de Kiev na madrugada de 16 de julho.",
+            "Klitschko informou dois mortos e seis feridos, incluindo um garoto de 16 anos."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.independent.co.uk/news/world/europe/ukraine-russia-war-live-putin-zelensky-ballistic-missile-strikes-b3015875.html",
+          "title": "Guerra Ucrânia-Rússia: premiê britânico de saída Starmer visita Kiev após ataque balístico",
+          "summary": "The Independent: o liveblog registra a viagem de alta segurança de Starmer e os ataques ucranianos a petroleiros no Mar Negro.",
+          "bullets": [
+            "Starmer chegou a Kiev em viagem de alta segurança antes de deixar o cargo.",
+            "Ele deve assegurar a Zelensky a continuidade do apoio britânico sob Andy Burnham.",
+            "O Exército ucraniano atingiu seis petroleiros russos e dois rebocadores no Mar Negro e no Mar de Azov.",
+            "Os petroleiros burlavam sanções e levavam combustível para as forças de Moscou.",
+            "O Ministério da Defesa russo disse ter atingido instalações militares e industriais em Kiev."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-15-2026/",
+          "title": "Avaliação da campanha ofensiva russa, 15 de julho de 2026",
+          "summary": "Institute for the Study of War: o instituto aponta a retomada da campanha russa contra portos ucranianos e o impacto nas exportações de grãos.",
+          "bullets": [
+            "Forças russas retomaram ataques contra a infraestrutura portuária ucraniana no Mar Negro.",
+            "Bohdan Kostetskyi, da Barva Invest, disse em 15 de julho que as exportações de grãos em águas profundas praticamente pararam.",
+            "O acordo de drones busca escalar rapidamente a produção conjunta UE-Ucrânia."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "AST SpaceMobile adia serviço para 2027 e capta US$1 bilhão em notas",
+      "summary": "A explosão do New Glenn na plataforma empurrou os 45 satélites BlueBird para 2027; a ação caiu a US$58,03 no after-hours com o risco de diluição.",
+      "bullets": [
+        "Em documento entregue à bolsa em 15 de julho, a AST SpaceMobile disse que sua campanha de lançamentos mira cerca de 45 satélites BlueBird no início de 2027.",
+        "A empresa, sediada no Texas, perde assim sua meta de serviço comercial no fim de 2026.",
+        "A AST contava com a Blue Origin para lançar 45 satélites até o fim deste ano e atender as parceiras AT&T e Verizon.",
+        "O foguete New Glenn, da Blue Origin, explodiu na plataforma de lançamento na Flórida.",
+        "No mesmo dia, a AST anunciou oferta privada de US$1 bilhão em notas seniores conversíveis com vencimento em 1º de fevereiro de 2034, com opção de mais US$150 milhões.",
+        "As notas têm juros de 1,625% ao ano e preço inicial de conversão de cerca de US$79,57 por ação, prêmio de 20% sobre o fechamento de US$66,31 em 15 de julho.",
+        "O caixa preliminar era de US$2,723 bilhões em 30 de junho, contra US$3,459 bilhões em 31 de março — queda de cerca de US$736 milhões, ou 21%."
+      ],
+      "body": "No documento, a empresa escreve que a projeção se baseia em \"suas expectativas atuais quanto à disponibilidade de lançamento\". As notas podem ser convertidas em dinheiro, ações Classe A ou uma combinação das duas, e a empresa firmou operações de capped call com preço-teto inicial de US$149,20 por ação para reduzir a diluição potencial em caso de conversão.\n\nA AST disse que os recursos podem financiar parcerias e/ou aquisições para verticalizar seu negócio e \"mitigar riscos associados a provedores de lançamento terceirizados\", além de garantir acesso adicional à órbita para sua rede de banda larga celular baseada no espaço. As ações caíram para US$58,03 no after-hours, com investidores avaliando a diluição.",
+      "category": [
+        "business",
+        "science",
+        "finance"
+      ],
+      "entities": {
+        "people": [],
+        "organizations": [
+          "AST SpaceMobile",
+          "Blue Origin",
+          "SpaceX",
+          "AT&T",
+          "Verizon",
+          "William Blair & Company"
+        ],
+        "places": [
+          "Texas",
+          "Florida"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.pcmag.com/news/ast-spacemobile-delays-service-launch-to-2027-eyes-acquisitions",
+          "title": "AST SpaceMobile adia lançamento do serviço para 2027 e mira 'aquisições'",
+          "summary": "PCMag: o documento entregue à bolsa move os 45 satélites BlueBird para o início de 2027 e abre a porta a aquisições.",
+          "bullets": [
+            "A campanha de lançamentos mira cerca de 45 satélites BlueBird no início de 2027.",
+            "A empresa perde a meta de serviço comercial no fim de 2026.",
+            "A projeção se baseia em \"suas expectativas atuais quanto à disponibilidade de lançamento\".",
+            "Os recursos podem financiar parcerias e/ou aquisições para verticalizar o negócio."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.stocktitan.net/sec-filings/ASTS/8-k-ast-space-mobile-inc-reports-material-event-d73bdb8682f3.html",
+          "title": "AST SpaceMobile planeja venda de US$1,0 bilhão em notas conversíveis",
+          "summary": "Stock Titan: o 8-K detalha os termos das notas seniores conversíveis com vencimento em 2034 e as operações de capped call.",
+          "bullets": [
+            "Oferta privada de US$1 bilhão em notas seniores conversíveis com vencimento em 1º de fevereiro de 2034.",
+            "Opção de adicionar outros US$150 milhões.",
+            "Juros de 1,625% ao ano e conversão inicial a cerca de US$79,57 por ação.",
+            "Capped call com preço-teto inicial de US$149,20 por ação para reduzir diluição."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://ts2.tech/en/ast-spacemobile-nasdaqasts-looks-to-raise-1-billion-with-convertible-cash-down-21/",
+          "title": "AST SpaceMobile busca levantar US$1 bilhão com conversível; caixa cai 21%",
+          "summary": "TS2: o caixa preliminar recuou de US$3,459 bilhões em março para US$2,723 bilhões em junho.",
+          "bullets": [
+            "Caixa preliminar de US$2,723 bilhões em 30 de junho, contra US$3,459 bilhões em 31 de março.",
+            "A queda é de cerca de US$736 milhões, ou 21%.",
+            "As notas podem ser convertidas em dinheiro, ações Classe A ou uma combinação.",
+            "O prêmio de conversão é de 20% sobre o fechamento de US$66,31 em 15 de julho."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.fxleaders.com/news/2026/07/16/asts-stock-slides-toward-58-after-1b-convertible-deal-revives-dilution-fears/",
+          "title": "Ação da ASTS escorrega rumo a US$58 após conversível de US$1 bi reacender temor de diluição",
+          "summary": "FX Leaders: a reação do mercado leva a ação a US$58,03 no after-hours com investidores avaliando a diluição.",
+          "bullets": [
+            "As ações caíram para US$58,03 no after-hours.",
+            "Investidores avaliavam a diluição potencial da oferta.",
+            "O fechamento anterior, em 15 de julho, foi de US$66,31."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://spacenews.com/ast-spacemobile-sees-new-glenn-setback-delaying-initial-commercial-service-into-2027/",
+          "title": "AST SpaceMobile vê revés do New Glenn adiando serviço comercial inicial para 2027",
+          "summary": "SpaceNews: a explosão do New Glenn na plataforma na Flórida é a causa direta do adiamento e afeta as parcerias com AT&T e Verizon.",
+          "bullets": [
+            "O foguete New Glenn, da Blue Origin, explodiu na plataforma de lançamento na Flórida.",
+            "A AST contava com a Blue Origin para lançar e operar 45 satélites BlueBird até o fim do ano.",
+            "Os satélites permitiriam atender as parceiras AT&T e Verizon.",
+            "A empresa quer garantir acesso adicional à órbita para sua rede de banda larga celular."
+          ],
+          "published_at": "2026-06-03",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Ação da SpaceX cai abaixo do preço de IPO de US$135 pela primeira vez",
+      "summary": "O papel recua mais de 30% ante as máximas de US$225, na quarta sessão seguida de queda, às vésperas do 13º voo de teste do Starship.",
+      "bullets": [
+        "As ações da SpaceX caíram pela quarta sessão seguida em 15 de julho e recuaram brevemente abaixo do preço de IPO de US$135 pela primeira vez.",
+        "A SPCX abriu a US$137,51, marcou mínima de US$132,15 e máxima de US$139,34, fechando a US$135,27 com volume de 57,57 milhões de ações.",
+        "O IPO de 12 de junho levantou quase US$86 bilhões, um recorde, e fez de Elon Musk o primeiro trilionário do mundo.",
+        "A ação subiu inicialmente acima de US$200 e caiu mais de 30% em relação às máximas de cerca de US$225.",
+        "A SpaceX recorreu ao mercado de títulos em junho para levantar US$25 bilhões e construir infraestrutura de tecnologia.",
+        "A empresa entrou no Nasdaq-100 na semana passada, o que trouxe investidores passivos por meio de fundos de índice.",
+        "O 13º voo de teste do Starship tem janela de 90 minutos abrindo às 18h45 (horário do leste dos EUA) de quinta-feira."
+      ],
+      "body": "A reversão reflete em parte a preocupação de investidores com gastos em IA financiados por dívida e com o efeito de possíveis altas de juros do Federal Reserve sobre avaliações esticadas de tecnologia. Nos dias após a abertura de capital, a ação deu à empresa por um breve período uma avaliação rival à de gigantes como Amazon e Microsoft; desde aquele pico, perdeu valor praticamente toda semana.\n\nA entrada no Nasdaq-100 foi possível por uma mudança recente de regra que encurtou o período de elegibilidade para 15 pregões no caso de empresas recém-abertas. O primeiro balanço da SpaceX após a listagem é esperado por analistas para a primeira semana de agosto, e o voo de teste desta quinta levará ao espaço, pela primeira vez, os satélites Starlink V3 de próxima geração.",
+      "category": [
+        "finance",
+        "business",
+        "science"
+      ],
+      "entities": {
+        "people": [
+          "Elon Musk"
+        ],
+        "organizations": [
+          "SpaceX",
+          "Nasdaq",
+          "Starlink",
+          "Federal Reserve"
+        ],
+        "places": [
+          "United States"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2026/07/15/spacex-spcx-stock-ipo-price.html",
+          "title": "Ação da SpaceX afunda abaixo do preço de IPO de US$135 pela primeira vez",
+          "summary": "CNBC: a queda de quarta é a quarta seguida e leva o papel ao preço de estreia, num IPO que levantou quase US$86 bilhões.",
+          "bullets": [
+            "As ações caíram pela quarta sessão seguida em 15 de julho.",
+            "O papel caiu brevemente abaixo do preço de IPO de US$135 pela primeira vez.",
+            "O IPO de 12 de junho levantou quase US$86 bilhões, um recorde.",
+            "O IPO fez de Elon Musk o primeiro trilionário do mundo."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://techcrunch.com/2026/07/15/spacex-slips-below-its-135-ipo-price-ahead-of-starship-launch/",
+          "title": "SpaceX cai ao preço de IPO de US$135 às vésperas do lançamento do Starship",
+          "summary": "TechCrunch: a queda coincide com a preparação do 13º voo de teste do Starship, que estreia os satélites Starlink V3.",
+          "bullets": [
+            "O 13º voo de teste tem janela de 90 minutos abrindo às 18h45 (leste dos EUA) de quinta.",
+            "O voo levará ao espaço, pela primeira vez, os satélites Starlink V3.",
+            "A ação recuou cerca de 1% na quarta-feira e fechou a US$135,27."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.straitstimes.com/business/companies-markets/spacex-shares-slide-below-ipo-price-for-the-first-time-as-blistering-rally-unravels",
+          "title": "Ações da SpaceX escorregam abaixo do preço de IPO pela primeira vez com fim da disparada",
+          "summary": "The Straits Times: o papel caiu mais de 30% ante as máximas de cerca de US$225, após rivalizar em valor com Amazon e Microsoft.",
+          "bullets": [
+            "A ação subiu inicialmente acima de US$200 nos dias após a abertura de capital.",
+            "Por um breve período a avaliação rivalizou com a de Amazon e Microsoft.",
+            "A ação caiu mais de 30% em relação às máximas de cerca de US$225.",
+            "Desde o pico, perdeu valor praticamente toda semana."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.benzinga.com/trading-ideas/movers/26/07/60481036/spacex-spcx-stock-falls-below-135-ipo-price",
+          "title": "Ação da SpaceX (SPCX) cai abaixo do preço de IPO de US$135",
+          "summary": "Benzinga: a nota liga a queda ao temor com gastos em IA financiados por dívida e com juros do Fed sobre avaliações esticadas.",
+          "bullets": [
+            "A reversão reflete preocupação com gastos em IA financiados por dívida.",
+            "Possíveis altas de juros do Fed pesam sobre avaliações esticadas de tecnologia.",
+            "A SpaceX levantou US$25 bilhões no mercado de títulos em junho.",
+            "A entrada no Nasdaq-100 trouxe investidores passivos via fundos de índice."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://exa.ai/library/markets/stock/SPCX?date=2026-07-15&t=6a58d2110880b00ef466c913",
+          "title": "SPCX — Space Exploration Technologies Corp Classe A: US$135,27 em 15 de julho de 2026",
+          "summary": "Exa Markets: os dados de pregão trazem abertura, mínima, máxima e volume da sessão de 15 de julho.",
+          "bullets": [
+            "A SPCX abriu a US$137,51 na sessão de 15 de julho.",
+            "Marcou mínima de US$132,15 e máxima de US$139,34.",
+            "Fechou a US$135,27 com volume de 57,57 milhões de ações."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Fed mantém postura com inflação perto de 4%, dizem Williams e Cook",
+      "summary": "Williams vê inflação caindo a 3,25% até o fim do ano; Cook aponta riscos inclinados para alta e diz que data centers aqueceram a economia.",
+      "bullets": [
+        "O Federal Reserve divulgou em 15 de julho seu Beige Book de julho de 2026, com vendas no varejo melhores, imobiliário misto e emprego mais forte.",
+        "O presidente do Fed de Nova York, John Williams, disse que a inflação geral está \"inquestionavelmente alta demais, em cerca de 4 por cento\", ante meta de 2%.",
+        "Williams disse que \"a atual postura da política monetária está bem posicionada\" para restaurar a meta.",
+        "Williams espera inflação em cerca de 3,25% até o fim do ano, rumo a 2% em 2027 e atingindo a meta em 2028.",
+        "A diretora Lisa Cook disse que os riscos \"continuam fortemente inclinados para uma inflação mais alta\".",
+        "Cook disse que a \"construção de data centers adicionou algum calor à economia\".",
+        "Na reunião de 17 de junho, o FOMC manteve a faixa-alvo dos fundos federais em 3,5% a 3,75%; o comitê volta a se reunir em duas semanas."
+      ],
+      "body": "O Beige Book aponta que as pressões salariais aumentaram e que as perspectivas relatadas eram de estáveis a positivas. Williams, em discurso em Nova York em 15 de julho, disse que \"o crescimento da economia é sólido e dentro da tendência, e o mercado de trabalho é igualmente sólido e estável\", e espera crescimento do PIB real em torno de 2% a 2,25% neste ano e nos próximos dois, com o desemprego caindo muito gradualmente para 4% em 2028.\n\nCook disse que votou com o restante do FOMC para manter os juros estáveis no mês passado, porque os dois principais fatores que pressionaram a inflação no último ano — tarifas e o conflito no Oriente Médio — deveriam, em tese, produzir apenas altas de curta duração. Ela observou que o crescimento do PIB em 2025 veio em 2,0% e que participantes do FOMC agora projetam 2,2% para 2026, ambas as leituras superando as projeções do ano passado em cerca de meio ponto percentual, e que a produtividade do trabalho cresceu cerca de 2,5% ao ano nos últimos dois anos.",
+      "category": [
+        "economy",
+        "finance"
+      ],
+      "entities": {
+        "people": [
+          "John C. Williams",
+          "Lisa Cook"
+        ],
+        "organizations": [
+          "Federal Reserve",
+          "FOMC",
+          "Federal Reserve Bank of New York"
+        ],
+        "places": [
+          "United States",
+          "New York City"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.federalreserve.gov/monetarypolicy/files/BeigeBook_20260715.pdf",
+          "title": "Beige Book — julho de 2026",
+          "summary": "Federal Reserve: o relatório em PDF registra varejo melhor, imobiliário misto, emprego mais forte e pressões salariais em alta.",
+          "bullets": [
+            "As vendas no varejo melhoraram e o setor imobiliário ficou misto.",
+            "O emprego se fortaleceu e as pressões salariais aumentaram.",
+            "As perspectivas relatadas eram de estáveis a positivas.",
+            "O relatório foi divulgado em 15 de julho de 2026."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.federalreserve.gov/monetarypolicy/beigebook202607.htm",
+          "title": "O Fed — Beige Book — julho de 2026",
+          "summary": "Federal Reserve: a versão web do relatório de julho consolida as leituras dos distritos divulgadas em 15 de julho.",
+          "bullets": [
+            "O Beige Book de julho de 2026 saiu em 15 de julho.",
+            "O panorama descreve atividade com perspectivas de estáveis a positivas.",
+            "O relatório antecede a reunião do FOMC em duas semanas."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://tellerwindow.newyorkfed.org/2026/07/15/key-takeaways-from-president-williamss-speech-on-the-economic-outlook-and-monetary-policy-27/",
+          "title": "Principais pontos do discurso do presidente Williams sobre perspectiva econômica e política monetária",
+          "summary": "Federal Reserve Bank of New York: o resumo do discurso traz as projeções de Williams para inflação, PIB e desemprego.",
+          "bullets": [
+            "Williams: a inflação geral está \"inquestionavelmente alta demais, em cerca de 4 por cento\".",
+            "O patamar está bem acima da meta de longo prazo de 2% do FOMC.",
+            "\"A atual postura da política monetária está bem posicionada\" para restaurar a meta.",
+            "Espera PIB real de 2% a 2,25% neste ano e nos próximos dois, e desemprego a 4% em 2028.",
+            "Espera inflação em cerca de 3,25% até o fim do ano e meta atingida em 2028."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.federalreserve.gov/newsevents/speech/cook20260715a.htm",
+          "title": "Discurso da diretora Cook sobre a perspectiva econômica",
+          "summary": "Federal Reserve Board: Cook detalha por que apoiou manter os juros e como o boom de data centers e a produtividade entram na conta.",
+          "bullets": [
+            "Cook: os riscos \"continuam fortemente inclinados para uma inflação mais alta\".",
+            "Ela votou com o FOMC para manter os juros estáveis no mês passado.",
+            "Tarifas e o conflito no Oriente Médio deveriam produzir altas de inflação de curta duração.",
+            "A \"construção de data centers adicionou algum calor à economia\".",
+            "PIB de 2,0% em 2025 e projeção de 2,2% para 2026; produtividade cresceu cerca de 2,5% ao ano."
+          ],
+          "published_at": "2026-07-15",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+          "title": "Fed divulga comunicado do FOMC",
+          "summary": "Federal Reserve: o comunicado de 17 de junho fixou a faixa-alvo da taxa dos fundos federais em 3,5% a 3,75%.",
+          "bullets": [
+            "O FOMC manteve a faixa-alvo dos fundos federais em 3,5% a 3,75%.",
+            "A decisão foi tomada na reunião de 17 de junho.",
+            "O comitê volta a se reunir em duas semanas."
+          ],
+          "published_at": "2026-06-17",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Alpaca capta US$435 milhões e avalia entrar em prime brokerage",
+      "summary": "A rodada soma US$135 milhões em equity liderados pela Peak XV e US$300 milhões em dívida, seis meses após avaliação de US$1,15 bilhão.",
+      "bullets": [
+        "A Alpaca anunciou em 16 de julho captação de US$135 milhões em equity liderada pela Peak XV, com participação relevante da Elefund.",
+        "O financiamento totaliza US$435 milhões, com US$300 milhões em dívida vinda principalmente da Payward, controladora da Kraken, e do BMO.",
+        "A rodada segue a Série D de US$150 milhões de janeiro de 2026, que avaliou a empresa em US$1,15 bilhão.",
+        "A Alpaca afirma ter dobrado a receita ano a ano por três anos consecutivos.",
+        "A empresa ultrapassou US$1,5 bilhão em ativos sob custódia nas ações que lastreiam ações tokenizadas.",
+        "Os usuários ativos mensais da API cresceram quase 4 vezes nos últimos seis meses.",
+        "A Alpaca suporta mais de 10 milhões de contas de corretagem em centenas de fintechs e instituições em mais de 40 países."
+      ],
+      "body": "A Alpaca usará o financiamento para acelerar sua infraestrutura de corretagem agent-first e de prime brokerage API-first, que permite a empresas financeiras e clientes institucionais construir e escalar produtos de investimento em mercados tradicionais e onchain. O crescimento de quase 4 vezes nos usuários ativos mensais da API veio à medida que a empresa expandiu capacidades de IA agêntica.\n\nYoshi Yokokawa, cofundador e CEO, disse que a empresa está \"posicionada de forma única para se tornar a camada de infraestrutura padrão para os mercados de capitais globais tokenizados e os serviços financeiros nativos de IA\". A Alpaca adquiriu uma corretora e prestadora de serviços de pagamento regulada pela IFSCA em GIFT City, estabelecendo presença regulada na Índia, além de entidades reguladas no Reino Unido e na Europa, completando o passporting nos 30 países do Espaço Econômico Europeu. O financiamento acumulado da empresa chega a US$400 milhões.",
+      "category": [
+        "finance",
+        "business"
+      ],
+      "entities": {
+        "people": [
+          "Yoshi Yokokawa",
+          "Aakash Kapoor"
+        ],
+        "organizations": [
+          "Alpaca",
+          "Peak XV Partners",
+          "Elefund",
+          "Payward",
+          "Kraken",
+          "BMO",
+          "Opera Tech Ventures",
+          "BNP Paribas",
+          "Unbound",
+          "Drive Capital"
+        ],
+        "places": [
+          "New York",
+          "San Mateo",
+          "India",
+          "United Kingdom"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://lasvegassun.com/news/2026/jul/16/alpaca-raises-135-million-to-scale-agent-first-bro/",
+          "title": "Alpaca capta US$135 milhões para escalar infraestrutura de corretagem agent-first",
+          "summary": "Business Wire via Las Vegas Sun: o comunicado detalha o uso dos recursos, as métricas de crescimento e a expansão regulatória na Índia e na Europa.",
+          "bullets": [
+            "Captação de US$135 milhões em equity liderada pela Peak XV, com participação da Elefund.",
+            "A empresa afirma ter dobrado a receita ano a ano por três anos consecutivos.",
+            "Mais de US$1,5 bilhão em ativos sob custódia lastreando ações tokenizadas.",
+            "Usuários ativos mensais da API cresceram quase 4 vezes em seis meses.",
+            "Presença regulada na Índia via GIFT City e passporting nos 30 países do EEE."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-07-16/broker-alpaca-raises-435-million-explores-prime-broking-entry",
+          "title": "Corretora Alpaca capta US$435 milhões e explora entrada em prime broking",
+          "summary": "Bloomberg: a soma de equity e dívida chega a US$435 milhões, com a empresa avaliando entrar no negócio de prime broking.",
+          "bullets": [
+            "O total de US$435 milhões inclui US$300 milhões em dívida.",
+            "A dívida vem principalmente da Payward, controladora da Kraken, e do BMO.",
+            "A Alpaca avalia entrar no negócio de prime broking.",
+            "Yokokawa fala em ser \"a camada de infraestrutura padrão\" para mercados tokenizados."
+          ],
+          "published_at": "2026-07-16",
+          "image_url": ""
+        },
+        {
+          "url": "https://fortune.com/2026/01/14/alpaca-fundraise-series-d-brokerage-infrastructure/",
+          "title": "Alpaca capta US$150 milhões com avaliação de US$1,15 bilhão",
+          "summary": "Fortune: a Série D de janeiro de 2026 estabeleceu a avaliação de US$1,15 bilhão que antecede a nova rodada.",
+          "bullets": [
+            "A Série D de US$150 milhões foi anunciada em janeiro de 2026.",
+            "A rodada avaliou a empresa em US$1,15 bilhão.",
+            "A Alpaca suporta mais de 10 milhões de contas de corretagem em mais de 40 países.",
+            "O financiamento acumulado da empresa é de US$400 milhões."
+          ],
+          "published_at": "2026-01-14",
+          "image_url": ""
+        }
+      ]
+    }
+  ]
+}

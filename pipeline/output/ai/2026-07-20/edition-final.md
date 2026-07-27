@@ -1,0 +1,54 @@
+# [Tech] - Bem-vindo(a) a 20 de Julho de 2026
+
+O que se sabe do Qwen3.8-Max, o novo modelo de 2,4 trilhões de parâmetros da Alibaba? Como o governo Trump pretende conter os modelos de IA chineses? O que a Microsoft acaba de adotar da AMD para o Azure?
+
+Por: Guilherme Saboia e Vinicius Gushiken
+
+### Alibaba apresenta o Qwen3.8-Max, modelo multimodal de 2,4 trilhões de parâmetros
+- **Prévia.** A Alibaba mostrou na World AI Conference de Xangai (domingo, 19 jul) o [Qwen3.8-Max-Preview](https://dailyjournal.news/news/2026-07-19/alibaba-apresenta-modelo-de-ia-qwen38-max-com-24-trilhoes-de-parametros), modelo de 2,4 trilhões de parâmetros em arquitetura esparsa Mixture-of-Experts (mistura de especialistas) e o primeiro Qwen acima de 1 trilhão a processar imagem, vídeo e documentos. Está disponível via assinatura Token Plan e nas plataformas Qoder e QoderWork a 10% do preço padrão no período de teste.
+- **Alegação.** A empresa chama o modelo de ["um dos mais poderosos disponíveis hoje, perdendo apenas para o Fable 5"](https://dailyjournal.news/news/2026-07-19/alibaba-apresenta-modelo-de-ia-qwen38-max-com-24-trilhoes-de-parametros), o topo da Anthropic, sem publicar model card, contagem de parâmetros ativados ou benchmarks; nenhuma avaliação independente confirmou a afirmação.
+- **Mercado.** A prévia vem dias após o [Kimi K3 da Moonshot](https://dailyjournal.news/news/2026-07-19/alibaba-apresenta-modelo-de-ia-qwen38-max-com-24-trilhoes-de-parametros), modelo de pesos abertos de 2,8 trilhões de parâmetros; a versão de pesos abertos do Qwen foi prometida "em breve", sem data, e as ações da Alibaba subiram mais de 3,5% na sessão overnight (fora do pregão regular) de segunda.
+
+### Governo Trump retoma plano para restringir modelos de IA open-source chineses
+- **Gatilho.** Alas do governo Trump retomaram o plano de [banir, na prática, modelos de IA open-source estrangeiros](https://dailyjournal.news/news/2026-07-20/governo-trump-avalia-restricoes-a-modelos-de-ia-de-origem-chinesa) depois da ascensão do Kimi na semana passada; segundo fontes ouvidas pelo Axios, a medida consolidaria o domínio de OpenAI e Anthropic.
+- **Ferramentas.** Em vez de um banimento direto, as fontes descrevem uma abordagem ["mais lenta e mais durável"](https://dailyjournal.news/news/2026-07-20/governo-trump-avalia-restricoes-a-modelos-de-ia-de-origem-chinesa): incluir laboratórios chineses na Entity List (lista de restrições de exportação), usar regras de compras públicas, ameaças de sanções e advertências da NSA e do diretor cibernético sobre possíveis backdoors (acessos ocultos).
+- **Política.** Também se estuda uma [ordem executiva](https://dailyjournal.news/news/2026-07-20/governo-trump-avalia-restricoes-a-modelos-de-ia-de-origem-chinesa) que responsabilizaria empresas dos EUA que hospedem modelos chineses; a saída do assessor Sriram Krishnan, contrário a qualquer intervenção, teria fortalecido os defensores das restrições.
+
+### Microsoft vai implantar o sistema de IA em rack Helios, da AMD, no Azure
+- **Acordo.** AMD e Microsoft ampliaram a parceria estratégica (20 jul): o [Helios em escala de rack](https://dailyjournal.news/news/2026-07-20/amd-prepara-lancamento-do-sistema-helios-para-competir-com-nvidia-em-2026) vai rodar a inferência (a execução dos modelos em produção, não o treino) de modelos de fronteira para a Microsoft, seus clientes e os serviços Azure AI, com envios a clientes a partir do segundo semestre de 2026.
+- **Hardware.** Cada rack reúne [72 GPUs Instinct MI455X](https://dailyjournal.news/news/2026-07-20/amd-prepara-lancamento-do-sistema-helios-para-competir-com-nvidia-em-2026), cada uma com 432 GB de memória HBM4 (de alta largura de banda), além de CPUs EPYC "Venice" e rede da própria AMD, sobre o formato de rack aberto da Meta.
+- **Azure.** O Azure ganha [duas novas séries de máquinas virtuais](https://dailyjournal.news/news/2026-07-20/amd-prepara-lancamento-do-sistema-helios-para-competir-com-nvidia-em-2026) com os mesmos EPYC "Venice" (HDv2 para IA agêntica, HXv2 para projeto de chips); a Microsoft se junta a Meta, OpenAI, Oracle e TCS no Helios, e a Meta já prometeu até 6 GW de GPUs AMD.
+
+---
+
+#### Capital & IPOs
+- **Moonshot AI.** A dona do Kimi K3 [pausou novas assinaturas](https://dailyjournal.news/news/2026-07-20/moonshot-pausa-novas-assinaturas-do-kimi-k3-e-prepara-ipo-em-hong-kong) no domingo após a demanda causar "desafios de computação sem precedentes", com vendas diárias de assinaturas seis vezes maiores desde o lançamento. A empresa busca um IPO em Hong Kong em seis meses e fecha uma rodada que pode avaliá-la em mais de US$30 bilhões, contra US$20 bilhões em maio, com receita recorrente anual (ARR) de US$300 milhões.
+- **CuspAI.** A startup britânica de descoberta de materiais por IA levantou uma [Série B de US$450 milhões](https://dailyjournal.news/news/2026-07-20/startup-cuspai-levanta-us-450-milhoes-em-rodada-serie-b) liderada por Kleiner Perkins e NEA, com a Bezos Expeditions de Jeff Bezos, a um *valuation* de US$2,6 bilhões, cerca de cinco vezes o de setembro de 2025. Ela lançou a coalizão "AI Materials Foundry" com mais de 45 parceiros (NVIDIA, Meta, Samsung, Hyundai) e direciona 80% da pesquisa a materiais de semicondutores.
+- **Zhongji Innolight.** A fabricante chinesa de transceptores ópticos para data centers sonda investidores para uma [listagem em Hong Kong de até US$8 bilhões](https://dailyjournal.news/news/2026-07-20/zhongji-innolight-sonda-listagem-de-ate-us-8-bi-em-hong-kong), a maior da cidade desde o Alibaba em 2019; as ações subiram até 8% na segunda após a aprovação da bolsa.
+
+#### Infraestrutura & chips
+- **Google.** A empresa desenvolve o chip de servidor ["Frozen v2"](https://dailyjournal.news/news/2026-07-20/google-desenvolve-chip-de-servidor-com-arquitetura-gemini-para-2028), que fixa partes do modelo Gemini diretamente no silício e promete eficiência de seis a dez vezes maior por token servido; a implantação está prevista para 2028 e visa aliviar um aperto de computação e energia que já levou o Google Cloud a recusar negócios.
+- **TSMC.** O CFO Wendell Huang disse que a empresa vai [acelerar a expansão no Arizona](https://dailyjournal.news/news/2026-07-20/tsmc-amplia-investimento-no-arizona-para-us-265-bilhoes), citando uma "megatendência de demanda de vários anos", e apontou a escassez de mão de obra de construção como principal gargalo; os valores são os já anunciados em 16 jul (US$100 bilhões extras, US$265 bilhões no total local).
+- **Amentum.** A NNSA do Departamento de Energia [selecionou a empresa](https://dailyjournal.news/news/2026-07-20/amentum-e-escolhida-pelo-doe-para-data-center-de-ia-de-1-gw) para negociar um arrendamento e erguer um data center de IA de 1 GW no Savannah River Site, na Carolina do Sul, apoiado por cerca de 2 GW de geração local a gás com transição para nuclear; as ações subiram 5,7% no pré-mercado.
+
+#### Fusões & aquisições
+- **Blackstone.** O fundo de *private equity* fechou acordo para assumir o controle da sul-coreana [Futronic](https://dailyjournal.news/news/2026-07-20/blackstone-investe-na-sul-coreana-futronic-com-valuation-de-us-675-mi), fabricante de atuadores (componentes que convertem comandos em movimento) de alta precisão para automotivo e robótica, em transação que avalia a empresa em cerca de US$676 milhões; a tese da gestora é que, conforme a IA converge com o mundo físico, as margens duradouras ficam nesses componentes dentro dos robôs.
+- **Samsung Biologics.** A companhia fez uma [oferta em dinheiro de US$1,8 bilhão](https://dailyjournal.news/news/2026-07-20/samsung-biologics-compra-fabricante-suica-polypeptide-por-us-18-bilhao) pela suíça PolyPeptide, a maior fusão da história da indústria farmacêutica coreana, para entrar em terapias com peptídeos e surfar a demanda por medicamentos GLP-1 de emagrecimento e diabetes.
+
+#### Regulação & governo
+- **CAISI.** Chris Fall [renuncia à direção](https://dailyjournal.news/news/2026-07-20/diretor-do-instituto-federal-de-testes-de-ia-dos-eua-renuncia) do Center for AI Standards and Innovation, o instituto federal de testes de IA, três meses após assumir; é a segunda saída no ano: seu antecessor, Collin Burns, foi pressionado a renunciar quando a Casa Branca soube de sua passagem pela Anthropic.
+- **AliExpress.** A Comissão Europeia multou o *marketplace* do Alibaba em [€550 milhões (US$629 milhões)](https://dailyjournal.news/news/2026-07-20/uniao-europeia-multa-aliexpress-em-550-milhoes-de-euros), a maior penalidade já aplicada sob o Digital Services Act (Lei de Serviços Digitais), por falhar em conter produtos inseguros e falsificados; a plataforma tem até 20 de outubro para apresentar um plano de ação.
+
+#### Ferramentas & apps
+- **App Store.** O número de novos apps na loja da Apple dobrou para cerca de [560 mil no primeiro semestre de 2026](https://dailyjournal.news/news/2026-07-20/lancamentos-de-aplicativos-na-app-store-dobram-no-primeiro-semestre-de-2026), a caminho de superar o total de todo o ano de 2025, puxado por *vibecoding* (descrever a ideia em linguagem natural para a IA gerar o código); as submissões do primeiro trimestre saltaram 84% no ano, e a Sensor Tower atribui o boom a ferramentas como o Claude Code, da Anthropic, e o Codex, da OpenAI.
+
+#### Mundo
+- **EUA e Irã.** O número de militares americanos mortos no conflito subiu a 17, com mais de 430 feridos, enquanto o CENTCOM lançava sua [nona noite consecutiva de ataques](https://dailyjournal.news/news/2026-07-18/eua-intensificam-ataques-contra-o-ira-e-precos-do-petroleo-sobem); no domingo, o Irã voltou a disparar drones e mísseis contra Kuwait, Bahrein e Jordânia, e Teerã mantém o Estreito de Ormuz fechado.
+- **Petróleo.** O Brent atingiu [US$90,75 por barril](https://dailyjournal.news/news/2026-07-20/brent-supera-us-90-pela-primeira-vez-desde-junho-com-bloqueio-em-ormuz), alta de cerca de 3% e máxima de cinco semanas, com o colapso do tráfego de petroleiros em Ormuz; a gasolina nos EUA beira US$4 por galão, e o colchão de cerca de 400 milhões de barris em estoque no início da guerra já foi quase todo consumido.
+- **Rússia.** A Rússia lançou 41 mísseis (25 deles balísticos) e 125 drones na [maior barragem de mísseis balísticos sobre Kyiv](https://dailyjournal.news/news/2026-07-19/ataques-mutuos-entre-russia-e-ucrania-deixam-mortos-e-feridos-1) desde 2022; os ataques mataram ao menos 20 pessoas em todo o país, e as defesas abateram 17 dos 25 balísticos, sinal de que os estoques de interceptadores Patriot foram reabastecidos.
+
+---
+
+#### Leia também
+- [Espanha combate incêndio ao norte de Madri que já queimou 13 mil hectares](https://dailyjournal.news/news/2026-07-19/incendio-florestal-destroi-12-mil-hectares-ao-norte-de-madri)
+- [Enchentes e deslizamentos matam ao menos 12 em Jammu e Caxemira](https://dailyjournal.news/news/2026-07-20/enchentes-e-deslizamentos-matam-ao-menos-12-em-jammu-e-caxemira)

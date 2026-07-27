@@ -1,0 +1,13 @@
+**Abaixo, apenas para assinantes:**
+
+**Modelos.** Empresa chinesa de IA pausa novas assinaturas depois que a demanda estourou sua capacidade de computação.
+**Capital.** Startup britânica de descoberta de materiais por IA levanta uma grande rodada com apoio de Jeff Bezos.
+**IPO.** Fabricante chinesa de componentes ópticos para data centers prepara uma das maiores aberturas de capital em Hong Kong em anos.
+**Hardware.** Uma big tech projeta um chip que grava seu modelo de IA direto no silício, prometendo eficiência muito maior por token.
+**Data centers.** Empresa é escolhida pelo Departamento de Energia dos EUA para erguer um data center de IA de escala gigawatt.
+**Robótica.** Gigante de private equity assume o controle de uma fabricante asiática de atuadores de precisão para robôs.
+**Biotech.** Oferta bilionária em dinheiro por uma farmacêutica suíça de peptídeos, de olho na onda dos remédios de emagrecimento.
+**Regulação.** Marketplace de uma gigante chinesa leva a maior multa já aplicada sob a lei de serviços digitais da União Europeia.
+**Apps.** Número de novos aplicativos na loja da Apple dispara, puxado pela IA que gera código a partir de linguagem natural.
+**Geopolítica.** Ataques americanos no Oriente Médio entram na segunda semana, mantêm fechado um estreito vital e pressionam o preço do petróleo.
+**Guerra.** Maior ataque com mísseis balísticos à capital ucraniana desde o início da guerra deixa dezenas de mortos.

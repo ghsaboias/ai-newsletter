@@ -1,0 +1,45 @@
+{
+  "date": "2026-07-24",
+  "fidelity_issues": [
+    {
+      "severity": "low",
+      "where": "facts.md",
+      "claim": "[S52] South China Morning Post — https://www.scmp.com/tech/article/3356961/chinas-nvidia-challenger-metax-eyes-hong-kong-share-sale-to-fund-ai-ambitions",
+      "issue": "não traça ao research.json",
+      "expected": "O research.json traz a URL como https://www.scmp.com/tech/article/3356961/chinas-nvidia-challenger-metax-eyes-hong-kong-share-sale-fund-ai-ambitions (sem o 'to-' no slug). É o único dos 100 links do bloco de Fontes que não bate com a pesquisa; a URL como escrita provavelmente quebra. Não usado na edição."
+    }
+  ],
+  "dropped_facts": [
+    {
+      "severity": "medium",
+      "story": "Brasil — tarifa adicional de 12,5% sobre produtos brasileiros",
+      "fact": "O Ministério do Desenvolvimento, Indústria, Comércio e Serviços estima que a tarifa de 25% deve atingir cerca de 15% das exportações brasileiras aos EUA, o equivalente a US$5,8 bilhões.",
+      "why_load_bearing": "É a única cifra que dá tamanho à história. A edição entrega as alíquotas (12,5% + 25% = 37,5%) e a reação do governo, mas o leitor sai sem saber quanto comércio está em jogo — o número que transforma a tarifa em impacto econômico mensurável."
+    },
+    {
+      "severity": "medium",
+      "story": "Casa Branca — expansão do Ratepayer Protection Pledge",
+      "fact": "O compromisso prevê cinco obrigações aos signatários, entre elas construir, trazer ou comprar nova oferta de energia, pagar por todas as melhorias na nova infraestrutura de entrega de energia e pagar tarifas negociadas usando ou não a eletricidade.",
+      "why_load_bearing": "É o mecanismo que é o ponto da notícia. A edição diz que o pacto cobre ~80% da energia dos EUA, tem 23 governadores e 187 empresas e é voluntário — mas nunca diz a que os signatários se comprometem. Sem as obrigações, 'compromisso de proteção ao consumidor' fica sem conteúdo verificável, e o contraste com o Ratepayer Protection Act (que a edição descreve em detalhe) perde a base de comparação."
+    },
+    {
+      "severity": "low",
+      "story": "Wall Street — Nasdaq cai 2,15%",
+      "fact": "A alta do petróleo agravou a queda ao reavivar temores de inflação e elevar os juros dos títulos.",
+      "why_load_bearing": "É metade da tese causal da história na pesquisa ('AI spending fears AND $100 oil'). A edição atribui a queda só aos gastos em IA de Alphabet e Tesla; o canal petróleo → inflação → juros some, e com ele a ligação com o item de Brent a US$100 que roda na mesma edição."
+    },
+    {
+      "severity": "low",
+      "story": "Houthis — ataque a petroleiros sauditas e Brent acima de US$100",
+      "fact": "Foi a primeira vez que o Brent superou os US$100 desde o fim de maio.",
+      "why_load_bearing": "É o benchmark que dá dimensão ao número. A edição traz 'US$100,65 o barril' e a alta de 6,96%, mas sem a referência temporal o leitor não sabe se US$100 é rotina ou ruptura."
+    },
+    {
+      "severity": "low",
+      "story": "Alphabet — US$124,3 bilhões em participações privadas",
+      "fact": "A posição na Anthropic começou com US$300 milhões em abril de 2023 e cresceu para US$13,3 bilhões investidos, somados a compromissos de até US$30 bilhões adicionais; a Anthropic se comprometeu a comprar ao menos cinco gigawatts de capacidade do Google Cloud.",
+      "why_load_bearing": "É a base de custo que dá sentido ao valor contábil. A edição mostra US$124,3 bi de saldo e o salto de avaliação da Anthropic, mas sem quanto a Alphabet efetivamente colocou não há como dimensionar o ganho — e o compromisso de 5 GW é o mecanismo circular (investimento que volta como receita de nuvem) por trás do negócio."
+    }
+  ],
+  "summary": "Fidelidade praticamente limpa — todos os números, nomes, citações e links da edição e do facts.md traçam ao research.json, com uma única URL de fonte com slug divergente; nenhum fato-âncora caiu, mas cinco histórias que ficaram perderam a cifra de tamanho (US$5,8 bi do Brasil) ou o mecanismo (as obrigações do Ratepayer Pledge)."
+}
