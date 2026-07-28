@@ -919,3 +919,13 @@ https://www.youtube.com/watch?v=xoE_pE26yDQ
 **Why Physical AI Is the Next Frontier | The a16z Show**
 O episódio do a16z Show traz Marc Andreessen e Erik Torenberg em uma conversa com Qasar Younis e Peter Ludwig, cofundadores da Applied Intuition. A empresa é focada em "IA Física" (Physical AI), desenvolvendo software e infraestrutura para tornar máquinas autônomas — de carros e caminhões a sistemas de defesa, mineração e robôs industriais. O foco central da discussão é o lançamento da plataforma Dana, projetada para democratizar o desenvolvimento de sistemas autônomos
 https://www.youtube.com/watch?v=56XgWH9ch0U
+
+## 2026-07-27
+
+**Sam Altman - How to Start a Startup**
+Sam Altman, cofundador e CEO da OpenAI, discute a evolução do ecossistema de startups, a importância da inteligência artificial (IA) como motor de mudança e a sua filosofia de liderança em ambientes de alta incerteza. O diálogo foca em como a velocidade de inovação mudou nos últimos 10 anos e como a OpenAI opera para manter sua missão de criar inteligência abundante e descentralizada
+https://www.youtube.com/watch?v=Vv3CEAS_w34
+
+**The 2028 Natural Gas Crisis No One Sees Coming**
+Matt Smith, especialista com 20 anos de experiência em mercados de energia, apresenta uma análise detalhada sobre o que ele descreve como uma crise iminente de gás natural nos Estados Unidos. O estudo, baseado em 18 meses de pesquisa bottom-up, aponta que o país caminha para um déficit histórico de oferta a partir de 2028, impulsionado pela combinação de exportações de GNL (Gás Natural Liquefeito) e o aumento massivo da demanda por energia para data centers de Inteligência Artificial
+https://www.youtube.com/watch?v=3d9tIgjf4_E
