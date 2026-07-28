@@ -1,0 +1,54 @@
+{
+  "date": "2026-07-28",
+  "fidelity_issues": [
+    {
+      "severity": "medium",
+      "where": "edition",
+      "claim": "e aos US$750 bilhões em acordos de infraestrutura de IA da Nvidia, incluindo os US$250 bilhões em garantias para data centers da OpenAI",
+      "issue": "especificidade inventada",
+      "expected": "O research.json traz os dois números como itens separados e de fontes distintas, sem relação de contenção: Bloomberg diz \"Nvidia Corp.'s $750 billion in AI infrastructure deals added to worry over AI-related debt levels\"; o analista Lee cita \"reports of Nvidia providing $250 billion in financial guarantees related to OpenAI's data center investment\". O facts.md (linhas 349-350) também os mantém separados. O 'incluindo' que aninha as garantias dentro dos acordos é inferência da edição."
+    },
+    {
+      "severity": "low",
+      "where": "edition",
+      "claim": "na primeira ação legal conhecida contra um empregado da empresa em um caso de desvio",
+      "issue": "não traça ao research.json",
+      "expected": "A pesquisa hedgeia: \"The move may be the first known instance of government authorities taking legal action against an employee of the chipmaker\" (Bloomberg), e o facts.md preserva o condicional (\"Se confirmado, seria a primeira ação legal conhecida\"). A edição afirma como fato consumado."
+    },
+    {
+      "severity": "low",
+      "where": "edition",
+      "claim": "algumas com prontuários de saúde, documentos internos de empresas e nomes e telefones de crianças",
+      "issue": "não traça ao research.json",
+      "expected": "A pesquisa diz \"Some reportedly contained health records, private company documents, and the names and phone numbers of children\" e o facts.md mantém \"Segundo relatos\". A edição remove a atribuição em uma alegação sensível sobre dados pessoais."
+    },
+    {
+      "severity": "low",
+      "where": "edition",
+      "claim": "coletou 1.081 submissões: 73% de natureza sexual, 95% delas mirando mulheres e 6,7% pessoas aparentemente menores de idade",
+      "issue": "número alterado",
+      "expected": "No research.json e no facts.md o 95% se refere ao subconjunto de pedidos de despir (73% sexuais → 83% desses pediam para tirar a roupa → 95% desses miravam mulheres). Ao suprimir o degrau dos 83%, a edição faz o 95% recair sobre o total das submissões sexuais. A redação da pesquisa é ambígua nesse ponto (\"95% of the requests targeted women\"), então trata-se de risco de deslocamento de referente, não de invenção."
+    }
+  ],
+  "dropped_facts": [
+    {
+      "severity": "medium",
+      "story": "Kospi cai 10,84% e aciona circuit breaker em Seul",
+      "fact": "O Kospi havia mais que dobrado do início do ano até meados de junho, mas desde então perdeu cerca de um terço do valor (facts.md L343).",
+      "why_load_bearing": "É a cifra que dá tamanho à história: sem o arco, a queda de 10,84% parece um choque isolado, e não o estágio avançado de uma correção que já devolveu um terço de um índice que havia dobrado no ano. Sustenta a leitura de 'fadiga do ciclo de IA' que a própria edição usa como causa."
+    },
+    {
+      "severity": "low",
+      "story": "Corning (Resultados & empregos)",
+      "fact": "Projeção do 3º trimestre de US$4,9-5,0 bilhões em vendas core e US$0,85-0,89 de lucro core por ação, contra consenso de US$4,99 bilhões e US$0,85 (facts.md L269-270).",
+      "why_load_bearing": "A queda de ~11% da ação é o ponto da história e a projeção é o mecanismo que a causa. A edição resolve isso qualitativamente ('em linha ou abaixo do consenso'), o que é fiel, mas o leitor perde a cifra que mostra o quão marginal foi a decepção."
+    },
+    {
+      "severity": "low",
+      "story": "Recursive (Ferramentas & poder computacional)",
+      "fact": "A Amazon não tomou participação acionária junto com a capacidade contratada, ao contrário do hábito dos grandes laboratórios de fazer arranjos híbridos de investimento (facts.md L65).",
+      "why_load_bearing": "É o mecanismo que distingue este contrato dos acordos compute-por-equity que dominaram o setor; sem ele, o item vira apenas mais um número de nuvem. O contrato-âncora (US$410 mi, dois terços do captado) sobreviveu, então o impacto é limitado."
+    }
+  ],
+  "summary": "Fidelidade alta — todo número, nome e citação do facts.md rastreia ao research.json; os quatro findings são da edição (uma relação de contenção inferida entre os US$750 bi e os US$250 bi da Nvidia, dois hedges suprimidos e um referente percentual deslocado), e nenhum fato-âncora de história publicada se perdeu."
+}
