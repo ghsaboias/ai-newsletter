@@ -1,6 +1,6 @@
 # [Tech] - Bem-vindo(a) a 10 de Julho de 2026
 
-O que a OpenAI lançou junto com o GPT-5.6? Quanto a SK Hynix levantou em sua estreia na Nasdaq? Por que a Meta cobrou pela primeira vez por um de seus modelos?
+O que a OpenAI lançou junto com o GPT-5.6? Como a China recuperou seu foguete Long March-10B no mar? Por que a Meta cobrou pela primeira vez por um de seus modelos?
 
 Por: Guilherme Saboia e Vinicius Gushiken
 
@@ -10,11 +10,11 @@ Por: Guilherme Saboia e Vinicius Gushiken
 - **Agente.** A empresa também lançou o [ChatGPT Work](https://dailyjournal.news/news/2026-07-08/departamento-de-comercio-dos-eua-autoriza-lancamento-do-gpt-56), agente movido pelo GPT-5.6 que reúne contexto de apps e arquivos conectados para montar documentos, planilhas e apresentações, a partir dos apps para Mac e Windows.
 - **App.** Um novo app de desktop, global para macOS e Windows, [combina Chat, Work e Codex](https://dailyjournal.news/news/2026-07-08/departamento-de-comercio-dos-eua-autoriza-lancamento-do-gpt-56) em um único aplicativo.
 
-### SK Hynix levanta US$26,5 bilhões na Nasdaq no maior IPO de uma estrangeira nos EUA
-- **Oferta.** A SK Hynix [precificou 177,9 milhões de ADRs](https://dailyjournal.news/news/2026-07-07/listagem-da-sk-hynix-nos-eua-atrai-demanda-acima-da-oferta) (recibos que representam ações estrangeiras em bolsa americana) a US$149 cada na quinta-feira (9/7), levantando cerca de US$26,5 bilhões; cada ADR equivale a um décimo de uma ação negociada em Seul.
-- **Recorde.** O valor supera a listagem de US$25 bilhões da Alibaba em 2014 e fica [atrás apenas da SpaceX](https://dailyjournal.news/news/2026-07-07/listagem-da-sk-hynix-nos-eua-atrai-demanda-acima-da-oferta) (cerca de US$85,7 bilhões), o segundo maior IPO (oferta pública inicial de ações) da história do mercado americano.
-- **Demanda.** A procura [superou em mais de sete vezes](https://dailyjournal.news/news/2026-07-07/listagem-da-sk-hynix-nos-eua-atrai-demanda-acima-da-oferta) o total disponível, e a oferta saiu com prêmio de 2,7% sobre a média dos últimos três pregões, o primeiro IPO do tipo nos EUA precificado com prêmio.
-- **Uso.** Os ADRs [estreiam em 10/7 sob o ticker "SKHY"](https://dailyjournal.news/news/2026-07-07/listagem-da-sk-hynix-nos-eua-atrai-demanda-acima-da-oferta), com a listagem principal ainda em Seul; os recursos financiarão fábricas e equipamentos para chips de IA, já que a empresa é a principal fornecedora de memória de alta largura de banda (HBM).
+### China recupera o foguete Long March-10B no mar e se torna a 2ª nação a pousar um propulsor orbital
+- **Voo inaugural.** O foguete Long March-10B [fez seu voo de estreia a partir de Wenchang](https://dailyjournal.news/news/2026-07-10/china-realiza-voo-inaugural-e-recupera-foguete-long-march-10b), em Hainan, na sexta-feira (10/7). O veículo tem cerca de 70 metros de altura.
+- **Segundo do mundo.** A China [se tornou a segunda nação a recuperar um propulsor de classe orbital](https://dailyjournal.news/news/2026-07-10/china-realiza-voo-inaugural-e-recupera-foguete-long-march-10b), feito que, até então, só as americanas SpaceX e Blue Origin haviam alcançado. A operação foi conduzida pela CASC, a principal empreiteira espacial estatal chinesa, e confirmada pela agência estatal Xinhua.
+- **Recuperação no mar.** O estágio [pousou sobre uma plataforma flutuante no oceano](https://dailyjournal.news/news/2026-07-10/china-testa-com-sucesso-recuperacao-de-propulsor-de-foguete-no-mar), passo necessário para tornar o foguete reutilizável e baratear cada lançamento.
+- **Próximos passos.** A CASC [pretende reaproveitar o mesmo estágio ainda em 2026](https://dailyjournal.news/news/2026-07-10/china-realiza-voo-inaugural-e-recupera-foguete-long-march-10b), para aumentar a cadência de lançamentos, em um programa que mira missões à Lua antes de 2030.
 
 ### Meta deixa o código aberto e passa a cobrar por seu modelo com o Muse Spark 1.1
 - **Modelo.** A Meta lançou publicamente o [Muse Spark 1.1](https://dailyjournal.news/news/2026-07-09/meta-lanca-api-de-modelos-de-ia-com-precos-75-menores-que-rivais) na quinta-feira (9/7), modelo de raciocínio multimodal para tarefas agênticas, com ganhos em uso de ferramentas e de computador, programação e compreensão multimodal.
