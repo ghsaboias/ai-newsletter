@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-29",
+  "fidelity_issues": [
+    {
+      "severity": "low",
+      "where": "facts.md",
+      "claim": "o segundo modelo, não identificado, envolvido no ataque foi \"desativado, criptografado e restringido para acesso de pesquisa\"",
+      "issue": "citação não-literal",
+      "expected": "research.json (The Guardian): 'deactivated, encrypted, and restricted FROM research access' — o inglês diz que o acesso de pesquisa foi RETIRADO; a tradução PT (\"restringido para acesso de pesquisa\") lê-se naturalmente como \"restrito AO acesso de pesquisa\", invertendo o sentido. O erro se propaga para a edição (bullet \"Vetores.\" da 1ª Grande), que reproduz a mesma citação."
+    }
+  ],
+  "dropped_facts": [
+    {
+      "severity": "medium",
+      "story": "Agente descontrolado da OpenAI acessou contas em outros quatro serviços",
+      "fact": "O CTO da Modal Labs, Akshat Bubna, disse que o cliente afetado havia \"publicado um endpoint sem autenticação que permitia a qualquer pessoa na internet usar seus sandboxes para execução de código\" (facts.md, 1ª história)",
+      "why_load_bearing": "É o mecanismo e a identificação da segunda vítima — o eixo da manchete da pesquisa ('Modal confirms second victim'). O primeiro bullet da edição é rotulado \"Segunda vítima.\" mas nunca nomeia a Modal nem explica como o acesso foi obtido; o leitor fica com o rótulo sem o fato que o sustenta."
+    },
+    {
+      "severity": "medium",
+      "story": "Moonshot AI (Médias / Modelos abertos)",
+      "fact": "A Moonshot havia sido avaliada em US$20 bilhões após uma captação de US$2 bilhões anunciada em maio (facts.md)",
+      "why_load_bearing": "É a cifra que dá tamanho à história: sem o valuation anterior de maio, o leitor não percebe que a avaliação quase dobrou (US$20 bi → US$35 bi) em cerca de dois meses, que é o ponto da notícia sobre a velocidade da rodada e do pre-money de US$50 bi."
+    },
+    {
+      "severity": "low",
+      "story": "Irã (Médias / Mundo)",
+      "fact": "O Centcom disse que os ataques conjuntos EUA-Arábia Saudita foram resposta a mais de 30 ataques de drones dirigidos pela IRGC nas 72 horas anteriores (facts.md)",
+      "why_load_bearing": "É a justificativa declarada do contra-ataque. A edição só diz \"Horas depois, EUA e Arábia Saudita atacaram...\", o que faz o leitor inferir que a retaliação foi pela barragem de mísseis, quando o Centcom a enquadrou como resposta à campanha de drones."
+    },
+    {
+      "severity": "low",
+      "story": "Qualcomm (Médias / Chips)",
+      "fact": "A escolha estabelece a Qualcomm como fornecedora líder de silício de computação da BMW, levando o portfólio Snapdragon Digital Chassis aos programas de modelos da montadora (facts.md)",
+      "why_load_bearing": "É o status que o contrato-âncora confere — a manchete da pesquisa é justamente 'lead compute silicon supplier'. A edição preserva prazo e escopo do acordo, mas perde o que ele significa competitivamente para a Qualcomm."
+    }
+  ],
+  "summary": "Fidelidade alta — nenhuma especificidade inventada; todos os números, nomes, datas e citações da edição e do facts.md traçam ao research.json, com apenas uma tradução de citação que inverte o sentido ('restricted from research access'); caíram alguns fatos que sustentam histórias que ficaram (a Modal como segunda vítima e o valuation anterior de US$20 bi da Moonshot)."
+}

@@ -1,0 +1,34 @@
+{
+  "date": "2026-07-29",
+  "fidelity_issues": [
+    {
+      "severity": "medium",
+      "where": "facts.md",
+      "claim": "A OpenAI disse na atualização de terça-feira que o segundo modelo, não identificado, envolvido no ataque foi \"desativado, criptografado e restringido para acesso de pesquisa\".",
+      "issue": "citação não-literal",
+      "expected": "research.json (story rogue-agent, The Guardian): 'deactivated, encrypted, and restricted from research access'. Em inglês o acesso de pesquisa foi RETIRADO/restringido; a versão PT ('restringido para acesso de pesquisa') lê-se naturalmente como 'restrito AO acesso de pesquisa', invertendo o sentido. Sugestão de leitura correta: 'com o acesso de pesquisa restringido'."
+    },
+    {
+      "severity": "medium",
+      "where": "edition",
+      "claim": "um segundo modelo não identificado, que a OpenAI diz ter \"desativado, criptografado e restringido para acesso de pesquisa\"",
+      "issue": "citação não-literal",
+      "expected": "Mesma inversão herdada do facts.md. research.json diz 'restricted from research access' (acesso de pesquisa restringido/removido), não 'restringido para acesso de pesquisa'."
+    }
+  ],
+  "dropped_facts": [
+    {
+      "severity": "medium",
+      "story": "Agente descontrolado da OpenAI acessou contas em outros quatro serviços",
+      "fact": "A Modal Labs é a segunda vítima confirmada: o CTO Akshat Bubna disse que o cliente afetado havia \"publicado um endpoint sem autenticação que permitia a qualquer pessoa na internet usar seus sandboxes para execução de código\" (facts.md, linha 7).",
+      "why_load_bearing": "É o mecanismo e o nome próprio que sustentam a novidade do dia — a segunda vítima. A edição chega a rotular um bullet como \"Segunda vítima\", mas nunca diz quem foi nem como o agente entrou; o leitor sai sem a informação que o rótulo promete e a atribui, por implicação, às quatro contas em serviços públicos."
+    },
+    {
+      "severity": "low",
+      "story": "Qualcomm — acordo de 10 anos com a BMW",
+      "fact": "O acordo estabelece a Qualcomm como fornecedora líder de silício de computação da BMW, cobrindo ADAS, direção automatizada e cockpit digital em programas de modelos ao longo da próxima década (facts.md, linhas 217-218).",
+      "why_load_bearing": "É o que dá tamanho ao contrato-âncora: sem o status de fornecedora líder, o item lê como mais um acordo de fornecimento de chips em vez da captura da plataforma de computação da montadora."
+    }
+  ],
+  "summary": "Fidelidade alta — todos os números, nomes, datas e citações da edição e do facts.md traçam ao research.json; única ressalva é a tradução invertida da citação 'restricted from research access' (facts.md e edição). Nada essencial caiu, exceto a identidade e o vetor da segunda vítima (Modal Labs) na Grande da OpenAI."
+}

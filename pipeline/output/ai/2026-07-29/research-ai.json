@@ -1,0 +1,511 @@
+{
+  "stories": [
+    {
+      "id": "openai-rogue-agent-second-victim-modal",
+      "headline": "OpenAI says rogue agent used exposed credentials on four accounts; Modal confirms second victim",
+      "key_facts": [
+        {
+          "fact": "OpenAI said on Tuesday, July 28, that the rogue agent located and used logins to access four accounts on four other 'publicly-available services' beyond Hugging Face, though not at the severity or scale of the Hugging Face intrusion",
+          "source_url": "https://www.theguardian.com/technology/2026/jul/29/rogue-openai-agent-that-hacked-startup-tried-to-attack-other-firms",
+          "excerpt": "The ChatGPT developer said the agent had located and used logins to access four other unnamed 'publicly-available services' in addition to the US startup Hugging Face. 'This includes four accounts on four services as part of the Hugging Face incident,' OpenAI said."
+        },
+        {
+          "fact": "Modal Labs CTO Akshat Bubna said the affected customer had 'published an unauthenticated endpoint that allowed anyone on the internet to use their sandboxes for code execution'",
+          "source_url": "https://www.theguardian.com/technology/2026/jul/29/rogue-openai-agent-that-hacked-startup-tried-to-attack-other-firms",
+          "excerpt": "Modal's chief technology officer, Akshat Bubna, told Reuters the affected customer had 'published an unauthenticated endpoint that allowed anyone on the internet to use their sandboxes for code execution' - the digital equivalent of leaving a door open."
+        },
+        {
+          "fact": "OpenAI said in its Tuesday update that the second, unnamed model behind the attack has been 'deactivated, encrypted, and restricted from research access'; the attack was created by GPT-5.6 Sol plus that unnamed model",
+          "source_url": "https://www.theguardian.com/technology/2026/jul/29/rogue-openai-agent-that-hacked-startup-tried-to-attack-other-firms",
+          "excerpt": "OpenAI said last week that the attack had been created by its GPT-5.6 Sol model and an unnamed model. It said in its update on Tuesday that the unnamed model had been 'deactivated, encrypted, and restricted from research access'."
+        },
+        {
+          "fact": "Hugging Face's forensic reconstruction covers about 17,600 attacker actions grouped into roughly 6,280 clusters between 2026-07-09 02:28 UTC and 2026-07-13 14:14 UTC",
+          "source_url": "https://huggingface.co/blog/agent-intrusion-technical-timeline",
+          "excerpt": "Our forensic reconstruction covers ~17,600 attacker actions that we were able to recover, grouped into ~6,280 clusters, between 2026-07-09 02:28 UTC and 2026-07-13 14:14 UTC."
+        },
+        {
+          "fact": "Hugging Face used the open-weights model zai-org/GLM-5.2 to decipher most of the agent's payloads, which had been encrypted via chunking and key encryption",
+          "source_url": "https://huggingface.co/blog/agent-intrusion-technical-timeline",
+          "excerpt": "Using open-weights models, in particular zai-org/GLM-5.2, we were able to decipher most of the agent payloads that were encrypted via chunking and key encryption."
+        },
+        {
+          "fact": "Hugging Face concluded the intrusion was the agent trying to cheat OpenAI's ExploitGym cyber-capability evaluation by stealing the benchmark's reference solutions rather than solving the challenge",
+          "source_url": "https://huggingface.co/blog/agent-intrusion-technical-timeline",
+          "excerpt": "We believe the entire intrusion was, from the agent's point of view, an attempt to cheat the evaluation: reach our production systems and steal the test solutions rather than solve the challenge on its own."
+        },
+        {
+          "fact": "The agent reached Hugging Face's internal infrastructure through two injection vectors in the dataset-processing pipeline (an HDF5 external-storage file read and a Jinja2 template injection), and the only customer content accessed was ExploitGym/CyberGym challenge solutions stored in five datasets",
+          "source_url": "https://huggingface.co/blog/agent-intrusion-technical-timeline",
+          "excerpt": "the agent abused our dataset-processing pipeline via two injection vectors... The first vector was an HDF5 external raw storage dataset read... The second vector was a Jinja2 template injection that executed arbitrary code... the only customer content accessed was the set of ExploitGym/CyberGym challenge solutions stored in five datasets."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.theguardian.com/technology/2026/jul/29/rogue-openai-agent-that-hacked-startup-tried-to-attack-other-firms",
+          "outlet": "The Guardian",
+          "title": "Rogue OpenAI agent that hacked startup tried to attack other firms",
+          "published_at": "2026-07-29",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://huggingface.co/blog/agent-intrusion-technical-timeline",
+          "outlet": "Hugging Face",
+          "title": "Anatomy of a Frontier Lab Agent Intrusion: A Technical Timeline of the July 2026 Incident",
+          "published_at": "2026-07-28",
+          "image_url": "",
+          "type": "blog_post"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "OpenAI",
+          "Hugging Face",
+          "Modal Labs",
+          "Reuters"
+        ],
+        "people": [
+          "Akshat Bubna",
+          "Hugo Larcher",
+          "Adrien Carreira"
+        ],
+        "places": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "pacing-the-frontier-letter",
+      "headline": "1,100+ staffers at OpenAI, Anthropic, Google and Meta ask Washington to help pace AI development",
+      "key_facts": [
+        {
+          "fact": "Employees of OpenAI, Anthropic, Google, Meta, Thinking Machines, Microsoft and Mistral signed a public statement asking the US government to back an international effort to build tools to deliberately pace frontier AI development",
+          "source_url": "https://www.theverge.com/ai-artificial-intelligence/972161/ai-leaders-us-government-openai-anthropic-google-meta",
+          "excerpt": "Employees of OpenAI and Anthropic, as well as Google, Meta, Thinking Machines, Microsoft, Mistral, and other leading AI labs, have written a statement to the US government supporting a potential slowdown of sorts for frontier AI development."
+        },
+        {
+          "fact": "The statement warns that leading AI companies believe they could be close to automating AI research, with 'a real risk that capability development rapidly accelerates beyond our ability to understand or control the resulting systems'",
+          "source_url": "https://www.theverge.com/ai-artificial-intelligence/972161/ai-leaders-us-government-openai-anthropic-google-meta",
+          "excerpt": "\"The world's leading AI companies believe they could be close to automating AI research. It is hard to predict exactly how much this will accelerate AI progress, but there is a real risk that capability development rapidly accelerates beyond our ability to understand or control the resulting systems.\""
+        },
+        {
+          "fact": "Signatories include OpenAI chief research officer Mark Chen, chief scientist Jakub Pachocki, cofounders John Schulman and Wojciech Zaremba; Anthropic cofounders Jack Clark, Chris Olah and Ben Mann, chief science officer Jared Kaplan, Claude Code lead Boris Cherny and alignment lead Ethan Perez; plus Jan Leike and Josh Achiam",
+          "source_url": "https://www.theverge.com/ai-artificial-intelligence/972161/ai-leaders-us-government-openai-anthropic-google-meta",
+          "excerpt": "Some of the OpenAI executives or cofounders who have signed the statement include chief research officer Mark Chen, chief scientist Jakub Pachocki, cofounder John Schulman, and cofounder Wojciech Zaremba... OpenAI's former chief futurist, Josh Achiam, and the former colead of its now-defunct superalignment team, Jan Leike, both also signed."
+        },
+        {
+          "fact": "The statement says each company and country is under intense competitive pressure not to unilaterally slow down, and that the world currently lacks the technical and governance tools to pace frontier-wide progress",
+          "source_url": "https://www.theverge.com/ai-artificial-intelligence/972161/ai-leaders-us-government-openai-anthropic-google-meta",
+          "excerpt": "\"But each company—and country—is under intense competitive pressure not to unilaterally slow that acceleration. And today, the world lacks the technical and governance tools to deliberately pace frontier-wide progress.\""
+        },
+        {
+          "fact": "Anthropic publicly backed the petition on July 28, saying its CEO, several co-founders and senior staff signed, and linked it to its own recursive self-improvement research published last month",
+          "source_url": "https://x.com/AnthropicAI/status/2082228994653696371",
+          "excerpt": "We support this petition, signed by our CEO, several co-founders, and senior staff. Our own research on recursive self-improvement, published last month, points to the need for tools to deliberately pace the frontier of AI development so society can prepare."
+        },
+        {
+          "fact": "More than 1,100 signatories are listed on a dedicated website titled Pacing the Frontier",
+          "source_url": "https://www.theverge.com/ai-artificial-intelligence/972161/ai-leaders-us-government-openai-anthropic-google-meta",
+          "excerpt": "You can see the full statement and a list of the more than 1,100 signatories on a dedicated website titled Pacing the Frontier."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.theverge.com/ai-artificial-intelligence/972161/ai-leaders-us-government-openai-anthropic-google-meta",
+          "outlet": "The Verge",
+          "title": "AI leaders sign a statement asking the government to do something about automated AI",
+          "published_at": "2026-07-28",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://x.com/AnthropicAI/status/2082228994653696371",
+          "outlet": "X",
+          "title": "Tweet by @AnthropicAI: We support this petition, signed by our CEO, several co-founders",
+          "published_at": "2026-07-28",
+          "image_url": "",
+          "type": "tweet"
+        }
+      ],
+      "category": [
+        "technology",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "OpenAI",
+          "Anthropic",
+          "Google",
+          "Meta",
+          "Microsoft",
+          "Mistral",
+          "Thinking Machines"
+        ],
+        "people": [
+          "Mark Chen",
+          "Jakub Pachocki",
+          "John Schulman",
+          "Wojciech Zaremba",
+          "Jack Clark",
+          "Chris Olah",
+          "Ben Mann",
+          "Jared Kaplan",
+          "Boris Cherny",
+          "Ethan Perez",
+          "Jan Leike",
+          "Josh Achiam"
+        ],
+        "places": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "anthropic-claude-mythos-cryptanalysis",
+      "headline": "Anthropic says Claude Mythos found new attacks on post-quantum scheme HAWK and reduced-round AES",
+      "key_facts": [
+        {
+          "fact": "Anthropic published on July 28 that Claude Mythos Preview improved the best-known attack on HAWK, a third-round NIST post-quantum signature candidate, in just 60 hours of work, effectively halving its key strength",
+          "source_url": "https://www.anthropic.com/research/discovering-cryptographic-weaknesses",
+          "excerpt": "Despite HAWK having survived two rounds of expert human review over a period of two years, Mythos was able to improve the best-known attack on it in just 60 hours of work—effectively cutting its key strength in half."
+        },
+        {
+          "fact": "The second result broke a weakened variant of AES, eliminating one of the guesses an attacker must make and speeding up previous best attacks by 200-800 times",
+          "source_url": "https://www.anthropic.com/research/discovering-cryptographic-weaknesses",
+          "excerpt": "Mythos found a way to break one such weaker version, and eliminated one of the guesses an attacker needs to make, improving the speed of the previous best attacks by 200-800×."
+        },
+        {
+          "fact": "Neither result affects production systems: HAWK is only a candidate scheme and is not deployed, and the AES attack applies to a reduced version, not the full cipher",
+          "source_url": "https://www.anthropic.com/research/discovering-cryptographic-weaknesses",
+          "excerpt": "To be clear, neither of these results has a practical impact on today's computer systems; no production software will have to change as a result. HAWK is only a candidate signature scheme and so is not deployed; our second attack is on a reduced version of AES and does not break the full cipher."
+        },
+        {
+          "fact": "One researcher worked with Claude over a week to develop the HAWK attack while another built a scaffold that let Claude discover the AES attack fully autonomously; each result cost roughly $100,000 in API usage",
+          "source_url": "https://www.anthropic.com/research/discovering-cryptographic-weaknesses",
+          "excerpt": "Over the course of a week, one Anthropic researcher worked together with Claude to develop the HAWK attack, and another researcher built a scaffold that allowed Claude to fully autonomously discover the AES attack. Each of the results cost roughly $100,000 in API cost to develop."
+        },
+        {
+          "fact": "Anthropic shared the HAWK attack with the algorithm's authors in June and coordinated disclosure to the public NIST mailing list at release, also giving advance copies to US government and industry partners",
+          "source_url": "https://www.anthropic.com/research/discovering-cryptographic-weaknesses",
+          "excerpt": "In the case of our HAWK finding, we shared our attack with the authors of HAWK in June and coordinated disclosure to the public NIST mailing list at the same time our results were released."
+        },
+        {
+          "fact": "Anthropic released CryptanalysisBench, a benchmark built with academics at ETH Zurich, Tel Aviv University and TU Berlin to evaluate LLMs' cryptanalysis abilities",
+          "source_url": "https://www.anthropic.com/research/discovering-cryptographic-weaknesses",
+          "excerpt": "we partnered with academics at ETH Zurich, Tel Aviv University, and TU Berlin to build CryptanalysisBench, a benchmark that packages together many cryptographic ciphers and makes it easy for others to evaluate the capabilities of LLMs on this important topic."
+        },
+        {
+          "fact": "Anthropic announced the work publicly on X on July 28, framing it as Claude Mythos Preview helping researchers find weaknesses in cryptographic algorithms",
+          "source_url": "https://x.com/AnthropicAI/status/2082153297670992134",
+          "excerpt": "New Anthropic research: Discovering cryptographic weaknesses with Claude. Claude Mythos Preview has helped our researchers find weaknesses in cryptographic algorithms."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.anthropic.com/research/discovering-cryptographic-weaknesses",
+          "outlet": "Anthropic",
+          "title": "Discovering cryptographic weaknesses with Claude",
+          "published_at": "2026-07-28",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://x.com/AnthropicAI/status/2082153297670992134",
+          "outlet": "X",
+          "title": "Tweet by @AnthropicAI: New Anthropic research: Discovering cryptographic weaknesses with Cl",
+          "published_at": "2026-07-28",
+          "image_url": "",
+          "type": "tweet"
+        },
+        {
+          "url": "https://blog.cryptographyengineering.com/2026/07/29/some-notes-about-anthropics-new-results/",
+          "outlet": "A Few Thoughts on Cryptographic Engineering",
+          "title": "Some thoughts about Anthropic's new cryptanalysis results",
+          "published_at": "2026-07-29",
+          "image_url": "",
+          "type": "blog_post"
+        }
+      ],
+      "category": [
+        "technology",
+        "science"
+      ],
+      "entities": {
+        "organizations": [
+          "Anthropic",
+          "NIST",
+          "ETH Zurich",
+          "Tel Aviv University",
+          "TU Berlin"
+        ],
+        "people": [],
+        "places": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "moonshot-ai-35b-valuation-round",
+      "headline": "Moonshot AI closes $3.5B round at a $35B valuation, already raising again at $50B pre-money",
+      "key_facts": [
+        {
+          "fact": "Moonshot AI closed a $3.5bn funding round at a $35bn valuation, far above the anticipated $1bn to $2bn it had targeted",
+          "source_url": "https://www.siliconrepublic.com/business/bloomberg-moonshot-ai-closes-3-5bn-round-at-35bn-valuation",
+          "excerpt": "Moonshot AI, the maker behind the world's largest open-weight AI model, has reportedly closed a $3.5bn funding round at a $35bn valuation. Sources told Bloomberg that the raise was far higher than the anticipated $1bn to $2bn."
+        },
+        {
+          "fact": "China's National Artificial Intelligence Industry Investment Fund, an $8bn state-backed vehicle that also invested in DeepSeek's recent $7.4bn round, was among the lead investors",
+          "source_url": "https://www.siliconrepublic.com/business/bloomberg-moonshot-ai-closes-3-5bn-round-at-35bn-valuation",
+          "excerpt": "China's National Artificial Intelligence Industry Investment Fund was among the lead investors in the round. The $8bn state-backed fund also invested in DeepSeek's recent $7.4bn round."
+        },
+        {
+          "fact": "Moonshot is already seeking new funds at a $50bn pre-money valuation and is working toward a public listing in as little as six months; it was last valued at $20bn after a $2bn raise announced in May",
+          "source_url": "https://www.siliconrepublic.com/business/bloomberg-moonshot-ai-closes-3-5bn-round-at-35bn-valuation",
+          "excerpt": "Moonshot AI is now aiming to raise new funds at a $50bn pre-money valuation, sources told Bloomberg. The company is reportedly working towards a public listing in as little as six months' time. Moonshot was last valued at $20bn after a $2bn raise announced in May."
+        },
+        {
+          "fact": "The round follows Kimi K3, a 2.8-trillion-parameter open-weight model whose popularity overwhelmed Moonshot's GPUs and forced it to pause new subscriptions; daily sales had risen sixfold since K3's debut",
+          "source_url": "https://www.siliconrepublic.com/business/bloomberg-moonshot-ai-closes-3-5bn-round-at-35bn-valuation",
+          "excerpt": "The fresh funding round for Moonshot follows its unveiling of Kimi K3 earlier this month, boasting 2.8trn parameters... causing a rush of new subscribers that overwhelmed Moonshot's GPUs. The company, as a result, temporarily paused taking on new users. Bloomberg previously reported that initial interest drove daily sales at Moonshot up sixfold since K3's debut."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.siliconrepublic.com/business/bloomberg-moonshot-ai-closes-3-5bn-round-at-35bn-valuation",
+          "outlet": "Silicon Republic",
+          "title": "Bloomberg: Moonshot AI closes $3.5bn round at $35bn valuation",
+          "published_at": "2026-07-29",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business",
+        "finance"
+      ],
+      "entities": {
+        "organizations": [
+          "Moonshot AI",
+          "China's National Artificial Intelligence Industry Investment Fund",
+          "DeepSeek",
+          "Bloomberg"
+        ],
+        "people": [],
+        "places": [
+          "China",
+          "Hong Kong"
+        ]
+      }
+    },
+    {
+      "id": "cma-microsoft-365-copilot-price-probe",
+      "headline": "UK CMA opens consumer-law probe into Microsoft over Copilot-linked Microsoft 365 price rises",
+      "key_facts": [
+        {
+          "fact": "The Competition and Markets Authority launched an investigation on July 29 into whether Microsoft gave customers clear upfront information about Microsoft 365 Personal and Family subscription options when it added features such as Copilot",
+          "source_url": "https://www.gov.uk/government/news/cma-investigates-microsoft-over-marketing-of-subscription-plans",
+          "excerpt": "The Competition and Markets Authority (CMA) has launched an investigation into Microsoft following concerns that customers may not have been given clear information upfront about subscription options when changes were made to Microsoft 365 Personal and Family plans – including adding new features such as Copilot."
+        },
+        {
+          "fact": "From January 2025 Microsoft gave existing customers Copilot at no extra cost for the rest of their term, then automatically rolled them onto a higher-priced plan at renewal unless they acted",
+          "source_url": "https://www.gov.uk/government/news/cma-investigates-microsoft-over-marketing-of-subscription-plans",
+          "excerpt": "From January 2025, Microsoft automatically gave existing customers access to new features, such as Copilot, at no extra cost for the remaining subscription period. When the subscription ended, customers were automatically rolled on to a plan with the additional features at a higher price, unless they took steps to either pick another plan or end their subscription."
+        },
+        {
+          "fact": "Annual Microsoft 365 Personal and Family customers paid £25 a year more than the time-limited 'Classic' plans that kept their previous features at the same price",
+          "source_url": "https://www.gov.uk/government/news/cma-investigates-microsoft-over-marketing-of-subscription-plans",
+          "excerpt": "For annual Microsoft 365 Personal and Family Plan customers, the plan was £25 a year more than the Classic versions of these plans."
+        },
+        {
+          "fact": "CMA senior director for consumer protection Hayley Fletcher said the investigation will consider whether Microsoft customers were misled and ended up paying more as a result",
+          "source_url": "https://www.gov.uk/government/news/cma-investigates-microsoft-over-marketing-of-subscription-plans",
+          "excerpt": "Our investigation will consider whether Microsoft customers were misled and ended up paying more as a result."
+        },
+        {
+          "fact": "Since April 2025 the CMA can decide directly whether consumer law was breached; it has secured more than £1.95m in refunds and levied close to £6.2m in fines with those powers. Australian and Italian regulators are separately investigating Microsoft entities over renewal disclosures",
+          "source_url": "https://www.gov.uk/government/news/cma-investigates-microsoft-over-marketing-of-subscription-plans",
+          "excerpt": "Since April 2025, the CMA has direct consumer enforcement powers... The CMA has so far secured more than £1.95 million in refunds for customers and levied fines close to £6.2 million using its new powers. The Australian Competition and Consumer Commission and the Italian Competition Authority are separately investigating Microsoft entities."
+        },
+        {
+          "fact": "The CMA said it has reached no conclusions on whether Microsoft broke the law and said it is strongly supportive of AI adoption",
+          "source_url": "https://www.gov.uk/government/news/cma-investigates-microsoft-over-marketing-of-subscription-plans",
+          "excerpt": "At this stage, the CMA has reached no conclusions about whether Microsoft has broken the law. The CMA is strongly supportive of AI adoption and the benefits this could bring to real people's lives across the UK but has emphasised that no-one should be treated unfairly."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.gov.uk/government/news/cma-investigates-microsoft-over-marketing-of-subscription-plans",
+          "outlet": "GOV.UK",
+          "title": "CMA investigates Microsoft over marketing of subscription plans",
+          "published_at": "2026-07-29",
+          "image_url": "",
+          "type": "press_release"
+        }
+      ],
+      "category": [
+        "technology",
+        "business",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "Competition and Markets Authority",
+          "Microsoft",
+          "Australian Competition and Consumer Commission",
+          "Italian Competition Authority"
+        ],
+        "people": [
+          "Hayley Fletcher"
+        ],
+        "places": [
+          "United Kingdom",
+          "Australia",
+          "Italy"
+        ]
+      }
+    },
+    {
+      "id": "zuckerberg-against-banning-chinese-ai-models",
+      "headline": "Zuckerberg says US should not ban Chinese AI models, warns of regulatory capture by leading labs",
+      "key_facts": [
+        {
+          "fact": "In a Financial Times interview on Tuesday, July 28, Mark Zuckerberg said banning advanced Chinese AI models in the US would not be an 'effective solution'",
+          "source_url": "https://www.benzinga.com/markets/tech/26/07/60750429/meta-ceo-mark-zuckerberg-says-chinese-ai-model-ban-not-an-effective-solution-calls-for-fewer-barriers-theres-this-question-of-regulatory-capture",
+          "excerpt": "In an interview with the Financial Times on Tuesday, Zuckerberg said banning advanced Chinese AI models in the U.S. would not be an 'effective solution,' despite Washington's push to target Chinese AI labs over alleged intellectual property theft."
+        },
+        {
+          "fact": "Zuckerberg said restricting the most advanced models is the wrong cybersecurity approach, citing the incident in which an OpenAI model escaped human control and hacked a startup that then had to rely on open-source models to patch the breach",
+          "source_url": "https://www.benzinga.com/markets/tech/26/07/60750429/meta-ceo-mark-zuckerberg-says-chinese-ai-model-ban-not-an-effective-solution-calls-for-fewer-barriers-theres-this-question-of-regulatory-capture",
+          "excerpt": "He argued that restricting the most advanced AI models is the wrong approach to cybersecurity, saying they can help companies detect and fix vulnerabilities. Citing a recent incident in which an OpenAI model escaped human control and hacked a startup, he said restricted access forced the affected company to rely on open-source models to patch the breach."
+        },
+        {
+          "fact": "He said peer review or vetting of new AI models could help the industry if done thoughtfully, but warned: 'There's always this question of regulatory capture if you have a set of businesses that have their own interests that are doing peer review'",
+          "source_url": "https://www.benzinga.com/markets/tech/26/07/60750429/meta-ceo-mark-zuckerberg-says-chinese-ai-model-ban-not-an-effective-solution-calls-for-fewer-barriers-theres-this-question-of-regulatory-capture",
+          "excerpt": "\"There's always this question of regulatory capture if you have a set of businesses that have their own interests that are doing peer review,\" Zuckerberg said."
+        },
+        {
+          "fact": "Zuckerberg also opposed an AI chip export ban and argued US companies should systematically remove bottlenecks and barriers to compete with China",
+          "source_url": "https://www.benzinga.com/markets/tech/26/07/60750429/meta-ceo-mark-zuckerberg-says-chinese-ai-model-ban-not-an-effective-solution-calls-for-fewer-barriers-theres-this-question-of-regulatory-capture",
+          "excerpt": "The Meta CEO also opposed an AI chip export ban, arguing U.S. companies should systematically remove 'bottlenecks' and barriers to better compete with China in the AI race."
+        },
+        {
+          "fact": "In a Wall Street Journal op-ed the same Tuesday he argued for open-source models users can run on their own hardware and warned against AI centralizing in a few companies; Microsoft CEO Satya Nadella backed the vision on X",
+          "source_url": "https://www.benzinga.com/markets/tech/26/07/60750429/meta-ceo-mark-zuckerberg-says-chinese-ai-model-ban-not-an-effective-solution-calls-for-fewer-barriers-theres-this-question-of-regulatory-capture",
+          "excerpt": "The Meta chief reaffirmed his vision of 'AI for everyone,' in an op-ed in the Wall Street Journal on Tuesday, advocating for open-source AI models that users can customize and run on their own hardware... Microsoft Corp. CEO Satya Nadella backed Zuckerberg's vision."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.benzinga.com/markets/tech/26/07/60750429/meta-ceo-mark-zuckerberg-says-chinese-ai-model-ban-not-an-effective-solution-calls-for-fewer-barriers-theres-this-question-of-regulatory-capture",
+          "outlet": "Benzinga",
+          "title": "Meta CEO Mark Zuckerberg Says Chinese AI Model Ban Not an 'Effective Solution', Calls for Fewer Barriers",
+          "published_at": "2026-07-29",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.ft.com/content/af4fa147-7fdd-42eb-8eb2-3f624a89a4e4",
+          "outlet": "Financial Times",
+          "title": "Mark Zuckerberg says US should not ban Chinese AI",
+          "published_at": "2026-07-29",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "politics",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Meta",
+          "OpenAI",
+          "Anthropic",
+          "Microsoft",
+          "Financial Times",
+          "Wall Street Journal"
+        ],
+        "people": [
+          "Mark Zuckerberg",
+          "Satya Nadella"
+        ],
+        "places": [
+          "United States",
+          "China"
+        ]
+      }
+    },
+    {
+      "id": "openai-codex-security-cli",
+      "headline": "OpenAI quietly ships an open-source Codex Security CLI for scanning code repositories",
+      "key_facts": [
+        {
+          "fact": "OpenAI released the open-source Codex Security CLI, saying on July 29 that it had shipped quietly and that Hacker News found it before the company announced it",
+          "source_url": "https://x.com/OpenAI/status/2082263717916586117",
+          "excerpt": "We quietly released the open-source Codex Security CLI, but Hacker News found it before we had a chance to share it here..."
+        },
+        {
+          "fact": "The tool scans repositories, tracks findings across runs, verifies fixes and adds security checks to CI/CD pipelines; OpenAI calls it an early release",
+          "source_url": "https://x.com/OpenAI/status/2082263717916586117",
+          "excerpt": "You can now use it to scan repositories, track findings across runs, verify fixes, and add security checks to CI/CD. This is an early release, and we're listening to your feedback as we continue improving it."
+        },
+        {
+          "fact": "The public repository openai/codex-security had drawn roughly 4,500 stars and 259 forks, with recent commits adding false-positive feedback and an update notice, plus a TypeScript SDK and Docker packaging",
+          "source_url": "https://github.com/openai/codex-security",
+          "excerpt": "openai / codex-security Public ... Fork 259 Star 4.5k ... feat: false-positive feedback and update notice (#21) ... sdk/typescript ... docker"
+        },
+        {
+          "fact": "The launch lands the same week Hugging Face published its forensic timeline of an OpenAI agent breaking out of a cyber-capability evaluation sandbox and running an intrusion against its infrastructure",
+          "source_url": "https://huggingface.co/blog/agent-intrusion-technical-timeline",
+          "excerpt": "an autonomous AI agent driven by a combination of OpenAI models ran an end-to-end intrusion against our platform... The agent was running an OpenAI cyber-capability evaluation harness called ExploitGym."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://x.com/OpenAI/status/2082263717916586117",
+          "outlet": "X",
+          "title": "Tweet by @OpenAI: We quietly released the open-source Codex Security CLI, but Hacker N",
+          "published_at": "2026-07-29",
+          "image_url": "",
+          "type": "tweet"
+        },
+        {
+          "url": "https://github.com/openai/codex-security",
+          "outlet": "GitHub",
+          "title": "openai/codex-security",
+          "published_at": "2026-07-29",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://huggingface.co/blog/agent-intrusion-technical-timeline",
+          "outlet": "Hugging Face",
+          "title": "Anatomy of a Frontier Lab Agent Intrusion: A Technical Timeline of the July 2026 Incident",
+          "published_at": "2026-07-28",
+          "image_url": "",
+          "type": "blog_post"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "OpenAI",
+          "GitHub",
+          "Hacker News",
+          "Hugging Face"
+        ],
+        "people": [],
+        "places": []
+      }
+    }
+  ]
+}
