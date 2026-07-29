@@ -207,8 +207,12 @@ vira página do Daily Journal — o leitor deve achar o mesmo tom no clique:
   `*cap table*`, `*hyperscalers*`.
   Exceções — consagrados em PT, **sem** itálico: framework, wafers, IPO, chip,
   data center, benchmark, startup, smartphone, software, hardware.
-  `site` no sentido de local físico é anglicismo: use "terreno", "local" ou
-  "campus" (só o sentido de página na web fica).
+  `site` no sentido de local físico é anglicismo: use "terreno", "local", "área"
+  ou "campus" (só o sentido de página na web fica). **Vale igualmente para a
+  grafia aportuguesada "sítio"**, que é o mesmo anglicismo disfarçado e escapa da
+  regra quando ela nomeia só `site` — "o sítio de Paducah" é proibido, "o terreno
+  de Paducah" é o certo. A regra vale também para **legendas de imagem** e
+  qualquer texto que vá ao ar junto da edição.
 - Sem travessões (—): use vírgula, dois-pontos ou ponto.
 - Léxico: "programação", nunca "codificação"; "contra" no lugar da preposição "ante" (só a palavra isolada, não *antes/diante/mediante*); "stealth" (em itálico: *stealth*), nunca "modo furtivo" — para *stealth mode* / *came out of stealth* use "operava em *stealth*" / "saiu do *stealth*"; "*stack*" (em itálico), nunca "pilha" — para *tech stack* / *full stack* / *AI stack* mantenha "*stack*" (só o sentido de camada de tecnologia; "pilha" no sentido de bateria fica); **"poder computacional", nunca "compute"** — vale também para nome de cluster de Médias (`#### Poder computacional`, não `#### Compute`), já que o `paywall-teaser` herda o rótulo da seção; **preço de token em `*input*`/`*output*`**, nunca "entrada"/"saída" (`US$5 por milhão de tokens de *input* e US$25 de *output*`) — se o `facts.md` chegar com o calque, converta.
 - Português preciso: concordância de gênero, preposições, crase. Cadência limpa —

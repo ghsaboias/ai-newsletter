@@ -495,9 +495,49 @@ echo "=== Draft Complete: <DATE> ==="
 [ -f "$D/links.json" ]    && echo "  Ingest:     $(jq 'length' "$D/links.json") DJ pages (executed)"
 [ -f "$D/paywall-meta.json" ] && echo "  Paywall:    $(jq '.teasers|length' "$D/paywall-meta.json") teasers"
 [ -f "$D/substack-draft.json" ]  && echo "  Draft:      $(jq -r '.url' "$D/substack-draft.json")"
-[ -f "$D/repetition.json" ] && echo "  Repetition: $(jq '.issues|length' "$D/repetition.json") issues (advisory)"
+[ -f "$D/repetition.json" ] && echo "  Repetition: $(jq -r '"\(.issues|length) issues (high \([.issues[]|select(.severity=="high")]|length) / med \([.issues[]|select(.severity=="medium")]|length) / low \([.issues[]|select(.severity=="low")]|length))"' "$D/repetition.json") (advisory)"
 [ -f "$D/fact-check.json" ] && echo "  Fact-check: $(jq '.fidelity_issues|length' "$D/fact-check.json") fidelity / $(jq '.dropped_facts|length' "$D/fact-check.json") dropped (advisory)"
 echo "  Duration:   $(( ($(date +%s) - START) / 60 ))m $(( ($(date +%s) - START) % 60 ))s"
+```
+
+Validate both advisory files before reading anything out of them. This is a
+**non-gating** check (advisory never halts the chain) — but a malformed report is
+worse than no report, so say so out loud instead of printing `null`s:
+
+```bash
+python3 "$ROOT/pipeline/tools/validate-findings.py" repetition "$D/repetition.json" || echo "  WARN: repetition.json fora do schema — findings abaixo podem estar incompletos"
+python3 "$ROOT/pipeline/tools/validate-findings.py" fact-check "$D/fact-check.json" || echo "  WARN: fact-check.json fora do schema — findings abaixo podem estar incompletos"
+```
+
+Then apply the **mechanical** half of the findings. Only `type: "lexicon"` is
+auto-applied — a banned term or a missing italic has one literal fix and no
+editorial judgement. Repetition of phrasing/framing/story is never auto-applied:
+it needs a rewrite, and that stays with the human reviewer.
+
+```bash
+python3 "$ROOT/pipeline/tools/apply-lexicon.py" "$D/repetition.json" "$D/edition.md" --execute
+python3 "$ROOT/pipeline/tools/apply-lexicon.py" "$D/repetition.json" "$D/edition-final.md" --execute
+```
+
+Run this **before** the Substack push if the push hasn't happened yet, so the
+draft goes out already clean. If the draft is already pushed, do **not** re-push
+from the skill — report the `APPLY` lines and let the reviewer mirror them in the
+editor. Each line prints `APPLY`/`SKIP`; a `SKIP` is the tool refusing to guess
+(anchor not found or ambiguous), never a silent failure.
+
+Then print the advisory findings that are worth the reviewer's eye — **high and
+medium only**, never the `low` tail (it's what makes the report get ignored).
+Both files now carry `severity`, so filter on it; never invent field names:
+
+```bash
+echo "--- repetition (high/med) ---"
+jq -r '.issues[] | select(.severity=="high" or .severity=="medium")
+       | "  [\(.severity)/\(.type)] \(.overlap)\n      → \(.suggestion)"' "$D/repetition.json"
+echo "--- fact-check (high/med) ---"
+jq -r '.fidelity_issues[] | select(.severity!="low")
+       | "  [\(.severity)] \(.issue) (\(.where)): \(.claim)"' "$D/fact-check.json"
+jq -r '.dropped_facts[] | select(.severity!="low")
+       | "  [\(.severity)] dropped em \"\(.story)\": \(.fact)"' "$D/fact-check.json"
 ```
 
 Then print the hand-off (point at the **Substack draft** — the review happens
@@ -510,7 +550,8 @@ there now):
 > Substack é a fonte da verdade — não rode a skill de novo pra re-publicar** (ela
 > nem re-empurra: o id em `.substack-draft-id` trava o create-once). Leia antes os
 > memory files em `~/.claude/projects/-Users-guilherme-ai-newsletter/memory/` e os
-> findings advisory: `repetition.json` (repetições story/phrasing/framing) +
+> findings advisory: `repetition.json` (repetições story/phrasing/framing +
+> violações de léxico/estilo, com `severity`) +
 > `fact-check.json` (fidelidade + fatos load-bearing perdidos).
 
 Do **not** re-print each step's output — research's skill and the agents already

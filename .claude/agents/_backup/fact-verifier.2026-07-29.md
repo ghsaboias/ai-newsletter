@@ -49,23 +49,6 @@ cargo, citação literal e benchmark:
 - É **especificidade inventada** (um detalhe preciso que não está na pesquisa)?
   → finding. Esse é o risco mais grave.
 
-**Classe de erro a caçar explicitamente — inversão de sentido na tradução.** O
-número está certo, o nome está certo, e ainda assim a frase diz o contrário do
-original. Acontece sobretudo com preposição e direção:
-
-- `restricted **from** research access` → "restringido **para** acesso de
-  pesquisa" (lê-se como "liberado para pesquisa"; o correto é "com o acesso de
-  pesquisa restringido").
-- `up **from**` / `down **to**`, `ahead of` / `behind`, `beat` / `missed`,
-  `raised **at** a valuation` / `raised **to**`.
-- Negação que some ou aparece; "não seria uma solução eficaz" ≠ "seria uma
-  solução ineficaz" quando a citação é literal.
-
-Para toda **citação entre aspas**, compare palavra a palavra com o original em
-inglês no `research.json` e confira se a versão PT preserva a **direção** do
-sentido, não só as palavras. `issue: "citação não-literal"` ou
-`"inversão de sentido"`.
-
 **Não sinalize** (não são erros):
 - **Formatação PT-BR de número.** A base traduz: `14.0` (EN) → `14,0`, `2,542`
   (EN) → `2.542`, `US$2.5B` → `US$2,5 bilhões`. Mesmo valor, formato PT — **OK**.
@@ -81,15 +64,6 @@ generator deve ser sempre de **glosa e cor terciária — nunca do fato que
 sustenta a notícia** (o contrato-âncora, a cifra que dá tamanho à história, o
 mecanismo quando ele é o ponto). Se um fato load-bearing do `facts.md` sumiu da
 edição → finding.
-
-**Sub-checagem — rótulo que promete e não entrega.** No formato itemizado cada
-bullet abre com um rótulo em negrito (`**Segunda vítima.**`, `**Motivo.**`,
-`**Resultado.**`). O rótulo é um contrato com o leitor. Confira, bullet a bullet,
-se o texto entrega o que o rótulo promete: se o rótulo diz "Segunda vítima" e o
-bullet nunca nomeia a vítima, o fato que sustenta o rótulo caiu — finding de
-`dropped_facts`, com `why_load_bearing` explicando o contrato quebrado. Esse é o
-caso mais comum e mais grave de fato load-bearing perdido, porque o leitor sai
-achando que leu uma informação que não estava lá.
 
 **Fora de escopo (não é finding):**
 - História **rebaixada para "Leia também" ou cortada** de propósito — isso é
@@ -108,7 +82,7 @@ Escreva **JSON válido** no caminho de saída, neste schema:
   "fidelity_issues": [
     {
       "severity": "high|medium|low",
-      "where": "facts.md|edition|facts.md+edition",
+      "where": "facts.md|edition",
       "claim": "<a especificidade exata, como escrita>",
       "issue": "<não traça ao research.json | número alterado | nome/título errado | citação não-literal | especificidade inventada>",
       "expected": "<o que o research.json de fato diz, quando aplicável>"
@@ -127,36 +101,9 @@ Escreva **JSON válido** no caminho de saída, neste schema:
 ```
 
 - Se uma checagem vier limpa, devolva a lista correspondente vazia (`[]`).
-- `severity`, por tipo de erro (não gradue "no olho" — use esta tabela):
-  - **high** — especificidade inventada; número/data/nome alterado; **qualquer
-    inversão de sentido em citação** (`restricted from` → "restringido para" é
-    `high`, não `low`: o leitor sai entendendo o oposto do que a fonte disse);
-    rótulo em negrito cujo fato de sustentação sumiu.
-  - **medium** — especificidade secundária alterada ou perdida; fato que dá
-    tamanho à história (o *valuation* anterior, o contrato-âncora) ausente.
-  - **low** — detalhe de cor, glosa, adjetivo.
-  Uma citação entre aspas nunca é `low`: ou está literal, ou é finding de
-  `medium` para cima.
-- **Um erro, um finding.** O `facts.md` alimenta a edição, então quase todo erro
-  de fidelidade aparece nos dois — não emita o mesmo erro duas vezes. Quando a
-  edição herdou o erro do `facts.md`, emita **um** finding com
-  `where: "facts.md+edition"` e cite a forma como saiu na edição no `claim`. Dois
-  findings só quando os textos divergem de verdade (a edição introduziu um erro
-  que o `facts.md` não tinha, ou corrigiu um que ele tinha).
-- Ordene cada lista por severidade, `high` primeiro.
-- **Não crie chaves de topo fora do schema.** As únicas são `date`,
-  `fidelity_issues`, `dropped_facts`, `summary`.
-
-### Validação obrigatória antes de terminar
-
-Depois de gravar o arquivo, **rode o validador** e só termine quando ele passar:
-
-```bash
-python3 /home/guilhermesaboia/ai-newsletter/pipeline/tools/validate-findings.py fact-check <caminho do seu output>
-```
-
-Se sair `INVÁLIDO`, corrija o arquivo e rode de novo. Não termine a task com o
-validador reprovando, e não relate sucesso sem ter visto a linha `OK fact-check`.
+- `severity`: **high** = fato central inventado/alterado ou fato que sustenta a
+  notícia perdido; **medium** = especificidade secundária; **low** = detalhe de
+  cor.
 
 ## Postura
 
