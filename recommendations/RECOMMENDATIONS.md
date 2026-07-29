@@ -929,3 +929,13 @@ https://www.youtube.com/watch?v=Vv3CEAS_w34
 **The 2028 Natural Gas Crisis No One Sees Coming**
 Matt Smith, especialista com 20 anos de experiência em mercados de energia, apresenta uma análise detalhada sobre o que ele descreve como uma crise iminente de gás natural nos Estados Unidos. O estudo, baseado em 18 meses de pesquisa bottom-up, aponta que o país caminha para um déficit histórico de oferta a partir de 2028, impulsionado pela combinação de exportações de GNL (Gás Natural Liquefeito) e o aumento massivo da demanda por energia para data centers de Inteligência Artificial
 https://www.youtube.com/watch?v=3d9tIgjf4_E
+
+## 2026-07-28
+
+**NASA's Jared Isaacman: the truth about UAPs, Moon Base by 2028 and the Path to Mars | Ep #274**
+O vídeo apresenta uma entrevista com Jared Isaacman, empresário e astronauta comercial que assumiu o cargo de 15º administrador da NASA em dezembro de 2025. A conversa, conduzida por Peter H. Diamandis e convidados, foca na reestruturação da agência para um modelo mais ágil, inspirado em startups, e na estratégia para a exploração espacial nas próximas décadas
+https://www.youtube.com/watch?v=nV_lyWrkBs8
+
+**Sam Altman on AGI, Compute, and Human Agency**
+Sam Altman, CEO da OpenAI, discute a trajetória da empresa, o papel estratégico da computação (compute) no desenvolvimento da Inteligência Artificial Geral (AGI), a economia da inteligência e a visão da OpenAI sobre o futuro do trabalho e da agência humana. O diálogo aborda desde os desafios operacionais de escalar infraestrutura até a responsabilidade ética de liderar uma tecnologia transformadora
+https://www.youtube.com/watch?v=XDB5beon4DY
