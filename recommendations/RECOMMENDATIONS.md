@@ -939,3 +939,23 @@ https://www.youtube.com/watch?v=nV_lyWrkBs8
 **Sam Altman on AGI, Compute, and Human Agency**
 Sam Altman, CEO da OpenAI, discute a trajetória da empresa, o papel estratégico da computação (compute) no desenvolvimento da Inteligência Artificial Geral (AGI), a economia da inteligência e a visão da OpenAI sobre o futuro do trabalho e da agência humana. O diálogo aborda desde os desafios operacionais de escalar infraestrutura até a responsabilidade ética de liderar uma tecnologia transformadora
 https://www.youtube.com/watch?v=XDB5beon4DY
+
+## 2026-07-29
+
+**The Next Frontier of AI Is Spatial Intelligence | Fei-Fei Li on a16z**
+O vídeo apresenta uma conversa entre Martin Casado (a16z), Fei-Fei Li (CEO da World Labs) e Yunzhu Li (cofundadora da SceniX e professora na Columbia University). O foco central é a aquisição da SceniX pela World Labs, unindo esforços para desenvolver a "inteligência espacial": a capacidade de máquinas entenderem, raciocinarem e interagirem com espaços físicos e virtuais. A discussão aborda a transição de modelos de linguagem para modelos de mundo voltados à robótica e o papel crucial da simulação
+https://www.youtube.com/watch?v=-tabaM5l3s0
+
+**The Fight Over Open Source AI, Anthropic's $1.5B Payout, NYC Socialists: Evictions = Violence?**
+O episódio discute a recente tensão em torno do modelo de IA de código aberto Kimi K3, da chinesa Moonshot AI, que atingiu desempenho comparável aos modelos de ponta dos EUA com custos significativamente menores. O debate central gira em torno da pressão exercida por laboratórios de IA de fronteira, como Anthropic e OpenAI, para que o governo dos EUA restrinja modelos de código aberto, sob o argumento de que a "destilação" (uso de outputs de modelos proprietários para treinar outros) constitui uma ameaça à segurança nacional e roubo de propriedade intelectual
+https://www.youtube.com/watch?v=wcV0SRPFK9s
+
+## 2026-07-30
+
+**Building the Automated AGI Lab: Core Automation's Jerry Tworek and Rohan Anil**
+Jerry Tworek (ex-OpenAI) e Rohan Anil (ex-Google Brain/Gemini), fundadores da Core Automation, em uma conversa com Sonya Huang e Pat Grady da Sequoia Capital. A discussão foca na tese de que a arquitetura Transformer atingiu seu limite de utilidade e que o próximo passo para a AGI exige uma mudança fundamental em direção a sistemas capazes de aprendizado contínuo em tempo real
+https://www.youtube.com/watch?v=2RJiaf0SY8s
+
+**The Next Frontier of AI Is Spatial Intelligence | Fei-Fei Li on a16z**
+O vídeo apresenta uma conversa entre Martin Casado (a16z), Fei-Fei Li (CEO da World Labs) e Yunzhu Li (cofundadora da SceniX e professora na Columbia University). O foco central é a aquisição da SceniX pela World Labs, unindo esforços para desenvolver a "inteligência espacial", a capacidade de máquinas entenderem, raciocinarem e interagirem com espaços físicos e virtuais. A discussão aborda a transição de modelos de linguagem para modelos de mundo voltados à robótica e o papel crucial da simulação
+https://www.youtube.com/watch?v=-tabaM5l3s0
