@@ -67,8 +67,24 @@ date '+%Y-%m-%d %H:%M:%S %Z'; date +%s   # second number = START, keep it
 ```
 
 ```
-DAY_DIR = /Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>
+REPO    = /Users/guilherme/ai-newsletter          # raiz do repo (onde vivem os scripts)
+DAY_DIR = $REPO/pipeline/output/ai/<DATE>
 ```
+
+E confira que `.claude/agents/` está **plano** — este é um GATE:
+
+```bash
+REPO=/Users/guilherme/ai-newsletter   # exporte junto do START; o Step 4 usa
+find "$REPO/.claude/agents" -mindepth 2 -name '*.md' | grep . && echo "HALT: definição de agente em subdiretório"
+```
+
+Achou algo → **HALT**, não dispare agente nenhum. O Claude Code varre `agents/`
+recursivamente: uma cópia em subdiretório (`_backup/`, `old/`) entra no registro
+com o mesmo `name:` e pode vencer a colisão — foi o que aconteceu em 2026-07-30
+(rodou o `repetition-checker` de 07-29, sem checagem de léxico e sem a tool
+`Bash`, e nada acusou erro). Backup de agente é o git, nunca uma cópia dentro de
+`agents/`. E as definições são carregadas **no início da sessão**: consertar os
+arquivos não conserta a sessão em curso — arrume e rode numa **sessão nova**.
 
 ## Orchestration model
 
@@ -505,9 +521,13 @@ Validate both advisory files before reading anything out of them. This is a
 worse than no report, so say so out loud instead of printing `null`s:
 
 ```bash
-python3 "$ROOT/pipeline/tools/validate-findings.py" repetition "$D/repetition.json" || echo "  WARN: repetition.json fora do schema — findings abaixo podem estar incompletos"
-python3 "$ROOT/pipeline/tools/validate-findings.py" fact-check "$D/fact-check.json" || echo "  WARN: fact-check.json fora do schema — findings abaixo podem estar incompletos"
+python3 "$REPO/pipeline/tools/validate-findings.py" repetition "$D/repetition.json" || echo "  WARN: repetition.json fora do schema — findings abaixo podem estar incompletos"
+python3 "$REPO/pipeline/tools/validate-findings.py" fact-check "$D/fact-check.json" || echo "  WARN: fact-check.json fora do schema — findings abaixo podem estar incompletos"
 ```
+
+`$REPO` é a raiz do repo (Step 0), **não** `$ROOT` — `ROOT`, nos Steps 3/3.5, é o
+diretório de *output*. Com `$ROOT` o `python3` morre com `can't open file`, o `||`
+dispara e o WARN sai idêntico ao de schema inválido, mascarando qual é o problema.
 
 Then apply the **mechanical** half of the findings. Only `type: "lexicon"` is
 auto-applied — a banned term or a missing italic has one literal fix and no
@@ -515,8 +535,8 @@ editorial judgement. Repetition of phrasing/framing/story is never auto-applied:
 it needs a rewrite, and that stays with the human reviewer.
 
 ```bash
-python3 "$ROOT/pipeline/tools/apply-lexicon.py" "$D/repetition.json" "$D/edition.md" --execute
-python3 "$ROOT/pipeline/tools/apply-lexicon.py" "$D/repetition.json" "$D/edition-final.md" --execute
+python3 "$REPO/pipeline/tools/apply-lexicon.py" "$D/repetition.json" "$D/edition.md" --execute
+python3 "$REPO/pipeline/tools/apply-lexicon.py" "$D/repetition.json" "$D/edition-final.md" --execute
 ```
 
 Run this **before** the Substack push if the push hasn't happened yet, so the
