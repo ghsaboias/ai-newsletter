@@ -1,0 +1,28 @@
+{
+  "date": "2026-07-31",
+  "fidelity_issues": [
+    {
+      "severity": "high",
+      "where": "edition",
+      "claim": "OpenAI corta em 80% o preço dos GPT-5.6 Luna e Terra (título da história)",
+      "issue": "número alterado",
+      "expected": "O corte de 80% vale só para o Luna (US$1 -> US$0,20 de input e US$6 -> US$1,20 de output). O Terra caiu 20% (US$2,50 -> US$2 e US$15 -> US$12). O research.json titula 'OpenAI cuts GPT-5.6 Luna price 80% and Terra 20%' e a Yahoo Finance fala em 'by up to 80%'. O corpo do bullet 'Tabela.' traz os valores certos; só o título generaliza os 80% para os dois modelos."
+    },
+    {
+      "severity": "medium",
+      "where": "edition",
+      "claim": "a Suno vai recorrer",
+      "issue": "não traça ao research.json",
+      "expected": "'Suno disagreed with the ruling and said it would evaluate all available options, including an appeal' — a empresa disse que vai avaliar todas as opções, inclusive recurso; não anunciou recurso. O facts.md registra corretamente ('disse que avaliará todas as opções disponíveis, inclusive recurso'); a edição transformou a possibilidade em decisão."
+    }
+  ],
+  "dropped_facts": [
+    {
+      "severity": "medium",
+      "story": "TSMC (Chips e memória)",
+      "fact": "O mesmo relatório da The Information afirma que a Nvidia avalia usar a tecnologia de empacotamento EMIB da Intel em um futuro processador (facts.md).",
+      "why_load_bearing": "É o mecanismo que explica o próprio movimento que a edição reporta: a Intel subir mais de 13% 'lida como validada em sua abordagem'. Sem a Nvidia avaliando o EMIB, o salto da ação fica sem causa explícita — a edição afirma a leitura do mercado, mas suprime o fato que a sustenta."
+    }
+  ],
+  "summary": "Fidelidade alta no geral (números, datas, citações e benchmarks rastreiam ao research.json); dois desvios na edição — o título que estende os 80% de corte ao Terra (que caiu 20%) e o recurso da Suno dado como certo — e um mecanismo de suporte perdido na história da TSMC."
+}

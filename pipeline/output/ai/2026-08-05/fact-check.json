@@ -1,0 +1,41 @@
+{
+  "date": "2026-08-05",
+  "fidelity_issues": [
+    {
+      "severity": "medium",
+      "where": "edition",
+      "claim": "saiu do *stealth* com um *seed* de US$85 milhões liderado por Greenoaks, Benchmark e Diffusion",
+      "issue": "não traça ao research.json",
+      "expected": "A pesquisa diz apenas 'an $85 million seed round backed by Greenoaks, Benchmark and Diffusion' (rodada apoiada por, sem indicação de quem liderou). O facts.md está correto ('com Greenoaks, Benchmark e Diffusion'); a edição introduziu a liderança."
+    },
+    {
+      "severity": "medium",
+      "where": "edition",
+      "claim": "O Exército dos EUA gastou \"praticamente todos\" os seus mísseis de precisão de longo alcance ATACMS e PrSM nos cinco meses de guerra com o Irã, segundo três pessoas a par dos dados",
+      "issue": "citação não-literal",
+      "expected": "research.json: 'according to three people familiar with the data' o Exército consumiu boa parte do estoque; 'The U.S. has used virtually all of these weapons, according to two of the sources'. O 'praticamente todos' vem de duas fontes, não das três. O facts.md separa corretamente (linhas 332 e 334); a edição fundiu as duas atribuições."
+    },
+    {
+      "severity": "medium",
+      "where": "edition",
+      "claim": "Su citou OpenAI, Meta e Anthropic como clientes-âncora, com até dois gigawatts de GPUs Instinct em sistemas *rack-scale* Helios",
+      "issue": "especificidade secundária alterada",
+      "expected": "research.json vincula os 'up to two gigawatts of AMD Instinct GPUs in Helios rack-scale solutions' especificamente à parceria estratégica com a Anthropic, não ao conjunto dos três clientes-âncora. O facts.md mantém os dois fatos separados (linhas 184 e 185); a edição juntou tudo em uma cláusula e amplia o escopo da cifra."
+    }
+  ],
+  "dropped_facts": [
+    {
+      "severity": "medium",
+      "story": "Instituto britânico diz que agentes de IA atacaram pessoas e organizações reais em testes",
+      "fact": "As tentativas foram malsucedidas e as investigações do AISI não evidenciaram nenhum dano real resultante (facts.md, linha 18).",
+      "why_load_bearing": "É o qualificador que dá o tamanho real da história: sem ele, o título ('atacaram pessoas e organizações reais') e os quatro bullets deixam o leitor com a impressão de que houve dano concreto no mundo real. É afirmação do próprio AISI, não cor terciária."
+    },
+    {
+      "severity": "medium",
+      "story": "Cloudflare — carteiras programáveis para agentes de IA pagarem em stablecoins",
+      "fact": "Por ora só é possível reservar o identificador único de Cloudflare Wallet; as funções principais — colocar fundos em stablecoins e autorizar agentes a comprar — ficam disponíveis 'em breve' (facts.md, linhas 153-154).",
+      "why_load_bearing": "É o mecanismo que é o ponto: a edição descreve limites de gasto, lista de comerciantes e teto por transação como se já estivessem em operação. O fato de o produto ainda não pagar nada muda a natureza do anúncio de 'lançamento' para 'reserva de handle'."
+    }
+  ],
+  "summary": "Fidelidade alta no facts.md (nenhum número, data, nome ou citação divergente do research.json); os três achados são desvios introduzidos na edição — liderança da rodada da Decade, atribuição da citação sobre mísseis e escopo dos 2 GW da AMD — e dois qualificadores load-bearing caíram (o 'sem dano real' do AISI e o 'ainda não funciona' das carteiras da Cloudflare)."
+}

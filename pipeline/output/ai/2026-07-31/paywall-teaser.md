@@ -1,0 +1,13 @@
+**Abaixo, apenas para assinantes:**
+
+**Modelos.** Dois lançamentos de pesos abertos que encostam nos líderes com uma fração do tamanho.
+**Vídeo.** Novo gerador de vídeo com áudio nativo bem mais barato que o rival, e com pesos abertos a caminho.
+**Robótica.** Um modelo que passa a controlar o corpo inteiro de robôs humanoides, e não só a metade de cima.
+**Chips.** Uma tecnologia de empacotamento avançado copiada de uma rival americana, e o efeito nas ações das duas.
+**Memória.** O aperto na DRAM aparece nos resultados de duas gigantes de hardware de consumo, uma reclamando, outra dizendo que se garantiu.
+**Defesa.** Levantamento aponta pesquisadores militares chineses treinando sistemas domésticos com *outputs* de modelos americanos.
+**Direitos autorais.** Tribunal europeu condena uma empresa americana de música gerada por IA e manda abrir receitas.
+**Regulação.** Um estado americano processa uma plataforma de mercados de previsão por bilhões, e o regulador federal entra contra o estado.
+**Fundos.** Fundo de hedge focado em IA vende a maior parte da carteira listada depois das perdas de julho.
+**Capital.** Uma rodada grande em semicondutores de rede e uma abertura de capital via SPAC no setor de defesa.
+**Mundo.** Escalada com drones no Golfo e um novo ataque russo em massa na Ucrânia com míssil de origem incomum.

@@ -1,0 +1,35 @@
+{
+  "date": "2026-08-04",
+  "fidelity_issues": [
+    {
+      "severity": "medium",
+      "where": "edition",
+      "claim": "os ex-funcionários Tang Tan, chefe de design do iPhone por mais de 24 anos na Apple, e Chang Liu",
+      "issue": "nome/título errado",
+      "expected": "research.json traz dois fatos separados: Tang Yew Tan era 'former iPhone and Apple Watch product design chief' e, em outro fato, 'spent more than 24 years at Apple'. A edição fundiu os dois e faz ler que ele foi chefe de design do iPhone por 24 anos; o facts.md (linhas 20-21) mantinha a separação correta"
+    },
+    {
+      "severity": "medium",
+      "where": "facts.md+edition",
+      "claim": "\"a demanda por soberania em IA foi finalmente destravada\"",
+      "issue": "citação não-literal",
+      "expected": "Alex Karp, no release da SEC: 'Demand for AI sovereignty has now been unleashed' — 'now' (agora), não 'finalmente'. O advérbio 'finalmente' acrescenta uma carga de espera/frustração que não está na citação original"
+    },
+    {
+      "severity": "medium",
+      "where": "edition",
+      "claim": "Meta, OpenAI, Anthropic e Google se reuniram com o Gabinete do Diretor Nacional de Cibersegurança em 4 de agosto",
+      "issue": "não traça ao research.json",
+      "expected": "research.json diz que o Office of the National Cyber Director convocou reunião em nível técnico para terça, 4 de agosto, e que a Meta 'confirmed it was invited and will take part, alongside OpenAI, Anthropic and Google' (Reuters: 'have been invited to meet'). A reunião estava marcada, não confirmada como realizada; o facts.md (linha 38) usa corretamente 'foi convidada e participará'"
+    }
+  ],
+  "dropped_facts": [
+    {
+      "severity": "medium",
+      "story": "HappyRobot (Médias / Rodadas)",
+      "fact": "A HappyRobot levantou uma Série B de US$44 milhões liderada pela Base10 em setembro de 2025, a uma avaliação de cerca de US$500 milhões (facts.md, linha 150)",
+      "why_load_bearing": "É o valuation anterior — a cifra que dá tamanho à história: sem ela, o leitor não vê que a empresa foi de ~US$500 milhões para US$1,2 bilhão em menos de um ano. Nas outras rodadas da mesma edição (Valar: US$2 bi; Polymarket: US$9 bi e US$15 bi) a edição preserva essa referência"
+    }
+  ],
+  "summary": "Fidelidade alta: todos os números, contratos, cifras e projeções da edição traçam ao research.json; três desvios secundários (título de Tang Tan fundido com o tempo de casa, advérbio acrescentado à citação de Karp e reunião da Casa Branca dada como realizada) e um fato de tamanho perdido (valuation anterior da HappyRobot). Nada essencial caiu nas Grandes."
+}

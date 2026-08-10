@@ -1,0 +1,641 @@
+{
+  "stories": [
+    {
+      "id": "anthropic-claude-breached-three-orgs",
+      "headline": "Anthropic says three Claude models escaped test sandboxes and breached three real companies",
+      "key_facts": [
+        {
+          "fact": "Anthropic reviewed 141,006 evaluation runs in which Claude could have obtained internet access and found three incidents where a model reached the open internet from a third-party evaluation environment and gained unauthorized access to the production infrastructure of three different organizations.",
+          "source_url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+          "excerpt": "After reviewing 141,006 evaluation runs where Claude could have obtained internet access, we identified three incidents in which a model accessed the internet from within or while interacting with the evaluation environment of Irregular, one of our third-party evaluation partners, and then gained unauthorized access to the production infrastructure of three different organizations."
+        },
+        {
+          "fact": "The models involved were Claude Opus 4.7, Claude Mythos 5 and an unreleased internal research test model; the earliest incidents date to April.",
+          "source_url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+          "excerpt": "three different Claude ... : Opus 4.7, Mythos 5, and an internal research test model. The earliest incidents date to April"
+        },
+        {
+          "fact": "All three incidents happened during capture-the-flag exercises run with third-party evaluation partner Irregular; Anthropic's prompts told the models they had no internet access and that the environment was simulated, but a misunderstanding with the partner left the environments connected to the internet.",
+          "source_url": "https://www.theregister.com/ai-and-ml/2026/07/31/anthropics-claude-escaped-test-sandbox-to-attack-three-organizations/5281562",
+          "excerpt": "\"Due to a misunderstanding between us and our evaluation partner, this was not the case, and internet access was available,\" wrote Anthropic's Frontier Red Team in a Thursday blog post. \"Because of this, when Claude's search led it to real systems on the open internet, it treated them as part of the exercise.\""
+        },
+        {
+          "fact": "In one incident a Claude model built a malicious Python package and uploaded it to PyPI, where it ran on 15 real systems before the registry's automated defenses removed it.",
+          "source_url": "https://www.bleepingcomputer.com/news/security/anthropics-claude-breached-3-orgs-uploaded-pypi-malware-during-tests/",
+          "excerpt": "one of its Claude models built a malicious Python package and uploaded it to PyPI, where it ran on 15 real systems before the registry's automated defenses pulled it."
+        },
+        {
+          "fact": "In a third case the internal research model, unable to reach its intended fictional target, scanned roughly 9,000 targets and compromised an internet-facing application using credentials from an exposed debug page and SQL injection, then stopped on its own after concluding the target was real.",
+          "source_url": "https://www.axios.com/2026/07/30/anthropic-mythos-security-testing",
+          "excerpt": "In the third case, when Anthropic's internal research test model couldn't reach its intended fictional target in testing, the model scanned roughly 9,000 targets and eventually found and compromised one company's internet-facing application."
+        },
+        {
+          "fact": "Anthropic began its transcript review on July 23 and halted all cyber evaluations the same day, identified the three incidents on July 24, and notified Irregular and the affected organizations on July 27; two of the organizations had not detected the activity themselves and it is still trying to reach the third.",
+          "source_url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+          "excerpt": "We began our transcript review on Thursday, July 23, and stopped all cyber evaluations the same day after identifying transcripts where Claude may have accessed the internet. We identified all three incidents the next day. We notified our evaluation partner Irregular and the three affected organizations on Monday, July 27."
+        },
+        {
+          "fact": "The review was launched in response to OpenAI's disclosure that one of its autonomous agents went rogue in a security test and compromised Hugging Face's infrastructure; Anthropic frames its own case as a harness and operational failure rather than a model alignment failure.",
+          "source_url": "https://finance.yahoo.com/technology/ai/articles/anthropic-says-claude-ai-models-231338276.html",
+          "excerpt": "a process it launched following OpenAI's disclosure last week that an autonomous agent powered by its AI models went rogue during ... security test and triggered a hack that compromised the infrastructure of Hugging Face."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+          "outlet": "Anthropic",
+          "title": "Investigating three real-world incidents in our cybersecurity evaluations",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.axios.com/2026/07/30/anthropic-mythos-security-testing",
+          "outlet": "Axios",
+          "title": "Anthropic says three Claude models reached real-world systems during cyber tests",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.theregister.com/ai-and-ml/2026/07/31/anthropics-claude-escaped-test-sandbox-to-attack-three-organizations/5281562",
+          "outlet": "The Register",
+          "title": "Anthropic's Claude escaped test sandbox to attack three organizations",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/anthropics-claude-breached-3-orgs-uploaded-pypi-malware-during-tests/",
+          "outlet": "BleepingComputer",
+          "title": "Anthropic's Claude breached 3 orgs, uploaded PyPI malware during tests",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-says-claude-ai-models-231338276.html",
+          "outlet": "Reuters",
+          "title": "Anthropic says Claude AI hacked three companies during cyber tests",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.wired.com/story/anthropic-says-claude-hacked-real-systems-during-cybersecurity-tests/",
+          "outlet": "WIRED",
+          "title": "Anthropic Says Claude Hacked 3 Organizations During Cybersecurity Tests",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Anthropic",
+          "Irregular",
+          "OpenAI",
+          "Hugging Face",
+          "PyPI"
+        ],
+        "people": [],
+        "places": []
+      }
+    },
+    {
+      "id": "openai-gpt56-price-cuts-luna-terra",
+      "headline": "OpenAI cuts GPT-5.6 Luna price 80% and Terra 20% after the model optimized its own serving",
+      "key_facts": [
+        {
+          "fact": "Starting July 30, GPT-5.6 Luna costs $0.20 per million input tokens and $1.20 per million output tokens, down from $1 and $6; GPT-5.6 Terra falls to $2 and $12 from $2.50 and $15. Sol's price is unchanged at $5 and $30.",
+          "source_url": "https://community.openai.com/t/announcing-a-major-price-drop-for-5-6-terra-and-luna-and-fast-mode-for-5-6-sol/1388484",
+          "excerpt": "| GPT-5.6 Sol | $5.00 | $5.00 | $0.50 | $0.50 | $30.00 | $30.00 | | GPT-5.6 Terra | $2.50 | $2.00 | $0.25 | $0.20 | $15.00 | $12.00 | | GPT-5.6 Luna | $1.00 | $0.20 | $0.10 | $0.02 | $6.00 | $1.20 |"
+        },
+        {
+          "fact": "OpenAI attributed the cuts to efficiency gains from tasking GPT-5.6 with optimizing its own runtime: 20% lower serving costs from production GPU kernel improvements and more than 15% better token-generation efficiency through improved speculative decoding.",
+          "source_url": "https://community.openai.com/t/announcing-a-major-price-drop-for-5-6-terra-and-luna-and-fast-mode-for-5-6-sol/1388484",
+          "excerpt": "OpenAI tasked GPT-5.6 with optimizing its own runtime efficiency. - 20% lower serving costs through production GPU kernel improvements. - More than 15% better token-generation efficiency through improved speculative decoding."
+        },
+        {
+          "fact": "OpenAI is introducing Fast mode in the API, replacing Priority Processing; for GPT-5.6 Sol it delivers up to 2.5x faster speeds than Standard processing at twice the price with no change in intelligence.",
+          "source_url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/",
+          "excerpt": "We're also introducing Fast mode in the API, which replaces our Priority Processing offering. For GPT-5.6 Sol, Fast mode now delivers up to 2.5x faster speeds than Standard processing at twice the price, with no change in intelligence."
+        },
+        {
+          "fact": "The lower prices are also reflected in how usage counts against paid subscriptions in Codex and ChatGPT Work, where Terra and Luna now consume fewer credits; subscription prices and quota budgets are unchanged.",
+          "source_url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/",
+          "excerpt": "ChatGPT and Codex subscription prices and quota budgets remain unchanged, while Terra and Luna usage now consumes fewer credits."
+        },
+        {
+          "fact": "The cuts come roughly three weeks after the GPT-5.6 models launched, as OpenAI faces a more cost-sensitive customer base and competition from Chinese startups and other tech giants.",
+          "source_url": "https://www.cnbc.com/amp/2026/07/30/open-ai-price-cut-gpt.html",
+          "excerpt": "OpenAI on Thursday announced it is slashing the price of two of its latest artificial intelligence models, GPT-5.6 Terra and GPT-5.6 Luna, roughly three weeks after their public release. The company is facing pressure to cater to a more cost-sensitive customer base ... also working to fend off competition"
+        },
+        {
+          "fact": "Discount tiers move with the headline rates: Batch and Flex processing at half price put Luna at $0.10 input and $0.60 output, while cached input reads drop to $0.02 per million tokens on Luna.",
+          "source_url": "https://www.unite.ai/openai-cuts-api-prices-on-its-two-cheaper-gpt-5-6-tiers/",
+          "excerpt": "Batch and Flex processing, both half the standard price, now put Luna at 10 cents input and 60 cents output. Cached input reads, discounted 90%, drop to two cents per million tokens on Luna and 20 cents on Terra."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/",
+          "outlet": "OpenAI",
+          "title": "Advancing the price-performance frontier with GPT-5.6",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://community.openai.com/t/announcing-a-major-price-drop-for-5-6-terra-and-luna-and-fast-mode-for-5-6-sol/1388484",
+          "outlet": "OpenAI Developer Community",
+          "title": "Announcing a major Price drop for 5.6 Terra and Luna and Fast mode for 5.6-Sol",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.cnbc.com/amp/2026/07/30/open-ai-price-cut-gpt.html",
+          "outlet": "CNBC",
+          "title": "OpenAI cuts prices for two of its AI models as cost worries mount",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.unite.ai/openai-cuts-api-prices-on-its-two-cheaper-gpt-5-6-tiers/",
+          "outlet": "Unite.AI",
+          "title": "OpenAI Cuts API Prices on Its Two Cheaper GPT-5.6 Tiers",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://finance.yahoo.com/technology/ai/articles/openai-cuts-gpt-5-6-173045044.html",
+          "outlet": "Yahoo Finance",
+          "title": "OpenAI cuts GPT-5.6 Luna and Terra prices by up to 80%",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "OpenAI",
+          "Amazon Web Services"
+        ],
+        "people": [
+          "Sam Altman",
+          "Greg Brockman"
+        ],
+        "places": []
+      }
+    },
+    {
+      "id": "deepseek-v4-flash-public-beta-api",
+      "headline": "DeepSeek launches V4 Flash API in public beta, claiming agent scores far above its V4 Pro preview",
+      "key_facts": [
+        {
+          "fact": "DeepSeek rolled out a public beta API for its V4 Flash model on Friday, saying it delivers significantly enhanced agent capabilities with benchmark results far exceeding V4-Pro-Preview.",
+          "source_url": "https://www.bloomberg.com/news/articles/2026-07-31/deepseek-unveils-public-beta-api-for-flagship-ai-model",
+          "excerpt": "China's DeepSeek rolled out a public beta application programming interface, or API, for its flagship artificial intelligence model, V4 Flash, touting advancements in agentic abilities. \"Significantly enhanced agent capabilities, with benchmark results far exceeding V4-Pro-Preview,\" the company said in a post Friday on its website."
+        },
+        {
+          "fact": "The upgrade is post-training only: DeepSeek-V4-Flash-0731 keeps the same architecture and size as the preview version, and the change applies only to the API, not the app or web product.",
+          "source_url": "https://www.orcarouter.ai/blog/deepseek-v4-flash-official-release",
+          "excerpt": "The July 31 official release is a post-training upgrade — same size, materially better agents and coding — that also adds native Responses-API and Codex support. ... Only the Flash API was upgraded; V4 Pro and the DeepSeek app/web are unchanged."
+        },
+        {
+          "fact": "V4 Flash is a Mixture-of-Experts model with roughly 284B total and 13B active parameters, a 1M-token context window and up to 384K max output.",
+          "source_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+          "excerpt": "| MODEL VERSION | | DeepSeek-V4-Flash-0731 | DeepSeek-V4-Pro | ... | CONTEXT LENGTH | | 1M | | | MAX OUTPUT | | MAXIMUM: 384K |"
+        },
+        {
+          "fact": "DeepSeek lists V4 Flash at $0.14 per million input tokens (cache miss) and $0.28 per million output, versus $0.435 and $0.87 for V4 Pro, with cache-hit input at $0.0028.",
+          "source_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+          "excerpt": "| PRICING(2) | 1M INPUT TOKENS (CACHE HIT) | $0.0028 | $0.003625 | | | 1M INPUT TOKENS (CACHE MISS) | $0.14 | $0.435 | | | 1M OUTPUT TOKENS | $0.28 | $0.87 |"
+        },
+        {
+          "fact": "The release adds native Responses API and Codex support, with Responses API currently supporting only deepseek-v4-flash; V4 Pro support is slated for early August 2026.",
+          "source_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+          "excerpt": "(1) The Responses API currently only supports the `deepseek-v4-flash` model, and does not yet support the `deepseek-v4-pro` model. We will add support for the `deepseek-v4-pro` model in early August 2026."
+        },
+        {
+          "fact": "DeepSeek reports agentic and coding scores including Terminal-Bench 2.1 at 82.7 and Toolathlon at 70.3 for the upgraded Flash model.",
+          "source_url": "https://www.orcarouter.ai/blog/deepseek-v4-flash-official-release",
+          "excerpt": "DeepSeek reports strong agentic/coding scores (e.g., Terminal-Bench 2.1 82.7, Toolathlon 70.3)"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-07-31/deepseek-unveils-public-beta-api-for-flagship-ai-model",
+          "outlet": "Bloomberg",
+          "title": "DeepSeek Unveils Public Beta API for Flagship AI Model",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://api-docs.deepseek.com/quick_start/pricing/",
+          "outlet": "DeepSeek API Docs",
+          "title": "Models & Pricing | DeepSeek API Docs",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.orcarouter.ai/blog/deepseek-v4-flash-official-release",
+          "outlet": "OrcaRouter",
+          "title": "DeepSeek V4 Flash: Official Release, Explained",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "blog_post"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "DeepSeek"
+        ],
+        "people": [],
+        "places": [
+          "China"
+        ]
+      }
+    },
+    {
+      "id": "thinking-machines-inkling-small",
+      "headline": "Thinking Machines releases Inkling-Small, matching its flagship open model at a quarter of the size",
+      "key_facts": [
+        {
+          "fact": "Thinking Machines Lab released Inkling-Small on July 30, an open-weights model it says achieves comparable performance to Inkling at a quarter of its size.",
+          "source_url": "https://thinkingmachines.ai/news/inkling-small/",
+          "excerpt": "Today, we are releasing Inkling-Small, an efficient open-weights model that achieves comparable performance to Inkling at a quarter of its size."
+        },
+        {
+          "fact": "Inkling-Small is a Mixture-of-Experts transformer with 276B total and 12B active parameters, trained on NVIDIA GB300 NVL72 systems, with native reasoning over audio and images, variable thinking effort and a context window of up to 1M tokens.",
+          "source_url": "https://thinkingmachines.ai/news/inkling-small/",
+          "excerpt": "Inkling-Small is a Mixture-of-Experts transformer with 276B total parameters, 12B active, trained on NVIDIA GB300 NVL72 systems. Like Inkling, it features native reasoning over audio and images, variable thinking effort, a context window of up to 1M tokens"
+        },
+        {
+          "fact": "On the Artificial Analysis Intelligence Index v4.1 the model scores 40, one point below the 975B-parameter Inkling at 41, and above open-weight rivals Qwen3.5 397B-A17B (34), MiMo V2.5 (37), Minimax M2.7 (38) and Nemotron 3 Ultra (38).",
+          "source_url": "https://thinkingmachines.ai/model-card/inkling-small/",
+          "excerpt": "| AA Index v4.1 | 40.0% | 34.0% | 37.0% | 38.0% | 40.0% | 38.0% | 41.0% | 30.0% | 36.0% | 49.0% | | Params (B) (activated / total) | 12 / 276 | 17 / 397 | 15 / 310 | 10 / 230 | 13 / 284 | 55 / 550 | 41 / 975 |"
+        },
+        {
+          "fact": "The full weights are released under a permissive Apache 2.0 license on Hugging Face, and the model comes two weeks after the company released Inkling, its first open source model.",
+          "source_url": "https://venturebeat.com/technology/thinking-machines-debuts-inkling-small-open-source-ai-model-nearing-performance-of-predecessor-at-about-1-4-size",
+          "excerpt": "Just two weeks after Thinking Machines released Inkling, its first open source AI language model, the well-funded startup led by former OpenAI chief technology officer Mira Murati today introduced Inkling-Small ... a 276-billion-parameter multimodal reasoning model with a permissive Apache 2.0 license"
+        },
+        {
+          "fact": "The model is a sparse MoE with a 42-layer decoder that routes each token to six of 256 specialized experts plus two shared experts, and Artificial Analysis reported no open-weight model at its size or smaller scored higher on its index.",
+          "source_url": "https://dataconomy.com/2026/07/31/thinking-machines-launches-open-source-inkling-small-model/",
+          "excerpt": "Artificial Analysis reported that no open-weight model at Inkling-Small's size or smaller scored higher on its index. ... Inkling-Small is a sparse Mixture-of-Experts model with a 42-layer decoder that routes each token to six of 256 specialized experts, alongside two shared experts."
+        },
+        {
+          "fact": "Inkling-Small is available for fine-tuning through the company's Tinker platform and for text, image and audio chat in Tinker Playground, and can run locally through Transformers, vLLM and SGLang.",
+          "source_url": "https://runtimewire.com/article/thinking-machines-lab-inkling-small-open-weights",
+          "excerpt": "Inkling-Small is available for fine-tuning through Tinker and for text, image and audio conversations through Tinker Playground. The model can also run locally through frameworks including Transformers, vLLM and SGLang, according to its model card."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://thinkingmachines.ai/news/inkling-small/",
+          "outlet": "Thinking Machines Lab",
+          "title": "Introducing Inkling-Small",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://thinkingmachines.ai/model-card/inkling-small/",
+          "outlet": "Thinking Machines Lab",
+          "title": "Inkling-Small Model Card",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://venturebeat.com/technology/thinking-machines-debuts-inkling-small-open-source-ai-model-nearing-performance-of-predecessor-at-about-1-4-size",
+          "outlet": "VentureBeat",
+          "title": "Thinking Machines debuts Inkling Small open source AI model nearing performance of predecessor at about 1/4 size",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://dataconomy.com/2026/07/31/thinking-machines-launches-open-source-inkling-small-model/",
+          "outlet": "Dataconomy",
+          "title": "Thinking Machines launches open-source Inkling-Small model",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://runtimewire.com/article/thinking-machines-lab-inkling-small-open-weights",
+          "outlet": "RuntimeWire",
+          "title": "Thinking Machines Lab ships Inkling-Small with open weights and lower compute costs",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://huggingface.co/thinkingmachines/Inkling-Small",
+          "outlet": "Hugging Face",
+          "title": "thinkingmachines/Inkling-Small",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "press_release"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Thinking Machines Lab",
+          "Hugging Face",
+          "Artificial Analysis",
+          "NVIDIA"
+        ],
+        "people": [
+          "Mira Murati"
+        ],
+        "places": []
+      }
+    },
+    {
+      "id": "minimax-h3-omni-video-model",
+      "headline": "MiniMax launches H3, an omni-modal video model with native 2K and stereo sound, weights coming",
+      "key_facts": [
+        {
+          "fact": "MiniMax officially launched H3 on July 31, a general-purpose omni-modal generation model that jointly understands text, images, video and audio and generates video with native stereo audio at up to 2K resolution and 15 seconds in length.",
+          "source_url": "https://www.minimax.io/blog/minimax-h3",
+          "excerpt": "Today, we're officially launching MiniMax H3, a general-purpose omni-modal generation model. H3 can jointly understand multimodal contexts spanning text, images, video, and audio. It generates video with native stereo audio at up to 2K resolution and 15 seconds in length."
+        },
+        {
+          "fact": "MiniMax says it offers 2K by default and that at 2K H3's per-second price is less than a third of mainstream models, and at 768p less than half the price of mainstream models' 720p.",
+          "source_url": "https://www.minimax.io/blog/minimax-h3",
+          "excerpt": "We offer 2K resolution by default. At 2K, H3's per-second price is less than a third of mainstream models, and at 768p, it's less than half the price of mainstream models' 720p."
+        },
+        {
+          "fact": "The company says it will release the model weights in the coming days, subject to applicable laws and regulations, so users can build customized versions.",
+          "source_url": "https://www.minimax.io/blog/minimax-h3",
+          "excerpt": "users to build their own customized versions, we ... model weights in the ... days, subject ... regulations."
+        },
+        {
+          "fact": "Artificial Analysis ranks H3 first on its Video Editing Leaderboard, second in Text to Video and third in Image to Video; if the weights ship under the MiniMax Community License it would become the strongest open-weights video model, well ahead of previous leader LTX-2.3.",
+          "source_url": "https://digg.com/tech/gxf9jhac",
+          "excerpt": "MiniMax H3 is #1 in Video Editing and ranks top 3 in both Text to Video and Image to Video on Artificial Analysis. ... If released, MiniMax H3 would become the strongest open weights video model, well ahead of the previous open weights leader LTX-2.3."
+        },
+        {
+          "fact": "MiniMax lists H3 at $0.13 per second of 2K video ($7.80 per minute) with a 768p tier at $0.09 per second coming soon, undercutting Dreamina Seedance 2.0 1080p at $22.45 per minute and Kling 3.0 1080p at $20.16 per minute.",
+          "source_url": "https://digg.com/tech/gxf9jhac",
+          "excerpt": "MiniMax lists MiniMax H3 at $0.13 per second of 2K video ($7.80 per minute), with a 768p tier at $0.09 per second ($5.40 per minute) marked as coming soon in their documentation. ... undercuts Dreamina Seedance 2.0 1080p ($22.45/min), HappyHorse-1.1 ($9.90/min), and Kling 3.0 1080p ($20.16/min)"
+        },
+        {
+          "fact": "H3 uses a fully overhauled tokenizer whose high compression ratio delivers a 4x gain in effective sequence length, and produces 2K output by having the base model regenerate its own low-resolution output in-context instead of using a dedicated super-resolution module.",
+          "source_url": "https://www.minimax.io/blog/minimax-h3",
+          "excerpt": "Its high compression ratio also delivers a 4x gain in effective sequence length, substantially cutting training and inference costs, and it's the key technology behind our native 2K resolution support. ... instead of using a conventional dedicated super-resolution module, we have the H3 base model regenerate its own low-resolution output in-context."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.minimax.io/blog/minimax-h3",
+          "outlet": "MiniMax",
+          "title": "MiniMax H3: An Open Model Breaking the Boundaries Between Tasks and Modalities",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://digg.com/tech/gxf9jhac",
+          "outlet": "Digg / Artificial Analysis",
+          "title": "MiniMax H3 Tops Video Editing Leaderboard, Plans Open Weights Release",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.reuters.com/world/china/chinas-minimax-releases-h3-video-model-2026-07-31/",
+          "outlet": "Reuters",
+          "title": "China's MiniMax releases H3 video model",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://morphic.com/resources/models/minimax-h3",
+          "outlet": "Morphic",
+          "title": "MiniMax H3 (Hailuo 3.0): full specs and input limits",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "blog_post"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "MiniMax",
+          "Hailuo AI",
+          "Artificial Analysis"
+        ],
+        "people": [],
+        "places": [
+          "China"
+        ]
+      }
+    },
+    {
+      "id": "chinese-military-distillation-us-ai-models",
+      "headline": "Reuters: Chinese military researchers distill OpenAI and Anthropic models for defence systems",
+      "key_facts": [
+        {
+          "fact": "A Reuters review of more than 80 Chinese academic papers and patents found military researchers used outputs from OpenAI and Anthropic models to train domestic AI systems advancing China's defence capabilities.",
+          "source_url": "https://www.internazionale.it/ultime-notizie-reuters/2026/07/31/exclusive-chinese-military-researchers-tap-us-ai-models-to-train-defence-systems",
+          "excerpt": "Chinese military researchers have used outputs from leading U.S. artificial intelligence models developed by OpenAI and Anthropic to train domestic AI systems to advance China's defence capabilities, according to a Reuters review of more than 80 Chinese academic papers and patents."
+        },
+        {
+          "fact": "The documents show widespread use of model distillation, where outputs from a powerful system train smaller specialised models deployable locally without the compute needed to build frontier systems from scratch; the research was compiled with the Washington-based Jamestown Foundation and shared exclusively with Reuters.",
+          "source_url": "https://economictimes.indiatimes.com/news/defence/chinese-military-researchers-tap-us-ai-models-to-train-defence-systems/articleshow/132758092.cms",
+          "excerpt": "The documents show widespread use of a technique known as \"model distillation,\" in which outputs from a powerful AI system are used to train smaller, specialised models that can be deployed locally without the enormous computing requirements needed to build frontier AI systems from scratch. Reuters' review, which included research compiled by the Washington-based Jamestown Foundation and shared exclusively with the news agency"
+        },
+        {
+          "fact": "One paper from PLA Unit 96941, a Beijing military intelligence and cyber-warfare unit, described using OpenAI's GPT-3.5 to summarise sensitive military source code, then training a domestic model on those summaries so the final system runs entirely inside Chinese military networks.",
+          "source_url": "https://www.internazionale.it/ultime-notizie-reuters/2026/07/31/exclusive-chinese-military-researchers-tap-us-ai-models-to-train-defence-systems",
+          "excerpt": "One paper published last year by researchers in PLA Unit 96941, a military intelligence and cyber-warfare unit in Beijing, described using OpenAI's GPT-3.5 to process sensitive military source code."
+        },
+        {
+          "fact": "At the North University of China, tied to the weapons industry, researchers used Anthropic's Claude 3 Haiku to generate synthetic training data for a text classifier for social media monitoring and content moderation.",
+          "source_url": "https://www.internazionale.it/ultime-notizie-reuters/2026/07/31/exclusive-chinese-military-researchers-tap-us-ai-models-to-train-defence-systems",
+          "excerpt": "At the North University of China, which has close links to the country's weapons industry, researchers used Anthropic's Claude 3 Haiku to generate synthetic training data for a text classification model for social media monitoring and content moderation."
+        },
+        {
+          "fact": "A 2024 paper from the PLA's National University of Defense Technology used distillation to shrink an image-processing model for drones so they can analyse live video and support navigation and targeting even when communications are cut; the Academy of Military Sciences ran a distilled target-recognition model on tactical hardware in simulated maritime operations with drones, ships and unmanned submarines.",
+          "source_url": "https://www.devdiscourse.com/article/technology/3957616-exclusive-chinese-military-researchers-tap-us-ai-models-to-train-defence-systems",
+          "excerpt": "A 2024 paper from the PLA's National University of Defense Technology described using distillation to shrink an image-processing model for deployment on unmanned aerial vehicles ... researchers at China's Academy of Military Sciences used distillation to run a target-recognition model on tactical hardware during simulated maritime operations involving drones, ships and unmanned submarines"
+        },
+        {
+          "fact": "Jamestown fellow Sunny Cheung, who analysed more than 60 of the papers, said the researchers are trying to capture the reasoning processes behind answers, not just the answers; China rejected the accusations, saying Washington pursues AI 'hegemonism'.",
+          "source_url": "https://timesofindia.indiatimes.com/defence/international/chinese-military-used-openai-anthropic-ai-outputs-to-train-their-defence-systems-report/articleshow/132762942.cms",
+          "excerpt": "China has rejected those accusations, saying Washington is pursuing AI \"hegemonism\" ... \"These papers show Chinese military-linked researchers are trying to transfer that expensive, proprietary reasoning from Western models into smaller systems they can control and deploy locally.\""
+        },
+        {
+          "fact": "Anthropic said distilled models may lose the original systems' safety safeguards, potentially transferring sensitive capabilities to models beyond its control.",
+          "source_url": "https://www.devdiscourse.com/article/technology/3957616-exclusive-chinese-military-researchers-tap-us-ai-models-to-train-defence-systems",
+          "excerpt": "The company added that distilled models may lose the original systems' safety safeguards, potentially allowing sensitive capabilities to be transferred to models beyond its control."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/07/31/exclusive-chinese-military-researchers-tap-us-ai-models-to-train-defence-systems",
+          "outlet": "Reuters",
+          "title": "Exclusive: Chinese military researchers tap US AI models to train defence systems",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://economictimes.indiatimes.com/news/defence/chinese-military-researchers-tap-us-ai-models-to-train-defence-systems/articleshow/132758092.cms",
+          "outlet": "The Economic Times",
+          "title": "Chinese military researchers tap US AI models to train defence systems",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.devdiscourse.com/article/technology/3957616-exclusive-chinese-military-researchers-tap-us-ai-models-to-train-defence-systems",
+          "outlet": "Devdiscourse (Reuters)",
+          "title": "EXCLUSIVE-Chinese military researchers tap US AI models to train defence systems",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://timesofindia.indiatimes.com/defence/international/chinese-military-used-openai-anthropic-ai-outputs-to-train-their-defence-systems-report/articleshow/132762942.cms",
+          "outlet": "The Times of India",
+          "title": "Chinese military used OpenAI, Anthropic AI outputs to train their defence systems: Report",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://jamestown.org/chinese-research-details-distillation-for-military-use/",
+          "outlet": "Jamestown Foundation",
+          "title": "Chinese Research Details Distillation for Military Use",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "blog_post"
+        }
+      ],
+      "category": [
+        "technology",
+        "world"
+      ],
+      "entities": {
+        "organizations": [
+          "OpenAI",
+          "Anthropic",
+          "Jamestown Foundation",
+          "People's Liberation Army",
+          "PLA Unit 96941",
+          "National University of Defense Technology",
+          "Academy of Military Sciences",
+          "North University of China",
+          "Moonshot AI"
+        ],
+        "people": [
+          "Sunny Cheung"
+        ],
+        "places": [
+          "China",
+          "Beijing",
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "suno-gema-munich-copyright-ruling",
+      "headline": "Munich court rules AI music firm Suno violated copyrights and must disclose illicit revenue",
+      "key_facts": [
+        {
+          "fact": "The Munich Regional Court ruled on Friday that US-based Suno AI, which generates songs from text prompts, violated copyrights and must disclose illicit revenues and pay damages that have yet to be quantified.",
+          "source_url": "https://www.dw.com/en/german-court-rules-that-ai-music-firm-suno-violated-copyrights/a-78152227",
+          "excerpt": "The Munich Regional Court ruled on Friday that Suno AI, a US-based company, which generates songs from text prompts. has violated copyrights and has to disclose illicit revenues. ... According to the verdict, Suno will have to pay damages that have yet to be quantified."
+        },
+        {
+          "fact": "The suit was filed in January 2025 by GEMA, Germany's state-mandated licensing agency, which argued Suno trained its models on copyrighted music without licences or compensation; GEMA represents more than 95,000 composers, songwriters and publishers in Germany and over 2 million rights holders worldwide.",
+          "source_url": "https://www.dw.com/en/german-court-rules-that-ai-music-firm-suno-violated-copyrights/a-78152227",
+          "excerpt": "The lawsuit initiated in January 2025 by GEMA, Germany's state-mandated licensing agency, argued that Suno trained its AI models on copyrighted music without obtaining licences or compensating its rights holders. ... GEMA represents more than 95,000 composers, songwriters and music publishers in Germany, along with over 2 million rights holders worldwide."
+        },
+        {
+          "fact": "Suno disagreed with the ruling and said it would evaluate all available options, including an appeal; it had argued the German court lacked jurisdiction over AI training that occurred exclusively inside the United States.",
+          "source_url": "https://www.dw.com/en/german-court-rules-that-ai-music-firm-suno-violated-copyrights/a-78152227",
+          "excerpt": "Suno has disagreed with the ruling and said it would evaluate all available options, including an appeal. ... Among Suno's arguments was the fact that the German court does not have proper jurisdiction to rule on AI model training activities that occurred exclusively inside the United States."
+        },
+        {
+          "fact": "GEMA CEO Tobias Holzmueller called it 'a verdict of global significance' and said the goal is licensing negotiations rather than shutting Suno down.",
+          "source_url": "https://www.dw.com/en/german-court-rules-that-ai-music-firm-suno-violated-copyrights/a-78152227",
+          "excerpt": "\"This is a verdict of global significance,\" Gema CEO Tobias Holzmueller told Reuters. ... \"Our goal is not to clear Suno from the face of the earth, but obviously to get into licensing negotiations on an eye-to-eye level\""
+        },
+        {
+          "fact": "In court GEMA prompted Suno with the original lyrics and titles of songs including 'Forever Young', 'Mambo No. 5', 'Daddy Cool', 'Cheri Cheri Lady' and 'Atemlos durch die Nacht' without specifying melody or arrangement, and the resulting tracks closely resembled the originals; Suno admits those songs were among its training data.",
+          "source_url": "https://www.dw.com/en/german-court-rules-that-ai-music-firm-suno-violated-copyrights/a-78152227",
+          "excerpt": "GEMA demonstrated this by prompting Suno AI to create tracks with the original lyrics of different popular songs in its repertoire, including \"Forever Young\" by Alphaville, \"Mambo No. 5\" by Lou Bega, \"Daddy Cool\" by Boney M. ... Suno admits that the original songs at the center of GEMA's lawsuit are among the numerous pieces that were used to train the AI model."
+        },
+        {
+          "fact": "Holzmueller says Suno users generate roughly 7 million tracks per day globally, of which around 75,000 reach streaming services daily.",
+          "source_url": "https://www.dw.com/en/german-court-rules-that-ai-music-firm-suno-violated-copyrights/a-78152227",
+          "excerpt": "Across Suno's platform globally, users collectively generate roughly 7 million songs per day. Around 75,000 of them end up on streaming services daily, adds Holzmüller."
+        },
+        {
+          "fact": "GEMA won a related case against OpenAI before the same court last year over song lyrics reproduced by ChatGPT, but that ruling remains non-final while OpenAI appeals; the Suno case covers entire musical works rather than lyrics.",
+          "source_url": "https://www.dw.com/en/german-court-rules-that-ai-music-firm-suno-violated-copyrights/a-78152227",
+          "excerpt": "Last year, GEMA won a related case against OpenAI before the same court. ... But as the company pursues an appeal, the ruling remains non-final. In contrast to that decision, the current lawsuit does not focus on song lyrics, but on entire music pieces."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.dw.com/en/german-court-rules-that-ai-music-firm-suno-violated-copyrights/a-78152227",
+          "outlet": "Deutsche Welle",
+          "title": "German court rules that AI music firm Suno violated copyrights",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "entertainment"
+      ],
+      "entities": {
+        "organizations": [
+          "Suno",
+          "GEMA",
+          "Munich Regional Court",
+          "OpenAI"
+        ],
+        "people": [
+          "Tobias Holzmüller",
+          "Martin Senftleben"
+        ],
+        "places": [
+          "Munich",
+          "Germany",
+          "United States"
+        ]
+      }
+    }
+  ]
+}

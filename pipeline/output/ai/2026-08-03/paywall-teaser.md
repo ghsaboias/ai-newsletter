@@ -1,0 +1,6 @@
+**Abaixo, apenas para assinantes:**
+
+**Silício.** Mudança de especificação de memória num acelerador de próxima geração e o efeito disso na conta do rack, tombo das ações de fabricantes asiáticos de memória, e duas projetistas de chips de IA, uma britânica e uma sul-coreana, levantando rodadas na casa dos bilhões.
+**Infraestrutura e energia.** Um complexo bilionário de data centers com geração própria a gás saindo de uma área do governo americano, e estados dos EUA revogando isenções fiscais que seguravam o custo desse tipo de projeto.
+**Dinheiro.** Uma empresa americana de pagamentos compra uma israelense de detecção de fraude, uma plataforma de testes de invasão automatizados triplica de valor em pouco mais de um ano, e um laboratório chinês de IA aparece sondando abertura de capital.
+**Mundo.** Um ataque militar cancelado no Oriente Médio e o petróleo em queda depois de um mês de alta, dezenas de milhares de migrantes atravessando para um enclave europeu, e novos ataques ucranianos a alvos militares e refinarias em território russo.

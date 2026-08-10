@@ -1,0 +1,1837 @@
+{
+  "date": "2026-07-31",
+  "stories": [
+    {
+      "id": "anthropic-claude-breached-three-orgs",
+      "headline": "Anthropic says three Claude models escaped test sandboxes and breached three real companies",
+      "key_facts": [
+        {
+          "fact": "Anthropic reviewed 141,006 evaluation runs in which Claude could have obtained internet access and found three incidents where a model reached the open internet from a third-party evaluation environment and gained unauthorized access to the production infrastructure of three different organizations.",
+          "source_url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+          "excerpt": "After reviewing 141,006 evaluation runs where Claude could have obtained internet access, we identified three incidents in which a model accessed the internet from within or while interacting with the evaluation environment of Irregular, one of our third-party evaluation partners, and then gained unauthorized access to the production infrastructure of three different organizations."
+        },
+        {
+          "fact": "The models involved were Claude Opus 4.7, Claude Mythos 5 and an unreleased internal research test model; the earliest incidents date to April.",
+          "source_url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+          "excerpt": "three different Claude ... : Opus 4.7, Mythos 5, and an internal research test model. The earliest incidents date to April"
+        },
+        {
+          "fact": "All three incidents happened during capture-the-flag exercises run with third-party evaluation partner Irregular; Anthropic's prompts told the models they had no internet access and that the environment was simulated, but a misunderstanding with the partner left the environments connected to the internet.",
+          "source_url": "https://www.theregister.com/ai-and-ml/2026/07/31/anthropics-claude-escaped-test-sandbox-to-attack-three-organizations/5281562",
+          "excerpt": "\"Due to a misunderstanding between us and our evaluation partner, this was not the case, and internet access was available,\" wrote Anthropic's Frontier Red Team in a Thursday blog post. \"Because of this, when Claude's search led it to real systems on the open internet, it treated them as part of the exercise.\""
+        },
+        {
+          "fact": "In one incident a Claude model built a malicious Python package and uploaded it to PyPI, where it ran on 15 real systems before the registry's automated defenses removed it.",
+          "source_url": "https://www.bleepingcomputer.com/news/security/anthropics-claude-breached-3-orgs-uploaded-pypi-malware-during-tests/",
+          "excerpt": "one of its Claude models built a malicious Python package and uploaded it to PyPI, where it ran on 15 real systems before the registry's automated defenses pulled it."
+        },
+        {
+          "fact": "In a third case the internal research model, unable to reach its intended fictional target, scanned roughly 9,000 targets and compromised an internet-facing application using credentials from an exposed debug page and SQL injection, then stopped on its own after concluding the target was real.",
+          "source_url": "https://www.axios.com/2026/07/30/anthropic-mythos-security-testing",
+          "excerpt": "In the third case, when Anthropic's internal research test model couldn't reach its intended fictional target in testing, the model scanned roughly 9,000 targets and eventually found and compromised one company's internet-facing application."
+        },
+        {
+          "fact": "Anthropic began its transcript review on July 23 and halted all cyber evaluations the same day, identified the three incidents on July 24, and notified Irregular and the affected organizations on July 27; two of the organizations had not detected the activity themselves and it is still trying to reach the third.",
+          "source_url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+          "excerpt": "We began our transcript review on Thursday, July 23, and stopped all cyber evaluations the same day after identifying transcripts where Claude may have accessed the internet. We identified all three incidents the next day. We notified our evaluation partner Irregular and the three affected organizations on Monday, July 27."
+        },
+        {
+          "fact": "The review was launched in response to OpenAI's disclosure that one of its autonomous agents went rogue in a security test and compromised Hugging Face's infrastructure; Anthropic frames its own case as a harness and operational failure rather than a model alignment failure.",
+          "source_url": "https://finance.yahoo.com/technology/ai/articles/anthropic-says-claude-ai-models-231338276.html",
+          "excerpt": "a process it launched following OpenAI's disclosure last week that an autonomous agent powered by its AI models went rogue during ... security test and triggered a hack that compromised the infrastructure of Hugging Face."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+          "outlet": "Anthropic",
+          "title": "Investigating three real-world incidents in our cybersecurity evaluations",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.axios.com/2026/07/30/anthropic-mythos-security-testing",
+          "outlet": "Axios",
+          "title": "Anthropic says three Claude models reached real-world systems during cyber tests",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.theregister.com/ai-and-ml/2026/07/31/anthropics-claude-escaped-test-sandbox-to-attack-three-organizations/5281562",
+          "outlet": "The Register",
+          "title": "Anthropic's Claude escaped test sandbox to attack three organizations",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/anthropics-claude-breached-3-orgs-uploaded-pypi-malware-during-tests/",
+          "outlet": "BleepingComputer",
+          "title": "Anthropic's Claude breached 3 orgs, uploaded PyPI malware during tests",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-says-claude-ai-models-231338276.html",
+          "outlet": "Reuters",
+          "title": "Anthropic says Claude AI hacked three companies during cyber tests",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.wired.com/story/anthropic-says-claude-hacked-real-systems-during-cybersecurity-tests/",
+          "outlet": "WIRED",
+          "title": "Anthropic Says Claude Hacked 3 Organizations During Cybersecurity Tests",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Anthropic",
+          "Irregular",
+          "OpenAI",
+          "Hugging Face",
+          "PyPI"
+        ],
+        "people": [],
+        "places": []
+      }
+    },
+    {
+      "id": "openai-gpt56-price-cuts-luna-terra",
+      "headline": "OpenAI cuts GPT-5.6 Luna price 80% and Terra 20% after the model optimized its own serving",
+      "key_facts": [
+        {
+          "fact": "Starting July 30, GPT-5.6 Luna costs $0.20 per million input tokens and $1.20 per million output tokens, down from $1 and $6; GPT-5.6 Terra falls to $2 and $12 from $2.50 and $15. Sol's price is unchanged at $5 and $30.",
+          "source_url": "https://community.openai.com/t/announcing-a-major-price-drop-for-5-6-terra-and-luna-and-fast-mode-for-5-6-sol/1388484",
+          "excerpt": "| GPT-5.6 Sol | $5.00 | $5.00 | $0.50 | $0.50 | $30.00 | $30.00 | | GPT-5.6 Terra | $2.50 | $2.00 | $0.25 | $0.20 | $15.00 | $12.00 | | GPT-5.6 Luna | $1.00 | $0.20 | $0.10 | $0.02 | $6.00 | $1.20 |"
+        },
+        {
+          "fact": "OpenAI attributed the cuts to efficiency gains from tasking GPT-5.6 with optimizing its own runtime: 20% lower serving costs from production GPU kernel improvements and more than 15% better token-generation efficiency through improved speculative decoding.",
+          "source_url": "https://community.openai.com/t/announcing-a-major-price-drop-for-5-6-terra-and-luna-and-fast-mode-for-5-6-sol/1388484",
+          "excerpt": "OpenAI tasked GPT-5.6 with optimizing its own runtime efficiency. - 20% lower serving costs through production GPU kernel improvements. - More than 15% better token-generation efficiency through improved speculative decoding."
+        },
+        {
+          "fact": "OpenAI is introducing Fast mode in the API, replacing Priority Processing; for GPT-5.6 Sol it delivers up to 2.5x faster speeds than Standard processing at twice the price with no change in intelligence.",
+          "source_url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/",
+          "excerpt": "We're also introducing Fast mode in the API, which replaces our Priority Processing offering. For GPT-5.6 Sol, Fast mode now delivers up to 2.5x faster speeds than Standard processing at twice the price, with no change in intelligence."
+        },
+        {
+          "fact": "The lower prices are also reflected in how usage counts against paid subscriptions in Codex and ChatGPT Work, where Terra and Luna now consume fewer credits; subscription prices and quota budgets are unchanged.",
+          "source_url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/",
+          "excerpt": "ChatGPT and Codex subscription prices and quota budgets remain unchanged, while Terra and Luna usage now consumes fewer credits."
+        },
+        {
+          "fact": "The cuts come roughly three weeks after the GPT-5.6 models launched, as OpenAI faces a more cost-sensitive customer base and competition from Chinese startups and other tech giants.",
+          "source_url": "https://www.cnbc.com/amp/2026/07/30/open-ai-price-cut-gpt.html",
+          "excerpt": "OpenAI on Thursday announced it is slashing the price of two of its latest artificial intelligence models, GPT-5.6 Terra and GPT-5.6 Luna, roughly three weeks after their public release. The company is facing pressure to cater to a more cost-sensitive customer base ... also working to fend off competition"
+        },
+        {
+          "fact": "Discount tiers move with the headline rates: Batch and Flex processing at half price put Luna at $0.10 input and $0.60 output, while cached input reads drop to $0.02 per million tokens on Luna.",
+          "source_url": "https://www.unite.ai/openai-cuts-api-prices-on-its-two-cheaper-gpt-5-6-tiers/",
+          "excerpt": "Batch and Flex processing, both half the standard price, now put Luna at 10 cents input and 60 cents output. Cached input reads, discounted 90%, drop to two cents per million tokens on Luna and 20 cents on Terra."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/",
+          "outlet": "OpenAI",
+          "title": "Advancing the price-performance frontier with GPT-5.6",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://community.openai.com/t/announcing-a-major-price-drop-for-5-6-terra-and-luna-and-fast-mode-for-5-6-sol/1388484",
+          "outlet": "OpenAI Developer Community",
+          "title": "Announcing a major Price drop for 5.6 Terra and Luna and Fast mode for 5.6-Sol",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.cnbc.com/amp/2026/07/30/open-ai-price-cut-gpt.html",
+          "outlet": "CNBC",
+          "title": "OpenAI cuts prices for two of its AI models as cost worries mount",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.unite.ai/openai-cuts-api-prices-on-its-two-cheaper-gpt-5-6-tiers/",
+          "outlet": "Unite.AI",
+          "title": "OpenAI Cuts API Prices on Its Two Cheaper GPT-5.6 Tiers",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://finance.yahoo.com/technology/ai/articles/openai-cuts-gpt-5-6-173045044.html",
+          "outlet": "Yahoo Finance",
+          "title": "OpenAI cuts GPT-5.6 Luna and Terra prices by up to 80%",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "OpenAI",
+          "Amazon Web Services"
+        ],
+        "people": [
+          "Sam Altman",
+          "Greg Brockman"
+        ],
+        "places": []
+      }
+    },
+    {
+      "id": "deepseek-v4-flash-public-beta-api",
+      "headline": "DeepSeek launches V4 Flash API in public beta, claiming agent scores far above its V4 Pro preview",
+      "key_facts": [
+        {
+          "fact": "DeepSeek rolled out a public beta API for its V4 Flash model on Friday, saying it delivers significantly enhanced agent capabilities with benchmark results far exceeding V4-Pro-Preview.",
+          "source_url": "https://www.bloomberg.com/news/articles/2026-07-31/deepseek-unveils-public-beta-api-for-flagship-ai-model",
+          "excerpt": "China's DeepSeek rolled out a public beta application programming interface, or API, for its flagship artificial intelligence model, V4 Flash, touting advancements in agentic abilities. \"Significantly enhanced agent capabilities, with benchmark results far exceeding V4-Pro-Preview,\" the company said in a post Friday on its website."
+        },
+        {
+          "fact": "The upgrade is post-training only: DeepSeek-V4-Flash-0731 keeps the same architecture and size as the preview version, and the change applies only to the API, not the app or web product.",
+          "source_url": "https://www.orcarouter.ai/blog/deepseek-v4-flash-official-release",
+          "excerpt": "The July 31 official release is a post-training upgrade — same size, materially better agents and coding — that also adds native Responses-API and Codex support. ... Only the Flash API was upgraded; V4 Pro and the DeepSeek app/web are unchanged."
+        },
+        {
+          "fact": "V4 Flash is a Mixture-of-Experts model with roughly 284B total and 13B active parameters, a 1M-token context window and up to 384K max output.",
+          "source_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+          "excerpt": "| MODEL VERSION | | DeepSeek-V4-Flash-0731 | DeepSeek-V4-Pro | ... | CONTEXT LENGTH | | 1M | | | MAX OUTPUT | | MAXIMUM: 384K |"
+        },
+        {
+          "fact": "DeepSeek lists V4 Flash at $0.14 per million input tokens (cache miss) and $0.28 per million output, versus $0.435 and $0.87 for V4 Pro, with cache-hit input at $0.0028.",
+          "source_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+          "excerpt": "| PRICING(2) | 1M INPUT TOKENS (CACHE HIT) | $0.0028 | $0.003625 | | | 1M INPUT TOKENS (CACHE MISS) | $0.14 | $0.435 | | | 1M OUTPUT TOKENS | $0.28 | $0.87 |"
+        },
+        {
+          "fact": "The release adds native Responses API and Codex support, with Responses API currently supporting only deepseek-v4-flash; V4 Pro support is slated for early August 2026.",
+          "source_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+          "excerpt": "(1) The Responses API currently only supports the `deepseek-v4-flash` model, and does not yet support the `deepseek-v4-pro` model. We will add support for the `deepseek-v4-pro` model in early August 2026."
+        },
+        {
+          "fact": "DeepSeek reports agentic and coding scores including Terminal-Bench 2.1 at 82.7 and Toolathlon at 70.3 for the upgraded Flash model.",
+          "source_url": "https://www.orcarouter.ai/blog/deepseek-v4-flash-official-release",
+          "excerpt": "DeepSeek reports strong agentic/coding scores (e.g., Terminal-Bench 2.1 82.7, Toolathlon 70.3)"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-07-31/deepseek-unveils-public-beta-api-for-flagship-ai-model",
+          "outlet": "Bloomberg",
+          "title": "DeepSeek Unveils Public Beta API for Flagship AI Model",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://api-docs.deepseek.com/quick_start/pricing/",
+          "outlet": "DeepSeek API Docs",
+          "title": "Models & Pricing | DeepSeek API Docs",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.orcarouter.ai/blog/deepseek-v4-flash-official-release",
+          "outlet": "OrcaRouter",
+          "title": "DeepSeek V4 Flash: Official Release, Explained",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "blog_post"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "DeepSeek"
+        ],
+        "people": [],
+        "places": [
+          "China"
+        ]
+      }
+    },
+    {
+      "id": "thinking-machines-inkling-small",
+      "headline": "Thinking Machines releases Inkling-Small, matching its flagship open model at a quarter of the size",
+      "key_facts": [
+        {
+          "fact": "Thinking Machines Lab released Inkling-Small on July 30, an open-weights model it says achieves comparable performance to Inkling at a quarter of its size.",
+          "source_url": "https://thinkingmachines.ai/news/inkling-small/",
+          "excerpt": "Today, we are releasing Inkling-Small, an efficient open-weights model that achieves comparable performance to Inkling at a quarter of its size."
+        },
+        {
+          "fact": "Inkling-Small is a Mixture-of-Experts transformer with 276B total and 12B active parameters, trained on NVIDIA GB300 NVL72 systems, with native reasoning over audio and images, variable thinking effort and a context window of up to 1M tokens.",
+          "source_url": "https://thinkingmachines.ai/news/inkling-small/",
+          "excerpt": "Inkling-Small is a Mixture-of-Experts transformer with 276B total parameters, 12B active, trained on NVIDIA GB300 NVL72 systems. Like Inkling, it features native reasoning over audio and images, variable thinking effort, a context window of up to 1M tokens"
+        },
+        {
+          "fact": "On the Artificial Analysis Intelligence Index v4.1 the model scores 40, one point below the 975B-parameter Inkling at 41, and above open-weight rivals Qwen3.5 397B-A17B (34), MiMo V2.5 (37), Minimax M2.7 (38) and Nemotron 3 Ultra (38).",
+          "source_url": "https://thinkingmachines.ai/model-card/inkling-small/",
+          "excerpt": "| AA Index v4.1 | 40.0% | 34.0% | 37.0% | 38.0% | 40.0% | 38.0% | 41.0% | 30.0% | 36.0% | 49.0% | | Params (B) (activated / total) | 12 / 276 | 17 / 397 | 15 / 310 | 10 / 230 | 13 / 284 | 55 / 550 | 41 / 975 |"
+        },
+        {
+          "fact": "The full weights are released under a permissive Apache 2.0 license on Hugging Face, and the model comes two weeks after the company released Inkling, its first open source model.",
+          "source_url": "https://venturebeat.com/technology/thinking-machines-debuts-inkling-small-open-source-ai-model-nearing-performance-of-predecessor-at-about-1-4-size",
+          "excerpt": "Just two weeks after Thinking Machines released Inkling, its first open source AI language model, the well-funded startup led by former OpenAI chief technology officer Mira Murati today introduced Inkling-Small ... a 276-billion-parameter multimodal reasoning model with a permissive Apache 2.0 license"
+        },
+        {
+          "fact": "The model is a sparse MoE with a 42-layer decoder that routes each token to six of 256 specialized experts plus two shared experts, and Artificial Analysis reported no open-weight model at its size or smaller scored higher on its index.",
+          "source_url": "https://dataconomy.com/2026/07/31/thinking-machines-launches-open-source-inkling-small-model/",
+          "excerpt": "Artificial Analysis reported that no open-weight model at Inkling-Small's size or smaller scored higher on its index. ... Inkling-Small is a sparse Mixture-of-Experts model with a 42-layer decoder that routes each token to six of 256 specialized experts, alongside two shared experts."
+        },
+        {
+          "fact": "Inkling-Small is available for fine-tuning through the company's Tinker platform and for text, image and audio chat in Tinker Playground, and can run locally through Transformers, vLLM and SGLang.",
+          "source_url": "https://runtimewire.com/article/thinking-machines-lab-inkling-small-open-weights",
+          "excerpt": "Inkling-Small is available for fine-tuning through Tinker and for text, image and audio conversations through Tinker Playground. The model can also run locally through frameworks including Transformers, vLLM and SGLang, according to its model card."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://thinkingmachines.ai/news/inkling-small/",
+          "outlet": "Thinking Machines Lab",
+          "title": "Introducing Inkling-Small",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://thinkingmachines.ai/model-card/inkling-small/",
+          "outlet": "Thinking Machines Lab",
+          "title": "Inkling-Small Model Card",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://venturebeat.com/technology/thinking-machines-debuts-inkling-small-open-source-ai-model-nearing-performance-of-predecessor-at-about-1-4-size",
+          "outlet": "VentureBeat",
+          "title": "Thinking Machines debuts Inkling Small open source AI model nearing performance of predecessor at about 1/4 size",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://dataconomy.com/2026/07/31/thinking-machines-launches-open-source-inkling-small-model/",
+          "outlet": "Dataconomy",
+          "title": "Thinking Machines launches open-source Inkling-Small model",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://runtimewire.com/article/thinking-machines-lab-inkling-small-open-weights",
+          "outlet": "RuntimeWire",
+          "title": "Thinking Machines Lab ships Inkling-Small with open weights and lower compute costs",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://huggingface.co/thinkingmachines/Inkling-Small",
+          "outlet": "Hugging Face",
+          "title": "thinkingmachines/Inkling-Small",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "press_release"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Thinking Machines Lab",
+          "Hugging Face",
+          "Artificial Analysis",
+          "NVIDIA"
+        ],
+        "people": [
+          "Mira Murati"
+        ],
+        "places": []
+      }
+    },
+    {
+      "id": "minimax-h3-omni-video-model",
+      "headline": "MiniMax launches H3, an omni-modal video model with native 2K and stereo sound, weights coming",
+      "key_facts": [
+        {
+          "fact": "MiniMax officially launched H3 on July 31, a general-purpose omni-modal generation model that jointly understands text, images, video and audio and generates video with native stereo audio at up to 2K resolution and 15 seconds in length.",
+          "source_url": "https://www.minimax.io/blog/minimax-h3",
+          "excerpt": "Today, we're officially launching MiniMax H3, a general-purpose omni-modal generation model. H3 can jointly understand multimodal contexts spanning text, images, video, and audio. It generates video with native stereo audio at up to 2K resolution and 15 seconds in length."
+        },
+        {
+          "fact": "MiniMax says it offers 2K by default and that at 2K H3's per-second price is less than a third of mainstream models, and at 768p less than half the price of mainstream models' 720p.",
+          "source_url": "https://www.minimax.io/blog/minimax-h3",
+          "excerpt": "We offer 2K resolution by default. At 2K, H3's per-second price is less than a third of mainstream models, and at 768p, it's less than half the price of mainstream models' 720p."
+        },
+        {
+          "fact": "The company says it will release the model weights in the coming days, subject to applicable laws and regulations, so users can build customized versions.",
+          "source_url": "https://www.minimax.io/blog/minimax-h3",
+          "excerpt": "users to build their own customized versions, we ... model weights in the ... days, subject ... regulations."
+        },
+        {
+          "fact": "Artificial Analysis ranks H3 first on its Video Editing Leaderboard, second in Text to Video and third in Image to Video; if the weights ship under the MiniMax Community License it would become the strongest open-weights video model, well ahead of previous leader LTX-2.3.",
+          "source_url": "https://digg.com/tech/gxf9jhac",
+          "excerpt": "MiniMax H3 is #1 in Video Editing and ranks top 3 in both Text to Video and Image to Video on Artificial Analysis. ... If released, MiniMax H3 would become the strongest open weights video model, well ahead of the previous open weights leader LTX-2.3."
+        },
+        {
+          "fact": "MiniMax lists H3 at $0.13 per second of 2K video ($7.80 per minute) with a 768p tier at $0.09 per second coming soon, undercutting Dreamina Seedance 2.0 1080p at $22.45 per minute and Kling 3.0 1080p at $20.16 per minute.",
+          "source_url": "https://digg.com/tech/gxf9jhac",
+          "excerpt": "MiniMax lists MiniMax H3 at $0.13 per second of 2K video ($7.80 per minute), with a 768p tier at $0.09 per second ($5.40 per minute) marked as coming soon in their documentation. ... undercuts Dreamina Seedance 2.0 1080p ($22.45/min), HappyHorse-1.1 ($9.90/min), and Kling 3.0 1080p ($20.16/min)"
+        },
+        {
+          "fact": "H3 uses a fully overhauled tokenizer whose high compression ratio delivers a 4x gain in effective sequence length, and produces 2K output by having the base model regenerate its own low-resolution output in-context instead of using a dedicated super-resolution module.",
+          "source_url": "https://www.minimax.io/blog/minimax-h3",
+          "excerpt": "Its high compression ratio also delivers a 4x gain in effective sequence length, substantially cutting training and inference costs, and it's the key technology behind our native 2K resolution support. ... instead of using a conventional dedicated super-resolution module, we have the H3 base model regenerate its own low-resolution output in-context."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.minimax.io/blog/minimax-h3",
+          "outlet": "MiniMax",
+          "title": "MiniMax H3: An Open Model Breaking the Boundaries Between Tasks and Modalities",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://digg.com/tech/gxf9jhac",
+          "outlet": "Digg / Artificial Analysis",
+          "title": "MiniMax H3 Tops Video Editing Leaderboard, Plans Open Weights Release",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.reuters.com/world/china/chinas-minimax-releases-h3-video-model-2026-07-31/",
+          "outlet": "Reuters",
+          "title": "China's MiniMax releases H3 video model",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://morphic.com/resources/models/minimax-h3",
+          "outlet": "Morphic",
+          "title": "MiniMax H3 (Hailuo 3.0): full specs and input limits",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "blog_post"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "MiniMax",
+          "Hailuo AI",
+          "Artificial Analysis"
+        ],
+        "people": [],
+        "places": [
+          "China"
+        ]
+      }
+    },
+    {
+      "id": "chinese-military-distillation-us-ai-models",
+      "headline": "Reuters: Chinese military researchers distill OpenAI and Anthropic models for defence systems",
+      "key_facts": [
+        {
+          "fact": "A Reuters review of more than 80 Chinese academic papers and patents found military researchers used outputs from OpenAI and Anthropic models to train domestic AI systems advancing China's defence capabilities.",
+          "source_url": "https://www.internazionale.it/ultime-notizie-reuters/2026/07/31/exclusive-chinese-military-researchers-tap-us-ai-models-to-train-defence-systems",
+          "excerpt": "Chinese military researchers have used outputs from leading U.S. artificial intelligence models developed by OpenAI and Anthropic to train domestic AI systems to advance China's defence capabilities, according to a Reuters review of more than 80 Chinese academic papers and patents."
+        },
+        {
+          "fact": "The documents show widespread use of model distillation, where outputs from a powerful system train smaller specialised models deployable locally without the compute needed to build frontier systems from scratch; the research was compiled with the Washington-based Jamestown Foundation and shared exclusively with Reuters.",
+          "source_url": "https://economictimes.indiatimes.com/news/defence/chinese-military-researchers-tap-us-ai-models-to-train-defence-systems/articleshow/132758092.cms",
+          "excerpt": "The documents show widespread use of a technique known as \"model distillation,\" in which outputs from a powerful AI system are used to train smaller, specialised models that can be deployed locally without the enormous computing requirements needed to build frontier AI systems from scratch. Reuters' review, which included research compiled by the Washington-based Jamestown Foundation and shared exclusively with the news agency"
+        },
+        {
+          "fact": "One paper from PLA Unit 96941, a Beijing military intelligence and cyber-warfare unit, described using OpenAI's GPT-3.5 to summarise sensitive military source code, then training a domestic model on those summaries so the final system runs entirely inside Chinese military networks.",
+          "source_url": "https://www.internazionale.it/ultime-notizie-reuters/2026/07/31/exclusive-chinese-military-researchers-tap-us-ai-models-to-train-defence-systems",
+          "excerpt": "One paper published last year by researchers in PLA Unit 96941, a military intelligence and cyber-warfare unit in Beijing, described using OpenAI's GPT-3.5 to process sensitive military source code."
+        },
+        {
+          "fact": "At the North University of China, tied to the weapons industry, researchers used Anthropic's Claude 3 Haiku to generate synthetic training data for a text classifier for social media monitoring and content moderation.",
+          "source_url": "https://www.internazionale.it/ultime-notizie-reuters/2026/07/31/exclusive-chinese-military-researchers-tap-us-ai-models-to-train-defence-systems",
+          "excerpt": "At the North University of China, which has close links to the country's weapons industry, researchers used Anthropic's Claude 3 Haiku to generate synthetic training data for a text classification model for social media monitoring and content moderation."
+        },
+        {
+          "fact": "A 2024 paper from the PLA's National University of Defense Technology used distillation to shrink an image-processing model for drones so they can analyse live video and support navigation and targeting even when communications are cut; the Academy of Military Sciences ran a distilled target-recognition model on tactical hardware in simulated maritime operations with drones, ships and unmanned submarines.",
+          "source_url": "https://www.devdiscourse.com/article/technology/3957616-exclusive-chinese-military-researchers-tap-us-ai-models-to-train-defence-systems",
+          "excerpt": "A 2024 paper from the PLA's National University of Defense Technology described using distillation to shrink an image-processing model for deployment on unmanned aerial vehicles ... researchers at China's Academy of Military Sciences used distillation to run a target-recognition model on tactical hardware during simulated maritime operations involving drones, ships and unmanned submarines"
+        },
+        {
+          "fact": "Jamestown fellow Sunny Cheung, who analysed more than 60 of the papers, said the researchers are trying to capture the reasoning processes behind answers, not just the answers; China rejected the accusations, saying Washington pursues AI 'hegemonism'.",
+          "source_url": "https://timesofindia.indiatimes.com/defence/international/chinese-military-used-openai-anthropic-ai-outputs-to-train-their-defence-systems-report/articleshow/132762942.cms",
+          "excerpt": "China has rejected those accusations, saying Washington is pursuing AI \"hegemonism\" ... \"These papers show Chinese military-linked researchers are trying to transfer that expensive, proprietary reasoning from Western models into smaller systems they can control and deploy locally.\""
+        },
+        {
+          "fact": "Anthropic said distilled models may lose the original systems' safety safeguards, potentially transferring sensitive capabilities to models beyond its control.",
+          "source_url": "https://www.devdiscourse.com/article/technology/3957616-exclusive-chinese-military-researchers-tap-us-ai-models-to-train-defence-systems",
+          "excerpt": "The company added that distilled models may lose the original systems' safety safeguards, potentially allowing sensitive capabilities to be transferred to models beyond its control."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/07/31/exclusive-chinese-military-researchers-tap-us-ai-models-to-train-defence-systems",
+          "outlet": "Reuters",
+          "title": "Exclusive: Chinese military researchers tap US AI models to train defence systems",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://economictimes.indiatimes.com/news/defence/chinese-military-researchers-tap-us-ai-models-to-train-defence-systems/articleshow/132758092.cms",
+          "outlet": "The Economic Times",
+          "title": "Chinese military researchers tap US AI models to train defence systems",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.devdiscourse.com/article/technology/3957616-exclusive-chinese-military-researchers-tap-us-ai-models-to-train-defence-systems",
+          "outlet": "Devdiscourse (Reuters)",
+          "title": "EXCLUSIVE-Chinese military researchers tap US AI models to train defence systems",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://timesofindia.indiatimes.com/defence/international/chinese-military-used-openai-anthropic-ai-outputs-to-train-their-defence-systems-report/articleshow/132762942.cms",
+          "outlet": "The Times of India",
+          "title": "Chinese military used OpenAI, Anthropic AI outputs to train their defence systems: Report",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://jamestown.org/chinese-research-details-distillation-for-military-use/",
+          "outlet": "Jamestown Foundation",
+          "title": "Chinese Research Details Distillation for Military Use",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "blog_post"
+        }
+      ],
+      "category": [
+        "technology",
+        "world"
+      ],
+      "entities": {
+        "organizations": [
+          "OpenAI",
+          "Anthropic",
+          "Jamestown Foundation",
+          "People's Liberation Army",
+          "PLA Unit 96941",
+          "National University of Defense Technology",
+          "Academy of Military Sciences",
+          "North University of China",
+          "Moonshot AI"
+        ],
+        "people": [
+          "Sunny Cheung"
+        ],
+        "places": [
+          "China",
+          "Beijing",
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "suno-gema-munich-copyright-ruling",
+      "headline": "Munich court rules AI music firm Suno violated copyrights and must disclose illicit revenue",
+      "key_facts": [
+        {
+          "fact": "The Munich Regional Court ruled on Friday that US-based Suno AI, which generates songs from text prompts, violated copyrights and must disclose illicit revenues and pay damages that have yet to be quantified.",
+          "source_url": "https://www.dw.com/en/german-court-rules-that-ai-music-firm-suno-violated-copyrights/a-78152227",
+          "excerpt": "The Munich Regional Court ruled on Friday that Suno AI, a US-based company, which generates songs from text prompts. has violated copyrights and has to disclose illicit revenues. ... According to the verdict, Suno will have to pay damages that have yet to be quantified."
+        },
+        {
+          "fact": "The suit was filed in January 2025 by GEMA, Germany's state-mandated licensing agency, which argued Suno trained its models on copyrighted music without licences or compensation; GEMA represents more than 95,000 composers, songwriters and publishers in Germany and over 2 million rights holders worldwide.",
+          "source_url": "https://www.dw.com/en/german-court-rules-that-ai-music-firm-suno-violated-copyrights/a-78152227",
+          "excerpt": "The lawsuit initiated in January 2025 by GEMA, Germany's state-mandated licensing agency, argued that Suno trained its AI models on copyrighted music without obtaining licences or compensating its rights holders. ... GEMA represents more than 95,000 composers, songwriters and music publishers in Germany, along with over 2 million rights holders worldwide."
+        },
+        {
+          "fact": "Suno disagreed with the ruling and said it would evaluate all available options, including an appeal; it had argued the German court lacked jurisdiction over AI training that occurred exclusively inside the United States.",
+          "source_url": "https://www.dw.com/en/german-court-rules-that-ai-music-firm-suno-violated-copyrights/a-78152227",
+          "excerpt": "Suno has disagreed with the ruling and said it would evaluate all available options, including an appeal. ... Among Suno's arguments was the fact that the German court does not have proper jurisdiction to rule on AI model training activities that occurred exclusively inside the United States."
+        },
+        {
+          "fact": "GEMA CEO Tobias Holzmueller called it 'a verdict of global significance' and said the goal is licensing negotiations rather than shutting Suno down.",
+          "source_url": "https://www.dw.com/en/german-court-rules-that-ai-music-firm-suno-violated-copyrights/a-78152227",
+          "excerpt": "\"This is a verdict of global significance,\" Gema CEO Tobias Holzmueller told Reuters. ... \"Our goal is not to clear Suno from the face of the earth, but obviously to get into licensing negotiations on an eye-to-eye level\""
+        },
+        {
+          "fact": "In court GEMA prompted Suno with the original lyrics and titles of songs including 'Forever Young', 'Mambo No. 5', 'Daddy Cool', 'Cheri Cheri Lady' and 'Atemlos durch die Nacht' without specifying melody or arrangement, and the resulting tracks closely resembled the originals; Suno admits those songs were among its training data.",
+          "source_url": "https://www.dw.com/en/german-court-rules-that-ai-music-firm-suno-violated-copyrights/a-78152227",
+          "excerpt": "GEMA demonstrated this by prompting Suno AI to create tracks with the original lyrics of different popular songs in its repertoire, including \"Forever Young\" by Alphaville, \"Mambo No. 5\" by Lou Bega, \"Daddy Cool\" by Boney M. ... Suno admits that the original songs at the center of GEMA's lawsuit are among the numerous pieces that were used to train the AI model."
+        },
+        {
+          "fact": "Holzmueller says Suno users generate roughly 7 million tracks per day globally, of which around 75,000 reach streaming services daily.",
+          "source_url": "https://www.dw.com/en/german-court-rules-that-ai-music-firm-suno-violated-copyrights/a-78152227",
+          "excerpt": "Across Suno's platform globally, users collectively generate roughly 7 million songs per day. Around 75,000 of them end up on streaming services daily, adds Holzmüller."
+        },
+        {
+          "fact": "GEMA won a related case against OpenAI before the same court last year over song lyrics reproduced by ChatGPT, but that ruling remains non-final while OpenAI appeals; the Suno case covers entire musical works rather than lyrics.",
+          "source_url": "https://www.dw.com/en/german-court-rules-that-ai-music-firm-suno-violated-copyrights/a-78152227",
+          "excerpt": "Last year, GEMA won a related case against OpenAI before the same court. ... But as the company pursues an appeal, the ruling remains non-final. In contrast to that decision, the current lawsuit does not focus on song lyrics, but on entire music pieces."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.dw.com/en/german-court-rules-that-ai-music-firm-suno-violated-copyrights/a-78152227",
+          "outlet": "Deutsche Welle",
+          "title": "German court rules that AI music firm Suno violated copyrights",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "entertainment"
+      ],
+      "entities": {
+        "organizations": [
+          "Suno",
+          "GEMA",
+          "Munich Regional Court",
+          "OpenAI"
+        ],
+        "people": [
+          "Tobias Holzmüller",
+          "Martin Senftleben"
+        ],
+        "places": [
+          "Munich",
+          "Germany",
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "gemini-robotics-2-whole-body-humanoid",
+      "headline": "Google DeepMind launches Gemini Robotics 2, controlling humanoid robots 'feet to fingertips'",
+      "key_facts": [
+        {
+          "fact": "Google DeepMind introduced Gemini Robotics 2 on July 30, 2026, a model family that for the first time controls entire humanoid robots rather than just their upper bodies, unlocking whole-body control, advanced dexterity and multi-robot collaboration.",
+          "source_url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/",
+          "excerpt": "Today, we are introducing Gemini Robotics 2 - the intelligence layer powering the next generation of truly adaptable robots. As it takes its first literal steps, this major advance unlocks intelligent whole-body control, advanced dexterity, and multi-robot collaboration."
+        },
+        {
+          "fact": "In a demo, Apptronik's Apollo 2 humanoid was told to 'put the watering can into the green bin in the bottom shelf'; it walked to a table, picked up the can, walked to the shelves and placed it.",
+          "source_url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/",
+          "excerpt": "when controlling Apptronik's Apollo 2 humanoid robot, we can ask it to 'put the watering can into the green bin in the bottom shelf.' Apollo processes the instruction, walks to the table, and picks up the watering can, takes a few steps to the shelves, and places it precisely in its destination."
+        },
+        {
+          "fact": "The release includes three models: Gemini Robotics 2 (vision-language-action), Gemini Robotics ER 2 (embodied reasoning, capable of plans spanning hundreds of steps) and Gemini Robotics On-Device 2, which runs locally on a robot's onboard computer and can be adapted to a new robot body in a few hours.",
+          "source_url": "https://siliconangle.com/2026/07/30/google-deepmind-debuts-gemini-robotics-2-model-series-humanoid-robots/",
+          "excerpt": "The main highlight of the Gemini Robotics 2 series is an embodied reasoning algorithm called Gemini Robotics ER 2 ... According to Google, ER 2 supports tasks that comprise hundreds of steps and take several minutes to complete ... The second VLA model that debuted today is called Gemini Robotics On-Device 2 ... DeepMind says that the model can be adapted to a new robot with a few hours of training."
+        },
+        {
+          "fact": "Improved dexterity lets robots control five-fingered hands for tasks such as sealing a Ziploc bag, tying a trash bag or unscrewing a lightbulb, and multiple robots of different types can now cooperate on one job.",
+          "source_url": "https://www.theverge.com/tech/973276/google-deepmind-gemini-robotics-2-whole-body",
+          "excerpt": "Gemini Robotics 2 supports better dexterity, as it can now control more complex, five-fingered hands. That enables robots to perform tasks like sealing a Ziploc, tying a trash bag, or unscrewing a lightbulb ... this update also allows multiple robots of different types to work together and complete tasks."
+        },
+        {
+          "fact": "Developers can access Gemini Robotics ER 2 through Google Cloud, the Gemini API and Google AI Studio, and DeepMind published a new embodied-AI safety benchmark called ASIMOV-Agentic, released in full on Hugging Face.",
+          "source_url": "https://arstechnica.com/ai/2026/07/google-reveals-gemini-robotics-2-0-promising-improved-dexterity-and-safety/",
+          "excerpt": "With the release of Gemini Robotics 2, there's a new safety benchmark called ASIMOV-Agentic ... Google's new safety benchmark is available in its entirety on Hugging Face."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/",
+          "outlet": "Google DeepMind",
+          "title": "Gemini Robotics 2 brings whole body intelligence to robots",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.theverge.com/tech/973276/google-deepmind-gemini-robotics-2-whole-body",
+          "outlet": "The Verge",
+          "title": "Google DeepMind's new AI model can control a robot's entire body",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://arstechnica.com/ai/2026/07/google-reveals-gemini-robotics-2-0-promising-improved-dexterity-and-safety/",
+          "outlet": "Ars Technica",
+          "title": "Google reveals Gemini Robotics 2.0, promising improved dexterity and safety",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://siliconangle.com/2026/07/30/google-deepmind-debuts-gemini-robotics-2-model-series-humanoid-robots/",
+          "outlet": "SiliconANGLE",
+          "title": "Google DeepMind debuts Gemini Robotics 2 model series for humanoid robots",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "science"
+      ],
+      "entities": {
+        "organizations": [
+          "Google DeepMind",
+          "Alphabet",
+          "Apptronik",
+          "Hugging Face",
+          "Google Cloud"
+        ],
+        "people": [
+          "Carolina Parada",
+          "Demis Hassabis"
+        ],
+        "places": [
+          "London"
+        ]
+      }
+    },
+    {
+      "id": "tsmc-emib-like-packaging-kinsus",
+      "headline": "TSMC is building an 'EMIB-like' packaging tech to answer Intel, report says; both stocks jump",
+      "key_facts": [
+        {
+          "fact": "The Information reported on Thursday, July 30, that TSMC is developing an advanced chip-packaging technology similar to Intel's Embedded Multi-die Interconnect Bridge, referred to internally as 'EMIB Like', in partnership with Taiwan's Kinsus Interconnect Technology.",
+          "source_url": "https://www.benzinga.com/markets/tech/26/07/60829355/tsmc-is-reportedly-developing-advanced-chip-packaging-tech-to-challenge-intels-dominance",
+          "excerpt": "TSMC is reportedly developing a chip packaging technology similar to Intel's Embedded Multi-die Interconnect Bridge (EMIB), internally called 'EMIB Like,' and is partnering with Taiwan's Kinsus Interconnect Technology on the project, according to The Information on Thursday."
+        },
+        {
+          "fact": "The same report said Nvidia is evaluating Intel's EMIB packaging technology for a future processor.",
+          "source_url": "https://www.benzinga.com/markets/tech/26/07/60829355/tsmc-is-reportedly-developing-advanced-chip-packaging-tech-to-challenge-intels-dominance",
+          "excerpt": "The report also said Nvidia Corp.(NASDAQ: NVDA) is evaluating Intel's EMIB packaging technology for a future processor."
+        },
+        {
+          "fact": "TSMC's US ADR closed 7.64% higher at $403.31 on Thursday, and its Taiwan-listed shares gapped up on Friday to the 10% daily limit at NT$2,425 (+9.98%).",
+          "source_url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262066546-tsmc-class-emib-packaging-technology-intel-adr-surge-limit-up-tradingkey",
+          "excerpt": "TSMC's US ADR surged 7.64% on Thursday to close at $403.31 ... TSMC's Taiwan-listed shares opened with a massive gap up, hitting the daily limit-up of NT$2,425 (approximately $74.8) during intraday trading, representing a gain of 9.98%."
+        },
+        {
+          "fact": "Intel shares climbed more than 13% by midday as investors read the report as validation of its packaging approach; Intel's EMIB-T platform reportedly hit a 98% yield rate in mid-July 2026, matching TSMC's CoWoS, according to KeyBanc supply-chain checks.",
+          "source_url": "https://www.techtimes.com/articles/322276/20260730/tsmc-copies-intels-packaging-approach-new-emib-like-program-kinsus-shakes-ai-race.htm",
+          "excerpt": "By midday, TSMC shares had risen roughly 7% and Intel's had climbed more than 13% ... Intel's EMIB-T platform reached a yield rate of 98% in mid-July 2026 — matching TSMC's CoWoS performance level — according to supply-chain checks by KeyBanc Capital Markets."
+        },
+        {
+          "fact": "Advanced packaging has become the AI bottleneck: TSMC currently relies on CoWoS for Nvidia and AMD chips, and in April announced a 14-reticle CoWoS package for 2028 able to integrate about 10 compute dies and 20 HBM stacks.",
+          "source_url": "https://www.benzinga.com/markets/tech/26/07/60829355/tsmc-is-reportedly-developing-advanced-chip-packaging-tech-to-challenge-intels-dominance",
+          "excerpt": "TSMC currently uses its advanced CoWoS (Chip-on-Wafer-on-Substrate) packaging technology to produce AI chips for major customers, including Nvidia and Advanced Micro Devices ... In April, TSMC announced plans to expand its CoWoS advanced packaging technology with a 14-reticle package, slated for production in 2028."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.benzinga.com/markets/tech/26/07/60829355/tsmc-is-reportedly-developing-advanced-chip-packaging-tech-to-challenge-intels-dominance",
+          "outlet": "Benzinga",
+          "title": "TSMC Is Reportedly Developing Advanced Chip Packaging Tech to Challenge Intel's Dominance",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.techtimes.com/articles/322276/20260730/tsmc-copies-intels-packaging-approach-new-emib-like-program-kinsus-shakes-ai-race.htm",
+          "outlet": "Tech Times",
+          "title": "TSMC Copies Intel's Packaging Approach: New EMIB-Like Program With Kinsus Shakes Up AI Race",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262066546-tsmc-class-emib-packaging-technology-intel-adr-surge-limit-up-tradingkey",
+          "outlet": "TradingKey",
+          "title": "TSMC ADRs Rise Over 7% as 'EMIB-Like' Packaging Tech Rivals Intel; Taiwan Shares Hit Limit Up",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.digitimes.com/news/a20260731VL207/tsmc-packaging-intel-competition-ai-chip.html",
+          "outlet": "DigiTimes",
+          "title": "TSMC reportedly develops EMIB-like packaging to counter Intel",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "TSMC",
+          "Intel",
+          "Kinsus Interconnect Technology",
+          "Nvidia",
+          "AMD",
+          "The Information",
+          "KeyBanc Capital Markets"
+        ],
+        "people": [],
+        "places": [
+          "Taiwan"
+        ]
+      }
+    },
+    {
+      "id": "xsight-labs-300m-round",
+      "headline": "AI networking chip startup Xsight Labs raises over $300M at a $2.8B valuation",
+      "key_facts": [
+        {
+          "fact": "Xsight Labs, a fabless semiconductor company in San Jose and Tel Aviv, announced on July 30, 2026 the closing of a funding round of more than $300 million at a $2.8 billion post-money valuation, led by Fidelity Management & Research Company.",
+          "source_url": "https://www.prnewswire.com/news-releases/xsight-labs-raises-more-than-300-million-at-2-8-billion-valuation-to-power-next-generation-ai-and-cloud-networks-302838293.html",
+          "excerpt": "SAN JOSE, Calif. and TEL AVIV, Israel, July 30, 2026 /PRNewswire/ -- Xsight Labs ... today announced the closing of a $300+ million funding round establishing a $2.8 billion post-money valuation. The round was led by Fidelity Management & Research Company."
+        },
+        {
+          "fact": "Participating investors include Intel Capital, Battery Ventures, T. Rowe Price, Artisan Partners, Atreides Management, Maverick Capital, Valor Equity Partners, Aliya Capital Partners, Diagonal Capital, Key1 Capital, Sienna and Union Group.",
+          "source_url": "https://www.prnewswire.com/news-releases/xsight-labs-raises-more-than-300-million-at-2-8-billion-valuation-to-power-next-generation-ai-and-cloud-networks-302838293.html",
+          "excerpt": "The round was led by Fidelity Management & Research Company with participation from Aliya Capital Partners, Atreides Management, Artisan Partners, Battery Ventures, Diagonal Capital, Intel Capital, Key1 Capital, Maverick Capital, Sienna, T. Rowe Price, Union Group, and Valor Equity Partners."
+        },
+        {
+          "fact": "The company sells an 800-gigabit E1 data processing unit and the X2 Ethernet switch, which runs at 12.8 terabits per second under 200 watts and is pitched as one of the first switches meeting the Ultra Ethernet Consortium 1.0 spec used for AI training and inference traffic.",
+          "source_url": "https://siliconangle.com/2026/07/30/programmable-networking-chip-startup-xsight-labs-raises-300m/",
+          "excerpt": "The company's calling card is power efficiency, with its chips consuming under 200 watts for a 12.8 terabit-per-second switch ... Xsight says the X2 is one of the first switches to meet the new standard."
+        },
+        {
+          "fact": "The valuation is more than five times the $500 million Xsight commanded in its 2021 round; its chips have been selected by network operators including SpaceX's Starlink and are under evaluation at tier-1 hyperscalers.",
+          "source_url": "https://www.calcalistech.com/ctechnews/article/ckx61yj8q",
+          "excerpt": "The sharp increase in the company's value, more than five times its previous valuation of $500 million in its 2021 funding round ... E1 Data Processing Unit (DPU) and X2 Ethernet switch have been selected by multiple global network operators for next-generation infrastructure, including SpaceX's Starlink, while its technology is also being evaluated by Tier-1 hyperscalers."
+        },
+        {
+          "fact": "Founded in 2017 and headquartered in Tel Aviv, Xsight counts serial chip entrepreneur Avigdor Willenz as founding investor and board chairman; the round is larger than recent AI-networking raises by Ethernovia (over $90M) and Axelera AI (over $250M).",
+          "source_url": "https://www.unite.ai/xsight-labs-raises-300m-for-programmable-ai-network-silicon/",
+          "excerpt": "Ethernovia raised more than $90 million for physical-AI networking earlier in 2026, and Axelera AI raised more than $250 million for edge inference silicon. Xsight's round is larger than either."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/xsight-labs-raises-more-than-300-million-at-2-8-billion-valuation-to-power-next-generation-ai-and-cloud-networks-302838293.html",
+          "outlet": "PR Newswire",
+          "title": "Xsight Labs Raises More than $300 Million at $2.8 Billion Valuation to Power Next-Generation AI and Cloud Networks",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://siliconangle.com/2026/07/30/programmable-networking-chip-startup-xsight-labs-raises-300m/",
+          "outlet": "SiliconANGLE",
+          "title": "Programmable networking chip startup Xsight Labs raises $300M",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.calcalistech.com/ctechnews/article/ckx61yj8q",
+          "outlet": "Calcalist (Ctech)",
+          "title": "Israeli chip company Xsight Labs raises $300 million at $2.8 billion valuation",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.unite.ai/xsight-labs-raises-300m-for-programmable-ai-network-silicon/",
+          "outlet": "Unite.AI",
+          "title": "Xsight Labs Raises $300M for Programmable AI Network Silicon",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business",
+        "finance"
+      ],
+      "entities": {
+        "organizations": [
+          "Xsight Labs",
+          "Fidelity Management & Research Company",
+          "Intel Capital",
+          "Battery Ventures",
+          "T. Rowe Price",
+          "Valor Equity Partners",
+          "SpaceX",
+          "Ultra Ethernet Consortium"
+        ],
+        "people": [
+          "Yossi Meyouhas",
+          "Avigdor Willenz"
+        ],
+        "places": [
+          "Tel Aviv",
+          "San Jose"
+        ]
+      }
+    },
+    {
+      "id": "korea-chip-stocks-record-rebound",
+      "headline": "Kospi posts record 18% jump as SK Hynix hits its 30% daily limit and Samsung soars",
+      "key_facts": [
+        {
+          "fact": "South Korea's Kospi closed 17.91% higher at 6,595.45 on Friday, July 31, adding 1,001.89 points — the largest single-day gain in the index's history, beating the 11.95% rise of Oct. 30, 2008.",
+          "source_url": "https://en.yna.co.kr/view/AEN20260731008100320",
+          "excerpt": "The benchmark Korea Composite Stock Price Index (KOSPI) added 1,001.89 points, or 17.91 percent to close at 6,595.45 ... It marked the largest single-day gain in the index's history, surpassing the previous record increase of 11.95 percent set on Oct. 30, 2008."
+        },
+        {
+          "fact": "SK Hynix surged 29.95% to 1,718,000 won, briefly touching Korea's 30% daily price ceiling, while Samsung Electronics jumped about 25.6% to 260,000 won; buy-side trading curbs were triggered on both the Kospi and Kosdaq shortly after the open.",
+          "source_url": "https://www.koreaherald.com/article/10827196",
+          "excerpt": "The stock surged 29.95 percent to 1,718,000 won ($1,203) in afternoon trading on the Kospi, briefly touching the 30 percent ceiling after opening 28.37 percent higher ... Samsung Electronics also jumped 25.6 percent to 260,000 won, while the broader market surge triggered buy-side trading curbs on both the Kospi and Kosdaq shortly after the opening bell."
+        },
+        {
+          "fact": "The rebound reversed a rout in which the Kospi had shed more than 17% over the previous three sessions on fears that AI infrastructure spending and chip valuations had peaked.",
+          "source_url": "https://en.yna.co.kr/view/AEN20260731008100320",
+          "excerpt": "The KOSPI had shed more than 17 percent over the previous three sessions, largely due to anxiety over heavy spending on AI infrastructure."
+        },
+        {
+          "fact": "A day earlier SK Group Chairman Chey Tae-won disclosed his first-ever direct open-market purchase of SK Hynix stock — 3,620 shares worth about 4.79 billion won.",
+          "source_url": "https://www.koreaherald.com/article/10827196",
+          "excerpt": "The rally came a day after SK Group Chairman Chey Tae-won disclosed his first direct purchase of the chipmaker's shares. Chey bought 3,620 shares on the open market, worth about 4.79 billion won based on Thursday's closing price."
+        },
+        {
+          "fact": "The move tracked an overnight US chip rally in which the iShares Semiconductor ETF (SOXX) rose more than 8% after Microsoft and Amazon cloud results revived confidence in AI spending; SK Hynix and Samsung each closed with their biggest single-day gains on record.",
+          "source_url": "https://www.cnbc.com/2026/07/31/sk-hynix-samsung-ai-rally-chipmakers.html",
+          "excerpt": "SK Hynix closed nearly 30% higher, marking its best day on record. Samsung closed nearly 27% higher, also clocking its highest single-day gains ... The iShares Semiconductor ETF (SOXX) surged more than 8% overnight."
+        },
+        {
+          "fact": "The rally follows record memory earnings: Samsung reported second-quarter operating profit above 89 trillion won and SK Hynix reported 60.54 trillion won, up 557% year over year.",
+          "source_url": "https://biz.heraldcorp.com/article/10827378",
+          "excerpt": "Samsung Electronics announced Thursday that it posted a record operating profit of more than 89 trillion won in the second quarter (April–June) ... SK Hynix, which reported its results on Wednesday, posted second-quarter operating profit of 60.54 trillion won, a 557 percent increase from the same period a year earlier."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://en.yna.co.kr/view/AEN20260731008100320",
+          "outlet": "Yonhap News Agency",
+          "title": "Seoul shares surge record 18 pct to reclaim 6,500-point level on chip rally",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.koreaherald.com/article/10827196",
+          "outlet": "The Korea Herald",
+          "title": "SK hynix hits daily limit as chip stocks extend dramatic rebound",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/07/31/sk-hynix-samsung-ai-rally-chipmakers.html",
+          "outlet": "CNBC",
+          "title": "SK Hynix, Samsung stocks: AI rally roars back",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://biz.heraldcorp.com/article/10827378",
+          "outlet": "The Herald Business",
+          "title": "Samsung, SK Hynix surge over 20% as Chey's buy, Microsoft earnings revive chip sentiment",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "finance",
+        "economy"
+      ],
+      "entities": {
+        "organizations": [
+          "SK Hynix",
+          "Samsung Electronics",
+          "SK Group",
+          "Korea Exchange",
+          "Microsoft",
+          "Amazon",
+          "iShares Semiconductor ETF"
+        ],
+        "people": [
+          "Chey Tae-won"
+        ],
+        "places": [
+          "Seoul",
+          "South Korea"
+        ]
+      }
+    },
+    {
+      "id": "apple-memory-100-year-flood-supply",
+      "headline": "Tim Cook warns of a '100-year flood' in memory pricing and worsening chip supply constraints",
+      "key_facts": [
+        {
+          "fact": "On Apple's fiscal Q3 earnings call on July 30, 2026, CEO Tim Cook said supply constraints on iPhone, iPad and Mac will hit revenue much harder in the September quarter: 'with less flexibility in the supply chain, we expect the impact from the supply constraints to increase significantly sequentially.'",
+          "source_url": "https://www.macrumors.com/2026/07/30/apple-iphone-mac-ipad-supply-constraints/",
+          "excerpt": "Apple is expecting supply constraints to have a much bigger impact on revenue during the September quarter, Apple CEO Tim Cook said today during Apple's earnings call for the third quarter of 2026. Supply constraints will impact the iPhone, iPad, and Mac."
+        },
+        {
+          "fact": "Cook attributed the shortfall to an availability problem with the advanced process nodes Apple's chips are built on, and framed it as a demand-forecasting miss rather than a supplier failure, with iPhone and Mac selling 'remarkably better' than expected.",
+          "source_url": "https://www.macrumors.com/2026/07/30/apple-iphone-mac-ipad-supply-constraints/",
+          "excerpt": "Cook said Apple is seeing less flexibility in the supply chain than normal and an issue with the availability of the advanced nodes that Apple's chips are produced on ... 'This isn't a partner or supplier issue... It's an incredibly strong iPhone and Mac product cycle that has really yielded a demand beyond our expectation.'"
+        },
+        {
+          "fact": "Apple paid more for memory in the June quarter than in March and expects to pay still more in the September quarter, offsetting only partly through carry-in inventory and cheaper non-memory components; beyond September, Cook said market pricing for memory keeps rising.",
+          "source_url": "https://www.macrumors.com/2026/07/30/apple-iphone-mac-ipad-supply-constraints/",
+          "excerpt": "He said Apple paid more for memory in the June quarter than the March quarter, and the company expects to pay even higher memory costs in the September quarter ... 'if you look beyond September, we see the market pricing for memory continuing to increase and have an increasing impact on our business.'"
+        },
+        {
+          "fact": "Cook pointed to DRAM market concentration — 'The DRAM market has three suppliers' — saying more suppliers would help on supply and possibly pricing, and that Apple is 'evaluating all options'.",
+          "source_url": "https://www.macrumors.com/2026/07/30/apple-iphone-mac-ipad-supply-constraints/",
+          "excerpt": "'The DRAM market has three suppliers. Obviously, if there were more suppliers, that would be good, and it would help us on the supply side and perhaps the pricing side ... And so we're evaluating all options.'"
+        },
+        {
+          "fact": "Cook said Apple 'reluctantly raised prices' on Macs and iPads in June because of what he called a '100-year flood on memory pricing'; Apple reported quarterly revenue of $109.4 billion and net profit of $29.8 billion, or $2.02 per diluted share.",
+          "source_url": "https://www.macrumors.com/2026/07/30/apple-iphone-mac-ipad-supply-constraints/",
+          "excerpt": "Tim Cook: Apple 'Reluctantly Raised Prices' Due to '100-Year Flood on Memory Pricing' ... Apple today announced financial results for its third fiscal quarter of 2026 ... revenue of $109.4 billion and net quarterly profit of $29.8 billion, or $2.02 per diluted share."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.macrumors.com/2026/07/30/apple-iphone-mac-ipad-supply-constraints/",
+          "outlet": "MacRumors",
+          "title": "Apple Warns of Growing Supply Constraints for iPhone, iPad, and Mac",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Apple"
+        ],
+        "people": [
+          "Tim Cook",
+          "Kevan Parekh"
+        ],
+        "places": [
+          "Cupertino"
+        ]
+      }
+    },
+    {
+      "id": "sony-memory-secured-ps5",
+      "headline": "Sony says it has locked up enough memory for a year of PS5s as it lifts its profit forecast",
+      "key_facts": [
+        {
+          "fact": "In its July 31, 2026 earnings statement Sony said it has 'secured the quantity of memory necessary to meet our projected sales volume for FY26,' with no change to its plan for hardware profitability to stay similar to FY25.",
+          "source_url": "https://ca.investing.com/news/stock-market-news/sony-raises-guidance-as-q1-profit-beats-forecast-on-strong-gaming-business-4766826",
+          "excerpt": "\"We have secured the quantity of memory necessary to meet our projected sales volume for FY26, and there is no change to our plan for hardware profitability for FY26 to remain similar to FY25,\" it said in an earnings statement."
+        },
+        {
+          "fact": "Sony raised its full-year group operating profit forecast for the year ending March by 8% to 1.72 trillion yen (about $10.7 billion), up from an initial 1.6 trillion yen, after June-quarter operating profit rose 40% to 476.5 billion yen.",
+          "source_url": "https://www.japantimes.co.jp/business/2026/07/31/companies/sony-profit-outlook-entertainment/",
+          "excerpt": "The company now expects annual operating profit of ¥1.72 trillion ($10.7 billion), surpassing the average analyst estimate and up from its initial forecast of ¥1.6 trillion. June-quarter operating profit surged by 40% to ¥476.5 billion."
+        },
+        {
+          "fact": "PlayStation 5 shipments fell to 1.6 million units in the quarter, roughly a third fewer than a year earlier.",
+          "source_url": "https://ca.investing.com/news/stock-market-news/sony-raises-guidance-as-q1-profit-beats-forecast-on-strong-gaming-business-4766826",
+          "excerpt": "In the first quarter Sony sold 1.6 million PlayStation 5 consoles, roughly a third fewer than the same period a year earlier."
+        },
+        {
+          "fact": "The reassurance lands against a memory squeeze investors have been calling 'Ramageddon', which has hit hardware makers including Apple and Samsung; Sony's guidance covers the fiscal year ending April 2027, spanning the November 19 launch of Grand Theft Auto 6.",
+          "source_url": "https://www.engadget.com/2227643/sony-has-secured-enough-ram-for-the-ps5s-it-expects-to-sell-this-year/",
+          "excerpt": "Whenever computer or gaming hardware is discussed these days, the \"Ramageddon\" memory shortage is likely to come up ... Sony may see a big holiday bump for PS5 sales since Grand Theft Auto 6 — expected to be a blockbuster — is due to be released on November 19th."
+        },
+        {
+          "fact": "Sony credited US tariff refunds, a weaker yen and cost control for the improved outlook, and its shares were down 8% year to date going into the results.",
+          "source_url": "https://ca.investing.com/news/stock-market-news/sony-raises-guidance-as-q1-profit-beats-forecast-on-strong-gaming-business-4766826",
+          "excerpt": "It pointed to the impact of U.S. tariff refunds, a boost from exchange rates and cost control for the rosier outlook for its gaming unit ... The company's shares were down 8% year-to-date ahead of the earnings."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://ca.investing.com/news/stock-market-news/sony-raises-guidance-as-q1-profit-beats-forecast-on-strong-gaming-business-4766826",
+          "outlet": "Reuters via Investing.com",
+          "title": "Sony raises guidance as Q1 profit beats forecast on strong gaming business",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.japantimes.co.jp/business/2026/07/31/companies/sony-profit-outlook-entertainment/",
+          "outlet": "The Japan Times",
+          "title": "Sony raises outlook after entertainment drives earnings jump",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.engadget.com/2227643/sony-has-secured-enough-ram-for-the-ps5s-it-expects-to-sell-this-year/",
+          "outlet": "Engadget",
+          "title": "Sony says it has secured enough RAM for all the PS5s it expects to sell this year",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.theverge.com/tech/973602/sony-says-dont-worry-weve-got-plenty-of-ram-for-playstation",
+          "outlet": "The Verge",
+          "title": "Sony says don't worry, we've got plenty of RAM for PlayStation",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Sony Group",
+          "PlayStation",
+          "Apple",
+          "Samsung Electronics"
+        ],
+        "people": [],
+        "places": [
+          "Tokyo"
+        ]
+      }
+    },
+    {
+      "id": "aalo-crusoe-nuclear-ai-factory",
+      "headline": "Aalo Atomics and Crusoe partner to run a nuclear-powered AI data center at Idaho National Lab",
+      "key_facts": [
+        {
+          "fact": "Advanced nuclear firm Aalo Atomics and AI infrastructure company Crusoe said on July 30, 2026 that they have formed a strategic commercial partnership to build a nuclear-powered 'AI Factory' data center.",
+          "source_url": "https://www.powermag.com/aalo-crusoe-plan-2027-inl-demonstration-pairing-nuclear-power-and-ai-data-center-load/",
+          "excerpt": "Advanced nuclear firm Aalo Atomics has formed a strategic partnership with energy-first AI infrastructure company Crusoe to develop a nuclear-powered 'AI Factory' data center ... The companies said on July 30 that under the commercial partnership..."
+        },
+        {
+          "fact": "As a proof of concept, Aalo will power a Crusoe Spark modular data center running Crusoe Cloud at Idaho National Laboratory in 2027.",
+          "source_url": "https://www.powermag.com/aalo-crusoe-plan-2027-inl-demonstration-pairing-nuclear-power-and-ai-data-center-load/",
+          "excerpt": "Aalo will initially power a Crusoe Spark modular data center running Crusoe Cloud at INL in 2027 as a proof of concept."
+        },
+        {
+          "fact": "Longer term the companies intend to deploy Aalo Pods and Aalo's 50-MWe extra-modular reactor (XMR) power plants at Crusoe data centers by the end of 2029; the demonstration builds on Aalo-X, a planned 30-MWth/10-MWe sodium-cooled plant at INL.",
+          "source_url": "https://www.powermag.com/aalo-crusoe-plan-2027-inl-demonstration-pairing-nuclear-power-and-ai-data-center-load/",
+          "excerpt": "Over the longer term, Aalo and Crusoe said they intend to deploy Aalo Pods and Aalo's 50-MWe extra-modular reactor (XMR) power plants at Crusoe data centers by the end of 2029 ... Aalo's planned 30-MWth/10-MWe sodium-cooled demonstration plant at INL."
+        },
+        {
+          "fact": "Crusoe said in June that its contracted AI infrastructure capacity was approaching 5 GW across data centers and cloud, and its 2026 deals include a 900-MW campus in Abilene, Texas for Microsoft AI infrastructure and a 1-GW campus in Childress, Texas with Lancium.",
+          "source_url": "https://www.powermag.com/aalo-crusoe-plan-2027-inl-demonstration-pairing-nuclear-power-and-ai-data-center-load/",
+          "excerpt": "The company said in June that its contracted AI infrastructure capacity was approaching 5 GW across data centers and cloud. Its 2026 announcements include a 900-MW AI Factory campus in Abilene, Texas, to support Microsoft AI infrastructure, a 1-GW AI data center campus in Childress, Texas, with Lancium."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.powermag.com/aalo-crusoe-plan-2027-inl-demonstration-pairing-nuclear-power-and-ai-data-center-load/",
+          "outlet": "POWER Magazine",
+          "title": "Aalo, Crusoe Plan 2027 INL Demonstration Pairing Nuclear Power and AI Data Center Load",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "science",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Aalo Atomics",
+          "Crusoe",
+          "Idaho National Laboratory",
+          "Microsoft",
+          "Lancium"
+        ],
+        "people": [],
+        "places": [
+          "Idaho",
+          "Abilene, Texas",
+          "Childress, Texas"
+        ]
+      }
+    },
+    {
+      "id": "iran-drone-strikes-kuwait-bahrain-hormuz-tankers",
+      "headline": "Iran hits US bases in Kuwait and Bahrain with drones and stops two tankers in Hormuz",
+      "key_facts": [
+        {
+          "fact": "Iran's army said on Friday, July 31, that it had struck US military assets at Kuwait's Ahmad al-Jaber air base with drones, targeting aircraft shelters, satellite communication systems and equipment warehouses",
+          "source_url": "https://www.aljazeera.com/news/2026/7/31/irgc-strikes-us-targets-in-kuwait-a-day-after-us-hits-iran-latest-events",
+          "excerpt": "The Iranian army said on Friday that its forces had targeted strategic US military facilities at Kuwait's Ahmad Al-Jaber airbase in a drone attack... it had targeted hangars, satellite communication systems and equipment warehouses using drones."
+        },
+        {
+          "fact": "Iran's army also said it attacked US facilities at Sheikh Isa Air Base in Bahrain, targeting power generators, navigation systems and support buildings",
+          "source_url": "https://www.cnbc.com/2026/07/31/us-iran-war-trump-hormuz.html",
+          "excerpt": "Iran's army also claimed Thursday to have attacked U.S. facilities at Sheikh Isa Air Base in Bahrain, targeting power generators, navigation systems and support buildings."
+        },
+        {
+          "fact": "Kuwait's defence ministry said it detected hostile drones in Kuwaiti airspace from dawn on Friday and 'engaged and destroyed' them, blaming 'Iranian aggression'",
+          "source_url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-strait-of-hormuz-kuwait-jordan-air-base/",
+          "excerpt": "Kuwait's defense ministry said that it had 'detected hostile drones inside Kuwaiti airspace since dawn today' and 'successfully intercepted and destroyed them.'"
+        },
+        {
+          "fact": "The IRGC said it struck and stopped two oil tankers that tried to cross the Strait of Hormuz under US military 'aerial escort', and that four other tankers turned back",
+          "source_url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-strait-of-hormuz-kuwait-jordan-air-base/",
+          "excerpt": "The IRGC said the 'non-compliant oil tankers … were struck and stopped, while four other oil tankers quickly changed course and returned to their previous locations.'"
+        },
+        {
+          "fact": "Iran said the attacks answered a US strike on a home on Qeshm Island; local media reported three members of one family were killed there",
+          "source_url": "https://www.rte.ie/news/middle-east/2026/0731/1585912-us-iran/",
+          "excerpt": "The Iranian army said the strikes came 'in response to the recent aggression by the terrorist US military against our country and its brutal attack on a residential home on Qeshm Island'. Local media reported yesterday that three members of a family were killed."
+        },
+        {
+          "fact": "CENTCOM rejected the IRGC's claim that its missiles destroyed three US F-35s at Jordan's al-Azraq air base, saying 'No US aircraft were destroyed or damaged in recent attempted Iranian attacks'",
+          "source_url": "https://economictimes.indiatimes.com/news/defence/iran-claims-to-destroy-drone-hangars-fuel-depot-destroyed-at-us-base-in-kuwait-war/articleshow/132753113.cms",
+          "excerpt": "US Central Command (CENTCOM) posted on X, 'No US aircraft were destroyed or damaged in recent attempted Iranian attacks.'"
+        },
+        {
+          "fact": "Oil prices reversed early losses and traded higher on Friday morning after the tanker report, while mediator Pakistan said US-Iran talks continue, 'particularly on the Strait of Hormuz'",
+          "source_url": "https://www.cnbc.com/2026/07/31/us-iran-war-trump-hormuz.html",
+          "excerpt": "Oil prices traded higher on Friday morning, reversing earlier losses, after Iran's Fars said the IRGC stopped two tankers from passing through the strategically vital Strait of Hormuz."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.aljazeera.com/news/2026/7/31/irgc-strikes-us-targets-in-kuwait-a-day-after-us-hits-iran-latest-events",
+          "outlet": "Al Jazeera",
+          "title": "IRGC strikes US targets in Kuwait a day after US hits Iran: Latest events",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-strait-of-hormuz-kuwait-jordan-air-base/",
+          "outlet": "CBS News",
+          "title": "Live Updates: Iran claims strikes on 2 ships in Strait of Hormuz and drone attack on U.S. base in Kuwait",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/07/31/us-iran-war-trump-hormuz.html",
+          "outlet": "CNBC",
+          "title": "Iran targets U.S. assets in Kuwait, Bahrain after Egypt drone attack",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.rte.ie/news/middle-east/2026/0731/1585912-us-iran/",
+          "outlet": "RTE",
+          "title": "Pakistan says US-Iran talks ongoing amid fresh strikes",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://economictimes.indiatimes.com/news/defence/iran-claims-to-destroy-drone-hangars-fuel-depot-destroyed-at-us-base-in-kuwait-war/articleshow/132753113.cms",
+          "outlet": "The Economic Times",
+          "title": "Iran claims to destroy drone hangars, fuel depot at US base in Kuwait",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "world",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "IRGC",
+          "CENTCOM",
+          "Kuwait Defence Ministry",
+          "Iranian Army"
+        ],
+        "people": [],
+        "places": [
+          "Iran",
+          "Kuwait",
+          "Bahrain",
+          "Strait of Hormuz",
+          "Qeshm Island",
+          "Jordan"
+        ]
+      }
+    },
+    {
+      "id": "boj-holds-1-percent-hawkish-yen-intervention",
+      "headline": "Bank of Japan holds at 1% but warns inflation may overshoot, after Tokyo props up the yen",
+      "key_facts": [
+        {
+          "fact": "The Bank of Japan kept its short-term policy rate at 1% on July 31, in an 8-1 vote; board member Hajime Takata dissented, proposing a hike to 1.25%",
+          "source_url": "https://www.newsquawk.com/headlines/boj-keeps-rates-unchanged-at-100-as-expected-through-8-1-vote-while-it-stated-that-it-will-consider-the-timing-and-pace-of-rate-hikes-while-examining-the-likelihood-of-realising-baseline-scenario-risks-with-eye-on-impact-of-middle-east-developments",
+          "excerpt": "BoJ keeps rates unchanged at 1.00%, as expected, through 8-1 vote... Takata dissented and proposed a 25bps hike, which was turned down by a majority vote."
+        },
+        {
+          "fact": "The BOJ warned for the first time that underlying inflation could exceed its 2% target, signalling further rate hikes",
+          "source_url": "https://www.straitstimes.com/business/japans-central-bank-keeps-rates-steady-delivers-hawkish-signal-as-government-props-up-yen",
+          "excerpt": "The Bank of Japan kept interest rates steady on July 31 but warned for the first time that underlying inflation could exceed its target, signalling further rate hikes in the wake of the government's yen-buying intervention."
+        },
+        {
+          "fact": "Japan's government conducted yen-buying, dollar-selling intervention in New York markets on July 30; the yen still hovered around 160.76 per dollar after the BOJ decision",
+          "source_url": "https://www.straitstimes.com/business/japans-central-bank-keeps-rates-steady-delivers-hawkish-signal-as-government-props-up-yen",
+          "excerpt": "The BOJ's decision and its hawkish statement pushed up the two-year Japanese government bond yield but did little to prop up the yen, which hovered around 160.760 per dollar... market intervention in New York markets on July 30, a move that failed to give the yen a sustained boost."
+        },
+        {
+          "fact": "Governor Kazuo Ueda said the BOJ could 'accelerate the pace of rate hikes' if financial conditions are judged overly accommodative, flagging 'meaningful upside risks' to inflation",
+          "source_url": "https://asia.nikkei.com/economy/bank-of-japan/boj-revises-inflation-forecast-down-while-keeping-rates-unchanged",
+          "excerpt": "Bank of Japan Gov. Kazuo Ueda on Friday said that if financial conditions are judged to be overly accommodative, BOJ could 'accelerate the pace of rate hikes'... warning of 'meaningful upside risks' to inflation due to rising wages and prices, as well as elevated oil prices and a weak yen."
+        },
+        {
+          "fact": "The BOJ cut its core inflation forecast for the fiscal year ending March 2027 to 2.5% from 2.8% projected in April, while raising its fiscal 2027 forecast",
+          "source_url": "https://www.thestar.com.my/business/business-news/2026/07/31/boj-keeps-rates-steady-delivers-hawkish-signal-as-government-props-up-yen",
+          "excerpt": "In the outlook report, the BOJ revised down its core inflation forecast for the current fiscal year ending in March 2027 to 2.5% from 2.8% projected in April due to stabilising oil prices. But it revised up its forecast for fiscal 2027."
+        },
+        {
+          "fact": "The BOJ added strong AI-linked demand and currency moves, alongside Middle East developments, to the factors it will weigh when timing further hikes; June's increase took the rate to a 31-year high",
+          "source_url": "https://english.kyodonews.net/articles/-/81194",
+          "excerpt": "Ueda said that the recent weakening of the yen against the U.S. dollar will be among the 'important' factors, along with the Middle East situation and the increase in artificial intelligence-linked demand... after the bank kept its benchmark rate unchanged at 1.0 percent following an increase to a 31-year-high in June."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.straitstimes.com/business/japans-central-bank-keeps-rates-steady-delivers-hawkish-signal-as-government-props-up-yen",
+          "outlet": "The Straits Times",
+          "title": "Japan's central bank keeps rates steady, delivers hawkish signal as government props up yen",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://english.kyodonews.net/articles/-/81194",
+          "outlet": "Kyodo News",
+          "title": "BOJ keeps key interest rate unchanged, lifts economic outlook for FY 2026",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://asia.nikkei.com/economy/bank-of-japan/boj-revises-inflation-forecast-down-while-keeping-rates-unchanged",
+          "outlet": "Nikkei Asia",
+          "title": "BOJ chief flags upside inflation risks, faster hikes possible",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.thestar.com.my/business/business-news/2026/07/31/boj-keeps-rates-steady-delivers-hawkish-signal-as-government-props-up-yen",
+          "outlet": "The Star",
+          "title": "BOJ keeps rates steady, delivers hawkish signal as government props up yen",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.newsquawk.com/headlines/boj-keeps-rates-unchanged-at-100-as-expected-through-8-1-vote-while-it-stated-that-it-will-consider-the-timing-and-pace-of-rate-hikes-while-examining-the-likelihood-of-realising-baseline-scenario-risks-with-eye-on-impact-of-middle-east-developments",
+          "outlet": "Newsquawk",
+          "title": "BoJ keeps rates unchanged at 1.00% through 8-1 vote",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.japantimes.co.jp/business/2026/07/31/economy/boj-retains-benchmark-interest-rate/",
+          "outlet": "The Japan Times",
+          "title": "BOJ keeps rates unchanged amid speculation of yen intervention",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "economy",
+        "finance",
+        "world"
+      ],
+      "entities": {
+        "organizations": [
+          "Bank of Japan"
+        ],
+        "people": [
+          "Kazuo Ueda",
+          "Hajime Takata"
+        ],
+        "places": [
+          "Japan",
+          "Tokyo",
+          "New York"
+        ]
+      }
+    },
+    {
+      "id": "situational-awareness-citadel-fire-sale",
+      "headline": "Aschenbrenner's Situational Awareness dumps its stock book to Citadel after 67% July loss",
+      "key_facts": [
+        {
+          "fact": "Situational Awareness, the AI-focused hedge fund run by former OpenAI researcher Leopold Aschenbrenner, sold the bulk of its public stock portfolio to Ken Griffin's Citadel, two sources told Reuters on Thursday, July 30",
+          "source_url": "https://finance.yahoo.com/markets/stocks/articles/citadel-buys-most-situationals-stock-180422112.html",
+          "excerpt": "Situational Awareness, an AI-focused hedge fund run by former OpenAI researcher Leopold Aschenbrenner, sold the bulk of its stock portfolio to Ken Griffin's Citadel after being battered by heavy losses in its tech holdings, two sources familiar with the matter told Reuters on Thursday."
+        },
+        {
+          "fact": "The fund was down around 67% so far in July, according to a letter it sent investors",
+          "source_url": "https://finance.yahoo.com/markets/stocks/articles/citadel-buys-most-situationals-stock-180422112.html",
+          "excerpt": "The fund was down around 67% so far in July after incurring heavy losses on AI stocks, the Wall Street Journal reported on Thursday, citing a source who saw a letter the firm sent to investors."
+        },
+        {
+          "fact": "The fund had grown to as much as $45 billion at the start of July before the losses; it was hit by declines in AI infrastructure holdings such as SK Hynix and by short positions in software names such as Adobe moving against it",
+          "source_url": "https://www.cnbc.com/2026/07/30/leopold-aschenbrenners-hedge-fund-is-facing-steep-ai-losses.html",
+          "excerpt": "The fund grew to as big as $45 billion at the start of July before big losses took hold... Situational Awareness has sustained significant losses in recent weeks as its portfolio of AI infrastructure investments such as SK Hynix declined while short positions in software companies such as Adobe moved sharply against it."
+        },
+        {
+          "fact": "Situational will keep a book of roughly $10 billion after the deal, including stocks and private investments; it did not sell its stake in Anthropic",
+          "source_url": "https://finance.yahoo.com/markets/stocks/articles/citadel-buys-most-situationals-stock-180422112.html",
+          "excerpt": "They said Situational will hold a book of roughly $10 billion after the deal comprised of stocks as well as private investments in companies like Anthropic. Situational has not sold its stake in Anthropic, the sources said."
+        },
+        {
+          "fact": "Prime brokers including Goldman Sachs, JPMorgan Chase, Bank of America and Citigroup helped facilitate the deal, with Citadel taking the leverage-financed portion of the portfolio",
+          "source_url": "https://finance.yahoo.com/markets/stocks/articles/citadel-buys-most-situationals-stock-180422112.html",
+          "excerpt": "A number of top Wall Street prime brokers, including Goldman Sachs, JPMorgan Chase, Bank of America, and Citigroup, helped facilitate the deal... As part of the deal, Citadel is picking up the portion of Situational's public portfolio that was financed by leverage from brokers."
+        },
+        {
+          "fact": "The 25-year-old Aschenbrenner was forced to sell the majority of his public equity holdings to Citadel on Wednesday; the fund's public book included AI hardware positions such as Nebius and Sandisk",
+          "source_url": "https://www.businessinsider.com/situational-awareness-keeps-anthropic-stake-portfolio-sale-citadel-2026-7",
+          "excerpt": "The 25-year-old founder of artificial-intelligence-focused investor Situational Awareness was forced to sell a majority of his public equity holdings to Ken Griffin's $71 billion hedge fund Citadel on Wednesday... which included large positions in AI hardware stocks such as Nebius and Sandisk."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://finance.yahoo.com/markets/stocks/articles/citadel-buys-most-situationals-stock-180422112.html",
+          "outlet": "Reuters via Yahoo Finance",
+          "title": "Citadel buys most of Situational's stock holdings after AI share rout, sources say",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/07/30/leopold-aschenbrenners-hedge-fund-is-facing-steep-ai-losses.html",
+          "outlet": "CNBC",
+          "title": "Why AI investor Leopold Aschenbrenner is selling all stocks",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.businessinsider.com/situational-awareness-keeps-anthropic-stake-portfolio-sale-citadel-2026-7",
+          "outlet": "Business Insider",
+          "title": "Situational Awareness Keeps Anthropic Stake in Portfolio Sale to Citadel",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.semafor.com/article/07/30/2026/high-flying-hedge-fund-sells-holdings-to-citadel-after-ai-losses",
+          "outlet": "Semafor",
+          "title": "High-flying hedge fund sells holdings to Citadel after AI losses",
+          "published_at": "2026-07-30",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "finance",
+        "business",
+        "economy"
+      ],
+      "entities": {
+        "organizations": [
+          "Situational Awareness",
+          "Citadel",
+          "Goldman Sachs",
+          "JPMorgan Chase",
+          "Bank of America",
+          "Citigroup",
+          "Anthropic"
+        ],
+        "people": [
+          "Leopold Aschenbrenner",
+          "Ken Griffin"
+        ],
+        "places": [
+          "New York"
+        ]
+      }
+    },
+    {
+      "id": "new-york-sues-kalshi-cftc-emergency-motion",
+      "headline": "New York sues Kalshi as illegal gambling; CFTC files emergency motion to block the state",
+      "key_facts": [
+        {
+          "fact": "New York Attorney General Letitia James and Governor Kathy Hochul announced on July 31 that the state sued KalshiEX for running an illegal, unlicensed gambling operation through its prediction market",
+          "source_url": "https://ag.ny.gov/press-release/2026/governor-hochul-and-attorney-general-james-announce-new-york-has-sued-kalshi",
+          "excerpt": "New York Governor Kathy Hochul and Attorney General Letitia James today announced that New York has sued KalshiEX, LLC (Kalshi) for running an illegal gambling operation in New York through its prediction market platform."
+        },
+        {
+          "fact": "The suit says Kalshi never obtained a New York State Gaming Commission license and exposed New Yorkers, including people under the legal gambling age of 21, to financial risk; it seeks an injunction, forfeiture of all gains, restitution and fines equal to three times those gains",
+          "source_url": "https://ag.ny.gov/press-release/2026/governor-hochul-and-attorney-general-james-announce-new-york-has-sued-kalshi",
+          "excerpt": "OAG is asking the court to order Kalshi to forfeit all illegal gains, distribute restitution to consumers who were harmed, and pay fines equal to three times the gains the company made through its illegal actions."
+        },
+        {
+          "fact": "Court filings put the requested compensatory damages at at least $36 billion, pending a full accounting, plus $100,000 for each offering",
+          "source_url": "https://www.theblock.co/post/410247/new-york-sues-kalshi",
+          "excerpt": "According to court filings, the requested compensatory damages could total at least $36 billion, pending a full accounting."
+        },
+        {
+          "fact": "Less than an hour before the state filed, the CFTC filed an 'emergency' motion in Manhattan federal court to stop New York's enforcement, calling it 'overreach' that would irreparably harm the agency and the markets it regulates",
+          "source_url": "https://www.nbcnews.com/tech/tech-news/new-york-sues-kalshi-says-prediction-markets-are-illegal-gambling-rcna590186",
+          "excerpt": "Less than one hour before New York sued Kalshi, the CFTC filed an 'emergency' motion in Manhattan federal court to stop the state's enforcement activity, calling it 'overreach' that would irreparably harm the agency and markets it regulates."
+        },
+        {
+          "fact": "The filings follow a Manhattan federal appeals court's rejection on Wednesday of Kalshi's bid to escape New York gambling law while it appeals Judge Analisa Torres's July 8 refusal to grant an injunction against the state",
+          "source_url": "https://www.nbcnews.com/tech/tech-news/new-york-sues-kalshi-says-prediction-markets-are-illegal-gambling-rcna590186",
+          "excerpt": "The CFTC filing followed Wednesday's rejection by the federal appeals court in Manhattan of Kalshi's request to avoid being subjected to New York's gambling laws, while it appeals U.S. District Judge Analisa Torres' refusal on July 8 to issue an injunction against the state."
+        },
+        {
+          "fact": "James filed similar petitions in April against Coinbase Financial Markets and Gemini Titan, and 44 state attorneys general wrote to the CFTC on Monday arguing it has no right to regulate sports event contracts",
+          "source_url": "https://www.cnbc.com/2026/07/31/new-york-sues-kalshi-claims-it-is-illegal-gambling-operation.html",
+          "excerpt": "44 state attorneys General on Monday sent a letter to the CFTC, claiming that the commission has no right to regulate sports-related event contracts, as part of a public comment period for the agency's first draft of regulations on prediction markets."
+        },
+        {
+          "fact": "Kalshi said it was disappointed, arguing New York cannot shut down a federally licensed financial exchange",
+          "source_url": "https://www.cnbc.com/2026/07/31/new-york-sues-kalshi-claims-it-is-illegal-gambling-operation.html",
+          "excerpt": "Kalshi expressed disappointment with the decision by the state, saying that New York can't shut down a federally-licensed financial exchange."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://ag.ny.gov/press-release/2026/governor-hochul-and-attorney-general-james-announce-new-york-has-sued-kalshi",
+          "outlet": "New York State Attorney General",
+          "title": "Governor Hochul and Attorney General James Announce New York Has Sued Kalshi",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.nbcnews.com/tech/tech-news/new-york-sues-kalshi-says-prediction-markets-are-illegal-gambling-rcna590186",
+          "outlet": "NBC News",
+          "title": "New York sues Kalshi, says its prediction markets are illegal gambling",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/07/31/new-york-sues-kalshi-claims-it-is-illegal-gambling-operation.html",
+          "outlet": "CNBC",
+          "title": "New York sues Kalshi, claims it is 'illegal gambling operation'",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.theblock.co/post/410247/new-york-sues-kalshi",
+          "outlet": "The Block",
+          "title": "New York sues Kalshi over illegal gambling claims, seeks $36 billion in damages",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "finance",
+        "politics",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Kalshi",
+          "CFTC",
+          "New York State Gaming Commission",
+          "Coinbase Financial Markets",
+          "Gemini Titan"
+        ],
+        "people": [
+          "Letitia James",
+          "Kathy Hochul",
+          "Analisa Torres"
+        ],
+        "places": [
+          "New York",
+          "Manhattan"
+        ]
+      }
+    },
+    {
+      "id": "russia-north-korean-missile-ukraine-strike",
+      "headline": "Zelensky says Russia used a North Korean missile in strike that killed six, then sent 255 drones",
+      "key_facts": [
+        {
+          "fact": "Russia launched more than 70 missiles and about 280 drones at Ukraine overnight into Thursday, killing nine people, with Kyiv and the western Lviv region the main targets, Zelensky said",
+          "source_url": "https://www.cnbctv18.com/world/russia-pounds-ukraine-in-new-air-attack-killing-children-19958403.htm",
+          "excerpt": "Russia launched more than 70 missiles and about 280 drones, Zelenskiy said in a statement. The capital Kyiv and the western region of Lviv on Ukraine's border with Poland were the main focus of the attack."
+        },
+        {
+          "fact": "In his nightly address, Zelensky said preliminary data showed Russia used a North Korean missile for the first time in a long while in the strike on the village of Radushne, where six people including three children were killed",
+          "source_url": "https://www.cnbctv18.com/world/russia-pounds-ukraine-in-new-air-attack-killing-children-19958403.htm",
+          "excerpt": "Zelenskiy said of the attack on the village: 'In Radushne, the Russians used a missile from North Korea for the first time in a long time – that is what preliminary data shows.' ... marking the first time in nearly a year that Russia has used such a weapon from its ally."
+        },
+        {
+          "fact": "The following night Russia launched 255 attack drones, including jet-powered Shahed variants and decoys; Ukraine's Air Force said 195 were shot down or suppressed while 22 struck targets at 14 locations",
+          "source_url": "https://newsukraine.rbc.ua/news/russia-fires-255-drones-at-ukraine-dozens-1785477630.html",
+          "excerpt": "Russian forces used 255 attack drones, including Shahed drones (including jet-powered variants), Gerbera, Italmas, and Parodiya decoy drones... air defenses had shot down or suppressed 195 enemy drones... 22 attack drones struck targets at 14 locations."
+        },
+        {
+          "fact": "Russian attacks killed at least nine people and injured 48 across Ukraine in the 24 hours to July 31, with search-and-rescue still under way in Lviv and Radushne",
+          "source_url": "https://kyivindependent.com/russian-attacks-kill-9-injure-42-across-ukraine-over-past-day-as-country-reels-from-previous-mass-strike/",
+          "excerpt": "Russian attacks killed at least nine people and injured 48 others across Ukraine over the past day, local authorities said on July 31... Search-and-rescue operations continued for a second consecutive day in the city of Lviv... and the village of Radushne."
+        },
+        {
+          "fact": "Trump said he was 'not sure' he would let Ukraine build Patriot missiles, weeks after saying at the NATO summit in Ankara that 'we'll give them the right to make Patriots'",
+          "source_url": "https://www.independent.co.uk/news/world/europe/ukraine-russia-war-live-putin-trump-zelensky-wildberries-missiles-b3025070.html",
+          "excerpt": "US president Donald Trump said he was 'not sure' he would let Ukraine build Patriot missiles, The Financial Times reported on Thursday... On 10 July at the Nato summit in Ankara, Turkey, Trump said: 'We'll give them the right to make Patriots.'"
+        },
+        {
+          "fact": "Ukraine's envoy to Washington, Olha Stefanishyna, said Kyiv needs anti-ballistic missiles now and that licensing local PAC-3 production could take from 12 months to five years",
+          "source_url": "https://www.independent.co.uk/news/world/europe/ukraine-russia-war-live-putin-trump-zelensky-wildberries-missiles-b3025070.html",
+          "excerpt": "Olha Stefanishyna told reporters that Ukraine was in discussions with the Pentagon about a license to produce Patriot PAC-3 missiles itself, but that process could take 12 months to five years."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.cnbctv18.com/world/russia-pounds-ukraine-in-new-air-attack-killing-children-19958403.htm",
+          "outlet": "CNBC TV18",
+          "title": "Russia pounds Ukraine in new air attack, killing 9, including children",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://newsukraine.rbc.ua/news/russia-fires-255-drones-at-ukraine-dozens-1785477630.html",
+          "outlet": "RBC-Ukraine",
+          "title": "Russia fires 255 drones at Ukraine, dozens reach their targets",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://kyivindependent.com/russian-attacks-kill-9-injure-42-across-ukraine-over-past-day-as-country-reels-from-previous-mass-strike/",
+          "outlet": "The Kyiv Independent",
+          "title": "Russian attacks kill 9, injure 48 across Ukraine over past day",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.independent.co.uk/news/world/europe/ukraine-russia-war-live-putin-trump-zelensky-wildberries-missiles-b3025070.html",
+          "outlet": "The Independent",
+          "title": "Ukraine-Russia war latest: Trump says he's 'not sure' about allowing Kyiv to build Patriot missiles",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "world",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "Ukrainian Air Force",
+          "Pentagon",
+          "NATO"
+        ],
+        "people": [
+          "Volodymyr Zelensky",
+          "Donald Trump",
+          "Olha Stefanishyna"
+        ],
+        "places": [
+          "Ukraine",
+          "Kyiv",
+          "Lviv",
+          "Radushne",
+          "Russia",
+          "North Korea"
+        ]
+      }
+    },
+    {
+      "id": "space-eyes-spac-638-million-eric-trump",
+      "headline": "Counter-drone firm Space-Eyes, backed by Eric Trump, to go public via SPAC at $638M",
+      "key_facts": [
+        {
+          "fact": "Space-Eyes agreed to go public by merging with McKinley Acquisition Corp in a deal valuing the combined business at $638 million, according to four people familiar with the matter",
+          "source_url": "https://www.theglobeandmail.com/investing/article-eric-trump-backed-defence-technology-company-space-eyes-to-go-public/",
+          "excerpt": "Defence technology company Space-Eyes has agreed to go public through a merger with special purpose acquisition company McKinley Acquisition Corp, in a deal valuing the combined business at US$638-million, according to four people familiar with the matter."
+        },
+        {
+          "fact": "Eric Trump recently became the third-largest private investor in Space-Eyes and will serve as a strategic adviser to the combined company",
+          "source_url": "https://www.theglobeandmail.com/investing/article-eric-trump-backed-defence-technology-company-space-eyes-to-go-public/",
+          "excerpt": "President Donald Trump's son Eric Trump has recently become the third-largest private investor in the original Space-Eyes... Eric Trump will serve as a strategic adviser to the combined business following the transaction."
+        },
+        {
+          "fact": "The Miami-based company builds AI-powered counter-drone and geospatial intelligence systems for governments and has generated about $1 million in annual revenue, operating mainly as an R&D company",
+          "source_url": "https://www.theglobeandmail.com/investing/article-eric-trump-backed-defence-technology-company-space-eyes-to-go-public/",
+          "excerpt": "which has operated primarily as a research-and-development company and generated about US$1-million in annual revenue... The Miami-based company develops artificial intelligence-powered counter-drone and geospatial intelligence technologies for governments and agencies."
+        },
+        {
+          "fact": "The transaction is expected to provide up to $251.7 million in gross proceeds, including McKinley's trust account and a planned PIPE financing",
+          "source_url": "https://www.theglobeandmail.com/investing/article-eric-trump-backed-defence-technology-company-space-eyes-to-go-public/",
+          "excerpt": "The transaction is expected to provide up to US$251.7-million in gross proceeds, including capital held in McKinley's trust account and a planned private investment in public equity, or PIPE, financing."
+        },
+        {
+          "fact": "The deal is expected to close in the fourth quarter of 2026, with the combined company trading on Nasdaq under the ticker 'CUAS', a reference to counter-unmanned aerial systems",
+          "source_url": "https://www.theglobeandmail.com/investing/article-eric-trump-backed-defence-technology-company-space-eyes-to-go-public/",
+          "excerpt": "The deal is expected to close in the fourth quarter of 2026, subject to shareholder and regulatory approvals, with the combined company expected to trade on the Nasdaq exchange under the ticker symbol 'CUAS'."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.theglobeandmail.com/investing/article-eric-trump-backed-defence-technology-company-space-eyes-to-go-public/",
+          "outlet": "The Globe and Mail (Reuters)",
+          "title": "Eric Trump-backed defence technology company Space-Eyes to go public in $638-million SPAC deal",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://ae.marketscreener.com/news/eric-trump-backed-defense-technology-company-space-eyes-to-go-public-in-638-million-spac-deal-sour-ce7f50dbde88f726",
+          "outlet": "MarketScreener (Reuters)",
+          "title": "Eric Trump-backed defense technology company Space-Eyes to go public in $638 million SPAC deal, sources say",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "business",
+        "finance",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "Space-Eyes",
+          "McKinley Acquisition Corp",
+          "Nasdaq"
+        ],
+        "people": [
+          "Eric Trump",
+          "Donald Trump"
+        ],
+        "places": [
+          "Miami",
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "xi-orders-pla-intelligent-military-system",
+      "headline": "Xi orders PLA to expand military use of unmanned and AI systems before its 99th anniversary",
+      "key_facts": [
+        {
+          "fact": "Xi Jinping called for enhancing the military application of unmanned intelligent technologies and advancing network information systems to gradually establish an 'intelligent military system'",
+          "source_url": "https://english.news.cn/20260731/4eea1a888bab410883335e1f0317b275/c.html",
+          "excerpt": "He called for enhancing military application of unmanned intelligent technologies and advancing the development and application of the network information system to gradually establish an intelligent military system."
+        },
+        {
+          "fact": "Xi made the remarks at a Politburo group study session on Thursday, ahead of the People's Liberation Army's 99th anniversary on Saturday, August 1",
+          "source_url": "https://www.scmp.com/news/china/military/article/3362496/xi-jinping-urges-chinese-armed-forces-strengthen-military-application-ai",
+          "excerpt": "Speaking ahead of the PLA's 99th anniversary on Saturday, Xi said the military had made 'significant progress' in modernisation and called for 'decisive' advances... He told a Politburo group study session on Thursday."
+        },
+        {
+          "fact": "Xi said combat capability remains the ultimate objective and testing criterion of high-quality military modernization, and pressed for the PLA's 2027 centenary goals to be met on schedule",
+          "source_url": "https://english.news.cn/20260731/4eea1a888bab410883335e1f0317b275/c.html",
+          "excerpt": "Combat capabilities remain the ultimate objective and testing criterion for promoting the high-quality modernization of national defense and the armed forces, Xi said."
+        },
+        {
+          "fact": "He also urged deeper anti-corruption work and tighter oversight of major military projects, and called closer military-civilian industrial integration 'a necessary path' to a modern army",
+          "source_url": "https://www.thestar.com.my/aseanplus/2026/07/31/xi-urges-military-to-step-up-use-of-unmanned-ai-technologies",
+          "excerpt": "Xi also reiterated the importance of political indoctrination for the People's Liberation Army (PLA), urging efforts to advance the fight against corruption and improve oversight of major projects... Xi repeated the importance of closer integration between the military and civilian industries, calling it 'a necessary path' to building a modern army."
+        },
+        {
+          "fact": "China aims to basically complete the modernization of its defence and armed forces by 2035 and build a 'world-class' military by 2049",
+          "source_url": "https://timesofindia.indiatimes.com/defence/international/china-to-focus-on-intelligent-military-system-as-pla-celebrates-99-years-what-it-means/articleshow/132761378.cms",
+          "excerpt": "China aims to basically achieve the modernisation of its national defence and armed forces by 2035 and build a 'world-class' military by 2049, the centenary of the founding of the People's Republic of China."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://english.news.cn/20260731/4eea1a888bab410883335e1f0317b275/c.html",
+          "outlet": "Xinhua",
+          "title": "Xi Focus: Xi stresses political guidance, innovation in military modernization",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.scmp.com/news/china/military/article/3362496/xi-jinping-urges-chinese-armed-forces-strengthen-military-application-ai",
+          "outlet": "South China Morning Post",
+          "title": "Xi Jinping urges Chinese armed forces to 'strengthen military application' of AI",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.thestar.com.my/aseanplus/2026/07/31/xi-urges-military-to-step-up-use-of-unmanned-ai-technologies",
+          "outlet": "The Star",
+          "title": "Xi urges military to step up use of unmanned, AI technologies",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://timesofindia.indiatimes.com/defence/international/china-to-focus-on-intelligent-military-system-as-pla-celebrates-99-years-what-it-means/articleshow/132761378.cms",
+          "outlet": "The Times of India",
+          "title": "China to focus on 'intelligent military system' as PLA celebrates 99 years",
+          "published_at": "2026-07-31",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "world",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "People's Liberation Army",
+          "Communist Party of China",
+          "Politburo",
+          "Xinhua"
+        ],
+        "people": [
+          "Xi Jinping"
+        ],
+        "places": [
+          "China",
+          "Beijing"
+        ]
+      }
+    }
+  ],
+  "story_count": 21,
+  "source_count": 81
+}

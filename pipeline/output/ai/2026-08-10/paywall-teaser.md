@@ -1,0 +1,6 @@
+**Abaixo, apenas para assinantes:**
+
+**Modelos.** Um ensaio longo de um fundador em defesa da IA aberta, e a liderança chinesa tanto em geração de vídeo quanto em robôs humanoides.
+**Silício.** O chip de IA próprio de uma gigante americana da nuvem, uma joint venture japonesa de sensores de imagem, a memória pesando cada vez mais no custo dos celulares, e uma projetista chinesa de chips a caminho da bolsa de Hong Kong.
+**Dinheiro.** Gestoras de infraestrutura entram no negócio de data centers arrendados a uma empresa americana de IA, e uma startup de cibersegurança defensiva sai do sigilo com uma rodada liderada por um fundo do Vale.
+**Mundo.** Negociações travadas no Oriente Médio mexendo com o petróleo, a recusa russa a congelar a guerra na véspera da visita de enviados americanos, exercícios militares em Taiwan, e câmeras de barcos-drone britânicos enviando dados para um endereço na China.
