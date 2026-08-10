@@ -13,6 +13,10 @@ newsletters/
 .claude/agents/                # the in-session pipeline:
                                #   researcher-{ai,hw,world}, facts, generator,
                                #   extract, paywall-teaser, repetition-checker, fact-verifier
+                               # FLAT — one .md per agent, no subdirs. Claude Code scans
+                               # this dir RECURSIVELY, so a copy in _backup/ or old/ also
+                               # registers under the same `name:` and can win the collision:
+                               # the run silently uses the stale definition. Backup is git.
 pipeline/                      # topic-agnostic helpers the agents call
   _lib.sh                      # loads topic config, shared utilities
   ingest.sh / rewrite-links.sh / substack-preview.sh

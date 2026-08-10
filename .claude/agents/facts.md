@@ -84,6 +84,12 @@ Escreva o `facts.md` no caminho indicado, com esta estrutura exata:
    - **`seed` é masculino:** "um seed de US$71 milhões", não "uma seed".
    - `coding` → "programação", nunca "codificação".
    - `stealth` fica em inglês, nunca "modo furtivo".
+   - `hedge fund` fica em inglês, nunca "fundo de hedge" (nem no plural:
+     "hedge funds", não "fundos de hedge"). O generator aplica o itálico.
+   - `valuation` fica em inglês, nunca "avaliação" — no sentido de valor de
+     mercado de uma empresa ("um valuation de US$12 bilhões"). O generator
+     aplica o itálico. "Avaliação" nos outros sentidos (de risco, de
+     desempenho, de um modelo) segue normal.
 4. **Glosse o jargão uma vez, na primeira ocorrência**, com um parêntese ou
    bullet curto e factual — apenas para siglas/termos técnicos consagrados (HBM,
    ADR, SPAC, OCR, EUV, IPO, FDA, AIEA etc.). Glosa curta e segura; **se tiver
