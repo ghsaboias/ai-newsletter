@@ -8,6 +8,7 @@ Git-tracked, synced-across-devices home for the newsletter's accumulated knowled
 | [editorial-review-log.md](editorial-review-log.md) | The dated **provenance** behind the principles — each review session's specific draft→final edits, kept for their before→after examples (2026-03-09 → 2026-07-01). |
 | [newsletter-workflow.md](newsletter-workflow.md) | The **publishing machinery** — the publish gap, per-story images (selection + `substack_mirror.py` insertion), the recommendations section + archive cron, chart posts, the Substack API/format reference, the v2 restructure, coverage direction. |
 | [operational-notes.md](operational-notes.md) | **Headless/harness** quirks — Bash bg-tasks dying at turn end, `sstats` running anywhere, nested subagents. The bucket destined for the Pi's `CLAUDE.md`. |
+| [search-provider-benchmark.md](search-provider-benchmark.md) | The **research-step search layer** — o que os agentes de research realmente chamam (baseline medido), o que Exa/WebSearch/Firecrawl sabem fazer (filtro de data, parâmetros, custo), e o desenho do benchmark. Bloqueado até 2026-08-16. |
 
 ## Relationship to CLAUDE.md and memory
 
