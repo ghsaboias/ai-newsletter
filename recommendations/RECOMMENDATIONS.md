@@ -959,3 +959,53 @@ https://www.youtube.com/watch?v=2RJiaf0SY8s
 **The Next Frontier of AI Is Spatial Intelligence | Fei-Fei Li on a16z**
 O vídeo apresenta uma conversa entre Martin Casado (a16z), Fei-Fei Li (CEO da World Labs) e Yunzhu Li (cofundadora da SceniX e professora na Columbia University). O foco central é a aquisição da SceniX pela World Labs, unindo esforços para desenvolver a "inteligência espacial", a capacidade de máquinas entenderem, raciocinarem e interagirem com espaços físicos e virtuais. A discussão aborda a transição de modelos de linguagem para modelos de mundo voltados à robótica e o papel crucial da simulação
 https://www.youtube.com/watch?v=-tabaM5l3s0
+
+## 2026-07-31
+
+**The $1/Hour Robot Is Coming: Four Industry Leaders Explain What's Next**
+Este episódio do All-In Podcast explora o estado atual e as perspectivas da robótica industrial e humanoide, com a participação de líderes da ANYbotics, 1X, Boston Dynamics e Agility Robotics. O debate foca na transição de robôs como experimentos de laboratório para ferramentas de trabalho reais, impulsionadas por avanços em IA, percepção e modelos de mundo
+https://www.youtube.com/watch?v=TqNiSTeNtb0
+
+**The Two Harvard Dropouts Who raised $800M to take on NVIDIA**
+O vídeo apresenta uma entrevista de Patrick O'Shaughnessy com Gavin Uberti e Robert Wachen, cofundadores da Etched. A empresa, fundada por dois ex-alunos de Harvard, levantou US$ 800 milhões para desenvolver hardware especializado em inferência de IA, desafiando a dominância da NVIDIA ao focar em arquiteturas otimizadas para a era pós-ChatGPT
+https://www.youtube.com/watch?v=BagWrgPww1o
+
+## 2026-08-03
+
+**Chip Stocks Crash, $20B Fund Margin Called, Frontier Labs: SLOW DOWN AI, Mamdani's Grocery Stores**
+O podcast discute a recente queda acentuada nas ações de semicondutores, destacando o caso de Leopold Aschenbrenner, gestor do fundo "Situational Awareness", que sofreu uma chamada de margem (margin call) após apostas alavancadas em IA. O índice de semicondutores da Filadélfia caiu mais de 20% no último mês, entrando em território de "bear market". Os apresentadores enfatizam que, embora a tese de longo prazo para IA permaneça sólida, a alavancagem excessiva em momentos de euforia de mercado é um risco fatal. O impacto foi global, com liquidações massivas de contas alavancadas na Coreia do Sul
+https://www.youtube.com/watch?v=ViqYWhLimGg
+
+**Lessons From Backing The Best Founders In Fintech | Micky Malka**
+Micky Malka é o fundador da Ribbit Capital e um empreendedor serial. O vídeo, uma conversa com David Senra (do podcast Founders), explora a filosofia de Malka sobre investimentos, a construção de empresas e a vida como um "jogo infinito". Malka, que se define como "empreendedor de coração e investidor por design", discute como sua trajetória, desde a infância na Venezuela até a criação de empresas como o Lemon Bank e a Ribbit Capital, moldou sua visão de mundo focada em rebeldia, aprendizado contínuo e a busca por beleza na tecnologia
+https://www.youtube.com/watch?v=CjLhd1WZwTE
+
+## 2026-08-04
+
+**Lessons From Backing The Best Founders In Fintech | Micky Malka**
+Micky Malka é o fundador da Ribbit Capital e um empreendedor serial. O vídeo, uma conversa com David Senra (do podcast Founders), explora a filosofia de Malka sobre investimentos, a construção de empresas e a vida como um "jogo infinito". Malka, que se define como "empreendedor de coração e investidor por design", discute como sua trajetória, desde a infância na Venezuela até a criação de empresas como o Lemon Bank e a Ribbit Capital, moldou sua visão de mundo focada em rebeldia, aprendizado contínuo e a busca por beleza na tecnologia
+https://www.youtube.com/watch?v=CjLhd1WZwTE
+
+**Waymo Co-CEO Dmitri Dolgov: The Demo Is Only 1% Of The Work**
+Uma palestra de Dmitri Dolgov, co-CEO da Waymo, na Y Combinator Startup School 2026. Ele detalha a trajetória da Waymo, que hoje opera 500 mil viagens semanais com veículos totalmente autônomos em 15 cidades, alcançando um índice de segurança 17 vezes superior ao de motoristas humanos. O foco é a transição da IA do mundo digital para o mundo físico (Physical AI)
+https://www.youtube.com/watch?v=Gp4zrV3-6N8
+
+## 2026-08-05
+
+**The AI Selloff Doesn't Match the Data | Top AI Investor Explains**
+Neste episódio do podcast Invest Like the Best, o CEO da Positive Sum, Patrick O'Shaughnessy, entrevista o investidor Gavin Baker para analisar a intensa correção de mercado no setor de IA e semicondutores ocorrida em julho de 2026. Baker descreve o período como "2022 condensado em um mês", contrastando o pânico nos mercados públicos com os fundamentos operacionais que continuam em aceleração no Vale do Silício
+https://www.youtube.com/watch?v=NGsi2PC4y68
+
+**How the White House Plans to 10x Scientific Productivity | Michael Kratsios | EP #276**
+O vídeo apresenta uma entrevista de Peter H. Diamandis com Michael Kratsios, Diretor do Escritório de Política de Ciência e Tecnologia da Casa Branca. A conversa foca na visão do governo americano para acelerar a produtividade científica através da inteligência artificial, destacando iniciativas como a 'Genesis Mission' e o relatório 'Science and New Golden Age'
+https://www.youtube.com/watch?v=iHv-vNM_XtU
+
+## 2026-08-07
+
+**How Open Source Became AI's Backbone | Inferact with a16z**
+Uma conversa entre Elena Burger e Matt Bornstein (a16z) com Simon Mo, cofundador e CEO da Inferact, sobre a evolução da IA de código aberto (open source) e o papel crítico da infraestrutura de inferência, representada pelo projeto vLLM, na viabilização de aplicações de IA de ponta
+https://www.youtube.com/watch?v=78-6dUROziQ
+
+**Chai Discovery's Bitter Lesson: Drug Design Is Another Scaling Problem**
+O vídeo apresenta Josh Meier e Matt McPartlon, cofundadores da Chai Discovery, discutindo sua abordagem para o design de fármacos. A empresa trata a biologia como um problema de engenharia, aplicando princípios de escalabilidade de dados, modelos e computação (a "lição amarga" da IA) para transformar a descoberta de medicamentos de um processo de tentativa e erro em um fluxo de trabalho de design estruturado
+https://www.youtube.com/watch?v=wv53mDmY-k0
