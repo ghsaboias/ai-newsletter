@@ -1,0 +1,60 @@
+{
+  "slug": "entregas-humanoides-1s26",
+  "title_pt": "Entregas globais de robôs humanoides mais que triplicaram no primeiro semestre",
+  "edition": "2026-08-10",
+  "metric": "Entregas (shipments) globais de robôs humanoides, em unidades. Dois semestres reportados (1S 2025 e 1S 2026) e a projeção da consultoria para o ano cheio de 2026.",
+  "definition": "Entregas = unidades enviadas pelos fabricantes no período (fluxo, não estoque instalado nem robôs em operação produtiva). A SAG conta apenas o que se enquadra na sua definição de 'humanoide funcional incorporado' — no caso da Leju, por exemplo, só a série KUAVO entra, Aelos e Roban ficam de fora. Os dois semestres são medidos com o mesmo método, da mesma casa; a terceira barra é ano cheio projetado, não um semestre.",
+  "series": [
+    { "period": "1S 2025", "period_type": "semestre", "units": 5100, "preliminary": false, "source_ref": "sag-robotics360-2026-08" },
+    { "period": "1S 2026", "period_type": "semestre", "units": 19100, "preliminary": false, "yoy_pct": 272, "source_ref": "sag-robotics360-2026-08" },
+    { "period": "2026", "period_type": "ano cheio (projeção)", "units": 60000, "preliminary": true, "source_ref": "sag-robotics360-2026-08" }
+  ],
+  "context_1s26": {
+    "china_share_pct": ">97",
+    "industrial_commercial_share_pct": ">70",
+    "industrial_commercial_share_1s25_pct": "~50",
+    "vendors": [
+      { "vendor": "AgiBot", "units": 8400, "share_pct": 44, "yoy_pct": 562, "country": "CN" },
+      { "vendor": "Unitree", "units": 5900, "share_pct": 31, "yoy_pct": 170, "country": "CN" },
+      { "vendor": "Galbot", "units": 900, "country": "CN" },
+      { "vendor": "UBTECH", "units": 700, "country": "CN" },
+      { "vendor": "Leju", "units": 600, "country": "CN" }
+    ],
+    "forecast_2030_units": 500000,
+    "forecast_revenue_2026_usd_bn": 1.6,
+    "forecast_revenue_2027_usd_bn": 3.0
+  },
+  "sources": [
+    {
+      "id": "sag-robotics360-2026-08",
+      "label": "Smart Analytics Global (SAG) — SAG Robotics 360, \"Global Humanoid Robot Shipments Surged 272% YoY to 19.1K Units in 1H 2026\" (10/ago/2026)",
+      "url": "https://smartanalyticsglobal.com/global-humanoid-robot-shipments-2026-agibot-unitree/",
+      "provides": "Release primário: 19.100 unidades no 1S26 (+272%) contra 5.100 no 1S25; China >97%; AgiBot 8.400 (44%, +562%), Unitree 5.900 (31%, +170%), Galbot ~900, UBTECH ~700, Leju ~600; industrial/comercial >70% das entregas (contra ~50% no 1S25); projeção de ~60.000 unidades em 2026 e 500.000 em 2030; receita de ~US$1,6 bi em 2026 e ~US$3 bi em 2027; recorte de definição (Leju = só KUAVO)."
+    },
+    {
+      "id": "bloomberg-2026-08-10",
+      "label": "Bloomberg — \"China Humanoid Makers Hold 97% of Global Shipments, Report Says\" (10/ago/2026)",
+      "url": "https://www.bloomberg.com/news/articles/2026-08-10/china-humanoid-makers-hold-97-of-global-shipments-report-says",
+      "provides": "Cobertura do mesmo release da SAG: 19.100 unidades no 1S26, mais que o triplo das 5.100 do 1S25; >97% de participação chinesa; projeção de ~60 mil no ano e meio milhão até 2030."
+    },
+    {
+      "id": "scmp-2026-08-10",
+      "label": "South China Morning Post — \"AgiBot overtakes Unitree as top global humanoid robot vendor in first half amid IPO push\" (10/ago/2026)",
+      "url": "https://www.scmp.com/tech/tech-trends/article/3363544/agibot-overtakes-unitree-top-global-humanoid-robot-vendor-first-half-amid-ipo-push",
+      "provides": "AgiBot ~8.400 unidades (44%) e Unitree ~5.900 (31%) no 1S26; alta de 562% a.a. da AgiBot. Não plotado — contexto do subtítulo."
+    }
+  ],
+  "method_fork": {
+    "chosen": "Smart Analytics Global sozinha, para as três barras.",
+    "why": "É a única casa que publica entregas de humanoides por semestre, e é a fonte da notícia do dia. Série semestral mais longa não existe publicada: os outros semestres só sairiam derivando de totais anuais, e as casas divergem forte em 2025 (Omdia 13 mil, Counterpoint 16 mil, IDC 18 mil).",
+    "source_credibility": "Casa nova e pequena (fundada no fim de 2025, 1 a 10 funcionários no LinkedIn, embora o site afirme ter mais de 20 analistas), especializada em smartphone e wearable, com robótica coberta só desde abril de 2026. A fundadora, Linda Sui, tem cerca de 19 anos de setor (Senior Director de Global Smartphone Strategies na Strategy Analytics; Head of Mobile Device Markets na TechInsights). Bloomberg, SCMP, Taipei Times e TASS usaram o número. O total de humanoides de 2025 implícito na SAG (31% de 53 mil ≈ 16,4 mil) cai entre os 13 mil da Omdia e os 18 mil da IDC.",
+    "not_mixed": "NÃO misturar com os anuais de Omdia/IDC/Counterpoint no mesmo eixo, nem derivar 2S 2025 subtraindo o 1S de um total anual de outra casa."
+  },
+  "notes": [
+    "Medido: entregas (unidades enviadas no período), fluxo e não estoque. Não mede robôs em operação produtiva — outras contagens estimam que os que fazem trabalho pago autônomo estão na casa das centenas.",
+    "As duas primeiras barras são semestres reportados; a terceira é ANO CHEIO projetado pela própria SAG (cor de projeção #7DB89B, rótulo com 'proj.'). Unidades de tempo diferentes na mesma série, sinalizadas no rótulo do eixo e na legenda.",
+    "Sem números derivados: os três valores estão no release. A participação chinesa entra como '>97%' (texto do release), não como unidades chinesas plotadas.",
+    "O gráfico anterior sobre humanoides (posts/chart-humanoid-market-share-2025.html, edição de 2026-07-03) usa base Omdia e mede participação por fabricante em 2025 — recorte e fonte diferentes. Não comparar as duas séries.",
+    "Por que promove a edição: o item do dia é a dominância chinesa (>97%) nas entregas do 1S26; o gráfico mostra a escala e a aceleração por trás dessa participação."
+  ]
+}
