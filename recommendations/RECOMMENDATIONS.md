@@ -1019,3 +1019,13 @@ https://www.youtube.com/watch?v=muRIXCDw-k0
 **AI Is Learning to Hack. Faster Than We Expected.**
 O vídeo apresenta uma discussão entre Joel De La Garza (a16z), Dylan Ayrey (Truffle Security) e Feross Aboukhadijeh (Socket) sobre a evolução da cibersegurança na era da IA. O debate foca em como modelos de IA estão deixando de apenas identificar vulnerabilidades para explorá-las ativamente, alterando o cenário de ataques à cadeia de suprimentos de software e a segurança de credenciais
 https://www.youtube.com/watch?v=RtNrvPBkwfA
+
+## 2026-08-11
+
+**Kavak's Playbook for Rebuilding a Company Around AI**
+O vídeo apresenta uma conversa entre Angela Strange e Gabriel Vasquez (a16z) com Alejandro Maza Ayala, Chief Product & AI Officer da Kavak. A discussão foca na transformação da Kavak, um marketplace de carros usados na América Latina, em uma empresa nativa em IA, onde agentes autônomos gerenciam quase a totalidade das operações e interações com clientes
+https://www.youtube.com/watch?v=n34CIw3gk1k
+
+**Peter Steinberger: What Happens When 4.7 Million People Let It Cook**
+Peter Steinberger, desenvolvedor e criador do projeto OpenClaw, compartilha sua experiência ao transformar uma ferramenta de automação pessoal em um projeto open source global com milhões de downloads. O relato foca nos desafios de escala, gestão de comunidade, burnout e a importância de manter a visão do produto original
+https://www.youtube.com/watch?v=whcfSGN6CAU
