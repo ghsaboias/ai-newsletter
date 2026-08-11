@@ -1009,3 +1009,13 @@ https://www.youtube.com/watch?v=78-6dUROziQ
 **Chai Discovery's Bitter Lesson: Drug Design Is Another Scaling Problem**
 O vídeo apresenta Josh Meier e Matt McPartlon, cofundadores da Chai Discovery, discutindo sua abordagem para o design de fármacos. A empresa trata a biologia como um problema de engenharia, aplicando princípios de escalabilidade de dados, modelos e computação (a "lição amarga" da IA) para transformar a descoberta de medicamentos de um processo de tentativa e erro em um fluxo de trabalho de design estruturado
 https://www.youtube.com/watch?v=wv53mDmY-k0
+
+## 2026-08-10
+
+**Google’s AI Brain Drain, SpaceX's Huge Quarter, Airtable’s 90% Collapse, US Data Fuels China AI**
+O Google enfrenta uma reestruturação significativa em sua divisão de IA, com a transição de Demis Hassabis para cargos de liderança e a saída de talentos de elite, como Jeff Dean, para fundar a startup Discovery Loop. O podcast discute se isso reflete uma perda de talentos ou uma mudança estratégica. A tese central é que o Google está priorizando investimentos em infraestrutura de computação (Capex) em vez do desenvolvimento exclusivo de modelos de fronteira, dado que a infraestrutura oferece retornos mais previsíveis e menos arriscados em um mercado onde modelos de código aberto estão se tornando competitivos
+https://www.youtube.com/watch?v=muRIXCDw-k0
+
+**AI Is Learning to Hack. Faster Than We Expected.**
+O vídeo apresenta uma discussão entre Joel De La Garza (a16z), Dylan Ayrey (Truffle Security) e Feross Aboukhadijeh (Socket) sobre a evolução da cibersegurança na era da IA. O debate foca em como modelos de IA estão deixando de apenas identificar vulnerabilidades para explorá-las ativamente, alterando o cenário de ataques à cadeia de suprimentos de software e a segurança de credenciais
+https://www.youtube.com/watch?v=RtNrvPBkwfA
