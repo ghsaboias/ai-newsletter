@@ -1029,3 +1029,13 @@ https://www.youtube.com/watch?v=n34CIw3gk1k
 **Peter Steinberger: What Happens When 4.7 Million People Let It Cook**
 Peter Steinberger, desenvolvedor e criador do projeto OpenClaw, compartilha sua experiência ao transformar uma ferramenta de automação pessoal em um projeto open source global com milhões de downloads. O relato foca nos desafios de escala, gestão de comunidade, burnout e a importância de manter a visão do produto original
 https://www.youtube.com/watch?v=whcfSGN6CAU
+
+## 2026-08-12
+
+**Ryan Greenblatt – What happens once AI can automate AI research?**
+Uma conversa entre o anfitrião Dwarkesh Patel e Ryan Greenblatt, cientista-chefe da Redwood Research, sobre a possibilidade de melhoria recursiva de IA (RSI). O debate foca na hipótese de que, ao automatizar a pesquisa e o desenvolvimento (P&D) de IA, a humanidade poderia presenciar um salto tecnológico equivalente a anos de progresso em um curto período, e as implicações de segurança e alinhamento decorrentes desse cenário
+https://www.youtube.com/watch?v=-RXD4bTuFTo
+
+**Everyone Is Still Undersizing the AI Market | Eric Vishria**
+Eric Vishria, sócio-gerente da Benchmark, discute com Patrick O'Shaughnessy (CEO da Positive Sum) como a inteligência artificial está reordenando o mercado de software, infraestrutura e capital de risco. Vishria argumenta que o mercado de IA é subestimado e que, assim como na era da computação em nuvem, o setor suportará múltiplos vencedores gigantescos em vez de um único monopólio
+https://www.youtube.com/watch?v=0e7aG_MIHlQ
