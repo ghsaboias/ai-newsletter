@@ -13,7 +13,7 @@ The `.substack-draft.html` the pipeline generates is **only the article body**. 
 What the pipeline body does **not** contain, that appears only in the published post:
 1. **Title & subtitle** — become Substack's own fields, not part of `body_html`.
 2. **Paywall block** ("Abaixo, apenas para assinantes:") at the cut point. Above = free, below = paid. Teaser text comes from `paywall-meta.json`. **`substack_post.py` → `inject_paywall` injects teaser + paywall automatically** when creating the draft via API. If pasted into the editor by hand instead, it's manual.
-   - **AbacatePay banner** (partnership, `~/abacatepay-parceria.png`) between teaser and cut: **automated 2026-06-23**. `substack_post.py` inserts the `captionedImage`/`image2` node (Substack CDN, href `https://abacatepay.com`) reading `newsletters/ai/paywall-banner.json`. Refresh the art: `python3 pipeline/tools/substack_upload.py ~/abacatepay-parceria.png --href https://abacatepay.com > newsletters/ai/paywall-banner.json`. Renders full-width (`resizeWidth: null`) by default.
+   - **Partner banner** between teaser and cut: **off since 2026-08-14** (the AbacatePay banner was removed; `TOPIC_PAYWALL_BANNER=""` in `newsletters/ai/config.sh` and the spec file is gone). The plumbing is intact for a future partner: upload the art with `python3 pipeline/tools/substack_upload.py <art.png> --href <url> > newsletters/ai/paywall-banner.json`, point `TOPIC_PAYWALL_BANNER` at it (or pass `--banner <file>` to `substack-preview.sh`), and `substack_post.py` inserts the `captionedImage`/`image2` node full-width (`resizeWidth: null`).
 3. **Embeds/media** added in the editor: link cards (Reuters, National Geographic…), images, videos/tweets. None in the body.
 4. **"Recomendações de hoje" section** at the foot (paid): video/interview picks. See the recommendations section below.
 5. **Last-mile prose edits** in the editor.
@@ -59,7 +59,7 @@ Editorial images use **`resizeWidth: 520`** (px) — Gui's standard, set 2026-07
 
 **Gotchas:**
 - **On PUT always send `draft_bylines:[{"id":473611573}]`** (the Daily Journal author). GET returns `draft_bylines:null`, so sending `[]` wipes the byline. Learned the hard way.
-- When bulk-setting widths, **skip the paywall banner** — the AbacatePay `captionedImage` has `href` set (it's the ad, keep it full-width `resizeWidth:null`). Only images **without** an `href` are editorial → 520.
+- When bulk-setting widths, **skip any href'd `captionedImage`** — a partner banner (none runs today) is an ad and stays full-width `resizeWidth:null`. Only images **without** an `href` are editorial → 520.
 - Creds from env or `~/daily-journal-platform/.env.local` (`SUBSTACK_SID`, `SUBSTACK_PUB_HOST`), same loader as `substack_upload.py`.
 
 ### `newsletter-images` skill (built 2026-06-22, historical mechanics)

@@ -15,12 +15,13 @@ TOPIC_BYLINE="Por: Guilherme Saboia e Vinicius Gushiken"
 
 # --- Publishing ---
 # Partner banner inserted between the paywall teaser ("Abaixo, apenas para
-# assinantes:") and the paywall cut. Spec = Substack CDN src + dims + link.
-# Refresh after changing the art:
-#   python3 pipeline/tools/substack_upload.py ~/abacatepay-parceria.png \
-#     --href https://abacatepay.com > "$TOPIC_DIR/paywall-banner.json"
-# Unset this (or delete the file) to skip the banner.
-TOPIC_PAYWALL_BANNER="$TOPIC_DIR/paywall-banner.json"
+# assinantes:") and the paywall cut. Disabled — no partner banner runs today.
+# To bring one back: upload the art and point this at the resulting spec, e.g.
+#   python3 pipeline/tools/substack_upload.py ~/parceria.png \
+#     --href https://partner.example > "$TOPIC_DIR/paywall-banner.json"
+#   TOPIC_PAYWALL_BANNER="$TOPIC_DIR/paywall-banner.json"
+# (substack-preview.sh also takes --banner <file> for a one-off.)
+TOPIC_PAYWALL_BANNER=""
 
 # --- Research ---
 # Research tools managed in research.sh: built-in (Read,Write,Bash) + exa MCP (mcp__exa__web_search_exa, mcp__exa__web_fetch_exa)

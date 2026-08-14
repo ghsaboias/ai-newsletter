@@ -14,8 +14,11 @@ to ~/daily-journal-platform/.env.local (same as substack-post.sh).
 
 Prints the banner spec JSON to stdout. Redirect it into the topic's banner file:
 
-  python3 substack_upload.py ~/abacatepay-parceria.png --href https://abacatepay.com \
+  python3 substack_upload.py ~/parceria.png --href https://partner.example \
     > newsletters/ai/paywall-banner.json
+
+Then point TOPIC_PAYWALL_BANNER (newsletters/ai/config.sh) at that file — it is
+empty by default, so no partner banner is inserted unless you set it.
 """
 
 import sys
@@ -68,7 +71,7 @@ def upload(path, sid, host):
 def main():
     ap = argparse.ArgumentParser(description="Upload an image to Substack and emit a banner spec.")
     ap.add_argument("image", help="path to the local image file")
-    ap.add_argument("--href", default=None, help="link the banner points to (e.g. https://abacatepay.com)")
+    ap.add_argument("--href", default=None, help="link the banner points to (e.g. https://partner.example)")
     ap.add_argument("--alt", default=None, help="alt text")
     ap.add_argument("--resize-width", type=int, default=None,
                     help="display width in px (omit for full content width)")
