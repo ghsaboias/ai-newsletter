@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-12",
+  "fidelity_issues": [
+    {
+      "severity": "high",
+      "where": "edition",
+      "claim": "mas fica em 26% no Terminal-Bench v3.0, bem atrás dos 34,6% e 34,1% dos dois rivais, e em 15,8% no Harvey LAB",
+      "issue": "inversão de sentido",
+      "expected": "O research.json diz que o Grok 4.6 LIDEROU o Harvey LAB com 15,8% ('Grok 4.6 led GDPVal-AA v2 ... and Harvey LAB (15.8%), but trailed badly on Terminal-Bench v3.0'). Na edição o 15,8% foi pendurado na oração adversativa ('mas fica em 26% ... e em 15,8%'), fazendo o leitor entender que o modelo também ficou atrás no Harvey LAB, quando venceu. O facts.md (linha 11) é neutro — o erro nasceu na edição."
+    },
+    {
+      "severity": "medium",
+      "where": "edition",
+      "claim": "Quatro tripulantes e dois socorristas iemenitas morreram em suspeito ataque houthi ao cargueiro Tihamah, as primeiras mortes em ataques a navios desde o início da guerra",
+      "issue": "citação não-literal",
+      "expected": "O research.json restringe o ineditismo a ataques houthis: 'the first deaths from Houthi strikes on shipping since the war on Iran began in late February' (facts.md linha 324 preserva o qualificador: 'primeiras mortes causadas por ataques houthis a navios'). A edição generalizou para 'primeiras mortes em ataques a navios', escopo que a fonte não sustenta — o mesmo texto relata 55 embarcações comerciais inutilizadas pelo bloqueio americano."
+    }
+  ],
+  "dropped_facts": [
+    {
+      "severity": "medium",
+      "story": "Nebius (Balanços)",
+      "fact": "EBITDA ajustado do grupo de US$236 milhões, ante prejuízo de US$21 milhões um ano antes, com margem do grupo subindo para 41% (ante 32% no 1º trimestre) e margem de 50% no segmento Nebius AI — facts.md linhas 213-215.",
+      "why_load_bearing": "É a cifra que dá tamanho econômico à história: o bullet apresenta receita de US$582,3 milhões no trimestre e capex de US$20 bilhões a US$25 bilhões no ano sem nenhum indicador de rentabilidade, deixando o leitor sem base para julgar se o crescimento de 514% se paga. A virada de prejuízo para EBITDA positivo com margem de 41% é o fato que sustenta a leitura do capex."
+    }
+  ],
+  "summary": "Fidelidade alta — todos os números, nomes, datas e citações traçam ao research.json —, com uma inversão de sentido grave no benchmark Harvey LAB (liderança virou atraso) e um qualificador de escopo perdido no bloco de Ormuz; nada essencial caiu, exceto a rentabilidade (EBITDA/margem) da Nebius."
+}

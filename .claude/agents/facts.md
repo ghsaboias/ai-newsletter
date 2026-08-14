@@ -84,6 +84,8 @@ Escreva o `facts.md` no caminho indicado, com esta estrutura exata:
    - **`seed` é masculino:** "um seed de US$71 milhões", não "uma seed".
    - `coding` → "programação", nunca "codificação".
    - `stealth` fica em inglês, nunca "modo furtivo".
+   - `guardrails` fica em inglês, nunca "salvaguardas" (as travas de segurança
+     de um modelo; masculino: "os guardrails"). O generator aplica o itálico.
    - `hedge fund` fica em inglês, nunca "fundo de hedge" (nem no plural:
      "hedge funds", não "fundos de hedge"). O generator aplica o itálico.
    - `valuation` fica em inglês, nunca "avaliação" — no sentido de valor de

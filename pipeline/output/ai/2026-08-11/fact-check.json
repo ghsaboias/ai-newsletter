@@ -1,0 +1,21 @@
+{
+  "date": "2026-08-11",
+  "fidelity_issues": [
+    {
+      "severity": "high",
+      "where": "facts.md+edition",
+      "claim": "baixaram 54 artigos do arXiv para checar novidade e reprovaram o resultado do zero",
+      "issue": "inversão de sentido",
+      "expected": "research.json (claude-riemann-zeta-critical-line-bound): 'independently re-prove its finding from scratch' / 're-proved the finding from scratch' — os subagentes PROVARAM NOVAMENTE o resultado do zero, de forma independente. Em PT-BR 'reprovaram o resultado' lê-se como 'rejeitaram/deram como falho o resultado', o oposto do original. Correção: 'provaram novamente o resultado do zero, de forma independente'."
+    },
+    {
+      "severity": "low",
+      "where": "facts.md",
+      "claim": "A OpenAI lançou o Daybreak em maio, junto do GPT-5.5-Cyber",
+      "issue": "número alterado",
+      "expected": "O campo 'fact' do research.json diz 'OpenAI launched Daybreak in May', mas o excerpt da própria fonte citada (Neowin) diz 'Back in June, OpenAI first introduced Daybreak alongside GPT-5.5-Cyber'. A base seguiu o resumo, não a fonte; o mês provavelmente é junho. Fato não chegou à edição."
+    }
+  ],
+  "dropped_facts": [],
+  "summary": "Fidelidade alta em números, nomes e citações (todas as cifras da edição traçam ao research.json), mas há uma inversão de sentido grave herdada pelo edition ('reprovaram o resultado' em vez de 'provaram novamente'); nenhum fato load-bearing das histórias publicadas foi perdido."
+}

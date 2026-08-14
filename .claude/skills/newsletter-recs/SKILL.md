@@ -33,7 +33,22 @@ OUTDIR = <REPO>/pipeline/output/ai/<DATE>
 
 Garanta que existe: `mkdir -p "$OUTDIR"` (normalmente já existe, criado pelo draft).
 
-## Step 1: Buscar candidatos
+## Step 1: Sincronizar o arquivo de recomendações
+
+Antes de buscar candidatos, atualize o `RECOMMENDATIONS.md` — sem isso o dedup roda
+contra um arquivo até 24h defasado (o cron do meio-dia) e pode repetir a rec de ontem
+se o draft rodar de manhã:
+
+```bash
+bash <REPO>/recommendations/sync-recommendations.sh
+```
+
+É o mesmo script do cron: upsert da janela recente de posts publicados + commit/push
+só do arquivo (idempotente; sem edição nova não produz diff). Se falhar (rede, sstats),
+**não pare**: siga com o arquivo local, avise o usuário, e aplique com rigor extra o
+guard de já-usados do Step 3.
+
+## Step 2: Buscar candidatos
 
 ```bash
 python3 <REPO>/recommendations/gather-rec-candidates.py --date <DATE> > "$OUTDIR/rec-candidates.json"
@@ -47,7 +62,7 @@ Até 2 candidatos por canal (os mais recentes **fora** do `RECOMMENDATIONS.md`).
 - `candidate_count == 0` → não há vídeo novo; reporte e **pare**.
 - `channels_with_no_fresh_candidate` → canais sem candidato fresco (normal). Não force.
 
-## Step 2: Escolher 2 (o julgamento)
+## Step 3: Escolher 2 (o julgamento)
 
 Do pool, escolha **exatamente 2**. Critérios, em ordem:
 
@@ -60,12 +75,12 @@ Do pool, escolha **exatamente 2**. Critérios, em ordem:
 Diversidade: prefira **2 canais / 2 pessoas diferentes**; 2 do mesmo canal só se forem
 claramente os dois mais fortes; **nunca** 2 com a mesma pessoa em destaque.
 
-**Já-recomendado nunca volta.** O helper dedup contra o `RECOMMENDATIONS.md`, MAS há um
-lag: as recs de hoje só entram no arquivo depois do sync do meio-dia (que lê o post
-*publicado*). Então se hoje o post já tem recs (feitas à mão ou por uma run anterior),
-**trate esses vídeos como já-usados** e não os repita — confira o post atual se tiver dúvida.
+**Já-recomendado nunca volta.** O helper dedup contra o `RECOMMENDATIONS.md`, que o
+Step 1 acabou de sincronizar — mas o sync só enxerga posts *publicados*. Se um draft
+recente com recs ainda não publicou (ou o Step 1 falhou), esses vídeos não estão no
+arquivo: **trate-os como já-usados** e não os repita — confira o post atual se tiver dúvida.
 
-## Step 3: Aparar o start-time
+## Step 4: Aparar o start-time
 
 Pra cada escolhido, olhe `chapters`. Se o 1º capítulo (00:00) for intro/cold-open/
 teaser/patrocínio e houver conteúdo logo depois, use o timestamp desse capítulo **em
@@ -75,7 +90,7 @@ segundos** (`start_seconds`). Sem capítulos claros → `null`. Ex.:
 A descrição **não** se escreve — é o `description_pt` do candidato (1º parágrafo do DJ),
 usado como está.
 
-## Step 4: Gravar a seleção
+## Step 5: Gravar a seleção
 
 Grave `<OUTDIR>/recs.json`:
 
@@ -99,7 +114,7 @@ Preview opcional do HTML (mesmo formato do Substack, pra conferência):
 python3 <REPO>/recommendations/render-recs-html.py --in "$OUTDIR/recs.json"
 ```
 
-## Step 5: Empurrar pro draft do Substack
+## Step 6: Empurrar pro draft do Substack
 
 Mostre a seleção pro usuário (título, canal, data, por quê, start-time). Então empurre a
 seção pro **draft do dia** — monta os nós ProseMirror (heading + parágrafo bold "Título:"
@@ -126,8 +141,8 @@ Cria um draft `[TESTE] …` idêntico, troca as recs pela seleção nova, e impr
 - **Autoridade + recência mandam**, nessa ordem. Figura importante da tech > painel genérico.
 - **Descrição = DJ (1º parágrafo), verbatim.** Não reescreva.
 - **Título original.** Não traduza.
-- **Já-recomendado nunca volta** — inclusive as recs de hoje que ainda não sincronizaram
-  pro arquivo (ver Step 2).
+- **Já-recomendado nunca volta** — inclusive recs de drafts ainda não publicados, que o
+  sync não enxerga (ver Step 3).
 - **Não invente vídeo.** Só do que o helper retornou. Pool magro → diga, não force um 2º fraco.
 - **Push é idempotente.** Rodar de novo troca a seção, não empilha.
 - **Nunca empurre pra um post que o usuário disse estar pronto/publicado sem avisar.**
@@ -135,7 +150,9 @@ Cria um draft `[TESTE] …` idêntico, troca as recs pela seleção nova, e impr
 
 ## Pendência conhecida (dedup lag)
 
-O `sync-recommendations.sh` (cron meio-dia) só registra recs de posts **publicados**.
-Um vídeo empurrado por essa skill não entra no `RECOMMENDATIONS.md` até publicar + o
-próximo sync. Enquanto isso o Step 2 cobre o gap manualmente. Melhoria futura: o push
-anexar os IDs escolhidos ao arquivo na hora, fechando o lag de vez.
+O sync (Step 1 + cron meio-dia) só registra recs de posts **publicados**. O Step 1
+fecha o lag de calendário (edição de ontem publicada de manhã, draft rodando antes do
+cron — foi assim que a rec de 2026-08-10 repetiu em 2026-08-11), mas um vídeo empurrado
+pra um draft ainda **não publicado** continua invisível até publicar. Esse resto o
+Step 3 cobre manualmente. Melhoria futura: o push anexar os IDs escolhidos ao arquivo
+na hora, fechando o lag de vez.

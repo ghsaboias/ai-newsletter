@@ -43,6 +43,12 @@ lista das **manchetes-líder (Grandes) das últimas edições**. Ela serve a uma
 só: **não relidere** uma história que já foi Grande há poucos dias (ver "Os três
 níveis" → GRANDES). Se a lista vier vazia (`(nenhuma)`), ignore.
 
+**Edição da véspera (vem na sua task).** A task também traz o **caminho da última
+edição publicada** (o `edition-final.md`/`edition.md` mais recente antes de hoje).
+**Leia esse arquivo antes de escrever**: ele cobre todos os níveis (as Grandes
+recentes só cobrem os leads) e alimenta a regra de **continuidade** (ver
+"Continuidade"). Se vier `(nenhuma)`, ignore.
+
 ## Saída
 
 Escreva `edition.md` no caminho indicado, nesta estrutura:
@@ -140,6 +146,24 @@ contrato-âncora, a cifra que dá tamanho, o mecanismo quando ele é o ponto).
 
 Toda história do `facts.md` entra em algum nível. Nenhuma fica de fora.
 
+## Continuidade (histórias que já rodaram na véspera)
+
+Vale para **qualquer nível**, não só para as Grandes. Se o evento central de uma
+história de hoje já apareceu na edição da véspera (caminho na sua task) — mesmo
+que só como Média —, a regra é **reenquadrar, não repetir**:
+
+- **Abra pelo que é novo e datado** (o contrato assinado, o número que mudou, a
+  etapa concluída) — nunca pelo anúncio que o leitor já leu ontem.
+- **Marque a continuidade numa oração curta**: "formalizando o anúncio da
+  véspera", "um dia após o anúncio", "como noticiado ontem". O leitor que leu a
+  véspera precisa ver que a história *continuou* — não reler a mesma notícia.
+- **Detalhe que não mudou (local, cronograma, atores) não reabre a história**:
+  pode reaparecer, mas subordinado ao fato novo, nunca como abertura do bullet.
+- **Números que divergem entre ontem e hoje** (plano noticiado vs. contrato
+  assinado, oferta anunciada vs. oferta ampliada) pedem a relação explícita numa
+  oração ("acima dos US$X anunciados na véspera") — nunca dois números soltos em
+  dias seguidos.
+
 ## Subtítulo
 
 Uma linha, em **formato de pergunta** (técnica da *lacuna de curiosidade*): **uma
@@ -214,7 +238,7 @@ vira página do Daily Journal — o leitor deve achar o mesmo tom no clique:
   de Paducah" é o certo. A regra vale também para **legendas de imagem** e
   qualquer texto que vá ao ar junto da edição.
 - Sem travessões (—): use vírgula, dois-pontos ou ponto.
-- Léxico: "programação", nunca "codificação"; "contra" no lugar da preposição "ante" (só a palavra isolada, não *antes/diante/mediante*); "stealth" (em itálico: *stealth*), nunca "modo furtivo" — para *stealth mode* / *came out of stealth* use "operava em *stealth*" / "saiu do *stealth*"; "*stack*" (em itálico), nunca "pilha" — para *tech stack* / *full stack* / *AI stack* mantenha "*stack*" (só o sentido de camada de tecnologia; "pilha" no sentido de bateria fica); **"poder computacional", nunca "compute"** — vale também para nome de cluster de Médias (`#### Poder computacional`, não `#### Compute`), já que o `paywall-teaser` herda o rótulo da seção; **preço de token em `*input*`/`*output*`**, nunca "entrada"/"saída" (`US$5 por milhão de tokens de *input* e US$25 de *output*`) — se o `facts.md` chegar com o calque, converta; **`*harness*` se glosa como "a camada que executa o modelo e o conecta às ferramentas"**, nunca "arcabouço" nem "framework" (é o wrapper de runtime que roda o modelo, não uma estrutura de design); **"*hedge fund*" (em itálico), nunca "fundo de hedge"** — o mercado brasileiro usa o termo em inglês, e a tradução parcial soa amadora (vale igual para o plural, "*hedge funds*", e para "fundos de hedge"); **"*valuation*" (em itálico), nunca "avaliação"** — no sentido de valor de mercado de uma empresa o termo fica em inglês ("um *valuation* de US$12 bilhões", "levantou US$300 milhões a um *valuation* de..."), porque "avaliação" em PT lê como apreciação/nota, não como preço da empresa (a palavra "avaliação" nos outros sentidos — avaliação de risco, de desempenho, de um modelo — segue normal).
+- Léxico: "programação", nunca "codificação"; "contra" no lugar da preposição "ante" (só a palavra isolada, não *antes/diante/mediante*); "stealth" (em itálico: *stealth*), nunca "modo furtivo" — para *stealth mode* / *came out of stealth* use "operava em *stealth*" / "saiu do *stealth*"; "*stack*" (em itálico), nunca "pilha" — para *tech stack* / *full stack* / *AI stack* mantenha "*stack*" (só o sentido de camada de tecnologia; "pilha" no sentido de bateria fica); **"poder computacional", nunca "compute"** — vale também para nome de cluster de Médias (`#### Poder computacional`, não `#### Compute`), já que o `paywall-teaser` herda o rótulo da seção; **preço de token em `*input*`/`*output*`**, nunca "entrada"/"saída" (`US$5 por milhão de tokens de *input* e US$25 de *output*`) — se o `facts.md` chegar com o calque, converta; **`*harness*` se glosa como "a camada que executa o modelo e o conecta às ferramentas"**, nunca "arcabouço" nem "framework" (é o wrapper de runtime que roda o modelo, não uma estrutura de design); **"*hedge fund*" (em itálico), nunca "fundo de hedge"** — o mercado brasileiro usa o termo em inglês, e a tradução parcial soa amadora (vale igual para o plural, "*hedge funds*", e para "fundos de hedge"); **"*valuation*" (em itálico), nunca "avaliação"** — no sentido de valor de mercado de uma empresa o termo fica em inglês ("um *valuation* de US$12 bilhões", "levantou US$300 milhões a um *valuation* de..."), porque "avaliação" em PT lê como apreciação/nota, não como preço da empresa (a palavra "avaliação" nos outros sentidos — avaliação de risco, de desempenho, de um modelo — segue normal); **"*guardrails*" (em itálico), nunca "salvaguardas"** — as travas de segurança de um modelo são "os *guardrails*" (masculino: "os *guardrails* foram contornados").
 - Português preciso: concordância de gênero, preposições, crase. Cadência limpa —
   se uma frase ficar dura, reestruture.
 - Números e nomes vêm **do `facts.md`**; não invente especificidade que não está

@@ -1,0 +1,6 @@
+**Abaixo, apenas para assinantes:**
+
+**Silício e infraestrutura.** Uma mineradora de bitcoin nos Estados Unidos aluga capacidade elétrica a um laboratório de IA, uma nuvem corporativa americana monta seu primeiro grande cluster de inferência com um parceiro de código aberto, e duas fabricantes de chips fecham uma joint venture de sensores de imagem no Japão.
+**Dinheiro.** Venda secundária de ações num laboratório americano de IA, oferta ampliada de ações de uma fabricante de chips, um IPO de robótica na China com procura muito acima da oferta e uma fabricante de aeronaves elétricas comprando subsidiárias de uma gigante aeroespacial.
+**Modelos.** Pesos abertos voltados a agentes e uma ferramenta de roteamento entre modelos, saídas de um laboratório americano passando a carregar sinais de procedência sob uma nova regra europeia, e um preço introdutório que deixa de ter prazo.
+**Mundo.** Alta do petróleo com o impasse em torno do Estreito de Ormuz, inflação de volta abaixo do teto da meta no Brasil e um país asiático revisando para cima o crescimento do ano por causa do investimento em IA.

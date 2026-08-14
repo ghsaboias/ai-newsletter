@@ -1,0 +1,6 @@
+**Abaixo, apenas para assinantes:**
+
+**Dinheiro.** Duas aquisições bilionárias, uma captação para uma startup americana de IA que ainda não tem produto nem clientes, e resultados trimestrais de três fabricantes de hardware.
+**Silício.** Lucros em alta nas fundições chinesas, uma fabricante chinesa de memória valendo mais que uma gigante local da internet, avanço chinês nas remessas de NAND, e um pacote sul-coreano de desregulamentação para fábricas e data centers.
+**Modelos e dados.** Um laboratório chinês troca seu modelo principal sem anunciar, e uma plataforma americana de transmissão ao vivo passa a liberar por padrão o conteúdo dos criadores para treino de IA.
+**Mundo.** Inflação ao produtor nos EUA, autorização de Washington para empresas privadas atuarem em operações cibernéticas, o Estreito de Ormuz ainda travado, e uma data final para a saída das forças americanas de um país do Oriente Médio.

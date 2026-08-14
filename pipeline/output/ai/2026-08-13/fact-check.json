@@ -1,0 +1,41 @@
+{
+  "date": "2026-08-13",
+  "fidelity_issues": [
+    {
+      "severity": "high",
+      "where": "edition",
+      "claim": "Um dia após a Marinha americana inutilizar mais um cargueiro no Golfo de Omã, Trump escreveu no Truth Social que os EUA têm \"controle total\" sobre o Estreito de Ormuz",
+      "issue": "especificidade inventada",
+      "expected": "O research.json não tem nenhuma menção a Marinha/Navy, cargueiro/tanker/vessel action ou Golfo de Omã (grep por 'navy', 'oman', 'tanker', 'cargo' em research.json e research-world.json retorna zero). A história hormuz-control-dispute-trump-iran registra apenas: post de Trump na quarta-feira 12 de agosto repetindo declaração do dia anterior, resposta da Autoridade do Estreito do Golfo Pérsico, dados da Kpler (13 travessias, mínimo desde 12 de maio, 90% abaixo dos 130 navios/dia pré-guerra), exigências do Conselho Supremo de Segurança Nacional do Irã, fala de Naqdi à PBS e Brent a US$88,98. O facts.md também não traz a cláusula — o erro nasce na edição."
+    },
+    {
+      "severity": "medium",
+      "where": "edition",
+      "claim": "deve fechar no primeiro semestre de 2027 e deslistar a plataforma de risco de seguros da NYSE um ano e meio após seu IPO de US$723,7 milhões",
+      "issue": "número alterado",
+      "expected": "research.json: 'Accelerant and its backers raised $723.69 million in a US IPO in July 2025, a year before agreeing to go private' — o intervalo entre o IPO (julho de 2025) e o acordo (13 de agosto de 2026) é de cerca de um ano, como está no facts.md ('um ano antes de aceitar fechar o capital'). 'Um ano e meio' não aparece na pesquisa."
+    },
+    {
+      "severity": "low",
+      "where": "edition",
+      "claim": "preços que quase triplicam no horário de pico a partir de 16 de agosto",
+      "issue": "número alterado",
+      "expected": "research.json: 'peak V4-Pro rates of $1.32 input and $3.96 output per million tokens — roughly triple the current list price' (facts.md: 'cerca do triplo'). Sobre US$0,435/US$0,87, o pico é 3,0x no input e 4,6x no output — 'quase triplicam' subestima a direção do reajuste."
+    }
+  ],
+  "dropped_facts": [
+    {
+      "severity": "medium",
+      "story": "Aquisições — Anthropic negocia comprar a Decart por cerca de US$6 bilhões",
+      "fact": "Se concluída, a equipe da Decart passaria a integrar a organização de inferência e desempenho da Anthropic, e o acordo ajudaria a empresa a absorver a demanda crescente antes de sua abertura de capital (facts.md, linhas 9 e 11).",
+      "why_load_bearing": "Mecanismo que é o ponto da história: é o que explica por que a Anthropic pagaria prêmio sobre os quase US$4 bilhões da rodada de maio, e é a ligação direta com a história de abertura da edição (o IPO de US$2 trilhões em outubro). A edição descreve o que a Decart faz, mas nunca diz para que a Anthropic a quer nem que a compra é movida pelo IPO — que está inclusive no headline da pesquisa ('ahead of its IPO')."
+    },
+    {
+      "severity": "medium",
+      "story": "Balanços — Lenovo, trimestre recorde de US$26,94 bilhões",
+      "fact": "O resultado não ajustado virou um prejuízo líquido de US$609 milhões, por causa de uma perda não recorrente de valor justo na reavaliação de warrants (facts.md, linha 226).",
+      "why_load_bearing": "Cifra que dá tamanho e qualifica a história: a edição só reporta o lucro ajustado de US$1,075 bilhão (+176%), deixando o trimestre uniformemente positivo, quando o resultado contábil foi prejuízo. É o contraponto que a pesquisa registra na mesma frase do lucro ajustado."
+    }
+  ],
+  "summary": "Fidelidade alta no facts.md (nenhum desvio rastreado contra o research.json); a edição introduziu uma cláusula inteiramente inventada sobre a Marinha americana e um cargueiro no Golfo de Omã (Ormuz), além de um intervalo errado no IPO da Accelerant, e podou o mecanismo da compra da Decart e o prejuízo contábil da Lenovo."
+}

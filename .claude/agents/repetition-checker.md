@@ -110,7 +110,8 @@ A fonte da verdade é o `generator.md` (as regras de escrita, seção de voz/est
   computacional" nunca "compute"; preço de token em "*input*"/"*output*" nunca
   "entrada"/"saída"; "*hedge fund*" nunca "fundo de hedge" (idem plural);
   "*valuation*" nunca "avaliação" **no sentido de valor de mercado de uma
-  empresa** ("avaliação de US$12 bilhões" → "*valuation* de US$12 bilhões").
+  empresa** ("avaliação de US$12 bilhões" → "*valuation* de US$12 bilhões");
+  "*guardrails*" nunca "salvaguardas" (as travas de segurança de um modelo).
   Atenção ao escopo: "avaliação" de risco, de desempenho ou de um modelo não é
   violação.
 - **Anglicismo de lugar**: `site` **e sua grafia aportuguesada `sítio`** no
@@ -203,6 +204,7 @@ automaticamente sem julgamento humano:
 | `fundo de hedge` | `*hedge fund*` |
 | `fundos de hedge` | `*hedge funds*` |
 | `avaliação de US$` | `*valuation* de US$` |
+| `salvaguardas` | `*guardrails*` |
 
 Regras do `fix`: (1) substituir `overlap` por `fix` dentro de `current_text` tem
 de produzir texto correto e gramatical — se não produzir, ajuste o `overlap` até

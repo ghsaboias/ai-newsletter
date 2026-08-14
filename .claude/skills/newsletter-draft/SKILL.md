@@ -194,31 +194,37 @@ Dispatch only whichever lacks its output (idempotency): `generator` if `edition.
 is missing, `extract` if `sources.json` is missing. **Mini run: dispatch
 `generator` only** — `extract` feeds the LINK block that mini skips.
 
-**First, gather the recent Grandes** — the lead (`###`) headlines of the last few
-editions. They go into the generator's prompt so it can honor its **no-re-lead
-rule** (a story that already led as a Grande in the last few days must not lead
-again — it demotes to Média). Cheap, and it's the signal that stops the same
-megaproject leading twice in a week:
+**First, gather the recent Grandes and the previous edition** — the lead (`###`)
+headlines of the last few editions, plus the **path** of the most recent edition
+file. The headlines feed the generator's **no-re-lead rule** (a story that
+already led as a Grande in the last few days must not lead again — it demotes to
+Média). The previous-edition path feeds its **continuity rule**: the generator
+reads the file and reframes any story that already ran yesterday (any tier, not
+just Grandes) as continuity instead of fresh news — that's what stops a Média
+from re-running two days straight as if new. `edition-final.md` is preferred
+over `edition.md` (it carries the human-reviewed tiering and headlines):
 
 ```bash
 ROOT=/Users/guilherme/ai-newsletter/pipeline/output/ai
-RECENT_GRANDES=""; CHECK=<DATE>
+RECENT_GRANDES=""; PREV_EDITION=""; CHECK=<DATE>
 for i in 1 2 3 4 5; do
   CHECK=$(date -j -v-1d -f "%Y-%m-%d" "$CHECK" "+%Y-%m-%d" 2>/dev/null || date -d "$CHECK - 1 day" "+%Y-%m-%d")
-  for f in edition.md edition-final.md; do
+  for f in edition-final.md edition.md; do
     [ -s "$ROOT/$CHECK/$f" ] || continue
     RECENT_GRANDES+=$(grep '^### ' "$ROOT/$CHECK/$f" | sed "s/^### /- $CHECK: /")$'\n'
+    [ -n "$PREV_EDITION" ] || PREV_EDITION="$ROOT/$CHECK/$f"
     break
   done
 done
 printf '%s' "${RECENT_GRANDES:-(nenhuma)}"   # paste into the generator prompt below
+printf '%s\n' "${PREV_EDITION:-(nenhuma)}"   # ditto — the continuity-rule path
 ```
 
 ```
 Agent({
   description: "edition: facts → edition.md",
   subagent_type: "generator",
-  prompt: "Date: <DATE>.\nFact base (input): /Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>/facts.md\nWrite the three-tier edition to: /Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>/edition.md\n\nRecent Grandes (do NOT re-lead these — a story whose core event already led here demotes to Média, unless it has a genuinely new, dated in-window development to lead with):\n<paste RECENT_GRANDES, one 'YYYY-MM-DD: headline' per line — or '(nenhuma)'>"
+  prompt: "Date: <DATE>.\nFact base (input): /Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>/facts.md\nWrite the three-tier edition to: /Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>/edition.md\n\nRecent Grandes (do NOT re-lead these — a story whose core event already led here demotes to Média, unless it has a genuinely new, dated in-window development to lead with):\n<paste RECENT_GRANDES, one 'YYYY-MM-DD: headline' per line — or '(nenhuma)'>\n\nEdição da véspera (READ this file before writing — any of today's stories whose core event already ran there, in ANY tier, must be framed as continuity per your Continuidade rule, never re-presented as fresh):\n<paste PREV_EDITION — the path — or '(nenhuma)'>"
 })
 Agent({                                    # FULL RUN ONLY — gated later at Step 3.5a
   description: "Extract sources → sources.json",

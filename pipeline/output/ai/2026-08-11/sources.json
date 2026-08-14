@@ -1,0 +1,1575 @@
+{
+  "date": "2026-08-11",
+  "newsletter_file": "2026-08-11/edition.md",
+  "source_count": 19,
+  "url_count": 70,
+  "news_entities": [
+    {
+      "headline": "Claude eleva limite ligado à hipótese de Riemann de 41,6% para 67,2%",
+      "summary": "Resultado saiu de duas sessões no Claude Code com 31 milhões de tokens de output e cerca de 60 subagentes, sem revisão por pares.",
+      "bullets": [
+        "A Anthropic anunciou em 10 de agosto que uma versão de pesquisa não lançada do Claude melhorou um limite inferior incondicional de longa data para a fração de zeros da função zeta de Riemann na linha crítica, de 41,6% para 67,2%.",
+        "O modelo não provou a hipótese de Riemann em si; o trabalho saiu de duas sessões no Claude Code que somaram 31 milhões de tokens de output.",
+        "O Claude gerou e testou 650 ideias sem sucesso e depois passou cerca de um dia e meio coordenando aproximadamente 60 subagentes, que rodaram cerca de 2.400 comandos de shell e escreveram centenas de scripts em Python.",
+        "Os subagentes reprovaram o resultado do zero, procuraram contraexemplos e baixaram 54 artigos do arXiv para checar se a descoberta já não tinha sido feita.",
+        "O artigo afirma que ao menos 67,250% dos zeros são simples e estão na linha crítica e que ao menos 83,625% são distintos, e vem com uma formalização em Lean 4 dos Teoremas A–E.",
+        "O artigo é assinado pelo próprio modelo e não passou por revisão por pares convencional."
+      ],
+      "body": "O pedido partiu de Jarred Sumner, funcionário da Anthropic que não é matemático e apenas pediu ao Claude que \"desse uma tentativa de verdade\" na hipótese de Riemann. O modelo recomendou que um teórico dos números humano validasse o achado.\n\nOs matemáticos da Anthropic Levent Alpöge e Ralph Furman analisaram o argumento e sua relação com pesquisas anteriores, e os teóricos dos números externos Brian Conrey e Dan Goldston examinaram o artigo em cima da hora. Com uma família de testes otimizada, as três constantes ficam em 0,6725, 0,6725 e 0,83625.\n\nA Anthropic diz não esperar que o método do Claude leve diretamente a uma prova da hipótese de Riemann. Os 67,2% também não significam que os zeros restantes estejam fora da linha crítica.",
+      "category": [
+        "technology",
+        "science"
+      ],
+      "entities": {
+        "people": [
+          "Jarred Sumner",
+          "Levent Alpöge",
+          "Ralph Furman",
+          "Brian Conrey",
+          "Dan Goldston"
+        ],
+        "organizations": [
+          "Anthropic"
+        ],
+        "places": []
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.anthropic.com/research/riemann-zeta",
+          "title": "Aprendendo mais sobre as capacidades matemáticas do Claude",
+          "summary": "Anthropic: o anúncio oficial descreve como uma versão de pesquisa não lançada do Claude chegou ao novo limite e o que a empresa entende como limites do método.",
+          "bullets": [
+            "O limite inferior para a fração de zeros na linha crítica subiu de 41,6% para 67,2%.",
+            "O trabalho consumiu duas sessões no Claude Code e 31 milhões de tokens de output.",
+            "A Anthropic diz não esperar que o método leve diretamente a uma prova da hipótese de Riemann."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        },
+        {
+          "url": "https://www-cdn.anthropic.com/564f962e60643842f5fcb4a17c9dbc8f608f1c37.pdf",
+          "title": "Mais de dois terços dos zeros da função zeta de Riemann estão na linha crítica",
+          "summary": "Anthropic: o artigo técnico, assinado pelo próprio modelo, traz os teoremas, as constantes otimizadas e a formalização em Lean 4.",
+          "bullets": [
+            "O artigo afirma que ao menos 67,250% dos zeros são simples e estão na linha crítica.",
+            "Ao menos 83,625% dos zeros são distintos, segundo o texto.",
+            "Com uma família de testes otimizada, as três constantes ficam em 0,6725, 0,6725 e 0,83625.",
+            "Acompanha uma formalização em Lean 4 dos Teoremas A–E."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        },
+        {
+          "url": "https://theaiinsider.tech/2026/08/11/anthropic-says-claude-improved-a-longstanding-bound-tied-to-the-riemann-hypothesis/",
+          "title": "Anthropic diz que o Claude melhorou um limite de longa data ligado à hipótese de Riemann",
+          "summary": "The AI Insider: reporta a mecânica do experimento, com os 650 ideias testadas, os cerca de 60 subagentes e a ausência de revisão por pares.",
+          "bullets": [
+            "O Claude gerou e testou 650 ideias antes de coordenar cerca de 60 subagentes por um dia e meio.",
+            "Os subagentes rodaram cerca de 2.400 comandos de shell e baixaram 54 artigos do arXiv.",
+            "O trabalho não passou por revisão por pares convencional.",
+            "O pedido partiu de Jarred Sumner, funcionário da Anthropic que não é matemático."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "OpenAI lança GPT-5.6-Cyber e divide programa Daybreak em dois níveis",
+      "summary": "O modelo atende 95% dos pedidos ofensivos na avaliação interna, contra 1,5% do GPT-5.6 Sol padrão, e só é liberado com verificação de identidade.",
+      "bullets": [
+        "A OpenAI anunciou em 10 de agosto a divisão do programa de cibersegurança Daybreak em dois níveis: Blue, com modelos de propósito geral, e Red, com modelos treinados para cibersegurança.",
+        "O GPT-5.6-Cyber é construído sobre o GPT-5.6 Sol, é treinado para encontrar vulnerabilidades zero-day e desenvolver cadeias de exploits, e recusa menos pedidos de duplo uso.",
+        "Na avaliação interna Advanced Cybersecurity Completion Rate, o GPT-5.6-Cyber atende 95,0% dos pedidos, contra 57,3% do GPT-5.5-Cyber, 2,0% via Daybreak Blue e 1,5% do GPT-5.6 Sol padrão.",
+        "A OpenAI diz que o modelo encontrou duas falhas até então desconhecidas no V8, motor JavaScript do Chrome, encadeáveis para furar o sandbox de heap; o Google corrigiu e atribuiu o CVE-2026-15903.",
+        "O acesso exige verificação de identidade, monitoramento e declarações legais, e chaves de segurança em hardware passam a ser obrigatórias em 1º de setembro de 2026.",
+        "A OpenAI classifica os dois modelos como Alto em capacidade cibernética no Preparedness Framework, abaixo do limiar Crítico."
+      ],
+      "body": "O Daybreak Blue dá acesso a modelos de fronteira de propósito geral, incluindo o GPT-5.6 Sol, com salvaguardas defensivas. O Daybreak Red libera modelos treinados especificamente para cibersegurança, voltados a pesquisa autorizada de vulnerabilidades, validação de exploits e testes de segurança — é por ele que sai o GPT-5.6-Cyber.\n\nA OpenAI afirma que o GPT-5.6-Cyber não esteve envolvido no incidente de exploração da Hugging Face, nem nenhum outro modelo previsto para lançamento futuro.\n\nA empresa lançou o Daybreak em maio, junto do GPT-5.5-Cyber, pouco depois de a Anthropic lançar sua própria coalizão de cibersegurança, o Project Glasswing. A expansão vem depois de incidentes de segurança envolvendo modelos de IA divulgados por OpenAI, Anthropic e Meta nas últimas semanas.",
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "people": [],
+        "organizations": [
+          "OpenAI",
+          "Google",
+          "Anthropic",
+          "Meta"
+        ],
+        "places": []
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/",
+          "title": "Expandindo o Daybreak enquanto a janela de defesa cibernética se estreita",
+          "summary": "OpenAI: o anúncio oficial detalha os dois níveis de acesso, os requisitos de verificação e a classificação de risco do modelo.",
+          "bullets": [
+            "O Daybreak Blue dá acesso a modelos de fronteira com salvaguardas defensivas; o Red, a modelos treinados para cibersegurança.",
+            "O acesso exige verificação de identidade, monitoramento, restrições de uso aprovado e declarações legais.",
+            "Chaves de segurança em hardware passam a ser obrigatórias para todas as contas Daybreak em 1º de setembro de 2026.",
+            "Os dois modelos são classificados como Alto em capacidade cibernética no Preparedness Framework, abaixo do limiar Crítico."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        },
+        {
+          "url": "https://the-decoder.com/openai-launches-gpt-5-6-cyber-to-help-defenders-find-vulnerabilities-before-attackers-do/",
+          "title": "OpenAI lança GPT-5.6-Cyber para ajudar defensores a achar falhas antes dos atacantes",
+          "summary": "The Decoder: foca no caso de uso demonstrado pela OpenAI, com as duas vulnerabilidades inéditas encontradas no motor V8 do Chrome.",
+          "bullets": [
+            "O modelo analisou o V8, motor JavaScript do Chrome, e encontrou duas vulnerabilidades até então desconhecidas.",
+            "As duas falhas podem ser encadeadas para corromper memória e furar o sandbox de heap do V8.",
+            "O Google corrigiu as falhas após divulgação coordenada e atribuiu a designação CVE-2026-15903."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        },
+        {
+          "url": "https://venturebeat.com/technology/openai-launches-gpt-5-6-cyber-with-reduced-refusals-95-completion-on-advanced-cybersecurity-tasks",
+          "title": "OpenAI lança GPT-5.6-Cyber com menos recusas e 95% de conclusão em tarefas cibernéticas avançadas",
+          "summary": "VentureBeat: destrincha os números da avaliação interna e a decisão deliberada de treinar o modelo para recusar menos pedidos de duplo uso.",
+          "bullets": [
+            "O GPT-5.6-Cyber atende 95,0% dos pedidos de cadeia de exploit, bypass de autenticação e escalada de privilégios.",
+            "O GPT-5.5-Cyber atende 57,3% dos mesmos pedidos.",
+            "O acesso via Daybreak Blue atende 2,0% e o GPT-5.6 Sol padrão, 1,5%.",
+            "O modelo foi treinado para recusar menos pedidos em tarefas cibernéticas de duplo uso e maior risco."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.neowin.net/news/openai-launches-gpt-56-cyber-and-expands-daybreak-with-red-and-blue-access-tiers/",
+          "title": "OpenAI lança GPT-5.6-Cyber e expande o Daybreak com níveis de acesso Red e Blue",
+          "summary": "Neowin: situa o lançamento no contexto competitivo, com o Daybreak criado em maio pouco depois do Project Glasswing da Anthropic.",
+          "bullets": [
+            "A OpenAI lançou o Daybreak em maio, junto do GPT-5.5-Cyber.",
+            "O programa surgiu pouco depois de a Anthropic lançar sua coalizão de cibersegurança, o Project Glasswing.",
+            "A expansão vem depois de incidentes de segurança envolvendo modelos de IA divulgados por OpenAI, Anthropic e Meta.",
+            "A OpenAI diz que o GPT-5.6-Cyber não esteve envolvido no incidente de exploração da Hugging Face."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Anthropic passa a marcar todo texto gerado pelo Claude no mundo todo",
+      "summary": "A marca d'água atende ao Artigo 50 da Lei de IA da UE, mas a ferramenta de detecção ainda não existe e o algoritmo não foi publicado.",
+      "bullets": [
+        "A Anthropic informou em documento de ajuda publicado na segunda-feira que o texto gerado por novos modelos Claude vai carregar marcas d'água embutidas.",
+        "A empresa assinou o Código de Prática sobre Transparência de Conteúdo Gerado por IA, previsto no Artigo 50(2) da Lei de IA da União Europeia, cujas obrigações passaram a valer em 2 de agosto de 2026.",
+        "A marcação vale globalmente: modelos Claude lançados na UE em ou após 2 de agosto já saem com a marcação embutida, e os anteriores estão sendo adaptados.",
+        "A cobertura inclui a API do Claude, o Claude, o Claude Code, o Claude Cowork, o Claude Tag e modelos servidos por terceiros como AWS, Google Cloud e Microsoft Foundry.",
+        "Arquivos com suporte (.svg, .png e .jpg) recebem metadados de procedência assinados seguindo o padrão C2PA.",
+        "A ferramenta de detecção ainda não foi lançada e a Anthropic não publicou o algoritmo nem uma taxa de falsos positivos."
+      ],
+      "body": "O texto recebe uma marca d'água imperceptível tecida no próprio texto, que acompanha o conteúdo em copiar e colar. A Anthropic diz que a marca \"pode persistir através de alguma edição\", mas admite que edição pesada ou mudança de formato pode remover as marcações por completo.\n\nA empresa também reconhece o limite interpretativo: a marca detectada não é prova conclusiva de que o Claude escreveu o conteúdo, já que usuários pedem ao modelo que revise ou traduza textos próprios. A ausência de marca, por sua vez, não prova autoria humana.\n\nO Artigo 50 da Lei de IA da UE exige que provedores marquem em formato legível por máquina as saídas de IA generativa — áudio, imagem, vídeo e texto — de modo detectável como gerado ou manipulado artificialmente.",
+      "category": [
+        "technology",
+        "politics"
+      ],
+      "entities": {
+        "people": [],
+        "organizations": [
+          "Anthropic",
+          "European Commission",
+          "C2PA",
+          "AWS",
+          "Google Cloud",
+          "Microsoft"
+        ],
+        "places": [
+          "European Union"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.theregister.com/ai-and-ml/2026/08/11/anthropic-pledges-to-embed-watermarks-to-help-discern-ai-slop-in-sop-to-eu/5285792",
+          "title": "Anthropic promete embutir marcas d'água para ajudar a distinguir conteúdo de IA, em aceno à UE",
+          "summary": "The Register: enquadra a medida como conformidade com Bruxelas e cobra as lacunas — sem ferramenta de detecção, sem algoritmo público, sem taxa de falsos positivos.",
+          "bullets": [
+            "A medida faz parte da conformidade com as regras de transparência da Lei de IA da União Europeia.",
+            "A ferramenta de detecção que permitiria a terceiros checar a marca ainda não foi lançada.",
+            "A Anthropic não publicou o algoritmo de marca d'água nem uma taxa de falsos positivos."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        },
+        {
+          "url": "https://the-decoder.com/anthropic-watermarks-all-claude-outputs-globally-with-marks-that-may-persist-through-some-editing/",
+          "title": "Anthropic marca todas as saídas do Claude globalmente, com marcas que \"podem persistir através de alguma edição\"",
+          "summary": "The Decoder: detalha o alcance técnico da marcação, do texto imperceptível aos metadados C2PA em arquivos suportados.",
+          "bullets": [
+            "O texto recebe uma marca d'água imperceptível tecida no próprio texto, que sobrevive a copiar e colar.",
+            "Arquivos .svg, .png e .jpg recebem metadados de procedência assinados no padrão C2PA.",
+            "Edição pesada ou mudança de formato pode remover as marcações por completo.",
+            "A cobertura inclui API do Claude, Claude, Claude Code, Claude Cowork e Claude Tag."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.thehindu.com/sci-tech/technology/anthropics-claude-to-mark-all-ai-content-including-text/article71331079.ece",
+          "title": "Claude, da Anthropic, vai marcar todo conteúdo de IA, inclusive texto",
+          "summary": "The Hindu: destaca que a marcação vale no mundo todo, e não apenas na União Europeia, incluindo modelos servidos por terceiros.",
+          "bullets": [
+            "A marcação se aplica à saída de modelos com suporte onde quer que o Claude seja oferecido, no mundo todo.",
+            "Modelos lançados na UE em ou após 2 de agosto de 2026 já saem com a marcação legível por máquina.",
+            "Modelos anteriores estão sendo adaptados durante o período de transição.",
+            "A cobertura inclui modelos servidos por AWS, Google Cloud e Microsoft Foundry."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.techtimes.com/articles/323873/20260811/claude-now-watermarks-text-everywhere-mark-proves-processing-not-authorship.htm",
+          "title": "Claude agora marca texto em todo lugar; a marca prova processamento, não autoria",
+          "summary": "Tech Times: foca no que a marca não prova — usuários também pedem ao Claude que revise ou traduza textos próprios.",
+          "bullets": [
+            "A marca detectada não é prova conclusiva de que o Claude escreveu o conteúdo.",
+            "Usuários pedem ao modelo que revise ou traduza textos de autoria própria.",
+            "A ausência de marca também não prova autoria humana."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        },
+        {
+          "url": "https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content",
+          "title": "Código de Prática sobre Transparência de Conteúdo Gerado por IA",
+          "summary": "European Commission: o texto oficial do código voluntário que a Anthropic assinou, ligado ao Artigo 50(2) da Lei de IA.",
+          "bullets": [
+            "O código está previsto no Artigo 50(2) da Lei de IA da União Europeia.",
+            "As obrigações de transparência do Artigo 50 passaram a valer em 2 de agosto de 2026.",
+            "O artigo exige marcação legível por máquina de saídas de IA generativa em áudio, imagem, vídeo e texto."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Anthropic fecha locação de US$9,1 bi por 20 anos com a mineradora Riot",
+      "summary": "São 191 MW no Texas até junho de 2028, terceira grande compra de poder computacional da Anthropic em três meses, somando mais de US$60 bilhões.",
+      "bullets": [
+        "A Riot Platforms divulgou em 10 de agosto um contrato de locação de 20 anos para 191 MW de capacidade de data center em seu campus de Rockdale, no Texas, até junho de 2048.",
+        "A Riot descreveu a contraparte apenas como um \"laboratório de IA de fronteira líder\"; a Bloomberg identificou o cliente como a Anthropic.",
+        "O acordo deve gerar US$9,1 bilhões de receita no prazo inicial, e duas opções de extensão de cinco anos cada podem elevar o total a US$16,1 bilhões.",
+        "A capacidade entra por etapas: 96 MW até dezembro de 2027 e os 191 MW completos até junho de 2028 — o equivalente ao consumo de cerca de 143 mil residências.",
+        "A ação da Riot subiu mais de 25% no after-hours de segunda-feira e estava em alta de cerca de 21% no pré-mercado de terça.",
+        "É a terceira grande compra de poder computacional da Anthropic em três meses; as três somam mais de US$60 bilhões em compromissos."
+      ],
+      "body": "A Riot é uma mineradora de bitcoin de origem e minerou 1.587 bitcoins apenas no segundo trimestre de 2026. Em seis meses, a empresa já assinou contratos de locação somando 241 MW de capacidade, o equivalente a cerca de US$9,8 bilhões de receita contratada de longo prazo. O outro inquilino é a AMD.\n\nPara bancar a fase inicial de construção, a Riot montou uma linha de financiamento interina de US$573 milhões via Morgan Stanley, e trabalha para colocar de pé um respaldo de crédito permanente.",
+      "category": [
+        "technology",
+        "business",
+        "finance"
+      ],
+      "entities": {
+        "people": [
+          "Jason Les"
+        ],
+        "organizations": [
+          "Anthropic",
+          "Riot Platforms",
+          "AMD",
+          "Morgan Stanley"
+        ],
+        "places": [
+          "Rockdale, Texas",
+          "United States"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-signs-9-1-billion-113731732.html",
+          "title": "Anthropic assina acordo de data center de US$9,1 bilhões com a Riot Platforms",
+          "summary": "Yahoo Finance: reporta a identificação da Anthropic como contraparte e o encaixe do contrato na sequência de compras de poder computacional da empresa.",
+          "bullets": [
+            "A Bloomberg identificou como Anthropic o \"laboratório de IA de fronteira líder\" citado pela Riot.",
+            "O contrato é a terceira grande compra de poder computacional da Anthropic em três meses.",
+            "As três compras somam mais de US$60 bilhões em compromissos."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        },
+        {
+          "url": "https://financefeeds.com/riot-platforms-just-signed-a-9-1-billion-ai-lease-reportedly-with-anthropic-and-shares-jumped-25/",
+          "title": "Riot assina locação de IA de US$9,1 bilhões, reportadamente com a Anthropic, e ação sobe 25%",
+          "summary": "FinanceFeeds: cobre a reação do mercado e o financiamento interino de US$573 milhões via Morgan Stanley para a fase inicial de obra.",
+          "bullets": [
+            "A ação da Riot subiu mais de 25% no after-hours de segunda-feira.",
+            "A Riot montou uma linha de financiamento interina de US$573 milhões via Morgan Stanley.",
+            "A empresa trabalha para colocar de pé um respaldo de crédito permanente."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        },
+        {
+          "url": "https://thenextweb.com/news/anthropic-riot-9bn-data-centre-deal",
+          "title": "Anthropic assina acordo de nuvem de US$9,1 bi por 20 anos com a mineradora de bitcoin Riot Platforms",
+          "summary": "The Next Web: traduz os 191 MW em escala física, comparando o consumo ao de cerca de 143 mil residências.",
+          "bullets": [
+            "Os 191 MW equivalem aproximadamente ao consumo elétrico de cerca de 143 mil residências a qualquer momento.",
+            "O contrato de locação tem prazo de 20 anos e vai até junho de 2048.",
+            "A Riot é uma mineradora de bitcoin de origem."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.livemint.com/companies/anthropic-signs-9-1-billion-20-year-ai-cloud-deal-with-bitcoin-miner-riot-platforms-for-texas-data-centre-capacity-11786430274769.html",
+          "title": "Anthropic assina acordo de nuvem de IA de US$9,1 bi por 20 anos com a Riot Platforms no Texas",
+          "summary": "Livemint: detalha o cronograma de entrega da capacidade e as opções de extensão que podem levar o contrato a US$16,1 bilhões.",
+          "bullets": [
+            "A capacidade entra em operação por etapas: 96 MW até dezembro de 2027 e 191 MW até junho de 2028.",
+            "Duas opções de extensão de cinco anos cada podem elevar o total a US$16,1 bilhões.",
+            "O campus fica em Rockdale, no Texas."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1167419/000110465926093406/riot-20260810x8k.htm",
+          "title": "Formulário 8-K da Riot Platforms, 10 de agosto de 2026",
+          "summary": "SEC EDGAR: o registro oficial da Riot descreve a contraparte apenas como um laboratório de IA de fronteira líder e formaliza os termos do contrato.",
+          "bullets": [
+            "O contrato é de locação de 20 anos para 191 MW no campus de Rockdale.",
+            "A receita esperada é de US$9,1 bilhões no prazo inicial.",
+            "A contraparte é descrita apenas como um \"laboratório de IA de fronteira líder\"."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.tipranks.com/news/riot-stock-rockets-21-premarket-on-signing-9-1-billion-cloud-deal-with-anthropic",
+          "title": "Ação da Riot dispara 21% no pré-mercado com acordo de US$9,1 bilhões com a Anthropic",
+          "summary": "TipRanks: acompanha o movimento da ação no pré-mercado de terça-feira e o total de capacidade já contratada pela Riot.",
+          "bullets": [
+            "A ação estava em alta de cerca de 21% na negociação pré-mercado de terça-feira.",
+            "A Riot já assinou contratos somando 241 MW de capacidade em seis meses.",
+            "Isso equivale a cerca de US$9,8 bilhões de receita contratada de longo prazo."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262095019-anthropic-riot-91-billion-ai-compute-bitcoin-mining-data-center-transition-tradingkey",
+          "title": "Anthropic assina mais um acordo de US$9,1 bilhões enquanto a mineradora Riot migra para IA",
+          "summary": "TradingKey: analisa a transição da Riot de mineração de bitcoin para data centers de IA, com a AMD como outra inquilina.",
+          "bullets": [
+            "A Riot minerou 1.587 bitcoins apenas no segundo trimestre de 2026.",
+            "O outro inquilino do campus é a AMD.",
+            "O contrato marca a terceira grande compra de poder computacional da Anthropic em três meses."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "OpenAI conclui recompra de US$7 bi em ações a valuation de US$852 bi",
+      "summary": "É a primeira vez que o preço fica estável entre ofertas, e a OpenAI usou o próprio caixa em vez de trazer compradores externos.",
+      "bullets": [
+        "A OpenAI concluiu na segunda-feira uma venda secundária de aproximadamente US$7 bilhões, permitindo que funcionários atuais e ex-funcionários vendessem ações ao valuation de US$852 bilhões.",
+        "O preço é o mesmo da rodada recorde de captação de US$122 bilhões fechada em março de 2026 — a primeira vez que o valuation fica estável na sequência de ofertas de recompra.",
+        "Nas duas ofertas anteriores, a OpenAI trouxe compradores externos como Thrive Capital e SoftBank; desta vez usou o próprio caixa, segundo duas pessoas a par dos termos.",
+        "A oferta anterior foi de US$6,6 bilhões a um valuation de US$500 bilhões, em outubro de 2025.",
+        "Antes dela houve uma oferta de US$1,5 bilhão ao SoftBank em novembro de 2024, quando a empresa valia US$157 bilhões.",
+        "A OpenAI protocolou seu prospecto de IPO de forma confidencial na SEC em junho de 2026 e não divulgou data de listagem."
+      ],
+      "body": "O valor de US$7 bilhões foi noticiado primeiro pela Bloomberg e confirmado pela CNBC na segunda-feira. A OpenAI não quis comentar.\n\nAnalistas leem a combinação de oferta de recompra e preço estável como sinal de que uma abertura de capital não é iminente: a empresa protocolou o prospecto de IPO de forma confidencial na SEC em junho, mas não marcou data de listagem.",
+      "category": [
+        "technology",
+        "finance",
+        "business"
+      ],
+      "entities": {
+        "people": [
+          "Sam Altman"
+        ],
+        "organizations": [
+          "OpenAI",
+          "SoftBank",
+          "Thrive Capital",
+          "SEC"
+        ],
+        "places": [
+          "United States"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2026/08/10/openai-wraps-7-billion-share-sale-ahead-of-potential-ipo-.html",
+          "title": "OpenAI conclui venda de ações de US$7 bilhões antes de possível IPO",
+          "summary": "CNBC: confirmou a operação na segunda-feira e apurou que a OpenAI usou o próprio caixa, sem compradores externos.",
+          "bullets": [
+            "A venda secundária somou aproximadamente US$7 bilhões ao valuation de US$852 bilhões.",
+            "A OpenAI usou o próprio caixa, segundo duas pessoas a par dos termos.",
+            "Nas duas ofertas anteriores, a empresa trouxe Thrive Capital e SoftBank como compradores."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        },
+        {
+          "url": "https://techcrunch.com/2026/08/10/openai-reportedly-completed-a-7-billion-employee-tender-offer/",
+          "title": "OpenAI teria concluído oferta de recompra de US$7 bilhões para funcionários",
+          "summary": "TechCrunch: registra a Bloomberg como primeira a noticiar o valor e o silêncio da OpenAI sobre a operação.",
+          "bullets": [
+            "O valor de US$7 bilhões foi noticiado primeiro pela Bloomberg.",
+            "A operação permitiu que funcionários atuais e ex-funcionários vendessem ações.",
+            "A OpenAI não quis comentar."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        },
+        {
+          "url": "https://techfundingnews.com/openai-closes-7b-tender-offer-at-852b-valuation-ahead-of-potential-ipo/",
+          "title": "OpenAI fecha oferta de US$7 bi a valuation de US$852 bi antes de possível IPO",
+          "summary": "Tech Funding News: compara a operação com as recompras anteriores, de US$6,6 bilhões em 2025 e US$1,5 bilhão em 2024.",
+          "bullets": [
+            "A oferta anterior foi de US$6,6 bilhões a um valuation de US$500 bilhões, em outubro de 2025.",
+            "Em novembro de 2024 houve uma oferta de US$1,5 bilhão ao SoftBank, com a empresa valendo US$157 bilhões.",
+            "É a primeira vez que o valuation fica estável na sequência de ofertas de recompra."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        },
+        {
+          "url": "https://qz.com/openai-7-billion-employee-stock-tender-offer-ipo-081126",
+          "title": "OpenAI concluiu recompra de US$7 bilhões em ações de funcionários antes de possível IPO",
+          "summary": "Quartz: puxa a leitura de analistas de que o preço estável e a recompra indicam que o IPO não está próximo.",
+          "bullets": [
+            "Analistas leem a oferta e o preço estável como sinal de que um IPO não é iminente.",
+            "A OpenAI protocolou seu prospecto de IPO de forma confidencial na SEC em junho de 2026.",
+            "A empresa não divulgou data de listagem."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Anthropic torna permanente o preço do Claude Sonnet 5",
+      "summary": "US$2 por milhão de tokens de input e US$10 por milhão de output ficam como estão; o valor introdutório subiria depois de 31 de agosto.",
+      "bullets": [
+        "A Anthropic disse em 10 de agosto que vai tornar permanente o preço introdutório do Claude Sonnet 5.",
+        "O preço mantido é de US$2 por milhão de tokens de input e US$10 por milhão de tokens de output.",
+        "O preço introdutório valeria apenas até 31 de agosto, e depois disso subiria.",
+        "A Anthropic lançou o Sonnet 5 em junho, apresentando-o como seu Sonnet mais agêntico até então."
+      ],
+      "body": "Segundo a Anthropic, o Sonnet 5 faz planos, usa ferramentas como navegadores e terminais e roda de forma autônoma em um nível que, poucos meses antes, exigia modelos maiores e mais caros. Manter o preço introdutório congela essa capacidade na faixa intermediária do catálogo em vez de empurrá-la para cima na tabela.",
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "people": [],
+        "organizations": [
+          "Anthropic"
+        ],
+        "places": []
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://x.com/claudeai/status/2086891169217122586",
+          "title": "Post do @claudeai: preço introdutório do Claude Sonnet 5 vira permanente",
+          "summary": "X: o anúncio da própria Anthropic de que o preço introdutório do Sonnet 5 deixa de ter prazo de validade.",
+          "bullets": [
+            "O preço de US$2 por milhão de tokens de input e US$10 por milhão de output fica permanente.",
+            "O valor introdutório valeria apenas até 31 de agosto e depois subiria.",
+            "O anúncio saiu em 10 de agosto."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        },
+        {
+          "url": "https://x.com/claudeai/status/2072017450611142835",
+          "title": "Post do @claudeai: apresentação do Claude Sonnet 5, o Sonnet mais agêntico até então",
+          "summary": "X: o post de lançamento de junho, que descreve as capacidades agênticas usadas para justificar o posicionamento do modelo.",
+          "bullets": [
+            "A Anthropic lançou o Sonnet 5 em junho.",
+            "A empresa apresentou o modelo como seu Sonnet mais agêntico até então.",
+            "O modelo faz planos, usa ferramentas como navegadores e terminais e roda de forma autônoma."
+          ],
+          "published_at": "2026-06-24",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Nvidia lança Nemotron 3.5 Lightning e o roteador aberto NeMo Switchyard",
+      "summary": "O modelo MoE de 30 bilhões de parâmetros sai com pesos e dados abertos, e o roteador corta o custo de benchmark a um terço do de rodar só o Opus 4.8.",
+      "bullets": [
+        "A Nvidia lançou o Nemotron 3.5 Lightning, um modelo aberto de mistura de especialistas (MoE) com 30 bilhões de parâmetros e 3 bilhões ativos, otimizado para agentes sempre ligados e baixa latência.",
+        "A Nvidia afirma que o Lightning entrega output até 4x mais rápido do que modelos comparáveis de sua categoria.",
+        "A empresa diz que o modelo completa tarefas agênticas cerca de 30% mais rápido que o Qwen3.6-35B com precisão equivalente.",
+        "Junto do modelo veio o NeMo Switchyard, biblioteca de roteamento de código aberto que envia cada etapa de um fluxo de agente ao modelo mais adequado.",
+        "Segundo a Nvidia, a combinação mantém taxa de conclusão de tarefas em nível de fronteira e corta os custos de benchmark para cerca de um terço do custo de rodar apenas o Opus 4.8.",
+        "Pesos, dados de treino e receitas foram publicados sob a licença permissiva OpenMDW-1.1, com distribuição no Hugging Face, ModelScope, OpenRouter e build.nvidia.com como microsserviço NIM."
+      ],
+      "body": "O Lightning estende a arquitetura híbrida Mamba-Transformer com MoE latente que a Nvidia introduziu com a família Nemotron 3. Foi desenhado para harnesses de agentes como OpenClaw e Hermes Agent, apoiados pela pilha open source de segurança e gestão NemoClaw, da própria Nvidia, para rodar agentes sempre ligados.\n\nEntre os parceiros do Switchyard estão os frameworks de agentes Cognition, LangChain e Nous Research, que chamam a biblioteca diretamente, e os gateways de LLM Kong, LiteLLM e OpenRouter, que embutiram suporte ao Switchyard em seus produtos.",
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "people": [
+          "Kari Briski"
+        ],
+        "organizations": [
+          "Nvidia",
+          "OpenRouter",
+          "LangChain",
+          "Cognition",
+          "Nous Research",
+          "Kong",
+          "Hugging Face"
+        ],
+        "places": []
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://developer.nvidia.com/blog/nvidia-nemotron-3-5-lightning-delivers-fast-accurate-specialized-task-execution-for-long-running-agents/?nvid=nv-csfg-698644",
+          "title": "Nemotron 3.5 Lightning entrega execução rápida e precisa de tarefas para agentes de longa duração",
+          "summary": "NVIDIA Technical Blog: o detalhamento técnico do modelo, da arquitetura híbrida Mamba-Transformer aos números de velocidade e à licença de publicação.",
+          "bullets": [
+            "O modelo é um MoE de 30 bilhões de parâmetros com 3 bilhões ativos.",
+            "Estende a arquitetura híbrida Mamba-Transformer com MoE latente da família Nemotron 3.",
+            "A Nvidia afirma output até 4x mais rápido que modelos comparáveis da categoria.",
+            "Pesos, dados de treino e receitas saíram sob a licença permissiva OpenMDW-1.1."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        },
+        {
+          "url": "https://blogs.nvidia.com/blog/nemotron-lightning-switchyard-rtx-dgx/",
+          "title": "Nemotron 3.5 Lightning e NeMo Switchyard entregam IA agêntica mais rápida e eficiente",
+          "summary": "NVIDIA Blog: apresenta o pacote modelo mais roteador e lista os parceiros de framework e gateway que já adotaram o Switchyard.",
+          "bullets": [
+            "O NeMo Switchyard envia cada etapa de um fluxo de agente ao modelo mais adequado.",
+            "Cognition, LangChain e Nous Research chamam o Switchyard diretamente.",
+            "Kong, LiteLLM e OpenRouter embutiram suporte ao Switchyard em seus produtos.",
+            "O modelo está no Hugging Face, ModelScope, OpenRouter e build.nvidia.com como microsserviço NIM."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        },
+        {
+          "url": "https://venturebeat.com/orchestration/nvidias-switchyard-router-reshuffles-ai-models-mid-task-cutting-task-costs-to-a-third",
+          "title": "Roteador Switchyard da Nvidia troca modelos no meio da tarefa e corta custos a um terço",
+          "summary": "VentureBeat: foca na economia do roteamento, com a comparação de custo contra rodar apenas o Opus 4.8 nos testes da própria Nvidia.",
+          "bullets": [
+            "A Nvidia diz que a combinação corta os custos de benchmark para cerca de um terço do custo de rodar só o Opus 4.8.",
+            "A empresa afirma manter taxa de conclusão de tarefas em nível de fronteira.",
+            "O Lightning completaria tarefas agênticas cerca de 30% mais rápido que o Qwen3.6-35B com precisão equivalente."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Nvidia se une a seis gestoras para mobilizar US$500 bi em IA",
+      "summary": "Apollo, BlackRock, Blackstone, Brookfield, Goldman Sachs e KKR entram em memorandos de entendimento, ainda sem acordos definitivos nem cronograma.",
+      "bullets": [
+        "A Nvidia anunciou em 10 de agosto de 2026 parcerias estratégicas para criar plataformas independentes de financiamento de poder computacional.",
+        "Os parceiros são Apollo, BlackRock, Blackstone, Brookfield, Goldman Sachs e KKR.",
+        "O objetivo é mobilizar mais de US$500 bilhões em capital de terceiros para infraestrutura de IA ao longo do tempo.",
+        "Os acordos são memorandos de entendimento, e a Nvidia afirma que as parcerias \"permanecem sujeitas à assinatura dos acordos definitivos\".",
+        "A estrutura permite que hyperscalers, laboratórios de IA de fronteira e empresas financiem GPUs e data centers com crédito institucional, fundos de seguradoras e capital privado, em vez de usar o próprio balanço.",
+        "A Nvidia não divulgou termos financeiros, compromissos de investimento de cada firma nem cronograma para desembolsar os US$500 bilhões."
+      ],
+      "body": "Larry Fink, CEO da BlackRock, chamou o projeto de início do \"próximo futuro da engenharia financeira\" e comparou a iniciativa à criação dos títulos lastreados em hipotecas nos anos 1970.\n\nJon Gray, presidente da Blackstone, disse que o poder computacional para IA será visto como uma \"classe de ativo financiável\", do mesmo modo como credores hipotecários enxergam imóveis. Gray disse à CNBC que a demanda por IA está superando a oferta e que o uso de IA nas empresas do portfólio da Blackstone cresceu sete vezes neste ano.",
+      "category": [
+        "technology",
+        "finance"
+      ],
+      "entities": {
+        "people": [
+          "Jensen Huang",
+          "Larry Fink",
+          "Jon Gray",
+          "David Solomon",
+          "Bruce Flatt"
+        ],
+        "organizations": [
+          "Nvidia",
+          "Apollo Global Management",
+          "BlackRock",
+          "Blackstone",
+          "Brookfield Asset Management",
+          "Goldman Sachs",
+          "KKR"
+        ],
+        "places": [
+          "United States"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://nvidianews.nvidia.com/news/nvidia-partners-with-apollo-blackrock-blackstone-brookfield-goldman-sachs-and-kkr-to-establish-ai-compute-infrastructure-financing-platforms-to-mobilize-over-500-billion-of-third-party-capital",
+          "title": "Nvidia firma parceria com Apollo, BlackRock, Blackstone, Brookfield, Goldman Sachs e KKR para plataformas de financiamento de infraestrutura de IA",
+          "summary": "NVIDIA Newsroom: o comunicado oficial define a estrutura das plataformas e ressalva que tudo ainda depende de acordos definitivos.",
+          "bullets": [
+            "O objetivo é mobilizar mais de US$500 bilhões em capital de terceiros ao longo do tempo.",
+            "As parcerias \"permanecem sujeitas à assinatura dos acordos definitivos\".",
+            "A estrutura usa crédito institucional, fundos de seguradoras e capital privado para bancar GPUs e data centers."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.cnbc.com/2026/08/10/nvidia-wall-street-asset-managers-500-billion-ai-push.html",
+          "title": "Nvidia e gestoras de Wall Street se unem em investida de US$500 bilhões em IA",
+          "summary": "CNBC: traz as falas de Larry Fink e Jon Gray e o dado de que o uso de IA no portfólio da Blackstone cresceu sete vezes no ano.",
+          "bullets": [
+            "Larry Fink chamou o projeto de início do \"próximo futuro da engenharia financeira\".",
+            "Fink comparou a iniciativa à criação dos títulos lastreados em hipotecas nos anos 1970.",
+            "Jon Gray disse que o poder computacional será visto como \"classe de ativo financiável\".",
+            "Segundo Gray, o uso de IA nas empresas do portfólio da Blackstone cresceu sete vezes neste ano."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        },
+        {
+          "url": "https://finance.yahoo.com/technology/ai/articles/wall-street-giants-partner-nvidia-163441421.html",
+          "title": "Nvidia se associa a gigantes de Wall Street para levantar US$500 bilhões para a construção de IA",
+          "summary": "Reuters via Yahoo Finance: aponta o que ficou de fora do anúncio — termos financeiros, compromissos por firma e cronograma de desembolso.",
+          "bullets": [
+            "A Nvidia não divulgou os termos financeiros das parcerias.",
+            "Também não informou os compromissos de investimento de cada firma.",
+            "Não há cronograma para desembolsar os US$500 bilhões previstos."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        },
+        {
+          "url": "https://media.kkr.com/news-details?news_id=2fdd2c1c-a052-4552-aa58-90d7a3d997e0",
+          "title": "KKR entra em plataformas de financiamento de infraestrutura de computação para IA com a Nvidia",
+          "summary": "KKR: o comunicado do lado dos gestores confirma a lista de parceiros e o desenho das plataformas independentes de financiamento.",
+          "bullets": [
+            "Os parceiros são Apollo, BlackRock, Blackstone, Brookfield, Goldman Sachs e KKR.",
+            "As plataformas de financiamento serão independentes.",
+            "Clientes da Nvidia poderão financiar GPUs e data centers sem usar o próprio balanço."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Intel amplia oferta de ações para US$20 bilhões e precifica a US$95",
+      "summary": "A venda atraiu mais de US$100 bilhões em demanda e deve render US$19,7 bilhões líquidos, com fechamento previsto para 12 de agosto.",
+      "bullets": [
+        "A Intel precificou 210.526.315 ações a US$95 cada.",
+        "A oferta pública subscrita foi ampliada para US$20 bilhões, ante os US$15 bilhões anunciados no dia anterior.",
+        "A venda atraiu mais de US$100 bilhões em demanda, segundo pessoas a par do assunto.",
+        "O preço de US$95 representa um desconto de 6,5% em relação ao fechamento de sexta-feira, e os recursos líquidos devem somar aproximadamente US$19,7 bilhões.",
+        "Os bancos coordenadores receberam uma opção de 30 dias para comprar até 31.578.947 ações adicionais ao preço da oferta, descontadas as comissões.",
+        "As ações caíram mais de 4% na segunda-feira, quando a oferta inicial de US$15 bilhões foi revelada, e subiram cerca de 1% no pré-mercado de terça."
+      ],
+      "body": "A Intel pretende usar os recursos para fins corporativos gerais, o que pode incluir investimentos de capital e capital de giro. A oferta deve ser fechada em 12 de agosto de 2026.\n\nO salto de US$15 bilhões para US$20 bilhões em um dia, com livro de mais de US$100 bilhões, inverteu a reação inicial do mercado: a queda de segunda-feira deu lugar a leve alta no pré-mercado assim que o preço final saiu.",
+      "category": [
+        "technology",
+        "finance"
+      ],
+      "entities": {
+        "people": [],
+        "organizations": [
+          "Intel",
+          "JPMorgan",
+          "Goldman Sachs",
+          "Morgan Stanley",
+          "Citigroup"
+        ],
+        "places": [
+          "Santa Clara",
+          "United States"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://finance.yahoo.com/markets/stocks/articles/intel-announces-upsize-pricing-20-063600058.html",
+          "title": "Intel anuncia ampliação e precificação de oferta de ações de US$20 bilhões",
+          "summary": "Business Wire via Yahoo Finance: o comunicado oficial com o número exato de ações, o preço, os recursos líquidos e a opção dos coordenadores.",
+          "bullets": [
+            "A Intel precificou 210.526.315 ações a US$95 cada.",
+            "Os recursos líquidos devem somar aproximadamente US$19,7 bilhões.",
+            "Os coordenadores têm opção de 30 dias para comprar até 31.578.947 ações adicionais.",
+            "A oferta deve ser fechada em 12 de agosto de 2026."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-08-10/intel-is-said-to-near-share-sale-upsize-to-raise-20-billion",
+          "title": "Intel estaria perto de ampliar venda de ações para levantar US$20 bilhões",
+          "summary": "Bloomberg: apurou antes do anúncio que a demanda superava US$100 bilhões e empurrava a oferta de US$15 bi para US$20 bi.",
+          "bullets": [
+            "A venda de ações atraiu mais de US$100 bilhões em demanda.",
+            "A oferta inicial anunciada era de US$15 bilhões.",
+            "A informação veio de pessoas a par do assunto."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        },
+        {
+          "url": "https://qz.com/intel-stock-offering-20-billion-ai-chips-081126",
+          "title": "Intel amplia oferta de ações para US$20 bilhões voltada à fabricação de chips de IA",
+          "summary": "Quartz: acompanha a reação da ação, da queda de mais de 4% na segunda-feira à leve alta após a precificação.",
+          "bullets": [
+            "As ações caíram mais de 4% na segunda-feira, quando a oferta de US$15 bilhões foi revelada.",
+            "As ações subiram cerca de 1% no pré-mercado de terça-feira após a precificação ampliada.",
+            "O preço de US$95 é um desconto de 6,5% em relação ao fechamento de sexta-feira.",
+            "Os recursos vão para fins corporativos gerais, incluindo investimentos de capital e capital de giro."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "TSMC e Sony criam joint venture de US$4,69 bi em Kumamoto",
+      "summary": "A Sony aporta 465 bilhões de ienes e a fábrica recém-construída; a TSMC entra com 282 bilhões, e a produção começa em 2029.",
+      "bullets": [
+        "Em 11 de agosto de 2026, a Sony Semiconductor Solutions e a TSMC anunciaram a assinatura de um acordo definitivo juridicamente vinculante.",
+        "O acordo estabelece a Advanced Vision Semiconductor Manufacturing Corporation, em Koshi City, província de Kumamoto, no Japão.",
+        "A Sony vai aportar cerca de 465 bilhões de ienes (cerca de US$2,92 bilhões) em dinheiro e ativos, incluindo sua fábrica de chips recém-construída em Kumamoto, transferida por cisão societária.",
+        "A TSMC vai aportar cerca de 282 bilhões de ienes em dinheiro, num aporte combinado de US$4,69 bilhões.",
+        "A joint venture vai fabricar sensores de imagem para smartphones com tecnologia de processo avançada, com produção em volume prevista para 2029.",
+        "A Sony será a única acionista controladora, vai consolidar a joint venture como subsidiária do Sony Group e indicará o Diretor Representante."
+      ],
+      "body": "Os aportes de capital serão feitos em fases, conforme a demanda de mercado. Os investimentos adicionais necessários para atingir a capacidade de produção planejada estão sendo considerados sob a premissa de apoio do governo japonês.\n\nA criação da joint venture e a conclusão da transação dependem das aprovações regulatórias necessárias. O acordo definitivo segue um memorando de entendimento não vinculante assinado pelas duas empresas em 8 de maio de 2026.",
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "people": [],
+        "organizations": [
+          "TSMC",
+          "Sony Semiconductor Solutions",
+          "Sony Group",
+          "Advanced Vision Semiconductor Manufacturing Corporation",
+          "JASM"
+        ],
+        "places": [
+          "Kumamoto",
+          "Koshi City",
+          "Japan",
+          "Taiwan"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://pr.tsmc.com/english/news/3333",
+          "title": "Sony Semiconductor Solutions e TSMC acertam joint venture para sensores de imagem de nova geração",
+          "summary": "TSMC: o comunicado conjunto formaliza a nova empresa, os aportes de cada lado e o cronograma de produção.",
+          "bullets": [
+            "A joint venture se chama Advanced Vision Semiconductor Manufacturing Corporation e fica em Koshi City, Kumamoto.",
+            "A Sony aporta cerca de 465 bilhões de ienes e a TSMC, cerca de 282 bilhões de ienes.",
+            "A produção em volume deve começar em 2029.",
+            "A joint venture vai fabricar sensores de imagem para smartphones com tecnologia de processo avançada."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/313838/000110465926093634/tm2622696d1_6k.htm",
+          "title": "Formulário 6-K do Sony Group: assinatura de acordo definitivo com a TSMC para joint venture",
+          "summary": "SEC EDGAR: o registro da Sony detalha a governança da joint venture, a cisão da fábrica e as condições regulatórias.",
+          "bullets": [
+            "O aporte da Sony inclui sua fábrica de chips recém-construída em Kumamoto, transferida por cisão societária.",
+            "A Sony será a única acionista controladora e consolidará a joint venture como subsidiária.",
+            "O Diretor Representante da joint venture será indicado pela Sony.",
+            "A conclusão da transação depende das aprovações regulatórias necessárias."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        },
+        {
+          "url": "https://asia.nikkei.com/business/business-deals/tsmc-and-sony-announce-image-sensor-joint-venture-in-japan",
+          "title": "TSMC e Sony anunciam joint venture de sensores de imagem no Japão",
+          "summary": "Nikkei Asia: contextualiza o acordo como desdobramento do memorando não vinculante de maio e aponta a dependência de apoio estatal japonês.",
+          "bullets": [
+            "O acordo definitivo segue um memorando de entendimento não vinculante assinado em 8 de maio de 2026.",
+            "O aporte combinado é de US$4,69 bilhões.",
+            "Os aportes de capital serão feitos em fases, conforme a demanda de mercado.",
+            "Investimentos adicionais para a capacidade planejada consideram a premissa de apoio do governo japonês."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "IPO da Unitree em Xangai tem procura 8.288 vezes maior que a oferta",
+      "summary": "A oferta levanta cerca de US$904 milhões e avalia a fabricante de humanoides em US$9 bilhões, ou 219 vezes o lucro de 2025.",
+      "bullets": [
+        "A Unitree Robotics informou em 10 de agosto de 2026 que a fatia de varejo de seu IPO no STAR Market teve procura cerca de 8.288,82 vezes maior que a oferta.",
+        "Mais de 9,78 milhões de contas de varejo enviaram pedidos válidos por 53,64 bilhões de ações, e a taxa final de sucesso no rateio ficou em 0,0181%, cerca de um em cada 5.525 candidatos.",
+        "A empresa precificou 40,45 milhões de ações a 150,8 iuanes (US$22,35) cada, levantando 6,10 bilhões de iuanes (cerca de US$904 milhões).",
+        "O preço avalia a Unitree em cerca de 61 bilhões de iuanes (US$9 bilhões), o que implica 219 vezes o lucro de 2025 e cerca de 36 vezes as vendas.",
+        "A demanda acionou um mecanismo de realocação (clawback) que transferiu 3,2 milhões de ações da fatia institucional para a de varejo, elevando a alocação online a 9,7 milhões de ações.",
+        "A Unitree será a primeira fabricante de robôs humanoides da China listada no mercado doméstico; o pagamento é devido até 12 de agosto."
+      ],
+      "body": "A fatia institucional também teve demanda extrema, com procura 2.760,67 vezes maior que a oferta — bem abaixo, ainda assim, do multiplicador do varejo.\n\nUm relatório da Smart Analytics Global divulgado no mesmo dia estimou os embarques de humanoides da Unitree em cerca de 5.900 unidades no primeiro semestre de 2026, alta de 170% na comparação anual e 31% do total mundial. Isso põe a empresa em segundo lugar no ranking global, atrás da também chinesa AGIBOT.",
+      "category": [
+        "technology",
+        "finance"
+      ],
+      "entities": {
+        "people": [
+          "Wang Xingxing"
+        ],
+        "organizations": [
+          "Unitree Robotics",
+          "Yushu Technology",
+          "Shanghai Stock Exchange",
+          "DeepSeek",
+          "AGIBOT"
+        ],
+        "places": [
+          "Shanghai",
+          "Hangzhou",
+          "China"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.thestar.com.my/tech/tech-news/2026/08/10/unitree039s-shanghai-ipo-more-than-8000-times-oversubscribed-by-retail-investors",
+          "title": "IPO da Unitree em Xangai tem procura mais de 8.000 vezes maior entre investidores de varejo",
+          "summary": "Reuters via The Star: reporta o tamanho da oferta, o valuation implícito e o marco de primeira fabricante chinesa de humanoides listada no mercado doméstico.",
+          "bullets": [
+            "A empresa precificou 40,45 milhões de ações a 150,8 iuanes (US$22,35) cada.",
+            "A oferta levanta 6,10 bilhões de iuanes, cerca de US$904 milhões.",
+            "O preço avalia a Unitree em cerca de 61 bilhões de iuanes (US$9 bilhões).",
+            "A Unitree será a primeira fabricante de robôs humanoides da China listada no mercado doméstico."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.globaltimes.cn/page/202608/1367902.shtml",
+          "title": "IPO da Unitree é 8.288 vezes sobrescrito e taxa de sucesso online cai a 0,0181%",
+          "summary": "Global Times: detalha a mecânica do rateio, com o clawback que moveu ações da fatia institucional para o varejo.",
+          "bullets": [
+            "Mais de 9,78 milhões de contas de varejo enviaram pedidos válidos por 53,64 bilhões de ações.",
+            "O mecanismo de realocação transferiu 3,2 milhões de ações da fatia institucional para a de varejo.",
+            "A alocação final online subiu para 9,7 milhões de ações.",
+            "A fatia institucional teve procura 2.760,67 vezes maior que a oferta."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        },
+        {
+          "url": "https://srnnews.com/unitrees-shanghai-ipo-more-than-8000-times-oversubscribed-by-retail-investors/",
+          "title": "IPO da Unitree em Xangai é mais de 8.000 vezes sobrescrito por investidores de varejo",
+          "summary": "Reuters via SRN News: traz os múltiplos de avaliação e a estimativa de embarques de humanoides divulgada no mesmo dia.",
+          "bullets": [
+            "O preço implica 219 vezes o lucro de 2025 e cerca de 36 vezes as vendas.",
+            "A Smart Analytics Global estimou embarques de cerca de 5.900 humanoides no primeiro semestre de 2026.",
+            "Os embarques cresceram 170% na comparação anual e representaram 31% do total mundial.",
+            "A Unitree ficou em segundo lugar no ranking mundial, atrás da chinesa AGIBOT."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        },
+        {
+          "url": "https://techgolly.com/unitree-robotics-ipo-ignites-shanghai-market-with-5526-times-retail-oversubscription",
+          "title": "IPO da Unitree Robotics agita o mercado de Xangai com rateio de um em 5.526",
+          "summary": "TechGolly: destaca a chance efetiva de alocação para o investidor de varejo e o prazo de pagamento das reservas.",
+          "bullets": [
+            "A taxa final de sucesso no rateio online ficou em 0,0181%, cerca de um em cada 5.525 candidatos.",
+            "As reservas online abriram em 10 de agosto de 2026.",
+            "O pagamento é devido até 12 de agosto."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "IBM fecha acordo de US$240 mi por cluster de inferência da Together AI",
+      "summary": "É o primeiro cluster dedicado de grande escala para inferência na IBM Cloud, com sistemas Nvidia HGX B300 previstos para o primeiro trimestre de 2027.",
+      "bullets": [
+        "A IBM anunciou em 11 de agosto de 2026 um acordo plurianual de US$240 milhões com a Together AI.",
+        "O acordo prevê a implantação de um grande cluster de sistemas Nvidia HGX B300 na IBM Cloud, com disponibilidade esperada para o primeiro trimestre de 2027.",
+        "É o primeiro cluster dedicado de grande escala construído para inferência na IBM Cloud, com rede Ethernet Nvidia Spectrum-X.",
+        "Segundo a Nvidia, a combinação foi construída para entregar 30x mais produção de fábrica de IA em relação às gerações anteriores.",
+        "A Together AI vai usar o cluster para servir inferência de modelos de código aberto a clientes corporativos; sua plataforma processa hoje cerca de 400 trilhões de tokens por mês.",
+        "O acordo estende uma parceria IBM-Nvidia anunciada em março para levar GPUs Blackwell Ultra à IBM Cloud."
+      ],
+      "body": "O contrato coloca a IBM no mercado de neoclouds ao transformar a Together AI em grande inquilina de nuvem em vez de concorrente direta.\n\nA Together AI disse ter escolhido IBM e Nvidia pelos roadmaps de produto e pela velocidade de entrega de capacidade de GPU ao menor custo possível por token.",
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "people": [
+          "Alan Peacock",
+          "Dion Harris"
+        ],
+        "organizations": [
+          "IBM",
+          "Together AI",
+          "Nvidia",
+          "Red Hat"
+        ],
+        "places": [
+          "Armonk",
+          "San Francisco",
+          "United States"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/ibm-and-together-ai-sign-multi-year-agreement-to-scale-open-source-ai-inference-with-nvidia-ai-infrastructure-on-ibm-cloud-302847748.html",
+          "title": "IBM e Together AI assinam acordo plurianual para escalar inferência de IA de código aberto na IBM Cloud",
+          "summary": "PR Newswire (IBM): o comunicado oficial traz o valor, o hardware e a justificativa da Together AI para a escolha dos parceiros.",
+          "bullets": [
+            "O acordo plurianual soma US$240 milhões.",
+            "O cluster usa sistemas Nvidia HGX B300 e rede Ethernet Nvidia Spectrum-X.",
+            "A Together AI citou roadmaps de produto e velocidade de entrega de GPU ao menor custo por token.",
+            "A disponibilidade é esperada para o primeiro trimestre de 2027."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        },
+        {
+          "url": "https://finance.yahoo.com/technology/ai/articles/ibms-240m-together-ai-deal-130423231.html",
+          "title": "Acordo de US$240 mi da IBM com a Together AI coloca a empresa no mercado de neoclouds",
+          "summary": "Yahoo Finance: lê o contrato como movimento estratégico da IBM, que converte uma rival potencial em inquilina de nuvem.",
+          "bullets": [
+            "O acordo coloca a IBM no mercado de neoclouds.",
+            "A Together AI passa a ser grande inquilina de nuvem em vez de concorrente direta.",
+            "O acordo estende a parceria IBM-Nvidia anunciada em março para GPUs Blackwell Ultra na IBM Cloud."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.techzine.eu/news/infrastructure/143545/ibm-builds-240-million-inference-cluster/",
+          "title": "IBM constrói cluster de inferência de US$240 milhões",
+          "summary": "Techzine: foca na escala técnica do cluster e no volume de tokens já processado pela plataforma da Together AI.",
+          "bullets": [
+            "É o primeiro cluster dedicado de grande escala construído para inferência na IBM Cloud.",
+            "A plataforma da Together AI processa cerca de 400 trilhões de tokens por mês.",
+            "Segundo a Nvidia, a combinação entrega 30x mais produção de fábrica de IA que as gerações anteriores."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Petróleo sobe 5% com impasse entre EUA e Irã sobre o Estreito de Ormuz",
+      "summary": "Brent fechou a US$87,72 e o WTI a US$82,13, maiores altas desde 29 de julho, com a reserva estratégica dos EUA no menor nível desde 1983.",
+      "bullets": [
+        "Os futuros do Brent fecharam em alta de US$4,17, ou 4,99%, a US$87,72 o barril em 10 de agosto; o WTI subiu US$3,95, ou 5,05%, a US$82,13.",
+        "Foram os maiores ganhos percentuais para os dois contratos desde 29 de julho, revertendo a queda de mais de 7% da semana anterior.",
+        "Trump disse que o Irã deve pagar indenização por \"todas as pessoas que eles mataram e feriram gravemente\"; Teerã exige reparações de guerra, fim das sanções e suspensão do bloqueio naval americano antes de reabrir o estreito.",
+        "Os estoques na Reserva Estratégica de Petróleo dos EUA caíram cerca de 6,1 milhões de barris na semana passada, para 298,7 milhões — o menor nível desde janeiro de 1983.",
+        "A consultoria Energy Aspects disse em 10 de agosto que apenas cinco embarcações por dia, em média, cruzam Ormuz, contra 14 por dia após o memorando EUA-Irã de junho e cerca de 130 travessias antes do conflito.",
+        "Militantes houthis reivindicaram um ataque à refinaria de Jazan, na Arábia Saudita, no dia anterior; o Brent está cerca de 16% acima dos níveis pré-guerra."
+      ],
+      "body": "A queda da semana anterior tinha vindo da expectativa de que Irã e Omã estivessem perto de um acordo para reabrir o Estreito de Ormuz, por onde escoava um quinto do petróleo e do gás natural liquefeito do mundo antes do início do conflito no Oriente Médio, no fim de fevereiro. As exigências cruzadas de compensação esvaziaram essa expectativa.\n\nEntre 4 e 6 de agosto, o tráfego pelo estreito ficou entre oito e 15 embarcações por dia, segundo a plataforma de rastreamento marítimo MarineTraffic.",
+      "category": [
+        "world",
+        "economy",
+        "finance"
+      ],
+      "entities": {
+        "people": [
+          "Donald Trump",
+          "Abbas Araghchi",
+          "Esmail Baghaei"
+        ],
+        "organizations": [
+          "OPEC",
+          "Energy Aspects",
+          "US Department of Energy",
+          "Saudi Aramco"
+        ],
+        "places": [
+          "Strait of Hormuz",
+          "Iran",
+          "United States",
+          "Oman",
+          "Saudi Arabia"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "political_high_risk",
+      "sources": [
+        {
+          "url": "https://lufkindailynews.com/news_reuters/business/oil-rises-4-as-iran-us-both-demand-compensation-and-hormuz-hopes-fade/article_189dacca-2e0d-52ed-8b0a-9d4254b596de.html",
+          "title": "Petróleo sobe 5% com Irã e EUA exigindo compensação e esperanças sobre Ormuz se esvaindo",
+          "summary": "Reuters: traz o fechamento dos dois contratos e as exigências cruzadas que travaram a expectativa de reabertura do estreito.",
+          "bullets": [
+            "O Brent fechou em alta de US$4,17, ou 4,99%, a US$87,72 o barril.",
+            "O WTI fechou em alta de US$3,95, ou 5,05%, a US$82,13.",
+            "Trump disse que o Irã deve pagar indenização pelas pessoas mortas e feridas.",
+            "Teerã exige reparações de guerra, fim das sanções e suspensão do bloqueio naval antes de reabrir o estreito."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.barchart.com/story/news/3761838/crude-prices-soar-as-strait-of-hormuz-reopening-in-doubt",
+          "title": "Preços do petróleo disparam com reabertura do Estreito de Ormuz em dúvida",
+          "summary": "Barchart: reúne os indicadores de oferta, da queda da reserva estratégica americana ao tráfego diário medido em Ormuz.",
+          "bullets": [
+            "Os estoques da Reserva Estratégica de Petróleo dos EUA caíram cerca de 6,1 milhões de barris, para 298,7 milhões.",
+            "É o menor nível desde janeiro de 1983, segundo o Departamento de Energia dos EUA.",
+            "A Energy Aspects apontou média de apenas cinco embarcações por dia cruzando Ormuz.",
+            "O número era de 14 navios por dia após o memorando EUA-Irã de junho."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.aljazeera.com/economy/2026/8/10/oil-prices-climb-as-iranian-demands-cloud-outlook-for-strait-of-hormuz",
+          "title": "Petróleo sobe com exigências iranianas obscurecendo o cenário para o Estreito de Ormuz",
+          "summary": "Al Jazeera: contextualiza o peso do estreito no fluxo global e registra o ataque houthi à refinaria de Jazan.",
+          "bullets": [
+            "O estreito escoava um quinto do petróleo e do GNL do mundo antes do conflito iniciado no fim de fevereiro.",
+            "Militantes houthis reivindicaram um ataque à refinaria de Jazan, na Arábia Saudita.",
+            "O Brent está cerca de 16% acima dos níveis anteriores à guerra.",
+            "Entre 4 e 6 de agosto, o tráfego ficou entre oito e 15 embarcações por dia, segundo a MarineTraffic."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Archer compra Wisk, Insitu e SkyGrid da Boeing em negócio só com ações",
+      "summary": "A Boeing vira maior acionista externa da Archer com quase 20%, e a Insitu sozinha fatura mais por ano que a Archer no trimestre.",
+      "bullets": [
+        "Boeing e Archer Aviation anunciaram em 10 de agosto acordos definitivos pelos quais a Archer adquire as subsidiárias Wisk Aero (eVTOL autônomos), SkyGrid (software de gestão de espaço aéreo) e Insitu (drones militares).",
+        "A Insitu é um negócio de defesa lucrativo, com mais de US$200 milhões de receita anual, operações em 35 países e mais de 3.500 sistemas de aeronaves não tripuladas já fabricados.",
+        "A transação é integralmente em ações e torna a Boeing a maior acionista externa da Archer, com participação de quase 20% e direito de indicar um membro do conselho.",
+        "A Boeing também vai investir até US$55 milhões em uma futura rodada da Archer e receberá warrants para comprar até US$200 milhões em ações.",
+        "As ações da Archer subiram cerca de 20%, a US$6,69, em 10 de agosto; Joby subiu 2%, EHang caiu 1% e a Boeing ficou praticamente estável.",
+        "No segundo trimestre, divulgado no mesmo dia, a Archer registrou US$5 milhões de receita e prejuízo líquido de US$263,2 milhões, ante US$217,7 milhões no trimestre anterior, e encerrou com US$1,56 bilhão em liquidez."
+      ],
+      "body": "A Boeing mantém acesso à tecnologia central de voo autônomo da Wisk para aeronaves comerciais e de defesa atuais e de próxima geração, por meio de um acordo de compartilhamento tecnológico. A Archer diz que a combinação cria uma \"plataforma de IA física de ponta a ponta\" ao lado do seu modelo de fundação para aeroespacial e defesa, o ZEE.\n\nA assimetria de escala é explícita: só a Insitu somaria mais receita anual do que toda a receita trimestral da Archer quando o negócio for concluído. A Archer entrou no pregão com queda de 26% no ano.\n\nA conclusão é esperada até o fim do ano, sujeita à análise antitruste sob a lei Hart-Scott-Rodino. A Insitu fica em Bingen, no condado de Klickitat, no estado de Washington, e tem escritórios nos EUA, na Austrália, no Reino Unido e nos Emirados Árabes Unidos.",
+      "category": [
+        "business",
+        "world",
+        "finance"
+      ],
+      "entities": {
+        "people": [
+          "Adam Goldstein",
+          "Brian Yutko",
+          "Kelly Ortberg"
+        ],
+        "organizations": [
+          "Archer Aviation",
+          "Boeing",
+          "Wisk Aero",
+          "Insitu",
+          "SkyGrid",
+          "Anduril",
+          "Moelis & Company",
+          "J.P. Morgan"
+        ],
+        "places": [
+          "United States",
+          "Bingen, Washington",
+          "Arlington, Virginia"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.investors.archer.com/news/news-details/2026/Archer-to-Shape-Physical-AI-Future-of-Aerospace-and-Defense-with-Acquisition-of-Boeings-Wisk-Aero-Insitu-and-SkyGrid-Subsidiaries-Boeing-to-Invest-in-Archer-and-Collaborate/default.aspx",
+          "title": "Archer anuncia aquisição das subsidiárias Wisk Aero, Insitu e SkyGrid da Boeing",
+          "summary": "Archer Aviation: o comunicado oficial detalha a estrutura em ações, o investimento adicional da Boeing e o acordo de compartilhamento tecnológico.",
+          "bullets": [
+            "A transação é integralmente em ações e dá à Boeing participação de quase 20% na Archer.",
+            "A Boeing investirá até US$55 milhões em uma futura rodada de captação da Archer.",
+            "A Boeing recebe warrants para comprar até US$200 milhões em ações e o direito de indicar um conselheiro.",
+            "A Archer diz que a combinação cria uma \"plataforma de IA física de ponta a ponta\" ao lado do seu modelo ZEE."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.seattletimes.com/business/boeing-aerospace/boeing-is-selling-flying-taxi-venture-wisk-wa-based-insitu-to-archer/",
+          "title": "Boeing vende a Wisk e a Insitu, sediada em Washington, para a Archer",
+          "summary": "The Seattle Times: cobre o lado regional do negócio, com o perfil da Insitu e sua presença industrial no estado de Washington.",
+          "bullets": [
+            "A Insitu fica em Bingen, no condado de Klickitat, estado de Washington.",
+            "A empresa tem escritórios nos EUA, na Austrália, no Reino Unido e nos Emirados Árabes Unidos.",
+            "A Insitu já fabricou mais de 3.500 sistemas de aeronaves não tripuladas.",
+            "O negócio é lucrativo, com mais de US$200 milhões de receita anual e operações em 35 países."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        },
+        {
+          "url": "https://theaircurrent.com/industry-strategy/archer-acquires-wisk-skygrid-insitu-from-boeing/",
+          "title": "Archer compra a rival Wisk enquanto a Boeing amplia a venda de ativos",
+          "summary": "The Air Current: analisa a lógica industrial — a Archer absorve uma concorrente direta em eVTOL enquanto a Boeing enxuga o portfólio.",
+          "bullets": [
+            "A Wisk Aero desenvolve eVTOL autônomos, aeronaves elétricas de decolagem e pouso vertical.",
+            "A SkyGrid faz software de gestão de espaço aéreo.",
+            "A Boeing mantém acesso à tecnologia central de voo autônomo da Wisk por acordo de compartilhamento.",
+            "A conclusão é esperada até o fim do ano, sujeita à análise antitruste sob a lei Hart-Scott-Rodino."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        },
+        {
+          "url": "https://finance.yahoo.com/markets/stocks/articles/archer-aviation-soars-20-boeing-135854785.html",
+          "title": "Ação da Archer Aviation sobe 20% com acordo para comprar Wisk, Insitu e SkyGrid da Boeing",
+          "summary": "Yahoo Finance: acompanha a reação do setor, com Joby, EHang e Boeing praticamente parados diante do salto da Archer.",
+          "bullets": [
+            "As ações da Archer subiram cerca de 20%, a US$6,69, em 10 de agosto.",
+            "Joby subiu 2%, EHang caiu 1% e a Boeing ficou praticamente estável.",
+            "A Archer entrou no pregão com queda de 26% no ano."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        },
+        {
+          "url": "https://247wallst.com/cards/archer-aviation-inc-q2-2026-earnings-achr-01kzpmtp87xv6hzce8s5r5awvz",
+          "title": "Archer Aviation no 2º trimestre de 2026: acordo com a Boeing ofusca resultado abaixo do esperado",
+          "summary": "24/7 Wall St.: coloca o balanço trimestral ao lado do anúncio, mostrando a distância entre a receita da Archer e a do ativo comprado.",
+          "bullets": [
+            "A Archer registrou US$5 milhões de receita e prejuízo líquido de US$263,2 milhões no segundo trimestre.",
+            "O prejuízo aumentou ante os US$217,7 milhões do trimestre anterior.",
+            "A empresa encerrou o período com US$1,56 bilhão em liquidez.",
+            "Só a Insitu somaria mais receita anual do que toda a receita trimestral da Archer."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "IPCA sobe 0,07% em julho e inflação volta a ficar abaixo do teto",
+      "summary": "A taxa em 12 meses caiu para 4,44%, ante 4,64%, no quarto mês consecutivo de desaceleração e no menor patamar mensal desde agosto de 2025.",
+      "bullets": [
+        "O IBGE informou em 11 de agosto que o IPCA subiu 0,07% em julho, desacelerando ante os 0,16% de junho.",
+        "É a menor taxa para meses de julho em quatro anos, desde 2022, e o menor resultado mensal desde agosto de 2025, quando o índice marcou 0,11%.",
+        "A inflação em 12 meses caiu para 4,44%, ante 4,64%, voltando a ficar abaixo do teto da meta do Banco Central, de 4,5%, depois de furar o teto em maio.",
+        "No acumulado do ano, a inflação chega a 3,44%; foi o quarto mês consecutivo de desaceleração.",
+        "O grupo Habitação teve a maior alta e o principal impacto, com avanço de 0,99% e contribuição de 0,15 ponto percentual, puxado pela energia elétrica residencial, que acelerou de 1,53% para 3,09%.",
+        "O grupo Alimentação e Bebidas caiu 0,67%, com o tomate 29,09% mais barato, a batata em queda de 19,59% e a cenoura em queda de 14,41%."
+      ],
+      "body": "O número veio em linha com a mediana de 0,07% do boletim Focus do Banco Central publicado em 10 de agosto — ou seja, sem surpresa para o mercado.\n\nA volta para dentro do intervalo de tolerância não muda a projeção para o fim do ano: o mercado ainda espera IPCA de 5,02% em 2026.",
+      "category": [
+        "brazil",
+        "economy"
+      ],
+      "entities": {
+        "people": [],
+        "organizations": [
+          "IBGE",
+          "Banco Central do Brasil"
+        ],
+        "places": [
+          "Brazil"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www1.folha.uol.com.br/mercado/2026/08/inflacao-desacelera-a-007-em-julho-e-fica-abaixo-do-teto-da-meta.shtml",
+          "title": "Inflação desacelera a 0,07% em julho e fica abaixo do teto da meta",
+          "summary": "Folha de S.Paulo: reporta o dado do IBGE e o retorno da inflação em 12 meses para dentro do intervalo de tolerância.",
+          "bullets": [
+            "O IPCA subiu 0,07% em julho, ante 0,16% em junho.",
+            "A inflação em 12 meses caiu para 4,44%, ante 4,64%.",
+            "A taxa voltou a ficar abaixo do teto da meta do Banco Central, de 4,5%.",
+            "É a menor taxa para meses de julho desde 2022."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        },
+        {
+          "url": "https://cbn.globo.com/economia/noticia/2026/08/11/ipca-desacelera-para-007percent-em-julho-e-inflacao-em-12-meses-fica-abaixo-do-teto-da-meta.ghtml",
+          "title": "IPCA desacelera para 0,07% em julho e inflação em 12 meses fica abaixo do teto da meta",
+          "summary": "CBN / Globo: abre a composição do índice, com Habitação puxando para cima e Alimentação puxando para baixo.",
+          "bullets": [
+            "O grupo Habitação subiu 0,99% e contribuiu com 0,15 ponto percentual.",
+            "A energia elétrica residencial acelerou de 1,53% em junho para 3,09% em julho.",
+            "O grupo Alimentação e Bebidas caiu 0,67%.",
+            "O tomate ficou 29,09% mais barato, a batata recuou 19,59% e a cenoura caiu 14,41%."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.jornalcorreiodonorte.com.br/politica-e-economia/2026/08/2617753-inflacao-recua-para-007-em-julho-e-volta-para-meta-do-governo.html",
+          "title": "Inflação recua para 0,07% em julho e volta para a meta do governo",
+          "summary": "Agência Brasil: situa o resultado na série — quarto mês seguido de desaceleração — e na expectativa do mercado para o fim de 2026.",
+          "bullets": [
+            "Foi o quarto mês consecutivo de desaceleração.",
+            "Foi o menor resultado mensal desde agosto de 2025, quando o IPCA marcou 0,11%.",
+            "No acumulado do ano, a inflação chega a 3,44%.",
+            "O mercado ainda espera IPCA de 5,02% para o fim de 2026."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Singapura eleva projeção de crescimento de 2026 para 4,5% a 5,5%",
+      "summary": "A revisão dobra a faixa anterior de 2% a 4% e atribui o salto ao boom global de investimento em IA, que impulsionou exportações e indústria.",
+      "bullets": [
+        "O Ministério do Comércio e Indústria de Singapura disse em 11 de agosto que espera crescimento do PIB entre 4,5% e 5,5% em 2026, ante projeção anterior de 2% a 4%.",
+        "Beh Swan Gin, secretário permanente do ministério, disse que o boom global de investimento em IA foi mais forte que o esperado desde a projeção de maio, dando impulso significativo à produção e às exportações ligadas a IA.",
+        "É a segunda revisão para cima: a faixa foi fixada em 2%-4% em fevereiro, antes da eclosão da guerra no Irã, e a projeção original, feita no ano passado, era de 1%-3%.",
+        "O PIB final do segundo trimestre cresceu 5,9% na comparação anual, acima da estimativa prévia de 5,7%, com crescimento de 6,1% no primeiro semestre.",
+        "As indústrias produtoras de bens se expandiram 10,5%, ante 7,9% no primeiro trimestre, e a indústria de transformação acelerou para 12,5%, ante 7,3%.",
+        "As exportações-chave subiram 27,4% no segundo trimestre, puxadas pela demanda por semicondutores e eletrônicos para IA."
+      ],
+      "body": "A demanda ligada a IA ajudou a compensar os efeitos negativos da guerra no Irã e das tarifas comerciais americanas — os dois choques que tinham travado a projeção do governo em fevereiro.\n\nEconomistas privados acompanharam a revisão oficial: o Maybank elevou sua projeção para 2026 a 5,2%, ante 4,8%, e o UOB subiu para 5%, também ante 4,8%. O RHB manteve sua projeção em 4,5%, citando riscos remanescentes.",
+      "category": [
+        "economy",
+        "world",
+        "finance"
+      ],
+      "entities": {
+        "people": [
+          "Beh Swan Gin",
+          "Chua Hak Bin",
+          "Jester Koh"
+        ],
+        "organizations": [
+          "Ministry of Trade and Industry",
+          "Maybank",
+          "UOB",
+          "RHB"
+        ],
+        "places": [
+          "Singapore"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.straitstimes.com/business/singapore-upgrades-2026-growth-forecast-to-4-5-to-5-5-on-stronger-ai-boom",
+          "title": "Singapura eleva projeção de crescimento do PIB em 2026 para 4,5%-5,5% com boom de IA mais forte",
+          "summary": "The Straits Times: reporta o anúncio do ministério e a explicação de Beh Swan Gin para a revisão.",
+          "bullets": [
+            "A projeção passou de 2%-4% para 4,5%-5,5%.",
+            "Beh Swan Gin falou em coletiva virtual em 11 de agosto.",
+            "Ele disse que o boom global de investimento em IA foi mais forte que o esperado desde a projeção de maio.",
+            "É a segunda revisão para cima, depois da faixa fixada em fevereiro."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.theedgesingapore.com/news/singapore-economy/singapore-raises-growth-forecast-high-55-ai-boom",
+          "title": "Singapura eleva projeção de crescimento a até 5,5% com boom de IA",
+          "summary": "The Edge Singapore: reúne as revisões dos bancos privados que seguiram o governo, e o que ficou de fora.",
+          "bullets": [
+            "O Maybank elevou sua projeção para 2026 a 5,2%, ante 4,8%.",
+            "O UOB elevou sua projeção para 5%, ante 4,8%.",
+            "O RHB manteve sua projeção em 4,5%, citando riscos remanescentes."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        },
+        {
+          "url": "https://tradingeconomics.com/singapore/gdp-growth-annual",
+          "title": "Taxa de crescimento anual do PIB de Singapura",
+          "summary": "Trading Economics / Statistics Singapore: a série oficial com o número final do segundo trimestre e a composição setorial do crescimento.",
+          "bullets": [
+            "O PIB final do segundo trimestre cresceu 5,9% na comparação anual, acima da estimativa prévia de 5,7%.",
+            "As indústrias produtoras de bens se expandiram 10,5%, ante 7,9% no primeiro trimestre.",
+            "A indústria de transformação acelerou para 12,5% de crescimento, ante 7,3%.",
+            "O crescimento do primeiro semestre ficou em 6,1%."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.straitstimes.com/business/singapores-key-exports-rise-27-4-in-q2-as-ai-lifts-electronics-shipments",
+          "title": "Exportações-chave de Singapura sobem 27,4% no 2º trimestre com IA impulsionando eletrônicos",
+          "summary": "The Straits Times: detalha o desempenho das exportações e como a demanda por chips compensou os choques externos.",
+          "bullets": [
+            "As exportações-chave subiram 27,4% no segundo trimestre.",
+            "A alta foi puxada pela demanda por semicondutores e eletrônicos para IA.",
+            "A demanda ajudou a compensar os efeitos da guerra no Irã e das tarifas comerciais americanas."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Banco central da Austrália mantém juros em 4,35% e sinaliza mais altas",
+      "summary": "Decisão unânime após três altas em 2026; a inflação só deve voltar ao ponto médio de 2,5% da meta depois do fim de 2027.",
+      "bullets": [
+        "O Conselho de Política Monetária do Reserve Bank of Australia manteve a taxa básica em 4,35% em 11 de agosto, depois de três altas ao longo de 2026.",
+        "O conselho disse que a inflação segue \"alta demais\" e não deve voltar ao redor do ponto médio de 2,5% da faixa de meta antes do fim de 2027.",
+        "O conselho alertou que há riscos de alta para essa projeção e que pode elevar mais os juros se esses riscos se materializarem.",
+        "O RBA reduziu sua projeção de inflação cheia para dezembro a 3,6%, ante 4%, e a de núcleo por média aparada para 3,3%, ante 3,5%.",
+        "A revisão veio depois de o choque do petróleo causado pelo conflito no Oriente Médio ter repassado menos que o temido.",
+        "A decisão foi unânime, revertendo a divisão de 8 a 1 registrada em maio."
+      ],
+      "body": "O banco disse que a oferta global de petróleo vai levar tempo para se recuperar e que há indicações de que os preços mais altos de combustível estão sendo repassados a outros bens e serviços, somando-se diretamente à inflação, além das pressões domésticas de capacidade.\n\nO RBA também observou que o crescimento nos principais parceiros comerciais da Austrália foi mais forte que o esperado, porque o impulso do investimento ligado a IA superou os efeitos adversos do conflito no Oriente Médio.",
+      "category": [
+        "economy",
+        "world",
+        "finance"
+      ],
+      "entities": {
+        "people": [],
+        "organizations": [
+          "Reserve Bank of Australia"
+        ],
+        "places": [
+          "Australia"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.rba.gov.au/media-releases/2026/mr-26-19.html",
+          "title": "Declaração do Conselho de Política Monetária: decisão de política monetária",
+          "summary": "Reserve Bank of Australia: o comunicado oficial mantém a taxa e registra o viés de alta caso os riscos inflacionários se concretizem.",
+          "bullets": [
+            "A taxa básica foi mantida em 4,35% em 11 de agosto.",
+            "O conselho disse que a inflação segue \"alta demais\".",
+            "A inflação não deve voltar ao redor de 2,5% antes do fim de 2027.",
+            "O conselho pode elevar mais os juros se os riscos de alta se materializarem."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.proactiveinvestors.com/companies/news/1096845/rba-holds-cash-rate-at-4-35-as-inflation-eases-but-further-hike-remains-on-table-1096845.html",
+          "title": "RBA mantém taxa básica em 4,35% com inflação em queda, mas nova alta segue na mesa",
+          "summary": "Proactive Investors: destaca a unanimidade da decisão e o corte nas projeções de inflação para dezembro.",
+          "bullets": [
+            "A decisão foi unânime, revertendo a divisão de 8 a 1 registrada em maio.",
+            "A projeção de inflação cheia para dezembro caiu a 3,6%, ante 4%.",
+            "A projeção de núcleo por média aparada caiu para 3,3%, ante 3,5%.",
+            "A revisão veio após o choque do petróleo repassar menos que o temido."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.rba.gov.au/publications/smp/2026/aug/financial-conditions.html",
+          "title": "Condições financeiras — Declaração sobre Política Monetária, agosto de 2026",
+          "summary": "Reserve Bank of Australia: o capítulo de condições financeiras explica o repasse do combustível e o papel do investimento em IA nos parceiros comerciais.",
+          "bullets": [
+            "O banco disse que a oferta global de petróleo vai levar tempo para se recuperar.",
+            "Há indicações de repasse dos preços mais altos de combustível a outros bens e serviços.",
+            "O crescimento nos principais parceiros comerciais foi mais forte que o esperado.",
+            "O impulso do investimento ligado a IA superou os efeitos adversos do conflito no Oriente Médio."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Sonelokimabe da MoonLake atinge todos os desfechos em fase 3",
+      "summary": "42,1% dos pacientes com 60 mg alcançaram resposta ACR50 na semana 16; a empresa quer protocolar o pedido de registro até o fim de setembro.",
+      "bullets": [
+        "A MoonLake Immunotherapeutics informou em 10 de agosto que o ensaio de fase 3 IZAR-1 do sonelokimabe atingiu todos os desfechos clínicos na semana 16, em adultos com artrite psoriásica ativa que nunca haviam usado biológicos.",
+        "O desfecho primário foi atingido com 42,1% dos pacientes tratados com 60 mg alcançando resposta ACR50; 66,5% alcançaram ACR20 e 41,2% atingiram atividade mínima de doença (MDA).",
+        "Entre os pacientes com envolvimento de pele concomitante, 61% atingiram PASI90 na semana 16.",
+        "Pelo protocolo de abertura de dados acordado com a FDA, foram divulgadas apenas as taxas de resposta absolutas do braço de 60 mg; as comparações contra placebo seguem cegas até a conclusão do programa de fase 3.",
+        "A análise cega de segurança apontou perfil consistente com estudos anteriores, sem novos sinais de segurança.",
+        "A MoonLake encerrou o segundo trimestre com US$537,0 milhões em caixa e projeta recursos suficientes até meados de 2028."
+      ],
+      "body": "Os ensaios IZAR-1 e IZAR-2 somam cerca de 1.500 adultos. O IZAR-2 testa pacientes refratários a inibidores de TNF, como o Humira da AbbVie, e compara o sonelokimabe diretamente com o Skyrizi (risanquizumabe), também da AbbVie — um teste de superioridade contra o padrão de mercado. O recrutamento deve terminar no terceiro trimestre de 2026.\n\nA MoonLake espera protocolar o pedido de licença de produto biológico (BLA) até o fim de setembro de 2026 para sua indicação principal.",
+      "category": [
+        "science",
+        "business"
+      ],
+      "entities": {
+        "people": [
+          "Jorge Santos da Silva"
+        ],
+        "organizations": [
+          "MoonLake Immunotherapeutics",
+          "FDA",
+          "AbbVie",
+          "Hercules Capital"
+        ],
+        "places": [
+          "Zug, Switzerland",
+          "United States"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://ir.moonlaketx.com/news-releases/news-release-details/moonlake-announces-positive-topline-results-phase-3-izar-1-trial",
+          "title": "MoonLake anuncia resultados preliminares positivos do ensaio de fase 3 IZAR-1 do sonelokimabe",
+          "summary": "MoonLake Immunotherapeutics: o comunicado oficial traz as taxas de resposta do braço de 60 mg e o protocolo de divulgação acordado com a FDA.",
+          "bullets": [
+            "42,1% dos pacientes com 60 mg e indução alcançaram resposta ACR50 na semana 16.",
+            "66,5% alcançaram ACR20 e 41,2% atingiram atividade mínima de doença.",
+            "Foram divulgadas apenas as taxas de resposta absolutas do braço de 60 mg, por acordo com a FDA.",
+            "As comparações contra placebo seguem cegas até a conclusão do programa de fase 3."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.fiercebiotech.com/biotech/moonlakes-nanobody-boosts-all-clinical-endpoints-phase-3-psoriatic-arthritis",
+          "title": "Nanobody da MoonLake melhora todos os desfechos clínicos em fase 3 de artrite psoriásica",
+          "summary": "Fierce Biotech: posiciona o resultado no programa clínico e no confronto direto com os produtos da AbbVie no ensaio IZAR-2.",
+          "bullets": [
+            "Os ensaios IZAR-1 e IZAR-2 somam cerca de 1.500 adultos.",
+            "O IZAR-2 testa pacientes refratários a inibidores de TNF, como o Humira da AbbVie.",
+            "O IZAR-2 compara o sonelokimabe diretamente com o Skyrizi (risanquizumabe), também da AbbVie.",
+            "O IZAR-2 deve concluir o recrutamento no terceiro trimestre de 2026."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.dermatologytimes.com/view/sonelokimab-meets-primary-end-point-in-phase-3-psoriatic-arthritis-trial",
+          "title": "Sonelokimabe atinge desfecho primário em ensaio de fase 3 de artrite psoriásica",
+          "summary": "Dermatology Times: olha o resultado pelo ângulo dermatológico, com a resposta de pele dos pacientes com envolvimento concomitante.",
+          "bullets": [
+            "Entre os pacientes com envolvimento de pele concomitante, 61% atingiram PASI90 na semana 16.",
+            "O ensaio envolveu adultos com artrite psoriásica ativa que nunca haviam usado biológicos.",
+            "A análise cega de segurança não apontou novos sinais de segurança."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        },
+        {
+          "url": "https://sa.marketscreener.com/news/moonlake-immunotherapeutics-reports-positive-topline-results-from-the-phase-3-izar-1-trial-of-sonelo-ce7859dadb8eff21",
+          "title": "MoonLake reporta resultados preliminares positivos do ensaio de fase 3 IZAR-1 do sonelokimabe",
+          "summary": "MarketScreener / S&P Capital IQ: cobre o lado financeiro, com a posição de caixa e o cronograma de protocolo regulatório.",
+          "bullets": [
+            "A MoonLake encerrou o segundo trimestre com US$537,0 milhões em caixa, equivalentes e títulos de curto prazo.",
+            "A empresa projeta caixa suficiente até meados de 2028.",
+            "A MoonLake espera protocolar o pedido de BLA até o fim de setembro de 2026."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Corte dos EUA libera mais de 3.000 ações contra Meta, Google e TikTok",
+      "summary": "A 9ª Corte de Apelações decidiu que a Seção 230 é defesa contra responsabilização, não imunidade contra ser processado.",
+      "bullets": [
+        "A 9ª Corte de Apelações dos EUA decidiu em 10 de agosto que Meta, Google (da Alphabet), TikTok (da ByteDance) e Snap terão de enfrentar mais de 3.000 processos federais que alegam projeto viciante das plataformas para usuários jovens.",
+        "A corte, sediada em San Francisco, rejeitou o pedido das empresas de reverter decisão de instância inferior, concluindo que o recurso interlocutório veio cedo demais no litígio.",
+        "O painel entendeu que a Seção 230 da Lei de Decência nas Comunicações de 1996 oferece uma defesa contra responsabilização, e não imunidade contra ser processado.",
+        "A juíza Jacqueline Hong-Ngoc Nguyen escreveu que a Meta argumenta que essa imunidade deveria ser implícita, e que a corte discorda.",
+        "A corte também negou o pedido da Meta de adiar um julgamento movido por 29 procuradores-gerais estaduais sobre coleta ilegal de dados de crianças e engano de consumidores sobre segurança.",
+        "Os casos federais estão centralizados perante a juíza Yvonne Gonzalez Rogers, em Oakland, e cerca de 3.300 processos adicionais estão consolidados na Justiça estadual da Califórnia."
+      ],
+      "body": "Os casos federais foram movidos por estados, municípios, distritos escolares e indivíduos, e pedem indenizações, multas e restituição.\n\nA decisão chega depois de uma sequência de derrotas judiciais para a Meta. Em março, um júri de Los Angeles considerou Meta e Google negligentes por projetar plataformas que causam danos a jovens e concedeu US$6 milhões a um autor de 20 anos. Um júri do Novo México condenou a Meta a pagar US$375 milhões por ter enganado consumidores sobre a segurança de suas plataformas. Na semana passada, um juiz concluiu que a empresa criou um dano coletivo (public nuisance) e ordenou o pagamento de US$567 milhões adicionais.",
+      "category": [
+        "politics",
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "people": [
+          "Jacqueline Nguyen",
+          "Yvonne Gonzalez Rogers"
+        ],
+        "organizations": [
+          "Meta Platforms",
+          "Alphabet",
+          "Google",
+          "TikTok",
+          "ByteDance",
+          "Snap",
+          "9th US Circuit Court of Appeals"
+        ],
+        "places": [
+          "San Francisco",
+          "Oakland, California",
+          "United States"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.yahoo.com/news/us/articles/us-appeals-court-allows-thousands-161341261.html",
+          "title": "Corte dos EUA decide que Meta e outras empresas de tecnologia terão de enfrentar milhares de ações",
+          "summary": "Reuters: reporta a decisão da 9ª Corte, o raciocínio sobre a Seção 230 e a negativa do pedido de adiamento feito pela Meta.",
+          "bullets": [
+            "Meta, Google, TikTok e Snap terão de enfrentar mais de 3.000 processos federais.",
+            "O painel entendeu que a Seção 230 é defesa contra responsabilização, não imunidade contra ser processado.",
+            "A juíza Jacqueline Hong-Ngoc Nguyen escreveu que a corte discorda da tese de imunidade implícita.",
+            "A corte negou o pedido da Meta de adiar julgamento movido por 29 procuradores-gerais estaduais."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.cbsnews.com/news/social-media-addiction-lawsuits-court-rules/",
+          "title": "Ações por vício em redes sociais contra Meta e TikTok podem avançar, decide corte",
+          "summary": "CBS News: descreve quem move os processos, onde eles estão concentrados e o que pedem.",
+          "bullets": [
+            "Os casos federais foram movidos por estados, municípios, distritos escolares e indivíduos.",
+            "Os casos estão centralizados perante a juíza federal Yvonne Gonzalez Rogers, em Oakland.",
+            "As ações pedem indenizações, multas e restituição.",
+            "Cerca de 3.300 processos adicionais estão consolidados na Justiça estadual da Califórnia."
+          ],
+          "published_at": "2026-08-10",
+          "image_url": ""
+        },
+        {
+          "url": "https://thenextweb.com/news/social-media-addiction-lawsuits-ninth-circuit-section-230",
+          "title": "Corte dos EUA libera milhares de ações por danos causados por redes sociais",
+          "summary": "The Next Web: encadeia a decisão com as condenações recentes da Meta em júris estaduais e no caso de dano coletivo.",
+          "bullets": [
+            "Em março, um júri de Los Angeles concedeu US$6 milhões a um autor de 20 anos contra Meta e Google.",
+            "Um júri do Novo México condenou a Meta a pagar US$375 milhões por enganar consumidores.",
+            "Na semana passada, um juiz ordenou o pagamento de US$567 milhões adicionais por dano coletivo.",
+            "O recurso interlocutório das empresas foi considerado prematuro."
+          ],
+          "published_at": "2026-08-11",
+          "image_url": ""
+        }
+      ]
+    }
+  ]
+}
