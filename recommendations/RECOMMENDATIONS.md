@@ -1039,3 +1039,13 @@ https://www.youtube.com/watch?v=-RXD4bTuFTo
 **Everyone Is Still Undersizing the AI Market | Eric Vishria**
 Eric Vishria, sócio-gerente da Benchmark, discute com Patrick O'Shaughnessy (CEO da Positive Sum) como a inteligência artificial está reordenando o mercado de software, infraestrutura e capital de risco. Vishria argumenta que o mercado de IA é subestimado e que, assim como na era da computação em nuvem, o setor suportará múltiplos vencedores gigantescos em vez de um único monopólio
 https://www.youtube.com/watch?v=0e7aG_MIHlQ
+
+## 2026-08-13
+
+**The New Rules for Founders | Garry Tan on a16z**
+Garry Tan, CEO da Y Combinator, discute como a inteligência artificial está redefinindo a criação de empresas, a importância da ambição dos fundadores e a necessidade de abandonar o foco no que é "popular" em favor de obsessões genuínas. O diálogo com Anish Acharya, da a16z, explora a transição de modelos tradicionais de SaaS para empresas movidas por agentes autônomos e a importância da agência humana na era da IA
+https://www.youtube.com/watch?v=fsTtKywmWlU
+
+**RL Environments Explained: How AI Agents Learn Real-World Work | Brendan Foody, Mercor**
+Brendan Foody, CEO da Mercor, explica que o treinamento de agentes de IA evoluiu da simples clonagem de comportamento (crowdsourcing) para a criação de ambientes de RL complexos. Esses ambientes são essenciais para treinar modelos em tarefas do mundo real, permitindo que agentes operem ferramentas corporativas de forma autônoma. Um ambiente de RL é composto por três pilares
+https://www.youtube.com/watch?v=a00xIn5kwhM
