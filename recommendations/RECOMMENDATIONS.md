@@ -1049,3 +1049,13 @@ https://www.youtube.com/watch?v=fsTtKywmWlU
 **RL Environments Explained: How AI Agents Learn Real-World Work | Brendan Foody, Mercor**
 Brendan Foody, CEO da Mercor, explica que o treinamento de agentes de IA evoluiu da simples clonagem de comportamento (crowdsourcing) para a criação de ambientes de RL complexos. Esses ambientes são essenciais para treinar modelos em tarefas do mundo real, permitindo que agentes operem ferramentas corporativas de forma autônoma. Um ambiente de RL é composto por três pilares
 https://www.youtube.com/watch?v=a00xIn5kwhM
+
+## 2026-08-14
+
+**When to Build Your Own Agent Harness | Harrison Chase, LangChain**
+Harrison Chase, cofundador e CEO da LangChain, define um agente como uma estrutura composta por três pilares: o modelo (LLM), o contexto (memória e dados) e o harness (a orquestração). O harness é o loop central que gerencia quando e como o modelo acessa o contexto e interage com ferramentas externas. A estratégia de "possuir sua própria inteligência" envolve o controle desses três elementos para evitar dependência de fornecedores e otimizar o desempenho para casos de uso específicos
+https://www.youtube.com/watch?v=HI2q3ci3Iuc
+
+**Bernie Demands the Labs Stop, Wall Street Turns GPUs Into Bonds, Grok 4.7 Takes #1 ft. Emad Mostaque**
+O episódio do podcast Moonshots, apresentado por Peter H. Diamandis, reúne um painel de especialistas (Salim Ismail, Dave Blundin, Dr. Alexander Wissner-Gross e Emad Mostaque) para discutir os avanços exponenciais em IA, longevidade, infraestrutura de computação e o impacto dessas tecnologias na sociedade
+https://www.youtube.com/watch?v=uoGnH0REG7A
