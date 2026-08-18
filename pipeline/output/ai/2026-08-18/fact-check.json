@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-18",
+  "fidelity_issues": [
+    {
+      "severity": "high",
+      "where": "edition",
+      "claim": "Um dia após o memorando entre EUA e Irã expirar sem prorrogação, o negociador Mohammad Baqer Qalibaf disse nesta terça que o país manterá o Estreito de Ormuz fechado...",
+      "issue": "especificidade inventada",
+      "expected": "Nenhum fato do research.json (história 'Iran goes fully offensive and keeps Hormuz shut') menciona memorando, expiração ou ausência de prorrogação. A palavra 'memorandum' só aparece no slug da URL da fonte ABC News (abc.net.au/news/2026-08-18/iran-us-memorandum-hormuz-strait/107048074), cujo título é 'Iran threatens to escalate conflict if Hormuz shipping deal not reached'. O facts.md também não traz esse fato. A pesquisa fala apenas em 'interim deal signed in June' que Trump chamou de 'over'."
+    },
+    {
+      "severity": "high",
+      "where": "edition",
+      "claim": "era negociado perto de US$91,07 nesta terça, o maior patamar desde 30 de julho, acima dos US$89,40 da véspera",
+      "issue": "número alterado",
+      "expected": "O research.json diz: 'Brent crude settled up $2.35, or 2.65%, at $90.87 a barrel on Monday, Aug. 17, and traded around $91.07 on Tuesday'. O fechamento da véspera foi US$90,87 (citado na própria frase da edição), e o fechamento anterior a ele seria ~US$88,52. O valor US$89,40 não existe na pesquisa nem no facts.md."
+    },
+    {
+      "severity": "medium",
+      "where": "edition",
+      "claim": "um alto funcionário disse à Reuters que Teerã passará de uma postura defensiva para uma \"totalmente ofensiva\" se os EUA não implementarem o texto em algumas semanas",
+      "issue": "não traça ao research.json",
+      "expected": "O research.json separa os dois pontos: a mudança para postura 'fully offensive' é apresentada como decisão já tomada ('Iran will shift from a defensive to a fully offensive military posture after talks on a permanent end to the war with the US stalled'); a condicional 'if the United States failed to implement an interim peace agreement fully within weeks' se aplica a intensificar tensões e lançar um ataque. O facts.md preserva a separação; a edição funde os dois e transforma a mudança de postura, que já ocorreu, em hipótese condicional."
+    }
+  ],
+  "dropped_facts": [],
+  "summary": "Fidelidade alta no geral e nenhum fato load-bearing perdido, mas o bloco do Irã na edição traz duas especificidades que não existem na pesquisa (memorando expirado na véspera e Brent a US$89,40) e converte em condicional a mudança de postura iraniana."
+}

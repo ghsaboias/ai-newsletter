@@ -1,0 +1,6 @@
+**Abaixo, apenas para assinantes:**
+
+**Dinheiro.** Duas rodadas grandes em startups americanas, uma de geração de vídeo e outra de voz, o volume que as gigantes de semicondutores já colocaram em startups neste ano e uma varejista de moda asiática que baixa a mira do próprio IPO.
+**Silício.** Capacidade reservada num nó de ponta de fundição para uma arquitetura de GPU que só chega no fim da década, e um rumor de coprojeto entre duas empresas americanas num chip de IA customizado.
+**Infraestrutura e energia.** Uma lacuna de cobertura de seguro num campus de data center americano, uma conta de emissões dos maiores projetos planejados nos EUA e um dos maiores data centers de IA do Japão saindo do papel com capital estrangeiro em vista.
+**Mundo.** Um prazo diplomático no Oriente Médio que vence sem prorrogação, um contato inédito entre Washington e a nova liderança do Hamas, ordem para encurtar exercícios militares na Ásia e um trimestre de crescimento fraco no Japão.
