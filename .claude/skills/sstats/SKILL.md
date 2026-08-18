@@ -22,7 +22,8 @@ sstats paid [days=90]             # paid subscriber growth
 sstats network [days=90]          # subscriber attribution
 sstats geo [global|usa]           # geographic breakdown
 sstats unsubscribes [days=90]     # unsubscribe trend
-sstats notes [limit=20]           # subscriber notes
+sstats notes [limit=20]           # subscriber notes (testimonials)
+sstats published-notes [limit=20] [--table]   # Notes the pub published (JSON: date, url, reactions, restacks, replies, body)
 ```
 
 ## Common usage

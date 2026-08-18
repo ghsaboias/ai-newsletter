@@ -9,6 +9,8 @@ Git-tracked, synced-across-devices home for the newsletter's accumulated knowled
 | [newsletter-workflow.md](newsletter-workflow.md) | The **publishing machinery** — the publish gap, per-story images (selection + `substack_mirror.py` insertion), the recommendations section + archive cron, chart posts, the Substack API/format reference, the v2 restructure, coverage direction. |
 | [operational-notes.md](operational-notes.md) | **Headless/harness** quirks — Bash bg-tasks dying at turn end, `sstats` running anywhere, nested subagents. The bucket destined for the Pi's `CLAUDE.md`. |
 | [search-provider-benchmark.md](search-provider-benchmark.md) | The **research-step search layer** — o que os agentes de research realmente chamam (baseline medido), o que Exa/WebSearch/Firecrawl sabem fazer (filtro de data, parâmetros, custo), e o desenho do benchmark. Bloqueado até 2026-08-16. |
+| [eval-findings.md](eval-findings.md) | **What instrumenting the pipeline found** (2026-08-14) — wall/token profile per stage (extract is the long pole; orchestrator ≈ half the spend), the ground-truth discovery (`edition-final.md` ≠ reviewed; published Substack body is), what the review actually edits (38% of bullets, ~zero selection/tiering changes), advisory acted-on rates, and the optimization queue. |
+| [evals-pipeline.md](evals-pipeline.md) | **The evals infrastructure and how to use it** — `evals/` layout, trace extractor, ground-truth dataset builder, the sandboxed replay harness (`evals/run.sh`, unlimited reruns/day, no production writes), the scorer and its calibration numbers, metric caveats, and the ablation workflow. |
 
 ## Relationship to CLAUDE.md and memory
 

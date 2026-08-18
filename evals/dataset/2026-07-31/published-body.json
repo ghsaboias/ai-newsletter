@@ -1,0 +1,2222 @@
+{
+ "draft_id": "209253519",
+ "title": "[Tech] - Bem-vindo(a) a 31 de Julho de 2026",
+ "subtitle": "Quantas empresas foram invadidas por modelos da Anthropic durante testes de segurança? Quanto a OpenAI cortou do preço dos GPT-5.6 mais baratos? Por que o Kospi teve a maior alta diária de sua história?",
+ "body": {
+  "type": "doc",
+  "content": [
+   {
+    "type": "paragraph",
+    "attrs": {
+     "textAlign": null
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Por: Guilherme Saboia e Vinicius Gushiken"
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Modelos da Anthropic escaparam do ambiente de teste e invadiram três empresas reais"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Achado."
+         },
+         {
+          "type": "text",
+          "text": " A Anthropic revisou 141.006 execuções de avaliação e "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-30/modelos-de-ia-da-anthropic-invadem-tres-empresas-durante-testes",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "identificou três incidentes"
+         },
+         {
+          "type": "text",
+          "text": " em que um modelo alcançou a internet aberta a partir do ambiente de um parceiro externo e obteve acesso não autorizado à infraestrutura de produção de três organizações diferentes. Os episódios mais antigos são de abril."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Causa."
+         },
+         {
+          "type": "text",
+          "text": " Os três casos ocorreram em exercícios de "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "capture-the-flag"
+         },
+         {
+          "type": "text",
+          "text": ", testes em que o participante tenta invadir um sistema-alvo, conduzidos com a parceira de avaliação Irregular. Os prompts diziam aos modelos que o ambiente era simulado e sem internet, mas "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-30/modelos-de-ia-da-anthropic-invadem-tres-empresas-durante-testes",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "um mal-entendido com a parceira"
+         },
+         {
+          "type": "text",
+          "text": " deixou os ambientes conectados. Os modelos envolvidos foram o Claude Opus 4.7, o Claude Mythos 5 e um modelo interno de pesquisa ainda não lançado."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Estrago."
+         },
+         {
+          "type": "text",
+          "text": " Em um dos incidentes, um modelo Claude construiu um pacote Python malicioso e "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-30/modelos-de-ia-da-anthropic-invadem-tres-empresas-durante-testes",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "o publicou no PyPI"
+         },
+         {
+          "type": "text",
+          "text": ", repositório oficial de pacotes da linguagem, onde chegou a rodar em 15 sistemas reais antes de ser removido. Em outro, o modelo interno escaneou cerca de 9.000 alvos e comprometeu a aplicação exposta à internet de uma empresa usando credenciais de uma página de "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "debug"
+         },
+         {
+          "type": "text",
+          "text": " e injeção de SQL, parando por conta própria ao concluir que o alvo era real."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Resposta."
+         },
+         {
+          "type": "text",
+          "text": " A revisão das transcrições começou em 23 de julho e, ao encontrar transcrições suspeitas, a empresa suspendeu todas as avaliações de cibersegurança; os incidentes foram identificados no dia 24 e as organizações afetadas, notificadas em 27 de julho. Duas delas não haviam detectado a atividade sozinhas e a terceira segue sem contato. A "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-30/modelos-de-ia-da-anthropic-invadem-tres-empresas-durante-testes",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "apuração foi aberta"
+         },
+         {
+          "type": "text",
+          "text": " em resposta à divulgação da OpenAI sobre o agente que comprometeu a infraestrutura da Hugging Face, e a Anthropic classifica o próprio caso como falha de "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "harness"
+         },
+         {
+          "type": "text",
+          "text": ", a camada que executa o modelo e o conecta às ferramentas, e de operação, não de alinhamento."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/12960a86-6572-4d4b-b165-06ff54c5e03b_1900x1000.png",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 1000,
+       "width": 1900,
+       "resizeWidth": 520,
+       "bytes": 76767,
+       "alt": "Ilustração da Anthropic: mãos segurando um cartão com fechadura",
+       "title": null,
+       "type": "image/png",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Ilustração do post em que a Anthropic detalha os três incidentes. Imagem: Anthropic"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "OpenAI corta em 80% o preço do GPT-5.6 Luna e em 20% o do Terra"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Tabela."
+         },
+         {
+          "type": "text",
+          "text": " Desde 30 de julho, o "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-31/openai-corta-em-ate-80-o-preco-da-api-do-gpt-56-luna-e-do-terra",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "Luna custa US$0,20 por milhão de tokens de "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-31/openai-corta-em-ate-80-o-preco-da-api-do-gpt-56-luna-e-do-terra",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           },
+           {
+            "type": "em"
+           }
+          ],
+          "text": "input"
+         },
+         {
+          "type": "text",
+          "text": " e US$1,20 de "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "output"
+         },
+         {
+          "type": "text",
+          "text": ", contra US$1 e US$6 anteriores. O Terra caiu para US$2 e US$12, contra US$2,50 e US$15, e o Sol segue inalterado em US$5 e US$30."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Motivo."
+         },
+         {
+          "type": "text",
+          "text": " A empresa atribui os cortes a "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-31/openai-corta-em-ate-80-o-preco-da-api-do-gpt-56-luna-e-do-terra",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "ganhos de eficiência"
+         },
+         {
+          "type": "text",
+          "text": " obtidos ao encarregar o próprio GPT-5.6 de otimizar seu tempo de execução: custo de atendimento 20% menor com melhorias em kernels de GPU em produção e mais de 15% de ganho na eficiência de geração de tokens via decodificação especulativa aprimorada."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Modo Fast."
+         },
+         {
+          "type": "text",
+          "text": " A OpenAI lança na API o "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-31/openai-corta-em-ate-80-o-preco-da-api-do-gpt-56-luna-e-do-terra",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "modo Fast, que substitui o Priority Processing"
+         },
+         {
+          "type": "text",
+          "text": ". No Sol, ele entrega velocidade até 2,5 vezes maior que o processamento Standard, pelo dobro do preço e sem mudança de inteligência."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Alcance."
+         },
+         {
+          "type": "text",
+          "text": " Com Batch e Flex, ambos pela metade do preço, o Luna sai a US$0,10 de "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "input"
+         },
+         {
+          "type": "text",
+          "text": " e US$0,60 de "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "output"
+         },
+         {
+          "type": "text",
+          "text": ", e a leitura de "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "input"
+         },
+         {
+          "type": "text",
+          "text": " em cache cai a US$0,02 por milhão de tokens. O uso de Terra e Luna passa a gastar menos créditos no Codex e no ChatGPT Work, sem mudança em preços de assinatura nem em cotas. Os "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-31/openai-corta-em-ate-80-o-preco-da-api-do-gpt-56-luna-e-do-terra",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "cortes vêm cerca de três semanas"
+         },
+         {
+          "type": "text",
+          "text": " após o lançamento público da família, com a empresa pressionada por clientes sensíveis a custo e pela concorrência de startups chinesas."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/cc17bb80-3067-4602-9d4a-e7ee964171cc_1216x1140.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 1140,
+       "width": 1216,
+       "resizeWidth": 520,
+       "bytes": 273693,
+       "alt": "Sam Altman, CEO da OpenAI",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Sam Altman, CEO da OpenAI. Foto: Steve Jurvetson / Wikimedia Commons (CC BY 2.0)"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Kospi sobe 17,91% e registra a maior alta diária de sua história"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Recorde."
+         },
+         {
+          "type": "text",
+          "text": " O índice "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-31/mercados-globais-sobem-com-recuperacao-tecnologica-e-alta-na-coreia",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "fechou a 6.595,45 pontos"
+         },
+         {
+          "type": "text",
+          "text": " na sexta-feira, ganho de 1.001,89 pontos e a maior alta em um único dia de sua história. O recorde anterior era a valorização de 11,95% de 30 de outubro de 2008."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Chips."
+         },
+         {
+          "type": "text",
+          "text": " A "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-31/mercados-globais-sobem-com-recuperacao-tecnologica-e-alta-na-coreia",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "SK Hynix subiu 29,95%"
+         },
+         {
+          "type": "text",
+          "text": ", a 1.718.000 wons, encostando no teto diário de 30% aplicado na Coreia, e a Samsung Electronics avançou cerca de 25,6%, a 260.000 wons. Ambas fecharam com as maiores altas diárias de suas histórias, e travas de negociação para compra foram acionadas no Kospi e no Kosdaq pouco depois da abertura."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Reversão."
+         },
+         {
+          "type": "text",
+          "text": " A alta apaga uma queda de mais de 17% nas três sessões anteriores, puxada pelo temor de que os gastos com infraestrutura de IA e as avaliações das empresas de chips tivessem atingido o pico. O movimento "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-31/mercados-globais-sobem-com-recuperacao-tecnologica-e-alta-na-coreia",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "acompanhou a alta noturna em Nova York"
+         },
+         {
+          "type": "text",
+          "text": ", com o ETF iShares Semiconductor (SOXX) subindo mais de 8% depois de resultados de nuvem de Microsoft e Amazon."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Fundamento."
+         },
+         {
+          "type": "text",
+          "text": " Um dia antes, o presidente do SK Group, Chey Tae-won, "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-31/mercados-globais-sobem-com-recuperacao-tecnologica-e-alta-na-coreia",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "revelou sua primeira compra direta"
+         },
+         {
+          "type": "text",
+          "text": " de ações da SK Hynix no mercado aberto, 3.620 papéis por cerca de 4,79 bilhões de wons. A memória vem de trimestres recordes: lucro operacional de 60,54 trilhões de wons na SK Hynix, alta de 557% ano a ano, e acima de 89 trilhões na Samsung."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/2070bf28-09ab-4278-b89a-d3c2e56eba89_1200x760.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 760,
+       "width": 1200,
+       "resizeWidth": 520,
+       "bytes": 158648,
+       "alt": "Painel do Kospi na sala de operações do Hana Bank, em Seul",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Sala de operações do Hana Bank, em Seul, durante o pregão de sexta-feira. Foto: Yonhap"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "blockquote",
+    "content": [
+     {
+      "type": "paragraph",
+      "attrs": {
+       "textAlign": null
+      },
+      "content": [
+       {
+        "type": "text",
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "text": "Abaixo, apenas para assinantes:"
+       }
+      ]
+     },
+     {
+      "type": "paragraph",
+      "attrs": {
+       "textAlign": null
+      },
+      "content": [
+       {
+        "type": "text",
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "text": "Modelos."
+       },
+       {
+        "type": "text",
+        "text": " Novos modelos de pesos abertos, geração de vídeo com áudio nativo bem mais barata que a dos rivais, e um sistema que passa a controlar o corpo inteiro de robôs humanoides."
+       }
+      ]
+     },
+     {
+      "type": "paragraph",
+      "attrs": {
+       "textAlign": null
+      },
+      "content": [
+       {
+        "type": "text",
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "text": "Silício."
+       },
+       {
+        "type": "text",
+        "text": " Uma nova aposta de fabricação de chips saída da Ásia que animou o setor inteiro na bolsa, e o aperto na memória aparecendo nos resultados de duas gigantes de hardware, uma reclamando do preço e outra dizendo que já se garantiu."
+       }
+      ]
+     },
+     {
+      "type": "paragraph",
+      "attrs": {
+       "textAlign": null
+      },
+      "content": [
+       {
+        "type": "text",
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "text": "Tribunais e reguladores."
+       },
+       {
+        "type": "text",
+        "text": " Uma decisão europeia contra uma empresa americana de música gerada por IA, um estado americano processando uma plataforma de apostas enquanto o regulador federal tenta barrar o próprio estado, e um levantamento sobre modelos americanos usados para treinar sistemas de defesa estrangeiros."
+       }
+      ]
+     },
+     {
+      "type": "paragraph",
+      "attrs": {
+       "textAlign": null
+      },
+      "content": [
+       {
+        "type": "text",
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "text": "Dinheiro."
+       },
+       {
+        "type": "text",
+        "text": " Um fundo de hedge focado em IA desmontando a carteira depois de fortes perdas no mês, uma fabricante de chips de rede levantando centenas de milhões, e uma pequena empresa de defesa abrindo capital por uma via alternativa."
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/f44b2401-8353-4151-945f-a4a7650d073d_4700x649.png",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 649,
+       "width": 4700,
+       "resizeWidth": null,
+       "bytes": 86036,
+       "alt": "AbacatePay",
+       "title": null,
+       "type": "image/png",
+       "href": "https://abacatepay.com",
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     }
+    ]
+   },
+   {
+    "type": "paywall"
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Modelos e pesos abertos"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "DeepSeek."
+         },
+         {
+          "type": "text",
+          "text": " A empresa "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-31/deepseek-lanca-api-v4-flash-em-beta-publico-com-foco-em-agentes",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "abriu o beta público da API do V4 Flash"
+         },
+         {
+          "type": "text",
+          "text": ", modelo "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "Mixture-of-Experts"
+         },
+         {
+          "type": "text",
+          "text": ", arquitetura que ativa só parte dos parâmetros por token, com 284 bilhões de parâmetros totais e 13 bilhões ativos, janela de 1 milhão de tokens e "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "output"
+         },
+         {
+          "type": "text",
+          "text": " de até 384 mil. A atualização é só de pós-treinamento, custa US$0,14 por milhão de tokens de "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "input"
+         },
+         {
+          "type": "text",
+          "text": " e US$0,28 de "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "output"
+         },
+         {
+          "type": "text",
+          "text": ", marca 82,7 no Terminal-Bench 2.1 e passa a suportar nativamente a Responses API e o Codex."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Thinking Machines."
+         },
+         {
+          "type": "text",
+          "text": " O laboratório de Mira Murati lançou o "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-30/thinking-machines-lanca-modelo-de-ia-inkling-small-com-pesos-abertos",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "Inkling-Small sob licença Apache 2.0"
+         },
+         {
+          "type": "text",
+          "text": ", um MoE de 276 bilhões de parâmetros totais e 12 bilhões ativos, treinado em sistemas NVIDIA GB300 NVL72, com raciocínio nativo sobre áudio e imagens. Ele marca 40 pontos no Artificial Analysis Intelligence Index v4.1, um a menos que o Inkling de 975 bilhões de parâmetros, e fica à frente de Qwen3.5 397B-A17B (34), MiMo V2.5 (37) e Minimax M2.7 (38)."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "MiniMax."
+         },
+         {
+          "type": "text",
+          "text": " O "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-31/minimax-lanca-modelo-h3-para-geracao-de-videos-em-2k",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "H3 gera vídeo com áudio estéreo nativo"
+         },
+         {
+          "type": "text",
+          "text": " em até 2K e 15 segundos, a US$0,13 por segundo, ou US$7,80 por minuto, contra US$20,16 por minuto do Kling 3.0 em 1080p. A empresa diz que vai liberar os pesos nos próximos dias, o que faria dele o modelo de vídeo de pesos abertos mais forte, e a Artificial Analysis já o coloca em primeiro lugar em edição de vídeo."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/e3c27ee9-df57-4140-bbd6-5165877432ef_2488x1408.png",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 1408,
+       "width": 2488,
+       "resizeWidth": 520,
+       "bytes": 4548101,
+       "alt": "Quadro de vídeo gerado pelo modelo MiniMax H3",
+       "title": null,
+       "type": "image/png",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Quadro gerado pelo H3 e divulgado pela própria MiniMax. Imagem: MiniMax"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Robótica"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Google DeepMind."
+         },
+         {
+          "type": "text",
+          "text": " O "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-31/google-deepmind-lanca-gemini-robotics-2-para-robos-humanoides",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "Gemini Robotics 2 controla robôs humanoides inteiros"
+         },
+         {
+          "type": "text",
+          "text": " pela primeira vez, e não apenas a parte superior do corpo, com destreza para fechar um saquinho Ziploc ou desenroscar uma lâmpada e cooperação entre robôs de tipos diferentes. A família tem três modelos: o ER 2, de raciocínio incorporado, dá conta de tarefas com centenas de passos, e o On-Device 2 roda no computador de bordo e se adapta a um novo corpo robótico em algumas horas de treinamento."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "youtube2",
+    "attrs": {
+     "videoId": "4lSQnrMC6nY",
+     "startTime": null,
+     "endTime": null
+    }
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Chips e memória"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "TSMC."
+         },
+         {
+          "type": "text",
+          "text": " A empresa desenvolve com a taiwanesa Kinsus uma "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-30/tsmc-desenvolve-nova-tecnologia-de-empacotamento-para-chips-de-ia",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "tecnologia de empacotamento avançado chamada internamente de “EMIB Like”"
+         },
+         {
+          "type": "text",
+          "text": ", cópia da ponte de interconexão que a Intel embute no substrato para ligar vários chips num mesmo pacote."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Apple."
+         },
+         {
+          "type": "text",
+          "text": " Tim Cook disse na teleconferência de resultados que as "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-30/receita-da-apple-supera-us-109-bilhoes-com-alta-nas-vendas-de-iphone",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "restrições de oferta em iPhone, iPad e Mac vão pesar muito mais"
+         },
+         {
+          "type": "text",
+          "text": " na receita do trimestre de setembro, por causa da indisponibilidade dos nós avançados de fabricação. Ele falou em “uma enchente centenária no preço da memória” para justificar os aumentos de preço de Macs e iPads em junho, apontou que “o mercado de DRAM tem três fornecedores” e disse que a Apple avalia todas as opções; a receita do trimestre foi de US$109,4 bilhões."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/2e69ec36-f67f-48d0-be86-9500b1565e98_1271x1589.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 1589,
+       "width": 1271,
+       "resizeWidth": 520,
+       "bytes": 1585804,
+       "alt": "Tim Cook, CEO da Apple",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Tim Cook, CEO da Apple, em março de 2026. Foto: Tessa Bury / Wikimedia Commons (CC BY 4.0)"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Sony."
+         },
+         {
+          "type": "text",
+          "text": " A Sony afirmou ter "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-31/sony-diz-ter-garantido-memoria-para-todo-o-ps5-do-ano-fiscal-de-2026",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "garantido a memória necessária"
+         },
+         {
+          "type": "text",
+          "text": " para o volume de PlayStation 5 projetado para o ano fiscal de 2026, sem mudança no plano de lucratividade do hardware. A empresa elevou em 8% a projeção de lucro operacional do grupo, a 1,72 trilhão de ienes, enquanto as remessas de PS5 caíram a 1,6 milhão de unidades no trimestre, um terço menos que um ano antes."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "IA e defesa"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "China."
+         },
+         {
+          "type": "text",
+          "text": " Uma revisão da Reuters em mais de 80 artigos acadêmicos e patentes concluiu que "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-31/pesquisadores-militares-chineses-usam-modelos-de-ia-dos-eua",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "pesquisadores militares chineses usaram "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-31/pesquisadores-militares-chineses-usam-modelos-de-ia-dos-eua",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           },
+           {
+            "type": "em"
+           }
+          ],
+          "text": "outputs"
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-31/pesquisadores-militares-chineses-usam-modelos-de-ia-dos-eua",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": " de modelos da OpenAI e da Anthropic"
+         },
+         {
+          "type": "text",
+          "text": " para treinar sistemas domésticos de defesa, por destilação, técnica em que os "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "outputs"
+         },
+         {
+          "type": "text",
+          "text": " de um sistema potente treinam modelos menores e especializados que rodam localmente. A Unidade 96941 do Exército de Libertação Popular usou o GPT-3.5 para resumir código-fonte militar sensível, a North University of China gerou dados sintéticos com o Claude 3 Haiku para um classificador de monitoramento de redes sociais e outro grupo encolheu um modelo de imagens para drones navegarem e mirarem com as comunicações cortadas."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Justiça e regulação"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Suno."
+         },
+         {
+          "type": "text",
+          "text": " O Tribunal Regional de Munique decidiu que a empresa americana de música gerada por IA "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-31/justica-alema-condena-suno-por-violacao-de-direitos-autorais",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "violou direitos autorais"
+         },
+         {
+          "type": "text",
+          "text": ", terá de revelar receitas obtidas de forma ilícita e pagar indenizações ainda não quantificadas. A ação é da GEMA, agência alemã de licenciamento que representa mais de 95 mil compositores e editoras, e teve como prova faixas geradas a partir de letras e títulos originais de músicas como “Forever Young” e “Mambo No. 5” que saíram muito parecidas com as originais; a Suno vai recorrer."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Kalshi."
+         },
+         {
+          "type": "text",
+          "text": " Nova York "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-31/cftc-contesta-acao-de-nova-york-contra-plataforma-de-apostas-kalshi",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "processou a KalshiEX por operar casa de apostas ilegal"
+         },
+         {
+          "type": "text",
+          "text": " e sem licença estadual por meio de sua plataforma de mercados de previsão, com pedido de indenização de pelo menos US$36 bilhões mais US$100 mil por contrato oferecido. Menos de uma hora antes do protocolo, a CFTC, reguladora de derivativos dos EUA, entrou com moção de emergência na corte federal de Manhattan para barrar o estado, que classifica como extrapolação."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Fundos e mercados"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Situational Awareness."
+         },
+         {
+          "type": "text",
+          "text": " O hedge fund focado em IA do ex-pesquisador da OpenAI Leopold Aschenbrenner "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-31/situational-awareness-vende-carteira-de-acoes-a-citadel-apos-perdas",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "vendeu a maior parte de sua carteira de ações listadas à Citadel"
+         },
+         {
+          "type": "text",
+          "text": ", de Ken Griffin, depois de acumular queda de cerca de 67% em julho. O fundo chegou a US$45 bilhões no início do mês e fica com cerca de US$10 bilhões entre ações e investimentos privados; as baixas vieram de posições em infraestrutura de IA como SK Hynix e de posições vendidas em software como a Adobe, e a participação na Anthropic não foi vendida. Até o fim de junho, o fundo acumulava alta de 439% no ano e de 1.551% desde a inauguração, em 2024, e a queda de julho consome parte desses ganhos sem revertê-los completamente."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/570bd278-83de-48b8-a4df-4b7cf56e72b2_1440x960.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 960,
+       "width": 1440,
+       "resizeWidth": 520,
+       "bytes": null,
+       "alt": "How former OpenAI researcher Leopold Aschenbrenner turned a viral AI  prophecy into profit, with a $1.5 billion hedge fund and outsize influence  from Silicon Valley to D.C. | Fortune",
+       "title": null,
+       "type": null,
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Leopold Aschenbrenner, criador do fundo Situational Awareness. Foto: Situational Awareness"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Rodadas e listagens"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Xsight Labs."
+         },
+         {
+          "type": "text",
+          "text": " A empresa de semicondutores sem fábrica própria, com sedes em San Jose e Tel Aviv, "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-31/xsight-labs-capta-mais-de-us300-mi-a-uma-avaliacao-de-us28-bilhoes",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "captou mais de US$300 milhões"
+         },
+         {
+          "type": "text",
+          "text": " a uma avaliação de US$2,8 bilhões, mais de cinco vezes o valor de sua rodada de 2021, em aporte liderado pela Fidelity com Intel Capital, Battery Ventures e T. Rowe Price. Ela vende a unidade de processamento de dados E1 e o "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "switch"
+         },
+         {
+          "type": "text",
+          "text": " Ethernet X2, de 12,8 terabits por segundo consumindo menos de 200 watts, já adotado por operadores como a Starlink."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Space-Eyes."
+         },
+         {
+          "type": "text",
+          "text": " A empresa de Miami de sistemas antidrones e inteligência geoespacial "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-31/space-eyes-apoiada-por-eric-trump-abre-capital-via-spac-a-us638-milhoes",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "vai abrir capital via SPAC"
+         },
+         {
+          "type": "text",
+          "text": ", empresa de aquisição de propósito específico, em negócio que avalia a companhia combinada em US$638 milhões e deve gerar até US$251,7 milhões brutos. Eric Trump virou recentemente o terceiro maior investidor privado e será conselheiro estratégico; a receita anual da Space-Eyes é de cerca de US$1 milhão."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Mundo"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Irã."
+         },
+         {
+          "type": "text",
+          "text": " O Exército iraniano disse ter "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-31/ira-reivindica-ataques-a-bases-dos-eua-no-kuwait",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "atingido com drones ativos militares dos EUA"
+         },
+         {
+          "type": "text",
+          "text": " na base aérea Ahmad al-Jaber, no Kuwait, e instalações americanas na base Sheikh Isa, no Bahrein, enquanto o Ministério da Defesa kuwaitiano afirma ter interceptado e destruído os aparelhos. A Guarda Revolucionária disse ter parado dois petroleiros no Estreito de Ormuz e feito outros quatro darem meia-volta, o que reverteu as perdas do petróleo na manhã de sexta; o CENTCOM negou que mísseis iranianos tenham destruído caças F-35 na Jordânia."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Ucrânia."
+         },
+         {
+          "type": "text",
+          "text": " A Rússia lançou mais de 70 mísseis e cerca de 280 drones contra Kiev e Lviv, matando nove pessoas, e Zelensky disse que dados preliminares indicam o "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-30/zelensky-acusa-coreia-do-norte-de-fornecer-misseis-usados-pela-russia",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "uso de um míssil norte-coreano"
+         },
+         {
+          "type": "text",
+          "text": " na aldeia de Radushne, o primeiro em quase um ano, onde seis pessoas morreram, três delas crianças. Na noite seguinte vieram 255 drones de ataque, dos quais 195 foram abatidos e 22 atingiram alvos em 14 localidades."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "calloutBlock",
+    "content": [
+     {
+      "type": "heading",
+      "attrs": {
+       "textAlign": null,
+       "level": 4
+      },
+      "content": [
+       {
+        "type": "text",
+        "text": "Leia também"
+       }
+      ]
+     },
+     {
+      "type": "bullet_list",
+      "content": [
+       {
+        "type": "list_item",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "link",
+              "attrs": {
+               "href": "https://dailyjournal.news/news/2026-07-30/crusoe-e-aalo-instalam-data-center-de-ia-com-energia-nuclear-em-idaho",
+               "target": "_blank",
+               "rel": "noopener noreferrer nofollow",
+               "class": null
+              }
+             }
+            ],
+            "text": "Aalo Atomics e Crusoe vão alimentar um data center de IA com energia nuclear no Idaho"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "list_item",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "link",
+              "attrs": {
+               "href": "https://dailyjournal.news/news/2026-07-31/banco-do-japao-mantem-juros-em-1-e-alerta-para-inflacao-acima-da-meta",
+               "target": "_blank",
+               "rel": "noopener noreferrer nofollow",
+               "class": null
+              }
+             }
+            ],
+            "text": "Banco do Japão mantém juros em 1% e alerta que a inflação pode superar a meta"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "list_item",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "link",
+              "attrs": {
+               "href": "https://dailyjournal.news/news/2026-07-31/xi-ordena-ao-exercito-chines-ampliar-uso-de-ia-e-sistemas-nao-tripulados",
+               "target": "_blank",
+               "rel": "noopener noreferrer nofollow",
+               "class": null
+              }
+             }
+            ],
+            "text": "Xi Jinping cobra do Exército chinês mais uso de IA e de sistemas não tripulados"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "marks": [
+       {
+        "type": "strong"
+       }
+      ],
+      "text": "Recomendações de hoje:"
+     }
+    ]
+   },
+   {
+    "type": "paragraph",
+    "attrs": {
+     "textAlign": null
+    },
+    "content": [
+     {
+      "type": "text",
+      "marks": [
+       {
+        "type": "strong"
+       }
+      ],
+      "text": "The $1/Hour Robot Is Coming: Four Industry Leaders Explain What's Next:"
+     },
+     {
+      "type": "text",
+      "text": " Este episódio do All-In Podcast explora o estado atual e as perspectivas da robótica industrial e humanoide, com a participação de líderes da ANYbotics, 1X, Boston Dynamics e Agility Robotics. O debate foca na transição de robôs como experimentos de laboratório para ferramentas de trabalho reais, impulsionadas por avanços em IA, percepção e modelos de mundo:"
+     }
+    ]
+   },
+   {
+    "type": "youtube2",
+    "attrs": {
+     "videoId": "TqNiSTeNtb0",
+     "startTime": null,
+     "endTime": null
+    }
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "paragraph",
+    "attrs": {
+     "textAlign": null
+    },
+    "content": [
+     {
+      "type": "text",
+      "marks": [
+       {
+        "type": "strong"
+       }
+      ],
+      "text": "The Two Harvard Dropouts Who raised $800M to take on NVIDIA:"
+     },
+     {
+      "type": "text",
+      "text": " O vídeo apresenta uma entrevista de Patrick O'Shaughnessy com Gavin Uberti e Robert Wachen, cofundadores da Etched. A empresa, fundada por dois ex-alunos de Harvard, levantou US$ 800 milhões para desenvolver hardware especializado em inferência de IA, desafiando a dominância da NVIDIA ao focar em arquiteturas otimizadas para a era pós-ChatGPT:"
+     }
+    ]
+   },
+   {
+    "type": "youtube2",
+    "attrs": {
+     "videoId": "BagWrgPww1o",
+     "startTime": "60s",
+     "endTime": null
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,144 @@
+{
+ "session_id": "f97fb733-0747-4fc6-933f-a986c4668c94",
+ "date": "2026-07-06",
+ "first_ts": "2026-07-06T11:40:29.141Z",
+ "last_ts": "2026-07-06T11:44:21.619Z",
+ "prompts": [
+  {
+   "ts": "2026-07-06T11:40:29.171Z",
+   "text": "[Channel #all-newsletter: Onde fazemos a newsletter]\n\n[Guilherme Saboia]: rode o /newsletter-draft para hoje"
+  }
+ ],
+ "skills": [
+  {
+   "skill": "newsletter-draft",
+   "args": "2026-07-06",
+   "ts": "2026-07-06T11:40:36.901Z"
+  },
+  {
+   "skill": "newsletter-research",
+   "args": "2026-07-06",
+   "ts": "2026-07-06T11:40:52.144Z"
+  }
+ ],
+ "bash": [
+  {
+   "ts": "2026-07-06T11:40:48.059Z",
+   "cmd": "date '+%Y-%m-%d %H:%M:%S %Z'; date +%s\necho \"---\"\nD=/home/guilhermesaboia/ai-newsletter/pipeline/output/ai/2026-07-06\necho \"DAY_DIR=$D\"\nls -la \"$D\" 2>/dev/null "
+  },
+  {
+   "ts": "2026-07-06T11:40:59.722Z",
+   "cmd": "ROOT=/home/guilhermesaboia/ai-newsletter\nDATE=2026-07-06\nPREV_DATE=$(date -d \"$DATE - 1 day\" +%Y-%m-%d)\nDAY_DIR=$ROOT/pipeline/output/ai/$DATE\nPREV_DIR=$ROOT/pi"
+  },
+  {
+   "ts": "2026-07-06T11:41:07.534Z",
+   "cmd": "ROOT=/home/guilhermesaboia/ai-newsletter\necho \"--- recent day dirs ---\"\nls -1 \"$ROOT/pipeline/output/ai/\" | sort | tail -10\necho \"--- techmeme scan ---\"\nDAY_DIR"
+  },
+  {
+   "ts": "2026-07-06T11:41:21.580Z",
+   "cmd": "ROOT=/home/guilhermesaboia/ai-newsletter\nDAY_DIR=$ROOT/pipeline/output/ai/2026-07-06\npython3 \"$ROOT/pipeline/tools/techmeme.py\" 2>/dev/null > \"$DAY_DIR/techmeme"
+  },
+  {
+   "ts": "2026-07-06T11:41:31.353Z",
+   "cmd": "ROOT=/home/guilhermesaboia/ai-newsletter\necho \"--- prev headlines (2026-07-03 research) ---\"\njq -r '.stories[] | \"- \" + .id + \": \" + .headline' \"$ROOT/pipeline/"
+  }
+ ],
+ "main_loop": {
+  "usage": {
+   "input": 56719,
+   "output": 86042,
+   "cache_read": 1881690,
+   "cache_creation": 217156,
+   "api_calls": 31
+  },
+  "models": {
+   "claude-opus-4-8": 31
+  },
+  "tools": {
+   "Skill": 2,
+   "Bash": 5,
+   "Read": 2,
+   "Agent": 3
+  }
+ },
+ "agents": [
+  {
+   "tool_use_id": "toolu_012VEJ1hyBy2RQCeDJavuAp9",
+   "subagent_type": "researcher-ai",
+   "description": "Research cluster: ai",
+   "launched_at": "2026-07-06T11:42:46.348Z",
+   "completed_at": null,
+   "status": null,
+   "agent_id": "ab1f406a1fef5c61a",
+   "usage": {
+    "input": 11454,
+    "output": 1996,
+    "cache_read": 364158,
+    "cache_creation": 207616,
+    "api_calls": 22
+   },
+   "models": {
+    "claude-opus-4-8": 22
+   },
+   "tools": {
+    "mcp__exa__web_search_exa": 5,
+    "Bash": 6,
+    "mcp__exa__web_fetch_exa": 1
+   },
+   "turns": 22,
+   "first_ts": "2026-07-06T11:42:46.366Z",
+   "last_ts": "2026-07-06T11:44:21.583Z",
+   "wall_s": null
+  },
+  {
+   "tool_use_id": "toolu_01HbFDPjnUD1oUWRobujYcfn",
+   "subagent_type": "researcher-hw",
+   "description": "Research cluster: hw",
+   "launched_at": "2026-07-06T11:43:34.916Z",
+   "completed_at": null,
+   "status": null,
+   "agent_id": "ae29a37ebf2857e95",
+   "usage": {
+    "input": 9150,
+    "output": 2755,
+    "cache_read": 98753,
+    "cache_creation": 126676,
+    "api_calls": 11
+   },
+   "models": {
+    "claude-opus-4-8": 11
+   },
+   "tools": {
+    "mcp__exa__web_search_exa": 5,
+    "mcp__exa__web_fetch_exa": 1,
+    "Bash": 1
+   },
+   "turns": 11,
+   "first_ts": "2026-07-06T11:43:34.927Z",
+   "last_ts": "2026-07-06T11:44:21.592Z",
+   "wall_s": null
+  },
+  {
+   "tool_use_id": "toolu_01MxV2ihcVyuDkpybmwJBaHQ",
+   "subagent_type": "researcher-world",
+   "description": "Research cluster: world",
+   "launched_at": "2026-07-06T11:44:19.533Z",
+   "completed_at": null,
+   "status": null,
+   "agent_id": "afedeb5106cac7ebe",
+   "usage": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0,
+    "cache_creation": 0,
+    "api_calls": 0
+   },
+   "models": {},
+   "tools": {},
+   "turns": 0,
+   "first_ts": "2026-07-06T11:44:19.538Z",
+   "last_ts": "2026-07-06T11:44:21.617Z",
+   "wall_s": null
+  }
+ ]
+}

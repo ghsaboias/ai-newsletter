@@ -1,0 +1,406 @@
+{
+ "session_id": "e9495d5c-9601-4c25-b94d-8b395dff0f00",
+ "date": "2026-07-22",
+ "first_ts": "2026-07-22T14:28:11.413Z",
+ "last_ts": "2026-07-22T16:11:59.362Z",
+ "prompts": [
+  {
+   "ts": "2026-07-22T14:28:11.441Z",
+   "text": "[Channel #all-newsletter: Onde fazemos a newsletter]\n\n[Guilherme Saboia]: hoje é quarta-feira. rode o /newsletter-draft para hoje. hoje é o dia da newsletter grátis, sem paywall/paywall section"
+  },
+  {
+   "ts": "2026-07-22T16:06:36.612Z",
+   "text": "[Guilherme Saboia]: o que falamos sobre a fuga ontem?"
+  },
+  {
+   "ts": "2026-07-22T16:08:31.905Z",
+   "text": "[Guilherme Saboia]: atualiza essa e corrige a do Arrakis."
+  }
+ ],
+ "skills": [
+  {
+   "skill": "newsletter-draft",
+   "args": "2026-07-22",
+   "ts": "2026-07-22T14:28:16.345Z"
+  },
+  {
+   "skill": "newsletter-research",
+   "args": "2026-07-22",
+   "ts": "2026-07-22T14:28:31.116Z"
+  }
+ ],
+ "bash": [
+  {
+   "ts": "2026-07-22T14:28:24.703Z",
+   "cmd": "date '+%Y-%m-%d %H:%M:%S %Z'; date +%s"
+  },
+  {
+   "ts": "2026-07-22T14:28:26.285Z",
+   "cmd": "D=/home/guilhermesaboia/ai-newsletter/pipeline/output/ai/2026-07-22\nls -la \"$D\" 2>/dev/null && echo \"---research---\" && jq '.story_count // \"n/a\"' \"$D/research."
+  },
+  {
+   "ts": "2026-07-22T14:28:39.221Z",
+   "cmd": "ROOT=/home/guilhermesaboia/ai-newsletter\nDATE=2026-07-22\nPREV_DATE=2026-07-21\nDAY_DIR=$ROOT/pipeline/output/ai/$DATE\nPREV_DIR=$ROOT/pipeline/output/ai/$PREV_DAT"
+  },
+  {
+   "ts": "2026-07-22T14:28:40.916Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter\nDATE=2026-07-22\nDAY_DIR=pipeline/output/ai/$DATE\npython3 pipeline/tools/techmeme.py 2>/dev/null | tee \"$DAY_DIR/techmeme."
+  },
+  {
+   "ts": "2026-07-22T14:38:27.694Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter\nDATE=2026-07-22\nD=pipeline/output/ai/$DATE\n# verify each partial is valid JSON\nfor c in ai hw world; do\n  if jq empty \"$D"
+  },
+  {
+   "ts": "2026-07-22T14:38:32.560Z",
+   "cmd": "D=/home/guilhermesaboia/ai-newsletter/pipeline/output/ai/2026-07-22\nif [ -s \"$D/research.json\" ] && jq -e '.story_count > 0' \"$D/research.json\" >/dev/null 2>&1;"
+  },
+  {
+   "ts": "2026-07-22T14:43:08.189Z",
+   "cmd": "D=/home/guilhermesaboia/ai-newsletter/pipeline/output/ai/2026-07-22\nSEC=$(grep -c '^## ' \"$D/facts.md\" 2>/dev/null || echo 0)\nFON=$(grep -c '^\\*\\*Fontes:\\*\\*' \""
+  },
+  {
+   "ts": "2026-07-22T14:43:10.902Z",
+   "cmd": "D=/home/guilhermesaboia/ai-newsletter/pipeline/output/ai/2026-07-22\npython3 /home/guilhermesaboia/ai-newsletter/pipeline/tools/link-tokens.py tokenize \"$D/facts"
+  },
+  {
+   "ts": "2026-07-22T14:43:18.414Z",
+   "cmd": "ROOT=/home/guilhermesaboia/ai-newsletter/pipeline/output/ai\nRECENT_GRANDES=\"\"; CHECK=2026-07-22\nfor i in 1 2 3 4 5; do\n  CHECK=$(date -d \"$CHECK - 1 day\" \"+%Y-%"
+  },
+  {
+   "ts": "2026-07-22T14:52:37.866Z",
+   "cmd": "D=/home/guilhermesaboia/ai-newsletter/pipeline/output/ai/2026-07-22\npython3 /home/guilhermesaboia/ai-newsletter/pipeline/tools/link-tokens.py expand \"$D/edition"
+  },
+  {
+   "ts": "2026-07-22T14:52:42.555Z",
+   "cmd": "D=/home/guilhermesaboia/ai-newsletter/pipeline/output/ai/2026-07-22\nG=$(grep -c '^### ' \"$D/edition.md\" 2>/dev/null || echo 0)\nC=$(grep -c '^#### ' \"$D/edition."
+  },
+  {
+   "ts": "2026-07-22T14:52:53.629Z",
+   "cmd": "ROOT=/home/guilhermesaboia/ai-newsletter/pipeline/output/ai\nPREV=(); CHECK=2026-07-22\nfor i in 1 2 3; do\n  CHECK=$(date -d \"$CHECK - 1 day\" \"+%Y-%m-%d\")\n  for f"
+  },
+  {
+   "ts": "2026-07-22T14:53:10.090Z",
+   "cmd": "D=/home/guilhermesaboia/ai-newsletter/pipeline/output/ai/2026-07-22\nif [ -s \"$D/sources.json\" ] && jq -e '.source_count>0 and (.url_count==([.news_entities[].so"
+  },
+  {
+   "ts": "2026-07-22T14:53:15.371Z",
+   "cmd": "D=/home/guilhermesaboia/ai-newsletter/pipeline/output/ai/2026-07-22\nif [ -f \"$D/links.json\" ] || [ -f \"$D/cluster-decisions.json\" ]; then\n  echo \"SKIP cluster-p"
+  },
+  {
+   "ts": "2026-07-22T14:53:55.622Z",
+   "cmd": "D=/home/guilhermesaboia/ai-newsletter/pipeline/output/ai/2026-07-22\njq -r '.entities[] | \"=== [\\(.index)] \\(.headline)\\n    suggested: \\(.suggested_news_id // \""
+  },
+  {
+   "ts": "2026-07-22T14:56:09.348Z",
+   "cmd": "D=/home/guilhermesaboia/ai-newsletter/pipeline/output/ai/2026-07-22\n[ -f \"$D/links.json\" ] || /home/guilhermesaboia/ai-newsletter/pipeline/ingest.sh 2026-07-22 "
+  },
+  {
+   "ts": "2026-07-22T14:59:40.704Z",
+   "cmd": "D=/home/guilhermesaboia/ai-newsletter/pipeline/output/ai/2026-07-22\nif [ -s \"$D/links.json\" ] && [ \"$(jq 'length' \"$D/links.json\")\" -gt 0 ]; then\n  echo \"OK ing"
+  },
+  {
+   "ts": "2026-07-22T14:59:49.719Z",
+   "cmd": "D=/home/guilhermesaboia/ai-newsletter/pipeline/output/ai/2026-07-22\n/home/guilhermesaboia/ai-newsletter/pipeline/rewrite-links.sh 2026-07-22 --in \"$D/edition.md"
+  },
+  {
+   "ts": "2026-07-22T15:00:05.868Z",
+   "cmd": "D=/home/guilhermesaboia/ai-newsletter/pipeline/output/ai/2026-07-22\nif [ -s \"$D/.substack-draft-id\" ]; then\n  echo \"SKIP push: draft $(cat \"$D/.substack-draft-i"
+  },
+  {
+   "ts": "2026-07-22T15:00:23.619Z",
+   "cmd": "D=/home/guilhermesaboia/ai-newsletter/pipeline/output/ai/2026-07-22\nSTART=1784730504\necho \"=== Draft Complete: 2026-07-22 (Wednesday — FREE edition, no paywall)"
+  },
+  {
+   "ts": "2026-07-22T15:00:34.041Z",
+   "cmd": "D=/home/guilhermesaboia/ai-newsletter/pipeline/output/ai/2026-07-22\necho \"=== FACT-CHECK fidelity ===\"\njq -r '.fidelity_issues[]? | \"• [\\(.severity // \"?\")] \\(."
+  },
+  {
+   "ts": "2026-07-22T15:00:41.655Z",
+   "cmd": "D=/home/guilhermesaboia/ai-newsletter/pipeline/output/ai/2026-07-22\necho \"=== FACT-CHECK ===\"; jq -c '.fidelity_issues' \"$D/fact-check.json\"\necho \"\"\necho \"=== R"
+  },
+  {
+   "ts": "2026-07-22T15:00:45.412Z",
+   "cmd": "D=/home/guilhermesaboia/ai-newsletter/pipeline/output/ai/2026-07-22\njq -c '.issues[]' \"$D/repetition.json\" 2>/dev/null | head -8"
+  },
+  {
+   "ts": "2026-07-22T16:06:43.547Z",
+   "cmd": "D=/home/guilhermesaboia/ai-newsletter/pipeline/output/ai/2026-07-21\n# Find the sandbox/escape story section in yesterday's edition\nawk '/OpenAI pausa modelo/,/^"
+  },
+  {
+   "ts": "2026-07-22T16:06:47.783Z",
+   "cmd": "D=/home/guilhermesaboia/ai-newsletter/pipeline/output/ai/2026-07-21\n# print from the header to the next ### or #### header\nsed -n '/^### OpenAI pausa modelo/,/^"
+  },
+  {
+   "ts": "2026-07-22T16:08:51.524Z",
+   "cmd": "D=/home/guilhermesaboia/ai-newsletter/pipeline/output/ai/2026-07-22\necho \"=== LEAD: OpenAI/Hugging Face (edition-final.md) ===\"\nsed -n '/^### Modelos da OpenAI/"
+  },
+  {
+   "ts": "2026-07-22T16:09:31.687Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter\npython3 pipeline/tools/substack_mirror.py --help 2>&1 | head -50"
+  },
+  {
+   "ts": "2026-07-22T16:09:36.601Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter\nfor sub in pull push; do echo \"=== $sub ===\"; python3 pipeline/tools/substack_mirror.py $sub --help 2>&1; echo; done"
+  },
+  {
+   "ts": "2026-07-22T16:09:51.048Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter\nD=pipeline/output/ai/2026-07-22\npython3 pipeline/tools/substack_mirror.py pull --dir \"$D\" 2>&1\necho \"=== body file ===\"\nl"
+  },
+  {
+   "ts": "2026-07-22T16:10:55.307Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter\nD=pipeline/output/ai/2026-07-22\npython3 - \"$D/substack-body.json\" <<'PY'\nimport json, sys\nbody = json.load(open(sys.argv["
+  },
+  {
+   "ts": "2026-07-22T16:11:18.038Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter\nD=pipeline/output/ai/2026-07-22\npython3 - \"$D/substack-body.json\" <<'PY'\nimport json, sys\np=sys.argv[1]\nbody=json.load(op"
+  },
+  {
+   "ts": "2026-07-22T16:11:45.639Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter\nD=pipeline/output/ai/2026-07-22\npython3 pipeline/tools/substack_mirror.py push --dir \"$D\" --byline 473611573 2>&1"
+  }
+ ],
+ "main_loop": {
+  "usage": {
+   "input": 2799,
+   "output": 194757,
+   "cache_read": 13759060,
+   "cache_creation": 768859,
+   "api_calls": 114
+  },
+  "models": {
+   "claude-opus-4-8": 114
+  },
+  "tools": {
+   "Skill": 2,
+   "Bash": 32,
+   "Read": 2,
+   "Agent": 8,
+   "Write": 1,
+   "Edit": 3
+  }
+ },
+ "agents": [
+  {
+   "tool_use_id": "toolu_01AqQFxSwG7bkFjGeqkwHvs9",
+   "subagent_type": "researcher-ai",
+   "description": "Research cluster: ai",
+   "launched_at": "2026-07-22T14:30:06.878Z",
+   "completed_at": "2026-07-22T14:35:56.588Z",
+   "status": "completed",
+   "agent_id": "ac452d17b8a635e36",
+   "usage": {
+    "input": 42,
+    "output": 30695,
+    "cache_read": 694042,
+    "cache_creation": 394219,
+    "api_calls": 21
+   },
+   "models": {
+    "claude-opus-4-8": 21
+   },
+   "tools": {
+    "mcp__exa__web_search_exa": 8,
+    "Bash": 2,
+    "Write": 1
+   },
+   "turns": 21,
+   "first_ts": "2026-07-22T14:30:06.891Z",
+   "last_ts": "2026-07-22T14:35:56.547Z",
+   "wall_s": 350
+  },
+  {
+   "tool_use_id": "toolu_01JdjSJDbmzuayRuvh2bUBUf",
+   "subagent_type": "researcher-hw",
+   "description": "Research cluster: hw",
+   "launched_at": "2026-07-22T14:30:56.871Z",
+   "completed_at": "2026-07-22T14:38:21.653Z",
+   "status": "completed",
+   "agent_id": "a670b8630c86bcd6b",
+   "usage": {
+    "input": 27502,
+    "output": 33191,
+    "cache_read": 2121284,
+    "cache_creation": 561548,
+    "api_calls": 37
+   },
+   "models": {
+    "claude-opus-4-8": 37
+   },
+   "tools": {
+    "mcp__exa__web_search_exa": 16,
+    "Bash": 2,
+    "Write": 1
+   },
+   "turns": 37,
+   "first_ts": "2026-07-22T14:30:56.882Z",
+   "last_ts": "2026-07-22T14:38:21.624Z",
+   "wall_s": 445
+  },
+  {
+   "tool_use_id": "toolu_01YbNLK6J1Qrpjq2V2gWj7Qf",
+   "subagent_type": "researcher-world",
+   "description": "Research cluster: world",
+   "launched_at": "2026-07-22T14:31:43.126Z",
+   "completed_at": "2026-07-22T14:37:17.537Z",
+   "status": "completed",
+   "agent_id": "a2f749033798f18fe",
+   "usage": {
+    "input": 48,
+    "output": 28600,
+    "cache_read": 858486,
+    "cache_creation": 450517,
+    "api_calls": 24
+   },
+   "models": {
+    "claude-opus-4-8": 24
+   },
+   "tools": {
+    "mcp__exa__web_search_exa": 9,
+    "mcp__exa__web_fetch_exa": 1,
+    "Bash": 2,
+    "Write": 1
+   },
+   "turns": 24,
+   "first_ts": "2026-07-22T14:31:43.129Z",
+   "last_ts": "2026-07-22T14:37:17.428Z",
+   "wall_s": 334
+  },
+  {
+   "tool_use_id": "toolu_01JdHqgAPnVKS6pDSsxcM2gE",
+   "subagent_type": "facts",
+   "description": "Facts: research → facts.md",
+   "launched_at": "2026-07-22T14:38:36.724Z",
+   "completed_at": "2026-07-22T14:43:03.540Z",
+   "status": "completed",
+   "agent_id": "a659b593e683c1ee2",
+   "usage": {
+    "input": 16,
+    "output": 24317,
+    "cache_read": 210093,
+    "cache_creation": 153279,
+    "api_calls": 8
+   },
+   "models": {
+    "claude-opus-4-8": 8
+   },
+   "tools": {
+    "Read": 2,
+    "Write": 1
+   },
+   "turns": 8,
+   "first_ts": "2026-07-22T14:38:36.728Z",
+   "last_ts": "2026-07-22T14:43:03.460Z",
+   "wall_s": 267
+  },
+  {
+   "tool_use_id": "toolu_01FZgbEKwncsfaDN8eaWJ56a",
+   "subagent_type": "generator",
+   "description": "edition: facts → edition.md",
+   "launched_at": "2026-07-22T14:43:30.398Z",
+   "completed_at": "2026-07-22T14:48:44.024Z",
+   "status": "completed",
+   "agent_id": "ab63dcd4740b41bb0",
+   "usage": {
+    "input": 10,
+    "output": 26306,
+    "cache_read": 75713,
+    "cache_creation": 97292,
+    "api_calls": 5
+   },
+   "models": {
+    "claude-opus-4-8": 5
+   },
+   "tools": {
+    "Read": 1,
+    "Write": 1
+   },
+   "turns": 5,
+   "first_ts": "2026-07-22T14:43:30.401Z",
+   "last_ts": "2026-07-22T14:48:43.997Z",
+   "wall_s": 314
+  },
+  {
+   "tool_use_id": "toolu_01SfdH83X3as2osbXmsCupzf",
+   "subagent_type": "extract",
+   "description": "Extract sources → sources.json",
+   "launched_at": "2026-07-22T14:43:32.262Z",
+   "completed_at": "2026-07-22T14:52:34.095Z",
+   "status": "completed",
+   "agent_id": "a93c82939972d2af3",
+   "usage": {
+    "input": 28,
+    "output": 39370,
+    "cache_read": 570482,
+    "cache_creation": 468844,
+    "api_calls": 14
+   },
+   "models": {
+    "claude-opus-4-8": 14
+   },
+   "tools": {
+    "Read": 3,
+    "Bash": 2,
+    "Write": 1
+   },
+   "turns": 14,
+   "first_ts": "2026-07-22T14:43:32.267Z",
+   "last_ts": "2026-07-22T14:52:34.065Z",
+   "wall_s": 542
+  },
+  {
+   "tool_use_id": "toolu_01SsWvuGp6fqNDqg5w1iKtUF",
+   "subagent_type": "repetition-checker",
+   "description": "Repetition check vs prior editions",
+   "launched_at": "2026-07-22T14:53:00.641Z",
+   "completed_at": null,
+   "status": null,
+   "agent_id": "aadf23785a56aa641",
+   "usage": {
+    "input": 16,
+    "output": 339,
+    "cache_read": 81229,
+    "cache_creation": 118181,
+    "api_calls": 8
+   },
+   "models": {
+    "claude-opus-4-8": 8
+   },
+   "tools": {
+    "Read": 3,
+    "Write": 1
+   },
+   "turns": 8,
+   "first_ts": "2026-07-22T14:53:00.646Z",
+   "last_ts": "2026-07-22T14:54:55.228Z",
+   "wall_s": null
+  },
+  {
+   "tool_use_id": "toolu_01XnBgJtTgidP2yy5XuAdFZJ",
+   "subagent_type": "fact-verifier",
+   "description": "Fact-verify the edition",
+   "launched_at": "2026-07-22T14:53:03.080Z",
+   "completed_at": null,
+   "status": null,
+   "agent_id": "a02fb8b5494484ea8",
+   "usage": {
+    "input": 44,
+    "output": 16615,
+    "cache_read": 851630,
+    "cache_creation": 215373,
+    "api_calls": 22
+   },
+   "models": {
+    "claude-opus-4-8": 22
+   },
+   "tools": {
+    "Read": 3,
+    "Bash": 6,
+    "Write": 1
+   },
+   "turns": 22,
+   "first_ts": "2026-07-22T14:53:03.083Z",
+   "last_ts": "2026-07-22T14:56:34.480Z",
+   "wall_s": null
+  }
+ ]
+}

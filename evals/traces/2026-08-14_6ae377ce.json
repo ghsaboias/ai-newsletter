@@ -1,0 +1,715 @@
+{
+ "session_id": "6ae377ce-d914-4ad7-aaff-f8856f5fff78",
+ "date": "2026-08-14",
+ "first_ts": "2026-08-14T16:56:33.409Z",
+ "last_ts": "2026-08-14T17:31:55.302Z",
+ "prompts": [
+  {
+   "ts": "2026-08-14T16:56:35.548Z",
+   "text": "[Channel #all-newsletter: Onde fazemos a newsletter]\n\n[Guilherme Saboia]: rode o /newsletter-draft para hoje, depois rode o /newsletter-images, suba tudo, e depois rode o /newsletter-recs"
+  },
+  {
+   "ts": "2026-08-14T17:17:25.965Z",
+   "text": "The machine crashed while you were working (hard reset — no clean shutdown), killing your run mid-flight. Anything under /tmp was wiped and all subagents and background tasks died. Check the on-disk state of what you were doing, then CONTINUE the interrupted work to completion in THIS turn. Verify before re-running any step — much of it may already be done."
+  }
+ ],
+ "skills": [
+  {
+   "skill": "newsletter-draft",
+   "args": "2026-08-14",
+   "ts": "2026-08-14T16:56:39.067Z"
+  },
+  {
+   "skill": "newsletter-research",
+   "args": "2026-08-14",
+   "ts": "2026-08-14T16:56:49.463Z"
+  },
+  {
+   "skill": "newsletter-images",
+   "args": "2026-08-14",
+   "ts": "2026-08-14T17:23:02.892Z"
+  },
+  {
+   "skill": "newsletter-recs",
+   "args": "2026-08-14",
+   "ts": "2026-08-14T17:29:51.733Z"
+  }
+ ],
+ "bash": [
+  {
+   "ts": "2026-08-14T16:56:45.242Z",
+   "cmd": "date '+%Y-%m-%d %H:%M:%S %Z'; date +%s; ls /home/guilhermesaboia/ai-newsletter/pipeline/output/ai/2026-08-14 2>/dev/null; find /home/guilhermesaboia/ai-newslett"
+  },
+  {
+   "ts": "2026-08-14T16:56:53.326Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter\nD=pipeline/output/ai/2026-08-14\nmkdir -p \"$D\"\nls \"$D\" 2>/dev/null\necho \"--- prev headlines ---\"\njq -r '.stories[] | \"- \" "
+  },
+  {
+   "ts": "2026-08-14T16:56:59.662Z",
+   "cmd": "cat /home/guilhermesaboia/ai-newsletter/pipeline/output/ai/2026-08-14/techmeme.md"
+  },
+  {
+   "ts": "2026-08-14T17:05:09.110Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter\nD=pipeline/output/ai/2026-08-14\nfor f in ai hw world; do jq empty \"$D/research-$f.json\" 2>/dev/null && echo \"valid: $f\" |"
+  },
+  {
+   "ts": "2026-08-14T17:08:47.875Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter\nD=pipeline/output/ai/2026-08-14\nSEC=$(grep -c '^## ' \"$D/facts.md\" 2>/dev/null || echo 0)\nFON=$(grep -c '^\\*\\*Fontes:\\*\\*"
+  },
+  {
+   "ts": "2026-08-14T17:12:04.733Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter\nD=pipeline/output/ai/2026-08-14\npython3 pipeline/tools/link-tokens.py expand \"$D/edition.md\" \"$D/facts.md\" && echo \"EXPAN"
+  },
+  {
+   "ts": "2026-08-14T17:12:09.249Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter\nROOT=$PWD/pipeline/output/ai; CHECK=2026-08-14\nfor i in 1 2 3; do\n  CHECK=$(date -d \"$CHECK - 1 day\" \"+%Y-%m-%d\")\n  for f"
+  },
+  {
+   "ts": "2026-08-14T17:17:30.730Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter/pipeline/output/ai/2026-08-14 && ls -la"
+  },
+  {
+   "ts": "2026-08-14T17:17:42.394Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter\nD=pipeline/output/ai/2026-08-14\nif [ -s \"$D/sources.json\" ] && jq -e '.source_count>0 and (.url_count==([.news_entities[]"
+  },
+  {
+   "ts": "2026-08-14T17:17:45.136Z",
+   "cmd": "pipeline/ingest.sh 2026-08-14 --propose 2>&1 | tail -20"
+  },
+  {
+   "ts": "2026-08-14T17:18:25.912Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter\njq -r '.entities[] | \"[\\(.index)] \\(.headline)\\n\" + ( .candidates[] | \"    sim=\\(.similarity) shared=\\(.shared_entities) "
+  },
+  {
+   "ts": "2026-08-14T17:18:50.808Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter\njq -r '.entities[] | select(.index>=17) | \"[\\(.index)] \\(.headline)\\n\" + ( .candidates[] | \"    sim=\\(.similarity) shared"
+  },
+  {
+   "ts": "2026-08-14T17:19:03.986Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter\npipeline/ingest.sh 2026-08-14 --execute 2>&1 | tail -30"
+  },
+  {
+   "ts": "2026-08-14T17:22:38.024Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter\nD=pipeline/output/ai/2026-08-14\necho \"OK ingest: $(jq 'length' \"$D/links.json\") mappings\"\npython3 pipeline/tools/apply-le"
+  },
+  {
+   "ts": "2026-08-14T17:22:42.771Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter\nD=pipeline/output/ai/2026-08-14\nif [ -s \"$D/.substack-draft-id\" ]; then\n  echo \"SKIP push: draft $(cat \"$D/.substack-draf"
+  },
+  {
+   "ts": "2026-08-14T17:22:52.628Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter\nD=pipeline/output/ai/2026-08-14\npython3 pipeline/tools/apply-lexicon.py \"$D/repetition.json\" \"$D/edition-final.md\" --exec"
+  },
+  {
+   "ts": "2026-08-14T17:23:26.845Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter\nmkdir -p /tmp/media-2026-08-14\njq -r '.stories[] | select(.id | test(\"openai-revenue|anthropic|glm|qwen|ultrafast|compute"
+  },
+  {
+   "ts": "2026-08-14T17:27:28.659Z",
+   "cmd": "cd /home/guilhermesaboia/tmp-media-2026-08-14 && for f in altman.jpg anthropic.png zai.png qwen.jpg cerebras.jpg computer-history.png ponyai.jpg drones.jpg fran"
+  },
+  {
+   "ts": "2026-08-14T17:28:55.840Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter\npython3 pipeline/tools/substack_mirror.py media --plan pipeline/output/ai/2026-08-14/images-final.json 2>&1 | tail -30"
+  },
+  {
+   "ts": "2026-08-14T17:29:15.665Z",
+   "cmd": "cd ~/michael-slack\nCH=C0BEUNPSKA8; TS=1786726591.018189; M=/home/guilhermesaboia/tmp-media-2026-08-14\nsend() { npx tsx src/cli-send.ts file $CH \"$1\" --thread $T"
+  },
+  {
+   "ts": "2026-08-14T17:29:31.811Z",
+   "cmd": "cd ~/michael-slack\nCH=C0BEUNPSKA8; TS=1786726591.018189; M=/home/guilhermesaboia/tmp-media-2026-08-14\nsend() { npx tsx src/cli-send.ts file $CH \"$1\" --thread $T"
+  },
+  {
+   "ts": "2026-08-14T17:29:56.366Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter\nbash recommendations/sync-recommendations.sh 2>&1 | tail -8"
+  },
+  {
+   "ts": "2026-08-14T17:31:02.738Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter\nOUT=pipeline/output/ai/2026-08-14\npython3 recommendations/gather-rec-candidates.py --date 2026-08-14 > \"$OUT/rec-candidat"
+  },
+  {
+   "ts": "2026-08-14T17:31:17.378Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter\njq -r '.candidates[] | select(.youtube_id==\"HI2q3ci3Iuc\" or .youtube_id==\"uoGnH0REG7A\") | \"=== \\(.youtube_id) | \\(.channe"
+  },
+  {
+   "ts": "2026-08-14T17:31:32.502Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter\nOUT=pipeline/output/ai/2026-08-14\npython3 pipeline/tools/substack_recs.py --file \"$OUT/recs.json\" --dir \"$OUT\" 2>&1 | tai"
+  },
+  {
+   "ts": "2026-08-14T17:31:38.746Z",
+   "cmd": "cd /home/guilhermesaboia/ai-newsletter\npython3 pipeline/tools/substack_mirror.py pull --dir pipeline/output/ai/2026-08-14 >/dev/null 2>&1\njq -r '[.. | objects |"
+  }
+ ],
+ "main_loop": {
+  "usage": {
+   "input": 228,
+   "output": 108859,
+   "cache_read": 17407367,
+   "cache_creation": 587817,
+   "api_calls": 118
+  },
+  "models": {
+   "claude-opus-5": 118
+  },
+  "tools": {
+   "Skill": 4,
+   "Bash": 26,
+   "Read": 10,
+   "Agent": 20,
+   "Write": 3
+  }
+ },
+ "agents": [
+  {
+   "tool_use_id": "toolu_01QqbNf1Vmjum8ipt3HmmrfT",
+   "subagent_type": "researcher-ai",
+   "description": "Research cluster: ai",
+   "launched_at": "2026-08-14T16:58:42.834Z",
+   "completed_at": "2026-08-14T17:02:59.914Z",
+   "status": "completed",
+   "agent_id": "aecde2bb8e87b8dff",
+   "usage": {
+    "input": 38,
+    "output": 24095,
+    "cache_read": 969375,
+    "cache_creation": 247698,
+    "api_calls": 19
+   },
+   "models": {
+    "claude-opus-5": 19
+   },
+   "tools": {
+    "mcp__exa__web_search_exa": 8,
+    "Bash": 2,
+    "Write": 1
+   },
+   "turns": 19,
+   "first_ts": "2026-08-14T16:58:42.850Z",
+   "last_ts": "2026-08-14T17:02:59.864Z",
+   "wall_s": 257
+  },
+  {
+   "tool_use_id": "toolu_01XRYyKbhLdnQUoGE2zeKJKh",
+   "subagent_type": "researcher-hw",
+   "description": "Research cluster: hw",
+   "launched_at": "2026-08-14T16:59:59.584Z",
+   "completed_at": "2026-08-14T17:03:49.703Z",
+   "status": "completed",
+   "agent_id": "ac19b4f3ec844e7b4",
+   "usage": {
+    "input": 42723,
+    "output": 21633,
+    "cache_read": 2098457,
+    "cache_creation": 413396,
+    "api_calls": 27
+   },
+   "models": {
+    "claude-opus-5": 27
+   },
+   "tools": {
+    "mcp__exa__web_search_exa": 14,
+    "Bash": 2,
+    "Write": 1
+   },
+   "turns": 27,
+   "first_ts": "2026-08-14T16:59:59.596Z",
+   "last_ts": "2026-08-14T17:03:49.657Z",
+   "wall_s": 230
+  },
+  {
+   "tool_use_id": "toolu_01VDnXTNAMZkGJFc6KRd4Scj",
+   "subagent_type": "researcher-world",
+   "description": "Research cluster: world",
+   "launched_at": "2026-08-14T17:01:07.351Z",
+   "completed_at": "2026-08-14T17:05:05.130Z",
+   "status": "completed",
+   "agent_id": "a65ce8398934f03ba",
+   "usage": {
+    "input": 14392,
+    "output": 22953,
+    "cache_read": 713132,
+    "cache_creation": 425360,
+    "api_calls": 17
+   },
+   "models": {
+    "claude-opus-5": 17
+   },
+   "tools": {
+    "mcp__exa__web_search_exa": 10,
+    "Write": 1,
+    "Bash": 1
+   },
+   "turns": 17,
+   "first_ts": "2026-08-14T17:01:07.357Z",
+   "last_ts": "2026-08-14T17:05:05.081Z",
+   "wall_s": 238
+  },
+  {
+   "tool_use_id": "toolu_01XtJBwSavX5SmXENpdftZzE",
+   "subagent_type": "facts",
+   "description": "Facts: research → facts.md",
+   "launched_at": "2026-08-14T17:05:19.161Z",
+   "completed_at": "2026-08-14T17:08:41.300Z",
+   "status": "completed",
+   "agent_id": "a0df12847c26a80ac",
+   "usage": {
+    "input": 14,
+    "output": 18565,
+    "cache_read": 231147,
+    "cache_creation": 107796,
+    "api_calls": 7
+   },
+   "models": {
+    "claude-opus-5": 7
+   },
+   "tools": {
+    "Read": 3,
+    "Write": 1
+   },
+   "turns": 7,
+   "first_ts": "2026-08-14T17:05:19.166Z",
+   "last_ts": "2026-08-14T17:08:41.286Z",
+   "wall_s": 202
+  },
+  {
+   "tool_use_id": "toolu_01EuBAgDocNQUTokTNZT6dUN",
+   "subagent_type": "generator",
+   "description": "edition: facts → edition.md",
+   "launched_at": "2026-08-14T17:08:57.982Z",
+   "completed_at": "2026-08-14T17:12:01.079Z",
+   "status": "completed",
+   "agent_id": "acf1e20320438fbd0",
+   "usage": {
+    "input": 12,
+    "output": 15495,
+    "cache_read": 94555,
+    "cache_creation": 133257,
+    "api_calls": 6
+   },
+   "models": {
+    "claude-opus-5": 6
+   },
+   "tools": {
+    "Read": 2,
+    "Write": 1
+   },
+   "turns": 6,
+   "first_ts": "2026-08-14T17:08:57.985Z",
+   "last_ts": "2026-08-14T17:12:01.007Z",
+   "wall_s": 183
+  },
+  {
+   "tool_use_id": "toolu_01EtKrcUinugQ8J3mTZzbwqu",
+   "subagent_type": "extract",
+   "description": "Extract sources → sources.json",
+   "launched_at": "2026-08-14T17:09:01.166Z",
+   "completed_at": null,
+   "status": null,
+   "agent_id": "a4719b1455f5aa298",
+   "usage": {
+    "input": 22,
+    "output": 35371,
+    "cache_read": 246918,
+    "cache_creation": 203488,
+    "api_calls": 11
+   },
+   "models": {
+    "claude-opus-5": 11
+   },
+   "tools": {
+    "Read": 1,
+    "Bash": 4
+   },
+   "turns": 11,
+   "first_ts": "2026-08-14T17:09:01.168Z",
+   "last_ts": "2026-08-14T17:15:33.883Z",
+   "wall_s": null
+  },
+  {
+   "tool_use_id": "toolu_01NscdMa5rk4z4u3W23KugMW",
+   "subagent_type": "paywall-teaser",
+   "description": "Paywall teasers → paywall-meta.json",
+   "launched_at": "2026-08-14T17:12:13.730Z",
+   "completed_at": "2026-08-14T17:12:59.778Z",
+   "status": "completed",
+   "agent_id": "adf19f861bcb653a5",
+   "usage": {
+    "input": 10,
+    "output": 3719,
+    "cache_read": 81544,
+    "cache_creation": 53171,
+    "api_calls": 5
+   },
+   "models": {
+    "claude-opus-5": 5
+   },
+   "tools": {
+    "Read": 1,
+    "Write": 2
+   },
+   "turns": 5,
+   "first_ts": "2026-08-14T17:12:13.733Z",
+   "last_ts": "2026-08-14T17:12:59.641Z",
+   "wall_s": 46
+  },
+  {
+   "tool_use_id": "toolu_01Mm8cg3CEaozrVQu9ijvsma",
+   "subagent_type": "repetition-checker",
+   "description": "Repetition check vs prior editions",
+   "launched_at": "2026-08-14T17:12:17.976Z",
+   "completed_at": "2026-08-14T17:15:22.298Z",
+   "status": "completed",
+   "agent_id": "ab613049d729a3e38",
+   "usage": {
+    "input": 42,
+    "output": 13972,
+    "cache_read": 1086112,
+    "cache_creation": 173000,
+    "api_calls": 21
+   },
+   "models": {
+    "claude-opus-5": 21
+   },
+   "tools": {
+    "Read": 5,
+    "Bash": 6,
+    "Write": 1
+   },
+   "turns": 21,
+   "first_ts": "2026-08-14T17:12:17.982Z",
+   "last_ts": "2026-08-14T17:15:18.297Z",
+   "wall_s": 184
+  },
+  {
+   "tool_use_id": "toolu_01XK3rjYJ7qvVr7ep4TzX8Ep",
+   "subagent_type": "fact-verifier",
+   "description": "Fact-verify the edition",
+   "launched_at": "2026-08-14T17:12:21.438Z",
+   "completed_at": null,
+   "status": null,
+   "agent_id": "a96ec65ecd0f70d0f",
+   "usage": {
+    "input": 48,
+    "output": 4931,
+    "cache_read": 1080840,
+    "cache_creation": 147682,
+    "api_calls": 24
+   },
+   "models": {
+    "claude-opus-5": 24
+   },
+   "tools": {
+    "Read": 2,
+    "Bash": 12
+   },
+   "turns": 24,
+   "first_ts": "2026-08-14T17:12:21.440Z",
+   "last_ts": "2026-08-14T17:15:34.641Z",
+   "wall_s": null
+  },
+  {
+   "tool_use_id": "toolu_01FjPLrr7Bj4EZpsTGiSjpjB",
+   "subagent_type": "fact-verifier",
+   "description": "Fact-verify the edition",
+   "launched_at": "2026-08-14T17:17:38.116Z",
+   "completed_at": null,
+   "status": null,
+   "agent_id": "af59e9eceef84f792",
+   "usage": {
+    "input": 66,
+    "output": 16975,
+    "cache_read": 1785864,
+    "cache_creation": 181035,
+    "api_calls": 33
+   },
+   "models": {
+    "claude-opus-5": 33
+   },
+   "tools": {
+    "Read": 2,
+    "Bash": 15,
+    "Write": 1
+   },
+   "turns": 33,
+   "first_ts": "2026-08-14T17:17:38.129Z",
+   "last_ts": "2026-08-14T17:21:35.164Z",
+   "wall_s": null
+  },
+  {
+   "tool_use_id": "toolu_012ZbRD9W2gJkDMwgvCBc2EK",
+   "subagent_type": "general-purpose",
+   "description": "Image: OpenAI Altman",
+   "launched_at": "2026-08-14T17:23:43.250Z",
+   "completed_at": "2026-08-14T17:27:23.670Z",
+   "status": "completed",
+   "agent_id": "a2d5ddbbe0f02881f",
+   "usage": {
+    "input": 116,
+    "output": 13228,
+    "cache_read": 3961125,
+    "cache_creation": 200593,
+    "api_calls": 58
+   },
+   "models": {
+    "claude-sonnet-5": 58
+   },
+   "tools": {
+    "Bash": 25,
+    "Read": 7
+   },
+   "turns": 58,
+   "first_ts": "2026-08-14T17:23:43.255Z",
+   "last_ts": "2026-08-14T17:27:23.534Z",
+   "wall_s": 220
+  },
+  {
+   "tool_use_id": "toolu_01LnjK36REkJjcA4oCQRnSth",
+   "subagent_type": "general-purpose",
+   "description": "Image: Anthropic multiagent",
+   "launched_at": "2026-08-14T17:23:54.135Z",
+   "completed_at": null,
+   "status": null,
+   "agent_id": "ae34c4401cbfaf1e1",
+   "usage": {
+    "input": 60,
+    "output": 5605,
+    "cache_read": 1565033,
+    "cache_creation": 109137,
+    "api_calls": 30
+   },
+   "models": {
+    "claude-sonnet-5": 30
+   },
+   "tools": {
+    "Bash": 14,
+    "Read": 1
+   },
+   "turns": 30,
+   "first_ts": "2026-08-14T17:23:54.137Z",
+   "last_ts": "2026-08-14T17:25:17.317Z",
+   "wall_s": null
+  },
+  {
+   "tool_use_id": "toolu_0169EKE6AxPuSvvbv17wzCKe",
+   "subagent_type": "general-purpose",
+   "description": "Image: Z.ai GLM-5.3",
+   "launched_at": "2026-08-14T17:24:05.275Z",
+   "completed_at": null,
+   "status": null,
+   "agent_id": "a5fe8c9785b3ece24",
+   "usage": {
+    "input": 50,
+    "output": 4003,
+    "cache_read": 1207405,
+    "cache_creation": 96561,
+    "api_calls": 25
+   },
+   "models": {
+    "claude-sonnet-5": 25
+   },
+   "tools": {
+    "Bash": 10,
+    "Skill": 1,
+    "Read": 2
+   },
+   "turns": 25,
+   "first_ts": "2026-08-14T17:24:05.280Z",
+   "last_ts": "2026-08-14T17:25:22.569Z",
+   "wall_s": null
+  },
+  {
+   "tool_use_id": "toolu_014cPA3S64t9C3ZXJt6nxPz2",
+   "subagent_type": "general-purpose",
+   "description": "Image: Qwen3.8",
+   "launched_at": "2026-08-14T17:24:15.078Z",
+   "completed_at": null,
+   "status": null,
+   "agent_id": "a3a6c2d968e14b60b",
+   "usage": {
+    "input": 22,
+    "output": 1757,
+    "cache_read": 411026,
+    "cache_creation": 110280,
+    "api_calls": 11
+   },
+   "models": {
+    "claude-sonnet-5": 11
+   },
+   "tools": {
+    "Bash": 4,
+    "Read": 1
+   },
+   "turns": 11,
+   "first_ts": "2026-08-14T17:24:15.081Z",
+   "last_ts": "2026-08-14T17:24:45.966Z",
+   "wall_s": null
+  },
+  {
+   "tool_use_id": "toolu_01LmmrkQmY2F9xtGPj6HYBr7",
+   "subagent_type": "general-purpose",
+   "description": "Image: Cerebras WSE",
+   "launched_at": "2026-08-14T17:24:26.443Z",
+   "completed_at": "2026-08-14T17:25:55.187Z",
+   "status": "completed",
+   "agent_id": "ab5338e10bbc2287c",
+   "usage": {
+    "input": 1374,
+    "output": 5258,
+    "cache_read": 1458295,
+    "cache_creation": 109570,
+    "api_calls": 28
+   },
+   "models": {
+    "claude-sonnet-5": 28
+   },
+   "tools": {
+    "Bash": 11,
+    "Read": 5
+   },
+   "turns": 28,
+   "first_ts": "2026-08-14T17:24:26.445Z",
+   "last_ts": "2026-08-14T17:25:54.934Z",
+   "wall_s": 89
+  },
+  {
+   "tool_use_id": "toolu_013mrHT1jfcN3doTKyr8Kxt7",
+   "subagent_type": "general-purpose",
+   "description": "Image: Computer History UI",
+   "launched_at": "2026-08-14T17:24:37.357Z",
+   "completed_at": "2026-08-14T17:25:33.798Z",
+   "status": "completed",
+   "agent_id": "a88e9dbdd19ac0eba",
+   "usage": {
+    "input": 46,
+    "output": 3952,
+    "cache_read": 1104911,
+    "cache_creation": 93490,
+    "api_calls": 23
+   },
+   "models": {
+    "claude-sonnet-5": 23
+   },
+   "tools": {
+    "Bash": 10,
+    "Read": 1
+   },
+   "turns": 23,
+   "first_ts": "2026-08-14T17:24:37.394Z",
+   "last_ts": "2026-08-14T17:25:33.713Z",
+   "wall_s": 56
+  },
+  {
+   "tool_use_id": "toolu_01UrKHmKkP96txY1Yx6yXYXd",
+   "subagent_type": "general-purpose",
+   "description": "Image: Pony.ai robotaxi",
+   "launched_at": "2026-08-14T17:24:49.517Z",
+   "completed_at": "2026-08-14T17:26:21.241Z",
+   "status": "completed",
+   "agent_id": "adb9cd88284ed3b5a",
+   "usage": {
+    "input": 60,
+    "output": 5396,
+    "cache_read": 1522501,
+    "cache_creation": 109334,
+    "api_calls": 30
+   },
+   "models": {
+    "claude-sonnet-5": 30
+   },
+   "tools": {
+    "Bash": 9,
+    "Read": 3,
+    "ToolSearch": 1,
+    "WebSearch": 2,
+    "WebFetch": 1
+   },
+   "turns": 30,
+   "first_ts": "2026-08-14T17:24:49.520Z",
+   "last_ts": "2026-08-14T17:26:21.057Z",
+   "wall_s": 92
+  },
+  {
+   "tool_use_id": "toolu_01TUJGkSTbRipU2bbAdWoCnb",
+   "subagent_type": "general-purpose",
+   "description": "Image: drone tariffs",
+   "launched_at": "2026-08-14T17:25:02.077Z",
+   "completed_at": "2026-08-14T17:25:44.460Z",
+   "status": "completed",
+   "agent_id": "a81f5cc6a2da7c19e",
+   "usage": {
+    "input": 34,
+    "output": 3316,
+    "cache_read": 764323,
+    "cache_creation": 85473,
+    "api_calls": 17
+   },
+   "models": {
+    "claude-sonnet-5": 17
+   },
+   "tools": {
+    "Bash": 7,
+    "Read": 2
+   },
+   "turns": 17,
+   "first_ts": "2026-08-14T17:25:02.080Z",
+   "last_ts": "2026-08-14T17:25:44.373Z",
+   "wall_s": 42
+  },
+  {
+   "tool_use_id": "toolu_01VRevtgjxgBfMfM3EAQz8E5",
+   "subagent_type": "general-purpose",
+   "description": "Image: France court",
+   "launched_at": "2026-08-14T17:25:12.385Z",
+   "completed_at": "2026-08-14T17:26:38.794Z",
+   "status": "completed",
+   "agent_id": "a0e1e16f085722f3a",
+   "usage": {
+    "input": 1410,
+    "output": 5804,
+    "cache_read": 1362703,
+    "cache_creation": 111915,
+    "api_calls": 27
+   },
+   "models": {
+    "claude-sonnet-5": 27
+   },
+   "tools": {
+    "Bash": 10,
+    "Read": 5
+   },
+   "turns": 27,
+   "first_ts": "2026-08-14T17:25:12.390Z",
+   "last_ts": "2026-08-14T17:26:38.701Z",
+   "wall_s": 86
+  },
+  {
+   "tool_use_id": "toolu_01Q9VqEqk9wn33PQ9sFZi85a",
+   "subagent_type": "general-purpose",
+   "description": "Image: Black Sea grain",
+   "launched_at": "2026-08-14T17:25:23.857Z",
+   "completed_at": null,
+   "status": null,
+   "agent_id": "aca18b3d586321fcb",
+   "usage": {
+    "input": 60,
+    "output": 7861,
+    "cache_read": 1510680,
+    "cache_creation": 117058,
+    "api_calls": 30
+   },
+   "models": {
+    "claude-sonnet-5": 30
+   },
+   "tools": {
+    "Bash": 15,
+    "Skill": 1,
+    "Read": 1
+   },
+   "turns": 30,
+   "first_ts": "2026-08-14T17:25:23.859Z",
+   "last_ts": "2026-08-14T17:27:41.288Z",
+   "wall_s": null
+  }
+ ]
+}

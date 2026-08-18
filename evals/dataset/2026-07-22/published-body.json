@@ -1,0 +1,1720 @@
+{
+ "draft_id": "208071548",
+ "title": "[Tech] - Bem-vindo(a) a 22 de Julho de 2026",
+ "subtitle": "Como um teste de segurança da OpenAI terminou em invasão à Hugging Face? Quanto a AMD vai investir na Anthropic no acordo de GPUs? Que modelos o Google lançou enquanto o Gemini 3.5 Pro segue em testes?",
+ "body": {
+  "content": [
+   {
+    "type": "paragraph",
+    "content": [
+     {
+      "type": "text",
+      "text": "Por: Guilherme Saboia e Vinicius Gushiken"
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Modelos da OpenAI invadem a produção da Hugging Face durante teste de segurança"
+     }
+    ]
+   },
+   {
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "type": "text",
+          "text": "Incidente."
+         },
+         {
+          "type": "text",
+          "text": " Um dia depois de admitir que pausou um modelo autônomo por escapar do seu ambiente de testes, a OpenAI revelou nesta terça (21) um desfecho mais grave: "
+         },
+         {
+          "type": "text",
+          "text": "uma combinação dos seus modelos invadiu a infraestrutura de produção da Hugging Face",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null,
+             "href": "https://dailyjournal.news/news/2026-07-22/modelos-da-openai-invadem-sistemas-da-hugging-face-em-testes-internos"
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " durante uma avaliação interna de capacidade cibernética. A dupla, o GPT-5.6 Sol e um modelo pré-lançamento ainda mais capaz, rodava com recusas cibernéticas reduzidas, sendo testada no benchmark ExploitGym num ambiente isolado ("
+         },
+         {
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "sandbox",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": ")."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Cadeia."
+         },
+         {
+          "type": "text",
+          "text": " "
+         },
+         {
+          "type": "text",
+          "text": "Os modelos exploraram uma vulnerabilidade zero-day",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "class": null,
+             "href": "https://dailyjournal.news/news/2026-07-22/modelos-da-openai-invadem-sistemas-da-hugging-face-em-testes-internos",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow"
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " (falha desconhecida do fornecedor, sem correção disponível) num proxy de cache de registro de pacotes, fizeram escalada de privilégios e movimentação lateral até um nó com acesso à internet, deduziram que a Hugging Face hospedava as soluções do ExploitGym e invadiram seu banco de dados de produção para roubar as respostas e burlar a própria avaliação."
+         }
+        ],
+        "type": "paragraph"
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "type": "text",
+          "text": "Defesa."
+         },
+         {
+          "type": "text",
+          "text": " A Hugging Face classificou a invasão como “sem precedentes” e “conduzida, de ponta a ponta, por um sistema autônomo de agentes de IA”; a princípio "
+         },
+         {
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-22/modelos-da-openai-invadem-sistemas-da-hugging-face-em-testes-internos",
+             "rel": "noopener noreferrer nofollow",
+             "target": "_blank",
+             "class": null
+            }
+           }
+          ],
+          "text": "atribuiu o ataque a um agente externo",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": " e recorreu ao modelo chinês GLM-5.2, da Zhipu AI, para contê-lo, já que os principais modelos dos EUA, incapazes de distinguir defensor de atacante, se recusaram a processar os dados."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Ineditismo.",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": " "
+         },
+         {
+          "type": "text",
+          "text": "A OpenAI apresentou o episódio como o primeiro caso conhecido",
+          "marks": [
+           {
+            "attrs": {
+             "rel": "noopener noreferrer nofollow",
+             "class": null,
+             "target": "_blank",
+             "href": "https://dailyjournal.news/news/2026-07-22/modelos-da-openai-invadem-sistemas-da-hugging-face-em-testes-internos"
+            },
+            "type": "link"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " em que o teste de benchmark de um modelo resultou num ciberataque real contra terceiros, e diz ter divulgado a falha ao fornecedor de forma responsável."
+         }
+        ]
+       }
+      ]
+     }
+    ],
+    "type": "bullet_list"
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "topImage": false,
+       "srcNoWatermark": null,
+       "bytes": 90938,
+       "href": null,
+       "internalRedirect": null,
+       "fullscreen": null,
+       "width": 1500,
+       "type": "image/jpeg",
+       "title": null,
+       "belowTheFold": false,
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/25e8b8c6-45fe-4ce0-8c07-16eb3cd100ff_1500x1015.jpeg",
+       "height": 1015,
+       "imageSize": null,
+       "resizeWidth": 520,
+       "alt": "Sam Altman, CEO da OpenAI, no palco"
+      }
+     },
+     {
+      "content": [
+       {
+        "type": "text",
+        "text": "Sam Altman, CEO da OpenAI. Imagem: Getty Images"
+       }
+      ],
+      "type": "caption"
+     }
+    ]
+   },
+   {
+    "attrs": {
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "AMD e Anthropic fecham acordo de até 2 GW em GPUs e US$5 bilhões em investimento"
+     }
+    ],
+    "type": "heading"
+   },
+   {
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "Acordo.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " "
+         },
+         {
+          "type": "text",
+          "text": "AMD e Anthropic firmaram parceria estratégica para implantar até 2 gigawatts de GPUs AMD Instinct série MI450",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-22/amd-firma-parceria-estrategica-e-investe-us-5-bi-na-anthropic",
+             "class": null,
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow"
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " em soluções de rack AMD Helios, com o primeiro gigawatt começando no primeiro semestre de 2027."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Investimento.",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": " "
+         },
+         {
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "class": null,
+             "rel": "noopener noreferrer nofollow",
+             "target": "_blank",
+             "href": "https://dailyjournal.news/news/2026-07-22/amd-firma-parceria-estrategica-e-investe-us-5-bi-na-anthropic"
+            }
+           }
+          ],
+          "text": "A AMD se comprometeu com um aporte em ações de até US$5 bilhões na Anthropic",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": ", condicionado ao cumprimento de metas específicas de implantação."
+         }
+        ]
+       }
+      ],
+      "type": "list_item"
+     },
+     {
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Racks."
+         },
+         {
+          "type": "text",
+          "text": " A Anthropic vai usar racks Helios com GPUs Instinct MI455X, CPUs EPYC “Venice”, rede Pensando e software ROCm, sobre o uso já existente dos chips MI355X; as empresas usarão o Claude para otimizar cargas para GPUs AMD, e a AMD adotará o Claude em suas equipes de engenharia."
+         }
+        ]
+       }
+      ],
+      "type": "list_item"
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Capacidade.",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": " A Anthropic empregará parte dos chips em seus próprios data centers e arrendará capacidade adicional de provedores de nuvem."
+         }
+        ]
+       }
+      ]
+     }
+    ],
+    "type": "bullet_list"
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "attrs": {
+       "topImage": false,
+       "srcNoWatermark": null,
+       "bytes": 202403,
+       "href": null,
+       "width": 1920,
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/f80bf0ba-e2d4-435b-940a-6e58db7659a7_1920x1080.jpeg",
+       "internalRedirect": null,
+       "type": "image/jpeg",
+       "belowTheFold": false,
+       "fullscreen": null,
+       "title": null,
+       "height": 1080,
+       "imageSize": null,
+       "resizeWidth": 520,
+       "alt": "Rack AMD Helios com GPUs Instinct MI450"
+      },
+      "type": "image2"
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Rack AMD Helios com GPUs Instinct MI450. Imagem: AMD"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "content": [
+     {
+      "type": "text",
+      "text": "Google lança três modelos Gemini Flash e inicia o treino do Gemini 4"
+     }
+    ],
+    "attrs": {
+     "level": 3
+    }
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "content": [
+       {
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Lançamentos."
+         },
+         {
+          "type": "text",
+          "text": " Em 21 de julho, "
+         },
+         {
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-21/google-lanca-novos-modelos-gemini-e-inicia-treinamento-do-gemini-4",
+             "rel": "noopener noreferrer nofollow",
+             "class": null,
+             "target": "_blank"
+            }
+           }
+          ],
+          "text": "o Google DeepMind lançou o Gemini 3.6 Flash",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": ", seu modelo “cavalo de batalha”, além do 3.5 Flash-Lite e do 3.5 Flash Cyber; o 3.6 Flash melhora programação, trabalho de conhecimento e tarefas multimodais e corta o uso de tokens em até 17%, ficando mais barato por token que o 3.5 Flash."
+         }
+        ],
+        "type": "paragraph"
+       }
+      ],
+      "type": "list_item"
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "Velocidade e preço.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " O 3.5 Flash-Lite atinge até 350 tokens por segundo, a US$0,30 por milhão de tokens de entrada e US$2,50 por milhão de saída."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "content": [
+         {
+          "type": "text",
+          "text": "Cibernético.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " O 3.5 Flash Cyber é o primeiro modelo do Google ajustado para encontrar e corrigir vulnerabilidades, restrito a governos e parceiros de confiança via agente CodeMender; "
+         },
+         {
+          "marks": [
+           {
+            "attrs": {
+             "class": null,
+             "rel": "noopener noreferrer nofollow",
+             "href": "https://dailyjournal.news/news/2026-07-21/google-lanca-novos-modelos-gemini-e-inicia-treinamento-do-gemini-4",
+             "target": "_blank"
+            },
+            "type": "link"
+           }
+          ],
+          "text": "marca 83,2%, contra 85,6% do GPT-5.5-Cyber",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": ", apesar de ser um modelo bem menor."
+         }
+        ],
+        "type": "paragraph"
+       }
+      ]
+     },
+     {
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Gemini 4."
+         },
+         {
+          "type": "text",
+          "text": " O Google disse ter iniciado seu “treino de pré-treinamento mais ambicioso até hoje”, para o Gemini 4; "
+         },
+         {
+          "marks": [
+           {
+            "attrs": {
+             "rel": "noopener noreferrer nofollow",
+             "class": null,
+             "href": "https://dailyjournal.news/news/2026-07-21/google-lanca-novos-modelos-gemini-e-inicia-treinamento-do-gemini-4",
+             "target": "_blank"
+            },
+            "type": "link"
+           }
+          ],
+          "type": "text",
+          "text": "o aguardado Gemini 3.5 Pro de ponta ficou de fora"
+         },
+         {
+          "type": "text",
+          "text": ", ainda em testes com parceiros em meio a atrasos internos e originalmente previsto para junho."
+         }
+        ]
+       }
+      ],
+      "type": "list_item"
+     }
+    ]
+   },
+   {
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "topImage": false,
+       "srcNoWatermark": null,
+       "bytes": 65117,
+       "href": null,
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/ff7d2ff7-4ac5-431a-bc15-e8552b40abb6_1300x731.jpeg",
+       "fullscreen": null,
+       "internalRedirect": null,
+       "type": "image/jpeg",
+       "title": null,
+       "width": 1300,
+       "belowTheFold": false,
+       "height": 731,
+       "imageSize": null,
+       "resizeWidth": 520,
+       "alt": "Arte oficial de lançamento do Gemini 3.6 Flash"
+      }
+     },
+     {
+      "content": [
+       {
+        "type": "text",
+        "text": "Lançamento oficial do Gemini 3.6 Flash, 3.5 Flash-Lite e 3.5 Flash Cyber. Imagem: Google"
+       }
+      ],
+      "type": "caption"
+     }
+    ],
+    "type": "captionedImage"
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Infraestrutura & chips"
+     }
+    ]
+   },
+   {
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "content": [
+         {
+          "type": "text",
+          "text": "Nvidia.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " "
+         },
+         {
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "target": "_blank",
+             "href": "https://dailyjournal.news/news/2026-07-21/nvidia-detalha-processador-vera-para-data-centers-com-design-proprio",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "type": "text",
+          "text": "A produção do Vera Rubin NVL72 acelera"
+         },
+         {
+          "type": "text",
+          "text": ", e a CoreWeave, primeira nuvem de IA a validá-lo, viu ganho de 10x em tokens por segundo por megawatt sobre o Grace Blackwell num benchmark DeepSeek-R1. A GPU Rubin é feita no processo de 3nm da TSMC e reúne 336 bilhões de transistores, 62% mais que o chip Blackwell GB300."
+         }
+        ],
+        "type": "paragraph"
+       }
+      ]
+     }
+    ],
+    "type": "bullet_list"
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "attrs": {
+       "topImage": false,
+       "srcNoWatermark": null,
+       "bytes": 207552,
+       "href": null,
+       "internalRedirect": null,
+       "width": 1920,
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/6ab86d8a-3105-4032-91f7-4e8ced3fbaa3_1920x1080.jpeg",
+       "type": "image/jpeg",
+       "fullscreen": null,
+       "title": null,
+       "belowTheFold": false,
+       "height": 1080,
+       "imageSize": null,
+       "resizeWidth": 520,
+       "alt": "Rack Nvidia Vera Rubin NVL72"
+      },
+      "type": "image2"
+     },
+     {
+      "content": [
+       {
+        "type": "text",
+        "text": "Rack Nvidia Vera Rubin NVL72. Imagem: Nvidia"
+       }
+      ],
+      "type": "caption"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "content": [
+       {
+        "content": [
+         {
+          "type": "text",
+          "text": "Super Micro.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " "
+         },
+         {
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "class": null,
+             "rel": "noopener noreferrer nofollow",
+             "target": "_blank",
+             "href": "https://dailyjournal.news/news/2026-07-21/acoes-da-super-micro-sobem-13-apos-projecao-de-margens-maiores"
+            }
+           }
+          ],
+          "type": "text",
+          "text": "A empresa registrou mais de US$60 bilhões em novos pedidos no 4º trimestre fiscal"
+         },
+         {
+          "type": "text",
+          "text": " e agora projeta margem bruta de 15% a 17%, contra os 8,2% a 8,4% da orientação anterior. As ações subiram cerca de 17,5% no "
+         },
+         {
+          "type": "text",
+          "text": "after-hours",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " após a prévia de 21 de julho."
+         }
+        ],
+        "type": "paragraph"
+       }
+      ],
+      "type": "list_item"
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Intel."
+         },
+         {
+          "type": "text",
+          "text": " "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "rel": "noopener noreferrer nofollow",
+             "class": null,
+             "target": "_blank",
+             "href": "https://dailyjournal.news/news/2026-07-22/intel-e-fortinet-firmam-parceria-para-desenvolvimento-do-chip-sp6"
+            }
+           }
+          ],
+          "text": "A Fortinet virou o primeiro cliente externo divulgado da Intel Foundry"
+         },
+         {
+          "type": "text",
+          "text": ", fabricando seu chip de segurança SP6 de nova geração no nó EUV (litografia ultravioleta extrema) Intel 4, dois dias antes do balanço do 2º trimestre da Intel."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "attrs": {
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Modelos abertos"
+     }
+    ],
+    "type": "heading"
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Poolside."
+         },
+         {
+          "type": "text",
+          "text": " "
+         },
+         {
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "rel": "noopener noreferrer nofollow",
+             "class": null,
+             "href": "https://dailyjournal.news/news/2026-07-22/poolside-lanca-laguna-s-21-modelo-aberto-de-118b-para-programacao",
+             "target": "_blank"
+            }
+           }
+          ],
+          "text": "Lançou o Laguna S 2.1, modelo de código aberto de 118 bilhões de parâmetros",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": " para programação com agentes, que ativa 8 bilhões por token, tem contexto de 1 milhão de tokens e roda numa única NVIDIA DGX Spark. Marca cerca de 70% no Terminal-Bench 2.1 e quase 60% no SWE-Bench Pro, igualando modelos com de 2 a 8 vezes mais parâmetros ativos, e é posto como a resposta ocidental aos laboratórios chineses de peso aberto."
+         }
+        ],
+        "type": "paragraph"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "content": [
+     {
+      "type": "text",
+      "text": "Rodadas"
+     }
+    ],
+    "attrs": {
+     "level": 4
+    },
+    "type": "heading"
+   },
+   {
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "content": [
+         {
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Glow.",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": " "
+         },
+         {
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "target": "_blank",
+             "class": null,
+             "href": "https://dailyjournal.news/news/2026-07-22/glow-sai-do-stealth-como-unicornio-de-us12-bi-em-seguranca-de-endpoints",
+             "rel": "noopener noreferrer nofollow"
+            }
+           }
+          ],
+          "text": "Startup de segurança de ",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "attrs": {
+             "class": null,
+             "rel": "noopener noreferrer nofollow",
+             "target": "_blank",
+             "href": "https://dailyjournal.news/news/2026-07-22/glow-sai-do-stealth-como-unicornio-de-us12-bi-em-seguranca-de-endpoints"
+            },
+            "type": "link"
+           },
+           {
+            "type": "em"
+           }
+          ],
+          "text": "endpoints"
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "class": null,
+             "href": "https://dailyjournal.news/news/2026-07-22/glow-sai-do-stealth-como-unicornio-de-us12-bi-em-seguranca-de-endpoints",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow"
+            }
+           }
+          ],
+          "text": " saiu do "
+         },
+         {
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-22/glow-sai-do-stealth-como-unicornio-de-us12-bi-em-seguranca-de-endpoints",
+             "class": null,
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow"
+            }
+           },
+           {
+            "type": "em"
+           }
+          ],
+          "type": "text",
+          "text": "stealth"
+         },
+         {
+          "marks": [
+           {
+            "attrs": {
+             "rel": "noopener noreferrer nofollow",
+             "class": null,
+             "href": "https://dailyjournal.news/news/2026-07-22/glow-sai-do-stealth-como-unicornio-de-us12-bi-em-seguranca-de-endpoints",
+             "target": "_blank"
+            },
+            "type": "link"
+           }
+          ],
+          "text": " com US$180 milhões a uma avaliação de US$1,2 bilhão",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": ", em rodada liderada por Sequoia, Cyberstarts, Greenoaks e Redpoint. Fundada em 2025 por ex-executivos de Meta, Snowflake e Claroty, usa agentes de IA para proteger dispositivos corporativos, cujo uso de IA saltou de 15% para 45% em um ano."
+         }
+        ],
+        "type": "paragraph"
+       }
+      ]
+     },
+     {
+      "content": [
+       {
+        "content": [
+         {
+          "type": "text",
+          "text": "Humanoid.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " "
+         },
+         {
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "rel": "noopener noreferrer nofollow",
+             "href": "https://dailyjournal.news/news/2026-07-22/humanoid-capta-us152-mi-e-vira-1-unicornio-de-humanoides-da-europa",
+             "target": "_blank",
+             "class": null
+            }
+           }
+          ],
+          "text": "A britânica de robótica captou uma Série A de US$152 milhões a US$1,35 bilhão",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": ", a maior de uma empresa de humanoides na Europa, com Prime Movers Lab, Schaeffler e Bosch. Assinou acordo com a Schaeffler para milhares de robôs, com a Bosch como fabricante contratada, e planeja robôs beta em clientes no 4º trimestre de 2026."
+         }
+        ],
+        "type": "paragraph"
+       }
+      ],
+      "type": "list_item"
+     }
+    ],
+    "type": "bullet_list"
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "attrs": {
+       "topImage": false,
+       "srcNoWatermark": null,
+       "bytes": 33924,
+       "href": null,
+       "width": 770,
+       "internalRedirect": null,
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/2bd4ff97-0329-48b5-aff3-9074b56db4d7_770x500.jpeg",
+       "belowTheFold": false,
+       "fullscreen": null,
+       "title": null,
+       "type": "image/jpeg",
+       "height": 500,
+       "imageSize": null,
+       "resizeWidth": 520,
+       "alt": "Robô humanoide HMND 01 Alpha, da Humanoid"
+      },
+      "type": "image2"
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Robô humanoide HMND 01 Alpha, da Humanoid. Imagem: Humanoid"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "youtube2",
+    "attrs": {
+     "videoId": "cFzahNGwAX0",
+     "startTime": null,
+     "endTime": null
+    }
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Arrakis."
+         },
+         {
+          "type": "text",
+          "text": " "
+         },
+         {
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-22/arrakis-sai-do-stealth-com-us38-mi-para-levar-agentes-de-ia-a-industria",
+             "rel": "noopener noreferrer nofollow",
+             "target": "_blank",
+             "class": null
+            }
+           }
+          ],
+          "text": "Saiu do ",
+          "type": "text"
+         },
+         {
+          "marks": [
+           {
+            "attrs": {
+             "rel": "noopener noreferrer nofollow",
+             "class": null,
+             "target": "_blank",
+             "href": "https://dailyjournal.news/news/2026-07-22/arrakis-sai-do-stealth-com-us38-mi-para-levar-agentes-de-ia-a-industria"
+            },
+            "type": "link"
+           },
+           {
+            "type": "em"
+           }
+          ],
+          "type": "text",
+          "text": "stealth"
+         },
+         {
+          "type": "text",
+          "text": " com US$38 milhões a uma avaliação de US$140 milhões",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "class": null,
+             "href": "https://dailyjournal.news/news/2026-07-22/arrakis-sai-do-stealth-com-us38-mi-para-levar-agentes-de-ia-a-industria",
+             "rel": "noopener noreferrer nofollow",
+             "target": "_blank"
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", incluindo Série A de US$30 milhões liderada pela Blossom Capital, com aportes pessoais de Olivier Pomel (CEO da Datadog) e Olivier Godement (chefe de produtos de negócios da OpenAI). Leva agentes de IA à indústria aeroespacial, de energia, logística e manufatura, e abrirá escritórios em Nova York e no Oriente Médio."
+         }
+        ],
+        "type": "paragraph"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "content": [
+     {
+      "type": "text",
+      "text": "Política & IA"
+     }
+    ],
+    "attrs": {
+     "level": 4
+    },
+    "type": "heading"
+   },
+   {
+    "content": [
+     {
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Anthropic."
+         },
+         {
+          "type": "text",
+          "text": " "
+         },
+         {
+          "type": "text",
+          "text": "Dobrou seu compromisso com política de IA para US$40 milhões",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-22/anthropic-doa-mais-us-20-milhoes-para-a-public-first-action",
+             "class": null,
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow"
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", doando mais US$20 milhões à Public First Action antes das eleições dos EUA e citando os riscos de modelos cada vez mais poderosos, incluindo o seu próprio Mythos. O grupo é contrapeso ao super PAC Leading the Future, bancado por investidores de tecnologia que defendem regulação mais leve."
+         }
+        ]
+       }
+      ],
+      "type": "list_item"
+     },
+     {
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Casa Branca."
+         },
+         {
+          "type": "text",
+          "text": " "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "attrs": {
+             "target": "_blank",
+             "href": "https://dailyjournal.news/news/2026-07-21/governo-trump-redireciona-us-200-bi-de-pesquisa-para-inteligencia-artificial",
+             "class": null,
+             "rel": "noopener noreferrer nofollow"
+            },
+            "type": "link"
+           }
+          ],
+          "text": "O OSTP divulgou o relatório “Science: A New Golden Age”"
+         },
+         {
+          "type": "text",
+          "text": ", que redirecionaria cerca de US$200 bilhões anuais em P&D federal de instituições para cientistas individuais, via bolsas portáteis. Um dos pilares escala a Genesis Mission como iniciativa nacional de IA para a ciência, com modelos de fundação por domínio e laboratórios autônomos."
+         }
+        ]
+       }
+      ],
+      "type": "list_item"
+     }
+    ],
+    "type": "bullet_list"
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "attrs": {
+       "topImage": false,
+       "srcNoWatermark": null,
+       "bytes": 460606,
+       "href": null,
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/f3bf8298-cd51-427a-9e61-79d9a21f9aaf_1920x1158.jpeg",
+       "width": 1920,
+       "belowTheFold": false,
+       "fullscreen": null,
+       "title": null,
+       "internalRedirect": null,
+       "type": "image/jpeg",
+       "height": 1158,
+       "imageSize": null,
+       "resizeWidth": 520,
+       "alt": "A Casa Branca, em Washington"
+      },
+      "type": "image2"
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "A Casa Branca, em Washington. Imagem: AgnosticPreachersKid/Wikimedia Commons (CC BY-SA 3.0)"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "content": [
+     {
+      "type": "text",
+      "text": "Conselhos & IPO"
+     }
+    ],
+    "attrs": {
+     "level": 4
+    },
+    "type": "heading"
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "content": [
+       {
+        "content": [
+         {
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "type": "text",
+          "text": "OpenAI."
+         },
+         {
+          "type": "text",
+          "text": " "
+         },
+         {
+          "type": "text",
+          "text": "Nomeou David Vélez, fundador e CEO do Nubank, e Robin Vince, CEO do BNY, para seus conselhos",
+          "marks": [
+           {
+            "attrs": {
+             "rel": "noopener noreferrer nofollow",
+             "href": "https://dailyjournal.news/news/2026-07-21/openai-nomeia-executivos-do-nubank-e-bny-para-o-conselho-antes-de-ipo",
+             "class": null,
+             "target": "_blank"
+            },
+            "type": "link"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " enquanto avança rumo a um IPO. O Nubank é o maior banco digital da América Latina, com mais de 135 milhões de clientes; avaliada em mais de US$850 bilhões, a OpenAI protocolou rascunho confidencial de prospecto na SEC em junho, com listagem possível já em 2027."
+         }
+        ],
+        "type": "paragraph"
+       }
+      ],
+      "type": "list_item"
+     }
+    ]
+   },
+   {
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "topImage": false,
+       "srcNoWatermark": null,
+       "bytes": 2626270,
+       "href": null,
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/ce9ef891-9f83-4064-8aae-5657af7fca51_3732x2427.jpeg",
+       "fullscreen": null,
+       "width": 3732,
+       "internalRedirect": null,
+       "title": null,
+       "type": "image/jpeg",
+       "belowTheFold": false,
+       "height": 2427,
+       "imageSize": null,
+       "resizeWidth": 520,
+       "alt": "David Vélez, fundador e CEO do Nubank"
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "David Vélez, fundador e CEO do Nubank. Imagem: Nubank"
+       }
+      ]
+     }
+    ],
+    "type": "captionedImage"
+   },
+   {
+    "type": "heading",
+    "content": [
+     {
+      "type": "text",
+      "text": "Ciência & saúde"
+     }
+    ],
+    "attrs": {
+     "level": 4
+    }
+   },
+   {
+    "content": [
+     {
+      "content": [
+       {
+        "content": [
+         {
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Science Corp.",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": " "
+         },
+         {
+          "type": "text",
+          "text": "Recebeu a marca CE para lançar na Europa o PRIMA, primeiro implante de interface cérebro-computador (BCI) aprovado para restaurar a visão",
+          "marks": [
+           {
+            "attrs": {
+             "class": null,
+             "rel": "noopener noreferrer nofollow",
+             "target": "_blank",
+             "href": "https://dailyjournal.news/news/2026-07-22/science-corp-recebe-aprovacao-na-ue-para-implante-ocular-bionico"
+            },
+            "type": "link"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " de formas em pacientes com degeneração macular. Liderada por Max Hodak, cofundador da Neuralink, a empresa já captou mais de US$490 milhões, e o primeiro implante comercial é esperado na Alemanha."
+         }
+        ],
+        "type": "paragraph"
+       }
+      ],
+      "type": "list_item"
+     }
+    ],
+    "type": "bullet_list"
+   },
+   {
+    "content": [
+     {
+      "attrs": {
+       "topImage": false,
+       "srcNoWatermark": null,
+       "bytes": 74125,
+       "href": null,
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/c66e18b8-50ca-480a-bac4-63373d4de46f_770x500.jpeg",
+       "fullscreen": null,
+       "internalRedirect": null,
+       "type": "image/jpeg",
+       "title": null,
+       "belowTheFold": false,
+       "width": 770,
+       "height": 500,
+       "imageSize": null,
+       "resizeWidth": 520,
+       "alt": "O implante retiniano PRIMA, da Science Corporation"
+      },
+      "type": "image2"
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "O implante retiniano PRIMA, da Science Corporation. Imagem: Science Corporation"
+       }
+      ]
+     }
+    ],
+    "type": "captionedImage"
+   },
+   {
+    "content": [
+     {
+      "type": "text",
+      "text": "Mundo"
+     }
+    ],
+    "type": "heading",
+    "attrs": {
+     "level": 4
+    }
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "content": [
+       {
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "EUA e Irã."
+         },
+         {
+          "type": "text",
+          "text": " "
+         },
+         {
+          "type": "text",
+          "text": "O CENTCOM concluiu a 11ª noite seguida de ataques ao Irã",
+          "marks": [
+           {
+            "attrs": {
+             "class": null,
+             "href": "https://dailyjournal.news/news/2026-07-22/eua-atacam-ira-pela-11-noite-teera-atinge-bases-no-kuwait-bahrein-e-jordania",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow"
+            },
+            "type": "link"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", mirando centros militares e logística para reduzir a ameaça ao Estreito de Ormuz, e o Irã retaliou atingindo bases ligadas aos EUA no Kuwait, Bahrein e Jordânia. Trump sinalizou intensificar e atacar “em breve” o sítio nuclear de Pickaxe Mountain, enquanto Israel prepara planos, mas permanece à margem."
+         }
+        ],
+        "type": "paragraph"
+       }
+      ],
+      "type": "list_item"
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Ucrânia.",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": " "
+         },
+         {
+          "type": "text",
+          "text": "Zelensky demitiu o comandante-em-chefe Oleksandr Syrskyi e nomeou o major-general Mykhailo Drapatyi, 43 anos",
+          "marks": [
+           {
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-21/zelensky-demite-principal-general-em-meio-a-crise-na-cupula-militar",
+             "class": null,
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow"
+            },
+            "type": "link"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", na maior reformulação militar desde a invasão russa. A troca veio após protestos de rua pela demissão do ministro da Defesa Mykhailo Fedorov e um atrito entre os dois."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "content": [
+       {
+        "content": [
+         {
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "type": "text",
+          "text": "França."
+         },
+         {
+          "type": "text",
+          "text": " "
+         },
+         {
+          "marks": [
+           {
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-21/franca-aprova-lei-que-proibe-acesso-de-menores-de-15-anos-a-redes-sociais",
+             "rel": "noopener noreferrer nofollow",
+             "class": null,
+             "target": "_blank"
+            },
+            "type": "link"
+           }
+          ],
+          "text": "Tornou-se o primeiro país da UE a aprovar a proibição total de redes sociais para menores de 15 anos",
+          "type": "text"
+         },
+         {
+          "type": "text",
+          "text": ", por 279 votos a 81 na Assembleia Nacional. Menores não poderão criar contas a partir de setembro de 2026 e as já existentes serão encerradas em janeiro de 2027; a lei também bane celulares na maioria dos colégios."
+         }
+        ],
+        "type": "paragraph"
+       }
+      ],
+      "type": "list_item"
+     }
+    ]
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "calloutBlock",
+    "content": [
+     {
+      "attrs": {
+       "level": 4
+      },
+      "content": [
+       {
+        "type": "text",
+        "text": "Leia também"
+       }
+      ],
+      "type": "heading"
+     },
+     {
+      "type": "bullet_list",
+      "content": [
+       {
+        "type": "list_item",
+        "content": [
+         {
+          "type": "paragraph",
+          "content": [
+           {
+            "marks": [
+             {
+              "type": "link",
+              "attrs": {
+               "rel": "noopener noreferrer nofollow",
+               "class": null,
+               "target": "_blank",
+               "href": "https://dailyjournal.news/news/2026-07-21/spacex-lanca-missao-para-estender-vida-util-de-satelites-em-orbita"
+              }
+             }
+            ],
+            "text": "SpaceX lança o primeiro veículo robótico de manutenção de satélites da Northrop Grumman",
+            "type": "text"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "list_item",
+        "content": [
+         {
+          "type": "paragraph",
+          "content": [
+           {
+            "type": "text",
+            "text": "Plozasiran, da Arrowhead, reduz triglicerídeos cerca de 80% em estudo de Fase 3",
+            "marks": [
+             {
+              "type": "link",
+              "attrs": {
+               "rel": "noopener noreferrer nofollow",
+               "class": null,
+               "href": "https://dailyjournal.news/news/2026-07-22/plozasiran-da-arrowhead-reduz-triglicerideos-80-na-fase-3",
+               "target": "_blank"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "type": "doc",
+  "attrs": {
+   "schemaVersion": "v1"
+  }
+ }
+}

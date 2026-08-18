@@ -1,0 +1,2177 @@
+{
+ "draft_id": "210628041",
+ "title": "[Tech] - Bem-vindo(a) a 10 de Agosto de 2026",
+ "subtitle": "Meta divulga novo modelo aberto | Agente de IA cancela reserva em academia | Intel anuncia primeira venda pública de ações desde 1971",
+ "body": {
+  "type": "doc",
+  "content": [
+   {
+    "type": "paragraph",
+    "attrs": {
+     "textAlign": null
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Por: Guilherme Saboia e Vinicius Gushiken"
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Meta abre os pesos do Muse Glimmer, modelo de 30 bilhões de parâmetros que roda em uma GPU"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Modelo."
+         },
+         {
+          "type": "text",
+          "text": " A Meta Superintelligence Labs publicou o "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-10/meta-lanca-modelo-de-ia-muse-glimmer-e-anuncia-fundo-de-us-1-bilhao",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "Muse Glimmer no Hugging Face"
+         },
+         {
+          "type": "text",
+          "text": ", um modelo de 30 bilhões de parâmetros com pesos abertos sob licença permissiva Apache 2.0, otimizado para fluxos de agentes locais em execução contínua. Ele aceita texto e imagens intercalados por meio de um codificador de percepção dedicado, foi treinado em mais de 100 idiomas e é compatível com o "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "scaffold"
+         },
+         {
+          "type": "text",
+          "text": " de agentes OpenClaw e outros padrões de orquestração agêntica."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Quantização."
+         },
+         {
+          "type": "text",
+          "text": " Quantizar os pesos para precisão de aproximadamente 4 bits reduz o requisito de memória de mais de 55GB para menos de 20GB, o que faz o modelo "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-10/meta-lanca-modelo-de-ia-muse-glimmer-e-anuncia-fundo-de-us-1-bilhao",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "rodar em um Mac ou PC com uma única GPU de 24GB de VRAM"
+         },
+         {
+          "type": "text",
+          "text": ". A Meta afirma que a compressão preserva a confiabilidade em tarefas agênticas, com degradação mínima ou nula."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Treino."
+         },
+         {
+          "type": "text",
+          "text": " O Glimmer foi pré-treinado com os "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "outputs"
+         },
+         {
+          "type": "text",
+          "text": " do Muse Spark, o modelo maior da casa, por destilação de "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "logits"
+         },
+         {
+          "type": "text",
+          "text": "; o pós-treinamento combinou "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "fine-tuning"
+         },
+         {
+          "type": "text",
+          "text": " supervisionado, destilação "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "on-policy"
+         },
+         {
+          "type": "text",
+          "text": " e aprendizado por reforço em raciocínio, programação e tarefas agênticas. O modelo chegou com suporte desde o primeiro dia em vLLM, SGLang, Ollama, llama.cpp, LM Studio e Unsloth, e a Meta o compara ao Gemma4-31B, do Google, e ao Qwen3.6-27B, da Alibaba."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Virada."
+         },
+         {
+          "type": "text",
+          "text": " É o lançamento de pesos abertos mais relevante da Meta desde a série Llama e "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-10/zuckerberg-critica-modelos-fechados-de-ia-e-defende-codigo-aberto",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "reverte em parte a migração para modelos fechados"
+         },
+         {
+          "type": "text",
+          "text": ", decidida após a recepção do Llama 4 e a saída de Yann LeCun. O diretor de IA da empresa, Alexandr Wang, disse que a Meta também vai "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-10/meta-lanca-modelo-de-ia-muse-glimmer-e-anuncia-fundo-de-us-1-bilhao",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "abrir os pesos do Muse Spark 1.2"
+         },
+         {
+          "type": "text",
+          "text": ", seu modelo base mais recente, nas próximas semanas segundo o Wall Street Journal."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/3ab69eba-ddd4-410d-8330-8db475096e20_1080x2010.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 2010,
+       "width": 1080,
+       "resizeWidth": 520,
+       "bytes": null,
+       "alt": "Table comparing Muse Glimmer 30B with Gemma4 31B and Qwen3.6 27B across agentic, coding, multimodal, safety, and reasoning benchmarks.",
+       "title": null,
+       "type": null,
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Pontuação do Muse Glimmer em diversos "
+       },
+       {
+        "type": "text",
+        "marks": [
+         {
+          "type": "em"
+         }
+        ],
+        "text": "benchmarks"
+       },
+       {
+        "type": "text",
+        "text": ", em comparação com Gemma4-31B e Qwen3.6-27B. Imagem: Meta"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Agente pessoal de IA explora falha na API de uma academia e cancela a reserva de um estranho"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Caso."
+         },
+         {
+          "type": "text",
+          "text": " A ABC News noticiou o "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-10/agente-de-ia-explora-falha-em-api-e-remove-usuario-de-academia",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "primeiro caso conhecido na Austrália de um agente de IA operado por um consumidor invadindo autonomamente um sistema em produção"
+         },
+         {
+          "type": "text",
+          "text": ". Andrew, que trabalha em uma empresa australiana de produtos de IA, conectou ao Claude, da Anthropic, o OpenClaw, assistente pessoal de código aberto criado por Peter Steinberger, e pediu que ele reservasse uma disputada aula matinal na academia."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Falha."
+         },
+         {
+          "type": "text",
+          "text": " O agente descobriu que os limites da janela de reserva, que restringiam com quanta antecedência as aulas podiam ser marcadas, eram aplicados apenas no "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "front-end"
+         },
+         {
+          "type": "text",
+          "text": " do site, não na API, e passou a "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-10/agente-de-ia-explora-falha-em-api-e-remove-usuario-de-academia",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "marcar aulas semanas ou meses além do permitido"
+         },
+         {
+          "type": "text",
+          "text": ". Qualquer cliente que contornasse a interface do navegador conseguia o mesmo."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Cancelamento."
+         },
+         {
+          "type": "text",
+          "text": " Perguntado apenas se poderia subir da quarta posição em uma lista de espera, o agente achou um "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "endpoint"
+         },
+         {
+          "type": "text",
+          "text": " de cancelamento sem nenhuma verificação de autorização e, sem ter recebido ordem para isso, "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-10/agente-de-ia-explora-falha-em-api-e-remove-usuario-de-academia",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "cancelou a reserva de quem estava em primeiro lugar"
+         },
+         {
+          "type": "text",
+          "text": ". “Testei isso com a pessoa na posição #1 da lista de espera e realmente funcionou”, relatou; quando Andrew pediu que desfizesse, respondeu que era impossível restaurar a pessoa. O agente então redigiu um e-mail de divulgação responsável à fornecedora do software de reservas, que Andrew enviou."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Vácuo legal."
+         },
+         {
+          "type": "text",
+          "text": " As seções 477.2 e 477.3 do Código Penal australiano, sobre modificação não autorizada de dados e comprometimento de comunicação eletrônica, preveem "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-10/agente-de-ia-explora-falha-em-api-e-remove-usuario-de-academia",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "pena máxima de dez anos de prisão"
+         },
+         {
+          "type": "text",
+          "text": " e foram escritas tendo réus humanos em mente. Ninguém na cadeia é claramente responsável, nenhuma queixa policial foi registrada, e os controles que o Australian Signals Directorate recomendou em maio para agentes, privilégio mínimo, aprovação humana em etapas sensíveis e autenticação por requisição, estavam ausentes no momento decisivo."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/65eae3cd-e822-4939-9ae7-bbbec7ea5d13_1600x900.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 900,
+       "width": 1600,
+       "resizeWidth": 520,
+       "bytes": 188513,
+       "alt": "Andrew, o usuário australiano cujo agente de IA invadiu a API da academia",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Andrew pediu ao assistente de IA que reservasse uma aula na academia. Imagem: ABC News/Billy Draper"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Intel anuncia oferta de ações de US$15 bilhões, a primeira venda pública desde 1971"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Oferta."
+         },
+         {
+          "type": "text",
+          "text": " A Intel "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-10/intel-anuncia-oferta-de-acoes-de-us-15-bilhoes-e-papeis-caem",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "anunciou uma oferta pública de ações ordinárias de US$15 bilhões"
+         },
+         {
+          "type": "text",
+          "text": ", a primeira venda pública de ações da empresa desde 1971. J.P. Morgan Securities, Goldman Sachs, Morgan Stanley e Citigroup Global Markets, coordenadores líderes conjuntos, têm opção de 30 dias para comprar até US$2,25 bilhões em ações adicionais, o que levaria a operação a US$17,25 bilhões."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Destino."
+         },
+         {
+          "type": "text",
+          "text": " Os recursos líquidos vão para fins corporativos gerais, o que pode incluir capital fixo e capital de giro, e a empresa enquadrou a captação na demanda por IA, citando IA física, silício de propósito específico, empacotamento avançado e wafers externos como oportunidades de crescimento. A Intel diz que a oferta preserva sua classificação de crédito de grau de investimento."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Fábrica."
+         },
+         {
+          "type": "text",
+          "text": " A venda vem depois de a Intel "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-10/intel-anuncia-oferta-de-acoes-de-us-15-bilhoes-e-papeis-caem",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "elevar em julho a meta de investimento em capital fixo para 2026, de US$18 bilhões para US$20 bilhões"
+         },
+         {
+          "type": "text",
+          "text": ", revisão feita após o crescimento de receita mais rápido em quase 15 anos. A empresa se comprometeu a levar o processo de fabricação 14A à produção em alto volume até 2028 e já tem a Tesla como cliente do 14A por meio de sua divisão de "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "foundry"
+         },
+         {
+          "type": "text",
+          "text": "."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/82941bd7-bf61-4e70-bb0d-035f893a57b5_1920x1080.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 1080,
+       "width": 1920,
+       "resizeWidth": 520,
+       "bytes": 588710,
+       "alt": "Lip-Bu Tan, CEO da Intel",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Lip-Bu Tan, CEO da Intel. Imagem: Intel"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "blockquote",
+    "content": [
+     {
+      "type": "paragraph",
+      "attrs": {
+       "textAlign": null
+      },
+      "content": [
+       {
+        "type": "text",
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "text": "Abaixo, apenas para assinantes:"
+       }
+      ]
+     },
+     {
+      "type": "paragraph",
+      "attrs": {
+       "textAlign": null
+      },
+      "content": [
+       {
+        "type": "text",
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "text": "Modelos."
+       },
+       {
+        "type": "text",
+        "text": " Um artigo em defesa da IA aberta, e a liderança chinesa tanto em geração de vídeo quanto em robôs humanoides."
+       }
+      ]
+     },
+     {
+      "type": "paragraph",
+      "attrs": {
+       "textAlign": null
+      },
+      "content": [
+       {
+        "type": "text",
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "text": "Silício."
+       },
+       {
+        "type": "text",
+        "text": " O chip de IA próprio de uma gigante americana da nuvem, uma joint venture japonesa de sensores de imagem, a memória pesando cada vez mais no custo dos celulares, e uma projetista chinesa de chips a caminho da bolsa de Hong Kong."
+       }
+      ]
+     },
+     {
+      "type": "paragraph",
+      "attrs": {
+       "textAlign": null
+      },
+      "content": [
+       {
+        "type": "text",
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "text": "Dinheiro."
+       },
+       {
+        "type": "text",
+        "text": " Gestoras de infraestrutura entram no negócio de data centers arrendados a uma empresa americana de IA, e uma startup de cibersegurança defensiva sai do "
+       },
+       {
+        "type": "text",
+        "marks": [
+         {
+          "type": "em"
+         }
+        ],
+        "text": "stealth"
+       },
+       {
+        "type": "text",
+        "text": " com uma rodada liderada por um fundo do Vale."
+       }
+      ]
+     },
+     {
+      "type": "paragraph",
+      "attrs": {
+       "textAlign": null
+      },
+      "content": [
+       {
+        "type": "text",
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "text": "Mundo."
+       },
+       {
+        "type": "text",
+        "text": " Exercícios militares em Taiwan e câmeras de barcos-drone britânicos enviando dados para um endereço na China."
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/f44b2401-8353-4151-945f-a4a7650d073d_4700x649.png",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 649,
+       "width": 4700,
+       "resizeWidth": null,
+       "bytes": 86036,
+       "alt": "AbacatePay",
+       "title": null,
+       "type": "image/png",
+       "href": "https://abacatepay.com",
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     }
+    ]
+   },
+   {
+    "type": "paywall"
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Modelos abertos"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Zuckerberg."
+         },
+         {
+          "type": "text",
+          "text": " O fundador da Meta publicou um ensaio de 6.500 palavras, “The Future Is for Everyone”, em que defende que "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-10/zuckerberg-critica-modelos-fechados-de-ia-e-defende-codigo-aberto",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "a superinteligência pessoal deve estar disponível para todos"
+         },
+         {
+          "type": "text",
+          "text": ", critica as empresas de modelos fechados por um discurso “tão cheio de catastrofismo” e argumenta que a política dos EUA precisa reduzir a fricção das restrições sobre dados de treinamento para que os modelos abertos americanos liderem; junto com o texto, a Meta anunciou um fundo de US$1 bilhão para comunidades próximas a seus data centers e prometeu agentes pessoais com um modo privado que nem a própria empresa consegue inspecionar. O professor da Wharton Ethan Mollick chamou o Muse Spark de “o melhor modelo de pesos abertos não chinês lançado em um ano”, mas ponderou que ele não está na fronteira dos modelos abertos da China."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/24893569-868c-403e-917a-c8be4a90e14e_1280x960.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 960,
+       "width": 1280,
+       "resizeWidth": 520,
+       "bytes": 169225,
+       "alt": "Mark Zuckerberg, fundador e CEO da Meta",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Mark Zuckerberg, fundador e CEO da Meta. Imagem: Jeff Sainlar/Meta (CC BY-SA 4.0)"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Memória e dispositivos"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Apple."
+         },
+         {
+          "type": "text",
+          "text": " A TrendForce estima que o custo da lista de materiais (BOM) do iPhone 18 Pro de 256GB será "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-10/custo-do-iphone-18-pro-sobe-38-com-a-alta-dos-precos-de-memoria",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "cerca de 38% maior na comparação anual"
+         },
+         {
+          "type": "text",
+          "text": ", com a memória saltando de perto de 10% do custo total um ano atrás para aproximadamente 34% no terceiro trimestre de 2026 e mais de 40% no primeiro semestre de 2027. A Apple avalia DRAM da chinesa CXMT para aparelhos vendidos na China e busca aval da Casa Branca, mas as regras federais que proíbem transferir tecnologia à empresa inviabilizam memória sob medida e limitam qualquer acordo a peças padrão; senadores americanos pediram em julho que a Apple não comprasse chips chineses."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Silício e fábricas"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Microsoft."
+         },
+         {
+          "type": "text",
+          "text": " A empresa deve apresentar o Maia 300, seu chip de IA de próxima geração, "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-10/microsoft-planeja-lancar-chip-maia-300-para-ia-ainda-este-ano",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "já em setembro"
+         },
+         {
+          "type": "text",
+          "text": ", e negocia com a TSMC capacidade para mais de 300 mil unidades com entrega em 2027, mirando mais de 1 milhão no prazo mais longo. Diz-se que o chip entrega mais de 30% mais tokens por dólar do que o hardware atual da Microsoft, que quer atrair grandes clientes de nuvem, como a Anthropic, para o próprio silício."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Sony e TSMC."
+         },
+         {
+          "type": "text",
+          "text": " As duas vão gastar cerca de 1 trilhão de ienes (US$6,32 bilhões) em uma "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-10/sony-e-tsmc-planejam-investir-us-63-bi-em-fabrica-no-japao",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           },
+           {
+            "type": "em"
+           }
+          ],
+          "text": "joint venture"
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-10/sony-e-tsmc-planejam-investir-us-63-bi-em-fabrica-no-japao",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": " de sensores de imagem de próxima geração"
+         },
+         {
+          "type": "text",
+          "text": ", com 60% da Sony e 40% da TSMC e produção comercial em 2029, em Kumamoto. O CEO da Sony, Hiroki Totoki, chamou o acordo de “primeiro passo” para a empresa se tornar "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "fab-light"
+         },
+         {
+          "type": "text",
+          "text": ", a primeira ruptura estrutural com décadas de projeto e fabricação inteiramente internos de seus sensores."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/dcc50848-35aa-473b-99ff-bf0914bdd42d_1920x1341.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 1341,
+       "width": 1920,
+       "resizeWidth": 520,
+       "bytes": 298011,
+       "alt": "Fábrica da JASM, joint venture da TSMC em Kumamoto",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "A fábrica da JASM, joint venture da TSMC em Kikuyo, Kumamoto. Imagem: hyolee2/Wikimedia Commons (CC BY-SA 4.0)"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Moore Threads."
+         },
+         {
+          "type": "text",
+          "text": " A projetista chinesa de chips de IA listada em Xangai aprovou "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-10/moore-threads-planeja-listagem-em-hong-kong-apos-receita-subir-147",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "emitir ações H e listar no quadro principal da bolsa de Hong Kong"
+         },
+         {
+          "type": "text",
+          "text": ", depois de a receita subir 147% no primeiro semestre, para 1,74 bilhão de yuans (cerca de US$255 milhões), com prejuízo líquido reduzido a 11,6 milhões de yuans, contra 270,9 milhões um ano antes. As ações acumulam alta de mais de 420% desde a estreia no STAR Market, em dezembro de 2025, e a rival Cambricon reportou receita de 5,996 bilhões de yuans, alta de 108,13%."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Infraestrutura de IA"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Anthropic."
+         },
+         {
+          "type": "text",
+          "text": " A empresa, a Macquarie Asset Management e o fundo soberano de Singapura GIC criaram a "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-10/anthropic-cria-joint-venture-para-construir-data-centers-de-ia",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "Theseus Infrastructure, plataforma que vai desenvolver, operar e arrendar data centers à Anthropic sob contratos de longo prazo"
+         },
+         {
+          "type": "text",
+          "text": ", com foco inicial nos EUA. Fundos da Macquarie e o GIC ficam donos da plataforma e financiam a maior parte do capital próprio de cada projeto, estrutura que transfere o risco de construção aos investidores de infraestrutura; a Anthropic se comprometeu a cobrir aumentos de preço de eletricidade para consumidores e já anunciou um programa de US$50 bilhões em infraestrutura computacional americana."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Segurança"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Corma."
+         },
+         {
+          "type": "text",
+          "text": " A empresa saiu do "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "stealth"
+         },
+         {
+          "type": "text",
+          "text": " com um "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "seed"
+         },
+         {
+          "type": "text",
+          "text": " de "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-10/corma-levanta-us60-milhoes-com-a-sequoia-para-ia-de-defesa-cibernetica",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "US$60 milhões liderado pela Sequoia Capital"
+         },
+         {
+          "type": "text",
+          "text": ", com Khosla Ventures e Coatue, para construir modelos de fundação de cibersegurança defensiva. Em simulações próprias em ambientes no estilo Fortune 500, sem verificação independente, os principais modelos tiveram sucesso como atacantes em 88% dos casos e detectaram as ameaças como defensores em apenas 12%; o CEO Alon Pluda diz que os modelos de fronteira são treinados na prática para o ataque, enquanto a defesa é “olhar "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "logs"
+         },
+         {
+          "type": "text",
+          "text": ", auditorias e achar a agulha no palheiro”."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Marinha Real britânica."
+         },
+         {
+          "type": "text",
+          "text": " Câmeras dos barcos-drone K3 Scout, com componentes fabricados na China, "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-10/marinha-real-britanica-desativa-internet-em-drones-apos-falha-de-seguranca",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "transmitiam comunicações de "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-10/marinha-real-britanica-desativa-internet-em-drones-apos-falha-de-seguranca",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           },
+           {
+            "type": "em"
+           }
+          ],
+          "text": "heartbeat"
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-10/marinha-real-britanica-desativa-internet-em-drones-apos-falha-de-seguranca",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": " para um endereço de IP na China"
+         },
+         {
+          "type": "text",
+          "text": ", dados que confirmam que o equipamento está online e funcionando. O Ministério da Defesa removeu toda a conectividade de internet das câmeras e diz não ter encontrado evidência de acesso ou transmissão externa de dados; a frota de £12 milhões, construída pela Kraken Technology Group, integrava um pacote britânico planejado para missões no Golfo."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/34ceb2dd-f396-4e8d-86ef-fbde0ae78c6e_1200x675.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 675,
+       "width": 1200,
+       "resizeWidth": 520,
+       "bytes": 188648,
+       "alt": "Barco-drone K3 Scout, da Kraken Technology Group",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Barco-drone K3 Scout, da Kraken Technology Group. Imagem: Reprodução/LBC"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "China"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Vídeo."
+         },
+         {
+          "type": "text",
+          "text": " Nove dos dez modelos de texto para vídeo mais bem avaliados na arena da Artificial Analysis, baseada em votos cegos de usuários, "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-10/laboratorios-chineses-dominam-ranking-global-de-modelos-de-ia-de-video",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "são chineses"
+         },
+         {
+          "type": "text",
+          "text": ", com o Gemini Omni Flash (Elo 1.243) como único americano no topo, à frente do MiniMax H3, de pesos abertos (1.237), e do Seedance 2.0 da ByteDance (1.223). Os EUA cederam terreno depois de a OpenAI encerrar o Sora em março e de a Anthropic nunca entrar em geração de vídeo; o próximo alvo são os "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "world models"
+         },
+         {
+          "type": "text",
+          "text": ", sistemas que buscam entender como o mundo físico funciona e que serão úteis em robôs humanoides e carros autônomos."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Humanoides."
+         },
+         {
+          "type": "text",
+          "text": " Fabricantes chinesas responderam por "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-10/fabricantes-chinesas-embarcam-97-dos-robos-humanoides-do-mundo",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "mais de 97% das entregas globais de robôs humanoides no primeiro semestre"
+         },
+         {
+          "type": "text",
+          "text": ", segundo a Smart Analytics Global, com cerca de 19.100 unidades no período, mais que o triplo das 5.100 de um ano antes. A AgiBot embarcou 5.168 unidades em 2025, cerca de 39% do mercado global sozinha, e a Unitree movimentou mais de 5.000 no mesmo período; a consultoria projeta 60 mil unidades neste ano e meio milhão até 2030."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/40de1f1a-9e51-4909-837b-4f4825c2a5df_1920x1184.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 1184,
+       "width": 1920,
+       "resizeWidth": 520,
+       "bytes": 305931,
+       "alt": "O robô humanoide X2, da chinesa AgiBot",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "O humanoide X2, da chinesa AgiBot, no MWC 2026. Imagem: JJxFile/Wikimedia Commons (CC BY 4.0)"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Saúde"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Aleniglipron."
+         },
+         {
+          "type": "text",
+          "text": " Um ensaio de fase 2b publicado na Nature Medicine mostrou "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-10/pilula-glp-1-aleniglipron-leva-a-121-de-perda-de-peso-em-36-semanas",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "perda média de 12,1% do peso corporal em 36 semanas na dose de 120 mg"
+         },
+         {
+          "type": "text",
+          "text": ", contra 10,7% em 90 mg, 9,0% em 45 mg e 0,5% no placebo, entre 230 adultos com obesidade ou sobrepeso em 38 centros médicos americanos. Os efeitos gastrointestinais foram leves a moderados, 10,4% interromperam o tratamento e não houve caso de lesão hepática; diferentemente de injetáveis como a semaglutida, é uma pequena molécula oral, e a Structure Therapeutics planeja um ensaio de fase 3."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Mundo"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Irã e EUA."
+         },
+         {
+          "type": "text",
+          "text": " O chanceler Abbas Araghchi disse que Teerã "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-08/ira-critica-diplomacia-de-trump-enquanto-trafego-no-estreito-de-ormuz-para",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "não mantém negociações diretas com Washington"
+         },
+         {
+          "type": "text",
+          "text": ", apenas troca mensagens por mediadores, e condicionou qualquer retomada ao fim das violações americanas ao memorando de junho e à compensação por elas; o porta-voz Esmaeil Baqaei afirmou que os EUA precisam suspender o bloqueio naval antes da reabertura plena do Estreito de Ormuz."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Rússia e Ucrânia."
+         },
+         {
+          "type": "text",
+          "text": " O vice-ministro Mikhail Galuzin disse à TASS que Moscou "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-10/russia-descarta-congelar-a-guerra-antes-de-visitas-de-witkoff-e-kushner",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "não aceitará “congelar” a guerra"
+         },
+         {
+          "type": "text",
+          "text": " sem tratar das “causas profundas” do conflito, às vésperas das viagens dos enviados americanos Steve Witkoff e Jared Kushner a Kyiv e a Moscou com novas propostas. Kyiv defende um cessar-fogo na atual linha de frente e a Rússia exige a retirada ucraniana de partes do Donbas; Zelenskyy marcou novas conversas com mediadores para esta semana e negociações por pacotes de defesa aérea."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Taiwan."
+         },
+         {
+          "type": "text",
+          "text": " As Forças Armadas simularam a "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-08/presidente-de-taiwan-supervisiona-exercicios-militares-contra-invasao",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "defesa a um desembarque chinês nas ilhas Penghu"
+         },
+         {
+          "type": "text",
+          "text": ", com tanques M60A3, artilharia e canhões antiaéreos, nos exercícios militares anuais. O governo também reduziu de propósito a velocidade da internet móvel no centro da ilha, pela primeira vez durante os exercícios, para testar como os cidadãos se comunicariam com conectividade escassa, sem afetar serviços essenciais; o norte, incluindo Taipé, passa pelo mesmo teste na quinta-feira."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/e18c40f7-1d15-4964-827b-407cf36f874f_760x481.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 481,
+       "width": 760,
+       "resizeWidth": 520,
+       "bytes": 34655,
+       "alt": "Tanque M60A3 dispara durante exercício militar em Penghu, Taiwan",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Tanque M60A3 dispara durante exercício militar em Penghu, Taiwan. Imagem: Reuters/Ann Wang"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "calloutBlock",
+    "content": [
+     {
+      "type": "heading",
+      "attrs": {
+       "textAlign": null,
+       "level": 4
+      },
+      "content": [
+       {
+        "type": "text",
+        "text": "Leia também"
+       }
+      ]
+     },
+     {
+      "type": "bullet_list",
+      "content": [
+       {
+        "type": "list_item",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "link",
+              "attrs": {
+               "href": "https://dailyjournal.news/news/2026-08-10/teledyne-compra-a-varex-imaging-por-us11-bilhao-em-dinheiro",
+               "target": "_blank",
+               "rel": "noopener noreferrer nofollow",
+               "class": null
+              }
+             }
+            ],
+            "text": "Teledyne compra a Varex Imaging por US$1,1 bilhão em dinheiro"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "list_item",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "link",
+              "attrs": {
+               "href": "https://dailyjournal.news/news/2026-08-09/columbia-britanica-declara-emergencia-apos-incendios-forcarem-evacuacoes",
+               "target": "_blank",
+               "rel": "noopener noreferrer nofollow",
+               "class": null
+              }
+             }
+            ],
+            "text": "Incêndio Bald Range tira 20 mil pessoas de casa e leva a Colúmbia Britânica a decretar emergência"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "marks": [
+       {
+        "type": "strong"
+       }
+      ],
+      "text": "Recomendações de hoje:"
+     }
+    ]
+   },
+   {
+    "type": "paragraph",
+    "attrs": {
+     "textAlign": null
+    },
+    "content": [
+     {
+      "type": "text",
+      "marks": [
+       {
+        "type": "strong"
+       }
+      ],
+      "text": "Google’s AI Brain Drain, SpaceX's Huge Quarter, Airtable’s 90% Collapse, US Data Fuels China AI:"
+     },
+     {
+      "type": "text",
+      "text": " O Google enfrenta uma reestruturação significativa em sua divisão de IA, com a transição de Demis Hassabis para cargos de liderança e a saída de talentos de elite, como Jeff Dean, para fundar a startup Discovery Loop. O podcast discute se isso reflete uma perda de talentos ou uma mudança estratégica. A tese central é que o Google está priorizando investimentos em infraestrutura de computação (Capex) em vez do desenvolvimento exclusivo de modelos de fronteira, dado que a infraestrutura oferece retornos mais previsíveis e menos arriscados em um mercado onde modelos de código aberto estão se tornando competitivos:"
+     }
+    ]
+   },
+   {
+    "type": "youtube2",
+    "attrs": {
+     "videoId": "muRIXCDw-k0",
+     "startTime": null,
+     "endTime": null
+    }
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "paragraph",
+    "attrs": {
+     "textAlign": null
+    },
+    "content": [
+     {
+      "type": "text",
+      "marks": [
+       {
+        "type": "strong"
+       }
+      ],
+      "text": "AI Is Learning to Hack. Faster Than We Expected.:"
+     },
+     {
+      "type": "text",
+      "text": " O vídeo apresenta uma discussão entre Joel De La Garza (a16z), Dylan Ayrey (Truffle Security) e Feross Aboukhadijeh (Socket) sobre a evolução da cibersegurança na era da IA. O debate foca em como modelos de IA estão deixando de apenas identificar vulnerabilidades para explorá-las ativamente, alterando o cenário de ataques à cadeia de suprimentos de software e a segurança de credenciais:"
+     }
+    ]
+   },
+   {
+    "type": "youtube2",
+    "attrs": {
+     "videoId": "RtNrvPBkwfA",
+     "startTime": "49s",
+     "endTime": null
+    }
+   }
+  ]
+ }
+}
