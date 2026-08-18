@@ -34,6 +34,14 @@ class HTMLToProseMirror(HTMLParser):
         self._doc_content = []
         self._active_marks = []
         self._current_block = None
+        # Table state. Substack's ProseMirror schema has NO table node, and an
+        # unknown node type makes the editor discard the ENTIRE document (probed
+        # 2026-08-18: a doc with a `table` node loads with an empty body, taking
+        # the surrounding paragraphs with it). So tables are degraded to a
+        # bullet_list, which the schema does support.
+        self._table = None
+        self._row = None
+        self._row_is_header = False
 
     def _push_block(self, node):
         self._current_block = node
@@ -52,7 +60,7 @@ class HTMLToProseMirror(HTMLParser):
     def _current_inline_parent(self):
         for node in reversed(self._stack):
             t = node.get("type")
-            if t in ("paragraph", "heading", "list_item_para"):
+            if t in ("paragraph", "heading", "list_item_para", "table_cell_para"):
                 return node
         return None
 
@@ -110,6 +118,17 @@ class HTMLToProseMirror(HTMLParser):
             self._push_block({"type": "blockquote"})
         elif tag == "hr":
             self._doc_content.append({"type": "horizontal_rule"})
+        elif tag == "table":
+            self._table = {"headers": [], "rows": []}
+        elif tag == "tr":
+            self._row = []
+            self._row_is_header = False
+        elif tag in ("th", "td"):
+            if tag == "th":
+                self._row_is_header = True
+            cell = {"type": "table_cell_para"}
+            self._stack.append(cell)
+            self._current_block = cell
 
     def handle_endtag(self, tag):
         if tag in ("p", "h1", "h2", "h3", "h4", "h5", "h6", "ul", "ol", "blockquote"):
@@ -124,6 +143,93 @@ class HTMLToProseMirror(HTMLParser):
             self._active_marks = [m for m in self._active_marks if m["type"] != "em"]
         elif tag == "a":
             self._active_marks = [m for m in self._active_marks if m["type"] != "link"]
+        elif tag in ("th", "td"):
+            cell = self._stack.pop()
+            self._current_block = self._stack[-1] if self._stack else None
+            if self._row is not None:
+                self._row.append(cell.get("content", []))
+        elif tag == "tr":
+            if self._table is not None and self._row:
+                if self._row_is_header and not self._table["headers"]:
+                    self._table["headers"] = self._row
+                else:
+                    self._table["rows"].append(self._row)
+            self._row = None
+        elif tag == "table":
+            node = self._table_to_bullet_list(self._table)
+            self._table = None
+            if node is not None:
+                if self._stack:
+                    self._stack[-1].setdefault("content", []).append(node)
+                else:
+                    self._doc_content.append(node)
+
+    # --- table degradation -------------------------------------------------
+
+    @staticmethod
+    def _cell_text(nodes):
+        return "".join(n.get("text", "") for n in nodes)
+
+    @staticmethod
+    def _trim(nodes):
+        """Drop leading/trailing whitespace-only text nodes from a cell."""
+        out = [dict(n) for n in nodes]
+        while out and not out[0].get("text", "").strip():
+            out.pop(0)
+        while out and not out[-1].get("text", "").strip():
+            out.pop()
+        if out:
+            out[0]["text"] = out[0].get("text", "").lstrip()
+            out[-1]["text"] = out[-1].get("text", "").rstrip()
+        return out
+
+    @staticmethod
+    def _strongify(nodes):
+        """Bold a cell's text, preserving any marks it already carries."""
+        out = []
+        for n in nodes:
+            n = dict(n)
+            marks = [dict(m) for m in n.get("marks", [])]
+            if not any(m.get("type") == "strong" for m in marks):
+                marks.append({"type": "strong"})
+            n["marks"] = marks
+            out.append(n)
+        return out
+
+    def _table_to_bullet_list(self, table):
+        """A row becomes one bullet: first cell bold as the label, the rest
+        appended after ' · '. With 3+ columns each value is prefixed by its
+        header, since the column it came from is no longer visible."""
+        if not table:
+            return None
+        headers = [self._cell_text(self._trim(c)).strip()
+                   for c in table.get("headers", [])]
+        items = []
+        for row in table.get("rows", []):
+            cells = [self._trim(c) for c in row]
+            if not any(self._cell_text(c).strip() for c in cells):
+                continue
+            content = list(self._strongify(cells[0]))
+            # With 3+ columns every value carries its header, so the first one
+            # needs it too — otherwise the bullet opens on a bare cell value
+            # ("1 · Dias: …" instead of "Semana 1 · Dias: …").
+            if len(headers) > 2 and headers and headers[0]:
+                content.insert(0, {"type": "text", "text": f"{headers[0]} ",
+                                   "marks": [{"type": "strong"}]})
+            for i, cell in enumerate(cells[1:], start=1):
+                if not self._cell_text(cell).strip():
+                    continue
+                content.append({"type": "text", "text": " · "})
+                if len(headers) > 2 and i < len(headers) and headers[i]:
+                    content.append({"type": "text", "text": f"{headers[i]}: "})
+                content.extend(cell)
+            if not content:
+                continue
+            items.append({"type": "list_item",
+                          "content": [{"type": "paragraph", "content": content}]})
+        if not items:
+            return None
+        return {"type": "bullet_list", "content": items}
 
     def handle_data(self, data):
         self._append_text(data)
