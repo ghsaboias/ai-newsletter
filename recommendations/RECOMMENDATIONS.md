@@ -1059,3 +1059,13 @@ https://www.youtube.com/watch?v=HI2q3ci3Iuc
 **Bernie Demands the Labs Stop, Wall Street Turns GPUs Into Bonds, Grok 4.7 Takes #1 ft. Emad Mostaque**
 O episódio do podcast Moonshots, apresentado por Peter H. Diamandis, reúne um painel de especialistas (Salim Ismail, Dave Blundin, Dr. Alexander Wissner-Gross e Emad Mostaque) para discutir os avanços exponenciais em IA, longevidade, infraestrutura de computação e o impacto dessas tecnologias na sociedade
 https://www.youtube.com/watch?v=uoGnH0REG7A
+
+## 2026-08-17
+
+**Travis Kalanick: How AI Will Transform the Physical World**
+Travis Kalanick, fundador da Uber, discute sua nova empreitada, a Atoms, em uma conversa com Ben Horowitz e Erik Torenberg. O foco central é a transição da "IA digital" para a "IA industrial", aplicando software, sensores e robótica para automatizar setores físicos fundamentais como produção de alimentos, mineração e logística. Kalanick defende que a próxima revolução industrial será impulsionada pela digitalização do mundo físico, tratando átomos com a mesma precisão e eficiência com que o software trata bits
+https://www.youtube.com/watch?v=r8qKNFeBPXE
+
+**200GW Hiding in Grid, Sodium Batteries 10x Cheaper, Wave-Powered Datacenters w/ Ramez Naam | EP #280**
+O vídeo discute a intersecção crítica entre a demanda massiva de energia pela Inteligência Artificial e a infraestrutura de rede elétrica atual. Ramez Naam, futurista de energia e investidor, argumenta que a energia não é um problema de custo, mas um gargalo de infraestrutura. A capacidade de processamento (compute) está crescendo exponencialmente, enquanto a expansão da rede elétrica (poles and wires) tornou-se um processo lento e regulado, criando um descompasso significativo entre a disponibilidade de chips e a capacidade de alimentá-los
+https://www.youtube.com/watch?v=LUFJE5QkINg
