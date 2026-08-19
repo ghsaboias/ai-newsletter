@@ -80,13 +80,6 @@
     margin-right: 6px;
     border-radius: 2px;
   }
-  .legend .dash-swatch {
-    display: inline-block;
-    width: 16px;
-    height: 0;
-    margin-right: 6px;
-    border-top: 2px dashed #999;
-  }
   .caption {
     font-size: 11px;
     line-height: 16px;
@@ -122,12 +115,11 @@
     <div class="legend">
       <span><span class="swatch" style="background:#044B2E"></span>Capital investido (US$ bilhões)</span>
       <span><span class="line-swatch" style="background:#E88E00"></span>Número de negócios</span>
-      <span><span class="dash-swatch"></span>2022 + 2023 + 2024 somados</span>
     </div>
   </div>
 
   <div class="caption">
-    Crunchbase News, "VCs Pour Billions Into Physical AI As The Next Wave Of AI Investing Takes Shape" (18/ago/2026), de onde vêm os três semestres, o agregado de 2022-2024 e a definição da categoria. A Crunchbase não publicou o corte por ano nem por semestre de 2022 a 2024, e por isso o período entra como linha de referência, não como barra.
+    Crunchbase News, "VCs Pour Billions Into Physical AI As The Next Wave Of AI Investing Takes Shape" (18/ago/2026), de onde vêm os três semestres, o agregado de 2022-2024 e a definição da categoria. A Crunchbase não publicou o corte por ano nem por semestre de 2022 a 2024, apenas o total dos três anos combinados.
   </div>
 
   <div class="footer">
@@ -140,36 +132,7 @@
   const data = {
     labels: ['1º sem. 2025', '2º sem. 2025', '1º sem. 2026'],
     usd:    [26.4, 12.0, 47.4],
-    deals:  [436, 470, 521],
-    refLine: 41.9
-  };
-
-  const refLinePlugin = {
-    id: 'refLine',
-    afterDatasetsDraw(chart) {
-      const { ctx, chartArea, scales } = chart;
-      const y = scales.yUsd.getPixelForValue(data.refLine);
-      ctx.save();
-      ctx.beginPath();
-      ctx.setLineDash([6, 4]);
-      ctx.lineWidth = 2;
-      ctx.strokeStyle = '#999';
-      ctx.moveTo(chartArea.left, y);
-      ctx.lineTo(chartArea.right, y);
-      ctx.stroke();
-      ctx.setLineDash([]);
-      const refText = 'US$41,9 bi em 2022-2024 somados';
-      ctx.textAlign = 'left';
-      ctx.textBaseline = 'top';
-      ctx.font = '700 12px Helvetica Neue';
-      // fundo branco: a gridline dos US$40 bi passa exatamente na altura deste rotulo
-      const refW = ctx.measureText(refText).width;
-      ctx.fillStyle = '#FFFFFF';
-      ctx.fillRect(chartArea.left + 3, y + 6, refW + 6, 16);
-      ctx.fillStyle = '#777';
-      ctx.fillText(refText, chartArea.left + 6, y + 8);
-      ctx.restore();
-    }
+    deals:  [436, 470, 521]
   };
 
   new Chart(document.getElementById('physai').getContext('2d'), {
@@ -253,7 +216,6 @@
       layout: { padding: { top: 30, right: 4, left: 0, bottom: 0 } }
     },
     plugins: [
-      refLinePlugin,
       {
         id: 'valueLabels',
         afterDatasetsDraw(chart) {
