@@ -1079,3 +1079,13 @@ https://www.youtube.com/watch?v=P5iICDVn5gc
 **Excellence Is the Capacity To Take Pain | Travis Kalanick, Founder of Uber**
 Travis Kalanick, cofundador da Uber e atual fundador da Atoms, discute sua filosofia de gestão, a construção de empresas sob condições extremas e sua visão sobre a automação do mundo físico. Kalanick enfatiza a importância de resolver problemas complexos através de uma abordagem de "primeiros princípios", mantendo a intensidade operacional que definiu sua trajetória no Vale do Silício
 https://www.youtube.com/watch?v=QVnU5lGlKE8
+
+## 2026-08-19
+
+**Rich Sutton and Khurram Javed: Why AI Models Stop Learning, and How to Start It Again**
+Rich Sutton, pioneiro do aprendizado por reforço, e seu ex-aluno Khurram Javed fundaram a Oak Lab com o objetivo de desenvolver agentes de IA que aprendam continuamente a partir de suas próprias experiências, em vez de dependerem de dados estáticos ou intervenção humana constante. A premissa central, denominada "Hipótese do Grande Mundo", defende que o mundo é vastamente mais complexo do que qualquer simulador ou modelo atual, tornando o aprendizado contínuo uma necessidade técnica, e não apenas uma escolha de design
+https://www.youtube.com/watch?v=xH7U7w9Qzlo
+
+**China's Endgame: ASI Timelines, US-China Relations, and the $1.7T AI Bubble With Alvin Graylin**
+Uma discussão aprofundada sobre a corrida tecnológica entre Estados Unidos e China, focando em inteligência artificial (IA), o desenvolvimento de Inteligência Artificial Superinteligente (ASI) e as implicações geopolíticas e econômicas. O anfitrião Peter H. Diamandis conversa com Alvin Wang Graylin, especialista com décadas de experiência no ecossistema tecnológico chinês e americano, sobre como a percepção de uma "corrida armamentista" pode estar levando a decisões irracionais e a riscos desnecessários
+https://www.youtube.com/watch?v=Slle5_AxBzs
