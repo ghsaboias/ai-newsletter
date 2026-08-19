@@ -72,7 +72,7 @@ Escreva `posts/data/<slug>.json` ANTES do chart. Estrutura (espelha os posts exi
 ls posts/chart-*.html
 ```
 
-Spec de marca completa no **CLAUDE.md "Posts"** (card 720px, H1 Helvetica 24px/700, footer fonte+`dailyjournal.news`, paleta `#044B2E`/`#7DB89B`/etc., logo via `<img src="../../daily-journal-platform/...">` — nunca duplique a logo). Regras fixas: `animation: false`, `tooltip: { enabled: false }`, `id="capture"` no card. Labels só em endpoints e milestones (plugin `afterDraw`), não em toda barra.
+Spec de marca completa no **CLAUDE.md "Posts"** (card 720px, H1 Helvetica 24px/700, footer fonte+`dailyjournal.news`, paleta `#044B2E`/`#7DB89B`/etc., logo via `<img src="../../daily-journal-platform/...">` — nunca duplique a logo). Regras fixas: `animation: false`, `tooltip: { enabled: false }`, `id="capture"` no card, e legenda com `.legend > span { display: inline-flex; align-items: center; }` (sem `vertical-align: middle` nos swatches — alinha pelo x-height do texto e deixa o quadradinho baixo). Labels só em endpoints e milestones (plugin `afterDraw`), não em toda barra.
 
 - **Header = só o título, largura cheia (`max-width: none`).** A logo DJ **não** vai no header — ela rouba largura e quebra o título em duas linhas. A logo entra DENTRO do gráfico como marca d'água (Step 5).
 
