@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Venture capital em startups de IA física</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    background: #FFFFFF;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 38px;
+  }
+  .card {
+    width: 720px;
+    background: #FFFFFF;
+    padding: 36px 40px;
+  }
+  .header {
+    padding-bottom: 24px;
+    border-bottom: 3px solid #044B2E;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.8px;
+    line-height: 26px;
+    max-width: none;
+  }
+  .kicker {
+    font-size: 13px;
+    line-height: 18px;
+    color: #444;
+    margin-top: 18px;
+  }
+  .kicker b { color: #044B2E; }
+  .chart-area { padding: 18px 0 4px; }
+  .chart-container {
+    position: relative;
+    width: 100%;
+    height: 430px;
+  }
+  .chart-logo {
+    position: absolute;
+    height: 15px;
+    top: 36px;
+    left: 70px;
+    opacity: 0.92;
+  }
+  .legend {
+    display: flex;
+    gap: 22px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid #E5E5E5;
+    font-size: 11px;
+    color: #444;
+  }
+  .legend .swatch {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+    vertical-align: middle;
+    border-radius: 2px;
+  }
+  .legend .line-swatch {
+    display: inline-block;
+    width: 16px;
+    height: 3px;
+    margin-right: 6px;
+    vertical-align: middle;
+    border-radius: 2px;
+  }
+  .legend .dash-swatch {
+    display: inline-block;
+    width: 16px;
+    height: 0;
+    margin-right: 6px;
+    vertical-align: middle;
+    border-top: 2px dashed #999;
+  }
+  .caption {
+    font-size: 11px;
+    line-height: 16px;
+    color: #999;
+    margin-top: 14px;
+  }
+  .footer {
+    padding-top: 14px;
+    border-top: 1px solid #E5E5E5;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
+  }
+  .footer span { font-size: 10px; color: #999; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="card" id="capture">
+  <div class="header">
+    <h1>Startups de IA física receberam US$47,4 bilhões no primeiro semestre de 2026</h1>
+  </div>
+
+  <div class="kicker">
+    A categoria reúne robótica, veículos autônomos, aeroespacial, drones, automação industrial e sensores. O semestre superou sozinho os <b>US$41,9 bilhões</b> investidos em 2022, 2023 e 2024 somados. O número de rodadas subiu bem menos que o capital: <b>521 negócios</b>, contra 436 um ano antes. A Série D de <b>US$16 bilhões</b> da Waymo, em fevereiro, respondeu por quase um terço dos dólares do semestre.
+  </div>
+
+  <div class="chart-area">
+    <div class="chart-container">
+      <canvas id="physai"></canvas>
+      <img src="../../daily-journal-platform/public/images/logo/logo-green-horizontal.png" class="chart-logo" alt="Daily Journal">
+    </div>
+
+    <div class="legend">
+      <span><span class="swatch" style="background:#044B2E"></span>Capital investido (US$ bilhões)</span>
+      <span><span class="line-swatch" style="background:#E88E00"></span>Número de negócios</span>
+      <span><span class="dash-swatch"></span>2022 + 2023 + 2024 somados</span>
+    </div>
+  </div>
+
+  <div class="caption">
+    Crunchbase News, "VCs Pour Billions Into Physical AI As The Next Wave Of AI Investing Takes Shape" (18/ago/2026), de onde vêm os três semestres, o agregado de 2022-2024 e a definição da categoria. A Crunchbase não publicou o corte por ano nem por semestre de 2022 a 2024, e por isso o período entra como linha de referência, não como barra.
+  </div>
+
+  <div class="footer">
+    <span>Fonte: Crunchbase</span>
+    <span>dailyjournal.news</span>
+  </div>
+</div>
+
+<script>
+  const data = {
+    labels: ['1º sem. 2025', '2º sem. 2025', '1º sem. 2026'],
+    usd:    [26.4, 12.0, 47.4],
+    deals:  [436, 470, 521],
+    refLine: 41.9
+  };
+
+  const refLinePlugin = {
+    id: 'refLine',
+    afterDatasetsDraw(chart) {
+      const { ctx, chartArea, scales } = chart;
+      const y = scales.yUsd.getPixelForValue(data.refLine);
+      ctx.save();
+      ctx.beginPath();
+      ctx.setLineDash([6, 4]);
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = '#999';
+      ctx.moveTo(chartArea.left, y);
+      ctx.lineTo(chartArea.right, y);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      const refText = 'US$41,9 bi em 2022-2024 somados';
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'top';
+      ctx.font = '700 12px Helvetica Neue';
+      // fundo branco: a gridline dos US$40 bi passa exatamente na altura deste rotulo
+      const refW = ctx.measureText(refText).width;
+      ctx.fillStyle = '#FFFFFF';
+      ctx.fillRect(chartArea.left + 3, y + 6, refW + 6, 16);
+      ctx.fillStyle = '#777';
+      ctx.fillText(refText, chartArea.left + 6, y + 8);
+      ctx.restore();
+    }
+  };
+
+  new Chart(document.getElementById('physai').getContext('2d'), {
+    data: {
+      labels: data.labels,
+      datasets: [
+        {
+          type: 'bar',
+          label: 'Capital',
+          data: data.usd,
+          yAxisID: 'yUsd',
+          order: 2,
+          backgroundColor: '#044B2E',
+          borderWidth: 0,
+          borderRadius: 3,
+          borderSkipped: false,
+          barPercentage: 0.52,
+          categoryPercentage: 0.9
+        },
+        {
+          type: 'line',
+          label: 'Negócios',
+          data: data.deals,
+          yAxisID: 'yDeals',
+          order: 1,
+          borderColor: '#E88E00',
+          backgroundColor: '#E88E00',
+          borderWidth: 2.5,
+          tension: 0.25,
+          pointRadius: 4,
+          pointBackgroundColor: '#FFFFFF',
+          pointBorderColor: '#E88E00',
+          pointBorderWidth: 2,
+          fill: false
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: {
+        yUsd: {
+          position: 'left',
+          beginAtZero: true,
+          max: 60,
+          grid: { color: '#f0f0f0', drawTicks: false },
+          border: { display: false },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 13, weight: '700' },
+            color: '#999',
+            padding: 8,
+            stepSize: 20,
+            callback: function(v) { return 'US$' + v + ' bi'; }
+          }
+        },
+        yDeals: {
+          position: 'right',
+          beginAtZero: true,
+          max: 600,
+          grid: { display: false },
+          border: { display: false },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 13, weight: '700' },
+            color: '#E88E00',
+            padding: 8,
+            stepSize: 200
+          }
+        },
+        x: {
+          grid: { display: false },
+          border: { color: '#ccc' },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 13, weight: '600' },
+            color: '#333',
+            padding: 6
+          }
+        }
+      },
+      layout: { padding: { top: 30, right: 4, left: 0, bottom: 0 } }
+    },
+    plugins: [
+      refLinePlugin,
+      {
+        id: 'valueLabels',
+        afterDatasetsDraw(chart) {
+          const { ctx } = chart;
+          const bars = chart.getDatasetMeta(0).data;
+          data.usd.forEach((v, i) => {
+            const bar = bars[i];
+            ctx.save();
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'top';
+            ctx.font = '700 14px Helvetica Neue';
+            ctx.fillStyle = '#FFFFFF';
+            ctx.fillText('US$' + v.toFixed(1).replace('.', ',') + ' bi', bar.x, bar.y + 12);
+            ctx.restore();
+          });
+          const pts = chart.getDatasetMeta(1).data;
+          data.deals.forEach((v, i) => {
+            const pt = pts[i];
+            ctx.save();
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'bottom';
+            ctx.font = '700 13px Helvetica Neue';
+            ctx.fillStyle = '#E88E00';
+            ctx.fillText(v + ' negócios', pt.x, pt.y - 10);
+            ctx.restore();
+          });
+        }
+      }
+    ]
+  });
+</script>
+</body>
+</html>
