@@ -1069,3 +1069,13 @@ https://www.youtube.com/watch?v=r8qKNFeBPXE
 **200GW Hiding in Grid, Sodium Batteries 10x Cheaper, Wave-Powered Datacenters w/ Ramez Naam | EP #280**
 O vídeo discute a intersecção crítica entre a demanda massiva de energia pela Inteligência Artificial e a infraestrutura de rede elétrica atual. Ramez Naam, futurista de energia e investidor, argumenta que a energia não é um problema de custo, mas um gargalo de infraestrutura. A capacidade de processamento (compute) está crescendo exponencialmente, enquanto a expansão da rede elétrica (poles and wires) tornou-se um processo lento e regulado, criando um descompasso significativo entre a disponibilidade de chips e a capacidade de alimentá-los
 https://www.youtube.com/watch?v=LUFJE5QkINg
+
+## 2026-08-18
+
+**Tokens Are the New Dollars | Stripe with a16z**
+Will Gaybrick, Presidente de Produto e Negócios da Stripe, discute com David George, sócio da a16z, a evolução da Stripe de uma empresa de pagamentos para uma plataforma de infraestrutura financeira multisserviços. A conversa foca em como a inteligência artificial, especificamente a codificação agentica, está acelerando a velocidade de desenvolvimento, permitindo que a empresa construa mais produtos simultaneamente em vez de apenas reduzir custos operacionais
+https://www.youtube.com/watch?v=P5iICDVn5gc
+
+**Excellence Is the Capacity To Take Pain | Travis Kalanick, Founder of Uber**
+Travis Kalanick, cofundador da Uber e atual fundador da Atoms, discute sua filosofia de gestão, a construção de empresas sob condições extremas e sua visão sobre a automação do mundo físico. Kalanick enfatiza a importância de resolver problemas complexos através de uma abordagem de "primeiros princípios", mantendo a intensidade operacional que definiu sua trajetória no Vale do Silício
+https://www.youtube.com/watch?v=QVnU5lGlKE8
