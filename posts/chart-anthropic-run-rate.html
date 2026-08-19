@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Receita anualizada da Anthropic</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    background: #FFFFFF;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 38px;
+  }
+  .card {
+    width: 720px;
+    background: #FFFFFF;
+    padding: 36px 40px;
+  }
+  .header {
+    padding-bottom: 24px;
+    border-bottom: 3px solid #044B2E;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.8px;
+    line-height: 26px;
+    max-width: none;
+  }
+  .kicker {
+    font-size: 13px;
+    line-height: 18px;
+    color: #444;
+    margin-top: 18px;
+  }
+  .kicker b { color: #044B2E; }
+  .chart-area { padding: 18px 0 4px; }
+  .chart-container {
+    position: relative;
+    width: 100%;
+    height: 430px;
+  }
+  .chart-logo {
+    position: absolute;
+    height: 15px;
+    left: 78px;
+    top: 52px;
+  }
+  .legend {
+    display: flex;
+    gap: 22px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid #E5E5E5;
+    font-size: 11px;
+    color: #444;
+  }
+  .legend > span {
+    display: inline-flex;
+    align-items: center;
+  }
+  .legend .swatch {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+    border-radius: 2px;
+  }
+  .caption {
+    font-size: 11px;
+    line-height: 16px;
+    color: #999;
+    margin-top: 14px;
+  }
+  .footer {
+    padding-top: 14px;
+    border-top: 1px solid #E5E5E5;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
+  }
+  .footer span { font-size: 10px; color: #999; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="card" id="capture">
+  <div class="header">
+    <h1>Receita anualizada da Anthropic</h1>
+  </div>
+
+  <div class="kicker">
+    O run-rate anualiza o faturamento do mês mais recente: em dezembro de 2025 o run-rate da Anthropic era de <b>US$9 bi</b>, enquanto a receita de todo o ano de 2025 somou <b>US$4,5 bi</b>; em julho de 2026 o run-rate era de <b>US$65 bi</b>, e a receita preliminar do segundo trimestre, de <b>US$11,5 bi</b>. A projeção de 2028 é da própria empresa, informada a investidores e reportada pela Reuters.
+  </div>
+
+  <div class="chart-area">
+    <div class="chart-container">
+      <canvas id="runrate"></canvas>
+      <img src="../../daily-journal-platform/public/images/logo/logo-green-horizontal.png" class="chart-logo" alt="Daily Journal">
+    </div>
+
+    <div class="legend">
+      <span><span class="swatch" style="background:#044B2E"></span>Run-rate anualizado (meses sem divulgação interpolados)</span>
+      <span><span class="swatch" style="background:#7DB89B"></span>Projeção linear até a receita projetada de 2028</span>
+    </div>
+  </div>
+
+  <div class="caption">
+    Fonte: Epoch AI, AI Companies Revenue Reports, que padroniza métrica, escopo e data de cada divulgação. Os valores de jan/2025, ago/2025, out/2025, fev/2026, abr/2026 e mai/2026 vêm de comunicados da própria Anthropic (Séries F, G e H, parceria com Broadcom e declaração de Dario Amodei); os de mar/2025, mai/2025 e jul/2025, de CNBC e The Information; os de dez/2025, mar/2026 e jul/2026, da Bloomberg. Projeção de 2028 conforme a Reuters.
+  </div>
+
+  <div class="footer">
+    <span>Fonte: Epoch AI — AI Companies Revenue Reports</span>
+    <span>dailyjournal.news</span>
+  </div>
+</div>
+
+<script>
+  // Grade mensal contínua jan/2025-dez/2028.
+  // Meses com divulgação carregam o valor reportado; os demais, dentro do período
+  // observado, são interpolados linearmente entre as duas divulgações vizinhas.
+  // A partir de ago/2026 tudo é projeção linear até a receita projetada de 2028.
+  const VALS = [1,1.5,2,2.5,3,3.5,4,5,6.0,7,8.0,9,11.5,14,19,30,47,56.0,65,69.66,74.31,78.97,83.62,88.28,92.93,97.59,102.24,106.9,111.55,116.21,120.86,125.52,130.17,134.83,139.48,144.14,148.79,153.45,158.1,162.76,167.41,172.07,176.72,181.38,186.03,190.69,195.34,200.0];
+  const LABELS = ['jan/25','fev/25','mar/25','abr/25','mai/25','jun/25','jul/25','ago/25','set/25','out/25','nov/25','dez/25','jan/26','fev/26','mar/26','abr/26','mai/26','jun/26','jul/26','ago/26','set/26','out/26','nov/26','dez/26','jan/27','fev/27','mar/27','abr/27','mai/27','jun/27','jul/27','ago/27','set/27','out/27','nov/27','dez/27','jan/28','fev/28','mar/28','abr/28','mai/28','jun/28','jul/28','ago/28','set/28','out/28','nov/28','dez/28'];
+  const LAST_OBS = 18;   // jul/2026, última divulgação
+
+  const SHOW_TICK = { 'jan/25':1, 'jul/25':1, 'dez/25':1, 'jul/26':1, 'dez/26':1, 'jul/27':1, 'dez/27':1, 'jul/28':1, 'dez/28':1 };
+  const NOTES = { 0: 'US$1 bi', 18: 'US$65 bi', 47: 'US$200 bi' };
+
+  new Chart(document.getElementById('runrate').getContext('2d'), {
+    data: {
+      labels: LABELS,
+      datasets: [{
+        type: 'bar',
+        data: VALS,
+        backgroundColor: VALS.map(function(_, i) { return i <= LAST_OBS ? '#044B2E' : '#7DB89B'; }),
+        borderWidth: 0,
+        borderRadius: 2,
+        borderSkipped: false,
+        barPercentage: 0.78,
+        categoryPercentage: 0.95
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 200,
+          grid: { color: '#f0f0f0', drawTicks: false },
+          border: { display: false },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 13, weight: '700' },
+            color: '#999',
+            padding: 8,
+            stepSize: 50,
+            callback: function(v) { return 'US$' + v + ' bi'; }
+          }
+        },
+        x: {
+          grid: { display: false },
+          border: { color: '#ccc' },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 12, weight: '600' },
+            color: '#333',
+            padding: 6,
+            autoSkip: false,
+            maxRotation: 0,
+            minRotation: 0,
+            callback: function(v, i) { return SHOW_TICK[LABELS[i]] ? LABELS[i] : ''; }
+          }
+        }
+      },
+      layout: { padding: { top: 56, right: 6, left: 0, bottom: 0 } }
+    },
+    plugins: [{
+      id: 'valueLabels',
+      afterDatasetsDraw(chart) {
+        const { ctx } = chart;
+        const els = chart.getDatasetMeta(0).data;
+        Object.keys(NOTES).forEach(function(k) {
+          const i = parseInt(k, 10);
+          const el = els[i];
+          const isProj = i > LAST_OBS;
+          ctx.save();
+          ctx.textBaseline = 'bottom';
+          ctx.font = '700 13px Helvetica Neue';
+          ctx.fillStyle = isProj ? '#5a9377' : '#044B2E';
+          if (isProj) {
+            const rx = chart.chartArea.right;
+            ctx.textAlign = 'right';
+            ctx.fillText(NOTES[k], rx, el.y - 25);
+            ctx.font = '600 11px Helvetica Neue';
+            ctx.fillStyle = '#8aa89a';
+            ctx.fillText('receita do ano de 2028', rx, el.y - 9);
+          } else if (i === LAST_OBS) {
+            // encosta à esquerda: a barra seguinte (projeção) é mais alta
+            ctx.textAlign = 'right';
+            ctx.fillText(NOTES[k], el.x + 6, el.y - 8);
+          } else {
+            ctx.textAlign = 'center';
+            ctx.fillText(NOTES[k], el.x, el.y - 8);
+          }
+          ctx.restore();
+        });
+      }
+    }]
+  });
+</script>
+</body>
+</html>
