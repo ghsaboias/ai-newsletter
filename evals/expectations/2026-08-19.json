@@ -1,0 +1,90 @@
+{
+  "date": "2026-08-19",
+  "note": "Oraculo do teste minimo das 3 hipoteses (fact-verifier web+atribuicao, generator trim, generator continuidade ancorada) + a excecao do molde Rodadas no repetition-checker. Escrito ANTES de rodar as variantes. REVISADO 09:12 apos o run fixture: A1/A2 eram FALSOS POSITIVOS do baseline (as duas atribuicoes constam da edicao de 2026-08-18, linhas 15 e 55). O oraculo original estava errado; a expectativa correta e que NAO sejam emitidos quando o agente recebe a edicao da vespera.",
+  "runs": {
+    "A": "advisory com prompts novos sobre a edicao de PRODUCAO 19/08 (isola deteccao: hipotese 1 + repetition-checker)",
+    "B": "generator novo sobre o facts.md congelado de producao (--stage edition --from-facts), depois advisory (isola geracao: hipoteses 2 e 3)"
+  },
+  "expectations": [
+    {
+      "id": "A1-anthropic-atribuicao",
+      "run": "A",
+      "source": "fact-check",
+      "expect": "absent",
+      "match": "v[eé]spera|preliminar",
+      "why": "FALSO POSITIVO do baseline. A edicao de 2026-08-18 (linha 15) diz literalmente 'receita preliminar de US$11,5 bilhoes no segundo trimestre' — logo 'acima dos US$11,5 bi preliminares informados na vespera' esta CORRETO. O fact-verifier antigo nao recebia a edicao da vespera e por isso chamou de invencao. Com o arquivo em maos, nao deve emitir."
+    },
+    {
+      "id": "A2-unitree-segunda",
+      "run": "A",
+      "source": "fact-check",
+      "expect": "absent",
+      "match": "segunda-feira",
+      "why": "FALSO POSITIVO do baseline. A edicao de 2026-08-18 (linha 55) diz 'Documento enviado a bolsa nesta segunda confirmou que a Unitree comeca a ser negociada [...] em 19 de agosto'. A atribuicao esta correta e verificavel."
+    },
+    {
+      "id": "A3-rodadas-mold",
+      "run": "A",
+      "source": "repetition",
+      "expect": "absent",
+      "match": "valuation de US\\$|molde.*Rodadas|Rodadas.*molde",
+      "why": "Gui: o molde 'de US$X a um valuation de US$Y' na secao Rodadas NAO e problema. A tabela do repetition-checker (linha 72) hoje manda tratar como phrasing/medium — invertemos."
+    },
+    {
+      "id": "A4-star-market",
+      "run": "A",
+      "source": "repetition",
+      "expect": "present",
+      "match": "STAR Market|8\\.?000 vezes",
+      "why": "Regressao-guard: a excecao do molde Rodadas nao pode cegar o checker para a recapitulacao real de cifra da vespera."
+    },
+    {
+      "id": "B1-euv-duv",
+      "run": "B",
+      "source": "edition",
+      "expect": "present",
+      "match": "EUV|DUV",
+      "why": "Fato load-bearing derrubado hoje: o mecanismo (escassez de equipamento) e o porque da virada de Pequim. A regra de trim do generator tem que preserva-lo na Media."
+    },
+    {
+      "id": "B2-harvey-11bi",
+      "run": "B",
+      "source": "edition",
+      "expect": "present",
+      "match": "US\\$11 bilh|modelos de (outras|terceiros)|Anthropic, OpenAI e Google",
+      "why": "Sem o contraste (negocio de US$11 bi construido sobre modelos de terceiros), o modelo proprio da Harvey perde o sentido."
+    },
+    {
+      "id": "B3-cursor-vuln",
+      "run": "B",
+      "source": "edition",
+      "expect": "present",
+      "match": "Cursor|vulnerabilidade",
+      "why": "O motivo de a Z.ai segurar os pesos e a historia; sem ele sobra um lancamento de API."
+    },
+    {
+      "id": "B4-sem-vespera-inventada",
+      "run": "B",
+      "source": "fact-check",
+      "expect": "absent",
+      "match": "atribui[cç][aã]o inventada",
+      "why": "Revisado: nao ha evidencia de que o generator fabrique atribuicao temporal (os dois casos suspeitos eram corretos). A expectativa vira uma guarda de regressao: com a regra de ancoragem, o generator nao deve produzir NENHUM finding da classe 'atribuicao inventada'."
+    },
+    {
+      "id": "B5-star-market-reenquadrado",
+      "run": "B",
+      "source": "repetition",
+      "expect": "absent",
+      "match": "STAR Market|8\\.?000 vezes",
+      "why": "Hipotese 3 pelo lado da repeticao: o item da Unitree abre pelo fato novo (estreia) e nao reexpoe as cifras da oferta que rodaram ontem."
+    },
+    {
+      "id": "A5-linha-de-credito-projecao",
+      "run": "A",
+      "source": "fact-check",
+      "expect": "present",
+      "match": "linha de cr[eé]dito|revolving",
+      "why": "Positivo verdadeiro NOVO (o baseline nao achou): o research diz 'is set to rise above its roughly $10 billion target' (projecao) e a edicao escreveu 'passou da meta'. Guarda de regressao para nao perder esta classe (status projetado virando fato consumado)."
+    }
+  ]
+}

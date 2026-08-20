@@ -111,6 +111,36 @@ central **mais** o secundário que dá peso; Leia também = só a manchete. O co
 sempre de glosa e cor terciária — **nunca** do fato que sustenta a notícia (o
 contrato-âncora, a cifra que dá tamanho, o mecanismo quando ele é o ponto).
 
+**Como aplicar isso na prática (não é conselho, é procedimento).** Antes de
+escrever cada história que vai para **Média**, pergunte à seção do `facts.md`:
+
+> Se eu apagasse este fato, o leitor ainda entenderia **por que** isto é notícia?
+
+O fato que responde "não" é o **fato-âncora** daquela história. Ele cai por
+último — é o **conteúdo reservado da segunda frase** do bullet de Média. Você
+corta glosa, adjetivo, cor, o terceiro ator, a data de fundação; o fato-âncora
+fica. Se só couber uma frase, ela carrega o fato-âncora, não o anúncio genérico.
+
+Os três tipos de fato-âncora, em ordem de frequência:
+
+1. **Mecanismo** — o *porquê* de algo ter acontecido, quando ele é a própria
+   notícia. Uma virada regulatória sem a restrição material que a força, uma
+   empresa segurando um lançamento sem o que apareceu no teste de segurança: em
+   ambos os casos, sem o mecanismo sobra um comunicado. Se o `facts.md` explica
+   *por que* algo mudou, essa explicação é âncora.
+2. **Cifra que dá tamanho** — o número sem o qual a história não tem escala (o
+   contrato, o *valuation*, o tamanho do negócio existente que a novidade
+   ameaça). "A empresa X lançou modelo próprio" é trivial; "a empresa X, negócio
+   de US$N bi construído sobre modelos de terceiros, lançou modelo próprio" é a
+   notícia — a cifra e a dependência anterior são o que dão sentido ao lançamento.
+3. **Contraste que sustenta o rótulo** — se o bullet abre com `**Motivo.**` ou
+   `**Virada.**`, o fato que entrega esse rótulo é âncora por construção. Rótulo
+   que promete e não entrega é o pior defeito do formato.
+
+Uma história vira "Leia também" (só a manchete) **de propósito**, e aí não há
+âncora a preservar. O erro que esta regra ataca é outro: a história fica na
+Média, mas sai capada do fato que a explica.
+
 - **GRANDES — as leituras obrigatórias do dia.** As histórias de maior peso, que o
   leitor não pode perder hoje. **No máximo 3**, e você decide quantas dentro desse
   teto — deixe o dia mandar. O normal é 3; um dia fraco ou muito repetitivo pode
@@ -163,6 +193,41 @@ que só como Média —, a regra é **reenquadrar, não repetir**:
   assinado, oferta anunciada vs. oferta ampliada) pedem a relação explícita numa
   oração ("acima dos US$X anunciados na véspera") — nunca dois números soltos em
   dias seguidos.
+
+### A referência à véspera tem de ser ANCORADA (regra dura)
+
+As orações acima são um **molde condicional**, não uma cota a preencher. Toda vez
+que você escrever "na véspera", "ontem", "um dia após", "confirmada na
+quinta", "informado anteriormente" ou qualquer outra amarra temporal, ela
+precisa apontar para um fato que você consegue **localizar** em um destes dois
+lugares:
+
+- o **arquivo da edição da véspera** (caminho na sua task — você já o leu), ou
+- um fato **explicitamente datado** dentro do próprio `facts.md`.
+
+**Não achou? Não escreva a oração.** Abrir pelo fato novo, sozinho, é uma saída
+perfeitamente boa — a continuidade é um recurso de clareza, não uma obrigação
+formal. O que **nunca** é aceitável é fabricar a âncora para o molde fechar.
+
+Os dois padrões de fabricação que você precisa reconhecer **em si mesmo**:
+
+- **Duas cifras do mesmo evento viram duas etapas.** Fontes diferentes às vezes
+  arredondam a **mesma** medida de formas diferentes ("mais de US$N bi" numa,
+  "US$N,M bi" noutra). Aí é uma medida só, não uma revisão: apresentar uma como o
+  valor "preliminar" da outra inventa cronologia. **Mas o inverso também
+  acontece** — número preliminar na véspera e número final hoje são duas etapas
+  de verdade, e relacioná-los é exatamente o que a regra de continuidade pede. O
+  que decide não é o seu palpite: é o arquivo da véspera. Se o número anterior
+  está **lá**, escreva a relação; se está só em outra fonte do mesmo dia, dê um
+  número só.
+- **A data que preenche o slot.** Ao escrever a oração de continuidade, é
+  tentador datar o passo anterior ("confirmada na quinta", "anunciada na
+  semana passada") mesmo sem data nenhuma na pesquisa. Se o `facts.md` não datou,
+  você não data.
+
+Na dúvida entre uma amarra temporal vaga e nenhuma, escreva **nenhuma**. Uma
+edição sem a oração de continuidade tem um defeito de estilo; uma edição com uma
+data inventada tem um defeito de fato, e é muito pior.
 
 ## Subtítulo
 

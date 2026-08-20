@@ -69,8 +69,34 @@ Exemplos reais da edição de 2026-07-29:
 | Nvidia (27), Amodei (28), Zuckerberg (29) contra proibir modelos abertos | **Não é repetição de enquadramento.** Atores diferentes, posições diferentes, debate em curso. É `framing` de severidade `low` no máximo, e o remédio é *aprofundar*, não cortar. |
 | "campus de N GW + N bilhões + data de entrega" pela 3ª edição | **Repetição real.** O molde é idêntico com qualquer empresa. `framing`, `medium`. |
 | Bullet do Zuckerberg recontando a invasão que a Grande do mesmo dia já contou | **Repetição real.** A recapitulação é redundante dentro da própria edição. `story`, `medium`. |
-| Seção Rodadas abrindo com "levantou uma Série X de US$N liderada por Fulano" todo dia | **Repetição real.** É o molde da seção. `phrasing`, `medium`. |
+| Seção Rodadas abrindo com "levantou uma Série X de US$N liderada por Fulano" todo dia | **Não é repetição.** É a forma canônica de noticiar uma rodada — ver "Moldes canônicos" logo abaixo. **Não emita.** |
 | "a criadora do Kimi K3" (aposição) depois de o Kimi K3 ter sido a Grande de anteontem | **Repetição real mas pequena.** 4 palavras. `phrasing`, `low`. |
+
+### Moldes canônicos — não são repetição
+
+Alguns moldes se repetem porque **são a forma correta de dar aquele tipo de
+fato**, não porque o texto ficou preguiçoso. Trocá-los só piora a leitura, e
+sinalizá-los treina o revisor a ignorar o relatório inteiro. **Nunca emita
+finding** para:
+
+- **Cifra de rodada + *valuation***: "levantou US$X a um *valuation* de US$Y",
+  "captou US$X liderada por Fulano". É a notação padrão do mercado; o leitor
+  varre a seção Rodadas justamente porque a forma é previsível. Vale ainda que
+  apareça em **todos** os bullets da seção, em edições seguidas.
+- **Cotação/indicador fechando um item de mercado ou geopolítica**, quando a
+  cotação é o *efeito* daquele fato do dia. (Vira finding só quando o mesmo
+  indicador fecha o mesmo assunto por 3+ edições **e** o valor mal se move — aí é
+  tique, `framing`/`medium`.)
+- **Notação de resultado**: "receita de US$X, alta de Y% na comparação anual".
+
+A régua: o molde é canônico quando **substituí-lo por uma variação custaria
+clareza ao leitor**. Se a variação melhora a leitura, é repetição legítima
+(`phrasing`); se só disfarça, não emita.
+
+**Isto não afrouxa a checagem de conteúdo.** Reexpor a **mesma cifra da véspera**
+continua sendo finding, mesmo que embalada num molde canônico — o problema ali
+nunca foi o molde, é o dado repetido (`story` ou `phrasing`, conforme o teste
+acima).
 
 ---
 
@@ -83,7 +109,8 @@ Exemplos reais da edição de 2026-07-29:
 2. **Frase repetida** (`phrasing`): frases, expressões ou **moldes de construção**
    reaproveitados entre edições. No formato itemizado isso aparece sobretudo em
    rótulos (`**Rótulo.**`), manchetes de `###`, aberturas de bullet e na primeira
-   frase de uma seção recorrente (Rodadas, Infraestrutura).
+   frase de uma seção recorrente (Rodadas, Infraestrutura) — **exceto** os moldes
+   canônicos listados acima, que nunca viram finding.
 3. **Enquadramento repetido** (`framing`): o mesmo ângulo narrativo, metáfora,
    tique de fechamento ou recurso retórico aparecendo com frequência demais —
    **independentemente do assunto**. (Ex.: fechar o bullet de guerra com a cotação

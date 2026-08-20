@@ -277,7 +277,13 @@ for it):
 
 - `paywall-teaser` → `paywall-meta.json` (the push consumes it) — **full run only**
 - `repetition-checker` → `repetition.json` (advisory) — moved up from the tail
-- `fact-verifier` → `fact-check.json` (advisory) — moved up from the tail
+- `fact-verifier` → `fact-check.json` (advisory) — moved up from the tail. **Passe
+  a ele o caminho da edição da véspera** (o primeiro item da lista `PREV` logo
+  abaixo, que você já resolve para o `repetition-checker`). Sem esse arquivo ele
+  não consegue distinguir continuidade legítima de atribuição inventada e reporta
+  como `high` toda referência correta a ontem — em 2026-08-19 os dois findings
+  `high` eram falsos positivos e duas frases certas foram apagadas por causa
+  disso.
 
 First resolve the previous editions `repetition-checker` compares against — walk
 back up to 3 prior days that have an edition file (prefer `edition.md`, fall back
@@ -312,7 +318,7 @@ Agent({
 Agent({
   description: "Fact-verify the edition",
   subagent_type: "fact-verifier",
-  prompt: "Date: <DATE>.\nresearch.json: <DAY_DIR>/research.json\nfacts.md: <DAY_DIR>/facts.md\nEdition (edition.md): <DAY_DIR>/edition.md\nWrite findings to: <DAY_DIR>/fact-check.json"
+  prompt: "Date: <DATE>.\nresearch.json: <DAY_DIR>/research.json\nfacts.md: <DAY_DIR>/facts.md\nEdition (edition.md): <DAY_DIR>/edition.md\nEdição da véspera (árbitro da classe 'atribuição inventada' — toda referência a 'na véspera'/'ontem'/'confirmada em <dia>' na edição de hoje tem de estar NESTE arquivo): <o primeiro item da lista PREV, só o caminho — ou '(nenhuma)'>\nWrite findings to: <DAY_DIR>/fact-check.json"
 })
 ```
 

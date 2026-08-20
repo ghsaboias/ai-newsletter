@@ -5,7 +5,7 @@
 # ground truth (evals/dataset/<date>/published-body.json).
 #
 # Usage:
-#   evals/run.sh <DATE> [VARIANT] [--stage facts|edition|score|all] [--from-facts]
+#   evals/run.sh <DATE> [VARIANT] [--stage facts|edition|advisory|score|all] [--from-facts]
 #
 #   VARIANT       label for this run (default: base). Agent definitions are
 #                 whatever .claude/agents/ currently holds — to A/B a prompt
@@ -15,6 +15,12 @@
 #                 rerunning resumes at the first missing output.
 #   --from-facts  seed the run with the PRODUCTION facts.md of that date
 #                 (ablate the generator only; skips the facts stage).
+#
+# The `advisory` stage runs the two non-gating auditors (fact-verifier and
+# repetition-checker) against the run's edition.md, writing fact-check.json and
+# repetition.json INTO THE RUN DIR — production's copies are never touched. If
+# the run has no edition.md it seeds the production one, so you can re-audit a
+# shipped edition with edited agent prompts. It is NOT part of `all`; ask for it.
 #   MODEL=<m>     env var: pass --model to the headless claude calls.
 #
 # Each stage is a one-shot headless `claude -p` that dispatches the registered
@@ -46,7 +52,7 @@ if [ "$FROM_FACTS" = 1 ] && [ ! -s "$RUN/facts.md" ]; then
   echo "seeded production facts.md (generator-only ablation)"
 fi
 
-CLAUDE_FLAGS=(--allowedTools "Agent,Task,Read,Write" --output-format json ${MODEL:+--model "$MODEL"})
+CLAUDE_FLAGS=(--allowedTools "Agent,Task,Read,Write,Bash,WebSearch,WebFetch" --output-format json ${MODEL:+--model "$MODEL"})
 
 run_stage() { # name, prompt -> saves transcript json, prints duration
   local name="$1" prompt="$2" t0 t1 out
@@ -103,6 +109,47 @@ if [[ "$STAGE" =~ ^(all|edition|score)$ ]] && [ -s "$RUN/edition.md" ]; then
     || { echo "HALT: link-token expand failed" >&2; exit 1; }
   G=$(grep -c '^### ' "$RUN/edition.md" || echo 0)
   echo "OK edition: $G grandes"
+fi
+
+# ---- advisory (fact-verifier + repetition-checker) ----
+# Not in `all`: opt in with --stage advisory. Audits $RUN/edition.md, seeding the
+# production edition when the run has none (re-audit of a shipped edition).
+if [ "$STAGE" = "advisory" ]; then
+  if [ ! -s "$RUN/edition.md" ]; then
+    [ -s "$PROD/edition.md" ] || { echo "HALT: no edition.md in run or production for $DATE" >&2; exit 1; }
+    cp "$PROD/edition.md" "$RUN/edition.md"; echo "seeded production edition.md (advisory re-audit)"
+  fi
+  [ -s "$RUN/facts.md" ] || { cp "$PROD/facts.md" "$RUN/facts.md"; echo "seeded production facts.md"; }
+
+  ROOT="$REPO/pipeline/output/ai"; PREVLIST=""; CHECK="$DATE"
+  for i in 1 2 3; do
+    CHECK=$(date -d "$CHECK - 1 day" "+%Y-%m-%d")
+    for f in edition.md v2.md pt.md; do
+      [ -s "$ROOT/$CHECK/$f" ] && { PREVLIST+="$CHECK: $ROOT/$CHECK/$f"$'\n'; break; }
+    done
+  done
+
+  PREV_ED=$(printf '%s' "$PREVLIST" | head -1 | cut -d' ' -f2-)
+  [ -s "$RUN/fact-check.json" ] || run_stage fact-check "Use the Agent tool to dispatch subagent_type \"fact-verifier\" with exactly this prompt, wait for completion, then reply with one line (its summary or FAILED: <reason>):
+Date: $DATE.
+research.json: $RUN/research.json
+facts.md: $RUN/facts.md
+Edition (edition.md): $RUN/edition.md
+Edição da véspera (árbitro da classe 'atribuição inventada'): ${PREV_ED:-(nenhuma)}
+Write findings to: $RUN/fact-check.json"
+
+  [ -s "$RUN/repetition.json" ] || run_stage repetition "Use the Agent tool to dispatch subagent_type \"repetition-checker\" with exactly this prompt, wait for completion, then reply with one line (its summary or FAILED: <reason>):
+Date: $DATE.
+Current edition: $RUN/edition.md
+Previous editions to compare against:
+${PREVLIST:-(none found)}
+Write findings to: $RUN/repetition.json"
+
+  for f in fact-check repetition; do
+    python3 "$REPO/pipeline/tools/validate-findings.py" "$f" "$RUN/$f.json" \
+      || echo "WARN: $f.json fora do schema"
+  done
+  echo "OK advisory: $RUN/fact-check.json + $RUN/repetition.json"
 fi
 
 # ---- score ----
