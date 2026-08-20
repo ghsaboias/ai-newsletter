@@ -131,7 +131,7 @@ As demais histórias do dia estão na [edição completa](<url da edição no Su
 
 **Voz (erros desta tarefa, não repita):**
 - **Registro neutro/profissional, nunca coloquial.** "permaneceram próximos de US$3 bi" ✅; "travados", "o dinheiro seguiu", "atropelou" ❌.
-- **Sem frase-moldura editorializante** (pigarro analítico): não abra parágrafo com "A mudança reflete...", "O movimento sinaliza...". Abra com o **fato**, mostre não conte. Ver memória `feedback_no_framing_sentences`.
+- **Sem frase-moldura editorializante** (pigarro analítico): não abra parágrafo com "A mudança reflete...", "O movimento sinaliza...". Abra com o **fato**, mostre não conte.
 - **Deixe o escopo do número explícito** (mundo vs EUA vs uma empresa). Se a série é global, diga "no mundo"; se um recorte é só-EUA, diga.
 - **Glose o jargão uma vez** ("o venture capital, o capital de risco que financia startups").
 - **Curto.** Posts são bem curtos (3 parágrafos é normal).
