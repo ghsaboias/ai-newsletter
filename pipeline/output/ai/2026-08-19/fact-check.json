@@ -1,0 +1,47 @@
+{
+  "date": "2026-08-19",
+  "fidelity_issues": [
+    {
+      "severity": "high",
+      "where": "edition",
+      "claim": "chegou a US$11,6 bilhões, mais que dobrando frente aos US$4,73 bilhões do primeiro trimestre, alta de cerca de 143% e acima dos US$11,5 bilhões preliminares informados na véspera",
+      "issue": "especificidade inventada",
+      "expected": "O research.json nao menciona nenhum numero preliminar divulgado na vespera. O unico '$11.5 billion' aparece no TipRanks como forma aproximada da MESMA receita do 2o trimestre ('rising from $4.73 billion in Q1 to more than $11.5 billion in Q2'), nao como um dado previo. O facts.md nao traz essa afirmacao."
+    },
+    {
+      "severity": "high",
+      "where": "edition",
+      "claim": "Confirmada na segunda-feira para hoje, a listagem comecou com as acoes abrindo a 1.100 yuans no STAR Market",
+      "issue": "nao traca ao research.json",
+      "expected": "Nao ha nada no research.json sobre uma confirmacao na segunda-feira. A materia da Bloomberg e de 18 de agosto (terca-feira) e diz apenas 'Unitree Robotics is set to begin trading in Shanghai Wednesday after raising 6.1 billion yuan'. O facts.md nao traz esse detalhe."
+    },
+    {
+      "severity": "low",
+      "where": "facts.md",
+      "claim": "O TechCrunch informou que as medidas sao as primeiras mudancas publicas nas praticas de seguranca da OpenAI desde os desdobramentos imediatos do incidente com a Hugging Face",
+      "issue": "numero alterado",
+      "expected": "research.json: 'The new measures are one of the first public changes in OpenAI's safety practices since the immediate aftermath of the Hugging Face incident' — 'uma das primeiras', nao 'as primeiras'. Nao chegou a edicao."
+    }
+  ],
+  "dropped_facts": [
+    {
+      "severity": "medium",
+      "story": "Nvidia — primeiros H200 na China",
+      "fact": "A mudanca de Pequim esta ligada a sua escassez de equipamentos avancados de fabricacao de chips: os EUA restringem a exportacao de maquinas EUV e avaliam banir as DUV, o que deixa a China sem capacidade de atender domesticamente a demanda por treinamento de IA (facts.md, linhas 167-169).",
+      "why_load_bearing": "mecanismo que e o ponto: a edicao diz que Pequim restringia importacoes para proteger a Huawei e agora liberou, sem dar a razao da reversao. Sem a escassez de EUV/DUV o leitor fica sem explicacao para o 'por que agora'."
+    },
+    {
+      "severity": "medium",
+      "story": "Harvey — modelo juridico proprio Tenet",
+      "fact": "A Harvey construiu um negocio de software juridico de US$11 bilhoes apoiada em modelos de IA de outras empresas (Anthropic, OpenAI e Google, em roteamento multimodelo) (facts.md, linhas 129-130).",
+      "why_load_bearing": "cifra que da tamanho a historia: e o unico numero que dimensiona a Harvey e o que torna relevante a troca de modelos alugados por um modelo proprio. A edicao fala do custo menor sem dizer o tamanho do negocio em jogo."
+    },
+    {
+      "severity": "medium",
+      "story": "Z.ai — GLM-5.3 na API",
+      "fact": "A Z.ai segurou os pesos enquanto rodava testes adicionais de seguranca depois que o GLM-5.3 mostrou capacidades ciberneticas avancadas o bastante para, segundo relatos, encontrar uma vulnerabilidade antes nao detectada no Cursor (facts.md, linha 62).",
+      "why_load_bearing": "mecanismo que e o ponto: a edicao afirma que os pesos so saem 'quando terminar o trabalho de seguranca' sem dizer qual e o risco. O motivo concreto (capacidade cibernetica que achou uma falha inedita no Cursor) e o que justifica a retencao e conecta o item ao tema da edicao."
+    }
+  ],
+  "summary": "Fidelidade alta no facts.md; a edicao introduziu duas especificidades que nao tracam a pesquisa (um '$11,5 bi preliminar na vespera' inexistente e uma confirmacao 'na segunda-feira' do IPO da Unitree), e tres mecanismos/cifras load-bearing (EUV-DUV na Nvidia, US$11 bi da Harvey, vulnerabilidade no Cursor na Z.ai) ficaram de fora."
+}
