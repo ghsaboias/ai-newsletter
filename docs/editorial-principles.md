@@ -147,10 +147,10 @@ Same neutral-voice instinct as the newsletter — strip flourish, stay literal (
 
 ## 12. Mechanics — em-dashes
 
-Em-dash (—, U+2014) → comma / colon / parentheses. This recurs **every** review — the `newsletter-no-dashes` skill covers the prose path, but the `generator`/`facts` agents still emit em-dashes into `edition.md`, so Gui still sweeps by hand.
+Em-dash (—, U+2014) → comma / colon / parentheses. The rule now lives in `generator.md`'s lexicon ("Sem travessões (—): use vírgula, dois-pontos ou ponto"), so `edition.md` ships clean; the patterns below are the conversions it applies.
 - Aside → comma/parens: "por ano — a maior virada"→"por ano, a maior"; "Booking.com — tudo às vésperas do IPO."→"Booking.com (tudo às vésperas do IPO)."
 - Introduces a list/explanation → colon: "confiabilidade — prédios ficaram fora do ar"→"confiabilidade: prédios…".
-- ⚠️ An em-dash **inside a link's anchor text** survives the prose pass — move it outside the bracket. Also do a final mechanical pass for double spaces / inconsistent prepositions that manual edits leave behind.
+- Also do a final mechanical pass for double spaces / inconsistent prepositions that manual edits leave behind.
 
 ---
 

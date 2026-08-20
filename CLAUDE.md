@@ -24,7 +24,7 @@ pipeline/                      # topic-agnostic helpers the agents call
   output/<topic>/YYYY-MM-DD/   # namespaced by topic
 ```
 
-Skills, all in-repo (`.claude/skills/`): `newsletter-draft`, `newsletter-research`, `newsletter-no-dashes`, `chart-post`, `newsletter-images`, `newsletter-open-links` (plus `sbq`, `sstats`). The full research → facts → edition pipeline is self-contained in the repo — `newsletter-draft` dispatches `newsletter-research`, which spawns the in-repo `researcher-{ai,hw,world}` agents and `pipeline/tools/dedup-research.py`.
+Skills, all in-repo (`.claude/skills/`): `newsletter-draft`, `newsletter-research`, `newsletter-images`, `newsletter-recs`, `chart-post` (plus `sbq`, `sstats`). The full research → facts → edition pipeline is self-contained in the repo — `newsletter-draft` dispatches `newsletter-research`, which spawns the in-repo `researcher-{ai,hw,world}` agents and `pipeline/tools/dedup-research.py`.
 All scripts default to topic `ai`. Override with `PIPELINE_TOPIC=ma`.
 
 ## Pipeline
