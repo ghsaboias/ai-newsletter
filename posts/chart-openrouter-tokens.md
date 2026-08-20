@@ -12,4 +12,4 @@ O volume que passa por esse encanamento saiu de 3,7 trilhões de tokens na últi
 
 O salto se concentra em 2026. A série passa o segundo semestre de 2025 entre 4,6 e 7,2 trilhões por semana, dobra entre janeiro e fevereiro e segue subindo, com oscilações semanais, até agosto.
 
-As demais histórias do dia estão na [edição completa](<LINK DA EDIÇÃO — preencher ao publicar>):
+As demais histórias do dia estão na [edição completa](https://dailyjournalnews.substack.com/p/tech-bem-vindoa-a-20-de-agosto-de):
