@@ -366,6 +366,29 @@ def build_teaser_blockquote(teasers: list) -> dict:
     return {"type": "blockquote", "content": paragraphs}
 
 
+# Substack's "Audience-specific content block" (ProseMirror node `dynamicContent`,
+# an if/else on subscriber tier). Valid audience keys: non_sub, free_sub, paid_sub,
+# founding_sub. The optional `dynamicContentElse` branch renders for everyone else;
+# we don't use one — paid readers simply get nothing where the teaser sat.
+TEASER_AUDIENCES = ["non_sub", "free_sub"]
+
+
+def wrap_for_free_readers(node: dict) -> dict:
+    """Wrap a node so only non-subscribers and free subscribers see it.
+
+    The editor derives the selectable tiers from the POST's audience, so on an
+    `only_paid` post a non_sub/free_sub block would normally be flagged
+    "won't render" — except above the paywall node, where availability is treated
+    as everyone. The teaser is always above the cut, so this holds.
+    """
+    return {
+        "type": "dynamicContent",
+        "attrs": {"audiences": list(TEASER_AUDIENCES),
+                  "displayName": "Audience-specific content block"},
+        "content": [{"type": "dynamicContentMatch", "content": [node]}],
+    }
+
+
 def build_banner_node(banner: dict) -> dict:
     """Build a Substack captionedImage node for a pre-uploaded partner banner.
 
@@ -435,12 +458,16 @@ def inject_paywall(doc: dict, cut_after: int, teasers: list, banner: dict = None
 
     Order mirrors the manual workflow: the "Abaixo, apenas para assinantes:"
     teaser, then the partner banner image, then the paywall cut.
+
+    The teaser only speaks to readers who hit the wall, so it goes inside an
+    audience-specific block (non_sub + free_sub). Paid and founding subscribers
+    read straight through from the Grandes into the Médias without it.
     """
     nodes = doc["content"]
     insert_at = cut_after + 1  # insert after the node at cut_after
     insert_at = max(1, min(insert_at, len(nodes)))  # clamp to valid range
 
-    inserted = [build_teaser_blockquote(teasers)]
+    inserted = [wrap_for_free_readers(build_teaser_blockquote(teasers))]
     if banner:
         inserted.append(build_banner_node(banner))
     inserted.append({"type": "paywall"})

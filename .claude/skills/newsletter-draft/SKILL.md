@@ -488,6 +488,13 @@ Grandes. The `draft` suffix persists the draft id to `.substack-draft-id` (the
 doc's `--id-out` target) and writes `substack-draft.json` with the review URL. The
 create-once guard above is what protects the hand-edited editor copy on any re-run.
 
+The teaser blockquote goes inside a Substack **audience-specific content block**
+(`dynamicContent`, audiences `non_sub` + `free_sub`), so only readers who actually
+hit the wall see "Abaixo, apenas para assinantes:" — paid and founding subscribers
+read straight from the Grandes into the Médias. It renders in the editor as an
+"SE / Público" box; leave it alone during review. `substack_post.py` builds it
+(`wrap_for_free_readers`), so nothing changes in the skill's commands.
+
 ## Step 4: Advisory roll-up (`repetition-checker` ∥ `fact-verifier`)
 
 Both were **dispatched back in Step 3**, right after the edition gate, and have
