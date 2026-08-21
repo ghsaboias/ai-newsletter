@@ -1089,3 +1089,13 @@ https://www.youtube.com/watch?v=xH7U7w9Qzlo
 **China's Endgame: ASI Timelines, US-China Relations, and the $1.7T AI Bubble With Alvin Graylin**
 Uma discussão aprofundada sobre a corrida tecnológica entre Estados Unidos e China, focando em inteligência artificial (IA), o desenvolvimento de Inteligência Artificial Superinteligente (ASI) e as implicações geopolíticas e econômicas. O anfitrião Peter H. Diamandis conversa com Alvin Wang Graylin, especialista com décadas de experiência no ecossistema tecnológico chinês e americano, sobre como a percepção de uma "corrida armamentista" pode estar levando a decisões irracionais e a riscos desnecessários
 https://www.youtube.com/watch?v=Slle5_AxBzs
+
+## 2026-08-20
+
+**What Happens When the AI Boom Runs Out of Money**
+Ben Thompson, analista de tecnologia, discute a dinâmica econômica e geopolítica da inteligência artificial. Ele argumenta que a dominância absoluta dos EUA na IA é perigosa, pois poderia incentivar a China a destruir a infraestrutura da TSMC, criando um risco global. O equilíbrio atual, onde empresas americanas (OpenAI, Anthropic) lideram e a China segue com um atraso de 6 a 9 meses, é considerado favorável e sustentável por enquanto. Thompson destaca que a IA não é gratuita; embora o custo de P&D possa ser amortizado, o custo de inferência é real e crescente
+https://www.youtube.com/watch?v=h-0NZ-oIjlk
+
+**Post-Training Is How You Keep Your Taste | Fireworks CEO Lin Qiao**
+Lin Qiao, CEO e cofundadora da Fireworks AI, defende que o pós-treinamento é a estratégia fundamental para empresas que buscam manter sua identidade e competitividade ao escalar produtos de IA. Em vez de depender exclusivamente de APIs de prateleira (black box), o pós-treinamento permite que as organizações incorporem seu julgamento, preferências e dados proprietários diretamente nos modelos, criando um diferencial durável e reduzindo drasticamente os custos operacionais
+https://www.youtube.com/watch?v=yAvJ7b_FxUA
