@@ -1099,3 +1099,13 @@ https://www.youtube.com/watch?v=h-0NZ-oIjlk
 **Post-Training Is How You Keep Your Taste | Fireworks CEO Lin Qiao**
 Lin Qiao, CEO e cofundadora da Fireworks AI, defende que o pós-treinamento é a estratégia fundamental para empresas que buscam manter sua identidade e competitividade ao escalar produtos de IA. Em vez de depender exclusivamente de APIs de prateleira (black box), o pós-treinamento permite que as organizações incorporem seu julgamento, preferências e dados proprietários diretamente nos modelos, criando um diferencial durável e reduzindo drasticamente os custos operacionais
 https://www.youtube.com/watch?v=yAvJ7b_FxUA
+
+## 2026-08-21
+
+**Mass Surveillance, Police Misuse, and Who Controls Your Flock Cameras with Flock CEO, Garret Langley**
+Garrett Langley, CEO da Flock Safety, discute o papel da sua empresa no equilíbrio entre segurança pública e privacidade. A Flock fornece sistemas de câmeras de leitura de placas (ALPR) e drones para mais de 6.000 cidades, focando na resolução de crimes e na localização de pessoas desaparecidas. A conversa aborda as controvérsias sobre vigilância em massa, o uso indevido de dados por policiais e a responsabilidade da empresa em estabelecer guardrails
+https://www.youtube.com/watch?v=5BWuvjGLMik
+
+**The Comms Strategist Behind Anduril, Shopify & Cognition | Lulu Cheng Meservey**
+Lulu Cheng Meservey é fundadora da Rostra e uma das estrategistas de comunicação mais influentes no setor de tecnologia, tendo trabalhado com empresas como Anduril, Shopify e Cognition. O vídeo explora sua trajetória, desde a infância como imigrante até o desenvolvimento de sua metodologia de comunicação, que prioriza a soberania narrativa e a construção de movimentos em vez de relações públicas tradicionais
+https://www.youtube.com/watch?v=DFImJfJGXl0
