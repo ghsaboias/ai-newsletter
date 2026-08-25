@@ -1,0 +1,60 @@
+{
+  "date": "2026-08-25",
+  "fidelity_issues": [
+    {
+      "severity": "medium",
+      "where": "facts.md+edition",
+      "claim": "passou brevemente de US$81.000 nesta terça, no primeiro fechamento acima de US$80.000 desde 15 de maio, antes de recuar para cerca de US$79 mil",
+      "issue": "número alterado",
+      "expected": "O excerpt da fonte no research.json diz 'BTC surpassed the $80,000 threshold for the first time since May 15, 2026' — ultrapassagem de patamar, não fechamento. A edição amarra o 'fechamento' à terça-feira e, na mesma frase, registra recuo para ~US$79 mil (o excerpt da CNBC fecha em US$79.054,33, alta de 0,3%), o que torna o fechamento acima de US$80 mil impossível naquele dia."
+    },
+    {
+      "severity": "medium",
+      "where": "edition",
+      "claim": "usa *neural operators*, técnica inaugurada anos atrás pela cofundadora Anima Anandkumar",
+      "issue": "não traça ao research.json",
+      "expected": "research.json (excerpt Reuters): 'technology that Anandkumar helped pioneer years ago, called neural operators'. O facts.md preserva corretamente ('técnica que a cofundadora Anima Anandkumar ajudou a inaugurar'); a edição transformou coautoria da técnica em invenção exclusiva."
+    },
+    {
+      "severity": "medium",
+      "where": "edition",
+      "claim": "a Nvidia projeta que o Vera Rubin NVL72 com LPX entregue até 35 vezes mais vazão de inferência por megawatt que o GB200 NVL72",
+      "issue": "não traça ao research.json",
+      "expected": "research.json (release da Nvidia): 'up to 35x higher inference throughput per megawatt for 2T-parameter models at long-context and low-latency than GB200 NVL72'. O facts.md mantém a condição ('em modelos de 2 trilhões de parâmetros com contexto longo e baixa latência'); a edição publicou a projeção sem a condição que a delimita."
+    },
+    {
+      "severity": "low",
+      "where": "edition",
+      "claim": "a Rússia lançou 143 drones e oito mísseis na noite de segunda, matando oito pessoas e ferindo 43",
+      "issue": "não traça ao research.json",
+      "expected": "research.json separa as duas coisas: 'Russia launched two Oniks anti-ship missiles, six Kh-31P and Kh-59 guided missiles and 143 drones overnight on Aug. 24' e, à parte, 'attacks killed eight and injured 43 over the past day'. As vítimas são do balanço de 24 horas (que inclui o drone contra o prédio residencial de Chernihiv ao meio-dia), não do ataque noturno especificamente."
+    }
+  ],
+  "dropped_facts": [
+    {
+      "severity": "high",
+      "story": "Segurança — OpenAI bane contas do ChatGPT originadas na Rússia",
+      "fact": "A campanha era construída em torno de um site com trabalhos acadêmicos copiados e atribuídos incorretamente e de um índice de 'soberania' que retratava a Rússia de forma favorável, e boa parte do conteúdo promovia uma organização chamada International Burke Institute (IBI).",
+      "why_load_bearing": "É o mecanismo que é o ponto da história (o headline da pesquisa é exatamente 'running a fake institute and a pro-Moscow sovereignty index'). Sem ele, a edição descreve apenas 'uma campanha de influência encoberta' genérica — e a citação que ela mesma publica ('a relevância da operação está menos no público que alcançou do que na infraestrutura que havia construído') fica sem referente: a infraestrutura nunca é descrita."
+    },
+    {
+      "severity": "medium",
+      "story": "Mundo — Irã, 'Operation Economic Outcast'",
+      "fact": "Bessent disse que países que continuarem comerciando com o Irã correm o risco de serem expulsos do sistema financeiro baseado no dólar.",
+      "why_load_bearing": "É a sanção secundária que dá tamanho à operação — e a edição mantém o contraponto ('sem prazo, sem nomes de países-alvo') sem nunca dizer a que ameaça esses dois 'sem' se referem, deixando a frase ininteligível."
+    },
+    {
+      "severity": "medium",
+      "story": "Modelos e produtos — Accelerated Understanding",
+      "fact": "As aplicações-alvo do modelo incluem design de chips, robótica, previsão de eventos climáticos extremos e análise de dados geológicos para empresas de energia, substituindo modelos matemáticos frágeis e sob medida para cada caso.",
+      "why_load_bearing": "É o que a empresa vende: sem as aplicações, a edição diz que o modelo é 'construído para física' e detalha só a arquitetura e a briga com o Project Prometheus, sem nunca dizer para que serve o produto."
+    },
+    {
+      "severity": "medium",
+      "story": "Mercados — Bitcoin acima de US$80 mil",
+      "fact": "A alta veio depois da decisão do Tesouro dos EUA de dobrar as compras de títulos públicos de prazo mais longo a partir de setembro, o que derrubou os juros, enfraqueceu o dólar e melhorou o apetite por risco.",
+      "why_load_bearing": "É o gatilho macro do movimento. A edição atribui a recuperação só ao *short squeeze* e às entradas em ETFs, deixando o leitor sem a causa que a pesquisa aponta como origem do rali."
+    }
+  ],
+  "summary": "Fidelidade alta — toda cifra, citação e nome das três Grandes traça ao research.json (inclusive detalhes que só aparecem nos excerpts, como 'world's fastest CPU core', '6x connection density' e 'meados de 2024'); os quatro reparos são de moldura (fechamento vs. ultrapassagem do bitcoin, crédito da técnica de Anandkumar, qualificador dos 35x da Nvidia, vítimas do ataque na Ucrânia). Caiu, sim, algo essencial: o instituto falso e o índice de 'soberania' que são a substância da operação russa, deixando a citação sobre 'infraestrutura' sem referente."
+}

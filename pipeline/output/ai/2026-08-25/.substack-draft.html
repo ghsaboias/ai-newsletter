@@ -1,0 +1,332 @@
+<h1 id="tech---bem-vindoa-a-25-de-agosto-de-2026">[Tech] - Bem-vindo(a)
+a 25 de Agosto de 2026</h1>
+<p>Em quanto o chip de inferência da OpenAI supera o Blackwell da
+Nvidia? O que a Apple colocou no seu primeiro chip de 2 nanômetros? Como
+o novo agente da Perplexity roda sem custo de tokens?</p>
+<p>Por: Guilherme Saboia e Vinicius Gushiken</p>
+<h3
+id="chip-próprio-da-openai-supera-o-blackwell-da-nvidia-em-desempenho-por-watt">Chip
+próprio da OpenAI supera o Blackwell da Nvidia em desempenho por
+watt</h3>
+<ul>
+<li><strong>Teste.</strong> Na conferência Hot Chips, a OpenAI
+apresentou o Jalapeño, seu acelerador de inferência construído com a
+Broadcom, e deixou a SemiAnalysis avaliá-lo: o chip <a
+href="https://dailyjournal.news/news/2026-08-25/chip-jalapeno-da-openai-supera-o-blackwell-da-nvidia-em-desempenho-por-watt">entregou
+de 1,5 a 1,9 vez mais trabalho de IA por watt que os chips Blackwell da
+Nvidia</a> e teve latência de 1,7 a 3,6 vezes menor. Os testes rodaram
+GPT-OSS, DeepSeek R1 e Kimi K2.5, com bom desempenho tanto em baixa
+latência quanto em alta vazão.</li>
+<li><strong>Velocidade.</strong> No DeepSeek R1, o Jalapeño <a
+href="https://dailyjournal.news/news/2026-08-25/chip-jalapeno-da-openai-supera-o-blackwell-da-nvidia-em-desempenho-por-watt">superou
+700 tokens por segundo por usuário</a> com concorrência 1, e no GPT-OSS
+rodou a aproximadamente 1.400. Os números saíram com predição de token
+único, sem decodificação especulativa e sem separação entre
+<em>prefill</em> e <em>decode</em>.</li>
+<li><strong>Silício.</strong> O A0 testado já foi sucedido por um
+<em>stepping</em> B0 que está na fábrica e <a
+href="https://dailyjournal.news/news/2026-08-25/chip-jalapeno-da-openai-supera-o-blackwell-da-nvidia-em-desempenho-por-watt">entrega
+cerca de 25% mais desempenho por watt</a>: 13,4 PFLOPs em MXFP4 num
+único <em>die</em> de computação do tamanho de um retículo, fabricado no
+processo N3P da TSMC, contra 17,5 PFLOPs em NVFP4 denso de um
+<em>die</em> Rubin comparável.</li>
+<li><strong>Consumo.</strong> O TDP (potência térmica de projeto) do
+Jalapeño é de 700W, contra 900W a 1.150W por <em>die</em> de computação
+do Rubin, e o chip virá com HBM4 (memória de alta largura de banda de
+quarta geração), chegando a 15,4TB/s de largura de banda de memória por
+pacote, acima de todos os aceleradores em produção com HBM3E. OpenAI e
+Broadcom <a
+href="https://dailyjournal.news/news/2026-08-25/chip-jalapeno-da-openai-supera-o-blackwell-da-nvidia-em-desempenho-por-watt">apresentaram
+o Jalapeño pela primeira vez em junho</a>; da contratação inicial da
+equipe, em meados de 2024, ao <em>tape-out</em> de fabricação foram
+cerca de 16 meses.</li>
+</ul>
+<h3
+id="apple-apresenta-o-m6-seu-primeiro-chip-de-2-nanômetros-e-o-m5-ultra">Apple
+apresenta o M6, seu primeiro chip de 2 nanômetros, e o M5 Ultra</h3>
+<ul>
+<li><strong>M6.</strong> Estreia num novo Mac mini e é o <a
+href="https://dailyjournal.news/news/2026-08-25/apple-lanca-processador-m5-ultra-e-introduz-chip-m6-de-2nm">primeiro
+chip de 2 nanômetros da empresa</a>, com complexo de CPU de 12 núcleos
+que a Apple diz ter o núcleo mais rápido do mundo, GPU de 12 núcleos com
+Neural Accelerators, Neural Engine duplo de 16 núcleos e 170GB/s de
+largura de banda de memória unificada.</li>
+<li><strong>M5 Ultra.</strong> O chip do novo Mac Studio usa a
+UltraFusion para unir dois M5 Max de dois <em>dies</em> cada, <a
+href="https://dailyjournal.news/news/2026-08-25/apple-lanca-processador-m5-ultra-e-introduz-chip-m6-de-2nm">formando
+a primeira arquitetura de quatro <em>dies</em> da Apple</a>, com mais de
+4,4TB/s de largura de banda entre <em>dies</em>, densidade de conexão
+mais de 6 vezes maior e CPU de 36 núcleos ao lado de uma GPU de 80
+núcleos.</li>
+<li><strong>Local.</strong> O Mac Studio com M5 Ultra suporta até 512GB
+de memória unificada e 1,2TB/s de largura de banda, 50% acima do M3
+Ultra, o bastante para <a
+href="https://dailyjournal.news/news/2026-08-25/apple-lanca-processador-m5-ultra-e-introduz-chip-m6-de-2nm">rodar
+LLMs de centenas de bilhões de parâmetros inteiramente no
+dispositivo</a>. Cada um dos 80 núcleos de GPU traz um Neural
+Accelerator, entregando até 4,5 vezes o poder computacional de pico do
+M3 Ultra em IA.</li>
+<li><strong>Preços.</strong> O Mac mini com M6 <a
+href="https://dailyjournal.news/news/2026-08-25/apple-lanca-processador-m5-ultra-e-introduz-chip-m6-de-2nm">parte
+de US$899 e a versão com M5 Pro de US$1.699</a>, cada um US$100 acima
+dos modelos com M4, e o Mac Studio com M5 Ultra sobe US$200, para
+US$5.499. Os novos Mac mini já estão em pré-venda, com entregas a partir
+de 22 de setembro.</li>
+</ul>
+<h3
+id="perplexity-lança-agente-que-roda-inteiramente-no-dispositivo-sem-custo-de-tokens">Perplexity
+lança agente que roda inteiramente no dispositivo, sem custo de
+tokens</h3>
+<ul>
+<li><strong>Produto.</strong> O Portable Computer é uma versão local da
+plataforma agêntica Computer e <a
+href="https://dailyjournal.news/news/2026-08-25/perplexity-lanca-portable-computer-agente-de-ia-que-roda-no-dispositivo">roda
+em hardware que o usuário já tem</a>, começando pelo <em>desktop</em>
+DGX Spark da Nvidia e por máquinas Linux com GPUs RTX de pelo menos 24GB
+de VRAM, o equivalente a uma GeForce RTX 3090 ou mais nova. Trabalho
+concluído localmente não consome créditos de cobrança; o produto chega a
+assinantes Pro, Max, Enterprise Pro e Enterprise Max no Linux, com
+Windows em setembro.</li>
+<li><strong>Modelos.</strong> No lançamento dá para configurar o Qwen
+3.8 27B ou o <a
+href="https://dailyjournal.news/news/2026-08-25/perplexity-lanca-portable-computer-agente-de-ia-que-roda-no-dispositivo">PPLX
+27B, versão que a Perplexity pós-treinou no próprio
+<em>harness</em></a>, a camada que executa o modelo e o conecta às
+ferramentas. O Nemotron 3.5 Lightning, da Nvidia, chega em breve.</li>
+<li><strong>Números.</strong> No Terminal Bench 2.1, o modelo Qwen
+rodando totalmente local <a
+href="https://dailyjournal.news/news/2026-08-25/perplexity-lanca-portable-computer-agente-de-ia-que-roda-no-dispositivo">marcou
+59,6% com custo marginal praticamente zero</a>. Deixá-lo escalar para um
+“consultor” Claude Opus 5 na nuvem elevou a nota a 73,0%, a um custo
+estimado de US$0,415 por tarefa, contra 82,4% a US$0,65 rodando apenas o
+modelo de fronteira.</li>
+<li><strong>Privacidade.</strong> Toda tarefa começa no dispositivo por
+padrão e o <a
+href="https://dailyjournal.news/news/2026-08-25/perplexity-lanca-portable-computer-agente-de-ia-que-roda-no-dispositivo">sistema
+pede permissão antes de mandar qualquer etapa para a nuvem</a>. Antes de
+cada chamada ao consultor, o <em>harness</em> roda um classificador de
+PII (informações pessoais identificáveis) sobre o contexto e mostra ao
+usuário exatamente o que sairia da máquina; o modelo remoto devolve só
+orientação em texto e nunca toca em arquivos ou ferramentas locais.</li>
+</ul>
+<hr />
+<h4 id="modelos-e-produtos">Modelos e produtos</h4>
+<ul>
+<li><strong>Thomson Reuters.</strong> A empresa lançou o Thomson, seu
+primeiro modelo de linguagem de grande porte proprietário, <a
+href="https://dailyjournal.news/news/2026-08-25/thomson-reuters-lanca-thomson-seu-primeiro-modelo-de-ia-proprio">investindo
+US$40 milhões em talento e poder computacional</a> sobre uma base de
+código aberto: o Snowdon, resultado do “realinhamento” de um modelo Qwen
+de pesos abertos da Alibaba que o Business Insider identificou como o
+Qwen3.5. O CEO Steve Hasker diz que avaliações preliminares internas
+colocam o Thomson “em pé de igualdade com os modelos de fronteira mais
+recentes”, sem que o comunicado publique número algum, e o lançamento
+veio um dia depois de a startup jurídica Harvey apresentar o Tenet,
+pós-treinado sobre o Kimi K3, do laboratório chinês Moonshot AI.</li>
+<li><strong>Accelerated Understanding.</strong> A empresa estreou
+publicamente com um <a
+href="https://dailyjournal.news/news/2026-08-25/fundadores-que-recusaram-a-prometheus-lancam-ia-de-fisica-sem-transformer">modelo
+construído para física, e não para linguagem</a>, que abandona a
+arquitetura Transformer e usa <em>neural operators</em>, técnica
+inaugurada anos atrás pela cofundadora Anima Anandkumar, professora do
+Caltech e ex-diretora da Nvidia; em testes, processou 5 trilhões de
+dados em um único <em>prompt</em>, cerca de 5 milhões de vezes o que os
+modelos principais de Anthropic e Google costumam consumir. Anandkumar e
+o cofundador Benedikt Jenik recusaram uma oferta do Project Prometheus,
+apoiado por Jeff Bezos, que previa 35% de participação, salários somados
+de até US$2 milhões e mais de US$2 bilhões em rodadas comprometidas até
+a Série B; a Prometheus levantou sozinha uma Série B de US$12 bilhões em
+junho.</li>
+<li><strong>Meta.</strong> Documentos internos vistos pelo The
+Information mostram que a empresa planeja lançar entre o fim de agosto e
+o início de setembro o <a
+href="https://dailyjournal.news/news/2026-08-25/meta-prepara-agente-pago-hatch-e-novo-modelo-watermelon-para-outubro">Hatch,
+plataforma de agentes de consumo derivada do OpenClaw</a>, com preços em
+camadas que podem chegar a uma assinatura de US$199,99 por mês. O agente
+foi projetado para operar em serviços como DoorDash, Etsy, Reddit, Yelp
+e Outlook, e um novo modelo com o codinome Watermelon está previsto para
+outubro; a própria Meta havia proibido o uso interno do OpenClaw
+alegando preocupações de segurança.</li>
+</ul>
+<h4 id="corrida-da-ia">Corrida da IA</h4>
+<ul>
+<li><strong>Musk.</strong> No primeiro <em>all-hands</em> com os mais de
+1.000 funcionários da Cursor, comprada pela SpaceX por US$60 bilhões,
+Musk disse que a xAI “ficou para trás”, que o Grok <a
+href="https://dailyjournal.news/news/2026-08-25/musk-diz-a-funcionarios-da-cursor-que-o-grok-ficou-para-tras">precisa
+“desesperadamente recuperar o atraso”</a> e que a Anthropic é a atual
+líder da corrida da IA, segundo o The Information. Ele afirmou não estar
+“acostumado a perder” e prometeu que a SpaceX seguirá acumulando mais
+poder computacional que qualquer rival; a Cursor teria passado de US$2
+bilhões em receita anualizada em junho, mas 45 pessoas deixaram a
+empresa desde abril, cerca de 20 delas vindas da aquisição da
+Graphite.</li>
+</ul>
+<h4 id="chips-e-infraestrutura">Chips e infraestrutura</h4>
+<ul>
+<li><strong>Nvidia.</strong> O Groq 3 LPX, acelerador de inferência
+interativa que estende a plataforma Vera Rubin, <a
+href="https://dailyjournal.news/news/2026-08-24/nvidia-inicia-producao-do-acelerador-groq-3-lpx-com-nebius-como-cliente">entrou
+em produção plena</a>: em testes da Artificial Analysis rodou o Gemma 4
+31B a 3.400 tokens de <em>output</em> por segundo com janela de contexto
+de 100 mil tokens, o melhor desempenho já registrado para esse modelo.
+Cada <em>rack</em> combina 256 aceleradores LPU com 128GB de SRAM no
+chip e 640TB/s de largura de banda de escalonamento vertical, a Nebius é
+a primeira nuvem de IA a adotá-lo, na sua Token Factory, e a Nvidia
+projeta que o Vera Rubin NVL72 com LPX entregue até 35 vezes mais vazão
+de inferência por megawatt que o GB200 NVL72.</li>
+<li><strong>Emerald AI.</strong> A startup levantou uma <a
+href="https://dailyjournal.news/news/2026-08-25/emerald-ai-capta-us-150-milhoes-e-atinge-valuation-de-us-105-bilhao">Série
+A de US$150 milhões a um <em>valuation</em> de US$1,05 bilhão</a>,
+coliderada por DCVC e Energize Capital e com Nvidia, Siemens, GE
+Vernova, Aramco Ventures, In-Q-Tel e Samsung Ventures na lista, para uma
+plataforma que corta o consumo elétrico de data centers em momentos de
+estresse da rede. A empresa afirma que a abordagem pode liberar até 100
+gigawatts na rede americana existente, tem contratos na Califórnia e na
+Virgínia e chega depois de uma demonstração com a National Grid, no
+Reino Unido, em que gerenciou 96 GPUs Blackwell Ultra num data center da
+Nebius em Londres, simulou mais de 200 eventos de rede e reduziu a
+demanda em até 40% sem prejudicar cargas críticas.</li>
+</ul>
+<h4 id="segurança">Segurança</h4>
+<ul>
+<li><strong>OpenAI.</strong> A empresa <a
+href="https://dailyjournal.news/news/2026-08-25/openai-bane-contas-russas-do-chatgpt-usadas-em-operacao-de-influencia">baniu
+contas do ChatGPT originadas na Rússia</a> que sustentavam uma campanha
+de influência encoberta, descoberta a partir de postagens de redes
+sociais geradas por IA: os operadores davam comandos em russo para gerar
+comentários no Substack, Telegram, X, Facebook e LinkedIn, instruíam o
+modelo a esconder qualquer pista linguística de sua origem e usavam VPNs
+para disfarçar a localização, já que a OpenAI não oferece acesso a seus
+modelos na Rússia. O alcance imediato foi limitado, mas a empresa disse
+que “a relevância da operação está menos no público que alcançou do que
+na infraestrutura que havia construído”; foram banidos também um grupo
+ligado a uma empresa de tecnologia chinesa com vínculos governamentais e
+usuários de língua chinesa que produziam slogans e charges para redes
+sociais e plataformas de notícias.</li>
+</ul>
+<h4 id="rodadas">Rodadas</h4>
+<ul>
+<li><strong>Lambda.</strong> A provedora de nuvem de IA apoiada pela
+Nvidia <a
+href="https://dailyjournal.news/news/2026-08-25/lambda-negocia-us3-bilhoes-a-valuation-acima-de-us12-bilhoes">negocia
+captar até US$3 bilhões a um <em>valuation</em> de US$12 bilhões ou
+mais</a>, em rodada que pode prepará-la para abrir capital já no ano que
+vem. A empresa deve superar US$1,5 bilhão de receita neste ano e já
+recebeu várias propostas de investimento; sua Série E, de novembro de
+2025, a avaliara perto de US$5,9 bilhões, pouco mais da metade do
+patamar agora discutido.</li>
+<li><strong>Alice.</strong> A empresa de confiança e segurança em IA,
+antes chamada ActiveFence, <a
+href="https://dailyjournal.news/news/2026-08-25/alice-capta-us140-milhoes-para-testes-de-seguranca-em-modelos-de-fronteira">levantou
+US$140 milhões liderados pelos Apax Digital Funds</a>, chegando a US$280
+milhões captados, com ARR (receita recorrente anual) perto de US$100
+milhões e crescimento de mais de 500% no negócio de IA em dois anos. Seu
+laboratório reúne mais de 150 pesquisadores e trabalha com 8 dos 10
+principais laboratórios de modelos, entre eles Anthropic, Google e
+Cohere, simulando <em>prompts</em> maliciosos e tarefas agênticas antes
+dos lançamentos para endurecer os modelos contra <em>jailbreaks</em> e
+<em>prompt injection</em> (injeção de instruções maliciosas no texto que
+o modelo lê).</li>
+<li><strong>Generalist.</strong> A startup de IA para robótica <a
+href="https://dailyjournal.news/news/2026-08-25/generalist-capta-mais-us200-milhoes-dois-meses-apos-rodada-de-us400-mi">captou
+cerca de US$200 milhões liderados pela 8VC</a>, revelados em registro
+federal, apenas dois meses depois de uma rodada de US$400 milhões e
+acima da marca de US$2 bilhões de junho. Fundada por ex-integrantes do
+Google DeepMind e da Boston Dynamics, a empresa constrói modelos e não
+hardware, já captou mais de US$650 milhões e apresentou há cerca de uma
+semana o Gen-1.5, voltado a braços robóticos, que aprende uma tarefa a
+partir de uma única demonstração humana e teve 59% de taxa média de
+conclusão em dez tarefas de amostra.</li>
+</ul>
+<h4 id="mercados">Mercados</h4>
+<ul>
+<li><strong>Unitree.</strong> As ações da fabricante chinesa de robôs <a
+href="https://dailyjournal.news/news/2026-08-25/acoes-da-unitree-caem-45-apos-estreia-que-quintuplicou-o-preco">caíram
+cerca de 45% desde a estreia em Xangai</a>, em 19 de agosto, quando
+fecharam o primeiro pregão em alta de 460%, e se estabilizaram nesta
+terça após três dias consecutivos de queda. O <em>valuation</em> chegou
+a US$66 bilhões antes de perder US$30 bilhões; analistas atribuem a
+oscilação ao mecanismo de listagem chinês e à ausência de vendedores a
+descoberto, o lucro do primeiro semestre deu sinais de desaceleração e a
+DeepSeek investiu cerca de 140,8 milhões de yuans na oferta, que
+levantou US$905 milhões.</li>
+<li><strong>Bitcoin.</strong> A criptomoeda <a
+href="https://dailyjournal.news/news/2026-08-25/bitcoin-supera-marca-de-us-80-mil-apos-alta-de-20-na-semana">passou
+brevemente de US$81.000 nesta terça</a>, no primeiro fechamento acima de
+US$80.000 desde 15 de maio, antes de recuar para cerca de US$79 mil,
+acumulando recuperação de 38% desde o fundo perto de US$58.000 na virada
+de junho para julho. O movimento estende uma alta de mais de 20% em três
+dias na semana passada, a maior desde 2023, alimentada por um <em>short
+squeeze</em> que liquidou mais de US$4 bilhões em posições vendidas e
+por US$1,92 bilhão de entradas líquidas nos ETFs à vista dos EUA entre
+17 e 21 de agosto, a semana mais forte de 2026.</li>
+</ul>
+<h4 id="saúde">Saúde</h4>
+<ul>
+<li><strong>Roche e Eisai.</strong> A FDA (agência reguladora de
+medicamentos dos EUA) <a
+href="https://dailyjournal.news/news/2026-08-24/fda-aprova-exame-de-sangue-para-auxiliar-deteccao-de-alzheimer">liberou
+o exame de sangue Elecsys pTau217 da Roche</a>, desenvolvido com a Eli
+Lilly, para identificar patologia amiloide ligada ao Alzheimer em
+pessoas de 55 anos ou mais com sinais de declínio cognitivo, o primeiro
+teste de biomarcador único que sustenta tanto a confirmação quanto a
+exclusão do achado. No mesmo dia, Eisai e Biogen anunciaram que o
+autoinjetor subcutâneo semanal Leqembi Iqlik já está disponível nos EUA
+para iniciar a terapia, o primeiro antiamiloide com aplicação em casa
+nas fases de início e de manutenção; no estudo Clarity AD, com 1.795
+pacientes, o lecanemabe intravenoso desacelerou a progressão da doença
+em 27% em 18 meses.</li>
+<li><strong>Johnson &amp; Johnson.</strong> A FDA aprovou o Imaavy
+(nipocalimabe) como <a
+href="https://dailyjournal.news/news/2026-08-25/fda-aprova-imaavy-como-1-tratamento-para-anemia-hemolitica-autoimune-quente">primeiro
+tratamento para anemia hemolítica autoimune quente</a>, doença rara e
+potencialmente fatal em que autoanticorpos destroem os glóbulos
+vermelhos, em adultos e pacientes a partir de 12 anos que estejam ou
+tenham estado em corticosteroides. No estudo de Fase 2/3 ENERGY, com 115
+adultos, cerca de três vezes mais pacientes na dose aprovada atingiram
+níveis duradouros de hemoglobina em 24 semanas que no placebo, com
+aumento médio de 1 g/dL já na primeira semana.</li>
+</ul>
+<h4 id="mundo">Mundo</h4>
+<ul>
+<li><strong>Irã.</strong> O secretário do Tesouro dos EUA, Scott
+Bessent, anunciou na segunda-feira a <a
+href="https://dailyjournal.news/news/2026-08-25/ira-promete-resistencia-apos-nova-rodada-de-sancoes-dos-eua">“Operation
+Economic Outcast”</a>, concretizando a coletiva prometida na véspera:
+quase 60 indivíduos, entidades e embarcações sancionados e determinações
+setoriais em ativos digitais, tecnologia, ouro, aviação e transporte
+marítimo, sem prazo, sem nomes de países-alvo e sem nenhuma das
+instituições financeiras chinesas suspeitas de facilitar as vendas de
+petróleo iraniano. Trump disse nesta terça que a Marinha removeu ou
+detonou todas as minas nas águas internacionais do Estreito de Ormuz e
+advertiu que qualquer embarcação que lançar novas será “imediata e
+sistematicamente destruída”, enquanto Irã e Omã propuseram um corredor
+de navegação conjunto e temporário; as exportações iranianas pelo
+estreito caíram de cerca de 2 milhões para 0,4 milhão de barris por dia
+em meados de agosto, segundo a Kpler.</li>
+<li><strong>Ucrânia.</strong> Londres autorizou a fabricante europeia
+MBDA a <a
+href="https://dailyjournal.news/news/2026-08-24/reino-unido-apoiara-ucrania-na-fabricacao-de-misseis-de-cruzeiro">compartilhar
+com Kiev informações técnicas classificadas sobre os componentes
+britânicos dos mísseis de cruzeiro SCALP/Storm Shadow</a>, abrindo
+caminho para a montagem local, e o Kremlin chamou a decisão de
+“combustível no fogo”. No mesmo dia, a Comissão Europeia liberou €6,1
+bilhões (US$7,1 bilhões) em empréstimos de defesa para antiaéreas,
+mísseis, munição e radares, tirados do Ukraine Support Loan de €90
+bilhões; a Rússia lançou 143 drones e oito mísseis na noite de segunda,
+matando oito pessoas e ferindo 43, e as ações da Ozon caíram 12% depois
+de a Ucrânia atingir três depósitos da varejista.</li>
+</ul>
+<hr />
+<h4 id="leia-também">Leia também</h4>
+<ul>
+<li><a
+href="https://dailyjournal.news/news/2026-08-25/fda-suspende-terapia-genica-da-regenxbio-para-sindrome-de-hunter">FDA
+suspende estudo de terapia gênica da Regenxbio para síndrome de Hunter
+após achados em ressonâncias</a></li>
+<li><a
+href="https://dailyjournal.news/news/2026-08-25/falcon-9-voa-pela-37-vez-com-o-mesmo-propulsor-recorde-da-spacex">Propulsor
+da SpaceX voa pela 37ª vez e bate recorde de reutilização do Falcon
+9</a></li>
+</ul>

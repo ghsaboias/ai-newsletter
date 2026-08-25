@@ -1,0 +1,2419 @@
+{
+ "draft_id": "212725225",
+ "title": "[Tech] - Bem-vindo(a) a 25 de Agosto de 2026",
+ "subtitle": "Em quanto o chip de inferência da OpenAI supera o Blackwell da Nvidia? O que a Apple colocou no seu primeiro chip de 2 nanômetros? Como o novo agente da Perplexity roda sem custo de tokens?",
+ "body": {
+  "type": "doc",
+  "content": [
+   {
+    "type": "paragraph",
+    "attrs": {
+     "textAlign": null
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Por: Guilherme Saboia e Vinicius Gushiken"
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Chip próprio da OpenAI supera o Blackwell da Nvidia em desempenho por watt"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Teste."
+         },
+         {
+          "type": "text",
+          "text": " Na conferência Hot Chips, a OpenAI apresentou o Jalapeño, seu acelerador de inferência construído com a Broadcom, e deixou a SemiAnalysis avaliá-lo: o chip "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/chip-jalapeno-da-openai-supera-o-blackwell-da-nvidia-em-desempenho-por-watt",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "entregou de 1,5 a 1,9 vez mais trabalho de IA por watt que os chips Blackwell da Nvidia"
+         },
+         {
+          "type": "text",
+          "text": " e teve latência de 1,7 a 3,6 vezes menor. Os testes rodaram GPT-OSS, DeepSeek R1 e Kimi K2.5, com bom desempenho tanto em baixa latência quanto em tokens por segundo."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Velocidade."
+         },
+         {
+          "type": "text",
+          "text": " No DeepSeek R1, o Jalapeño "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/chip-jalapeno-da-openai-supera-o-blackwell-da-nvidia-em-desempenho-por-watt",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "superou 700 tokens por segundo por usuário"
+         },
+         {
+          "type": "text",
+          "text": " com concorrência 1, e no GPT-OSS rodou a aproximadamente 1.400. Os números saíram com predição de token único, sem decodificação especulativa e sem separação entre "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "prefill"
+         },
+         {
+          "type": "text",
+          "text": " e "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "decode"
+         },
+         {
+          "type": "text",
+          "text": "."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Silício."
+         },
+         {
+          "type": "text",
+          "text": " O A0 testado já foi sucedido por um "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "stepping"
+         },
+         {
+          "type": "text",
+          "text": " B0 que está na fábrica e "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/chip-jalapeno-da-openai-supera-o-blackwell-da-nvidia-em-desempenho-por-watt",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "entrega cerca de 25% mais desempenho por watt"
+         },
+         {
+          "type": "text",
+          "text": ": 13,4 PFLOPs em MXFP4 num único "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "die"
+         },
+         {
+          "type": "text",
+          "text": " de computação do tamanho de um retículo, fabricado no processo N3P da TSMC, contra 17,5 PFLOPs em NVFP4 denso de um "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "die"
+         },
+         {
+          "type": "text",
+          "text": " Rubin comparável."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Consumo."
+         },
+         {
+          "type": "text",
+          "text": " O TDP (potência térmica de projeto) do Jalapeño é de 700W, contra 900W a 1.150W por "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "die"
+         },
+         {
+          "type": "text",
+          "text": " de computação do Rubin, e o chip virá com HBM4 (memória de alta largura de banda de quarta geração), chegando a 15,4TB/s de largura de banda de memória por pacote, acima de todos os aceleradores em produção com HBM3E. OpenAI e Broadcom "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/chip-jalapeno-da-openai-supera-o-blackwell-da-nvidia-em-desempenho-por-watt",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "apresentaram o Jalapeño pela primeira vez em junho"
+         },
+         {
+          "type": "text",
+          "text": "; da contratação inicial da equipe, em meados de 2024, ao "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "tape-out"
+         },
+         {
+          "type": "text",
+          "text": " de fabricação foram cerca de 16 meses."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/c0afbad3-0f3d-4f99-a5a0-f0b44aac4fff_4032x3024.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 3024,
+       "width": 4032,
+       "resizeWidth": 520,
+       "bytes": 1778616,
+       "alt": "Chip Jalapeño da OpenAI montado numa placa",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "O acelerador de inferência Jalapeño, da OpenAI, construído com a Broadcom. Imagem: OpenAI"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Apple apresenta o M6, seu primeiro chip de 2 nanômetros, e o M5 Ultra"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "M6."
+         },
+         {
+          "type": "text",
+          "text": " Estreia num novo Mac mini e é o "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/apple-lanca-processador-m5-ultra-e-introduz-chip-m6-de-2nm",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "primeiro chip de 2 nanômetros da empresa"
+         },
+         {
+          "type": "text",
+          "text": ", com complexo de CPU de 12 núcleos que a Apple diz ter o núcleo mais rápido do mundo, GPU de 12 núcleos com Neural Accelerators, Neural Engine duplo de 16 núcleos e 170GB/s de largura de banda de memória unificada."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "M5 Ultra."
+         },
+         {
+          "type": "text",
+          "text": " O chip do novo Mac Studio usa a UltraFusion para unir dois M5 Max de dois "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "dies"
+         },
+         {
+          "type": "text",
+          "text": " cada, "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/apple-lanca-processador-m5-ultra-e-introduz-chip-m6-de-2nm",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "formando a primeira arquitetura de quatro "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/apple-lanca-processador-m5-ultra-e-introduz-chip-m6-de-2nm",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           },
+           {
+            "type": "em"
+           }
+          ],
+          "text": "dies"
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/apple-lanca-processador-m5-ultra-e-introduz-chip-m6-de-2nm",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": " da Apple"
+         },
+         {
+          "type": "text",
+          "text": ", com mais de 4,4TB/s de largura de banda entre "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "dies"
+         },
+         {
+          "type": "text",
+          "text": ", densidade de conexão mais de 6 vezes maior e CPU de 36 núcleos ao lado de uma GPU de 80 núcleos."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Local."
+         },
+         {
+          "type": "text",
+          "text": " O Mac Studio com M5 Ultra suporta até 512GB de memória unificada e 1,2TB/s de largura de banda, 50% acima do M3 Ultra, o bastante para "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/apple-lanca-processador-m5-ultra-e-introduz-chip-m6-de-2nm",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "rodar LLMs de centenas de bilhões de parâmetros inteiramente no dispositivo"
+         },
+         {
+          "type": "text",
+          "text": ". Cada um dos 80 núcleos de GPU traz um Neural Accelerator, entregando até 4,5 vezes o poder computacional de pico do M3 Ultra em IA."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Preços."
+         },
+         {
+          "type": "text",
+          "text": " O Mac mini com M6 "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/apple-lanca-processador-m5-ultra-e-introduz-chip-m6-de-2nm",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "parte de US$899 e a versão com M5 Pro de US$1.699"
+         },
+         {
+          "type": "text",
+          "text": ", cada um US$100 acima dos modelos com M4, e o Mac Studio com M5 Ultra sobe US$200, para US$5.499. Os novos Mac mini já estão em pré-venda, com entregas a partir de 22 de setembro."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/6e285228-2d07-4549-80cc-7d8e68ac7702_1960x1307.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 1307,
+       "width": 1960,
+       "resizeWidth": 520,
+       "bytes": 76036,
+       "alt": "Novo Mac mini segurado na palma da mão",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "O novo Mac mini, primeiro Mac com o chip M6 de 2 nanômetros. Imagem: Apple"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Perplexity lança agente que roda inteiramente no dispositivo, sem custo de tokens"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Produto."
+         },
+         {
+          "type": "text",
+          "text": " O Portable Computer é uma versão local da plataforma agêntica Computer e "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/perplexity-lanca-portable-computer-agente-de-ia-que-roda-no-dispositivo",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "roda em hardware que o usuário já tem"
+         },
+         {
+          "type": "text",
+          "text": ", começando pelo "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "desktop"
+         },
+         {
+          "type": "text",
+          "text": " DGX Spark da Nvidia e por máquinas Linux com GPUs RTX de pelo menos 24GB de VRAM, o equivalente a uma GeForce RTX 3090 ou mais nova. Trabalho concluído localmente não consome créditos de cobrança; o produto chega a assinantes Pro, Max, Enterprise Pro e Enterprise Max no Linux, com Windows em setembro."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Modelos."
+         },
+         {
+          "type": "text",
+          "text": " No lançamento dá para configurar o Qwen 3.8 27B ou o "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/perplexity-lanca-portable-computer-agente-de-ia-que-roda-no-dispositivo",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "PPLX 27B, versão que a Perplexity pós-treinou no próprio "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/perplexity-lanca-portable-computer-agente-de-ia-que-roda-no-dispositivo",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           },
+           {
+            "type": "em"
+           }
+          ],
+          "text": "harness"
+         },
+         {
+          "type": "text",
+          "text": ", a camada que executa o modelo e o conecta às ferramentas. O Nemotron 3.5 Lightning, da Nvidia, chega em breve."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Números."
+         },
+         {
+          "type": "text",
+          "text": " No Terminal Bench 2.1, o modelo Qwen rodando totalmente local "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/perplexity-lanca-portable-computer-agente-de-ia-que-roda-no-dispositivo",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "marcou 59,6% com custo marginal praticamente zero"
+         },
+         {
+          "type": "text",
+          "text": ". Deixá-lo escalar para um “consultor” Claude Opus 5 na nuvem elevou a nota a 73,0%, a um custo estimado de US$0,415 por tarefa, contra 82,4% a US$0,65 rodando apenas o modelo de fronteira."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Privacidade."
+         },
+         {
+          "type": "text",
+          "text": " Toda tarefa começa no dispositivo por padrão e o "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/perplexity-lanca-portable-computer-agente-de-ia-que-roda-no-dispositivo",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "sistema pede permissão antes de mandar qualquer etapa para a nuvem"
+         },
+         {
+          "type": "text",
+          "text": ". Antes de cada chamada ao consultor, o "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "harness"
+         },
+         {
+          "type": "text",
+          "text": " roda um classificador de PII (informações pessoais identificáveis) sobre o contexto e mostra ao usuário exatamente o que sairia da máquina; o modelo remoto devolve só orientação em texto e nunca toca em arquivos ou ferramentas locais."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/009bea16-1a96-4926-9929-7561a595cb43_1280x720.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 720,
+       "width": 1280,
+       "resizeWidth": 520,
+       "bytes": 27437,
+       "alt": "Diálogo do Portable Computer pedindo permissão para usar um modelo na nuvem",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "O agente pede permissão antes de escalar qualquer etapa para a nuvem. Imagem: Perplexity"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "dynamicContent",
+    "attrs": {
+     "audiences": [
+      "non_sub",
+      "free_sub"
+     ],
+     "displayName": "Audience-specific content block"
+    },
+    "content": [
+     {
+      "type": "dynamicContentMatch",
+      "content": [
+       {
+        "type": "blockquote",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "strong"
+             }
+            ],
+            "text": "Abaixo, apenas para assinantes:"
+           }
+          ]
+         },
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "strong"
+             }
+            ],
+            "text": "Modelos."
+           },
+           {
+            "type": "text",
+            "text": " Uma empresa americana de informação lança seu modelo próprio construído sobre um modelo-base chinês, uma estreante apresenta um modelo feito para física em vez de linguagem, e uma big tech americana prepara sua plataforma de agentes para consumidores."
+           }
+          ]
+         },
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "strong"
+             }
+            ],
+            "text": "Silício e energia."
+           },
+           {
+            "type": "text",
+            "text": " Um novo acelerador de inferência entra em produção plena, e uma startup americana que corta o consumo elétrico de data centers levanta uma rodada com investidores de chips e de energia."
+           }
+          ]
+         },
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "strong"
+             }
+            ],
+            "text": "Dinheiro."
+           },
+           {
+            "type": "text",
+            "text": " Uma provedora americana de nuvem de IA negocia a rodada que a prepara para abrir capital, uma empresa de segurança de modelos e uma de IA para robótica anunciam novas captações."
+           }
+          ]
+         },
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "strong"
+             }
+            ],
+            "text": "Mundo."
+           },
+           {
+            "type": "text",
+            "text": " Novas sanções americanas contra o Irã e o impasse no Estreito de Ormuz, mais armas e crédito europeu para a Ucrânia, e uma campanha de influência russa banida de um serviço americano de IA."
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "paywall"
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Modelos e produtos"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Thomson Reuters."
+         },
+         {
+          "type": "text",
+          "text": " A empresa lançou o Thomson, seu primeiro modelo de linguagem de grande porte proprietário, "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/thomson-reuters-lanca-thomson-seu-primeiro-modelo-de-ia-proprio",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "investindo US$40 milhões em talento e poder computacional"
+         },
+         {
+          "type": "text",
+          "text": " sobre uma base de código aberto: o Snowdon, resultado do “realinhamento” de um modelo Qwen de pesos abertos da Alibaba que o Business Insider identificou como o Qwen3.5. O CEO Steve Hasker diz que avaliações preliminares internas colocam o Thomson “em pé de igualdade com os modelos de fronteira mais recentes”, sem que o comunicado publique número algum, e o lançamento veio um dia depois de a startup jurídica Harvey apresentar o Tenet, pós-treinado sobre o Kimi K3, do laboratório chinês Moonshot AI."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Accelerated Understanding."
+         },
+         {
+          "type": "text",
+          "text": " A empresa estreou publicamente com um "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/fundadores-que-recusaram-a-prometheus-lancam-ia-de-fisica-sem-transformer",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "modelo construído para física, e não para linguagem"
+         },
+         {
+          "type": "text",
+          "text": ", que abandona a arquitetura Transformer e usa "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "neural operators"
+         },
+         {
+          "type": "text",
+          "text": ", técnica inaugurada anos atrás pela cofundadora Anima Anandkumar, professora do Caltech e ex-diretora da Nvidia; em testes, processou 5 trilhões de dados em um único "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "prompt"
+         },
+         {
+          "type": "text",
+          "text": ", cerca de 5 milhões de vezes o que os modelos principais de Anthropic e Google costumam consumir. Anandkumar e o cofundador Benedikt Jenik recusaram uma oferta do Project Prometheus, apoiado por Jeff Bezos, que previa 35% de participação, salários somados de até US$2 milhões e mais de US$2 bilhões em rodadas comprometidas até a Série B; a Prometheus levantou sozinha uma Série B de US$12 bilhões em junho."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/55d46dc1-467a-44cb-9506-20b7fac04380_2617x3021.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 3021,
+       "width": 2617,
+       "resizeWidth": 520,
+       "bytes": 1181092,
+       "alt": "Anima Anandkumar discursando em conferência",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Anima Anandkumar, cofundadora da Accelerated Understanding e professora do Caltech. Foto: Runawaymo/Wikimedia Commons (CC BY-SA 4.0)"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Meta."
+         },
+         {
+          "type": "text",
+          "text": " Documentos internos vistos pelo The Information mostram que a empresa planeja lançar entre o fim de agosto e o início de setembro o "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/meta-prepara-agente-pago-hatch-e-novo-modelo-watermelon-para-outubro",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "Hatch, plataforma de agentes de consumo derivada do OpenClaw"
+         },
+         {
+          "type": "text",
+          "text": ", com preços em camadas que podem chegar a uma assinatura de US$199,99 por mês. O agente foi projetado para operar em serviços como DoorDash, Etsy, Reddit, Yelp e Outlook, e um novo modelo com o codinome Watermelon está previsto para outubro; a própria Meta havia proibido o uso interno do OpenClaw alegando preocupações de segurança."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Corrida da IA"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Musk."
+         },
+         {
+          "type": "text",
+          "text": " No primeiro "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "all-hands"
+         },
+         {
+          "type": "text",
+          "text": " com os mais de 1.000 funcionários da Cursor, comprada pela SpaceX por US$60 bilhões, Musk disse que a xAI “ficou para trás”, que o Grok "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/musk-diz-a-funcionarios-da-cursor-que-o-grok-ficou-para-tras",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "precisa “desesperadamente recuperar o atraso”"
+         },
+         {
+          "type": "text",
+          "text": " e que a Anthropic é a atual líder da corrida da IA, segundo o The Information. Ele afirmou não estar “acostumado a perder” e prometeu que a SpaceX seguirá acumulando mais poder computacional que qualquer rival; a Cursor teria passado de US$2 bilhões em receita anualizada em junho, mas 45 pessoas deixaram a empresa desde abril, cerca de 20 delas vindas da aquisição da Graphite."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/6c58f697-c808-4686-8835-eab630ce9a15_1351x900.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 900,
+       "width": 1351,
+       "resizeWidth": 520,
+       "bytes": 112264,
+       "alt": "Elon Musk falando em painel no Fórum Econômico Mundial",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Elon Musk no Fórum Econômico Mundial, em Davos, em janeiro de 2026. Imagem: Fabrice Coffrini/AFP via Getty Images"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Chips e infraestrutura"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Nvidia."
+         },
+         {
+          "type": "text",
+          "text": " O Groq 3 LPX, acelerador de inferência interativa que estende a plataforma Vera Rubin, "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-24/nvidia-inicia-producao-do-acelerador-groq-3-lpx-com-nebius-como-cliente",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "entrou em produção plena"
+         },
+         {
+          "type": "text",
+          "text": ": em testes da Artificial Analysis rodou o Gemma 4 31B a 3.400 tokens de "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "output"
+         },
+         {
+          "type": "text",
+          "text": " por segundo com janela de contexto de 100 mil tokens, o melhor desempenho já registrado para esse modelo. Cada "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "rack"
+         },
+         {
+          "type": "text",
+          "text": " combina 256 aceleradores LPU com 128GB de SRAM no chip e 640TB/s de largura de banda de escalonamento vertical, a Nebius é a primeira nuvem de IA a adotá-lo, na sua Token Factory, e a Nvidia projeta que o Vera Rubin NVL72 com LPX entregue até 35 vezes mais vazão de inferência por megawatt que o GB200 NVL72."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/7ca6f0b5-eafa-45aa-bffa-46ef587a9b18_1680x945.png",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 945,
+       "width": 1680,
+       "resizeWidth": 520,
+       "bytes": 1738514,
+       "alt": "Família de racks Vera Rubin da Nvidia",
+       "title": null,
+       "type": "image/png",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "A família de racks Vera Rubin, que agora inclui o Groq 3 LPX. Imagem: Nvidia"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Emerald AI."
+         },
+         {
+          "type": "text",
+          "text": " A startup levantou uma "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/emerald-ai-capta-us-150-milhoes-e-atinge-valuation-de-us-105-bilhao",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "Série A de US$150 milhões a um "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/emerald-ai-capta-us-150-milhoes-e-atinge-valuation-de-us-105-bilhao",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           },
+           {
+            "type": "em"
+           }
+          ],
+          "text": "valuation"
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/emerald-ai-capta-us-150-milhoes-e-atinge-valuation-de-us-105-bilhao",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": " de US$1,05 bilhão"
+         },
+         {
+          "type": "text",
+          "text": ", coliderada por DCVC e Energize Capital e com Nvidia, Siemens, GE Vernova, Aramco Ventures, In-Q-Tel e Samsung Ventures na lista, para uma plataforma que corta o consumo elétrico de data centers em momentos de estresse da rede. A empresa afirma que a abordagem pode liberar até 100 gigawatts na rede americana existente, tem contratos na Califórnia e na Virgínia e chega depois de uma demonstração com a National Grid, no Reino Unido, em que gerenciou 96 GPUs Blackwell Ultra num data center da Nebius em Londres, simulou mais de 200 eventos de rede e reduziu a demanda em até 40% sem prejudicar cargas críticas."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Segurança"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "OpenAI."
+         },
+         {
+          "type": "text",
+          "text": " A empresa "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/openai-bane-contas-russas-do-chatgpt-usadas-em-operacao-de-influencia",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "baniu contas do ChatGPT originadas na Rússia"
+         },
+         {
+          "type": "text",
+          "text": " que sustentavam uma campanha de influência encoberta, descoberta a partir de postagens de redes sociais geradas por IA: os operadores davam comandos em russo para gerar comentários no Substack, Telegram, X, Facebook e LinkedIn, instruíam o modelo a esconder qualquer pista linguística de sua origem e usavam VPNs para disfarçar a localização, já que a OpenAI não oferece acesso a seus modelos na Rússia. O alcance imediato foi limitado, mas a empresa disse que “a relevância da operação está menos no público que alcançou do que na infraestrutura que havia construído”; foram banidos também um grupo ligado a uma empresa de tecnologia chinesa com vínculos governamentais e usuários de língua chinesa que produziam slogans e charges para redes sociais e plataformas de notícias."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Rodadas"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Lambda."
+         },
+         {
+          "type": "text",
+          "text": " A provedora de nuvem de IA apoiada pela Nvidia "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/lambda-negocia-us3-bilhoes-a-valuation-acima-de-us12-bilhoes",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "negocia captar até US$3 bilhões a um "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/lambda-negocia-us3-bilhoes-a-valuation-acima-de-us12-bilhoes",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           },
+           {
+            "type": "em"
+           }
+          ],
+          "text": "valuation"
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/lambda-negocia-us3-bilhoes-a-valuation-acima-de-us12-bilhoes",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": " de US$12 bilhões ou mais"
+         },
+         {
+          "type": "text",
+          "text": ", em rodada que pode prepará-la para abrir capital já no ano que vem. A empresa deve superar US$1,5 bilhão de receita neste ano e já recebeu várias propostas de investimento; sua Série E, de novembro de 2025, a avaliara perto de US$5,9 bilhões, pouco mais da metade do patamar agora discutido."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Alice."
+         },
+         {
+          "type": "text",
+          "text": " A empresa de confiança e segurança em IA, antes chamada ActiveFence, "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/alice-capta-us140-milhoes-para-testes-de-seguranca-em-modelos-de-fronteira",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "levantou US$140 milhões liderados pelos Apax Digital Funds"
+         },
+         {
+          "type": "text",
+          "text": ", chegando a US$280 milhões captados, com ARR (receita recorrente anual) perto de US$100 milhões e crescimento de mais de 500% no negócio de IA em dois anos. Seu laboratório reúne mais de 150 pesquisadores e trabalha com 8 dos 10 principais laboratórios de modelos, entre eles Anthropic, Google e Cohere, simulando "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "prompts"
+         },
+         {
+          "type": "text",
+          "text": " maliciosos e tarefas agênticas antes dos lançamentos para endurecer os modelos contra "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "jailbreaks"
+         },
+         {
+          "type": "text",
+          "text": " e "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "prompt injection"
+         },
+         {
+          "type": "text",
+          "text": " (injeção de instruções maliciosas no texto que o modelo lê)."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Generalist."
+         },
+         {
+          "type": "text",
+          "text": " A startup de IA para robótica "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/generalist-capta-mais-us200-milhoes-dois-meses-apos-rodada-de-us400-mi",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "captou cerca de US$200 milhões liderados pela 8VC"
+         },
+         {
+          "type": "text",
+          "text": ", revelados em registro federal, apenas dois meses depois de uma rodada de US$400 milhões e acima da marca de US$2 bilhões de junho. Fundada por ex-integrantes do Google DeepMind e da Boston Dynamics, a empresa constrói modelos e não hardware, já captou mais de US$650 milhões e apresentou há cerca de uma semana o Gen-1.5, voltado a braços robóticos, que aprende uma tarefa a partir de uma única demonstração humana e teve 59% de taxa média de conclusão em dez tarefas de amostra."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "youtube2",
+    "attrs": {
+     "videoId": "1cllCVK-9lo",
+     "startTime": null,
+     "endTime": null
+    }
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Mercados"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Unitree."
+         },
+         {
+          "type": "text",
+          "text": " As ações da fabricante chinesa de robôs "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/acoes-da-unitree-caem-45-apos-estreia-que-quintuplicou-o-preco",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "caíram cerca de 45% desde a estreia em Xangai"
+         },
+         {
+          "type": "text",
+          "text": ", em 19 de agosto, quando fecharam o primeiro pregão em alta de 460%, e se estabilizaram nesta terça após três dias consecutivos de queda. O "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "valuation"
+         },
+         {
+          "type": "text",
+          "text": " chegou a US$66 bilhões antes de perder US$30 bilhões; analistas atribuem a oscilação ao mecanismo de listagem chinês. O lucro do primeiro semestre deu sinais de desaceleração e a DeepSeek investiu cerca de 140,8 milhões de yuans na oferta, que levantou US$905 milhões."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/23eae930-4f96-46d1-a7b1-36c44fbe477d_1920x1080.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 1080,
+       "width": 1920,
+       "resizeWidth": 520,
+       "bytes": 328923,
+       "alt": "Robô humanoide H1 da Unitree caminhando ao ar livre",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "O robô humanoide H1, da Unitree. Imagem: Unitree Robotics"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Saúde"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Roche e Eisai."
+         },
+         {
+          "type": "text",
+          "text": " A FDA (agência reguladora de medicamentos dos EUA) "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-24/fda-aprova-exame-de-sangue-para-auxiliar-deteccao-de-alzheimer",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "liberou o exame de sangue Elecsys pTau217 da Roche"
+         },
+         {
+          "type": "text",
+          "text": ", desenvolvido com a Eli Lilly, para identificar patologia amiloide ligada ao Alzheimer em pessoas de 55 anos ou mais com sinais de declínio cognitivo, o primeiro teste de biomarcador único que sustenta tanto a confirmação quanto a exclusão do achado. No mesmo dia, Eisai e Biogen anunciaram que o autoinjetor subcutâneo semanal Leqembi Iqlik já está disponível nos EUA para iniciar a terapia, o primeiro antiamiloide com aplicação em casa nas fases de início e de manutenção; no estudo Clarity AD, com 1.795 pacientes, o lecanemabe intravenoso desacelerou a progressão da doença em 27% em 18 meses."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Johnson & Johnson."
+         },
+         {
+          "type": "text",
+          "text": " A FDA aprovou o Imaavy (nipocalimabe) como "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/fda-aprova-imaavy-como-1-tratamento-para-anemia-hemolitica-autoimune-quente",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "primeiro tratamento para anemia hemolítica autoimune quente"
+         },
+         {
+          "type": "text",
+          "text": ", doença rara e potencialmente fatal em que autoanticorpos destroem os glóbulos vermelhos, em adultos e pacientes a partir de 12 anos que estejam ou tenham estado em corticosteroides. No estudo de Fase 2/3 ENERGY, com 115 adultos, cerca de três vezes mais pacientes na dose aprovada atingiram níveis duradouros de hemoglobina em 24 semanas que no placebo, com aumento médio de 1 g/dL já na primeira semana."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Mundo"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Irã."
+         },
+         {
+          "type": "text",
+          "text": " O secretário do Tesouro dos EUA, Scott Bessent, anunciou na segunda-feira a "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-25/ira-promete-resistencia-apos-nova-rodada-de-sancoes-dos-eua",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "“Operation Economic Outcast”"
+         },
+         {
+          "type": "text",
+          "text": ", concretizando a coletiva prometida na véspera: quase 60 indivíduos, entidades e embarcações sancionados e determinações setoriais em ativos digitais, tecnologia, ouro, aviação e transporte marítimo, sem prazo, sem nomes de países-alvo e sem nenhuma das instituições financeiras chinesas suspeitas de facilitar as vendas de petróleo iraniano. Trump disse nesta terça que a Marinha removeu ou detonou todas as minas nas águas internacionais do Estreito de Ormuz e advertiu que qualquer embarcação que lançar novas será “imediata e sistematicamente destruída”, enquanto Irã e Omã propuseram um corredor de navegação conjunto e temporário."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Ucrânia."
+         },
+         {
+          "type": "text",
+          "text": " Londres autorizou a fabricante europeia MBDA a "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-08-24/reino-unido-apoiara-ucrania-na-fabricacao-de-misseis-de-cruzeiro",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "compartilhar com Kiev informações técnicas classificadas sobre os componentes britânicos dos mísseis de cruzeiro SCALP/Storm Shadow"
+         },
+         {
+          "type": "text",
+          "text": ", abrindo caminho para a montagem local, e o Kremlin chamou a decisão de “combustível no fogo”. No mesmo dia, a Comissão Europeia liberou €6,1 bilhões (US$7,1 bilhões) em empréstimos de defesa para antiaéreas, mísseis, munição e radares, tirados do Ukraine Support Loan de €90 bilhões; as ações da Ozon caíram 12% depois de a Ucrânia atingir três depósitos da varejista."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/7010eb2f-ad88-4501-91d7-c60c829f95aa_3087x2019.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 2019,
+       "width": 3087,
+       "resizeWidth": 520,
+       "bytes": 654607,
+       "alt": "Caça Tornado GR4 da RAF em voo com míssil Storm Shadow sob a fuselagem",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Míssil de cruzeiro Storm Shadow sob um Tornado GR4 da Força Aérea britânica. Imagem: RAF/MOD via Wikimedia Commons (OGL v1.0)"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "calloutBlock",
+    "content": [
+     {
+      "type": "heading",
+      "attrs": {
+       "textAlign": null,
+       "level": 4
+      },
+      "content": [
+       {
+        "type": "text",
+        "text": "Leia também"
+       }
+      ]
+     },
+     {
+      "type": "bullet_list",
+      "content": [
+       {
+        "type": "list_item",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "link",
+              "attrs": {
+               "href": "https://dailyjournal.news/news/2026-08-25/fda-suspende-terapia-genica-da-regenxbio-para-sindrome-de-hunter",
+               "target": "_blank",
+               "rel": "noopener noreferrer nofollow",
+               "class": null
+              }
+             }
+            ],
+            "text": "FDA suspende estudo de terapia gênica da Regenxbio para síndrome de Hunter após achados em ressonâncias"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "list_item",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "link",
+              "attrs": {
+               "href": "https://dailyjournal.news/news/2026-08-25/falcon-9-voa-pela-37-vez-com-o-mesmo-propulsor-recorde-da-spacex",
+               "target": "_blank",
+               "rel": "noopener noreferrer nofollow",
+               "class": null
+              }
+             }
+            ],
+            "text": "Propulsor da SpaceX voa pela 37ª vez e bate recorde de reutilização do Falcon 9"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "marks": [
+       {
+        "type": "strong"
+       }
+      ],
+      "text": "Recomendações de hoje:"
+     }
+    ]
+   },
+   {
+    "type": "paragraph",
+    "attrs": {
+     "textAlign": null
+    },
+    "content": [
+     {
+      "type": "text",
+      "marks": [
+       {
+        "type": "strong"
+       }
+      ],
+      "text": "How Harvey Built a Research Lab on a Budget | Gabe Pereyra:"
+     },
+     {
+      "type": "text",
+      "text": " Nesta apresentação do evento Own Your Intelligence da Sequoia Capital, Gabe Pereyra, cofundador e presidente da Harvey, detalha como a empresa construiu seu próprio laboratório de pesquisa em IA para competir com grandes laboratórios de fronteira, mesmo operando na camada de aplicação e com orçamento limitado. A estratégia central da Harvey baseia-se em alavancar o ecossistema de modelos de código aberto (open-source) e infraestrutura de terceiros, em vez de tentar desenvolver tudo internamente:"
+     }
+    ]
+   },
+   {
+    "type": "youtube2",
+    "attrs": {
+     "videoId": "MGouk8W51v0",
+     "startTime": "37s",
+     "endTime": null
+    }
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "paragraph",
+    "attrs": {
+     "textAlign": null
+    },
+    "content": [
+     {
+      "type": "text",
+      "marks": [
+       {
+        "type": "strong"
+       }
+      ],
+      "text": "Sergey Brin Retakes Gemini, 4 Labs Lose Containment, Compute Trades at NYSE w/ Kush Bavaria | EP 278:"
+     },
+     {
+      "type": "text",
+      "text": " O episódio 278 do podcast Moonshots reúne Peter Diamandis, Salim Ismail, Dave Blundin e o cientista Alexander Wissner-Gross com o convidado especial Kush Bavaria, CEO da Ornn. A discussão foca na aceleração da inteligência artificial, o retorno de Sergey Brin ao comando do Gemini, a emergência de agentes autônomos e a transformação da computação em uma commodity negociável:"
+     }
+    ]
+   },
+   {
+    "type": "youtube2",
+    "attrs": {
+     "videoId": "Q6PTLG71NGc",
+     "startTime": null,
+     "endTime": null
+    }
+   }
+  ]
+ }
+}
