@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Fronteira de Pareto</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    background: #FFFFFF;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 38px;
+  }
+  .card { width: 720px; background: #FFFFFF; padding: 36px 40px; }
+  .header {
+    padding-bottom: 24px;
+    border-bottom: 3px solid #044B2E;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.8px;
+    line-height: 26px;
+    max-width: none;
+  }
+  .kicker { font-size: 13px; line-height: 18px; color: #444; margin-top: 18px; }
+  .kicker b { color: #044B2E; }
+  .chart-area { padding: 18px 0 4px; }
+  .chart-container { position: relative; width: 100%; height: 430px; }
+  .chart-logo { position: absolute; height: 15px; right: 12px; bottom: 48px; }
+  .legend {
+    display: flex;
+    gap: 22px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid #E5E5E5;
+    font-size: 11px;
+    color: #444;
+  }
+  .legend > span { display: inline-flex; align-items: center; }
+  .legend .dot {
+    display: inline-block;
+    width: 11px; height: 11px;
+    margin-right: 6px;
+    border-radius: 50%;
+  }
+  .caption { font-size: 11px; line-height: 16px; color: #999; margin-top: 14px; }
+  .footer {
+    padding-top: 14px;
+    border-top: 1px solid #E5E5E5;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
+  }
+  .footer span { font-size: 10px; color: #999; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="card" id="capture">
+  <div class="header">
+    <h1>Fronteira de Pareto</h1>
+  </div>
+
+  <div class="kicker">
+    No Terminal-Bench 2.1, cada ponto é um agente rodando um modelo nas mesmas <b>89 tarefas de linha de comando</b>. À <b>esquerda</b>, mais barato. <b>Acima</b>, mais preciso. Em 14 dos 17 pares existe outro que acerta mais e custa menos. Os três que restam são a <b>fronteira de Pareto</b>: são os pares com a melhor relação entre preço e desempenho.
+  </div>
+
+
+  <div class="chart-area">
+    <div class="chart-container">
+      <canvas id="tbench"></canvas>
+      <img src="../../daily-journal-platform/public/images/logo/logo-green-horizontal.png" class="chart-logo" alt="Daily Journal">
+    </div>
+
+    <div class="legend">
+      <span><span class="dot" style="background:#044B2E"></span>Na fronteira de custo-benefício</span>
+      <span><span class="dot" style="background:#ccc"></span>Superado por outro par mais barato e mais preciso</span>
+    </div>
+  </div>
+
+  <div class="caption">
+    Fonte de todos os números: leaderboard oficial do Terminal-Bench 2.1, snapshot de 11 de julho de 2026, 17 pares agente + modelo. O custo é o total gasto na rodada completa do benchmark, com as 89 tarefas executadas 5 vezes cada, somando 445 trajetórias. Eixo de custo em escala logarítmica.
+  </div>
+
+  <div class="footer">
+    <span>Fonte: Terminal-Bench — leaderboard 2.1 (11 jul. 2026)</span>
+    <span>dailyjournal.news</span>
+  </div>
+</div>
+
+<script>
+  const RAW = [
+    { a:'Claude Code',    m:'Fable 5',        acc:83.8, cost:552.67,  pareto:true  },
+    { a:'Codex',          m:'GPT-5.5',        acc:83.1, cost:2059.19, pareto:false },
+    { a:'Terminus 2',     m:'Fable 5',        acc:80.4, cost:438.64,  pareto:true  },
+    { a:'Cursor CLI',     m:'Grok 4.5',       acc:79.3, cost:134.09,  pareto:true  },
+    { a:'Claude Code',    m:'Opus 4.8',       acc:78.9, cost:286.94,  pareto:false },
+    { a:'Codex',          m:'GPT-5.6 Terra',  acc:78.4, cost:421.15,  pareto:false },
+    { a:'Terminus 2',     m:'GPT-5.5',        acc:78.0, cost:493.85,  pareto:false },
+    { a:'mini-SWE-agent', m:'Muse Spark 1.1', acc:76.2, cost:198.05,  pareto:false },
+    { a:'Codex',          m:'GPT-5.6 Luna',   acc:75.7, cost:241.45,  pareto:false },
+    { a:'Claude Code',    m:'Sonnet 5',       acc:74.6, cost:288.18,  pareto:false },
+    { a:'Terminus 2',     m:'Gemini 3 Pro',   acc:73.9, cost:224.44,  pareto:false },
+    { a:'Claude Code',    m:'Opus 4.7',       acc:68.9, cost:599.52,  pareto:false },
+    { a:'Terminus 2',     m:'Opus 4.7',       acc:66.1, cost:582.26,  pareto:false },
+    { a:'Gemini CLI',     m:'Gemini 3 Pro',   acc:65.8, cost:247.76,  pareto:false },
+    { a:'Gemini CLI',     m:'Gemini 3.1 Pro', acc:65.8, cost:236.49,  pareto:false },
+    { a:'Terminus 2',     m:'Gemini 3.1 Pro', acc:65.6, cost:229.99,  pareto:false },
+    { a:'Claude Code',    m:'GLM-5.1',        acc:58.7, cost:277.14,  pareto:false }
+  ];
+
+  const pt = (d) => ({ x: d.cost, y: d.acc });
+  const dominated = RAW.filter(d => !d.pareto).map(pt);
+  const frontier  = RAW.filter(d =>  d.pareto).map(pt).sort((p, q) => p.x - q.x);
+
+  // degraus da fronteira: sobe no ponto, anda até o próximo custo
+  const steps = [];
+  frontier.forEach((p, i) => {
+    steps.push({ x: p.x, y: p.y });
+    if (i < frontier.length - 1) steps.push({ x: frontier[i + 1].x, y: p.y });
+  });
+
+  // rótulos: os 3 da fronteira + o outlier caro
+  const LABELS = [
+    { cost:134.09,  acc:79.3, text:'Cursor CLI + Grok 4.5', num:'79,3%', axis:'US$134',   arow:0, color:'#044B2E', num_color:'#5a9377', align:'left',  dx:-8,  dy:-33, ndy:-18 },
+    { cost:438.64,  acc:80.4, text:'Terminus 2 + Fable 5',  num:'80,4%', axis:'US$439',   arow:0, color:'#044B2E', num_color:'#5a9377', align:'right', dx:0,   dy:-58, ndy:-43, leader:true },
+    { cost:552.67,  acc:83.8, text:'Claude Code + Fable 5', num:'83,8%', axis:'US$553',   arow:1, color:'#044B2E', num_color:'#5a9377', align:'left',  dx:14,  dy:-8,  ndy:8, dropFrom:80.4 },
+    { cost:2059.19, acc:83.1, text:'Codex + GPT-5.5',       num:'83,1%', axis:'US$2.059', arow:0, color:'#888',    num_color:'#aaa',    align:'right', dx:-13, dy:20,  ndy:36 }
+  ];
+  new Chart(document.getElementById('tbench').getContext('2d'), {
+    data: {
+      datasets: [
+        {
+          type: 'line',
+          label: 'Fronteira',
+          data: steps,
+          borderColor: '#044B2E',
+          borderWidth: 2,
+          borderDash: [6, 4],
+          pointRadius: 0,
+          fill: false,
+          order: 3
+        },
+        {
+          type: 'scatter',
+          label: 'Superados',
+          data: dominated,
+          backgroundColor: '#ccc',
+          borderColor: '#bbb',
+          borderWidth: 1,
+          pointRadius: 6,
+          order: 2
+        },
+        {
+          type: 'scatter',
+          label: 'Fronteira',
+          data: frontier,
+          backgroundColor: '#044B2E',
+          borderColor: '#044B2E',
+          pointRadius: 7,
+          order: 1
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: {
+        y: {
+          min: 55,
+          max: 88,
+          grid: { color: '#f0f0f0', drawTicks: false },
+          border: { display: false },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 13, weight: '700' },
+            color: '#999',
+            padding: 8,
+            stepSize: 5,
+            callback: (v) => v + '%'
+          }
+        },
+        x: {
+          type: 'logarithmic',
+          min: 110,
+          max: 2600,
+          grid: { display: false },
+          border: { color: '#ccc' },
+          ticks: { display: false }
+        }
+      },
+      layout: { padding: { top: 26, right: 12, left: 0, bottom: 34 } }
+    },
+    plugins: [
+      {
+        id: 'pointLabels',
+        afterDatasetsDraw(chart) {
+          const { ctx, scales } = chart;
+          ctx.save();
+          // marca no eixo X onde cai cada ponto rotulado
+          LABELS.forEach(l => {
+            const x = scales.x.getPixelForValue(l.cost);
+            const y = scales.y.getPixelForValue(l.acc);
+            ctx.strokeStyle = l.color === '#888' ? '#e0e0e0' : '#cfe0d6';
+            ctx.lineWidth = 1;
+            ctx.setLineDash([3, 3]);
+            ctx.beginPath();
+            ctx.moveTo(x, l.dropFrom ? scales.y.getPixelForValue(l.dropFrom) : y + 9);
+            ctx.lineTo(x, chart.chartArea.bottom);
+            ctx.stroke();
+            ctx.setLineDash([]);
+            ctx.strokeStyle = l.color === '#888' ? '#aaa' : '#044B2E';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(x, chart.chartArea.bottom);
+            ctx.lineTo(x, chart.chartArea.bottom + (l.arow ? 24 : 8));
+            ctx.stroke();
+            ctx.font = '700 13px Helvetica Neue';
+            ctx.fillStyle = l.color === '#888' ? '#888' : '#044B2E';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'top';
+            ctx.fillText(l.axis, x, chart.chartArea.bottom + (l.arow ? 28 : 12));
+          });
+
+          LABELS.forEach(l => {
+            const x = scales.x.getPixelForValue(l.cost);
+            const y = scales.y.getPixelForValue(l.acc);
+            ctx.textAlign = l.align;
+            ctx.textBaseline = 'middle';
+            ctx.font = '700 12px Helvetica Neue';
+            ctx.fillStyle = l.color;
+            ctx.fillText(l.text, x + l.dx, y + l.dy);
+            ctx.font = '700 11px Helvetica Neue';
+            ctx.fillStyle = l.num_color;
+            ctx.fillText(l.num, x + l.dx, y + l.ndy);
+            if (l.leader) {
+              ctx.strokeStyle = l.num_color;
+              ctx.lineWidth = 1;
+              ctx.beginPath();
+              ctx.moveTo(x, y + l.ndy + 7);
+              ctx.lineTo(x, y - 11);
+              ctx.stroke();
+            }
+          });
+          ctx.restore();
+        }
+      }
+    ]
+  });
+</script>
+</body>
+</html>
