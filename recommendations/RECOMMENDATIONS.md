@@ -1109,3 +1109,13 @@ https://www.youtube.com/watch?v=5BWuvjGLMik
 **The Comms Strategist Behind Anduril, Shopify & Cognition | Lulu Cheng Meservey**
 Lulu Cheng Meservey é fundadora da Rostra e uma das estrategistas de comunicação mais influentes no setor de tecnologia, tendo trabalhado com empresas como Anduril, Shopify e Cognition. O vídeo explora sua trajetória, desde a infância como imigrante até o desenvolvimento de sua metodologia de comunicação, que prioriza a soberania narrativa e a construção de movimentos em vez de relações públicas tradicionais
 https://www.youtube.com/watch?v=DFImJfJGXl0
+
+## 2026-08-24
+
+**Sam Altman on Building OpenAI & Betting on the Impossible**
+Sam Altman, cofundador e CEO da OpenAI e ex-presidente da aceleradora Y Combinator, discute com David Senra (apresentador do podcast Founders) a construção da OpenAI, a gestão de pesquisa em inteligência artificial, a infraestrutura de computação em escala global, a filosofia operacional herdada do ecossistema de startups e as implicações socioeconômicas da AGI
+https://www.youtube.com/watch?v=kG8AoExkX40
+
+**Anthropic's $2T IPO, Zuck's AI Manifesto, Nvidia's $500B AI Bet, Grok's Comeback**
+A Anthropic está sendo cotada para um IPO com avaliação de US$ 2 trilhões, impulsionada por uma receita anualizada projetada entre US$ 100 e US$ 120 bilhões. O crescimento da empresa é descrito como sem precedentes, com uma expansão de 10x ao ano nos últimos três anos. Gavin Baker, convidado do episódio, destaca que, embora a Anthropic enfrente concorrência crescente da OpenAI, modelos de código aberto e do Grok, a demanda por tokens de IA continua crescendo exponencialmente, superando a oferta atual
+https://www.youtube.com/watch?v=kVzYGVJ8zUk
