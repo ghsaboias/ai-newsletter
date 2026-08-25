@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lançamentos da família Falcon por ano</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    background: #FFFFFF;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 38px;
+  }
+  .card {
+    width: 720px;
+    background: #FFFFFF;
+    padding: 36px 40px;
+  }
+  .header {
+    padding-bottom: 24px;
+    border-bottom: 3px solid #044B2E;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.8px;
+    line-height: 28px;
+    max-width: none;
+  }
+  .kicker {
+    font-size: 13px;
+    line-height: 18px;
+    color: #444;
+    margin-top: 18px;
+  }
+  .kicker b { color: #044B2E; }
+  .chart-area { padding: 18px 0 4px; }
+  .chart-container {
+    position: relative;
+    width: 100%;
+    height: 420px;
+  }
+  .chart-logo {
+    position: absolute;
+    height: 15px;
+    width: auto;
+    top: 42px;
+    left: 46px;
+  }
+  .legend {
+    display: flex;
+    gap: 22px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid #E5E5E5;
+    font-size: 11px;
+    color: #444;
+  }
+  .legend > span {
+    display: inline-flex;
+    align-items: center;
+  }
+  .legend .swatch {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+    border-radius: 2px;
+  }
+  .caption {
+    font-size: 11px;
+    line-height: 16px;
+    color: #999;
+    margin-top: 14px;
+  }
+  .footer {
+    padding-top: 14px;
+    border-top: 1px solid #E5E5E5;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
+  }
+  .footer span { font-size: 10px; color: #999; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="card" id="capture">
+  <div class="header">
+    <h1>Lançamentos da família Falcon por ano</h1>
+  </div>
+
+  <div class="kicker">
+    A SpaceX chegou a <b>100 lançamentos</b> em 2026 no dia 22 de agosto. O recorde anual é de <b>165</b>, em 2025. Das 100 missões deste ano, <b>76</b> levaram satélites da Starlink, a constelação de internet da própria empresa.
+  </div>
+
+  <div class="chart-area">
+    <div class="chart-container">
+      <canvas id="falcon"></canvas>
+      <img src="../../daily-journal-platform/public/images/logo/logo-green-horizontal.png" class="chart-logo" alt="Daily Journal">
+    </div>
+
+    <div class="legend">
+      <span><span class="swatch" style="background:#044B2E"></span>Ano fechado</span>
+      <span><span class="swatch" style="background:#7DB89B"></span>2026 (parcial, 1º/jan a 22/ago)</span>
+    </div>
+  </div>
+
+  <div class="caption">
+    Lançamentos de Falcon 9 e Falcon Heavy por ano, do levantamento por versão de foguete da Wikipedia; os totais de 2022 a 2025 constam também do texto do artigo. Os 100 de 2026 até 22 de agosto — 99 Falcon 9 mais o Falcon Heavy do Viasat-3 F3, em abril — e o recorde de 165 em 2025 vêm do Space.com.
+  </div>
+
+  <div class="footer">
+    <span>Fonte: Wikipedia, List of Falcon 9 and Falcon Heavy launches; Space.com</span>
+    <span>dailyjournal.news</span>
+  </div>
+</div>
+
+<script>
+  const data = {
+    labels: ['2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026'],
+    values: [7, 8, 18, 21, 13, 26, 31, 61, 96, 134, 165, 100],
+    prelim: 11
+  };
+
+  new Chart(document.getElementById('falcon').getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: data.labels,
+      datasets: [{
+        data: data.values,
+        backgroundColor: data.values.map((_, i) => i === data.prelim ? '#7DB89B' : '#044B2E'),
+        borderWidth: 0,
+        borderRadius: 3,
+        borderSkipped: false,
+        barPercentage: 0.66,
+        categoryPercentage: 0.9
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 180,
+          grid: { color: '#f0f0f0', drawTicks: false },
+          border: { display: false },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 13, weight: '700' },
+            color: '#999',
+            padding: 8,
+            stepSize: 45
+          }
+        },
+        x: {
+          grid: { display: false },
+          border: { color: '#ccc' },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 12, weight: '600' },
+            color: '#333',
+            padding: 6
+          }
+        }
+      },
+      layout: { padding: { top: 30, right: 4, left: 0, bottom: 0 } }
+    },
+    plugins: [
+      {
+        id: 'valueLabels',
+        afterDatasetsDraw(chart) {
+          const { ctx } = chart;
+          const bars = chart.getDatasetMeta(0).data;
+          data.values.forEach((v, i) => {
+            const bar = bars[i];
+            const isPrelim = (i === data.prelim);
+            ctx.save();
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'bottom';
+            ctx.font = '700 13px Helvetica Neue';
+            ctx.fillStyle = isPrelim ? '#5a9377' : '#044B2E';
+            ctx.fillText(String(v), bar.x, bar.y - 6);
+            ctx.restore();
+          });
+        }
+      }
+    ]
+  });
+</script>
+</body>
+</html>

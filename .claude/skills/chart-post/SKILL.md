@@ -1,7 +1,7 @@
 ---
 name: chart-post
 description: >-
-  Cria um post de gráfico do Substack a partir de uma história da edição do dia da newsletter de AI/Tech. Lê o edition-final.md, propõe 3-4 candidatos de gráfico via AskUserQuestion (com previews ASCII), Gui escolhe, pesquisa dados de FONTES PRIMÁRIAS (citable > derived), resolve qualquer divergência de método com Gui, grava os dados auditáveis em posts/data/<slug>.json, constrói o chart copiando o scaffolding de marca de um posts/chart-*.html existente, renderiza em PNG 2× via render.sh (Mac: browser-tools no Brave real; Pi/Linux: Chromium headless), inspeciona os labels, e escreve a prosa em posts/chart-<slug>.md. Voz neutra/profissional, título factual/descritivo, todas as ressalvas no caption (não na prosa). Aciona quando o usuário diz "fazer um post com gráfico", "post de gráfico do dia", "craft a substack post with a chart", "/chart-post".
+  Cria um post de gráfico do Substack a partir de uma história da edição do dia da newsletter de AI/Tech. Lê o edition-final.md, propõe 6 candidatos de gráfico via AskUserQuestion (com previews ASCII), Gui escolhe, pesquisa dados de FONTES PRIMÁRIAS (citable > derived), resolve qualquer divergência de método com Gui, grava os dados auditáveis em posts/data/<slug>.json, constrói o chart copiando o scaffolding de marca de um posts/chart-*.html existente, renderiza em PNG 2× via render.sh (Mac: browser-tools no Brave real; Pi/Linux: Chromium headless), inspeciona os labels, e escreve a prosa em posts/chart-<slug>.md. Voz neutra/profissional, título factual/descritivo, todas as ressalvas no caption (não na prosa). Aciona quando o usuário diz "fazer um post com gráfico", "post de gráfico do dia", "craft a substack post with a chart", "/chart-post".
 allowed-tools: Read, Write, Edit, Bash, WebSearch, WebFetch, AskUserQuestion
 ---
 
@@ -28,7 +28,7 @@ Sem `edition-final.md`, **não invente** — liste as datas e pare. **Leia o `ed
 
 ## Step 1: Propor candidatos de gráfico (julgamento do Gui)
 
-Identifique as histórias com **dado confiável e visualizável** (série temporal, comparação, ranking) — não toda história vira gráfico. Proponha **3-4 candidatos via AskUserQuestion**, cada um com um **preview ASCII** do que o gráfico mostraria e a fonte provável. Gui escolhe. Defina o `<slug>` (kebab-case) a partir da escolha.
+Identifique as histórias com **dado confiável e visualizável** (série temporal, comparação, ranking) — não toda história vira gráfico. Proponha **6 candidatos**, cada um com um **preview ASCII** do que o gráfico mostraria e a fonte provável. O AskUserQuestion aceita no máximo 4 opções por pergunta, então mande **duas perguntas na mesma chamada** — "Candidatos 1-3" e "Candidatos 4-6", 3 opções cada, e uma quarta opção "nenhum deste bloco" em ambas. Gui marca o preferido de cada bloco (ou descarta o bloco); se ele marcar um em cada, confirme qual dos dois vai virar o post antes de pesquisar dado. Defina o `<slug>` (kebab-case) a partir da escolha.
 
 Bons candidatos: séries anuais com uma virada clara (funding, shipments, adoção), comparações entre países/empresas, "antes vs depois". Evite: número solto sem série, dado que você só conseguiria por interpolação (ver Step 2).
 
