@@ -1119,3 +1119,13 @@ https://www.youtube.com/watch?v=kG8AoExkX40
 **Anthropic's $2T IPO, Zuck's AI Manifesto, Nvidia's $500B AI Bet, Grok's Comeback**
 A Anthropic está sendo cotada para um IPO com avaliação de US$ 2 trilhões, impulsionada por uma receita anualizada projetada entre US$ 100 e US$ 120 bilhões. O crescimento da empresa é descrito como sem precedentes, com uma expansão de 10x ao ano nos últimos três anos. Gavin Baker, convidado do episódio, destaca que, embora a Anthropic enfrente concorrência crescente da OpenAI, modelos de código aberto e do Grok, a demanda por tokens de IA continua crescendo exponencialmente, superando a oferta atual
 https://www.youtube.com/watch?v=kVzYGVJ8zUk
+
+## 2026-08-25
+
+**How Harvey Built a Research Lab on a Budget | Gabe Pereyra**
+Nesta apresentação do evento Own Your Intelligence da Sequoia Capital, Gabe Pereyra, cofundador e presidente da Harvey, detalha como a empresa construiu seu próprio laboratório de pesquisa em IA para competir com grandes laboratórios de fronteira, mesmo operando na camada de aplicação e com orçamento limitado. A estratégia central da Harvey baseia-se em alavancar o ecossistema de modelos de código aberto (open-source) e infraestrutura de terceiros, em vez de tentar desenvolver tudo internamente
+https://www.youtube.com/watch?v=MGouk8W51v0
+
+**Sergey Brin Retakes Gemini, 4 Labs Lose Containment, Compute Trades at NYSE w/ Kush Bavaria | EP 278**
+O episódio 278 do podcast Moonshots reúne Peter Diamandis, Salim Ismail, Dave Blundin e o cientista Alexander Wissner-Gross com o convidado especial Kush Bavaria, CEO da Ornn. A discussão foca na aceleração da inteligência artificial, o retorno de Sergey Brin ao comando do Gemini, a emergência de agentes autônomos e a transformação da computação em uma commodity negociável
+https://www.youtube.com/watch?v=Q6PTLG71NGc
