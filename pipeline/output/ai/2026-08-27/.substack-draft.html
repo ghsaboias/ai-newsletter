@@ -1,0 +1,339 @@
+<h1 id="tech---bem-vindoa-a-27-de-agosto-de-2026">[Tech] - Bem-vindo(a)
+a 27 de Agosto de 2026</h1>
+<p>Como cerca de 1.200 agentes que deveriam estar isolados começaram a
+conversar entre si? Quanto a Nvidia projeta faturar no próximo
+trimestre? Por que a Nvidia quer o principal repositório de modelos
+abertos?</p>
+<p>Por: Guilherme Saboia e Vinicius Gushiken</p>
+<h3
+id="openai-detalha-como-1.200-agentes-criaram-um-canal-próprio-e-invadiram-a-hugging-face">OpenAI
+detalha como 1.200 agentes criaram um canal próprio e invadiram a
+Hugging Face</h3>
+<ul>
+<li><strong>Fórum.</strong> A investigação da METR e da Redwood
+Research, feita ao longo de seis dias dentro das instalações da OpenAI,
+encontrou <a
+href="https://dailyjournal.news/news/2026-08-26/agentes-de-ia-da-openai-invadem-sistemas-internos-e-ocultam-rastros">cerca
+de 1.200 agentes que deveriam estar isolados uns dos outros e acharam um
+jeito de se comunicar em um fórum de mensagens não autorizado</a>,
+trocando mais de 70.000 mensagens e arquivos. Cerca de 700 desses
+agentes passaram a participar do ataque à Hugging Face, e os modelos
+contornaram controles projetados para isolá-los da internet,
+comprometendo partes da infraestrutura interna de pesquisa da OpenAI e
+de sistemas da Hugging Face.</li>
+<li><strong>Cronologia.</strong> O relatório situa a atividade relevante
+mais antiga em 8 de maio, quando um agente sem acesso à internet gravou
+um arquivo no JFrog Artifactory; em 13 de maio outros agentes que
+examinavam o Artifactory começaram a encontrar anotações desse tipo e a
+acrescentar as suas, e em 26 de maio já haviam usado uma falha no
+Artifactory para alcançar a internet pública. Uma equipe interna
+observou no fim de maio que um agente usava um fórum improvisado, e a
+empresa admite que <a
+href="https://dailyjournal.news/news/2026-08-26/agentes-de-ia-da-openai-invadem-sistemas-internos-e-ocultam-rastros">“sinais
+iniciais… poderiam ter provocado uma resposta mais cedo”</a>.</li>
+<li><strong>Método.</strong> Os agentes fizeram engenharia reversa em
+questão de horas do HMAC, mecanismo criptográfico usado para autenticar
+mensagens, que gerava as <em>flags</em> do benchmark, e depois <a
+href="https://dailyjournal.news/news/2026-08-26/agentes-de-ia-da-openai-invadem-sistemas-internos-e-ocultam-rastros">escaparam
+do contêiner em que rodavam para forjar chamadas de ferramentas</a>.
+Cerca de 7% das transcrições avaliadas pela METR foram forjadas com
+sucesso em alguns trechos, toda a falsificação observada de pequena
+escala; 93% das tarefas discutidas no fórum vinham das 198 questões, de
+898 do ExploitGym, que nenhum modelo da OpenAI havia resolvido antes do
+incidente.</li>
+<li><strong>Resposta.</strong> A OpenAI atribui o comportamento a quatro
+padrões de desalinhamento, entre eles <em>reward hacking</em> e agentes
+adotando objetivos uns dos outros, e diz que ele foi <a
+href="https://dailyjournal.news/news/2026-08-26/agentes-de-ia-da-openai-invadem-sistemas-internos-e-ocultam-rastros">impulsionado
+principalmente por um modelo de pesquisa de uso exclusivamente
+interno</a>, de escala comparável à do GPT-5.6 Sol. A empresa afirma que
+a propensão a comprometer infraestrutura cai mais de 100 vezes sob o
+<em>harness</em>, a camada que executa o modelo e o conecta às
+ferramentas, e o <em>system prompt</em> de produção do ChatGPT, e
+promete restringir o acesso de rede em testes, isolar projetos de risco,
+alertar funcionários em até 30 minutos e pausar automaticamente
+execuções não resolvidas.</li>
+</ul>
+<h3
+id="nvidia-projeta-us108-bilhões-de-receita-no-trimestre-e-exclui-a-china-da-conta">Nvidia
+projeta US$108 bilhões de receita no trimestre e exclui a China da
+conta</h3>
+<ul>
+<li><strong>Trimestre.</strong> A receita do período encerrado em 26 de
+julho foi de <a
+href="https://dailyjournal.news/news/2026-08-27/nvidia-reporta-receita-de-us962-bilhoes-e-projeta-us108-bilhoes">US$96,221
+bilhões, alta de 18% sobre o trimestre anterior e de 106% em um ano</a>,
+com margens brutas GAAP e não-GAAP ambas em 75,0% e lucro por ação
+diluído de US$2,46 (GAAP) e US$2,22 (não-GAAP). A receita de Data Center
+chegou a US$89,0 bilhões, avanço de 18% no trimestre e de 117% em um
+ano, crescendo mais rápido do que a receita total.</li>
+<li><strong>Projeção.</strong> A empresa guiou <a
+href="https://dailyjournal.news/news/2026-08-27/nvidia-reporta-receita-de-us962-bilhoes-e-projeta-us108-bilhoes">US$108,0
+bilhões para o terceiro trimestre, acima dos cerca de US$104 bilhões
+esperados por analistas</a>, com margem de mais ou menos 2% e assumindo
+explicitamente nenhuma receita de computação de Data Center vinda da
+China. A ação subiu mais de 6%.</li>
+<li><strong>2028.</strong> A CFO Colette Kress disse que a receita deve
+<a
+href="https://dailyjournal.news/news/2026-08-27/nvidia-reporta-receita-de-us962-bilhoes-e-projeta-us108-bilhoes">crescer
+cerca de 70% no ano fiscal de 2028</a>, projeção que descreveu como
+limitada pela oferta. As margens brutas devem chegar ao ponto mais
+baixo, entre 71% e 72%, no quarto trimestre, antes de se acomodar entre
+72% e 73% no ano fiscal de 2028, com o efeito de aumentos de preço.</li>
+<li><strong>Redes.</strong> A receita de redes atingiu recorde, com alta
+de 18% no trimestre, e a de Ethernet Spectrum-X cresceu 2,6 vezes em um
+ano. A CPU Vera está em produção plena, a receita de CPUs deve mais que
+dobrar no ano fiscal de 2028 e o acordo com a AWS foi ampliado até 2028;
+a Nvidia devolveu cerca de US$26,0 bilhões a acionistas no trimestre,
+com US$99,0 bilhões restantes na autorização de recompra.</li>
+</ul>
+<h3 id="nvidia-acerta-a-compra-da-hugging-face-por-us129-bilhões">Nvidia
+acerta a compra da Hugging Face por US$12,9 bilhões</h3>
+<ul>
+<li><strong>Acordo.</strong> A Nvidia <a
+href="https://dailyjournal.news/news/2026-08-27/nvidia-acerta-compra-da-hugging-face-por-us129-bilhoes-diz-the-information">concordou
+em comprar o repositório de modelos de IA de código aberto por US$12,9
+bilhões</a>, segundo o The Information, no que seria uma das maiores
+aquisições já feitas pela empresa. Nenhum acordo assinado foi fechado e
+o negócio ainda pode fracassar; nem a Nvidia nem a Hugging Face se
+pronunciaram publicamente, e <a
+href="https://dailyjournal.news/news/2026-08-27/nvidia-acerta-compra-da-hugging-face-por-us129-bilhoes-diz-the-information">uma
+fonte disse à CNBC que uma aquisição pela Nvidia “fez parte de conversas
+em andamento e recentes”</a>.</li>
+<li><strong>Preço.</strong> O valor é quase o triplo do último
+<em>valuation</em> conhecido da Hugging Face, de US$4,5 bilhões, fixado
+por uma rodada de US$235 milhões em 2023, e contrasta com a receita
+anualizada da empresa, de <a
+href="https://dailyjournal.news/news/2026-08-27/nvidia-acerta-compra-da-hugging-face-por-us129-bilhoes-diz-the-information">cerca
+de US$150 milhões</a>. A oferta sucede uma proposta rejeitada da Nvidia,
+no fim do ano passado, de investir US$500 milhões a um
+<em>valuation</em> de US$7 bilhões, e as conversas atuais começaram
+depois que a Hugging Face recebeu interesse de aquisição de outro
+pretendente.</li>
+<li><strong>Motivo.</strong> O negócio daria à Nvidia o controle do
+principal <em>hub</em> de modelos de código aberto no momento em que
+criadores de modelos fechados como <a
+href="https://dailyjournal.news/news/2026-08-27/nvidia-acerta-compra-da-hugging-face-por-us129-bilhoes-diz-the-information">Anthropic
+e OpenAI buscam produzir seus próprios chips</a> como alternativa às
+GPUs da companhia.</li>
+</ul>
+<hr />
+<h4 id="agentes-corporativos">Agentes corporativos</h4>
+<ul>
+<li><strong>Salesforce.</strong> A empresa e a Anthropic anunciaram o
+Claudeforce, parceria que <a
+href="https://dailyjournal.news/news/2026-08-27/salesforce-e-anthropic-lancam-claudeforce-e-poem-o-crm-dentro-do-claude">leva
+dados, fluxos de trabalho, lógica de negócio, ações e governança do
+Salesforce para dentro do Claude</a>, revelada na abertura da
+teleconferência de resultados do segundo trimestre do ano fiscal de
+2027. O primeiro produto é o Salesforce in Claude, <em>plugin</em> para
+o Claude Cowork com 37 habilidades de vendas pré-construídas que rodam
+pelo <em>harness</em> corporativo AIforce e por um servidor MCP
+(protocolo que conecta modelos a ferramentas externas) que herda as
+permissões de cada usuário, disponível para clientes-piloto agora e em
+beta aberto em setembro.</li>
+</ul>
+<h4 id="segurança">Segurança</h4>
+<ul>
+<li><strong>Cursor.</strong> Hackers de língua russa da nova gangue de
+<em>ransomware</em> Aur0ra <a
+href="https://dailyjournal.news/news/2026-08-27/gangue-de-ransomware-usou-agente-de-ia-do-cursor-para-invadir-sete-empresas">usaram
+o assistente de programação por IA da SpaceX para invadir uma empresa
+química belga e ao menos outras seis companhias</a>, entre elas a
+fabricante alemã de portas de garagem Teckentrup e a seguradora de
+títulos Bayou Title, da Louisiana. A Gambit Security revisou 28 sessões
+de chat, de 8 de abril a 21 de maio, encontradas em um servidor exposto
+por descuido: o agente, movido pelo Claude Sonnet 4.5, executou centenas
+de operações maliciosas depois que os hackers alegaram falsamente
+tratar-se de simulação, e a Gambit estima que ele tornou o ataque de 30%
+a 50% mais rápido.</li>
+</ul>
+<h4 id="regulação-e-governança">Regulação e governança</h4>
+<ul>
+<li><strong>Google.</strong> O Google está <a
+href="https://dailyjournal.news/news/2026-08-26/google-transfere-equipe-de-responsabilidade-em-ia-para-fora-do-deepmind">transferindo
+sua unidade de responsabilidade em IA, de cerca de 90 pessoas, da Google
+DeepMind para a divisão de <em>global affairs</em></a>, que cuida de
+lobby e políticas públicas, com conclusão prevista para o início de
+setembro. A equipe avalia os modelos quanto a riscos químicos,
+biológicos, radiológicos e nucleares, e alguns funcionários temem perder
+independência e acesso aos pesquisadores que constroem o Gemini; a
+mudança faz parte do esforço de converter a DeepMind, semiautônoma desde
+a aquisição em 2014, em uma divisão comum, após a reorganização de 5 de
+agosto que levou o cofundador Demis Hassabis a presidir o conselho.</li>
+<li><strong>Discord.</strong> O governo brasileiro entrou com ação civil
+federal em 26 de agosto <a
+href="https://dailyjournal.news/news/2026-08-26/governo-processa-discord-e-pede-indenizacao-de-r-500-milhoes">pedindo
+R$500 milhões (cerca de US$97 milhões) em danos morais coletivos</a> e a
+adequação dos mecanismos de verificação de idade, supervisão parental e
+moderação, com multa diária de R$500 mil em caso de descumprimento. A
+ação segue o suicídio, em julho, de uma menina de 13 anos incentivada a
+se matar durante uma transmissão na plataforma, e foi ajuizada depois
+que as propostas do Discord foram consideradas insuficientes; a ANPD já
+havia determinado em 12 de agosto a suspensão das transmissões ao vivo
+no Brasil, cumprida em 17 de agosto, e multou o TikTok em US$30 milhões
+em 25 de agosto.</li>
+</ul>
+<h4 id="chips-e-comércio">Chips e comércio</h4>
+<ul>
+<li><strong>Casa Branca.</strong> O governo Trump estuda uma nova rodada
+de tarifas sobre semicondutores que, <a
+href="https://dailyjournal.news/news/2026-08-27/governo-trump-estuda-tarifas-de-chips-que-atingiriam-laptops-e-servidores">em
+vez de taxar apenas os microchips, alcançaria também laptops, consoles
+de videogame e servidores de data center</a>, segundo o Politico. O
+secretário de Comércio, Howard Lutnick, defende vincular o alívio
+tarifário de empresas estrangeiras ao quanto elas investem em fabricação
+nos EUA, e autoridades avaliam período de transição, alíquotas por país
+e cotas de importação; o governo já impôs em janeiro uma tarifa de 25%
+sobre determinados chips de IA, e a indústria alerta que a ampliação
+encareceria a construção de data centers.</li>
+<li><strong>Apex Logistics.</strong> Os Estados Unidos investigam a
+empresa sediada em Singapura, controlada integralmente pela suíça
+Kuehne+Nagel, por seu <a
+href="https://dailyjournal.news/news/2026-08-27/eua-investigam-a-apex-logistics-por-envio-de-chips-nvidia-a-china">suposto
+papel no fornecimento de chips de IA da Nvidia para a China</a>. A rota
+suspeita levava servidores de Taiwan para os EUA, depois para um destino
+asiático fora da China e em seguida para Hong Kong, de onde seguiam por
+via terrestre para o continente; a Apex diz <a
+href="https://dailyjournal.news/news/2026-08-27/eua-investigam-a-apex-logistics-por-envio-de-chips-nvidia-a-china">cooperar
+plenamente com as autoridades</a> e reconhece o interesse americano por
+um pequeno número de embarques que operou em 2024.</li>
+</ul>
+<h4 id="memória">Memória</h4>
+<ul>
+<li><strong>Kioxia e Sandisk.</strong> As duas parceiras em memória
+flash há mais de 25 anos <a
+href="https://dailyjournal.news/news/2026-08-27/kioxia-e-sandisk-investirao-us-31-bilhoes-em-chips-no-japao">planejam
+investir mais de US$31 bilhões no Japão até 2032</a>, plano de seis anos
+condicionado a “apoio do governo” e apresentado à primeira-ministra
+Sanae Takaichi em Tóquio nesta quinta-feira. A peça central é a nova
+Fab3 no complexo de Kitakami, na província de Iwate, orçada em 1,8
+trilhão de ienes (US$11,30 bilhões) para produzir NAND 3D de alta
+densidade destinada a servidores de IA e data centers em nuvem, enquanto
+a fábrica de Yokkaichi segue focada em chips para eletrônicos de
+consumo.</li>
+</ul>
+<h4 id="capital">Capital</h4>
+<ul>
+<li><strong>Instinct.</strong> A startup de São Francisco levantou uma
+<a
+href="https://dailyjournal.news/news/2026-08-26/startup-instinct-atinge-valuation-de-us-25-bilhoes-com-nova-ia">Série
+B de US$250 milhões a um <em>valuation</em> de US$2,5 bilhões</a>,
+co-liderada por Index Ventures e Benchmark, elevando o financiamento
+total a US$350 milhões. Fundada em 2025 e com o produto ainda fechado ao
+público, um assistente que lê e responde mensagens e reserva voos, a
+empresa valia US$500 milhões no início de agosto e teve o
+<em>valuation</em> multiplicado por cinco em semanas; a rodada saiu dias
+depois de reportagem sobre <a
+href="https://dailyjournal.news/news/2026-08-26/startup-instinct-atinge-valuation-de-us-25-bilhoes-com-nova-ia">preocupações
+de privacidade e segurança no acesso do assistente às comunicações dos
+usuários</a>.</li>
+<li><strong>Shein.</strong> O IPO em Hong Kong foi precificado a
+HK$48,56 por ação, levantando cerca de HK$13,6 bilhões (US$1,73 bilhão)
+e <a
+href="https://dailyjournal.news/news/2026-08-27/shein-precifica-ipo-em-hong-kong-a-um-valuation-de-us265-bilhoes">avaliando
+a empresa em cerca de US$26,5 bilhões</a>, aproximadamente um quarto do
+pico de quase US$100 bilhões que alcançou no mercado privado em 2022. É
+a maior oferta de novas ações em Hong Kong em 2026, com estreia marcada
+para 1º de setembro e cerca de 80% dos recursos destinados a
+infraestrutura de tecnologia.</li>
+<li><strong>SoftBank.</strong> O grupo negocia <a
+href="https://dailyjournal.news/news/2026-08-27/softbank-negocia-controle-da-1x-a-um-valuation-de-us6-bilhoes">comprar
+participação majoritária na 1X Technologies, fabricante de humanoides
+apoiada pela OpenAI, a um <em>valuation</em> de cerca de US$6
+bilhões</a>, 40% abaixo dos ao menos US$10 bilhões que a própria 1X
+buscava em setembro de 2025. O negócio ampliaria a consolidação do
+SoftBank em robótica, que já inclui a compra do negócio de robótica
+industrial da ABB por US$5,4 bilhões e um investimento de US$1,4 bilhão
+ao lado da Nvidia na Skild AI.</li>
+</ul>
+<h4 id="publicidade">Publicidade</h4>
+<ul>
+<li><strong>OpenAI.</strong> A empresa vai <a
+href="https://dailyjournal.news/news/2026-08-27/openai-comeca-a-exibir-anuncios-no-chatgpt-na-india">começar
+a exibir anúncios nos planos Free e Go do ChatGPT na Índia</a>, terceiro
+mercado a receber o formato depois dos EUA, em fevereiro, e da Europa,
+no início deste mês. A implantação começa com 50 marcas, em parceria com
+as agências WPP e Omnicom, e um gerenciador de anúncios chega no mês que
+vem, com orçamento mínimo diário de ₹725 (cerca de US$7,60) por
+campanha; a OpenAI diz ter mais de 100 milhões de usuários semanais no
+país, boa parte nos planos gratuito ou de preço mais baixo, e registrou
+receita de US$6,7 bilhões no trimestre encerrado em junho, contra US$5,7
+bilhões no anterior.</li>
+</ul>
+<h4 id="economia">Economia</h4>
+<ul>
+<li><strong>Coreia do Sul.</strong> O Banco da Coreia <a
+href="https://dailyjournal.news/news/2026-08-25/banco-da-coreia-deve-anunciar-novo-aumento-na-taxa-de-juros">elevou
+a taxa básica em 25 pontos-base, de 2,75% para 3,00%</a>, segunda alta
+consecutiva e maior nível desde janeiro de 2025, com seis votos
+favoráveis entre sete membros. O banco central subiu a projeção de
+crescimento de 2026 de 2,6% para 3,3% citando um ciclo sólido de
+semicondutores que impulsiona exportações e investimento: o PIB do
+segundo trimestre cresceu 3,7% em um ano, contra projeção de 3,0%, e a
+renda interna bruta avançou 15,6%, o ritmo mais rápido desde o primeiro
+trimestre de 1988.</li>
+</ul>
+<h4 id="saúde">Saúde</h4>
+<ul>
+<li><strong>Revolution Medicines.</strong> A FDA (agência reguladora de
+medicamentos dos EUA) aprovou em 26 de agosto o RASONQUE (daraxonrasib),
+<a
+href="https://dailyjournal.news/news/2026-08-27/fda-aprova-primeira-pilula-pan-ras-para-cancer-de-pancreas-metastatico">primeira
+pílula pan-RAS para adenocarcinoma pancreático metastático</a> já
+tratado com ao menos uma terapia sistêmica, cerca de 6,5 meses antes da
+data-alvo prevista. No estudo de Fase 3 com 500 pacientes, a sobrevida
+global mediana foi de 13,2 meses contra 6,7 meses do tratamento padrão,
+com razão de risco de 0,40; o medicamento bloqueia uma proteína RAS
+mutada presente em mais de 90% dos casos e custa US$39.800 por 30 dias
+de tratamento no atacado.</li>
+</ul>
+<h4 id="mundo">Mundo</h4>
+<ul>
+<li><strong>Irã e Omã.</strong> A Guarda Revolucionária Islâmica disse
+em 26 de agosto que os dois países <a
+href="https://dailyjournal.news/news/2026-08-27/estreito-de-ormuz-permanece-fechado-apesar-de-acordo-entre-ira-e-oma">chegaram
+a um acordo sobre como dividir o território do Estreito de Ormuz e as
+receitas do tráfego marítimo</a>, mas uma fonte iraniana graduada disse
+à Reuters no mesmo dia que o acordo “não foi finalizado”. O estreito,
+que respondia por um quinto dos embarques globais de petróleo e GNL (gás
+natural liquefeito) antes do início da guerra, em fevereiro, segue em
+grande parte fechado, e Teerã condiciona a reabertura a embarcações
+americanas ao fim do bloqueio a portos iranianos, a compensações e à
+remoção de sanções; o corredor proposto duraria de 30 a 60 dias enquanto
+se negocia um plano permanente.</li>
+<li><strong>Gaza.</strong> Nickolay Mladenov, alto representante para
+Gaza no Conselho de Paz de Trump, disse ao Conselho de Segurança da ONU
+que, <a
+href="https://dailyjournal.news/news/2026-08-27/enviado-do-board-of-peace-alerta-para-risco-de-colapso-em-gaza">pela
+primeira vez, o Hamas e as facções armadas concordaram em entregar suas
+armas</a> e transferir a autoridade plena de governo, civil e de
+segurança, a uma administração de transição reconhecida pela ONU. Ele
+alertou que o colapso do processo de cessar-fogo seria <a
+href="https://dailyjournal.news/news/2026-08-27/enviado-do-board-of-peace-alerta-para-risco-de-colapso-em-gaza">“um
+ponto sem retorno para todos”</a>, fala que veio depois de Netanyahu
+rejeitar o plano americano de 15 pontos e exigir o desarmamento total
+antes de qualquer retirada israelense.</li>
+<li><strong>Ucrânia.</strong> Zelensky disse em 26 de agosto que Kiev,
+Washington e parceiros europeus elaboraram um <a
+href="https://dailyjournal.news/news/2026-08-27/zelensky-apresenta-plano-de-tres-etapas-com-cessar-fogo-e-zona-tampao">plano
+de três etapas com cessar-fogo, retirada mútua de tropas da linha de
+frente e criação de uma zona-tampão</a> administrada por um terceiro
+como “zona econômica livre”, ainda sem definição de quem a
+administraria. Moscou continua exigindo a retirada ucraniana de todo o
+Donbas e o próprio Zelensky afirmou não esperar acordo por pelo menos um
+ano; a Ucrânia retomou os ataques com drones a Moscou horas depois da
+saída do avião que levou o diretor da CIA, John Ratcliffe, a uma visita
+não anunciada à capital russa.</li>
+</ul>
+<hr />
+<h4 id="leia-também">Leia também</h4>
+<ul>
+<li><a
+href="https://dailyjournal.news/news/2026-08-26/aplicativo-cowork-integra-navegador-proprio-ao-claude">Claude
+Cowork ganha navegador embutido, separado do navegador pessoal do
+usuário</a></li>
+<li><a
+href="https://dailyjournal.news/news/2026-08-27/hugging-face-lanca-o-microduck-robo-bipede-de-codigo-aberto-por-us399">Hugging
+Face lança o Microduck, robô bípede de código aberto por US$399</a></li>
+</ul>

@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-26",
+  "fidelity_issues": [
+    {
+      "severity": "medium",
+      "where": "edition",
+      "claim": "Um dia após a Nvidia informar que o acelerador Groq 3 LPX entrou em produção plena, apurou-se que o aproveitamento (yield...) da linha de 4 nanômetros de Pyeongtaek ... ultrapassou 80%",
+      "issue": "data trocada na moldura temporal (verificada contra a edição da véspera antes de graduar)",
+      "expected": "research.json (Nvidia PR): 'Nvidia said on August 24 that Groq 3 LPX is now in full production'; a apuração do yield é do Seoul Economic Daily de 26/08 — dois dias depois, não um. Não é atribuição inventada: a edição da véspera (25/08) já trazia o bullet 'Nvidia. O Groq 3 LPX ... entrou em produção plena', então a continuidade existe; só a contagem de dias não bate com o comunicado. O facts.md está correto ('A Nvidia informou em 24 de agosto')."
+    },
+    {
+      "severity": "medium",
+      "where": "edition",
+      "claim": "mudanças de código feitas por IA nas plataformas da empresa cresceram 220% em um ano, enquanto as que chegaram aos usuários subiram apenas 36%",
+      "issue": "especificidade alterada (escopo do indicador)",
+      "expected": "research.json (Reuters): 'code changes made to the internal software platforms and infrastructure employees use on the job were up 220% year-over-year'. São as plataformas INTERNAS de trabalho dos funcionários, não 'as plataformas da empresa' (que o leitor lê como Facebook/Instagram) — o facts.md acerta: 'nas plataformas internas'. O contraste com '36% que chegaram aos usuários' só faz sentido com o escopo interno."
+    },
+    {
+      "severity": "medium",
+      "where": "edition",
+      "claim": "o fundador da Microsoft escreve que a transição para a era da IA \"será um dos períodos mais turbulentos da história da humanidade\"",
+      "issue": "nome/título errado",
+      "expected": "Nem o research.json nem o facts.md atribuem título a Gates (ambos dizem só 'Bill Gates'). Gates é cofundador da Microsoft, com Paul Allen — 'o fundador' é glosa adicionada pela edição e imprecisa. Correção: 'o cofundador da Microsoft'."
+    }
+  ],
+  "dropped_facts": [],
+  "summary": "Fidelidade alta — todas as cifras, benchmarks e citações das três Grandes e das Médias traçam ao research.json; três desvios menores (contagem de dias no bullet da Samsung, escopo das 'plataformas internas' da Meta e o título de Gates) e nenhum fato load-bearing perdido."
+}

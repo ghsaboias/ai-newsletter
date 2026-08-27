@@ -1,0 +1,6 @@
+**Abaixo, apenas para assinantes:**
+
+**Agentes.** Uma gigante americana de software corporativo leva seus dados e fluxos de trabalho para dentro do Claude, e criminosos de língua russa usam um assistente de programação por IA para invadir empresas na Europa e nos EUA.
+**Silício.** Washington estuda ampliar as tarifas de semicondutores para equipamentos acabados, os EUA investigam uma empresa asiática de logística por desvio de chips da Nvidia para a China, e duas fabricantes de memória flash anunciam novas fábricas no Japão.
+**Dinheiro.** Uma startup americana de assistente pessoal multiplica seu valor em poucas semanas, uma varejista chinesa de moda online estreia em Hong Kong bem abaixo do pico que já teve, e um grupo japonês negocia o controle de uma fabricante de robôs humanoides.
+**Mundo.** Um entendimento contestado sobre o Estreito de Ormuz, um passo inédito no desarmamento em Gaza, e um novo plano de cessar-fogo em três etapas para a Ucrânia.
