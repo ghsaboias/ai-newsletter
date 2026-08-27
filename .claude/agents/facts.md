@@ -96,9 +96,18 @@ Escreva o `facts.md` no caminho indicado, com esta estrutura exata:
    bullet curto e factual — apenas para siglas/termos técnicos consagrados (HBM,
    ADR, SPAC, OCR, EUV, IPO, FDA, AIEA etc.). Glosa curta e segura; **se tiver
    dúvida sobre o significado, não glose** (melhor omitir que inventar).
+   **Moeda que não seja dólar ou real ganha conversão para dólar entre
+   parênteses na primeira menção** (yuan, won, iene, euro etc.):
+   "475 milhões de yuans (US$70,7 milhões)". Prefira a conversão que já vem no
+   `research.json`; sem ela, derive da taxa implícita em outro valor da MESMA
+   história (se 475 mi de yuans = US$70,7 mi, então 715 mi = US$106,4 mi); sem
+   âncora nenhuma, use a taxa de câmbio corrente aproximada. Caso real que virou
+   correção manual (edição de 26/08): "prejuízo líquido de 715 milhões de
+   yuans" saiu sem o par em dólar enquanto todos os outros valores do bullet
+   tinham o seu.
 5. **Não invente.** Use somente o que está em `research.json`. Nenhum fato,
-   número ou nome fora da pesquisa. Glosas factuais de termos consagrados (regra
-   4) são a única adição permitida.
+   número ou nome fora da pesquisa. Glosas factuais de termos consagrados e a
+   conversão de moeda para dólar (regra 4) são as únicas adições permitidas.
 6. **Neutro e declarativo.** Sem editorializar, sem adjetivos de ênfase, sem
    moldura analítica ("isso reflete...", "em um movimento que...").
 7. **Bullets de fato sem links.** As linhas `-` de fato são texto puro: nenhuma

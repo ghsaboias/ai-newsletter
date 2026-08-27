@@ -304,6 +304,21 @@ vira página do Daily Journal — o leitor deve achar o mesmo tom no clique:
   qualquer texto que vá ao ar junto da edição.
 - Sem travessões (—): use vírgula, dois-pontos ou ponto.
 - Léxico: "programação", nunca "codificação"; "contra" no lugar da preposição "ante" (só a palavra isolada, não *antes/diante/mediante*); "stealth" (em itálico: *stealth*), nunca "modo furtivo" — para *stealth mode* / *came out of stealth* use "operava em *stealth*" / "saiu do *stealth*"; "*stack*" (em itálico), nunca "pilha" — para *tech stack* / *full stack* / *AI stack* mantenha "*stack*" (só o sentido de camada de tecnologia; "pilha" no sentido de bateria fica); **"poder computacional", nunca "compute"** — vale também para nome de cluster de Médias (`#### Poder computacional`, não `#### Compute`), já que o `paywall-teaser` herda o rótulo da seção; **preço de token em `*input*`/`*output*`**, nunca "entrada"/"saída" (`US$5 por milhão de tokens de *input* e US$25 de *output*`) — se o `facts.md` chegar com o calque, converta; **`*harness*` se glosa como "a camada que executa o modelo e o conecta às ferramentas"**, nunca "arcabouço" nem "framework" (é o wrapper de runtime que roda o modelo, não uma estrutura de design); **"*hedge fund*" (em itálico), nunca "fundo de hedge"** — o mercado brasileiro usa o termo em inglês, e a tradução parcial soa amadora (vale igual para o plural, "*hedge funds*", e para "fundos de hedge"); **"*valuation*" (em itálico), nunca "avaliação"** — no sentido de valor de mercado de uma empresa o termo fica em inglês ("um *valuation* de US$12 bilhões", "levantou US$300 milhões a um *valuation* de..."), porque "avaliação" em PT lê como apreciação/nota, não como preço da empresa (a palavra "avaliação" nos outros sentidos — avaliação de risco, de desempenho, de um modelo — segue normal); **"*guardrails*" (em itálico), nunca "salvaguardas"** — as travas de segurança de um modelo são "os *guardrails*" (masculino: "os *guardrails* foram contornados"). **"Google" é masculino: "o Google", "do Google"** — nunca "a Google"/"da Google".
+- **Moeda não-dólar sempre com conversão entre parênteses.** Se um valor chegar
+  do `facts.md` em yuan, won, iene, euro etc. sem o equivalente em dólar,
+  adicione "(US$X)" na primeira menção — pela taxa implícita de outro valor da
+  mesma história, ou pela taxa corrente aproximada. Caso real (26/08):
+  "prejuízo líquido de 715 milhões de yuans" saiu sem conversão, com todos os
+  demais valores do bullet convertidos, e virou correção manual do revisor.
+- **Movimento de mercado não fecha bullet de matéria que não é de mercado.**
+  Reação de ações/commodities colada numa história de outro assunto ("…e as
+  ações subiram cerca de 5% na negociação pré-mercado", "…e as ações subiram
+  10,2%") é o corte mais frequente do revisor humano — apareceu em 8 das
+  últimas 12 edições e foi cortado todas as vezes (Meta 26/08, bullet do
+  Tesouro 21/08, bullet "Ações" deletado inteiro 10/08). A exceção é real e
+  vale na outra direção: quando a matéria É de mercado (Economia, petróleo,
+  resultados), o preço é a notícia e fica por inteiro, inclusive o contexto
+  cross-asset (Treasury, índices) — o revisor mantém nesses casos.
 - Português preciso: concordância de gênero, preposições, crase. Cadência limpa —
   se uma frase ficar dura, reestruture.
 - Números e nomes vêm **do `facts.md`**; não invente especificidade que não está
