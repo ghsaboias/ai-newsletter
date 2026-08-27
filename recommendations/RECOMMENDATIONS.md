@@ -1129,3 +1129,13 @@ https://www.youtube.com/watch?v=MGouk8W51v0
 **Sergey Brin Retakes Gemini, 4 Labs Lose Containment, Compute Trades at NYSE w/ Kush Bavaria | EP 278**
 O episódio 278 do podcast Moonshots reúne Peter Diamandis, Salim Ismail, Dave Blundin e o cientista Alexander Wissner-Gross com o convidado especial Kush Bavaria, CEO da Ornn. A discussão foca na aceleração da inteligência artificial, o retorno de Sergey Brin ao comando do Gemini, a emergência de agentes autônomos e a transformação da computação em uma commodity negociável
 https://www.youtube.com/watch?v=Q6PTLG71NGc
+
+## 2026-08-26
+
+**Dylan Patel – Two labs will soon control most of the world's workforce**
+Dylan Patel, fundador da consultoria de semicondutores SemiAnalysis, analisa a economia dos laboratórios de inteligência artificial de fronteira (OpenAI e Anthropic), a dinâmica da cadeia de suprimentos de semicondutores, os efeitos macroeconômicos do investimento massivo em infraestrutura (CapEx) e a tendência estrutural de hipercentralização da capacidade computacional e da força de trabalho sintética global em uma conversa com o entrevistador Dwarkesh Patel
+https://www.youtube.com/watch?v=aV26V1UvkJw
+
+**Parallel’s Parag Agrawal: Building a New Web for AI Agents**
+Parag Agrawal, ex-CEO do Twitter e atual fundador e CEO da Parallel Web Systems, debate com Sonya Huang e Andrew Reed (sócios da Sequoia Capital, no podcast Training Data) a reestruturação da infraestrutura de busca e da economia da web para a era dos agentes de inteligência artificial
+https://www.youtube.com/watch?v=fUcnE6pjq5w
