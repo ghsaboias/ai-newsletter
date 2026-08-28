@@ -1,0 +1,6 @@
+**Abaixo, apenas para assinantes:**
+
+**Modelos e agentes.** Uma carta aberta com mais de cem signatários sobre ciberataques, um agente de programação em teste que só para quando mandam parar, geração de vídeo com cenas mais longas e um novo formato de avaliação independente de modelos.
+**Silício.** Balanço de uma fabricante chinesa de memória, uma empresa americana de chips recuando de um tipo de acordo fechado com nuvens de IA, uma compra de startup de chips que não saiu e mais um contrato de energia para data center nos EUA.
+**Dinheiro.** Uma oferta bilionária por uma empresa americana de pagamentos que ficou pelo caminho, rodada no braço de robótica de uma montadora chinesa e dados semanais de emprego nos EUA.
+**Mundo.** Negociação americana por acesso de longo prazo a reservas de petróleo sul-americanas, conversas sobre um corredor marítimo no Oriente Médio e mais uma noite de bombardeio russo sobre cidades ucranianas.
