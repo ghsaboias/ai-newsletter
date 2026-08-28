@@ -1139,3 +1139,13 @@ https://www.youtube.com/watch?v=aV26V1UvkJw
 **Parallel’s Parag Agrawal: Building a New Web for AI Agents**
 Parag Agrawal, ex-CEO do Twitter e atual fundador e CEO da Parallel Web Systems, debate com Sonya Huang e Andrew Reed (sócios da Sequoia Capital, no podcast Training Data) a reestruturação da infraestrutura de busca e da economia da web para a era dos agentes de inteligência artificial
 https://www.youtube.com/watch?v=fUcnE6pjq5w
+
+## 2026-08-27
+
+**Ex-NVIDIA Engineer: Why AI Is About to Get 1000x Cheaper**
+Neil Movva, cofundador da Sail Research e ex-engenheiro da NVIDIA, detalha a tese de que a próxima fronteira da inteligência artificial não será definida pela redução de latência em chatbots interativos, mas pela proliferação de agentes autônomos que operam em segundo plano por horas, dias ou semanas. A Sail Research posiciona-se como uma "fábrica de tokens", desenhada para fornecer inferência de modelos abertos pelo menor custo de mercado por meio de arbitragem técnica e física em todas as camadas da pilha: software de baixo nível, diversificação de silício, arquitetura de data centers e matriz energética intermitente
+https://www.youtube.com/watch?v=uyzqxIoiobU
+
+**Building Defense Technologies to Protect Democracies | Torsten Reil, Helsing**
+Torsten Reil, biólogo de formação e fundador da NaturalMotion (empresa de tecnologia de animação e jogos vendida para a Zynga por mais de US$ 500 milhões), é cofundador e co-CEO da Helsing, empresa europeia de inteligência artificial voltada ao setor de defesa. Em conversa com David Senra, Reil detalha a mudança de paradigma na guerra moderna (a transição de tropas humanas e plataformas caras para sistemas autônomos em massa), a criação e escala da Helsing, a vitória em grandes contratos estatais de defesa, o desenvolvimento de pilotos de caça baseados em IA sobre-humana e sua filosofia de contratação e densidade de talentos
+https://www.youtube.com/watch?v=OduvOCrVpgo
