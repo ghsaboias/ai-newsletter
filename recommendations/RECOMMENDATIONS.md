@@ -1149,3 +1149,13 @@ https://www.youtube.com/watch?v=uyzqxIoiobU
 **Building Defense Technologies to Protect Democracies | Torsten Reil, Helsing**
 Torsten Reil, biólogo de formação e fundador da NaturalMotion (empresa de tecnologia de animação e jogos vendida para a Zynga por mais de US$ 500 milhões), é cofundador e co-CEO da Helsing, empresa europeia de inteligência artificial voltada ao setor de defesa. Em conversa com David Senra, Reil detalha a mudança de paradigma na guerra moderna (a transição de tropas humanas e plataformas caras para sistemas autônomos em massa), a criação e escala da Helsing, a vitória em grandes contratos estatais de defesa, o desenvolvimento de pilotos de caça baseados em IA sobre-humana e sua filosofia de contratação e densidade de talentos
 https://www.youtube.com/watch?v=OduvOCrVpgo
+
+## 2026-08-28
+
+**How Cursor Built One of AI’s Fastest-Growing Companies**
+Martin Casado, Sarah Wang e Matt Bornstein, General Partners da gestora de venture capital Andreessen Horowitz (a16z), analisam a trajetória da Cursor, detalhando as decisões estratégicas de produto, a abordagem contrária ao consenso do mercado, a dinâmica de captação de recursos, o modelo de vendas enterprise, a cultura interna e o histórico de M&A da companhia
+https://www.youtube.com/watch?v=GHrnbvkVPZA
+
+**Sam Altman: Singularity Slow-Down, Emad Runs 18 Grokbots, Waymo Slashes Hardware 83% | EP #283**
+O painel do Moonshots Podcast, composto por Peter Diamandis (fundador do XPRIZE e Singularity University), Salim Ismail (fundador da OpenExO), Dave Blundin (sócio-gerente da Link Ventures), Dr. Alexander Wissner-Gross (AWG, cientista da computação e fundador da Reified) e o convidado Emad Mostaque (fundador da Intelligent Internet e ex-CEO da Stability AI), analisa os principais desenvolvimentos da inteligência artificial, robótica e exploração espacial. O debate abrange a desaceleração percebida da Singularidade frente a gargalos institucionais, a explosão de agentes autônomos, o avanço dos modelos de código aberto chineses sobre os laboratórios proprietários norte-americanos, novas estratégias de hardware da NVIDIA e da Waymo, a reação pública a data centers e as metas de lançamento orbital da SpaceX
+https://www.youtube.com/watch?v=0mOXQ4_kY04
