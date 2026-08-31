@@ -481,7 +481,8 @@ def inject_paywall(doc: dict, cut_after: int, teasers: list, banner: dict = None
 # ---------------------------------------------------------------------------
 
 def post_draft(html_file, sid, pub_host, paywall_meta_file=None, banner_file=None,
-               draft_id=None, callout_heading=None, paywall_after_grandes=False):
+               draft_id=None, callout_heading=None, paywall_after_grandes=False,
+               cover_image=None):
     with open(html_file, "r", encoding="utf-8") as f:
         html_content = f.read()
 
@@ -547,6 +548,10 @@ def post_draft(html_file, sid, pub_host, paywall_meta_file=None, banner_file=Non
         "draft_video_upload_id": None,
         "type": "newsletter",
     }
+    # Social-preview / email cover image (CDN URL). Without it Substack's
+    # publish flow suggests the publication logo/avatar, which crop badly.
+    if cover_image:
+        payload["cover_image"] = cover_image
 
     # Update an existing draft in place (PUT) when a draft_id is given;
     # otherwise create a new one (POST).
@@ -585,6 +590,7 @@ def main():
     id_out = None
     callout_heading = None
     paywall_after_grandes = False
+    cover_image = None
     pos = []
     i = 0
     while i < len(argv):
@@ -594,6 +600,8 @@ def main():
             id_out = argv[i + 1]; i += 2
         elif argv[i] == "--callout-heading" and i + 1 < len(argv):
             callout_heading = argv[i + 1]; i += 2
+        elif argv[i] == "--cover-image" and i + 1 < len(argv):
+            cover_image = argv[i + 1]; i += 2
         elif argv[i] == "--paywall-after-grandes":
             paywall_after_grandes = True; i += 1
         else:
@@ -601,7 +609,8 @@ def main():
 
     if len(pos) < 3:
         print(f"Usage: {sys.argv[0]} <html_file> <sid> <pub_host> [paywall_meta_json] [banner_json] "
-              f"[--draft-id <id>] [--id-out <path>] [--callout-heading <text>] [--paywall-after-grandes]",
+              f"[--draft-id <id>] [--id-out <path>] [--callout-heading <text>] [--paywall-after-grandes] "
+              f"[--cover-image <url>]",
               file=sys.stderr)
         sys.exit(1)
 
@@ -614,7 +623,8 @@ def main():
     try:
         result = post_draft(html_file, sid, pub_host, paywall_meta_file, banner_file,
                             draft_id=draft_id, callout_heading=callout_heading,
-                            paywall_after_grandes=paywall_after_grandes)
+                            paywall_after_grandes=paywall_after_grandes,
+                            cover_image=cover_image)
     except urllib.error.HTTPError as e:
         body = e.read().decode("utf-8", errors="replace")
         print(f"  HTTP {e.code}: {e.reason}", file=sys.stderr)

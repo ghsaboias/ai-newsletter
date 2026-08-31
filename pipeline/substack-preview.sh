@@ -19,7 +19,8 @@ set -euo pipefail
 source "$(cd "$(dirname "$0")" && pwd)/_lib.sh"
 
 # Positional: <date> <md_file> <suffix> [label] [callout_heading]
-# Optional flags (anywhere): --paywall-meta <file>, --paywall-after-grandes
+# Optional flags (anywhere): --paywall-meta <file>, --paywall-after-grandes,
+#   --banner <file> / --no-banner, --cover-image <url> / --no-cover-image
 POS=()
 PAYWALL_META=""
 PAYWALL_AFTER_GRANDES=false
@@ -27,12 +28,18 @@ PAYWALL_AFTER_GRANDES=false
 # to the topic's spec from config.sh ($TOPIC_PAYWALL_BANNER), so every paywalled
 # edition gets it deterministically. --banner <file> overrides; --no-banner skips.
 BANNER="${TOPIC_PAYWALL_BANNER:-}"
+# Social-preview / email cover image (CDN URL). Defaults to the topic's
+# $TOPIC_COVER_IMAGE so every draft lands with the right image pre-selected
+# (otherwise Substack's publish flow suggests the logo/avatar, which crop badly).
+COVER_IMAGE="${TOPIC_COVER_IMAGE:-}"
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --paywall-meta)          PAYWALL_META="$2"; shift 2 ;;
     --paywall-after-grandes) PAYWALL_AFTER_GRANDES=true; shift ;;
     --banner)                BANNER="$2"; shift 2 ;;
     --no-banner)             BANNER=""; shift ;;
+    --cover-image)           COVER_IMAGE="$2"; shift 2 ;;
+    --no-cover-image)        COVER_IMAGE=""; shift ;;
     *)                       POS+=("$1"); shift ;;
   esac
 done
@@ -84,6 +91,7 @@ if [[ -n "$PAYWALL_META" ]] && [[ -f "$PAYWALL_META" ]]; then
   fi
 fi
 ARGS+=(--id-out "$ID_FILE")
+[[ -n "$COVER_IMAGE" ]] && ARGS+=(--cover-image "$COVER_IMAGE")
 [[ -n "$CALLOUT_HEADING" ]] && ARGS+=(--callout-heading "$CALLOUT_HEADING")
 [[ "$PAYWALL_AFTER_GRANDES" == true ]] && ARGS+=(--paywall-after-grandes)
 if [[ -f "$ID_FILE" ]] && [[ -s "$ID_FILE" ]]; then
