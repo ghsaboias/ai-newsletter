@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Data centers na receita da Nvidia</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    background: #FFFFFF;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 38px;
+  }
+  .card { width: 720px; background: #FFFFFF; padding: 36px 40px; }
+  .header {
+    padding-bottom: 24px;
+    border-bottom: 3px solid #044B2E;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.8px;
+    line-height: 26px;
+    max-width: none;
+  }
+  .kicker { font-size: 13px; line-height: 18px; color: #444; margin-top: 18px; }
+  .kicker b { color: #044B2E; }
+  .chart-area { padding: 18px 0 4px; }
+  .chart-container { position: relative; width: 100%; height: 430px; }
+  .chart-logo { position: absolute; height: 15px; left: 84px; top: 44px; }
+  .legend {
+    display: flex;
+    gap: 22px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid #E5E5E5;
+    font-size: 11px;
+    color: #444;
+  }
+  .legend > span { display: inline-flex; align-items: center; }
+  .legend .swatch {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+    border-radius: 2px;
+  }
+  .legend .line-swatch {
+    display: inline-block;
+    width: 16px;
+    height: 3px;
+    margin-right: 6px;
+    border-radius: 2px;
+  }
+  .caption { font-size: 11px; line-height: 16px; color: #999; margin-top: 14px; }
+  .footer {
+    padding-top: 14px;
+    border-top: 1px solid #E5E5E5;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
+  }
+  .footer span { font-size: 10px; color: #999; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="card" id="capture">
+  <div class="header">
+    <h1>Data centers representam 92,5% da receita da Nvidia</h1>
+  </div>
+
+  <div class="kicker">
+    A receita de data centers cresceu <b>117% em um ano</b>, contra <b>106%</b> da receita total. Os demais negócios somados, placas de vídeo, visualização profissional e automotivo, hoje agrupados como Edge Computing, ficaram em <b>US$7,2 bilhões</b> no trimestre. Para o trimestre atual a Nvidia projeta <b>US$108 bilhões</b> de receita total, assumindo nenhuma receita de computação de data centers vinda da China.
+  </div>
+
+  <div class="chart-area">
+    <div class="chart-container">
+      <canvas id="nvda"></canvas>
+      <img src="../../daily-journal-platform/public/images/logo/logo-green-horizontal.png" class="chart-logo" alt="Daily Journal">
+    </div>
+
+    <div class="legend">
+      <span><span class="swatch" style="background:#044B2E"></span>Data Center</span>
+      <span><span class="swatch" style="background:#ccc"></span>Demais segmentos</span>
+      <span><span class="swatch" style="background:#7DB89B"></span>Trimestre atual (projeção da empresa)</span>
+    </div>
+  </div>
+
+  <div class="caption">
+    Fonte de todos os números realizados: releases trimestrais de resultados da Nvidia. O total de out/26 é projeção da própria companhia (US$108,0 bi, mais ou menos 2%); a divisão Data Center/demais nessa coluna não foi reportada nem projetada e mantém o peso de 92,5% do trimestre anterior. Os meses são o encerramento do trimestre fiscal.
+  </div>
+
+  <div class="footer">
+    <span>Fonte: Nvidia, releases de resultados trimestrais (3T fiscal 2025 a 2T fiscal 2027)</span>
+    <span>dailyjournal.news</span>
+  </div>
+</div>
+
+<script>
+  const data = {
+    labels:     ['out/24','jan/25','abr/25','jul/25','out/25','jan/26','abr/26','jul/26','out/26'],
+    dataCenter: [30.8, 35.6, 39.1, 41.1, 51.2, 62.3, 75.2, 89.0, 99.9],
+    other:      [ 4.3,  3.7,  5.0,  5.6,  5.8,  5.8,  6.4,  7.2,  8.1],
+    total:      [35.1, 39.3, 44.1, 46.7, 57.0, 68.1, 81.6, 96.2, 108.0],
+    share:      [87.7, 90.6, 88.7, 88.0, 89.8, 91.5, 92.2, 92.5, 92.5],
+    proj: 8
+  };
+
+  const fmt = (v) => 'US$' + v.toFixed(1).replace('.', ',') + ' bi';
+
+  new Chart(document.getElementById('nvda').getContext('2d'), {
+    data: {
+      labels: data.labels,
+      datasets: [
+        {
+          type: 'bar',
+          label: 'Data Center',
+          data: data.dataCenter,
+          backgroundColor: data.dataCenter.map((_, i) => i === data.proj ? '#7DB89B' : '#044B2E'),
+          borderWidth: 0,
+          barPercentage: 0.68,
+          categoryPercentage: 0.92,
+          stack: 's',
+          yAxisID: 'y',
+          order: 2
+        },
+        {
+          type: 'bar',
+          label: 'Demais segmentos',
+          data: data.other,
+          backgroundColor: data.other.map((_, i) => i === data.proj ? '#D8E8DF' : '#ccc'),
+          borderWidth: 0,
+          barPercentage: 0.68,
+          categoryPercentage: 0.92,
+          borderRadius: { topLeft: 3, topRight: 3 },
+          borderSkipped: false,
+          stack: 's',
+          yAxisID: 'y',
+          order: 2
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: {
+        y: {
+          stacked: true,
+          beginAtZero: true,
+          max: 120,
+          grid: { color: '#f0f0f0', drawTicks: false },
+          border: { display: false },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 13, weight: '700' },
+            color: '#999',
+            padding: 8,
+            stepSize: 30,
+            callback: function(v) { return 'US$' + v + ' bi'; }
+          }
+        },
+        yRight: {
+          position: 'right',
+          stacked: true,
+          beginAtZero: true,
+          max: 120,
+          grid: { display: false },
+          border: { display: false },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 13, weight: '700' },
+            color: '#999',
+            padding: 8,
+            stepSize: 30,
+            callback: function(v) { return 'US$' + v + ' bi'; }
+          }
+        },
+        x: {
+          stacked: true,
+          grid: { display: false },
+          border: { color: '#ccc' },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 12, weight: '600' },
+            color: '#333',
+            padding: 6
+          }
+        }
+      },
+      layout: { padding: { top: 34, right: 4, left: 0, bottom: 0 } }
+    },
+    plugins: [
+      {
+        id: 'valueLabels',
+        afterDatasetsDraw(chart) {
+          const { ctx } = chart;
+          const top = chart.getDatasetMeta(1).data;
+          // rótulos só nos endpoints e na projeção
+          const marks = [
+            { i: 0, text: fmt(data.total[0]), color: '#333', dx: 0, dy: 0 },
+            { i: 7, text: fmt(data.total[7]), color: '#333', dx: 0, dy: 0 },
+            { i: 8, text: '~US$108 bi', color: '#5a9377', dx: 0, dy: 0 }
+          ];
+          marks.forEach(function(m) {
+            const bar = top[m.i];
+            ctx.save();
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'bottom';
+            ctx.font = '700 13px Helvetica Neue';
+            ctx.fillStyle = m.color;
+            ctx.fillText(m.text, bar.x + m.dx, bar.y - 8 + m.dy);
+            ctx.restore();
+          });
+          // participação do Data Center no primeiro e no último trimestre reportado
+          const dc = chart.getDatasetMeta(0).data;
+          data.share.forEach(function(v, i) {
+            const bar = dc[i];
+            ctx.save();
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'top';
+            ctx.font = '700 10px Helvetica Neue';
+            ctx.fillStyle = i === data.proj ? '#2f6b4f' : '#FFFFFF';
+            ctx.fillText(v.toFixed(1).replace('.', ',') + '%', bar.x, bar.y + 8);
+            ctx.restore();
+          });
+        }
+      }
+    ]
+  });
+</script>
+</body>
+</html>
