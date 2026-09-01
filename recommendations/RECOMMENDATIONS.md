@@ -1159,3 +1159,13 @@ https://www.youtube.com/watch?v=GHrnbvkVPZA
 **Sam Altman: Singularity Slow-Down, Emad Runs 18 Grokbots, Waymo Slashes Hardware 83% | EP #283**
 O painel do Moonshots Podcast, composto por Peter Diamandis (fundador do XPRIZE e Singularity University), Salim Ismail (fundador da OpenExO), Dave Blundin (sócio-gerente da Link Ventures), Dr. Alexander Wissner-Gross (AWG, cientista da computação e fundador da Reified) e o convidado Emad Mostaque (fundador da Intelligent Internet e ex-CEO da Stability AI), analisa os principais desenvolvimentos da inteligência artificial, robótica e exploração espacial. O debate abrange a desaceleração percebida da Singularidade frente a gargalos institucionais, a explosão de agentes autônomos, o avanço dos modelos de código aberto chineses sobre os laboratórios proprietários norte-americanos, novas estratégias de hardware da NVIDIA e da Waymo, a reação pública a data centers e as metas de lançamento orbital da SpaceX
 https://www.youtube.com/watch?v=0mOXQ4_kY04
+
+## 2026-08-31
+
+**How to Dominate for Decades | Doug Leone, Sequoia Capital**
+Doug Leone liderou a Sequoia Capital por 26 anos ao lado de Michael Moritz, participando de ciclos tecnológicos decisivos no Vale do Silício. Nascido na Itália, emigrou para os Estados Unidos sem falar inglês, carregando a insegurança do forasteiro como motor de desempenho. Após deixar a liderança aos 65 anos para abrir espaço à sucessão, retornou à gestora aos 69 anos, reassumindo uma postura de analista iniciante para decifrar a transformação imposta pela inteligência artificial. Nesta conversa com David Senra, Leone detalha suas heurísticas de investimento, os erros históricos da indústria de venture capital, a dinâmica de construção de conselhos, a psicologia de apoio a fundadores e os bastidores de empresas como Nubank, ServiceNow, Cisco e Nvidia
+https://www.youtube.com/watch?v=NR9NI51D7ek
+
+**Why Top Founders Are Racing Into AI Infrastructure**
+O episódio debate o lançamento do Machine Age Fund, novo fundo de investimento da gestora de capital de risco Andreessen Horowitz (a16z) focado em infraestrutura de computação para Inteligência Artificial. A conversa reúne Ben Horowitz (co-fundador e sócio-gerente da a16z), Martin Casado (sócio-geral da a16z), Raghu Raghuram (sócio-gerente e ex-CEO da VMware) e o apresentador Erik Torenberg, detalhando os limites físicos, de capital e de hardware que substituíram os modelos como o principal gargalo da IA
+https://www.youtube.com/watch?v=Zx1Ec8LWFeM
