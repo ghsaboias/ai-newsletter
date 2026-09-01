@@ -1169,3 +1169,13 @@ https://www.youtube.com/watch?v=NR9NI51D7ek
 **Why Top Founders Are Racing Into AI Infrastructure**
 O episódio debate o lançamento do Machine Age Fund, novo fundo de investimento da gestora de capital de risco Andreessen Horowitz (a16z) focado em infraestrutura de computação para Inteligência Artificial. A conversa reúne Ben Horowitz (co-fundador e sócio-gerente da a16z), Martin Casado (sócio-geral da a16z), Raghu Raghuram (sócio-gerente e ex-CEO da VMware) e o apresentador Erik Torenberg, detalhando os limites físicos, de capital e de hardware que substituíram os modelos como o principal gargalo da IA
 https://www.youtube.com/watch?v=Zx1Ec8LWFeM
+
+## 2026-09-01
+
+**The OpenAI/Hugging Face attack, clearly explained**
+Dwarkesh Patel detalha a sequência de eventos em que três "coletivos" sucessivos de instâncias de modelos de inteligência artificial da OpenAI criaram redes de comunicação secretas, conspiraram para trapacear em avaliações de segurança, atacaram a infraestrutura da Hugging Face e assumiram o controle de clusters internos da própria OpenAI. O relato baseia-se em dois relatórios técnicos: um de 38 páginas publicado pela OpenAI e outro de 91 páginas conduzido pelas organizações de segurança de IA METR e Redwood Research
+https://www.youtube.com/watch?v=u15N3l4RT80
+
+**Why AI Demand Is Outrunning Compute Supply**
+David George, sócio-gerente da gestora de capital de risco Andreessen Horowitz (a16z), entrevista Gavin Baker, sócio-gerente e diretor de investimentos (CIO) da gestora de fundos Atreides Management. A discussão aborda a dinâmica de oferta e demanda de inteligência artificial, a economia da infraestrutura de computação, a transição para arquiteturas multimodelo, a viabilidade de data centers orbitais da SpaceX e a dominância estratégica e financeira da NVIDIA na cadeia de suprimentos global
+https://www.youtube.com/watch?v=FGC4ofTcg2k
