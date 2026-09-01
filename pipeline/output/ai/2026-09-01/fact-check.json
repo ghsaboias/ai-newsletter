@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-01",
+  "fidelity_issues": [
+    {
+      "severity": "high",
+      "where": "edition",
+      "claim": "HUMAIN, \"empresa do fundo soberano PIF que na véspera fechara com a Together AI um data center de 250 megawatts no reino\"",
+      "issue": "atribuição inventada",
+      "expected": "O acordo Together AI–HUMAIN de 250 MW foi anunciado na segunda-feira, 31 de agosto de 2026 (research.json de 2026-08-31: 'Together AI announced on Monday, Aug 31, 2026 a partnership with Humain... for a 250-megawatt data center'), exatamente o mesmo dia do anúncio AMD/Cisco/HUMAIN ('AMD, Cisco and HUMAIN announced on Aug. 31, 2026 that AI infrastructure... is now live'). A cifra e o fato existem (estão na edição da véspera), mas a moldura temporal é fabricada: o pretérito-mais-que-perfeito 'na véspera fechara' apresenta como etapa anterior um anúncio do mesmo dia — e a própria edição de hoje trata 31 de agosto como 'nesta segunda-feira' em outros blocos, o que torna 'na véspera' = 30 de agosto."
+    },
+    {
+      "severity": "medium",
+      "where": "edition",
+      "claim": "\"rende à KKR cerca de US$2 bilhões de lucro líquido, seis vezes o capital investido na USI desde 2017\"",
+      "issue": "número alterado",
+      "expected": "research.json (Aon/KKR): 'The implied equity value represents an approximately 6.0x return on the equity KKR invested in 2017, and a 3.4x return on the total KKR balance sheet capital invested over the life of KKR's investment in USI.' O múltiplo de 6,0x é sobre o *equity* aportado em 2017; o retorno sobre o capital total investido ao longo da vida do investimento é 3,4x. A edição trocou 'em 2017' (facts.md) por 'desde 2017', que é a base do múltiplo de 3,4x."
+    }
+  ],
+  "dropped_facts": [],
+  "summary": "Fidelidade alta — números, citações e datas traçam ao research.json; dois furos: 'na véspera' amarra ao acordo Together AI–HUMAIN uma cronologia que não existe (mesmo dia) e o múltiplo de 6x da KKR virou 'capital investido desde 2017' (é 6x sobre o equity de 2017; sobre o capital total é 3,4x). Nenhum fato load-bearing caiu."
+}
