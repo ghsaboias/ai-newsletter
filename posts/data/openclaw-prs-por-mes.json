@@ -1,0 +1,55 @@
+{
+  "slug": "openclaw-prs-por-mes",
+  "title_pt": "Contribuições aceitas no OpenClaw por mês",
+  "edition": "2026-08-31",
+  "metric": "Pull requests com merge no repositório openclaw/openclaw, por mês de merge (contagem)",
+  "definition": "Consulta à API de busca do GitHub: repo:openclaw/openclaw is:pr is:merged merged:<primeiro>..<último dia do mês>. Conta PRs pela data de merge, não pela de abertura. Inclui PRs de bots e de automações do próprio projeto, sem filtro de autor. Extraída em 31 de agosto de 2026.",
+  "series": [
+    { "month": "2026-01", "merged_prs": 672, "preliminary": false, "source_ref": "github-search" },
+    { "month": "2026-02", "merged_prs": 1498, "preliminary": false, "source_ref": "github-search" },
+    { "month": "2026-03", "merged_prs": 2047, "preliminary": false, "source_ref": "github-search" },
+    { "month": "2026-04", "merged_prs": 2372, "preliminary": false, "source_ref": "github-search" },
+    { "month": "2026-05", "merged_prs": 3255, "preliminary": false, "source_ref": "github-search" },
+    { "month": "2026-06", "merged_prs": 2014, "preliminary": false, "source_ref": "github-search" },
+    { "month": "2026-07", "merged_prs": 9190, "preliminary": false, "source_ref": "github-search" },
+    { "month": "2026-08", "merged_prs": 10112, "preliminary": true, "source_ref": "github-search" }
+  ],
+  "excluded_from_chart": [
+    { "month": "2025-11", "merged_prs": 0, "reason": "repositório criado em 24 de novembro de 2025; nenhum PR com merge no mês" },
+    { "month": "2025-12", "merged_prs": 8, "reason": "valor invisível na escala do gráfico; a origem do projeto vai no subtítulo" }
+  ],
+  "totals": {
+    "all_time_merged_prs": 31168,
+    "jul_ago_2026": 19302,
+    "release_claim_prs": 16000,
+    "contributors_claim": 933,
+    "first_time_contributors_claim": 569
+  },
+  "sources": [
+    {
+      "id": "github-search",
+      "label": "GitHub, API de busca do repositório openclaw/openclaw (extração de 31/08/2026)",
+      "url": "https://github.com/openclaw/openclaw",
+      "provides": "contagem de PRs com merge por mês e total histórico de 31.168"
+    },
+    {
+      "id": "openclaw-blog",
+      "label": "OpenClaw — \"OpenClaw 2.0, Accidentally\" (30/08/2026)",
+      "url": "https://openclaw.ai/blog/openclaw-2-accidentally",
+      "provides": "933 contribuidores, 569 de primeira viagem, mais de 16.000 PRs na versão 2.0"
+    },
+    {
+      "id": "github-release",
+      "label": "GitHub, release v2026.8.1 do openclaw/openclaw",
+      "url": "https://github.com/openclaw/openclaw/releases",
+      "provides": "data de publicação da 2.0: 31/08/2026, 03h30 UTC"
+    }
+  ],
+  "notes": [
+    "Fluxo, não estoque: cada barra é o que entrou naquele mês, não o tamanho acumulado do projeto.",
+    "Agosto de 2026 vai até o dia 31, data da extração, e o mês ainda não estava fechado.",
+    "A soma dos meses de nov/2025 a ago/2026 dá exatamente 31.168, o total histórico informado pela API, o que confirma por fora a afirmação do projeto de que os 16.000 PRs da 2.0 são cerca de metade de tudo que já foi incorporado.",
+    "Julho e agosto de 2026 somam 19.302 PRs, a janela em que a 2.0 foi construída.",
+    "A contagem inclui PRs de bots e automações; o projeto não publica um recorte só de contribuições humanas."
+  ]
+}
