@@ -139,6 +139,10 @@ As demais histórias do dia estão na [edição completa](<url da edição no Su
 
 **Antes de dar OK pra postar, releia fato a fato + gramática** e confirme que cada número casa com o `posts/data/<slug>.json`.
 
+## Em dashes
+
+Proibidos em tudo que a skill produz: título, kicker, legenda, footer e prosa. No lugar, vírgula, ponto ou dois-pontos. (Gui, 2026-09-01.)
+
 ## Step 7: Commit (quando o Gui pedir)
 
 Posts são commitados (charts + `posts/data/*.json` = dados auditáveis). `origin/main` avança sozinho (Pi recommendations cron, ~meio-dia BRT, pusha deste clone) — **`git pull --rebase origin main` antes de pushar** ou o push é rejeitado. A publicação em si é manual (cola o `.md`/`.png` no editor do Substack como Note; ver memórias `publish-gap-substack`, `chart-post-workflow`).

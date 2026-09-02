@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Os acordos de computação da Anthropic</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    background: #FFFFFF;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 38px;
+  }
+  .card {
+    width: 720px;
+    background: #FFFFFF;
+    padding: 36px 40px;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding-bottom: 24px;
+    border-bottom: 3px solid #044B2E;
+  }
+  .logo { height: 18px; flex: 0 0 auto; }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.8px;
+    line-height: 26px;
+    max-width: none;
+  }
+  .kicker {
+    font-size: 13px;
+    line-height: 18px;
+    color: #444;
+    margin-top: 18px;
+  }
+  .kicker b { color: #044B2E; }
+  .chart-area { padding: 20px 0 4px; }
+  .chart-container {
+    width: 100%;
+    height: 360px;
+    position: relative;
+  }
+  .legend {
+    display: flex;
+    gap: 22px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid #E5E5E5;
+    font-size: 11px;
+    color: #444;
+  }
+  .legend > span {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+  }
+  .legend .swatch {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+    flex: 0 0 auto;
+    border-radius: 2px;
+  }
+  .footer {
+    padding-top: 14px;
+    border-top: 1px solid #E5E5E5;
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    margin-top: 14px;
+  }
+  .footer span {
+    font-size: 10px;
+    color: #999;
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+<div class="card" id="capture">
+  <div class="header">
+    <h1>Os acordos de computação da Anthropic</h1>
+    <img src="../../daily-journal-platform/public/images/logo/logo-green-horizontal.png" class="logo" alt="Daily Journal">
+  </div>
+
+  <div class="kicker">
+    A Anthropic fechou nesta segunda-feira um contrato de <b>US$35 bilhões</b> com a Lambda, de seis anos e cerca de 350 MW num data center no Texas, cinco dias depois de acordar <b>US$45 bilhões</b> com a Nscale na Virgínia Ocidental. É o quarto compromisso do tipo desde novembro: com a SpaceX, a empresa aluga capacidade dos campi Colossus por <b>US$1,25 bilhão por mês</b> até 2029; com a Fluidstack, os <b>US$50 bilhões</b> são um plano de data centers próprios.
+  </div>
+
+  <div class="chart-area">
+    <div class="chart-container">
+      <canvas id="commitments"></canvas>
+    </div>
+
+    <div class="legend">
+      <span><span class="swatch" style="background:#044B2E"></span>Valor total anunciado do compromisso, em US$ bilhões</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Fontes: anúncio da Fluidstack (12/11/2025); Bloomberg (SpaceX, "quase US$45 bilhões", 20/05/2026; Nscale, 26/08/2026); Reuters (Lambda, 31/08/2026)</span>
+    <span>dailyjournal.news</span>
+  </div>
+</div>
+
+<script>
+  const series = {
+    labels: [['Fluidstack', '12/11/2025'], ['SpaceX', '20/05/2026'], ['Nscale', '26/08/2026'], ['Lambda', '31/08/2026']],
+    values: [50, 45, 45, 35],
+    pointLabels: [
+      { i: 0, text: '50' },
+      { i: 1, text: '~45' },
+      { i: 2, text: '45' },
+      { i: 3, text: '35' }
+    ]
+  };
+
+  new Chart(document.getElementById('commitments').getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: series.labels,
+      datasets: [{
+        data: series.values,
+        backgroundColor: '#044B2E',
+        borderWidth: 0,
+        borderRadius: 3,
+        borderSkipped: false,
+        barPercentage: 0.62,
+        categoryPercentage: 0.78
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: {
+        x: {
+          grid: { display: false },
+          border: { color: '#ccc' },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 12, weight: '600' },
+            color: '#333',
+            padding: 7,
+            maxRotation: 0,
+            autoSkip: false
+          }
+        },
+        y: {
+          beginAtZero: true,
+          max: 50,
+          grid: { color: '#f0f0f0', drawTicks: false },
+          border: { display: false },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 12, weight: '700' },
+            color: '#999',
+            padding: 9,
+            stepSize: 10,
+            callback: function(v) { return v; }
+          }
+        }
+      },
+      layout: { padding: { top: 34, right: 6, left: 0, bottom: 0 } }
+    },
+    plugins: [{
+      id: 'valueLabels',
+      afterDatasetsDraw(chart) {
+        const { ctx } = chart;
+        const bars = chart.getDatasetMeta(0).data;
+        series.pointLabels.forEach(function(r) {
+          const bar = bars[r.i];
+          ctx.save();
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'bottom';
+          ctx.font = '700 14px Helvetica Neue';
+          ctx.fillStyle = '#044B2E';
+          ctx.fillText(r.text, bar.x + (r.dx || 0), bar.y - 9 + (r.dy || 0));
+          ctx.restore();
+        });
+      }
+    }]
+  });
+</script>
+</body>
+</html>
