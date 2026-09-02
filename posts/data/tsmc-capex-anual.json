@@ -1,0 +1,46 @@
+{
+  "slug": "tsmc-capex-anual",
+  "title_pt": "Capex anual da TSMC em fábricas e equipamentos",
+  "edition": "2026-09-02",
+  "metric": "Despesa de capital (capex) consolidada da TSMC por ano civil, em US$ bilhões",
+  "definition": "Capital expenditures consolidados como reportados pela TSMC no formulário 20-F de cada ano fiscal. A TSMC reporta em NT$ e traduz o ano mais recente para US$ a uma taxa média ponderada do próprio ano; cada ponto da série usa a tradução publicada pela empresa para aquele ano, nunca uma conversão nossa. O ponto de 2026 não é realizado: é a faixa do orçamento de capital que a empresa guia, elevada em 16 de julho de 2026.",
+  "series": [
+    { "year": 2018, "usd_bn": 10.463, "preliminary": false, "source_ref": "20f-fy2018" },
+    { "year": 2019, "usd_bn": 14.903, "preliminary": false, "source_ref": "20f-fy2019" },
+    { "year": 2020, "usd_bn": 17.235, "preliminary": false, "source_ref": "20f-fy2020" },
+    { "year": 2021, "usd_bn": 30.039, "preliminary": false, "source_ref": "20f-fy2021" },
+    { "year": 2022, "usd_bn": 36.289, "preliminary": false, "source_ref": "20f-fy2022" },
+    { "year": 2023, "usd_bn": 30.448, "preliminary": false, "source_ref": "20f-fy2023" },
+    { "year": 2024, "usd_bn": 29.755, "preliminary": false, "source_ref": "20f-fy2024" },
+    { "year": 2025, "usd_bn": 40.895, "preliminary": false, "source_ref": "20f-fy2025" },
+    { "year": 2026, "usd_bn_low": 60, "usd_bn_high": 64, "preliminary": true, "guidance": true, "source_ref": "call-2q26" }
+  ],
+  "context": {
+    "guidance_2026_initial": { "low_usd_bn": 52, "high_usd_bn": 56, "date": "2026-01-15", "source_ref": "call-4q25" },
+    "guidance_2026_raised": { "low_usd_bn": 60, "high_usd_bn": 64, "date": "2026-07-16", "source_ref": "call-2q26" },
+    "h1_2026_actual_usd_bn": 26.80,
+    "equipment_purchase_index_2026": { "baseline_end_2025": 1.0, "q1_2026": 1.5, "july_2026": 1.9, "source_ref": "semicon-udn" },
+    "fabs_under_construction": { "taiwan": 13, "overseas_low": 5, "overseas_high": 6, "total_approx": 20, "historical_max_simultaneous": "4 a 5", "source_ref": "semicon-udn" }
+  },
+  "sources": [
+    { "id": "20f-fy2018", "label": "TSMC — Formulário 20-F do exercício de 2018 (abril de 2019)", "url": "https://www.sec.gov/Archives/edgar/data/1046179/000119312519108390/d665387d20f.htm", "provides": "capex de 2018: NT$315.582 mi, US$10.463 mi" },
+    { "id": "20f-fy2019", "label": "TSMC — Formulário 20-F do exercício de 2019 (abril de 2020)", "url": "https://www.sec.gov/Archives/edgar/data/1046179/000119312520107579/d831201d20f.htm", "provides": "capex de 2019: NT$460.422 mi, US$14.903 mi" },
+    { "id": "20f-fy2020", "label": "TSMC — Formulário 20-F do exercício de 2020 (abril de 2021)", "url": "https://www.sec.gov/Archives/edgar/data/1046179/000119312521118512/d94821d20f.htm", "provides": "capex de 2020: NT$507.239 mi, US$17.235 mi" },
+    { "id": "20f-fy2021", "label": "TSMC — Formulário 20-F do exercício de 2021 (abril de 2022)", "url": "https://www.sec.gov/Archives/edgar/data/1046179/000119312522104891/d204786d20f.htm", "provides": "capex de 2021: NT$839.196 mi, US$30.039 mi" },
+    { "id": "20f-fy2022", "label": "TSMC — Formulário 20-F do exercício de 2022 (abril de 2023)", "url": "https://www.sec.gov/Archives/edgar/data/1046179/000119312523107214/d428519d20f.htm", "provides": "capex de 2022: NT$1.082.672 mi, US$36.289 mi" },
+    { "id": "20f-fy2023", "label": "TSMC — Formulário 20-F do exercício de 2023 (abril de 2024)", "url": "https://www.sec.gov/Archives/edgar/data/1046179/000119312524099840/d592628d20f.htm", "provides": "capex de 2023: NT$949.817 mi, US$30.448 mi" },
+    { "id": "20f-fy2024", "label": "TSMC — Formulário 20-F do exercício de 2024 (abril de 2025)", "url": "https://www.sec.gov/Archives/edgar/data/1046179/000119312525083423/d896993d20f.htm", "provides": "capex de 2024: NT$956.007 mi, US$29.755 mi" },
+    { "id": "20f-fy2025", "label": "TSMC — Formulário 20-F do exercício de 2025 (abril de 2026)", "url": "https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm", "provides": "capex de 2025: NT$1.272.411 mi, US$40.895 mi; orçamento inicial de 2026 de US$52 bi a US$56 bi" },
+    { "id": "call-4q25", "label": "TSMC — teleconferência de resultados do 4T25, 15 de janeiro de 2026", "url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-01/51d09df96cd89ac19d65af39032b038dc2896a24/TSMC%204Q25%20Transcript.pdf", "provides": "CFO Wendell Huang: capex de 2025 de US$40,9 bi contra US$29,8 bi em 2024; orçamento de 2026 entre US$52 bi e US$56 bi" },
+    { "id": "call-2q26", "label": "TSMC — teleconferência de resultados do 2T26, 16 de julho de 2026", "url": "https://www.investing.com/news/transcripts/earnings-call-transcript-tsmc-lifts-2026-outlook-as-ai-demand-stays-hot-in-q2-2026-93CH-4794777", "provides": "elevação do orçamento de 2026 para a faixa de US$60 bi a US$64 bi" },
+    { "id": "mgmt-2q26", "label": "TSMC — Management Report do 2T26 (16 de julho de 2026)", "url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-07/6f49632674bd2d0fd48cb65aaf89ec6ab510b559/2Q26%20ManagementReport.pdf", "provides": "capex acumulado do 1S26: US$26,80 bi" },
+    { "id": "semicon-udn", "label": "United Daily News — SEMICON Taiwan, fala de Cliff Hou (2 de setembro de 2026)", "url": "https://udn.com/news/story/7240/9730162", "provides": "índice de compra de equipamento 1x, 1,5x e 1,9x; 13 fábricas em Taiwan e 5 a 6 no exterior, contra 4 a 5 no ritmo histórico" }
+  ],
+  "notes": [
+    "Fluxo, não estoque: cada barra é o gasto daquele ano, não o investimento acumulado.",
+    "A barra de 2026 é meta, não realizado. É a faixa guiada de US$60 bi a US$64 bi, e por isso aparece como um intervalo, sem ponto único: um valor central seria uma média calculada por nós, não um número reportado. Até o fim de junho a empresa havia gasto US$26,80 bi.",
+    "A TSMC reporta o capex em dólares de Taiwan. Cada ponto usa a conversão para dólar americano publicada pela própria empresa no 20-F daquele ano, a uma taxa média ponderada do ano, e não uma conversão feita por nós. Isso significa que a série carrega o efeito do câmbio de cada ano.",
+    "O índice de compra de equipamento (1x, 1,5x, 1,9x) e a contagem de fábricas em obra ficaram fora do eixo de propósito: o índice não tem unidade e a contagem de fábricas é um estoque de hoje, sem série anual comparável. As duas coisas vão no subtítulo.",
+    "As médias de fábricas por ano atribuídas ao VP T.S. Chang (3 por ano entre 2017 e 2020, 5 por ano entre 2021 e 2024, 9 em 2025) foram descartadas: são médias de período, e o número de 2025 mistura 8 fábricas com 1 planta de encapsulamento."
+  ]
+}
