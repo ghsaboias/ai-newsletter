@@ -1189,3 +1189,13 @@ https://www.youtube.com/watch?v=X50zezLFWWI
 **She Knows the 250 People Building AI. Here's What They Actually Believe.**
 Sarah Guo, fundadora da gestora de venture capital Conviction e ex-sócia da Greylock Partners, discute com Patrick O’Shaughnessy (CEO da Positive Sum) o estado da fronteira do desenvolvimento de inteligência artificial, a dinâmica competitiva dos grandes laboratórios de pesquisa, os limites físicos de infraestrutura e energia, a viabilidade de modelos abertos (open source), e os critérios que utiliza para alocar capital em mercados não convencionais, como robótica e biologia computacional
 https://www.youtube.com/watch?v=hY6S__xeCjg
+
+## 2026-09-03
+
+**Inside Moderna’s Biggest mRNA Test Since COVID**
+Stéphane Bancel, CEO da Moderna, e Jorge Conde, sócio-geral da equipe de Bio + Health da Andreessen Horowitz (a16z), discutem os resultados positivos de Fase 3 da vacina terapêutica individualizada de mRNA contra melanoma (desenvolvida em parceria com a Merck), a engenharia por trás da manufatura personalizada, o caminho regulatório e a expansão da plataforma para outros tumores, doenças genéticas raras e condições autoimunes
+https://www.youtube.com/watch?v=yTNMEYeCgWw
+
+**OpenAI Cuts Off Elon's Cursor, Humanity's First Star Probe, and Trump's Nuclear Mars Ship | EP #285**
+No episódio #285 do podcast Moonshots, Peter H. Diamandis (fundador do XPRIZE e da Singularity University), Dave Blundin (fundador e general partner da Link Ventures) e Dr. Alexander Wissner-Gross (cientista da computação e fundador da Reified) recebem Philip Johnston (cofundador e CEO da Starcloud) e Matt Pines (CEO da Physical Superintelligence - PSI) para anunciar a missão interestelar Fermi Explorer, além de debaterem os últimos desdobramentos em inteligência artificial, semicondutores, energia, geoengenharia e exploração espacial. Salim Ismail esteve ausente devido a atrasos em trânsito aéreo
+https://www.youtube.com/watch?v=JywXvB8PpTs
