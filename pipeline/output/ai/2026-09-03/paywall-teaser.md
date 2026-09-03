@@ -1,0 +1,6 @@
+**Abaixo, apenas para assinantes:**
+
+**Regulação e políticas públicas.** Um acordo internacional sem força vinculante que empurra a IA para reguladores setoriais, uma desenvolvedora americana de modelos dizendo a parlamentares que constrói mecanismos de desligamento automático, e mais uma grande rede escolar dos EUA barrando IA generativa nos aparelhos dos alunos.
+**Silício e data centers.** Falta de memória segurando a conversão de pedidos de IA em receita numa fabricante americana de servidores, preços de chips de memória subindo de novo no mercado à vista, e uma operadora americana de data centers se juntando à Nvidia num serviço de inferência para grandes empresas.
+**Dinheiro.** Uma desenvolvedora chinesa de modelos protocola pedido de abertura de capital em Hong Kong, e uma startup israelense-holandesa de agentes para grandes empresas levanta nova rodada com a entrada de um gigante de software corporativo.
+**Mundo.** Emprego mais fraco que o esperado nos EUA e juros longos em alta, o banco central canadense mantendo a taxa às vésperas de contratarifas sobre produtos americanos, novas tarifas americanas sobre drones importados entrando em vigor, e outra rodada de ataques entre EUA e Irã.
