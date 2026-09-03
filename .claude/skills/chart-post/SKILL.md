@@ -126,8 +126,10 @@ Escreva `posts/chart-<slug>.md`. Formato (espelha os posts existentes):
 
 <2-4 parágrafos: a história. Abre com o fato.>
 
-As demais histórias do dia estão na [edição completa](<url da edição no Substack>):
+As demais histórias do dia estão na [edição completa](<url pública da edição no Substack>):
 ```
+
+**URL da edição = a pública `/p/<slug>`, NUNCA a do editor** (`/publish/post/<id>`, que é o que está em `substack-draft.json` e só abre pra quem edita). O Substack gera o slug a partir do título da edição (o H1 do `edition-final.md`): minúsculas, sem acento, só letras/dígitos e hífens, truncado em palavra inteira por volta de 34-36 caracteres. Pra "[Tech] - Bem-vindo(a) a 3 de Setembro de 2026" fica `https://dailyjournalnews.substack.com/p/tech-bem-vindoa-a-3-de-setembro-de` (o "2026" cai no truncamento; em títulos mais curtos, como "6 de julho", ele sobrevive). **Confirme com `curl -sI <url> | head -1`** (200 = certo, 404 = tente com/sem o `-2026` no fim); se não resolver, pergunte ao Gui em vez de chutar. (Gui, 2026-09-03.)
 
 **Voz (erros desta tarefa, não repita):**
 - **Registro neutro/profissional, nunca coloquial.** "permaneceram próximos de US$3 bi" ✅; "travados", "o dinheiro seguiu", "atropelou" ❌.
