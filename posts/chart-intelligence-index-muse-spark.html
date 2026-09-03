@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Ranking de modelos no Intelligence Index</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; background: #FFF; color: #000; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 38px; }
+  .card { width: 720px; background: #FFF; padding: 36px 40px; }
+  .header { padding-bottom: 24px; border-bottom: 3px solid #044B2E; }
+  .header h1 { font-size: 24px; font-weight: 700; letter-spacing: -0.8px; line-height: 26px; max-width: none; }
+  .kicker { font-size: 13px; line-height: 18px; color: #444; margin-top: 18px; }
+  .kicker b { color: #044B2E; }
+  .chart-area { padding: 18px 0 4px; }
+  .chart-container { position: relative; width: 100%; height: 470px; }
+  .chart-logo { position: absolute; height: 15px; right: 12px; bottom: 12px; }
+  .legend { display: flex; gap: 22px; margin-top: 16px; padding-top: 14px; border-top: 1px solid #E5E5E5; font-size: 11px; color: #444; }
+  .legend > span { display: inline-flex; align-items: center; }
+  .legend .swatch { display: inline-block; width: 12px; height: 12px; margin-right: 6px; border-radius: 2px; }
+  .caption { font-size: 11px; line-height: 16px; color: #999; margin-top: 14px; }
+  .footer { padding-top: 14px; border-top: 1px solid #E5E5E5; display: flex; justify-content: space-between; margin-top: 14px; }
+  .footer span { font-size: 10px; color: #999; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="card" id="capture">
+  <div class="header">
+    <h1>Ranking de modelos no Intelligence Index</h1>
+  </div>
+  <div class="kicker">
+    Melhor variante de cada modelo no índice da Artificial Analysis, que agrega avaliações de raciocínio, código, agentes e conhecimento. Entre parênteses, o nível de esforço de raciocínio da variante. O novo modelo da Meta marca <b>62 pontos</b> na versão max, ainda em preview, e <b>61</b> na xhigh, já pública. Cinco meses atrás, o Muse Spark 1.2 fazia <b>57</b>.
+  </div>
+  <div class="chart-area">
+    <div class="chart-container">
+      <canvas id="idx"></canvas>
+      <img src="../../daily-journal-platform/public/images/logo/logo-green-horizontal.png" class="chart-logo" alt="Daily Journal">
+    </div>
+    <div class="legend">
+      <span><span class="swatch" style="background:#044B2E"></span>Meta, Muse Spark 1.3</span>
+      <span><span class="swatch" style="background:#7DB89B"></span>Meta, Muse Spark 1.2</span>
+      <span><span class="swatch" style="background:#C9D2CD"></span>Demais laboratórios</span>
+    </div>
+  </div>
+  <div class="caption">
+    Fonte de todos os números: leaderboard da Artificial Analysis, Intelligence Index v4.6, snapshot de 3 de setembro de 2026.
+  </div>
+  <div class="footer">
+    <span>Fonte: Artificial Analysis, Intelligence Index v4.6 (3 set. 2026)</span>
+    <span>dailyjournal.news</span>
+  </div>
+</div>
+<script>
+  const ROWS = [
+    { m:'Claude Fable 5.1 (max)',   lab:'Anthropic', v:66, k:'o' },
+    { m:'Claude Opus 5 (max)',      lab:'Anthropic', v:63, k:'o' },
+    { m:'Muse Spark 1.3 (max)',     lab:'Meta',      v:62, k:'new' },
+    { m:'Claude Fable 5',           lab:'Anthropic', v:62, k:'o' },
+    { m:'GPT-5.6 Sol (max)',        lab:'OpenAI',    v:61, k:'o' },
+    { m:'Grok 4.6 (high)',          lab:'xAI',       v:61, k:'o' },
+    { m:'Muse Spark 1.3 (xhigh)',   lab:'Meta',      v:61, k:'new' },
+    { m:'Kimi K3 (max)',            lab:'Moonshot',  v:60, k:'o' },
+    { m:'GLM-5.3 (max)',            lab:'Z.ai',      v:60, k:'o' },
+    { m:'Gemini 3.8 Flash (high)',  lab:'Google',    v:59, k:'o' },
+    { m:'Qwen3.8 Max',              lab:'Alibaba',   v:58, k:'o' },
+    { m:'GPT-5.6 Terra (max)',      lab:'OpenAI',    v:57, k:'o' },
+    { m:'Muse Spark 1.2 (xhigh)',   lab:'Meta',      v:57, k:'old' },
+  ];
+  const col = r => r.k==='new' ? '#044B2E' : r.k==='old' ? '#7DB89B' : '#C9D2CD';
+  const tcol = r => r.k==='new' ? '#044B2E' : r.k==='old' ? '#5a9377' : '#333';
+  new Chart(document.getElementById('idx').getContext('2d'), {
+    type: 'bar',
+    data: { labels: ROWS.map(r=>r.m), datasets: [{ data: ROWS.map(r=>r.v), backgroundColor: ROWS.map(col), borderWidth: 0, borderRadius: 2, borderSkipped: false, barPercentage: 0.74, categoryPercentage: 0.84 }] },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false, animation: false,
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: {
+        x: { beginAtZero: true, max: 70, grid: { color: '#f0f0f0', drawTicks: false }, border: { display: false },
+             ticks: { font: { family: 'Helvetica Neue', size: 11 }, color: '#bbb', padding: 6, stepSize: 10 } },
+        y: { grid: { display: false }, border: { display: false },
+             ticks: { font: { family: 'Helvetica Neue', size: 12, weight: '600' }, color: ROWS.map(tcol), padding: 8, crossAlign: 'far' } }
+      },
+      layout: { padding: { top: 4, right: 110, left: 0, bottom: 4 } }
+    },
+    plugins: [{
+      id: 'valueLabels',
+      afterDraw(chart) {
+        const { ctx } = chart; const meta = chart.getDatasetMeta(0).data;
+        ROWS.forEach((r, i) => {
+          const bar = meta[i]; ctx.save(); ctx.textBaseline = 'middle'; ctx.textAlign = 'left';
+          ctx.font = (r.k!=='o' ? '700 ' : '600 ') + '12px Helvetica Neue'; ctx.fillStyle = tcol(r);
+          ctx.fillText(r.v, bar.x + 7, bar.y);
+          ctx.font = '500 11px Helvetica Neue'; ctx.fillStyle = r.k==='o' ? '#999' : tcol(r);
+          ctx.fillText(r.lab, bar.x + 30, bar.y);
+          ctx.restore();
+        });
+      }
+    }]
+  });
+</script>
+</body>
+</html>
