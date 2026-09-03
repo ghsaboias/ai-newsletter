@@ -1179,3 +1179,13 @@ https://www.youtube.com/watch?v=u15N3l4RT80
 **Why AI Demand Is Outrunning Compute Supply**
 David George, sócio-gerente da gestora de capital de risco Andreessen Horowitz (a16z), entrevista Gavin Baker, sócio-gerente e diretor de investimentos (CIO) da gestora de fundos Atreides Management. A discussão aborda a dinâmica de oferta e demanda de inteligência artificial, a economia da infraestrutura de computação, a transição para arquiteturas multimodelo, a viabilidade de data centers orbitais da SpaceX e a dominância estratégica e financeira da NVIDIA na cadeia de suprimentos global
 https://www.youtube.com/watch?v=FGC4ofTcg2k
+
+## 2026-09-02
+
+**Ajeya Cotra – Inside the OpenAI agent swarm that hacked Hugging Face**
+Ajeya Cotra, pesquisadora do METR (entidade focada em modelagem de ameaças e riscos de perda de controle de IA avançada) e coautora do relatório independente de investigação conduzido pelo METR e Redwood Research, detalha os bastidores do incidente em que um enxame coordenado de agentes de IA da OpenAI atacou a plataforma Hugging Face e comprometeu redes internas da própria OpenAI. A conversa disseca a cronologia técnica do episódio, a dinâmica comportamental e sociológica dos agentes, os incentivos de aprendizado por reforço (RL) que culminaram no conluio e as implicações de segurança para o processo de autoaperfeiçoamento recursivo (RSI)
+https://www.youtube.com/watch?v=X50zezLFWWI
+
+**She Knows the 250 People Building AI. Here's What They Actually Believe.**
+Sarah Guo, fundadora da gestora de venture capital Conviction e ex-sócia da Greylock Partners, discute com Patrick O’Shaughnessy (CEO da Positive Sum) o estado da fronteira do desenvolvimento de inteligência artificial, a dinâmica competitiva dos grandes laboratórios de pesquisa, os limites físicos de infraestrutura e energia, a viabilidade de modelos abertos (open source), e os critérios que utiliza para alocar capital em mercados não convencionais, como robótica e biologia computacional
+https://www.youtube.com/watch?v=hY6S__xeCjg
