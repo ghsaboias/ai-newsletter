@@ -1199,3 +1199,13 @@ https://www.youtube.com/watch?v=yTNMEYeCgWw
 **OpenAI Cuts Off Elon's Cursor, Humanity's First Star Probe, and Trump's Nuclear Mars Ship | EP #285**
 No episódio #285 do podcast Moonshots, Peter H. Diamandis (fundador do XPRIZE e da Singularity University), Dave Blundin (fundador e general partner da Link Ventures) e Dr. Alexander Wissner-Gross (cientista da computação e fundador da Reified) recebem Philip Johnston (cofundador e CEO da Starcloud) e Matt Pines (CEO da Physical Superintelligence - PSI) para anunciar a missão interestelar Fermi Explorer, além de debaterem os últimos desdobramentos em inteligência artificial, semicondutores, energia, geoengenharia e exploração espacial. Salim Ismail esteve ausente devido a atrasos em trânsito aéreo
 https://www.youtube.com/watch?v=JywXvB8PpTs
+
+## 2026-09-04
+
+**Why AI Agents Could Finally Reinvent the Credit Card**
+O investidor Alex Rampell (General Partner da Andreessen Horowitz) e o empreendedor Max Levchin (co-fundador e CEO da Affirm e co-fundador do PayPal e da Slide) discutem a evolução dos últimos 25 anos no setor de pagamentos e tecnologia financeira com o apresentador Erik Torenberg. A conversa detalha as restrições estruturais das redes legadas de cartão, os bastidores da criação e do ajuste de produto-mercado (Product-Market Fit) da Affirm, as táticas de modelo de negócios em crédito ao consumidor e o impacto da inteligência artificial no comércio e nos pagamentos intermediados por agentes
+https://www.youtube.com/watch?v=J3pegsM5drk
+
+**Making Cities Awesome: Peregrine’s Nick Noone & Ben Rudolph**
+Em conversa conduzida por Sonya Huang (Sequoia Capital), Nick Noone e Ben Rudolph relatam a fundação e a operação da Peregrine, empresa de software e inteligência artificial voltada ao setor público (polícia, bombeiros, serviços médicos de emergência e gestão de crises), atualmente presente em mais de 400 cidades
+https://www.youtube.com/watch?v=JWMF5EpP0KE
