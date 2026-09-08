@@ -1209,3 +1209,13 @@ https://www.youtube.com/watch?v=J3pegsM5drk
 **Making Cities Awesome: Peregrine’s Nick Noone & Ben Rudolph**
 Em conversa conduzida por Sonya Huang (Sequoia Capital), Nick Noone e Ben Rudolph relatam a fundação e a operação da Peregrine, empresa de software e inteligência artificial voltada ao setor público (polícia, bombeiros, serviços médicos de emergência e gestão de crises), atualmente presente em mais de 400 cidades
 https://www.youtube.com/watch?v=JWMF5EpP0KE
+
+## 2026-09-07
+
+**Building a Power Company for the Next 50 Years | Zach Dell, Base Power**
+Zach Dell, cofundador e CEO da Base Power e filho do fundador da Dell Technologies, Michael Dell, detalha a fundação, a tese operacional e o modelo econômico de sua empresa de energia. A companhia combina manufatura proprietária de baterias residenciais com atuação direta no mercado de energia elétrica, visando construir uma empresa de infraestrutura integrada com horizonte operacional de cinco décadas
+https://www.youtube.com/watch?v=QFk6g5PQtqs
+
+**GPT-6 Hits AGI? Tech Euphoria 2.0, SF Mansion Shortage, NYC Bans AI in Schools & Venezuela Oil Deal**
+Discussão entre os apresentadores do podcast All-In — Chamath Palihapitiya (investidor de capital de risco), Jason Calacanis (investidor-anjo e moderador), David Sacks (investidor e ex-Czar de IA da Casa Branca) e David Friedberg (fundador e investidor em ciência e tecnologia) — abordando os lançamentos de modelos de fronteira de inteligência artificial, dinâmica de mercado e bolha imobiliária em São Francisco, debates de segurança cibernética e influências políticas de grupos de Altruísmo Eficaz, o banimento de IA em escolas públicas de Nova York e o recente acordo petrolífero dos Estados Unidos na Venezuela
+https://www.youtube.com/watch?v=DvFe9bR2eHA
