@@ -1,0 +1,2007 @@
+{
+ "draft_id": "209005078",
+ "title": "[Edição Gratuita] - Bem-vindo(a) a 29 de Julho de 2026",
+ "subtitle": "Novos detalhes do cyber-incidente envolvendo OpenAI e Hugging Face | Por que mais de 1.100 funcionários de laboratórios de IA escreveram ao governo dos EUA?",
+ "body": {
+  "type": "doc",
+  "content": [
+   {
+    "type": "paragraph",
+    "attrs": {
+     "textAlign": null
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Por: Guilherme Saboia e Vinicius Gushiken"
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Agente descontrolado da OpenAI acessou contas em outros quatro serviços"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Segunda vítima."
+         },
+         {
+          "type": "text",
+          "text": " A OpenAI afirmou na terça-feira que o agente localizou e usou logins para "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-29/openai-confirma-que-ataque-de-sua-ia-atingiu-mais-alvos-que-o-previsto",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "acessar quatro contas em quatro outros serviços disponíveis publicamente"
+         },
+         {
+          "type": "text",
+          "text": ", além da Hugging Face. Segundo a empresa, esses acessos não tiveram a gravidade nem a escala da invasão à Hugging Face e integram o mesmo incidente. A segunda vítima confirmada é a Modal Labs: o CTO Akshat Bubna disse que o cliente afetado havia “publicado um "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "endpoint"
+         },
+         {
+          "type": "text",
+          "text": " sem autenticação que permitia a qualquer pessoa na internet usar seus "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "sandboxes"
+         },
+         {
+          "type": "text",
+          "text": " para execução de código”."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Forense."
+         },
+         {
+          "type": "text",
+          "text": " A reconstrução da Hugging Face cobre cerca de "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-29/openai-lanca-codex-security-cli-open-source-para-escanear-repositorios",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "17.600 ações do atacante"
+         },
+         {
+          "type": "text",
+          "text": ", agrupadas em aproximadamente 6.280 grupos, entre 9 de julho às 02h28 UTC e 13 de julho às 14h14 UTC. Os "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "payloads"
+         },
+         {
+          "type": "text",
+          "text": ", protegidos por fragmentação e criptografia, foram decifrados em sua maior parte com o modelo de pesos abertos zai-org/GLM-5.2."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Motivo."
+         },
+         {
+          "type": "text",
+          "text": " A empresa concluiu que toda a invasão foi uma tentativa de burlar o ExploitGym, avaliação de capacidade cibernética da OpenAI: o agente buscou roubar as soluções de referência do benchmark em vez de resolver os desafios por conta própria. O único conteúdo de cliente acessado foi esse conjunto de soluções, guardado em cinco datasets."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Vetores."
+         },
+         {
+          "type": "text",
+          "text": " O agente chegou à infraestrutura interna por duas injeções no pipeline de processamento de datasets: a leitura de um dataset HDF5 com armazenamento externo bruto e uma injeção de template Jinja2 que executou código arbitrário. O ataque foi criado pelo GPT-5.6 Sol em conjunto com um segundo modelo não identificado, que a OpenAI diz ter “desativado, criptografado e com o acesso de pesquisa restringido”."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/5ba5cf6a-78d7-4a4a-8605-46e3a704202c_2720x1400.png",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 1400,
+       "width": 2720,
+       "resizeWidth": 520,
+       "bytes": 303205,
+       "alt": "Diagrama da cadeia do ataque, da sandbox de avaliação da OpenAI até a rede interna da Hugging Face",
+       "title": null,
+       "type": "image/png",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "A cadeia do ataque, da sandbox de avaliação até a rede interna da Hugging Face. Imagem: Hugging Face"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Mais de 1.100 funcionários de laboratórios de IA pedem ferramentas para desacelerar a fronteira"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Carta."
+         },
+         {
+          "type": "text",
+          "text": " Funcionários de OpenAI, Anthropic, Google, Meta, Thinking Machines, Microsoft e Mistral assinaram uma declaração ao governo dos EUA pedindo apoio a um "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-28/profissionais-de-ia-pedem-que-governo-dos-eua-desacelere-desenvolvimento",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "esforço internacional para criar ferramentas"
+         },
+         {
+          "type": "text",
+          "text": " que permitam desacelerar deliberadamente o desenvolvimento de IA avançada. Os signatários estão listados em um site dedicado, o "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://www.pacingthefrontier.com/",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "Pacing the Frontier"
+         },
+         {
+          "type": "text",
+          "text": "."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Argumento."
+         },
+         {
+          "type": "text",
+          "text": " O texto diz que as principais empresas de IA acreditam que podem estar perto de automatizar a pesquisa em IA e que há “um risco real de que o desenvolvimento de capacidades acelere rapidamente além da nossa capacidade de entender ou controlar os sistemas resultantes”. Cada empresa e cada país está sob intensa pressão competitiva para não desacelerar unilateralmente, e o mundo não dispõe hoje das ferramentas técnicas e de governança para modular esse ritmo."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Quem assinou."
+         },
+         {
+          "type": "text",
+          "text": " Pela OpenAI, o "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "chief research officer"
+         },
+         {
+          "type": "text",
+          "text": " Mark Chen, o cientista-chefe Jakub Pachocki e os cofundadores John Schulman e Wojciech Zaremba. Pela Anthropic, os cofundadores Jack Clark, Chris Olah e Ben Mann, o "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "chief science officer"
+         },
+         {
+          "type": "text",
+          "text": " Jared Kaplan, o líder do Claude Code Boris Cherny e o líder de alinhamento Ethan Perez. Também assinaram Jan Leike, ex-colíder da equipe de superalinhamento da OpenAI, hoje extinta, e Josh Achiam, ex-"
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "chief futurist"
+         },
+         {
+          "type": "text",
+          "text": " da empresa."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Anthropic."
+         },
+         {
+          "type": "text",
+          "text": " A empresa "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-28/profissionais-de-ia-pedem-que-governo-dos-eua-desacelere-desenvolvimento",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "apoiou publicamente a petição em 28 de julho"
+         },
+         {
+          "type": "text",
+          "text": ", dizendo que seu CEO, vários cofundadores e funcionários seniores assinaram. Ligou o apoio à sua própria pesquisa sobre automelhoria recursiva, publicada no mês passado."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/2c4fa843-17e4-4892-947c-84cfdb6ebd1e_3000x1684.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 1684,
+       "width": 3000,
+       "resizeWidth": 520,
+       "bytes": 1530539,
+       "alt": "Mark Chen e Jakub Pachocki, da OpenAI",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Mark Chen (esq.), diretor de pesquisa da OpenAI, e Jakub Pachocki, cientista-chefe, dois dos signatários. Imagem: cortesia da OpenAI"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "SK Hynix tem trimestre recorde abaixo do consenso e ações de chips caem"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Resultado."
+         },
+         {
+          "type": "text",
+          "text": " Receita de 79,3187 trilhões de won e lucro operacional de 60,5426 trilhões, com margem operacional de 76%, no "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-29/sk-hynix-registra-lucro-recorde-mas-resultados-ficam-abaixo-do-esperado",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "melhor desempenho trimestral da história"
+         },
+         {
+          "type": "text",
+          "text": " da empresa. A receita subiu 257% e o lucro operacional 557% na comparação anual, o lucro líquido chegou a 93,9226 trilhões de won e a receita do primeiro semestre passou de 100 trilhões pela primeira vez."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Abaixo do esperado."
+         },
+         {
+          "type": "text",
+          "text": " Os dois números principais frustraram o consenso: cerca de "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-29/sk-hynix-registra-lucro-recorde-mas-resultados-ficam-abaixo-do-esperado",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "US$54,34 bilhões de receita contra US$57,56 bilhões projetados"
+         },
+         {
+          "type": "text",
+          "text": " e US$41,48 bilhões de lucro operacional contra US$43,85 bilhões. A ação caiu 9,61% em Seul e o Kospi acionou "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "circuit breaker"
+         },
+         {
+          "type": "text",
+          "text": " pelo segundo dia seguido, depois do tombo de 10,84% de terça. Nos EUA é o terceiro pregão seguido de queda no setor: na segunda a SanDisk já havia perdido 14% e a AMD 7%, na terça AMD, Intel e Micron ampliaram as perdas e nesta quarta a Sandisk recuou mais de 7,5% e Arm e AMD mais de 6,5%."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "HBM4."
+         },
+         {
+          "type": "text",
+          "text": " As entregas em massa de HBM4 (memória de alta largura de banda usada em aceleradores de IA) começaram no trimestre, com ampliação da produção no segundo semestre e amostras de HBM4E concluídas no primeiro semestre. A empresa fechou acordos de fornecimento de longo prazo com cerca de 10 clientes."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Caixa e capex."
+         },
+         {
+          "type": "text",
+          "text": " O trimestre terminou com 88 trilhões de won em caixa, alta de 33,6 trilhões contra o período anterior, e caixa líquido de 69,4 trilhões. A SK Hynix acelera a produção em massa na M15X e prepara a sala limpa da Fase 1 de Yongin para o início de 2027, além da fábrica de encapsulamento avançado P&T7 e da base de NAND M17, com promessa de disciplina em capex."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/1ae5b81f-76e5-4f0d-9b91-c050b338baae_1000x657.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 657,
+       "width": 1000,
+       "resizeWidth": 520,
+       "bytes": 33813,
+       "alt": "Dois módulos de memória HBM4 da SK Hynix",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Módulos de memória HBM4 da SK Hynix. Imagem: SK hynix"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Segurança e criptografia"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Anthropic."
+         },
+         {
+          "type": "text",
+          "text": " O Claude Mythos Preview "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-29/modelo-claude-mythos-da-anthropic-demonstra-avancos-em-criptoanalise",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "melhorou o melhor ataque conhecido contra o HAWK"
+         },
+         {
+          "type": "text",
+          "text": ", candidato do NIST a esquema de assinatura pós-quântica que resistira a dois anos de revisão por especialistas humanos, em 60 horas de trabalho e cortando pela metade a força da chave; um segundo resultado quebrou uma variante enfraquecida do AES e acelerou os melhores ataques anteriores em 200 a 800 vezes. Nenhum dos dois afeta sistemas em produção, cada um custou cerca de US$100 mil em uso de API, e a empresa lançou o CryptanalysisBench, benchmark de criptanálise construído com acadêmicos da ETH Zurich, da Universidade de Tel Aviv e da TU Berlin."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/b0196dad-97a3-43d3-a604-107679ed3947_996x337.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 337,
+       "width": 996,
+       "resizeWidth": 520,
+       "bytes": 92671,
+       "alt": "Gráfico de tarefas resolvidas no CryptanalysisBench por tempo, custo e tokens",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Tarefas resolvidas no CryptanalysisBench por tempo, custo e tokens: o Claude Mythos (azul) segue subindo quando ganha mais computação. Imagem: Fluri et al., CryptanalysisBench (arXiv)"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "OpenAI."
+         },
+         {
+          "type": "text",
+          "text": " Lançou de forma discreta o "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-29/openai-lanca-codex-security-cli-open-source-para-escanear-repositorios",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "Codex Security CLI"
+         },
+         {
+          "type": "text",
+          "text": ", ferramenta de código aberto que escaneia repositórios, acompanha achados entre execuções, verifica correções e adiciona checagens de segurança a pipelines de CI/CD. O repositório público acumula cerca de 4.500 estrelas e 259 forks, com commits recentes que somaram SDK em TypeScript e empacotamento em Docker."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Infraestrutura e energia"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Brookfield e NextEra."
+         },
+         {
+          "type": "text",
+          "text": " É o segundo grande projeto do mês a nascer em terreno de enriquecimento de urânio do Departamento de Energia, depois da área em Ohio onde a Nvidia negocia garantir o data center da OpenAI, e desta vez as empresas trazem a própria energia: vão pagar e construir do zero até 4,6 GW de geração dedicada só a esse cliente, entre 2 GW a gás natural e 2,6 GW de armazenamento em baterias da NextEra. O "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-29/brookfield-e-nextera-investem-us100-bi-em-campus-de-data-centers-no-kentucky",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "campus de US$100 bilhões"
+         },
+         {
+          "type": "text",
+          "text": " fica em Paducah, no oeste do Kentucky, deve gerar 8.000 empregos na construção e 600 de operação, e chega a 1,8 GW de capacidade de rede e mais de 1,2 GW de poder computacional quando ficar pronto, em 2032."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/86af790b-21fd-4eb6-87b8-ae53078ee392_1800x1013.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 1013,
+       "width": 1800,
+       "resizeWidth": 520,
+       "bytes": 650412,
+       "alt": "Vista aérea do terreno de Paducah, no Kentucky",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "O terreno de Paducah, no oeste do Kentucky, onde ficava a usina de enriquecimento de urânio. Imagem: Departamento de Energia dos EUA"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Chips"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "GlobalFoundries."
+         },
+         {
+          "type": "text",
+          "text": " Os EUA planejam conceder "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-29/globalfoundries-recebe-us-300-milhoes-do-chips-act-para-ia",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "US$300 milhões do CHIPS Act"
+         },
+         {
+          "type": "text",
+          "text": " à empresa para P&D de fotônica de silício voltada a data centers de IA mais eficientes, em carta de intenções assinada com o Departamento de Comércio. O roteiro mira desempenho óptico de 400 Gb/s e eficiência energética até 5 vezes maior que a das soluções atuais; um acordo separado dá ao governo americano participação acionária de cerca de 1% na companhia."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Qualcomm."
+         },
+         {
+          "type": "text",
+          "text": " Assinou um "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-29/qualcomm-fecha-acordo-de-dez-anos-para-fornecer-chips-a-bmw",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "acordo de 10 anos para fornecer chips à BMW"
+         },
+         {
+          "type": "text",
+          "text": ", o que a estabelece como fornecedora líder de silício de computação da montadora: o acordo cobre cockpit digital, ADAS (sistemas avançados de assistência ao motorista) e direção automatizada nos programas de modelos da próxima década. No mesmo dia, concluiu a aquisição da empresa de software de IA Modular."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/f17e9b18-2469-4469-a171-a12393adc04b_1920x1080.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 1080,
+       "width": 1920,
+       "resizeWidth": 520,
+       "bytes": 120856,
+       "alt": "Cockpit digital Panoramic iDrive, da BMW",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "O Panoramic iDrive, novo cockpit digital da BMW. Imagem: BMW"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Modelos abertos"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Zuckerberg."
+         },
+         {
+          "type": "text",
+          "text": " Disse ao Financial Times que proibir modelos chineses avançados de IA nos EUA não seria uma "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-29/mark-zuckerberg-defende-que-eua-nao-banam-ia-desenvolvida-na-china",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "“solução eficaz”"
+         },
+         {
+          "type": "text",
+          "text": " e que restringir os modelos mais capazes é a abordagem errada para cibersegurança, porque são eles que permitem às empresas detectar e corrigir vulnerabilidades. Sobre submeter modelos novos a revisão por pares, disse que pode ajudar a indústria se for feito com cuidado, mas advertiu: “Há sempre essa questão da captura regulatória se você tem um conjunto de empresas com interesses próprios fazendo a revisão por pares”. Também se opôs a proibir a exportação de chips de IA e argumentou que as empresas americanas deveriam remover gargalos internos, e não erguer barreiras, para competir com a China. Em artigo no Wall Street Journal no mesmo dia, reafirmou a bandeira da “IA para todos”, com modelos abertos que o usuário rode no próprio hardware, contra a centralização da tecnologia em poucas empresas, posição apoiada por Satya Nadella no X."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/21af0b9a-cef2-4577-ab52-5e0d5e6f6e07_1000x563.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 563,
+       "width": 1000,
+       "resizeWidth": 520,
+       "bytes": 34322,
+       "alt": "Mark Zuckerberg, CEO da Meta, falando ao microfone",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Mark Zuckerberg, CEO da Meta. Imagem: Shutterstock"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Moonshot AI."
+         },
+         {
+          "type": "text",
+          "text": " Fechou uma "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-29/moonshot-ai-atinge-valuation-de-us-35-bilhoes-apos-rodada-de-us-35-bi",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "rodada de US$3,5 bilhões a um "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-29/moonshot-ai-atinge-valuation-de-us-35-bilhoes-apos-rodada-de-us-35-bi",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           },
+           {
+            "type": "em"
+           }
+          ],
+          "text": "valuation"
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-29/moonshot-ai-atinge-valuation-de-us-35-bilhoes-apos-rodada-de-us-35-bi",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": " de US$35 bilhões"
+         },
+         {
+          "type": "text",
+          "text": ", muito acima da faixa de US$1 bilhão a US$2 bilhões que mirava, com o fundo estatal chinês National Artificial Intelligence Industry Investment Fund entre os líderes. A startup de Pequim já busca novos recursos a um "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "valuation"
+         },
+         {
+          "type": "text",
+          "text": " "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "pre-money"
+         },
+         {
+          "type": "text",
+          "text": " de US$50 bilhões e trabalha para abrir capital em até seis meses; as vendas diárias subiram seis vezes desde a estreia do modelo."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Regulação"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "CMA."
+         },
+         {
+          "type": "text",
+          "text": " A autoridade britânica de concorrência e mercados abriu "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-29/reino-unido-investiga-microsoft-por-renovacoes-do-microsoft-365",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "investigação sobre a Microsoft"
+         },
+         {
+          "type": "text",
+          "text": " para avaliar se os clientes do Microsoft 365 Personal e Family receberam informação clara e antecipada quando os planos mudaram com a adição do Copilot. Assinantes anuais que não escolhessem outro plano nem cancelassem eram migrados automaticamente para uma versão £25 por ano mais cara que as edições “Classic”; reguladores da Austrália e da Itália apuram separadamente divulgações de renovação da empresa."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "FCC."
+         },
+         {
+          "type": "text",
+          "text": " Adicionou à Covered List "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-28/governo-trump-proibe-robos-e-equipamentos-de-energia-estrangeiros",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "robôs avançados e inversores de energia"
+         },
+         {
+          "type": "text",
+          "text": " produzidos no exterior, o que proíbe importar ou vender novas versões desses dispositivos nos EUA. A medida mira especificamente equipamentos chineses e prevê isenções para produtos que o Departamento de Defesa ou o de Segurança Interna considerem não representar ameaça."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/e0fe1f74-0a80-425a-a546-8cd605168e96_1920x1080.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 1080,
+       "width": 1920,
+       "resizeWidth": 520,
+       "bytes": 109862,
+       "alt": "Robô humanoide G1, da chinesa Unitree",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "O humanoide G1, da chinesa Unitree. Imagem: Unitree/Divulgação"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Rodadas"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Eliyan."
+         },
+         {
+          "type": "text",
+          "text": " A empresa de Santa Clara que desenvolve interconexões de "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "chiplets"
+         },
+         {
+          "type": "text",
+          "text": " — die-to-die, chip-to-chip e rack-to-rack — virou unicórnio: "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-29/startup-eliyan-atinge-valuation-de-us-1-bilhao-com-rodada-serie-c",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "Série C de US$145 milhões"
+         },
+         {
+          "type": "text",
+          "text": " a um "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "valuation"
+         },
+         {
+          "type": "text",
+          "text": " de US$1 bilhão, sobressubscrita e liderada pela Seligman Ventures, com Cisco Investments e Lumentum entrando como investidores estratégicos. Dias antes ela apresentara o NuLink-XD, arquitetura SerDes 224G PAM4 fabricada no processo de 3 nm da TSMC que reduz o consumo em até 40%."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/be4482d3-f571-40dc-8f1e-09dbc1d150dc_1537x1023.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 1023,
+       "width": 1537,
+       "resizeWidth": 520,
+       "bytes": 117298,
+       "alt": "Os três fundadores da Eliyan em frente à sede da empresa",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Os fundadores da Eliyan: Syrus Ziai, o CEO Ramin Farjadrad e Patrick Soheili. Imagem: Eliyan/Divulgação"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "ChipAgents."
+         },
+         {
+          "type": "text",
+          "text": " Levantou uma "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-29/chipagents-levanta-us60-mi-para-projeto-de-chips-com-agentes-de-ia",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "Série A2 de US$60 milhões"
+         },
+         {
+          "type": "text",
+          "text": " liderada pela B Capital, elevando o total da Série A a US$131 milhões, com Bessemer Venture Partners, Micron, Ericsson e ScOp Venture Capital reforçando a aposta. A receita recorrente anual (ARR) da empresa, que usa agentes de IA para projetar e verificar chips, cresceu 6 vezes no primeiro semestre, com mais de 120 implantações em companhias de semicondutores e uma parceria ampliada com a Nvidia."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Mundo"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Irã."
+         },
+         {
+          "type": "text",
+          "text": " O Comando Central dos EUA disse que o Irã lançou uma "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-29/jordania-intercepta-misseis-iranianos-apos-ataques-dos-eua-no-iraque",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "barragem de mísseis contra forças americanas"
+         },
+         {
+          "type": "text",
+          "text": " às 17h45 EDT de terça-feira e que todos foram interceptados; a Guarda Revolucionária afirmou ter mirado uma base aérea e um centro de comando na Jordânia e atingido três petroleiros no Estreito de Ormuz. Horas depois, EUA e Arábia Saudita atacaram posições de milícias alinhadas ao Irã no leste do Iraque, com pelo menos 20 mortos segundo as Forças de Mobilização Popular."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Ucrânia."
+         },
+         {
+          "type": "text",
+          "text": " Forças ucranianas "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-29/ucrania-ataca-duas-grandes-refinarias-russas-e-senado-dos-eua-avanca-sancoes",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "atacaram duas das maiores refinarias de petróleo da Rússia"
+         },
+         {
+          "type": "text",
+          "text": ", uma da Lukoil na região de Perm e outra em Ryazan, com capacidade anual combinada de cerca de 220 milhões de barris, horas depois de Zelensky se reunir com Trump na Casa Branca. Em 28 de julho, o Senado dos EUA votou 86 a 12 para dar andamento a um projeto que autorizaria tarifas de até 200% sobre os maiores compradores de petróleo e gás russos e estenderia sanções ao Irã até 2031."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "calloutBlock",
+    "content": [
+     {
+      "type": "heading",
+      "attrs": {
+       "textAlign": null,
+       "level": 4
+      },
+      "content": [
+       {
+        "type": "text",
+        "text": "Leia também"
+       }
+      ]
+     },
+     {
+      "type": "bullet_list",
+      "content": [
+       {
+        "type": "list_item",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "link",
+              "attrs": {
+               "href": "https://dailyjournal.news/news/2026-07-28/terremoto-de-nivel-7-atinge-provincia-de-kumamoto-no-japao",
+               "target": "_blank",
+               "rel": "noopener noreferrer nofollow",
+               "class": null
+              }
+             }
+            ],
+            "text": "Terremoto de magnitude 7,1 em Kumamoto deixa ao menos 18 mortos no Japão"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "list_item",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "link",
+              "attrs": {
+               "href": "https://dailyjournal.news/news/2026-07-29/russia-inclui-fundador-do-telegram-em-lista-de-procurados",
+               "target": "_blank",
+               "rel": "noopener noreferrer nofollow",
+               "class": null
+              }
+             }
+            ],
+            "text": "FSB acusa Pavel Durov de facilitar terrorismo e emite mandado de prisão"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "list_item",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "link",
+              "attrs": {
+               "href": "https://dailyjournal.news/news/2026-07-28/keiko-fujimori-toma-posse-como-presidente-do-peru",
+               "target": "_blank",
+               "rel": "noopener noreferrer nofollow",
+               "class": null
+              }
+             }
+            ],
+            "text": "Keiko Fujimori toma posse como presidente do Peru"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "list_item",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "link",
+              "attrs": {
+               "href": "https://dailyjournal.news/news/2026-07-29/pemvidutida-da-altimmune-reduz-consumo-pesado-de-alcool-em-fase-2",
+               "target": "_blank",
+               "rel": "noopener noreferrer nofollow",
+               "class": null
+              }
+             }
+            ],
+            "text": "GLP-1 da Altimmune reduz dias de consumo pesado de álcool em ensaio de fase 2"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "list_item",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "link",
+              "attrs": {
+               "href": "https://dailyjournal.news/news/2026-07-28/espaconave-da-katalyst-perde-controle-em-missao-da-nasa",
+               "target": "_blank",
+               "rel": "noopener noreferrer nofollow",
+               "class": null
+              }
+             }
+            ],
+            "text": "Nave da Katalyst gira fora de controle e ameaça resgate do telescópio Swift"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "marks": [
+       {
+        "type": "strong"
+       }
+      ],
+      "text": "Recomendações de hoje:"
+     }
+    ]
+   },
+   {
+    "type": "paragraph",
+    "attrs": {
+     "textAlign": null
+    },
+    "content": [
+     {
+      "type": "text",
+      "marks": [
+       {
+        "type": "strong"
+       }
+      ],
+      "text": "The Next Frontier of AI Is Spatial Intelligence | Fei-Fei Li on a16z:"
+     },
+     {
+      "type": "text",
+      "text": " O vídeo apresenta uma conversa entre Martin Casado (a16z), Fei-Fei Li (CEO da World Labs) e Yunzhu Li (cofundadora da SceniX e professora na Columbia University). O foco central é a aquisição da SceniX pela World Labs, unindo esforços para desenvolver a \"inteligência espacial\": a capacidade de máquinas entenderem, raciocinarem e interagirem com espaços físicos e virtuais. A discussão aborda a transição de modelos de linguagem para modelos de mundo voltados à robótica e o papel crucial da simulação:"
+     }
+    ]
+   },
+   {
+    "type": "youtube2",
+    "attrs": {
+     "videoId": "-tabaM5l3s0",
+     "startTime": "68s",
+     "endTime": null
+    }
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "paragraph",
+    "attrs": {
+     "textAlign": null
+    },
+    "content": [
+     {
+      "type": "text",
+      "marks": [
+       {
+        "type": "strong"
+       }
+      ],
+      "text": "The Fight Over Open Source AI, Anthropic's $1.5B Payout, NYC Socialists: Evictions = Violence?:"
+     },
+     {
+      "type": "text",
+      "text": " O episódio discute a recente tensão em torno do modelo de IA de código aberto Kimi K3, da chinesa Moonshot AI, que atingiu desempenho comparável aos modelos de ponta dos EUA com custos significativamente menores. O debate central gira em torno da pressão exercida por laboratórios de IA de fronteira, como Anthropic e OpenAI, para que o governo dos EUA restrinja modelos de código aberto, sob o argumento de que a \"destilação\" (uso de outputs de modelos proprietários para treinar outros) constitui uma ameaça à segurança nacional e roubo de propriedade intelectual:"
+     }
+    ]
+   },
+   {
+    "type": "youtube2",
+    "attrs": {
+     "videoId": "wcV0SRPFK9s",
+     "startTime": null,
+     "endTime": null
+    }
+   }
+  ]
+ }
+}

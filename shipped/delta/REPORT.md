@@ -1,0 +1,859 @@
+# Review delta — 50 editions (2026-06-29 → 2026-09-07)
+
+## Subtitle
+
+| kind | n |
+|---|---|
+| rewritten-declarative-pipes | 23 |
+| questions-edited | 18 |
+| unchanged | 5 |
+| questions-rewritten | 3 |
+| rewritten-other | 1 |
+
+By month:
+- 2026-06: questions-edited=1, questions-rewritten=1
+- 2026-07: questions-edited=11, rewritten-declarative-pipes=7, unchanged=3, questions-rewritten=1, rewritten-other=1
+- 2026-08: rewritten-declarative-pipes=11, questions-edited=6, unchanged=2, questions-rewritten=1
+- 2026-09: rewritten-declarative-pipes=5
+
+Examples (local → shipped):
+- **2026-08-21** [questions-edited]
+  - L: Quanto a Nvidia pagou para licenciar a fábrica de modelos da Poolside? O que o Brasil vai construir no Rio Grande do Norte? Qual recorde de IPO a Anthropic espera igualar?
+  - S: Quanto a Nvidia pagou para licenciar a fábrica de modelos da Poolside? O que o Brasil vai construir no Rio Grande do Norte? Quantas vezes os modelos da família Gemma, da Google, já foram baixados?
+- **2026-08-24** [rewritten-declarative-pipes]
+  - L: Por que a Nvidia avisou seus maiores clientes que os servidores de IA vão ficar mais caros? A que preço a Hugging Face sonda a própria venda? O que fez o Texas suspender as aprovações de novos data centers?
+  - S: Por que os servidores de IA vão ficar mais caros? | Hugging Face sonda venda da empresa | O que fez o Texas suspender as aprovações de novos data centers?
+- **2026-08-25** [questions-edited]
+  - L: Em quanto o chip de inferência da OpenAI supera o Blackwell da Nvidia? O que a Apple colocou no seu primeiro chip de 2 nanômetros? Como o novo agente da Perplexity roda sem custo de tokens?
+  - S: O chip de inferência da OpenAI é melhor que os da Nvidia? O que a Apple colocou no seu primeiro chip de 2 nanômetros? Como o novo agente da Perplexity roda sem custo de tokens?
+- **2026-08-26** [rewritten-declarative-pipes]
+  - L: Que regras a Meta aceitou impor a contas de adolescentes para encerrar o julgamento? O que a Alibaba mostrou na primeira prévia da arquitetura do Qwen4? Por que Zuckerberg abortou o plano de trocar equipes da Meta por agentes de IA?
+  - S: Meta vai pagar multa | Dois novos modelos chineses | Zuckerberg voltou atrás em plano de substituir funcionários por IA?
+- **2026-08-27** [questions-edited]
+  - L: Como cerca de 1.200 agentes que deveriam estar isolados começaram a conversar entre si? Quanto a Nvidia projeta faturar no próximo trimestre? Por que a Nvidia quer o principal repositório de modelos abertos?
+  - S: Como 1.200 agentes que deveriam estar isolados conseguiram conversar entre si? Quanto a Nvidia projeta faturar no próximo trimestre? Por que a Nvidia quer comprar a Hugging Face?
+- **2026-08-28** [rewritten-declarative-pipes]
+  - L: Como um agente de IA passou a controlar os lasers de um computador quântico? Por que o novo modelo aberto da Tencent não cabe em um nó de oito GPUs? Por que uma juíza federal anulou a lista negra do Pentágono contra a Anthropic?
+  - S: Claude no laboratório | Novo modelo da chinesa Tencent | Anthropic sai da lista de risco à segurança nacional americana
+- **2026-08-31** [rewritten-declarative-pipes]
+  - L: Quanto o negócio de anúncios da OpenAI já fatura em ritmo anualizado? O que a Nvidia recebeu em troca dos US$3,5 bilhões que colocou na MediaTek? Por que a Comissão Europeia enquadrou o ChatGPT como mecanismo de busca, e não como plataforma?
+  - S: Ads no ChatGPT batem US$1 bi anualizado | Nvidia investe US$3,5 bilhões na MediaTek | Comissão Europeia enquadra ChatGPT como mecanismo de busca muito grande
+- **2026-09-01** [rewritten-declarative-pipes]
+  - L: Quanto a Anthropic acertou de nuvem com a Lambda? Quais ferramentas de IA chegaram aos 3 milhões de funcionários do Pentágono? Por que a Anthropic havia parado de testar os próprios modelos em cibersegurança?
+  - S: Nvidia, Anthropic e Lambda fecham acordo de US$35 bi | ChatGPT e Grok no Pentágono | Atualizações no caso Apple vs OpenAI
+- **2026-09-02** [rewritten-declarative-pipes]
+  - L: O que o próximo modelo da OpenAI fez sozinho para cruzar o limiar "Critical" de cibersegurança? Quanto o Claude Fable 5.1 promete cortar de custo, e quem contesta a conta? O que a Uber diz estar preparando ao demitir 3.300 pessoas?
+  - S: Novo modelo da OpenAI atinge categoria "crítica" | Afinal, o Fable 5.1 é mais barato ou mais caro que o Fable 5? | Por que a Uber demitiu mais de 3.000 funcionários?
+- **2026-09-03** [rewritten-declarative-pipes]
+  - L: Onde o novo modelo da Meta entrou no ranking da fronteira? Quanto a Broadcom diz já ter garantido de receita de IA para 2027? Por que o Departamento de Justiça dos EUA entrou no processo de direitos autorais contra a OpenAI?
+  - S: Novo modelo da Meta surpreende em tarefas agênticas | Broadcom divulga resultados do trimestre | Departamento de Justiça dos EUA entra em processo de direitos autorais a favor da OpenAI
+- **2026-09-04** [rewritten-declarative-pipes]
+  - L: O que o GPT-6 Astra trouxe para a OpenAI declarar a era da AGI? Como agentes descontrolados transformaram um wiki alemão em mural de recados? Qual valuation a Thinking Machines negocia depois de baixar o próprio pedido?
+  - S: "Bem-vindos à era da AGI", diz cofundador da OpenAI | Agentes de IA usam wiki alemã para trocar mensagens durante avaliação | Thinking Machines negocia round de US$1 bilhão
+- **2026-09-07** [rewritten-declarative-pipes]
+  - L: O que o cientista-chefe da OpenAI diz que nenhum laboratório resolveu? Quanto trabalho de agente a OpenAI já faz para cada dia de trabalho humano? Quantos anos de idade biológica uma droga desenhada com IA tirou dos pacientes?
+  - S: Cientista-chefe da OpenAI pede desaceleração | Agentes de IA já trabalham mais que humanos na OpenAI? | Nova droga desenhada com IA tem potencial rejuvenescedor?
+
+## Structure
+
+- stories cut: 21 (editions with ≥1 cut: 16)
+- stories added: 0
+- tier moves: 0
+- Grande headline edits: 12 / 150 (editions: 12)
+- Média label edits: 6
+- cluster renames: 6
+- bullets deleted whole: 7 / 1283  (editions: 6)
+- bullets added: 1
+- bullets edited in place: 336 / 1283
+- Leia também cut: 3 / 125; added: 0; retitled: 3
+
+Cut stories (tier/cluster → title):
+- 2026-07-01 [grandes/None] ByteDance constrói data center de US$39 bilhões no Ceará, o maior fora da China
+- 2026-07-01 [grandes/None] Samsung, SK e Amkor prometem US$578 bilhões para polo de chips no sudoeste da Coreia
+- 2026-07-01 [medias/Infraestrutura & energia] Firmus
+- 2026-07-09 [medias/Segurança & infraestrutura civil] Petróleo
+- 2026-07-24 [medias/Mercados] Wall Street
+- 2026-07-28 [medias/Segurança & privacidade] Hugging Face
+- 2026-08-03 [medias/Hardware & memória] Seul
+- 2026-08-10 [medias/Imagens falsas] Reino Unido
+- 2026-08-11 [medias/Mundo] Petróleo
+- 2026-08-13 [grandes/None] Hassabis propôs órgão independente de supervisão de IA nos moldes da AIEA antes de deixar a DeepMind
+- 2026-08-13 [medias/Mundo] Ormuz
+- 2026-08-14 [medias/Mundo] Ucrânia e Rússia
+- 2026-08-18 [medias/Antitruste] Contexto
+- 2026-08-18 [medias/Oriente Médio] Rússia
+- 2026-08-19 [grandes/None] Unitree fecha estreia em Xangai com alta de mais de 460%
+- 2026-08-20 [medias/Mercados de previsão] Polymarket
+- 2026-08-24 [medias/Mundo] Ucrânia
+- 2026-08-25 [medias/Mercados] Bitcoin
+- 2026-08-26 [medias/Economia] Petróleo
+- 2026-08-28 [medias/Chips] Anthropic
+- 2026-08-28 [medias/Mundo] Ucrânia
+
+Tier moves:
+
+Grande headline edits:
+- 2026-07-09
+  - B: SpaceXAI lança Grok 4.5 para código e trabalho agêntico
+  - A: SpaceXAI lança Grok 4.5 para programação e agentes
+- 2026-07-17
+  - B: Vinte e nove países criam organização mundial de cooperação em IA em Xangai
+  - A: Vinte e nove países criam organização mundial de cooperação em IA em Shanghai
+- 2026-07-22
+  - B: Modelos da OpenAI invadem a produção da Hugging Face durante teste de segurança
+  - A: Modelos da OpenAI invadem a Hugging Face durante teste de segurança
+- 2026-07-28
+  - B: Amazon descontinua a maior parte dos modelos Nova de topo de linha
+  - A: Amazon descontinua a maior parte dos modelos Nova mais avançados
+- 2026-08-07
+  - B: Hassabis deixa a operação do Google DeepMind e o comando da IA migra para a Califórnia
+  - A: Hassabis deixa a operação do Google DeepMind para tornar-se chair e cientista-chefe da Alphabet
+- 2026-08-12
+  - B: Pesquisadores extraem o raciocínio oculto de modelos de fronteira usando modelos irmãos mais fracos
+  - A: Pesquisadores extraem o raciocínio oculto de modelos avançados usando modelos "irmãos" mais fracos
+- 2026-08-17
+  - B: Big Tech acumula cerca de US$3 trilhões em compromissos de IA fora do balanço
+  - A: Big techs acumulam cerca de US$3 trilhões em compromissos de IA fora do balanço
+- 2026-08-19
+  - B: OpenAI pausa treinamento de RL de fronteira após sinais de capacidade cibernética crítica
+  - A: OpenAI pausa treinamento de RL nos modelos mais avançados após sinais de capacidade cibernética crítica
+- 2026-08-20
+  - B: Vacina de mRNA contra câncer de Merck e Moderna atinge desfecho em Fase 3
+  - A: Vacina de mRNA contra câncer, de Merck e Moderna, atinge desfecho em Fase 3
+- 2026-08-21
+  - B: Nvidia licencia por US$6 bilhões o sistema com que a Poolside construiu seus modelos
+  - A: Nvidia licencia sistema da Poolside por US$6 bilhões
+- 2026-08-31
+  - B: Comissão Europeia designa o ChatGPT como mecanismo de busca de muito grande porte
+  - A: Comissão Europeia designa o ChatGPT como mecanismo de busca muito grande
+- 2026-09-04
+  - B: Agentes da OpenAI sequestraram um wiki alemão para trocar táticas de evasão
+  - A: Agentes da OpenAI usam uma wiki alemã para trocar táticas de evasão
+
+Média label edits:
+- 2026-07-01: Salvaguarda → Segurança
+- 2026-07-07: Termo.  → Termo
+- 2026-07-08: *Framework* → *Framework
+- 2026-08-11: Prova de campo → Prova real
+- 2026-08-20: *Warrant* → *Warrant
+- 2026-08-21: *Valuation* → *Valuation
+
+Cluster renames:
+- 2026-07-09: Modelos & avaliação → Modelos & evals
+- 2026-07-09: Modelos & avaliação → Modelos & evals
+- 2026-07-09: Modelos & avaliação → Modelos & evals
+- 2026-07-27: Compute → Poder computacional
+- 2026-08-13: Mundo → Economia
+- 2026-08-20: Cadeias de suprimento → Supply chain
+
+## Bullets deleted whole
+
+Labels: Contraste=1, Contexto=1, Choque=1, Ásia=1, Ações=1, Ressalva=1, Múltiplo=1
+Categories: number-bearing=3, market=3, quote=1, hedge/attribution=1
+- 2026-06-30 [grandes] Califórnia adota o Claude com 50% de desconto em t / **Contraste** ['quote', 'hedge/attribution']: O acordo estadual contrasta com a postura federal: o Pentágono declarou a Anthropic um "risco para a cadeia de suprimentos" e fechou com a OpenAI depois que a empresa buscou ressalvas contra vigilância e armas autônomas.
+- 2026-07-01 [grandes] EUA suspendem controles de exportação e o Claude F / **Contexto** ['number-bearing']: A própria Anthropic confirmou que modelos menos capazes — incluindo Opus 4.8, GPT-5.5 e Kimi K2.7 — identificaram as mesmas vulnerabilidades e reproduziram a mesma demonstração de exploração.
+- 2026-07-14 [grandes] Trump reimpõe bloqueio naval ao Irã e cria taxa de / **Choque** ['market']: O petróleo disparou quase 10%: o bruto dos EUA fechou em alta de 9,4%, a US$78,14 o barril, e o Brent subiu 9,6%, a US$83,30; o S&P 500 caiu 0,8% e o Nasdaq, 1,6%.
+- 2026-07-14 [grandes] Trump reimpõe bloqueio naval ao Irã e cria taxa de / **Ásia** ['market']: O Kospi caiu 8,9%, incluindo uma queda de 15,4% da SK Hynix, a pior em um único dia desde a estreia da empresa em bolsa, em 1997.
+- 2026-08-10 [grandes] Intel anuncia oferta de ações de US$15 bilhões, a  / **Ações** ['market']: Os papéis caíram cerca de 3% no pré-mercado com a notícia da diluição, depois de subirem mais de 400% nos 12 meses anteriores.
+- 2026-08-12 [grandes] SpaceXAI lança o Grok 4.6 e mantém o preço do mode / **Ressalva** ['number-bearing']: Todos os números de benchmark são autorreportados, e a SpaceXAI diz que os placares dos concorrentes vieram de system cards publicados e de leaderboards públicos, não de execuções próprias. A avaliadora independente Vals
+- 2026-08-13 [grandes] Investidores da Anthropic esperam IPO de US$2 tril / **Múltiplo** ['number-bearing']: Sobre uma receita de saída de US$100 bilhões, um valuation de US$2 trilhões equivale a cerca de 20 vezes as vendas futuras. Um investidor argumenta que uma empresa crescendo 800% ao ano justificaria, no piso do razoável,
+
+## In-place bullet edits
+
+- 336 edits; shrink=150 grow=71 same-length≈115
+- chars removed total: 10978; added: 2170
+Deleted-span categories: other=101, number-bearing=34, market=18, timing=5, gloss=4, hedge/attribution=2, quote=2
+- editions with ≥1 market-span deletion (bullet edit or whole bullet): 18
+
+Words newly italicized by editor (top 40): input=8, output=8, guardrails=4, valuation=4, reinforcement learning=2, chips=2, benchmark=2, outputs=2, data center=2, preparedness framework=2, stablecoin=1, roadmap=1, stealth=1, compute=1, ticker=1, valuations=1, model card=1, stack=1, knowledge work=1, chip=1, venture capital=1, summit=1, backstop=1, seed=1, benchmarks=1, tranche=1, institute for the study of war=1, framework=1, catering=1, staff=1, str_replace_editor=1, upscaled=1, malware=1, frame=1, enterprise frontier safeguards=1, project glasswing=1, workflows=1, fairwind program=1, core=1, offline=1
+Italics removed (top 20): valuation=2, town hall=1, hyperscale=1, scaffold=1, hyperscalers=1, hedge fund=1, after-market=1, harnesses=1
+Bold added (top 20): .=3, crítico=1
+
+Short substitutions (≤4 tokens each side), top 80:
+- 8× `—` → `,`
+- 7× `entrada` → `input`
+- 6× `saída` → `output`
+- 3× `de` → `do`
+- 3× `uma avaliação` → `um valuation`
+- 3× `quadro` → `frame`
+- 2× `codificação` → `programação`
+- 2× `de fundação` → `base`
+- 2× `hynix` → `hynix`
+- 2× `de fronteira` → `avançados`
+- 2× `de fronteira` → `avançado`
+- 2× `as saídas` → `os outputs`
+- 2× `embarcou` → `entregou`
+- 2× `com` → `sendo`
+- 2× `na véspera` → `ontem`
+- 2× `um` → `uma`
+- 1× `na` → `no`
+- 1× `trata` → `tratava`
+- 1× `restando acusar` → `normalmente apenas processando`
+- 1× `comprometeu` → `investiu`
+- 1× `aporte` → `investimento`
+- 1× `salvaguardas` → `proteções`
+- 1× `uma` → `a`
+- 1× `de forward` → `field`
+- 1× `embarcar` → `posicionar`
+- 1× `com` → `próximo a`
+- 1× `,` → `( seu`
+- 1× `para rodar modelos transformer` → `de inferência )`
+- 1× `ante` → `contra`
+- 1× `em 1º de julho` → `hoje`
+- 1× `roteiro` → `roadmap para chips`
+- 1× `4nm em` → `4 nm para`
+- 1× `um nó aprimorado` → `apresentou o`
+- 1× `foram ativos` → `tiveram efeito`
+- 1× `furtivo` → `stealth`
+- 1× `para testar seus modelos` → `, testando a tecnologia`
+- 1× `. a empresa` → `, e`
+- 1× `de` → `só`
+- 1× `town hall interno` → `uma reunião interna`
+- 1× `chefe` → `diretor`
+- 1× `por` → `pelo brasileiro`
+- 1× `fundação` → `ia`
+- 1× `partilha` → `divisão`
+- 1× `código` → `programação`
+- 1× `como` → `na`
+- 1× `venda` → `oferta pública`
+- 1× `chinesa ofereceu` → `empresa oferecerá`
+- 1× `eixo` → `cenário`
+- 1× `estava` → `está`
+- 1× `discutia` → `discutiu`
+- 1× `dividem` → `dividirão`
+- 1× `treino` → `treinamento`
+- 1× `por ia` → `que atuam`
+- 1× `cerca de sete` → `alguns`
+- 1× `cerca` → `mais`
+- 1× `redirecionam` → `estão redirecionando`
+- 1× `;` → `, mas`
+- 1× `é de` → `tem`
+- 1× `tem no estado` → `havia prometido`
+- 1× `prometido pela empresa` → `comprometido`
+- 1× `vender` → `venderem`
+- 1× `avaliações esticadas de` → `valuations esticados em`
+- 1× `84 , 6` → `à frente`
+- 1× `747 , 8` → `748`
+- 1× `a entrada` → `o input`
+- 1× `,` → `;`
+- 1× `xangai` → `shanghai`
+- 1× `, falha que a` → `. a`
+- 1× `que renderá` → `promete`
+- 1× `caminha para` → `atingiu o ritmo de`
+- 1× `está previsto para` → `deve sair até`
+- 1× `e` → `,`
+- 1× `, entregando` → `e`
+- 1× `empresa` → `meta`
+- 1× `a bolsa` → `o mercado de previsões`
+- 1× `verificar seu` → `passar por verificação de`
+- 1× `sem acender` → `falhando`
+- 1× `contra` → `, abaixo dos`
+- 1× `conforme` → `( a depender do`
+- 1× `e produto` → `)`
+
+Deleted spans ≥5 tokens (all, newest first) — for reading:
+- 2026-09-07 [medias/Petróleo] ['number-bearing'] −«a US $ 97 , 93 o barril na segunda - feira ,» +«ao»
+- 2026-09-07 [medias/Petróleo] ['number-bearing'] −«, antes de recuar para cerca de US $ 96 , 19 , depois de subir 7 , 8 % na semana encerrada em 6 de setembro»
+- 2026-09-07 [medias/Petróleo] ['number-bearing'] −«; o WTI é negociado perto de US $ 91»
+- 2026-09-07 [medias/Alemanha] ['other'] −«, melhor resultado do partido de extrema direita em qualquer eleição estadual alemã»
+- 2026-09-07 [medias/Anthropic] ['number-bearing'] −«, perto de 30 % do valuation privado de US $ 965 bilhões da própria Anthropic»
+- 2026-09-07 [medias/TSMC] ['number-bearing'] −«contra 150 mil no primeiro semestre» +«a geração seguinte»
+- 2026-09-07 [medias/TSMC] ['other'] −«primeiro processo de classe angstrom da empresa ,»
+- 2026-09-07 [medias/Samsung e SK hynix] ['market'] −«As ações da SK hynix fecharam em alta de 8 , 26 % em Seul , a 1 , 783 milhão de wons ( cerca de US $ 1 . 324 , 58 ) , e a Mirae Asset elevou os preços - alvo das duas empresas projetando alta de mais de 22 % no preço médio da DRAM no ano que vem .»
+- 2026-09-07 [grandes/Monitoramento] ['other'] −«que a empresa precisa supervisionar»
+- 2026-09-04 [medias/Irã] ['other'] −«provavelmente de um acerto direto»
+- 2026-09-04 [medias/Irã] ['other'] −«, e não de ricochete em outro alvo»
+- 2026-09-04 [medias/Federal Reserve] ['market'] −«O rendimento do Treasury de dois anos recuou 5 pontos - base , para 4 , 33 % , o de 10 anos voltou a cerca de 4 , 75 % depois de tocar 4 , 818 % na quarta - feira , e o índice do dólar caiu mais de 0 , 5 % , para cerca de 99 ;»
+- 2026-09-04 [medias/Banco da Coreia] ['other'] −«, o que ampliaria a diferença atual em vez de estreitá - la»
+- 2026-09-03 [medias/Irã] ['market'] −«, enquanto o rial caiu a uma mínima recorde de 2 , 20 milhões por dólar e o Brent fechou a US $ 95 , 63 , alta de 1 %»
+- 2026-09-03 [medias/Canadá] ['number-bearing'] −«, mas em 2 , 2 % em julho quando ela é excluída»
+- 2026-09-03 [medias/Estados Unidos] ['number-bearing'] −«, o que aliviou a venda de títulos e levou o Dow a subir 0 , 6 %»
+- 2026-09-03 [medias/Nvidia] ['number-bearing'] −«O que em 27 de agosto era um acordo ainda não assinado virou contrato definitivo : a» +«A»
+- 2026-09-03 [medias/Nvidia] ['number-bearing'] −«. 930 . 300 . 000 —» +«, 9 bi ,»
+- 2026-09-03 [medias/Nvidia] ['other'] −«Ele também abriu a escala do que comprou —» +«A aquisição toca»
+- 2026-09-02 [medias/Rússia e Ucrânia] ['number-bearing'] −«A Rússia lançou 174 drones de ataque contra a Ucrânia a partir das 18h de terça - feira , cerca de metade deles variantes Shahed com propulsão a jato , além de dois mísseis Iskander - M e dois Kh - 59 / 69 ; as defesas ucranianas abateram ou neutralizaram 141 »
+- 2026-09-02 [medias/Irã] ['number-bearing'] −«feira em alta de mais de US $ 4 por barril ,» +«se»
+- 2026-09-02 [medias/iPronics] ['other'] −«sem converter a luz em sinais elétricos»
+- 2026-09-01 [medias/Nepal] ['number-bearing'] −«; cientistas dizem que o leito rochoso sob uma geleira do alto do Himalaia colapsou , num evento sísmico de magnitude 5 , 2 , e a» +«. A»
+- 2026-09-01 [medias/Google] ['number-bearing'] −«; a Samsung teria comprometido até 70 % de sua capacidade de memória em contratos de longo prazo até 2031 e espera escassez global de chips até 2028»
+- 2026-09-01 [medias/Trump] ['number-bearing'] −«O vice - presidente JD Vance ponderou no mesmo dia que 99 % da oposição vem de áreas onde um data center significa contas de energia mais altas ;» +«A»
+- 2026-09-01 [grandes/Acordo] ['timing'] −«que informaram o acordo nesta segunda - feira»
+- 2026-08-31 [medias/Irã] ['number-bearing'] −«, e o petróleo subiu , com o Brent passando de US $ 90 o barril e o West Texas Intermediate acima de US $ 85»
+- 2026-08-31 [medias/CXMT] ['other'] −«, no volume mínimo que caracteriza a produção de risco»
+- 2026-08-31 [grandes/Pressão] ['number-bearing'] −«está sob pressão para justificar a investidores um valuation de US $ 852 bilhões antes do» +«tem»
+- 2026-08-28 [medias/Roivant] ['other'] −«o maior já feito na doença ,» +«avaliou a eficácia do tratamento ao longo de 52 semanas . O resultado mostrou que»
+- 2026-08-28 [medias/Roivant] ['number-bearing'] −«miosite com uso mínimo ou nulo de esteroides até a semana 52» +«corticoides»
+- 2026-08-28 [medias/Irã] ['number-bearing'] −«; a Organização Marítima Internacional registrou 70 incidentes no estreito desde o início da guerra , em 28 de fevereiro , com 19 marinheiros mortos»
+- 2026-08-28 [medias/PayPal] ['market'] −«; as ações caíram 13 % no pré - mercado desta sexta - feira , a US $ 53 , 20 , após fecharem a US $ 61 , 47»
+- 2026-08-27 [medias/Irã e Omã] ['other'] −«estreito , que respondia por um quinto dos embarques globais de petróleo e GNL ( gás natural liquefeito ) antes do início da guerra , em fevereiro , segue em grande parte fechado , e Teerã condiciona a reabertura a embarcações americanas ao fim do bloqueio a p»
+- 2026-08-27 [grandes/Projeção] ['market'] −«A ação subiu mais de 6 % .»
+- 2026-08-27 [grandes/Método] ['other'] −«, toda a falsificação observada de pequena escala»
+- 2026-08-25 [medias/Ucrânia] ['number-bearing'] −«a Rússia lançou 143 drones e oito mísseis na noite de segunda , matando oito pessoas e ferindo 43 , e»
+- 2026-08-25 [medias/Irã] ['hedge/attribution'] −«; as exportações iranianas pelo estreito caíram de cerca de 2 milhões para 0 , 4 milhão de barris por dia em meados de agosto , segundo a Kpler»
+- 2026-08-25 [medias/Unitree] ['other'] −«e à ausência de vendedores a descoberto , o» +«. O»
+- 2026-08-24 [medias/Irã] ['number-bearing'] −«, e os militares americanos afirmam que seu bloqueio a portos iranianos redirecionou 70 navios comerciais e inutilizou três até domingo»
+- 2026-08-24 [grandes/Reação] ['other'] −«pelo problema que foi causado para elas»
+- 2026-08-21 [medias/Tesouro dos EUA] ['market'] −«O S & P 500 caiu 0 , 8 % , o Nasdaq 1 % e o Dow Jones 700 pontos , o petróleo americano fechou a US $ 87 , 83 e o Brent a US $ 93 , 78 , e investidores» +«Investidores»
+- 2026-08-21 [grandes/Rio Grande do Norte] ['other'] −«, que o Brasil espera ver entre as dez máquinas mais potentes do mundo em capacidade de processamento de IA»
+- 2026-08-21 [grandes/Rio] ['number-bearing'] −«, R $ 1 , 3 bilhão ( US $ 251 milhões ) ,»
+- 2026-08-21 [grandes/Pacote] ['other'] −«, num movimento que equilibra as relações com as duas potências»
+- 2026-08-20 [medias/Irã] ['other'] −«deem uma tábua de salvação» +«ajudem»
+- 2026-08-20 [medias/Irã] ['number-bearing'] −«, por onde passaram dez embarcações na segunda - feira contra 130 a 140 antes da guerra»
+- 2026-08-19 [medias/Ucrânia] ['other'] −«e a segunda salva em dois dias»
+- 2026-08-19 [medias/Irã] ['number-bearing'] −«e o tráfego no estreito ficou em cerca de 10 travessias diárias , o menor patamar desde 11 de maio , contra cerca de 130 antes da guerra , com o Brent a US $ 91 , 02»
+- 2026-08-19 [medias/Anthropic] ['number-bearing'] −«; o pedido confidencial foi protocolado em junho e a projeção de receita para 2028 vai de US $ 190 bilhões a US $ 200 bilhões»
+- 2026-08-19 [medias/SK hynix] ['market'] −«; as ações caíram 9 , 8 % no pregão regular em meio à liquidação do mercado coreano , mas o ADR ( recibo de ações estrangeiras negociado nos EUA ) subiu mais de 8 % à noite , com o valor da recompra compensando a diluição dos US $ 26 , 5 bilhões levantados na »
+- 2026-08-19 [grandes/OpenAI] ['other'] −«: o prejuízo cresce mais rápido que a receita»
+- 2026-08-18 [medias/Irã] ['market', 'timing'] −«O Brent fechou a US $ 90 , 87 na segunda , alta de 2 , 65 % , e era negociado perto de US $ 91 , 07 nesta terça , o maior patamar desde 30 de julho ; dados da Kpler mostram cinco embarcações cruzando o estreito no sábado e nenhuma no domingo , contra 31 no fim» +«A»
+- 2026-08-18 [grandes/Número] ['number-bearing'] −«; no fim de 2025 o indicador estava em torno de US $ 9 bilhões»
+- 2026-08-17 [medias/EUA e Irã] ['other'] −«, com os dois lados mais distantes do que em junho , sem compromisso sobre o Estreito de Ormuz nem indicação de que as negociações nucleares detalhadas tenham começado»
+- 2026-08-17 [medias/EUA e Irã] ['market'] −«; o Brent subiu até 1 % , a US $ 89 , 40 o barril , com o JPMorgan estimando US $ 7 a US $ 8 adicionais por barril a cada mês de interrupção e o Goldman Sachs alertando para US $ 120»
+- 2026-08-17 [medias/Google e AMD] ['other'] −«, não nome de produto anunciado»
+- 2026-08-17 [medias/Fabricantes de chips] ['number-bearing'] −«, mas a rodada de US $ 122 bilhões da OpenAI em março responde por mais de 95 % do valor de tudo que o setor liderou no ano»
+- 2026-08-17 [grandes/Natureza] ['other'] −«Não se trata de dívida oculta : são» +«São»
+- 2026-08-14 [medias/SMIC] ['other'] −«que não são CPUs nem GPUs , puxada por» +«especializados em»
+- 2026-08-14 [medias/Lam Research] ['market'] −«, e as ações subiram 10 , 2 %»
+- 2026-08-14 [medias/DeepSeek] ['other'] −«, alternativa aberta aos harnesses por trás do Claude Code e do Codex»
+- 2026-08-14 [medias/Alibaba] ['other'] −«em escala de fronteira na mesma família»
+- 2026-08-13 [medias/CXMT] ['number-bearing'] −«bilhões contra US $ 510»
+- 2026-08-13 [medias/CXMT] ['market'] −«e fechou o primeiro pregão 465 , 8 % acima do preço de oferta»
+- 2026-08-13 [medias/DeepSeek] ['other'] −«Nenhum laboratório independente avaliou o build .»
+- 2026-08-13 [grandes/Receita] ['other'] −«Meia dúzia de investidores calcula» +«Investidores calculam»
+- 2026-08-13 [grandes/Receita] ['number-bearing'] −«, crescimento de mais de dez vezes sobre os US $ 47 bilhões reportados em maio»
+- 2026-08-12 [medias/Ormuz] ['number-bearing'] −«; já são 55 embarcações comerciais inutilizadas no bloqueio»
+- 2026-08-12 [medias/Ormuz] ['other'] −«, as primeiras mortes em ataques a navios desde o início da guerra»
+- 2026-08-12 [medias/Ormuz] ['timing'] −«condições já noticiadas na véspera ,»
+- 2026-08-12 [medias/Estados Unidos] ['other'] −«, sinal de que o choque da guerra com o Irã continua perdendo força»
+- 2026-08-12 [medias/Nebius] ['market'] −«; a ação subiu cerca de 12 % no pré - mercado»
+- 2026-08-12 [medias/Super Micro] ['market'] −«, e a ação subiu entre 7 % e 10 % no after - market»
+- 2026-08-11 [medias/Trump] ['other'] −«escondeu uma operação de despiste :»
+- 2026-08-11 [medias/Trump] ['other'] −«, depois que a inteligência americana detectou um plano crível do Irã de atingir o avião presidencial com um míssil»
+- 2026-08-11 [medias/Trump] ['other'] −«, com as janelas fechadas por ordem do Serviço Secreto e o código de chamada de Air Force One , e a» +«. A»
+- 2026-08-11 [medias/Intel] ['market'] −«, e as ações subiram cerca de 1 % no pré - mercado de terça , depois de caírem mais de 4 % na segunda»
+- 2026-08-10 [medias/Irã e EUA] ['market'] −«Com as expectativas de acordo esfriando , o WTI subiu 2 , 9 % , para US $ 80 , 42 o barril , e o Brent 2 , 8 % , para US $ 85 , 87 , depois de uma semana em que ambos recuaram mais de 7 % .»
+- 2026-08-10 [medias/Anthropic] ['other'] −«e a Anthropic como locatária âncora dos novos terrenos»
+- 2026-08-10 [grandes/Oferta] ['other'] −«com garantia firme dos bancos»
+- 2026-08-10 [grandes/Caso] ['other'] −«que entrou na OpenAI em fevereiro ,»
+- 2026-08-07 [medias/Irã] ['market'] −«Os futuros de petróleo subiram de 3 % a 4 % , com o WTI a US $ 77 , 29 e o Brent a US $ 82 , 49 , e um» +«Um»
+- 2026-08-07 [medias/SK hynix] ['other'] −«, respectivamente , num momento em que os preços de memória dispararam com oferta escassa e demanda ligada à IA»
+- 2026-08-05 [medias/Safe Superintelligence] ['other'] −«Se acontecer , o lançamento contraria a premissa que define o laboratório de Ilya Sutskever , ex - cientista - chefe da OpenAI : desde» +«Desde»
+- 2026-08-04 [medias/Ormuz] ['market'] −«petróleo subiu quase 3 % , revertendo parte da queda de 7 % do Brent na segunda ; o»
+- 2026-08-03 [medias/Ucrânia] ['number-bearing'] −«Na mesma noite a Rússia lançou 133 drones , dos quais 109 foram derrubados , e»
+- 2026-08-03 [medias/OPEP+] ['market'] −«O Brent caiu 5 , 72 % em 3 de agosto , a US $ 82 , 90 , e o petróleo americano recuou 6 , 93 % , para US $ 78 , 80 , depois de o Brent fechar julho com alta de mais de 24 % ; analistas alertam para US $ 120 no quarto trimestre se o fluxo livre por Ormuz não vo»
+- 2026-08-03 [grandes/Alcance] ['quote'] −«Elisabetta Righini , sócia do Sidley Austin , afirma que a responsabilidade não se limita a violações substantivas : " recusar um pedido de informação , dar respostas enganosas ou bloquear a avaliação de um modelo é multável por si só " .»
+- 2026-08-03 [grandes/Ceticismo] ['quote'] −«Gary Marcus classificou o anúncio como " marketing , não ciência " , observou que a» +«A»
+- 2026-08-03 [grandes/Alegação] ['quote'] −«, e Thomas Bloom , o matemático que em outubro de 2025 chamou uma alegação anterior da empresa sobre problemas de Erdős de " uma deturpação dramática " , classificou o resultado como " grande notícia "»
+- 2026-07-31 [medias/Sony] ['other'] −«Do outro lado do mesmo aperto , a» +«A»
+- 2026-07-31 [medias/TSMC] ['market'] −«O ADR da TSMC , recibo que representa ações estrangeiras negociado em bolsa americana , fechou em alta de 7 , 64 % na quinta - feira , as ações em Taiwan bateram o limite diário de 10 % na sexta e a Intel subiu mais de 13 % , lida como validada em sua abordage»
+- 2026-07-30 [medias/Petróleo] ['number-bearing'] −«, por onde passa cerca de 20 % da oferta global , o» +«. O»
+- 2026-07-30 [medias/Intel] ['other'] −«incluindo o código de nível de transferência de registradores dos núcleos ,»
+- 2026-07-30 [medias/Arm] ['other'] −«e chips de servidor Arm em rampa em todos os hyperscalers»
+- 2026-07-30 [medias/OpenAI] ['other'] −«com o estado da conversa gerenciado no lado do cliente , para comparar todos os provedores sob os mesmos limites»
+- 2026-07-29 [medias/Zuckerberg] ['other'] −«: foi o que a invadida pelo agente da OpenAI acabou fazendo , com modelos abertos»
+- 2026-07-29 [medias/Anthropic] ['other'] −«, obtido de forma autônoma por um scaffold ,»
+- 2026-07-28 [medias/Recursive] ['other'] −«marcou estado da arte em» +«atingiu o topo nos benchmarks»
+- 2026-07-28 [medias/Cursor] ['market'] −«, semanas antes da conclusão esperada da compra da Cursor pela SpaceX por US $ 60 bilhões em ações»
+- 2026-07-28 [grandes/Novo modelo] ['other'] −«de fundação de topo de linha» +«base»
+- 2026-07-27 [medias/SpaceX] ['number-bearing'] −«operacionais pela primeira vez , 20»
+- 2026-07-27 [medias/CXMT] ['number-bearing'] −«2026 , e apenas 6 , 73 % do capital ampliado era livremente negociável» +«2020»
+- 2026-07-27 [medias/Altman] ['other'] −«publicarem o marco voluntário de liberação é» +«federais têm até»
+- 2026-07-27 [medias/Microsoft] ['number-bearing'] −«; o modelo interno executa cerca de 95 % do trabalho e a» +«. A»
+- 2026-07-24 [medias/AMD e Cerebras] ['number-bearing'] −«A parceria fecha uma lacuna no portfólio da AMD que custou US $ 20 bilhões à Nvidia , ao contratar a equipe da Groq em dezembro .»
+- 2026-07-24 [grandes/Produto] ['other'] −«da OpenAI e da Anthropic» +«de diversos provedores de modelos fechados ,»
+- 2026-07-23 [grandes/Ormuz] ['other'] −«, em uma rota que escoa cerca de um quinto da oferta global de petróleo»
+- 2026-07-23 [grandes/Ormuz] ['other'] −«O que mudou é o status formal : a» +«A»
+- 2026-07-23 [grandes/Cloud] ['other'] −«, o chip acelerador de IA projetado pelo próprio Google»
+- 2026-07-22 [grandes/Cibernético] ['number-bearing'] −«; marca 83 , 2 % , contra 85 , 6 % do GPT - 5»
+- 2026-07-22 [grandes/Cibernético] ['hedge/attribution'] −«5 - Cyber , apesar de ser um modelo bem menor .»
+- 2026-07-21 [medias/Z.ai] ['other'] −«e não tenham sido verificados»
+- 2026-07-21 [grandes/Produtos] ['gloss'] −«( OCR = reconhecimento óptico de caracteres )»
+- 2026-07-17 [medias/Nvidia] ['number-bearing'] −«, com operação prevista para junho de 2028»
+- 2026-07-17 [medias/Databricks] ['other'] −«do verão no Hemisfério Norte» +«de setembro»
+- 2026-07-17 [medias/Apple] ['gloss'] −«( caso 5 : 26 - cv - 07078»
+- 2026-07-17 [grandes/Atraso] ['market'] −«As ações da Alphabet caíram mais de 3 % .»
+- 2026-07-17 [grandes/Preço e ressalvas] ['number-bearing'] −«a entrada em cache US $ 0 , 30 e a saída» +«o output»
+- 2026-07-17 [grandes/Preço e ressalvas] ['number-bearing'] −«, e o BrowseComp usou compactação de contexto acionada a 300 mil tokens : sem essa gestão , a nota é 90 , 4»
+- 2026-07-17 [grandes/Avaliação independente] ['number-bearing'] −«No Intelligence Index da mesma casa marca 57 , 11 , perto do Opus 4 . 8 e do GPT - 5 . 5 , e» +«Também»
+- 2026-07-17 [grandes/Benchmarks] ['number-bearing'] −«contra 88 , 8 do» +«praticamente empatado com o»
+- 2026-07-17 [grandes/Benchmarks] ['number-bearing'] −«no Program Bench ( 77» +«em quatro benchmarks de programação e agentes»
+- 2026-07-17 [grandes/Benchmarks] ['number-bearing'] −«8 ) , no SWE Marathon ( 42 , 0 ) , no» +«incluindo o»
+- 2026-07-17 [grandes/Benchmarks] ['gloss'] −«( 91 , 2 ) e no Automation Bench ( 30 , 8 )»
+- 2026-07-16 [grandes/Contexto] ['number-bearing'] −«O secretário de Comércio , Howard Lutnick , disse que os US $ 250 bilhões do acordo incluem os US $ 100 bilhões que a TSMC já havia prometido em 2025 , ou seja , parte do valor não é dinheiro novo .»
+- 2026-07-16 [grandes/Pesos abertos] ['other'] −«Diferentemente dos modelos principais da OpenAI , da Anthropic e do Google , o» +«O»
+- 2026-07-14 [medias/Nova York] ['number-bearing'] −«Desenvolvedores pediram conexão à rede para mais de 30 projetos de hyperscale que , juntos , usariam mais energia do que a Irlanda .»
+- 2026-07-13 [medias/Petróleo e Ásia] ['number-bearing'] −«O tráfego pelo estreito , por onde passa um quinto do petróleo global , entrou em colapso : apenas nove embarcações cruzaram entre sábado e domingo , contra cerca de 130 por dia antes da guerra .»
+- 2026-07-13 [grandes/Ataques] ['other'] −«No Catar , três pessoas , incluindo uma criança , ficaram feridas por estilhaços após a interceptação de fogo iraniano .»
+- 2026-07-10 [medias/Fidji Simo] ['other'] −«, enquanto a empresa se prepara para abrir capital»
+- 2026-07-10 [grandes/Variantes] ['quote'] −«" cavalo de batalha "» +«mais inteligente»
+- 2026-07-09 [medias/Nexchip Semiconductor] ['number-bearing'] −«pretendia levantar cerca de US $ 890 , 37 milhões em» +«Semiconductor anunciou oficialmente seus planos para»
+- 2026-07-09 [medias/Luxshare] ['number-bearing'] −«, mas fechou a estreia 1 , 55 % abaixo do preço da oferta»
+- 2026-07-09 [medias/SK Hynix] ['other'] −«estava ligada à listagem planejada» +«será feita»
+- 2026-07-02 [medias/Engram] ['other'] −«de camada de memória aprendida»
+- 2026-07-01 [grandes/Volta] ['number-bearing'] −«em 1º de julho , no Claude Platform , Claude»
+- 2026-07-01 [grandes/Volta] ['other'] −«ai , Claude Code e Claude Cowork .»
+- 2026-06-30 [medias/Reed Semiconductor] ['other'] −«— rodada com excesso de demanda e participação de grandes fabricantes de semicondutores —»
+
+Inserted spans ≥5 tokens:
+- 2026-09-07 [medias/TSMC] +«, corretora e casa de análise de Wall Street , prevê» (was «espera»)
+- 2026-09-07 [medias/TSMC] +«a TSMC eleve a produção» (was «os inícios mensais»)
+- 2026-09-07 [medias/TSMC] +«3 nm , seu processo mais avançado , de 150 mil» (was «3nm subam»)
+- 2026-09-07 [medias/TSMC] +«wafers ( lâminas de silício ) por mês até o início» (was «no começo»)
+- 2026-09-07 [medias/TSMC] +«, que desenvolve chip próprio , é»
+- 2026-08-28 [medias/Roivant] +«avaliou a eficácia do tratamento ao longo de 52 semanas . O resultado mostrou que» (was «o maior já feito na doença ,»)
+- 2026-08-28 [medias/Roivant] +«pacientes que receberam o medicamento alcançaram» (was «tratados atingiram»)
+- 2026-08-28 [medias/Roivant] +«com pouca ou nenhuma dependência» (was «no escore»)
+- 2026-08-20 [medias/SK hynix] +«( US $ 201 mil )»
+- 2026-08-18 [medias/Xiaomi] +«( US $ 16 , 2 bilhões )»
+- 2026-08-18 [grandes/Número] +«2025 , quando o indicador estava em torno de US $ 9 bilhões ,» (was «um ano antes»)
+- 2026-08-14 [medias/Alibaba] +«, maior , que usa»
+- 2026-08-14 [grandes/Efeito colateral] +«, aberta havia 45 anos»
+- 2026-08-12 [medias/Google] +«A empresa lançou o Pixel 11 , com todos» (was «Todos»)
+- 2026-08-11 [medias/Trump] +«inteligência americana detectou um plano crível do Irã» (was «troca»)
+- 2026-08-11 [medias/Trump] +«atingir o avião presidencial com um míssil . Na» (was «aviões na»)
+- 2026-08-03 [medias/Ceuta] +«amanhã ( 4 de agosto )» (was «terça - feira»)
+- 2026-08-03 [medias/Irã] +«( Institute for the Study of War )»
+- 2026-07-31 [medias/Situational Awareness] +«Até o fim de junho , o fundo acumulava alta de 439 % no ano e de 1 . 551 % desde a inauguração , em 2024 , e a queda de julho consome parte desses ganhos sem revertê - los completamente .»
+- 2026-07-31 [grandes/Resposta] +«ao encontrar transcrições suspeitas ,» (was «quando»)
+- 2026-07-28 [medias/Recursive] +«atingiu o topo nos benchmarks» (was «marcou estado da arte em»)
+- 2026-07-27 [medias/Irã] +«mantiveram uma pausa nos ataques» (was «seguraram fogo»)
+- 2026-07-27 [medias/SpaceX] +«marcou duas estreias para o programa :»
+- 2026-07-27 [medias/CXMT] +«oferta de semicondutores já feita na China continental , acima dos US $ 7 , 5 bilhões» (was «listagem»)
+- 2026-07-27 [medias/Altman] +«. O processo de liberação que a OpenAI pretende usar para» (was «;»)
+- 2026-07-27 [medias/Altman] +«modelo ainda não existe :» (was «prazo para»)
+- 2026-07-27 [medias/Altman] +«para publicar essas regras voluntárias e definir quais modelos elas cobrem»
+- 2026-07-27 [grandes/Energia] +«secretário nas últimas semanas , interessadas no mesmo terreno» (was «procuraram sobre o site»)
+- 2026-07-24 [grandes/Produto] +«de diversos provedores de modelos fechados ,» (was «da OpenAI e da Anthropic»)
+- 2026-07-23 [grandes/Cloud] +«( o chip de IA projetado pelo próprio Google )»
+- 2026-07-21 [medias/Anduril e Archer] +«( motores que giram )»
+- 2026-07-17 [medias/Kalshi] +«, e a plataforma terá guardrails contra apostas com informação privilegiada»
+- 2026-07-17 [medias/Nvidia] +«, como a Nvidia chama seus data centers dedicados a IA ,»
+- 2026-07-17 [medias/Nvidia] +«, com operação prevista para junho de 2028 ,»
+- 2026-07-17 [medias/Apple] +«, notificação que os obriga a preservar documentos e mensagens»
+- 2026-07-17 [medias/OpenAI] +«( o relatório técnico de segurança )»
+- 2026-07-17 [grandes/Benchmarks] +«( 88 , 8 )»
+- 2026-07-17 [grandes/Benchmarks] +«( 84 , 6 )»
+- 2026-07-17 [grandes/Benchmarks] +«em quatro benchmarks de programação e agentes» (was «no Program Bench ( 77»)
+- 2026-07-17 [grandes/Benchmarks] +«em dois , entre eles o» (was «no FrontierSWE e no»)
+- 2026-07-16 [grandes/Aporte] +«aos US $ 165 bilhões» (was «às instalações»)
+- 2026-07-13 [medias/Petróleo e Ásia] +«a situação no Golfo Pérsico» (was «o choque em Ormuz»)
+- 2026-07-13 [medias/Israel] +«( US $ 23 milhões )»
+- 2026-07-13 [medias/TSMC] +«( Chip - on - Wafer - on - Substrate , tecnologia avançada de empacotamento 2 . 5D / 3D )»
+- 2026-07-10 [medias/MiniMax] +«( Inteligência Artificial Geral )»
+- 2026-07-09 [medias/China] +«chips , e faz ocorre» (was «computação»)
+- 2026-07-09 [medias/Nexchip Semiconductor] +«Semiconductor anunciou oficialmente seus planos para» (was «pretendia levantar cerca de US $ 890 , 37 milhões em»)
+- 2026-07-09 [medias/Nexchip Semiconductor] +«na Bolsa de Valores de» (was «em»)
+- 2026-07-09 [medias/SK Hynix] +«. Entre os dias 10 e 13 de julho ( período de negociação pré - emissão ) , negociará»
+- 2026-07-09 [medias/SK Hynix] +«SKHYV , trocando para o ticker»
+- 2026-07-09 [grandes/Infraestrutura] +«, incluindo estradas e sistemas de abastecimento de água»
+- 2026-07-03 [grandes/Contexto] +«( grupo de mídia chinês )»
+- 2026-07-02 [medias/Engram] +«para criar uma " memória " corporativa para IA : modelos treinados no contexto interno de cada organização , capazes de responder com menos consulta a documentos»
+- 2026-07-02 [medias/Engram] +«prompts longos . A Engram»
+- 2026-07-02 [medias/Samsung] +«, uma versão aprimorada prevista»
+- 2026-06-30 [medias/Reed Semiconductor] +«A rodada teve excesso de demanda e participação de grandes fabricantes de semicondutores»
+- 2026-06-30 [medias/Amazon] +«com a valorização da empresa»
+- 2026-06-30 [grandes/Histórico] +«apareceu perto do topo dos» (was «liderou os»)
+
+## Leia também
+
+- 2026-07-14 EDIT: Nous Research negocia rodada de US$75 milhões a US$1,5 bilhão para o agente Hermes → Nous Research negocia rodada de US$75 milhões a valuation de US$1,5 bilhão para o agente Hermes
+- 2026-07-14 EDIT: UE e Reino Unido aplicam primeiras sanções cibernéticas conjuntas contra a Rússia → UE e Reino Unido aplicam sanções cibernéticas conjuntas contra a Rússia
+- 2026-07-16 CUT: Williams diz que a inflação, em cerca de 4%, está alta demais, e que a política atual do Fed está bem posicionada para devolvê-la à meta
+- 2026-07-20 CUT: Espanha combate incêndio ao norte de Madri que já queimou 13 mil hectares
+- 2026-07-20 CUT: Enchentes e deslizamentos matam ao menos 12 em Jammu e Caxemira
+- 2026-07-22 EDIT: Plozasiran, da Arrowhead, reduz triglicerídeos cerca de 80% em estudo de Fase 3 → Plozasiran, da Arrowhead, reduz triglicerídeos em cerca de 80% em estudo de Fase 3
+
+## Paywall teasers
+
+| kind | n |
+|---|---|
+| edited | 36 |
+| absent-shipped | 3 |
+| unchanged | 3 |
+- editions where teaser COUNT changed: 17
+- **2026-06-29** edited local=12 shipped=9
+  - CUT: M&A. BT e Verizon combinam suas operações corporativas internacionais em uma joint venture.
+  - CUT: Geopolítica. A Ucrânia ataca refinarias russas e Putin admite déficit de combustível.
+  - CUT: Eleições. Chadchart Sittipunt é reeleito governador de Bangkok.
+  - EDIT sim=0.95
+    - B: Memória. A chinesa CXMT fecha contrato de fornecimento de DRAM com a Tencent às vésperas de seu IPO.
+    - A: Memória. CXMT fecha contrato de fornecimento de DRAM com a Tencent às vésperas de seu IPO.
+  - EDIT sim=0.97
+    - B: Eficiência. DeepSeek abre o código de um framework que acelera a inferência de seus modelos.
+    - A: Eficiência. DeepSeek abre código de framework que acelera a inferência de seus modelos.
+  - EDIT sim=0.81
+    - B: Robótica. Duas fabricantes chinesas de humanoides viram unicórnios e atraem gigantes de tecnologia.
+    - A: Robótica. Duas fabricantes chinesas de humanoides viram unicórnios.
+  - EDIT sim=0.98
+    - B: Espaço. SpaceX lança o satélite mais potente da frota da SiriusXM em Cabo Canaveral.
+    - A: Espaço. SpaceX lança o satélite mais potente da frota da SiriusXM no Cabo Canaveral.
+- **2026-06-30** edited local=16 shipped=10
+  - CUT: Capital. Chamath Palihapitiya levanta uma Série A para sua startup de codificação por IA e assume como CEO.
+  - CUT: Capital. A Straiker, de segurança para agentes de IA, levanta uma Série A liderada pela Marathon Management Partners.
+  - CUT: Energia. A Reed Semiconductor levanta uma rodada para soluções de energia prontas para data centers e IA.
+  - CUT: Privacidade. A Suprema Corte decide que mandados de geofence, que varrem todos os dispositivos de uma área, exigem proteção da Quarta Emenda.
+  - CUT: Biotech. A Genmab relata resultados positivos de Fase 3 do epcoritamabe em um tipo de linfoma.
+  - CUT: Biotech. A Abivax divulga resultados positivos de Fase 3 do obefazimode em colite ulcerativa.
+  - EDIT sim=0.97
+    - B: Big techs. A Amazon explora a OpenAI e seus próprios modelos Nova após renegociar o contrato com a Anthropic.
+    - A: Big techs. Amazon explora a OpenAI e seus próprios modelos após renegociar o contrato com a Anthropic.
+  - EDIT sim=0.91
+    - B: Negócios. A dona do ranking Chatbot Arena passa a faturar com seu serviço pago de avaliações de IA.
+    - A: Negócios. Dona de ranking de chatbots passa a faturar com seu serviço pago de avaliações de IA.
+  - EDIT sim=0.73
+    - B: Capital. A Higgsfield, startup de vídeo por IA, negocia uma rodada que multiplica seu valuation.
+    - A: Capital. Startup de vídeo por IA, negocia uma rodada de investimento.
+  - EDIT sim=0.95
+    - B: Defesa. A sueca Saab assina contrato para fornecer submarinos à Polônia, e os países lançam um pacto de defesa no Báltico.
+    - A: Defesa. Suécia assina contrato para fornecer submarinos à Polônia, e os países lançam um pacto de defesa no Báltico.
+  - EDIT sim=0.38
+    - B: Regulação. A Suprema Corte mantém a demissão de uma comissária da FTC por Trump e derruba o precedente que blindava agências independentes.
+    - A: Privacidade. A Suprema Corte americana decide que mandados de geofence exigem proteção da Quarta Emenda.
+- **2026-07-01** absent-shipped local=10 shipped=0
+  - CUT: Modelos. Google lança um modelo de imagem Gemini mais rápido e leva geração de vídeo por conversa a desenvolvedores.
+  - CUT: Agentes. Anthropic lança seu Sonnet mais barato para rodar agentes, mas uma mudança no faturamento pode comer boa parte da economia.
+  - CUT: Ciência. Anthropic apresenta uma bancada de IA que reúne pesquisa computacional e bases científicas em um só ambiente.
+  - CUT: Big techs. AWS cria uma unidade de engenharia embarcada para implantar IA agêntica junto a clientes.
+  - CUT: Hardware. Etched sai do modo sigiloso com um chip dedicado a modelos de IA e uma nova rodada de investimento.
+  - CUT: Robótica. Japão financia um consórcio liderado pela SoftBank para criar um modelo de IA voltado a robôs.
+  - CUT: Data centers. Firmus e Nvidia firmam parceria para erguer uma fábrica de IA na Indonésia.
+  - CUT: IPO. A dona do Vimeo, Bending Spoons, precifica seu IPO acima da faixa e estreia na Nasdaq.
+  - CUT: Stablecoins. Visa, Mastercard, BlackRock e outras se unem para lançar uma nova stablecoin em dólar.
+  - CUT: Defesa. Saab assina contrato para vender caças Gripen E à Ucrânia.
+- **2026-07-02** absent-shipped local=10 shipped=0
+  - CUT: Hardware. Etched sai do modo furtivo com bilhões em contratos e captação para seu chip de inferência.
+  - CUT: Data centers. Switch abre rodada liderada pela a16z e mira um IPO.
+  - CUT: Energia. National Grid Ventures compra fatia da Joulent para levar energia a data centers no Texas.
+  - CUT: Modelos. Z.ai lança o ZCode para competir com Cursor, Claude Code e GitHub Copilot.
+  - CUT: Biotech. Basecamp Research leva seus modelos de design de antibióticos e vacinas ao Claude Science, da Anthropic.
+  - CUT: Capital. TwelveLabs capta em Série B liderada por NEA e NAVER para escalar sua IA de vídeo.
+  - CUT: Robótica. Apptronik amplia seu Robot Park em Austin e apresenta o humanoide Apollo 2.
+  - CUT: Geopolítica. Irã abre canal de comunicação com Washington para reportar violações do acordo que encerrou a guerra.
+  - CUT: Macro. Kevin Warsh assume o Fed e sinaliza foco no combate à inflação, contra os cortes de juros buscados por Trump.
+  - CUT: Petróleo. O Brent encerra seu pior trimestre desde 2020.
+- **2026-07-03** edited local=9 shipped=9
+  - EDIT sim=0.95
+    - B: Big techs. Microsoft cria empresa própria para implantar IA dentro dos clientes.
+    - A: Big techs. Microsoft cria empresa própria para implantar IA nos clientes.
+- **2026-07-06** edited local=6 shipped=6
+  - EDIT sim=0.8
+    - B: Chips. SK Hynix abre venda de ações nos EUA e mira estreia na Nasdaq.
+    - A: Chips. SK Hynix abrirá venda de ações nos EUA ainda essa semana.
+  - EDIT sim=0.86
+    - B: Capital. Even Realities levanta nova rodada para óculos inteligentes, com Meituan e Tencent.
+    - A: Capital. Even Realities levanta nova rodada para óculos inteligentes.
+  - EDIT sim=0.85
+    - B: Energia. OPEP+ eleva a produção de petróleo e o Brent recua.
+    - A: Energia. OPEP+ eleva a produção de petróleo.
+- **2026-07-07** edited local=10 shipped=9
+  - CUT: Segurança. A agência de cibersegurança dos EUA usa um modelo da Anthropic para varrer o código do governo.
+  - EDIT sim=0.99
+    - B: Modelos. A Tencent lança um modelo de código aberto e supera rivais chineses em testes cegos.
+    - A: Modelos. Tencent lança um modelo de código aberto e supera rivais chineses em testes cegos.
+  - EDIT sim=0.99
+    - B: Hardware. A DeepSeek desenvolve seu próprio chip de inferência para reduzir a dependência da Nvidia.
+    - A: Hardware. DeepSeek desenvolve seu próprio chip de inferência para reduzir a dependência da Nvidia.
+  - EDIT sim=0.93
+    - B: Data centers. A TeraWulf fecha um arrendamento de longo prazo com a Anthropic para um data center em Kentucky.
+    - A: Data centers. TeraWulf fecha um contrato de longo prazo com a Anthropic para um data center em Kentucky.
+  - EDIT sim=0.99
+    - B: Big techs. A xAI é renomeada para SpaceXAI e consolida sua marca de IA sob a SpaceX.
+    - A: Big techs. xAI é renomeada para SpaceXAI e consolida sua marca de IA sob a SpaceX.
+  - EDIT sim=0.97
+    - B: Macro. Um diretor do Fed afirma que o principal risco à economia agora é a inflação.
+    - A: Macro. Diretor do Fed afirma que o principal risco à economia agora é a inflação.
+- **2026-07-08** absent-shipped local=10 shipped=0
+  - CUT: Mercados. Uma bolsa asiática entra em mercado de baixa, com investidores questionando os gastos com IA.
+  - CUT: Memória. A alta dos preços de memória encolhe o mercado global de smartphones de entrada.
+  - CUT: Modelos. O primeiro modelo conjunto de duas empresas que acabaram de se unir, e um modelo chinês maior do que qualquer outro disponível no país.
+  - CUT: Agentes. Um agente de IA ganha versões para web e celular, e uma análise de sessões mostra que programação é minoria do uso.
+  - CUT: Segurança. Um órgão ligado ao governo chinês aponta risco de acesso oculto em uma ferramenta de programação americana.
+  - CUT: Chips. Um compromisso plurianual para fabricar mais chips nos EUA, e testes com memória de uma fabricante chinesa em lista negra do Pentágono.
+  - CUT: Energia. Um estado americano passa a cobrar tarifas de data centers de grande carga e revoga incentivos a concessionárias.
+  - CUT: Capital. As maiores rodadas do dia: uma fabricante de chips de IA e uma startup de computação quântica.
+  - CUT: Geopolítica. Nova troca de ataques entre americanos e iranianos no Golfo, depois de investidas contra navios comerciais.
+  - CUT: Brasil. O governo dá como quase certa a sobretaxa americana que entra em vigor este mês.
+- **2026-07-09** edited local=15 shipped=9
+  - CUT: Agentes. Alta capta capital para expandir agentes de vendas.
+  - CUT: IPO. Luxshare estreia em Hong Kong com expansão para carros e data centers de IA.
+  - CUT: Chips. Nexchip prepara venda de ações em Hong Kong.
+  - CUT: Segurança. Interpol prende suspeitos e bloqueia contas em operação global contra fraudes.
+  - CUT: Regulação. Block fecha acordo para encerrar investigação sobre proteção antifraude do Cash App.
+  - CUT: Regulação. FTC e estados fecham acordo de direito ao reparo com a John Deere.
+  - EDIT sim=0.6
+    - B: Agentes. Prime Intellect levanta rodada para vender stack de agentes empresariais.
+    - A: Agentes. Rodada de mais de US$100mi de uma empresa de agentes empresariais.
+  - EDIT sim=0.43
+    - B: Hardware. Iluvatar CoreX faz venda de ações em Hong Kong após forte alta.
+    - A: Hardware. As novas rodadas de investimento no setor de semicondutores.
+  - EDIT sim=0.15
+    - B: Hardware. Positron negocia rodada para financiar chips de IA.
+    - A: Segurança. A operação global da Interpol contra fraudes e engenharia social.
+  - EDIT sim=0.88
+    - B: Defesa. EUA oferecem licença para Ucrânia fabricar sistemas Patriot.
+    - A: Defesa. EUA oferecem licença para Ucrânia fabricar sistema de mísseis.
+- **2026-07-10** edited local=8 shipped=8
+  - EDIT sim=0.86
+    - B: Executivos. A número dois de um grande laboratório de IA deixa o cargo em tempo integral às vésperas de abrir capital.
+    - A: Executivos. A número dois de um grande laboratório de IA deixa o cargo em tempo integral.
+  - EDIT sim=0.98
+    - B: Capital. Uma startup de dados para treino de IA negocia uma nova rodada bilionária e compra uma rival no mesmo dia.
+    - A: Capital. Uma startup de dados para treinamento de IA negocia uma nova rodada bilionária e compra uma rival no mesmo dia.
+  - EDIT sim=0.68
+    - B: China. Uma gigante chinesa da internet negocia recomprar uma startup de agentes que Pequim obrigou uma big tech americana a devolver.
+    - A: China. Uma gigante chinesa negocia recomprar uma startup de agentes.
+- **2026-07-13** edited local=7 shipped=5
+  - CUT: Mercados. Petróleo dispara e bolsas asiáticas despencam com a escalada no Golfo.
+  - CUT: Geopolítica. Dezenas de países se reúnem para ampliar o apoio militar à Ucrânia.
+  - EDIT sim=0.93
+    - B: Biotech. Novas parcerias de IA aplicada à descoberta de fármacos, uma delas com a NVIDIA.
+    - A: Biotech. Novas parcerias de IA aplicada à descoberta de medicamentos, uma delas com a NVIDIA.
+- **2026-07-14** edited local=10 shipped=9
+  - CUT: Macro. Um diretor do Fed sinaliza que os juros nos EUA podem subir no curto prazo.
+  - EDIT sim=0.35
+    - B: Regulação. O governo dos EUA estuda um marco para acelerar o lançamento de modelos abertos que acompanhem os chineses.
+    - A: Data centers. Um estado dos EUA vira o primeiro a decretar moratória para novos data centers.
+  - EDIT sim=0.29
+    - B: Data centers. Um estado dos EUA vira o primeiro a decretar moratória para novos data centers.
+    - A: Energia. Uma big tech fecha acordo para bancar toda a produção inicial de um grande projeto solar.
+  - EDIT sim=0.29
+    - B: Energia. Uma big tech fecha acordo para bancar toda a produção inicial de um grande projeto solar.
+    - A: Macro. Um diretor do Fed sinaliza que os juros nos EUA podem subir no curto prazo.
+- **2026-07-16** edited local=12 shipped=6
+  - CUT: Justiça. Uma empresa de IA processa um dos seus próprios usuários por deepfakes sexuais ilegais.
+  - CUT: Eleições. A primeira doação milionária de um executivo de IA a um super PAC favorável à regulação.
+  - CUT: Robótica. Uma montadora asiática assume o controle total da sua fabricante de humanoides.
+  - CUT: Negócios. Acordo bilionário no delivery que estende uma plataforma a quase 100 países.
+  - CUT: Geopolítica. Um cessar-fogo dado como nulo, ataques intensificados e o petróleo reagindo.
+  - CUT: Defesa. Um acordo de drones entre a Europa e um país em guerra, horas antes de novos mísseis na capital.
+  - EDIT sim=0.62
+    - B: Chips. Mais um trimestre recorde de lucro na produção de chips, e o fornecedor de equipamentos que decidiu cobrar mais caro pelas máquinas.
+    - A: Chips. Mais um trimestre recorde de lucro na produção de chips.
+  - EDIT sim=0.36
+    - B: Big techs. Uma gigante de consumo caça startups de semicondutores para socorrer os seus chips de servidor de IA.
+    - A: Biotech. Uma parceria de IA para prevenir, detectar e responder a ameaças biológicas, barateando o rastreamento de doenças.
+  - EDIT sim=0.25
+    - B: Mercados. Uma estreia recente em bolsa cai abaixo do preço de IPO pela primeira vez, e uma operadora de data centers abre capital abaixo da faixa esperada.
+    - A: Segurança. Uma rede social passa a avisar os pais quando adolescentes falam de suicídio com o seu chatbot.
+  - EDIT sim=0.38
+    - B: Biotech. Uma parceria de IA para prevenir, detectar e responder a ameaças biológicas, barateando o rastreamento de doenças.
+    - A: Justiça. Uma empresa de IA processa um dos seus próprios usuários por deepfakes sexuais ilegais.
+  - EDIT sim=0.32
+    - B: Segurança. Uma rede social passa a avisar os pais quando adolescentes falam de suicídio com o seu chatbot.
+    - A: Robótica. Uma montadora asiática assume o controle total da sua fabricante de humanoides.
+- **2026-07-17** edited local=7 shipped=7
+  - EDIT sim=0.95
+    - B: Capital. Principais rodadas e ofertas do dia.
+    - A: Capital. As principais rodadas e ofertas do dia.
+- **2026-07-20** edited local=11 shipped=5
+  - CUT: Capital. Startup britânica de descoberta de materiais por IA levanta uma grande rodada com apoio de Jeff Bezos.
+  - CUT: IPO. Fabricante chinesa de componentes ópticos para data centers prepara uma das maiores aberturas de capital em Hong Kong em anos.
+  - CUT: Data centers. Empresa é escolhida pelo Departamento de Energia dos EUA para erguer um data center de IA de escala gigawatt.
+  - CUT: Robótica. Gigante de private equity assume o controle de uma fabricante asiática de atuadores de precisão para robôs.
+  - CUT: Biotech. Oferta bilionária em dinheiro por uma farmacêutica suíça de peptídeos, de olho na onda dos remédios de emagrecimento.
+  - CUT: Geopolítica. Ataques americanos no Oriente Médio entram na segunda semana, mantêm fechado um estreito vital e pressionam o preço do petróleo.
+  - CUT: Guerra. Maior ataque com mísseis balísticos à capital ucraniana desde o início da guerra deixa dezenas de mortos.
+  - ADD: Mais…
+  - EDIT sim=0.37
+    - B: Modelos. Empresa chinesa de IA pausa novas assinaturas depois que a demanda estourou sua capacidade de computação.
+    - A: Geopolítica. Segunda semana de ataques no Oriente Médio continua.
+  - EDIT sim=0.28
+    - B: Hardware. Uma big tech projeta um chip que grava seu modelo de IA direto no silício, prometendo eficiência muito maior por token.
+    - A: Data Centers. Novos projetos escolhidos pelo Departamento de Energia dos EUA
+  - EDIT sim=0.77
+    - B: Regulação. Marketplace de uma gigante chinesa leva a maior multa já aplicada sob a lei de serviços digitais da União Europeia.
+    - A: Regulação. A maior multa já aplicada a lei de serviços digitais da União Europeia
+  - EDIT sim=0.26
+    - B: Apps. Número de novos aplicativos na loja da Apple dispara, puxado pela IA que gera código a partir de linguagem natural.
+    - A: Capital. Rounds de Investimento em Startups, IPOs de fabricantes de chips e Private Equity na robótica.
+- **2026-07-23** edited local=11 shipped=11
+  - EDIT sim=0.76
+    - B: Saúde. Novo tratamento para obesidade cumpre o desfecho principal em dois estudos de Fase 3, com efeitos colaterais que derrubam parte dos pacientes.
+    - A: Saúde. Novo tratamento para obesidade cumpre o desfecho principal em dois estudos de Fase 3.
+- **2026-07-24** edited local=12 shipped=9
+  - CUT: Agentes. Startup de agentes de horizonte longo, tocada por três pessoas, é comprada por uma das maiores empresas do setor.
+  - CUT: Mercados. As participações privadas de uma big tech quase dobraram no trimestre, puxadas pela reavaliação de sua maior aposta em um laboratório de IA, no mesmo dia em que o Nasdaq caiu com temores sob
+  - CUT: Geopolítica. Ataques a petroleiros no Mar Vermelho disparam o preço do petróleo, e a campanha americana contra o Irã segue noite após noite.
+  - EDIT sim=0.96
+    - B: Hardware. Uma grande fabricante de chips anunciou processadores de servidor de nova geração, uma parceria de inferência ultrarrápida e uma investida completa em robótica.
+    - A: Hardware. Uma grande fabricante de chips anunciou processadores de servidor de nova geração, uma parceria de inferência ultrarrápida e uma investimento em robótica.
+  - EDIT sim=0.12
+    - B: Robótica. Um modelo que aprende uma tarefa de manipulação com minutos de dados de robô, já testado por uma montadora alemã, e uma rodada de centenas de milhões para uma desenvolvedora de modelos de fundação para robôs.
+    - A: Geopolítica. Ataques a petroleiros no Mar Vermelho disparam o preço do petróleo, e a campanha americana contra o Irã segue noite após noite.
+- **2026-07-27** edited local=10 shipped=7
+  - CUT: Memória. Acordo de longo prazo entre gigantes coreanas e americanas de chips, mais os compromissos de uma cúpula de IA entre os dois países.
+  - CUT: Espaço. Voo de teste que soltou satélites operacionais pela primeira vez, e um pedido para uma nova constelação de órbita baixa.
+  - CUT: Mundo. Trégua no Oriente Médio derruba o preço do petróleo, e um artigo em jornal americano contra as novas tarifas.
+  - EDIT sim=0.96
+    - B: Pesos abertos. Carta da indústria ganha dez novos signatários, com a Anthropic como a ausência mais visível.
+    - A: Pesos abertos. Carta da indústria ganha dez novos signatários, com a Anthropic como a ausência mais notável.
+  - EDIT sim=0.93
+    - B: Compute. Laboratório de superinteligência sem produto nem receita fecha parceria de longo prazo com a Nvidia.
+    - A: Poder computacional. Laboratório de superinteligência sem produto nem receita fecha parceria de longo prazo com a Nvidia.
+  - EDIT sim=0.77
+    - B: Semicondutores. Estreia em bolsa de uma fabricante chinesa de memória com uma das maiores altas do ano na Ásia.
+    - A: Semicondutores. Estreia em bolsa de uma fabricante chinesa de memória, com a maior captação em semicondutores da história da China.
+  - EDIT sim=0.29
+    - B: Litografia. China começa a produzir em massa máquinas de fabricação de chips, e ações europeias do setor recuam.
+    - A: Memória. Acordo de longo prazo entre gigantes coreanas e americanas.
+- **2026-07-28** edited local=11 shipped=3
+  - CUT: Data centers. Acordos bilionários por campi de escala de gigawatt nos EUA, com fabricantes de chip agora do lado do inquilino.
+  - CUT: Contrabando de chips. Primeira detenção conhecida de um funcionário de uma gigante de chips em investigação de desvio de servidores para a China.
+  - CUT: Deepfakes. Auditoria em ferramentas abertas de edição de imagem que geram nudez não consentida com um prompt de poucas palavras.
+  - CUT: Poder computacional. Startup de superinteligência recursiva fecha acordo plurianual de computação que consome boa parte de tudo o que já levantou.
+  - CUT: Capital. Rodada seed grande para uma startup de modelos de voz de código aberto que mira a líder do setor.
+  - CUT: Empregos. Gigante de pagamentos corta milhares de vagas em tecnologia e produto, citando IA.
+  - CUT: Geopolítica. Proposta de trégua aérea discutida na Casa Branca, enquanto drones seguem atingindo alvos dos dois lados.
+  - CUT: Oriente Médio. Sinais trocados sobre negociações com Teerã e um mecanismo para o trânsito de embarcações em um estreito estratégico.
+  - EDIT sim=0.21
+    - B: Programação. Editor de código com IA lança plano regional por uma fração do preço da assinatura padrão.
+    - A: Empregos. Gigante de pagamentos corta milhares de vagas em tecnologia e produto, citando IA.
+- **2026-07-30** edited local=12 shipped=6
+  - CUT: Modelos. Ajustes de API que triplicaram a nota de um modelo de raciocínio num teste difícil, gastando menos tokens.
+  - CUT: Talento. Cofundadora de um laboratório rival volta à antiga empresa para liderar um time de auto-aprimoramento recursivo.
+  - CUT: Regulação. Plataformas muito usadas devem cair na categoria mais rígida das regras europeias de conteúdo.
+  - CUT: Capex. Big techs elevaram o gasto de capital em data centers, e uma delas cortou a projeção do ano.
+  - CUT: IPO. Maior abertura de capital do ano em Hong Kong, de uma fornecedora chinesa de peças para data centers de IA, estreou abaixo do preço de emissão.
+  - CUT: Capital. Rodada de uma israelense de segurança para agentes de IA, com tecnologia já integrada pela Anthropic.
+  - EDIT sim=0.42
+    - B: Música. Nova versão de um gerador de música por IA, com faixas mais longas e controle de andamento.
+    - A: Capital. Rodada de uma israelense de segurança para agentes de IA, com tecnologia já integrada pela Anthropic.
+  - EDIT sim=0.22
+    - B: Receita. Um laboratório de IA disse a funcionários que o faturamento anualizado de um mês superou um trimestre inteiro.
+    - A: IPO. Maior abertura de capital do ano em Hong Kong, de uma fornecedora chinesa de peças para data centers de IA, estreou abaixo do preço de emissão.
+  - EDIT sim=0.87
+    - B: Chips. Resultados de fabricantes de chips: royalties recordes em data center, projeção fraca por causa do preço da memória e um licenciamento raro de arquitetura de processadores a uma startup.
+    - A: Chips. Resultados de fabricantes de chips: royalties recordes em data center, e um licenciamento raro de arquitetura de processadores a uma startup.
+  - EDIT sim=0.64
+    - B: Geopolítica. Nova onda de ataques americanos no Oriente Médio, e petróleo em forte alta com a tensão em uma rota marítima decisiva.
+    - A: Geopolítica. Nova onda de ataques americanos no Oriente Médio.
+- **2026-07-31** edited local=11 shipped=4
+  - CUT: Robótica. Um modelo que passa a controlar o corpo inteiro de robôs humanoides, e não só a metade de cima.
+  - CUT: Memória. O aperto na DRAM aparece nos resultados de duas gigantes de hardware de consumo, uma reclamando, outra dizendo que se garantiu.
+  - CUT: Defesa. Levantamento aponta pesquisadores militares chineses treinando sistemas domésticos com outputs de modelos americanos.
+  - CUT: Direitos autorais. Tribunal europeu condena uma empresa americana de música gerada por IA e manda abrir receitas.
+  - CUT: Regulação. Um estado americano processa uma plataforma de mercados de previsão por bilhões, e o regulador federal entra contra o estado.
+  - CUT: Fundos. Fundo de hedge focado em IA vende a maior parte da carteira listada depois das perdas de julho.
+  - CUT: Capital. Uma rodada grande em semicondutores de rede e uma abertura de capital via SPAC no setor de defesa.
+  - CUT: Mundo. Escalada com drones no Golfo e um novo ataque russo em massa na Ucrânia com míssil de origem incomum.
+  - ADD: Tribunais e reguladores. Uma decisão europeia contra uma empresa americana de música gerada por IA, um estado americano processando uma plataforma de apostas enquanto o regulador federal tenta barrar 
+  - EDIT sim=0.36
+    - B: Modelos. Dois lançamentos de pesos abertos que encostam nos líderes com uma fração do tamanho.
+    - A: Modelos. Novos modelos de pesos abertos, geração de vídeo com áudio nativo bem mais barata que a dos rivais, e um sistema que passa a controlar o corpo inteiro de robôs humanoides.
+  - EDIT sim=0.07
+    - B: Vídeo. Novo gerador de vídeo com áudio nativo bem mais barato que o rival, e com pesos abertos a caminho.
+    - A: Dinheiro. Um fundo de hedge focado em IA desmontando a carteira depois de fortes perdas no mês, uma fabricante de chips de rede levantando centenas de milhões, e uma pequena empresa de defesa abrindo capital por uma via alternativa.
+  - EDIT sim=0.03
+    - B: Chips. Uma tecnologia de empacotamento avançado copiada de uma rival americana, e o efeito nas ações das duas.
+    - A: Silício. Uma nova aposta de fabricação de chips saída da Ásia que animou o setor inteiro na bolsa, e o aperto na memória aparecendo nos resultados de duas gigantes de hardware, uma reclamando do preço e outra dizendo que já se garantiu.
+- **2026-08-03** edited local=4 shipped=4
+  - EDIT sim=0.81
+    - B: Silício. Mudança de especificação de memória num acelerador de próxima geração e o efeito disso na conta do rack, tombo das ações de fabricantes asiáticos de memória, e duas projetistas de chips de IA, uma britânica e uma sul-coreana, levantando rodadas na casa dos bilhões.
+    - A: Silício. Mudança de especificação de memória num acelerador de próxima geração, e duas projetistas de chips de IA, uma britânica e uma sul-coreana, levantando rodadas na casa dos bilhões.
+  - EDIT sim=0.93
+    - B: Infraestrutura e energia. Um complexo bilionário de data centers com geração própria a gás saindo de uma área do governo americano, e estados dos EUA revogando isenções fiscais que seguravam o custo desse tipo de projeto.
+    - A: Infraestrutura e energia. Um complexo bilionário de data centers com geração própria a gás saindo de uma área do governo americano, e estados dos EUA revogando isenções fiscais para esse tipo de projeto.
+- **2026-08-04** edited local=4 shipped=4
+  - EDIT sim=0.96
+    - B: Infraestrutura. Contratos bilionários de poder computacional em um campus de data center nórdico recém-erguido, uma rodada grande de uma startup nuclear americana, e um estado americano que manda auditar toda a fila de data centers na rede elétrica.
+    - A: Infraestrutura. Contratos bilionários de poder computacional em um campus de data center nórdico recém-erguido, uma rodada grande de uma startup nuclear americana, e um estado americano que manda auditar toda a fila de data centers pedindo conexão à rede elétrica.
+- **2026-08-07** edited local=4 shipped=4
+  - EDIT sim=0.94
+    - B: Modelos. Um modelo chinês em treinamento numa escala acima da dos maiores já lançados no país, mudanças nos limites de uso e no modelo padrão de um assistente popular, uma tentativa de cobrar dos grandes usuários de um modelo aberto e uma IA aberta que antecipa a trajetória de ciclones.
+    - A: Modelos. Um modelo chinês em treinamento numa escala acima da dos maiores já lançados no país, mudanças nos limites de uso e no modelo padrão de um popular assistente, uma tentativa de cobrar dos grandes usuários de um modelo aberto e uma IA aberta que antecipa a trajetória de ciclones.
+  - EDIT sim=0.91
+    - B: Silício. Duas novas fábricas de memória na Coreia do Sul aprovadas num momento de preços em alta, e uma fabricante americana de chips comprando uma startup canadense de silício para IA.
+    - A: Silício. Duas novas fábricas de memória na Coreia do Sul aprovadas, e uma fabricante americana de chips comprando uma startup canadense de silício para IA.
+- **2026-08-10** edited local=4 shipped=4
+  - EDIT sim=0.9
+    - B: Modelos. Um ensaio longo de um fundador em defesa da IA aberta, e a liderança chinesa tanto em geração de vídeo quanto em robôs humanoides.
+    - A: Modelos. Um artigo em defesa da IA aberta, e a liderança chinesa tanto em geração de vídeo quanto em robôs humanoides.
+  - EDIT sim=0.98
+    - B: Dinheiro. Gestoras de infraestrutura entram no negócio de data centers arrendados a uma empresa americana de IA, e uma startup de cibersegurança defensiva sai do sigilo com uma rodada liderada por um fundo do Vale.
+    - A: Dinheiro. Gestoras de infraestrutura entram no negócio de data centers arrendados a uma empresa americana de IA, e uma startup de cibersegurança defensiva sai do stealth com uma rodada liderada por um fundo do Vale.
+  - EDIT sim=0.61
+    - B: Mundo. Negociações travadas no Oriente Médio mexendo com o petróleo, a recusa russa a congelar a guerra na véspera da visita de enviados americanos, exercícios militares em Taiwan, e câmeras de barcos-drone britânicos enviando dados para um endereço na China.
+    - A: Mundo. Exercícios militares em Taiwan e câmeras de barcos-drone britânicos enviando dados para um endereço na China.
+- **2026-08-11** edited local=4 shipped=4
+  - EDIT sim=0.98
+    - B: Modelos. Pesos abertos voltados a agentes e uma ferramenta de roteamento entre modelos, saídas de um laboratório americano passando a carregar sinais de procedência sob uma nova regra europeia, e um preço introdutório que deixa de ter prazo.
+    - A: Modelos. Pesos abertos voltados a agentes e uma ferramenta de roteamento entre modelos, outputs de um laboratório americano passando a carregar sinais de procedência sob uma nova regra europeia, e um preço introdutório que deixa de ter prazo.
+- **2026-08-13** edited local=4 shipped=4
+  - EDIT sim=0.67
+    - B: Mundo. Inflação ao produtor nos EUA, autorização de Washington para empresas privadas atuarem em operações cibernéticas, o Estreito de Ormuz ainda travado, e uma data final para a saída das forças americanas de um país do Oriente Médio.
+    - A: Mundo. Inflação ao produtor nos EUA e autorização de Washington para empresas privadas atuarem em operações cibernéticas.
+- **2026-08-14** edited local=4 shipped=4
+  - EDIT sim=0.97
+    - B: Dinheiro. Uma operadora americana de data centers estuda abrir capital ou se vender, uma grande emissora de stablecoin conclui sua primeira auditoria completa, e um dado do varejo americano mexe com a aposta de juros.
+    - A: Dinheiro. Uma operadora americana de data centers estuda abrir capital ou se vender, uma grande emissora de stablecoin conclui sua primeira auditoria completa, e um dado do varejo americano mexe com a previsão de juros.
+- **2026-08-17** edited local=4 shipped=4
+  - EDIT sim=0.92
+    - B: Silício. Capacidade reservada num nó de ponta de fundição para uma arquitetura de GPU que só chega no fim da década, e um rumor de coprojeto entre duas empresas americanas num chip de IA customizado.
+    - A: Silício. Capacidade reservada para uma arquitetura de GPU que só chega no fim da década, e um rumor de projeto entre duas empresas americanas num chip de IA customizado.
+- **2026-08-18** edited local=4 shipped=3
+  - CUT: Mundo. Um impasse entre Washington e Teerã mantém uma rota marítima de petróleo travada e empurra o preço do barril, um acerto define quem verifica o desarmamento em Gaza, e um documento europeu apont
+  - EDIT sim=0.67
+    - B: Modelos e ferramentas. Um novo modelo chinês de pesos abertos vira o mais baixado e a licença da versão maior aperta, uma empresa americana de programação com IA entra na hospedagem de código enquanto o serviço dominante do setor passa horas fora do ar, e uma plataforma chinesa de pagamentos lança s
+    - A: Modelos e ferramentas. Um novo modelo chinês de pesos abertos vira o mais baixado, uma empresa americana de programação com IA entra na hospedagem de código, uma plataforma chinesa de pagamentos lança sua aposta em comércio agêntico.
+  - EDIT sim=0.57
+    - B: Silício e hardware. O custo da memória comprime a margem de uma fabricante chinesa de smartphones enquanto estoques e preços sobem na cadeia coreana, e duas gigantes americanas de eletrônicos mexem em onde fabricam e no que vem no próximo aparelho.
+    - A: Silício e hardware. O custo da memória comprime a margem de uma fabricante chinesa de smartphones.
+  - EDIT sim=0.96
+    - B: Dinheiro. Rodadas e movimentos de bolsa em chips de inferência, data centers e robôs humanoides, e uma grande gestora americana de venture capital vira alvo de investigação antitruste em Washington.
+    - A: Dinheiro. Rodadas e movimentações em chips de inferência, data centers e robôs humanoides, e uma grande gestora americana de venture capital vira alvo de investigação antitruste em Washington.
+- **2026-08-20** edited local=4 shipped=4
+  - EDIT sim=0.81
+    - B: Mundo. Um embargo comercial e um novo pacote de pressão econômica sobre o Irã, mais uma noite de ataques russos na Ucrânia, e um estudo sobre apostas certeiras em mercados de defesa.
+    - A: Mundo. Um embargo comercial e um novo pacote de pressão econômica sobre o Irã, mais uma noite de ataques russos na Ucrânia.
+- **2026-08-21** edited local=4 shipped=4
+  - EDIT sim=0.88
+    - B: Modelos. Um novo modelo chinês que também lê imagens, uma família de modelos abertos que cruza uma marca redonda de downloads e um assistente que passa a ler e enviar mensagens de texto por você.
+    - A: Modelos. Um novo modelo chinês que também lê imagens, uma família de modelos abertos cruzando marco importante no número de downloads e um assistente que lê e envia mensagens de texto por você.
+  - EDIT sim=0.96
+    - B: Silício. Uma empresa americana de robotáxis mostra o chip que projetou para seus carros, uma fabricante de chips namora uma projetista coreana e mais um pacote bilionário de dívida para bancar capacidade de computação.
+    - A: Silício. Uma empresa americana de robotáxis mostra o chip que projetou para seus carros, uma fabricante de chips de olho em uma projetista coreana, e mais um pacote bilionário de dívida para bancar capacidade de computação.
+  - EDIT sim=0.87
+    - B: Dinheiro. Distribuição bilionária a acionistas de uma gigante coreana de chips, uma estatal chinesa de memória autorizada a abrir capital, uma empresa americana de dados de treinamento que multiplica a receita e os juros dos títulos americanos de volta à alta.
+    - A: Dinheiro. Distribuição bilionária a acionistas de uma gigante coreana de chips, uma estatal chinesa de memória autorizada a abrir capital, uma empresa americana de dados de treinamento multiplica sua receita, e os juros dos títulos americanos voltam a subir.
+- **2026-08-24** edited local=4 shipped=4
+  - EDIT sim=0.85
+    - B: Mundo. Um novo pacote de sanções americanas contra o Irã, um projeto de idade mínima para redes sociais que também alcança os companheiros de IA, e as contas de mais um ano de guerra na Ucrânia.
+    - A: Mundo. Um novo pacote de sanções americanas contra o Irã, e um projeto de idade mínima para redes sociais que também alcança os companheiros de IA.
+- **2026-08-25** edited local=4 shipped=4
+  - EDIT sim=0.95
+    - B: Modelos. Uma empresa americana de informação profissional lança seu modelo próprio construído sobre uma base chinesa, uma estreante apresenta um modelo feito para física em vez de linguagem, e uma big tech americana prepara sua plataforma de agentes para consumidores.
+    - A: Modelos. Uma empresa americana de informação lança seu modelo próprio construído sobre um modelo-base chinês, uma estreante apresenta um modelo feito para física em vez de linguagem, e uma big tech americana prepara sua plataforma de agentes para consumidores.
+  - EDIT sim=0.82
+    - B: Dinheiro. Uma provedora americana de nuvem de IA negocia a rodada que a prepara para abrir capital, uma empresa de segurança de modelos e uma de IA para robótica anunciam novas captações, e as ações de uma fabricante chinesa de robôs caem depois de uma estreia em alta.
+    - A: Dinheiro. Uma provedora americana de nuvem de IA negocia a rodada que a prepara para abrir capital, uma empresa de segurança de modelos e uma de IA para robótica anunciam novas captações.
+- **2026-08-28** edited local=4 shipped=4
+  - EDIT sim=0.9
+    - B: Silício. Balanço de uma fabricante chinesa de memória, uma empresa americana de chips recuando de um tipo de acordo fechado com nuvens de IA, uma compra de startup de chips que não saiu e mais um contrato de energia para data center nos EUA.
+    - A: Silício. Balanço de uma fabricante chinesa de memória, uma empresa americana de chips recuando de um tipo de acordo fechado com nuvens de IA e mais um contrato de energia para data center nos EUA.
+  - EDIT sim=0.82
+    - B: Mundo. Negociação americana por acesso de longo prazo a reservas de petróleo sul-americanas, conversas sobre um corredor marítimo no Oriente Médio e mais uma noite de bombardeio russo sobre cidades ucranianas.
+    - A: Mundo. Negociação americana por acesso de longo prazo a reservas de petróleo sul-americanas e conversas sobre um corredor marítimo no Oriente Médio.
+- **2026-08-31** edited local=4 shipped=4
+  - EDIT sim=0.94
+    - B: Agentes. Um projeto de agentes de código aberto lança uma grande atualização e vê usuários travados logo depois, contas de um assistente de IA são acessadas com sessões roubadas por malware, e uma mudança na forma de cobrar por IA corporativa contraria a convenção do software por assinatura.
+    - A: Agentes. Um projeto de agentes de código aberto lança uma grande atualização, contas de um assistente de IA são acessadas com sessões roubadas por malware, e uma mudança na forma de cobrar por IA corporativa contraria a convenção do software por assinatura.
+- **2026-09-01** edited local=4 shipped=4
+  - EDIT sim=0.24
+    - B: Mundo. Petroleiros atingidos por projéteis numa rota de saída do Golfo Pérsico, com efeito no preço do petróleo, um desastre natural no Himalaia com trabalhadores presos em túneis de hidrelétricas, e um país europeu contratando no exterior um sistema de defesa aérea.
+    - A: Mundo. Petroleiros atingidos por projéteis no Golfo Pérsico, um desastre natural no Himalaia com trabalhadores presos em túneis de hidrelétricas, e um país europeu contratando um sistema de defesa aérea.
+- **2026-09-04** edited local=4 shipped=4
+  - EDIT sim=0.81
+    - B: Modelos. Um modelo americano de reconhecimento de fala que corta preço e tempo de transcrição, um país do Golfo apresentando seu modelo nacional em árabe construído sobre tecnologia chinesa e os primeiros resultados independentes de benchmark do lançamento de fronteira da semana.
+    - A: Modelos. Um modelo americano de reconhecimento de fala que corta preço e tempo de transcrição, e um país do Golfo apresentando seu modelo nacional em árabe construído sobre tecnologia chinesa.
+  - EDIT sim=0.96
+    - B: Dinheiro. Duas rodadas bilionárias em empresas americanas de infraestrutura de IA, uma delas seguida no mesmo dia por um contrato longo de nuvem com uma firma de trading.
+    - A: Dinheiro. Duas rodadas bilionárias em empresas americanas de infraestrutura de IA, uma delas seguida no mesmo dia por um contrato de nuvem com uma empresa de trading.
+- **2026-09-07** edited local=4 shipped=4
+  - EDIT sim=0.89
+    - B: Silício. Estoques de memória em queda na Coreia do Sul, capacidade de fundição avançada redirecionada para chips de IA e um nó de ponta assumindo o topo da receita de uma fabricante taiwanesa.
+    - A: Silício. Estoques de memória em queda na Coreia do Sul, capacidade de fundição avançada redirecionada para chips de IA e um nó de ponta representando a maior parte da receita de uma fabricante taiwanesa.
+  - EDIT sim=0.97
+    - B: Infraestrutura. Um consórcio de empresas taiwanesas em torno de chips ópticos para data centers, e a conta em gigawatts e em dólares que um laboratório americano de IA já travou em contratos de capacidade computacional.
+    - A: Infraestrutura. Um consórcio de empresas taiwanesas em torno de chips ópticos para data centers, e a conta em gigawatts e em dólares que um laboratório americano de IA já garantiu em contratos de capacidade computacional.
+  - EDIT sim=0.92
+    - B: Mundo. Eleição estadual alemã com avanço da extrema direita, novo movimento iraniano no entorno de Ormuz, enviados americanos em Kiev, ofensiva rebelde no Iêmen e o petróleo no nível mais alto em semanas.
+    - A: Mundo. Eleição estadual alemã, novo movimento iraniano no entorno de Ormuz, enviados americanos em Kiev, ofensiva rebelde no Iêmen e o petróleo no nível mais alto em semanas.

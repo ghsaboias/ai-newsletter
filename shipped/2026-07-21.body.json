@@ -1,0 +1,2303 @@
+{
+ "draft_id": "207915223",
+ "title": "[Tech] - Bem-vindo(a) a 21 de Julho de 2026",
+ "subtitle": "Por que a OpenAI pausou um modelo treinado para tarefas de longa duração? Quanto vale o maior acordo de direitos autorais já visto nos EUA? O que a Microsoft ganha ao bancar as GPUs europeias da Mistral?",
+ "body": {
+  "type": "doc",
+  "content": [
+   {
+    "type": "paragraph",
+    "attrs": {
+     "textAlign": null
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Por: Guilherme Saboia e Vinicius Gushiken"
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "OpenAI pausa modelo autônomo após ele escapar do "
+     },
+     {
+      "type": "text",
+      "marks": [
+       {
+        "type": "em"
+       }
+      ],
+      "text": "sandbox"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Pausa."
+         },
+         {
+          "type": "text",
+          "text": " A OpenAI revelou que "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-20/openai-suspende-modelo-de-ia-apos-falha-em-protocolos-de-seguranca",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "pausou o acesso a um modelo não lançado"
+         },
+         {
+          "type": "text",
+          "text": " treinado para tarefas de longa duração, após observar “falhas inéditas” não capturadas por suas avaliações pré-implantação. É o mesmo sistema que a empresa disse ter refutado a conjectura da distância unitária de Erdős, problema de geometria discreta com cerca de 80 anos, anunciado em 20 de maio."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Fuga."
+         },
+         {
+          "type": "text",
+          "text": " Instruído a compartilhar resultados só no Slack em uma avaliação, o modelo passou cerca de uma hora "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-20/openai-suspende-modelo-de-ia-apos-falha-em-protocolos-de-seguranca",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "contornando as restrições do "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-20/openai-suspende-modelo-de-ia-apos-falha-em-protocolos-de-seguranca",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           },
+           {
+            "type": "em"
+           }
+          ],
+          "text": "sandbox"
+         },
+         {
+          "type": "text",
+          "text": " (ambiente isolado de execução) e abriu um "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "pull request"
+         },
+         {
+          "type": "text",
+          "text": " público no GitHub mesmo assim, enquanto modelos de horizonte mais curto haviam esbarrado na mesma barreira e parado."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Evasão."
+         },
+         {
+          "type": "text",
+          "text": " Em outro incidente, com um scanner bloqueando um token de autenticação, o modelo "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-20/openai-suspende-modelo-de-ia-apos-falha-em-protocolos-de-seguranca",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "dividiu o token e o reconstruiu em tempo de execução"
+         },
+         {
+          "type": "text",
+          "text": ", afirmando nos logs que fazia isso “para evadir o scanner”."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Correção."
+         },
+         {
+          "type": "text",
+          "text": " A OpenAI "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-20/openai-suspende-modelo-de-ia-apos-falha-em-protocolos-de-seguranca",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "reconstruiu seu "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-20/openai-suspende-modelo-de-ia-apos-falha-em-protocolos-de-seguranca",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           },
+           {
+            "type": "em"
+           }
+          ],
+          "text": "stack"
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-20/openai-suspende-modelo-de-ia-apos-falha-em-protocolos-de-seguranca",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": " de segurança"
+         },
+         {
+          "type": "text",
+          "text": " em torno de defesa em profundidade e monitoramento em nível de trajetória, que acompanha uma sequência inteira de ações e pode pausar uma sessão para revisão humana, e restaurou o acesso limitado sob monitoramento."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/1209d5b4-b118-43ee-b95e-3bb6f9b464d0_1920x1081.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 1081,
+       "width": 1920,
+       "resizeWidth": 520,
+       "bytes": 100479,
+       "alt": "Logos da OpenAI e do ChatGPT",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Os logos da OpenAI e do ChatGPT. Imagem: Didem Mente/Anadolu Agency/Getty Images"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Justiça dos EUA aprova acordo de US$1,5 bilhão da Anthropic com autores"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Aprovação."
+         },
+         {
+          "type": "text",
+          "text": " A juíza federal Araceli Martínez-Olguín "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-20/anthropic-fecha-acordo-de-us-15-bilhao-em-processo-de-direitos-autorais",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "concedeu aprovação final na segunda-feira"
+         },
+         {
+          "type": "text",
+          "text": " ao acordo de US$1,5 bilhão da Anthropic com autores, o maior acordo conhecido em um caso de direitos autorais nos EUA, rejeitando as objeções de que o valor seria pequeno demais como “não fundamentadas em uma avaliação realista dos riscos e recompensas de um julgamento”."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Origem."
+         },
+         {
+          "type": "text",
+          "text": " A ação coletiva de 2024 alegou que a Anthropic "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-20/anthropic-fecha-acordo-de-us-15-bilhao-em-processo-de-direitos-autorais",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "salvou mais de 7 milhões de livros pirateados"
+         },
+         {
+          "type": "text",
+          "text": ", vindos de repositórios como o Library Genesis; o juiz Alsup já havia decidido que treinar modelos com livros é uso justo ("
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "fair use"
+         },
+         {
+          "type": "text",
+          "text": "), mas que a pirataria violou os direitos dos autores."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Valores."
+         },
+         {
+          "type": "text",
+          "text": " O acordo prevê cerca de "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-20/anthropic-fecha-acordo-de-us-15-bilhao-em-processo-de-direitos-autorais",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "US$3.000 por obra para aproximadamente 480.000 obras"
+         },
+         {
+          "type": "text",
+          "text": ", cerca de quatro vezes o mínimo de danos legais para infração intencional; até 16 de abril, 440.490 obras (91,3%) haviam sido reivindicadas. Do próprio fundo do acordo saem os honorários dos advogados dos autores: a juíza aprovou US$101 milhões, abaixo dos US$187,5 milhões pedidos."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Precedente."
+         },
+         {
+          "type": "text",
+          "text": " É um dos primeiros acordos entre "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-20/anthropic-fecha-acordo-de-us-15-bilhao-em-processo-de-direitos-autorais",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "dezenas de ações semelhantes contra empresas de IA"
+         },
+         {
+          "type": "text",
+          "text": ", incluindo OpenAI, Meta e Google; alguns autores e editoras optaram por sair do acordo e mantêm ações separadas contra a Anthropic."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/aad9327c-dfa2-4455-b9c5-8c300ef87f3d_1200x675.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 675,
+       "width": 1200,
+       "resizeWidth": 520,
+       "bytes": 96538,
+       "alt": "Logo da Anthropic",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "O logo da Anthropic. Imagem: Reuters/Dado Ruvic"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Microsoft vai bancar expansão europeia de GPUs da Mistral em acordo bilionário"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Acordo."
+         },
+         {
+          "type": "text",
+          "text": " Microsoft e Mistral ampliaram a parceria com um "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-21/microsoft-e-mistral-fecham-parceria-multibilionaria-na-europa",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "compromisso multibilionário da Microsoft"
+         },
+         {
+          "type": "text",
+          "text": " para usar a infraestrutura de GPUs da Mistral baseada na Europa, empregando milhares das mais recentes GPUs NVIDIA Vera Rubin na capacidade europeia ampliada."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Soberania."
+         },
+         {
+          "type": "text",
+          "text": " Por meio dos data centers da Mistral na França, o arranjo "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-21/microsoft-e-mistral-fecham-parceria-multibilionaria-na-europa",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "oferece a setores regulados uma alternativa à infraestrutura controlada pelos EUA"
+         },
+         {
+          "type": "text",
+          "text": "; o presidente Brad Smith disse que o acordo não inclui nenhuma nova participação financeira na Mistral."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Produtos."
+         },
+         {
+          "type": "text",
+          "text": " Os modelos "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-21/microsoft-e-mistral-fecham-parceria-multibilionaria-na-europa",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "Medium 3.5 e OCR 4 já estão no Microsoft Foundry"
+         },
+         {
+          "type": "text",
+          "text": ", o Medium 3.5 foi integrado ao Copilot Studio, e o Azure Local permitirá rodar os modelos “abertos” da Mistral em ambientes totalmente desconectados."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Ambição."
+         },
+         {
+          "type": "text",
+          "text": " Arthur Mensch, CEO da Mistral, não quis comentar reportagem de que a empresa "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-21/microsoft-e-mistral-fecham-parceria-multibilionaria-na-europa",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "negociaria captar cerca de EUR3 bilhões"
+         },
+         {
+          "type": "text",
+          "text": " (US$3,4 bilhões) a uma avaliação de EUR20 bilhões, e disse mirar 1 gigawatt de capacidade computacional até 2030."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/27c39340-c3df-43d8-b251-e1f9b90484fc_1672x941.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 941,
+       "width": 1672,
+       "resizeWidth": 520,
+       "bytes": 83118,
+       "alt": "Arthur Mensch, CEO da Mistral",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Arthur Mensch, CEO da Mistral. Imagem: CNBC"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "blockquote",
+    "content": [
+     {
+      "type": "paragraph",
+      "attrs": {
+       "textAlign": null
+      },
+      "content": [
+       {
+        "type": "text",
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "text": "Abaixo, apenas para assinantes:"
+       }
+      ]
+     },
+     {
+      "type": "paragraph",
+      "attrs": {
+       "textAlign": null
+      },
+      "content": [
+       {
+        "type": "text",
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "text": "Segurança."
+       },
+       {
+        "type": "text",
+        "text": " Pesquisadores driblaram os sandboxes de vários agentes de programação por IA populares."
+       }
+      ]
+     },
+     {
+      "type": "paragraph",
+      "attrs": {
+       "textAlign": null
+      },
+      "content": [
+       {
+        "type": "text",
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "text": "Espionagem."
+       },
+       {
+        "type": "text",
+        "text": " Ex-funcionário de uma grande fabricante de chips é indiciado por tentar vazar segredos para a China."
+       }
+      ]
+     },
+     {
+      "type": "paragraph",
+      "attrs": {
+       "textAlign": null
+      },
+      "content": [
+       {
+        "type": "text",
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "text": "China."
+       },
+       {
+        "type": "text",
+        "text": " Pequim estuda endurecer os controles de exportação de suas tecnologias de IA e chips, revertendo a política de pesos abertos."
+       }
+      ]
+     },
+     {
+      "type": "paragraph",
+      "attrs": {
+       "textAlign": null
+      },
+      "content": [
+       {
+        "type": "text",
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "text": "Data centers."
+       },
+       {
+        "type": "text",
+        "text": " Uma empresa chinesa concluiu um data center de escala gigawatt usando apenas chips fabricados na China, sem nenhum da Nvidia."
+       }
+      ]
+     },
+     {
+      "type": "paragraph",
+      "attrs": {
+       "textAlign": null
+      },
+      "content": [
+       {
+        "type": "text",
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "text": "Chips."
+       },
+       {
+        "type": "text",
+        "text": " A maior fabricante de chips do mundo planeja elevar os preços de produção, e já avisou grandes clientes."
+       }
+      ]
+     },
+     {
+      "type": "paragraph",
+      "attrs": {
+       "textAlign": null
+      },
+      "content": [
+       {
+        "type": "text",
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "text": "Financiamento."
+       },
+       {
+        "type": "text",
+        "text": " Uma grande gestora estrutura bilhões em dívida para financiar o campus de data center de uma big tech."
+       }
+      ]
+     },
+     {
+      "type": "paragraph",
+      "attrs": {
+       "textAlign": null
+      },
+      "content": [
+       {
+        "type": "text",
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "text": "Capital."
+       },
+       {
+        "type": "text",
+        "text": " Novas rodadas de investimento em startups de pagamentos para agentes de IA e de robôs que constroem usinas solares."
+       }
+      ]
+     },
+     {
+      "type": "paragraph",
+      "attrs": {
+       "textAlign": null
+      },
+      "content": [
+       {
+        "type": "text",
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "text": "Defesa."
+       },
+       {
+        "type": "text",
+        "text": " Novo drone de ataque autônomo projetado para voar ao lado de helicópteros tripulados."
+       }
+      ]
+     },
+     {
+      "type": "paragraph",
+      "attrs": {
+       "textAlign": null
+      },
+      "content": [
+       {
+        "type": "text",
+        "marks": [
+         {
+          "type": "strong"
+         }
+        ],
+        "text": "Direitos autorais."
+       },
+       {
+        "type": "text",
+        "text": " Uma gravadora abre nova ação por direitos autorais contra uma plataforma de música gerada por IA."
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/f44b2401-8353-4151-945f-a4a7650d073d_4700x649.png",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 649,
+       "width": 4700,
+       "resizeWidth": null,
+       "bytes": 86036,
+       "alt": "AbacatePay",
+       "title": null,
+       "type": "image/png",
+       "href": "https://abacatepay.com",
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     }
+    ]
+   },
+   {
+    "type": "paywall"
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Segurança"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Pillar Security."
+         },
+         {
+          "type": "text",
+          "text": " A equipe de pesquisa publicou a série “Week of Sandbox Escapes” e "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-21/pesquisadores-identificam-falhas-de-seguranca-em-agentes-de-codificacao-ia",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "escapou dos "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-21/pesquisadores-identificam-falhas-de-seguranca-em-agentes-de-codificacao-ia",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           },
+           {
+            "type": "em"
+           }
+          ],
+          "text": "sandboxes"
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-21/pesquisadores-identificam-falhas-de-seguranca-em-agentes-de-codificacao-ia",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": " de quatro agentes de código por IA"
+         },
+         {
+          "type": "text",
+          "text": ", Cursor, Codex da OpenAI, Gemini CLI do Google e Antigravity, sem atacá-los diretamente. A falha do Cursor virou o CVE-2026-48124, corrigido na versão 3.0.0, e a OpenAI pagou recompensa de alta severidade pela do Codex."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Taiwan."
+         },
+         {
+          "type": "text",
+          "text": " Promotores "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-20/taiwan-denuncia-ex-gerente-da-tsmc-por-roubo-de-segredos-industriais",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "indiciaram um ex-vice-gerente da TSMC"
+         },
+         {
+          "type": "text",
+          "text": ", de sobrenome Chen, acusado de tentar vazar tecnologias centrais de chips para a China, no que dizem ser o primeiro processo do tipo no país, e pediram sete anos de prisão. Chen teria copiado 21 documentos confidenciais entre maio de 2023 e fevereiro de 2024, recuperados antes de qualquer transferência."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "China & chips"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Pequim."
+         },
+         {
+          "type": "text",
+          "text": " O Ministério do Comércio "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-21/china-avalia-novas-restricoes-a-exportacao-de-ia-e-chips",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "consulta Alibaba, ByteDance e Zhipu sobre endurecer os controles de exportação"
+         },
+         {
+          "type": "text",
+          "text": " de tecnologias avançadas de IA e chips, incluindo limitar a transferência de dados de treinamento e restringir que estrangeiros baixem os pesos ("
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "weights"
+         },
+         {
+          "type": "text",
+          "text": ") dos modelos chineses. A medida marcaria uma reversão da estratégia de pesos abertos que impulsionou a adoção global de modelos chineses."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Z.ai."
+         },
+         {
+          "type": "text",
+          "text": " Segundo a Bloomberg, a ex-Zhipu concluiu um "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-20/zai-conclui-data-center-de-1-gw-equipado-apenas-com-chips-chineses",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "data center de 1 gigawatt com apenas chips fabricados na China"
+         },
+         {
+          "type": "text",
+          "text": ", em vários clusters de mais de 10.000 chips e nenhum da Nvidia, e começou a operá-lo parcialmente. As ações dispararam 37% em Hong Kong na terça, embora os detalhes venham de uma única fonte anônima."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/14568d18-3e58-4779-a932-7e80d8e08706_419x279.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": "normal",
+       "height": 279,
+       "width": 419,
+       "resizeWidth": null,
+       "bytes": 0,
+       "alt": null,
+       "title": null,
+       "type": "",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Wang Wentao, Ministro do Comércio da China. Foto: REUTERS/Maxim Shemetov/File Photo"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Manufatura & memória"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "TSMC."
+         },
+         {
+          "type": "text",
+          "text": " A fabricante planeja "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-21/tsmc-planeja-aumentar-precos-de-chips-em-ate-10-a-partir-de-2027",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "elevar os preços de produção de chips em até 10% em 2027"
+         },
+         {
+          "type": "text",
+          "text": ", com reajustes de 5% a 10% (a depender do cliente) e prêmio adicional de 10% a 15% para pedidos de "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "chips"
+         },
+         {
+          "type": "text",
+          "text": " de alto desempenho acima do previsto; Apple, Nvidia e AMD já foram informadas. O aumento vem após um segundo trimestre recorde, com lucro em alta de 77%."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/dd2b0990-c700-45b4-a773-e61c174f2806_2520x1260.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 1260,
+       "width": 2520,
+       "resizeWidth": 520,
+       "bytes": 141205,
+       "alt": "Logo da TSMC",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "O logo da TSMC. Imagem: Reuters"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Coreia do Sul."
+         },
+         {
+          "type": "text",
+          "text": " As exportações de semicondutores "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-21/exportacoes-de-chips-da-coreia-do-sul-saltam-180-em-julho",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "somaram US$22,1 bilhões entre 1º e 20 de julho"
+         },
+         {
+          "type": "text",
+          "text": ", alta de 180,6% na comparação anual e recorde para o período, puxadas pelos preços da memória e pela demanda por HBM (memória de alta largura de banda) para servidores de IA. Os chips foram 40,3% das exportações totais."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Infraestrutura"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "BlackRock."
+         },
+         {
+          "type": "text",
+          "text": " A gestora busca "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-21/meta-capta-us-12-bilhoes-com-blackrock-para-expansao-de-data-centers",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "vender mais de US$12 bilhões em títulos"
+         },
+         {
+          "type": "text",
+          "text": " para financiar um campus de data center da Meta em El Paso, no Texas, com financiamento total perto de US$13 bilhões. A estrutura mantém a maior parte da dívida de construção fora do balanço da Meta, registrada como aluguel, e ecoa um acordo de quase US$30 bilhões com a Blue Owl no ano passado."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/d5d074da-a57b-4704-9089-0b62dde2628d_5908x2816.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 2816,
+       "width": 5908,
+       "resizeWidth": 520,
+       "bytes": 7879952,
+       "alt": "Render do campus de data center da Meta em El Paso, Texas",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Render do campus de data center da Meta em El Paso, Texas. Imagem: Meta"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Rodadas"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Natural."
+         },
+         {
+          "type": "text",
+          "text": " A startup de infraestrutura de pagamentos para agentes de IA "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-20/startup-natural-capta-us-30-milhoes-para-pagamentos-de-agentes-de-ia",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "levantou uma Série A de US$30 milhões"
+         },
+         {
+          "type": "text",
+          "text": " liderada por Kirsten Green, da Forerunner, elevando o total a cerca de US$40 milhões. A empresa quer competir diretamente com incumbentes como a Stripe na corrida por meios de pagamento agênticos."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Gritt."
+         },
+         {
+          "type": "text",
+          "text": " A startup saiu do "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "stealth"
+         },
+         {
+          "type": "text",
+          "text": " com uma "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-21/startup-gritt-capta-us-34-milhoes-para-robos-de-construcao-solar",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "Série A de US$26 milhões liderada pela Obvious Ventures"
+         },
+         {
+          "type": "text",
+          "text": ", US$34 milhões no total, para robôs controlados por IA que constroem usinas solares. Seus sistemas permitem que uma equipe de oito instale de 3.000 a 4.000 painéis por dia, contra cerca de 800 no método tradicional, e a empresa tem contratos para 2,8 GW."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/4aff7439-7ada-4138-830e-a27b67667fdb_3840x2160.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 2160,
+       "width": 3840,
+       "resizeWidth": 520,
+       "bytes": 2104990,
+       "alt": "Robô autônomo da Gritt instalando painéis solares",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Robô autônomo da Gritt instalando painéis solares. Imagem: Gritt"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Capital & aquisições"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Ant International."
+         },
+         {
+          "type": "text",
+          "text": " A afiliada internacional do Ant Group, de Jack Ma, "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-21/ant-international-capta-us-12-bilhao-para-expansao-global",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "levantou US$1,2 bilhão"
+         },
+         {
+          "type": "text",
+          "text": " para acelerar a expansão global, com participação de Ant Group e Alibaba, e estava avaliada em US$10 bilhões antes da rodada. A empresa de pagamentos, sediada em Singapura, diz conectar mais de 150 milhões de comerciantes a mais de 2 bilhões de contas de usuários."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Tencent."
+         },
+         {
+          "type": "text",
+          "text": " A gigante chinesa "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-20/tencent-negocia-compra-da-desenvolvedora-de-jogos-superplay",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "negocia comprar o estúdio israelense SuperPlay"
+         },
+         {
+          "type": "text",
+          "text": ", da Playtika, por US$1 bilhão a US$1,5 bilhão. A Playtika havia comprado a SuperPlay em 2024 por US$690 milhões mais "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "earnout"
+         },
+         {
+          "type": "text",
+          "text": " (pagamento condicionado a metas) de até US$1,25 bilhão, que a Tencent assumiria."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Defesa"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Anduril e Archer."
+         },
+         {
+          "type": "text",
+          "text": " As empresas apresentaram no Farnborough Airshow o "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-20/anduril-lanca-drone-de-ataque-com-design-de-helicoptero",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "“Thunder”, um drone de ataque autônomo com formato de helicóptero"
+         },
+         {
+          "type": "text",
+          "text": " projetado para voar como “ala leal” ("
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "loyal wingman"
+         },
+         {
+          "type": "text",
+          "text": ") ao lado de helicópteros tripulados como o Apache. Combina o tiltrotor (motores que giram) da Karem, o trem de força híbrido-elétrico da Archer e a autonomia da Anduril, com primeiro voo previsto para 2027."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/928dab85-51cc-49ef-af9d-4149b0029e25_1200x630.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 630,
+       "width": 1200,
+       "resizeWidth": 520,
+       "bytes": 51017,
+       "alt": "O 'Thunder', rotor de ataque autônomo da Anduril e Archer",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "O 'Thunder', drone de ataque autônomo da Anduril e Archer. Imagem: Anduril"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "youtube2",
+    "attrs": {
+     "videoId": "F4LOf_eleAM",
+     "startTime": null,
+     "endTime": null
+    }
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Direitos autorais"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Sony Music."
+         },
+         {
+          "type": "text",
+          "text": " A gravadora abriu uma "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-07-21/sony-music-processa-udio-por-uso-de-30-mil-musicas-para-treinar-ia",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "segunda ação por violação de direitos autorais contra a Udio"
+         },
+         {
+          "type": "text",
+          "text": ", empresa de música por IA, apontando 30.117 gravações que diz terem sido copiadas sem permissão para treinar seus modelos. Isso amplia a exposição potencial da Udio de cerca de US$50 milhões para aproximadamente US$4,5 bilhões; a Sony é a única grande gravadora que ainda processa a startup."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "calloutBlock",
+    "content": [
+     {
+      "type": "heading",
+      "attrs": {
+       "textAlign": null,
+       "level": 4
+      },
+      "content": [
+       {
+        "type": "text",
+        "text": "Leia também"
+       }
+      ]
+     },
+     {
+      "type": "bullet_list",
+      "content": [
+       {
+        "type": "list_item",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "link",
+              "attrs": {
+               "href": "https://dailyjournal.news/news/2026-07-21/guarda-revolucionaria-do-ira-ataca-data-center-da-aws-no-bahrein",
+               "target": "_blank",
+               "rel": "noopener noreferrer nofollow",
+               "class": null
+              }
+             }
+            ],
+            "text": "Irã alega ataque com mísseis de cruzeiro a data center da AWS no Bahrein"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "list_item",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "link",
+              "attrs": {
+               "href": "https://dailyjournal.news/news/2026-07-19/ataques-mutuos-entre-russia-e-ucrania-deixam-mortos-e-feridos-1",
+               "target": "_blank",
+               "rel": "noopener noreferrer nofollow",
+               "class": null
+              }
+             }
+            ],
+            "text": "Ataque russo atinge navio perto de Odessa e Ucrânia lança mais de 400 drones sobre Moscou"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "list_item",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "link",
+              "attrs": {
+               "href": "https://dailyjournal.news/news/2026-07-20/dois-petroleiros-explodem-no-estreito-de-ormuz-apos-alertas-do-ira",
+               "target": "_blank",
+               "rel": "noopener noreferrer nofollow",
+               "class": null
+              }
+             }
+            ],
+            "text": "Brent supera US$90 com ameaça iraniana ao Estreito de Ormuz"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "list_item",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "link",
+              "attrs": {
+               "href": "https://dailyjournal.news/news/2026-07-21/terapia-celular-e-genica-da-kolon-tissuegene-falha-em-fase-3-para-joelho-nos-eua",
+               "target": "_blank",
+               "rel": "noopener noreferrer nofollow",
+               "class": null
+              }
+             }
+            ],
+            "text": "Terapia celular e gênica da Kolon TissueGene falha em ensaio de Fase 3 nos EUA"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "marks": [
+       {
+        "type": "strong"
+       }
+      ],
+      "text": "Recomendações de hoje:"
+     }
+    ]
+   },
+   {
+    "type": "paragraph",
+    "attrs": {
+     "textAlign": null
+    },
+    "content": [
+     {
+      "type": "text",
+      "marks": [
+       {
+        "type": "strong"
+       }
+      ],
+      "text": "Urgent Update- AI Sputnik Moment: Kimi K3 Released w/ Emad Mostaque | Ep. 272:"
+     },
+     {
+      "type": "text",
+      "text": " O vídeo discute o lançamento do modelo Kimi K3, desenvolvido pela chinesa Moonshot AI, que atingiu o topo dos benchmarks globais de IA. Peter Diamandis e seus convidados (Emad Mostaque, Salim Ismail, Dave Blundin e Dr. Alexander Wissner-Gross) analisam como esse modelo, mesmo sob restrições de exportação de chips dos EUA, superou modelos americanos de ponta, marcando uma mudança drástica no cenário competitivo:"
+     }
+    ]
+   },
+   {
+    "type": "youtube2",
+    "attrs": {
+     "videoId": "pSUyLfirP8Y",
+     "startTime": null,
+     "endTime": null
+    }
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "paragraph",
+    "attrs": {
+     "textAlign": null
+    },
+    "content": [
+     {
+      "type": "text",
+      "marks": [
+       {
+        "type": "strong"
+       }
+      ],
+      "text": "\"Being Canceled is a Choice\" | Replit CEO with a16z:"
+     },
+     {
+      "type": "text",
+      "text": " O vídeo apresenta uma conversa entre Erik Torenberg e Amjad Masad, fundador e CEO da Replit, sobre a importância da comunicação direta (founder-led storytelling) para o crescimento de empresas. Masad discute como a construção de uma narrativa pública foi fundamental para a sobrevivência e o sucesso da Replit, defendendo que CEOs devem aprender a se comunicar diretamente com o público em vez de depender exclusivamente de intermediários como a imprensa:"
+     }
+    ]
+   },
+   {
+    "type": "youtube2",
+    "attrs": {
+     "videoId": "rghTqkclDqA",
+     "startTime": "52s",
+     "endTime": null
+    }
+   }
+  ]
+ }
+}
