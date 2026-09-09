@@ -265,6 +265,19 @@ else
 fi
 ```
 
+Then gate the **subtitle** (line 3 of `edition.md`): one ` | `-separated segment
+per Grande, at most one segment ending in `?`. This is the published format
+(every edition since July was rewritten into it by hand), so a mismatch is a
+generator bug — delete `edition.md` and re-run `generator`, don't hand-patch:
+
+```bash
+SUB=$(sed -n 3p "$D/edition.md")
+S=$(awk -F' \\| ' '{print NF}' <<<"$SUB")
+Q=$(grep -o '?' <<<"$SUB" | wc -l)
+if [ "$S" -eq "$G" ] && [ "$Q" -le 1 ]; then echo "OK subtitle: $S segments, $Q question"
+else echo "FAIL subtitle: $S segments for $G grandes, $Q questions — re-run generator: $SUB"; fi
+```
+
 An out-of-cap Grande count is worth surfacing — **>3 is a real problem** (the cap),
 a low count is the writer's call on a thin/repetitive day — but `edition.md` still
 exists, so flag it for the human review rather than hard-failing.

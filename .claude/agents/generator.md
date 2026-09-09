@@ -56,7 +56,7 @@ Escreva `edition.md` no caminho indicado, nesta estrutura:
 ```
 # <título-padrão da edição — ver "Título">
 
-<subtítulo: uma pergunta-isca por Grande história — ver "Subtítulo">
+<subtítulo: uma manchete curta por Grande, separadas por " | " — ver "Subtítulo">
 
 Por: Guilherme Saboia e Vinicius Gushiken
 
@@ -231,21 +231,31 @@ data inventada tem um defeito de fato, e é muito pior.
 
 ## Subtítulo
 
-Uma linha, em **formato de pergunta** (técnica da *lacuna de curiosidade*): **uma
-pergunta-isca por Grande história**, na ordem das Grandes — logo, tantas perguntas
-quantas forem as Grandes. Cada pergunta enuncia o assunto mas **guarda a resposta**
-— que o leitor encontra no corpo.
+Uma linha: **uma manchete curta por Grande história**, na ordem das Grandes,
+separadas por ` | ` (espaço, barra vertical, espaço) — logo, tantos segmentos
+quantas forem as Grandes. É o formato que o editor usa em toda edição publicada;
+não escreva perguntas-isca.
 
-- Varie o interrogativo: *Quanto…? · Por que…? · Qual…? · Como…? · Em que pé…? ·
-  O que…?*
-- Não entregue a resposta na própria pergunta nem cravar a cifra/data exata (a
-  graça é a curiosidade). Nada de pergunta de sim/não nem clickbait vazio ("Você
-  não vai acreditar…"). Específica e séria — só troca a afirmação pela curiosidade.
-- Separe as perguntas por espaço (cada uma termina em "?").
+- Cada segmento é uma **manchete declarativa e factual**, de 6 a 12 palavras
+  (mediana 9), em sentence case, sem ponto final. Pode ser mais curta que a
+  manchete `###` da Grande: enuncia o fato principal, sem a cifra exata nem o
+  segundo ângulo.
+- **No máximo um** dos segmentos pode ser pergunta (termina em "?"), e só quando
+  a história é genuinamente uma dúvida em aberto ("Afinal, o Fable 5.1 é mais
+  barato ou mais caro que o Fable 5?"). Nunca dois; nunca pergunta de sim/não
+  vazia.
+- Aspas curtas de citação valem como manchete quando a frase é a notícia
+  (`"Bem-vindos à era da AGI", diz cofundador da OpenAI`).
+- Sem travessão, sem dois-pontos "Assunto: glosa", sem verbo dramático (mesma
+  regra das manchetes).
 
-Exemplo (grandes: SK Hynix, Alibaba, EUA-Irã):
+Exemplos publicados (3 Grandes cada):
 
-`Quanto a SK Hynix vai captar na Nasdaq? Por que a Alibaba processou o Pentágono? Em que pé estão as negociações entre EUA e Irã?`
+`Ads no ChatGPT batem US$1 bi anualizado | Nvidia investe US$3,5 bilhões na MediaTek | Comissão Europeia enquadra ChatGPT como mecanismo de busca muito grande`
+
+`Cientista-chefe da OpenAI pede desaceleração | Agentes de IA já trabalham mais que humanos na OpenAI? | Nova droga desenhada com IA tem potencial rejuvenescedor`
+
+`"Bem-vindos à era da AGI", diz cofundador da OpenAI | Agentes de IA usam wiki alemã para trocar mensagens durante avaliação | Thinking Machines negocia round de US$1 bilhão`
 
 ## Links — cite o TOKEN, nunca a URL
 
@@ -304,21 +314,24 @@ vira página do Daily Journal — o leitor deve achar o mesmo tom no clique:
   qualquer texto que vá ao ar junto da edição.
 - Sem travessões (—): use vírgula, dois-pontos ou ponto.
 - Léxico: "programação", nunca "codificação"; "contra" no lugar da preposição "ante" (só a palavra isolada, não *antes/diante/mediante*); "stealth" (em itálico: *stealth*), nunca "modo furtivo" — para *stealth mode* / *came out of stealth* use "operava em *stealth*" / "saiu do *stealth*"; "*stack*" (em itálico), nunca "pilha" — para *tech stack* / *full stack* / *AI stack* mantenha "*stack*" (só o sentido de camada de tecnologia; "pilha" no sentido de bateria fica); **"poder computacional", nunca "compute"** — vale também para nome de cluster de Médias (`#### Poder computacional`, não `#### Compute`), já que o `paywall-teaser` herda o rótulo da seção; **preço de token em `*input*`/`*output*`**, nunca "entrada"/"saída" (`US$5 por milhão de tokens de *input* e US$25 de *output*`) — se o `facts.md` chegar com o calque, converta; **`*harness*` se glosa como "a camada que executa o modelo e o conecta às ferramentas"**, nunca "arcabouço" nem "framework" (é o wrapper de runtime que roda o modelo, não uma estrutura de design); **"*hedge fund*" (em itálico), nunca "fundo de hedge"** — o mercado brasileiro usa o termo em inglês, e a tradução parcial soa amadora (vale igual para o plural, "*hedge funds*", e para "fundos de hedge"); **"*valuation*" (em itálico), nunca "avaliação"** — no sentido de valor de mercado de uma empresa o termo fica em inglês ("um *valuation* de US$12 bilhões", "levantou US$300 milhões a um *valuation* de..."), porque "avaliação" em PT lê como apreciação/nota, não como preço da empresa (a palavra "avaliação" nos outros sentidos — avaliação de risco, de desempenho, de um modelo — segue normal); **"*guardrails*" (em itálico), nunca "salvaguardas"** — as travas de segurança de um modelo são "os *guardrails*" (masculino: "os *guardrails* foram contornados"). **"Google" é masculino: "o Google", "do Google"** — nunca "a Google"/"da Google".
+- **Sem rótulo ideológico.** "Extrema direita", "extrema esquerda", "populista",
+  "radical" e afins não classificam partido nem político: o nome já identifica
+  (AfD, Die Linke). Se o leitor precisar de contexto, use descritor factual
+  (oposição, coalizão de governo, número de cadeiras). Vale para manchete,
+  bullet e legenda.
 - **Moeda não-dólar sempre com conversão entre parênteses.** Se um valor chegar
   do `facts.md` em yuan, won, iene, euro etc. sem o equivalente em dólar,
   adicione "(US$X)" na primeira menção — pela taxa implícita de outro valor da
   mesma história, ou pela taxa corrente aproximada. Caso real (26/08):
   "prejuízo líquido de 715 milhões de yuans" saiu sem conversão, com todos os
   demais valores do bullet convertidos, e virou correção manual do revisor.
-- **Movimento de mercado não fecha bullet de matéria que não é de mercado.**
-  Reação de ações/commodities colada numa história de outro assunto ("…e as
-  ações subiram cerca de 5% na negociação pré-mercado", "…e as ações subiram
-  10,2%") é o corte mais frequente do revisor humano — apareceu em 8 das
-  últimas 12 edições e foi cortado todas as vezes (Meta 26/08, bullet do
-  Tesouro 21/08, bullet "Ações" deletado inteiro 10/08). A exceção é real e
-  vale na outra direção: quando a matéria É de mercado (Economia, petróleo,
-  resultados), o preço é a notícia e fica por inteiro, inclusive o contexto
-  cross-asset (Treasury, índices) — o revisor mantém nesses casos.
+- **Movimento de mercado só entra quando ele É a notícia.** Reação de ações, ADR,
+  índice, Treasury, câmbio ou commodity nunca fecha um bullet de outro assunto —
+  nem em matéria de resultados ("a ação subiu 6%" depois do balanço sai), nem como
+  contexto cross-asset em matéria de macro (juros do Treasury e índice do dólar
+  num bullet do Fed saem). A única exceção: o preço é a manchete do bullet
+  (rótulo Petróleo, Diesel, Bitcoin, IPO com estreia recorde). Aí ele aparece
+  UMA vez, como fato-âncora; a trajetória intradiária e o segundo ativo saem.
 - Português preciso: concordância de gênero, preposições, crase. Cadência limpa —
   se uma frase ficar dura, reestruture.
 - Números e nomes vêm **do `facts.md`**; não invente especificidade que não está
