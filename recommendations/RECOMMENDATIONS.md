@@ -1219,3 +1219,13 @@ https://www.youtube.com/watch?v=QFk6g5PQtqs
 **GPT-6 Hits AGI? Tech Euphoria 2.0, SF Mansion Shortage, NYC Bans AI in Schools & Venezuela Oil Deal**
 Discussão entre os apresentadores do podcast All-In — Chamath Palihapitiya (investidor de capital de risco), Jason Calacanis (investidor-anjo e moderador), David Sacks (investidor e ex-Czar de IA da Casa Branca) e David Friedberg (fundador e investidor em ciência e tecnologia) — abordando os lançamentos de modelos de fronteira de inteligência artificial, dinâmica de mercado e bolha imobiliária em São Francisco, debates de segurança cibernética e influências políticas de grupos de Altruísmo Eficaz, o banimento de IA em escolas públicas de Nova York e o recente acordo petrolífero dos Estados Unidos na Venezuela
 https://www.youtube.com/watch?v=DvFe9bR2eHA
+
+## 2026-09-08
+
+**Why World Models Could Change Robotics, 3D, and Creativity**
+Os cofundadores da World Labs (Fei-Fei Li, Justin Johnson e Ben Mildenhall) juntam-se a Martin Casado, sócio-geral da a16z, para discutir o lançamento do Atlas, o mais recente modelo de mundo da empresa. Fundada há cerca de dois anos e meio, a startup desenvolve tecnologia focada em inteligência espacial, integrando geração, reconstrução 3D e simulação em uma única arquitetura unificada
+https://www.youtube.com/watch?v=qn1QDDBnTA0
+
+**GPT-6 Astra Saturates ARC-AGI-3, Tesla Cybercab Hits Austin, Anthropic Proves Fermat's Last Theorem**
+Discussão entre Peter H. Diamandis (fundador da XPRIZE e Singularity University), Salim Ismail (fundador da Open ExO e GP na Exponential Venture Capital), Dave Blundin (fundador e GP da Link Ventures), Dr. Alexander Wissner-Gross (cientista da computação e fundador da Reified) e Emad Mostaque (fundador da Intelligent Internet e ex-CEO da Stability AI) sobre os lançamentos de modelos de fronteira de IA, governança global, mobilidade autônoma, exploração espacial e avanços em longevidade
+https://www.youtube.com/watch?v=1DB_QDiviH4
