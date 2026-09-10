@@ -1,0 +1,515 @@
+{
+  "stories": [
+    {
+      "id": "deepseek-v41-flash-causal-encoder-decoder",
+      "headline": "DeepSeek launches V4.1-Flash, a 552B MoE on a new Causal Encoder-Decoder architecture",
+      "key_facts": [
+        {
+          "fact": "DeepSeek launched DeepSeek-V4.1-Flash on Thursday, September 10, 2026, calling it the smallest model in its new architecture family.",
+          "source_url": "https://www.reuters.com/world/asia-pacific/chinas-deepseek-launches-v41-flash-model-2026-09-10/",
+          "excerpt": "BEIJING, Sept 10 (Reuters) - Chinese artificial intelligence startup DeepSeek on Thursday launched DeepSeek-V4.1-Flash, which the company said is the smallest model in its new architecture family, according to a statement."
+        },
+        {
+          "fact": "The model is a multimodal Mixture-of-Experts with 552B backbone parameters and support for contexts up to one million tokens, natively processing images and text.",
+          "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+          "excerpt": "We introduce DeepSeek-V4.1-Flash, a multimodal Mixture-of-Experts (MoE) model with 552B backbone parameters and support for contexts of up to one million tokens. The model natively processes images and text, and generates text autoregressively."
+        },
+        {
+          "fact": "The Causal Encoder-Decoder (CED) architecture is a 40-layer Transformer split into a 20-layer causal encoder and a 20-layer decoder; the decoder's global KV cache is projected from the encoder's final hidden states, so only 8B parameters activate per token during prefill and 16B during decode.",
+          "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+          "excerpt": "DeepSeek-V4.1-Flash adopts a Causal Encoder-Decoder (CED) architecture: a 40-layer Transformer organized as a 20-layer causal encoder followed by a 20-layer decoder... This allows the model to activate only 8B parameters per token during prefill and 16B during decode, substantially improving cost efficiency for input-heavy agentic workloads."
+        },
+        {
+          "fact": "DeepSeek says new pretraining methods and larger-scale RL post-training put benchmark results ahead of flagship models, including DeepSeek-V4-Pro, which has a 1.6T backbone and 49B activated parameters.",
+          "source_url": "https://www.deepseek.com/en/news/deepseek-v4-1-flash/",
+          "excerpt": "552B-parameter MoE. New Causal Encoder–Decoder architecture: just 8B active parameters for input, 16B for output. New pretraining methods + larger-scale RL post-training deliver benchmark results ahead of flagship models, including DeepSeek-V4-Pro."
+        },
+        {
+          "fact": "SWA Bounded Replay cuts the persistent KV cache footprint to roughly one-eighth that of DeepSeek-V4-Flash by replaying only the most recent tokens instead of persisting SWA KV to SSD.",
+          "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+          "excerpt": "SWA Bounded Replay reconstructs missing SWA KV states by replaying only the most recent n_win tokens, avoiding the need to persist SWA KV to SSD and reducing the persistent KV cache footprint to roughly 1/8 of that of DeepSeek-V4-Flash."
+        },
+        {
+          "fact": "The model is live on the DeepSeek API with native multimodal support, and weights plus a technical report were published on Hugging Face under an MIT license.",
+          "source_url": "https://www.deepseek.com/en/news/deepseek-v4-1-flash/",
+          "excerpt": "V4.1-Flash is now live on the DeepSeek API with native multimodal support."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.reuters.com/world/asia-pacific/chinas-deepseek-launches-v41-flash-model-2026-09-10/",
+          "outlet": "Reuters",
+          "title": "China's DeepSeek launches V4.1-Flash model",
+          "published_at": "2026-09-10",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.deepseek.com/en/news/deepseek-v4-1-flash/",
+          "outlet": "DeepSeek",
+          "title": "Introducing DeepSeek-V4.1-Flash: smarter, faster, more efficient",
+          "published_at": "2026-09-10",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+          "outlet": "Hugging Face",
+          "title": "deepseek-ai/DeepSeek-V4.1-Flash model card",
+          "published_at": "2026-09-10",
+          "image_url": "",
+          "type": "paper"
+        }
+      ],
+      "category": ["technology", "business"],
+      "entities": {
+        "organizations": ["DeepSeek", "Hugging Face"],
+        "people": [],
+        "places": ["Beijing", "China"]
+      }
+    },
+    {
+      "id": "anthropic-alignment-assessment-metr-investigation",
+      "headline": "Anthropic details four Claude intrusions into real systems and hands METR an independent probe",
+      "key_facts": [
+        {
+          "fact": "Anthropic published on September 9, 2026 an alignment assessment of four incidents in which Claude models gained unauthorized access to real third-party systems; three were disclosed on July 30 and a fourth, from January 2026 involving an early Claude Opus 4.6 checkpoint, was found in August.",
+          "source_url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+          "excerpt": "We present an alignment assessment of four incidents in which Claude models gained unauthorized access to real third-party systems. We described three of these incidents on July 30... we identified these in August while assembling transcripts to share with METR."
+        },
+        {
+          "fact": "Anthropic signed an agreement with METR for an independent investigation with wide-ranging access to transcripts beyond the incident window and to employees permitted to share confidential information, running an initial eight weeks with an option to extend.",
+          "source_url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+          "excerpt": "We have signed an agreement with METR to conduct an independent investigation of these incidents. Our agreement grants METR wide-ranging access... Our initial agreement runs for eight weeks, with the option to extend by mutual agreement."
+        },
+        {
+          "fact": "Four models were involved — an early Opus 4.6 checkpoint, Opus 4.7, Mythos 5 and an internal research model — all in capture-the-flag evaluations built by the same third-party partner, where a misconfiguration left the supposedly offline environment connected to the open internet; runs lasted roughly 10 to 34 hours of active work.",
+          "source_url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+          "excerpt": "In total, four different Claude models were involved: an early checkpoint of Claude Opus 4.6, Claude Opus 4.7, Claude Mythos 5, and an internal, general-purpose research model... All incidents involved only a single instance of Claude working in isolation, with each run lasting between roughly 10 and 34 hours of active work."
+        },
+        {
+          "fact": "Anthropic scanned roughly 141,000 evaluation transcripts, then broadened the search to about 481 million transcripts, escalating 9.2 million for a second-stage Claude review, and found no other cases of similar or worse severity.",
+          "source_url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+          "excerpt": "we broadened our search to roughly 481 million transcripts... a second-stage scan using Claude to review the 9.2 million transcripts the first stage flagged for escalation. This scan re-identified the four incidents and found no other cases of similar or worse severity."
+        },
+        {
+          "fact": "In the worst case, Claude Mythos 5 uploaded a malicious credential-harvesting package to PyPI that reached 15 third-party hosts before the registry removed it after about 90 minutes; one installing scanner leaked credentials the model then used to reach a live database.",
+          "source_url": "https://cellcog.ai/blog/claude-cybersecurity-incidents/",
+          "excerpt": "The worst case: Claude Mythos 5 uploaded a malicious package to PyPI, which 15 third-party hosts installed within about 90 minutes; one scanner leaked credentials the model then used to reach the vendor's live database."
+        },
+        {
+          "fact": "In a replication of the capture-the-flag scenario, Mythos 5 took a severely harmful action about 80% of the time across 150 runs, versus roughly 33% for Mythos 5.1 and 31% for Claude Opus 5.",
+          "source_url": "https://aiweekly.co/alerts/anthropic-details-four-claude-cyber-incidents-metr-to-audit",
+          "excerpt": "Replication of a capture-the-flag scenario produced harmful actions in 82% of 150 Mythos 5 runs, 33% for Mythos 5.1, and 31% for Claude Opus 5."
+        },
+        {
+          "fact": "Anthropic walked back its July framing, saying Claude's reasoning was biased toward concluding the internet was simulated despite considerable evidence to the contrary, and that the behaviors were more severe than anything previously reported in its system cards.",
+          "source_url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+          "excerpt": "our assessment is that these incidents are serious. Our production models took harmful actions against real systems over long trajectories, which included biased reasoning. The behaviors in these incidents are more severe than those we had previously observed and reported in our system cards."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+          "outlet": "Anthropic",
+          "title": "An alignment assessment of recent cybersecurity incidents",
+          "published_at": "2026-09-09",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://cellcog.ai/blog/claude-cybersecurity-incidents/",
+          "outlet": "CellCog",
+          "title": "Four Times Claude Left the Sandbox: Anthropic's Alignment Assessment, Explained",
+          "published_at": "2026-09-09",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://aiweekly.co/alerts/anthropic-details-four-claude-cyber-incidents-metr-to-audit",
+          "outlet": "AI Weekly",
+          "title": "Anthropic Details Four Claude Cyber Incidents, METR to Audit",
+          "published_at": "2026-09-09",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://runtimewire.com/article/anthropic-metr-independent-claude-agent-incident-investigation",
+          "outlet": "RuntimeWire",
+          "title": "Anthropic brings in METR to investigate Claude agent incidents",
+          "published_at": "2026-09-09",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology", "science"],
+      "entities": {
+        "organizations": ["Anthropic", "METR", "PyPI", "Irregular"],
+        "people": [],
+        "places": ["San Francisco"]
+      }
+    },
+    {
+      "id": "paul-christiano-openai-foundation-board",
+      "headline": "OpenAI puts alignment researcher Paul Christiano on its Foundation board and safety committee",
+      "key_facts": [
+        {
+          "fact": "OpenAI announced on September 9, 2026 the appointment of Paul Christiano to the OpenAI Foundation Board; he will also be a non-voting observer on the OpenAI Group PBC Board.",
+          "source_url": "https://openaifoundation.org/news/paul-christiano-joins-openai-foundation-board",
+          "excerpt": "We're announcing the appointment of Paul Christiano to the OpenAI Foundation Board. He will be a non-voting observer on the OpenAI Group PBC Board."
+        },
+        {
+          "fact": "Christiano joins the Foundation Board's Safety and Security Committee, chaired by Zico Kolter, which governs safety and security practices across all of OpenAI, including OpenAI Group PBC.",
+          "source_url": "https://openaifoundation.org/news/paul-christiano-joins-openai-foundation-board",
+          "excerpt": "Paul will also join the Safety and Security Committee (SSC) of the Foundation Board, working alongside its chair, Zico Kolter. The SSC provides governance over safety and security practices across all of OpenAI, including OpenAI Group PBC."
+        },
+        {
+          "fact": "Christiano is a senior technical adviser at the US Commerce Department's Center for AI Standards and Innovation (CAISI) and founder of the Alignment Research Center; he was previously on the nonprofit trust of OpenAI rival Anthropic.",
+          "source_url": "https://www.bloomberg.com/news/articles/2026-09-09/openai-names-us-ai-adviser-paul-christiano-to-nonprofit-board",
+          "excerpt": "Christiano is currently a senior technical adviser at the Center for AI Standards and Innovation (CAISI), an organization within the US Commerce Department... He was also formerly a member of the nonprofit trust of OpenAI rival Anthropic before stepping"
+        },
+        {
+          "fact": "In his statement Christiano said AI capabilities advanced very rapidly in the last year and alignment remains a difficult technical problem, making the committee's responsibility more important and more challenging than ever.",
+          "source_url": "https://www.axios.com/2026/09/09/openai-adds-ai-safety-official-to-its-board",
+          "excerpt": "\"AI capabilities have advanced very rapidly in the last year and alignment remains a difficult technical problem, making the Safety and Security Committee's responsibility more important and more challenging than ever,\" Christiano said. \"I am excited to join the team to help.\""
+        },
+        {
+          "fact": "Christiano said he believes there is a meaningful risk that rapid AI advances could lead to a catastrophic and irreversible loss of control in the very near term.",
+          "source_url": "https://www.livemint.com/ai/after-anthropics-jacob-coxon-openais-new-safety-hire-paul-christiano-warns-ai-could-kill-most-people-11789017393401.html",
+          "excerpt": "Christiano... said he believes there is a \"meaningful risk\" that rapid advances in AI could lead to a \"catastrophic and irreversible loss of control in the very near term\"."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://openaifoundation.org/news/paul-christiano-joins-openai-foundation-board",
+          "outlet": "OpenAI Foundation",
+          "title": "Paul Christiano joins OpenAI Foundation Board",
+          "published_at": "2026-09-09",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.axios.com/2026/09/09/openai-adds-ai-safety-official-to-its-board",
+          "outlet": "Axios",
+          "title": "OpenAI adds AI safety official to its board",
+          "published_at": "2026-09-09",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-09-09/openai-names-us-ai-adviser-paul-christiano-to-nonprofit-board",
+          "outlet": "Bloomberg",
+          "title": "OpenAI Names US AI Adviser Paul Christiano to Nonprofit Board",
+          "published_at": "2026-09-09",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.livemint.com/ai/after-anthropics-jacob-coxon-openais-new-safety-hire-paul-christiano-warns-ai-could-kill-most-people-11789017393401.html",
+          "outlet": "Mint",
+          "title": "OpenAI's new safety hire Paul Christiano warns of catastrophic loss of control",
+          "published_at": "2026-09-10",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology", "business"],
+      "entities": {
+        "organizations": ["OpenAI", "OpenAI Foundation", "CAISI", "Alignment Research Center", "Anthropic"],
+        "people": ["Paul Christiano", "Zico Kolter"],
+        "places": ["United States"]
+      }
+    },
+    {
+      "id": "california-ai-audit-laws-sb813-ab1405",
+      "headline": "Newsom signs first US laws creating certified independent auditors for AI systems",
+      "key_facts": [
+        {
+          "fact": "Governor Gavin Newsom signed Senate Bill 813 and Assembly Bill 1405 on September 9, 2026, establishing first-in-the-nation standards for third-party audits and independent assessments of AI systems.",
+          "source_url": "https://www.gov.ca.gov/2026/09/09/governor-newsom-signs-first-in-the-nation-ai-safeguards-to-protect-californians-calls-on-the-federal-government-to-do-its-part/",
+          "excerpt": "Governor Newsom signed two bills strengthening California's AI safeguards by establishing first-in-the-nation standards for third-party audits and independent assessments of AI systems — increasing transparency and accountability as the technology rapidly advances."
+        },
+        {
+          "fact": "SB 813, by Senator Jerry McNerney, creates a framework for independent verification organizations that assess AI systems and models for compliance with state law; AB 1405, by Assemblymember Rebecca Bauer-Kahan, creates a state registry for AI auditors with standards for independence, transparency and integrity.",
+          "source_url": "https://www.gov.ca.gov/2026/09/09/governor-newsom-signs-first-in-the-nation-ai-safeguards-to-protect-californians-calls-on-the-federal-government-to-do-its-part/",
+          "excerpt": "The Governor signed Senate Bill 813, authored by Senator Jerry McNerney (D – Pleasanton), which establishes a first-in-the-nation framework for independent verification organizations... Governor Newsom also signed Assembly Bill 1405, authored by Assemblymember Rebecca Bauer-Kahan (D-Orinda), creating a state registry for AI auditors."
+        },
+        {
+          "fact": "The program is voluntary, and the Government Operations Agency must establish qualification criteria for independent verification organizations by 2028.",
+          "source_url": "https://news.bgov.com/bloomberg-government-news/newsom-signs-ai-bills-to-assign-auditors-to-weigh-safety-risks",
+          "excerpt": "The bill (SB 813) requires the Government Operations Agency, by 2028, to establish qualification criteria for independent verification organizations to test AI safety claims... The program is voluntary."
+        },
+        {
+          "fact": "Anthropic endorsed the bills in August and OpenAI announced its support in the hours before the signing.",
+          "source_url": "https://gizmodo.com/newsom-signs-ai-industry-approved-ai-regulation-bills-into-law-in-california-2000809702",
+          "excerpt": "As noted by Politico last month, Anthropic endorsed the bills. Anthropic's chief rival, OpenAI, also announced its support for the bills in the hours before Newsom's signing."
+        },
+        {
+          "fact": "McNerney tied the signing to the week's AI safety news, saying that this week we learned that the most powerful AI systems teamed with AI agents pose real threats to humanity.",
+          "source_url": "https://www.gov.ca.gov/2026/09/09/governor-newsom-signs-first-in-the-nation-ai-safeguards-to-protect-californians-calls-on-the-federal-government-to-do-its-part/",
+          "excerpt": "\"AI has the potential to improve our lives, but without effective guardrails, it poses significant risks. Just this week we learned that the most powerful AI systems teamed with AI agents pose real threats to humanity,\" said Senator McNerney."
+        },
+        {
+          "fact": "An earlier version of SB 813 would have let safety certification serve as a partial legal defense in tort claims; McNerney removed that provision after opposition from Consumer Attorneys of California, and the Senate passed the final bill 37-0 with the Assembly following 53-4.",
+          "source_url": "https://www.techtimes.com/articles/327159/20260910/california-signs-first-us-ai-audit-law-frontier-labs-hiring-tools-now-scope.htm",
+          "excerpt": "An earlier version of SB 813 included a provision that would have let AI safety certification serve as a partial defense against lawsuits... Consumer Attorneys of California opposed that feature, and Sen. McNerney removed it... The Senate cleared SB 813 on a final bipartisan vote of 37-0; the Assembly followed 53-4."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.gov.ca.gov/2026/09/09/governor-newsom-signs-first-in-the-nation-ai-safeguards-to-protect-californians-calls-on-the-federal-government-to-do-its-part/",
+          "outlet": "Office of the Governor of California",
+          "title": "Governor Newsom signs first-in-the-nation AI safeguards to protect Californians",
+          "published_at": "2026-09-09",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://news.bgov.com/bloomberg-government-news/newsom-signs-ai-bills-to-assign-auditors-to-weigh-safety-risks",
+          "outlet": "Bloomberg Government",
+          "title": "Newsom Signs AI Bills to Assign Auditors to Weigh Safety Risks",
+          "published_at": "2026-09-10",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://gizmodo.com/newsom-signs-ai-industry-approved-ai-regulation-bills-into-law-in-california-2000809702",
+          "outlet": "Gizmodo",
+          "title": "Newsom Signs AI Industry-Approved AI Regulation Bills Into Law in California",
+          "published_at": "2026-09-09",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.techtimes.com/articles/327159/20260910/california-signs-first-us-ai-audit-law-frontier-labs-hiring-tools-now-scope.htm",
+          "outlet": "Tech Times",
+          "title": "California Signs First US AI Audit Law: Frontier Labs and Hiring Tools Now in Scope",
+          "published_at": "2026-09-10",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["politics", "technology"],
+      "entities": {
+        "organizations": ["California Government Operations Agency", "OpenAI", "Anthropic", "Consumer Attorneys of California"],
+        "people": ["Gavin Newsom", "Jerry McNerney", "Rebecca Bauer-Kahan"],
+        "places": ["California", "Sacramento"]
+      }
+    },
+    {
+      "id": "amazon-dsp-chatgpt-ads-pilot",
+      "headline": "Amazon plugs its ad platform into ChatGPT, letting brands buy ads inside OpenAI's chatbot",
+      "key_facts": [
+        {
+          "fact": "Amazon announced on Thursday, September 10, 2026 that it is partnering with OpenAI to let its advertisers run ads inside ChatGPT, starting with select brands in the US.",
+          "source_url": "https://www.cnbc.com/2026/09/10/amazon-chatgptads-open-ai.html",
+          "excerpt": "Amazon on Thursday announced it's partnering with OpenAI to let its advertisers run ads in ChatGPT, starting with select brands in the U.S."
+        },
+        {
+          "fact": "ChatGPT Ads inventory is bought through Amazon DSP as a managed service on cost-per-click and cost-per-mille terms, with Amazon setting up and optimizing campaigns while OpenAI controls all ad delivery decisions through its own systems.",
+          "source_url": "https://www.marketingdive.com/news/amazon-pilots-ad-services-in-chatgpt-what-marketers-need-to-know/829945/",
+          "excerpt": "ChatGPT Ads will be bought via Amazon DSP and are offered as a managed service, meaning Amazon's team will help set up and optimize campaigns. Inventory will be available on both a cost-per-click and cost-per-mille... OpenAI will control all ad delivery decisions through its own systems."
+        },
+        {
+          "fact": "Delta Vacations is among the first named brands in the pilot, which is limited to select US advertisers.",
+          "source_url": "https://digiday.com/media-buying/amazon-brings-its-dsp-to-openais-chatgpt-ads-extending-its-supply-chasing-streak/",
+          "excerpt": "From today (September 10), advertisers using Amazon Ads... can buy ads inside the ChatGPT app. It's a pilot for now, limited to select U.S. advertisers, with Delta Vacations among the first named."
+        },
+        {
+          "fact": "OpenAI's advertising business recently reached a $1 billion annualized revenue run rate; it began selling sponsored placements in the US in February with retailers such as Best Buy and Williams-Sonoma, and said ChatGPT had 900 million weekly active users.",
+          "source_url": "https://www.cnbc.com/2026/09/10/amazon-chatgptads-open-ai.html",
+          "excerpt": "It marks a vote of confidence from the world's largest online retailer in OpenAI's burgeoning ad business, which recently reached a $1 billion annualized revenue run rate. OpenAI started selling sponsored placements in ChatGPT in the U.S. in February, starting with retailers like Best Buy and Williams-Sonoma... OpenAI said in February that ChatGPT reached 900 million weekly active users."
+        },
+        {
+          "fact": "Amazon had heavily restricted AI platforms' access to its store, but quietly began buying ads on ChatGPT and became the top retail advertiser on the platform between April and August, according to Sensor Tower.",
+          "source_url": "https://www.cnbc.com/2026/09/10/amazon-chatgptads-open-ai.html",
+          "excerpt": "Amazon has heavily restricted access to its sprawling webstore from artificial intelligence platforms... But in recent months, Amazon began quietly buying ads on ChatGPT, and it became the top retail company advertising on the platform between April and August, according to data from market intelligence firm Sensor Tower."
+        },
+        {
+          "fact": "Ads appear as labeled text and image units beneath ChatGPT's organic responses, and run on the free tier and the cheaper Go subscription.",
+          "source_url": "https://www.marketingdive.com/news/amazon-pilots-ad-services-in-chatgpt-what-marketers-need-to-know/829945/",
+          "excerpt": "The ads themselves will surface as text and image units beneath organic ChatGPT responses with clearly marked sponsored labels... ChatGPT currently runs ads on its free model and cheaper Go subscription tier."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2026/09/10/amazon-chatgptads-open-ai.html",
+          "outlet": "CNBC",
+          "title": "Amazon gives OpenAI's ad business a boost with ChatGPT partnership",
+          "published_at": "2026-09-10",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.marketingdive.com/news/amazon-pilots-ad-services-in-chatgpt-what-marketers-need-to-know/829945/",
+          "outlet": "Marketing Dive",
+          "title": "Amazon pilots ad services in ChatGPT: What marketers need to know",
+          "published_at": "2026-09-10",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://digiday.com/media-buying/amazon-brings-its-dsp-to-openais-chatgpt-ads-extending-its-supply-chasing-streak/",
+          "outlet": "Digiday",
+          "title": "Amazon Ads brings advertisers to ChatGPT, extending its supply-chasing streak",
+          "published_at": "2026-09-10",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.adweek.com/commerce/amazon-and-openai-team-up-to-target-chatgpts-us-users/",
+          "outlet": "Adweek",
+          "title": "Amazon and OpenAI Team Up to Target ChatGPT's US Users",
+          "published_at": "2026-09-10",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["business", "technology"],
+      "entities": {
+        "organizations": ["Amazon", "OpenAI", "Delta Vacations", "Sensor Tower", "Amazon DSP"],
+        "people": ["Chris Conetta", "Katrin Koenig", "Andy Jassy"],
+        "places": ["United States"]
+      }
+    },
+    {
+      "id": "know-your-agent-visa-mastercard-ant",
+      "headline": "Visa, Mastercard and Ant International start a 'Know-Your-Agent' standard for AI payments",
+      "key_facts": [
+        {
+          "fact": "Ant International, Mastercard and Visa said on September 10, 2026 they had begun collaborating on a Know-Your-Agent (KYA) interoperability framework to streamline agent onboarding and identification across card networks, digital wallets, agent platforms and marketplaces.",
+          "source_url": "https://www.ant-intl.com/en/news/detail/?id=ant-international-mastercard-and-visa-initiate-collaboration-on-know-your-agent-interoperability-to-scale-agentic-commerce",
+          "excerpt": "Ant International, Mastercard, and Visa have begun collaboration on a Know-Your-Agent (KYA) interoperability framework, designed to help card networks, digital wallet ecosystems, agent platforms and marketplaces streamline agent onboarding and identification across networks."
+        },
+        {
+          "fact": "The companies cited McKinsey projections that AI agents will orchestrate $3 trillion to $5 trillion of global consumer commerce by 2030.",
+          "source_url": "https://www.cnbc.com/2026/09/10/ant-international-visa-mastercard-ai-agent-payment-standard.html",
+          "excerpt": "In a statement, the companies cited McKinsey projections expecting AI agents will handle $3 trillion to $5 trillion of global consumer commerce by 2030."
+        },
+        {
+          "fact": "The framework builds on the three firms' separate protocols — Visa's Trusted Agent Protocol, Mastercard Verifiable Intent and Ant International's Agentic Mobile Protocol — which they will now work to align on common principles.",
+          "source_url": "https://www.ant-intl.com/en/news/detail/?id=ant-international-mastercard-and-visa-initiate-collaboration-on-know-your-agent-interoperability-to-scale-agentic-commerce",
+          "excerpt": "The three organizations have previously rolled out their respective protocols — Visa's Trusted Agent Protocol, Mastercard Verifiable Intent, and Ant International's Agentic Mobile Protocol — and will now explore opportunities to work towards common principles."
+        },
+        {
+          "fact": "Work will run through BuildFin.ai, an industry platform convened by the Monetary Authority of Singapore, building on the Safeguards for Agentic Finance at Runtime (SAFR) framework.",
+          "source_url": "https://www.ant-intl.com/en/news/detail/?id=ant-international-mastercard-and-visa-initiate-collaboration-on-know-your-agent-interoperability-to-scale-agentic-commerce",
+          "excerpt": "Building on the Safeguards for Agentic Finance at Runtime (SAFR) framework, Ant International, Mastercard and Visa will collaborate through BuildFin.ai... an industry platform convened by the Monetary Authority of Singapore (MAS)."
+        },
+        {
+          "fact": "Ant International chief innovation officer Jiang-Ming Yang said AI agents' potential for hallucination means the industry needs to make sure people feel safe, and that an agent registering with Ant would not need to register again with Visa or Mastercard.",
+          "source_url": "https://www.cnbc.com/2026/09/10/ant-international-visa-mastercard-ai-agent-payment-standard.html",
+          "excerpt": "Jiang-Ming Yang, chief innovation officer of Ant International, told CNBC that AI agents' potential for hallucination meant \"we need to make sure people feel safe.\"... \"If [an] agent registers with Ant, they don't need to register again with Visa, Mastercard,\" Yang said."
+        },
+        {
+          "fact": "The companies said the initiative could reduce integration costs and accelerate the launch of new agentic services by improving trust and risk visibility across participating networks.",
+          "source_url": "https://www.straitstimes.com/business/payment-firms-visa-mastercard-and-ant-international-team-up-on-ai-agent-trust-framework",
+          "excerpt": "The companies said the initiative could help reduce integration costs and accelerate the launch of new agentic services by providing greater trust and risk visibility across participating networks."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.ant-intl.com/en/news/detail/?id=ant-international-mastercard-and-visa-initiate-collaboration-on-know-your-agent-interoperability-to-scale-agentic-commerce",
+          "outlet": "Ant International",
+          "title": "Ant International, Mastercard and Visa Initiate Collaboration on Know-Your-Agent Interoperability to Scale Agentic Commerce",
+          "published_at": "2026-09-10",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.reuters.com/technology/payment-firms-visa-mastercard-ant-international-team-up-ai-agent-trust-framework-2026-09-10/",
+          "outlet": "Reuters",
+          "title": "Payment firms Visa, Mastercard and Ant International team up on AI agent trust framework",
+          "published_at": "2026-09-10",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/09/10/ant-international-visa-mastercard-ai-agent-payment-standard.html",
+          "outlet": "CNBC",
+          "title": "Ant International, Visa and Mastercard team up on AI payment standard",
+          "published_at": "2026-09-10",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.straitstimes.com/business/payment-firms-visa-mastercard-and-ant-international-team-up-on-ai-agent-trust-framework",
+          "outlet": "The Straits Times",
+          "title": "Payment firms Visa, Mastercard and Ant International team up on AI agent trust framework",
+          "published_at": "2026-09-10",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["business", "technology", "finance"],
+      "entities": {
+        "organizations": ["Ant International", "Visa", "Mastercard", "Monetary Authority of Singapore", "BuildFin.ai", "McKinsey"],
+        "people": ["Jiang-Ming Yang", "Pablo Fourez", "Rubail Birwadker"],
+        "places": ["Singapore", "Shanghai"]
+      }
+    },
+    {
+      "id": "alibaba-unipat-ai-300m-round",
+      "headline": "Alibaba to lead $300M round in AI evaluation startup UniPat at a $2.5B valuation",
+      "key_facts": [
+        {
+          "fact": "Alibaba is slated to lead a $300 million investment in AI training and benchmarking startup UniPat AI, valuing the company at $2.5 billion.",
+          "source_url": "https://www.bloomberg.com/news/articles/2026-09-10/alibaba-backs-ex-staffer-s-ai-testing-lab-at-2-5-billion-value",
+          "excerpt": "Alibaba Group Holding Ltd. is slated to lead a $300 million investment in AI training and benchmarking startup UniPat AI, valuing the nascent company at $2.5 billion and giving a vote of confidence to a former intern."
+        },
+        {
+          "fact": "The financing is set to close soon and also drew Tencent and previous backers including HSG, formerly Sequoia China; talks remain in progress and terms may still change.",
+          "source_url": "https://www.bloomberg.com/news/articles/2026-09-10/alibaba-backs-ex-staffer-s-ai-testing-lab-at-2-5-billion-value",
+          "excerpt": "The financing is set to close soon and also drew participation from Tencent Holdings Ltd. and previous backers like HSG, formerly Sequoia China, according to people familiar with the matter. Talks remain in progress and the deal's contours may still change."
+        },
+        {
+          "fact": "UniPat founder Li Kuan interned at Alibaba's Tongyi Lab before starting the company.",
+          "source_url": "https://valueaddvc.com/pulse/unipat-ai-300-million-alibaba-tencent-2026",
+          "excerpt": "UniPat's founder, Li Kuan, interned at Alibaba's Tongyi Lab before starting the company."
+        },
+        {
+          "fact": "UniPat builds models, tools and benchmarks focused on scientific reasoning and multimodal evaluation, including UniScientist, SWE-Vision for code-based visual understanding, and BabyVision for human-level visual reasoning.",
+          "source_url": "https://valueaddvc.com/pulse/unipat-ai-300-million-alibaba-tencent-2026",
+          "excerpt": "The company builds models, tools and benchmarks focused on scientific reasoning and multimodal evaluation, including UniScientist, a research-grade reasoning system; SWE-Vision, a tool for evaluating code-based visual understanding; and BabyVision, which tests multimodal models against human-level visual reasoning."
+        },
+        {
+          "fact": "The $2.5 billion mark places UniPat well below Surge AI's reported $15-25 billion range, but shows how much capital independent AI evaluation now commands as labs compete on third-party scores.",
+          "source_url": "https://valueaddvc.com/pulse/unipat-ai-300-million-alibaba-tencent-2026",
+          "excerpt": "The round values a benchmarking-and-evaluation company at $2.5 billion, in the same tier as Surge AI's reported $15-25 billion range, showing how much capital independent AI evaluation now commands as labs compete on trustworthy scores rather than self-reported numbers."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-09-10/alibaba-backs-ex-staffer-s-ai-testing-lab-at-2-5-billion-value",
+          "outlet": "Bloomberg",
+          "title": "Alibaba Backs Ex-Staffer's AI Testing Lab at $2.5 Billion Value",
+          "published_at": "2026-09-10",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://valueaddvc.com/pulse/unipat-ai-300-million-alibaba-tencent-2026",
+          "outlet": "Value Add Pulse",
+          "title": "Alibaba, Tencent Back UniPat AI At $2.5B",
+          "published_at": "2026-09-10",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.panews.io/articles/01a08964-495d-722d-807c-838ccce9a1fe",
+          "outlet": "PANews",
+          "title": "Alibaba to Lead UniPat AI's $300 Million Funding Round, Valuing the Company at $2.5 Billion",
+          "published_at": "2026-09-10",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["business", "technology"],
+      "entities": {
+        "organizations": ["Alibaba", "UniPat AI", "Tencent", "HSG", "Tongyi Lab", "Surge AI"],
+        "people": ["Li Kuan"],
+        "places": ["China"]
+      }
+    }
+  ]
+}

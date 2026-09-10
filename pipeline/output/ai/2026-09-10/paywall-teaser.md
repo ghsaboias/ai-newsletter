@@ -1,0 +1,6 @@
+**Abaixo, apenas para assinantes:**
+
+**Tribunais e reguladores.** Um estado americano aprova o primeiro padrão do país para auditoria independente de sistemas de IA, uma investigação antitruste federal mira um acordo de licenciamento de tecnologia de chips, e um pesquisador de segurança assume cadeira no conselho de um laboratório americano.
+**Silício.** Fabricantes chinesas de aceleradores repassam a escassez de memória para os preços, dinheiro novo entra em memória e em chips de inferência, e duas empresas mexem na energia e na construção de data centers nos Estados Unidos.
+**Dinheiro.** Rodadas numa empresa chinesa de avaliação de modelos, numa fabricante americana de drones militares e numa de robôs para centros de distribuição, além de um acordo entre bandeiras de cartão para identificar agentes de IA em pagamentos.
+**Mundo.** Novo aperto de juros na Europa atribuído ao conflito no Oriente Médio, petróleo em alta com a rota de exportação ameaçada, e um ataque ucraniano de drones bem dentro do território russo.

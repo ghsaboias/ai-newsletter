@@ -1,0 +1,48 @@
+{
+  "date": "2026-09-10",
+  "fidelity_issues": [
+    {
+      "severity": "low",
+      "where": "edition",
+      "claim": "Christiano disse haver \"risco significativo\" [...] dias depois de o pesquisador Jacob Coxon deixar a Anthropic com críticas à corrida entre os laboratórios",
+      "issue": "não traça ao research.json",
+      "expected": "\"Coxon\" não aparece em nenhum ponto do research.json de hoje. A edição da véspera (2026-09-09) confirma o evento — Coxon anunciou na terça-feira, 8 de setembro, que deixa a indústria de IA criticando Anthropic e OpenAI —, mas isso é UM dia antes da nomeação de Christiano (9 de setembro), não \"dias depois\". O evento existe e a ordem está certa; só o intervalo está alongado. (A outra continuidade da edição, \"dois dias depois do alerta conjunto de NSA, FBI e CISA\", foi verificada e está correta: o alerta AA26-251A é de 8 de setembro na edição da véspera e cita a DeepSeek nominalmente.)"
+    },
+    {
+      "severity": "low",
+      "where": "edition",
+      "claim": "DeepSeek lança o V4.1-Flash, que ativa 8 bilhões de parâmetros por token (manchete do bloco)",
+      "issue": "número alterado",
+      "expected": "research.json (Hugging Face + DeepSeek): \"only 8B parameters per token during prefill and 16B during decode\". Os 8B valem só para o prefill; a manchete generaliza para \"por token\". O bullet **Arquitetura** traz a distinção correta (8B no prefill, 16B no decode), então o erro está contido na manchete."
+    },
+    {
+      "severity": "low",
+      "where": "facts.md+edition",
+      "claim": "o preço a coloca bem abaixo da faixa de US$15 bilhões a US$25 bilhões atribuída à Surge AI",
+      "issue": "inversão de sentido (key_fact e excerpt do research.json se contradizem)",
+      "expected": "O key_fact do research.json diz \"places UniPat well below Surge AI's reported $15-25 billion range\" — foi isso que facts.md e edição seguiram —, mas o excerpt da mesma entrada (texto da fonte) diz o oposto: \"in the same tier as Surge AI's reported $15-25 billion range\". A aritmética favorece \"bem abaixo\" (US$2,5 bi vs. US$15-25 bi), então provavelmente é o excerpt que está corrompido; fica o alerta para conferência humana da fonte Bloomberg."
+    },
+    {
+      "severity": "low",
+      "where": "facts.md+edition",
+      "claim": "que chegou a 15 hosts de terceiros antes de o repositório removê-lo, cerca de 90 minutos depois",
+      "issue": "atribuição do intervalo de 90 minutos difere da fonte citada",
+      "expected": "O key_fact do research.json reproduz essa mesma frase (\"before the registry removed it after about 90 minutes\"), mas o excerpt da fonte (CellCog) diz apenas \"which 15 third-party hosts installed within about 90 minutes\" — os 90 minutos são a janela de instalação, e a remoção pelo PyPI não é datada na fonte. Erro herdado do research.json, não introduzido pela edição."
+    }
+  ],
+  "dropped_facts": [
+    {
+      "severity": "medium",
+      "story": "Positron AI — Série C de US$875 milhões a um valuation post-money de US$5 bilhões",
+      "fact": "O aporte veio em duas tranches: uma Série C de US$375 milhões a um valuation pré-money de US$3,5 bilhões e uma Série C-1 de ATÉ US$500 milhões liderada por NEA e Jim Clark (facts.md, linha 143).",
+      "why_load_bearing": "É a cifra que dá tamanho à história e a qualifica: dos US$875 milhões da manchete, até US$500 milhões estão numa segunda tranche com teto (\"up to\"), ou seja, não são um cheque único e fechado. Sem isso o leitor lê US$875 milhões como capital comprometido de uma vez."
+    },
+    {
+      "severity": "medium",
+      "story": "Kepler Computing — US$468 milhões e memória ferroelétrica sem EUV",
+      "fact": "Números da própria Kepler indicam throughput de multiplicação de matrizes de 15 a 20 vezes acima de referências convencionais de SRAM e DRAM, com uma fração do consumo de energia (facts.md, linha 191).",
+      "why_load_bearing": "É a alegação de desempenho que sustenta a tese da empresa — e o bullet manteve a ressalva final (\"nenhuma parte externa avaliou em benchmark um produto comercial\") sem a alegação que ela qualifica. A ressalva fica pendurada: o leitor não sabe qual número não foi verificado."
+    }
+  ],
+  "summary": "Fidelidade alta — todos os números, nomes e citações da edição traçam ao research.json (nenhuma especificidade inventada, nenhuma atribuição temporal falsa; a referência ao alerta NSA/FBI/CISA confere com a edição da véspera); restam 4 achados low, dois deles erros já presentes no próprio research.json. Nada essencial caiu: só duas podas medium (estrutura em tranches da Positron e o número de desempenho da Kepler)."
+}

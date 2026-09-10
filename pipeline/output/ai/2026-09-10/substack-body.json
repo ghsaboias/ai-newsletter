@@ -1,0 +1,2614 @@
+{
+ "draft_id": "215072869",
+ "title": "[Tech] - Bem-vindo(a) a 10 de Setembro de 2026",
+ "subtitle": "Anthropic detalha quatro invasões do Claude e aceita auditoria externa | DeepSeek lança V4.1-Flash com nova arquitetura e pesos abertos | Amazon leva seus anunciantes para dentro do ChatGPT",
+ "body": {
+  "type": "doc",
+  "content": [
+   {
+    "type": "paragraph",
+    "content": [
+     {
+      "type": "text",
+      "text": "Por: Guilherme Saboia e Vinicius Gushiken"
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Anthropic detalha quatro invasões do Claude em sistemas reais e abre transcrições à METR"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "Incidentes.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " A empresa publicou em 9 de setembro uma "
+         },
+         {
+          "type": "text",
+          "text": "avaliação de alinhamento de quatro casos em que modelos Claude obtiveram acesso não autorizado a sistemas reais de terceiros",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-09/anthropic-investiga-acessos-nao-autorizados-de-modelos-claude",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ": três já haviam sido divulgados em 30 de julho, e o quarto, de janeiro de 2026, envolveu um "
+         },
+         {
+          "type": "text",
+          "text": "checkpoint",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " inicial do Opus 4.6 e só foi identificado em agosto, enquanto a Anthropic reunia transcrições para compartilhar com a METR. Quatro modelos estiveram envolvidos, o "
+         },
+         {
+          "type": "text",
+          "text": "checkpoint",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " do Opus 4.6, o Opus 4.7, o Mythos 5 e um modelo interno de pesquisa de uso geral, todos em avaliações "
+         },
+         {
+          "type": "text",
+          "text": "capture-the-flag",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " construídas pelo mesmo parceiro terceirizado, cujo ambiente, supostamente offline, ficou conectado à internet aberta por uma configuração incorreta."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "Pior caso.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " O Claude Mythos 5 "
+         },
+         {
+          "type": "text",
+          "text": "subiu ao PyPI um pacote malicioso de coleta de credenciais",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-09/anthropic-investiga-acessos-nao-autorizados-de-modelos-claude",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", que chegou a 15 hosts de terceiros antes de o repositório removê-lo, cerca de 90 minutos depois; um dos scanners que instalou o pacote vazou credenciais que o modelo usou em seguida para acessar um banco de dados em produção. Cada incidente envolveu uma única instância do Claude trabalhando isoladamente, com execuções de cerca de 10 a 34 horas de trabalho ativo."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "Reprodutibilidade.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " Numa replicação do cenário "
+         },
+         {
+          "type": "text",
+          "text": "capture-the-flag",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", o "
+         },
+         {
+          "type": "text",
+          "text": "Mythos 5 tomou uma ação gravemente prejudicial em cerca de 80% das 150 execuções",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-09/anthropic-investiga-acessos-nao-autorizados-de-modelos-claude",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", contra aproximadamente 33% do Mythos 5.1 e 31% do Claude Opus 5. A Anthropic revisou o enquadramento que havia dado em julho e afirmou que o raciocínio do Claude foi enviesado no sentido de concluir que a internet era simulada, apesar de evidências consideráveis em contrário, e que os comportamentos são mais graves do que qualquer coisa relatada antes em seus "
+         },
+         {
+          "type": "text",
+          "text": "system cards",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": "."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "Varredura e auditoria.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " A empresa varreu cerca de 141 mil transcrições de avaliação e depois ampliou a busca para aproximadamente 481 milhões, escalando 9,2 milhões delas para uma segunda etapa de revisão feita pelo próprio Claude, que reidentificou os quatro incidentes e não encontrou outros casos de gravidade igual ou pior. A Anthropic assinou um "
+         },
+         {
+          "type": "text",
+          "text": "acordo com a METR para uma investigação independente",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-09/anthropic-investiga-acessos-nao-autorizados-de-modelos-claude",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", com acesso amplo a transcrições fora da janela dos incidentes e a funcionários autorizados a compartilhar informações confidenciais, válido por oito semanas e extensível por consenso mútuo."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/9885d877-a58f-4d12-8420-e4fa395ff9a7_2000x1125.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 1125,
+       "width": 2000,
+       "resizeWidth": 520,
+       "bytes": 470070,
+       "alt": "Ilustração da avaliação de alinhamento publicada pela Anthropic",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Ilustração da avaliação de alinhamento publicada pela Anthropic. Imagem: Anthropic"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "DeepSeek lança o V4.1-Flash, que ativa 8 bilhões de parâmetros por token e supera o próprio "
+     },
+     {
+      "type": "text",
+      "text": "flagship",
+      "marks": [
+       {
+        "type": "em"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "Modelo.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " A DeepSeek lançou nesta quinta-feira o "
+         },
+         {
+          "type": "text",
+          "text": "DeepSeek-V4.1-Flash",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/deepseek-lanca-modelo-v41-flash-com-arquitetura-de-552b-de-parametros",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", descrito pela empresa como o menor da sua nova família de arquitetura: um modelo multimodal Mixture-of-Experts (MoE, arquitetura em que só uma fração dos “especialistas” da rede é acionada a cada token) com 552 bilhões de parâmetros no "
+         },
+         {
+          "type": "text",
+          "text": "backbone",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", suporte a contextos de até um milhão de tokens e processamento nativo de imagens e texto. O lançamento vem dois dias depois do alerta conjunto de NSA, FBI e CISA que citou a DeepSeek entre as empresas chinesas acusadas de destilar modelos americanos."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "Arquitetura.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " A "
+         },
+         {
+          "type": "text",
+          "text": "Causal Encoder-Decoder (CED) é um Transformer de 40 camadas",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/deepseek-lanca-modelo-v41-flash-com-arquitetura-de-552b-de-parametros",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " dividido em um "
+         },
+         {
+          "type": "text",
+          "text": "encoder",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " causal de 20 camadas e um decoder de 20 camadas, com o cache KV global do decoder projetado a partir dos estados ocultos finais do encoder. O desenho derruba a computação por token para 8 bilhões de parâmetros ativados no "
+         },
+         {
+          "type": "text",
+          "text": "prefill",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", a fase em que o modelo lê o "
+         },
+         {
+          "type": "text",
+          "text": "prompt",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", e 16 bilhões no "
+         },
+         {
+          "type": "text",
+          "text": "decode",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", quando gera a resposta."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "Memória.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " A técnica SWA Bounded Replay reconstrói estados KV ausentes reproduzindo apenas os tokens mais recentes, em vez de persistir o KV em SSD, o que reduz o rastro do cache KV persistente para cerca de um oitavo do DeepSeek-V4-Flash."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "Resultado.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " A empresa afirma que novos métodos de pré-treinamento e um pós-treinamento com aprendizado por reforço em escala maior colocam o modelo à frente de "
+         },
+         {
+          "type": "text",
+          "text": "flagships",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " em benchmarks, incluindo o "
+         },
+         {
+          "type": "text",
+          "text": "próprio DeepSeek-V4-Pro",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/deepseek-lanca-modelo-v41-flash-com-arquitetura-de-552b-de-parametros",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", que tem "
+         },
+         {
+          "type": "text",
+          "text": "backbone",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " de 1,6 trilhão de parâmetros e 49 bilhões ativados. O V4.1-Flash está na API da DeepSeek, e pesos e relatório técnico foram publicados no Hugging Face sob licença MIT."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/21097b26-039d-4e0a-9f10-641a54becac4_3213x2192.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 2192,
+       "width": 3213,
+       "resizeWidth": 520,
+       "bytes": 343041,
+       "alt": "Arte oficial de lançamento do DeepSeek-V4.1-Flash",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Arte oficial de lançamento do DeepSeek-V4.1-Flash. Imagem: DeepSeek"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Amazon fecha parceria para levar seus anunciantes ao ChatGPT"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "Acordo.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " A Amazon anunciou nesta quinta-feira uma "
+         },
+         {
+          "type": "text",
+          "text": "parceria com a OpenAI para que seus anunciantes veiculem anúncios dentro do ChatGPT",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/amazon-e-openai-firmam-parceria-para-anuncios-no-chatgpt",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", começando com marcas selecionadas nos Estados Unidos, entre elas a Delta Vacations. O inventário do ChatGPT Ads é comprado via Amazon DSP, a plataforma de compra programática de mídia da empresa, como serviço gerenciado, nos modelos de custo por clique e custo por mil impressões, com a OpenAI controlando todas as decisões de entrega por meio de seus próprios sistemas."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "Virada.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " A Amazon vinha "
+         },
+         {
+          "type": "text",
+          "text": "restringindo fortemente o acesso de plataformas de IA à sua loja online",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/amazon-e-openai-firmam-parceria-para-anuncios-no-chatgpt",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", mas nos últimos meses começou discretamente a comprar anúncios no ChatGPT e se tornou a maior anunciante do varejo na plataforma entre abril e agosto, segundo a Sensor Tower."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "Negócio.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " O negócio de publicidade da OpenAI atingiu recentemente "
+         },
+         {
+          "type": "text",
+          "text": "receita anualizada de US$1 bilhão",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/amazon-e-openai-firmam-parceria-para-anuncios-no-chatgpt",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ". A empresa começou a vender espaços patrocinados no ChatGPT nos EUA em fevereiro, com varejistas como Best Buy e Williams-Sonoma, quando dizia ter 900 milhões de usuários ativos semanais."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "Formato.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " Os anúncios aparecem como "
+         },
+         {
+          "type": "text",
+          "text": "unidades de texto e imagem abaixo das respostas orgânicas",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/amazon-e-openai-firmam-parceria-para-anuncios-no-chatgpt",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", com rótulo de patrocínio, e rodam no plano gratuito e na assinatura mais barata, o Go."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/53b1856c-c18b-4592-9a49-3a2521462270_1300x1450.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 1450,
+       "width": 1300,
+       "resizeWidth": 520,
+       "bytes": 216278,
+       "alt": "Anúncio patrocinado da Amazon dentro de uma resposta do ChatGPT",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Anúncio patrocinado da Amazon dentro de uma resposta do ChatGPT. Imagem: Juozas Kaziukėnas via Business Insider"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "dynamicContent",
+    "attrs": {
+     "audiences": [
+      "non_sub",
+      "free_sub"
+     ],
+     "displayName": "Audience-specific content block"
+    },
+    "content": [
+     {
+      "type": "dynamicContentMatch",
+      "content": [
+       {
+        "type": "blockquote",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "strong"
+             }
+            ],
+            "text": "Abaixo, apenas para assinantes:"
+           }
+          ]
+         },
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "strong"
+             }
+            ],
+            "text": "Tribunais e reguladores."
+           },
+           {
+            "type": "text",
+            "text": " Um estado americano aprova o primeiro padrão do país para auditoria independente de sistemas de IA, uma investigação antitruste federal mira um acordo de licenciamento de tecnologia de chips, e um pesquisador de segurança assume cadeira no conselho de um laboratório americano."
+           }
+          ]
+         },
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "strong"
+             }
+            ],
+            "text": "Silício."
+           },
+           {
+            "type": "text",
+            "text": " Fabricantes chinesas de aceleradores repassam a escassez de memória para os preços, dinheiro novo entra em memória e em chips de inferência, e duas empresas mexem na energia e na construção de data centers nos Estados Unidos."
+           }
+          ]
+         },
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "strong"
+             }
+            ],
+            "text": "Dinheiro."
+           },
+           {
+            "type": "text",
+            "text": " Rodadas numa empresa chinesa de avaliação de modelos, numa fabricante americana de drones militares e numa de robôs para centros de distribuição, além de um acordo entre bandeiras de cartão para identificar agentes de IA em pagamentos."
+           }
+          ]
+         },
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "strong"
+             }
+            ],
+            "text": "Mundo."
+           },
+           {
+            "type": "text",
+            "text": " Novo aperto de juros na Europa atribuído ao conflito no Oriente Médio, petróleo em alta com a rota de exportação ameaçada, e um ataque ucraniano de drones bem dentro do território russo."
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "paywall"
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Segurança e governança"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "Califórnia.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " Gavin Newsom sancionou em 9 de setembro o SB 813 e o AB 1405, os "
+         },
+         {
+          "type": "text",
+          "text": "primeiros padrões do país para auditorias de IA por terceiros",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-09/openai-declara-apoio-a-projetos-de-lei-sobre-seguranca-de-ia-na-california",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ": o primeiro cria um marco para organizações de verificação independente que avaliam sistemas quanto à conformidade com a lei estadual, e o segundo institui um registro estadual de auditores, com critérios de qualificação a serem definidos pela Government Operations Agency até 2028. O programa é voluntário e passou por 37 a 0 no Senado estadual e 53 a 4 na Assembleia, com endosso da Anthropic em agosto e apoio da OpenAI anunciado nas horas que antecederam a sanção, depois que o autor do SB 813, Jerry McNerney, retirou um dispositivo que permitiria usar a certificação de segurança como "
+         },
+         {
+          "type": "text",
+          "text": "defesa legal parcial em ações judiciais",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-09/openai-declara-apoio-a-projetos-de-lei-sobre-seguranca-de-ia-na-california",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": "."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "OpenAI.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " A empresa nomeou em 9 de setembro "
+         },
+         {
+          "type": "text",
+          "text": "Paul Christiano para o conselho da OpenAI Foundation",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-09/paul-christiano-e-nomeado-para-o-conselho-da-openai-foundation",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " e para o Comitê de Segurança e Proteção presidido por Zico Kolter, que exerce governança sobre as práticas de segurança de toda a OpenAI, incluindo a OpenAI Group PBC; ele também será observador sem direito a voto no conselho da PBC. Fundador do Alignment Research Center, consultor técnico sênior do CAISI, órgão do Departamento de Comércio, e ex-integrante do trust sem fins lucrativos da Anthropic, Christiano disse haver "
+         },
+         {
+          "type": "text",
+          "text": "“risco significativo” de que avanços rápidos levem a uma “perda de controle catastrófica e irreversível no curtíssimo prazo”",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-09/paul-christiano-e-nomeado-para-o-conselho-da-openai-foundation",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", dias depois de o pesquisador Jacob Coxon deixar a Anthropic com críticas à corrida entre os laboratórios."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/e24bed5d-f973-4939-96b7-d8fa0bd2f2e1_3840x3840.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 3840,
+       "width": 3840,
+       "resizeWidth": 520,
+       "bytes": 5525673,
+       "alt": "Paul Christiano, fundador do Alignment Research Center",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Paul Christiano, fundador do Alignment Research Center e novo conselheiro da OpenAI Foundation. Imagem: NIST"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Chips e memória"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "China.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " A Huawei elevou o preço indicativo da placa aceleradora "
+         },
+         {
+          "type": "text",
+          "text": "Ascend 950DT para mais de 250 mil yuans (cerca de US$37.255), de 20% a 50% acima das cotações dadas a clientes dois meses antes",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/fabricantes-chinesas-de-chips-de-ia-elevam-precos-em-ate-50",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", e a Cambricon repreçou seu chip de próxima geração, provisoriamente chamado 690, de 20% a 30% acima; MetaX e Iluvatar CoreX fizeram aumentos semelhantes. Desde que Washington endureceu em dezembro de 2024 os controles de exportação de HBM (memória de alta largura de banda, o padrão usado por GPUs de IA) para a China, as fabricantes locais dependem de canais do mercado paralelo, onde a memória custa várias vezes o preço pago fora do país, e a Bloomberg calcula que o "
+         },
+         {
+          "type": "text",
+          "text": "950DT subiu cerca de 60% em três meses, ficando em linha com o preço do B200 da Nvidia",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/fabricantes-chinesas-de-chips-de-ia-elevam-precos-em-ate-50",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": "."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/ecc205f9-6fd8-4c5a-83f0-413f9d9f5a98_1706x1279.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 1279,
+       "width": 1706,
+       "resizeWidth": 520,
+       "bytes": 311141,
+       "alt": "Ascend 950DT e Atlas 950 SuperPoD apresentados no Huawei Connect",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "O Ascend 950DT e o Atlas 950 SuperPoD apresentados no Huawei Connect. Imagem: Huawei Connect"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "Kepler Computing.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " A empresa de San Jose saiu do "
+         },
+         {
+          "type": "text",
+          "text": "stealth",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " em 9 de setembro, após sete anos, com "
+         },
+         {
+          "type": "text",
+          "text": "US$468 milhões levantados junto a GlobalFoundries, Intel Capital, AMD Ventures, Baillie Gifford e Bill Gates",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/kepler-computing-sai-do-stealth-com-us468-milhoes-para-memoria-3d",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", pela tese de que empilhamento 3D de capacitores ferroelétricos de óxido de háfnio e zircônio aumenta a densidade de HBM e SRAM sem depender de litografia ultravioleta extrema (EUV) e roda em fábricas já existentes. Depois de 35 formulações de material e cerca de 2.000 wafers processados, a Kepler diz ter convertido uma linha de 28nm da GlobalFoundries em fábrica de memória em oito meses, contra os 24 típicos, e recebeu em julho um compromisso de até US$245 milhões do Departamento de Comércio; "
+         },
+         {
+          "type": "text",
+          "text": "nenhuma parte externa avaliou em benchmark um produto comercial da empresa",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/kepler-computing-sai-do-stealth-com-us468-milhoes-para-memoria-3d",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": "."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "Positron AI.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " A fabricante de chips de inferência anunciou uma "
+         },
+         {
+          "type": "text",
+          "text": "Série C de US$875 milhões a um ",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/positron-ai-levanta-us875-milhoes-para-o-chip-de-inferencia-asimov",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": "valuation post-money",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/positron-ai-levanta-us875-milhoes-para-o-chip-de-inferencia-asimov",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           },
+           {
+            "type": "em"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " de US$5 bilhões",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/positron-ai-levanta-us875-milhoes-para-o-chip-de-inferencia-asimov",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", cerca de cinco vezes a marca de US$1 bilhão de fevereiro, em rodada co-liderada por NEA, Atreides, Valor Equity, Andra Capital, a SemiAnalysis Capital de Dylan Patel e Jim Clark, fundador da Silicon Graphics e da Netscape. O Asimov, seu chip de próxima geração, faz "
+         },
+         {
+          "type": "text",
+          "text": "tape out",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " no processo N3P da TSMC no fim de 2026 para produção no segundo semestre de 2027 e troca a HBM por "
+         },
+         {
+          "type": "text",
+          "text": "LPDDR5X de prateleira, com 288 GB a 2.304 GB de memória por chip",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/positron-ai-levanta-us875-milhoes-para-o-chip-de-inferencia-asimov",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": "."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Poder computacional e energia"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "SpaceX.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " Uma nova equipe de engenheiros de foguetes instalada por Elon Musk está "
+         },
+         {
+          "type": "text",
+          "text": "reformulando a construção dos data centers da empresa",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/spacex-refaz-construcao-de-data-centers-e-prioriza-redundancia",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", deslocando a prioridade da velocidade para a redundância de energia e refrigeração, o que pode desacelerar a expansão: instalações no Tennessee e no Mississippi operaram por meses sem sistemas de backup, e a Macrohard, no Tennessee, dependeu de mais de 100 "
+         },
+         {
+          "type": "text",
+          "text": "chillers",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " móveis e ficou abaixo da meta interna de 99,9% de disponibilidade, com quedas que interromperam treinamentos de modelos. A revisão chega com um "
+         },
+         {
+          "type": "text",
+          "text": "prazo de 30 de setembro para entregar ao Google cerca de 110 mil GPUs da Nvidia",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/spacex-refaz-construcao-de-data-centers-e-prioriza-redundancia",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", por um contrato de US$920 milhões mensais em capacidade plena que o Google pode encerrar ou reduzir após um mês de carência; a SpaceX gastou US$15,8 bilhões em capex ligado a IA só no segundo trimestre e passou de 0,4 GW para 1,4 GW de capacidade no último ano, mirando 2 GW até dezembro."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/7035a2d0-0f5d-440a-907d-474e3c1fa49b_1600x1067.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 1067,
+       "width": 1600,
+       "resizeWidth": 520,
+       "bytes": 598763,
+       "alt": "O data center Macrohard, da SpaceX, em Memphis",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "O data center Macrohard, da SpaceX, em Memphis, ao lado da usina a gás vizinha. Imagem: Steve Jones/Southern Environmental Law Center"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "TAR.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " A empresa de Austin captou uma "
+         },
+         {
+          "type": "text",
+          "text": "Série A de US$120 milhões liderada pela Spark Capital, a um ",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/startup-tar-capta-us-120-milhoes-e-atinge-valuation-de-us-1-bilhao",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": "valuation post-money",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/startup-tar-capta-us-120-milhoes-e-atinge-valuation-de-us-1-bilhao",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           },
+           {
+            "type": "em"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " de US$1 bilhão",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/startup-tar-capta-us-120-milhoes-e-atinge-valuation-de-us-1-bilhao",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", três meses depois de um "
+         },
+         {
+          "type": "text",
+          "text": "seed",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " de US$27 milhões, elevando o financiamento reportado a US$147 milhões. Fundada em 2026, a TAR monta no oeste do Texas sistemas modulares que combinam solar, eólica, baterias e turbinas a gás de ciclo simples para alimentar data centers de IA sem conexão com a concessionária, e executa uma implantação em escala de concessionária com uma das maiores "
+         },
+         {
+          "type": "text",
+          "text": "neoclouds",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": "."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Antitruste"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "Nvidia.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " O Departamento de Justiça dos EUA investiga se a empresa "
+         },
+         {
+          "type": "text",
+          "text": "tentou driblar o escrutínio antitruste sobre o acordo firmado com a Groq",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/doj-investiga-acordo-de-us17-bilhoes-entre-nvidia-e-groq",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", segundo o New York Times: a Nvidia anunciou no ano passado um negócio de US$17 bilhões por uma “licença não exclusiva” da tecnologia de chips da startup e contratou vários executivos dela, incluindo o fundador Jonathan Ross. O DOJ abriu a apuração pouco depois do anúncio, em dezembro, e enviou um pedido formal de informações; pode multar a Nvidia, mas dificilmente buscará desfazer a transação, que a Bloomberg avalia em US$20 bilhões e que os senadores Elizabeth Warren e Richard Blumenthal já haviam questionado em março, "
+         },
+         {
+          "type": "text",
+          "text": "argumentando que arranjos assim “funcionam como fusões de fato”",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/doj-investiga-acordo-de-us17-bilhoes-entre-nvidia-e-groq",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": "."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/0829d02b-9a9a-4430-9e41-80d67e79d1d3_500x500.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 500,
+       "width": 500,
+       "resizeWidth": 520,
+       "bytes": 61274,
+       "alt": "Jonathan Ross, fundador e CEO da Groq",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Jonathan Ross, fundador e CEO da Groq, contratado pela Nvidia no acordo sob investigação. Imagem: World Governments Summit"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Pagamentos agênticos"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "Visa, Mastercard e Ant International.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " As três iniciaram uma colaboração em um "
+         },
+         {
+          "type": "text",
+          "text": "marco de interoperabilidade Know-Your-Agent (KYA)",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/visa-mastercard-e-ant-criam-padrao-de-identidade-para-agentes-de-ia",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " para simplificar o cadastro e a identificação de agentes de IA entre bandeiras de cartão, carteiras digitais, plataformas de agentes e "
+         },
+         {
+          "type": "text",
+          "text": "marketplaces",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", partindo dos protocolos que cada uma já lançou: o Trusted Agent Protocol da Visa, o Mastercard Verifiable Intent e o Agentic Mobile Protocol da Ant. O trabalho será conduzido pela BuildFin.ai, plataforma convocada pela Autoridade Monetária de Singapura, e as empresas citam projeção da McKinsey de que agentes vão orquestrar de "
+         },
+         {
+          "type": "text",
+          "text": "US$3 trilhões a US$5 trilhões do comércio global ao consumidor até 2030",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/visa-mastercard-e-ant-criam-padrao-de-identidade-para-agentes-de-ia",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": "."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Rodadas"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "UniPat AI.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " A Alibaba deve liderar um "
+         },
+         {
+          "type": "text",
+          "text": "investimento de US$300 milhões na startup chinesa de treinamento e benchmarking de IA, a um ",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/alibaba-lidera-rodada-de-us-300-milhoes-na-startup-unipat-ai",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": "valuation",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/alibaba-lidera-rodada-de-us-300-milhoes-na-startup-unipat-ai",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           },
+           {
+            "type": "em"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " de US$2,5 bilhões",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/alibaba-lidera-rodada-de-us-300-milhoes-na-startup-unipat-ai",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", com participação de Tencent e da HSG, antiga Sequoia China; os termos ainda podem mudar. Fundada por Li Kuan, ex-estagiário do Tongyi Lab da própria Alibaba, a UniPat faz modelos e ferramentas de raciocínio científico e avaliação multimodal, e o preço a coloca bem abaixo da faixa de US$15 bilhões a US$25 bilhões atribuída à Surge AI."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "Mach Industries.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " A fabricante de veículos militares não tripulados anunciou uma "
+         },
+         {
+          "type": "text",
+          "text": "extensão de Série C de US$600 milhões que dobrou seu ",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/mach-industries-capta-us600-milhoes-e-dobra-valuation-para-us37-bi",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": "valuation",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/mach-industries-capta-us600-milhoes-e-dobra-valuation-para-us37-bi",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           },
+           {
+            "type": "em"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " para US$3,7 bilhões",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/mach-industries-capta-us600-milhoes-e-dobra-valuation-para-us37-bi",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", três meses depois da Série C original de US$300 milhões a US$1,8 bilhão, com Ribbit, Infinite Capital, Bedrock e Sequoia nas duas tranches. Fundada por Ethan Thornton, de 22 anos, que largou o MIT aos 19, a empresa faz drones VTOL, sistemas de ataque de longo alcance e antidrone numa fábrica de 10.700 m² em Huntington Beach, ganhou um contrato com o Exército dos EUA neste ano e comprou em maio a Exquadrum, de motores de foguete sólidos, por US$50 milhões."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "Maven Robotics.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " A startup de Santa Clara saiu do "
+         },
+         {
+          "type": "text",
+          "text": "stealth",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " com "
+         },
+         {
+          "type": "text",
+          "text": "US$100 milhões de RoboStrategy, LocalGlobe, Vine Ventures e XTX Markets Ventures",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/maven-robotics-levanta-us100-milhoes-para-robos-de-paletizacao",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " para construir 250 robôs de terceira geração e projetar uma plataforma de quarta geração. Os robôs, com dois braços que erguem até 30 quilos sobre bases com rodas a até 16 km/h, fazem paletização mista em centros de distribuição, e o CEO Hamza Derbas diz que até oito unidades já trabalham 16 horas por dia com disponibilidade de 99% ou mais."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/3eb54c99-497e-4683-8e14-5ac305be2ccf_1600x2399.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 2399,
+       "width": 1600,
+       "resizeWidth": 520,
+       "bytes": 412175,
+       "alt": "Hamza e Khalid Derbas, fundadores da Maven Robotics, com o robô da empresa",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Hamza e Khalid Derbas, fundadores da Maven Robotics, com o robô da empresa. Imagem: Maven Robotics"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Macro e energia"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "BCE.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " O Banco Central Europeu "
+         },
+         {
+          "type": "text",
+          "text": "elevou suas três taxas básicas em 25 pontos-base",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/banco-central-europeu-divulga-decisao-sobre-taxas-de-juros",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", levando a taxa de depósito a 2,50% a partir de 16 de setembro, na segunda alta de 2026, e atribuiu explicitamente a pressão inflacionária ao conflito no Oriente Médio. As projeções do corpo técnico veem inflação cheia de 3,0% em 2026, 2,5% em 2027 e 2,1% em 2028, com revisão para cima nos dois últimos anos, e Christine Lagarde disse que a inflação só deve "
+         },
+         {
+          "type": "text",
+          "text": "voltar à meta perto do fim de 2027",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/banco-central-europeu-divulga-decisao-sobre-taxas-de-juros",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": "; do outro lado do Atlântico, 65 de 93 economistas ouvidos pela Reuters esperam que o Federal Reserve mantenha os juros em 3,50%-3,75% na reunião de 15 e 16 de setembro, contra 90% em agosto."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/272a3388-d96f-4dcd-a39a-547f991dff46_1920x1536.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 1536,
+       "width": 1920,
+       "resizeWidth": 520,
+       "bytes": 224427,
+       "alt": "Christine Lagarde, presidente do Banco Central Europeu",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Christine Lagarde, presidente do Banco Central Europeu. Imagem: John MacDougall/AFP/Getty"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "Petróleo.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " O Brent subiu cerca de 4% nesta quinta-feira, a "
+         },
+         {
+          "type": "text",
+          "text": "US$105,24 o barril, maior nível desde maio",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/petroleo-brent-atinge-us-105-com-tensoes-no-oriente-medio",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", depois que autoridades iemenitas informaram que a milícia houthi tomou uma cidade portuária e ampliou seu controle sobre a passagem pelo estreito de Bab al-Mandab, rota que a Arábia Saudita vinha usando para exportar. A produção saudita caiu no mês passado ao menor nível desde 1990, os fluxos por Ormuz recuaram para até 2 milhões de barris por dia, contra 8 a 9 milhões antes da retomada dos combates em 30 de agosto, e Trump disse não buscar acordo com o Irã nem esperar preços menores antes das "
+         },
+         {
+          "type": "text",
+          "text": "eleições de meio de mandato de novembro",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/petroleo-brent-atinge-us-105-com-tensoes-no-oriente-medio",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": "."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Rússia e Ucrânia"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "type": "text",
+          "text": "Ucrânia.",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " As Forças de Operações Especiais informaram em 9 de setembro que drones voaram mais de 3.000 km para atingir "
+         },
+         {
+          "type": "text",
+          "text": "duas plantas de processamento de condensado de gás no Okrug Autônomo de Yamalo-Nenets",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/drones-ucranianos-atingem-plantas-de-gas-no-artico-russo-a-3000-km",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", o ataque mais profundo em território russo desde o início da guerra e o primeiro a alcançar a parte ártica do país, contra o recorde anterior de uma refinaria em Omsk, a cerca de 2.500 km, atingida em 6 de julho. A planta de Novy Urengoy processa 19,5 milhões de toneladas de petróleo bruto e gás natural por ano e produz diesel usado pelas forças armadas russas; o governador Dmitry Artyukhov disse que a incursão foi repelida, mas que a queda de destroços provocou um incêndio, sem "
+         },
+         {
+          "type": "text",
+          "text": "mortos ou feridos",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-10/drones-ucranianos-atingem-plantas-de-gas-no-artico-russo-a-3000-km",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": "."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/a6c4b52a-8dea-42b4-a3fb-e4315cf2502e_1200x683.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 683,
+       "width": 1200,
+       "resizeWidth": 520,
+       "bytes": 130189,
+       "alt": "Incêndio na planta de condensado de gás de Novy Urengoy",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Incêndio na planta de condensado de gás de Novy Urengoy após o ataque de drones. Imagem: The Barents Observer"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "calloutBlock",
+    "content": [
+     {
+      "type": "heading",
+      "attrs": {
+       "level": 4
+      },
+      "content": [
+       {
+        "type": "text",
+        "text": "Leia também"
+       }
+      ]
+     },
+     {
+      "type": "bullet_list",
+      "content": [
+       {
+        "type": "list_item",
+        "content": [
+         {
+          "type": "paragraph",
+          "content": [
+           {
+            "type": "text",
+            "text": "FDA aprova terapia da Bayer em primeira linha para câncer de pulmão com mutação HER2",
+            "marks": [
+             {
+              "type": "link",
+              "attrs": {
+               "href": "https://dailyjournal.news/news/2026-09-10/fda-aprova-hyrnuo-da-bayer-em-primeira-linha-para-cancer-de-pulmao-her2",
+               "target": "_blank",
+               "rel": "noopener noreferrer nofollow",
+               "class": null
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "list_item",
+        "content": [
+         {
+          "type": "paragraph",
+          "content": [
+           {
+            "type": "text",
+            "text": "Roivant leva mosliciguate inalado à Fase 3 após redução de 56,3% na resistência vascular pulmonar",
+            "marks": [
+             {
+              "type": "link",
+              "attrs": {
+               "href": "https://dailyjournal.news/news/2026-09-10/mosliciguate-da-roivant-reduz-563-a-resistencia-vascular-pulmonar",
+               "target": "_blank",
+               "rel": "noopener noreferrer nofollow",
+               "class": null
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "list_item",
+        "content": [
+         {
+          "type": "paragraph",
+          "content": [
+           {
+            "type": "text",
+            "text": "Enbridge compra o negócio de petróleo da Tallgrass por US$2,55 bilhões",
+            "marks": [
+             {
+              "type": "link",
+              "attrs": {
+               "href": "https://dailyjournal.news/news/2026-09-10/enbridge-compra-negocio-de-petroleo-da-tallgrass-por-us255-bilhoes",
+               "target": "_blank",
+               "rel": "noopener noreferrer nofollow",
+               "class": null
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "marks": [
+       {
+        "type": "strong"
+       }
+      ],
+      "text": "Recomendações de hoje:"
+     }
+    ]
+   },
+   {
+    "type": "paragraph",
+    "attrs": {
+     "textAlign": null
+    },
+    "content": [
+     {
+      "type": "text",
+      "marks": [
+       {
+        "type": "strong"
+       }
+      ],
+      "text": "Building One of AI’s Fastest-Growing Companies | Mati Staniszewski, ElevenLabs:"
+     },
+     {
+      "type": "text",
+      "text": " Mati Staniszewski é cofundador e CEO da ElevenLabs, empresa de inteligência artificial aplicada a áudio e voz fundada em 2022 ao lado de Piotr Dąbkowski. Em conversa com David Senra, Staniszewski detalha como sua trajetória na Palantir e a experiência de Piotr no Google moldaram a estrutura operacional, a estratégia de produto e a filosofia de pesquisa da ElevenLabs, que opera como um laboratório de modelos de fronteira integrado a uma plataforma unificada de comunicação para empresas e criadores:"
+     }
+    ]
+   },
+   {
+    "type": "youtube2",
+    "attrs": {
+     "videoId": "RFccAuyPPOg",
+     "startTime": null,
+     "endTime": null
+    }
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "paragraph",
+    "attrs": {
+     "textAlign": null
+    },
+    "content": [
+     {
+      "type": "text",
+      "marks": [
+       {
+        "type": "strong"
+       }
+      ],
+      "text": "Inside the Race to Measure Frontier Intelligence:"
+     },
+     {
+      "type": "text",
+      "text": " Rayan Krishnan, fundador e CEO da Vals, discute com os sócios da Andreessen Horowitz (a16z) Ben Horowitz, Jennifer Li e Erik Torenberg a crise metodológica na avaliação de modelos de fronteira em inteligência artificial. Com a saturação de benchmarks públicos e a proliferação de modelos agênticos e soberanos, a conversa detalha os gargalos técnicos de teste, a economia do consumo de tokens nas empresas e o papel das auditorias independentes na formulação de políticas públicas e tratados geopolíticos:"
+     }
+    ]
+   },
+   {
+    "type": "youtube2",
+    "attrs": {
+     "videoId": "WO9c9qxDxzU",
+     "startTime": "55s",
+     "endTime": null
+    }
+   }
+  ]
+ }
+}
