@@ -1229,3 +1229,13 @@ https://www.youtube.com/watch?v=qn1QDDBnTA0
 **GPT-6 Astra Saturates ARC-AGI-3, Tesla Cybercab Hits Austin, Anthropic Proves Fermat's Last Theorem**
 Discussão entre Peter H. Diamandis (fundador da XPRIZE e Singularity University), Salim Ismail (fundador da Open ExO e GP na Exponential Venture Capital), Dave Blundin (fundador e GP da Link Ventures), Dr. Alexander Wissner-Gross (cientista da computação e fundador da Reified) e Emad Mostaque (fundador da Intelligent Internet e ex-CEO da Stability AI) sobre os lançamentos de modelos de fronteira de IA, governança global, mobilidade autônoma, exploração espacial e avanços em longevidade
 https://www.youtube.com/watch?v=1DB_QDiviH4
+
+## 2026-09-09
+
+**Inside OpenAI’s Breakthroughs in Mathematical Reasoning**
+Lisha Li, sócia de infraestrutura na Andreessen Horowitz (a16z), conversa com Mehtaab Sawhney e Mark Sellke, matemáticos e pesquisadores na OpenAI. Ambos discutem a evolução dos modelos de raciocínio da OpenAI, o impacto dos novos resultados matemáticos obtidos por IA (em especial o conjunto de 10 problemas resolvidos no projeto Astra), a dinâmica interna do raciocínio dos modelos e as transformações na prática da matemática pura e aplicada
+https://www.youtube.com/watch?v=1JvyLGd2Sfs
+
+**Why the World Order Is Collapsing and American Power Is Rising**
+Em conversa com Patrick O'Shaughnessy (CEO da Positive Sum e apresentador do podcast Invest Like The Best), Walter Russell Mead (historiador, professor de relações internacionais, colunista do The Wall Street Journal e autor de obras como God and Gold e Special Providence) analisa as transformações na ordem geopolítica global. Mead argumenta que, embora o arranjo institucional internacional pós-Segunda Guerra Mundial e pós-Guerra Fria esteja em colapso, o poder material, produtivo e tecnológico dos Estados Unidos permanece em ascensão
+https://www.youtube.com/watch?v=v-2BdiL6r74
