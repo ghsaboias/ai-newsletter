@@ -1239,3 +1239,13 @@ https://www.youtube.com/watch?v=1JvyLGd2Sfs
 **Why the World Order Is Collapsing and American Power Is Rising**
 Em conversa com Patrick O'Shaughnessy (CEO da Positive Sum e apresentador do podcast Invest Like The Best), Walter Russell Mead (historiador, professor de relações internacionais, colunista do The Wall Street Journal e autor de obras como God and Gold e Special Providence) analisa as transformações na ordem geopolítica global. Mead argumenta que, embora o arranjo institucional internacional pós-Segunda Guerra Mundial e pós-Guerra Fria esteja em colapso, o poder material, produtivo e tecnológico dos Estados Unidos permanece em ascensão
 https://www.youtube.com/watch?v=v-2BdiL6r74
+
+## 2026-09-10
+
+**Building One of AI’s Fastest-Growing Companies | Mati Staniszewski, ElevenLabs**
+Mati Staniszewski é cofundador e CEO da ElevenLabs, empresa de inteligência artificial aplicada a áudio e voz fundada em 2022 ao lado de Piotr Dąbkowski. Em conversa com David Senra, Staniszewski detalha como sua trajetória na Palantir e a experiência de Piotr no Google moldaram a estrutura operacional, a estratégia de produto e a filosofia de pesquisa da ElevenLabs, que opera como um laboratório de modelos de fronteira integrado a uma plataforma unificada de comunicação para empresas e criadores
+https://www.youtube.com/watch?v=RFccAuyPPOg
+
+**Inside the Race to Measure Frontier Intelligence**
+Rayan Krishnan, fundador e CEO da Vals, discute com os sócios da Andreessen Horowitz (a16z) Ben Horowitz, Jennifer Li e Erik Torenberg a crise metodológica na avaliação de modelos de fronteira em inteligência artificial. Com a saturação de benchmarks públicos e a proliferação de modelos agênticos e soberanos, a conversa detalha os gargalos técnicos de teste, a economia do consumo de tokens nas empresas e o papel das auditorias independentes na formulação de políticas públicas e tratados geopolíticos
+https://www.youtube.com/watch?v=WO9c9qxDxzU
