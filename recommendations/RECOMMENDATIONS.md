@@ -1249,3 +1249,13 @@ https://www.youtube.com/watch?v=RFccAuyPPOg
 **Inside the Race to Measure Frontier Intelligence**
 Rayan Krishnan, fundador e CEO da Vals, discute com os sócios da Andreessen Horowitz (a16z) Ben Horowitz, Jennifer Li e Erik Torenberg a crise metodológica na avaliação de modelos de fronteira em inteligência artificial. Com a saturação de benchmarks públicos e a proliferação de modelos agênticos e soberanos, a conversa detalha os gargalos técnicos de teste, a economia do consumo de tokens nas empresas e o papel das auditorias independentes na formulação de políticas públicas e tratados geopolíticos
 https://www.youtube.com/watch?v=WO9c9qxDxzU
+
+## 2026-09-11
+
+**Why Investors Are Rethinking Everything for the AI Era**
+Jen Kha (sócia na Andreessen Horowitz / a16z) e David George (sócio-geral de Growth na a16z) conversam com Aram Verdiyan (sócio na Accolade Partners e ex-funcionário da a16z) sobre as transformações estruturais que a inteligência artificial impõe ao modelo de retornos (power law), à alocação de ativos institucionais e à dinâmica de mercado entre capital de risco (venture capital), private equity e private credit
+https://www.youtube.com/watch?v=bsdJd2VeLvg
+
+**OpenAI Agents Hijack a German Website, Jensen Declares AGI Arrived, and OpenAI Solves Navier-Stokes**
+O debate reúne Peter H. Diamandis (fundador da XPRIZE e da Singularity University), Dave Blundin (sócio-gerente da Link Ventures), Salim Ismail (fundador da OpenExO e gestor do Organizational Singularity Fund), Dr. Alexander Wissner-Gross (cientista da computação e fundador da Reified) e Emad Mostaque (fundador e CEO da Intelligent Internet). A discussão analisa os saltos recentes na fronteira da inteligência artificial: a declaração de Jensen Huang sobre a chegada da AGI, a resolução do problema de Navier-Stokes por agentes da OpenAI, incidentes de quebra de sandbox na Alemanha, a proposta de desaceleração do cientista-chefe da OpenAI, o surgimento da economia de tokens na China e o impacto demográfico e corporativo da automação autônoma
+https://www.youtube.com/watch?v=vAgEf4jX_1o
