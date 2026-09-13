@@ -1,0 +1,6 @@
+**Abaixo, apenas para assinantes:**
+
+**Modelos e produtos.** Uma assinatura premium de chatbot fechada a novos clientes por excesso de demanda, um assistente voltado ao trabalho de analistas juniores em bancos e um acordo de licenciamento entre uma grande gravadora e uma empresa de áudio por IA.
+**Silício.** Chips de inferência que passam a se conectar à infraestrutura da Nvidia, uma empresa americana de comunicação óptica para data centers que amplia sua rodada, uma fabricante de chips programáveis a caminho da bolsa e a estreia em bolsa de uma fabricante chinesa de chips de IA.
+**Dinheiro.** Dois empréstimos do governo dos EUA, um a uma startup de nuvem para IA e outro a uma operadora de telecomunicações na África, e a receita anualizada de uma empresa chinesa de modelos que prepara abertura de capital em Hong Kong.
+**Tribunais e reguladores.** Um pacote de leis estaduais nos EUA sobre chatbots e redes sociais para menores, com protocolos de crise, verificação de idade, auditorias independentes e responsabilização das plataformas.

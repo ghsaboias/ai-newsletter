@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-11",
+  "fidelity_issues": [
+    {
+      "severity": "high",
+      "where": "edition",
+      "claim": "A [Reuters confirmou o relato](https://www.reuters.com/business/altman-tells-staff-openai-is-open-slowing-ai-development-bloomberg-news-reports-2026-09-11/).",
+      "issue": "atribuição inventada",
+      "expected": "O research.json não traz nenhum fato dizendo que a Reuters confirmou o relato. A fonte Reuters listada na história é, pelo próprio título, uma repercussão da Bloomberg: 'Altman tells staff OpenAI is open to slowing AI development, Bloomberg News reports' (o slug da URL termina em '-bloomberg-news-reports-'). O facts.md também não registra confirmação independente. 'Confirmou' atribui à Reuters uma apuração própria que não existiu — o correto seria 'a Reuters repercutiu/relatou o texto da Bloomberg'."
+    },
+    {
+      "severity": "low",
+      "where": "edition",
+      "claim": "O relatório sai dois dias depois do alerta conjunto de NSA, FBI e CISA sobre destilação industrial de modelos americanos por empresas chinesas.",
+      "issue": "não traça ao research.json",
+      "expected": "Nenhuma menção a NSA, FBI ou CISA existe no research.json de hoje (busca por 'NSA|FBI|CISA' só retorna 'transaction'), e a frase também não está no facts.md — foi introduzida na edição. A moldura temporal, porém, é confirmada pela edição da véspera (2026-09-10), que registra 'o lançamento vem dois dias depois do alerta conjunto de NSA, FBI e CISA que citou a DeepSeek entre as empresas chinesas acusadas de destilar modelos americanos' para um evento de 10 de setembro — o que situa o alerta em 8 de setembro e torna 'dois dias depois' correto também para o relatório da Anthropic (10 de setembro). É furo de rastreabilidade (continuidade herdada da edição anterior), não invenção."
+    }
+  ],
+  "dropped_facts": [
+    {
+      "severity": "medium",
+      "story": "Nvidia — Jensen Huang rejeitou na conferência da Goldman Sachs a crítica de financiamento circular",
+      "fact": "Documentos da Nvidia mostram que três clientes diretos responderam por 16%, 15% e 13% da receita no primeiro semestre do ano fiscal de 2027 (facts.md, seção 'Nvidia — Huang rebate a crítica de financiamento circular').",
+      "why_load_bearing": "É a única cifra dura do bloco e a evidência concreta por trás da crítica que Huang está rebatendo: a concentração de receita em poucos clientes é o que dá substância à acusação de financiamento circular. Sem ela, o bullet fica com a defesa do CEO e sem o dado que a motiva."
+    }
+  ],
+  "summary": "Fidelidade alta — todos os números, nomes, datas e citações das três Grandes e das Médias traçam ao research.json; dois desvios pontuais na edição (a Reuters descrita como tendo 'confirmado' o que apenas repercutiu da Bloomberg, e o alerta NSA/FBI/CISA herdado da véspera sem fonte na pesquisa de hoje), e um único fato load-bearing podado (a concentração de receita da Nvidia em três clientes)."
+}
