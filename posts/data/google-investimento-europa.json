@@ -1,0 +1,30 @@
+{
+  "slug": "google-investimento-europa",
+  "title_pt": "Investimentos do Google na Europa",
+  "edition": "2026-09-09",
+  "metric": "Valor total anunciado de cada programa plurianual de investimento do Google em um país europeu, em bilhões de euros (moeda nativa do anúncio)",
+  "definition": "Programas plurianuais anunciados pelo Google entre setembro de 2025 e setembro de 2026, denominados em euro, com valor total e período declarados no press release oficial. Cada barra é o valor bruto do programa, sem anualização e sem conversão de moeda. O escopo de cada programa segue o texto do anúncio: Finlândia = data centers e infraestrutura de apoio (Hamina, Kajaani, Muhos, Vaala); Alemanha = data centers (Dietzenbach, Hanau) e escritórios (Berlim, Frankfurt, Munique); Bélgica = data centers (Saint-Ghislain, Farciennes).",
+  "series": [
+    { "country_pt": "Finlândia", "eur_bn": 13, "period": "2027-2028", "years": 2, "announced": "2026-09-09", "at_least": true, "source_ref": "fi" },
+    { "country_pt": "Alemanha", "eur_bn": 5.5, "period": "2026-2029", "years": 4, "announced": "2025-11-11", "at_least": false, "source_ref": "de" },
+    { "country_pt": "Bélgica", "eur_bn": 5, "period": "2026-2027", "years": 2, "announced": "2025-10-07", "at_least": false, "source_ref": "be" }
+  ],
+  "excluded": [
+    { "country_pt": "Reino Unido", "value": "£5 bi", "period": "2025-2027", "announced": "2025-09-16", "reason": "Em libra, e o escopo declarado inclui capex, P&D e engenharia, com a DeepMind dentro. Não mede a mesma coisa que os programas de infraestrutura. Vai pro caption como ponte.", "url": "https://www.googlecloudpresscorner.com/2025-09-16-Google-Opens-Waltham-Cross-Data-Centre-as-Part-of-Two-year-GBP5-Billion-Investment-in-the-UK-to-Help-Power-its-AI-Economy" },
+    { "country_pt": "Holanda", "value": "€600 mi", "announced": "2025-11-18", "reason": "Um único data center (Winschoten), não um programa plurianual.", "url": "https://www.googlecloudpresscorner.com/2025-11-18-Google-Opens-Data-Center-in-Winschoten-to-Help-Power-the-AI-Economy-in-The-Netherlands" },
+    { "country_pt": "Finlândia (2024)", "value": "€1 bi", "announced": "2024-05-20", "reason": "Expansão de um único campus (Hamina), anterior ao recorte de 12 meses.", "url": "https://www.businessfinland.fi/en/whats-new/news/2024/google-announced-an-expansion-of-its-hamina-data-center" },
+    { "country_pt": "Suécia", "value": "não divulgado", "announced": "2026-06-02", "reason": "Início de obra em Horndal sem valor de investimento divulgado (só um fundo comunitário de €5 mi).", "url": "https://www.googlecloudpresscorner.com/2026-06-02-Google-Breaks-Ground-on-Data-Center-in-Horndal,-Sweden" }
+  ],
+  "sources": [
+    { "id": "fi", "label": "Google, press release: Google Deepens Commitment to Finland with Two-Year €13 Billion investment in AI Infrastructure (9 set. 2026)", "url": "https://www.googlecloudpresscorner.com/2026-09-09-Google-Deepens-Commitment-to-Finland-with-Two-Year-EUR13-Billion-investment-in-AI-Infrastructure", "provides": "€13 bi, 2027-2028, 'largest single investment in Europe', sites, PPA nuclear com a Fortum, €4,5 bi investidos em Hamina desde 2009" },
+    { "id": "de", "label": "Google, press release: Google Announces €5.5 Billion Investment in Germany, including AI Infrastructure, through 2029 (11 nov. 2025)", "url": "https://www.googlecloudpresscorner.com/2025-11-11-Google-Announces-EUR5-5-Billion-Investment-in-Germany,-including-AI-Infrastructure,-through-2029", "provides": "€5,5 bi, 2026-2029, data centers em Dietzenbach e Hanau, escritórios em Berlim, Frankfurt e Munique" },
+    { "id": "be", "label": "Google, press release: Google Announces New €5 Billion AI Infrastructure Investment in Belgium through 2027 (7 out. 2025)", "url": "https://www.googlecloudpresscorner.com/2025-10-07-Google-Announces-New-EUR5-Billion-AI-Infrastructure-Investment-in-Belgium-through-2027", "provides": "€5 bi, 2026-2027, Saint-Ghislain e Farciennes, mais de €11 bi investidos na Bélgica desde 2007" }
+  ],
+  "notes": [
+    "Fluxo, não estoque: cada barra é o valor de um programa novo anunciado, não o acumulado histórico do Google no país (Finlândia €4,5 bi desde 2009; Bélgica mais de €11 bi desde 2007; Holanda mais de €3,8 bi).",
+    "Os períodos diferem (2 anos na Finlândia e na Bélgica, 4 na Alemanha). O gráfico plota o valor bruto declarado; anualizar seria número derivado. O período vai no label de cada barra.",
+    "A Finlândia é 'pelo menos €13 bi' segundo o Google. As outras duas são valores fechados.",
+    "Reino Unido (£5 bi, 2025-2027) fica fora do gráfico e vai pro caption: moeda diferente e escopo que inclui P&D e a DeepMind.",
+    "Escopo da Alemanha inclui escritórios, não só data centers. Dito no kicker."
+  ]
+}

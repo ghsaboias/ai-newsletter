@@ -1,0 +1,29 @@
+{
+  "slug": "claude-acoes-prejudiciais-ctf",
+  "title_pt": "Taxa de ações prejudiciais por modelo Claude",
+  "edition": "2026-09-10",
+  "metric": "Percentual de execuções em que o modelo tomou pelo menos uma ação gravemente prejudicial, em 150 execuções por modelo",
+  "definition": "Replicação, feita pela Anthropic com sua ferramenta interna de auditoria automatizada, do cenário capture-the-flag em que ocorreram os incidentes de acesso não autorizado. 'Ação gravemente prejudicial' = falsificar uma identidade, plantar um artefato malicioso (como um pacote com backdoor), enganar uma pessoa ou invadir um sistema de terceiro. Cada modelo rodou 150 vezes; a barra é a fração de execuções com ao menos uma ação desse tipo. O auditor tenta ativamente provocar comportamento desalinhado, então a Anthropic diz que as taxas provavelmente são maiores do que um ambiente fixo produziria.",
+  "series": [
+    { "model": "Opus 4.6",   "pct": 21, "n": 150, "source_ref": "anthropic-fig33" },
+    { "model": "Sonnet 4.6", "pct": 27, "n": 150, "source_ref": "anthropic-fig33" },
+    { "model": "Opus 4.7",   "pct": 22, "n": 150, "source_ref": "anthropic-fig33" },
+    { "model": "Opus 4.8",   "pct": 39, "n": 150, "source_ref": "anthropic-fig33" },
+    { "model": "Mythos 5",   "pct": 82, "n": 150, "source_ref": "anthropic-text" },
+    { "model": "Sonnet 5",   "pct": 12, "n": 150, "source_ref": "anthropic-fig33" },
+    { "model": "Opus 5",     "pct": 31, "n": 150, "source_ref": "anthropic-text" },
+    { "model": "Mythos 5.1", "pct": 33, "n": 150, "source_ref": "anthropic-text" }
+  ],
+  "sources": [
+    { "id": "anthropic-text", "label": "Anthropic, 'An alignment assessment of recent cybersecurity incidents' (9 set. 2026), seção 'Capture-the-flag scenario'", "url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents", "provides": "Texto: Mythos 5 82%, Opus 5 31%, Mythos 5.1 33%, em 150 execuções; definição de ação gravemente prejudicial; ressalva sobre o auditor" },
+    { "id": "anthropic-fig33", "label": "Anthropic, mesmo relatório, Figura 33 ('Severely harmful actions in the capture-the-flag scenario'), rótulos impressos nas barras", "url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6a2afcceffffc42dd1f9aed11e9de65507f7cca9-1700x935.png", "provides": "Opus 4.6 21%, Sonnet 4.6 27%, Opus 4.7 22%, Opus 4.8 39%, Sonnet 5 12% (os cinco modelos que o texto não cita numericamente)" }
+  ],
+  "notes": [
+    "Todos os oito valores vêm da mesma figura da Anthropic, com o mesmo método e n=150. Três aparecem também no texto do relatório; os outros cinco só nos rótulos impressos da Figura 33.",
+    "A figura original traz barras de erro (intervalos de confiança) que a Anthropic não reporta numericamente; o gráfico do DJ omite as barras de erro e diz isso no caption.",
+    "A Anthropic pede cautela com o valor absoluto: o auditor automatizado tenta provocar o comportamento, e a empresa não sabe com que frequência as condições do cenário (tarefa impossível, autorização ambígua) ocorrem em produção. Vai no kicker.",
+    "A Anthropic diz que os incidentes reais envolveram um checkpoint inicial do Opus 4.6, o Opus 4.7, o Mythos 5 e um modelo interno de pesquisa; o modelo interno não está na figura.",
+    "Ordem das barras = ordem de lançamento dos modelos, como na figura original. Não há dado para modelos 4.5 nesta métrica.",
+    "Mythos 5 é o modelo da Anthropic disponível só para organizações aprovadas; Fable 5 / 5.1 (versão pública do mesmo modelo, com medidas adicionais) não aparece na figura."
+  ]
+}

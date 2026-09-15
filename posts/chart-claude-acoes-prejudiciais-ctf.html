@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Taxa de ações prejudiciais por modelo Claude</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; background: #FFF; color: #000; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 38px; }
+  .card { width: 720px; background: #FFF; padding: 36px 40px; }
+  .header { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-bottom: 24px; border-bottom: 3px solid #044B2E; }
+  .header .logo { height: 18px; flex-shrink: 0; }
+  .header h1 { font-size: 24px; font-weight: 700; letter-spacing: -0.8px; line-height: 26px; max-width: none; }
+  .kicker { font-size: 13px; line-height: 18px; color: #444; margin-top: 18px; }
+  .kicker b { color: #044B2E; }
+  .chart-area { padding: 18px 0 4px; }
+  .chart-container { position: relative; width: 100%; height: 300px; }
+  .legend { display: flex; gap: 22px; margin-top: 16px; padding-top: 14px; border-top: 1px solid #E5E5E5; font-size: 11px; color: #444; }
+  .legend > span { display: inline-flex; align-items: center; }
+  .legend .swatch { display: inline-block; width: 12px; height: 12px; margin-right: 6px; border-radius: 2px; }
+  .caption { font-size: 11px; line-height: 16px; color: #999; margin-top: 14px; }
+  .footer { padding-top: 14px; border-top: 1px solid #E5E5E5; display: flex; justify-content: space-between; margin-top: 14px; }
+  .footer span { font-size: 10px; color: #999; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="card" id="capture">
+  <div class="header">
+    <h1>Taxa de ações prejudiciais por modelo Claude</h1>
+    <img src="../../daily-journal-platform/public/images/logo/logo-green-horizontal.png" class="logo" alt="Daily Journal">
+  </div>
+  <div class="kicker">
+    Teste da Anthropic que reproduz o cenário dos incidentes de acesso não autorizado. Cada modelo rodou 150 vezes; a barra mostra em quantas delas o modelo fez ao menos uma destas coisas: criar uma identidade falsa, publicar um pacote de software malicioso, enganar uma pessoa ou invadir um sistema de terceiro. Um auditor automatizado tenta provocar o comportamento. O <b>Mythos 5</b> fez isso em <b>82%</b> das vezes; os modelos seguintes, Opus 5 e Mythos 5.1, em <b>31%</b> e <b>33%</b>.
+  </div>
+  <div class="chart-area">
+    <div class="chart-container">
+      <canvas id="ctf"></canvas>
+    </div>
+    <div class="legend">
+      <span><span class="swatch" style="background:#044B2E"></span>Mythos 5</span>
+      <span><span class="swatch" style="background:#C9D2CD"></span>Demais modelos, em ordem de lançamento</span>
+    </div>
+  </div>
+  <div class="caption">
+    Fontes: Anthropic, "An alignment assessment of recent cybersecurity incidents" (9 set. 2026). Mythos 5, Opus 5 e Mythos 5.1 no texto do relatório; os demais nos rótulos da Figura 33. A figura original traz intervalos de confiança, não reportados numericamente, omitidos aqui.
+  </div>
+  <div class="footer">
+    <span>Fonte: Anthropic, alignment assessment (9 set. 2026)</span>
+    <span>dailyjournal.news</span>
+  </div>
+</div>
+<script>
+  const ROWS = [
+    { m:'Opus 4.6',   v:21 },
+    { m:'Sonnet 4.6', v:27 },
+    { m:'Opus 4.7',   v:22 },
+    { m:'Opus 4.8',   v:39 },
+    { m:'Mythos 5',   v:82, k:'hi' },
+    { m:'Sonnet 5',   v:12 },
+    { m:'Opus 5',     v:31 },
+    { m:'Mythos 5.1', v:33 },
+  ];
+  const col  = r => r.k==='hi' ? '#044B2E' : '#C9D2CD';
+  const tcol = r => r.k==='hi' ? '#044B2E' : '#333';
+  new Chart(document.getElementById('ctf').getContext('2d'), {
+    type: 'bar',
+    data: { labels: ROWS.map(r=>r.m), datasets: [{ data: ROWS.map(r=>r.v), backgroundColor: ROWS.map(col), borderWidth: 0, borderRadius: 2, borderSkipped: false, barPercentage: 0.72, categoryPercentage: 0.84 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false, animation: false,
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: {
+        y: { beginAtZero: true, max: 100, grid: { color: '#f0f0f0', drawTicks: false }, border: { display: false },
+             ticks: { font: { family: 'Helvetica Neue', size: 11 }, color: '#888', padding: 6, stepSize: 25, callback: v => v + '%' } },
+        x: { grid: { display: false }, border: { display: true, color: '#ddd' },
+             ticks: { font: { family: 'Helvetica Neue', size: 11, weight: '600' }, color: ROWS.map(tcol), padding: 8 } }
+      },
+      layout: { padding: { top: 18, right: 4, left: 0, bottom: 0 } }
+    },
+    plugins: [{
+      id: 'valueLabels',
+      afterDraw(chart) {
+        const { ctx } = chart; const meta = chart.getDatasetMeta(0).data;
+        ROWS.forEach((r, i) => {
+          const bar = meta[i]; ctx.save(); ctx.textBaseline = 'bottom'; ctx.textAlign = 'center';
+          ctx.font = (r.k==='hi' ? '700 ' : '600 ') + '12px Helvetica Neue'; ctx.fillStyle = tcol(r);
+          ctx.fillText(r.v + '%', bar.x, bar.y - 5);
+          ctx.restore();
+        });
+      }
+    }]
+  });
+</script>
+</body>
+</html>
