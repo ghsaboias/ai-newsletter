@@ -1,0 +1,96 @@
+{
+  "slug": "openai-aquisicoes-por-ano",
+  "title_pt": "Aquisições da OpenAI por ano",
+  "edition": "2026-09-15",
+  "metric": "Número de empresas adquiridas pela OpenAI por ano civil, contagem de deals.",
+  "definition": "Contagem de aquisições concluídas atribuídas à OpenAI pela base da Tracxn, por ano de anúncio. Inclui acqui-hires, que é onde as bases divergem entre si. Total de 21 aquisições desde 2023, conforme a Tracxn em 15 de setembro de 2026.",
+  "series": [
+    { "year": 2023, "deals": 1, "preliminary": false, "source_ref": "tracxn" },
+    { "year": 2024, "deals": 3, "preliminary": false, "source_ref": "tracxn" },
+    { "year": 2025, "deals": 6, "preliminary": false, "source_ref": "tracxn" },
+    { "year": 2026, "deals": 11, "preliminary": true, "source_ref": "tracxn" }
+  ],
+  "disclosed_values": [
+    {
+      "company": "io Products",
+      "announced": "2025-05-21",
+      "usd_bn": 6.5,
+      "form": "ações",
+      "confirmed_by": "a própria OpenAI",
+      "source_ref": "openai-io",
+      "note": "startup de dispositivos de Jony Ive; maior aquisição da história da empresa"
+    },
+    {
+      "company": "Statsig",
+      "announced": "2025-09-02",
+      "usd_bn": 1.1,
+      "form": "all-stock",
+      "confirmed_by": "reportagem (Bloomberg, CNBC, TechCrunch)",
+      "source_ref": "bloomberg-statsig",
+      "note": "testes de produto e feature flags; o fundador Vijaye Raji virou CTO de Aplicações da OpenAI"
+    },
+    {
+      "company": "Glass Imaging",
+      "announced": "2026-09-14",
+      "usd_bn": 0.3,
+      "usd_bn_is_floor": true,
+      "form": "não divulgada",
+      "confirmed_by": "reportagem (Wall Street Journal)",
+      "source_ref": "wsj-glass",
+      "note": "software de câmera para smartphones, fundada por ex-engenheiros da Apple do Modo Retrato; WSJ diz 'mais de US$300 milhões', cerca do triplo do valuation de US$100 mi de 2025"
+    }
+  ],
+  "named_2026_deals": [
+    "Convogo", "Torch Health", "Crixet", "OpenClaw", "Promptfoo", "Astral",
+    "TBPN", "Hiro Finance", "Tomoro", "Weights", "Ona", "NextSlide", "Glass Imaging"
+  ],
+  "not_counted": [
+    {
+      "company": "Windsurf",
+      "reported_value_usd_bn": 3.0,
+      "reason": "o negócio não se concretizou; não entra na contagem nem nos valores divulgados"
+    }
+  ],
+  "sources": [
+    {
+      "id": "tracxn",
+      "label": "Tracxn — Acquisitions by OpenAI (consultado em 15 set. 2026)",
+      "url": "https://tracxn.com/d/acquisitions/acquisitions-by-openai/__kElhSG7uVGeFk1i71Co9-nwFtmtyMVT7f-YHMn4TFBg",
+      "provides": "a série inteira de contagem por ano (2023-2026) e o total de 21"
+    },
+    {
+      "id": "crunchbase-news",
+      "label": "Crunchbase News — \"OpenAI Has Already Done Nearly As Many M&A Deals In 2026 As It Did All of Last Year\" (25 mar. 2026)",
+      "url": "https://news.crunchbase.com/ma/data-openai-2023-2026-acquisitions-open-source-astral-promptfoo/",
+      "provides": "a contagem alternativa (1 / 2 / 8 / 6 até março de 2026, total 17) citada como ponte no caption"
+    },
+    {
+      "id": "openai-io",
+      "label": "OpenAI — anúncio da aquisição da io Products (21 mai. 2025)",
+      "url": "https://openai.com/index/openai-io/",
+      "provides": "os US$6,5 bilhões em ações"
+    },
+    {
+      "id": "bloomberg-statsig",
+      "label": "Bloomberg — \"OpenAI to Buy Product Testing Startup Statsig for $1.1 Billion\" (2 set. 2025)",
+      "url": "https://www.bloomberg.com/news/articles/2025-09-02/openai-to-buy-product-testing-startup-statsig-for-1-1-billion",
+      "provides": "os US$1,1 bilhão all-stock"
+    },
+    {
+      "id": "wsj-glass",
+      "label": "Wall Street Journal, via SiliconANGLE — \"OpenAI reportedly buys AI camera startup Glass Imaging for more than $300M\" (14 set. 2026)",
+      "url": "https://siliconangle.com/2026/09/14/openai-reportedly-buys-ai-camera-startup-glass-imaging-for-more-than-300m/",
+      "provides": "o piso de US$300 milhões da Glass Imaging"
+    }
+  ],
+  "notes": [
+    "Não existe fonte primária para esta série. A OpenAI não publica lista de aquisições, então qualquer contagem é metodologia de agregador. O gráfico usa a Tracxn como FONTE ÚNICA nos quatro anos, e o caption declara isso e faz a ponte para a contagem divergente da Crunchbase.",
+    "As bases divergem porque discordam do que conta como aquisição versus acqui-hire. Tracxn: 1 / 3 / 6 / 11, total 21. Crunchbase News em 25 de março de 2026: 1 / 2 / 8 / 6 no acumulado do ano, total 17. Mesma tendência, classificação diferente.",
+    "A barra de 2026 é PARCIAL: cobre 1º de janeiro a 15 de setembro. Já é o pico anual mesmo sem o quarto trimestre.",
+    "A lista em named_2026_deals tem 13 nomes contra os 11 que a Tracxn conta para 2026. A diferença é de classificação (alguns entram como acqui-hire, outros a Tracxn data em ano diferente do anúncio público). Por isso o subtítulo do gráfico apresenta os nomes como exemplos, com 'entre elas', e NUNCA como enumeração completa: listar 13 nomes ao lado de uma barra de 11 seria uma contradição interna.",
+    "Apenas 3 dos 21 negócios têm valor divulgado, e só um deles (io Products) foi confirmado pela própria OpenAI. Statsig e Glass Imaging vêm de reportagem. Esse é o fato mais forte do conjunto e vai para a prosa.",
+    "O valor da Glass Imaging é um PISO ('mais de US$300 milhões'), não um número exato. Onde aparecer, leva o sinal '>'.",
+    "Windsurf, reportada em cerca de US$3 bilhões em maio de 2025, não entra em lugar nenhum: o negócio caiu.",
+    "A NextSlide foi anunciada em 8 de agosto de 2026 pelo fundador, que disse que a aquisição tinha acontecido 'no começo do ano'. É um exemplo concreto de por que as contagens por ano divergem entre bases."
+  ]
+}
