@@ -1259,3 +1259,13 @@ https://www.youtube.com/watch?v=bsdJd2VeLvg
 **OpenAI Agents Hijack a German Website, Jensen Declares AGI Arrived, and OpenAI Solves Navier-Stokes**
 O debate reúne Peter H. Diamandis (fundador da XPRIZE e da Singularity University), Dave Blundin (sócio-gerente da Link Ventures), Salim Ismail (fundador da OpenExO e gestor do Organizational Singularity Fund), Dr. Alexander Wissner-Gross (cientista da computação e fundador da Reified) e Emad Mostaque (fundador e CEO da Intelligent Internet). A discussão analisa os saltos recentes na fronteira da inteligência artificial: a declaração de Jensen Huang sobre a chegada da AGI, a resolução do problema de Navier-Stokes por agentes da OpenAI, incidentes de quebra de sandbox na Alemanha, a proposta de desaceleração do cientista-chefe da OpenAI, o surgimento da economia de tokens na China e o impacto demográfico e corporativo da automação autônoma
 https://www.youtube.com/watch?v=vAgEf4jX_1o
+
+## 2026-09-14
+
+**Inside Bending Spoons: Finding Talent, Leveraging AI & Driving Operational Excellence | Luca Ferrari**
+Luca Ferrari é cofundador e CEO da Bending Spoons, empresa de tecnologia fundada em Copenhague e sediada em Milão que opera sob um modelo de aquisição, reestruturação profunda e retenção perpétua de ativos de software. A companhia registra cerca de US$ 3 bilhões em faturamento anualizado (run-rate revenue), mantém margens de lucro operacional ajustado em torno de 54% a 55% e gera mais de US$ 4 milhões em receita por funcionário central (spooner). Nesta conversa com David Senra, Ferrari detalha as teses operacionais da empresa: a primazia do talento bruto e do extreme ownership sobre a experiência prévia, a centralização científica dos processos de contratação, a eliminação de títulos de cargos e bônus variáveis, a automação operacional por meio de um sistema proprietário com mais de 50 ferramentas e agentes de IA, e a estratégia de alocação de capital em aquisições como Evernote e Vimeo
+https://www.youtube.com/watch?v=MCbHnlpwZf0
+
+**The State of AI: Models, Moats, and the Consumer Renaissance**
+Anish Acharya, sócio-geral (General Partner) da gestora de venture capital Andreessen Horowitz (a16z), e Jen Kha analisam as transformações estruturais no ecossistema de inteligência artificial, cobrindo a disputa na camada de modelos de fundação, a resiliência dos moats (vantagens competitivas), as novas dinâmicas da camada de aplicações e o renascimento do segmento de consumo (consumer AI)
+https://www.youtube.com/watch?v=zEZ0rQ8Ef-Y
