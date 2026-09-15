@@ -129,7 +129,12 @@ Escreva `posts/chart-<slug>.md`. Formato (espelha os posts existentes):
 As demais histórias do dia estão na [edição completa](<url pública da edição no Substack>):
 ```
 
-**URL da edição = a pública `/p/<slug>`, NUNCA a do editor** (`/publish/post/<id>`, que é o que está em `substack-draft.json` e só abre pra quem edita). O Substack gera o slug a partir do título da edição (o H1 do `edition-final.md`): minúsculas, sem acento, só letras/dígitos e hífens, truncado em palavra inteira por volta de 34-36 caracteres. Pra "[Tech] - Bem-vindo(a) a 3 de Setembro de 2026" fica `https://dailyjournalnews.substack.com/p/tech-bem-vindoa-a-3-de-setembro-de` (o "2026" cai no truncamento; em títulos mais curtos, como "6 de julho", ele sobrevive). **Confirme com `curl -sI <url> | head -1`** (200 = certo, 404 = tente com/sem o `-2026` no fim); se não resolver, pergunte ao Gui em vez de chutar. (Gui, 2026-09-03.)
+**URL da edição = a pública `/p/<slug>`, NUNCA a do editor** (`/publish/post/<id>`, que é o que está em `substack-draft.json` e só abre pra quem edita). **Não derive o slug do título** (a regra de truncamento do Substack não é previsível: em 10/09/2026 saiu `...-10-de-setembro`, sem o `-de` que 09/09 tinha). Resolva pelo id, que o Substack redireciona pro slug canônico:
+```bash
+ID=$(python3 -c "import json;print(json.load(open('$BASE/substack-draft.json'))['id'])")
+curl -sI "https://dailyjournalnews.substack.com/p/$ID" | grep -i '^location' | awk '{print $2}' | tr -d '\r'
+```
+Só funciona depois de publicado (draft não redireciona, o `Location` vem vazio ou aponta pra home). Se a edição ainda não foi publicada, deixe o link com o placeholder `/p/$ID` e diga ao Gui que precisa resolver depois; nunca chute. Alternativa quando o cache já atualizou: `curl -s 'https://dailyjournalnews.substack.com/api/v1/archive?sort=new&limit=3'` lista `canonical_url` por `id`. (Gui, 2026-09-10.)
 
 **Voz (erros desta tarefa, não repita):**
 - **Registro neutro/profissional, nunca coloquial.** "permaneceram próximos de US$3 bi" ✅; "travados", "o dinheiro seguiu", "atropelou" ❌.

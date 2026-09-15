@@ -24,7 +24,30 @@ sstats geo [global|usa]           # geographic breakdown
 sstats unsubscribes [days=90]     # unsubscribe trend
 sstats notes [limit=20]           # subscriber notes (testimonials)
 sstats published-notes [limit=20] [--table]   # Notes the pub published (JSON: date, url, reactions, restacks, replies, body)
+sstats templates [--json]         # post templates (editor "Templates" menu): id, date, nodes, name
+sstats template <id|name> [--body|--text|--json]   # one template; name = case-insensitive substring
+sstats template-create <name> <doc.json>           # doc.json = ProseMirror {"type":"doc","content":[...]}
+sstats template-update <id|name> <doc.json> [--name N]
+sstats template-delete <id|name>
 ```
+
+## Post templates (ad insertions)
+
+Substack's editor "Templates" live at `/api/v1/post-templates` (GET list, GET/PUT/DELETE
+`/post-templates/<id>`, POST `{name, body}`). `body` is a JSON **string** holding a
+ProseMirror doc. The partner insertion models (Locaweb, Solana Hackathon) are
+templates; source docs are versioned in `newsletters/ai/insertions/*.json`.
+
+```bash
+sstats template locaweb --text                    # quick read of the copy + links
+sstats template solana --body > /tmp/solana.json  # edit, then:
+sstats template-update solana /tmp/solana.json
+```
+
+Insertion anatomy (mirror it for new partners): `captionedImage` (1272×312 banner,
+`href` = tracked link) → centered paragraphs, bold lead + plain tail → `button`
+(same URL) → empty centered paragraph. Upload the banner with
+`pipeline/tools/substack_upload.py <png> --href URL` to get the CDN `src`.
 
 ## Common usage
 
