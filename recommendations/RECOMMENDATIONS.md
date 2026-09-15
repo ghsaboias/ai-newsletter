@@ -1269,3 +1269,13 @@ https://www.youtube.com/watch?v=MCbHnlpwZf0
 **The State of AI: Models, Moats, and the Consumer Renaissance**
 Anish Acharya, sócio-geral (General Partner) da gestora de venture capital Andreessen Horowitz (a16z), e Jen Kha analisam as transformações estruturais no ecossistema de inteligência artificial, cobrindo a disputa na camada de modelos de fundação, a resiliência dos moats (vantagens competitivas), as novas dinâmicas da camada de aplicações e o renascimento do segmento de consumo (consumer AI)
 https://www.youtube.com/watch?v=zEZ0rQ8Ef-Y
+
+## 2026-09-15
+
+**Elon Musk & Gwynne Shotwell on AI Risks and Peer Review, Starship, Terafab, SpaceX/Tesla Merger**
+Conversa no All-In Podcast com Gwynne Shotwell (presidente e COO da SpaceX) e Elon Musk (fundador e CEO da SpaceX e Tesla, fundador da xAI), cobrindo a trajetória de crescimento da SpaceX, a integração operacional com inteligência artificial, a infraestrutura de satélites e computação espacial, o desenvolvimento do Starship, o projeto Terafab e propostas de regulação e testes cruzados de segurança para modelos de fronteira de IA
+https://www.youtube.com/watch?v=iwBOQeFPAwg
+
+**Greg Brockman Says AGI Has Arrived**
+Greg Brockman, cofundador e presidente da OpenAI, discute com Ben Horowitz e Erik Torenberg (a16z) o estágio atual da inteligência artificial, argumentando que o lançamento do modelo Astra marca a entrada prática na era da AGI (Inteligência Artificial Geral). A conversa detalha os avanços em agentes autônomos, uso direto de computadores por visão computacional, os riscos e assimetrias de segurança cibernética, a reorganização de prioridades internas da OpenAI e o impacto econômico e social da tecnologia
+https://www.youtube.com/watch?v=IJn8cagMW18
