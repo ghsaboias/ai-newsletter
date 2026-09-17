@@ -1,0 +1,118 @@
+{
+  "slug": "divida-lastreada-em-chips",
+  "title_pt": "Dívida garantida por chips de IA emitida por ano",
+  "edition": "2026-09-17",
+  "metric": "Dívida emitida por ano cujo colateral são os próprios aceleradores de IA (GPUs, TPUs e outros ASICs), em US$ bilhões, valor no fechamento",
+  "definition": "Série GPU: bucket 'GPU-collateralized' do Compute Credit Tracker do CCIR (Compute Credit Index Research), instrumentos cujo filing ou release declara GPUs/equipamento como garantia, tomados pelo operador que é dono dos chips (CoreWeave, IREN, Nscale, Lambda, Nebius, Crusoe, etc.). Valor emitido no fechamento, não saldo sacado; sem modelagem de amortização; nada estimado. Série 'TPU e outros aceleradores': bucket 'chip-lease instruments (non-GPU accelerators)' do mesmo tracker, que o CCIR mantém fora do gráfico de GPU por construção: SPV Apollo/Blackstone que compra TPUs do Google e aluga à Anthropic (US$35 bi) + facility da General Compute garantida por ASICs SambaNova SN50 (US$0,4 bi). Crux AI: empréstimo de US$22 bi de 10 bancos, garantido por TPUs e contratos de clientes, reportado pela Bloomberg em 16/09/2026 e ainda em sindicação; sem release das partes e ainda não listado no CCIR.",
+  "series": [
+    {
+      "year": 2023,
+      "gpu_usd_bn": 1.5,
+      "non_gpu_usd_bn": 0,
+      "crux_reported_usd_bn": 0,
+      "preliminary": false,
+      "source_ref": "ccir-tracker",
+      "note": "CCIR: 'Pre-2024 issuance (GPU $1.5B)', nível inicial da linha acumulada; é o DDTL 1.0 da CoreWeave (ago/2023)"
+    },
+    {
+      "year": 2024,
+      "gpu_usd_bn": 8.5,
+      "non_gpu_usd_bn": 0,
+      "crux_reported_usd_bn": 0,
+      "preliminary": false,
+      "source_ref": "ccir-tracker",
+      "quarters_usd_bn": {
+        "Q1": 4.8,
+        "Q2": 3.7,
+        "Q3": 0.0,
+        "Q4": 0.0
+      }
+    },
+    {
+      "year": 2025,
+      "gpu_usd_bn": 6.4,
+      "non_gpu_usd_bn": 0,
+      "crux_reported_usd_bn": 0,
+      "preliminary": false,
+      "source_ref": "ccir-tracker",
+      "quarters_usd_bn": {
+        "Q1": 0.2,
+        "Q2": 0.0,
+        "Q3": 6.2,
+        "Q4": 0.0
+      }
+    },
+    {
+      "year": 2026,
+      "gpu_usd_bn": 30.0,
+      "non_gpu_usd_bn": 35.4,
+      "crux_reported_usd_bn": 22,
+      "preliminary": true,
+      "as_of": "até 16/09/2026 (parcial)",
+      "source_ref": "ccir-tracker",
+      "quarters_usd_bn": {
+        "Q1": 13.4,
+        "Q2": 7.0,
+        "Q3_qtd": 9.6
+      },
+      "non_gpu_breakdown": {
+        "anthropic_broadcom_tpu_spv": 35.0,
+        "general_compute_sambanova": 0.4
+      }
+    }
+  ],
+  "ccir_cumulative_gpu_usd_bn": {
+    "2024Q4": 10,
+    "2025Q4": 16,
+    "2026Q3_qtd": 46,
+    "note": "linha acumulada do tracker, arredondada a inteiro pelo próprio CCIR; bate com a soma dos trimestres (1,5+8,5+6,4+30,0 = 46,4)"
+  },
+  "sources": [
+    {
+      "id": "ccir-tracker",
+      "label": "CCIR (ccir.io), Compute Credit Tracker, 'Compute-infrastructure debt issuance, observed, by quarter', série GPU-collateralized, as of 2026-09-16",
+      "url": "https://ccir.io/credit",
+      "provides": "Barras trimestrais de emissão garantida por GPU (2024 Q1 a 2026 Q3 QTD), nível pré-2024 (US$1,5 bi), linha acumulada (US$46 bi), e o bucket de aceleradores não-GPU (2 instrumentos, US$35,4 bi). Termos de dados: citar como 'CCIR (ccir.io)' com a série e a data."
+    },
+    {
+      "id": "apollo-release",
+      "label": "Apollo, release 'Apollo Leads $35 Billion Capital Solution for Broadcom AI XPV Platform in Partnership with Blackstone and Leading Global Banks' (09/06/2026)",
+      "url": "https://ir.apollo.com/_assets/_0e6f3222dc367aca81b711ff9e414ee3/apollo/news/2026-06-09_Apollo_Leads_35_Billion_Capital_Solution_for_629.pdf",
+      "provides": "US$35 bi; SPV compra TPUs do Google e aluga à Anthropic; Broadcom dá suporte de valor residual às tranches A1 e A2 (estrutura conforme PitchBook e Bloomberg)"
+    },
+    {
+      "id": "bloomberg-crux",
+      "label": "Bloomberg, 'Banks Line Up $22 Billion Chip Loan Tied to Blackstone, Alphabet' (16/09/2026), replicado pela Reuters",
+      "url": "https://www.bloomberg.com/news/articles/2026-09-16/banks-line-up-22-billion-chip-loan-tied-to-blackstone-alphabet",
+      "provides": "US$22 bi de 10 bancos (Goldman Sachs, SMBC, Barclays, BNP Paribas, Bank of Nova Scotia entre eles) para a Crux AI comprar TPUs; garantia = valor dos chips + contratos de clientes; bancos ainda sindicam e a dívida pode ser refinanciada em bonds IG; mais US$1 bi de revolver"
+    },
+    {
+      "id": "techcrunch-general-compute",
+      "label": "TechCrunch, 'Why the first GPU financiers are turning to inference chips in a $400 million deal' (17/07/2026) e release da General Compute",
+      "url": "https://techcrunch.com/2026/07/17/why-the-first-gpu-financiers-are-turning-to-inference-chips-in-a-400-million-deal/",
+      "provides": "Facility de até US$400 mi da Upper90, garantida por ASICs SambaNova SN50; começa em US$100 mi comprometidos"
+    },
+    {
+      "id": "blackstone-crux-jv",
+      "label": "Blackstone, release 'Blackstone Announces Joint Venture with Google to Create New TPU Cloud' (18/05/2026)",
+      "url": "https://www.blackstone.com/news/press/blackstone-announces-joint-venture-with-google-to-create-new-tpu-cloud/",
+      "provides": "US$5 bi iniciais de equity da Blackstone; 500 MW em 2027; CEO Benjamin Treynor Sloss"
+    },
+    {
+      "id": "coreweave-ddtl4",
+      "label": "CoreWeave, release 'CoreWeave Closes Landmark $8.5 Billion Financing Facility, Achieving First Investment-Grade Rated GPU-backed Financing' (31/03/2026)",
+      "url": "https://investors.coreweave.com/news/news-details/2026/CoreWeave-Closes-Landmark-8-5-Billion-Financing-Facility-Achieving-First-Investment-Grade-Rated-GPU-backed-Financing/default.aspx",
+      "provides": "DDTL 4.0: US$8,5 bi, A3 (Moody's) e A (low) (DBRS), primeiro financiamento garantido por GPUs com grau de investimento; maior instrumento da série GPU de 2026 no CCIR"
+    }
+  ],
+  "notes": [
+    "Medido: fluxo (dívida emitida no ano, valor no fechamento), não estoque nem saldo sacado. O CCIR não modela saque nem amortização.",
+    "O ano é a soma dos trimestres publicados pelo CCIR (2024: 4,8+3,7; 2025: 0,2+6,2; 2026: 13,4+7,0+9,6). 2023 = nível pré-2024 declarado pelo tracker (US$1,5 bi). A linha acumulada do CCIR (US$46 bi em 2026 Q3) confere.",
+    "2026 é PARCIAL, até 16 de setembro; o CCIR avisa que a barra do trimestre corrente 'backfills' à medida que filings chegam.",
+    "Duas estruturas empilhadas com honestidade de legenda: na série GPU o tomador é dono dos chips (empréstimo); no SPV da Anthropic o veículo compra os chips e aluga (lease). O CCIR separa as duas por construção; aqui vão em cores diferentes, nunca somadas num rótulo único.",
+    "Crux AI (US$22 bi) é press-only (Bloomberg, 16/09), ainda em sindicação e sem release; entra como segmento vazado/tracejado, não como emissão fechada. Não está no CCIR nem no GPU nem no bucket não-GPU.",
+    "Fora do escopo (não são garantidos por chips): bonds de campus de data center (Meta Hyperion, Fluidstack Meridian Arc, Vantage/Stargate), notas unsecured e conversíveis dos neoclouds, o programa de US$20 bi da Valor para a xAI (umbrella, press).",
+    "Termos do CCIR: publicação de dados em charts e reportagem é permitida com atribuição 'CCIR (ccir.io)' + série + data.",
+    "A prosa cita o DDTL 4.0 da CoreWeave (US$8,5 bi, mar/2026) como maior instrumento do ano na série GPU; é o maior valor da tabela de instrumentos GPU-collateralized do CCIR."
+  ]
+}
