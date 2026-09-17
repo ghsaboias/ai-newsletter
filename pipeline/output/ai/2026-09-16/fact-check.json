@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-16",
+  "fidelity_issues": [
+    {
+      "severity": "high",
+      "where": "edition",
+      "claim": "O Brent fechou a US$108,75, alta de 2,9% e maior fechamento desde 19 de maio, acima dos quase US$107 da véspera",
+      "issue": "atribuição inventada",
+      "expected": "O research.json (S44/businesstimes) traz apenas: Brent fechou em alta de US$3,07 (2,9%) a US$108,75 na terça-feira, 15/09 — o que implica fechamento anterior de US$105,68, não 'quase US$107'. Nenhuma cifra de ~US$107 existe no research.json. O valor de 'quase US$107' vem da edição da véspera (2026-09-15, bloco Mercados/Petróleo: 'O Brent subiu 1,3%, para quase US$107 o barril'), que é uma cotação do MESMO pregão de 15/09 cujo settle foi US$108,75 — dois retratos do mesmo dia apresentados como dois dias. O facts.md não contém essa comparação; o erro foi introduzido na edição."
+    },
+    {
+      "severity": "low",
+      "where": "facts.md+edition",
+      "claim": "custo previsto de cerca de A$32 bilhões (US$21 bilhões)",
+      "issue": "não traça ao research.json",
+      "expected": "O research.json (ABC/Brisbane Times) traz apenas 'A$32 billion' / '$32 billion data centre'; não há conversão para dólar americano em nenhuma fonte da pesquisa. A web confirma a ordem de grandeza (TNGlobal: 'Australia's $22B data center project'), então é furo de rastreabilidade, não invenção."
+    }
+  ],
+  "dropped_facts": [],
+  "summary": "Fidelidade alta no geral — cifras, nomes, datas e citações das 20 histórias traçam ao research.json; um caso grave de moldura temporal fabricada no Brent ('quase US$107 da véspera' é o mesmo pregão de 15/09) e uma conversão cambial sem lastro na pesquisa; nenhum fato load-bearing perdido."
+}

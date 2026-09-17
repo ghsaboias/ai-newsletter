@@ -1,0 +1,6 @@
+**Abaixo, apenas para assinantes:**
+
+**Silício.** Uma fabricante chinesa antecipa o calendário do seu chip de treinamento, saem os resultados de uma rodada de testes de inferência com novos aceleradores, e um país asiático amplia o orçamento do seu programa de semicondutores com anúncios de fornecedores americanos.
+**Dinheiro.** Um consórcio de bancos monta um empréstimo bilionário lastreado em chips para uma nova empresa de nuvem, uma fabricante americana de geradores fecha acordo com a Amazon atrelado a ações, duas startups de IA, uma chinesa e uma britânica, negociam rodadas que multiplicam seu valor, e um regulador dos EUA abre espaço para ações tokenizadas.
+**Modelos e agentes.** O chefe de IA de uma big tech americana ataca publicamente a forma como uma rival trata a consciência de modelos, e uma plataforma americana de casa inteligente passa a aceitar comandos de agentes de IA de terceiros.
+**Mundo.** Decisão de juros nos EUA, o petróleo revertendo parte da alta da semana, sanções à Rússia aprovadas no Congresso americano seguidas de novos ataques na Ucrânia, e uma proposta europeia de associação a um país da América do Norte.
