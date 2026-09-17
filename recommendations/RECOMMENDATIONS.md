@@ -1279,3 +1279,13 @@ https://www.youtube.com/watch?v=iwBOQeFPAwg
 **Greg Brockman Says AGI Has Arrived**
 Greg Brockman, cofundador e presidente da OpenAI, discute com Ben Horowitz e Erik Torenberg (a16z) o estágio atual da inteligência artificial, argumentando que o lançamento do modelo Astra marca a entrada prática na era da AGI (Inteligência Artificial Geral). A conversa detalha os avanços em agentes autônomos, uso direto de computadores por visão computacional, os riscos e assimetrias de segurança cibernética, a reorganização de prioridades internas da OpenAI e o impacto econômico e social da tecnologia
 https://www.youtube.com/watch?v=IJn8cagMW18
+
+## 2026-09-16
+
+**Satya Nadella on the AI Doomer Slowdown, Microsoft's Master Plan & Who Wins AI**
+Satya Nadella, presidente e CEO da Microsoft, discute em entrevista ao All-In Podcast a desaceleração no desenvolvimento de modelos de fronteira, a segurança de inteligência artificial, a estratégia de alocação de capital e infraestrutura da Microsoft, além do impacto econômico real e da percepção pública dos data centers
+https://www.youtube.com/watch?v=hdcsTeCFE0I
+
+**Martine Rothblatt: Growing Unlimited Organs, AI Consciousness, & Digital Personhood by 2030 | EP#290**
+Martine Rothblatt, fundadora e CEO da United Therapeutics e criadora da rádio por satélite SiriusXM, discute com Peter H. Diamandis os avanços práticos em biotecnologia para eliminação da escassez de órgãos, rejuvenescimento do sistema imunológico via timo, longevidade humana, consciência digital e personhood jurídica de inteligências artificiais
+https://www.youtube.com/watch?v=2uiIEdmL040
