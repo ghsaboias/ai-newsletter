@@ -1289,3 +1289,13 @@ https://www.youtube.com/watch?v=hdcsTeCFE0I
 **Martine Rothblatt: Growing Unlimited Organs, AI Consciousness, & Digital Personhood by 2030 | EP#290**
 Martine Rothblatt, fundadora e CEO da United Therapeutics e criadora da rádio por satélite SiriusXM, discute com Peter H. Diamandis os avanços práticos em biotecnologia para eliminação da escassez de órgãos, rejuvenescimento do sistema imunológico via timo, longevidade humana, consciência digital e personhood jurídica de inteligências artificiais
 https://www.youtube.com/watch?v=2uiIEdmL040
+
+## 2026-09-17
+
+**Sequoia Legend Michael Moritz: Steve Jobs, Being an Outsider, and Investing in the Age of AI**
+Michael Moritz, ex-jornalista da revista Time, sócio histórico da Sequoia Capital (onde liderou investimentos seminais em empresas como Yahoo e Google e conduziu a firma entre meados dos anos 1990 e 2012) e autor de biografias de figuras como Lee Iacocca, Steve Jobs e Alex Ferguson, discute em conversa com Patrick O'Shaughnessy as forças psicológicas que moldam líderes excepcionais. A discussão aborda suas origens em uma família de refugiados do nazismo, a mentalidade de sobrevivência, o método de investigação da infância de fundadores, a dinâmica do capital de risco nas últimas quatro décadas e a influência da inteligência artificial
+https://www.youtube.com/watch?v=mlWX7RltfDE
+
+**Jensen Huang: The Doomer Hoax, Superintelligence is Here, and The Future of AI (ft. President Trump)**
+Jensen Huang, fundador e CEO da Nvidia, participou de uma edição ao vivo do All-In Podcast com os apresentadores Chamath Palihapitiya, Jason Calacanis, David Sacks e David Friedberg. A conversa abordou a psicologia do movimento "doomer" na inteligência artificial, a regulamentação do setor, a estratégia de código aberto da Nvidia, a competição com a China e a alocação de capital da empresa em infraestrutura de computação e energia, além de uma ligação telefônica surpresa de Donald Trump
+https://www.youtube.com/watch?v=S7CrlFLAmEA
