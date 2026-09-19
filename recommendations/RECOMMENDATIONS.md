@@ -1299,3 +1299,13 @@ https://www.youtube.com/watch?v=mlWX7RltfDE
 **Jensen Huang: The Doomer Hoax, Superintelligence is Here, and The Future of AI (ft. President Trump)**
 Jensen Huang, fundador e CEO da Nvidia, participou de uma edição ao vivo do All-In Podcast com os apresentadores Chamath Palihapitiya, Jason Calacanis, David Sacks e David Friedberg. A conversa abordou a psicologia do movimento "doomer" na inteligência artificial, a regulamentação do setor, a estratégia de código aberto da Nvidia, a competição com a China e a alocação de capital da empresa em infraestrutura de computação e energia, além de uma ligação telefônica surpresa de Donald Trump
 https://www.youtube.com/watch?v=S7CrlFLAmEA
+
+## 2026-09-18
+
+**OpenAI researcher on agent swarms & recursive self-improvement**
+Noam Brown, pesquisador na OpenAI e um dos principais contribuidores para o desenvolvimento do modelo o1 e das abordagens de raciocínio (reasoning), discute o estado da pesquisa em sistemas multiagente, os recentes avanços matemáticos, as perspectivas de autoaperfeiçoamento recursivo (RSI, na sigla em inglês) e os riscos estruturais de desalinhamento de inteligência artificial demonstrados em incidentes recentes de avaliação
+https://www.youtube.com/watch?v=6AgOfiZOWiY
+
+**Databricks’ Ali Ghodsi Never Wanted to Be CEO. Now He’s Among the Best**
+Ali Ghodsi, cofundador e CEO da Databricks, relata a Brian Halligan (cofundador e ex-CEO da HubSpot e parceiro da Sequoia) sua trajetória desde a transição acidental da carreira acadêmica para o comando executivo até a transformação da empresa em uma potência de dados e inteligência artificial avaliada em dezenas de bilhões de dólares. A conversa detalha as táticas de execução, contratação de lideranças, estratégia contra rivais como a Snowflake, reformulação de processos com IA e a filosofia de gestão necessária para escalar hiperorganizações
+https://www.youtube.com/watch?v=k7wPdCNfljQ
