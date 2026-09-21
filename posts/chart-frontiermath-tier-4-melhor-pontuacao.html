@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>FrontierMath Tier 4</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    background: #FFFFFF;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 38px;
+  }
+  .card { width: 720px; background: #FFFFFF; padding: 36px 40px; }
+  .header { padding-bottom: 24px; border-bottom: 3px solid #044B2E; }
+  .header h1 {
+    font-size: 24px; font-weight: 700; color: #000000;
+    letter-spacing: -0.8px; line-height: 26px; max-width: none;
+  }
+  .kicker { font-size: 13px; line-height: 18px; color: #444; margin-top: 18px; }
+  .kicker b { color: #044B2E; }
+  .chart-area { padding: 18px 0 4px; }
+  .chart-container { position: relative; width: 100%; height: 400px; }
+  .chart-logo { position: absolute; height: 15px; left: 51px; top: 28px; }
+  .legend {
+    display: flex; gap: 22px; margin-top: 16px; padding-top: 14px;
+    border-top: 1px solid #E5E5E5; font-size: 11px; color: #444;
+  }
+  .legend > span { display: inline-flex; align-items: center; }
+  .legend .dot { display: inline-block; width: 11px; height: 11px; margin-right: 6px; border-radius: 50%; }
+  .caption { font-size: 11px; line-height: 16px; color: #999; margin-top: 14px; }
+  .footer {
+    padding-top: 14px; border-top: 1px solid #E5E5E5;
+    display: flex; justify-content: space-between; margin-top: 14px;
+  }
+  .footer span { font-size: 10px; color: #999; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="card" id="capture">
+  <div class="header">
+    <h1>FrontierMath Tier 4: recorde de 5% a 98% em 17 meses</h1>
+  </div>
+
+  <div class="kicker">
+    O Tier 4 é o nível de <b>matemática de pesquisa</b> do FrontierMath, da Epoch AI: <b>43 problemas</b> inéditos e privados. Cada ponto é um modelo (e um nível de esforço de raciocínio) na data em que foi lançado. A linha liga os recordes: o <b>o4-mini</b> abriu em <b>4,9%</b>, em abril de 2025; o <b>GPT-6 Astra</b> chegou a <b>97,6%</b> em setembro de 2026.
+  </div>
+
+  <div class="chart-area">
+    <div class="chart-container">
+      <canvas id="fm4"></canvas>
+      <img src="../../daily-journal-platform/public/images/logo/logo-green-horizontal.png" class="chart-logo" alt="Daily Journal">
+    </div>
+
+    <div class="legend">
+      <span><span class="dot" style="background:#044B2E"></span>Recorde na data de lançamento</span>
+      <span><span class="dot" style="background:#ccc"></span>Demais modelos e configurações</span>
+    </div>
+  </div>
+
+  <div class="caption">
+    Fonte de todos os números: Epoch AI, Benchmarking Hub, export oficial de 21 de setembro de 2026, conjunto FrontierMath-Tier-4-v2-Private (43 problemas, versão de 12 de junho de 2026, quando 12 problemas foram corrigidos e 7 removidos). Os modelos lançados antes dessa versão foram avaliados nela a partir de 9 de junho de 2026. A OpenAI financiou o FrontierMath e tem acesso exclusivo a parte dele, segundo a Epoch.
+  </div>
+
+  <div class="footer">
+    <span>Fonte: Epoch AI, Benchmarking Hub (21 set. 2026)</span>
+    <span>dailyjournal.news</span>
+  </div>
+</div>
+
+<script>
+  const RAW = [{"d":"2025-01-31","y":0.0,"m":"o3-mini (high)","r":false},{"d":"2025-04-16","y":4.9,"m":"o4-mini (high)","r":true},{"d":"2025-06-17","y":0.0,"m":"Gemini 2.5 Pro","r":false},{"d":"2025-08-05","y":2.4,"m":"Claude Opus 4.1 (32K)","r":false},{"d":"2025-08-07","y":22.0,"m":"GPT-5 (high)","r":true},{"d":"2025-08-07","y":12.2,"m":"GPT-5 mini (high)","r":false},{"d":"2025-08-07","y":2.4,"m":"GPT-5 nano (high)","r":false},{"d":"2025-09-29","y":2.4,"m":"Claude Sonnet 4.5 (32K)","r":false},{"d":"2025-10-07","y":19.5,"m":"GPT-5 Pro (high)","r":false},{"d":"2025-11-24","y":4.9,"m":"Claude Opus 4.5 (32K)","r":false},{"d":"2025-12-11","y":46.0,"m":"GPT-5.2 Pro (xhigh)","r":true},{"d":"2025-12-11","y":31.7,"m":"GPT-5.2 (xhigh)","r":false},{"d":"2025-12-17","y":17.1,"m":"Gemini 3 Flash Preview","r":false},{"d":"2026-02-05","y":26.8,"m":"Claude Opus 4.6 (max)","r":false},{"d":"2026-02-17","y":17.1,"m":"Grok 4.20 (reasoning)","r":false},{"d":"2026-02-19","y":26.8,"m":"Gemini 3.1 Pro Preview","r":false},{"d":"2026-03-05","y":58.5,"m":"GPT-5.4 Pro (xhigh)","r":true},{"d":"2026-03-05","y":49.0,"m":"GPT-5.4 (xhigh)","r":false},{"d":"2026-03-17","y":12.2,"m":"GPT-5.4 nano (high)","r":false},{"d":"2026-03-17","y":9.8,"m":"GPT-5.4 mini (xhigh)","r":false},{"d":"2026-04-16","y":31.7,"m":"Claude Opus 4.7 (max)","r":false},{"d":"2026-04-17","y":14.6,"m":"Grok 4.3 (high)","r":false},{"d":"2026-04-20","y":25.6,"m":"Kimi K2.6","r":false},{"d":"2026-04-23","y":78.0,"m":"GPT-5.5 Pro (xhigh)","r":true},{"d":"2026-04-23","y":72.5,"m":"GPT-5.5 (xhigh)","r":false},{"d":"2026-04-24","y":2.4,"m":"DeepSeek V4 Pro (max)","r":false},{"d":"2026-05-05","y":2.4,"m":"GPT-5.5 Instant","r":false},{"d":"2026-05-08","y":75.6,"m":"AI Co-Mathematician (Google DeepMind)","r":false},{"d":"2026-05-19","y":34.1,"m":"Qwen3.7-Max","r":false},{"d":"2026-05-19","y":26.8,"m":"Gemini 3.5 Flash (high)","r":false},{"d":"2026-05-28","y":56.1,"m":"Claude Opus 4.8 (max)","r":false},{"d":"2026-06-09","y":90.2,"m":"Claude Fable 5 (max)","r":true},{"d":"2026-06-12","y":12.2,"m":"Kimi K2.7 Code","r":false},{"d":"2026-06-16","y":29.3,"m":"GLM-5.2 (max)","r":false},{"d":"2026-06-30","y":29.3,"m":"Claude Sonnet 5 (max)","r":false},{"d":"2026-07-08","y":24.4,"m":"Grok 4.5 (high)","r":false},{"d":"2026-07-09","y":82.9,"m":"GPT-5.6 Sol (max)","r":false},{"d":"2026-07-09","y":80.5,"m":"GPT-5.6 Sol (promax)","r":false},{"d":"2026-07-09","y":70.7,"m":"GPT-5.6 Terra (max)","r":false},{"d":"2026-07-09","y":61.0,"m":"GPT-5.6 Luna (max)","r":false},{"d":"2026-07-15","y":17.1,"m":"Inkling Small (xhigh)","r":false},{"d":"2026-07-15","y":4.9,"m":"Inkling (xhigh)","r":false},{"d":"2026-07-16","y":39.0,"m":"Kimi K3 (max)","r":false},{"d":"2026-07-21","y":22.0,"m":"Gemini 3.6 Flash (high)","r":false},{"d":"2026-07-21","y":0.0,"m":"Gemini 3.5 Flash-Lite (high)","r":false},{"d":"2026-07-24","y":73.2,"m":"Claude Opus 5 (max)","r":false},{"d":"2026-07-31","y":24.4,"m":"DeepSeek V4 Flash 0731 (max)","r":false},{"d":"2026-08-02","y":46.3,"m":"Qwen3.8-Max (xhigh)","r":false},{"d":"2026-08-12","y":31.7,"m":"Grok 4.6 (xhigh)","r":false},{"d":"2026-08-13","y":36.6,"m":"Gemini 3.7 Flash (high)","r":false},{"d":"2026-08-13","y":26.8,"m":"DeepSeek V4 Pro 0813 (max)","r":false},{"d":"2026-08-14","y":29.3,"m":"GLM-5.3 (max)","r":false},{"d":"2026-08-20","y":17.1,"m":"GLM-5.3 Flash (max)","r":false},{"d":"2026-09-01","y":87.8,"m":"Claude Fable 5.1 (max)","r":false},{"d":"2026-09-01","y":34.1,"m":"Qwen3.8-Max 0902 (xhigh)","r":false},{"d":"2026-09-02","y":46.3,"m":"Muse Spark 1.3 (max)","r":false},{"d":"2026-09-02","y":41.5,"m":"Muse Spark 1.3 (xhigh)","r":false},{"d":"2026-09-02","y":22.0,"m":"Gemini 3.8 Flash (high)","r":false},{"d":"2026-09-03","y":97.6,"m":"GPT-6 Astra (high)","r":true},{"d":"2026-09-03","y":97.6,"m":"GPT-6 Astra (xhigh)","r":false},{"d":"2026-09-03","y":97.6,"m":"GPT-6 Astra (max)","r":false},{"d":"2026-09-03","y":97.6,"m":"GPT-6 Astra (medium)","r":false},{"d":"2026-09-03","y":87.8,"m":"GPT-6 Astra (low)","r":false},{"d":"2026-09-03","y":82.9,"m":"GPT-6 Astra (none)","r":false}];
+  const T = (s) => Date.UTC(+s.slice(0,4), +s.slice(5,7)-1, +s.slice(8,10));
+  const pt = (d) => ({ x: T(d.d), y: d.y });
+  const others  = RAW.filter(d => !d.r).map(pt);
+  const records = RAW.filter(d =>  d.r).map(pt);
+
+  // degraus: segura o recorde até o próximo
+  const steps = [];
+  records.forEach((p, i) => {
+    steps.push({ x: p.x, y: p.y });
+    if (i < records.length - 1) steps.push({ x: records[i + 1].x, y: p.y });
+  });
+
+  const XMIN = Date.UTC(2025, 0, 1), XMAX = Date.UTC(2026, 9, 1);
+  const MONTHS = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+  const ticks = [];
+  for (let y = 2025; y <= 2026; y++) for (let m = 0; m < 12; m += 3) { const t = Date.UTC(y, m, 1); if (t >= XMIN && t <= XMAX) ticks.push(t); }
+
+  // rótulos dos recordes: dx/dy por ponto
+  const LABELS = [
+    { d:'2025-04-16', y:4.9,  text:'o4-mini',       num:'4,9%',  align:'left',  dx:8,  dy:-27, ndy:-13 },
+    { d:'2025-08-07', y:22.0, text:'GPT-5',         num:'22,0%', align:'left',  dx:8,  dy:-27, ndy:-13 },
+    { d:'2025-12-11', y:46.0, text:'GPT-5.2 Pro',   num:'46,0%', align:'right', dx:-11, dy:-8,  ndy:6 },
+    { d:'2026-03-05', y:58.5, text:'GPT-5.4 Pro',   num:'58,5%', align:'right', dx:-11, dy:-8,  ndy:6 },
+    { d:'2026-04-23', y:78.0, text:'GPT-5.5 Pro',   num:'78,0%', align:'right', dx:-10, dy:-8,  ndy:6 },
+    { d:'2026-06-09', y:90.2, text:'Claude Fable 5',num:'90,2%', align:'right', dx:-10, dy:-8,  ndy:6 },
+    { d:'2026-09-03', y:97.6, text:'GPT-6 Astra',   num:'97,6%', align:'right', dx:-12, dy:-8,  ndy:6 }
+  ];
+
+  new Chart(document.getElementById('fm4').getContext('2d'), {
+    data: {
+      datasets: [
+        { type: 'line', label: 'Recorde', data: steps, borderColor: '#044B2E', borderWidth: 2, pointRadius: 0, fill: false, order: 3, stepped: false },
+        { type: 'scatter', label: 'Demais', data: others, backgroundColor: '#d0d0d0', borderColor: '#fff', borderWidth: 1.5, pointRadius: 4.5, order: 2 },
+        { type: 'scatter', label: 'Recorde', data: records, backgroundColor: '#044B2E', borderColor: '#044B2E', pointRadius: 6, order: 1 }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: {
+        y: {
+          min: 0, max: 100,
+          grid: { color: '#f0f0f0', drawTicks: false },
+          border: { display: false },
+          ticks: { font: { family: 'Helvetica Neue', size: 13, weight: '700' }, color: '#999', padding: 8, stepSize: 25, callback: (v) => v + '%' }
+        },
+        x: {
+          type: 'linear', min: XMIN, max: XMAX,
+          grid: { display: false },
+          border: { color: '#ccc' },
+          afterBuildTicks: (axis) => { axis.ticks = ticks.map(v => ({ value: v })); },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 12, weight: '700' }, color: '#999', padding: 8,
+            callback: (v) => { const d = new Date(v); return MONTHS[d.getUTCMonth()] + ' ' + String(d.getUTCFullYear()).slice(2); }
+          }
+        }
+      },
+      layout: { padding: { top: 14, right: 16, left: 0, bottom: 0 } }
+    },
+    plugins: [{
+      id: 'pointLabels',
+      afterDatasetsDraw(chart) {
+        const { ctx, scales } = chart;
+        ctx.save();
+        LABELS.forEach(l => {
+          const x = scales.x.getPixelForValue(T(l.d));
+          const y = scales.y.getPixelForValue(l.y);
+          ctx.textAlign = l.align; ctx.textBaseline = 'middle';
+          ctx.font = '700 12px Helvetica Neue'; ctx.fillStyle = '#044B2E';
+          ctx.fillText(l.text, x + l.dx, y + l.dy);
+          ctx.font = '700 11px Helvetica Neue'; ctx.fillStyle = '#5a9377';
+          ctx.fillText(l.num, x + l.dx, y + l.ndy);
+        });
+        ctx.restore();
+      }
+    }]
+  });
+</script>
+</body>
+</html>
