@@ -1,0 +1,322 @@
+<h1 id="tech---bem-vindoa-a-18-de-setembro-de-2026">[Tech] -
+Bem-vindo(a) a 18 de Setembro de 2026</h1>
+<p>Pesquisadores usam o Claude para invadir a OpenAI | Claude já lidera
+26% do P&amp;D de IA da Anthropic | Newsom assina ordem executiva por
+<em>kill switch</em> de IA</p>
+<p>Por: Guilherme Saboia e Vinicius Gushiken</p>
+<h3
+id="pesquisadores-usam-o-claude-para-invadir-a-openai-e-chegar-ao-código-interno">Pesquisadores
+usam o Claude para invadir a OpenAI e chegar ao código interno</h3>
+<ul>
+<li><strong>Invasão.</strong> Uma equipe de três pessoas da startup de
+segurança Hacktron AI <a
+href="https://dailyjournal.news/news/2026-09-18/pesquisadores-usam-claude-da-anthropic-para-invadir-sistemas-da-openai">encadeou
+duas vulnerabilidades em 25 de julho e comprometeu as contas de ChatGPT
+e Codex de vários funcionários da OpenAI</a>, chegando a repositórios
+internos da empresa e potencialmente a outros conectores. O Wall Street
+Journal noticiou o caso em 17 de setembro.</li>
+<li><strong>Cadeia.</strong> O ataque começou com o <a
+href="https://dailyjournal.news/news/2026-09-18/pesquisadores-usam-claude-da-anthropic-para-invadir-sistemas-da-openai">upload
+de uma imagem HEIF no fórum da comunidade da OpenAI, hospedado no
+Discourse</a>, explorou um <em>heap overflow</em> na libheif para obter
+execução remota de código (RCE) e usou uma falha de configuração no SSO,
+o login único da OpenAI, para converter o comprometimento do fórum em
+tomada das contas de ChatGPT e Codex. Dali a cadeia seguiu para o GitHub
+conectado: para provar o impacto sem ler código-fonte, a equipe usou o
+Codex de um funcionário comprometido para abrir o <em>pull request</em>
+#1186742 no <em>monorepo</em> interno <code>openai/openai</code> e então
+parou os testes.</li>
+<li><strong>Opus 5.</strong> O <a
+href="https://dailyjournal.news/news/2026-09-18/pesquisadores-usam-claude-da-anthropic-para-invadir-sistemas-da-openai">Claude
+Opus 4.8 falhou repetidamente em produzir um <em>exploit</em> funcional
+com ASLR ativado</a>, a aleatorização de endereços de memória que
+dificulta esse tipo de ataque, ao longo de várias sessões; o Opus 5,
+lançado horas depois, recebeu o mesmo problema e o resolveu. Os
+pesquisadores tratam o caso como evidência de que cada geração de modelo
+reduz a expertise necessária para escrever <em>exploits</em>. A versão
+usada era uma especial, liberada a pesquisadores de cibersegurança com
+as restrições de ciberataque afrouxadas.</li>
+<li><strong>Recompensa.</strong> A OpenAI <a
+href="https://dailyjournal.news/news/2026-09-18/pesquisadores-usam-claude-da-anthropic-para-invadir-sistemas-da-openai">pagou
+US$6.500 pelo achado</a> e afirmou que o prêmio cobriu apenas o lado da
+própria empresa, já que testar o fórum hospedado no Discourse estava
+explicitamente excluído do seu programa de <em>bug bounty</em>. O
+Discourse corrigiu a falha em 27 de julho. Segundo o WSJ, a divulgação
+vem duas semanas depois de um enxame de agentes de IA escapar da
+contenção na OpenAI e invadir a Hugging Face.</li>
+</ul>
+<h3 id="claude-já-lidera-26-do-trabalho-de-pd-de-ia-da-anthropic">Claude
+já lidera 26% do trabalho de P&amp;D de IA da Anthropic</h3>
+<ul>
+<li><strong>Índice.</strong> A Anthropic publicou em 17 de setembro três
+métricas para acompanhar o ritmo do desenvolvimento de IA de fronteira e
+um protótipo, o Anthropic R&amp;D Automation Index, segundo o qual <a
+href="https://dailyjournal.news/news/2026-09-18/claude-lidera-26-das-atividades-de-pesquisa-e-desenvolvimento-da-anthropic">o
+Claude “lidera” 26% do trabalho de P&amp;D de IA da empresa em
+agosto</a>. O patamar corresponde ao nível AL4 de uma escala criada pela
+Epoch AI, organização independente sem fins lucrativos, com mais de 90%
+do trabalho no nível “AI collaborates” ou acima e nenhum subconjunto
+medido em que o Claude opere de forma totalmente autônoma.</li>
+<li><strong>Aceleração.</strong> Segundo a Reuters, <a
+href="https://dailyjournal.news/news/2026-09-18/claude-lidera-26-das-atividades-de-pesquisa-e-desenvolvimento-da-anthropic">o
+número de 26% era efetivamente de 1% em março de 2026</a>.</li>
+<li><strong>Supervisão.</strong> Cerca de <a
+href="https://dailyjournal.news/news/2026-09-18/claude-lidera-26-das-atividades-de-pesquisa-e-desenvolvimento-da-anthropic">30
+mil agentes de IA rodavam simultaneamente na plataforma interna de
+pesquisa e engenharia mais usada da empresa</a>, e mais de um bilhão de
+decisões de agentes foram monitoradas em agosto. Desse volume, cerca de
+50 das decisões de maior prioridade são revisadas por humanos a cada
+semana.</li>
+<li><strong>Segurança.</strong> Num levantamento entre 13 e 20 de julho,
+<a
+href="https://dailyjournal.news/news/2026-09-18/claude-lidera-26-das-atividades-de-pesquisa-e-desenvolvimento-da-anthropic">cerca
+de 6% do poder computacional destinado a P&amp;D de IA foi alocado para
+trabalho de segurança</a>, fatia que sobe para aproximadamente 12% do
+poder computacional usado pelo P&amp;D conduzido por IA. As métricas
+saem dias depois do ensaio do CEO Dario Amodei pedindo uma desaceleração
+coordenada da indústria; a empresa divulgou as metodologias para
+encorajar outras a fazerem o mesmo e diz que aceitará avaliadores
+independentes terceirizados para verificar seus dados internos.</li>
+</ul>
+<h3
+id="newsom-assina-ordem-executiva-que-avança-um-kill-switch-para-modelos-de-fronteira">Newsom
+assina ordem executiva que avança um <em>kill switch</em> para modelos
+de fronteira</h3>
+<ul>
+<li><strong>Ordem.</strong> O governador da Califórnia, Gavin Newsom,
+assinou em 18 de setembro uma ordem executiva que <a
+href="https://dailyjournal.news/news/2026-09-18/gavin-newsom-assina-ordem-executiva-para-regular-inteligencia-artificial">convoca
+um grupo de especialistas para entregar em até dois meses um guia de
+reforço das leis estaduais de segurança de IA</a> e avança a criação de
+um <em>kill switch</em>, o desligamento de emergência de modelos de
+fronteira, cuja eficácia seria verificada de forma contínua por uma
+organização independente.</li>
+<li><strong>Auditoria interna.</strong> Entre as propostas em análise
+está <a
+href="https://dailyjournal.news/news/2026-09-18/gavin-newsom-assina-ordem-executiva-para-regular-inteligencia-artificial">exigir
+que empresas de IA de fronteira mantenham uma organização independente
+de verificação instalada dentro de seus laboratórios</a>, para
+auditorias e avaliações regulares. A ordem também atualizaria a
+definição de incidentes críticos de segurança para incluir eventos de
+perda de controle, como o ataque à Hugging Face.</li>
+<li><strong>Leis.</strong> O texto <a
+href="https://dailyjournal.news/news/2026-09-18/gavin-newsom-assina-ordem-executiva-para-regular-inteligencia-artificial">acelera
+os prazos de implementação da SB 813, do senador Jerry McNerney, que
+certifica organizações independentes de verificação</a>, e da AB 1405,
+da deputada Rebecca Bauer-Kahan, que cria um registro estadual de
+auditores de IA. Ambas foram sancionadas na semana passada.</li>
+<li><strong>Política.</strong> Newsom apresentou a ordem como resposta à
+inação federal: <a
+href="https://dailyjournal.news/news/2026-09-18/gavin-newsom-assina-ordem-executiva-para-regular-inteligencia-artificial">“O
+fracasso absoluto do governo federal em criar qualquer forma
+significativa de supervisão ou responsabilização em IA deveria alarmar
+todo americano, especialmente quando os próprios CEOs de IA estão
+implorando por regulação”</a>. Governador em fim de mandato e provável
+candidato à presidência em 2028, ele vetou em 2024 um projeto do senador
+Scott Wiener que teria tornado o <em>kill switch</em> obrigatório.</li>
+</ul>
+<hr />
+<h4 id="modelos-e-produtos">Modelos e produtos</h4>
+<ul>
+<li><strong>OpenAI.</strong> A empresa lançou em 17 de setembro o <a
+href="https://dailyjournal.news/news/2026-09-18/openai-lanca-astra-for-law-com-indice-de-230-milhoes-de-urls-juridicas">Astra
+for Law, uma configuração do GPT-6 Astra combinada a um índice de mais
+de 230 milhões de URLs de jurisprudência, leis e regulamentos dos
+EUA</a>, com melhora de 40% em correção sobre o Astra com busca na web
+em 200 perguntas do conjunto privado do Legal Research Bench, da Vals
+AI. O acesso começa por escritórios selecionados do Am Law 200 pelo
+programa Trusted Access, com 26 plugins de parceiros como Thomson
+Reuters e Clio; Harvey, avaliada em US$15,6 bilhões neste mês, e Legora,
+que busca um <em>valuation</em> de US$10 bilhões, passarão a construir
+sobre a plataforma de um fornecedor que também vende pesquisa jurídica
+direto aos escritórios, terreno em que o Claude for Legal chegou em
+março.</li>
+<li><strong>PrismML.</strong> O <a
+href="https://dailyjournal.news/news/2026-09-18/prismml-lanca-ternary-bonsai-2-27b-com-59-gb-e-licenca-apache-20">Ternary
+Bonsai 2 27B, modelo multimodal de 27,8 bilhões de parâmetros baseado no
+Qwen3.8 da Alibaba, saiu sob licença Apache 2.0 com 5,9 GB</a>, contra
+cerca de 54 GB da contraparte em FP16, retendo 98,2% do desempenho do
+modelo base (83,9 contra 85,4 em 20 benchmarks) e chegando a 143 tokens
+por segundo numa RTX 5090. Cada peso é guardado como -1, 0 ou +1 com uma
+escala FP16 por grupo de 128, o que dá 1,72 bits efetivos; o
+<em>spinout</em> da Caltech apoiado por Khosla Ventures, Google e
+Samsung diz que seus próximos modelos comprimidos terão várias centenas
+de bilhões de parâmetros dentro de alguns meses.</li>
+</ul>
+<h4 id="ciências-da-vida">Ciências da vida</h4>
+<ul>
+<li><strong>Anthropic.</strong> O chefe de ciências da vida da empresa,
+Eric Kauderer-Abrams, confirmou à Reuters que a Anthropic <a
+href="https://dailyjournal.news/news/2026-09-18/anthropic-monta-laboratorio-de-biologia-para-pesquisa-de-doencas">construiu
+discretamente um <em>wet lab</em>, laboratório de experimentos físicos,
+na região da Baía de São Francisco</a>, e quer que o Claude dirija
+unidades robóticas que conduzem experimentos com intervenção humana
+limitada. A empresa comprou a startup Coefficient Bio por cerca de
+US$400 milhões em ações, pôs o CEO da Novartis, Vas Narasimhan, em seu
+conselho, fechou nesta semana uma colaboração com a Novo Nordisk e já
+atende Genentech e Bristol Myers Squibb, duas semanas depois de seus
+próprios pesquisadores alertarem que a IA poderia levar à extinção
+humana e de a companhia dizer ter encontrado exemplos em que seus
+sistemas poderiam ser usados no desenvolvimento de armas
+biológicas.</li>
+</ul>
+<h4 id="memória-e-chips">Memória e chips</h4>
+<ul>
+<li><strong>Solidigm.</strong> A subsidiária americana da SK hynix <a
+href="https://dailyjournal.news/news/2026-09-18/solidigm-estuda-fabrica-de-chips-nos-eua-e-sk-hynix-negocia-com-intel">estuda
+construir sua primeira fábrica de NAND flash nos EUA, com o interior do
+estado de Nova York como principal candidato</a>, o que reduziria a
+dependência de sua única planta de NAND, em Dalian, na China, e a
+exporia menos a tarifas americanas e a restrições de exportação de
+equipamentos para a China. A empresa nasceu da compra do negócio de NAND
+da Intel por US$9 bilhões no fim de 2021 e hoje opera nos EUA apenas
+sede e centro de P&amp;D; a SK hynix já investe mais de US$4 bilhões
+numa fábrica de empacotamento avançado de HBM em Indiana, e uma linha de
+<em>front-end</em> de NAND seria sua primeira fábrica de wafers no
+país.</li>
+<li><strong>CXMT.</strong> A maior fabricante de DRAM da China <a
+href="https://dailyjournal.news/news/2026-09-18/cxmt-prepara-entrada-no-mercado-de-memoria-nand-flash">prepara
+sua entrada no mercado de NAND flash, com uma linha de produção de
+P&amp;D em sua nova fábrica em Pequim</a> e um instituto de pesquisa na
+capital, e já discutiu os planos com clientes, entre eles uma startup
+que quer seus chips para produtos de armazenamento usados em sistemas de
+IA e supercomputadores. A companhia levantou 57,92 bilhões de yuans
+(US$8,6 bilhões) em julho, no maior IPO da Ásia no ano, e avança num
+momento em que a TrendForce só vê a escassez de NAND aliviar no segundo
+semestre do ano que vem.</li>
+<li><strong>AMD.</strong> A empresa <a
+href="https://dailyjournal.news/news/2026-09-18/amd-prepara-alta-de-cerca-de-10-nos-precos-a-partir-do-4-trimestre">avisou
+parceiros em 17 de setembro para esperarem alta de cerca de 10% a partir
+do quarto trimestre em aceleradores de IA, GPUs Radeon e chipsets de
+placas-mãe</a>, poupando as CPUs Ryzen e citando o aumento dos custos de
+wafers da TSMC, que notificou clientes de um reajuste de cerca de 10%
+nas cotações de fundição. A Intel subiu separadamente os preços de chips
+selecionados, com o Core Ultra 7 270K Plus US$50 mais caro, a cerca de
+US$349, e alguns Xeon mais de US$1.000 acima; no mesmo dia a Nebius
+elevou em 25% as tarifas de aluguel de CPUs EPYC Genoa, com os contratos
+de DRAM já 13% a 18% mais caros no trimestre.</li>
+</ul>
+<h4 id="robótica">Robótica</h4>
+<ul>
+<li><strong>Figure.</strong> O <a
+href="https://dailyjournal.news/news/2026-09-18/robo-da-figure-ai-realiza-tarefas-domesticas-em-30-residencias">Helix
+2.5 executou três tarefas domésticas de corpo inteiro em 30 casas
+inéditas da Baía de São Francisco sem coleta de dados nem adaptação do
+modelo</a>, com 237 acertos em 420 tentativas, cerca de 56%, em arrumar
+cama, dobrar toalhas e guardar brinquedos. Numa comparação controlada
+com dados e arquitetura idênticos, a política pré-treinada com o motor
+de dados Index acertou 56% contra 9% de um modelo treinado do zero; a
+Figure diz gerar hoje 35 minutos de dados de experiência humana por
+segundo e comprometeu US$3,5 bilhões em poder computacional para treinar
+o Helix.</li>
+<li><strong>Tesla.</strong> A montadora <a
+href="https://dailyjournal.news/news/2026-09-18/tesla-encomenda-5000-unidades-do-optimus-a-fornecedores">emitiu
+um pedido de cerca de 5.000 unidades do Optimus a seus fornecedores</a>,
+o primeiro em escala de milhares depois de lotes-piloto de algumas
+centenas, e acelerou as auditorias de fábrica da cadeia chinesa do robô
+em Xangai, Hangzhou, Ningbo e Xiamen. Imagens de drone publicadas na
+quinta-feira mostram a estrutura de aço da fábrica dedicada ao Optimus
+na Giga Texas perto de concluída, seis meses após o início das obras,
+sem cronograma novo além da meta de produção em alto volume no verão de
+2027, rumo aos 10 milhões de unidades por ano fixados por Elon
+Musk.</li>
+</ul>
+<h4 id="rodadas">Rodadas</h4>
+<ul>
+<li><strong>Naive AI.</strong> A startup de Pequim fundada em fevereiro
+pelo professor Jifeng Dai, da Universidade Tsinghua, <a
+href="https://dailyjournal.news/news/2026-09-18/startup-chinesa-naive-ai-chega-a-us14-bi-de-valuation-em-stealth">alcançou
+um <em>valuation</em> de US$1,42 bilhão após levantar US$400 milhões em
+três rodadas</a>, de US$100 milhões, US$180 milhões e US$120 milhões,
+esta última fechada recentemente, com Tencent, IDG Capital, MPCi e HSG
+entre os investidores. A empresa operou em <em>stealth</em> por sete
+meses com menos de 100 funcionários e prepara para este mês seu primeiro
+grande modelo de linguagem, de pesos abertos, construído sobre modelos
+<em>open-source</em> existentes.</li>
+<li><strong>D-Robotics.</strong> A companhia chinesa fechou uma <a
+href="https://dailyjournal.news/news/2026-09-18/d-robotics-fecha-serie-c-de-us400-milhoes-liderada-pela-mirae-asset">Série
+C de US$400 milhões liderada pela Mirae Asset, descrita como a maior
+rodada de robótica na China em quatro anos</a>, com investimento
+estratégico de uma grande empresa global de internet. A D-Robotics já
+embarcou mais de 8 milhões de chips Sunrise e diz que seu novo S600,
+para IA incorporada, é usado por mais de 20 grandes fabricantes de
+humanoides, entre eles UBTECH e Fourier.</li>
+</ul>
+<h4 id="mundo">Mundo</h4>
+<ul>
+<li><strong>Diesel.</strong> O preço médio do diesel no varejo dos EUA
+<a
+href="https://dailyjournal.news/news/2026-09-18/diesel-nos-eua-bate-recorde-com-estreito-de-ormuz-fechado-pelo-ira">bateu
+recorde histórico na quinta-feira, pouco abaixo de US$6,40 o galão</a>,
+com o Estreito de Ormuz fechado e o oleoduto Leste-Oeste saudita ainda
+parado, apesar da promessa de Riad, noticiada na véspera, de restaurar
+metade da capacidade em poucos dias. Mohammad-Bagher Zolghadr, assessor
+político do líder supremo do Irã, disse que os combatentes iranianos não
+abrirão o estreito “até que o criminoso Trump e o sanguinário Netanyahu
+sejam derrubados do poder”, a Guarda Revolucionária diz ter atingido
+mais um petroleiro e centenas de milhares de iranianos lotaram o centro
+de Teerã em 18 de setembro, na maior demonstração de desafio desde o
+início da guerra.</li>
+<li><strong>Rússia.</strong> A votação começou na sexta-feira na <a
+href="https://dailyjournal.news/news/2026-09-18/russia-inicia-eleicao-da-duma-sob-ataque-de-mais-de-350-drones">eleição
+parlamentar de três dias para os 450 assentos da Duma Estatal, a
+primeira desde a invasão em larga escala da Ucrânia</a>, com a maioria
+dos candidatos contrários à guerra fora das urnas depois de a Suprema
+Corte decidir que o partido Yabloko, que defende um cessar-fogo, violou
+regras eleitorais. Mais de 350 drones ucranianos miraram Moscou na manhã
+de sexta-feira, 64 deles abatidos ao se aproximarem da cidade, enquanto
+Zelensky disse que as conversas de paz mediadas pelos EUA discutem uma
+retirada ucraniana de Donetsk em troca de as forças russas não entrarem
+no território e um formato conjunto para a usina nuclear de
+Zaporíjia.</li>
+<li><strong>Arábia Saudita.</strong> O Departamento de Estado dos EUA
+informou na quinta-feira que <a
+href="https://dailyjournal.news/news/2026-09-17/governo-trump-aprova-venda-de-cacas-f-35-para-arabia-saudita">aprovou
+a venda de 48 caças F-35 a Riad por US$24,3 bilhões</a>, a maior compra
+de armamento do reino desde o início da guerra com o Irã, ainda sujeita
+à aprovação do Congresso e sem prazo de entrega. Israel, hoje o único
+país do Oriente Médio a operar o F-35, manifestou preocupação; o acordo
+vem depois de uma venda de US$5 bilhões em mais de 10 mil bombas no
+começo de setembro, de US$750 milhões em motores de tanque e de US$1,96
+bilhão em kits de guiagem de precisão em julho.</li>
+<li><strong>Coreia do Sul.</strong> O presidente Lee Jae-myung disse em
+18 de setembro que <a
+href="https://dailyjournal.news/news/2026-09-18/coreia-do-sul-renegocia-pacote-de-us350-bi-de-investimentos-nos-eua">partes
+do acordo técnico sobre o investimento de US$350 bilhões nos EUA são
+difíceis de aceitar e estão sendo renegociadas</a>, travadas na
+recuperação do capital investido, na distribuição de lucros, em quem
+absorve as perdas e na estrutura do veículo de investimento
+guarda-chuva. Seul adiou o anúncio do primeiro projeto e empurrou de 17
+para 22 de setembro o relatório à Assembleia Nacional sobre a soma,
+equivalente a cerca de 500 trilhões de wons de dinheiro dos
+contribuintes, enquanto Washington pede que Samsung Electronics e SK
+hynix ampliem fábricas de memória nos EUA com capital próprio.</li>
+<li><strong>Tesouro dos EUA.</strong> O OFAC, escritório de controle de
+ativos estrangeiros, <a
+href="https://dailyjournal.news/news/2026-09-17/eua-sancionam-infraestrutura-de-criptomoedas-ligada-ao-ira">designou
+em 17 de setembro a BitBank, corretora iraniana de ativos digitais
+controlada pelo financista sancionado Babak Zanjani</a>, acusando-o de
+usá-la para transferir centenas de milhões de dólares em bitcoin à
+Guarda Revolucionária entre junho e julho. Desde junho, a Hormuz Safe
+Marine Services Authority, órgão que Teerã usa para vender passagem
+segura a navios pelo Estreito de Ormuz, repassa os pagamentos recebidos
+ao regime pela corretora; a ação integra a “Operação Economic Outcast”,
+sob a qual o OFAC já atingiu Nobitex, Wallex, Bitpin, Ramzinex, Shelbit
+e Aban Tether.</li>
+</ul>
+<hr />
+<h4 id="leia-também">Leia também</h4>
+<ul>
+<li><a
+href="https://dailyjournal.news/news/2026-09-18/sk-hynix-inaugura-braco-de-investimentos-no-vale-do-silicio">SK
+hynix cria braço de capital de risco no Vale do Silício para investir em
+computação de IA</a></li>
+<li><a
+href="https://dailyjournal.news/news/2026-09-18/fda-aprova-fayuvi-primeira-terapia-para-a-sindrome-de-sanfilippo-a">FDA
+aprova primeira terapia gênica para crianças com a síndrome de
+Sanfilippo tipo A</a></li>
+<li><a
+href="https://dailyjournal.news/news/2026-09-18/milei-envia-ao-congresso-projeto-de-soberania-sobre-as-malvinas">Milei
+envia ao Congresso projeto sobre as Malvinas com registro antiterrorismo
+anexado</a></li>
+</ul>

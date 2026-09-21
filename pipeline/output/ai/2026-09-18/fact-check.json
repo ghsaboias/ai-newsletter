@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-18",
+  "fidelity_issues": [
+    {
+      "severity": "high",
+      "where": "edition",
+      "claim": "[Anthropic, wet lab] \"...já atende Genentech e Bristol Myers Squibb, duas semanas depois de seus próprios pesquisadores alertarem que a IA poderia levar à extinção humana e de a companhia dizer ter encontrado exemplos em que seus sistemas poderiam ser usados no desenvolvimento de armas biológicas.\"",
+      "issue": "atribuição inventada",
+      "expected": "O research.json (Reuters, story anthropic-wet-lab-drug-program) diz \"In the past two weeks, some of its researchers warned that AI could lead to human extinction, and Anthropic said it found examples where its systems could have been used toward biological weapons development\" — uma janela ('nas últimas duas semanas', como o facts.md escreve corretamente), não um intervalo de duas semanas entre o alerta e a notícia de hoje. A edição fabricou a moldura temporal ('duas semanas depois'), que faria os dois eventos terem ocorrido exatamente duas semanas antes."
+    },
+    {
+      "severity": "medium",
+      "where": "edition",
+      "claim": "[OFAC/BitBank] \"...a ação integra a \\\"Operação Economic Outcast\\\", sob a qual o OFAC já atingiu Nobitex, Wallex, Bitpin, Ramzinex, Shelbit e Aban Tether.\"",
+      "issue": "nome/título errado",
+      "expected": "O research.json diz que a \"Operation Economic Outcast\" foi lançada por Bessent em 24 de agosto como continuação da campanha anterior \"Economic Fury\", e que as sanções a Nobitex, Wallex, Bitpin e Ramzinex foram em junho (portanto sob a campanha anterior, não sob a Economic Outcast, que ainda não existia). O facts.md acerta ao dizer \"sob essas campanhas\" (plural); a edição comprimiu as duas campanhas em uma e pendurou as ações de junho no nome errado."
+    }
+  ],
+  "dropped_facts": [],
+  "summary": "Fidelidade alta — todos os números, nomes, datas e as duas citações literais (Newsom, Zolghadr) traçam ao research.json, inclusive a referência à véspera sobre o oleoduto saudita (confirmada na edição de 2026-09-17); dois defeitos de moldura introduzidos pela edição (o 'duas semanas depois' da Anthropic e o nome da campanha do OFAC) e nenhum fato load-bearing perdido."
+}

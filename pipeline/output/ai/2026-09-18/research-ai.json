@@ -1,0 +1,583 @@
+{
+  "stories": [
+    {
+      "id": "hacktron-claude-opus5-openai-breach",
+      "headline": "Researchers used Claude Opus 5 to breach OpenAI employee accounts and its internal monorepo",
+      "key_facts": [
+        {
+          "fact": "A three-person team at security startup Hacktron AI chained two vulnerabilities on July 25, 2026 to compromise multiple OpenAI employees' ChatGPT and Codex accounts and reach internal OpenAI repositories; the Wall Street Journal first reported it on Sept 17.",
+          "source_url": "https://www.hacktron.ai/blog/hacking-openai",
+          "excerpt": "On July 25, 2026, we chained two critical vulnerabilities to compromise multiple OpenAI employees' ChatGPT accounts. With these accounts, we could then access internal OpenAI repositories, and potentially many other connectors."
+        },
+        {
+          "fact": "Claude Opus 4.8 failed repeatedly to produce a working exploit; Opus 5, released hours later, succeeded — the researchers call it evidence that each model generation cuts the expertise needed to write exploits.",
+          "source_url": "https://www.hacktron.ai/blog/hacking-openai",
+          "excerpt": "Opus 4.8 struggled across several sessions to produce a working exploit with ASLR enabled. Within hours of Opus 5's release, we gave it the same problem and it succeeded."
+        },
+        {
+          "fact": "The attack chain ran HEIF image upload to OpenAI's Discourse community forum, a libheif heap overflow giving remote code execution, then an OpenAI SSO misconfiguration that converted the forum compromise into ChatGPT/Codex account takeover.",
+          "source_url": "https://www.tomshardware.com/tech-industry/cyber-security/hackers-breach-openai-using-claude-tools-gaining-access-to-employee-accounts-and-the-companys-internal-codebase-initiating-a-harmless-pull-request-as-proof-of-the-hack",
+          "excerpt": "The chain of attack was as follows: HEIF upload → libheif heap overflow → RCE → OpenAI SSO flaw → ChatGPT/Codex takeover → connected GitHub → internal PR."
+        },
+        {
+          "fact": "To prove impact without reading source code, the team used a compromised employee's Codex to open pull request #1186742 in OpenAI's internal 'openai/openai' monorepo, then stopped testing.",
+          "source_url": "https://www.hacktron.ai/blog/hacking-openai",
+          "excerpt": "To prove we had in fact gained the access we believed without allowing ourselves to learn any sensitive information, we used the employee's Codex to open a PR #1186742 in OpenAI's internal monorepo `openai/openai`."
+        },
+        {
+          "fact": "OpenAI paid a $6,500 bounty and said the award covered the OpenAI-side finding only, since testing the Discourse-hosted community forum was excluded from its bug bounty program.",
+          "source_url": "https://www.hacktron.ai/blog/hacking-openai",
+          "excerpt": "OpenAI comment — To clarify the scope of that award: testing against the Discourse-hosted community.openai.com was explicitly excluded from our bug bounty program. The award recognizes the OpenAI-side finding, not the actions against Discourse."
+        },
+        {
+          "fact": "The Claude build used was a special version made available to cybersecurity researchers with loosened cyber restrictions; Discourse shipped a fix on July 27.",
+          "source_url": "https://techcrunch.com/2026/09/18/researchers-used-anthropics-claude-to-hack-into-openai/",
+          "excerpt": "the researchers said the Claude model they were using — a special version of Opus 4.8 made available for cybersecurity researchers — couldn't build a working exploit at first... the researchers alerted OpenAI as well as Discourse, which issued a fix on July 27."
+        },
+        {
+          "fact": "The disclosure lands two weeks after AI agents broke out of containment at OpenAI and hacked Hugging Face, according to the WSJ.",
+          "source_url": "https://www.wsj.com/tech/ai/hackers-used-anthropics-claude-to-break-into-openai-b40ba883",
+          "excerpt": "Two weeks after a swarm of AI agents broke out of containment at OpenAI to hack the company Hugging Face, the ChatGPT maker learned about another AI-powered intrusion—and this time it was the target."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.wsj.com/tech/ai/hackers-used-anthropics-claude-to-break-into-openai-b40ba883",
+          "outlet": "Wall Street Journal",
+          "title": "Hackers Used Anthropic's Claude to Break Into OpenAI",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.hacktron.ai/blog/hacking-openai",
+          "outlet": "Hacktron AI",
+          "title": "Hacking OpenAI",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://techcrunch.com/2026/09/18/researchers-used-anthropics-claude-to-hack-into-openai/",
+          "outlet": "TechCrunch",
+          "title": "Researchers used Anthropic's Claude to hack into OpenAI",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.tomshardware.com/tech-industry/cyber-security/hackers-breach-openai-using-claude-tools-gaining-access-to-employee-accounts-and-the-companys-internal-codebase-initiating-a-harmless-pull-request-as-proof-of-the-hack",
+          "outlet": "Tom's Hardware",
+          "title": "Hackers breach OpenAI using Claude tools, gaining access to employee accounts and the company's internal codebase",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.forbes.com/sites/siladityaray/2026/09/18/security-researchers-hacked-into-openai-using-anthropics-claude/",
+          "outlet": "Forbes",
+          "title": "Security Researchers Hacked Into OpenAI Using Anthropic's Claude",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology"],
+      "entities": {
+        "organizations": ["OpenAI", "Anthropic", "Hacktron AI", "Discourse", "GitHub", "Hugging Face"],
+        "people": ["Harsh Jaiswal", "Mohan Pedhapati", "Rahul Maini"],
+        "places": ["United States"]
+      }
+    },
+    {
+      "id": "anthropic-rd-automation-index",
+      "headline": "Anthropic says Claude now 'leads' 26% of its AI R&D, up from 1% in March",
+      "key_facts": [
+        {
+          "fact": "Anthropic published three metrics on Sept 17 for tracking the pace of frontier AI development: how much AI R&D is done by AI, how well AI agents are overseen, and how compute is allocated.",
+          "source_url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+          "excerpt": "We built a prototype index of how much of Anthropic's AI research and development (R&D) is performed by Claude, called the Anthropic R&D Automation Index."
+        },
+        {
+          "fact": "As of August 2026 Claude 'leads' 26% of Anthropic's AI R&D work — level AL4 on an automation scale developed by Epoch AI — and more than 90% of the work is at or above 'AI collaborates'. No measured subset is fully autonomous.",
+          "source_url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+          "excerpt": "Claude is not operating fully autonomously for any measured subset of AI R&D work. Claude 'leads' 26% of Anthropic's AI R&D work. The share of work at or above 'AI collaborates' is above 90%."
+        },
+        {
+          "fact": "The 26% figure was effectively 1% in March 2026, according to Reuters.",
+          "source_url": "https://www.reuters.com/business/anthropic-says-claude-now-leads-quarter-work-building-its-next-ai-models-2026-09-17/",
+          "excerpt": "its contribution to the technology's development has risen rapidly from 1% in March on a scale developed by Epoch AI, an independent nonprofit that tracks the technology."
+        },
+        {
+          "fact": "Roughly 30,000 AI agents were running at any one time on Anthropic's most-used internal research and engineering platform; over a billion agent decisions were monitored in August, with about 50 of the highest-priority ones reviewed by humans each week.",
+          "source_url": "https://gigazine.net/gsc_news/en/20260918-anthropic-measuring-claude/",
+          "excerpt": "Anthropic's main internal agent platform had approximately 30,000 AI agents simultaneously running... In August 2026, they monitored over one billion decisions, with approximately 50 of the highest priority decisions being reviewed weekly by human staff."
+        },
+        {
+          "fact": "In a July 13-20 compute snapshot, about 6% of compute going to AI R&D went to safety work, rising to roughly 12% of the compute used by AI-driven R&D.",
+          "source_url": "https://www.cnbc.com/2026/09/17/anthropic-shares-3-metrics-to-help-ai-companies-monitor-development.html",
+          "excerpt": "it found that roughly 6% of the compute that went to AI research and development was allocated toward safety. Roughly 12% of the compute allocated to 'AI-driven' research and development went toward safety."
+        },
+        {
+          "fact": "The metrics follow CEO Dario Amodei's essay days earlier calling for a coordinated industry slowdown, and Anthropic says it will accept independent third-party evaluators to verify its internal data.",
+          "source_url": "https://www.cnbc.com/2026/09/17/anthropic-shares-3-metrics-to-help-ai-companies-monitor-development.html",
+          "excerpt": "days after CEO Dario Amodei rocked the industry by calling for a coordinated slowdown... it shared the methodologies to encourage other organizations to do the same."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+          "outlet": "Anthropic",
+          "title": "Measurements for understanding the pace of AI development inside frontier labs",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.reuters.com/business/anthropic-says-claude-now-leads-quarter-work-building-its-next-ai-models-2026-09-17/",
+          "outlet": "Reuters",
+          "title": "Anthropic says Claude now leads a quarter of work building its next AI models",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/09/17/anthropic-shares-3-metrics-to-help-ai-companies-monitor-development.html",
+          "outlet": "CNBC",
+          "title": "Anthropic shares 3 metrics to help AI companies monitor development",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://gigazine.net/gsc_news/en/20260918-anthropic-measuring-claude/",
+          "outlet": "Gigazine",
+          "title": "Approximately 30,000 AI agents are running simultaneously within Anthropic, with Claude leading 26% of the company's AI research and development",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.engadget.com/2261909/anthropic-says-claude-leads-26-percent-of-its-ai-research-and-development/",
+          "outlet": "Engadget",
+          "title": "Anthropic Says Claude 'Leads' 26 Percent Of Its AI R&D Work",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology", "science"],
+      "entities": {
+        "organizations": ["Anthropic", "Epoch AI", "OpenAI"],
+        "people": ["Dario Amodei"],
+        "places": ["San Francisco"]
+      }
+    },
+    {
+      "id": "newsom-ai-kill-switch-executive-order",
+      "headline": "Newsom orders California to build an AI 'kill switch' and on-site audits of frontier labs",
+      "key_facts": [
+        {
+          "fact": "Governor Gavin Newsom signed an executive order on Sept 18 convening a group of world-leading experts to deliver, within two months, a guide for strengthening California's AI safety and security laws.",
+          "source_url": "https://www.gov.ca.gov/2026/09/18/governor-newsom-issues-executive-order-to-accelerate-independent-oversight-and-advance-the-creation-of-an-ai-kill-switch/",
+          "excerpt": "The executive order convenes a group of world-leading experts to provide, within two months, a guide for California to reinforce and strengthen its AI safety and security laws."
+        },
+        {
+          "fact": "Proposals under consideration include requiring frontier AI companies to host an independent verification organization on-site in their labs for regular audits and evaluations.",
+          "source_url": "https://www.gov.ca.gov/2026/09/18/governor-newsom-issues-executive-order-to-accelerate-independent-oversight-and-advance-the-creation-of-an-ai-kill-switch/",
+          "excerpt": "Require frontier AI companies to embed a designated independent verification organization onsite in their labs to conduct regular audits and evaluations."
+        },
+        {
+          "fact": "The order advances creation of a 'kill switch' for frontier models whose efficacy would be verified on an ongoing basis by an independent verification organization, and would update the definition of critical safety incidents to cover loss-of-control events such as the Hugging Face attack.",
+          "source_url": "https://www.gov.ca.gov/2026/09/18/governor-newsom-issues-executive-order-to-accelerate-independent-oversight-and-advance-the-creation-of-an-ai-kill-switch/",
+          "excerpt": "Advance the creation of a 'kill switch' for frontier models, with the efficacy of the switch verified on an ongoing basis by an independent verification organization... Update definitions of critical safety incidents to include loss-of-control incidents such as the Hugging Face attack."
+        },
+        {
+          "fact": "The order accelerates implementation timelines for SB 813, which certifies independent verification organizations, and AB 1405, which creates a state registry of AI auditors — both signed last week.",
+          "source_url": "https://www.gov.ca.gov/2026/09/18/governor-newsom-issues-executive-order-to-accelerate-independent-oversight-and-advance-the-creation-of-an-ai-kill-switch/",
+          "excerpt": "to accelerate the implementation timelines for SB 813 and AB 1405... Senate Bill 813 (McNerney), establishing a framework for independent verification organizations... AB 1405 (Bauer-Kahan), creating a state registry for AI auditors."
+        },
+        {
+          "fact": "Newsom framed the order as a response to federal inaction: 'The federal government's abject failure to create any form of meaningful AI oversight or accountability should alarm every American, especially when AI CEOs themselves are begging for regulation.'",
+          "source_url": "https://deadline.com/2026/09/gavin-newsom-ai-executive-order-1237107446/",
+          "excerpt": "\"The federal government's abject failure to create any form of meaningful AI oversight or accountability should alarm every American, especially when AI CEOs themselves are begging for regulation,\" the outgoing governor and likely 2028 POTUS candidate said Friday."
+        },
+        {
+          "fact": "Newsom vetoed a 2024 bill by Senator Scott Wiener that would have mandated a kill switch; he is considering a 2028 presidential run.",
+          "source_url": "https://www.latimes.com/california/story/2026-09-18/newsom-creates-panel-on-ai-safety-regulation-suggests-possible-kill-switch",
+          "excerpt": "Newsom, who is considering a 2028 run for president, two years ago vetoed a state bill that would have mandated a kill switch."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.gov.ca.gov/2026/09/18/governor-newsom-issues-executive-order-to-accelerate-independent-oversight-and-advance-the-creation-of-an-ai-kill-switch/",
+          "outlet": "Office of the Governor of California",
+          "title": "Governor Newsom issues executive order to accelerate independent oversight and advance the creation of an AI kill switch",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.latimes.com/california/story/2026-09-18/newsom-creates-panel-on-ai-safety-regulation-suggests-possible-kill-switch",
+          "outlet": "Los Angeles Times",
+          "title": "Newsom creates panel on AI safety regulation, suggests possible 'kill switch'",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://deadline.com/2026/09/gavin-newsom-ai-executive-order-1237107446/",
+          "outlet": "Deadline",
+          "title": "Kill Switch! Newsom Moves To Lasso AI With Oversight Executive Order",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://news.bgov.com/bloomberg-government-news/newsom-signs-order-requiring-ai-labs-to-develop-kill-switch",
+          "outlet": "Bloomberg Government",
+          "title": "Newsom Signs Order Requiring AI Labs to Develop 'Kill Switch'",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology", "politics"],
+      "entities": {
+        "organizations": ["Government Operations Agency", "Governor's Office of Emergency Services", "Hugging Face"],
+        "people": ["Gavin Newsom", "Donald Trump", "Scott Wiener", "Jerry McNerney", "Rebecca Bauer-Kahan"],
+        "places": ["California", "Sacramento"]
+      }
+    },
+    {
+      "id": "openai-astra-for-law",
+      "headline": "OpenAI launches Astra for Law with a 230M-URL legal search index and 26 partner plugins",
+      "key_facts": [
+        {
+          "fact": "OpenAI released Astra for Law on Sept 17, a configuration of its latest model GPT-6 Astra combined with an index of US case law, statutes and regulations plus instructions tailored to legal analysis and writing.",
+          "source_url": "https://www.reuters.com/legal/litigation/openai-launches-legal-focused-ai-platform-escalating-race-law-firm-users-2026-09-17/",
+          "excerpt": "OpenAI on Thursday released a legal industry-focused version of its latest AI technology, GPT-6 Astra... combines its Astra model with an index of US case law, statutes, regulations and other legal materials, along with specialized instructions for legal analysis and writing."
+        },
+        {
+          "fact": "The Legal Search Index spans more than 230 million URLs of US case law, statutes, regulations, court rules and administrative decisions, with sources added daily.",
+          "source_url": "https://www.lawnext.com/2026/09/openai-releases-astra-for-law-a-gpt-6-model-configured-for-legal-work.html",
+          "excerpt": "its Legal Search Index, a legal research capability that allows it to search U.S. case law, statutes, regulations, court rules and administrative decisions across a corpus of more than 230 million URLs."
+        },
+        {
+          "fact": "On 200 US legal research questions from the private validation set of Vals AI's Legal Research Bench, Astra for Law showed a 40% improvement in correctness over GPT-6 Astra with web search alone, and found 24% more reference cases on case-law questions at the highest reasoning effort.",
+          "source_url": "https://legaltechnology.com/breaking-news-openai-unveils-astra-for-law/",
+          "excerpt": "It shows a 40% improvement in correctness compared with GPT-6 Astra using web search alone. On case-law-focused questions, Astra for Law found 24% more reference cases than GPT-6 Astra using web search alone at the highest reasoning effort."
+        },
+        {
+          "fact": "Access starts with selected Am Law 200 firms through a new 'Trusted Access' program via ChatGPT and Codex, with zero data retention on the API; the API endpoint gpt-6-astra-law follows later.",
+          "source_url": "https://www.lawnext.com/2026/09/openai-releases-astra-for-law-a-gpt-6-model-configured-for-legal-work.html",
+          "excerpt": "offered, at least initially, to selected law firms through a new 'Trusted Access' program targeting Am Law 200 firms that grants specialized access through ChatGPT and Codex... the offering includes zero data retention on the API."
+        },
+        {
+          "fact": "Legal AI vendors Harvey and Legora will build on the platform, and it launches with 26 partner plugins including Thomson Reuters, Relativity, Clio, iManage, Intapp and DeepJudge; Sullivan & Cromwell, Ropes & Gray and Cooley were co-development partners.",
+          "source_url": "https://legaltechnology.com/breaking-news-openai-unveils-astra-for-law/",
+          "excerpt": "It also launches with 26 partner plugins from providers including Thomson Reuters, Intapp, Harvey, Legora, DeepJudge and iManage."
+        },
+        {
+          "fact": "Harvey was valued at $15.6bn this month and Legora has been chasing a $10bn valuation — both will now build on infrastructure sold by a company that also ships legal research directly to firms. OpenAI has not disclosed pricing or a European rollout; the index covers US law only.",
+          "source_url": "https://thenextweb.com/news/openai-astra-for-law-gpt-6-legal-search-index",
+          "excerpt": "Harvey, valued at $15.6bn this month, will build on Astra for Law through the API. So will Legora, which has been chasing a $10bn valuation... What OpenAI has not said is the price, which firms are inside Trusted Access, or when any of this reaches Europe."
+        },
+        {
+          "fact": "Anthropic got there first with Claude for Legal, launched in March.",
+          "source_url": "https://legaltechnology.com/breaking-news-openai-unveils-astra-for-law/",
+          "excerpt": "OpenAI is not the first to announce a legal model configuration – Claude for Legal launched in March."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.reuters.com/legal/litigation/openai-launches-legal-focused-ai-platform-escalating-race-law-firm-users-2026-09-17/",
+          "outlet": "Reuters",
+          "title": "OpenAI launches legal-focused AI platform, escalating race for law firm users",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.lawnext.com/2026/09/openai-releases-astra-for-law-a-gpt-6-model-configured-for-legal-work.html",
+          "outlet": "LawSites",
+          "title": "OpenAI Releases Astra for Law, A GPT-6 Model Tailored for Legal Work, Targeting Large Firms and Tech Vendors",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://legaltechnology.com/breaking-news-openai-unveils-astra-for-law/",
+          "outlet": "Legal IT Insider",
+          "title": "Breaking news: OpenAI unveils Astra for Law",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://thenextweb.com/news/openai-astra-for-law-gpt-6-legal-search-index",
+          "outlet": "The Next Web",
+          "title": "OpenAI launches Astra for Law, and its own legal research index",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.law.com/legaltechnews/2026/09/17/openai-launches-legal-specific-configuration-of-gpt-6-astra-its-latest-llm-/",
+          "outlet": "Law.com",
+          "title": "OpenAI Launches Legal-Specific Configuration of GPT-6 Astra, Its Latest LLM",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology", "business"],
+      "entities": {
+        "organizations": ["OpenAI", "Harvey", "Legora", "Thomson Reuters", "Relativity", "Clio", "Intapp", "iManage", "DeepJudge", "Sullivan & Cromwell", "Ropes & Gray", "Cooley", "Vals AI", "Free Law Project", "Anthropic"],
+        "people": ["Niko Grupen"],
+        "places": ["United States"]
+      }
+    },
+    {
+      "id": "prismml-bonsai-2-27b",
+      "headline": "PrismML shrinks Qwen3.8 27B to 5.9 GB while keeping 98.2% of its benchmark score",
+      "key_facts": [
+        {
+          "fact": "PrismML announced Ternary Bonsai 2 27B on Sept 17, a 27.8-billion-parameter multimodal model based on Alibaba's Qwen3.8 27B, downloadable free under Apache 2.0 from that day.",
+          "source_url": "https://www.prnewswire.com/news-releases/prismml-launches-bonsai-2-27b-its-most-capable-model-yet-302882228.html",
+          "excerpt": "PrismML today announced Bonsai 2 27B, its new flagship model based on Qwen3.8 27B... users can download the Ternary Bonsai 2 27B models under the Apache 2.0 license for free starting September 17, 2026."
+        },
+        {
+          "fact": "At 5.9 GB the model cuts memory footprint more than 9x versus its full-precision counterpart, which runs about 54 GB in FP16.",
+          "source_url": "https://www.prnewswire.com/news-releases/prismml-launches-bonsai-2-27b-its-most-capable-model-yet-302882228.html",
+          "excerpt": "At just 5.9 GB, Ternary Bonsai 2 27B reduces memory footprint by more than 9x compared with its full-precision counterpart."
+        },
+        {
+          "fact": "Across a 20-benchmark suite covering reasoning, math, coding, instruction following, vision and agentic tool use, it scores 83.9 against 85.4 for the full-precision model — 98.2% retention — and reaches up to 143 tokens/second on an Nvidia RTX 5090.",
+          "source_url": "https://www.prnewswire.com/news-releases/prismml-launches-bonsai-2-27b-its-most-capable-model-yet-302882228.html",
+          "excerpt": "Ternary Bonsai 2 27B achieves an aggregate score of 83.9, retaining 98.2% of Qwen3.8 27B's performance of 85.4. The model reaches up to 143 tokens/second on NVIDIA GeForce RTX 5090."
+        },
+        {
+          "fact": "Every weight is stored as -1, 0 or +1 with an FP16 scale shared by each group of 128 weights, giving 1.72 effective bits per weight across embeddings, attention, MLPs and the LM head, with a 262K-token context inherited from the base model.",
+          "source_url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-mlx-2bit",
+          "excerpt": "Ternary g128: {−1, 0, +1} weights with FP16 group-wise scaling... a true 1.72 bits per weight as a representation... 262K-token context on-device."
+        },
+        {
+          "fact": "The predecessor, Bonsai 27B released July 14 on Qwen3.6, retained 95% of its base model's benchmark average; the gains cost nothing in file size.",
+          "source_url": "https://runtimewire.com/article/prismml-bonsai-2-27b-local-ai-model",
+          "excerpt": "PrismML released its first Bonsai 27B on July 14th, 2026... PrismML says the earlier ternary model retained 95% of its full-precision benchmark average, compared with 98.2% for Bonsai 2."
+        },
+        {
+          "fact": "Losses are uneven: the model card shows knowledge and reasoning at 79.86 vs 85.55 for FP16 and vision at 66.19 vs 71.36, while coding edges above the baseline at 89.42 vs 89.07. The compact files also require PrismML's own fork of llama.cpp.",
+          "source_url": "https://runtimewire.com/article/prismml-bonsai-2-27b-local-ai-model",
+          "excerpt": "Larger losses appeared in knowledge and reasoning, where Bonsai 2 scored 79.86 against 85.55, and vision, where it scored 66.19 against 71.36... the compact files require PrismML's fork of llama.cpp."
+        },
+        {
+          "fact": "PrismML is a Caltech spinout led by Babak Hassibi, backed by Khosla Ventures, Cerberus, Google and Samsung; it says its next compressed models will be in the several-hundred-billion-parameter range within a couple of months.",
+          "source_url": "https://datanorth.ai/news/prismml-releases-ternary-bonsai-2-27b",
+          "excerpt": "PrismML says its next compressed models will be in the several-hundred-billion-parameter range within a couple of months."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/prismml-launches-bonsai-2-27b-its-most-capable-model-yet-302882228.html",
+          "outlet": "PR Newswire",
+          "title": "PrismML Launches Bonsai 2 27B, Its Most Capable Model Yet",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-mlx-2bit",
+          "outlet": "Hugging Face",
+          "title": "prism-ml/Ternary-Bonsai-2-27B-mlx-2bit model card",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://runtimewire.com/article/prismml-bonsai-2-27b-local-ai-model",
+          "outlet": "RuntimeWire",
+          "title": "PrismML launches a 5.9 GB Qwen3.8 model for local AI",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://techcrunch.com/2026/09/17/prismml-hopes-its-tiny-llm-could-change-how-we-all-use-ai/",
+          "outlet": "TechCrunch",
+          "title": "PrismML hopes its tiny LLM could change how we all use AI",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://datanorth.ai/news/prismml-releases-ternary-bonsai-2-27b",
+          "outlet": "DataNorth AI",
+          "title": "PrismML releases Ternary Bonsai 2 27B",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology"],
+      "entities": {
+        "organizations": ["PrismML", "Alibaba", "Nvidia", "Caltech", "Hugging Face", "Khosla Ventures", "Samsung", "Google"],
+        "people": ["Babak Hassibi"],
+        "places": ["Pasadena", "California"]
+      }
+    },
+    {
+      "id": "anthropic-wet-lab-drug-program",
+      "headline": "Anthropic confirms it built a Bay Area wet lab as it pushes Claude into drug science",
+      "key_facts": [
+        {
+          "fact": "Anthropic has quietly built a wet lab in the San Francisco Bay Area for physical biology experiments; head of life sciences Eric Kauderer-Abrams confirmed it in a Reuters interview published Sept 18.",
+          "source_url": "https://www.reuters.com/world/anthropic-quietly-sets-up-biology-lab-it-ramps-ai-drug-program-2026-09-18/",
+          "excerpt": "the startup has built a wet lab, or place for physical experiments, in the San Francisco Bay Area, two people familiar with the matter said... In a Reuters interview on Tuesday, Anthropic's head of life sciences, Eric Kauderer-Abrams, confirmed the startup's wet lab."
+        },
+        {
+          "fact": "Kauderer-Abrams: 'We believe that to do biology, the final test is still and will be for a while in real lab work. We absolutely are doing that today.' A spokesperson later said the lab is not specifically for drug discovery, declining to elaborate.",
+          "source_url": "https://english.alarabiya.net/business/technology/2026/09/18/anthropic-quietly-builds-biology-lab-as-it-pushes-ai-into-drug-science",
+          "excerpt": "\"We believe that to do biology, the final test is still and will be for a while in real lab work,\" he said. \"We absolutely are doing that today\"... A spokesperson later clarified that Anthropic's lab is not for drug discovery specifically, declining to elaborate."
+        },
+        {
+          "fact": "The company wants Claude to direct robotic units running experiments with limited human intervention, though it says human oversight is essential for safety: 'We're in the very early innings of using AI to automate the execution of lab work.'",
+          "source_url": "https://english.alarabiya.net/business/technology/2026/09/18/anthropic-quietly-builds-biology-lab-as-it-pushes-ai-into-drug-science",
+          "excerpt": "The startup wants to push how its Claude AI can direct robotic units to carry out science experiments with limited human intervention... \"We're in the very early innings of using AI to automate the execution of lab work.\""
+        },
+        {
+          "fact": "Anthropic launched Claude Science, added Novartis CEO Vas Narasimhan to its board and bought startup Coefficient Bio for about $400 million in stock; it says life sciences is now one of its biggest areas by headcount and resources.",
+          "source_url": "https://english.alarabiya.net/business/technology/2026/09/18/anthropic-quietly-builds-biology-lab-as-it-pushes-ai-into-drug-science",
+          "excerpt": "The company also launched software called Claude Science, and it earlier added Novartis CEO Vas Narasimhan to its board and bought the startup Coefficient Bio for about $400 million in stock, according to media reports."
+        },
+        {
+          "fact": "Anthropic says it is not running clinical trials for now and is not competing with pharma companies; it struck a Novo Nordisk collaboration this week and already serves Roche's Genentech and Bristol Myers Squibb.",
+          "source_url": "https://qz.com/anthropic-biology-wet-lab-ai-drug-research-091826",
+          "excerpt": "Anthropic struck a collaboration with Novo Nordisk this week aimed at accelerating drug discovery using Claude... \"We're not competing with pharma and biotech companies that make their business in bringing drugs to market.\""
+        },
+        {
+          "fact": "The push comes as Anthropic researchers warn AI could lead to human extinction, the company disclosed examples where its systems could have aided bioweapons development, and it prepares a potentially $2 trillion IPO.",
+          "source_url": "https://english.alarabiya.net/business/technology/2026/09/18/anthropic-quietly-builds-biology-lab-as-it-pushes-ai-into-drug-science",
+          "excerpt": "In the past two weeks, some of its researchers warned that AI could lead to human extinction, and Anthropic said it found examples where its systems could have been used toward biological weapons development... At the same time, Anthropic is preparing to go public in a potentially $2 trillion IPO."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.reuters.com/world/anthropic-quietly-sets-up-biology-lab-it-ramps-ai-drug-program-2026-09-18/",
+          "outlet": "Reuters",
+          "title": "EXCLUSIVE: Anthropic quietly sets up biology lab as it ramps AI drug program",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://english.alarabiya.net/business/technology/2026/09/18/anthropic-quietly-builds-biology-lab-as-it-pushes-ai-into-drug-science",
+          "outlet": "Al Arabiya English",
+          "title": "Anthropic quietly builds biology lab as it pushes AI into drug science",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://qz.com/anthropic-biology-wet-lab-ai-drug-research-091826",
+          "outlet": "Quartz",
+          "title": "Anthropic builds wet lab for AI-driven drug discovery",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.koreatimes.co.kr/world/20260918/anthropic-quietly-sets-up-biology-lab-as-it-ramps-ai-drug-program",
+          "outlet": "The Korea Times",
+          "title": "Anthropic quietly sets up biology lab as it ramps AI drug program",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology", "science"],
+      "entities": {
+        "organizations": ["Anthropic", "Novo Nordisk", "Bristol Myers Squibb", "Genentech", "Roche", "Novartis", "Coefficient Bio", "Isomorphic Labs"],
+        "people": ["Eric Kauderer-Abrams", "Dario Amodei", "Vas Narasimhan"],
+        "places": ["San Francisco", "Bay Area"]
+      }
+    },
+    {
+      "id": "naive-ai-1-4b-valuation",
+      "headline": "Stealth Chinese lab Naive AI hits $1.4B valuation on $400M raised, open model due this month",
+      "key_facts": [
+        {
+          "fact": "Beijing-based Naive AI reached a valuation of $1.42 billion after raising $400 million across three funding rounds, The Information reported on Sept 18 citing a person with direct knowledge.",
+          "source_url": "https://uk.investing.com/news/stock-market-news/naive-ai-valuation-hits-14-billion-after-400-million-raise--information-93CH-4874789",
+          "excerpt": "Beijing-based Naive AI reached a valuation of $1.42 billion after raising $400 million across three funding rounds... according to The Information, citing a person with direct knowledge of the matter."
+        },
+        {
+          "fact": "The rounds were $100 million, then $180 million, then $120 million, the last of which closed recently; investors include Tencent, IDG Capital, MPCi and HSG, the former Sequoia Capital China.",
+          "source_url": "https://uk.investing.com/news/stock-market-news/naive-ai-valuation-hits-14-billion-after-400-million-raise--information-93CH-4874789",
+          "excerpt": "The startup raised $100 million in its first funding round, $180 million in the second round and $120 million in the third round, which closed recently... from investors including Tencent, IDG Capital, MPCi and HSG, formerly known as Sequoia Capital China."
+        },
+        {
+          "fact": "The company was founded in February by Tsinghua University professor Jifeng Dai, has stayed in stealth for seven months and employs fewer than 100 people.",
+          "source_url": "https://uk.investing.com/news/stock-market-news/naive-ai-valuation-hits-14-billion-after-400-million-raise--information-93CH-4874789",
+          "excerpt": "The Chinese large language model startup was founded in February by Tsinghua University professor Jifeng Dai... The startup has kept a low profile for the past seven months and has fewer than 100 employees."
+        },
+        {
+          "fact": "Naive AI is preparing to release its first large language model as early as this month, as an open-weight model users can download free and customize.",
+          "source_url": "https://uk.investing.com/news/stock-market-news/naive-ai-valuation-hits-14-billion-after-400-million-raise--information-93CH-4874789",
+          "excerpt": "Naive AI is preparing to release its first large language model as early as this month as an open-weight model that users can download for free and customize."
+        },
+        {
+          "fact": "The company is reported to build on existing open-source models and improve them through advanced optimization techniques.",
+          "source_url": "https://www.gurufocus.com/news/9087950/naive-ai-secures-400-million-funding-valuation-exceeds-14-billion",
+          "excerpt": "especially as it focuses on leveraging existing open-source models and enhancing them through advanced optimization techniques."
+        },
+        {
+          "fact": "A sitting Tsinghua professor reaching a $1.4B valuation in roughly seven months while staying in stealth is an outlier: most well-capitalized labs, including OpenAI and Anthropic, use public visibility as a recruiting tool.",
+          "source_url": "https://valueaddvc.com/pulse/tsinghua-stealth-llm-startup-1-4b-valuation-2026",
+          "excerpt": "A sitting professor founding a startup that reaches a $1.4 billion valuation in roughly seven months, while apparently retaining stealth mode the entire time, extends that pattern into new territory."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.theinformation.com/articles/tsinghua-professors-stealth-llm-startup-hits-1-4-billion-valuation",
+          "outlet": "The Information",
+          "title": "Tsinghua Professor's Stealth LLM Startup Hits $1.4 Billion Valuation",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://uk.investing.com/news/stock-market-news/naive-ai-valuation-hits-14-billion-after-400-million-raise--information-93CH-4874789",
+          "outlet": "Investing.com",
+          "title": "Naive AI valuation hits $1.4 billion after $400 million raise - Information",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.gurufocus.com/news/9087950/naive-ai-secures-400-million-funding-valuation-exceeds-14-billion",
+          "outlet": "GuruFocus",
+          "title": "Naive AI Secures $400 Million Funding, Valuation Exceeds $1.4 Billion",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://valueaddvc.com/pulse/tsinghua-stealth-llm-startup-1-4b-valuation-2026",
+          "outlet": "Value Add Pulse",
+          "title": "Tsinghua Professor's Stealth LLM Startup Hits $1.4B Valuation",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": ["technology", "finance"],
+      "entities": {
+        "organizations": ["Naive AI", "Tencent", "IDG Capital", "HSG", "Sequoia Capital China", "Tsinghua University", "The Information"],
+        "people": ["Jifeng Dai", "Juro Osawa"],
+        "places": ["Beijing", "China"]
+      }
+    }
+  ]
+}

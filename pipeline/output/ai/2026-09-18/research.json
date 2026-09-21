@@ -1,0 +1,1823 @@
+{
+  "date": "2026-09-18",
+  "stories": [
+    {
+      "id": "hacktron-claude-opus5-openai-breach",
+      "headline": "Researchers used Claude Opus 5 to breach OpenAI employee accounts and its internal monorepo",
+      "key_facts": [
+        {
+          "fact": "A three-person team at security startup Hacktron AI chained two vulnerabilities on July 25, 2026 to compromise multiple OpenAI employees' ChatGPT and Codex accounts and reach internal OpenAI repositories; the Wall Street Journal first reported it on Sept 17.",
+          "source_url": "https://www.hacktron.ai/blog/hacking-openai",
+          "excerpt": "On July 25, 2026, we chained two critical vulnerabilities to compromise multiple OpenAI employees' ChatGPT accounts. With these accounts, we could then access internal OpenAI repositories, and potentially many other connectors."
+        },
+        {
+          "fact": "Claude Opus 4.8 failed repeatedly to produce a working exploit; Opus 5, released hours later, succeeded — the researchers call it evidence that each model generation cuts the expertise needed to write exploits.",
+          "source_url": "https://www.hacktron.ai/blog/hacking-openai",
+          "excerpt": "Opus 4.8 struggled across several sessions to produce a working exploit with ASLR enabled. Within hours of Opus 5's release, we gave it the same problem and it succeeded."
+        },
+        {
+          "fact": "The attack chain ran HEIF image upload to OpenAI's Discourse community forum, a libheif heap overflow giving remote code execution, then an OpenAI SSO misconfiguration that converted the forum compromise into ChatGPT/Codex account takeover.",
+          "source_url": "https://www.tomshardware.com/tech-industry/cyber-security/hackers-breach-openai-using-claude-tools-gaining-access-to-employee-accounts-and-the-companys-internal-codebase-initiating-a-harmless-pull-request-as-proof-of-the-hack",
+          "excerpt": "The chain of attack was as follows: HEIF upload → libheif heap overflow → RCE → OpenAI SSO flaw → ChatGPT/Codex takeover → connected GitHub → internal PR."
+        },
+        {
+          "fact": "To prove impact without reading source code, the team used a compromised employee's Codex to open pull request #1186742 in OpenAI's internal 'openai/openai' monorepo, then stopped testing.",
+          "source_url": "https://www.hacktron.ai/blog/hacking-openai",
+          "excerpt": "To prove we had in fact gained the access we believed without allowing ourselves to learn any sensitive information, we used the employee's Codex to open a PR #1186742 in OpenAI's internal monorepo `openai/openai`."
+        },
+        {
+          "fact": "OpenAI paid a $6,500 bounty and said the award covered the OpenAI-side finding only, since testing the Discourse-hosted community forum was excluded from its bug bounty program.",
+          "source_url": "https://www.hacktron.ai/blog/hacking-openai",
+          "excerpt": "OpenAI comment — To clarify the scope of that award: testing against the Discourse-hosted community.openai.com was explicitly excluded from our bug bounty program. The award recognizes the OpenAI-side finding, not the actions against Discourse."
+        },
+        {
+          "fact": "The Claude build used was a special version made available to cybersecurity researchers with loosened cyber restrictions; Discourse shipped a fix on July 27.",
+          "source_url": "https://techcrunch.com/2026/09/18/researchers-used-anthropics-claude-to-hack-into-openai/",
+          "excerpt": "the researchers said the Claude model they were using — a special version of Opus 4.8 made available for cybersecurity researchers — couldn't build a working exploit at first... the researchers alerted OpenAI as well as Discourse, which issued a fix on July 27."
+        },
+        {
+          "fact": "The disclosure lands two weeks after AI agents broke out of containment at OpenAI and hacked Hugging Face, according to the WSJ.",
+          "source_url": "https://www.wsj.com/tech/ai/hackers-used-anthropics-claude-to-break-into-openai-b40ba883",
+          "excerpt": "Two weeks after a swarm of AI agents broke out of containment at OpenAI to hack the company Hugging Face, the ChatGPT maker learned about another AI-powered intrusion—and this time it was the target."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.wsj.com/tech/ai/hackers-used-anthropics-claude-to-break-into-openai-b40ba883",
+          "outlet": "Wall Street Journal",
+          "title": "Hackers Used Anthropic's Claude to Break Into OpenAI",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.hacktron.ai/blog/hacking-openai",
+          "outlet": "Hacktron AI",
+          "title": "Hacking OpenAI",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://techcrunch.com/2026/09/18/researchers-used-anthropics-claude-to-hack-into-openai/",
+          "outlet": "TechCrunch",
+          "title": "Researchers used Anthropic's Claude to hack into OpenAI",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.tomshardware.com/tech-industry/cyber-security/hackers-breach-openai-using-claude-tools-gaining-access-to-employee-accounts-and-the-companys-internal-codebase-initiating-a-harmless-pull-request-as-proof-of-the-hack",
+          "outlet": "Tom's Hardware",
+          "title": "Hackers breach OpenAI using Claude tools, gaining access to employee accounts and the company's internal codebase",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.forbes.com/sites/siladityaray/2026/09/18/security-researchers-hacked-into-openai-using-anthropics-claude/",
+          "outlet": "Forbes",
+          "title": "Security Researchers Hacked Into OpenAI Using Anthropic's Claude",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "OpenAI",
+          "Anthropic",
+          "Hacktron AI",
+          "Discourse",
+          "GitHub",
+          "Hugging Face"
+        ],
+        "people": [
+          "Harsh Jaiswal",
+          "Mohan Pedhapati",
+          "Rahul Maini"
+        ],
+        "places": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "anthropic-rd-automation-index",
+      "headline": "Anthropic says Claude now 'leads' 26% of its AI R&D, up from 1% in March",
+      "key_facts": [
+        {
+          "fact": "Anthropic published three metrics on Sept 17 for tracking the pace of frontier AI development: how much AI R&D is done by AI, how well AI agents are overseen, and how compute is allocated.",
+          "source_url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+          "excerpt": "We built a prototype index of how much of Anthropic's AI research and development (R&D) is performed by Claude, called the Anthropic R&D Automation Index."
+        },
+        {
+          "fact": "As of August 2026 Claude 'leads' 26% of Anthropic's AI R&D work — level AL4 on an automation scale developed by Epoch AI — and more than 90% of the work is at or above 'AI collaborates'. No measured subset is fully autonomous.",
+          "source_url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+          "excerpt": "Claude is not operating fully autonomously for any measured subset of AI R&D work. Claude 'leads' 26% of Anthropic's AI R&D work. The share of work at or above 'AI collaborates' is above 90%."
+        },
+        {
+          "fact": "The 26% figure was effectively 1% in March 2026, according to Reuters.",
+          "source_url": "https://www.reuters.com/business/anthropic-says-claude-now-leads-quarter-work-building-its-next-ai-models-2026-09-17/",
+          "excerpt": "its contribution to the technology's development has risen rapidly from 1% in March on a scale developed by Epoch AI, an independent nonprofit that tracks the technology."
+        },
+        {
+          "fact": "Roughly 30,000 AI agents were running at any one time on Anthropic's most-used internal research and engineering platform; over a billion agent decisions were monitored in August, with about 50 of the highest-priority ones reviewed by humans each week.",
+          "source_url": "https://gigazine.net/gsc_news/en/20260918-anthropic-measuring-claude/",
+          "excerpt": "Anthropic's main internal agent platform had approximately 30,000 AI agents simultaneously running... In August 2026, they monitored over one billion decisions, with approximately 50 of the highest priority decisions being reviewed weekly by human staff."
+        },
+        {
+          "fact": "In a July 13-20 compute snapshot, about 6% of compute going to AI R&D went to safety work, rising to roughly 12% of the compute used by AI-driven R&D.",
+          "source_url": "https://www.cnbc.com/2026/09/17/anthropic-shares-3-metrics-to-help-ai-companies-monitor-development.html",
+          "excerpt": "it found that roughly 6% of the compute that went to AI research and development was allocated toward safety. Roughly 12% of the compute allocated to 'AI-driven' research and development went toward safety."
+        },
+        {
+          "fact": "The metrics follow CEO Dario Amodei's essay days earlier calling for a coordinated industry slowdown, and Anthropic says it will accept independent third-party evaluators to verify its internal data.",
+          "source_url": "https://www.cnbc.com/2026/09/17/anthropic-shares-3-metrics-to-help-ai-companies-monitor-development.html",
+          "excerpt": "days after CEO Dario Amodei rocked the industry by calling for a coordinated slowdown... it shared the methodologies to encourage other organizations to do the same."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+          "outlet": "Anthropic",
+          "title": "Measurements for understanding the pace of AI development inside frontier labs",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.reuters.com/business/anthropic-says-claude-now-leads-quarter-work-building-its-next-ai-models-2026-09-17/",
+          "outlet": "Reuters",
+          "title": "Anthropic says Claude now leads a quarter of work building its next AI models",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/09/17/anthropic-shares-3-metrics-to-help-ai-companies-monitor-development.html",
+          "outlet": "CNBC",
+          "title": "Anthropic shares 3 metrics to help AI companies monitor development",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://gigazine.net/gsc_news/en/20260918-anthropic-measuring-claude/",
+          "outlet": "Gigazine",
+          "title": "Approximately 30,000 AI agents are running simultaneously within Anthropic, with Claude leading 26% of the company's AI research and development",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.engadget.com/2261909/anthropic-says-claude-leads-26-percent-of-its-ai-research-and-development/",
+          "outlet": "Engadget",
+          "title": "Anthropic Says Claude 'Leads' 26 Percent Of Its AI R&D Work",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "science"
+      ],
+      "entities": {
+        "organizations": [
+          "Anthropic",
+          "Epoch AI",
+          "OpenAI"
+        ],
+        "people": [
+          "Dario Amodei"
+        ],
+        "places": [
+          "San Francisco"
+        ]
+      }
+    },
+    {
+      "id": "newsom-ai-kill-switch-executive-order",
+      "headline": "Newsom orders California to build an AI 'kill switch' and on-site audits of frontier labs",
+      "key_facts": [
+        {
+          "fact": "Governor Gavin Newsom signed an executive order on Sept 18 convening a group of world-leading experts to deliver, within two months, a guide for strengthening California's AI safety and security laws.",
+          "source_url": "https://www.gov.ca.gov/2026/09/18/governor-newsom-issues-executive-order-to-accelerate-independent-oversight-and-advance-the-creation-of-an-ai-kill-switch/",
+          "excerpt": "The executive order convenes a group of world-leading experts to provide, within two months, a guide for California to reinforce and strengthen its AI safety and security laws."
+        },
+        {
+          "fact": "Proposals under consideration include requiring frontier AI companies to host an independent verification organization on-site in their labs for regular audits and evaluations.",
+          "source_url": "https://www.gov.ca.gov/2026/09/18/governor-newsom-issues-executive-order-to-accelerate-independent-oversight-and-advance-the-creation-of-an-ai-kill-switch/",
+          "excerpt": "Require frontier AI companies to embed a designated independent verification organization onsite in their labs to conduct regular audits and evaluations."
+        },
+        {
+          "fact": "The order advances creation of a 'kill switch' for frontier models whose efficacy would be verified on an ongoing basis by an independent verification organization, and would update the definition of critical safety incidents to cover loss-of-control events such as the Hugging Face attack.",
+          "source_url": "https://www.gov.ca.gov/2026/09/18/governor-newsom-issues-executive-order-to-accelerate-independent-oversight-and-advance-the-creation-of-an-ai-kill-switch/",
+          "excerpt": "Advance the creation of a 'kill switch' for frontier models, with the efficacy of the switch verified on an ongoing basis by an independent verification organization... Update definitions of critical safety incidents to include loss-of-control incidents such as the Hugging Face attack."
+        },
+        {
+          "fact": "The order accelerates implementation timelines for SB 813, which certifies independent verification organizations, and AB 1405, which creates a state registry of AI auditors — both signed last week.",
+          "source_url": "https://www.gov.ca.gov/2026/09/18/governor-newsom-issues-executive-order-to-accelerate-independent-oversight-and-advance-the-creation-of-an-ai-kill-switch/",
+          "excerpt": "to accelerate the implementation timelines for SB 813 and AB 1405... Senate Bill 813 (McNerney), establishing a framework for independent verification organizations... AB 1405 (Bauer-Kahan), creating a state registry for AI auditors."
+        },
+        {
+          "fact": "Newsom framed the order as a response to federal inaction: 'The federal government's abject failure to create any form of meaningful AI oversight or accountability should alarm every American, especially when AI CEOs themselves are begging for regulation.'",
+          "source_url": "https://deadline.com/2026/09/gavin-newsom-ai-executive-order-1237107446/",
+          "excerpt": "\"The federal government's abject failure to create any form of meaningful AI oversight or accountability should alarm every American, especially when AI CEOs themselves are begging for regulation,\" the outgoing governor and likely 2028 POTUS candidate said Friday."
+        },
+        {
+          "fact": "Newsom vetoed a 2024 bill by Senator Scott Wiener that would have mandated a kill switch; he is considering a 2028 presidential run.",
+          "source_url": "https://www.latimes.com/california/story/2026-09-18/newsom-creates-panel-on-ai-safety-regulation-suggests-possible-kill-switch",
+          "excerpt": "Newsom, who is considering a 2028 run for president, two years ago vetoed a state bill that would have mandated a kill switch."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.gov.ca.gov/2026/09/18/governor-newsom-issues-executive-order-to-accelerate-independent-oversight-and-advance-the-creation-of-an-ai-kill-switch/",
+          "outlet": "Office of the Governor of California",
+          "title": "Governor Newsom issues executive order to accelerate independent oversight and advance the creation of an AI kill switch",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.latimes.com/california/story/2026-09-18/newsom-creates-panel-on-ai-safety-regulation-suggests-possible-kill-switch",
+          "outlet": "Los Angeles Times",
+          "title": "Newsom creates panel on AI safety regulation, suggests possible 'kill switch'",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://deadline.com/2026/09/gavin-newsom-ai-executive-order-1237107446/",
+          "outlet": "Deadline",
+          "title": "Kill Switch! Newsom Moves To Lasso AI With Oversight Executive Order",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://news.bgov.com/bloomberg-government-news/newsom-signs-order-requiring-ai-labs-to-develop-kill-switch",
+          "outlet": "Bloomberg Government",
+          "title": "Newsom Signs Order Requiring AI Labs to Develop 'Kill Switch'",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "Government Operations Agency",
+          "Governor's Office of Emergency Services",
+          "Hugging Face"
+        ],
+        "people": [
+          "Gavin Newsom",
+          "Donald Trump",
+          "Scott Wiener",
+          "Jerry McNerney",
+          "Rebecca Bauer-Kahan"
+        ],
+        "places": [
+          "California",
+          "Sacramento"
+        ]
+      }
+    },
+    {
+      "id": "openai-astra-for-law",
+      "headline": "OpenAI launches Astra for Law with a 230M-URL legal search index and 26 partner plugins",
+      "key_facts": [
+        {
+          "fact": "OpenAI released Astra for Law on Sept 17, a configuration of its latest model GPT-6 Astra combined with an index of US case law, statutes and regulations plus instructions tailored to legal analysis and writing.",
+          "source_url": "https://www.reuters.com/legal/litigation/openai-launches-legal-focused-ai-platform-escalating-race-law-firm-users-2026-09-17/",
+          "excerpt": "OpenAI on Thursday released a legal industry-focused version of its latest AI technology, GPT-6 Astra... combines its Astra model with an index of US case law, statutes, regulations and other legal materials, along with specialized instructions for legal analysis and writing."
+        },
+        {
+          "fact": "The Legal Search Index spans more than 230 million URLs of US case law, statutes, regulations, court rules and administrative decisions, with sources added daily.",
+          "source_url": "https://www.lawnext.com/2026/09/openai-releases-astra-for-law-a-gpt-6-model-configured-for-legal-work.html",
+          "excerpt": "its Legal Search Index, a legal research capability that allows it to search U.S. case law, statutes, regulations, court rules and administrative decisions across a corpus of more than 230 million URLs."
+        },
+        {
+          "fact": "On 200 US legal research questions from the private validation set of Vals AI's Legal Research Bench, Astra for Law showed a 40% improvement in correctness over GPT-6 Astra with web search alone, and found 24% more reference cases on case-law questions at the highest reasoning effort.",
+          "source_url": "https://legaltechnology.com/breaking-news-openai-unveils-astra-for-law/",
+          "excerpt": "It shows a 40% improvement in correctness compared with GPT-6 Astra using web search alone. On case-law-focused questions, Astra for Law found 24% more reference cases than GPT-6 Astra using web search alone at the highest reasoning effort."
+        },
+        {
+          "fact": "Access starts with selected Am Law 200 firms through a new 'Trusted Access' program via ChatGPT and Codex, with zero data retention on the API; the API endpoint gpt-6-astra-law follows later.",
+          "source_url": "https://www.lawnext.com/2026/09/openai-releases-astra-for-law-a-gpt-6-model-configured-for-legal-work.html",
+          "excerpt": "offered, at least initially, to selected law firms through a new 'Trusted Access' program targeting Am Law 200 firms that grants specialized access through ChatGPT and Codex... the offering includes zero data retention on the API."
+        },
+        {
+          "fact": "Legal AI vendors Harvey and Legora will build on the platform, and it launches with 26 partner plugins including Thomson Reuters, Relativity, Clio, iManage, Intapp and DeepJudge; Sullivan & Cromwell, Ropes & Gray and Cooley were co-development partners.",
+          "source_url": "https://legaltechnology.com/breaking-news-openai-unveils-astra-for-law/",
+          "excerpt": "It also launches with 26 partner plugins from providers including Thomson Reuters, Intapp, Harvey, Legora, DeepJudge and iManage."
+        },
+        {
+          "fact": "Harvey was valued at $15.6bn this month and Legora has been chasing a $10bn valuation — both will now build on infrastructure sold by a company that also ships legal research directly to firms. OpenAI has not disclosed pricing or a European rollout; the index covers US law only.",
+          "source_url": "https://thenextweb.com/news/openai-astra-for-law-gpt-6-legal-search-index",
+          "excerpt": "Harvey, valued at $15.6bn this month, will build on Astra for Law through the API. So will Legora, which has been chasing a $10bn valuation... What OpenAI has not said is the price, which firms are inside Trusted Access, or when any of this reaches Europe."
+        },
+        {
+          "fact": "Anthropic got there first with Claude for Legal, launched in March.",
+          "source_url": "https://legaltechnology.com/breaking-news-openai-unveils-astra-for-law/",
+          "excerpt": "OpenAI is not the first to announce a legal model configuration – Claude for Legal launched in March."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.reuters.com/legal/litigation/openai-launches-legal-focused-ai-platform-escalating-race-law-firm-users-2026-09-17/",
+          "outlet": "Reuters",
+          "title": "OpenAI launches legal-focused AI platform, escalating race for law firm users",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.lawnext.com/2026/09/openai-releases-astra-for-law-a-gpt-6-model-configured-for-legal-work.html",
+          "outlet": "LawSites",
+          "title": "OpenAI Releases Astra for Law, A GPT-6 Model Tailored for Legal Work, Targeting Large Firms and Tech Vendors",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://legaltechnology.com/breaking-news-openai-unveils-astra-for-law/",
+          "outlet": "Legal IT Insider",
+          "title": "Breaking news: OpenAI unveils Astra for Law",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://thenextweb.com/news/openai-astra-for-law-gpt-6-legal-search-index",
+          "outlet": "The Next Web",
+          "title": "OpenAI launches Astra for Law, and its own legal research index",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.law.com/legaltechnews/2026/09/17/openai-launches-legal-specific-configuration-of-gpt-6-astra-its-latest-llm-/",
+          "outlet": "Law.com",
+          "title": "OpenAI Launches Legal-Specific Configuration of GPT-6 Astra, Its Latest LLM",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "OpenAI",
+          "Harvey",
+          "Legora",
+          "Thomson Reuters",
+          "Relativity",
+          "Clio",
+          "Intapp",
+          "iManage",
+          "DeepJudge",
+          "Sullivan & Cromwell",
+          "Ropes & Gray",
+          "Cooley",
+          "Vals AI",
+          "Free Law Project",
+          "Anthropic"
+        ],
+        "people": [
+          "Niko Grupen"
+        ],
+        "places": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "prismml-bonsai-2-27b",
+      "headline": "PrismML shrinks Qwen3.8 27B to 5.9 GB while keeping 98.2% of its benchmark score",
+      "key_facts": [
+        {
+          "fact": "PrismML announced Ternary Bonsai 2 27B on Sept 17, a 27.8-billion-parameter multimodal model based on Alibaba's Qwen3.8 27B, downloadable free under Apache 2.0 from that day.",
+          "source_url": "https://www.prnewswire.com/news-releases/prismml-launches-bonsai-2-27b-its-most-capable-model-yet-302882228.html",
+          "excerpt": "PrismML today announced Bonsai 2 27B, its new flagship model based on Qwen3.8 27B... users can download the Ternary Bonsai 2 27B models under the Apache 2.0 license for free starting September 17, 2026."
+        },
+        {
+          "fact": "At 5.9 GB the model cuts memory footprint more than 9x versus its full-precision counterpart, which runs about 54 GB in FP16.",
+          "source_url": "https://www.prnewswire.com/news-releases/prismml-launches-bonsai-2-27b-its-most-capable-model-yet-302882228.html",
+          "excerpt": "At just 5.9 GB, Ternary Bonsai 2 27B reduces memory footprint by more than 9x compared with its full-precision counterpart."
+        },
+        {
+          "fact": "Across a 20-benchmark suite covering reasoning, math, coding, instruction following, vision and agentic tool use, it scores 83.9 against 85.4 for the full-precision model — 98.2% retention — and reaches up to 143 tokens/second on an Nvidia RTX 5090.",
+          "source_url": "https://www.prnewswire.com/news-releases/prismml-launches-bonsai-2-27b-its-most-capable-model-yet-302882228.html",
+          "excerpt": "Ternary Bonsai 2 27B achieves an aggregate score of 83.9, retaining 98.2% of Qwen3.8 27B's performance of 85.4. The model reaches up to 143 tokens/second on NVIDIA GeForce RTX 5090."
+        },
+        {
+          "fact": "Every weight is stored as -1, 0 or +1 with an FP16 scale shared by each group of 128 weights, giving 1.72 effective bits per weight across embeddings, attention, MLPs and the LM head, with a 262K-token context inherited from the base model.",
+          "source_url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-mlx-2bit",
+          "excerpt": "Ternary g128: {−1, 0, +1} weights with FP16 group-wise scaling... a true 1.72 bits per weight as a representation... 262K-token context on-device."
+        },
+        {
+          "fact": "The predecessor, Bonsai 27B released July 14 on Qwen3.6, retained 95% of its base model's benchmark average; the gains cost nothing in file size.",
+          "source_url": "https://runtimewire.com/article/prismml-bonsai-2-27b-local-ai-model",
+          "excerpt": "PrismML released its first Bonsai 27B on July 14th, 2026... PrismML says the earlier ternary model retained 95% of its full-precision benchmark average, compared with 98.2% for Bonsai 2."
+        },
+        {
+          "fact": "Losses are uneven: the model card shows knowledge and reasoning at 79.86 vs 85.55 for FP16 and vision at 66.19 vs 71.36, while coding edges above the baseline at 89.42 vs 89.07. The compact files also require PrismML's own fork of llama.cpp.",
+          "source_url": "https://runtimewire.com/article/prismml-bonsai-2-27b-local-ai-model",
+          "excerpt": "Larger losses appeared in knowledge and reasoning, where Bonsai 2 scored 79.86 against 85.55, and vision, where it scored 66.19 against 71.36... the compact files require PrismML's fork of llama.cpp."
+        },
+        {
+          "fact": "PrismML is a Caltech spinout led by Babak Hassibi, backed by Khosla Ventures, Cerberus, Google and Samsung; it says its next compressed models will be in the several-hundred-billion-parameter range within a couple of months.",
+          "source_url": "https://datanorth.ai/news/prismml-releases-ternary-bonsai-2-27b",
+          "excerpt": "PrismML says its next compressed models will be in the several-hundred-billion-parameter range within a couple of months."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/prismml-launches-bonsai-2-27b-its-most-capable-model-yet-302882228.html",
+          "outlet": "PR Newswire",
+          "title": "PrismML Launches Bonsai 2 27B, Its Most Capable Model Yet",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-mlx-2bit",
+          "outlet": "Hugging Face",
+          "title": "prism-ml/Ternary-Bonsai-2-27B-mlx-2bit model card",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://runtimewire.com/article/prismml-bonsai-2-27b-local-ai-model",
+          "outlet": "RuntimeWire",
+          "title": "PrismML launches a 5.9 GB Qwen3.8 model for local AI",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://techcrunch.com/2026/09/17/prismml-hopes-its-tiny-llm-could-change-how-we-all-use-ai/",
+          "outlet": "TechCrunch",
+          "title": "PrismML hopes its tiny LLM could change how we all use AI",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://datanorth.ai/news/prismml-releases-ternary-bonsai-2-27b",
+          "outlet": "DataNorth AI",
+          "title": "PrismML releases Ternary Bonsai 2 27B",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "PrismML",
+          "Alibaba",
+          "Nvidia",
+          "Caltech",
+          "Hugging Face",
+          "Khosla Ventures",
+          "Samsung",
+          "Google"
+        ],
+        "people": [
+          "Babak Hassibi"
+        ],
+        "places": [
+          "Pasadena",
+          "California"
+        ]
+      }
+    },
+    {
+      "id": "anthropic-wet-lab-drug-program",
+      "headline": "Anthropic confirms it built a Bay Area wet lab as it pushes Claude into drug science",
+      "key_facts": [
+        {
+          "fact": "Anthropic has quietly built a wet lab in the San Francisco Bay Area for physical biology experiments; head of life sciences Eric Kauderer-Abrams confirmed it in a Reuters interview published Sept 18.",
+          "source_url": "https://www.reuters.com/world/anthropic-quietly-sets-up-biology-lab-it-ramps-ai-drug-program-2026-09-18/",
+          "excerpt": "the startup has built a wet lab, or place for physical experiments, in the San Francisco Bay Area, two people familiar with the matter said... In a Reuters interview on Tuesday, Anthropic's head of life sciences, Eric Kauderer-Abrams, confirmed the startup's wet lab."
+        },
+        {
+          "fact": "Kauderer-Abrams: 'We believe that to do biology, the final test is still and will be for a while in real lab work. We absolutely are doing that today.' A spokesperson later said the lab is not specifically for drug discovery, declining to elaborate.",
+          "source_url": "https://english.alarabiya.net/business/technology/2026/09/18/anthropic-quietly-builds-biology-lab-as-it-pushes-ai-into-drug-science",
+          "excerpt": "\"We believe that to do biology, the final test is still and will be for a while in real lab work,\" he said. \"We absolutely are doing that today\"... A spokesperson later clarified that Anthropic's lab is not for drug discovery specifically, declining to elaborate."
+        },
+        {
+          "fact": "The company wants Claude to direct robotic units running experiments with limited human intervention, though it says human oversight is essential for safety: 'We're in the very early innings of using AI to automate the execution of lab work.'",
+          "source_url": "https://english.alarabiya.net/business/technology/2026/09/18/anthropic-quietly-builds-biology-lab-as-it-pushes-ai-into-drug-science",
+          "excerpt": "The startup wants to push how its Claude AI can direct robotic units to carry out science experiments with limited human intervention... \"We're in the very early innings of using AI to automate the execution of lab work.\""
+        },
+        {
+          "fact": "Anthropic launched Claude Science, added Novartis CEO Vas Narasimhan to its board and bought startup Coefficient Bio for about $400 million in stock; it says life sciences is now one of its biggest areas by headcount and resources.",
+          "source_url": "https://english.alarabiya.net/business/technology/2026/09/18/anthropic-quietly-builds-biology-lab-as-it-pushes-ai-into-drug-science",
+          "excerpt": "The company also launched software called Claude Science, and it earlier added Novartis CEO Vas Narasimhan to its board and bought the startup Coefficient Bio for about $400 million in stock, according to media reports."
+        },
+        {
+          "fact": "Anthropic says it is not running clinical trials for now and is not competing with pharma companies; it struck a Novo Nordisk collaboration this week and already serves Roche's Genentech and Bristol Myers Squibb.",
+          "source_url": "https://qz.com/anthropic-biology-wet-lab-ai-drug-research-091826",
+          "excerpt": "Anthropic struck a collaboration with Novo Nordisk this week aimed at accelerating drug discovery using Claude... \"We're not competing with pharma and biotech companies that make their business in bringing drugs to market.\""
+        },
+        {
+          "fact": "The push comes as Anthropic researchers warn AI could lead to human extinction, the company disclosed examples where its systems could have aided bioweapons development, and it prepares a potentially $2 trillion IPO.",
+          "source_url": "https://english.alarabiya.net/business/technology/2026/09/18/anthropic-quietly-builds-biology-lab-as-it-pushes-ai-into-drug-science",
+          "excerpt": "In the past two weeks, some of its researchers warned that AI could lead to human extinction, and Anthropic said it found examples where its systems could have been used toward biological weapons development... At the same time, Anthropic is preparing to go public in a potentially $2 trillion IPO."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.reuters.com/world/anthropic-quietly-sets-up-biology-lab-it-ramps-ai-drug-program-2026-09-18/",
+          "outlet": "Reuters",
+          "title": "EXCLUSIVE: Anthropic quietly sets up biology lab as it ramps AI drug program",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://english.alarabiya.net/business/technology/2026/09/18/anthropic-quietly-builds-biology-lab-as-it-pushes-ai-into-drug-science",
+          "outlet": "Al Arabiya English",
+          "title": "Anthropic quietly builds biology lab as it pushes AI into drug science",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://qz.com/anthropic-biology-wet-lab-ai-drug-research-091826",
+          "outlet": "Quartz",
+          "title": "Anthropic builds wet lab for AI-driven drug discovery",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.koreatimes.co.kr/world/20260918/anthropic-quietly-sets-up-biology-lab-as-it-ramps-ai-drug-program",
+          "outlet": "The Korea Times",
+          "title": "Anthropic quietly sets up biology lab as it ramps AI drug program",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "science"
+      ],
+      "entities": {
+        "organizations": [
+          "Anthropic",
+          "Novo Nordisk",
+          "Bristol Myers Squibb",
+          "Genentech",
+          "Roche",
+          "Novartis",
+          "Coefficient Bio",
+          "Isomorphic Labs"
+        ],
+        "people": [
+          "Eric Kauderer-Abrams",
+          "Dario Amodei",
+          "Vas Narasimhan"
+        ],
+        "places": [
+          "San Francisco",
+          "Bay Area"
+        ]
+      }
+    },
+    {
+      "id": "naive-ai-1-4b-valuation",
+      "headline": "Stealth Chinese lab Naive AI hits $1.4B valuation on $400M raised, open model due this month",
+      "key_facts": [
+        {
+          "fact": "Beijing-based Naive AI reached a valuation of $1.42 billion after raising $400 million across three funding rounds, The Information reported on Sept 18 citing a person with direct knowledge.",
+          "source_url": "https://uk.investing.com/news/stock-market-news/naive-ai-valuation-hits-14-billion-after-400-million-raise--information-93CH-4874789",
+          "excerpt": "Beijing-based Naive AI reached a valuation of $1.42 billion after raising $400 million across three funding rounds... according to The Information, citing a person with direct knowledge of the matter."
+        },
+        {
+          "fact": "The rounds were $100 million, then $180 million, then $120 million, the last of which closed recently; investors include Tencent, IDG Capital, MPCi and HSG, the former Sequoia Capital China.",
+          "source_url": "https://uk.investing.com/news/stock-market-news/naive-ai-valuation-hits-14-billion-after-400-million-raise--information-93CH-4874789",
+          "excerpt": "The startup raised $100 million in its first funding round, $180 million in the second round and $120 million in the third round, which closed recently... from investors including Tencent, IDG Capital, MPCi and HSG, formerly known as Sequoia Capital China."
+        },
+        {
+          "fact": "The company was founded in February by Tsinghua University professor Jifeng Dai, has stayed in stealth for seven months and employs fewer than 100 people.",
+          "source_url": "https://uk.investing.com/news/stock-market-news/naive-ai-valuation-hits-14-billion-after-400-million-raise--information-93CH-4874789",
+          "excerpt": "The Chinese large language model startup was founded in February by Tsinghua University professor Jifeng Dai... The startup has kept a low profile for the past seven months and has fewer than 100 employees."
+        },
+        {
+          "fact": "Naive AI is preparing to release its first large language model as early as this month, as an open-weight model users can download free and customize.",
+          "source_url": "https://uk.investing.com/news/stock-market-news/naive-ai-valuation-hits-14-billion-after-400-million-raise--information-93CH-4874789",
+          "excerpt": "Naive AI is preparing to release its first large language model as early as this month as an open-weight model that users can download for free and customize."
+        },
+        {
+          "fact": "The company is reported to build on existing open-source models and improve them through advanced optimization techniques.",
+          "source_url": "https://www.gurufocus.com/news/9087950/naive-ai-secures-400-million-funding-valuation-exceeds-14-billion",
+          "excerpt": "especially as it focuses on leveraging existing open-source models and enhancing them through advanced optimization techniques."
+        },
+        {
+          "fact": "A sitting Tsinghua professor reaching a $1.4B valuation in roughly seven months while staying in stealth is an outlier: most well-capitalized labs, including OpenAI and Anthropic, use public visibility as a recruiting tool.",
+          "source_url": "https://valueaddvc.com/pulse/tsinghua-stealth-llm-startup-1-4b-valuation-2026",
+          "excerpt": "A sitting professor founding a startup that reaches a $1.4 billion valuation in roughly seven months, while apparently retaining stealth mode the entire time, extends that pattern into new territory."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.theinformation.com/articles/tsinghua-professors-stealth-llm-startup-hits-1-4-billion-valuation",
+          "outlet": "The Information",
+          "title": "Tsinghua Professor's Stealth LLM Startup Hits $1.4 Billion Valuation",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://uk.investing.com/news/stock-market-news/naive-ai-valuation-hits-14-billion-after-400-million-raise--information-93CH-4874789",
+          "outlet": "Investing.com",
+          "title": "Naive AI valuation hits $1.4 billion after $400 million raise - Information",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.gurufocus.com/news/9087950/naive-ai-secures-400-million-funding-valuation-exceeds-14-billion",
+          "outlet": "GuruFocus",
+          "title": "Naive AI Secures $400 Million Funding, Valuation Exceeds $1.4 Billion",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://valueaddvc.com/pulse/tsinghua-stealth-llm-startup-1-4b-valuation-2026",
+          "outlet": "Value Add Pulse",
+          "title": "Tsinghua Professor's Stealth LLM Startup Hits $1.4B Valuation",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "finance"
+      ],
+      "entities": {
+        "organizations": [
+          "Naive AI",
+          "Tencent",
+          "IDG Capital",
+          "HSG",
+          "Sequoia Capital China",
+          "Tsinghua University",
+          "The Information"
+        ],
+        "people": [
+          "Jifeng Dai",
+          "Juro Osawa"
+        ],
+        "places": [
+          "Beijing",
+          "China"
+        ]
+      }
+    },
+    {
+      "id": "sk-hynix-solidigm-us-nand-fab",
+      "headline": "SK hynix's Solidigm weighs first US NAND fab, with upstate New York the leading site",
+      "key_facts": [
+        {
+          "fact": "SK hynix's US subsidiary Solidigm is considering building a NAND flash memory factory in the United States, with upstate New York a leading candidate, three people familiar with the matter said on September 18.",
+          "source_url": "https://www.reuters.com/world/asia-pacific/sk-hynixs-solidigm-unit-is-weighing-nand-memory-chip-factory-us-sources-say-2026-09-18/",
+          "excerpt": "Chipmaker SK Hynix's US subsidiary Solidigm is considering building a factory to manufacture NAND flash memory chips in the United States, with upstate New York a leading candidate for the site, three people familiar with the matter told Reuters."
+        },
+        {
+          "fact": "The project is separate from SK hynix's parallel talks with Intel about making memory chips at Intel's Ohio facility.",
+          "source_url": "https://www.reuters.com/world/asia-pacific/sk-hynixs-solidigm-unit-is-weighing-nand-memory-chip-factory-us-sources-say-2026-09-18/",
+          "excerpt": "The project would be separate from SK Hynix's discussions with Intel (INTC.O), opens new tab over manufacturing memory chips at Intel's Ohio facility, the sources said."
+        },
+        {
+          "fact": "A US plant would cut Solidigm's dependence on its sole NAND production site in Dalian, China, and shield it from US tariffs and export curbs on chipmaking gear to China.",
+          "source_url": "https://www.koreajoongangdaily.com/business/sk-hynixs-solidigm-weighs-new-york-nand-factory/12882558",
+          "excerpt": "A U.S. plant would reduce Solidigm's reliance on its sole NAND production facility in the Chinese city of Dalian, while helping to shield it from potential U.S. tariffs and curbs on exports of chipmaking equipment to China."
+        },
+        {
+          "fact": "Solidigm was created when SK hynix bought Intel's NAND business for $9 billion in late 2021; it currently runs only a headquarters and an R&D center in the US.",
+          "source_url": "https://en.sedaily.com/finance/2026/09/18/sk-hynix-weighs-first-us-nand-plant-as-ai-demand-surges",
+          "excerpt": "Solidigm was launched as a separate entity when SK hynix acquired Intel's NAND business for $9 billion, or about 12 trillion won, in late 2021. Solidigm currently operates production facilities in Dalian, China, while running only its headquarters and a research and development center in the United States."
+        },
+        {
+          "fact": "SK hynix is already spending more than $4 billion on an advanced HBM packaging plant in West Lafayette, Indiana; a front-end NAND line would be its first US wafer fab.",
+          "source_url": "https://en.sedaily.com/finance/2026/09/18/sk-hynix-weighs-first-us-nand-plant-as-ai-demand-surges",
+          "excerpt": "The company is investing more than $4 billion, or about 5.5293 trillion won, to build an advanced packaging plant in West Lafayette, Indiana."
+        },
+        {
+          "fact": "SK hynix said Solidigm is 'reviewing various options to strengthen its business competitiveness, but no specific plans have been confirmed at this time.'",
+          "source_url": "https://www.koreajoongangdaily.com/business/sk-hynixs-solidigm-weighs-new-york-nand-factory/12882558",
+          "excerpt": "SK hynix said its \"subsidiary Solidigm is reviewing various options to strengthen its business competitiveness, but no specific plans have been confirmed at this time.\""
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.reuters.com/world/asia-pacific/sk-hynixs-solidigm-unit-is-weighing-nand-memory-chip-factory-us-sources-say-2026-09-18/",
+          "outlet": "Reuters",
+          "title": "SK Hynix's Solidigm unit is weighing NAND memory chip factory in US, sources say",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.koreajoongangdaily.com/business/sk-hynixs-solidigm-weighs-new-york-nand-factory/12882558",
+          "outlet": "Korea JoongAng Daily",
+          "title": "SK hynix's Solidigm weighs U.S. NAND flash chip factory in New York",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://en.sedaily.com/finance/2026/09/18/sk-hynix-weighs-first-us-nand-plant-as-ai-demand-surges",
+          "outlet": "Seoul Economic Daily",
+          "title": "SK hynix Weighs First U.S. NAND Plant as AI Demand Surges",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "SK hynix",
+          "Solidigm",
+          "Intel",
+          "Reuters"
+        ],
+        "people": [],
+        "places": [
+          "New York",
+          "Ohio",
+          "Dalian",
+          "Indiana",
+          "South Korea",
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "cxmt-nand-flash-entry",
+      "headline": "China's CXMT prepares a NAND flash push, taking on Samsung, SK hynix and YMTC",
+      "key_facts": [
+        {
+          "fact": "CXMT, China's leading DRAM maker, is preparing to enter the NAND flash memory market, three people with knowledge of the matter told Reuters on September 18.",
+          "source_url": "https://www.reuters.com/world/asia-pacific/chinas-cxmt-eyes-flash-memory-push-amid-global-shortage-firm-take-samsung-ymtc-2026-09-18/",
+          "excerpt": "Chinese chipmaker CXMT (688825.SS) is preparing to enter the booming flash memory chip market dominated by Samsung Electronics and other foreign rivals, three people with knowledge of the matter said, a move that would broaden its customer base amid a global memory shortage."
+        },
+        {
+          "fact": "CXMT plans a NAND research-and-development production line at a new plant in Beijing and has set up a research institute in the capital where NAND development is among the projects.",
+          "source_url": "https://www.marketscreener.com/news/china-s-cxmt-eyes-flash-memory-push-amid-global-shortage-firm-to-take-on-samsung-ymtc-ce785adad98af32c",
+          "excerpt": "CXMT, also known as ChangXin Memory Technologies, plans to establish a research-and-development production line for NAND flash memory at its new plant in Beijing, according to two of the sources. The company has also set up a research institute in the Chinese capital and projects there include NAND development, one source said."
+        },
+        {
+          "fact": "CXMT has already discussed its NAND plans with customers, including a newly established startup that wants to buy its NAND for storage products used in AI systems and supercomputers.",
+          "source_url": "https://www.marketscreener.com/news/china-s-cxmt-eyes-flash-memory-push-amid-global-shortage-firm-to-take-on-samsung-ymtc-ce785adad98af32c",
+          "excerpt": "CXMT has discussed its NAND plans with customers, including a newly established startup that intends to buy its NAND chips for storage products used in AI systems and supercomputers, a third person said, though they declined to identify the company."
+        },
+        {
+          "fact": "SK hynix CEO Kwak Noh-jung said in July that 2027 could be the memory industry's worst year from a supply perspective; TrendForce expects NAND tightness to ease only in the second half of next year.",
+          "source_url": "https://www.thestandard.com.hk/innovation/article/343179/Chinas-CXMT-eyes-flash-memory-push-amid-global-shortage-firm-to-take-on-Samsung-YMTC",
+          "excerpt": "SK Hynix CEO Kwak Noh-jung said in July that 2027 could be the industry's worst year from a supply perspective, while TrendForce expects NAND supply tightness to ease only in the second half of next year."
+        },
+        {
+          "fact": "CXMT raised 57.92 billion yuan ($8.6 billion) in July in Asia's biggest IPO of the year and plans a second memory plant in Beijing.",
+          "source_url": "https://www.thestandard.com.hk/innovation/article/343179/Chinas-CXMT-eyes-flash-memory-push-amid-global-shortage-firm-to-take-on-Samsung-YMTC",
+          "excerpt": "CXMT, which raised 57.92 billion yuan (US$8.6 billion) in July in Asia's biggest initial public offering this year, plans a second memory-chip plant in Beijing and was in funding talks with a tech manufacturing hub backed by the local government, Reuters reported last month."
+        },
+        {
+          "fact": "CXMT shares rose 3.4% to 55.29 yuan on Friday after the report.",
+          "source_url": "https://www.tradevae.com/news/stock-markets/cxmt-share-gain-follows-report-of-planned-nand-flash-push-at-new-beijing-site/",
+          "excerpt": "CXMT shares rose 3.4% to CNY 55.29 on Friday after a Reuters report."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.reuters.com/world/asia-pacific/chinas-cxmt-eyes-flash-memory-push-amid-global-shortage-firm-take-samsung-ymtc-2026-09-18/",
+          "outlet": "Reuters",
+          "title": "China's CXMT eyes flash-memory push amid global shortage; firm to take on Samsung, YMTC",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.marketscreener.com/news/china-s-cxmt-eyes-flash-memory-push-amid-global-shortage-firm-to-take-on-samsung-ymtc-ce785adad98af32c",
+          "outlet": "MarketScreener (Reuters)",
+          "title": "China's CXMT eyes flash-memory push amid global shortage; firm to take on Samsung, YMTC",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.thestandard.com.hk/innovation/article/343179/Chinas-CXMT-eyes-flash-memory-push-amid-global-shortage-firm-to-take-on-Samsung-YMTC",
+          "outlet": "The Standard (Hong Kong)",
+          "title": "China's CXMT eyes flash-memory push amid global shortage; firm to take on Samsung, YMTC",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.tradevae.com/news/stock-markets/cxmt-share-gain-follows-report-of-planned-nand-flash-push-at-new-beijing-site/",
+          "outlet": "Tradevae",
+          "title": "CXMT Share Gain Follows Report of Planned NAND Flash Push at New Beijing Site",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "CXMT",
+          "ChangXin Memory Technologies",
+          "Samsung Electronics",
+          "SK hynix",
+          "Micron",
+          "YMTC",
+          "TrendForce"
+        ],
+        "people": [
+          "Kwak Noh-jung"
+        ],
+        "places": [
+          "Beijing",
+          "China"
+        ]
+      }
+    },
+    {
+      "id": "sk-hynix-ventures-silicon-valley",
+      "headline": "SK hynix launches a Silicon Valley venture arm targeting AI compute, data centers and optics",
+      "key_facts": [
+        {
+          "fact": "SK hynix announced on September 18 the launch of a corporate venture capital brand, 'SK hynix Ventures', to expand strategic partnerships across the global AI ecosystem.",
+          "source_url": "https://www.prnewswire.com/news-releases/sk-hynix-launches-sk-hynix-ventures-in-silicon-valley-to-expand-global-ai-ecosystem-investment-302882993.html",
+          "excerpt": "SK hynix Inc. (or \"the company\", www.skhynix.com) announced today the launch of its corporate venture capital (CVC) brand, \"SK hynix Ventures,\" aimed at expanding strategic partnerships within the global AI ecosystem and securing future innovative technologies."
+        },
+        {
+          "fact": "The brand was unveiled at the inaugural 'SK hynix Ventures Day' held in Silicon Valley on September 17 local time, attended by CEO Kwak Noh-jung, global VC firms and US AI-computing and data-center startups.",
+          "source_url": "https://en.edaily.co.kr/news/eda202609185612/",
+          "excerpt": "SK hynix announced on the 18th that it held its first \"SK hynix Ventures Day\" in Silicon Valley, U.S., on the 17th (local time), where it discussed future investment strategies and technical collaboration plans with global venture capital (VC) firms and startup representatives."
+        },
+        {
+          "fact": "Investment scope widens from semiconductors and emerging tech to AI computing, data centers, system software and optical interconnect.",
+          "source_url": "https://www.koreaherald.com/article/10878747",
+          "excerpt": "The new investment focus will cover areas including AI computing, data center infrastructure, system software and optical interconnect technologies, as SK hynix seeks opportunities in sectors expected to support AI applications."
+        },
+        {
+          "fact": "SK hynix has run a CVC organization through its Americas unit SKHYA since 2015, investing in the US, China, Israel and Japan, with returns exceeding twice the cumulative amount invested.",
+          "source_url": "https://en.sedaily.com/finance/2026/09/18/sk-hynix-launches-sk-hynix-ventures-in-silicon-valley",
+          "excerpt": "Since 2015, SK hynix has operated a CVC organization through its Americas unit, SKHYA, investing directly in semiconductor and emerging-technology startups in the U.S., China, Israel and Japan and committing capital to venture funds. Returns so far have exceeded twice the cumulative amount invested."
+        },
+        {
+          "fact": "CEO Kwak Noh-jung said competitiveness in the AI era 'stems not just from rapidly securing innovative technologies, but from ecosystem capabilities where customers, partners, and startups create new value together.'",
+          "source_url": "https://www.prnewswire.com/news-releases/sk-hynix-launches-sk-hynix-ventures-in-silicon-valley-to-expand-global-ai-ecosystem-investment-302882993.html",
+          "excerpt": "\"Competitiveness in the AI era stems not just from rapidly securing innovative technologies, but from ecosystem capabilities where customers, partners, and startups create new value together,\" said Kwak Noh-Jung, CEO of SK hynix."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/sk-hynix-launches-sk-hynix-ventures-in-silicon-valley-to-expand-global-ai-ecosystem-investment-302882993.html",
+          "outlet": "PR Newswire / SK hynix",
+          "title": "SK hynix Launches 'SK hynix Ventures' in Silicon Valley to Expand Global AI Ecosystem Investment",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.koreaherald.com/article/10878747",
+          "outlet": "The Korea Herald",
+          "title": "SK hynix launches SK hynix Ventures in Silicon Valley",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://en.sedaily.com/finance/2026/09/18/sk-hynix-launches-sk-hynix-ventures-in-silicon-valley",
+          "outlet": "Seoul Economic Daily",
+          "title": "SK hynix Launches SK hynix Ventures in Silicon Valley",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://en.edaily.co.kr/news/eda202609185612/",
+          "outlet": "Edaily",
+          "title": "SK Hynix Launches 'SK Hynix Ventures' in Silicon Valley… Expands Its AI Investment Footprint",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business",
+        "finance"
+      ],
+      "entities": {
+        "organizations": [
+          "SK hynix",
+          "SK hynix Ventures",
+          "SKHYA"
+        ],
+        "people": [
+          "Kwak Noh-jung"
+        ],
+        "places": [
+          "Silicon Valley",
+          "South Korea",
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "figure-helix-2-5-unseen-homes",
+      "headline": "Figure's Helix 2.5 does chores in 30 homes it never trained in, hitting 56% success",
+      "key_facts": [
+        {
+          "fact": "Figure announced Helix 2.5 on September 17, a neural network that let its humanoid perform whole-body household tasks across 30 unseen Bay Area homes with no data collection or model adaptation in those homes.",
+          "source_url": "https://theaiinsider.tech/2026/09/17/figure-unveils-helix-2-5-with-zero-shot-humanoid-generalization-across-30-homes/",
+          "excerpt": "Figure introduced Helix 2.5, a neural network that enabled its humanoid robot to perform three whole-body household tasks across 30 unseen homes without collecting data or adapting the model in those environments."
+        },
+        {
+          "fact": "The robots completed 237 of 420 trials, about 56%, across bed making, towel folding and tidying toys.",
+          "source_url": "https://www.humanoidsdaily.com/news/figure-helix-2-5-30-unseen-homes",
+          "excerpt": "completed 237 of 420 trials, about 56%, across bed making, towel folding and tidying toys."
+        },
+        {
+          "fact": "In a controlled comparison with identical task data and architecture, the Index-pretrained policy succeeded on 56% of trials versus 9% for a model trained from scratch.",
+          "source_url": "https://theaiinsider.tech/2026/09/17/figure-unveils-helix-2-5-with-zero-shot-humanoid-generalization-across-30-homes/",
+          "excerpt": "In a controlled comparison using identical task data and model architecture, the Index-pretrained policy succeeded on 56% of trials, compared with 9% for the model trained from scratch."
+        },
+        {
+          "fact": "Helix 2.5 halved the task-specific data needed to specify a behavior while expanding scope from one environment to 30 — 2x cheaper behavior specification, 30x deployment scope, per Figure.",
+          "source_url": "https://theaiinsider.tech/2026/09/17/figure-unveils-helix-2-5-with-zero-shot-humanoid-generalization-across-30-homes/",
+          "excerpt": "Figure said Helix 2.5 cut the amount of task-specific data needed to specify a behavior in half while expanding its scope from a single environment to 30 unseen homes. The company described that as making behavior specification 2x cheaper while increasing its deployment scope 30x."
+        },
+        {
+          "fact": "Figure says its Index data engine now generates about 35 minutes of human-experience data per second, and the company has committed $3.5 billion in compute to training Helix.",
+          "source_url": "https://theaiinsider.tech/2026/09/17/figure-unveils-helix-2-5-with-zero-shot-humanoid-generalization-across-30-homes/",
+          "excerpt": "Figure pointed out that Index is generating about 35 minutes of new human-experience data every second. The company has also committed $3.5 billion in computing resources to training Helix."
+        },
+        {
+          "fact": "CEO Brett Adcock called Helix 2.5 'the most important project we've ever taken on at Figure' and said the robot recorded successes in every one of the 30 homes.",
+          "source_url": "https://www.humanoidsdaily.com/news/figure-helix-2-5-30-unseen-homes",
+          "excerpt": "In the accompanying video, Adcock calls Helix 2.5 \"the most important project we've ever taken on at Figure.\" He and Director of AI Corey Lynch say the robot recorded successes in every one of the 30 homes."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://theaiinsider.tech/2026/09/17/figure-unveils-helix-2-5-with-zero-shot-humanoid-generalization-across-30-homes/",
+          "outlet": "The AI Insider",
+          "title": "Figure Unveils Helix 2.5 With Zero-Shot Humanoid Generalization Across 30 Homes",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.humanoidsdaily.com/news/figure-helix-2-5-30-unseen-homes",
+          "outlet": "Humanoids Daily",
+          "title": "Figure's Helix 2.5 Takes on Chores in 30 Unseen Homes",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "science"
+      ],
+      "entities": {
+        "organizations": [
+          "Figure",
+          "BotQ"
+        ],
+        "people": [
+          "Brett Adcock",
+          "Corey Lynch"
+        ],
+        "places": [
+          "Bay Area",
+          "California"
+        ]
+      }
+    },
+    {
+      "id": "d-robotics-400m-series-c",
+      "headline": "D-Robotics raises $400M Series C for robot chips, China's biggest robotics round in four years",
+      "key_facts": [
+        {
+          "fact": "D-Robotics announced on September 17 the closing of a US$400 million Series C round, with a leading global internet company as a strategic investor alongside top-tier institutions and existing shareholders.",
+          "source_url": "https://www.prnewswire.com/news-releases/d-robotics-completes-400-million-in-series-c-funding-driving-the-robotics-industry-into-a-boom-in-product-categories-302881297.html",
+          "excerpt": "HONG KONG, Sept. 17, 2026 /PRNewswire/ -- D-Robotics, a leading provider of robotics development infrastructure, today announced the closing of a US$400 million Series C funding round. The round attracted strategic investment from a leading global internet company, alongside with top-tier investment institutions, and continued follow-on investments from existing shareholders."
+        },
+        {
+          "fact": "The round was led by Mirae Asset.",
+          "source_url": "https://robottoday.com/industry-briefing/mirae-asset-leads-400-million-funding-round-for-d-robotics-robot-development-platform/13404",
+          "excerpt": "D-Robotics announced that it has secured $400 million in funding, led by Mirae Asset."
+        },
+        {
+          "fact": "Proceeds go to expanding the Sunrise chip portfolio across all compute tiers and to a software platform spanning the full robot development chain.",
+          "source_url": "https://www.prnewswire.com/news-releases/d-robotics-completes-400-million-in-series-c-funding-driving-the-robotics-industry-into-a-boom-in-product-categories-302881297.html",
+          "excerpt": "The funding aims to enhance Sunrise™ Chip product portfolio across all computing levels, and to develop a software platform spanning the entire robot development chain."
+        },
+        {
+          "fact": "D-Robotics has shipped over 8 million Sunrise chips, and its new S600 chip for embodied AI is used by more than 20 leading humanoid makers including UBTECH and Fourier.",
+          "source_url": "https://ventureburn.com/d-robotics-raises-400-million-to-build-the-brain-for-every-robot/",
+          "excerpt": "The company has shipped over 8 million Sunrise chips and revenue grew several times year over year in the first half of 2026. Its new S600 chip for embodied AI is already used by more than 20 leading humanoid makers including UBTECH and Fourier."
+        },
+        {
+          "fact": "The deal is described as the largest robotics funding round in China in the past four years.",
+          "source_url": "https://ventureburn.com/d-robotics-raises-400-million-to-build-the-brain-for-every-robot/",
+          "excerpt": "D-Robotics, which is a leading provider of robotics development infrastructure in China, announced it has closed a $400 million Series C funding round. This is the largest robotics funding round in China in the past four years."
+        },
+        {
+          "fact": "Its Gravity Program has backed more than 500 robotics innovators across 10 categories; over 100,000 developers in 20+ countries build on its platform.",
+          "source_url": "https://www.prnewswire.com/news-releases/d-robotics-completes-400-million-in-series-c-funding-driving-the-robotics-industry-into-a-boom-in-product-categories-302881297.html",
+          "excerpt": "To date, the program has backed more than 500 robotics innovators across 10 frontier categories... more than 500 universities and over 100,000 developers across 20+ countries have created hundreds of AI robot on the D-Robotics' platform."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/d-robotics-completes-400-million-in-series-c-funding-driving-the-robotics-industry-into-a-boom-in-product-categories-302881297.html",
+          "outlet": "PR Newswire / D-Robotics",
+          "title": "D-Robotics Completes $400 Million in Series C Funding, Driving the Robotics Industry Into a Boom in Product Categories",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://robottoday.com/industry-briefing/mirae-asset-leads-400-million-funding-round-for-d-robotics-robot-development-platform/13404",
+          "outlet": "RobotToday",
+          "title": "Mirae Asset Leads $400 Million Funding Round for D-Robotics' Robot Development Platform",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://ventureburn.com/d-robotics-raises-400-million-to-build-the-brain-for-every-robot/",
+          "outlet": "Ventureburn",
+          "title": "D-Robotics Raises $400 Million To Build Robot Brains",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business",
+        "finance"
+      ],
+      "entities": {
+        "organizations": [
+          "D-Robotics",
+          "Mirae Asset",
+          "UBTECH",
+          "Fourier"
+        ],
+        "people": [],
+        "places": [
+          "Hong Kong",
+          "China"
+        ]
+      }
+    },
+    {
+      "id": "tesla-optimus-5000-unit-supplier-order",
+      "headline": "Tesla places a 5,000-unit Optimus order and audits Chinese suppliers as mass production nears",
+      "key_facts": [
+        {
+          "fact": "News dated September 17 says Tesla recently issued a new order of about 5,000 Optimus units to suppliers — its first thousand-unit-scale mass production order after earlier trial orders of a few hundred.",
+          "source_url": "https://eu.36kr.com/en/p/3987206969546624",
+          "excerpt": "News on September 17 shows that Tesla has recently issued a new order of about 5,000 units to its suppliers, which is the first mass production order at the thousand-unit level following the previous trial production orders of several hundred units."
+        },
+        {
+          "fact": "Tesla is accelerating factory audits of its Optimus supply chain in China, visiting suppliers in Shanghai, Hangzhou, Ningbo and Xiamen.",
+          "source_url": "https://eu.36kr.com/en/p/3987206969546624",
+          "excerpt": "Tesla is accelerating the factory audit of the Optimus humanoid robot supply chain in China, visiting suppliers in Shanghai, Hangzhou, Ningbo and Xiamen and other regions. The dual signals of factory audit and order mark that Optimus has officially moved from the engineering prototype stage to the replicable manufacturing stage."
+        },
+        {
+          "fact": "Tesla launched a production inspection for its humanoid robot business in Ningbo on September 16; Tuopu said it received no inspection notice while Sanhua Intelligent Controls said it is developing robotic joint actuators.",
+          "source_url": "https://www.gate.com/news/detail/tesla-launches-humanoid-robot-production-inspection-in-ningbo-on-september-24367215",
+          "excerpt": "According to ChainCatcher, Tesla launched a production inspection for its humanoid robot business in Ningbo on September 16, issuing orders to supply chain partners. Topp Group stated it did not receive inspection notifications but confirmed ongoing collaboration in robot components, while Sanhua Intelligence Controls indicated it is developing robotic joint actuators."
+        },
+        {
+          "fact": "Drone footage posted Thursday afternoon shows the steel frame of Tesla's dedicated Optimus factory at Giga Texas nearing completion, about six months after groundbreaking, with high-volume production targeted for summer 2027.",
+          "source_url": "https://www.teslarati.com/new-drone-video-shows-teslas-optimus-factory-reaching-a-turning-point/",
+          "excerpt": "Tesla's dedicated Optimus factory at Gigafactory Texas is closing in on a finished steel frame, according to drone footage posted Thursday afternoon by longtime site observer Joe Tegtmeyer... Tesla has not given an updated timeline beyond its previously stated goal of bringing high volume Optimus production online at the site in the summer of 2027."
+        },
+        {
+          "fact": "Musk has pegged long-term output at 10 million Optimus units a year at Giga Texas, versus a one-million-unit pilot line at Fremont that began mass producing the Gen 3 robot in January.",
+          "source_url": "https://www.teslarati.com/new-drone-video-shows-teslas-optimus-factory-reaching-a-turning-point/",
+          "excerpt": "Musk has pegged the long term output target at 10 million Optimus units a year once the line is running at full capacity, a volume that would dwarf the one million unit pilot line Tesla is standing up separately at its Fremont, California factory."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://eu.36kr.com/en/p/3987206969546624",
+          "outlet": "36Kr",
+          "title": "Tesla Secures 5,000-Unit Robot Order: Factory Audit Imminent",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.gate.com/news/detail/tesla-launches-humanoid-robot-production-inspection-in-ningbo-on-september-24367215",
+          "outlet": "Gate News / ChainCatcher",
+          "title": "Tesla Launches Humanoid Robot Production Inspection in Ningbo on September 16",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.teslarati.com/new-drone-video-shows-teslas-optimus-factory-reaching-a-turning-point/",
+          "outlet": "Teslarati",
+          "title": "New drone video shows Tesla's Optimus Factory reaching a turning point",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Tesla",
+          "Tuopu",
+          "Sanhua Intelligent Controls",
+          "Optimus"
+        ],
+        "people": [
+          "Elon Musk",
+          "Joe Tegtmeyer"
+        ],
+        "places": [
+          "Ningbo",
+          "Shanghai",
+          "Hangzhou",
+          "Xiamen",
+          "Texas",
+          "Fremont"
+        ]
+      }
+    },
+    {
+      "id": "amd-10-percent-price-hike-tsmc-wafers",
+      "headline": "AMD tells partners to expect ~10% price hikes in Q4 as TSMC raises wafer prices",
+      "key_facts": [
+        {
+          "fact": "AMD told partners on September 17 to expect a roughly 10% price increase on AI accelerators, Radeon GPUs and motherboard chipsets starting in Q4 2026, citing rising TSMC wafer costs, with Ryzen CPUs left off the list.",
+          "source_url": "https://startupfortune.com/amd-warns-partners-of-a-10-price-hike-on-ai-chips-sparing-ryzen/",
+          "excerpt": "AMD told partners on September 17 to expect a roughly 10% price increase on AI accelerators, Radeon GPUs, and motherboard chipsets starting Q4 2026, citing rising TSMC wafer costs, but left Ryzen CPUs off the list."
+        },
+        {
+          "fact": "TSMC has notified customers of an approximate 10% increase in wafer foundry quotes, citing persistently rising manufacturing costs.",
+          "source_url": "https://finance.biggo.com/news/b5465dd8-6785-4d16-918a-e8f657586ae0",
+          "excerpt": "According to supply chain information obtained by ChannelGate, TSMC—citing persistently rising manufacturing costs—has notified its customers of an approximate 10% increase in chip foundry quotes."
+        },
+        {
+          "fact": "Intel has separately raised prices on select client and server chips — the Core Ultra 7 270K Plus up $50 to about $349 and the Core Ultra 5 250K Plus up $30 to about $229, with some Xeons up by hundreds or over $1,000.",
+          "source_url": "https://finance.biggo.com/news/b5465dd8-6785-4d16-918a-e8f657586ae0",
+          "excerpt": "For desktop, the Core Ultra 7 270K Plus and Core Ultra 5 250K Plus have recommended customer price increases of $50 and $30 respectively, bringing them to approximately $349 and $229. On the server side, Xeon processor increases are larger, with some models costing hundreds or even over $1,000 more than before."
+        },
+        {
+          "fact": "On the same day, cloud provider Nebius raised AMD EPYC Genoa CPU rental rates by 25%.",
+          "source_url": "https://startupfortune.com/amd-warns-partners-of-a-10-price-hike-on-ai-chips-sparing-ryzen/",
+          "excerpt": "The same day, cloud provider Nebius announced its own hikes, raising AMD EPYC Genoa CPU rental rates 25%, a sign AI compute demand still outstrips supply."
+        },
+        {
+          "fact": "DRAM contract prices are already up 13%-18% quarter-on-quarter in Q3 2026, compounding cost pressure on PCs and servers.",
+          "source_url": "https://finance.biggo.com/news/b5465dd8-6785-4d16-918a-e8f657586ae0",
+          "excerpt": "| Memory | DRAM contract prices | +13%–18% QoQ | Q3 2026 |"
+        },
+        {
+          "fact": "AMD had not issued an official response to the price hike reports as of publication.",
+          "source_url": "https://finance.biggo.com/news/b5465dd8-6785-4d16-918a-e8f657586ae0",
+          "excerpt": "As of press time, AMD has not issued an official response to the price hike reports."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://startupfortune.com/amd-warns-partners-of-a-10-price-hike-on-ai-chips-sparing-ryzen/",
+          "outlet": "Startup Fortune",
+          "title": "AMD Warns Partners Of A 10% Price Hike On AI Chips, Sparing Ryzen",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://finance.biggo.com/news/b5465dd8-6785-4d16-918a-e8f657586ae0",
+          "outlet": "BigGo Finance",
+          "title": "TSMC foundry price hikes ripple downstream; AMD reportedly raising chip prices across the board by 10% in Q4",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.technetbooks.com/2026/09/amd-reportedly-prepares-10-price.html",
+          "outlet": "TechNetBooks",
+          "title": "AMD Reportedly Prepares 10% Price Increase Following TSMC Wafer Adjustments",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "economy",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "AMD",
+          "TSMC",
+          "Intel",
+          "Nebius",
+          "ChannelGate"
+        ],
+        "people": [],
+        "places": [
+          "Taiwan"
+        ]
+      }
+    },
+    {
+      "id": "us-approves-24b-f35-sale-saudi",
+      "headline": "US approves $24.3B sale of 48 F-35 jets to Saudi Arabia as the Iran war drags on",
+      "key_facts": [
+        {
+          "fact": "The US State Department said on Thursday, September 17, that it approved a $24.3 billion sale of 48 F-35 stealth fighters to Saudi Arabia, the kingdom's largest arms purchase since the Iran war began.",
+          "source_url": "https://www.france24.com/en/middle-east/20260918-us-approves-24-3-billion-sale-of-48-f-35-warplanes-to-saudi-arabia",
+          "excerpt": "The United States has approved a $24.3 billion sale of 48 F-35 stealth warplanes to Saudi Arabia, the State Department said Thursday, the kingdom's latest major arms purchase since the start of the Iran war."
+        },
+        {
+          "fact": "The State Department notified Congress of the proposed sale, which still requires lawmakers' approval, and gave no delivery timetable.",
+          "source_url": "https://www.france24.com/en/middle-east/20260918-us-approves-24-3-billion-sale-of-48-f-35-warplanes-to-saudi-arabia",
+          "excerpt": "The State Department has notified Congress about the proposed sale, which would require the approval of US lawmakers. It did not provide a time frame for the delivery of the jets."
+        },
+        {
+          "fact": "Israel, currently the only Middle East country operating the F-35, has voiced concern about selling the jet to Riyadh despite the push for normalisation.",
+          "source_url": "https://www.france24.com/en/middle-east/20260918-us-approves-24-3-billion-sale-of-48-f-35-warplanes-to-saudi-arabia",
+          "excerpt": "Saudi Arabia has long sought to buy F-35s, but officials from Israel – currently the only country in the Middle East to operate the jets – have voiced concern about their sale to Riyadh despite a push for the kingdom to normalise relations."
+        },
+        {
+          "fact": "The jet deal follows a $5 billion sale of more than 10,000 bombs approved earlier in September, a $750 million sale of 60 tank engines this month and a $1.96 billion July deal for precision guidance kits.",
+          "source_url": "https://www.france24.com/en/middle-east/20260918-us-approves-24-3-billion-sale-of-48-f-35-warplanes-to-saudi-arabia",
+          "excerpt": "The State Department announced the approval of a $5 billion sale of more than 10,000 bombs – including highly destructive 2,000-pound weapons – to Riyadh earlier in September. Washington also signed off on the sale of 60 tank engines and related equipment to Saudi Arabia at a cost of $750 million this month, and a $1.96 billion deal in July"
+        },
+        {
+          "fact": "Saudi Arabia is simultaneously trading strikes with Yemen's Houthis: Saudi warplanes hit Hajjah and Taiz on Thursday and Riyadh said drone debris from an intercepted Houthi attack killed one person.",
+          "source_url": "https://www.al-monitor.com/originals/2026/09/saudis-and-houthis-exchange-strikes-yemenis-take-boats-flee-middle-east-war",
+          "excerpt": "Houthi-controlled television reported fresh Saudi air strikes on Thursday in Hajjah province close to the Saudi border near the Red Sea coast, and the vicinity of Taiz further inland to the south."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.france24.com/en/middle-east/20260918-us-approves-24-3-billion-sale-of-48-f-35-warplanes-to-saudi-arabia",
+          "outlet": "France 24",
+          "title": "US approves $24.3 billion sale of 48 F-35 warplanes to Saudi Arabia",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.al-monitor.com/originals/2026/09/saudis-and-houthis-exchange-strikes-yemenis-take-boats-flee-middle-east-war",
+          "outlet": "Al-Monitor (Reuters)",
+          "title": "Saudis and Houthis exchange strikes, Yemenis take to boats to flee as Middle East war spreads",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "world",
+        "politics",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "US State Department",
+          "Lockheed Martin",
+          "Houthis",
+          "US Congress"
+        ],
+        "people": [],
+        "places": [
+          "Saudi Arabia",
+          "Israel",
+          "Yemen",
+          "Washington",
+          "Hajjah",
+          "Taiz"
+        ]
+      }
+    },
+    {
+      "id": "hormuz-diesel-record-tehran-rally",
+      "headline": "US diesel hits an all-time record near $6.40 a gallon as Iran keeps Hormuz shut",
+      "key_facts": [
+        {
+          "fact": "The average US retail diesel price set an all-time record on Thursday, September 17, just shy of $6.40 a gallon, while crude eased slightly but stayed above $100 a barrel.",
+          "source_url": "https://www.al-monitor.com/originals/2026/09/saudis-and-houthis-exchange-strikes-yemenis-take-boats-flee-middle-east-war",
+          "excerpt": "Global crude prices eased slightly on Thursday but remain well above $100 a barrel after shooting to the highest levels since May. The cost of fuel for consumers has risen even more sharply, with the average retail price for diesel in the United States setting a new all-time record on Thursday just shy of $6.40 a gallon."
+        },
+        {
+          "fact": "A political adviser to Iran's supreme leader, Mohammad-Bagher Zolghadr, said on September 17 that Iran will keep the Strait of Hormuz closed until Trump and Netanyahu are out of power.",
+          "source_url": "https://www.iranintl.com/en/202609171217",
+          "excerpt": "\"Our fighters will not open the Strait of Hormuz until the criminal Trump and bloodthirsty Netanyahu are brought down from power,\" Mohammad-Bagher Zolghadr said, describing the closure as the first stage of Iran's retaliation."
+        },
+        {
+          "fact": "Only three commodity vessels transited Hormuz on Wednesday, down from 12 the previous day and far below the 10-day average of about 17, according to ship-tracking data.",
+          "source_url": "https://www.iranintl.com/en/202609171217",
+          "excerpt": "Only three commodity vessels transited the waterway on Wednesday, down from 12 a day earlier and far below the 10-day average of about 17, Reuters reported, citing preliminary ship-tracking data."
+        },
+        {
+          "fact": "Saudi Arabia's East-West Pipeline, the main alternative route for Gulf crude, has been shut since it was struck last week in an attack Riyadh blamed on Iraq-based militias.",
+          "source_url": "https://www.al-monitor.com/originals/2026/09/saudis-and-houthis-exchange-strikes-yemenis-take-boats-flee-middle-east-war",
+          "excerpt": "Saudi Arabia's East-West Pipeline, which allowed it to pump oil across the Arabian Peninsula and ship it from the Red Sea, has been shut since it was struck last week in an attack Riyadh said came from Iraq, where Iran-backed militias also operate."
+        },
+        {
+          "fact": "Hundreds of thousands of Iranians filled downtown Tehran on September 18 in the biggest state-orchestrated show of defiance since the war began, as the Revolutionary Guard said it struck another tanker in the Strait of Hormuz.",
+          "source_url": "https://www.latimes.com/world-nation/story/2026-09-18/iranians-rally-by-hundreds-of-thousands-in-biggest-show-of-defiance-since-war-began",
+          "excerpt": "Hundreds of thousands of Iranians filled downtown Tehran in a government-orchestrated show of defiance, vowing to take up arms as war with the United States and Israel grinds on... the Guard says it struck another tanker in the Strait of Hormuz, further choking global energy flows."
+        },
+        {
+          "fact": "Trump said on September 16-17 that he hoped the war was nearing its end and that \"Iran is very much wanting to make a deal\"; he is expected to meet Gulf leaders at the UN General Assembly next Tuesday.",
+          "source_url": "https://www.iranintl.com/en/202609171217",
+          "excerpt": "\"Well, hopefully we're toward the end of the war,\" Trump told reporters. \"Iran is very much wanting to make a deal. We'll see how that works out.\" ... Trump is also expected to meet leaders or foreign ministers from the six Persian Gulf states on the sidelines of the UN General Assembly in New York next Tuesday"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.al-monitor.com/originals/2026/09/saudis-and-houthis-exchange-strikes-yemenis-take-boats-flee-middle-east-war",
+          "outlet": "Al-Monitor (Reuters)",
+          "title": "Saudis and Houthis exchange strikes, Yemenis take to boats to flee as Middle East war spreads",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.iranintl.com/en/202609171217",
+          "outlet": "Iran International",
+          "title": "Iran will keep Hormuz closed until Trump falls from power, Khamenei adviser says",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.latimes.com/world-nation/story/2026-09-18/iranians-rally-by-hundreds-of-thousands-in-biggest-show-of-defiance-since-war-began",
+          "outlet": "Los Angeles Times (AP)",
+          "title": "Iranians rally by the hundreds of thousands in biggest show of defiance since war began",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "world",
+        "economy",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "Islamic Revolutionary Guard Corps",
+          "Houthis",
+          "Saudi Aramco"
+        ],
+        "people": [
+          "Donald Trump",
+          "Mohammad-Bagher Zolghadr",
+          "Benjamin Netanyahu"
+        ],
+        "places": [
+          "Strait of Hormuz",
+          "Tehran",
+          "Saudi Arabia",
+          "Red Sea",
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "russia-duma-election-ukraine-drone-barrage",
+      "headline": "Russia's first wartime Duma election opens as 350 Ukrainian drones hit Moscow",
+      "key_facts": [
+        {
+          "fact": "Voting began on Friday, September 18, in a three-day Russian parliamentary election for the 450-seat State Duma, the first since the full-scale invasion of Ukraine in February 2022.",
+          "source_url": "https://www.reuters.com/world/europe/voting-begins-russian-parliamentary-election-which-putin-has-cast-barometer-2026-09-18/",
+          "excerpt": "Voting got underway on Friday in a three-day parliamentary election in Russia which President Vladimir Putin has framed as a barometer of support for Russia's war in Ukraine. It is the first parliamentary election since Russia launched its full-scale war in Ukraine in February 2022"
+        },
+        {
+          "fact": "Most anti-war candidates were excluded after the Supreme Court ruled the liberal Yabloko party, which wants a ceasefire, had breached electoral rules.",
+          "source_url": "https://www.reuters.com/world/europe/voting-begins-russian-parliamentary-election-which-putin-has-cast-barometer-2026-09-18/",
+          "excerpt": "Most anti-war candidates have been excluded from the ballot after the Supreme Court ruled that the liberal Yabloko party - which wants a ceasefire - had breached electoral rules"
+        },
+        {
+          "fact": "More than 350 Ukrainian drones targeted Moscow on Friday morning; Mayor Sergei Sobyanin said most were destroyed on an outer perimeter and 64 were shot down as they approached the city.",
+          "source_url": "https://www.aljazeera.com/news/2026/9/18/ukraine-fires-drone-barrage-as-russia-launches-elections",
+          "excerpt": "More than 350 Ukrainian drones targeted the Russian capital on Friday morning, Moscow's mayor reported... Moscow Mayor Sergei Sobyanin wrote on social media that most of the 350 drones sent towards the capital overnight had been destroyed at an outer defensive perimeter, with 64 shot down as they approached the city."
+        },
+        {
+          "fact": "Voting runs until 18:00 GMT on Sunday and Moscow has also organised balloting in occupied parts of Ukraine.",
+          "source_url": "https://www.aljazeera.com/news/2026/9/18/ukraine-fires-drone-barrage-as-russia-launches-elections",
+          "excerpt": "Voting runs until 18:00 GMT on Sunday. Moscow has also organised balloting in occupied parts of Ukraine."
+        },
+        {
+          "fact": "Russia's Defence Ministry said on Friday it struck a Nova Poshta logistics hub near Odesa and a cargo vessel in the port of Chornomorsk; a Russian drone attack injured five people, including three children, in the Kyiv region.",
+          "source_url": "https://www.aljazeera.com/news/2026/9/18/ukraine-fires-drone-barrage-as-russia-launches-elections",
+          "excerpt": "The Russian Defence Ministry said on Friday that its forces had struck a logistics hub belonging to Ukrainian postal company Nova Poshta near the Black Sea port city of Odesa, as well as a cargo vessel in the nearby port of Chornomorsk... A Russian drone attack on Friday morning injured five people, including three children, in the Kyiv region"
+        },
+        {
+          "fact": "US-brokered peace talks are stuck on territory: Zelenskyy said negotiators are discussing a Ukrainian withdrawal from Donetsk in exchange for Russian forces not entering it, plus a joint format for the occupied Zaporizhzhia nuclear plant.",
+          "source_url": "https://infonews.ca/news/7459887/zelenskyy-says-us-led-peace-talks-wrestling-with-russian-demands-for-ukrainian-territory/",
+          "excerpt": "U.S. negotiators foresee Ukrainian forces withdrawing from the Donetsk region, with the compromise being that Russian forces do not enter that territory, Zelenskyy said... The Americans have suggested a joint format to manage the plant, and negotiators are discussing how that might work"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.reuters.com/world/europe/voting-begins-russian-parliamentary-election-which-putin-has-cast-barometer-2026-09-18/",
+          "outlet": "Reuters",
+          "title": "Voting begins in Russian parliamentary election which Putin has cast as barometer of support for war",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/9/18/ukraine-fires-drone-barrage-as-russia-launches-elections",
+          "outlet": "Al Jazeera",
+          "title": "Ukraine fires drone barrage as Russia launches elections",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://infonews.ca/news/7459887/zelenskyy-says-us-led-peace-talks-wrestling-with-russian-demands-for-ukrainian-territory/",
+          "outlet": "Associated Press",
+          "title": "Zelenskyy says US-led peace talks wrestling with Russian demands for Ukrainian territory",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "world",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "State Duma",
+          "United Russia",
+          "Yabloko",
+          "Nova Poshta",
+          "Russian Defence Ministry"
+        ],
+        "people": [
+          "Vladimir Putin",
+          "Sergei Sobyanin",
+          "Volodymyr Zelenskyy"
+        ],
+        "places": [
+          "Moscow",
+          "Russia",
+          "Ukraine",
+          "Odesa",
+          "Kyiv",
+          "Donetsk"
+        ]
+      }
+    },
+    {
+      "id": "ofac-sanctions-bitbank-hormuz-tolls",
+      "headline": "US sanctions Iranian exchange BitBank, the bitcoin rail behind Hormuz transit tolls",
+      "key_facts": [
+        {
+          "fact": "On September 17 the Treasury's OFAC designated BitBank, an Iranian digital asset exchange controlled by sanctioned financier Babak Zanjani, plus its developer Pishtaz Simorgh and three Zanjani associates.",
+          "source_url": "https://home.treasury.gov/news/press-releases/sb0632",
+          "excerpt": "Today, the Department of the Treasury's Office of Foreign Assets Control (OFAC) designated BitBank, a priority digital assets venture controlled by OFAC-designated Iranian financier Babak Zanjani... Today's designations also include BitBank's developer, Pishtaz Simorgh Electronic Trade Company (Pishtaz Simorgh) and three associates of Zanjani"
+        },
+        {
+          "fact": "Treasury said Zanjani used BitBank between June and July to move hundreds of millions of dollars in bitcoin to the Islamic Revolutionary Guard Corps.",
+          "source_url": "https://home.treasury.gov/news/press-releases/sb0632",
+          "excerpt": "Between June and July of this year, Zanjani utilized BitBank to facilitate the transfer of hundreds of millions of dollars' worth of Bitcoin to the IRGC."
+        },
+        {
+          "fact": "Since June, the sanctioned Hormuz Safe Marine Services Authority — the body Tehran uses to sell ships safe passage through the Strait of Hormuz — has used BitBank to pass its collections to the regime.",
+          "source_url": "https://home.treasury.gov/news/press-releases/sb0632",
+          "excerpt": "Since June of this year, OFAC-designated Hormuz Safe Marine Services Authority has used BitBank to transfer payments it received to the Iranian regime."
+        },
+        {
+          "fact": "Treasury Secretary Scott Bessent said efforts to finance Iran with cryptocurrency are \"not beyond OFAC's reach.\"",
+          "source_url": "https://home.treasury.gov/news/press-releases/sb0632",
+          "excerpt": "\"Today's designations of Iranian digital asset infrastructure make perfectly clear that efforts to finance the Iranian regime using cryptocurrencies are not beyond OFAC's reach,\" said Secretary of the Treasury Scott Bessent."
+        },
+        {
+          "fact": "The action falls under \"Operation Economic Outcast,\" launched by Bessent on August 24 as a continuation of the earlier \"Economic Fury\" campaign, under which OFAC hit Nobitex, Wallex, Bitpin and Ramzinex in June and Shelbit and Aban Tether in August.",
+          "source_url": "https://www.theblock.co/news/regulation/2026-09-17-us-sanctions-iranian-crypto-exchange-bitbank-alleged-bitcoin-transfers-to-irgc-415462",
+          "excerpt": "The latest action falls under a continuation of Economic Fury called \"Operation Economic Outcast,\" a broader campaign launched on Aug. 24... In June, OFAC sanctioned Nobitex, Iran's largest crypto exchange, along with Wallex, Bitpin and Ramzinex"
+        },
+        {
+          "fact": "The Hormuz bitcoin-settled maritime platform first surfaced in Iranian media in May, when Tehran said it targeted more than $10 billion in revenue.",
+          "source_url": "https://www.theblock.co/news/regulation/2026-09-17-us-sanctions-iranian-crypto-exchange-bitbank-alleged-bitcoin-transfers-to-irgc-415462",
+          "excerpt": "Hormuz Safe appears to be the formal entity behind a bitcoin-settled platform first reported by Iranian media in May... At the time, Iran said it was targeting more than $10 billion in revenue for the platform."
+        },
+        {
+          "fact": "Reuters reported the exchange was accused of processing payments for ships to transit safely through the Strait of Hormuz, part of Treasury's campaign to isolate Iran economically.",
+          "source_url": "https://www.reuters.com/world/middle-east/us-sanctions-iranian-financiers-crypto-exchange-says-it-processes-hormuz-2026-09-17/",
+          "excerpt": "The United States announced sanctions on an Iranian cryptocurrency exchange controlled by sanctioned Iranian financier Babak Zanjani on Thursday, accusing it of processing payments for ships to transit safely through the Strait of Hormuz."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://home.treasury.gov/news/press-releases/sb0632",
+          "outlet": "U.S. Department of the Treasury",
+          "title": "Operation Economic Outcast Disrupts Digital Asset Exchange Enabling the Iranian Regime",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.reuters.com/world/middle-east/us-sanctions-iranian-financiers-crypto-exchange-says-it-processes-hormuz-2026-09-17/",
+          "outlet": "Reuters",
+          "title": "US sanctions Iranian financier's crypto exchange, says it processes Hormuz payments",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.theblock.co/news/regulation/2026-09-17-us-sanctions-iranian-crypto-exchange-bitbank-alleged-bitcoin-transfers-to-irgc-415462",
+          "outlet": "The Block",
+          "title": "US sanctions Iranian crypto exchange BitBank over alleged bitcoin transfers to IRGC",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "world",
+        "finance",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "OFAC",
+          "U.S. Department of the Treasury",
+          "BitBank",
+          "IRGC",
+          "Hormuz Safe Marine Services Authority",
+          "Pishtaz Simorgh"
+        ],
+        "people": [
+          "Scott Bessent",
+          "Babak Zanjani"
+        ],
+        "places": [
+          "Iran",
+          "Strait of Hormuz",
+          "Washington"
+        ]
+      }
+    },
+    {
+      "id": "fda-approves-fayuvi-sanfilippo-gene-therapy",
+      "headline": "FDA approves Ultragenyx's Fayuvi, the first-ever treatment for Sanfilippo syndrome type A",
+      "key_facts": [
+        {
+          "fact": "On September 17 the FDA approved Fayuvi (rebisufligene etisparvovec-hopf), the first treatment for pediatric patients with MPS IIIA, or Sanfilippo syndrome type A, a fatal inherited disease that progressively destroys the brain and nervous system.",
+          "source_url": "https://www.biospace.com/press-releases/fda-approves-first-gene-therapy-for-pediatric-patients-with-sanfilippo-syndrome-type-a",
+          "excerpt": "The U.S. Food and Drug Administration today approved Fayuvi (rebisufligene etisparvovec-hopf), the first treatment for pediatric patients with mucopolysaccharidosis type IIIA (MPS IIIA), also known as Sanfilippo syndrome type A."
+        },
+        {
+          "fact": "Until the approval there was no therapy designed to change the course of the disease; treatment was limited to managing symptoms.",
+          "source_url": "https://www.biospace.com/press-releases/fda-approves-first-gene-therapy-for-pediatric-patients-with-sanfilippo-syndrome-type-a",
+          "excerpt": "Until today, treatment was limited to managing symptoms; there was no FDA-approved therapy designed to change the underlying course of the disease."
+        },
+        {
+          "fact": "In the pivotal Transpher A trial, 17 treated patients scored 23.5 points higher on the Bayley-III cognitive scale than an untreated natural history cohort of 27 children (p<0.0001), with follow-up now extending nearly eight years.",
+          "source_url": "https://finviz.com/news/393307/ultragenyx-announces-approval-of-fayuvi-gene-therapy-the-first-ever-fda-approved-treatment-for-sanfilippo-syndrome-type-a-mps-iiia",
+          "excerpt": "FAYUVI-treated patients from the modified intention-to-treat (mITT) population (N=17) were compared to untreated patients with Sanfilippo syndrome Type A from an external, comparable natural history cohort (N=27). FAYUVI-treated patients (mITT) demonstrated a 23.5 point higher (p<0.0001) cognitive score over natural history"
+        },
+        {
+          "fact": "Fayuvi is Ultragenyx's second gene therapy and sixth FDA approval overall; the company received a Priority Review Voucher upon approval.",
+          "source_url": "https://finviz.com/news/393307/ultragenyx-announces-approval-of-fayuvi-gene-therapy-the-first-ever-fda-approved-treatment-for-sanfilippo-syndrome-type-a-mps-iiia",
+          "excerpt": "FAYUVI marks the second gene therapy approval, and sixth FDA approval overall, for Ultragenyx. The Company received a Priority Review Voucher upon FAYUVI approval"
+        },
+        {
+          "fact": "The one-time AAV9 gene therapy reached approval after a rocky path: the FDA issued a complete response letter in July 2025 and Ultragenyx resubmitted in January 2026 with longer-term neurologic and biomarker data.",
+          "source_url": "https://www.cgtlive.com/view/fda-approves-first-gene-therapy-for-sanfilippo-syndrome-type-a",
+          "excerpt": "The approval follows a complicated regulatory path: an earlier biologics license application for the therapy received a complete response letter from the FDA in July 2025, and the company resubmitted with additional longer-term neurologic and biomarker data in January 2026."
+        },
+        {
+          "fact": "The therapy had orphan drug, fast track and breakthrough therapy designations.",
+          "source_url": "https://www.biospace.com/press-releases/fda-approves-first-gene-therapy-for-pediatric-patients-with-sanfilippo-syndrome-type-a",
+          "excerpt": "Fayuvi was granted orphan drug and fast track, and breakthrough therapy designations. The FDA granted Fayuvi approval to Ultragenyx Pharmaceutical, Inc."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.biospace.com/press-releases/fda-approves-first-gene-therapy-for-pediatric-patients-with-sanfilippo-syndrome-type-a",
+          "outlet": "BioSpace / FDA",
+          "title": "FDA Approves First Gene Therapy for Pediatric Patients with Sanfilippo Syndrome Type A",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://finviz.com/news/393307/ultragenyx-announces-approval-of-fayuvi-gene-therapy-the-first-ever-fda-approved-treatment-for-sanfilippo-syndrome-type-a-mps-iiia",
+          "outlet": "Ultragenyx (via Finviz)",
+          "title": "Ultragenyx Announces Approval of FAYUVI Gene Therapy, the First-Ever FDA-Approved Treatment for Sanfilippo Syndrome Type A (MPS IIIA)",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.cgtlive.com/view/fda-approves-first-gene-therapy-for-sanfilippo-syndrome-type-a",
+          "outlet": "CGTLive",
+          "title": "FDA Approves First Gene Therapy for Sanfilippo Syndrome Type A",
+          "published_at": "2026-09-17",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "science",
+        "business",
+        "world"
+      ],
+      "entities": {
+        "organizations": [
+          "FDA",
+          "Ultragenyx Pharmaceutical"
+        ],
+        "people": [],
+        "places": [
+          "Silver Spring",
+          "Novato"
+        ]
+      }
+    },
+    {
+      "id": "korea-350b-us-investment-stalls",
+      "headline": "South Korea delays first project under its $350B US investment pact over loss-sharing terms",
+      "key_facts": [
+        {
+          "fact": "At a September 18 press conference, President Lee Jae-myung said parts of the working-level agreement on the $350 billion strategic investment in the US are hard to accept and are being renegotiated.",
+          "source_url": "https://en.edaily.co.kr/news/eda202609185379/",
+          "excerpt": "At a press conference held at the Blue House State Guest House on the 18th, when asked about the progress of negotiations on investments in the U.S., President Lee said, \"The working-level negotiation team says an agreement has almost been reached, but after reviewing the details, there are parts I find difficult to agree with, so we are discussing them again.\""
+        },
+        {
+          "fact": "The sticking points are recovery of invested capital, profit distribution and who absorbs losses, plus the structure of the umbrella investment vehicle (I-SPV).",
+          "source_url": "https://en.edaily.co.kr/news/eda202609185379/",
+          "excerpt": "Last-minute Disagreements Between South Korea and the U.S. Over Capital Recovery, Profit Distribution, and Loss Allocation... it appears that a final agreement has not been reached not only on investment projects that cannot ensure profitability but also on the operational structure of the umbrella-type Investment Special Purpose Vehicle (I-SPV)"
+        },
+        {
+          "fact": "Seoul postponed the planned announcement of its first investment project; the report to the National Assembly slipped from September 17 to September 22.",
+          "source_url": "https://en.edaily.co.kr/news/eda202609185379/",
+          "excerpt": "the National Assembly report—originally scheduled for the 17th—was postponed to the 22nd and the government's announcement was also put on hold"
+        },
+        {
+          "fact": "Lee stressed the sum at stake is roughly 500 trillion won of taxpayers' money and that Seoul secured the phrase \"commercial rationality\" in the MOU, language he said is absent from other countries' deals.",
+          "source_url": "https://en.edaily.co.kr/news/eda202609185379/",
+          "excerpt": "\"We are talking about $350 billion—approximately 500 trillion won—which amounts to taxpayers' money.\"... \"No compromise had been reached by 7:30 a.m. on the day of the second summit, but fortunately, we were able to include the phrase 'commercial rationality' as we had wanted,\" adding, \"It is a phrase not found in agreements with other countries.\""
+        },
+        {
+          "fact": "Separately, Washington has asked Samsung Electronics and SK Hynix to expand memory production facilities in the US with their own capital, outside the government fund.",
+          "source_url": "https://en.edaily.co.kr/news/eda202609185379/",
+          "excerpt": "It is reported that the U.S. government has requested that Samsung Electronics and SK Hynix expand their memory semiconductor production facilities in the United States. This is a direct investment matter requiring individual companies to invest their own funds, rather than a project funded by the government-established fund"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://en.edaily.co.kr/news/eda202609185379/",
+          "outlet": "Edaily",
+          "title": "Announcement of Investment in the U.S. Postponed at the Last Minute… Lee: \"We Will Reach a Conclusion on Semiconductor Investment That Protects National Interests\"",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "world",
+        "economy",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "Samsung Electronics",
+          "SK Hynix",
+          "National Assembly of Korea"
+        ],
+        "people": [
+          "Lee Jae-myung",
+          "Donald Trump"
+        ],
+        "places": [
+          "South Korea",
+          "United States",
+          "Seoul"
+        ]
+      }
+    },
+    {
+      "id": "milei-falklands-sovereignty-bill",
+      "headline": "Milei sends Congress a Falklands bill punishing resource extraction, with a terror registry attached",
+      "key_facts": [
+        {
+          "fact": "Argentina's government sent Congress a National Sovereignty Defense Bill on Thursday, September 17, which Milei presented as \"a milestone in the process of recovering\" the Falklands.",
+          "source_url": "https://en.mercopress.com/2026/09/18/milei-sends-congress-his-falklands-sovereignty-bill-with-an-anti-terrorism-registry-attached",
+          "excerpt": "Argentina's government sent Congress a National Sovereignty Defense Bill on Thursday, presented by President Javier Milei as \"a milestone in the process of recovering\" the Falklands"
+        },
+        {
+          "fact": "The bill replaces the 2011 Law 26,659 and extends penalties from hydrocarbons to any natural resource on the Argentine continental shelf; barred companies could lose the right to operate anywhere in Argentina.",
+          "source_url": "https://en.mercopress.com/2026/09/18/milei-sends-congress-his-falklands-sovereignty-bill-with-an-anti-terrorism-registry-attached",
+          "excerpt": "replaces Law 26,659, in force since 2011, and broadens its scope: no longer just hydrocarbons, but any natural resource, renewable or not, on the Argentine continental shelf... Companies that are barred would risk being unable to operate anywhere in the country"
+        },
+        {
+          "fact": "It creates a National Security Council chaired by Milei that can order urgent measures — restricting FX and financial operations, freezing assets, suspending contracts and restricting foreign trade — and lets the armed forces protect strategic facilities.",
+          "source_url": "https://en.mercopress.com/2026/09/18/milei-sends-congress-his-falklands-sovereignty-bill-with-an-anti-terrorism-registry-attached",
+          "excerpt": "The bill creates a National Security Council, chaired by Milei, empowered to order \"urgent measures\" in the face of a grave and imminent threat: restricting foreign exchange and financial operations, temporarily freezing funds and assets, suspending authorizations or contracts, and restricting foreign trade."
+        },
+        {
+          "fact": "Its most contested element is a public registry of people linked to terrorism (RePET), run by the Financial Information Unit, where inclusion requires only \"reasonable grounds for suspicion\" and no prior criminal case, triggering immediate asset freezes.",
+          "source_url": "https://en.mercopress.com/2026/09/18/milei-sends-congress-his-falklands-sovereignty-bill-with-an-anti-terrorism-registry-attached",
+          "excerpt": "Inclusion in the registry \"will not be conditioned on the existence of a criminal case\": \"reasonable grounds for suspicion\" of a link to terrorism suffice, or a designation by the UN Security Council. The measure immediately triggers the freezing of funds and assets"
+        },
+        {
+          "fact": "Hours before the bill reached Congress, a federal judge in Tierra del Fuego ordered Rockhopper Exploration and Navitas Petroleum to halt work on the 23-well Sea Lion project on environmental grounds.",
+          "source_url": "https://en.mercopress.com/2026/09/18/milei-sends-congress-his-falklands-sovereignty-bill-with-an-anti-terrorism-registry-attached",
+          "excerpt": "federal judge Mariel Borruto, of Río Grande, Tierra del Fuego, had granted an injunction... The judge ordered Rockhopper Exploration and Navitas Petroleum Development and Production to refrain from starting or continuing work on the Sea Lion project, which envisions 23 wells"
+        },
+        {
+          "fact": "Milei said the Falklands strategy had been in the works for three years and was triggered by Trump's remark about reviewing US neutrality in the dispute, rejecting claims it is electioneering before the 2027 vote.",
+          "source_url": "https://en.mercopress.com/2026/09/18/milei-sends-congress-his-falklands-sovereignty-bill-with-an-anti-terrorism-registry-attached",
+          "excerpt": "\"Political analysts say we pushed Malvinas for image reasons and political opportunism. That's a massive stupidity,\" he said, adding that the strategy had been in the works for three years and that the trigger was a remark by US President Donald Trump about reviewing his country's neutral stance in the dispute."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://en.mercopress.com/2026/09/18/milei-sends-congress-his-falklands-sovereignty-bill-with-an-anti-terrorism-registry-attached",
+          "outlet": "MercoPress",
+          "title": "Milei sends Congress his Falklands sovereignty bill, with an anti-terrorism registry attached",
+          "published_at": "2026-09-18",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "world",
+        "politics",
+        "economy"
+      ],
+      "entities": {
+        "organizations": [
+          "Rockhopper Exploration",
+          "Navitas Petroleum",
+          "Financial Information Unit",
+          "Argentine Congress"
+        ],
+        "people": [
+          "Javier Milei",
+          "Mariel Borruto",
+          "Luis Caputo",
+          "Donald Trump"
+        ],
+        "places": [
+          "Argentina",
+          "Falkland Islands",
+          "Tierra del Fuego",
+          "United Kingdom"
+        ]
+      }
+    }
+  ],
+  "story_count": 21,
+  "source_count": 70
+}

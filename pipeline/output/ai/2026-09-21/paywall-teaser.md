@@ -1,0 +1,6 @@
+**Abaixo, apenas para assinantes:**
+
+**Modelos.** Duas empresas chinesas lançam modelos no mesmo fim de semana, um de geração e edição de imagem, outro agêntico, com mudanças no que de fato sai aberto.
+**Silício.** Rendimento de produção de memória para IA subindo na Coreia do Sul, uma empresa chinesa de IA apostando o treino dos seus modelos em chips domésticos, um chip taiwanês estreando em notebooks e a oposição local travando projetos de data center nos EUA.
+**Reguladores e dinheiro.** Uma empresa americana de IA passa a pagar avaliadores externos instalados dentro de casa, um painel da ONU publica seu primeiro relatório temático, reguladores chineses seguram as aberturas de capital dos fabricantes de robôs humanoides e uma construtora de data centers protocola a sua em Nova York.
+**Mundo.** Uma visita de Estado que coloca a IA na pauta comercial entre Washington e Pequim, uma onda de drones contra a capital russa, as condições de Teerã para reabrir a passagem no Golfo e ataques a instalações de petróleo na Arábia Saudita.
