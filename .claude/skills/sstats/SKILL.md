@@ -13,6 +13,7 @@ sstats summary                    # quick overview
 sstats emails [-n 20]             # per-post: opens, clicks, views, engagement
 sstats post [id|slug] [--html|--json|--meta]
                                   # published post HTML; no arg = today's latest
+sstats draft <post_id> [--body|--json]  # editor body (ProseMirror); keeps audience-gated blocks
 sstats open-rate                  # 30-day open rate
 sstats views                      # 30-day views
 sstats followers [days=90]        # follower timeseries
@@ -48,6 +49,20 @@ Insertion anatomy (mirror it for new partners): `captionedImage` (1272×312 bann
 `href` = tracked link) → centered paragraphs, bold lead + plain tail → `button`
 (same URL) → empty centered paragraph. Upload the banner with
 `pipeline/tools/substack_upload.py <png> --href URL` to get the CDN `src`.
+
+## Audience-gated blocks ("only to free subscribers")
+
+`post --html`/`--json` return the owner view, which Substack renders as *paid*: any
+"Audience-specific content block" aimed at free/non-subscribers is stripped, so grepping
+published HTML misses those insertions. Read the editor body instead:
+
+```bash
+sstats draft <post_id> | jq '.content[] | select(.type=="dynamicContent")'
+```
+
+The wrapper is `dynamicContent` (`attrs.audiences: ["non_sub","free_sub"]`) → `dynamicContentMatch`
+→ the insertion nodes. `has_dynamic_content: true` on the post JSON means at least one exists.
+`emails` rejects `-n` above 20 — page with `--offset 20`.
 
 ## Common usage
 
