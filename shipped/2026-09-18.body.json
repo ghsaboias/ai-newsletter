@@ -1,0 +1,2477 @@
+{
+ "draft_id": "216333896",
+ "title": "[Tech] - Bem-vindo(a) a 18 de Setembro de 2026",
+ "subtitle": "Pesquisadores usam o Claude para invadir a OpenAI | Claude já lidera 26% do P&D de IA da Anthropic | Newsom assina ordem executiva com kill switch para IA",
+ "body": {
+  "type": "doc",
+  "content": [
+   {
+    "type": "paragraph",
+    "attrs": {
+     "textAlign": null
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Por: Guilherme Saboia e Vinicius Gushiken"
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Pesquisadores usam o Claude para invadir a OpenAI"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Invasão."
+         },
+         {
+          "type": "text",
+          "text": " Uma equipe de três pessoas da startup de segurança Hacktron AI "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/pesquisadores-usam-claude-da-anthropic-para-invadir-sistemas-da-openai",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "encadeou duas vulnerabilidades em 25 de julho e comprometeu as contas de ChatGPT e Codex de vários funcionários da OpenAI"
+         },
+         {
+          "type": "text",
+          "text": ", chegando a repositórios internos da empresa e potencialmente a outros conectores. O Wall Street Journal noticiou o caso em 17 de setembro."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Cadeia."
+         },
+         {
+          "type": "text",
+          "text": " O ataque começou com o "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/pesquisadores-usam-claude-da-anthropic-para-invadir-sistemas-da-openai",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "upload de uma imagem HEIF no fórum da comunidade da OpenAI, hospedado no Discourse"
+         },
+         {
+          "type": "text",
+          "text": ", explorou um "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "heap overflow"
+         },
+         {
+          "type": "text",
+          "text": " na "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "libheif"
+         },
+         {
+          "type": "text",
+          "text": " para obter execução remota de código (RCE) e usou uma falha de configuração no SSO, o login único da OpenAI, para converter o comprometimento do fórum em tomada das contas de ChatGPT e Codex. Dali a cadeia seguiu para o GitHub conectado: para provar o impacto sem ler código-fonte, a equipe usou o Codex de um funcionário comprometido para abrir o "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "pull request"
+         },
+         {
+          "type": "text",
+          "text": " #1186742 no "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "monorepo"
+         },
+         {
+          "type": "text",
+          "text": " interno openai/openai e então parou os testes."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Opus 5."
+         },
+         {
+          "type": "text",
+          "text": " O "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/pesquisadores-usam-claude-da-anthropic-para-invadir-sistemas-da-openai",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "Claude Opus 4.8 falhou repetidamente em produzir um "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/pesquisadores-usam-claude-da-anthropic-para-invadir-sistemas-da-openai",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           },
+           {
+            "type": "em"
+           }
+          ],
+          "text": "exploit"
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/pesquisadores-usam-claude-da-anthropic-para-invadir-sistemas-da-openai",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": " funcional com ASLR ativado"
+         },
+         {
+          "type": "text",
+          "text": ", a aleatorização de endereços de memória que dificulta esse tipo de ataque, ao longo de várias sessões; o Opus 5, lançado horas depois, recebeu o mesmo problema e o resolveu. Os pesquisadores tratam o caso como evidência de que cada geração de modelo reduz a expertise necessária para escrever "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "exploits"
+         },
+         {
+          "type": "text",
+          "text": ". A versão usada era uma especial, liberada a pesquisadores de cibersegurança com as restrições de ciberataque afrouxadas."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Recompensa."
+         },
+         {
+          "type": "text",
+          "text": " A OpenAI "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/pesquisadores-usam-claude-da-anthropic-para-invadir-sistemas-da-openai",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "pagou US$6.500 pelo achado"
+         },
+         {
+          "type": "text",
+          "text": " e afirmou que o prêmio cobriu apenas o lado da própria empresa, já que testar o fórum hospedado no Discourse estava explicitamente excluído do seu programa de "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "bug bounty"
+         },
+         {
+          "type": "text",
+          "text": ". O Discourse corrigiu a falha em 27 de julho."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/9812e196-7647-4c3b-8ffc-09c6bb8f5dc4_1838x965.png",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 965,
+       "width": 1838,
+       "resizeWidth": 520,
+       "bytes": 1072208,
+       "alt": "Arte do relatório 'Hacking OpenAI' da Hacktron AI",
+       "title": null,
+       "type": "image/png",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "A arte do relatório em que a Hacktron AI detalhou a invasão. Imagem: Hacktron AI"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Claude já lidera 26% do trabalho de P&D de IA da Anthropic"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Índice."
+         },
+         {
+          "type": "text",
+          "text": " A Anthropic publicou em 17 de setembro três métricas para acompanhar o ritmo do desenvolvimento de IA avançada e um protótipo, o "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "Anthropic R&D Automation Index"
+         },
+         {
+          "type": "text",
+          "text": ", segundo o qual "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/claude-lidera-26-das-atividades-de-pesquisa-e-desenvolvimento-da-anthropic",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "o Claude “lidera” 26% do trabalho de P&D de IA da empresa em agosto"
+         },
+         {
+          "type": "text",
+          "text": ". O patamar corresponde ao nível AL4 de uma escala criada pela Epoch AI, organização independente sem fins lucrativos, com mais de 90% do trabalho no nível “"
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "AI collaborates"
+         },
+         {
+          "type": "text",
+          "text": "” ou acima e nenhum subconjunto medido em que o Claude opere de forma totalmente autônoma. Segundo a Reuters, "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/claude-lidera-26-das-atividades-de-pesquisa-e-desenvolvimento-da-anthropic",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "o número de 26% era efetivamente de 1% em março de 2026"
+         },
+         {
+          "type": "text",
+          "text": "."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Supervisão."
+         },
+         {
+          "type": "text",
+          "text": " Cerca de "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/claude-lidera-26-das-atividades-de-pesquisa-e-desenvolvimento-da-anthropic",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "30 mil agentes de IA rodavam simultaneamente na plataforma interna de pesquisa e engenharia mais usada da empresa"
+         },
+         {
+          "type": "text",
+          "text": ", e mais de um bilhão de decisões de agentes foram monitoradas em agosto. Desse volume, cerca de 50 das decisões de maior prioridade são revisadas por humanos a cada semana."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Segurança."
+         },
+         {
+          "type": "text",
+          "text": " Num levantamento entre 13 e 20 de julho, "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/claude-lidera-26-das-atividades-de-pesquisa-e-desenvolvimento-da-anthropic",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "cerca de 6% do poder computacional destinado a P&D de IA foi alocado para trabalho de segurança"
+         },
+         {
+          "type": "text",
+          "text": ", fatia que sobe para aproximadamente 12% do poder computacional usado em P&D conduzida por IA. As métricas saem dias depois do ensaio do CEO Dario Amodei pedindo uma desaceleração coordenada da indústria; a empresa divulgou as metodologias para encorajar outras a fazerem o mesmo e diz que aceitará avaliadores independentes terceirizados para verificar seus dados internos."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/67992b65-1294-41a4-ada2-b0fa7d57914a_1920x1230.png",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 1230,
+       "width": 1920,
+       "resizeWidth": 520,
+       "bytes": 240037,
+       "alt": "Gráfico da Anthropic mostrando a parcela do P&D de modelos liderada pelo Claude",
+       "title": null,
+       "type": "image/png",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "A parcela do trabalho de P&D de modelos da Anthropic em que o Claude lidera saltou de 1% em março para 26% em agosto. Imagem: Anthropic"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Newsom assina ordem executiva que avança um "
+     },
+     {
+      "type": "text",
+      "marks": [
+       {
+        "type": "em"
+       }
+      ],
+      "text": "kill switch"
+     },
+     {
+      "type": "text",
+      "text": " para modelos de fronteira"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Ordem."
+         },
+         {
+          "type": "text",
+          "text": " O governador da Califórnia, Gavin Newsom, assinou em 18 de setembro uma ordem executiva que "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/gavin-newsom-assina-ordem-executiva-para-regular-inteligencia-artificial",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "convoca um grupo de especialistas para entregar em até dois meses um guia de reforço das leis estaduais de segurança de IA"
+         },
+         {
+          "type": "text",
+          "text": " e avança a criação de um "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "kill switch"
+         },
+         {
+          "type": "text",
+          "text": ", o desligamento de emergência de modelos de fronteira, cuja eficácia seria verificada de forma contínua por uma organização independente."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Auditoria interna."
+         },
+         {
+          "type": "text",
+          "text": " Entre as propostas em análise está "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/gavin-newsom-assina-ordem-executiva-para-regular-inteligencia-artificial",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "exigir que empresas de IA de fronteira mantenham uma organização independente de verificação instalada dentro de seus laboratórios"
+         },
+         {
+          "type": "text",
+          "text": ", para auditorias e avaliações regulares. A ordem também atualizaria a definição de incidentes críticos de segurança para incluir eventos de perda de controle, como o ataque à Hugging Face."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Leis."
+         },
+         {
+          "type": "text",
+          "text": " O texto "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/gavin-newsom-assina-ordem-executiva-para-regular-inteligencia-artificial",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "acelera os prazos de implementação da SB 813, do senador Jerry McNerney, que certifica organizações independentes de verificação"
+         },
+         {
+          "type": "text",
+          "text": ", e da AB 1405, da deputada Rebecca Bauer-Kahan, que cria um registro estadual de auditores de IA. Ambas foram sancionadas na semana passada."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Política."
+         },
+         {
+          "type": "text",
+          "text": " Newsom apresentou a ordem como resposta à inação federal: "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/gavin-newsom-assina-ordem-executiva-para-regular-inteligencia-artificial",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "“O fracasso absoluto do governo federal em criar qualquer forma significativa de supervisão ou responsabilização em IA deveria alarmar todo americano, especialmente quando os próprios CEOs de IA estão implorando por regulação”"
+         },
+         {
+          "type": "text",
+          "text": ". Governador em fim de mandato e provável candidato à presidência em 2028, ele vetou em 2024 um projeto do senador Scott Wiener que teria tornado o "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "kill switch"
+         },
+         {
+          "type": "text",
+          "text": " obrigatório."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/9dc7889e-e474-498e-9b0d-88075502089a_5196x3464.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 3464,
+       "width": 5196,
+       "resizeWidth": 520,
+       "bytes": 5074112,
+       "alt": "Gavin Newsom, governador da Califórnia",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Gavin Newsom, governador da Califórnia. Imagem: Juliana Yamada/AP"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "dynamicContent",
+    "attrs": {
+     "audiences": [
+      "non_sub",
+      "free_sub"
+     ],
+     "displayName": "Audience-specific content block",
+     "subscriberTagIds": null
+    },
+    "content": [
+     {
+      "type": "dynamicContentMatch",
+      "content": [
+       {
+        "type": "captionedImage",
+        "content": [
+         {
+          "type": "image2",
+          "attrs": {
+           "src": "https://substack-post-media.s3.amazonaws.com/public/images/54379287-738e-46ad-b7b7-ae721e98d6c6_1272x312.png",
+           "srcNoWatermark": null,
+           "fullscreen": null,
+           "imageSize": null,
+           "height": 312,
+           "width": 1272,
+           "resizeWidth": null,
+           "bytes": 57675,
+           "alt": "Hackathon Global da Solana — Superteam Brasil",
+           "title": null,
+           "type": "image/png",
+           "href": "https://hackathon.superteam.com.br/?utm_source=vini_talks&utm_medium=influencer&utm_campaign=hackathon_global_2026",
+           "belowTheFold": false,
+           "topImage": false,
+           "internalRedirect": null,
+           "isProcessing": false,
+           "align": null,
+           "offset": false
+          }
+         }
+        ]
+       },
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": "center"
+        },
+        "content": [
+         {
+          "type": "text",
+          "text": "O "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Hackathon Global da Solana"
+         },
+         {
+          "type": "text",
+          "text": " (Colosseum) está aberto: "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "100% online e gratuito"
+         },
+         {
+          "type": "text",
+          "text": ", de 14 de setembro a 12 de outubro:"
+         }
+        ]
+       },
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": "center"
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Mais de US$ 800 mil em prêmios"
+         },
+         {
+          "type": "text",
+          "text": " nas diversas trilhas da competição global"
+         }
+        ]
+       },
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": "center"
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Mais de US$ 2,5 milhões em investimento anjo"
+         },
+         {
+          "type": "text",
+          "text": ": pelo menos 10 startups recebem US$ 250 mil cada da aceleradora do Colosseum, com programa em San Francisco"
+         }
+        ]
+       },
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": "center"
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Trilha exclusiva Brasil"
+         },
+         {
+          "type": "text",
+          "text": " com US$ 5 mil (R$ 25 mil) em prêmios extras, além da competição global"
+         }
+        ]
+       },
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": "center"
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Times brasileiros já captaram mais de R$ 15 milhões"
+         },
+         {
+          "type": "text",
+          "text": " nas últimas edições"
+         }
+        ]
+       },
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": "center"
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Não precisa saber programar"
+         },
+         {
+          "type": "text",
+          "text": ", ter ideia ou time pronto: a Superteam Brasil ajuda a formar equipes, dá suporte em português e roda workshops de IA e vibe coding ao vivo"
+         }
+        ]
+       },
+       {
+        "type": "button",
+        "attrs": {
+         "url": "https://hackathon.superteam.com.br/?utm_source=vini_talks&utm_medium=influencer&utm_campaign=hackathon_global_2026",
+         "text": "Conhecer mais",
+         "action": null,
+         "class": null
+        }
+       },
+       {
+        "type": "horizontal_rule"
+       },
+       {
+        "type": "blockquote",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "strong"
+             }
+            ],
+            "text": "Abaixo, apenas para assinantes:"
+           }
+          ]
+         },
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "strong"
+             }
+            ],
+            "text": "Modelos."
+           },
+           {
+            "type": "text",
+            "text": " Uma empresa de IA monta um laboratório físico de biologia."
+           }
+          ]
+         },
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "strong"
+             }
+            ],
+            "text": "Silício."
+           },
+           {
+            "type": "text",
+            "text": " Duas fabricantes de memória, uma americana e uma chinesa, preparam novas linhas de chips de armazenamento."
+           }
+          ]
+         },
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "strong"
+             }
+            ],
+            "text": "Dinheiro e robôs."
+           },
+           {
+            "type": "text",
+            "text": " Rodadas de centenas de milhões em duas startups chinesas, uma de modelos e outra de chips para robôs, uma montadora americana encomenda seu humanoide em escala pela primeira vez e outra fabricante americana leva o seu para dentro de casas de verdade."
+           }
+          ]
+         },
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "strong"
+             }
+            ],
+            "text": "Mundo."
+           },
+           {
+            "type": "text",
+            "text": " Combustível em recorde nos EUA, eleição parlamentar na Rússia em meio à guerra, venda de caças americanos a um país do Golfo, sanções a uma corretora de criptomoedas iraniana e um pacote asiático de investimento nos EUA em renegociação."
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "horizontal_rule"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "paywall"
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Modelos e produtos"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "OpenAI."
+         },
+         {
+          "type": "text",
+          "text": " A empresa lançou em 17 de setembro o "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/openai-lanca-astra-for-law-com-indice-de-230-milhoes-de-urls-juridicas",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "Astra for Law, uma configuração do GPT-6 Astra combinada a um índice de mais de 230 milhões de URLs de jurisprudência, leis e regulamentos dos EUA"
+         },
+         {
+          "type": "text",
+          "text": ", com melhora de 40% em correção sobre o Astra com busca na web em 200 perguntas do conjunto privado do "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "Legal Research Bench"
+         },
+         {
+          "type": "text",
+          "text": ", da Vals AI. O acesso começa por escritórios selecionados do Am Law 200 pelo programa Trusted Access, com 26 plugins de parceiros como Thomson Reuters e Clio; Harvey, avaliada em US$15,6 bilhões neste mês, e Legora, que busca um "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "valuation"
+         },
+         {
+          "type": "text",
+          "text": " de US$10 bilhões, passarão a construir sobre a plataforma de um fornecedor que também vende pesquisa jurídica direto aos escritórios, terreno em que o "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "Claude for Legal"
+         },
+         {
+          "type": "text",
+          "text": " chegou em março."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/0011dd98-7bb1-40f0-8e09-2a950d339b1f_1600x1200.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 1200,
+       "width": 1600,
+       "resizeWidth": 520,
+       "bytes": 173922,
+       "alt": "Apresentação do Astra for Law no evento de lançamento da OpenAI",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "O Astra for Law apresentado no evento de lançamento, em 17 de setembro. Imagem: Legal IT Insider"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "PrismML."
+         },
+         {
+          "type": "text",
+          "text": " O "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/prismml-lanca-ternary-bonsai-2-27b-com-59-gb-e-licenca-apache-20",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "Ternary Bonsai 2 27B, modelo multimodal de 27,8 bilhões de parâmetros baseado no Qwen3.8 da Alibaba, saiu sob licença Apache 2.0 com 5,9 GB"
+         },
+         {
+          "type": "text",
+          "text": ", contra cerca de 54 GB da contraparte em FP16, retendo 98,2% do desempenho do modelo base (83,9 contra 85,4 em 20 benchmarks) e chegando a 143 tokens por segundo numa RTX 5090. O "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "spinout"
+         },
+         {
+          "type": "text",
+          "text": " da Caltech apoiado por Khosla Ventures, Google e Samsung diz que seus próximos modelos comprimidos terão várias centenas de bilhões de parâmetros dentro de alguns meses."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Ciências da vida"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Anthropic."
+         },
+         {
+          "type": "text",
+          "text": " O chefe de “ciências da vida” da empresa, Eric Kauderer-Abrams, confirmou à Reuters que a Anthropic "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/anthropic-monta-laboratorio-de-biologia-para-pesquisa-de-doencas",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "construiu discretamente um "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/anthropic-monta-laboratorio-de-biologia-para-pesquisa-de-doencas",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           },
+           {
+            "type": "em"
+           }
+          ],
+          "text": "wet lab"
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/anthropic-monta-laboratorio-de-biologia-para-pesquisa-de-doencas",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": ", laboratório de experimentos físicos, na região da Baía de São Francisco"
+         },
+         {
+          "type": "text",
+          "text": ", e quer que o Claude dirija unidades robóticas que conduzem experimentos com intervenção humana limitada. A empresa comprou a startup Coefficient Bio por cerca de US$400 milhões em ações, pôs o CEO da Novartis, Vas Narasimhan, em seu conselho, fechou nesta semana uma colaboração com a Novo Nordisk e já atende Genentech e Bristol Myers Squibb."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Memória e chips"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Solidigm."
+         },
+         {
+          "type": "text",
+          "text": " A subsidiária americana da SK hynix "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/solidigm-estuda-fabrica-de-chips-nos-eua-e-sk-hynix-negocia-com-intel",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "estuda construir sua primeira fábrica de NAND flash nos EUA, com o interior do estado de Nova York como principal candidato"
+         },
+         {
+          "type": "text",
+          "text": ", o que reduziria a dependência de sua única planta de NAND, em Dalian, na China, e a exporia menos a tarifas americanas e a restrições de exportação de equipamentos para a China. A empresa nasceu da compra do negócio de NAND da Intel por US$9 bilhões no fim de 2021 e tem nos EUA apenas sede e centro de P&D; a SK hynix já investe mais de US$4 bilhões numa fábrica de empacotamento avançado de HBM em Indiana, e uma linha de "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "front-end"
+         },
+         {
+          "type": "text",
+          "text": " de NAND seria sua primeira fábrica de wafers no país."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/a8d17363-6bd2-4072-980b-9be43f3b011c_1600x900.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 900,
+       "width": 1600,
+       "resizeWidth": 520,
+       "bytes": 155519,
+       "alt": "SSD corporativo U.2 da Solidigm",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "SSD corporativo da Solidigm, subsidiária americana da SK hynix. Imagem: Solidigm/Divulgação"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "CXMT."
+         },
+         {
+          "type": "text",
+          "text": " A maior fabricante de DRAM da China "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/cxmt-prepara-entrada-no-mercado-de-memoria-nand-flash",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "prepara sua entrada no mercado de NAND flash, com uma linha de produção de P&D em sua nova fábrica em Pequim"
+         },
+         {
+          "type": "text",
+          "text": " e um instituto de pesquisa na capital, e já discutiu os planos com clientes, entre eles uma startup que quer seus chips para produtos de armazenamento usados em sistemas de IA e supercomputadores. A companhia levantou 57,92 bilhões de yuans (US$8,6 bilhões) em julho, no maior IPO da Ásia no ano, e avança num momento em que a TrendForce só vê a escassez de NAND aliviar no segundo semestre do ano que vem."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "AMD."
+         },
+         {
+          "type": "text",
+          "text": " A empresa "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/amd-prepara-alta-de-cerca-de-10-nos-precos-a-partir-do-4-trimestre",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "avisou parceiros em 17 de setembro para esperarem alta de cerca de 10% a partir do quarto trimestre em aceleradores de IA, GPUs Radeon e chipsets de placas-mãe"
+         },
+         {
+          "type": "text",
+          "text": ", poupando as CPUs Ryzen e citando o aumento dos custos de wafers da TSMC, que notificou clientes de um reajuste de cerca de 10% nas cotações de fundição. A Intel subiu separadamente os preços de chips selecionados, com o Core Ultra 7 270K Plus US$50 mais caro, a cerca de US$349, e alguns Xeon mais de US$1.000 acima; no mesmo dia a Nebius elevou em 25% as tarifas de aluguel de CPUs EPYC Genoa, com os contratos de DRAM já 13% a 18% mais caros no trimestre."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Robótica"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Figure."
+         },
+         {
+          "type": "text",
+          "text": " O "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/robo-da-figure-ai-realiza-tarefas-domesticas-em-30-residencias",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "Helix 2.5 executou três tarefas domésticas de corpo inteiro em 30 casas da Baía de São Francisco sem coleta de dados nem adaptação do modelo"
+         },
+         {
+          "type": "text",
+          "text": ", com 237 acertos em 420 tentativas, cerca de 56%, em arrumar cama, dobrar toalhas e guardar brinquedos. Numa comparação controlada com dados e arquitetura idênticos, a política pré-treinada com o motor de dados Index acertou 56% contra 9% de um modelo treinado do zero; a Figure diz gerar hoje 35 minutos de dados de experiência humana por segundo e comprometeu US$3,5 bilhões em poder computacional para treinar o Helix."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "youtube2",
+    "attrs": {
+     "videoId": "lJpM_2a1zrE",
+     "startTime": null,
+     "endTime": null
+    }
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Tesla."
+         },
+         {
+          "type": "text",
+          "text": " A montadora "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/tesla-encomenda-5000-unidades-do-optimus-a-fornecedores",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "emitiu um pedido de cerca de 5.000 unidades do Optimus a seus fornecedores"
+         },
+         {
+          "type": "text",
+          "text": ", e acelerou as auditorias em fábricas chinesa em Xangai, Hangzhou, Ningbo e Xiamen. Imagens de drone publicadas na quinta-feira mostram a estrutura de aço da fábrica dedicada ao Optimus na Giga Texas perto de concluída, seis meses após o início das obras, sem cronograma novo além da meta de produção em alto volume no verão de 2027, rumo aos 10 milhões de unidades por ano fixados por Elon Musk."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Rodadas"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Naive AI."
+         },
+         {
+          "type": "text",
+          "text": " A startup de Pequim fundada em fevereiro pelo professor Jifeng Dai, da Universidade Tsinghua, "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/startup-chinesa-naive-ai-chega-a-us14-bi-de-valuation-em-stealth",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "alcançou um "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/startup-chinesa-naive-ai-chega-a-us14-bi-de-valuation-em-stealth",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           },
+           {
+            "type": "em"
+           }
+          ],
+          "text": "valuation"
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/startup-chinesa-naive-ai-chega-a-us14-bi-de-valuation-em-stealth",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": " de US$1,42 bilhão após levantar US$400 milhões em três rodadas"
+         },
+         {
+          "type": "text",
+          "text": ", de US$100 milhões, US$180 milhões e US$120 milhões, esta última fechada recentemente, com Tencent, IDG Capital, MPCi e HSG entre os investidores. A empresa operou em "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "stealth"
+         },
+         {
+          "type": "text",
+          "text": " por sete meses com menos de 100 funcionários e prepara para este mês seu primeiro grande modelo de linguagem, de pesos abertos, construído sobre modelos "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ],
+          "text": "open-source"
+         },
+         {
+          "type": "text",
+          "text": " existentes."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "D-Robotics."
+         },
+         {
+          "type": "text",
+          "text": " A companhia chinesa fechou uma "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/d-robotics-fecha-serie-c-de-us400-milhoes-liderada-pela-mirae-asset",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "Série C de US$400 milhões liderada pela Mirae Asset"
+         },
+         {
+          "type": "text",
+          "text": ", com investimento estratégico de uma grande empresa global de internet. A D-Robotics já enviou mais de 8 milhões de chips Sunrise e diz que seu novo S600, para IA física, é usado por mais de 20 grandes fabricantes de humanoides, entre eles UBTECH e Fourier."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 4
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "Mundo"
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Diesel."
+         },
+         {
+          "type": "text",
+          "text": " O preço médio do diesel no varejo dos EUA "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/diesel-nos-eua-bate-recorde-com-estreito-de-ormuz-fechado-pelo-ira",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "bateu recorde histórico na quinta-feira, pouco abaixo de US$6,40 o galão"
+         },
+         {
+          "type": "text",
+          "text": ", com o oleoduto Leste-Oeste saudita ainda parado, apesar da promessa de Riad, noticiada na véspera, de restaurar metade da capacidade em poucos dias. Mohammad-Bagher Zolghadr, assessor político do líder supremo do Irã, disse que os combatentes iranianos não abrirão o estreito “até que o criminoso Trump e o sanguinário Netanyahu sejam derrubados do poder”, a Guarda Revolucionária diz ter atingido mais um petroleiro e centenas de milhares de iranianos lotaram o centro de Teerã em 18 de setembro, na maior demonstração desde o início da guerra."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Rússia."
+         },
+         {
+          "type": "text",
+          "text": " A votação começou na sexta-feira na "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/russia-inicia-eleicao-da-duma-sob-ataque-de-mais-de-350-drones",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "eleição parlamentar de três dias para os 450 assentos da Duma Estatal, a primeira desde a invasão em larga escala da Ucrânia"
+         },
+         {
+          "type": "text",
+          "text": ", com a maioria dos candidatos contrários à guerra fora das urnas depois de a Suprema Corte decidir que o partido Yabloko, que defende um cessar-fogo, violou regras eleitorais. Zelensky disse que as conversas de paz mediadas pelos EUA discutem uma retirada ucraniana de Donetsk em troca de as forças russas não entrarem no território e um formato conjunto para a usina nuclear de Zaporíjia."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Arábia Saudita."
+         },
+         {
+          "type": "text",
+          "text": " O Departamento de Estado dos EUA informou na quinta-feira que "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-17/governo-trump-aprova-venda-de-cacas-f-35-para-arabia-saudita",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "aprovou a venda de 48 caças F-35 a Riad por US$24,3 bilhões"
+         },
+         {
+          "type": "text",
+          "text": ", a maior compra de armamento do reino desde o início da guerra com o Irã, ainda sujeita à aprovação do Congresso e sem prazo de entrega. Israel, hoje o único país do Oriente Médio a operar o F-35, manifestou preocupação; o acordo vem depois de uma venda de US$5 bilhões em mais de 10 mil bombas no começo de setembro, de US$750 milhões em motores de tanque e de US$1,96 bilhão em kits de guiagem de precisão em julho."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "captionedImage",
+    "content": [
+     {
+      "type": "image2",
+      "attrs": {
+       "src": "https://substack-post-media.s3.amazonaws.com/public/images/6237bd20-0fc9-4758-b7f9-ac17a959cd87_1920x1222.jpeg",
+       "srcNoWatermark": null,
+       "fullscreen": null,
+       "imageSize": null,
+       "height": 1222,
+       "width": 1920,
+       "resizeWidth": 520,
+       "bytes": 745148,
+       "alt": "Caça F-35A Lightning II em voo",
+       "title": null,
+       "type": "image/jpeg",
+       "href": null,
+       "belowTheFold": false,
+       "topImage": false,
+       "internalRedirect": null,
+       "isProcessing": false,
+       "align": null,
+       "offset": false
+      }
+     },
+     {
+      "type": "caption",
+      "content": [
+       {
+        "type": "text",
+        "text": "Um F-35A Lightning II em voo de teste. Imagem: US Air Force"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "bullet_list",
+    "content": [
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Coreia do Sul."
+         },
+         {
+          "type": "text",
+          "text": " O presidente Lee Jae-myung disse em 18 de setembro que "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-18/coreia-do-sul-renegocia-pacote-de-us350-bi-de-investimentos-nos-eua",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "partes do acordo técnico sobre o investimento de US$350 bilhões nos EUA são difíceis de aceitar e estão sendo renegociadas"
+         },
+         {
+          "type": "text",
+          "text": ", travadas na recuperação do capital investido, na distribuição de lucros, em quem absorve as perdas e na estrutura do veículo de investimento guarda-chuva. Seul adiou o anúncio do primeiro projeto e empurrou de 17 para 22 de setembro o relatório à Assembleia Nacional sobre a soma, equivalente a cerca de 500 trilhões de wons de dinheiro dos contribuintes, enquanto Washington pede que Samsung Electronics e SK hynix ampliem fábricas de memória nos EUA com capital próprio."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "list_item",
+      "content": [
+       {
+        "type": "paragraph",
+        "attrs": {
+         "textAlign": null
+        },
+        "content": [
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "strong"
+           }
+          ],
+          "text": "Tesouro dos EUA."
+         },
+         {
+          "type": "text",
+          "text": " O OFAC, escritório de controle de ativos estrangeiros, "
+         },
+         {
+          "type": "text",
+          "marks": [
+           {
+            "type": "link",
+            "attrs": {
+             "href": "https://dailyjournal.news/news/2026-09-17/eua-sancionam-infraestrutura-de-criptomoedas-ligada-ao-ira",
+             "target": "_blank",
+             "rel": "noopener noreferrer nofollow",
+             "class": null
+            }
+           }
+          ],
+          "text": "designou em 17 de setembro a BitBank, corretora iraniana de ativos digitais controlada pelo financista sancionado Babak Zanjani"
+         },
+         {
+          "type": "text",
+          "text": ", acusando-o de usá-la para transferir centenas de milhões de dólares em bitcoin à Guarda Revolucionária entre junho e julho. Desde junho, a Hormuz Safe Marine Services Authority, órgão que Teerã usa para vender passagem segura a navios pelo Estreito de Ormuz, repassa os pagamentos recebidos ao regime pela corretora; a ação integra a “Operação Economic Outcast”, sob a qual o OFAC já atingiu Nobitex, Wallex, Bitpin, Ramzinex, Shelbit e Aban Tether."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "calloutBlock",
+    "content": [
+     {
+      "type": "heading",
+      "attrs": {
+       "textAlign": null,
+       "level": 4
+      },
+      "content": [
+       {
+        "type": "text",
+        "text": "Leia também"
+       }
+      ]
+     },
+     {
+      "type": "bullet_list",
+      "content": [
+       {
+        "type": "list_item",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "link",
+              "attrs": {
+               "href": "https://dailyjournal.news/news/2026-09-18/sk-hynix-inaugura-braco-de-investimentos-no-vale-do-silicio",
+               "target": "_blank",
+               "rel": "noopener noreferrer nofollow",
+               "class": null
+              }
+             }
+            ],
+            "text": "SK hynix cria braço de capital de risco no Vale do Silício para investir em computação de IA"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "list_item",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "link",
+              "attrs": {
+               "href": "https://dailyjournal.news/news/2026-09-18/fda-aprova-fayuvi-primeira-terapia-para-a-sindrome-de-sanfilippo-a",
+               "target": "_blank",
+               "rel": "noopener noreferrer nofollow",
+               "class": null
+              }
+             }
+            ],
+            "text": "FDA aprova primeira terapia gênica para crianças com a síndrome de Sanfilippo tipo A"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "list_item",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "textAlign": null
+          },
+          "content": [
+           {
+            "type": "text",
+            "marks": [
+             {
+              "type": "link",
+              "attrs": {
+               "href": "https://dailyjournal.news/news/2026-09-18/milei-envia-ao-congresso-projeto-de-soberania-sobre-as-malvinas",
+               "target": "_blank",
+               "rel": "noopener noreferrer nofollow",
+               "class": null
+              }
+             }
+            ],
+            "text": "Milei envia ao Congresso projeto sobre as Malvinas com registro antiterrorismo anexado"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "heading",
+    "attrs": {
+     "textAlign": null,
+     "level": 3
+    },
+    "content": [
+     {
+      "type": "text",
+      "marks": [
+       {
+        "type": "strong"
+       }
+      ],
+      "text": "Recomendações de hoje:"
+     }
+    ]
+   },
+   {
+    "type": "paragraph",
+    "attrs": {
+     "textAlign": null
+    },
+    "content": [
+     {
+      "type": "text",
+      "marks": [
+       {
+        "type": "strong"
+       }
+      ],
+      "text": "OpenAI researcher on agent swarms & recursive self-improvement:"
+     },
+     {
+      "type": "text",
+      "text": " Noam Brown, pesquisador na OpenAI e um dos principais contribuidores para o desenvolvimento do modelo o1 e das abordagens de raciocínio ("
+     },
+     {
+      "type": "text",
+      "marks": [
+       {
+        "type": "em"
+       }
+      ],
+      "text": "reasoning"
+     },
+     {
+      "type": "text",
+      "text": "), discute o estado da pesquisa em sistemas multiagente, os recentes avanços matemáticos, as perspectivas de autoaperfeiçoamento recursivo (RSI, na sigla em inglês) e os riscos estruturais de desalinhamento de inteligência artificial demonstrados em incidentes recentes de avaliação:"
+     }
+    ]
+   },
+   {
+    "type": "youtube2",
+    "attrs": {
+     "videoId": "6AgOfiZOWiY",
+     "startTime": null,
+     "endTime": null
+    }
+   },
+   {
+    "type": "horizontal_rule"
+   },
+   {
+    "type": "paragraph",
+    "attrs": {
+     "textAlign": null
+    },
+    "content": [
+     {
+      "type": "text",
+      "marks": [
+       {
+        "type": "strong"
+       }
+      ],
+      "text": "Databricks’ Ali Ghodsi Never Wanted to Be CEO. Now He’s Among the Best:"
+     },
+     {
+      "type": "text",
+      "text": " Ali Ghodsi, cofundador e CEO da Databricks, relata a Brian Halligan (cofundador e ex-CEO da HubSpot e parceiro da Sequoia) sua trajetória desde a transição acidental da carreira acadêmica para o comando executivo até a transformação da empresa em uma potência de dados e inteligência artificial avaliada em dezenas de bilhões de dólares. A conversa detalha as táticas de execução, contratação de lideranças, estratégia contra rivais como a Snowflake, reformulação de processos com IA e a filosofia de gestão necessária para escalar hiperorganizações:"
+     }
+    ]
+   },
+   {
+    "type": "youtube2",
+    "attrs": {
+     "videoId": "k7wPdCNfljQ",
+     "startTime": "82s",
+     "endTime": null
+    }
+   }
+  ]
+ }
+}
