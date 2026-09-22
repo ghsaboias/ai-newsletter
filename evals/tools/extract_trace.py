@@ -38,14 +38,18 @@ def usage_bucket():
     return {"input": 0, "output": 0, "cache_read": 0, "cache_creation": 0, "api_calls": 0}
 
 
-def add_usage(bucket, u):
+def add_usage(bucket, u, prev=None):
+    """Add one API response's usage. Streamed responses are split into several
+    JSONL rows sharing a message id; the caller passes the usage already counted
+    for that id as `prev` so only the increase (if any) is added."""
     if not u:
         return
-    bucket["input"] += u.get("input_tokens", 0)
-    bucket["output"] += u.get("output_tokens", 0)
-    bucket["cache_read"] += u.get("cache_read_input_tokens", 0)
-    bucket["cache_creation"] += u.get("cache_creation_input_tokens", 0)
-    bucket["api_calls"] += 1
+    prev = prev or {}
+    for k, src in (("input", "input_tokens"), ("output", "output_tokens"),
+                   ("cache_read", "cache_read_input_tokens"), ("cache_creation", "cache_creation_input_tokens")):
+        bucket[k] += max(0, u.get(src, 0) - prev.get(src, 0))
+    if not prev:
+        bucket["api_calls"] += 1
 
 
 def parse_subagent(path):
@@ -58,6 +62,7 @@ def parse_subagent(path):
         "first_ts": None,
         "last_ts": None,
     }
+    seen_ids = {}
     for d in iter_jsonl(path):
         t = d.get("timestamp")
         if t:
@@ -66,11 +71,19 @@ def parse_subagent(path):
         if d.get("type") != "assistant":
             continue
         m = d.get("message") or {}
-        agg["turns"] += 1
-        add_usage(agg["usage"], m.get("usage"))
-        mdl = m.get("model")
-        if mdl:
-            agg["models"][mdl] = agg["models"].get(mdl, 0) + 1
+        mid = m.get("id")
+        u = m.get("usage") or {}
+        first = not (mid and mid in seen_ids)
+        # streamed responses are split into several rows sharing a message id
+        # (usage grows across rows) — count each API response once
+        add_usage(agg["usage"], u, seen_ids.get(mid))
+        if mid:
+            seen_ids[mid] = {k: max(v, seen_ids.get(mid, {}).get(k, 0)) for k, v in u.items() if isinstance(v, int)}
+        if first:
+            agg["turns"] += 1
+            mdl = m.get("model")
+            if mdl:
+                agg["models"][mdl] = agg["models"].get(mdl, 0) + 1
         for c in m.get("content") or []:
             if isinstance(c, dict) and c.get("type") == "tool_use":
                 agg["tools"][c["name"]] = agg["tools"].get(c["name"], 0) + 1
@@ -88,6 +101,7 @@ def parse_session(sess_path):
     bash_calls = []
     prompts = []
     main_usage = usage_bucket()
+    main_seen = {}
     main_models = {}
     main_tools = {}
     first_ts = last_ts = None
@@ -101,9 +115,14 @@ def parse_session(sess_path):
         m = d.get("message") or {}
 
         if typ == "assistant":
-            add_usage(main_usage, m.get("usage"))
+            mid = m.get("id")
+            u = m.get("usage") or {}
+            first = not (mid and mid in main_seen)
+            add_usage(main_usage, u, main_seen.get(mid))   # dedupe split rows (see parse_subagent)
+            if mid:
+                main_seen[mid] = {k: max(v, main_seen.get(mid, {}).get(k, 0)) for k, v in u.items() if isinstance(v, int)}
             mdl = m.get("model")
-            if mdl:
+            if mdl and first:
                 main_models[mdl] = main_models.get(mdl, 0) + 1
             for c in m.get("content") or []:
                 if not (isinstance(c, dict) and c.get("type") == "tool_use"):
