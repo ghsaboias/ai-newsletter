@@ -1,0 +1,35 @@
+{
+  "slug": "opus-preco-por-geracao",
+  "title_pt": "Preço do Opus, por versão",
+  "edition": "2026-09-22",
+  "metric": "Preço de lista da API da Anthropic no lançamento de cada modelo Opus, em US$ por milhão de tokens (input e output).",
+  "definition": "Preço padrão (tier global, sem batch, sem cache, sem fast mode) por milhão de tokens de input e de output, conforme o anúncio de lançamento de cada modelo e a tabela da página de preços da plataforma Claude. Nenhum Opus teve o preço alterado depois do lançamento.",
+  "series": [
+    { "model": "Claude 3 Opus", "launch": "2024-03-04", "input_usd": 15, "output_usd": 75, "cache_read_usd": null, "source_ref": "claude-3-family" },
+    { "model": "Claude Opus 4", "launch": "2025-05-22", "input_usd": 15, "output_usd": 75, "cache_read_usd": 1.5, "source_ref": "claude-4" },
+    { "model": "Claude Opus 4.1", "launch": "2025-08-05", "input_usd": 15, "output_usd": 75, "cache_read_usd": 1.5, "source_ref": "opus-4-1" },
+    { "model": "Claude Opus 4.5", "launch": "2025-11-24", "input_usd": 5, "output_usd": 25, "cache_read_usd": 0.5, "source_ref": "opus-4-5" },
+    { "model": "Claude Opus 4.6", "launch": "2026-02-05", "input_usd": 5, "output_usd": 25, "cache_read_usd": 0.5, "source_ref": "pricing-page" },
+    { "model": "Claude Opus 4.7", "launch": "2026-04-16", "input_usd": 5, "output_usd": 25, "cache_read_usd": 0.5, "source_ref": "opus-4-7" },
+    { "model": "Claude Opus 4.8", "launch": "2026-05-28", "input_usd": 5, "output_usd": 25, "cache_read_usd": 0.5, "source_ref": "opus-4-8" },
+    { "model": "Claude Opus 5", "launch": "2026-07-24", "input_usd": 5, "output_usd": 25, "cache_read_usd": 0.5, "source_ref": "opus-5" },
+    { "model": "Claude Opus 5.5", "launch": "2026-09-22", "input_usd": 4, "output_usd": 20, "cache_read_usd": 0.2, "source_ref": "opus-5-5" }
+  ],
+  "sources": [
+    { "id": "claude-3-family", "label": "Anthropic — Introducing the next generation of Claude (4 mar. 2024)", "url": "https://www.anthropic.com/news/claude-3-family", "provides": "Claude 3 Opus: US$15 / US$75" },
+    { "id": "claude-4", "label": "Anthropic — Introducing Claude 4 (22 mai. 2025)", "url": "https://www.anthropic.com/news/claude-4", "provides": "Opus 4: US$15 / US$75" },
+    { "id": "opus-4-1", "label": "Anthropic — Claude Opus 4.1 (5 ago. 2025)", "url": "https://www.anthropic.com/news/claude-opus-4-1", "provides": "Opus 4.1: mesmo preço do Opus 4" },
+    { "id": "opus-4-5", "label": "Anthropic — Introducing Claude Opus 4.5 (24 nov. 2025)", "url": "https://www.anthropic.com/news/claude-opus-4-5", "provides": "Opus 4.5: US$5 / US$25" },
+    { "id": "opus-4-7", "label": "Anthropic — Introducing Claude Opus 4.7 (16 abr. 2026)", "url": "https://www.anthropic.com/news/claude-opus-4-7", "provides": "Opus 4.7: mesmo preço do Opus 4.6, US$5 / US$25" },
+    { "id": "opus-4-8", "label": "Anthropic — Introducing Claude Opus 4.8 (28 mai. 2026)", "url": "https://www.anthropic.com/news/claude-opus-4-8", "provides": "Opus 4.8: US$5 / US$25" },
+    { "id": "opus-5", "label": "Anthropic — Introducing Claude Opus 5 (24 jul. 2026)", "url": "https://www.anthropic.com/news/claude-opus-5", "provides": "Opus 5: US$5 / US$25" },
+    { "id": "opus-5-5", "label": "Anthropic — Introducing Claude Opus 5.5 (22 set. 2026)", "url": "https://www.anthropic.com/claude-opus-5-5", "provides": "Opus 5.5: US$4 / US$20, cache read US$0,20 (vs US$0,50)" },
+    { "id": "pricing-page", "label": "Plataforma Claude — Pricing (consultada em 22 set. 2026)", "url": "https://platform.claude.com/docs/en/about-claude/pricing", "provides": "tabela com Opus 4 a 5.5 (input, output, cache); nota do tokenizer do 4.7+; data do Opus 4.6 vem do anúncio https://www.anthropic.com/news/claude-opus-4-6 (5 fev. 2026)" }
+  ],
+  "notes": [
+    "Preço por token, não custo por tarefa: a Anthropic diz que o Opus 5.5 custa ~40% menos que o Opus 5 em cargas típicas, mas isso é estimativa da empresa, não preço de lista.",
+    "Tokenizer: segundo a página de preços, o Claude 4.7 e posteriores usam um tokenizer novo que gera cerca de 30% mais tokens para o mesmo texto; o preço por token do 4.7 em diante não é diretamente comparável ao dos modelos anteriores.",
+    "Claude 3 Opus não aparece mais na tabela atual (aposentado); o preço vem do anúncio de lançamento.",
+    "Cache read fica fora do gráfico e aparece só na prosa: o Opus 5.5 cobra 0,05x o input (US$0,20), contra 0,1x (US$0,50) no Opus 5."
+  ]
+}
