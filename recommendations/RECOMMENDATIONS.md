@@ -1309,3 +1309,13 @@ https://www.youtube.com/watch?v=6AgOfiZOWiY
 **Databricks’ Ali Ghodsi Never Wanted to Be CEO. Now He’s Among the Best**
 Ali Ghodsi, cofundador e CEO da Databricks, relata a Brian Halligan (cofundador e ex-CEO da HubSpot e parceiro da Sequoia) sua trajetória desde a transição acidental da carreira acadêmica para o comando executivo até a transformação da empresa em uma potência de dados e inteligência artificial avaliada em dezenas de bilhões de dólares. A conversa detalha as táticas de execução, contratação de lideranças, estratégia contra rivais como a Snowflake, reformulação de processos com IA e a filosofia de gestão necessária para escalar hiperorganizações
 https://www.youtube.com/watch?v=k7wPdCNfljQ
+
+## 2026-09-21
+
+**Databricks CEO: Stop Scaring People About AI**
+Em conversa com os sócios-gerais da Andreessen Horowitz (a16z), Martin Casado e Sarah Wang, o cofundador e CEO da Databricks, Ali Ghodsi, discute o estado atual da inteligência artificial, criticando o pânico em torno de riscos existenciais catastróficos e apontando onde estão os verdadeiros gargalos de adoção e os riscos concretos de segurança
+https://www.youtube.com/watch?v=GzEtpAKYRvE
+
+**Robinhood's Vlad Tenev on Tokenizing Everything, OpenAI's 6 Misalignment Reports, Figure's Robot**
+Discussão entre Peter Diamandis, Dave Blundin (Link Ventures), Dr. Alexander Wissner-Gross (Reified) e o convidado Vlad Tenev (cofundador e CEO da Robinhood e fundador da Harmonic) sobre regulação e responsabilidade civil em IA, incidentes de desalinhamento de modelos, verificação formal matemática, tokenização de ativos financeiros, o programa governamental Trump Accounts, avanços em robótica humanoide com a Figure/Helix, autoaperfeiçoamento recursivo (RSI) e o impacto da inteligência artificial sobre serviços profissionais e eficiência energética
+https://www.youtube.com/watch?v=LNBzLTLuLUo
