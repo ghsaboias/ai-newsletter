@@ -1319,3 +1319,13 @@ https://www.youtube.com/watch?v=GzEtpAKYRvE
 **Robinhood's Vlad Tenev on Tokenizing Everything, OpenAI's 6 Misalignment Reports, Figure's Robot**
 Discussão entre Peter Diamandis, Dave Blundin (Link Ventures), Dr. Alexander Wissner-Gross (Reified) e o convidado Vlad Tenev (cofundador e CEO da Robinhood e fundador da Harmonic) sobre regulação e responsabilidade civil em IA, incidentes de desalinhamento de modelos, verificação formal matemática, tokenização de ativos financeiros, o programa governamental Trump Accounts, avanços em robótica humanoide com a Figure/Helix, autoaperfeiçoamento recursivo (RSI) e o impacto da inteligência artificial sobre serviços profissionais e eficiência energética
 https://www.youtube.com/watch?v=LNBzLTLuLUo
+
+## 2026-09-22
+
+**Naveen Rao: 4D Computing, AI's Energy Wall & Beating Biology**
+Naveen Rao, cofundador e CEO da Unconventional AI, detalha a proposta de sua nova startup de semicondutores: redesenhar os computadores a partir de primeiros princípios para superar o gargalo energético da inteligência artificial por meio de computação dinâmica quadridimensional (4D computing)
+https://www.youtube.com/watch?v=yAsrMA_ADPc
+
+**Box's Aaron Levie: On Reinventing Yourself in the AI Age and Enterprise Diffusion**
+Conversa entre Aaron Levie, cofundador e CEO da Box, e Sonya Huang, sócia da Sequoia Capital, sobre a transformação da Box em uma plataforma centrada em inteligência artificial, a disputa de valor entre a camada de infraestrutura/modelos de fronteira e a camada de aplicação empresarial, o impacto dos modelos de pesos abertos e os gargalos reais de difusão da IA nos fluxos de trabalho corporativos
+https://www.youtube.com/watch?v=NE4CLThMPGU
