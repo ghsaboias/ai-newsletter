@@ -1,14 +1,15 @@
 ---
 name: newsletter-research
 description: >-
-  Roda a etapa de research da newsletter de AI/Tech. Pesquisa as notícias do dia em 3 clusters paralelos (ai, hw, world) usando os 3 sub-agentes especialistas (researcher-ai/-hw/-world, cada um com seu beat de-conflitado no próprio system prompt), depois mergeia com dedup semântico (pipeline/tools/dedup-research.py) num único research.json. Aciona quando o usuário diz "rodar research", "pesquisa do dia", "research da newsletter", "/newsletter-research", ou pede explicitamente para rodar a pesquisa. Aceita flag `mini` para teste rápido (1 cluster, 3 stories).
+  Roda a etapa de research da newsletter de AI/Tech. Pesquisa as notícias do dia em 3 clusters paralelos (ai, hw, world) usando 3 instâncias do sub-agente `researcher` (uma por cluster, beats de-conflitados no brief), depois mergeia com dedup semântico (pipeline/tools/dedup-research.py) num único research.json. Aciona quando o usuário diz "rodar research", "pesquisa do dia", "research da newsletter", "/newsletter-research", ou pede explicitamente para rodar a pesquisa. Aceita flag `mini` para teste rápido (1 cluster, 3 stories).
 allowed-tools: Read, Write, Bash, Agent
 ---
 
-The 3 specialist agents own the research methodology (beat, de-confliction, key
-accounts) in their own system prompts. This skill is the thin orchestrator: pick
-the window, build the one shared brief file, dispatch the 3 specialists **in one
-message**, merge. It does **not** inject cluster categories — that lives in the agents.
+The research methodology (beats, de-confliction, key accounts) lives in the
+brief built from `RESEARCH.md`; the `researcher` agent reads it and works the
+cluster named in its task prompt. This skill is the thin orchestrator: pick the
+window, build the one shared brief file, dispatch the 3 cluster instances **in
+one message**, merge.
 
 ## When this skill runs
 
@@ -69,22 +70,18 @@ three calls fit in one message, and the specialists' own system prompts make the
 
 ## Step 3: Dispatch the 3 specialists in parallel — one message
 
-Each cluster has a registered specialist whose system prompt carries its beat +
-de-confliction and the rule to `Read` the brief first:
+Every cluster runs the same registered agent, `researcher`, whose system prompt
+carries the rule to `Read` the brief first; the cluster name in the task prompt
+selects the beat.
 
-| cluster | `subagent_type` |
-|---|---|
-| `ai`    | `researcher-ai` |
-| `hw`    | `researcher-hw` |
-| `world` | `researcher-world` |
-
-- **Normal mode**: `ai`, `hw`, `world` (3 agents)
-- **Mini mode**: only `researcher-ai` (1 agent)
+- **Normal mode**: `ai`, `hw`, `world` (3 instances)
+- **Mini mode**: only `ai` (1 instance)
 
 ### Per-cluster prompt (short — the brief carries the rest)
 
 ```
 Date: <DATE>.
+Cluster: <name>
 Brief (READ THIS FILE FIRST, in full, before any search): <BRIEF>
 Output file: <DAY_DIR>/research-<name>.json
 
@@ -93,12 +90,12 @@ Write the JSON to the output file path above, copied character-for-character. Ho
 
 ### Agent call shape
 
-For each cluster `<name>` ∈ {ai, hw, world}, with `<type>` the matching specialist:
+For each cluster `<name>` ∈ {ai, hw, world}:
 
 ```
 Agent({
   description: "Research cluster: <name>",
-  subagent_type: "<type>",            // researcher-ai | researcher-hw | researcher-world
+  subagent_type: "researcher",
   prompt: "<the per-cluster prompt above>"
 })
 ```
@@ -145,13 +142,13 @@ Two checks on the session's JSONL after a run — the pipeline trace already
 measures the first:
 
 - `python3 evals/tools/extract_trace.py <session.jsonl>` → the three
-  `researcher-*` agents must share the same `launched_at` minute (spread ≈ 0).
+  `researcher` instances must share the same `launched_at` minute (spread ≈ 0).
 - In each `subagents/agent-*.jsonl` the first `tool_use` must be `Read` on
   `research-brief.md`, before any `mcp__exa__web_search_exa`.
 
 ## Testing
 
-Fast smoke test — runs only `researcher-ai` with a 3-story cap (~3 min), produces `research.json` with `story_count: 3`:
+Fast smoke test — runs only the `ai` cluster with a 3-story cap (~3 min), produces `research.json` with `story_count: 3`:
 
 ```
 /newsletter-research mini

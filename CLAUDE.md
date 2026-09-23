@@ -11,7 +11,7 @@ newsletters/
     prompts/RESEARCH.md        # research brief (injected into the researcher agents)
   ma/                          # M&A newsletter (dormant)
 .claude/agents/                # the in-session pipeline:
-                               #   researcher-{ai,hw,world}, facts, generator,
+                               #   researcher (×3 clusters), facts, generator,
                                #   extract, paywall-teaser, repetition-checker, fact-verifier
                                # FLAT — one .md per agent, no subdirs. Claude Code scans
                                # this dir RECURSIVELY, so a copy in _backup/ or old/ also
@@ -24,7 +24,7 @@ pipeline/                      # topic-agnostic helpers the agents call
   output/<topic>/YYYY-MM-DD/   # namespaced by topic
 ```
 
-Skills, all in-repo (`.claude/skills/`): `newsletter-draft`, `newsletter-research`, `newsletter-images`, `newsletter-recs`, `chart-post` (plus `sbq`, `sstats`). The full research → facts → edition pipeline is self-contained in the repo — `newsletter-draft` dispatches `newsletter-research`, which spawns the in-repo `researcher-{ai,hw,world}` agents and `pipeline/tools/dedup-research.py`.
+Skills, all in-repo (`.claude/skills/`): `newsletter-draft`, `newsletter-research`, `newsletter-images`, `newsletter-recs`, `chart-post` (plus `sbq`, `sstats`). The full research → facts → edition pipeline is self-contained in the repo — `newsletter-draft` dispatches `newsletter-research`, which spawns the in-repo `researcher` agent once per cluster (ai / hw / world) and `pipeline/tools/dedup-research.py`.
 All scripts default to topic `ai`. Override with `PIPELINE_TOPIC=ma`.
 
 ## Pipeline

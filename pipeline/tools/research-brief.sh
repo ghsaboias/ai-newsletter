@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Build the day's shared research brief — ONE file the three cluster researchers
-# (researcher-ai / -hw / -world) Read as their first action, instead of the
+# (the `researcher` agent, one instance per cluster) Read as their first action, instead of the
 # orchestrator pasting the same ~26KB brief into three Agent prompts (which
 # forced the three dispatches to go out serially, 1-5 min apart).
 #
