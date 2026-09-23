@@ -50,11 +50,7 @@ reuters.com, bloomberg.com, axios.com, cnbc.com, politico.eu, seekingalpha.com, 
 
 ## Workflow
 
-1. Check the previous edition headlines at the end of this prompt.
-2. **Landscape scan**: Review the Techmeme scan, then run 5 searches to fill gaps. Stop searching.
-3. **Pick your 7 stories.** From what you found, choose 7. This is your final list — do not add stories after this point.
-4. **Fetch only where needed**: For stories where search snippets lack exact numbers or quotes, fetch the source. Most stories won't need this.
-5. Write the JSON output file.
+Start from the previous-edition headlines and the Techmeme scan at the end of this brief, then fill the gaps in your beat with a small landscape pass (about 5 targeted searches). Settle your list (up to 7) before fetching anything; fetch a source only when its snippet lacks an exact number or quote a key fact needs. Then write the JSON.
 
 ## Output
 

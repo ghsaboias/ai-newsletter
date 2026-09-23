@@ -64,7 +64,8 @@ Até 2 candidatos por canal (os mais recentes **fora** do `RECOMMENDATIONS.md`).
 
 ## Step 3: Escolher 2 (o julgamento)
 
-Do pool, escolha **exatamente 2**. Critérios, em ordem:
+Do pool, escolha **2** (1 se o pool for magro: não force um 2º fraco). Critérios,
+em ordem:
 
 1. **Autoridade** — traz uma **figura importante da tech** (fundador/CEO, pesquisador
    de fronteira, investidor de peso)? Priorize. Painel genérico sem nome forte perde.

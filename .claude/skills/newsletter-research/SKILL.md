@@ -1,7 +1,7 @@
 ---
 name: newsletter-research
 description: >-
-  Roda a etapa de research da newsletter de AI/Tech. Pesquisa as notícias do dia em 3 clusters paralelos (ai, hw, world) usando os 3 sub-agentes especialistas (researcher-ai/-hw/-world, cada um com seu beat de-conflitado no próprio system prompt), depois mergeia com dedup semântico (pipeline/tools/dedup-research.py) num único research.json. Substitui pipeline/research.sh. Aciona quando o usuário diz "rodar research", "pesquisa do dia", "research da newsletter", "/newsletter-research", ou pede explicitamente para rodar a pesquisa. Aceita flag `mini` para teste rápido (1 cluster, 3 stories).
+  Roda a etapa de research da newsletter de AI/Tech. Pesquisa as notícias do dia em 3 clusters paralelos (ai, hw, world) usando os 3 sub-agentes especialistas (researcher-ai/-hw/-world, cada um com seu beat de-conflitado no próprio system prompt), depois mergeia com dedup semântico (pipeline/tools/dedup-research.py) num único research.json. Aciona quando o usuário diz "rodar research", "pesquisa do dia", "research da newsletter", "/newsletter-research", ou pede explicitamente para rodar a pesquisa. Aceita flag `mini` para teste rápido (1 cluster, 3 stories).
 allowed-tools: Read, Write, Bash, Agent
 ---
 

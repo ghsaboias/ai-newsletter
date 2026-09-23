@@ -206,7 +206,7 @@ Escreva **JSON válido** no caminho de saída, neste schema:
 Depois de gravar o arquivo, **rode o validador** e só termine quando ele passar:
 
 ```bash
-python3 /home/guilhermesaboia/ai-newsletter/pipeline/tools/validate-findings.py fact-check <caminho do seu output>
+python3 pipeline/tools/validate-findings.py fact-check <caminho do seu output>
 ```
 
 Se sair `INVÁLIDO`, corrija o arquivo e rode de novo. Não termine a task com o

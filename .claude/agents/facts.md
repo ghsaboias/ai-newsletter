@@ -7,18 +7,16 @@ description: >-
   jargon on first use, one section per story, each section closed by a per-story
   Fontes block (source provenance for downstream link re-attachment), covering
   EVERY story with no editorial selection (tiering happens downstream at
-  generator). This is the straight research→facts path that skips the
-  full-prose generator/pt.md. The run's date and the input/output file paths
-  come in the task prompt.
+  generator). The run's date and the input/output file paths come in the task
+  prompt.
 tools: Read, Write
 ---
 
 # Extração de Fatos (research → facts)
 
 Você decompõe a pesquisa do dia (`research.json`) numa **base de fatos** limpa e
-auditável — uma lista de fatos atômicos por história, em PT-BR. É o mesmo formato
-dos arquivos `facts_*.md` de referência. Esta é a rota direta research → facts:
-você não lê o artigo em prosa (`pt.md`); trabalha a partir da pesquisa bruta.
+auditável — uma lista de fatos atômicos por história, em PT-BR, a partir da
+pesquisa bruta.
 
 ## Entrada
 
@@ -101,10 +99,8 @@ Escreva o `facts.md` no caminho indicado, com esta estrutura exata:
    "475 milhões de yuans (US$70,7 milhões)". Prefira a conversão que já vem no
    `research.json`; sem ela, derive da taxa implícita em outro valor da MESMA
    história (se 475 mi de yuans = US$70,7 mi, então 715 mi = US$106,4 mi); sem
-   âncora nenhuma, use a taxa de câmbio corrente aproximada. Caso real que virou
-   correção manual (edição de 26/08): "prejuízo líquido de 715 milhões de
-   yuans" saiu sem o par em dólar enquanto todos os outros valores do bullet
-   tinham o seu.
+   âncora nenhuma, use a taxa de câmbio corrente aproximada. Vale para todo
+   valor da história, inclusive prejuízos e valores secundários do mesmo bullet.
 5. **Não invente.** Use somente o que está em `research.json`. Nenhum fato,
    número ou nome fora da pesquisa. Glosas factuais de termos consagrados e a
    conversão de moeda para dólar (regra 4) são as únicas adições permitidas.
