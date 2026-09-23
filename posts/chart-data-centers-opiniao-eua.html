@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Porcentagem de americanos que veem data centers como ruins, por área</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    background: #FFFFFF;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 38px;
+  }
+  .card { width: 720px; background: #FFFFFF; padding: 36px 40px; }
+  .header { padding-bottom: 24px; border-bottom: 3px solid #044B2E; }
+  .header h1 {
+    font-size: 24px; font-weight: 700; color: #000000;
+    letter-spacing: -0.8px; line-height: 26px; max-width: none;
+  }
+  .kicker { font-size: 13px; line-height: 18px; color: #444; margin-top: 18px; }
+  .kicker b { color: #044B2E; }
+  .chart-area { padding: 18px 0 4px; }
+  .chart-container { position: relative; width: 100%; height: 400px; }
+  .chart-logo { position: absolute; height: 15px; width: auto; right: 36px; bottom: 41px; }
+  .legend {
+    display: flex; gap: 22px; margin-top: 16px; padding-top: 14px;
+    border-top: 1px solid #E5E5E5; font-size: 11px; color: #444;
+  }
+  .legend > span { display: inline-flex; align-items: center; }
+  .legend .swatch { display: inline-block; width: 12px; height: 12px; margin-right: 6px; border-radius: 2px; }
+  .caption { font-size: 11px; line-height: 16px; color: #999; margin-top: 14px; }
+  .footer {
+    padding-top: 14px; border-top: 1px solid #E5E5E5;
+    display: flex; justify-content: space-between; margin-top: 14px;
+  }
+  .footer span { font-size: 10px; color: #999; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="card" id="capture">
+  <div class="header">
+    <h1>Porcentagem de americanos que veem data centers como ruins, por área</h1>
+  </div>
+
+  <div class="kicker">
+    Em pesquisa de julho e agosto do Pew Research Center, instituto de pesquisa americano, <b>54%</b> dos adultos americanos disseram que data centers são majoritariamente ruins para o meio ambiente, contra <b>39%</b> em janeiro. A maior alta foi na qualidade de vida de quem mora perto, de 30% para <b>49%</b>. Só <b>4%</b> veem impacto majoritariamente bom nessas áreas ou no custo de energia. A parcela que nunca ouviu falar de data centers caiu de 25% para <b>12%</b>.
+  </div>
+
+  <div class="chart-area">
+    <div class="chart-container">
+      <canvas id="dc"></canvas>
+      <img src="../../daily-journal-platform/public/images/logo/logo-green-horizontal.png" class="chart-logo" alt="Daily Journal">
+    </div>
+
+    <div class="legend">
+      <span><span class="swatch" style="background:#ccc"></span>Janeiro de 2026</span>
+      <span><span class="swatch" style="background:#044B2E"></span>Julho e agosto de 2026</span>
+    </div>
+  </div>
+
+  <div class="caption">
+    Pesquisa do Pew Research Center com 10.548 adultos nos EUA, feita de 20 de julho a 9 de agosto de 2026. Os números de janeiro vêm da edição anterior da mesma pesquisa.
+  </div>
+
+  <div class="footer">
+    <span>Fonte: Pew Research Center</span>
+    <span>dailyjournal.news</span>
+  </div>
+</div>
+
+<script>
+  const data = {
+    labels: ['Meio ambiente', ['Custo de energia', 'das residências'], ['Qualidade de vida de', 'quem mora perto'], 'Empregos locais', ['Arrecadação local', 'de impostos']],
+    jan: [39, 38, 30, 15, 12],
+    aug: [54, 50, 49, 24, 21]
+  };
+
+  new Chart(document.getElementById('dc').getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: data.labels,
+      datasets: [
+        { data: data.jan, backgroundColor: '#ccc',    borderWidth: 0, borderRadius: 2, borderSkipped: false, barPercentage: 0.84, categoryPercentage: 0.78 },
+        { data: data.aug, backgroundColor: '#044B2E', borderWidth: 0, borderRadius: 2, borderSkipped: false, barPercentage: 0.84, categoryPercentage: 0.78 }
+      ]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: {
+        x: {
+          beginAtZero: true,
+          max: 60,
+          grid: { color: '#f0f0f0', drawTicks: false },
+          border: { display: false },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 11 },
+            color: '#bbb',
+            padding: 6,
+            stepSize: 20,
+            callback: v => v + '%'
+          }
+        },
+        y: {
+          grid: { display: false },
+          border: { color: '#ccc' },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 12, weight: '600' },
+            color: '#333',
+            padding: 8
+          }
+        }
+      },
+      layout: { padding: { top: 4, right: 36, left: 0, bottom: 4 } }
+    },
+    plugins: [{
+      id: 'valueLabels',
+      afterDatasetsDraw(chart) {
+        const { ctx } = chart;
+        [[0, data.jan, '#999', '600'], [1, data.aug, '#044B2E', '700']].forEach(([ds, vals, color, w]) => {
+          chart.getDatasetMeta(ds).data.forEach((bar, i) => {
+            ctx.save();
+            ctx.textAlign = 'left';
+            ctx.textBaseline = 'middle';
+            ctx.font = w + ' 12px Helvetica Neue';
+            ctx.fillStyle = color;
+            ctx.fillText(vals[i] + '%', bar.x + 6, bar.y);
+            ctx.restore();
+          });
+        });
+      }
+    }]
+  });
+</script>
+</body>
+</html>

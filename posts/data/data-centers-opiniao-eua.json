@@ -1,0 +1,37 @@
+{
+  "slug": "data-centers-opiniao-eua",
+  "title_pt": "Porcentagem de americanos que veem data centers como ruins, por área",
+  "edition": "2026-09-23",
+  "metric": "% de adultos nos EUA que dizem que data centers são majoritariamente ruins para cada área",
+  "definition": "Pergunta do American Trends Panel (Pew): data centers são majoritariamente bons, majoritariamente ruins ou nenhum dos dois para cada área. Base: todos os adultos nos EUA, incluindo os que não ouviram falar de data centers. Dados do chart 'Americans have become more likely to say data centers have a negative impact in various areas' (CSV oficial da Pew).",
+  "waves": [
+    { "id": "jan26", "label": "jan/26", "field_dates": "janeiro de 2026 (onda publicada em 2026-03-12)" },
+    { "id": "aug26", "label": "ago/26", "field_dates": "2026-07-20 a 2026-08-09", "n": 10548 }
+  ],
+  "series": [
+    { "area_en": "The environment",                  "area_pt": "Meio ambiente",                     "jan26": 39, "aug26": 54, "source_ref": "pew-csv" },
+    { "area_en": "Home energy costs",                "area_pt": "Custo de energia das residências",  "jan26": 38, "aug26": 50, "source_ref": "pew-csv" },
+    { "area_en": "People's quality of life nearby",  "area_pt": "Qualidade de vida de quem mora perto","jan26": 30, "aug26": 49, "source_ref": "pew-csv" },
+    { "area_en": "Local jobs",                       "area_pt": "Empregos locais",                   "jan26": 15, "aug26": 24, "source_ref": "pew-csv" },
+    { "area_en": "Local tax revenue",                "area_pt": "Arrecadação local de impostos",      "jan26": 12, "aug26": 21, "source_ref": "pew-csv" }
+  ],
+  "context": {
+    "mostly_good_env_energy_quality_aug26": 4,
+    "mostly_good_jobs_tax_aug26_range": "21% a 24% (bom e ruim em parcelas parecidas)",
+    "heard_about_data_centers": { "jan26": { "a_lot": 25, "a_little": 50, "nothing": 25 }, "aug26": { "a_lot": 35, "a_little": 53, "nothing": 12 } },
+    "uncomfortable_with_new_local_data_center_aug26": 60,
+    "env_mostly_bad_by_party": { "rep": { "jan26": 31, "aug26": 47 }, "dem": { "jan26": 50, "aug26": 62 } }
+  },
+  "sources": [
+    { "id": "pew-short-read", "label": "Pew Research Center: Americans' views of data centers have turned more negative (22/09/2026)", "url": "https://www.pewresearch.org/short-reads/2026/09/22/americans-views-of-data-centers-have-turned-more-negative/", "provides": "texto, datas de campo, n, contexto" },
+    { "id": "pew-csv", "label": "Pew Research Center: dados do chart 476716 (CSV)", "url": "https://www.pewresearch.org/wp-json/prc-chart-builder/v1/charts/476716/data.csv", "provides": "as 10 barras" },
+    { "id": "pew-awareness-csv", "label": "Pew Research Center: dados do chart 477783 (CSV)", "url": "https://www.pewresearch.org/wp-json/prc-chart-builder/v1/charts/477783/data.csv", "provides": "quanto os americanos ouviram falar de data centers, jan vs ago" },
+    { "id": "pew-jan", "label": "Pew Research Center: How Americans view data centers' impact in key areas (12/03/2026)", "url": "https://www.pewresearch.org/short-reads/2026/03/12/how-americans-view-data-centers-impact-in-key-areas-from-the-environment-to-jobs/", "provides": "onda de janeiro" },
+    { "id": "pew-topline", "label": "Pew Research Center: topline da onda jul-ago/2026", "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/SR_26.09.22_data-centers_topline.pdf", "provides": "questionário e totais" }
+  ],
+  "notes": [
+    "Todos os números são reportados pela Pew; nada foi calculado, exceto as diferenças em pontos percentuais, que a própria Pew também cita (+15 no meio ambiente, +9 em empregos e impostos).",
+    "Base = todos os adultos. A parcela que nunca ouviu falar de data centers caiu de 25% para 12% entre as ondas, então parte da alta do 'majoritariamente ruim' vem de gente que passou a ter opinião.",
+    "A Pew rotula as ondas como Jan '26 e Aug '26; a segunda foi a campo de 20/07 a 09/08."
+  ]
+}
