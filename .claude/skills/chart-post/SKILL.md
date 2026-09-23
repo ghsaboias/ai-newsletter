@@ -74,7 +74,7 @@ ls posts/chart-*.html
 
 Spec de marca completa no **CLAUDE.md "Posts"** (card 720px, H1 Helvetica 24px/700, footer fonte+`dailyjournal.news`, paleta `#044B2E`/`#7DB89B`/etc., logo via `<img src="../../daily-journal-platform/...">` — nunca duplique a logo). Regras fixas: `animation: false`, `tooltip: { enabled: false }`, `id="capture"` no card, e legenda com `.legend > span { display: inline-flex; align-items: center; }` (sem `vertical-align: middle` nos swatches — alinha pelo x-height do texto e deixa o quadradinho baixo). Labels só em endpoints e milestones (plugin `afterDraw`), não em toda barra.
 
-- **Header = só o título, largura cheia (`max-width: none`).** A logo DJ **não** vai no header — ela rouba largura e quebra o título em duas linhas. A logo entra DENTRO do gráfico como marca d'água (Step 5).
+- **Logo DJ: no header só se o título couber em UMA linha com ela ao lado.** Aí a logo vai no header, à direita, centralizada verticalmente no título (`.header` flex, `align-items:center`, `justify-content:space-between`; `.logo` 18px, `flex-shrink:0`). Se o título quebraria em duas linhas com a logo ali, o header fica só com o título (`max-width: none`) e a logo entra DENTRO do gráfico como marca d'água (Step 5). Confira no render. (Gui, 2026-09-23.)
 
 - **Título factual/descritivo, não editorial.** "Startups de defesa já captaram mais em 2026 do que em todo 2025" ✅; "como o VC descobriu a defesa" ❌ (editorial, foi rejeitado). Pode ser o nome da métrica ("Remessas globais de smartphones do grupo Xiaomi") — o ângulo da notícia mora no subtítulo.
 - **Não duplique no chart o que o título já diz.** Se o título carrega o "recorde", corte a linha de anotação "recorde" redundante.
@@ -98,7 +98,7 @@ magick posts/chart-<slug>.png -crop WxH+X+Y +repage /tmp/x.png   # depois Read /
 ```
 Itere o HTML → `render.sh` → Read até os labels estarem limpos. Se o PNG sair em branco/baixo, rode `render.sh` de novo.
 
-**Posicionar a logo DJ (julgamento visual, com o gráfico já pronto).** A logo vai DENTRO do gráfico, num `<img class="chart-logo">` (`height` ~15px) com `position:absolute` dentro do `.chart-container` (que precisa ser `position:relative`).
+**Posicionar a logo DJ dentro do gráfico (só quando o título não comporta a logo no header; julgamento visual, com o gráfico já pronto).** A logo vai DENTRO do gráfico, num `<img class="chart-logo">` (`height` ~15px) com `position:absolute` dentro do `.chart-container` (que precisa ser `position:relative`).
 
 Primeiro ache o **quadrante vazio do plot**: padrão é o **canto inferior direito** (funciona quando os dados sobem pra direita). Se os dados ocupam esse canto (série decrescente, barras altas à direita), vá pro canto limpo (superior direito/esquerdo).
 
