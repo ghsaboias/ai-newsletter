@@ -1329,3 +1329,13 @@ https://www.youtube.com/watch?v=yAsrMA_ADPc
 **Box's Aaron Levie: On Reinventing Yourself in the AI Age and Enterprise Diffusion**
 Conversa entre Aaron Levie, cofundador e CEO da Box, e Sonya Huang, sócia da Sequoia Capital, sobre a transformação da Box em uma plataforma centrada em inteligência artificial, a disputa de valor entre a camada de infraestrutura/modelos de fronteira e a camada de aplicação empresarial, o impacto dos modelos de pesos abertos e os gargalos reais de difusão da IA nos fluxos de trabalho corporativos
 https://www.youtube.com/watch?v=NE4CLThMPGU
+
+## 2026-09-23
+
+**Adam Foroughi, Applovin CEO: Surviving a 92% Drawdown, Ads as ML 1.0 & the $50B Game Ad Market**
+Adam Foroughi, cofundador e CEO da AppLovin, plataforma de monetização e tecnologia de anúncios em jogos mobile e comércio digital, discute a trajetória da companhia, a transição para modelos de aprendizado profundo (deep learning), a dinâmica do mercado de publicidade mobile de US$ 50 bilhões, a recuperação após uma queda de 92% no valor de mercado pós-IPO e a postura operacional contra gigantes como Meta e Google
+https://www.youtube.com/watch?v=JtomF4bGxHs
+
+**Why OpenAI and Anthropic Won't Win Finance**
+Gabe Stengel é cofundador da Rogo, uma plataforma de inteligência artificial aplicada ao setor financeiro institucional e bancos de investimento. Em conversa com Patrick O'Shaughnessy no podcast Invest Like The Best, Stengel discute a transição das ferramentas de busca e copilotos para fluxos de trabalho autônomos no mercado de capitais, a arquitetura necessária para vencer fornecedores generalistas de IA como OpenAI e Anthropic, e como o valor das grandes instituições financeiras migrará dos profissionais para sistemas de software e dados nos próximos dez anos
+https://www.youtube.com/watch?v=B0illwrqUG0
