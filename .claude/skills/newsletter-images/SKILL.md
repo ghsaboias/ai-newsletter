@@ -17,7 +17,7 @@ A seção **"Leia também"** (headlines + qualquer embed de recomendação) fica
 
 ## Fonte da verdade
 
-- **Conteúdo do dia:** `pipeline/output/${PIPELINE_TOPIC:-ai}/<DATE>/edition-final.md` (a edição em três tiers: Grandes / categorias Médias / Leia também).
+- **Conteúdo do dia:** `pipeline/output/${PIPELINE_TOPIC:-ai}/<DATE>/edition-final.md` (a edição em três tiers: Grandes / categorias Médias / Leia também). **Não existe mais `pt.md`.**
 - **Proveniência das fontes:** `facts.md` (blocos **Fontes:** por história) e `research.json` (URLs de origem + `key_facts`/`sources` por história) — é daqui que saem as páginas pra puxar `og:image` e as palavras-chave.
 - **O draft do Substack é a fonte da verdade depois do primeiro push.** Nunca se re-empurra pelo HTML (`.substack-draft.html`) — isso reconstruiria o post e apagaria a mídia. Toda atualização vai pelo `substack_mirror.py` (`pull`/`push`/`media`).
 

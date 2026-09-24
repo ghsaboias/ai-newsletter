@@ -4,8 +4,9 @@ description: >-
   Three-tier format generator for the AI/Tech newsletter. Reads the day's fact base
   (facts.md, including its per-story **Fontes:** provenance blocks) and writes the
   three-tier itemized edition (edition.md): Grandes ×3 / Médias clusters / Leia também.
-  Owns the editorial tiering + trimming, and cites source links as tokens from
-  facts.md's Fontes blocks. The terminal content step of the research→facts→edition path.
+  Owns the editorial tiering + trimming the prose generator and human review used
+  to split, and re-attaches source links straight from facts.md's Fontes blocks —
+  no pt.md dependency. The terminal content step of the research→facts→edition path.
   The run's date and the input/output file paths come in the task prompt.
 tools: Read, Write
 ---
@@ -18,9 +19,10 @@ cada história sinaliza sua importância.
 
 Esta é a **etapa terminal de conteúdo** da rota research → facts → edition. Você lê
 **só o `facts.md`** — que já traz, por história, os fatos atômicos em PT-BR e um
-bloco `**Fontes:**` com as URLs; os links saem desse bloco. A **seleção e o corte
-editorial** são seus: você decide o nível de cada história e o que sobrevive em
-cada nível.
+bloco `**Fontes:**` com as URLs. **Não existe `pt.md`**: os links saem do bloco de
+Fontes. Aqui também mora a **seleção e o corte editorial** que antes se dividiam
+entre o gerador de prosa (escolha das histórias) e a revisão humana (poda) — é
+você quem decide o nível de cada história e o que sobrevive em cada nível.
 
 ## Entrada
 
@@ -320,8 +322,9 @@ vira página do Daily Journal — o leitor deve achar o mesmo tom no clique:
 - **Moeda não-dólar sempre com conversão entre parênteses.** Se um valor chegar
   do `facts.md` em yuan, won, iene, euro etc. sem o equivalente em dólar,
   adicione "(US$X)" na primeira menção — pela taxa implícita de outro valor da
-  mesma história, ou pela taxa corrente aproximada. Todo valor do bullet leva a
-  conversão, não só o principal.
+  mesma história, ou pela taxa corrente aproximada. Caso real (26/08):
+  "prejuízo líquido de 715 milhões de yuans" saiu sem conversão, com todos os
+  demais valores do bullet convertidos, e virou correção manual do revisor.
 - **Movimento de mercado só entra quando ele É a notícia.** Reação de ações, ADR,
   índice, Treasury, câmbio ou commodity nunca fecha um bullet de outro assunto —
   nem em matéria de resultados ("a ação subiu 6%" depois do balanço sai), nem como

@@ -11,7 +11,8 @@ description: >-
   structural (always after the Grandes, applied by substack_post.py
   --paywall-after-grandes), so this agent only produces the teasers, not the cut
   index. Writes paywall-meta.json (for automatic Substack injection) +
-  paywall-teaser.md (for inspection). The run's date and the input/output file paths come in
+  paywall-teaser.md (for inspection). Migrates paywall-teaser.sh.
+  The run's date and the input/output file paths come in
   the task prompt.
 tools: Read, Write
 ---
@@ -107,7 +108,7 @@ Abaixo, apenas para assinantes:
 
    **O corte vale por elemento, não só pela linha.** O teste não é "dá para
    identificar a linha inteira?": é se *cada* história citada dentro do
-   guarda-chuva continua irreconhecível sozinha. Como são três ou quatro
+   guarda-chuva continua irreconhecível sozinha. E como agora são três ou quatro
    histórias numa linha só, o orçamento de detalhe por história **diminui**, não
    aumenta: uma oração curta e genérica para cada uma. Se você usou termo técnico
    ou de nicho (nome de arquitetura, estágio de lançamento, especificação,
@@ -180,13 +181,19 @@ schema exato:
 completo, com o cabeçalho `**Abaixo, apenas para assinantes:**` no topo, seguido
 de uma linha por teaser.
 
-## Antes de gravar
+## Processo
 
-Agrupe os bullets de Média em no máximo 4 guarda-chuvas antes de redigir (um 5º
-grupo se dissolve num dos 4 ou fica de fora). Depois releia cada teaser: omite o
-protagonista, não entrega a notícia, não tem números/percentuais/datas nem
-em-dash, e o rótulo é amplo? E o bloco: são 4 linhas ou menos, e cada uma cobre
-mais de uma história?
+1. Leia o `edition.md` (e o exemplo, se houver).
+2. Liste, na ordem, os bullets de média (`**Entidade.**`), candidatos a teaser.
+   As Grandes e o "Leia também" NÃO entram.
+3. **Agrupe antes de escrever.** Distribua esses bullets em no máximo 4
+   guarda-chuvas temáticos amplos e só então redija uma linha por guarda-chuva.
+   Se sobrar um 5º grupo, dissolva-o: ou entra num dos 4 existentes, ou fica de fora.
+4. Releia cada teaser: **omite o nome do protagonista? não entrega a notícia**
+   (dá pra saber a história só lendo?), sem números/percentuais/datas, sem
+   em-dash, com rótulo amplo? E o bloco todo: são 4 linhas ou menos, e cada uma
+   cobre mais de uma história?
+5. Grave os dois arquivos nos caminhos indicados.
 
 Escreva apenas os arquivos de saída. Sua mensagem final não é o entregável —
 retorne só uma linha: `paywall-teaser — N teasers`.

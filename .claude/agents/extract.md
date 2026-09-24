@@ -16,8 +16,8 @@ model: opus
 
 # Extração de Fontes (facts → sources.json)
 
-A parte determinística do extract é o script `pipeline/tools/extract.py`. Seu
-trabalho é **só a prosa**. O fluxo é sempre:
+A parte determinística do extract virou script. Seu trabalho é **só a prosa**.
+O fluxo é sempre:
 
 1. **Esqueleto** — rode:
 

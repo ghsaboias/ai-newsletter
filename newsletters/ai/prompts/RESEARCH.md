@@ -22,50 +22,8 @@ story a sibling owns** — even a strong one.
 | Geopolitics, military/defense, macro & central banks, markets, biotech/pharma, health policy, space, climate/energy | **world** |
 | Non-tech funding / IPOs / M&A / SPACs (any company that isn't an AI or hardware company) | **world** |
 
-Apply the column for **your** cluster (named in your task prompt). The other
+Apply the column for **your** cluster (named in your system prompt). The other
 columns are off-limits — a sibling has them covered.
-
-## Beats
-
-### ai
-- New model releases & capability jumps (frontier and open-source)
-- Reasoning, coding, multimodal, agentic systems (tool/computer use, long-horizon)
-- AI safety: alignment, evals, red-teaming, governance
-- AI in science: protein folding, drug discovery, materials, math
-- AI economics: pricing, API changes, adoption metrics, enterprise deals
-- AI **software/lab** funding rounds (model labs, agent startups, AI infra/tooling, applied AI)
-- Recursive self-improvement: AI training AI, automated ML research
-- Key X accounts to check (via `bird`): @sama, @AnthropicAI, @OpenAI, @GoogleDeepMind, @scaling01, @metr_evals, @epochairesearch, @arcprize
-
-### hw
-- Chips & semiconductors: Nvidia, AMD, Intel, Broadcom, custom silicon (TPU, Trainium, Maia)
-- Foundries: TSMC, Samsung, Intel Foundry — capacity, nodes, orders
-- Data centers, energy-for-compute (nuclear/solar/grid/PPAs), cooling
-- Export controls: US-China chip restrictions, ASML/EUV, sanctions
-- Robotics: humanoids, industrial automation, warehouse robots
-- **Hardware-company financing — IPOs, ADR listings, SPACs, raises, M&A** —
-  chipmakers, robotics, data-center/compute infra, energy-for-compute. This is
-  hw's even though it looks "financial." Examples: an SK Hynix ADR listing, an
-  Agility robotics SPAC, a chip-startup raise, an AI-inference chip taped out by
-  an AI lab.
-- Key X accounts to check (via `bird`): @elonmusk
-
-### world
-- Geopolitics: conflicts, alliances, sanctions, trade wars, diplomacy
-- Military & defense: operations, weapons systems, defense deals, intelligence
-- Economics: jobs, GDP, inflation, central banks, oil/energy prices
-- Labor & AI displacement: layoffs citing AI, hiring freezes, workforce shifts
-- Markets: major equity/commodity/crypto moves tied to news events
-- **Non-tech** funding/IPOs/M&A/SPACs (everything that isn't an AI or hardware company)
-- Biotech & pharma: drug approvals, trial results, gene therapy, longevity
-- Health policy: FDA decisions, pandemic prep, health-system changes
-- Space: launches, missions, satellites, exploration milestones
-- Climate/energy: transition milestones, extreme events, policy
-- Key sources: Reuters, AP, BBC, Al Jazeera, FT, STAT News, BioPharma Dive, Nature Medicine
-
-world is the broadest cluster with the most candidates for only 7 slots — spend
-them on geopolitics, defense, biotech, space, and macro, not on stories ai or hw
-own.
 
 ## Rules
 
@@ -92,7 +50,11 @@ reuters.com, bloomberg.com, axios.com, cnbc.com, politico.eu, seekingalpha.com, 
 
 ## Workflow
 
-Start from the previous-edition headlines and the Techmeme scan at the end of this brief, then fill the gaps in your beat with a small landscape pass (about 5 targeted searches). Settle your list (up to 7) before fetching anything; fetch a source only when its snippet lacks an exact number or quote a key fact needs. Then write the JSON.
+1. Check the previous edition headlines at the end of this prompt.
+2. **Landscape scan**: Review the Techmeme scan, then run 5 searches to fill gaps. Stop searching.
+3. **Pick your 7 stories.** From what you found, choose 7. This is your final list — do not add stories after this point.
+4. **Fetch only where needed**: For stories where search snippets lack exact numbers or quotes, fetch the source. Most stories won't need this.
+5. Write the JSON output file.
 
 ## Output
 

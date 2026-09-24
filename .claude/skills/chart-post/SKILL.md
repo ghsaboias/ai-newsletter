@@ -34,7 +34,7 @@ Bons candidatos: séries anuais com uma virada clara (funding, shipments, adoç�
 
 ## Step 2: Pesquisar os dados (FONTES PRIMÁRIAS) e resolver o fork de método
 
-Pesquise a série de **fontes primárias** (relatórios anuais, releases oficiais, o report nominal — **não** agregadores). Use `WebSearch` (ou Exa) pra achar o report nominal e `WebFetch` pra ler.
+Pesquise a série de **fontes primárias** (relatórios anuais, releases oficiais, o report nominal — **não** agregadores). Firecrawl costuma estar sem créditos; use **Exa + WebFetch**, e `WebSearch` pra achar o report nominal.
 
 **O rigor de dado do Gui é o coração da skill (forte e consistente):**
 - **Citable > derived.** Ele rejeita números que você computou/interpolou (ex.: um acumulado somado de shipments anuais). Plote a **série crua reportada**.

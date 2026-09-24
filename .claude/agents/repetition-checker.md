@@ -28,7 +28,8 @@ Tudo vem na sua task:
 - **Edição atual** — caminho do `edition.md` do dia (o que vai ao ar: formato em três
   níveis, itemizado).
 - **Edições anteriores** — uma lista de `DATA: caminho` (em geral as 3 mais
-  recentes que existem), no mesmo formato em três níveis.
+  recentes que existem). Podem estar no formato novo (`edition.md`) ou, para datas
+  antes da virada, no formato antigo (`pt.md`). Compare contra o que vier.
 - **Caminho de saída** do `repetition.json`.
 
 Leia a edição atual e cada edição anterior por inteiro. Leia primeiro as mais
@@ -42,7 +43,7 @@ deveria obedecer) para a checagem 4.
 
 ## A distinção que governa tudo: assunto recorrente ≠ repetição editorial
 
-A newsletter cobre notícia em curso: o mesmo
+Este é o erro que você mais comete. A newsletter cobre notícia em curso: o mesmo
 **debate**, a mesma **empresa**, a mesma **categoria de projeto** vão reaparecer
 dia após dia. Isso é o noticiário funcionando, **não é repetição**.
 
@@ -160,8 +161,8 @@ ou tom. Se não é uma regra escrita, não é finding.
 
 ## Como escrever um finding legível
 
-O revisor precisa ver de relance o que se repete, sem garimpar dois parágrafos
-atrás de três palavras em comum.
+O finding de ontem que ninguém entendeu justapunha dois parágrafos inteiros onde
+só três palavras casavam. Não faça isso.
 
 - **`overlap` é obrigatório**: o **menor trecho literal** (ou a descrição exata do
   molde) que de fato se repete. Se o que casa é "criadora do Kimi K3", o
@@ -294,7 +295,7 @@ já preenchidos.
 Depois de gravar o arquivo, **rode o validador** e só termine quando ele passar:
 
 ```bash
-python3 pipeline/tools/validate-findings.py repetition <caminho do seu output>
+python3 /home/guilhermesaboia/ai-newsletter/pipeline/tools/validate-findings.py repetition <caminho do seu output>
 ```
 
 Se sair `INVÁLIDO`, **corrija o arquivo e rode de novo**, quantas vezes forem
@@ -304,8 +305,8 @@ sem ter visto a linha `OK repetition`.
 ### Conformidade de schema — leia antes de escrever
 
 O consumidor deste arquivo é um script `jq`, não um humano. Campo com nome
-diferente ou chave inventada **quebra o roll-up silenciosamente** (o relatório
-imprime `null` no lugar do campo).
+diferente ou chave inventada **quebra o roll-up silenciosamente** (já aconteceu:
+uma rodada saiu inteira sem `severity` e o relatório imprimiu `null` em tudo).
 
 - **`type`, `severity`, `overlap`, `current_text` e `suggestion` são
   obrigatórios em todo issue.** Nenhum pode ser `null` ou ausente. Só
