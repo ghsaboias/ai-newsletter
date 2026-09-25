@@ -1339,3 +1339,13 @@ https://www.youtube.com/watch?v=JtomF4bGxHs
 **Why OpenAI and Anthropic Won't Win Finance**
 Gabe Stengel é cofundador da Rogo, uma plataforma de inteligência artificial aplicada ao setor financeiro institucional e bancos de investimento. Em conversa com Patrick O'Shaughnessy no podcast Invest Like The Best, Stengel discute a transição das ferramentas de busca e copilotos para fluxos de trabalho autônomos no mercado de capitais, a arquitetura necessária para vencer fornecedores generalistas de IA como OpenAI e Anthropic, e como o valor das grandes instituições financeiras migrará dos profissionais para sistemas de software e dados nos próximos dez anos
 https://www.youtube.com/watch?v=B0illwrqUG0
+
+## 2026-09-24
+
+**Replit CEO Amjad Masad on What Young People Should Learn in the AI Era**
+Amjad Masad, fundador e CEO da Replit, e Gagan Biyani, cofundador e CEO da Horowitz and Andreessen Academy (HAA), debatem o papel do ensino superior, a formação de jovens na era da inteligência artificial e os desvios causados pela profissionalização precoce no Vale do Silício. A conversa foi mediada por Erik Torenberg
+https://www.youtube.com/watch?v=Q8yFrGwIftE
+
+**Bill Gurley: Searching for Feynman**
+Em palestra no All-In Summit, o investidor de capital de risco Bill Gurley (Benchmark, investidor histórico da Uber e Zillow) analisa o fracasso institucional e científico na determinação da causa-raiz da pandemia de COVID-19. Gurley estabelece um paralelo direto entre o tratamento de cinco desastres modernos e a ausência de uma investigação independente e técnica sobre a COVID-19, identificando o fenômeno de captura regulatória, conflitos de interesse da comunidade de virologia e o papel fundamental de investigadores independentes (searchers) contra instituições que ocultam dados (blockers)
+https://www.youtube.com/watch?v=A4Q7zAayW20
