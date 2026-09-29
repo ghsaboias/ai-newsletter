@@ -1,0 +1,6 @@
+**Abaixo, apenas para assinantes:**
+
+**Mundo.** Chefes de laboratórios de IA diante de um órgão internacional, novidades na trégua comercial entre EUA e China e a posição russa sobre a guerra na Ucrânia.
+**Modelos.** Prazo para o próximo modelo de um laboratório americano, novos recursos para os agentes de uma big tech e uma gigante americana do varejo ampliando a fabricação de robôs.
+**Silício.** Reajuste de preços numa fabricante taiwanesa de chips, novo polo na Ásia para uma fundição israelense, um projeto de data center nos EUA sob risco de atraso e um experimento de data center de uma big tech americana.
+**Dinheiro.** Duas startups americanas de inferência negociando rodadas, uma operadora australiana de data centers a caminho da bolsa e os juros dos títulos do Tesouro americano em alta.

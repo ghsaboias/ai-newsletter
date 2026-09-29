@@ -1,0 +1,6 @@
+**Abaixo, apenas para assinantes:**
+
+**Segurança e reguladores.** Um laboratório americano de IA se desculpa com um governo estrangeiro por um incidente com seus agentes, hackers atingem uma agência federal americana, e um projeto de lei nos EUA quer limitar modelos de fronteira.
+**Negócios.** Uma big tech americana leva seu agente a pequenas empresas, uma fabricante americana de chips compra uma startup americana de simulação 3D, uma startup americana que automatiza a gestão de imóveis e clínicas capta nova rodada, e uma gigante de chips busca dividir o risco de crédito de seus clientes.
+**Silício.** Um conglomerado sul-coreano aporta numa empresa americana de data centers e energia, uma fabricante taiwanesa de chips estuda um novo polo nos EUA, e uma sul-coreana amplia a produção de componentes para chips de IA.
+**Mundo.** Juros americanos em alta, conversas indiretas entre EUA e Irã, e mais um dia de ataques de drones russos na Ucrânia.
