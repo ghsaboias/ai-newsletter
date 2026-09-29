@@ -61,16 +61,20 @@ Julgamento é seu; garimpo é mecânico. **Uma mídia por bloco forte, não por 
 ## Garimpo (mecânica)
 
 Duas armas por história, reaproveitando as URLs de `research.json`:
-1. **`og:image`/`twitter:image` das fontes** do bloco (as páginas de research, **não** os links do DJ). `curl` com UA de navegador + `grep` do meta; se a página bloquear, use scrape/screenshot.
+1. **`og:image`/`twitter:image` das fontes** do bloco (as páginas de research, **não** os links do DJ). `curl` com UA de navegador + `grep` do meta; se a página bloquear, use scrape/screenshot. Se a história é anúncio e as fontes são só cobertura de terceiros, busque também a **fonte primária** (blog/newsroom/press kit da empresa).
 2. **Busca por palavra-chave** (o flow preferido do Gui): as palavras-chave da história em busca de imagem, e pega 2-3 candidatos.
 
-Baixe os candidatos, **Read cada imagem**, e ranqueie estrito ao arquétipo (descarte logo-só, watermark de stock, colagem, <~800px, off-subject). Rodar isso em sub-agentes paralelos (um por história) é o caminho rápido.
+**Precedência:** fonte primária › fontes da história › busca. Candidato de fonte que bate com o arquétipo vence o da busca.
+
+**Recência:** a imagem tem que ser do fato atual — produto/equipamento na versão anunciada, cena do evento em questão. Rosto: prefira foto recente; descarte foto visivelmente antiga se houver alternativa.
+
+Baixe os candidatos, **Read cada imagem**, e ranqueie estrito ao arquétipo (descarte logo-só, watermark de stock, colagem, <~800px, off-subject, desatualizada). Rodar isso em sub-agentes paralelos (um por história) é o caminho rápido.
 
 **Sub-agentes (mecânica):**
 - Scratch: um dir por edição no scratchpad da sessão (ex.: `<scratchpad>/media-<DATE>/`) — fora do repo.
 - Cada agente grava **um** arquivo com nome-slug fixo (`openai.jpeg`, `apptronik.jpg`, …); esse path entra depois no `images-final.json`.
 - O prompt de cada agente leva: a história (título + fatos-chave), o arquétipo + query já decididos no mapeamento, as URLs de fonte do `research.json`, e os critérios de descarte acima.
-- O agente devolve: o arquivo baixado + de onde veio (página de origem + crédito pra legenda) + candidato a **vídeo oficial** se existir (só o link do YouTube — nunca baixar vídeo).
+- O agente devolve: o arquivo baixado + de onde veio (página de origem + crédito pra legenda + data da imagem, se aferível) + candidato a **vídeo oficial** se existir (só o link do YouTube — nunca baixar vídeo).
 
 > Nota: o helper `gather.py` desta pasta é **legado** — ele ainda assume o `pt.md`, paths de Mac (`/Users/guilherme/...`) e injeta em `substack.html`. Não use como está; precisa ser portado pro layout novo (edition-final.md + push via mirror). O garimpo acima (og + busca, em sub-agentes) é o método atual.
 
