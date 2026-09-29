@@ -1349,3 +1349,13 @@ https://www.youtube.com/watch?v=Q8yFrGwIftE
 **Bill Gurley: Searching for Feynman**
 Em palestra no All-In Summit, o investidor de capital de risco Bill Gurley (Benchmark, investidor histórico da Uber e Zillow) analisa o fracasso institucional e científico na determinação da causa-raiz da pandemia de COVID-19. Gurley estabelece um paralelo direto entre o tratamento de cinco desastres modernos e a ausência de uma investigação independente e técnica sobre a COVID-19, identificando o fenômeno de captura regulatória, conflitos de interesse da comunidade de virologia e o papel fundamental de investigadores independentes (searchers) contra instituições que ocultam dados (blockers)
 https://www.youtube.com/watch?v=A4Q7zAayW20
+
+## 2026-09-28
+
+**Why AI’s Next Breakthroughs Could Come from Outside the Big Labs**
+Em debate promovido pela a16z e mediado por Erik Torenberg, Aaron Levie (CEO da Box), Martin Casado (General Partner da a16z, com passagem anterior pelo Lawrence Livermore National Laboratory) e Steven Sinofsky (Board Partner da a16z e ex-presidente da Divisão Windows na Microsoft) discutem as falhas no discurso contemporâneo sobre segurança e regulação de IA, os riscos reais de cibersegurança apresentados por agentes autônomos e a migração da fronteira de inovação dos grandes laboratórios para o ecossistema de software aplicativo
+https://www.youtube.com/watch?v=TLJNJDf2XGo
+
+**Luca Ferrari, Bending Spoons CEO: The $40K Start, Buying Product-Market Fit & Beating Private Equity**
+Luca Ferrari, cofundador e CEO da Bending Spoons, empresa de tecnologia sediada em Milão que atingiu múltiplos bilhões de dólares em avaliação e projeta uma receita pro forma anualizada próxima a US$ 4 bilhões, discute o modelo operacional da companhia, a tese de aquisição de software maduro, a gestão de dívida, a eficiência de equipes reduzidas e a diferenciação estrutural em relação ao private equity tradicional
+https://www.youtube.com/watch?v=6t5yF8ansoQ
