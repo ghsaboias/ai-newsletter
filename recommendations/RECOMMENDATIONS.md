@@ -1359,3 +1359,13 @@ https://www.youtube.com/watch?v=TLJNJDf2XGo
 **Luca Ferrari, Bending Spoons CEO: The $40K Start, Buying Product-Market Fit & Beating Private Equity**
 Luca Ferrari, cofundador e CEO da Bending Spoons, empresa de tecnologia sediada em Milão que atingiu múltiplos bilhões de dólares em avaliação e projeta uma receita pro forma anualizada próxima a US$ 4 bilhões, discute o modelo operacional da companhia, a tese de aquisição de software maduro, a gestão de dívida, a eficiência de equipes reduzidas e a diferenciação estrutural em relação ao private equity tradicional
 https://www.youtube.com/watch?v=6t5yF8ansoQ
+
+## 2026-09-29
+
+**Inside the Personal AI Assistant Growing 10% a Day | Instinct Founder**
+Noah Shinn, fundador e CEO da Instinct, discute o desenvolvimento e a dinâmica de crescimento do assistente pessoal autônomo de inteligência artificial criado por sua startup há cerca de um ano. Em conversa com Patrick O'Shaughnessy (CEO da Positive Sum), Shinn detalha o modelo sem aplicativo da plataforma, a dinâmica de rede agente-para-agente, os desafios operacionais de gerenciar uma infraestrutura de computação que dobra em ciclos semanais e o modelo econômico baseado em comissões sobre transações
+https://www.youtube.com/watch?v=Am7IWP8IpEc
+
+**Jared Isaacman: A New Era for NASA and American Space Exploration**
+Jared Isaacman, administrador da NASA nomeado no governo Donald Trump, aviador e astronauta comercial, apresentou as diretrizes operacionais, tecnológicas e geopolíticas da agência espacial americana durante participação no All-In Podcast. Isaacman detalhou a reestruturação da agência para competir na nova corrida espacial contra a aliança China-Rússia, o abandono de programas legados e ineficientes, a transição para a propulsão nuclear profunda e o cronograma revisado do programa Artemis rumo à Lua e a Marte
+https://www.youtube.com/watch?v=VTF6p0U98ek
