@@ -30,7 +30,23 @@ sstats template <id|name> [--body|--text|--json]   # one template; name = case-i
 sstats template-create <name> <doc.json>           # doc.json = ProseMirror {"type":"doc","content":[...]}
 sstats template-update <id|name> <doc.json> [--name N]
 sstats template-delete <id|name>
+sstats note-draft <text.md|-> [--image PNG]... [--link URL] [--id DRAFT_ID]   # salva RASCUNHO de Note (nunca publica)
+sstats note-drafts [limit=20]     # lista rascunhos de Note
+sstats note-draft-delete <id>     # apaga um rascunho (recusa id fora da lista de rascunhos)
 ```
+
+## Note drafts
+
+Notes live on the global `substack.com/api/v1`, not the publication host. A draft is an
+unpublished comment row: `POST /comment/draft` `{bodyJson, attachmentIds, replyMinimumRole}`
+creates, `PATCH /feed/comment/<id>` replaces, `GET /feed/drafts` lists, `DELETE /comment/<id>`
+removes. Attachments: `POST /image {image: <data uri>}` → `{url}`, then
+`POST /comment/attachment {url, type: "image"|"link"}` → `{id}`; a `link` to one of our posts
+comes back as a `post` card. `POST /comment/feed` **publishes** (with `draftCommentId` to
+publish a draft): sstats never calls it, publishing stays in the composer (Notes > Drafts).
+
+`note-draft` text: paragraphs split on blank lines; `**bold**`, `*italic*`, `[text](url)` and bare URLs
+become marks. The chart-post skill wraps it in `.claude/skills/chart-post/note-draft.sh <slug>`.
 
 ## Post templates (ad insertions)
 

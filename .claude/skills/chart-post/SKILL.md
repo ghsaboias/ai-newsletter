@@ -9,7 +9,7 @@ allowed-tools: Read, Write, Edit, Bash, WebSearch, WebFetch, AskUserQuestion
 
 Tarefa recorrente: "fazer um post de gráfico do Substack" a partir da edição do dia. O gráfico = dado histórico/comparativo confiável que conta a história sozinho e **promove aquela edição**. Os arquivos ficam em `posts/` (spec de marca no CLAUDE.md "Posts"). Roda depois que o `edition-final.md` do dia existe (o draft já foi empurrado pro Substack).
 
-`edition-final.md` → **chart-post** → `posts/data/<slug>.json` (dados auditáveis) + `posts/chart-<slug>.html` (chart) + `posts/chart-<slug>.png` (render 2×) + `posts/chart-<slug>.md` (prosa pra colar como Substack Note).
+`edition-final.md` → **chart-post** → `posts/data/<slug>.json` (dados auditáveis) + `posts/chart-<slug>.html` (chart) + `posts/chart-<slug>.png` (render 2×) + `posts/chart-<slug>.md` (prosa) → rascunho de Note no Substack (`note-draft.sh`, depois do OK final; o Gui publica).
 
 **Garimpo e mecânica são automáticos; gosto e rigor de dado são do Gui.** Os pontos de julgamento (qual gráfico, qual fonte, resolver divergência de método, aprovar labels, aprovar prosa) passam por ele via AskUserQuestion ou apresentação. Não publique sozinho.
 
@@ -144,19 +144,41 @@ Só funciona depois de publicado (draft não redireciona, o `Location` vem vazio
 - **Curto.** Posts são bem curtos (3 parágrafos é normal).
 - **Ao mandar o texto no chat, mande SÓ o texto, sem NENHUMA formatação** — sem blockquote (`>`), sem barra de metadados, sem negrito, sem aspas de cerca. Texto cru, pronto pra copiar e colar direto. (Gui, 2026-06-30.)
 
+**Negrito e itálico na prosa** (o `.md` carrega as marcas; `note-draft.sh` as leva pro Note. Levantado dos 30 Notes de gráfico de 23/06 a 23/09/2026; Gui, 2026-10-01):
+- **Itálico (`*termo*`) = jargão em inglês não aportuguesado**, o mesmo critério da edição: *tokens*, *input*, *output*, *neoclouds*, *releases*, *preview*, *gateway*, *float*, *follow-on*, *capture-the-flag*, *stablecoins*. Vale no parágrafo da primeira menção (todas as ocorrências ali); nos parágrafos seguintes o termo volta sem itálico. **Sem itálico:** nomes próprios, produtos e empresas, siglas (HBM, IPO), e os termos já correntes em português (startup, data center, chip, software, venture capital, run-rate, pull request).
+- **Negrito (`**termo**`) = as entidades que ancoram a história, na primeira menção**: quem age (empresa/país), o produto, modelo ou benchmark que o gráfico mede, e a fonte do dado (ex. de 21 a 23/09: "**Anthropic**", "**Claude Opus 5.5**", "**FrontierMath Tier 4**", "**Epoch AI**", "**Pew Research Center**"). Quase tudo no primeiro parágrafo; num parágrafo posterior só entra entidade nova que seja o gancho da notícia (ex.: os outros modelos comparados). De 2 a 5 negritos por Note, nunca frase inteira.
+- **Sem negrito em números.** Notes de julho negritavam cifras e frases ("**485 TWh**"); o padrão recente largou isso. O número já está no gráfico.
+- A linha final ("As demais histórias do dia...") fica sem marca nenhuma.
+- Negrito e itálico não se combinam no mesmo termo: termo estrangeiro que também é o sujeito da história fica só em itálico.
+
 **Antes de dar OK pra postar, releia fato a fato + gramática** e confirme que cada número casa com o `posts/data/<slug>.json`.
 
 ## Em dashes
 
 Proibidos em tudo que a skill produz: título, kicker, legenda, footer e prosa. No lugar, vírgula, ponto ou dois-pontos. (Gui, 2026-09-01.)
 
-## Step 7: Commit (quando o Gui pedir)
+## Step 7: Rascunho do Note no Substack (quando o Gui der o OK final)
 
-Posts são commitados (charts + `posts/data/*.json` = dados auditáveis). `origin/main` avança sozinho (Pi recommendations cron, ~meio-dia BRT, pusha deste clone) — **`git pull --rebase origin main` antes de pushar** ou o push é rejeitado. A publicação em si é manual (cola o `.md`/`.png` no editor do Substack como Note; ver memórias `publish-gap-substack`, `chart-post-workflow`).
+Só depois do OK final do Gui no chart **e** na prosa:
+
+```bash
+.claude/skills/chart-post/note-draft.sh <slug>
+```
+Sobe o PNG, anexa o card da edição e salva o texto como **rascunho** de Note (`sstats note-draft`; devolve `id` + `attachments: ["image","post"]`). **Não publica**: o rascunho aparece no composer de Notes do Substack, em Drafts, e o Gui posta de lá (é onde ele põe os negritos). Diga a ele o `id` e que está em Drafts.
+
+- **Mudou a prosa ou o chart depois?** `note-draft.sh <slug> --id <id>` substitui o mesmo rascunho. Não crie um segundo. `sstats note-drafts` lista; `sstats note-draft-delete <id>` apaga.
+- O script recusa link placeholder (`/p/<id>`) ou de editor: resolva a URL pública antes (Step 6).
+- **Nunca** chame `POST /api/v1/comment/feed`: esse endpoint publica o Note na hora. A skill só cria rascunho.
+- Se `sstats note-draft` falhar (API do Substack mudou), o fallback é o manual: Gui cola o texto e o PNG no composer.
+
+## Step 8: Commit (quando o Gui pedir)
+
+Posts são commitados (charts + `posts/data/*.json` = dados auditáveis). `origin/main` avança sozinho (Pi recommendations cron, ~meio-dia BRT, pusha deste clone) — **`git pull --rebase origin main` antes de pushar** ou o push é rejeitado. A publicação em si é manual: o Gui posta o rascunho do Step 7 pelo composer de Notes.
 
 ## Regras
 
 - **Garimpo automático, escolha humana.** Candidato de gráfico, fonte, fork de método, labels e prosa passam pelo Gui. Nunca publique sozinho.
+- **Rascunho sim, publicação não.** Com o OK final, `note-draft.sh` salva o Note como rascunho no Substack; quem publica é o Gui, no composer.
 - **Citable > derived.** Plote números reportados, não interpolados/computados. Largue a série problemática em vez de fudge.
 - **Caption/footnote = só fonte; caracterização da história → subtítulo.** O footnote fica só com de-onde-vem-cada-número (e a ponte de fonte). O que é medido, meta vs realizado, contexto setorial = subtítulo. Nunca na prosa nem no título. (Gui, 2026-06-30.)
 - **Render sempre via `render.sh`** — ele escolhe o backend pela plataforma: Mac = browser-tools no Brave real (headless de Brave trava no setup de perfil), Pi/Linux = Chromium headless (`headless-render.js`). Nunca tente headless no Mac nem browser-tools no Pi.
