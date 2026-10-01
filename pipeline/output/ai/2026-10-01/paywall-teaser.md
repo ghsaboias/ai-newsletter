@@ -1,0 +1,6 @@
+**Abaixo, apenas para assinantes:**
+
+**Governos e segurança.** Um laboratório americano diz ter barrado uma campanha para copiar seus modelos, um estado americano aprova lei sobre IA no trabalho, a defesa dos EUA monta um estudo sobre a guerra do futuro e um assistente de IA chega às agências públicas americanas.
+**Dinheiro.** Rodadas para startups americanas de segurança cibernética com IA e de chips, uma nova stablecoin de dólar com sócios conhecidos do setor de pagamentos entra em operação, e os juros dos títulos americanos seguem em alta.
+**Silício.** Uma empresa americana de chips passa a financiar um laboratório de IA, uma gigante chinesa de tecnologia aluga chips de IA fora do país e a alta da memória chega ao preço dos celulares de uma fabricante chinesa.
+**Energia.** Uma gigante americana de tecnologia fecha contrato de longo prazo com uma usina nuclear, e uma geradora japonesa entra num projeto de data center de IA.
