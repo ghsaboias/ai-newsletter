@@ -1369,3 +1369,13 @@ https://www.youtube.com/watch?v=Am7IWP8IpEc
 **Jared Isaacman: A New Era for NASA and American Space Exploration**
 Jared Isaacman, administrador da NASA nomeado no governo Donald Trump, aviador e astronauta comercial, apresentou as diretrizes operacionais, tecnológicas e geopolíticas da agência espacial americana durante participação no All-In Podcast. Isaacman detalhou a reestruturação da agência para competir na nova corrida espacial contra a aliança China-Rússia, o abandono de programas legados e ineficientes, a transição para a propulsão nuclear profunda e o cronograma revisado do programa Artemis rumo à Lua e a Marte
 https://www.youtube.com/watch?v=VTF6p0U98ek
+
+## 2026-09-30
+
+**Sarah Paine — Why wars are so difficult to end**
+Sarah Paine, historiadora e professora de estratégia naval no U.S. Naval War College, analisa a dinâmica do término de conflitos bélicos, demonstrando por que guerras são fáceis de iniciar, difíceis de encerrar e ainda mais difíceis de concluir nos termos originalmente planejados. A análise utiliza a Guerra Russo-Japonesa (1904–1905) como modelo de encerramento bem-sucedido de guerra limitada e examina os mecanismos teóricos de Carl von Clausewitz e Sun Tzu para explicar dois problemas centrais: a escalada de conflitos regionais em conflagrações globais e o surgimento de insurgências prolongadas após vitórias convencionais
+https://www.youtube.com/watch?v=f6cjAEr08qk
+
+**Daniel Ek: Life After Spotify, Broken Healthcare Incentives, Catching Disease Early & AI's Potential**
+Daniel Ek, cofundador e presidente executivo do Spotify (plataforma com mais de 700 milhões de usuários ativos e mais de 300 milhões de assinantes pagos), detalha a transição do seu foco operacional para a Neko Health, startup de diagnósticos preventivos em saúde que fundou ao lado de Hjalmar Nilsonne. A conversa, conduzida por Jason Calacanis e David Friedberg no All-In Podcast, aborda a fundação do Spotify, o modelo de negócios e a tecnologia da Neko Health, os problemas de incentivos no sistema de saúde dos EUA, a governança da inteligência artificial e os bastidores de sua trajetória como empreendedor técnico na Europa
+https://www.youtube.com/watch?v=JEUboZzZGM4
