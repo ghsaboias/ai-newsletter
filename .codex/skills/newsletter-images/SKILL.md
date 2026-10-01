@@ -2,8 +2,21 @@
 name: newsletter-images
 description: >-
   Monta a pré-seleção assistida de imagem/vídeo por história da newsletter de AI/Tech. Lê a edição do dia (edition-final.md), decide o sujeito visual + arquétipo + query de busca por história, junta candidatos (og:image das fontes de research.json + busca por palavra-chave), o Claude ranqueia estrito-ao-arquétipo com preferência por paisagem, propõe legenda e sobe as escolhas no thread do Slack (a imagem em si; vídeo só como link). Gui aprova/troca; as escolhas viram images-final.json, que o substack_mirror.py media empurra pro draft ao vivo do Substack (imagens em 520px, com legenda, na posição de cada história). Exclui a seção Leia também. Aciona quando o usuário diz "escolher as imagens", "rodar images", "montar as imagens", "/newsletter-images".
-allowed-tools: Read, Write, Bash
 ---
+
+## Execução no Codex
+
+Sincronizada da skill Claude; as regras editoriais abaixo são as mesmas.
+Leia skills dependentes em `.codex/skills/<nome>/SKILL.md` e siga-as nesta sessão.
+`Read`/`Write`/`Bash` significam leitura/edição/shell pelas ferramentas disponíveis;
+use `functions.exec` com `tools.exec_command` / `tools.apply_patch`. Para ver imagens,
+use `tools.view_image`. Para busca/fetch, use Exa quando disponível, senão `web.run`.
+Chamadas a `collaboration.spawn_agent` são diretas, fora de `functions.exec`.
+Respeite o limite de agentes simultâneos da sessão: despache os independentes até
+preencher as vagas e aguarde a conclusão antes de despachar o próximo grupo. Não presuma vagas ilimitadas.
+A autorização explícita do usuário prevalece sobre pedidos de aprovação desta
+skill; se ele já aprovou todas as imagens/vídeos, faça a conferência visual e siga
+para o push sem repetir a pergunta. Preserve o draft existente ao adicionar mídia.
 
 ## Quando essa skill roda
 

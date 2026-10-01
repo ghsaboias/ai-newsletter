@@ -1,24 +1,26 @@
 ---
 name: newsletter-draft
 description: >-
-  Orquestra a geração do draft da newsletter de AI/Tech pelo caminho novo
-  (research → facts → edition), inteiramente com sub-agentes em sessão, sem prosa
-  intermediária (pt.md). Encadeia: research (skill newsletter-research → 3
-  especialistas + dedup → research.json) → facts (agente facts → facts.md) →
-  edição (agente generator → edition.md) → LINK+PAYWALL+PUSH (extract+paywall-teaser →
-  ingest --execute → rewrite-links → push de UM draft no Substack, DJ-linkado +
-  com paywall) → checks advisory em paralelo (repetition-checker ∥ fact-verifier,
-  não-bloqueantes → repetition.json + fact-check.json). Para se algum passo de
-  CONTEÚDO falhar (os checks advisory nunca interrompem). Ao final o artefato é um
-  draft do Substack já DJ-linkado e com paywall, pronto pra revisão humana NO
-  EDITOR do Substack (aprovação de tiering + imagens/vídeo à mão); os dois
-  relatórios advisory ficam ao lado. NÃO inicia a revisão e — crítico — NÃO
-  re-empurra depois do primeiro push (o draft do Substack vira a fonte da verdade).
-  É o orquestrador do draft da newsletter de AI/Tech (substituiu o antigo caminho
-  de prosa). Aciona quando o usuário diz "rodar o draft", "draftar a
-  edição", "/newsletter-draft". Aceita `YYYY-MM-DD` e a flag `mini`.
-allowed-tools: Skill, Read, Write, Bash, Agent
+  Gera o draft da newsletter de AI/Tech: research → facts → edition, com
+  subagentes; vincula as fontes ao Daily Journal, inclui paywall e cria um único
+  draft no Substack. Executa checagens de repetição, léxico e fidelidade para a
+  revisão humana. Aceita YYYY-MM-DD e mini. Use para /newsletter-draft, rodar o
+  draft ou draftar a edição. Após o primeiro push, preserva o draft no editor.
 ---
+
+## Execução no Codex
+
+Sincronizada da skill Claude; as regras editoriais abaixo são as mesmas.
+Leia skills dependentes em `.codex/skills/<nome>/SKILL.md` e siga-as nesta sessão.
+`Read`/`Write`/`Bash` significam leitura/edição/shell pelas ferramentas disponíveis;
+use `functions.exec` com `tools.exec_command` / `tools.apply_patch`. Para ver imagens,
+use `tools.view_image`. Para busca/fetch, use Exa quando disponível, senão `web.run`.
+Chamadas a `collaboration.spawn_agent` são diretas, fora de `functions.exec`.
+Respeite o limite de agentes simultâneos da sessão: despache os independentes até
+preencher as vagas e aguarde a conclusão antes de despachar o próximo grupo. Não presuma vagas ilimitadas.
+A autorização explícita do usuário prevalece sobre pedidos de aprovação desta
+skill; se ele já aprovou todas as imagens/vídeos, faça a conferência visual e siga
+para o push sem repetir a pergunta. Preserve o draft existente ao adicionar mídia.
 
 ## When this skill runs
 
@@ -67,8 +69,14 @@ date '+%Y-%m-%d %H:%M:%S %Z'; date +%s   # second number = START, keep it
 ```
 
 ```
-DAY_DIR = /Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>
+REPO    = /Users/guilherme/ai-newsletter          # raiz do repo (onde vivem os scripts)
+DAY_DIR = $REPO/pipeline/output/ai/<DATE>
 ```
+
+Confira que os nove agentes em `.codex/agents/*.toml` estão disponíveis
+como tipos registrados na sessão. Não mantenha cópias de backup nesse diretório;
+use o git. Se as definições foram atualizadas após iniciar a sessão, inicie uma
+nova sessão antes de executar a cadeia para carregar as instruções novas.
 
 ## Orchestration model
 
@@ -76,7 +84,7 @@ This skill is **thin** and **gated**. Three jobs only:
 
 1. **Run each step in order**: research via the `newsletter-research` *skill*;
    facts and the edition via the registered *agents* (`facts`, `generator`) dispatched
-   with the `Agent` tool. (Research is a skill because it's a 3-agent fan-out +
+   with the `collaboration.spawn_agent` tool. (Research is a skill because it's a 3-agent fan-out +
    merge; facts and generator are single agents, so they're dispatched directly — there's
    no facts/generator child skill to delegate to.) **Maximize the back-half overlap:**
    `extract` reads only facts.md+research.json, so it's fired *with* the `generator`
@@ -111,7 +119,7 @@ Idempotency: if `$DAY_DIR/research.json` exists with `story_count > 0`, skip thi
 step. Otherwise:
 
 ```
-Skill({ skill: "newsletter-research", args: "<DATE>" })   # append " mini" when the mini flag is set
+Read `.codex/skills/newsletter-research/SKILL.md` and execute it for <DATE>   # append " mini" when the mini flag is set
 ```
 
 Gate:
@@ -134,10 +142,10 @@ agent with a **paths-only** prompt (its methodology lives in its own system
 prompt):
 
 ```
-Agent({
-  description: "Facts: research → facts.md",
-  subagent_type: "facts",
-  prompt: "Date: <DATE>.\nResearch (input): /Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>/research.json\nWrite the atomic fact base to: /Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>/facts.md"
+collaboration.spawn_agent({
+  task_name: "facts",
+  agent_type: "facts",
+  message: "Date: <DATE>.\nResearch (input): /Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>/research.json\nWrite the atomic fact base to: /Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>/facts.md"
 })
 ```
 
@@ -178,36 +186,42 @@ Dispatch only whichever lacks its output (idempotency): `generator` if `edition.
 is missing, `extract` if `sources.json` is missing. **Mini run: dispatch
 `generator` only** — `extract` feeds the LINK block that mini skips.
 
-**First, gather the recent Grandes** — the lead (`###`) headlines of the last few
-editions. They go into the generator's prompt so it can honor its **no-re-lead
-rule** (a story that already led as a Grande in the last few days must not lead
-again — it demotes to Média). Cheap, and it's the signal that stops the same
-megaproject leading twice in a week:
+**First, gather the recent Grandes and the previous edition** — the lead (`###`)
+headlines of the last few editions, plus the **path** of the most recent edition
+file. The headlines feed the generator's **no-re-lead rule** (a story that
+already led as a Grande in the last few days must not lead again — it demotes to
+Média). The previous-edition path feeds its **continuity rule**: the generator
+reads the file and reframes any story that already ran yesterday (any tier, not
+just Grandes) as continuity instead of fresh news — that's what stops a Média
+from re-running two days straight as if new. `edition-final.md` is preferred
+over `edition.md` (it carries the human-reviewed tiering and headlines):
 
 ```bash
 ROOT=/Users/guilherme/ai-newsletter/pipeline/output/ai
-RECENT_GRANDES=""; CHECK=<DATE>
+RECENT_GRANDES=""; PREV_EDITION=""; CHECK=<DATE>
 for i in 1 2 3 4 5; do
   CHECK=$(date -j -v-1d -f "%Y-%m-%d" "$CHECK" "+%Y-%m-%d" 2>/dev/null || date -d "$CHECK - 1 day" "+%Y-%m-%d")
-  for f in edition.md edition-final.md; do
+  for f in edition-final.md edition.md; do
     [ -s "$ROOT/$CHECK/$f" ] || continue
     RECENT_GRANDES+=$(grep '^### ' "$ROOT/$CHECK/$f" | sed "s/^### /- $CHECK: /")$'\n'
+    [ -n "$PREV_EDITION" ] || PREV_EDITION="$ROOT/$CHECK/$f"
     break
   done
 done
 printf '%s' "${RECENT_GRANDES:-(nenhuma)}"   # paste into the generator prompt below
+printf '%s\n' "${PREV_EDITION:-(nenhuma)}"   # ditto — the continuity-rule path
 ```
 
 ```
-Agent({
-  description: "edition: facts → edition.md",
-  subagent_type: "generator",
-  prompt: "Date: <DATE>.\nFact base (input): /Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>/facts.md\nWrite the three-tier edition to: /Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>/edition.md\n\nRecent Grandes (do NOT re-lead these — a story whose core event already led here demotes to Média, unless it has a genuinely new, dated in-window development to lead with):\n<paste RECENT_GRANDES, one 'YYYY-MM-DD: headline' per line — or '(nenhuma)'>"
+collaboration.spawn_agent({
+  task_name: "generator",
+  agent_type: "generator",
+  message: "Date: <DATE>.\nFact base (input): /Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>/facts.md\nWrite the three-tier edition to: /Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>/edition.md\n\nRecent Grandes (do NOT re-lead these — a story whose core event already led here demotes to Média, unless it has a genuinely new, dated in-window development to lead with):\n<paste RECENT_GRANDES, one 'YYYY-MM-DD: headline' per line — or '(nenhuma)'>\n\nEdição da véspera (READ this file before writing — any of today's stories whose core event already ran there, in ANY tier, must be framed as continuity per your Continuidade rule, never re-presented as fresh):\n<paste PREV_EDITION — the path — or '(nenhuma)'>"
 })
-Agent({                                    # FULL RUN ONLY — gated later at Step 3.5a
-  description: "Extract sources → sources.json",
-  subagent_type: "extract",
-  prompt: "Date: <DATE>.\nfacts.md (input): <DAY_DIR>/facts.md\nresearch.json (metadata join): <DAY_DIR>/research.json\nWrite sources.json to: <DAY_DIR>/sources.json"
+collaboration.spawn_agent({                                    # FULL RUN ONLY — gated later at Step 3.5a
+  task_name: "extract",
+  agent_type: "extract",
+  message: "Date: <DATE>.\nfacts.md (input): <DAY_DIR>/facts.md\nresearch.json (metadata join): <DAY_DIR>/research.json\nWrite sources.json to: <DAY_DIR>/sources.json"
 })
 ```
 
@@ -243,6 +257,19 @@ else
 fi
 ```
 
+Then gate the **subtitle** (line 3 of `edition.md`): one ` | `-separated segment
+per Grande, at most one segment ending in `?`. This is the published format
+(every edition since July was rewritten into it by hand), so a mismatch is a
+generator bug — delete `edition.md` and re-run `generator`, don't hand-patch:
+
+```bash
+SUB=$(sed -n 3p "$D/edition.md")
+S=$(awk -F' \\| ' '{print NF}' <<<"$SUB")
+Q=$(grep -o '?' <<<"$SUB" | wc -l)
+if [ "$S" -eq "$G" ] && [ "$Q" -le 1 ]; then echo "OK subtitle: $S segments, $Q question"
+else echo "FAIL subtitle: $S segments for $G grandes, $Q questions — re-run generator: $SUB"; fi
+```
+
 An out-of-cap Grande count is worth surfacing — **>3 is a real problem** (the cap),
 a low count is the writer's call on a thin/repetitive day — but `edition.md` still
 exists, so flag it for the human review rather than hard-failing.
@@ -255,7 +282,13 @@ for it):
 
 - `paywall-teaser` → `paywall-meta.json` (the push consumes it) — **full run only**
 - `repetition-checker` → `repetition.json` (advisory) — moved up from the tail
-- `fact-verifier` → `fact-check.json` (advisory) — moved up from the tail
+- `fact-verifier` → `fact-check.json` (advisory) — moved up from the tail. **Passe
+  a ele o caminho da edição da véspera** (o primeiro item da lista `PREV` logo
+  abaixo, que você já resolve para o `repetition-checker`). Sem esse arquivo ele
+  não consegue distinguir continuidade legítima de atribuição inventada e reporta
+  como `high` toda referência correta a ontem — em 2026-08-19 os dois findings
+  `high` eram falsos positivos e duas frases certas foram apagadas por causa
+  disso.
 
 First resolve the previous editions `repetition-checker` compares against — walk
 back up to 3 prior days that have an edition file (prefer `edition.md`, fall back
@@ -277,20 +310,20 @@ Then **fire them in one message** (skip any whose output already exists; on a
 **mini** run skip `paywall-teaser` — there's no push to feed):
 
 ```
-Agent({                                          # FULL RUN ONLY
-  description: "Paywall teasers → paywall-meta.json",
-  subagent_type: "paywall-teaser",
-  prompt: "Date: <DATE>.\nedition.md (input): <DAY_DIR>/edition.md\nWrite paywall-meta.json to: <DAY_DIR>/paywall-meta.json\nWrite paywall-teaser.md to: <DAY_DIR>/paywall-teaser.md"
+collaboration.spawn_agent({                                          # FULL RUN ONLY
+  task_name: "paywall_teaser",
+  agent_type: "paywall-teaser",
+  message: "Date: <DATE>.\nedition.md (input): <DAY_DIR>/edition.md\nWrite paywall-meta.json to: <DAY_DIR>/paywall-meta.json\nWrite paywall-teaser.md to: <DAY_DIR>/paywall-teaser.md"
 })
-Agent({
-  description: "Repetition check vs prior editions",
-  subagent_type: "repetition-checker",
-  prompt: "Date: <DATE>.\nCurrent edition: <DAY_DIR>/edition.md\nPrevious editions to compare against:\n<the PREV list, one 'YYYY-MM-DD: path' per line — or '(none found)'>\nWrite findings to: <DAY_DIR>/repetition.json"
+collaboration.spawn_agent({
+  task_name: "repetition_checker",
+  agent_type: "repetition-checker",
+  message: "Date: <DATE>.\nCurrent edition: <DAY_DIR>/edition.md\nPrevious editions to compare against:\n<the PREV list, one 'YYYY-MM-DD: path' per line — or '(none found)'>\nWrite findings to: <DAY_DIR>/repetition.json"
 })
-Agent({
-  description: "Fact-verify the edition",
-  subagent_type: "fact-verifier",
-  prompt: "Date: <DATE>.\nresearch.json: <DAY_DIR>/research.json\nfacts.md: <DAY_DIR>/facts.md\nEdition (edition.md): <DAY_DIR>/edition.md\nWrite findings to: <DAY_DIR>/fact-check.json"
+collaboration.spawn_agent({
+  task_name: "fact_verifier",
+  agent_type: "fact-verifier",
+  message: "Date: <DATE>.\nresearch.json: <DAY_DIR>/research.json\nfacts.md: <DAY_DIR>/facts.md\nEdition (edition.md): <DAY_DIR>/edition.md\nEdição da véspera (árbitro da classe 'atribuição inventada' — toda referência a 'na véspera'/'ontem'/'confirmada em <dia>' na edição de hoje tem de estar NESTE arquivo): <o primeiro item da lista PREV, só o caminho — ou '(nenhuma)'>\nWrite findings to: <DAY_DIR>/fact-check.json"
 })
 ```
 
@@ -395,14 +428,11 @@ this file.
 
 Idempotency: if `links.json` exists, the day was already ingested — **skip**.
 
-**Run this as ONE foreground Bash call with an explicit `timeout: 600000` (10 min).**
-Ingest takes ~4 min for ~20 entities; the Bash tool's default 2-min timeout kills it
-mid-run, leaving partial DB rows that the retry then collides with (duplicate-key
-noise). **Never** run it with `run_in_background`, `nohup`, or a detached `&`: in the
-headless Slack harness, Bash background tasks are killed the moment the turn ends and
-their completion notification never arrives — a detached ingest finishes with nobody
-watching and the chain stalls. Staying foreground keeps the turn (and the run) alive.
-The same 10-min timeout applies to the `--propose` call in Step 3.5b.
+Execute `--propose` e `--execute` com `tools.exec_command`, mantendo a sessão
+ativa até o processo terminar (podem levar cerca de 4–10 minutos). Se retornar
+`session_id`, acompanhe com `tools.write_stdin` até obter o exit code. O
+`yield_time_ms` controla a devolução de saída, não é um timeout de execução.
+Não use `nohup`, `&` ou encerre a tarefa com o ingest ainda em andamento.
 
 ```bash
 D=/Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>
@@ -460,6 +490,13 @@ Grandes. The `draft` suffix persists the draft id to `.substack-draft-id` (the
 doc's `--id-out` target) and writes `substack-draft.json` with the review URL. The
 create-once guard above is what protects the hand-edited editor copy on any re-run.
 
+The teaser blockquote goes inside a Substack **audience-specific content block**
+(`dynamicContent`, audiences `non_sub` + `free_sub`), so only readers who actually
+hit the wall see "Abaixo, apenas para assinantes:" — paid and founding subscribers
+read straight from the Grandes into the Médias. It renders in the editor as an
+"SE / Público" box; leave it alone during review. `substack_post.py` builds it
+(`wrap_for_free_readers`), so nothing changes in the skill's commands.
+
 ## Step 4: Advisory roll-up (`repetition-checker` ∥ `fact-verifier`)
 
 Both were **dispatched back in Step 3**, right after the edition gate, and have
@@ -495,9 +532,53 @@ echo "=== Draft Complete: <DATE> ==="
 [ -f "$D/links.json" ]    && echo "  Ingest:     $(jq 'length' "$D/links.json") DJ pages (executed)"
 [ -f "$D/paywall-meta.json" ] && echo "  Paywall:    $(jq '.teasers|length' "$D/paywall-meta.json") teasers"
 [ -f "$D/substack-draft.json" ]  && echo "  Draft:      $(jq -r '.url' "$D/substack-draft.json")"
-[ -f "$D/repetition.json" ] && echo "  Repetition: $(jq '.issues|length' "$D/repetition.json") issues (advisory)"
+[ -f "$D/repetition.json" ] && echo "  Repetition: $(jq -r '"\(.issues|length) issues (high \([.issues[]|select(.severity=="high")]|length) / med \([.issues[]|select(.severity=="medium")]|length) / low \([.issues[]|select(.severity=="low")]|length))"' "$D/repetition.json") (advisory)"
 [ -f "$D/fact-check.json" ] && echo "  Fact-check: $(jq '.fidelity_issues|length' "$D/fact-check.json") fidelity / $(jq '.dropped_facts|length' "$D/fact-check.json") dropped (advisory)"
 echo "  Duration:   $(( ($(date +%s) - START) / 60 ))m $(( ($(date +%s) - START) % 60 ))s"
+```
+
+Validate both advisory files before reading anything out of them. This is a
+**non-gating** check (advisory never halts the chain) — but a malformed report is
+worse than no report, so say so out loud instead of printing `null`s:
+
+```bash
+python3 "$REPO/pipeline/tools/validate-findings.py" repetition "$D/repetition.json" || echo "  WARN: repetition.json fora do schema — findings abaixo podem estar incompletos"
+python3 "$REPO/pipeline/tools/validate-findings.py" fact-check "$D/fact-check.json" || echo "  WARN: fact-check.json fora do schema — findings abaixo podem estar incompletos"
+```
+
+`$REPO` é a raiz do repo (Step 0), **não** `$ROOT` — `ROOT`, nos Steps 3/3.5, é o
+diretório de *output*. Com `$ROOT` o `python3` morre com `can't open file`, o `||`
+dispara e o WARN sai idêntico ao de schema inválido, mascarando qual é o problema.
+
+Then apply the **mechanical** half of the findings. Only `type: "lexicon"` is
+auto-applied — a banned term or a missing italic has one literal fix and no
+editorial judgement. Repetition of phrasing/framing/story is never auto-applied:
+it needs a rewrite, and that stays with the human reviewer.
+
+```bash
+python3 "$REPO/pipeline/tools/apply-lexicon.py" "$D/repetition.json" "$D/edition.md" --execute
+python3 "$REPO/pipeline/tools/apply-lexicon.py" "$D/repetition.json" "$D/edition-final.md" --execute
+```
+
+Run this **before** the Substack push if the push hasn't happened yet, so the
+draft goes out already clean. If the draft is already pushed, do **not** re-push
+from the skill — report the `APPLY` lines and let the reviewer mirror them in the
+editor. Each line prints `APPLY`/`SKIP`; a `SKIP` is the tool refusing to guess
+(anchor not found or ambiguous), never a silent failure.
+
+Then print the advisory findings that are worth the reviewer's eye — **high and
+medium only**, never the `low` tail (it's what makes the report get ignored).
+Both files now carry `severity`, so filter on it; never invent field names:
+
+```bash
+echo "--- repetition (high/med) ---"
+jq -r '.issues[] | select(.severity=="high" or .severity=="medium")
+       | "  [\(.severity)/\(.type)] \(.overlap)\n      → \(.suggestion)"' "$D/repetition.json"
+echo "--- fact-check (high/med) ---"
+jq -r '.fidelity_issues[] | select(.severity!="low")
+       | "  [\(.severity)] \(.issue) (\(.where)): \(.claim)"' "$D/fact-check.json"
+jq -r '.dropped_facts[] | select(.severity!="low")
+       | "  [\(.severity)] dropped em \"\(.story)\": \(.fact)"' "$D/fact-check.json"
 ```
 
 Then print the hand-off (point at the **Substack draft** — the review happens
@@ -510,7 +591,8 @@ there now):
 > Substack é a fonte da verdade — não rode a skill de novo pra re-publicar** (ela
 > nem re-empurra: o id em `.substack-draft-id` trava o create-once). Leia antes os
 > memory files em `~/.claude/projects/-Users-guilherme-ai-newsletter/memory/` e os
-> findings advisory: `repetition.json` (repetições story/phrasing/framing) +
+> findings advisory: `repetition.json` (repetições story/phrasing/framing +
+> violações de léxico/estilo, com `severity`) +
 > `fact-check.json` (fidelidade + fatos load-bearing perdidos).
 
 Do **not** re-print each step's output — research's skill and the agents already
