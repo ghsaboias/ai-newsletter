@@ -1389,3 +1389,13 @@ https://www.youtube.com/watch?v=orUDz9N9Q48
 **We Tested the New Wave of Personal AI Agents**
 Anish Acharya (General Partner na Andreessen Horowitz / a16z) conversa com David Pawlan (criador do Assistant Benchmark) sobre a evolução recente dos agentes de inteligência artificial voltados ao consumidor, analisando arquiteturas de interface, viabilidade econômica, dinâmicas sociais em grupos e os impactos no comércio eletrônico
 https://www.youtube.com/watch?v=3T5sij3spWw
+
+## 2026-10-02
+
+**How Jev Turns AI Into Software That Gets Things Done**
+Diogo Almeida, fundador e CEO da TypeSafe AI (ex-OpenAI e Google Brain), discute com Ben Horowitz e Martin Casado (sócios da Andreessen Horowitz / a16z) a lacuna entre o avanço dos modelos de inteligência artificial e a escassez de automação real no mundo produtivo. Almeida apresenta a proposta do Jev, um modelo projetado não como chatbot ou assistente de geração de código para humanos, mas como uma primitiva inteligente embutida diretamente no código-fonte para tomada de decisões probabilísticas em máquinas de estado
+https://www.youtube.com/watch?v=Ut3LOjKNJaE
+
+**Anthropic's Wet Lab, Artificial Wombs in 24 Months, and Scalable Gene Editing | MOONSHOTS Live #297**
+Em painel no evento MOONSHOTS Live 2026, Peter Diamandis, Salim Ismail, Dave Blundin e Dr. Alexander Wissner-Gross entrevistam Ben Lamm, cofundador e CEO da Colossal Biosciences, empresa de biotecnologia avaliada em mais de US$ 10 bilhões que combina engenharia genética, síntese de DNA e inteligência artificial para desextinção e conservação de espécies
+https://www.youtube.com/watch?v=VHg3oX1ytYQ
