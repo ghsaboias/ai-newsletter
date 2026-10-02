@@ -1379,3 +1379,13 @@ https://www.youtube.com/watch?v=f6cjAEr08qk
 **Daniel Ek: Life After Spotify, Broken Healthcare Incentives, Catching Disease Early & AI's Potential**
 Daniel Ek, cofundador e presidente executivo do Spotify (plataforma com mais de 700 milhões de usuários ativos e mais de 300 milhões de assinantes pagos), detalha a transição do seu foco operacional para a Neko Health, startup de diagnósticos preventivos em saúde que fundou ao lado de Hjalmar Nilsonne. A conversa, conduzida por Jason Calacanis e David Friedberg no All-In Podcast, aborda a fundação do Spotify, o modelo de negócios e a tecnologia da Neko Health, os problemas de incentivos no sistema de saúde dos EUA, a governança da inteligência artificial e os bastidores de sua trajetória como empreendedor técnico na Europa
 https://www.youtube.com/watch?v=JEUboZzZGM4
+
+## 2026-10-01
+
+**Cathie Wood on Tesla-SpaceX Merger, $1M Bitcoin, More AIs Than Humans | EP #296 | Moonshots Live**
+Durante o Moonshots Live 2026, Peter Diamandis (fundador do XPRIZE e Singularity University) e Emad Mostaque (fundador da Intelligent Internet) entrevistam Cathie Wood (CEO e CIO da ARK Invest) e Nikhil Chandhok (Chief Product & Technology Officer da Circle) sobre a fusão entre Tesla e SpaceX, a proliferação de agentes de inteligência artificial, a infraestrutura financeira de stablecoins e blockchain, o impacto da IA na saúde e o cenário macroeconômico global
+https://www.youtube.com/watch?v=orUDz9N9Q48
+
+**We Tested the New Wave of Personal AI Agents**
+Anish Acharya (General Partner na Andreessen Horowitz / a16z) conversa com David Pawlan (criador do Assistant Benchmark) sobre a evolução recente dos agentes de inteligência artificial voltados ao consumidor, analisando arquiteturas de interface, viabilidade econômica, dinâmicas sociais em grupos e os impactos no comércio eletrônico
+https://www.youtube.com/watch?v=3T5sij3spWw
