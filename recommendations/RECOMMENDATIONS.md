@@ -1409,3 +1409,13 @@ https://www.youtube.com/watch?v=cvmgnpxr-Lk
 **AI, Infrastructure, and the Next Investment Cycle**
 David George, Sarah Wang, Alex Immerman e Santiago Rodriguez, sócios da equipe de investimentos Growth da Andreessen Horowitz (a16z), analisam 25 gráficos da apresentação anual State of Markets. A discussão abrange a dinâmica macroeconômica do ciclo de infraestrutura de inteligência artificial, o comportamento dos balanços e valuations das empresas de tecnologia, a evolução da camada de modelos e aplicações, as transformações no mercado de SaaS e as novas fronteiras de investimento em hardware, autonomia, biologia e defesa
 https://www.youtube.com/watch?v=lr3hNhA0IfQ
+
+## 2026-10-06
+
+**Astro Teller: Inside Google X's 2,000-Idea Moonshot Factory & How Google Brain Made the T in ChatGPT**
+Astro Teller, cofundador e líder ("Captain of Moonshots") da X (o laboratório de inovação da Alphabet/Google) e neto de Edward Teller e de um Nobel de Economia, detalha em painel no evento Moonshots Live 2026, ao lado de Peter Diamandis, Salim Ismail, Dave Blundin e Alexander Wissner-Gross, os princípios operacionais, a economia interna e a cultura de engenharia de inovação radical que regem a X há mais de 16 anos
+https://www.youtube.com/watch?v=FO8VXvS8aw4
+
+**The Current State of Consumer AI**
+Elena Burger, parceira editorial da Andreessen Horowitz (a16z), entrevista os sócios de investimento Olivia Moore e Josh Elman para analisar os dados da 7ª edição do relatório Top 100 Consumer AI Apps. Pela primeira vez, a pesquisa incorporou dados de gastos reais em cartões de crédito de pessoas físicas nos Estados Unidos (via painel da YipitData), além das métricas tradicionais de tráfego web e downloads mobile
+https://www.youtube.com/watch?v=aCvrzhwUxg0
