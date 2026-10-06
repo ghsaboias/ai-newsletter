@@ -1399,3 +1399,13 @@ https://www.youtube.com/watch?v=Ut3LOjKNJaE
 **Anthropic's Wet Lab, Artificial Wombs in 24 Months, and Scalable Gene Editing | MOONSHOTS Live #297**
 Em painel no evento MOONSHOTS Live 2026, Peter Diamandis, Salim Ismail, Dave Blundin e Dr. Alexander Wissner-Gross entrevistam Ben Lamm, cofundador e CEO da Colossal Biosciences, empresa de biotecnologia avaliada em mais de US$ 10 bilhões que combina engenharia genética, síntese de DNA e inteligência artificial para desextinção e conservação de espécies
 https://www.youtube.com/watch?v=VHg3oX1ytYQ
+
+## 2026-10-05
+
+**How Mark Zuckerberg, Palmer Luckey, Josh Kushner & Scott Wu Think | Jeremy Stern**
+Jeremy Stern, editor-chefe da Colossus, detalha os bastidores, a psicologia e o processo de reportagem por trás de seus extensos perfis de fundadores e investidores como Mark Zuckerberg, Palmer Luckey, Scott Wu e Josh Kushner. A conversa com David Senra explora a motivação desses líderes, a aplicação de ambição literária ao jornalismo de negócios e as origens intelectuais e pessoais do próprio trabalho de Stern
+https://www.youtube.com/watch?v=cvmgnpxr-Lk
+
+**AI, Infrastructure, and the Next Investment Cycle**
+David George, Sarah Wang, Alex Immerman e Santiago Rodriguez, sócios da equipe de investimentos Growth da Andreessen Horowitz (a16z), analisam 25 gráficos da apresentação anual State of Markets. A discussão abrange a dinâmica macroeconômica do ciclo de infraestrutura de inteligência artificial, o comportamento dos balanços e valuations das empresas de tecnologia, a evolução da camada de modelos e aplicações, as transformações no mercado de SaaS e as novas fronteiras de investimento em hardware, autonomia, biologia e defesa
+https://www.youtube.com/watch?v=lr3hNhA0IfQ
