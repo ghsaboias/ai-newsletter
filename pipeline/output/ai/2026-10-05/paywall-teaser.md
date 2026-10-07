@@ -1,0 +1,6 @@
+**Abaixo, apenas para assinantes:**
+
+**Modelos.** Um novo modelo aberto vindo da Alemanha, uma startup americana preparando o seu e anúncios chegando a um chatbot.
+**Silício.** Conversas com uma fabricante taiwanesa de chips sobre uma nova fábrica nos EUA, um acordo de patentes entre uma gigante chinesa e uma americana do setor e energia nuclear reservada para um campus de data centers.
+**Dinheiro.** Um conglomerado francês de produtos elétricos compra uma empresa americana de software industrial, uma australiana de infraestrutura para IA prepara a abertura de capital e ex-engenheiros de uma startup americana de chips processam a antiga direção.
+**Mundo.** Mais ataques no Golfo, decisões de grandes economias e de produtores sobre a oferta de petróleo, e escalada entre Rússia e Ucrânia com um novo pacote alemão de ajuda militar.
