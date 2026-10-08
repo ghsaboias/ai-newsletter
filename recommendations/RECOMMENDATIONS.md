@@ -1419,3 +1419,13 @@ https://www.youtube.com/watch?v=FO8VXvS8aw4
 **The Current State of Consumer AI**
 Elena Burger, parceira editorial da Andreessen Horowitz (a16z), entrevista os sócios de investimento Olivia Moore e Josh Elman para analisar os dados da 7ª edição do relatório Top 100 Consumer AI Apps. Pela primeira vez, a pesquisa incorporou dados de gastos reais em cartões de crédito de pessoas físicas nos Estados Unidos (via painel da YipitData), além das métricas tradicionais de tráfego web e downloads mobile
 https://www.youtube.com/watch?v=aCvrzhwUxg0
+
+## 2026-10-07
+
+**Google's AI Infrastructure Chief, Amin Vahdat, on the Physics & Economics of Frontier AI**
+Amin Vahdat, líder de infraestrutura de inteligência artificial do Google, detalha a física, a engenharia e a economia por trás da construção de data centers de IA, da linha de processadores TPU e da operação em escala de hiperescala, em conversa com Sonya Huang, sócia da Sequoia Capital
+https://www.youtube.com/watch?v=bGph8GwB3Sk
+
+**Why Education Has to Change**
+Erik Torenberg, Ben Horowitz (sócio-fundador da gestora de venture capital Andreessen Horowitz / a16z) e Gagan Biyani (cofundador da Udemy e da Maven) apresentam a fundação da Horowitz Andreessen Academy (HAA). A conversa detalha a tese educacional da iniciativa, o impacto da inteligência artificial na formação profissional e o redesenho do modelo universitário tradicional para focar em aprendizado prático e orientado a projetos em San Francisco
+https://www.youtube.com/watch?v=Z4x71naDx1Q
