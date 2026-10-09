@@ -1429,3 +1429,13 @@ https://www.youtube.com/watch?v=bGph8GwB3Sk
 **Why Education Has to Change**
 Erik Torenberg, Ben Horowitz (sócio-fundador da gestora de venture capital Andreessen Horowitz / a16z) e Gagan Biyani (cofundador da Udemy e da Maven) apresentam a fundação da Horowitz Andreessen Academy (HAA). A conversa detalha a tese educacional da iniciativa, o impacto da inteligência artificial na formação profissional e o redesenho do modelo universitário tradicional para focar em aprendizado prático e orientado a projetos em San Francisco
 https://www.youtube.com/watch?v=Z4x71naDx1Q
+
+## 2026-10-08
+
+**Why Every AI Lab Will Become a Biotech Company | Andrew Huberman**
+O investidor Patrick O'Shaughnessy (Positive Sum) conversa com o neurocientista Andrew Huberman (professor na Universidade de Stanford e criador do Huberman Lab Podcast). A discussão aborda a fisiologia da energia e do sono em profissionais de alta performance, os problemas no discurso público de longevidade, o desenvolvimento de tecnologias de leitura e escrita neural não invasiva, a tese de que grandes laboratórios de inteligência artificial se tornarão empresas de biotecnologia e os dilemas éticos da engenharia genética humana
+https://www.youtube.com/watch?v=_QSX3BF9UX0
+
+**Building Cyber Defense for the Agentic Era**
+Em conversa com David George, General Partner da a16z, Kevin Mandia, fundador e CEO da Armadin e ex-fundador da Mandiant (adquirida pelo Google), detalha a transformação estrutural da cibersegurança diante do avanço dos modelos de inteligência artificial autônomos. Mandia analisa a mudança na economia dos ataques digitais, as limitações do modelo tradicional de pentesting e segurança operacional, o papel da defesa autônoma e as exigências operacionais para construir empresas em velocidade de IA
+https://www.youtube.com/watch?v=cJsHel27Z6M
