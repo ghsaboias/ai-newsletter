@@ -1439,3 +1439,13 @@ https://www.youtube.com/watch?v=_QSX3BF9UX0
 **Building Cyber Defense for the Agentic Era**
 Em conversa com David George, General Partner da a16z, Kevin Mandia, fundador e CEO da Armadin e ex-fundador da Mandiant (adquirida pelo Google), detalha a transformação estrutural da cibersegurança diante do avanço dos modelos de inteligência artificial autônomos. Mandia analisa a mudança na economia dos ataques digitais, as limitações do modelo tradicional de pentesting e segurança operacional, o papel da defesa autônoma e as exigências operacionais para construir empresas em velocidade de IA
 https://www.youtube.com/watch?v=cJsHel27Z6M
+
+## 2026-10-09
+
+**Luca Ferrari: The Operating System Behind Bending Spoons**
+Luca Ferrari é cofundador e CEO da Bending Spoons, empresa de tecnologia sediada em Milão que adquire ativos digitais consolidados (como Evernote, Vimeo, AOL, Meetup) para reestruturá-los profundamente e mantê-los indefinidamente. Em conversa com Brian Halligan (cofundador e ex-CEO da HubSpot) no podcast Long Strange Trip, Ferrari detalha o sistema operacional proprietário da companhia, os métodos quantitativos de contratação, a preferência por potencial bruto sobre experiência prévia e os princípios de simplificação e integridade que regem o negócio
+https://www.youtube.com/watch?v=hZxmbhsbvyw
+
+**The Fight Over Claude's Consciousness, AI's 1942 Moment, & Why Altman Says "Accept Some Bad Things"**
+O painel reúne Peter H. Diamandis, Dave Blundin, Salim Ismail, Dr. Alexander Wissner-Gross e Emad Mostaque para analisar os principais acontecimentos recentes no ecossistema de inteligência artificial, geopolítica computacional, regulação, economia da abundância e avanços científicos
+https://www.youtube.com/watch?v=LRdb8UmPnh0
