@@ -27,10 +27,10 @@ PROMPT="$TOPIC_PROMPTS_DIR/RESEARCH.md"
 # falling back to the calendar day before.
 PREV_DATE=""; CHECK="$DATE"
 for _ in 1 2 3 4 5 6 7; do
-  CHECK=$(date -d "$CHECK - 1 day" "+%Y-%m-%d")
+  CHECK=$(date -j -v-1d -f "%Y-%m-%d" "$CHECK" "+%Y-%m-%d" 2>/dev/null || date -d "$CHECK - 1 day" "+%Y-%m-%d")
   [[ -s "$LOOP_DIR/$CHECK/research.json" ]] && { PREV_DATE="$CHECK"; break; }
 done
-[[ -n "$PREV_DATE" ]] || PREV_DATE=$(date -d "$DATE - 1 day" "+%Y-%m-%d")
+[[ -n "$PREV_DATE" ]] || PREV_DATE=$(date -j -v-1d -f "%Y-%m-%d" "$DATE" "+%Y-%m-%d" 2>/dev/null || date -d "$DATE - 1 day" "+%Y-%m-%d")
 
 PREV_HEADLINES="(none)"
 if [[ -s "$LOOP_DIR/$PREV_DATE/research.json" ]]; then
