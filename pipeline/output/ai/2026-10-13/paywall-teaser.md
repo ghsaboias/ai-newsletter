@@ -1,0 +1,6 @@
+**Abaixo, apenas para assinantes:**
+
+**Segurança e modelos.** Um laboratório americano mede quão perto modelos pequenos estão de se espalhar sozinhos e como barrou quem copia seu modelo, laboratórios disputando o que avaliadores externos podem publicar e uma assinatura que junta chatbot e ferramenta de código.
+**Silício.** A fala de um CEO americano de chips que derrubou ações de memória na Coreia do Sul, um novo produto de memória para servidores de uma fabricante chinesa e mais um data center para a Anthropic, desta vez no Japão.
+**Dinheiro.** Bancos americanos reduzindo exposição a um empréstimo para GPUs, mais financiamento para data centers na Malásia, uma startup de modelos de IA avaliada em bilhões e duas aquisições, uma japonesa em computadores industriais e outra de um app de namoro.
+**Mundo.** Uma revisão do crescimento global puxada pelo investimento em IA, ameaças do Irã a data centers ligados aos EUA no Golfo e um ataque ucraniano que derrubou um data center russo.
