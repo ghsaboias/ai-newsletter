@@ -1,0 +1,1052 @@
+{
+  "entities": [
+    {
+      "headline": "Anthropic lança Claude Haiku 5.5 com custo 75% menor que o Haiku 4.5",
+      "summary": "O modelo custa US$0,10 por milhão de tokens de input e marca 72,4% no OSWorld 2.1, contra 15,7% do Haiku 4.5.",
+      "bullets": [
+        "A Anthropic lançou o Claude Haiku 5.5 em 7 de outubro de 2026, fechando a família Claude 5.5 depois do Opus 5.5 (22/9) e do Sonnet 5.5 (28/9).",
+        "Até 100 mil tokens, o preço é de US$0,10 (input) e US$0,50 (output) por milhão de tokens; o Haiku 4.5 custa US$1 e US$5.",
+        "Acima de 100 mil tokens, o Haiku 5.5 custa US$0,50 (input) e US$2,50 (output) por milhão de tokens.",
+        "No Terminal-Bench 4.0, de programação agêntica, o Haiku 5.5 marca 39,2%, contra 0,0% do Haiku 4.5 e 70,6% do Sonnet 5.5.",
+        "É o primeiro Haiku com ajuste de esforço (effort) configurável e tem janela de contexto de 1 milhão de tokens, contra 200 mil do Haiku 4.5.",
+        "O novo tokenizador gera cerca de 30% mais tokens para o mesmo texto: 90 mil tokens no Haiku 4.5 viram cerca de 117 mil no Haiku 5.5.",
+        "No mesmo dia, a Anthropic cortou em 50% o preço de leitura de cache do Sonnet 5.5, de US$0,20 para US$0,10 por milhão de tokens."
+      ],
+      "body": "A Anthropic chama o Haiku 5.5 de \"o modelo pequeno mais barato, mais rápido e mais capaz que já lançamos\". Nos benchmarks da própria empresa, o modelo marca 72,4% no OSWorld 2.1, teste de uso de computador, acima dos 48,9% do GPT-6 Luna e abaixo dos 83,9% do Sonnet 5.5. O ajuste de esforço permite ao usuário escolher entre otimizar custo ou inteligência.\n\nO preço vem em duas faixas, separadas pelo limite de 100 mil tokens por prompt. Como o novo tokenizador gera cerca de 30% mais tokens para o mesmo texto, uma carga que cabia na faixa barata no Haiku 4.5 pode passar do limite no Haiku 5.5.\n\nA Anthropic também mexeu em outros preços: o corte no cache do Sonnet 5.5 reduz em cerca de 20% o custo do modelo na maioria das tarefas agênticas, segundo a empresa. Assinantes do Max 5x e do Max 20x passaram a receber créditos mensais de API de US$100 e US$200, e os do plano Team, até US$500.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.anthropic.com/claude-haiku-5-5",
+          "title": "Claude Haiku 5.5",
+          "summary": "Anthropic: página oficial apresenta o Haiku 5.5 como o modelo pequeno mais barato, rápido e capaz que a empresa já lançou.",
+          "bullets": [
+            "Em média, o Haiku 5.5 custa cerca de 75% menos para rodar que o Haiku 4.5.",
+            "O modelo marca 72,4% no OSWorld 2.1 e 39,2% no Terminal-Bench 4.0.",
+            "É o primeiro modelo da classe Haiku com ajuste de esforço configurável."
+          ]
+        },
+        {
+          "url": "https://aicoder.com/news/news-20261008-anthropic-claude-haiku-5-5-launch",
+          "title": "Anthropic lança o Claude Haiku 5.5",
+          "summary": "AICoder: detalha as faixas de preço do Haiku 5.5, o corte no cache do Sonnet 5.5 e os novos créditos de API nos planos pagos.",
+          "bullets": [
+            "Até 100 mil tokens: US$0,10 de input e US$0,50 de output por milhão; acima disso, US$0,50 e US$2,50.",
+            "A leitura de cache do Sonnet 5.5 caiu de US$0,20 para US$0,10 por milhão de tokens.",
+            "Assinantes do Max 5x e Max 20x recebem US$100 e US$200 em créditos mensais de API; o plano Team, até US$500."
+          ]
+        },
+        {
+          "url": "https://llm-stats.com/blog/research/claude-haiku-5-5-launch",
+          "title": "Lançamento do Claude Haiku 5.5: benchmarks, contexto e tokenizador",
+          "summary": "LLM Stats: compara os benchmarks do Haiku 5.5 com rivais e aponta o efeito do novo tokenizador sobre a faixa de preço.",
+          "bullets": [
+            "No OSWorld 2.1, o Haiku 4.5 marca 15,7%, o GPT-6 Luna 48,9% e o Sonnet 5.5 83,9%.",
+            "A janela de contexto sobe de 200 mil para 1 milhão de tokens.",
+            "O novo tokenizador gera cerca de 30% mais tokens; 90 mil tokens viram cerca de 117 mil, acima do limite de 100 mil da faixa barata."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Google Cloud lança Gemini agent, que usa modelos Gemini e Claude",
+      "summary": "O agente gerencia fluxos de vários dias, monta equipes de subagentes e pode ganhar conta própria no Workspace; está em prévia privada.",
+      "bullets": [
+        "O Google Cloud anunciou o Gemini agent no evento Gemini at Work 2026, em 8 de outubro.",
+        "O Google chama o produto de \"agente universal para o trabalho\".",
+        "O agente escolhe o modelo mais adequado para cada tarefa entre as famílias Gemini, do Google, e Claude, da Anthropic.",
+        "Agentes persistentes podem receber conta no Workspace, e-mail, agenda, armazenamento no Drive e presença no diretório da empresa.",
+        "O agente funciona no Google Workspace, no Microsoft 365 e no Slack.",
+        "Está em prévia privada e terá disponibilidade ampla em breve para planos Business e Enterprise selecionados do Workspace."
+      ],
+      "body": "O Gemini agent planeja tarefas, usa ferramentas, se conecta aos sistemas corporativos dos clientes e entrega o trabalho pronto. Segundo o Google, ele consegue gerenciar fluxos de trabalho que duram vários dias, coordenando tarefas em paralelo e montando equipes temporárias de subagentes especializados.\n\nHoje o agente combina modelos do próprio Google e da Anthropic, e o Google prevê suporte futuro a outros modelos privados e abertos. A versão persistente trata o agente quase como um funcionário, com conta, e-mail e agenda próprios dentro da empresa.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-at-work/",
+          "title": "Gemini at Work: o agente universal para o trabalho",
+          "summary": "Google: anúncio oficial do Gemini agent no Gemini at Work 2026, com os modelos usados e o cronograma de disponibilidade.",
+          "bullets": [
+            "O agente planeja tarefas, usa ferramentas e se conecta aos sistemas corporativos dos clientes.",
+            "Usa hoje as famílias Gemini e Claude, com suporte futuro previsto a outros modelos privados e abertos.",
+            "Está em prévia privada, com disponibilidade ampla em breve para planos Business e Enterprise selecionados."
+          ]
+        },
+        {
+          "url": "https://venturebeat.com/orchestration/google-cloud-unveils-persistent-gemini-agents-for-long-running-tasks-and-they-get-their-own-gmail-calendar-and-drive-storage",
+          "title": "Google Cloud apresenta agentes Gemini persistentes para tarefas longas, com Gmail, agenda e Drive próprios",
+          "summary": "VentureBeat: foca nos agentes persistentes, que ganham identidade própria no Workspace e cuidam de fluxos de vários dias.",
+          "bullets": [
+            "Agentes persistentes podem receber conta no Workspace, e-mail, agenda e armazenamento no Drive.",
+            "O agente gerencia fluxos de trabalho que duram vários dias.",
+            "Coordena tarefas em paralelo e monta equipes temporárias de subagentes especializados."
+          ]
+        },
+        {
+          "url": "https://9to5google.com/2026/10/08/gemini-agent-google-cloud/",
+          "title": "Google Cloud anuncia o Gemini agent",
+          "summary": "9to5Google: descreve onde o agente funciona e como ele escolhe o modelo para cada tarefa.",
+          "bullets": [
+            "O agente funciona no Google Workspace, no Microsoft 365 e no Slack.",
+            "Escolhe o modelo mais adequado para cada tarefa.",
+            "Foi anunciado em 8 de outubro, no evento Gemini at Work 2026."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Demitidos da OpenAI pedem preservar monitoramento do raciocínio da IA",
+      "summary": "Carta de 7 de outubro pede auditores externos; a OpenAI diz que as demissões não tiveram relação com alertas de segurança.",
+      "bullets": [
+        "Jasmine Wang, Tomek Korbak e Mikita Balesni enviaram em 7 de outubro uma carta ao conselho e aos comitês de segurança da OpenAI.",
+        "A carta pede que a OpenAI trabalhe com auditores de segurança externos e preserve o monitoramento da cadeia de raciocínio (chain of thought) dos modelos.",
+        "A carta diz que as demissões estão \"intimidando quem continua na OpenAI\".",
+        "Em 1º de outubro, a OpenAI disse ter se desligado dos três por violar políticas de manuseio de informações sensíveis.",
+        "Um porta-voz compartilhou um memorando interno que \"concordou fortemente\" com as recomendações da carta.",
+        "O system card do GPT-6 Astra diz que modelos da classe Astra conseguiriam escapar dos monitores de CoT em condições adversariais."
+      ],
+      "body": "\"Como indústria, ainda não sabemos como desenvolver e implantar com segurança modelos que não conseguimos monitorar\", diz a carta. A OpenAI acusa os três de repassar informações sensíveis a uma organização de segurança de IA; um porta-voz disse que as demissões \"não tiveram relação com levantar preocupações de segurança ou se manifestar\".\n\nO pedido ganha peso com o GPT-6 Astra, que usa uma técnica de raciocínio mais opaca chamada recurrent depth (profundidade recorrente). Korbak e Balesni foram autores principais, e Wang coautora, de um artigo de julho de 2025, escrito com pesquisadores da OpenAI, do Google DeepMind e da Anthropic, que chamou o monitoramento da cadeia de raciocínio de oportunidade nova e frágil para a segurança de IA.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.wsj.com/tech/ai/fired-openai-researchers-ask-company-to-preserve-visibility-into-ai-reasoning-987c8c94",
+          "title": "Pesquisadores demitidos pela OpenAI pedem que empresa preserve visibilidade sobre o raciocínio da IA",
+          "summary": "Wall Street Journal: revela a carta dos três ex-funcionários ao conselho e a resposta da OpenAI sobre as demissões.",
+          "bullets": [
+            "A carta foi enviada ao conselho e aos comitês de segurança em 7 de outubro.",
+            "Pede auditores de segurança externos e a preservação do monitoramento da cadeia de raciocínio.",
+            "Um porta-voz disse que as demissões não tiveram relação com levantar preocupações de segurança."
+          ]
+        },
+        {
+          "url": "https://gizmodo.com/3-fired-openai-employees-write-plea-for-chain-of-thought-monitoring-to-be-preserved-2000823349",
+          "title": "Três funcionários demitidos da OpenAI escrevem apelo pela preservação do monitoramento da cadeia de raciocínio",
+          "summary": "Gizmodo: liga a carta ao system card do GPT-6 Astra e à técnica de raciocínio mais opaca usada no modelo.",
+          "bullets": [
+            "O system card diz que modelos da classe Astra conseguiriam escapar dos monitores de CoT em condições adversariais.",
+            "O Astra usa uma técnica chamada recurrent depth (profundidade recorrente).",
+            "Korbak, Balesni e Wang assinaram o artigo de julho de 2025 sobre monitoramento de raciocínio."
+          ]
+        },
+        {
+          "url": "https://www.aa.com.tr/en/science-technology/fired-openai-researchers-urge-board-to-preserve-ai-reasoning-oversight-report/4082602",
+          "title": "Pesquisadores demitidos pela OpenAI pedem ao conselho que preserve a supervisão do raciocínio da IA",
+          "summary": "Anadolu Agency: resume as acusações da OpenAI contra os três e o alerta da carta sobre o efeito das demissões.",
+          "bullets": [
+            "Em 1º de outubro, a OpenAI disse ter se desligado de três pessoas por violar políticas de informações sensíveis.",
+            "Segundo a acusação, eles repassaram as informações a uma organização de segurança de IA.",
+            "A carta diz que as demissões estão \"intimidando quem continua na OpenAI\"."
+          ]
+        },
+        {
+          "url": "https://yellow.com/news/openai-memo-backs-fired-researchers-letter",
+          "title": "Memorando da OpenAI apoia carta de pesquisadores demitidos",
+          "summary": "Yellow: destaca o memorando interno da OpenAI que concordou com as recomendações dos ex-funcionários.",
+          "bullets": [
+            "O porta-voz compartilhou um memorando interno que \"concordou fortemente\" com as recomendações.",
+            "A carta foi assinada por Jasmine Wang, Tomek Korbak e Mikita Balesni."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Matemática da OpenAI gera alerta sobre criptografia e pedido de boicote",
+      "summary": "Justin Drake pede \"modo bunker\" no blockchain; associação de matemáticos pede que pesquisadores parem de trabalhar com a OpenAI.",
+      "bullets": [
+        "Em 7 de outubro, o pesquisador do Ethereum Justin Drake alertou que a IA pode permitir quebrar as assinaturas ECDSA, que protegem carteiras de criptomoedas.",
+        "Drake recomendou uma migração em massa e controlada de ativos para endereços novos.",
+        "Vitalik Buterin disse não recomendar a corrida para carteiras novas hoje, mas estendeu a preocupação à criptografia baseada em reticulados.",
+        "Scott Aaronson notou que a criptografia estava ausente da lista de artigos divulgada pela OpenAI.",
+        "Segundo fontes de Aaronson, empresas de IA começaram a investigar se seus modelos internos conseguem quebrar protocolos criptográficos importantes.",
+        "A Association for Human Mathematics pediu que matemáticos interrompam o trabalho com a OpenAI."
+      ],
+      "body": "Drake, pesquisador do Ethereum, pediu que a indústria de blockchain se prepare para um \"modo bunker\". Buterin respondeu que \"há uma boa chance de a segurança concreta dos reticulados sofrer golpes sérios nos próximos dois anos de matemática feita por IA\" — o que atinge também a criptografia considerada resistente a computadores quânticos.\n\nAaronson chamou a divulgação da OpenAI de um dos maiores dias da história da matemática; ela incluiu uma suposta prova da Conjectura dos Jogos Únicos, de Subhash Khot, mas quase nenhum humano entendeu as provas até agora, segundo ele. A Association for Human Mathematics disse que divulgar mais de 700 arquivos de uma vez \"não é uma demonstração de erudição, mas uma demonstração de poder\".",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://cointelegraph.com/news/justin-drake-urges-crypto-bunker-mode-as-ai-could-break-wallet-security-within-months",
+          "title": "Justin Drake pede \"modo bunker\" no cripto porque a IA pode quebrar a segurança de carteiras em meses",
+          "summary": "Cointelegraph: relata o alerta de Drake sobre as assinaturas ECDSA e a resposta de Vitalik Buterin.",
+          "bullets": [
+            "Drake alertou que a IA pode tornar possível quebrar as assinaturas ECDSA.",
+            "Recomendou migração em massa e controlada de ativos para endereços novos.",
+            "Buterin disse não recomendar mover fundos hoje, mas citou riscos aos reticulados nos próximos dois anos."
+          ]
+        },
+        {
+          "url": "https://scottaaronson.blog/?p=10169",
+          "title": "Shtetl-Optimized: um dos maiores dias da história da matemática",
+          "summary": "Shtetl-Optimized: Scott Aaronson comenta a divulgação da OpenAI e aponta a ausência de criptografia na lista de artigos.",
+          "bullets": [
+            "Aaronson chamou a divulgação de um dos maiores dias da história da matemática.",
+            "A divulgação incluiu uma suposta prova da Conjectura dos Jogos Únicos, de Subhash Khot.",
+            "Segundo fontes dele, empresas de IA investigam \"com cautela e discrição\" se seus modelos quebram protocolos criptográficos."
+          ]
+        },
+        {
+          "url": "https://www.ahmath.org/statements",
+          "title": "Declarações da Association for Human Mathematics",
+          "summary": "Association for Human Mathematics: critica a divulgação em massa da OpenAI e pede que matemáticos interrompam a colaboração.",
+          "bullets": [
+            "Divulgar mais de 700 arquivos de uma vez \"não é uma demonstração de erudição, mas uma demonstração de poder\".",
+            "A associação pediu que matemáticos interrompam seu trabalho com a OpenAI."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Hacker usa agentes de IA para invadir bancos sul-coreanos, diz CrowdStrike",
+      "summary": "O atacante usou a ferramenta ARTEX, desenvolvida na China, com DeepSeek, GLM e Grok em sessões do Claude Code e exfiltrou dados.",
+      "bullets": [
+        "A CrowdStrike Intelligence publicou o relatório em 7 de outubro.",
+        "A campanha contra organizações financeiras da Coreia do Sul durou do fim de setembro ao início de outubro de 2026.",
+        "O atacante usou o ARTEX, ferramenta de código aberto de teste de invasão (pentest) agêntico, com o DeepSeek v4.1-flash como LLM principal.",
+        "Ele complementou o DeepSeek com o GLM-5.3, da Zhipu AI, e o Grok 4.6 em sessões do Claude Code.",
+        "A CrowdStrike avalia, com confiança moderada, que o atacante fala chinês e tem motivação financeira.",
+        "Em um banco, foi invadido um serviço de consulta de empréstimos usado por corretores; em outro, um sistema móvel de apoio a funcionários."
+      ],
+      "body": "Diretórios abertos do atacante expuseram históricos de sessões do Claude Code. Neles, o atacante perguntou onde vender dados de vazamentos coreanos e pediu um currículo de pesquisador de segurança que listava os resultados do ataque, junto com aparentes dados pessoais.\n\nPara a CrowdStrike, o caso mostra que ferramentas de IA permitem a um único agente com motivação financeira realizar várias invasões em pouco tempo.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/",
+          "title": "Atacante desconhecido usa ARTEX contra o setor financeiro sul-coreano",
+          "summary": "CrowdStrike: relatório descreve a campanha, os modelos de IA usados e o que os históricos de sessão expostos revelaram.",
+          "bullets": [
+            "A instância do ARTEX usou o DeepSeek v4.1-flash, complementado por GLM-5.3 e Grok 4.6 em sessões do Claude Code.",
+            "Os históricos expostos mostram o atacante perguntando onde vender dados de vazamentos coreanos.",
+            "A campanha resultou em exfiltração de dados de dois bancos.",
+            "A CrowdStrike atribui a ação, com confiança moderada, a um falante de chinês com motivação financeira."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Manus capta mais de US$500 milhões na primeira rodada após saída da Meta",
+      "summary": "Boyu Capital e IDG lideram a rodada; a Bloomberg havia informado que o valuation deveria dobrar para US$4 bilhões.",
+      "bullets": [
+        "A Butterfly Effect, controladora da startup de agentes de IA Manus, anunciou a captação em 8 de outubro.",
+        "Tencent, HSG e ZhenFund também participaram da rodada.",
+        "Em abril, Pequim ordenou que a Meta desfizesse a aquisição de US$2 bilhões da Manus.",
+        "A Manus retomou a operação independente em agosto e disse que teve de apagar parte dos dados de usuários.",
+        "Segundo o The Information, a receita anualizada chegou a cerca de US$500 milhões em junho, contra US$100 milhões na época da compra pela Meta."
+      ],
+      "body": "A Manus não divulgou seu valuation. A ordem de Pequim para desfazer a compra pela Meta veio em meio ao maior escrutínio sobre investimentos americanos em startups chinesas de IA.\n\nSegundo o The Information, a Manus avaliava uma estrutura de joint venture constituída na China, que abriria caminho para uma listagem em Hong Kong. A empresa disse que vai continuar contratando na China e no exterior.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2026/10/08/manus-fund-raise-meta-muse-tencent.html",
+          "title": "Manus faz captação com Tencent após saída da Meta",
+          "summary": "CNBC: detalha os investidores da rodada e o histórico da aquisição desfeita pela Meta.",
+          "bullets": [
+            "A rodada foi liderada pela Boyu Capital e pela IDG Capital.",
+            "Tencent, HSG e ZhenFund também participaram.",
+            "Pequim ordenou em abril que a Meta desfizesse a compra de US$2 bilhões."
+          ]
+        },
+        {
+          "url": "https://techcrunch.com/2026/10/08/chinas-manus-raises-over-500m-in-first-funding-round-since-split-with-meta/",
+          "title": "Chinesa Manus capta mais de US$500 milhões na primeira rodada desde a separação da Meta",
+          "summary": "TechCrunch: foca no crescimento da receita da Manus e nos planos de reestruturação na China.",
+          "bullets": [
+            "A receita anualizada chegou a cerca de US$500 milhões em junho, segundo o The Information.",
+            "Na época da compra pela Meta, a receita anualizada era de US$100 milhões.",
+            "A Manus avaliava uma joint venture na China que abriria caminho para listagem em Hong Kong."
+          ]
+        },
+        {
+          "url": "https://www.streetinsider.com/Reuters/Manus+raises+more+than+%24500+million+after+Meta+exit/27162541.html",
+          "title": "Manus capta mais de US$500 milhões após saída da Meta",
+          "summary": "Reuters (via StreetInsider): informa a captação e o valuation esperado, além da retomada da operação independente.",
+          "bullets": [
+            "A Manus não divulgou valuation; a Bloomberg havia informado que ele deveria dobrar para US$4 bilhões.",
+            "A Manus retomou a operação independente em agosto.",
+            "A empresa disse que vai continuar contratando na China e no exterior."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Arena capta US$200 milhões a valuation de US$3,1 bilhões",
+      "summary": "A startup de ranking de modelos lançou o Alignment Index, liderado pelo GPT-6.1 Sol, da OpenAI, com 87,9 pontos.",
+      "bullets": [
+        "A rodada da Arena Intelligence foi liderada pela Lightspeed Venture Partners e pela Khosla Ventures, com Salesforce Ventures e Dell Technologies Capital.",
+        "O valuation quase dobra os US$1,7 bilhão de janeiro.",
+        "O Alignment Index, lançado em 8 de outubro, foi construído com mais de 90 mil sessões de agentes, cobrindo 27 modelos.",
+        "O Claude Opus 5.5, da Anthropic, aparece em segundo, com 83,2 pontos, seguido pelo Grok 4.7, com 82,7.",
+        "Uma reportagem descreve a rodada como Série B fechada em 22 de setembro, a US$2,88 bilhões pós-investimento."
+      ],
+      "body": "A Arena é a startup por trás de um ranking popular de modelos de IA. O novo Alignment Index classifica os modelos por sinais como a frequência com que tomam ações não autorizadas e com que dizem ter concluído tarefas que não concluíram.\n\nHá divergência sobre o valor da rodada: a Bloomberg informou US$3,1 bilhões, enquanto outra reportagem cita valuation pós-investimento de US$2,88 bilhões.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://thenextweb.com/news/arena-3bn-alignment-index-europe",
+          "title": "Arena chega a US$3 bilhões e lança o Alignment Index",
+          "summary": "The Next Web: cobre a captação e o funcionamento do novo índice de alinhamento da Arena.",
+          "bullets": [
+            "O índice mede ações não autorizadas e tarefas declaradas como concluídas sem estarem.",
+            "Foi construído com mais de 90 mil sessões de agentes e 27 modelos.",
+            "O GPT-6.1 Sol lidera com 87,9 pontos."
+          ]
+        },
+        {
+          "url": "https://allmind.ai/news/15b36c64ca6d4e0e8729fcd0e4b1b7855b16fd95db8113e2222b3f04e3122974",
+          "title": "Arena capta US$200 milhões a valuation de US$3,1 bilhões",
+          "summary": "AllMind News (resumo da Bloomberg): informa o tamanho da rodada, os investidores e o salto de valuation desde janeiro.",
+          "bullets": [
+            "Lightspeed e Khosla lideraram; Salesforce Ventures e Dell Technologies Capital participaram.",
+            "O valuation de US$3,1 bilhões quase dobra o US$1,7 bilhão de janeiro."
+          ]
+        },
+        {
+          "url": "https://cryptobriefing.com/arena-200m-series-b-alignment-index/",
+          "title": "Arena faz Série B de US$200 milhões e lança Alignment Index",
+          "summary": "Crypto Briefing: descreve a rodada como Série B fechada em setembro, com valuation menor que o da Bloomberg.",
+          "bullets": [
+            "A rodada teria sido fechada em 22 de setembro.",
+            "O valuation pós-investimento citado é de US$2,88 bilhões.",
+            "No índice, o Claude Opus 5.5 tem 83,2 pontos e o Grok 4.7, 82,7."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Samsung estima lucro recorde de US$80,2 bi no trimestre com memória para IA",
+      "summary": "Lucro operacional sobe 782,5% em um ano; a TSMC também reportou receita trimestral recorde, 51% maior em um ano.",
+      "bullets": [
+        "A Samsung estimou lucro operacional de 107,4 trilhões de wons no terceiro trimestre, em comunicado preliminar de 8 de outubro.",
+        "A receita preliminar foi de 195 trilhões de wons (US$145,6 bilhões), alta de cerca de 127%, com margem operacional de cerca de 55%.",
+        "É a primeira empresa sul-coreana a superar 100 trilhões de wons de lucro operacional em um trimestre, e o quarto trimestre recorde seguido.",
+        "O lucro supera os US$63,7 bilhões de lucro operacional da Nvidia em seu trimestre mais recente.",
+        "As ações da Samsung caíram 2,42%, a 262 mil wons, e o KOSPI recuou 2,62%.",
+        "A TSMC teve receita de NT$511,86 bilhões em setembro, alta de 54,6%, e de NT$1,49 trilhão (US$46,8 bilhões) no trimestre."
+      ],
+      "body": "O crescimento da Samsung veio da demanda por memória de data centers de IA, incluindo HBM (memória de alta largura de banda). O número ficou levemente acima da SmartEstimate da LSEG, de 106,1 trilhões de wons; mesmo assim, as ações caíram com investidores realizando lucros. Os resultados completos saem em 29 de outubro.\n\nNem tudo vai bem: analistas estimam que a divisão de foundry e System LSI ainda teve prejuízo de 1 trilhão a 1,5 trilhão de wons, em parte pelos custos iniciais da fábrica de Taylor, no Texas. Já a TSMC superou o topo da própria projeção trimestral, de US$44,6 bilhões a US$45,8 bilhões.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.koreajoongangdaily.com/business/samsung-q3-operating-profit-tops-100-trillion-for-first-time-on-memory-demand/12910277",
+          "title": "Lucro operacional da Samsung no 3º trimestre passa de 100 trilhões de wons pela primeira vez com demanda por memória",
+          "summary": "Korea JoongAng Daily: destaca o marco inédito para uma empresa sul-coreana e a sequência de trimestres recordes.",
+          "bullets": [
+            "É a primeira vez que uma empresa sul-coreana supera 100 trilhões de wons de lucro operacional em um trimestre.",
+            "É o quarto trimestre recorde seguido da Samsung.",
+            "O crescimento veio da demanda por memória de data centers de IA, incluindo HBM."
+          ]
+        },
+        {
+          "url": "https://www.euronews.com/2026/10/08/samsung-flags-783-profit-jump-to-record-80bn-as-ai-chip-boom-also-lifts-tsmc-sales",
+          "title": "Samsung prevê salto de 783% no lucro, a recorde de US$80 bi, e boom de chips de IA também eleva vendas da TSMC",
+          "summary": "Euronews: junta o resultado da Samsung ao da TSMC e compara o lucro com o da Nvidia.",
+          "bullets": [
+            "O lucro supera os US$63,7 bilhões de lucro operacional da Nvidia no trimestre mais recente.",
+            "A receita da TSMC em setembro subiu 54,6%, para NT$511,86 bilhões.",
+            "A receita trimestral da TSMC superou o topo da projeção, de US$44,6 bilhões a US$45,8 bilhões."
+          ]
+        },
+        {
+          "url": "https://krro.com/2026/10/07/samsung-q3-profit-jumps-783-as-ai-memory-boom-lifts-chip-earnings/",
+          "title": "Lucro da Samsung no 3º trimestre salta 783% com boom de memória para IA",
+          "summary": "Reuters (via KRRO): compara a estimativa com o consenso do mercado e aponta o prejuízo persistente na área de foundry.",
+          "bullets": [
+            "O lucro ficou levemente acima da SmartEstimate da LSEG, de 106,1 trilhões de wons.",
+            "A divisão de foundry e System LSI teria prejuízo de 1 trilhão a 1,5 trilhão de wons.",
+            "Parte do prejuízo vem dos custos iniciais da fábrica de Taylor, no Texas."
+          ]
+        },
+        {
+          "url": "https://www.asiae.co.kr/en/article/2026100808413440057",
+          "title": "Samsung divulga estimativa recorde do 3º trimestre; ações recuam",
+          "summary": "The Asia Business Daily: registra a receita preliminar, a margem e a reação da bolsa sul-coreana.",
+          "bullets": [
+            "A receita preliminar foi de 195 trilhões de wons, alta de cerca de 127%.",
+            "A margem operacional implícita é de cerca de 55%.",
+            "As ações da Samsung caíram 2,42%, e o KOSPI, 2,62%."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "GlobalFoundries fecha acordo de US$2 bi para fornecer interposers à TSMC",
+      "summary": "A fábrica de Malta, em Nova York, deve virar a primeira fonte de interposers de silício dos EUA, com escala a partir de 2028.",
+      "bullets": [
+        "A GlobalFoundries anunciou em 8 de outubro o acordo de fabricação com a TSMC.",
+        "O acordo plurianual de US$2 bilhões tem prazo inicial de cinco anos e prevê estrutura para expansão futura.",
+        "O acordo cria uma fonte americana de interposers para o CoWoS, tecnologia de encapsulamento avançado de chips da TSMC.",
+        "A produção em volume deve ganhar escala no primeiro semestre de 2028.",
+        "A cobertura descreve a GlobalFoundries como empresa apoiada pelos Emirados Árabes Unidos."
+      ],
+      "body": "O interposer de silício fica sob processadores e chips de memória dentro de encapsulamentos avançados de IA e permite que eles se comuniquem em alta velocidade. Segundo a GlobalFoundries, os interposers incluem capacitores de trincheira profunda embutidos.\n\nPara atender ao contrato, a empresa vai ampliar a capacidade de sua fábrica em Malta, no estado de Nova York.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://gf.com/news-and-events/news/globalfoundries-reaches-agreement-to-establish-us-based-supply-of-silicon-interposers-for-advanced-ai-packaging/",
+          "title": "GlobalFoundries fecha acordo para estabelecer fornecimento de interposers de silício nos EUA para encapsulamento avançado de IA",
+          "summary": "GlobalFoundries: comunicado oficial detalha o prazo, a fábrica envolvida e a tecnologia dos interposers.",
+          "bullets": [
+            "O acordo tem prazo inicial de cinco anos e estrutura para futura expansão.",
+            "A fábrica de Malta, em Nova York, deve ser a primeira fonte de interposers de silício nos EUA.",
+            "Os interposers incluem capacitores de trincheira profunda embutidos."
+          ]
+        },
+        {
+          "url": "https://kfgo.com/2026/10/08/globalfoundries-to-make-key-ai-chip-component-for-tsmc/",
+          "title": "GlobalFoundries vai fabricar componente-chave de chips de IA para a TSMC",
+          "summary": "Reuters (via KFGO): explica a função do interposer e o cronograma de produção.",
+          "bullets": [
+            "O interposer permite que processadores e memória se comuniquem em alta velocidade.",
+            "A produção em volume deve ganhar escala no primeiro semestre de 2028."
+          ]
+        },
+        {
+          "url": "https://www.thenationalnews.com/future/technology/2026/10/08/uae-backed-globalfoundries-and-tsmc-announce-2bn-manufacturing-agreement/",
+          "title": "GlobalFoundries, apoiada pelos Emirados, e TSMC anunciam acordo de fabricação de US$2 bi",
+          "summary": "The National: destaca o valor do acordo e o vínculo da GlobalFoundries com os Emirados Árabes Unidos.",
+          "bullets": [
+            "O acordo plurianual vale US$2 bilhões.",
+            "A GlobalFoundries é descrita como empresa apoiada pelos Emirados Árabes Unidos."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Broadcom busca mais de US$50 bi para financiar chips da OpenAI, diz WSJ",
+      "summary": "Apollo e Blackstone estão entre os credores procurados; a Bloomberg fala em cerca de US$30 bilhões em dívida.",
+      "bullets": [
+        "Segundo o WSJ de 7 de outubro, as conversas estão em estágio inicial e a expectativa é fechar antes do fim do ano.",
+        "O financiamento pode cobrir vários gigawatts de capacidade de chips da OpenAI.",
+        "O programa de chips da OpenAI se chama internamente Nexus; as duas primeiras gerações têm os codinomes Jalapeño e Serrano.",
+        "A Oracle negocia com a Apollo e o Goldman Sachs uma estrutura para comprar hardware para um data center de 1 gigawatt.",
+        "Um pacote separado de US$60 bilhões, com garantia parcial da Broadcom, avança com a Anthropic entre as principais beneficiárias."
+      ],
+      "body": "O valor pode mudar: a Bloomberg informou cerca de US$30 bilhões em dívida para a próxima fase do projeto e disse que nenhum processo formal começou.\n\nO caso faz parte de uma onda de dívida para chips de IA. Na estrutura proposta pela Oracle, investidores privados financiariam uma entidade fora do balanço da empresa, que compraria os chips e os alugaria à Oracle. O pacote ligado à Anthropic inclui US$42 bilhões em dívida sênior com garantia e US$18 bilhões em dívida subordinada liderada pela Blackstone.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://investinglive.com/stocks/wsj-broadcom-seeks-over-50-billion-for-openai-chips-as-oracle-spacex-chase-ai-debt-deals/",
+          "title": "WSJ: Broadcom busca mais de US$50 bilhões para chips da OpenAI enquanto Oracle e SpaceX correm atrás de dívida para IA",
+          "summary": "investingLive: resume a reportagem do WSJ sobre o financiamento e os credores procurados.",
+          "bullets": [
+            "Apollo e Blackstone estão entre os credores procurados.",
+            "As conversas estão em estágio inicial e o valor pode mudar.",
+            "A expectativa é fechar o negócio antes do fim do ano."
+          ]
+        },
+        {
+          "url": "https://www.investing.com/news/stock-market-news/broadcom-oracle-and-spacex-pursue-blockbuster-debt-deals-amid-ai-buildout--wsj-4937581",
+          "title": "Broadcom, Oracle e SpaceX buscam megaoperações de dívida em meio à expansão da IA, diz WSJ",
+          "summary": "Investing.com: detalha a estrutura fora do balanço que a Oracle negocia para comprar chips.",
+          "bullets": [
+            "A Oracle negocia com a Apollo e o Goldman Sachs para equipar um data center de 1 gigawatt.",
+            "Investidores privados financiariam uma entidade fora do balanço que alugaria os chips à Oracle."
+          ]
+        },
+        {
+          "url": "https://www.benzinga.com/markets/tech/26/10/62240166/broadcom-eyes-over-50-billion-to-fund-openais-custom-ai-chips-as-oracle-also-pursues-major-chip-financing-report",
+          "title": "Broadcom mira mais de US$50 bilhões para financiar chips customizados da OpenAI; Oracle também busca financiamento",
+          "summary": "Benzinga: descreve o programa de chips da OpenAI e a capacidade que o financiamento pode cobrir.",
+          "bullets": [
+            "O financiamento pode cobrir vários gigawatts de capacidade.",
+            "O programa interno se chama Nexus, com gerações de codinome Jalapeño e Serrano."
+          ]
+        },
+        {
+          "url": "https://www.trendforce.com/news/2026/10/08/news-ai-chip-spending-fuels-debt-financing-wave-broadcom-reportedly-eyes-tens-of-billions-to-fund-openai/",
+          "title": "Gastos com chips de IA alimentam onda de financiamento por dívida; Broadcom mira dezenas de bilhões para a OpenAI",
+          "summary": "TrendForce: contrasta o valor do WSJ com o da Bloomberg e cita o pacote de chips ligado à Anthropic.",
+          "bullets": [
+            "A Bloomberg informou cerca de US$30 bilhões em dívida e disse que nenhum processo formal começou.",
+            "Um pacote de US$60 bilhões, com garantia parcial da Broadcom, tem a Anthropic entre as principais beneficiárias.",
+            "O pacote inclui US$42 bilhões em dívida sênior e US$18 bilhões em dívida subordinada liderada pela Blackstone."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "IPO da Firmus fica em risco após investidores resistirem ao preço",
+      "summary": "A operadora de data centers apoiada pela Nvidia avalia cortar o preço de A$11 para A$8,25 por ação; bancos cogitam cancelar.",
+      "bullets": [
+        "O bookbuilding institucional fechou em 8 de outubro, às 9h no horário da Austrália.",
+        "O preço de A$11 implicava valuation de cerca de A$43,7 bilhões (US$30,3 bilhões).",
+        "A Firmus buscava levantar cerca de A$7 bilhões, no que seria o segundo maior IPO da Austrália, atrás do da Telstra.",
+        "As ações do Maas Group, dono de 3,2% da Firmus, caíram 30%.",
+        "A estreia na ASX (bolsa australiana) está marcada para 23 de outubro.",
+        "A Nvidia detém 7,2% da Firmus e a Blackstone, 6,7%."
+      ],
+      "body": "Segundo o Australian Financial Review, os bancos passaram de discutir uma reformulação da oferta com valor de mercado menor para considerar cancelar a operação.\n\nA Firmus opera hoje 46MW e tem 865MW em cinco projetos na Indonésia, na Malásia e na Tasmânia, com capacidade contratada por Meta, OpenAI e Fireworks AI. Com os data centers prontos, a empresa espera carregar cerca de US$30 bilhões em dívida, cerca de seis vezes o lucro operacional de US$5 bilhões que projeta para 2028.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.smh.com.au/business/companies/firmus-float-in-trouble-as-investors-don-t-buy-the-hype-20261008-p613sp.html",
+          "title": "IPO da Firmus em apuros porque investidores não compram o entusiasmo",
+          "summary": "The Sydney Morning Herald: relata a resistência dos investidores ao preço e o valuation implícito da oferta.",
+          "bullets": [
+            "Investidores resistiram ao preço de A$11 por ação.",
+            "O preço implicava valuation de cerca de A$43,7 bilhões.",
+            "O bookbuilding institucional fechou em 8 de outubro."
+          ]
+        },
+        {
+          "url": "https://www.afr.com/technology/firmus-ipo-hangs-in-the-balance-as-investor-demand-evaporates-20261008-p613s0",
+          "title": "IPO da Firmus fica indefinido com a demanda de investidores evaporando",
+          "summary": "Australian Financial Review: informa que os bancos passaram a considerar cancelar a oferta.",
+          "bullets": [
+            "Os bancos passaram de discutir uma oferta menor para considerar cancelar a operação.",
+            "A Firmus buscava levantar cerca de A$7 bilhões."
+          ]
+        },
+        {
+          "url": "https://www.streetinsider.com/Reuters/Firmus+investor+stock+falls+after+reports+AI+data+centre+operator+may+cut+%245+billion+IPO/27163322.html",
+          "title": "Ações de investidor da Firmus caem após relatos de que a operadora pode reduzir IPO de US$5 bilhões",
+          "summary": "Reuters (via StreetInsider): foca na queda das ações do Maas Group e na possível redução do preço.",
+          "bullets": [
+            "As ações do Maas Group, dono de 3,2% da Firmus, caíram 30%.",
+            "A Firmus avaliava reduzir o preço de A$11 para A$8,25 por ação."
+          ]
+        },
+        {
+          "url": "https://www.abc.net.au/news/2026-10-08/firmus-ipo-underwhelms-before-it-hits-the-market/107241548",
+          "title": "IPO da Firmus decepciona antes de chegar ao mercado",
+          "summary": "ABC News (Austrália): descreve a operação da Firmus, seus clientes e o peso da oferta no mercado australiano.",
+          "bullets": [
+            "Seria o segundo maior IPO da Austrália, atrás apenas do da Telstra.",
+            "A Firmus opera 46MW e tem 865MW em cinco projetos em andamento.",
+            "A capacidade está contratada por Meta, OpenAI e Fireworks AI."
+          ]
+        },
+        {
+          "url": "https://marcustoday.com.au/2026/10/firmus-ipo-price-drops-back-down-to-earth/",
+          "title": "Preço do IPO da Firmus volta à realidade",
+          "summary": "Marcus Today: analisa a estrutura acionária e o endividamento projetado da Firmus.",
+          "bullets": [
+            "A Nvidia detém 7,2% e a Blackstone, 6,7%.",
+            "A Firmus espera carregar cerca de US$30 bilhões em dívida com os data centers prontos.",
+            "A dívida equivale a cerca de seis vezes o lucro operacional de US$5 bilhões projetado para 2028."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Nvidia e Microsoft apresentam chip RTX Spark para agentes de IA no Windows",
+      "summary": "Notebooks com o chip chegam em 16 de outubro; o Surface Laptop Ultra, da Microsoft, vai de US$2.599 a US$5.899.",
+      "bullets": [
+        "Jensen Huang e Satya Nadella apresentaram os produtos em evento da Microsoft em San Francisco, em 7 de outubro.",
+        "O RTX Spark combina GPU Blackwell RTX com até 6.144 núcleos e CPU Grace com até 20 núcleos, conectadas a 600 GB/s.",
+        "O chip entrega um petaflop de desempenho de IA em FP4 (formato numérico de 4 bits) e tem até 128GB de memória unificada.",
+        "A pré-venda de notebooks abriu em 7 de outubro; desktops compactos chegam em novembro.",
+        "O Surface RTX Spark Dev Box custa US$5.999, com 128 GB de RAM e 2 TB de armazenamento.",
+        "Acer, ASUS, Dell, HP, Lenovo, Microsoft, MSI e Gigabyte vão lançar sistemas com o chip."
+      ],
+      "body": "As novas máquinas rodam Windows 11 sobre a família de chips N1X, da Nvidia, baseada na arquitetura Arm e projetada com participação da MediaTek. São, portanto, dispositivos Windows on Arm.\n\nA Nvidia também mostrou o DGX Station for Windows, baseado no superchip GB300 Grace Blackwell Ultra Desktop, com 748GB de memória coerente e até 20 petaflops de poder computacional de IA em FP4.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://blogs.nvidia.com/blog/local-ai-rtx-spark-microsoft-windows-event/",
+          "title": "IA local com RTX Spark no evento Windows da Microsoft",
+          "summary": "NVIDIA Blog: apresenta as especificações do RTX Spark e do DGX Station for Windows.",
+          "bullets": [
+            "O RTX Spark entrega um petaflop de IA em FP4 e tem até 128GB de memória unificada.",
+            "GPU e CPU se conectam a 600 GB/s.",
+            "O DGX Station for Windows tem 748GB de memória coerente e até 20 petaflops em FP4."
+          ]
+        },
+        {
+          "url": "https://www.techspot.com/news/114139-nvidia-microsoft-agentic-pc-era-starts-surface-laptop.html",
+          "title": "Nvidia e Microsoft dizem que a era do PC agêntico começa com o Surface Laptop",
+          "summary": "TechSpot: detalha os preços do Surface Laptop Ultra e do Surface RTX Spark Dev Box.",
+          "bullets": [
+            "O Surface Laptop Ultra vai de US$2.599 a US$5.899.",
+            "O Surface RTX Spark Dev Box custa US$5.999, com 128 GB de RAM e 2 TB de armazenamento."
+          ]
+        },
+        {
+          "url": "https://techisland.news/story/nvidia-and-microsoft-launch-rtx-spark-hardware-and-mxc-for-local-ai-agents-on-windows-181574",
+          "title": "Nvidia e Microsoft lançam hardware RTX Spark para agentes de IA locais no Windows",
+          "summary": "TechIsland: descreve a base Arm das máquinas e os fabricantes que vão adotar o chip.",
+          "bullets": [
+            "As máquinas rodam Windows 11 sobre a família de chips N1X, baseada em Arm.",
+            "A MediaTek participou do projeto dos chips N1X.",
+            "Acer, ASUS, Dell, HP, Lenovo, Microsoft, MSI e Gigabyte vão lançar sistemas."
+          ]
+        },
+        {
+          "url": "https://mixed-news.com/en/nvidia-rtx-spark-preorders-laptops-october-16-1440p-100fps/",
+          "title": "Pré-venda do Nvidia RTX Spark começa; notebooks chegam em 16 de outubro",
+          "summary": "Mixed News: informa o calendário de pré-venda e de chegada dos notebooks e desktops.",
+          "bullets": [
+            "A pré-venda de notebooks abriu em 7 de outubro.",
+            "Os notebooks ficam disponíveis a partir de 16 de outubro.",
+            "Os desktops compactos chegam em novembro."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Oratomic capta US$475 milhões e passa a valer US$5,4 bilhões",
+      "summary": "A startup de computação quântica com átomos neutros mira 2030; a Universal Quantum captou mais de US$100 milhões no mesmo dia.",
+      "bullets": [
+        "A Série B veio três meses depois da Série A e leva o total captado a US$775 milhões.",
+        "O valuation subiu de US$1,5 bilhão para US$5,4 bilhões.",
+        "ARCH Venture Partners, Spark Capital, Khosla Ventures, Index Ventures, General Catalyst e Bezos Expeditions co-lideraram a rodada.",
+        "A Oratomic, de Pasadena, foi fundada em 2025 e tem Dolev Bluvstein como CEO e cofundador.",
+        "A empresa acredita que consegue uma máquina útil e tolerante a falhas com cerca de 10 mil qubits."
+      ],
+      "body": "A Oratomic usa arranjos reconfiguráveis de átomos neutros e espera ter um computador quântico de grande escala e tolerante a falhas pronto até 2030.\n\nNo mesmo dia, a britânica Universal Quantum, que desenvolve sistemas modulares de íons aprisionados, captou mais de US$100 milhões em uma Série A.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.wsj.com/cio-journal/quantum-startup-oratomic-now-worth-5-4-billion-after-series-b-funding-538a80fc",
+          "title": "Startup quântica Oratomic passa a valer US$5,4 bilhões após Série B",
+          "summary": "The Wall Street Journal: informa o novo valuation, o total captado e a meta de 2030.",
+          "bullets": [
+            "O valuation subiu de US$1,5 bilhão para US$5,4 bilhões.",
+            "O total captado chega a US$775 milhões.",
+            "A Oratomic espera ter um computador quântico tolerante a falhas até 2030."
+          ]
+        },
+        {
+          "url": "https://siliconangle.com/2026/10/08/oratomic-raises-475m-for-neutral-atom-quantum-computing-universal-quantum-nets-100m/",
+          "title": "Oratomic capta US$475 milhões para computação quântica com átomos neutros; Universal Quantum levanta US$100 milhões",
+          "summary": "SiliconANGLE: explica a abordagem técnica da Oratomic e cobre a rodada da Universal Quantum.",
+          "bullets": [
+            "A Oratomic usa arranjos reconfiguráveis de átomos neutros.",
+            "Acredita que consegue uma máquina útil com cerca de 10 mil qubits.",
+            "A Universal Quantum, de sistemas de íons aprisionados, captou mais de US$100 milhões em Série A."
+          ]
+        },
+        {
+          "url": "https://traded.co/vc/deal/oratomic-raises-475-million-in-series-b-round-from-arch-venture-partners-and-others/",
+          "title": "Oratomic capta US$475 milhões em Série B com ARCH Venture Partners e outros",
+          "summary": "TradedVC: lista os co-líderes da rodada e o perfil da empresa.",
+          "bullets": [
+            "A rodada foi co-liderada por ARCH, Spark Capital, Khosla, Index, General Catalyst e Bezos Expeditions.",
+            "A Oratomic tem sede em Pasadena e foi fundada em 2025.",
+            "O CEO e cofundador é Dolev Bluvstein."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Mecka capta US$60 milhões com Sequoia para gerar dados de treino de robôs",
+      "summary": "A startup paga pessoas para gravar tarefas do dia a dia e diz ter passado de US$100 milhões em receita anualizada em junho.",
+      "bullets": [
+        "A Mecka anunciou a Série B em 7 de outubro, liderada pela Sequoia Capital.",
+        "Nvidia, M12 (fundo da Microsoft), Qualcomm Ventures e Samsung entraram como novos investidores.",
+        "Os anjos incluem Tony Xu (DoorDash), Frank Slootman (ex-ServiceNow e Snowflake) e Milan Kovac (ex-Optimus, da Tesla).",
+        "O TechCrunch havia informado um valuation de cerca de US$500 milhões.",
+        "A empresa já divulgou US$128 milhões em captações e espera US$300 milhões de receita anualizada até o fim do ano."
+      ],
+      "body": "A Mecka paga pessoas para se gravarem fazendo tarefas como preparar café ou consertar carros, usando sensores corporais e smartphones. Os dados servem para treinar robôs humanoides e outros robôs.\n\nCom sede em Nova York e Toronto, a Mecka se posiciona como integradora de robótica que fornece hardware, captura de dados e pós-treinamento. O dinheiro vai ampliar a infraestrutura de dados, reforçar o laboratório de pesquisa e expandir a implantação comercial de robôs.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.mecka.ai/news/series-b",
+          "title": "Mecka anuncia Série B",
+          "summary": "Mecka: comunicado oficial lista os investidores, a receita e o uso previsto do dinheiro.",
+          "bullets": [
+            "A rodada de US$60 milhões foi liderada pela Sequoia Capital.",
+            "A Mecka diz ter passado de US$100 milhões em receita anualizada em junho de 2026.",
+            "O dinheiro vai ampliar a infraestrutura de dados, o laboratório de pesquisa e a implantação de robôs."
+          ]
+        },
+        {
+          "url": "https://techcrunch.com/2026/10/07/robot-data-startup-mecka-ai-nabs-60m-from-sequoia/",
+          "title": "Startup de dados para robôs Mecka AI recebe US$60 milhões da Sequoia",
+          "summary": "TechCrunch: descreve como a Mecka coleta dados e retoma o valuation antecipado pelo site.",
+          "bullets": [
+            "A Mecka paga pessoas para gravar tarefas do dia a dia com sensores corporais e smartphones.",
+            "O TechCrunch havia informado valuation de cerca de US$500 milhões.",
+            "A empresa tem sede em Nova York e Toronto."
+          ]
+        },
+        {
+          "url": "https://dealroom.co/news/160699-mecka-raises-60m-series-b-to-turn-human-motion-into-robot-training-data/",
+          "title": "Mecka capta US$60 milhões em Série B para transformar movimento humano em dados de treino de robôs",
+          "summary": "Dealroom: detalha os investidores-anjo e o histórico de captações da Mecka.",
+          "bullets": [
+            "Os anjos incluem Tony Xu, Frank Slootman e Milan Kovac.",
+            "A Mecka já divulgou US$128 milhões em captações.",
+            "Espera chegar a US$300 milhões de receita anualizada até o fim do ano."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Drones atingem data center da Yandex em Sasovo, na Rússia",
+      "summary": "É o primeiro grande ataque a um polo de dados russo desde o início da guerra; o data center parou totalmente, sem vítimas.",
+      "bullets": [
+        "O ataque ocorreu em 8 de outubro e causou um incêndio no polo de Sasovo, um dos cinco grandes data centers da Yandex.",
+        "O local abriga dezenas de milhares de servidores; a Yandex suspendeu as operações ali.",
+        "Alguns serviços podem ficar indisponíveis, mas os principais não foram afetados, segundo a empresa.",
+        "O Ministério da Defesa da Rússia disse ter interceptado 399 drones ucranianos na madrugada de 8 de outubro.",
+        "A Yandex Cloud relatou problemas de energia na zona ru-central1-b a partir de cerca de 1h31."
+      ],
+      "body": "A Yandex é a principal empresa de IA e tecnologia da Rússia. A instalação de Sasovo fica no terreno da fábrica de máquinas-ferramenta Sasta, que fornece equipamentos a empresas da indústria de defesa russa.\n\nNa mesma noite, a Ucrânia atingiu uma refinaria de petróleo no Bascortostão.",
+      "is_breaking": false,
+      "sensitivity": "violent",
+      "sources": [
+        {
+          "url": "https://www.straitstimes.com/world/europe/drones-hit-yandex-data-centre-in-first-major-attack-on-russian-data-hub",
+          "title": "Drones atingem data center da Yandex no primeiro grande ataque a um polo de dados russo",
+          "summary": "The Straits Times (Reuters): relata o ataque inédito e o incêndio no polo de Sasovo.",
+          "bullets": [
+            "É o primeiro grande ataque a um polo de dados russo desde o início da guerra.",
+            "Segundo a Yandex, o ataque causou um incêndio em um de seus cinco grandes data centers.",
+            "A Yandex disse que não houve vítimas."
+          ]
+        },
+        {
+          "url": "https://www.cnbc.com/2026/10/08/russia-yandex-ukraine-drone-strike-data-center.html",
+          "title": "Ataque de drone ucraniano atinge data center da Yandex na Rússia",
+          "summary": "CNBC: descreve o peso da Yandex no setor de tecnologia russo e o efeito do ataque nos serviços.",
+          "bullets": [
+            "A Yandex é a principal empresa de IA e tecnologia da Rússia.",
+            "O data center abriga dezenas de milhares de servidores.",
+            "Os serviços principais não foram afetados."
+          ]
+        },
+        {
+          "url": "https://tass.com/politics/2199159",
+          "title": "Defesa aérea russa intercepta 399 drones ucranianos durante a noite",
+          "summary": "TASS: traz o balanço do Ministério da Defesa russo sobre os drones interceptados.",
+          "bullets": [
+            "O ministério disse ter interceptado 399 drones sobre regiões russas e o Mar Negro.",
+            "A interceptação ocorreu na madrugada de 8 de outubro."
+          ]
+        },
+        {
+          "url": "https://www.kyivpost.com/post/86416",
+          "title": "Drones atingem data center da Yandex e refinaria no Bascortostão",
+          "summary": "Kyiv Post: liga o data center a uma fábrica que fornece à indústria de defesa russa e cita outro alvo na mesma noite.",
+          "bullets": [
+            "A instalação fica no terreno da fábrica Sasta, que fornece equipamentos à indústria de defesa russa.",
+            "Na mesma noite, a Ucrânia atingiu uma refinaria no Bascortostão."
+          ]
+        },
+        {
+          "url": "https://kyivindependent.com/russias-largest-yandex-data-center-reportedly-hit-in-drone-attack/",
+          "title": "Maior data center da Yandex na Rússia teria sido atingido em ataque de drones",
+          "summary": "The Kyiv Independent: registra a paralisação total do data center e as falhas de energia na Yandex Cloud.",
+          "bullets": [
+            "A Yandex suspendeu as operações e o data center parou totalmente.",
+            "A Yandex Cloud relatou problemas de energia na zona ru-central1-b a partir de cerca de 1h31."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Ata do Fed cita investimento em IA como fator de pressão inflacionária",
+      "summary": "Em setembro, o Fed subiu os juros em 0,25 ponto, para 3,75% a 4%, e a maioria dos dirigentes vê outra alta até o fim do ano.",
+      "bullets": [
+        "O Fed divulgou em 7 de outubro a ata da reunião do FOMC (comitê de política monetária) de 15 e 16 de setembro.",
+        "A alta de juros foi aprovada por 12 a 0.",
+        "Os participantes citaram o petróleo, puxado por eventos geopolíticos, e o salto nos investimentos em IA como fontes de inflação.",
+        "Segundo vários dirigentes, o efeito da IA sobre a inflação de bens industriais cresce, enquanto o das tarifas diminui.",
+        "A equipe técnica estimou inflação de 3,8% em agosto, puxada pela energia.",
+        "Antes da ata, o CME FedWatch indicava 78% de chance de manutenção dos juros em 27 e 28 de outubro."
+      ],
+      "body": "A ata mostra a expansão da IA ganhando espaço no diagnóstico do Fed sobre inflação: vários dirigentes disseram que a inflação de bens industriais (core goods) seguiu elevada, com o efeito da IA aparentemente crescendo e o das tarifas diminuindo.\n\nO documento também cita comentários de mercado de que a competição por capital, causada pela forte emissão de dívida privada para financiar infraestrutura de IA, contribuiu para a alta dos juros dos títulos do Tesouro americano.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261007a.htm",
+          "title": "Ata da reunião do FOMC de 15 e 16 de setembro de 2026",
+          "summary": "Federal Reserve: comunicado de divulgação da ata da reunião de setembro.",
+          "bullets": [
+            "A ata foi divulgada em 7 de outubro de 2026.",
+            "A reunião elevou os juros em 0,25 ponto, para a faixa de 3,75% a 4%."
+          ]
+        },
+        {
+          "url": "https://www.federalreserve.gov/monetarypolicy/files/fomcminutes20260916.pdf",
+          "title": "Ata do Comitê Federal de Mercado Aberto, 15 e 16 de setembro de 2026",
+          "summary": "Federal Reserve: íntegra da ata, com a avaliação dos dirigentes sobre IA, petróleo e juros futuros.",
+          "bullets": [
+            "Todos os participantes apoiaram a alta, aprovada por 12 a 0.",
+            "A maioria avaliou que outra alta provavelmente seria apropriada até o fim do ano.",
+            "A ata cita a emissão de dívida para infraestrutura de IA como fator na alta dos juros do Tesouro."
+          ]
+        },
+        {
+          "url": "https://www.kitco.com/news/article/2026-10-07/fomc-minutes-show-fed-ready-hike-again-2026-ai-buildout-replaces-tariffs",
+          "title": "Ata do FOMC mostra Fed pronto para subir juros de novo em 2026; expansão da IA substitui tarifas",
+          "summary": "Kitco News: destaca a troca das tarifas pela IA como fonte de inflação de bens industriais.",
+          "bullets": [
+            "O efeito da IA sobre a inflação de bens industriais aparentemente cresce.",
+            "O efeito das tarifas diminui, segundo vários dirigentes."
+          ]
+        },
+        {
+          "url": "https://www.rismedia.com/2026/10/07/notes-from-fed-meeting-cite-ai-tariffs-and-geopolitical-conflicts-for-rate-hike/",
+          "title": "Notas da reunião do Fed citam IA, tarifas e conflitos geopolíticos para alta de juros",
+          "summary": "RISMedia: resume os fatores citados pelo Fed para justificar a alta de setembro.",
+          "bullets": [
+            "Eventos geopolíticos que elevaram petróleo e combustíveis contribuíram para a inflação.",
+            "A equipe técnica estimou inflação de 3,8% em agosto."
+          ]
+        },
+        {
+          "url": "https://www.fxstreet.com/news/fed-minutes-set-to-provide-some-insight-into-the-timing-of-next-rate-hikes-202610071400",
+          "title": "Ata do Fed deve dar pistas sobre o momento das próximas altas de juros",
+          "summary": "FXStreet: registra as apostas do mercado antes da divulgação da ata.",
+          "bullets": [
+            "O CME FedWatch indicava 78% de chance de manutenção dos juros.",
+            "A próxima reunião é em 27 e 28 de outubro."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Irã ameaça bloquear novas rotas de petróleo e analisa plano dos EUA",
+      "summary": "Araghchi diz que responderá em poucos dias ao plano de sete dias para reabrir Ormuz; EUA enviam terceiro porta-aviões.",
+      "bullets": [
+        "O Irã avisou países da região que novas rotas de exportação de petróleo serão consideradas hostis, segundo fonte regional à Reuters.",
+        "Um diplomata disse que o Irã \"não tem nenhuma intenção de deixar o controle do Estreito de Ormuz escapar de suas mãos\".",
+        "Em 8 de outubro, o chanceler Abbas Araghchi disse que o Irã analisa a resposta dos EUA ao seu \"plano de sete dias\".",
+        "Pelo plano, a navegação normal seria retomada no sexto dia e as negociações de acordo final começariam no sétimo.",
+        "O CENTCOM (Comando Central dos EUA) disse ter removido minas navais plantadas pelo Irã no estreito.",
+        "Mensagens seguem trocadas por meio de Catar, Paquistão e China."
+      ],
+      "body": "Segundo um diplomata informado por Teerã, o Irã tem planos prontos para bloquear rotas que alguns países da região usam para exportar petróleo, e os petroleiros enfrentam risco maior de ataques.\n\nNo plano iraniano, os EUA tomariam medidas acordadas nos primeiros quatro ou cinco dias. Do lado americano, o CENTCOM diz que o bloqueio naval ao Irã é \"firme e eficaz\", segundo a Al Arabiya; reportagens indicam que Washington avalia novos ataques, e um terceiro porta-aviões foi enviado à região.",
+      "is_breaking": false,
+      "sensitivity": "political_high_risk",
+      "sources": [
+        {
+          "url": "https://www.jpost.com/israel-news/article-911058",
+          "title": "Irã alerta países da região contra novas rotas de exportação de petróleo",
+          "summary": "The Jerusalem Post (Reuters): relata o aviso iraniano a vizinhos e os planos para bloquear rotas alternativas.",
+          "bullets": [
+            "Tentativas de abrir novas rotas de exportação serão consideradas hostis.",
+            "O Irã tem planos prontos para bloquear rotas usadas por países da região.",
+            "Os petroleiros enfrentam risco maior de ataques."
+          ]
+        },
+        {
+          "url": "https://www.aa.com.tr/en/middle-east/iran-reviewing-us-feedback-on-7-day-plan-expects-to-respond-within-days/4082358",
+          "title": "Irã analisa resposta dos EUA ao plano de 7 dias e espera responder em poucos dias",
+          "summary": "Anadolu Agency: detalha as declarações de Araghchi e as etapas do plano iraniano para Ormuz.",
+          "bullets": [
+            "Araghchi disse esperar responder em poucos dias.",
+            "Os EUA tomariam medidas acordadas nos primeiros quatro ou cinco dias.",
+            "A navegação seria retomada no sexto dia e as negociações começariam no sétimo."
+          ]
+        },
+        {
+          "url": "https://www.iranintl.com/en/202610082077",
+          "title": "CENTCOM diz que bloqueio naval ao Irã é firme e eficaz",
+          "summary": "Iran International: traz a posição militar americana sobre o bloqueio e a remoção de minas.",
+          "bullets": [
+            "O CENTCOM chamou o bloqueio naval de \"firme e eficaz\", segundo a Al Arabiya.",
+            "O CENTCOM disse ter removido minas navais plantadas pelo Irã no estreito."
+          ]
+        },
+        {
+          "url": "https://www.thenationalnews.com/news/mena/2026/10/08/attempt-to-break-us-iran-diplomatic-deadlock-up-against-growing-appetite-for-major-war/",
+          "title": "Tentativa de romper impasse diplomático entre EUA e Irã esbarra em apetite crescente por guerra",
+          "summary": "The National: descreve os canais de mediação e os sinais de escalada militar americana.",
+          "bullets": [
+            "As mensagens são trocadas por meio de Catar, Paquistão e China.",
+            "Washington avalia novos ataques, segundo reportagens.",
+            "Os EUA enviaram um terceiro porta-aviões à região."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "IEA acelera liberação de estoques de petróleo com Brent acima de US$100",
+      "summary": "Membros priorizam diesel e ainda têm 1,1 bilhão de barris em estoques de emergência; o petróleo passou a cair após o acordo.",
+      "bullets": [
+        "Em 7 de outubro, os governos membros da IEA (Agência Internacional de Energia) apoiaram acelerar a liberação prevista na Ação Coletiva de março de 2026.",
+        "Os estoques de emergência incluem mais de 200 milhões de barris de diesel.",
+        "Dos 400 milhões de barris prometidos em março, 325 milhões já saíram, restando cerca de 100 milhões.",
+        "O compromisso de 100 milhões de barris do G7 completa o acordo de março e não acrescenta oferta nova.",
+        "O Conselho de Governadores da IEA se reúne em 15 de outubro.",
+        "O S&P 500 recuou 0,22% em 7 de outubro, para 7.801,75 pontos."
+      ],
+      "body": "A decisão não amplia o volume prometido em março: acelera a liberação do que falta e dá prioridade ao diesel. O compromisso de 100 milhões de barris do G7 também apenas completa o acordo anterior.\n\nAutoridades da União Europeia se comprometeram a adiar novas liberações até uma avaliação mais clara da IEA sobre o mercado. O Brent fechou acima de US$100 o barril em 7 de outubro, dia em que Wall Street também fechou em queda.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.iea.org/news/statement-by-iea-executive-director-on-meeting-of-iea-member-governments-on-7-october-2026",
+          "title": "Declaração do diretor-executivo da IEA sobre a reunião de governos membros em 7 de outubro de 2026",
+          "summary": "IEA: comunicado oficial sobre a aceleração da liberação de estoques e a prioridade ao diesel.",
+          "bullets": [
+            "Os membros apoiaram acelerar a liberação da Ação Coletiva de março de 2026.",
+            "Também apoiaram priorizar a liberação de estoques de diesel.",
+            "Os membros ainda têm cerca de 1,1 bilhão de barris em estoques públicos de emergência."
+          ]
+        },
+        {
+          "url": "https://www.politico.eu/article/eu-countries-will-release-fresh-oil-stocks-only-after-iea-assessment/",
+          "title": "Países da UE só vão liberar novos estoques de petróleo após avaliação da IEA",
+          "summary": "POLITICO Europe: relata a posição da União Europeia sobre novas liberações.",
+          "bullets": [
+            "Autoridades da UE se comprometeram a adiar novas liberações até avaliação mais clara da IEA.",
+            "O Conselho de Governadores da IEA se reúne em 15 de outubro."
+          ]
+        },
+        {
+          "url": "https://www.euronews.com/2026/10/08/exclusive-g7s-100-million-barrel-pledge-tied-to-unfinished-march-emergency-oil-release",
+          "title": "Exclusivo: promessa de 100 milhões de barris do G7 está ligada a liberação de emergência inacabada de março",
+          "summary": "Euronews: mostra que o compromisso do G7 apenas completa o acordo de março.",
+          "bullets": [
+            "Dos 400 milhões de barris prometidos em março, 325 milhões já foram liberados.",
+            "O compromisso do G7 não acrescenta oferta nova."
+          ]
+        },
+        {
+          "url": "https://www.straitstimes.com/business/companies-markets/wall-street-ends-lower-off-record-highs-as-treasury-yields-climb",
+          "title": "Wall Street fecha em queda, abaixo das máximas recordes, com alta dos juros do Tesouro",
+          "summary": "The Straits Times (Reuters): registra o fechamento dos mercados e o petróleo acima de US$100.",
+          "bullets": [
+            "O S&P 500 recuou 0,22%, para 7.801,75 pontos.",
+            "O Brent fechou acima de US$100 o barril em 7 de outubro.",
+            "O petróleo passou a cair depois do acordo da IEA."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "FDA aprova Tukysa, da Pfizer, como manutenção no câncer de mama HER2+",
+      "summary": "A combinação com trastuzumabe e pertuzumabe leva o remédio à primeira linha da doença metastática, sem quimioterapia.",
+      "bullets": [
+        "A FDA (agência reguladora de medicamentos dos EUA) aprovou o tucatinibe (Tukysa) em 7 de outubro de 2026.",
+        "O Tukysa é da Seagen, subsidiária da Pfizer.",
+        "A aprovação vale para manutenção em adultos com câncer de mama HER2-positivo metastático ou localmente avançado irressecável, após a indução.",
+        "O Tukysa é um inibidor oral de tirosina quinase de HER2.",
+        "O remédio já era aprovado com trastuzumabe e capecitabina para pacientes que haviam recebido terapia anti-HER2."
+      ],
+      "body": "Segundo a Pfizer, a aprovação leva o Tukysa a um estágio mais inicial da doença metastática. A combinação é uma opção de manutenção sem quimioterapia que pode ajudar a retardar a progressão da doença.\n\nA aprovação anterior, com trastuzumabe e capecitabina, inclui pacientes com metástases cerebrais.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.pfizer.com/news/press-release/press-release-detail/pfizers-tukysa-regimen-receives-fda-approval-front-line",
+          "title": "Regime com Tukysa, da Pfizer, recebe aprovação da FDA na primeira linha",
+          "summary": "Pfizer: comunicado destaca a chegada do Tukysa à primeira linha e a opção sem quimioterapia.",
+          "bullets": [
+            "A aprovação leva o Tukysa à primeira linha da doença metastática.",
+            "A combinação pode ajudar a retardar a progressão da doença sem quimioterapia.",
+            "O Tukysa é da Seagen, subsidiária da Pfizer."
+          ]
+        },
+        {
+          "url": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-tucatinib-trastuzumab-and-pertuzumab-maintenance-treatment-her2-positive-breast-cancer",
+          "title": "FDA aprova tucatinibe, trastuzumabe e pertuzumabe para manutenção no câncer de mama HER2-positivo",
+          "summary": "FDA: nota oficial define a indicação aprovada para a combinação.",
+          "bullets": [
+            "A indicação é para adultos com câncer de mama HER2-positivo metastático ou localmente avançado irressecável.",
+            "O uso é como manutenção após o tratamento de indução.",
+            "A aprovação saiu em 7 de outubro de 2026."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Índia rejeita acusação de Musk de que oligarcas bloqueiam a Starlink",
+      "summary": "O ministério chama a crítica de \"infundada e equivocada\"; Jio e Airtel somam quase 910 milhões de assinantes de banda larga.",
+      "bullets": [
+        "Musk escreveu no X que a Starlink está \"sendo bloqueada por certos oligarcas\" e chamou isso de \"um crime contra o povo da Índia\".",
+        "Musk não citou os rivais pelo nome, mas depois perguntou: \"Ambani é o verdadeiro chefe da Índia?\"",
+        "A SpaceX anunciou em 2025 acordos com a Jio e a Bharti Airtel para levar a Starlink à Índia; o serviço ainda não foi lançado.",
+        "Segundo o Ministério das Comunicações, três empresas estão em estágio regulatório semelhante e passam por avaliações de segurança.",
+        "Jio e Airtel têm mais de 80% dos assinantes de banda larga da Índia.",
+        "Musk disse que a Starlink tem licença em mais de 165 países."
+      ],
+      "body": "O ministério indiano rejeitou a sugestão de que as regras, ou sua aplicação, sejam injustas ou discriminatórias. A Bharti Airtel é a segunda maior operadora de telecomunicações do país.\n\nMusk insistiu no tema na quinta-feira, dizendo que a Starlink passou cinco anos cumprindo todas as exigências do governo da Índia sem obter licença.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2026/10/08/elon-musk-starlink-spacex-jio-airtel-india.html",
+          "title": "Musk diz que Starlink é bloqueada na Índia; Jio e Airtel dominam a banda larga",
+          "summary": "CNBC: contextualiza a crítica de Musk com o peso da Jio e da Airtel no mercado indiano.",
+          "bullets": [
+            "Jio e Airtel somam quase 910 milhões de assinantes de banda larga, mais de 80% do total.",
+            "A SpaceX anunciou em 2025 acordos com Jio e Bharti Airtel.",
+            "O serviço da Starlink ainda não foi lançado na Índia."
+          ]
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/10/8/india-defends-satellite-internet-approval-process-after-elon-musk-jab",
+          "title": "Índia defende processo de aprovação de internet via satélite após ataque de Elon Musk",
+          "summary": "Al Jazeera: traz a resposta do Ministério das Comunicações da Índia.",
+          "bullets": [
+            "O ministério chamou a crítica de \"infundada e equivocada\".",
+            "Três empresas estão em estágio regulatório semelhante e passam por avaliações de segurança."
+          ]
+        },
+        {
+          "url": "https://www.independent.co.uk/asia/india/elon-musk-starlink-ambani-mittal-modi-b3063409.html",
+          "title": "Elon Musk mira Ambani na disputa da Starlink na Índia",
+          "summary": "The Independent: registra a escalada de Musk na quinta-feira, com menção direta a Ambani.",
+          "bullets": [
+            "Musk perguntou: \"Ambani é o verdadeiro chefe da Índia?\"",
+            "Musk disse que a Starlink tem licença em mais de 165 países.",
+            "Disse ainda que a empresa passou cinco anos cumprindo exigências sem obter licença."
+          ]
+        },
+        {
+          "url": "https://indianexpress.com/article/business/india-satellite-policy-centre-response-elon-musk-starlink-oligarch-10911859/",
+          "title": "Governo indiano responde a Elon Musk sobre política de satélites e \"oligarcas\"",
+          "summary": "The Indian Express: detalha a acusação original de Musk e a defesa da política de satélites pelo governo.",
+          "bullets": [
+            "Musk disse que a Starlink está \"sendo bloqueada por certos oligarcas\".",
+            "Ele chamou o bloqueio de \"um crime contra o povo da Índia\".",
+            "O ministério negou que as regras sejam injustas ou discriminatórias."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "FDA aprova Rhapsido, da Novartis, para dermografismo sintomático",
+      "summary": "É o primeiro tratamento para essa forma de urticária crônica em adultos sem controle com anti-histamínicos H1.",
+      "bullets": [
+        "A Novartis anunciou a aprovação em 7 de outubro de 2026.",
+        "O Rhapsido (remibrutinibe) é um inibidor oral e altamente seletivo da tirosina quinase de Bruton (BTK).",
+        "No dermografismo sintomático, coceira e vergões surgem por atrito, coçar ou esfregar a pele.",
+        "O Rhapsido passa a ser o único tratamento indicado para urticária crônica espontânea e dermografismo sintomático.",
+        "A aprovação para urticária crônica espontânea saiu em 30 de setembro de 2025."
+      ],
+      "body": "A nova indicação amplia o uso do Rhapsido para além da urticária crônica espontânea, aprovada um ano antes. O dermografismo sintomático é uma forma de urticária crônica provocada por atritos do dia a dia na pele.\n\nO remibrutinibe também está em estudo para hidradenite supurativa, alergia alimentar e esclerose múltipla.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.novartis.com/news/media-releases/novartis-rhapsido-remibrutinib-receives-fda-approval-first-treatment-symptomatic-dermographism-sd-expanding-its-use-beyond-chronic-spontaneous-urticaria-csu",
+          "title": "Rhapsido, da Novartis, recebe aprovação da FDA como primeiro tratamento para dermografismo sintomático",
+          "summary": "Novartis: comunicado oficial descreve a nova indicação e os próximos estudos do remibrutinibe.",
+          "bullets": [
+            "O Rhapsido é o único tratamento indicado para urticária crônica espontânea e dermografismo sintomático.",
+            "O remibrutinibe está em estudo para hidradenite supurativa, alergia alimentar e esclerose múltipla."
+          ]
+        },
+        {
+          "url": "https://www.ajmc.com/view/fda-approves-first-symptomatic-dermographism-treatment",
+          "title": "FDA aprova primeiro tratamento para dermografismo sintomático",
+          "summary": "AJMC: explica a doença e o mecanismo do remibrutinibe.",
+          "bullets": [
+            "No dermografismo sintomático, coceira e vergões são provocados por atrito na pele.",
+            "O Rhapsido é um inibidor oral e altamente seletivo da BTK.",
+            "A indicação é para adultos sem controle com anti-histamínicos H1."
+          ]
+        }
+      ]
+    }
+  ]
+}
