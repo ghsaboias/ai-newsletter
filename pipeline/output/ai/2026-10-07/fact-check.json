@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-07",
+  "fidelity_issues": [
+    {
+      "severity": "medium",
+      "where": "edition",
+      "claim": "A agência finlandesa de licenciamento (LVV) mandou suspender as obras preparatórias de dois data centers do Google, em Muhos e Kajaani, até 23 de outubro e até a conclusão dos estudos de impacto ambiental",
+      "issue": "inversão de sentido",
+      "expected": "research.json: 'ordered ... to suspend ... preparatory work ... by October 23, until environmental impact assessments are completed'. 23 de outubro é o PRAZO para parar as obras (by), não a data em que a suspensão termina. O facts.md estava correto ('A suspensão deve ocorrer até 23 de outubro'), mas a edição, ao juntar 'até 23 de outubro e até a conclusão', faz a data parecer o fim da suspensão. Sugestão: 'mandou suspender, até 23 de outubro, as obras ... enquanto os estudos de impacto ambiental não forem concluídos'."
+    },
+    {
+      "severity": "medium",
+      "where": "facts.md+edition",
+      "claim": "Stripe e Shopify também integram o Trusted Agent Protocol, rival da Visa",
+      "issue": "inversão de sentido",
+      "expected": "research.json: 'Visa's rival Trusted Agent Protocol' / 'Both have already joined a rival protocol run by Visa.' O protocolo é da Visa e concorre com o Personal Agent Protocol. Em PT, o aposto 'rival da Visa' se lê como 'concorrente da Visa'. Sugestão: 'o Trusted Agent Protocol, protocolo concorrente mantido pela Visa'."
+    },
+    {
+      "severity": "low",
+      "where": "facts.md+edition",
+      "claim": "100 milhões de euros (cerca de US$115 milhões) ... de 100.000 a 750.000 euros (de US$115 mil a US$865 mil)",
+      "issue": "não traça ao research.json",
+      "expected": "O research.json traz só os valores em euros (EUR100 million; EUR100,000 to EUR750,000), e a web os confirma (proposta CORE da Comissão, julho de 2025). As cifras em dólar são conversões calculadas pela base, que nenhuma fonte informa; a taxa implícita (~1,15) bate com a da BBC no mesmo dossiê (EUR13bn ≈ US$15bn). É um furo de rastreabilidade, não de verdade."
+    }
+  ],
+  "dropped_facts": [],
+  "summary": "Fidelidade alta: nenhuma especificidade inventada, nenhuma atribuição inventada (o 'um dia depois' do alerta de Zelensky consta da edição de 6/10). Há duas frases com o sentido desviado (o prazo da LVV e a Visa como dona do protocolo rival) e conversões em dólar que não traçam à pesquisa. Nenhum fato load-bearing caiu."
+}
