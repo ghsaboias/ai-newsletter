@@ -2,7 +2,7 @@
 """
 Partner insertions (ads) for the day's newsletter, from the Publicidade board.
 
-  list   --date D      Cards on the Publicidade board (GitHub Project #5) with
+  list   --date D      Open cards on the Publicidade board (GitHub Project #5) with
                        Formato "📧 Newsletter" and "Data no ar" == D, each joined
                        with its model from newsletters/ai/insertions/registry.json
                        (keyed by the card's Cliente). JSON on stdout.
@@ -47,13 +47,26 @@ def board_items():
     return json.loads(out)["items"]
 
 
+def open_issue_numbers():
+    """The board listing doesn't carry issue state, so ask the repo. A closed card
+    was either delivered or cancelled; neither should put the ad in again."""
+    out = subprocess.run(
+        ["gh", "issue", "list", "-R", f"{BOARD_OWNER}/publicidade", "--state", "open",
+         "--json", "number", "-L", "1000"],
+        capture_output=True, text=True, check=True).stdout
+    return {i["number"] for i in json.loads(out)}
+
+
 def day_insertions(date):
     registry = json.load(open(REGISTRY, encoding="utf-8"))
+    open_numbers = open_issue_numbers()
     found = []
     for it in board_items():
         if it.get("formato") != NEWSLETTER_FORMAT or it.get("data no ar") != date:
             continue
         c = it.get("content") or {}
+        if c.get("number") not in open_numbers:
+            continue
         cliente = it.get("cliente")
         model = registry.get(cliente) if cliente else None
         found.append({

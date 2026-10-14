@@ -39,6 +39,9 @@ python3 "$REPO/pipeline/tools/insertions.py" list --date <DATE> > "$D/insertions
 jq -c '{count, warnings, i: [.insertions[] | {number, cliente, status, model: (.model.template_id // null)}]}' "$D/insertions.json"
 ```
 
+Só contam cards **abertos**: card fechado já foi entregue ou foi cancelado. Para
+cancelar uma inserção, basta fechar o card.
+
 - `count == 0` → `SKIP insertion: nada no board para <DATE>` e pare. Dia comum: o
   teaser do paywall fica.
 - `warnings` (card sem Cliente, dois cards do mesmo Cliente no mesmo dia) → reporte
