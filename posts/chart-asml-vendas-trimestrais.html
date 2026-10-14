@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Vendas líquidas trimestrais da ASML</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    background: #FFFFFF;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 38px;
+  }
+  .card {
+    width: 720px;
+    background: #FFFFFF;
+    padding: 36px 40px;
+  }
+  .header {
+    padding-bottom: 24px;
+    border-bottom: 3px solid #044B2E;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .header .logo { height: 18px; flex-shrink: 0; }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.8px;
+    line-height: 26px;
+    max-width: none;
+  }
+  .kicker {
+    font-size: 13px;
+    line-height: 18px;
+    color: #444;
+    margin-top: 18px;
+  }
+  .kicker b { color: #044B2E; }
+  .chart-area { padding: 20px 0 4px; }
+  .chart-container {
+    width: 100%;
+    height: 372px;
+    position: relative;
+  }
+  .legend {
+    display: flex;
+    gap: 22px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid #E5E5E5;
+    font-size: 11px;
+    color: #444;
+  }
+  .legend > span {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+  }
+  .legend .swatch {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+    flex: 0 0 auto;
+    border-radius: 2px;
+  }
+  .footer {
+    padding-top: 14px;
+    border-top: 1px solid #E5E5E5;
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    margin-top: 14px;
+  }
+  .footer span {
+    font-size: 10px;
+    color: #999;
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+<div class="card" id="capture">
+  <div class="header">
+    <h1>Vendas líquidas trimestrais da ASML</h1>
+    <img src="../../daily-journal-platform/public/images/logo/logo-green-horizontal.png" class="logo" alt="Daily Journal">
+  </div>
+
+  <div class="kicker">
+    A fabricante das máquinas de litografia usadas para imprimir chips vendeu o recorde de <b>€11,7 bi</b> no 3º trimestre de 2026 e prevê de <b>€14,2 bi a €15,2 bi</b> para o 4º. Em abril, a ASML previa vender de €36 bi a €40 bi em 2026; agora prevê de <b>€44 bi a €45 bi</b>. A empresa diz que a capacidade de produção planejada não atenderá toda a demanda dos clientes nem em 2027 nem em 2028.
+  </div>
+
+  <div class="chart-area">
+    <div class="chart-container">
+      <canvas id="sales"></canvas>
+    </div>
+
+    <div class="legend">
+      <span><span class="swatch" style="background:#044B2E"></span>Vendas líquidas, em € bilhões</span>
+      <span><span class="swatch" style="background:#7DB89B"></span>Previsão da ASML para o 4º tri. de 2026, de €14,2 bi a €15,2 bi</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Fonte: releases de resultados trimestrais da ASML, de julho de 2023 a outubro de 2026; faixa do 4º tri. de 2026 conforme o guidance de 14/10/2026</span>
+    <span>dailyjournal.news</span>
+  </div>
+</div>
+
+<script>
+  const q = ['1T','2T','3T','4T'];
+  const labels = [];
+  [2023, 2024, 2025, 2026].forEach(function (y) {
+    q.forEach(function (t, i) { labels.push(i === 0 ? [t, String(y)] : [t, '']); });
+  });
+  const series = {
+    // € bilhões; 4T26 fica vazio porque é uma faixa, não um ponto
+    actual: [6.746, 6.902, 6.673, 7.237, 5.290, 6.243, 7.467, 9.263, 7.742, 7.692, 7.516, 9.718, 8.767, 9.326, 11.662, null],
+    // faixa do 4T26, empilhada: piso + amplitude
+    rangeLow:  [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 14.2],
+    rangeSpan: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1.0],
+    pointLabels: [
+      { i: 0, text: '6,7' },
+      { i: 4, text: '5,3' },
+      { i: 11, text: '9,7' },
+      { i: 14, text: '11,7' }
+    ]
+  };
+
+  const barOpts = { barPercentage: 0.7, categoryPercentage: 0.9, borderSkipped: false, borderWidth: 0, stack: 'a' };
+
+  new Chart(document.getElementById('sales').getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [
+        Object.assign({ data: series.actual, backgroundColor: '#044B2E', borderRadius: 3 }, barOpts),
+        Object.assign({ data: series.rangeLow, backgroundColor: '#7DB89B', borderRadius: 0 }, barOpts),
+        Object.assign({ data: series.rangeSpan, backgroundColor: '#B6D6C5', borderRadius: { topLeft: 3, topRight: 3 } }, barOpts)
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: {
+        y: {
+          stacked: true,
+          beginAtZero: true,
+          max: 16,
+          grid: { color: '#f0f0f0', drawTicks: false },
+          border: { display: false },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 13, weight: '700' },
+            color: '#999',
+            padding: 8,
+            stepSize: 4,
+            callback: function(v) { return '€' + v + ' bi'; }
+          }
+        },
+        x: {
+          stacked: true,
+          grid: { display: false },
+          border: { color: '#ccc' },
+          ticks: {
+            font: { family: 'Helvetica Neue', size: 12, weight: '600' },
+            color: '#333',
+            padding: 6,
+            autoSkip: false,
+            maxRotation: 0
+          }
+        }
+      },
+      layout: { padding: { top: 30, right: 4, left: 0, bottom: 0 } }
+    },
+    plugins: [
+      {
+        id: 'valueLabels',
+        afterDatasetsDraw(chart) {
+          const { ctx } = chart;
+          const bars = chart.getDatasetMeta(0).data;
+          ctx.save();
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'bottom';
+          ctx.font = '700 13px Helvetica Neue';
+          ctx.fillStyle = '#044B2E';
+          series.pointLabels.forEach(function (l) {
+            ctx.fillText(l.text, bars[l.i].x + (l.dx || 0), bars[l.i].y - 6);
+          });
+          // rótulo da faixa do 4T26, acima do topo da barra clara
+          const top = chart.getDatasetMeta(2).data[15];
+          ctx.fillStyle = '#5a9377';
+          ctx.fillText('14,2 a 15,2', top.x - 14, top.y - 6);
+          ctx.restore();
+        }
+      }
+    ]
+  });
+</script>
+</body>
+</html>
