@@ -1,0 +1,6 @@
+**Abaixo, apenas para assinantes:**
+
+**Laboratórios.** Um modo mais rápido e mais caro para um modelo americano, novas regras de uso em outro laboratório, mais um capítulo de uma crise interna e contas banidas por operações de influência de dois governos.
+**Governo americano.** Empresas de tecnologia prometem poder computacional a um programa científico federal, e o governo suspende empresas de software e serviços de TI de um programa de residência permanente.
+**Hardware e dinheiro.** Uma empresa australiana de data centers desiste da bolsa, PCs vendem menos, uma compra de espectro para telefonia móvel e rodadas para startups americanas de robótica de armazém e de interface cérebro-computador.
+**Mundo.** Juros longos dos EUA e petróleo em alta, um recado de Washington sobre o Irã e ataques russos na Ucrânia às vésperas de nova rodada de negociações.
