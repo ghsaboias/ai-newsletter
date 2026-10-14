@@ -1449,3 +1449,13 @@ https://www.youtube.com/watch?v=hZxmbhsbvyw
 **The Fight Over Claude's Consciousness, AI's 1942 Moment, & Why Altman Says "Accept Some Bad Things"**
 O painel reúne Peter H. Diamandis, Dave Blundin, Salim Ismail, Dr. Alexander Wissner-Gross e Emad Mostaque para analisar os principais acontecimentos recentes no ecossistema de inteligência artificial, geopolítica computacional, regulação, economia da abundância e avanços científicos
 https://www.youtube.com/watch?v=LRdb8UmPnh0
+
+## 2026-10-13
+
+**Building the Cloud for AI Agents | AWS CEO Matt Garman**
+Raghu Raghuram (sócio da a16z e ex-CEO da VMware) entrevista Matt Garman (CEO da Amazon Web Services - AWS, que ingressou na empresa em 2005 e foi o primeiro gerente-geral do Amazon EC2 em 2006). A conversa detalha a reestruturação da infraestrutura de nuvem da AWS para atender fluxos de trabalho orientados por agentes de inteligência artificial, o plano de alocação de capacidade de processamento gráfico, a escala sem precedentes de investimentos em bens de capital (CapEx), o desenvolvimento de silício proprietário e a transformação nos processos de desenvolvimento de software
+https://www.youtube.com/watch?v=rn_afJaPldg
+
+**How He Built the World’s Largest Digital Bank with 140 Million Customers**
+David Vélez, fundador e CEO do Nubank, a maior instituição financeira digital do mundo, com 140 milhões de clientes, conversa com Patrick O’Shaughnessy, CEO da gestora Positive Sum, sobre a escala alcançada pelo banco, a dinâmica de disrupção do setor financeiro global de US$ 10 trilhões, a reinvenção interna da companhia com inteligência artificial e a expansão internacional para os Estados Unidos e mais de 35 países
+https://www.youtube.com/watch?v=Rs40uGRyXC8
