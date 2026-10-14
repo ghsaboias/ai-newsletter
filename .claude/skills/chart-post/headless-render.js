@@ -116,7 +116,7 @@ await cdp('Emulation.setDeviceMetricsOverride', { width: 800, height: H, deviceS
 await evalJS('new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))');
 
 // guarda anti-borrão (mesma do render.sh macOS)
-const crisp = await evalJS("(function(){var c=document.querySelector('canvas');return (window.devicePixelRatio===2 && c && c.width===c.clientWidth*2) ? 'ok' : ('dpr='+window.devicePixelRatio+' buf='+(c?c.width+'x'+c.height:'?')+' css='+(c?c.clientWidth+'x'+c.clientHeight:'?'));})()");
+const crisp = await evalJS("(function(){var c=document.querySelector('canvas');return (window.devicePixelRatio===2 && (!c || c.width===c.clientWidth*2)) ? 'ok' :('dpr='+window.devicePixelRatio+' buf='+(c?c.width+'x'+c.height:'?')+' css='+(c?c.clientWidth+'x'+c.clientHeight:'?'));})()");
 if (crisp !== 'ok') console.error(`aviso: render não-retina (${crisp}) — a região do gráfico pode sair pixelada`);
 
 const rect = await evalJS("(function(){var r=document.getElementById('capture').getBoundingClientRect();return {x:Math.round(r.left),y:Math.round(r.top),w:Math.round(r.width),h:Math.round(r.height)};})()");

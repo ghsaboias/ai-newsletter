@@ -8,15 +8,17 @@ description: >-
   edição (agente generator → edition.md) → LINK+PAYWALL+PUSH (extract+paywall-teaser →
   ingest --execute → rewrite-links → push de UM draft no Substack, DJ-linkado +
   com paywall) → checks advisory em paralelo (repetition-checker ∥ fact-verifier,
-  não-bloqueantes → repetition.json + fact-check.json). Para se algum passo de
-  CONTEÚDO falhar (os checks advisory nunca interrompem). Ao final o artefato é um
-  draft do Substack já DJ-linkado e com paywall, pronto pra revisão humana NO
-  EDITOR do Substack (aprovação de tiering + imagens/vídeo à mão); os dois
+  não-bloqueantes → repetition.json + fact-check.json) → COMPLETA o draft:
+  imagens/vídeos (newsletter-images auto, tudo aprovado), recomendações
+  (newsletter-recs) e inserção de parceiro do dia, se o board Publicidade tiver uma
+  (newsletter-insertion, que cria o modelo quando falta). Para se algum passo de
+  CONTEÚDO falhar (os checks advisory nunca interrompem). Ao final devolve a URL do
+  draft completo do Substack, pronto pra revisão humana NO EDITOR; os dois
   relatórios advisory ficam ao lado. NÃO inicia a revisão e — crítico — NÃO
   re-empurra depois do primeiro push (o draft do Substack vira a fonte da verdade).
   É o orquestrador do draft da newsletter de AI/Tech (substituiu o antigo caminho
   de prosa). Aciona quando o usuário diz "rodar o draft", "draftar a
-  edição", "/newsletter-draft". Aceita `YYYY-MM-DD` e a flag `mini`.
+  edição", "run newsletter draft", "rodar a newsletter", "/newsletter-draft". Aceita `YYYY-MM-DD` e a flag `mini`.
 allowed-tools: Skill, Read, Write, Bash, Agent
 ---
 
@@ -36,15 +38,22 @@ generator, no draft-rewrite. It chains, in order:
    - `rewrite-links --in edition.md --out edition-final.md` → DJ links baked into the md
    - `substack-preview.sh … --paywall-after-grandes` → **push ONE Substack draft** (DJ-linked + paywalled)
 4. `repetition-checker` ∥ `fact-verifier`  (agents, parallel, **advisory**, fired right after the edition gate so they overlap the LINK block; collected here) → `repetition.json` + `fact-check.json`
+5. **Complete the draft** (sequential, each edits the live draft): `newsletter-images <DATE> auto` → `newsletter-recs <DATE>` → `newsletter-insertion <DATE>`
 
-When it finishes, **the DJ-linked + paywalled Substack draft is the artifact ready
-for the human review** (which happens *in Substack* now, and is
+When it finishes, **the complete Substack draft (DJ-linked, paywalled, with images,
+recs and the day's partner insertion) is the artifact ready for the human review** (which happens *in Substack* now, and is
 *approving/adjusting tiering*, not rewriting prose); the two advisory reports sit
 alongside it to feed that review. The advisory checks are **non-gating** — they
 audit the finished edition and their findings inform the review, but they never
 halt the chain. This skill does **not** start the review, and — critically —
 **after the first push the Substack draft is source of truth; the skill never
 re-pushes** (hand-added images/video/text in the editor must not be clobbered).
+Step 5's images/recs/insertion are not a re-push: each one GETs the live draft,
+inserts its nodes and PUTs it back, before anyone has opened the editor.
+
+This is the whole daily job. "Run newsletter draft" replaces the old three-skill
+prompt (draft, then images with everything approved, then recs, then send the URL):
+the run ends by replying with the draft URL.
 
 ## Args
 
@@ -85,6 +94,24 @@ com o mesmo `name:` e pode vencer a colisão — foi o que aconteceu em 2026-07-
 `Bash`, e nada acusou erro). Backup de agente é o git, nunca uma cópia dentro de
 `agents/`. E as definições são carregadas **no início da sessão**: consertar os
 arquivos não conserta a sessão em curso — arrume e rode numa **sessão nova**.
+
+### Step 0.5 — partner insertion preflight (full run only)
+
+The day's partner insertion needs only the Publicidade board, so check it now. If a
+model has to be created, that runs in the background under the whole research →
+push chain instead of adding ~10 min at the end:
+
+```bash
+D=$REPO/pipeline/output/ai/<DATE>; mkdir -p "$D"
+python3 "$REPO/pipeline/tools/insertions.py" list --date <DATE> > "$D/insertions.json" \
+  && jq -c '{count, warnings, missing: [.insertions[] | select(.model == null) | {number, cliente}]}' "$D/insertions.json" \
+  || echo "WARN insertion preflight: board query failed — Step 5c retries"
+```
+
+For each `missing` entry, fire the `insertion-designer` agent now, in the background,
+with the same prompt `newsletter-insertion` uses (its Step 2) — and commit the new
+model as that step says once the agent returns OK. `count == 0` → nothing to do; Step 5c will just
+print the skip. Never block the chain on this.
 
 ## Orchestration model
 
@@ -529,7 +556,41 @@ D=/Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>
 `repetition.json`/`fact-check.json` are the skill's outputs; a pre-existing file
 from the old shell path is overwritten by the agent output — expected.
 
-## Step 5: Final roll-up
+## Step 5: Complete the draft (images → recs → insertion)
+
+Full run only (mini has no draft). Requires `$D/.substack-draft-id`; without it the
+push failed, so **stop** and report. Run the three **one after another, never in
+parallel**: each GETs the live draft, edits it and PUTs it back, so two at once
+would overwrite each other's work. A failure in one is reported in the roll-up and
+the next one still runs; none of them halts the run.
+
+**5a. Images.** Skip if `$D/images-final.json` exists (a re-run must not wipe
+images Gui swapped in the editor). Otherwise:
+
+```
+Skill({ skill: "newsletter-images", args: "<DATE> auto" })
+```
+
+`auto` = everything pre-approved: every pick, strong and optional, plus every
+official video, goes in without the Slack approval round.
+
+**5b. Recs.** Skip if `$D/recs.json` exists. Otherwise:
+
+```
+Skill({ skill: "newsletter-recs", args: "<DATE>" })
+```
+
+**5c. Partner insertion.** Always run (it's idempotent). If Step 0.5 fired an
+`insertion-designer`, wait for it to finish first.
+
+```
+Skill({ skill: "newsletter-insertion", args: "<DATE>" })
+```
+
+No insertion that day → it prints a skip and the paywall teaser stays. With an
+insertion, the ad replaces the teaser in the free-only block.
+
+## Step 6: Final roll-up
 
 One block, then the hand-off line:
 
@@ -542,7 +603,9 @@ echo "=== Draft Complete: <DATE> ==="
 [ -f "$D/sources.json" ]  && echo "  Sources:    $(jq '.source_count' "$D/sources.json") entities, $(jq '.url_count' "$D/sources.json") urls"
 [ -f "$D/links.json" ]    && echo "  Ingest:     $(jq 'length' "$D/links.json") DJ pages (executed)"
 [ -f "$D/paywall-meta.json" ] && echo "  Paywall:    $(jq '.teasers|length' "$D/paywall-meta.json") teasers"
-[ -f "$D/substack-draft.json" ]  && echo "  Draft:      $(jq -r '.url' "$D/substack-draft.json")"
+[ -f "$D/images-final.json" ] && echo "  Images:     $(jq '[.[] | select(.file)] | length' "$D/images-final.json") images, $(jq '[.[] | select(.videoId)] | length' "$D/images-final.json") videos"
+[ -f "$D/recs.json" ]     && echo "  Recs:       $(jq -r '[.items[].title] | join(" / ")' "$D/recs.json")"
+[ -f "$D/insertions.json" ] && echo "  Insertion:  $(jq -r 'if .count == 0 then "none today" else ([.insertions[] | "#\(.number) \(.cliente)"] | join(", ")) end' "$D/insertions.json")"
 [ -f "$D/repetition.json" ] && echo "  Repetition: $(jq -r '"\(.issues|length) issues (high \([.issues[]|select(.severity=="high")]|length) / med \([.issues[]|select(.severity=="medium")]|length) / low \([.issues[]|select(.severity=="low")]|length))"' "$D/repetition.json") (advisory)"
 [ -f "$D/fact-check.json" ] && echo "  Fact-check: $(jq '.fidelity_issues|length' "$D/fact-check.json") fidelity / $(jq '.dropped_facts|length' "$D/fact-check.json") dropped (advisory)"
 echo "  Duration:   $(( ($(date +%s) - START) / 60 ))m $(( ($(date +%s) - START) % 60 ))s"
@@ -593,12 +656,15 @@ jq -r '.dropped_facts[] | select(.severity!="low")
 ```
 
 Then print the hand-off (point at the **Substack draft** — the review happens
-there now):
+there now). **The last line of the reply is the editor URL**:
+`https://dailyjournalnews.substack.com/publish/post/<id from .substack-draft-id>`.
+If a model was created today, show its banner PNG and copy too (see
+`newsletter-insertion` Saída).
 
-> Draft no Substack pronto — **já DJ-linkado e com paywall** — em
-> `substack-draft.json`. Próximo passo: **revisão humana no editor do Substack** —
-> aprovar/ajustar o *tiering* (quais 3 viram Grandes, o que cai pra Média/Leia
-> também) e adicionar imagens/vídeo/texto à mão. **A partir daqui o draft do
+> Draft no Substack completo — **DJ-linkado, com paywall, imagens, recomendações e
+> a inserção do dia** — em `substack-draft.json`. Próximo passo: **revisão humana no
+> editor do Substack** — aprovar/ajustar o *tiering* (quais 3 viram Grandes, o que
+> cai pra Média/Leia também) e trocar o que não agradar. **A partir daqui o draft do
 > Substack é a fonte da verdade — não rode a skill de novo pra re-publicar** (ela
 > nem re-empurra: o id em `.substack-draft-id` trava o create-once). Leia antes os
 > memory files em `~/.claude/projects/-Users-guilherme-ai-newsletter/memory/` e os
@@ -632,8 +698,10 @@ summarized. The orchestrator adds only the gate lines and this roll-up.
   `.substack-draft-id`: once it exists, the skill **skips** the push on every
   re-run. After the first push the Substack draft is source of truth; hand-added
   images/video/text must never be overwritten from local md.
-- **Stop before the human review.** Ends after the pushed draft + advisory reports.
-  Do not start the review.
+- **Stop before the human review.** Ends after the complete draft (Step 5) +
+  advisory reports, replying with the draft URL. Do not start the review.
+- **Step 5 runs serially.** Images, recs and insertion each read-modify-write the
+  live draft; running two at once loses one's edits.
 - **Idempotent resume.** Re-running picks up at the first missing output. Force a
   rerun by deleting the output(s).
 - **Tight output.** No step-by-step play-by-play; gate lines + final roll-up only.

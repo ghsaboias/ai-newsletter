@@ -12,7 +12,8 @@ newsletters/
   ma/                          # M&A newsletter (dormant)
 .claude/agents/                # the in-session pipeline:
                                #   researcher-{ai,hw,world}, facts, generator,
-                               #   extract, paywall-teaser, repetition-checker, fact-verifier
+                               #   extract, paywall-teaser, repetition-checker, fact-verifier,
+                               #   insertion-designer
                                # FLAT — one .md per agent, no subdirs. Claude Code scans
                                # this dir RECURSIVELY, so a copy in _backup/ or old/ also
                                # registers under the same `name:` and can win the collision:
@@ -24,7 +25,7 @@ pipeline/                      # topic-agnostic helpers the agents call
   output/<topic>/YYYY-MM-DD/   # namespaced by topic
 ```
 
-Skills, all in-repo (`.claude/skills/`): `newsletter-draft`, `newsletter-research`, `newsletter-images`, `newsletter-recs`, `chart-post` (plus `sbq`, `sstats`). The full research → facts → edition pipeline is self-contained in the repo — `newsletter-draft` dispatches `newsletter-research`, which spawns the in-repo `researcher-{ai,hw,world}` agents and `pipeline/tools/dedup-research.py`.
+Skills, all in-repo (`.claude/skills/`): `newsletter-draft`, `newsletter-research`, `newsletter-images`, `newsletter-recs`, `newsletter-insertion`, `chart-post` (plus `sbq`, `sstats`). The full research → facts → edition pipeline is self-contained in the repo — `newsletter-draft` dispatches `newsletter-research`, which spawns the in-repo `researcher-{ai,hw,world}` agents and `pipeline/tools/dedup-research.py`.
 All scripts default to topic `ai`. Override with `PIPELINE_TOPIC=ma`.
 
 ## Pipeline
@@ -36,8 +37,13 @@ One in-session agent chain, orchestrated by the `newsletter-draft` skill (`/news
 3. **edition** — `generator` agent writes the tiered edition → `edition.md`
 4. **link + paywall + push** — `extract` ∥ `paywall-teaser` → `ingest --execute` → `rewrite-links` → `substack-preview.sh` pushes **one** DJ-linked, paywalled Substack draft
 5. **advisory checks** (non-gating, parallel) — `repetition-checker` ∥ `fact-verifier` → `repetition.json` + `fact-check.json`
+6. **complete the draft** (serial, each edits the live draft) — `newsletter-images auto` (all picks approved) → `newsletter-recs` → `newsletter-insertion` (the day's partner ad from the Publicidade board, in the free-only block where the paywall teaser sits; creates the model via `insertion-designer` when the Cliente has none) → reply with the draft URL
 
-The artifact is a Substack draft already DJ-linked and paywalled. **Human review happens in the Substack editor** — approving/adjusting tiering, adding images/video by hand. After the first push the Substack draft is source of truth; the skill never re-pushes. **Read memory first**: `~/.claude/projects/-Users-guilherme-ai-newsletter/memory/`
+The artifact is a complete Substack draft: DJ-linked, paywalled, with images, recs and the day's insertion. "Run newsletter draft" is the whole daily job.
+
+Partner insertions: board = GitHub Project #5 (`daily-journal-tech`), cards with Formato "📧 Newsletter" + "Data no ar". Model = Substack post template, mapped by Cliente in `newsletters/ai/insertions/registry.json`. Tools: `pipeline/tools/insertions.py` (list/insert), `insertion_model.py` (spec → template), `render-banner.sh` (1272×312 PNG).
+
+**Human review happens in the Substack editor** — approving/adjusting tiering, swapping images/video by hand. After the first push the Substack draft is source of truth; the skill never re-pushes. **Read memory first**: `~/.claude/projects/-Users-guilherme-ai-newsletter/memory/`
 
 ## Editorial Principles
 

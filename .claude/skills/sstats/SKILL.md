@@ -61,6 +61,9 @@ sstats template solana --body > /tmp/solana.json  # edit, then:
 sstats template-update solana /tmp/solana.json
 ```
 
+Which template serves which board Cliente: `newsletters/ai/insertions/registry.json`.
+Daily insertion into the draft and new-model creation: the `newsletter-insertion` skill.
+
 Insertion anatomy (mirror it for new partners): `captionedImage` (1272×312 banner,
 `href` = tracked link) → centered paragraphs, bold lead + plain tail → `button`
 (same URL) → empty centered paragraph. Upload the banner with

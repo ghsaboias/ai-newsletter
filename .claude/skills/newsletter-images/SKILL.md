@@ -23,15 +23,22 @@ A seção **"Leia também"** (headlines + qualquer embed de recomendação) fica
 
 ## Args
 
-`/newsletter-images [YYYY-MM-DD]` — sem arg usa hoje.
+`/newsletter-images [YYYY-MM-DD] [auto]` — sem data usa hoje.
+
+**`auto`** (é como o `newsletter-draft` chama): o Gui pré-aprovou tudo. Pule o passo 4
+inteiro (nada de subir imagens no Slack, nada de esperar OK): toda escolha entra,
+**fortes e opcionais**, e todo vídeo oficial encontrado entra junto (`videoId`). O
+julgamento continua igual (arquétipo, conferência visual com Read, pular com motivo); só
+a aprovação some. Vá direto ao passo 5 e devolva uma linha por mídia empurrada + as
+puladas com motivo.
 
 ## Fluxo
 
 1. **Mapear** — leia `edition-final.md`, liste as histórias do corpo (Grandes + categorias, sem Leia também) e decida por história: merece mídia? qual sujeito + arquétipo + query? Junte as URLs de fonte por história do `research.json`.
 2. **Garimpar** — dispare os sub-agentes em paralelo (um por história que merece mídia), num tiro só.
 3. **Conferir** — dimensões em lote (paisagem? largura ≥ ~800px?) e **Read em cada imagem** pra confirmar sujeito/qualidade. A conferência visual é da sessão principal, não do sub-agente.
-4. **Propor** — mande as escolhas pro Gui (ver "Proposta pra aprovação") e aguarde o OK.
-5. **Empurrar** — depois do OK, escreva `images-final.json` e rode o `substack_mirror.py media` (um tiro só).
+4. **Propor** — mande as escolhas pro Gui (ver "Proposta pra aprovação") e aguarde o OK. Em `auto`, pule.
+5. **Empurrar** — depois do OK (em `auto`, direto), escreva `images-final.json` e rode o `substack_mirror.py media` (um tiro só).
 
 ## Princípios de seleção (o que vale)
 
@@ -129,7 +136,7 @@ Campos:
 Empurra tudo num tiro só (sobe as imagens, monta os nós `captionedImage`+legenda a 520px, divide os bullet_lists, embute os vídeos, e dá PUT preservando byline/paywall/banner):
 
 ```bash
-python3 pipeline/tools/substack_mirror.py media --plan pipeline/output/ai/<DATE>/images-final.json
+python3 pipeline/tools/substack_mirror.py media --plan pipeline/output/ai/<DATE>/images-final.json --dir pipeline/output/ai/<DATE> --replace
 ```
 
 - Sem `--id`/`--dir` ele pega a edição de **hoje** (lê o `.substack-draft-id`).
@@ -138,7 +145,7 @@ python3 pipeline/tools/substack_mirror.py media --plan pipeline/output/ai/<DATE>
 
 ## Regras
 
-- **Garimpo automático, escolha humana.** Nunca finalize a seleção sozinho; proponha e deixe Gui decidir.
+- **Garimpo automático, escolha humana.** Nunca finalize a seleção sozinho; proponha e deixe Gui decidir. A exceção é `auto`, em que o Gui já aprovou tudo de antemão.
 - **Leia também / recomendações fora de escopo.** Só imagens/vídeos por história do corpo.
 - **Não invente fonte/legenda.** "fonte?" em vez de chutar.
 - **Pule histórias sem imagem boa, com motivo.** Nem toda história precisa de imagem.
