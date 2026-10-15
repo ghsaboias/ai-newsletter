@@ -1469,3 +1469,13 @@ https://www.youtube.com/watch?v=L4SWQebqhek
 **Former Intel CEO: Why This is the Best Time to Build Hardware**
 Pat Gelsinger, sócio-geral da Playground Global e ex-CEO da Intel e da VMware, discute com Raghu Raghuram e Guido Appenzeller (sócios da a16z) as transformações na engenharia de semicondutores, os limites físicos da expansão da inteligência artificial e as restrições que moldarão a próxima geração de hardware, memória, conectividade óptica, energia e virtualização
 https://www.youtube.com/watch?v=1Q_7yU7FZ1k
+
+## 2026-10-15
+
+**Channeling Rage, Rolling Calls & Building an Entertainment Empire | Ari Emanuel, WME & TKO**
+Ari Emanuel é cofundador da Endeavor, presidente executivo e CEO da TKO Group Holdings, presidente executivo do WME Group e fundador da MARI. Nesta conversa com David Senra (apresentador do podcast Founders), Emanuel detalha os bastidores da aquisição do UFC por US$ 4,2 bilhões, a consolidação da William Morris Endeavor (WME), as estratégias de negociação aprendidas com figuras como Egon Durban e David Geffen, a tese por trás de eventos ao vivo frente ao avanço da inteligência artificial e sua transição pessoal: de um operador movido por raiva e insegurança a um executivo focado em presença, rotina e “sorte” calculada
+https://www.youtube.com/watch?v=QeolP6gwSb4
+
+**Is Claude Conscious? Pope Rejects, Model Welfare Movement, OpenAI's Math Backlash, France Riots**
+No episódio, os apresentadores e investidores Chamath Palihapitiya (Social Capital), David Sacks (Craft Ventures), David Friedberg (The Production Board) e Jason Calacanis analisam as reuniões da Anthropic com líderes religiosos sobre consciência de IA, a publicação massiva de provas matemáticas pela OpenAI e a reação da academia, a crise fiscal e os protestos na França sob a ótica dos mercados de títulos públicos, e as implicações de agentes autônomos e da descompilação de softwares proprietários para o valor da propriedade intelectual
+https://www.youtube.com/watch?v=TBLHdXABwAg
