@@ -1459,3 +1459,13 @@ https://www.youtube.com/watch?v=rn_afJaPldg
 **How He Built the World’s Largest Digital Bank with 140 Million Customers**
 David Vélez, fundador e CEO do Nubank, a maior instituição financeira digital do mundo, com 140 milhões de clientes, conversa com Patrick O’Shaughnessy, CEO da gestora Positive Sum, sobre a escala alcançada pelo banco, a dinâmica de disrupção do setor financeiro global de US$ 10 trilhões, a reinvenção interna da companhia com inteligência artificial e a expansão internacional para os Estados Unidos e mais de 35 países
 https://www.youtube.com/watch?v=Rs40uGRyXC8
+
+## 2026-10-14
+
+**David Silver and Lasse Espeholt of Ineffable Intelligence: A Superlearner for the Age of Experience**
+David Silver (líder dos projetos AlphaGo, AlphaZero e AlphaStar na DeepMind) e Lasse Espeholt (pesquisador ex-DeepMind e Google Brain, criador de arquiteturas como IMPALA e SEED RL) são cofundadores da Ineffable Intelligence. A empresa defende que a rota dominante de modelos de linguagem (LLMs) pré-treinados em dados humanos atingirá um teto e aposta na criação de um superlearner, um agente de aprendizado por reforço (RL) puro que começa sem conhecimento prévio e descobre matemática, ciência e linguagens por meio da própria experiência em ambientes simulados
+https://www.youtube.com/watch?v=L4SWQebqhek
+
+**Former Intel CEO: Why This is the Best Time to Build Hardware**
+Pat Gelsinger, sócio-geral da Playground Global e ex-CEO da Intel e da VMware, discute com Raghu Raghuram e Guido Appenzeller (sócios da a16z) as transformações na engenharia de semicondutores, os limites físicos da expansão da inteligência artificial e as restrições que moldarão a próxima geração de hardware, memória, conectividade óptica, energia e virtualização
+https://www.youtube.com/watch?v=1Q_7yU7FZ1k
