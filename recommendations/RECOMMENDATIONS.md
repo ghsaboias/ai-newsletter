@@ -1479,3 +1479,13 @@ https://www.youtube.com/watch?v=QeolP6gwSb4
 **Is Claude Conscious? Pope Rejects, Model Welfare Movement, OpenAI's Math Backlash, France Riots**
 No episódio, os apresentadores e investidores Chamath Palihapitiya (Social Capital), David Sacks (Craft Ventures), David Friedberg (The Production Board) e Jason Calacanis analisam as reuniões da Anthropic com líderes religiosos sobre consciência de IA, a publicação massiva de provas matemáticas pela OpenAI e a reação da academia, a crise fiscal e os protestos na França sob a ótica dos mercados de títulos públicos, e as implicações de agentes autônomos e da descompilação de softwares proprietários para o valor da propriedade intelectual
 https://www.youtube.com/watch?v=TBLHdXABwAg
+
+## 2026-10-19
+
+**CoreWeave Crash, AI Trade Cracks, Anthropic IPO Red Flags, Bill Gates Doomer**
+O episódio reúne os apresentadores Jason Calacanis, David Sacks e Chamath Palihapitiya com a participação de Ben Horowitz (cofundador da gestora de venture capital Andreessen Horowitz / a16z), substituindo David Friedberg. O debate foca na liquidação dos títulos de dívida da CoreWeave e a sustentabilidade financeira das Neoclouds, o impacto deflacionário da inteligência artificial sobre o mercado tradicional de software, os vazamentos de números do Investor Day da Anthropic antes de seu IPO, as disputas regulatórias em torno de modelos abertos e fechados e as motivações por trás do posicionamento alarmista de Bill Gates sobre segurança em IA
+https://www.youtube.com/watch?v=_b3LfMflIGs
+
+**OpenAI Bulk-Solves 722 Math Problems, Anthropic’s Cruelty Policy, & Elon’s Quadrillion-Dollar SpaceX**
+Discussão entre Peter H. Diamandis (fundador do XPRIZE, Singularity University e Fountain Life), Salim Ismail (fundador da OpenExO e gestor do Exponential VC), Dave Blundin (fundador da Link Ventures) e Dr. Alexander Wissner-Gross (AWG, cientista da computação e fundador da Reified) sobre os avanços recentes em inteligência artificial de fronteira, biologia sintética, nanotecnologia, interfaces cérebro-computador e a economia espacial
+https://www.youtube.com/watch?v=A5YVqEpbgaU
