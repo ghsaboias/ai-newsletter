@@ -35,9 +35,8 @@ One in-session agent chain, orchestrated by the `newsletter-draft` skill (`/news
 1. **research** — `newsletter-research` skill spawns 3 de-conflicted cluster researchers (ai / hw / world) + dedup → `research.json`
 2. **facts** — `facts` agent atomizes research into a sourced fact base → `facts.md`
 3. **edition** — `generator` agent writes the tiered edition → `edition.md`
-4. **link + paywall + push** — `extract` ∥ `paywall-teaser` → `ingest --execute` → `rewrite-links` → `substack-preview.sh` pushes **one** DJ-linked, paywalled Substack draft
-5. **advisory checks** (non-gating, parallel) — `repetition-checker` ∥ `fact-verifier` → `repetition.json` + `fact-check.json`
-6. **complete the draft** (serial, each edits the live draft) — `newsletter-images auto` (all picks approved) → `newsletter-recs` → `newsletter-insertion` (the day's partner ad from the Publicidade board, in the free-only block where the paywall teaser sits; creates the model via `insertion-designer` when the Cliente has none) → reply with the draft URL
+4. **checks + link + paywall + push** — `extract` ∥ `paywall-teaser` ∥ `repetition-checker` ∥ `fact-verifier` → `ingest --execute` → **every finding fixed in `edition.md`** → `rewrite-links` → `substack-preview.sh` pushes **one** DJ-linked, paywalled Substack draft
+5. **complete the draft** (serial, each edits the live draft) — `newsletter-images auto` (all picks approved) → `newsletter-recs` → `newsletter-insertion` (the day's partner ad from the Publicidade board, in the free-only block where the paywall teaser sits; creates the model via `insertion-designer` when the Cliente has none) → reply with the draft URL
 
 The artifact is a complete Substack draft: DJ-linked, paywalled, with images, recs and the day's insertion. "Run newsletter draft" is the whole daily job.
 

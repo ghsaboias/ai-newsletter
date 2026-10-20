@@ -7,14 +7,15 @@ description: >-
   especialistas + dedup → research.json) → facts (agente facts → facts.md) →
   edição (agente generator → edition.md) → LINK+PAYWALL+PUSH (extract+paywall-teaser →
   ingest --execute → rewrite-links → push de UM draft no Substack, DJ-linkado +
-  com paywall) → checks advisory em paralelo (repetition-checker ∥ fact-verifier,
-  não-bloqueantes → repetition.json + fact-check.json) → COMPLETA o draft:
+  com paywall; antes do push, checks repetition-checker ∥ fact-verifier →
+  repetition.json + fact-check.json, e TODOS os findings são corrigidos no
+  edition.md) → COMPLETA o draft:
   imagens/vídeos (newsletter-images auto, tudo aprovado), recomendações
   (newsletter-recs) e inserção de parceiro do dia, se o board Publicidade tiver uma
   (newsletter-insertion, que cria o modelo quando falta). Para se algum passo de
-  CONTEÚDO falhar (os checks advisory nunca interrompem). Ao final devolve a URL do
-  draft completo do Substack, pronto pra revisão humana NO EDITOR; os dois
-  relatórios advisory ficam ao lado. NÃO inicia a revisão e — crítico — NÃO
+  CONTEÚDO falhar. Ao final devolve a URL do draft completo do Substack, pronto
+  pra revisão humana NO EDITOR (só gosto: nada sinalizado fica pro Gui
+  corrigir). NÃO inicia a revisão e — crítico — NÃO
   re-empurra depois do primeiro push (o draft do Substack vira a fonte da verdade).
   É o orquestrador do draft da newsletter de AI/Tech (substituiu o antigo caminho
   de prosa). Aciona quando o usuário diz "rodar o draft", "draftar a
@@ -35,20 +36,19 @@ generator, no draft-rewrite. It chains, in order:
    - `extract` (agent, facts.md-driven, fired in Step 3 *with* the generator) → `sources.json`; `paywall-teaser` (agent, fired right after the edition gate) → `paywall-meta.json`
    - `ingest --propose` → `cluster-candidates.json`; **you pick same-story matches** → `cluster-decisions.json` (cluster into an existing DJ news instead of minting a new image-less card)
    - `ingest --execute` → `links.json` + ~1 DJ news page per *unclustered* story
+   - **fix every finding**: `repetition-checker` ∥ `fact-verifier` (fired right after the edition gate, overlapping the LINK block) → `repetition.json` + `fact-check.json`; every finding, any severity, is fixed in `edition.md`
    - `rewrite-links --in edition.md --out edition-final.md` → DJ links baked into the md
    - `substack-preview.sh … --paywall-after-grandes` → **push ONE Substack draft** (DJ-linked + paywalled)
-4. `repetition-checker` ∥ `fact-verifier`  (agents, parallel, **advisory**, fired right after the edition gate so they overlap the LINK block; collected here) → `repetition.json` + `fact-check.json`
-5. **Complete the draft** (sequential, each edits the live draft): `newsletter-images <DATE> auto` → `newsletter-recs <DATE>` → `newsletter-insertion <DATE>`
+4. **Complete the draft** (sequential, each edits the live draft): `newsletter-images <DATE> auto` → `newsletter-recs <DATE>` → `newsletter-insertion <DATE>`
 
 When it finishes, **the complete Substack draft (DJ-linked, paywalled, with images,
 recs and the day's partner insertion) is the artifact ready for the human review** (which happens *in Substack* now, and is
-*approving/adjusting tiering*, not rewriting prose); the two advisory reports sit
-alongside it to feed that review. The advisory checks are **non-gating** — they
-audit the finished edition and their findings inform the review, but they never
-halt the chain. This skill does **not** start the review, and — critically —
+*approving/adjusting tiering* and taste edits, not rewriting prose). Nothing the
+checks flagged is left for the reviewer: every finding is fixed before the push.
+This skill does **not** start the review, and — critically —
 **after the first push the Substack draft is source of truth; the skill never
 re-pushes** (hand-added images/video/text in the editor must not be clobbered).
-Step 5's images/recs/insertion are not a re-push: each one GETs the live draft,
+Step 4's images/recs/insertion are not a re-push: each one GETs the live draft,
 inserts its nodes and PUTs it back, before anyone has opened the editor.
 
 This is the whole daily job. "Run newsletter draft" replaces the old three-skill
@@ -83,7 +83,7 @@ DAY_DIR = $REPO/pipeline/output/ai/<DATE>
 E confira que `.claude/agents/` está **plano** — este é um GATE:
 
 ```bash
-REPO=/Users/guilherme/ai-newsletter   # exporte junto do START; o Step 4 usa
+REPO=/Users/guilherme/ai-newsletter   # exporte junto do START; os Steps 3.5d e 5 usam
 find "$REPO/.claude/agents" -mindepth 2 -name '*.md' | grep . && echo "HALT: definição de agente em subdiretório"
 ```
 
@@ -105,12 +105,12 @@ push chain instead of adding ~10 min at the end:
 D=$REPO/pipeline/output/ai/<DATE>; mkdir -p "$D"
 python3 "$REPO/pipeline/tools/insertions.py" list --date <DATE> > "$D/insertions.json" \
   && jq -c '{count, warnings, missing: [.insertions[] | select(.model == null) | {number, cliente}]}' "$D/insertions.json" \
-  || echo "WARN insertion preflight: board query failed — Step 5c retries"
+  || echo "WARN insertion preflight: board query failed — Step 4c retries"
 ```
 
 For each `missing` entry, fire the `insertion-designer` agent now, in the background,
 with the same prompt `newsletter-insertion` uses (its Step 2) — and commit the new
-model as that step says once the agent returns OK. `count == 0` → nothing to do; Step 5c will just
+model as that step says once the agent returns OK. `count == 0` → nothing to do; Step 4c will just
 print the skip. Never block the chain on this.
 
 ## Orchestration model
@@ -124,16 +124,15 @@ This skill is **thin** and **gated**. Three jobs only:
    no facts/generator child skill to delegate to.) **Maximize the back-half overlap:**
    `extract` reads only facts.md+research.json, so it's fired *with* the `generator`
    (Step 3), not after the edition; and the moment the edition gate passes, the three
-   edition-only agents — `paywall-teaser` + the two **advisory** agents
-   (`repetition-checker`, `fact-verifier`) — are fired together and run in the
-   background while the deterministic `ingest --execute` → `rewrite-links` → Substack
-   push (Step 3.5) proceeds. The advisory findings are just collected at the end
-   (Step 4); none of the four touch the push, so none of them gate it.
+   edition-only agents — `paywall-teaser` + the two checks (`repetition-checker`,
+   `fact-verifier`) — are fired together and run in the background while
+   `ingest` (Step 3.5) proceeds. Their findings are fixed in `edition.md` at Step
+   3.5d, after ingest and before `rewrite-links` → push.
 2. **Gate between the CONTENT + LINK steps.** After research/facts/edition/extract/ingest,
    verify the output exists/validates *before* starting the next. Missing/invalid →
    **STOP the chain and report which step failed**. This reproduces `set -euo
-   pipefail`. The push is **create-once** (skips if `.substack-draft-id` exists); the
-   advisory step does **not** gate — findings never halt the chain.
+   pipefail`. The push is **create-once** (skips if `.substack-draft-id` exists).
+   Findings don't halt the chain: they get fixed.
 3. **Print one final roll-up.**
 
 **Idempotent.** Each output is checked first; if it already exists, skip that step
@@ -216,7 +215,7 @@ Two outputs depend only on `facts.md` (+ `research.json`): the **edition**
 (`generator`) and the **sources** (`extract`). `extract` reads facts.md +
 research.json — **not** edition.md — and is the LINK-block long pole (~10 min), so
 starting it here (rather than after the edition) hides it under the edition +
-paywall + ingest + advisory work. **Full run: fire BOTH in one message now.**
+paywall + ingest + checks work. **Full run: fire BOTH in one message now.**
 Dispatch only whichever lacks its output (idempotency): `generator` if `edition.md`
 is missing, `extract` if `sources.json` is missing. **Mini run: dispatch
 `generator` only** — `extract` feeds the LINK block that mini skips.
@@ -316,8 +315,8 @@ extract→ingest→push block (none of it touches the push, so none of it should
 for it):
 
 - `paywall-teaser` → `paywall-meta.json` (the push consumes it) — **full run only**
-- `repetition-checker` → `repetition.json` (advisory) — moved up from the tail
-- `fact-verifier` → `fact-check.json` (advisory) — moved up from the tail. **Passe
+- `repetition-checker` → `repetition.json` (fixed at Step 3.5d)
+- `fact-verifier` → `fact-check.json` (fixed at Step 3.5d). **Passe
   a ele o caminho da edição da véspera** (o primeiro item da lista `PREV` logo
   abaixo, que você já resolve para o `repetition-checker`). Sem esse arquivo ele
   não consegue distinguir continuidade legítima de atribuição inventada e reporta
@@ -362,8 +361,8 @@ Agent({
 })
 ```
 
-All three run in the background while you do Step 3.5; you collect the two advisory
-findings at Step 4 (by then they're done). The paywall meta finishes in well under
+All three run in the background while you do Step 3.5; you fix the two checks'
+findings at Step 3.5d (by then they're done). The paywall meta finishes in well under
 a minute — long before ingest+rewrite complete — so it's ready for the push. If
 **no** previous editions were found, still run `fact-verifier` (it needs none) and
 either skip `repetition-checker` with a note or pass it "(none found)".
@@ -380,7 +379,7 @@ re-push clobbers the hand-added images/video/text).
 
 **Mini mode skips this entire block.** `mini` is a content-chain smoke test — it
 must **not** write to the production DB (`ingest --execute`) or push a live Substack
-draft. On a `mini` run, stop after the edition gate (Step 3) + advisory (Step 4); print
+draft. On a `mini` run, stop after the edition gate (Step 3) + the two checks; print
 "SKIP 3.5 (mini)".
 
 **Create-once / idempotent-skip.** Every output here skips if it already exists.
@@ -492,7 +491,32 @@ step fails, treat it as a hard failure and stop before rewriting links or pushin
 the Substack draft; otherwise link previews can cache ISR 404s for freshly-created
 pages.
 
-### Step 3.5d — rewrite-links → `edition-final.md` (bake DJ links into the md)
+### Step 3.5d — fix every finding in `edition.md`
+
+Wait for both checks (`repetition.json`, `fact-check.json`). Then fix **every**
+finding, any severity, in `edition.md`, before the link rewrite, so the push
+carries the fixed text:
+
+```bash
+D=/Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>
+python3 "$REPO/pipeline/tools/validate-findings.py" repetition "$D/repetition.json"
+python3 "$REPO/pipeline/tools/validate-findings.py" fact-check "$D/fact-check.json"
+python3 "$REPO/pipeline/tools/apply-lexicon.py" "$D/repetition.json" "$D/edition.md" --execute
+jq -r '.issues[] | "[\(.severity)/\(.type)] \(.overlap)\n  → \(.suggestion)"' "$D/repetition.json"
+jq -r '.fidelity_issues[] | "[\(.severity)] \(.issue) (\(.where)): \(.claim)"' "$D/fact-check.json"
+jq -r '.dropped_facts[] | "[\(.severity)] dropped em \"\(.story)\": \(.fact)"' "$D/fact-check.json"
+```
+
+`apply-lexicon.py` handles the lexicon findings. Fix each remaining finding by
+editing `edition.md` yourself, following its `suggestion`: rewrite the repeated
+phrasing/framing, mark continuity for a repeated story, cut or correct the claim
+the fact-check flagged (against `research.json`), put back the dropped fact.
+Keep every link as it is. The roll-up lists what was fixed.
+
+`$REPO` é a raiz do repo (Step 0), **não** `$ROOT` — `ROOT`, nos Steps 3/3.5, é o
+diretório de *output*.
+
+### Step 3.5e — rewrite-links → `edition-final.md` (bake DJ links into the md)
 
 ```bash
 D=/Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>
@@ -508,7 +532,7 @@ DJ=$(grep -oE 'https?://[^) ]*dailyjournal\.news[^) ]*' "$D/edition-final.md" | 
 echo "  edition-final.md: $DJ DJ links"; [ "$DJ" -eq 0 ] && echo "  WARN: no DJ links in edition-final.md"
 ```
 
-### Step 3.5e — push ONE Substack draft (DJ-linked + paywalled) — CREATE-ONCE
+### Step 3.5f — push ONE Substack draft (DJ-linked + paywalled) — CREATE-ONCE
 
 ```bash
 D=/Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>
@@ -535,28 +559,7 @@ read straight from the Grandes into the Médias. It renders in the editor as an
 "SE / Público" box; leave it alone during review. `substack_post.py` builds it
 (`wrap_for_free_readers`), so nothing changes in the skill's commands.
 
-## Step 4: Advisory roll-up (`repetition-checker` ∥ `fact-verifier`)
-
-Both were **dispatched back in Step 3**, right after the edition gate, and have
-been running **concurrently** with the extract→ingest→push block — they audit only
-`edition.md` and never touch the push, so there's no reason to make the push wait
-for them. By the time the push lands they're done; here you just **collect and
-report** their findings (advisory / non-gating — a non-empty findings list is
-information, not failure). If either is somehow still running, wait for its
-notification; never re-dispatch one whose output already exists.
-
-Report (surface counts, **never halt**):
-
-```bash
-D=/Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>
-[ -f "$D/repetition.json" ] && echo "  Repetition: $(jq '.issues|length' "$D/repetition.json") issues (advisory)"
-[ -f "$D/fact-check.json" ] && echo "  Fact-check: $(jq '.fidelity_issues|length' "$D/fact-check.json") fidelity / $(jq '.dropped_facts|length' "$D/fact-check.json") dropped (advisory)"
-```
-
-`repetition.json`/`fact-check.json` are the skill's outputs; a pre-existing file
-from the old shell path is overwritten by the agent output — expected.
-
-## Step 5: Complete the draft (images → recs → insertion)
+## Step 4: Complete the draft (images → recs → insertion)
 
 Full run only (mini has no draft). Requires `$D/.substack-draft-id`; without it the
 push failed, so **stop** and report. Run the three **one after another, never in
@@ -564,7 +567,7 @@ parallel**: each GETs the live draft, edits it and PUTs it back, so two at once
 would overwrite each other's work. A failure in one is reported in the roll-up and
 the next one still runs; none of them halts the run.
 
-**5a. Images.** Skip if `$D/images-final.json` exists (a re-run must not wipe
+**4a. Images.** Skip if `$D/images-final.json` exists (a re-run must not wipe
 images Gui swapped in the editor). Otherwise:
 
 ```
@@ -574,13 +577,13 @@ Skill({ skill: "newsletter-images", args: "<DATE> auto" })
 `auto` = everything pre-approved: every pick, strong and optional, plus every
 official video, goes in without the Slack approval round.
 
-**5b. Recs.** Skip if `$D/recs.json` exists. Otherwise:
+**4b. Recs.** Skip if `$D/recs.json` exists. Otherwise:
 
 ```
 Skill({ skill: "newsletter-recs", args: "<DATE>" })
 ```
 
-**5c. Partner insertion.** Always run (it's idempotent). If Step 0.5 fired an
+**4c. Partner insertion.** Always run (it's idempotent). If Step 0.5 fired an
 `insertion-designer`, wait for it to finish first.
 
 ```
@@ -590,7 +593,7 @@ Skill({ skill: "newsletter-insertion", args: "<DATE>" })
 No insertion that day → it prints a skip and the paywall teaser stays. With an
 insertion, the ad replaces the teaser in the free-only block.
 
-## Step 6: Final roll-up
+## Step 5: Final roll-up
 
 One block, then the hand-off line:
 
@@ -606,54 +609,12 @@ echo "=== Draft Complete: <DATE> ==="
 [ -f "$D/images-final.json" ] && echo "  Images:     $(jq '[.[] | select(.file)] | length' "$D/images-final.json") images, $(jq '[.[] | select(.videoId)] | length' "$D/images-final.json") videos"
 [ -f "$D/recs.json" ]     && echo "  Recs:       $(jq -r '[.items[].title] | join(" / ")' "$D/recs.json")"
 [ -f "$D/insertions.json" ] && echo "  Insertion:  $(jq -r 'if .count == 0 then "none today" else ([.insertions[] | "#\(.number) \(.cliente)"] | join(", ")) end' "$D/insertions.json")"
-[ -f "$D/repetition.json" ] && echo "  Repetition: $(jq -r '"\(.issues|length) issues (high \([.issues[]|select(.severity=="high")]|length) / med \([.issues[]|select(.severity=="medium")]|length) / low \([.issues[]|select(.severity=="low")]|length))"' "$D/repetition.json") (advisory)"
-[ -f "$D/fact-check.json" ] && echo "  Fact-check: $(jq '.fidelity_issues|length' "$D/fact-check.json") fidelity / $(jq '.dropped_facts|length' "$D/fact-check.json") dropped (advisory)"
+[ -f "$D/repetition.json" ] && echo "  Repetition: $(jq -r '"\(.issues|length) issues (high \([.issues[]|select(.severity=="high")]|length) / med \([.issues[]|select(.severity=="medium")]|length) / low \([.issues[]|select(.severity=="low")]|length))"' "$D/repetition.json") (all fixed)"
+[ -f "$D/fact-check.json" ] && echo "  Fact-check: $(jq '.fidelity_issues|length' "$D/fact-check.json") fidelity / $(jq '.dropped_facts|length' "$D/fact-check.json") dropped (all fixed)"
 echo "  Duration:   $(( ($(date +%s) - START) / 60 ))m $(( ($(date +%s) - START) % 60 ))s"
 ```
 
-Validate both advisory files before reading anything out of them. This is a
-**non-gating** check (advisory never halts the chain) — but a malformed report is
-worse than no report, so say so out loud instead of printing `null`s:
-
-```bash
-python3 "$REPO/pipeline/tools/validate-findings.py" repetition "$D/repetition.json" || echo "  WARN: repetition.json fora do schema — findings abaixo podem estar incompletos"
-python3 "$REPO/pipeline/tools/validate-findings.py" fact-check "$D/fact-check.json" || echo "  WARN: fact-check.json fora do schema — findings abaixo podem estar incompletos"
-```
-
-`$REPO` é a raiz do repo (Step 0), **não** `$ROOT` — `ROOT`, nos Steps 3/3.5, é o
-diretório de *output*. Com `$ROOT` o `python3` morre com `can't open file`, o `||`
-dispara e o WARN sai idêntico ao de schema inválido, mascarando qual é o problema.
-
-Then apply the **mechanical** half of the findings. Only `type: "lexicon"` is
-auto-applied — a banned term or a missing italic has one literal fix and no
-editorial judgement. Repetition of phrasing/framing/story is never auto-applied:
-it needs a rewrite, and that stays with the human reviewer.
-
-```bash
-python3 "$REPO/pipeline/tools/apply-lexicon.py" "$D/repetition.json" "$D/edition.md" --execute
-python3 "$REPO/pipeline/tools/apply-lexicon.py" "$D/repetition.json" "$D/edition-final.md" --execute
-```
-
-Run this **before** the Substack push if the push hasn't happened yet, so the
-draft goes out already clean. If the draft is already pushed, do **not** re-push
-from the skill — report the `APPLY` lines and let the reviewer mirror them in the
-editor. Each line prints `APPLY`/`SKIP`; a `SKIP` is the tool refusing to guess
-(anchor not found or ambiguous), never a silent failure.
-
-Then print the advisory findings that are worth the reviewer's eye — **high and
-medium only**, never the `low` tail (it's what makes the report get ignored).
-Both files now carry `severity`, so filter on it; never invent field names:
-
-```bash
-echo "--- repetition (high/med) ---"
-jq -r '.issues[] | select(.severity=="high" or .severity=="medium")
-       | "  [\(.severity)/\(.type)] \(.overlap)\n      → \(.suggestion)"' "$D/repetition.json"
-echo "--- fact-check (high/med) ---"
-jq -r '.fidelity_issues[] | select(.severity!="low")
-       | "  [\(.severity)] \(.issue) (\(.where)): \(.claim)"' "$D/fact-check.json"
-jq -r '.dropped_facts[] | select(.severity!="low")
-       | "  [\(.severity)] dropped em \"\(.story)\": \(.fact)"' "$D/fact-check.json"
-```
+Then list what Step 3.5d fixed, one line per finding (what was flagged → what changed).
 
 Then print the hand-off (point at the **Substack draft** — the review happens
 there now). **The last line of the reply is the editor URL**:
@@ -666,11 +627,8 @@ If a model was created today, show its banner PNG and copy too (see
 > editor do Substack** — aprovar/ajustar o *tiering* (quais 3 viram Grandes, o que
 > cai pra Média/Leia também) e trocar o que não agradar. **A partir daqui o draft do
 > Substack é a fonte da verdade — não rode a skill de novo pra re-publicar** (ela
-> nem re-empurra: o id em `.substack-draft-id` trava o create-once). Leia antes os
-> memory files em `~/.claude/projects/-Users-guilherme-ai-newsletter/memory/` e os
-> findings advisory: `repetition.json` (repetições story/phrasing/framing +
-> violações de léxico/estilo, com `severity`) +
-> `fact-check.json` (fidelidade + fatos load-bearing perdidos).
+> nem re-empurra: o id em `.substack-draft-id` trava o create-once). Todos os
+> findings de `repetition.json` e `fact-check.json` já foram corrigidos antes do push.
 
 Do **not** re-print each step's output — research's skill and the agents already
 summarized. The orchestrator adds only the gate lines and this roll-up.
@@ -686,11 +644,10 @@ summarized. The orchestrator adds only the gate lines and this roll-up.
   skill (owns the 3-agent fan-out + dedup). Facts/generator → the registered agents,
   paths-only prompts (they own their methodology). This skill only sequences,
   gates, and rolls up.
-- **Advisory is non-gating.** `repetition-checker` and `fact-verifier` are fired
-  right after the edition gate (end of Step 3) and run in parallel *with* the LINK
-  block — they audit only `edition.md`, never the push. Their findings feed the
-  review but **never halt** the chain; they're just collected at Step 4. Only the
-  content steps (research/facts/edition) gate.
+- **Every finding gets fixed.** `repetition-checker` and `fact-verifier` are fired
+  right after the edition gate (end of Step 3) and run in parallel *with* ingest.
+  Step 3.5d fixes all their findings in `edition.md` before the push. Nothing
+  flagged is left for the reviewer.
 - **Link before push; review in Substack.** Step 3.5 bakes DJ links + the paywall
   into the md and pushes ONE Substack draft *before* the human review — that draft
   *is* the artifact reviewed. There is **no** separate finalize/re-push afterward.
@@ -698,9 +655,9 @@ summarized. The orchestrator adds only the gate lines and this roll-up.
   `.substack-draft-id`: once it exists, the skill **skips** the push on every
   re-run. After the first push the Substack draft is source of truth; hand-added
   images/video/text must never be overwritten from local md.
-- **Stop before the human review.** Ends after the complete draft (Step 5) +
-  advisory reports, replying with the draft URL. Do not start the review.
-- **Step 5 runs serially.** Images, recs and insertion each read-modify-write the
+- **Stop before the human review.** Ends after the complete draft (Step 4),
+  replying with the draft URL. Do not start the review.
+- **Step 4 runs serially.** Images, recs and insertion each read-modify-write the
   live draft; running two at once loses one's edits.
 - **Idempotent resume.** Re-running picks up at the first missing output. Force a
   rerun by deleting the output(s).
