@@ -1,0 +1,1673 @@
+{
+  "date": "2026-10-20",
+  "newsletter_file": "2026-10-20/edition.md",
+  "source_count": 21,
+  "url_count": 73,
+  "news_entities": [
+    {
+      "headline": "DeepSeek abre o código do DeepInfer, seu sistema de inferência",
+      "summary": "O framework que roda o DeepSeek-V4.1-Flash em escala sai sob licença Apache 2.0, com suporte a GPUs Nvidia e NPUs Huawei Ascend 950.",
+      "bullets": [
+        "A DeepSeek publicou o DeepInfer em 20 de outubro de 2026, sob a licença Apache 2.0.",
+        "O DeepInfer é o sistema que roda o DeepSeek-V4.1-Flash em escala.",
+        "Suporta GPUs NVIDIA SM100 e NPUs Huawei Ascend 950.",
+        "Inclui kernels otimizados (FlashMLA, DeepGEMM, DeepEP), paralelismo de especialistas para modelos MoE e decodificação especulativa.",
+        "Não inclui KV cache, separação entre prefill e decode nem balanceamento de carga entre réplicas.",
+        "A DeepSeek também abriu o deepseek-recipe, componente de codificação e decodificação de tokens usado em produção."
+      ],
+      "body": "A DeepSeek disse que a abertura do código pretende ajudar a comunidade a reduzir custos de poder computacional e consumo de energia, além de tornar a IA mais acessível em preço. A empresa afirmou que o código de inferência (a execução de um modelo já treinado para gerar respostas) de seus modelos futuros também será publicado no DeepInfer.\n\nEntre os recursos estão paralelismo de especialistas para modelos MoE (mixture of experts, arquitetura que ativa só parte do modelo a cada token), decodificação especulativa com tokens de rascunho, inferência invariante ao tamanho do lote, amostragem determinística e saídas estruturadas. A versão publicada, porém, deixa de fora o KV cache (memória das chaves e valores de atenção já calculados), a separação entre as fases de prefill e decode e o balanceamento de carga entre réplicas, o que faz dela um sistema incompleto de serviço de inferência.\n\nA Bloomberg descreveu o lançamento como algo que pode tornar a tecnologia da DeepSeek mais barata e mais fácil de rodar para empresas.",
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "DeepSeek",
+          "NVIDIA",
+          "Huawei"
+        ],
+        "people": [],
+        "places": [
+          "China"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://x.com/deepseek_ai/status/2112476496283775135",
+          "title": "DeepSeek anuncia a abertura do código do DeepInfer",
+          "summary": "DeepSeek (X): a empresa apresenta o DeepInfer como o sistema que roda o DeepSeek-V4.1-Flash e diz querer cortar custos de computação e energia.",
+          "bullets": [
+            "O DeepInfer é o framework de inferência que roda o DeepSeek-V4.1-Flash em escala.",
+            "O objetivo declarado é reduzir custos de poder computacional e consumo de energia.",
+            "A DeepSeek também quer tornar a IA mais acessível em preço."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://x.com/deepseek_ai/status/2112476498598957056",
+          "title": "DeepSeek diz que modelos futuros terão código de inferência no DeepInfer",
+          "summary": "DeepSeek (X): a empresa promete publicar no DeepInfer o código de inferência de modelos futuros e abre também o deepseek-recipe.",
+          "bullets": [
+            "O código de inferência dos modelos futuros da DeepSeek também sairá no DeepInfer.",
+            "O deepseek-recipe, componente de codificação e decodificação de tokens usado em produção, foi aberto separadamente.",
+            "O deepseek-recipe é alinhado com a API oficial da DeepSeek."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://github.com/deepseek-ai/DeepInfer",
+          "title": "Repositório do DeepInfer no GitHub",
+          "summary": "GitHub: o repositório lista os recursos, o hardware suportado e o que ficou fora da versão publicada do DeepInfer.",
+          "bullets": [
+            "Licença Apache 2.0, com suporte a GPUs NVIDIA SM100 e NPUs Huawei Ascend 950.",
+            "Kernels FlashMLA, DeepGEMM e DeepEP, além de paralelismo de especialistas para modelos MoE.",
+            "Decodificação especulativa, SWA bounded replay, amostragem determinística e saídas estruturadas.",
+            "Sem KV cache, sem separação entre prefill e decode e sem balanceamento de carga entre réplicas."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-10-20/deepseek-unveils-open-source-tool-to-help-cut-ai-operating-costs",
+          "title": "DeepSeek lança ferramenta de código aberto para reduzir custos de operação de IA",
+          "summary": "Bloomberg: o lançamento pode tornar a tecnologia da DeepSeek mais barata e mais fácil de rodar para empresas.",
+          "bullets": [
+            "A DeepSeek abriu o código do DeepInfer em 20 de outubro de 2026.",
+            "Segundo a Bloomberg, a ferramenta pode baratear o uso da tecnologia da DeepSeek por empresas.",
+            "A DeepSeek diz que quer reduzir custos de computação e consumo de energia."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Inception lança o Mercury 3, LLM de difusão acima de 1.000 tokens/s",
+      "summary": "A Inception diz que o modelo supera GPT-6 Luna e Claude Haiku 5.5 em qualidade e custa US$0,10 por milhão de tokens de input no lançamento.",
+      "bullets": [
+        "A Inception lançou o Mercury 3 em 19 de outubro de 2026.",
+        "A empresa afirma que o modelo é de 4 a 8 vezes mais rápido que Haiku 5.5, GPT-6 Luna e GLM-5.3 Flash.",
+        "Na tabela da própria Inception, o Mercury 3 lidera em 8 de 12 testes; no SWE-Bench Atlas marcou 51,08, contra 33,33 e 32,26.",
+        "No DeepSWE v1, ficou com 46,31, abaixo dos 51,62 do Haiku 5.5.",
+        "Tem janela de contexto de 1 milhão de tokens e mais de 40 vezes os parâmetros do Mercury 1.",
+        "O preço de lançamento é US$0,10 (input) e US$0,35 (output) por milhão de tokens, 50% abaixo do preço de tabela.",
+        "Está disponível pela API da Inception, OpenRouter, Baseten e Vercel, sem pesos abertos."
+      ],
+      "body": "Modelos autorregressivos geram um token por vez; o Mercury 3, um LLM de difusão, gera e refina vários tokens em paralelo. O CEO da Inception, Stefano Ermon, chamou o modelo de \"o LLM de difusão mais inteligente já lançado\". A empresa não divulgou o número de parâmetros.\n\nA Inception disse ter usado enxames de agentes Mercury 3 para autoaperfeiçoamento recursivo e que esses agentes aumentaram a velocidade geral do modelo em 16%, além das melhorias feitas pela equipe. O preço de tabela é de US$0,20 por milhão de tokens de input e US$0,70 por milhão de output; o modelo é oferecido só por API.",
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Inception",
+          "OpenAI",
+          "Anthropic",
+          "Baseten",
+          "OpenRouter",
+          "Vercel"
+        ],
+        "people": [
+          "Stefano Ermon"
+        ],
+        "places": []
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.thedeepview.com/articles/why-inception-s-mercury-3-upends-ai-economics",
+          "title": "Por que o Mercury 3, da Inception, muda a economia da IA",
+          "summary": "The Deep View: a reportagem foca na velocidade e no preço do Mercury 3 frente a modelos autorregressivos rivais.",
+          "bullets": [
+            "O Mercury 3 roda a mais de 1.000 tokens por segundo.",
+            "A Inception afirma que é de 4 a 8 vezes mais rápido que Haiku 5.5, GPT-6 Luna e GLM-5.3 Flash.",
+            "O preço de lançamento é US$0,10 por milhão de tokens de input e US$0,35 por milhão de output.",
+            "Stefano Ermon chamou o modelo de \"o LLM de difusão mais inteligente já lançado\"."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.marktechpost.com/2026/10/19/inception-mercury-3-diffusion-llm/",
+          "title": "Inception lança o Mercury 3, LLM de difusão",
+          "summary": "MarkTechPost: detalha benchmarks, contexto, tamanho e o uso de agentes Mercury 3 para acelerar o próprio modelo.",
+          "bullets": [
+            "Na tabela da Inception, o Mercury 3 marcou 51,08 no SWE-Bench Atlas e 46,31 no DeepSWE v1.",
+            "Janela de contexto de 1 milhão de tokens e mais de 40 vezes os parâmetros do Mercury 1.",
+            "Enxames de agentes Mercury 3 aumentaram a velocidade do modelo em 16%, segundo a Inception.",
+            "Disponível pela API da Inception, OpenRouter, Baseten e Vercel, sem pesos abertos."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "OpenAI diz que novos modelos avançam em COBOL, Fortran e Visual Basic",
+      "summary": "No novo benchmark MultiLangBench, o GPT-6 Astra teve 87,4% de aprovação nos testes, contra 26,8% do GPT-5.6 Sol.",
+      "bullets": [
+        "A OpenAI divulgou os resultados em 19 de outubro de 2026.",
+        "O MultiLangBench pede a construção de um motor de banco de dados compatível com SQLite em 20 linguagens.",
+        "Em COBOL, a taxa de aprovação subiu de 10,9% para 72,1%.",
+        "Na migração de COBOL com saída idêntica byte a byte, o GPT-6.1 Sol marcou 86,6% com baixo esforço de raciocínio, contra 5,4% do GPT-5.6 Sol.",
+        "Com mais esforço de raciocínio, o GPT-6.1 Sol chegou a 97,9%.",
+        "O GPT-6 Luna atingiu 40,3% a cerca de US$0,77 por amostra, contra US$3,48 do GPT-5.6 Sol.",
+        "A OpenAI está publicando o MultiLangBench no GitHub."
+      ],
+      "body": "A OpenAI disse que COBOL, Fortran e Visual Basic, linguagens com poucos dados de treino, sustentam software do qual bancos, governos e empresas dependem. A empresa cita que o COBOL está por trás de mais de 40% dos sistemas de internet banking, de 80% das transações presenciais com cartão de crédito e de 95% das transações em caixas eletrônicos.\n\nNo teste de migração, o código em COBOL precisava ser convertido para C++, Java, Kotlin, Python ou Rust com saída idêntica byte a byte. Segundo The Circuitry, o GPT-6.1 Sol obteve seus 86,6% a 61% do custo de API do GPT-5.6 Sol. A OpenAI ressalva que migrações em produção ainda exigem revisão de especialistas.",
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "OpenAI"
+        ],
+        "people": [],
+        "places": []
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://x.com/OpenAI/status/2112310345863930168",
+          "title": "OpenAI anuncia avanço de seus modelos em linguagens com poucos dados",
+          "summary": "OpenAI (X): a empresa anuncia que seus modelos mais recentes criam e migram melhor software em COBOL, Fortran e Visual Basic.",
+          "bullets": [
+            "O anúncio foi feito em 19 de outubro de 2026.",
+            "Essas linguagens sustentam software usado por bancos, governos e empresas.",
+            "O novo benchmark MultiLangBench está sendo publicado no GitHub."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        },
+        {
+          "url": "https://mediarelease.co/us/mr02096-openai-advancing-coding-low-resource-programming-languages-19102026.html",
+          "title": "OpenAI: avanço em programação para linguagens de poucos recursos",
+          "summary": "MediaRelease.co (comunicado da OpenAI): o texto oficial traz os números do MultiLangBench e do teste de migração de COBOL.",
+          "bullets": [
+            "O GPT-6 Astra teve 87,4% de aprovação no MultiLangBench, contra 26,8% do GPT-5.6 Sol.",
+            "Em COBOL, a taxa subiu de 10,9% para 72,1%.",
+            "O GPT-6.1 Sol chegou a 97,9% na migração com esforço de raciocínio maior.",
+            "O GPT-6 Luna atingiu 40,3% a cerca de US$0,77 por amostra."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.engadget.com/2291457/openai-says-its-models-can-translate-cobol/",
+          "title": "OpenAI diz que seus modelos conseguem traduzir COBOL",
+          "summary": "Engadget: destaca o peso do COBOL no sistema financeiro e a ressalva da OpenAI sobre migrações em produção.",
+          "bullets": [
+            "O COBOL sustenta mais de 40% dos sistemas de internet banking, segundo a OpenAI.",
+            "Também sustenta 80% das transações presenciais com cartão e 95% das transações em caixas eletrônicos.",
+            "A OpenAI diz que migrações em produção ainda exigem revisão de especialistas."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://thecircuitry.to/article/openai-models-improve-coding-for-cobol-fortran-and-other-low-resource-languages-mvfw28o8",
+          "title": "Modelos da OpenAI melhoram em COBOL, Fortran e outras linguagens de poucos recursos",
+          "summary": "The Circuitry: compara desempenho e custo do GPT-6.1 Sol com o GPT-5.6 Sol no teste de migração de COBOL.",
+          "bullets": [
+            "O GPT-6.1 Sol marcou 86,6% com baixo esforço de raciocínio, contra 5,4% do GPT-5.6 Sol.",
+            "O resultado saiu a 61% do custo de API do GPT-5.6 Sol.",
+            "O custo do GPT-6 Luna no MultiLangBench é cerca de 78% menor que o do GPT-5.6 Sol."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "DHS ordena remoção da DeepSeek dos sistemas federais civis dos EUA",
+      "summary": "A ordem, emitida em julho e tornada pública em 19 de outubro, também proíbe compras futuras e dá 60 dias para pedidos de exceção.",
+      "bullets": [
+        "O DHS tornou a ordem pública em 19 de outubro de 2026; ela foi emitida originalmente em 24 de julho.",
+        "A base legal é o Federal Acquisition Supply Chain Security Act de 2018.",
+        "Abrange afiliadas da DeepSeek e produtos de terceiros desenvolvidos com implementações da empresa.",
+        "Vale para agências civis como Tesouro, Estado e Justiça, mas exclui o Departamento de Defesa.",
+        "As agências podem pedir exceções em até 60 dias.",
+        "Comércio, Marinha e estados como Nova York, Tennessee e Virgínia já haviam restringido a DeepSeek."
+      ],
+      "body": "O DHS (Departamento de Segurança Interna dos EUA) disse que os modelos da DeepSeek apresentam \"múltiplos vetores de ameaça\" e que seu uso por funcionários ou fornecedores do governo americano \"pode resultar na transferência de dados sensíveis para a RPC\" (República Popular da China). O órgão também afirmou que os modelos podem conter malware ou vulnerabilidades de segurança.\n\nA medida amplia restrições que já existiam em partes do governo: o Departamento de Comércio e a Marinha haviam limitado a DeepSeek em dispositivos oficiais, e estados como Nova York, Tennessee e Virgínia tomaram medidas semelhantes.",
+      "category": [
+        "technology",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "Department of Homeland Security",
+          "DeepSeek",
+          "Department of Defense",
+          "Department of Commerce"
+        ],
+        "people": [],
+        "places": [
+          "United States",
+          "China"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.wsj.com/tech/ai/dhs-orders-deepseek-technology-removed-from-federal-civilian-it-systems-060b6d3d",
+          "title": "DHS ordena remoção da tecnologia da DeepSeek dos sistemas de TI federais civis",
+          "summary": "Wall Street Journal: revela que o DHS exigiu que agências civis retirem a DeepSeek de seus sistemas e parem de comprá-la.",
+          "bullets": [
+            "A ordem exige a remoção da tecnologia da DeepSeek dos sistemas de TI de agências federais civis.",
+            "Compras futuras de produtos e serviços da DeepSeek ficam proibidas.",
+            "O DHS diz que os modelos apresentam \"múltiplos vetores de ameaça\"."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.federalregister.gov/documents/2026/10/20/2026-21447/notice-of-order-regarding-exclusion-and-removal-of-deepseek-products-from-federal-civilian-executive",
+          "title": "Aviso de ordem de exclusão e remoção de produtos da DeepSeek do Executivo federal civil",
+          "summary": "Federal Register: o texto oficial define a base legal, o alcance da ordem e o prazo para pedidos de exceção.",
+          "bullets": [
+            "A ordem se baseia no Federal Acquisition Supply Chain Security Act de 2018.",
+            "Abrange afiliadas da DeepSeek e produtos de terceiros desenvolvidos com suas implementações.",
+            "A ordem foi emitida originalmente em 24 de julho.",
+            "As agências têm até 60 dias para pedir exceções."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.cnbc.com/2026/10/20/us-deepseek-federal-agency-ban.html",
+          "title": "EUA proíbem a DeepSeek em agências federais",
+          "summary": "CNBC: detalha quais agências são afetadas e os riscos de segurança apontados pelo DHS.",
+          "bullets": [
+            "A ordem vale para Tesouro, Estado e Justiça, entre outras agências civis.",
+            "O Departamento de Defesa fica de fora.",
+            "O DHS diz que os modelos podem conter malware ou vulnerabilidades de segurança."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.thehindubusinessline.com/info-tech/us-orders-removal-of-deepseek-from-civilian-government-it-systems/article71603248.ece",
+          "title": "EUA ordenam remoção da DeepSeek dos sistemas de TI do governo civil",
+          "summary": "The Hindu BusinessLine (Reuters): situa a ordem entre restrições anteriores de agências e estados americanos à DeepSeek.",
+          "bullets": [
+            "O DHS diz que o uso pode levar dados sensíveis para a República Popular da China.",
+            "O Departamento de Comércio e a Marinha já haviam restringido a DeepSeek em dispositivos do governo.",
+            "Nova York, Tennessee e Virgínia já haviam tomado medidas semelhantes."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "OpenAI busca fechar rodada de US$30 bi antes do IPO da Anthropic",
+      "summary": "A rodada pode avaliar a OpenAI acima de US$1,4 trilhão; o IPO da Anthropic é esperado para meados de novembro, segundo a Reuters.",
+      "bullets": [
+        "A Reuters relatou a corrida em 19 de outubro de 2026, citando fontes.",
+        "SoftBank, o fundo MGX, de Abu Dhabi, e outros investidores atuais negociam participação.",
+        "A OpenAI diz ter chegado a US$50 bilhões de receita anualizada e espera US$70 bilhões até o fim do ano.",
+        "O último valuation da OpenAI foi de US$852 bilhões, em março, após uma rodada de US$122 bilhões.",
+        "A receita da Anthropic subiu para US$16,8 bilhões no terceiro trimestre, contra US$11,6 bilhões no segundo.",
+        "A Anthropic busca US$2 trilhões no IPO; alguns investidores defendem cerca de US$1,5 trilhão."
+      ],
+      "body": "A OpenAI quer garantir os compromissos de investidores antes que as divulgações financeiras da Anthropic no IPO (oferta pública inicial de ações) permitam comparações lado a lado entre as duas empresas. A OpenAI diz que sua receita anualizada chegou a US$50 bilhões após o lançamento do GPT-6 Astra e que o corte de preços de seus modelos mais baratos aumentou o uso; a empresa disse a investidores que pode baixar ainda mais os preços.\n\nA OpenAI acusa a Anthropic de inflar a receita ao contabilizar o valor bruto de contratos revendidos por provedores de nuvem. A Anthropic nega e diz seguir práticas contábeis estabelecidas.",
+      "category": [
+        "business",
+        "finance",
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "OpenAI",
+          "Anthropic",
+          "SoftBank",
+          "MGX",
+          "Reuters"
+        ],
+        "people": [
+          "Sarah Friar"
+        ],
+        "places": []
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.moneycontrol.com/artificial-intelligence/openai-seeks-to-accelerate-fundraising-ahead-of-anthropic-ipo-report-article-14055784.html",
+          "title": "OpenAI tenta acelerar captação antes do IPO da Anthropic, diz reportagem",
+          "summary": "Moneycontrol (Reuters): a OpenAI corre para fechar compromissos de investidores antes da abertura de capital da Anthropic.",
+          "bullets": [
+            "A rodada é de cerca de US$30 bilhões e pode avaliar a OpenAI acima de US$1,4 trilhão.",
+            "SoftBank e o fundo MGX, de Abu Dhabi, negociam participação.",
+            "O IPO da Anthropic é esperado para meados de novembro."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.cnbctv18.com/technology/openai-seeks-to-accelerate-fundraising-ahead-of-anthropic-ipo-report-20015427.htm",
+          "title": "OpenAI busca acelerar rodada antes do IPO da Anthropic",
+          "summary": "CNBC TV18 (Reuters): traz os números de receita que a OpenAI apresenta a investidores e a disputa contábil com a Anthropic.",
+          "bullets": [
+            "A OpenAI diz ter chegado a US$50 bilhões em receita anualizada após o GPT-6 Astra.",
+            "A empresa espera US$70 bilhões em receita anualizada até o fim do ano.",
+            "A OpenAI acusa a Anthropic de inflar a receita; a Anthropic nega."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://qz.com/openai-30-billion-funding-round-anthropic-ipo-102026",
+          "title": "OpenAI busca rodada de US$30 bilhões antes do IPO da Anthropic",
+          "summary": "Quartz: compara os valuations em jogo e a evolução da receita da Anthropic.",
+          "bullets": [
+            "O último valuation da OpenAI foi de US$852 bilhões, em março.",
+            "A receita da Anthropic subiu para US$16,8 bilhões no terceiro trimestre.",
+            "A Anthropic busca valuation de US$2 trilhões no IPO."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Startups de IA Arda, Otter.ai e Town anunciam novas captações",
+      "summary": "A Otter.ai levou US$320 milhões, a Arda US$230 milhões a valuation de US$1,5 bi e a Town US$108 milhões a valuation de US$1 bi.",
+      "bullets": [
+        "A Arda, de Bob McGrew, ex-chefe de pesquisa da OpenAI, captou US$230 milhões a valuation de US$1,5 bilhão.",
+        "A rodada da Arda foi liderada por Altimeter Capital, Accel e Khosla Ventures; em março, a empresa buscava US$700 milhões de valuation.",
+        "A Otter.ai captou US$320 milhões não dilutivos do Customer Value Fund da General Catalyst.",
+        "A Otter.ai diz que 40 milhões de pessoas já usaram seu produto, contra 25 milhões no ano passado.",
+        "A Town, de Jean-Denis Greze, ex-CTO da Plaid, captou Série B de US$108 milhões a valuation de US$1 bilhão.",
+        "A Série B da Town foi co-liderada por Forerunner Ventures e Menlo Ventures, quatro meses após o lançamento público."
+      ],
+      "body": "A Arda, startup de IA para manufatura, anunciou a captação à CNBC em 20 de outubro de 2026. McGrew descreveu a empresa como \"uma interface e um agente que fazem pelos engenheiros de manufatura o que o Claude ou o Cursor fazem pelos programadores\". Os modelos da Arda já estão em uso na empresa de defesa Anduril, e o valuation mais que dobrou em cerca de sete meses.\n\nA Otter.ai, que faz anotações automáticas de reuniões, havia captado US$50 milhões no total antes dessa rodada; o capital novo é não dilutivo, ou seja, não reduz a participação dos sócios atuais. A Town dá a cada funcionário de empresas clientes um assistente de IA, o \"Townie\", conectado a email, agenda e sistemas de trabalho, e os Townies podem conversar entre si. A Town já captou pelo menos US$160 milhões.",
+      "category": [
+        "business",
+        "finance",
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Arda",
+          "Altimeter Capital",
+          "Accel",
+          "Khosla Ventures",
+          "Anduril",
+          "Otter.ai",
+          "General Catalyst",
+          "Town",
+          "Forerunner Ventures",
+          "Menlo Ventures",
+          "OpenAI"
+        ],
+        "people": [
+          "Bob McGrew",
+          "Jean-Denis Greze"
+        ],
+        "places": [
+          "United States"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2026/10/20/ex-openai-executive-builds-1point5-billion-ai-manufacturing-startup-arda.html",
+          "title": "Ex-executivo da OpenAI cria startup de IA para manufatura avaliada em US$1,5 bilhão",
+          "summary": "CNBC: a Arda, de Bob McGrew, anuncia captação de US$230 milhões e descreve seu agente para engenheiros de manufatura.",
+          "bullets": [
+            "A Arda captou US$230 milhões a valuation de US$1,5 bilhão.",
+            "Altimeter Capital, Accel e Khosla Ventures lideraram a rodada.",
+            "Os modelos da Arda já estão em uso na Anduril."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://cryptobriefing.com/arda-raises-230-million-ai-manufacturing/",
+          "title": "Arda capta US$230 milhões para IA na manufatura",
+          "summary": "Crypto Briefing: destaca a valorização da Arda desde a tentativa de captação de março de 2026.",
+          "bullets": [
+            "Em março de 2026, a Arda buscava US$70 milhões a valuation de US$700 milhões.",
+            "O valuation mais que dobrou em cerca de sete meses.",
+            "A nova rodada foi de US$230 milhões a US$1,5 bilhão."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://techcrunch.com/2026/10/20/otter-ai-raises-320-million-from-general-catalysts-growth-fund-for-its-meeting-tool/",
+          "title": "Otter.ai capta US$320 milhões de fundo de crescimento da General Catalyst",
+          "summary": "TechCrunch: a Otter.ai recebe capital não dilutivo do Customer Value Fund da General Catalyst.",
+          "bullets": [
+            "A rodada é de US$320 milhões e não dilui os sócios atuais.",
+            "Antes, a Otter.ai havia captado US$50 milhões no total.",
+            "40 milhões de pessoas já usaram o produto, contra 25 milhões no ano passado."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://techcrunch.com/2026/10/19/ai-assistant-startup-town-nabs-unicorn-valuation-four-months-after-launch/",
+          "title": "Startup de assistentes de IA Town vira unicórnio quatro meses após o lançamento",
+          "summary": "TechCrunch: a Town, do ex-CTO da Plaid Jean-Denis Greze, fecha Série B de US$108 milhões a valuation de US$1 bilhão.",
+          "bullets": [
+            "Forerunner Ventures e Menlo Ventures co-lideraram a Série B.",
+            "Cada funcionário recebe um assistente de IA, o \"Townie\", ligado a email, agenda e sistemas de trabalho.",
+            "A Town captou pelo menos US$160 milhões até agora."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Rascunho de lei federal de IA circulado pela Anthropic recebe críticas",
+      "summary": "Defensores de segurança em IA consideram o texto mais fraco que o FRONTIER Act e apontam avaliadores que podem se autocertificar.",
+      "bullets": [
+        "O Politico publicou o rascunho em 16 de outubro; a Transformer divulgou uma análise em 19 de outubro.",
+        "O texto exige avaliadores independentes de riscos catastróficos, mas sem padrões nem licenciamento para eles.",
+        "Para bloquear um modelo perigoso, o Departamento de Comércio teria de recorrer a um tribunal federal.",
+        "O tribunal decidiria \"sem deferência\" ao governo e consideraria o dano ao desenvolvedor, aos usuários e ao público.",
+        "O projeto se sobreporia à SB 53 da Califórnia e ao RAISE Act de Nova York, mas preserva leis de proteção infantil.",
+        "Anthony Cimino, chefe de assuntos federais da Anthropic, disse em 19 de outubro que se trata de um rascunho inicial."
+      ],
+      "body": "O rascunho vinha circulando entre parlamentares e foi comparado pelos críticos ao FRONTIER Act, projeto bipartidário dos deputados Obernolte e Trahan, considerado mais forte. Os pontos mais criticados são a falta de padrões para os avaliadores independentes, que podem se autocertificar, e o caminho judicial exigido para o governo bloquear um modelo.\n\nCimino disse que o projeto não isenta as empresas de responsabilidade quando causam danos e que a Anthropic quer trabalhar com formuladores de políticas para tornar o texto \"o mais forte possível\". Ele já havia dito que a linguagem sobre a precedência sobre leis estaduais seria ajustada.",
+      "category": [
+        "technology",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "Anthropic",
+          "Politico",
+          "Department of Commerce",
+          "Encode",
+          "LawAI"
+        ],
+        "people": [
+          "Anthony Cimino",
+          "Nathan Calvin",
+          "Charlie Bullock"
+        ],
+        "places": [
+          "United States",
+          "California",
+          "New York"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.transformernews.ai/p/anthropic-leaked-ai-bill-undermines-safety-first-approach",
+          "title": "Projeto de lei de IA vazado da Anthropic contradiz sua abordagem de segurança em primeiro lugar",
+          "summary": "Transformer: a análise detalha os pontos fracos do rascunho em relação ao FRONTIER Act.",
+          "bullets": [
+            "Os avaliadores independentes não teriam padrões nem licenciamento e poderiam se autocertificar.",
+            "O Departamento de Comércio precisaria de um tribunal federal para bloquear um modelo perigoso.",
+            "O projeto se sobreporia à SB 53 da Califórnia e ao RAISE Act de Nova York."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        },
+        {
+          "url": "https://x.com/ajcimino/status/2112250250043732269",
+          "title": "Anthony Cimino, da Anthropic, responde às críticas ao rascunho",
+          "summary": "Anthony Cimino (X): o chefe de assuntos federais da Anthropic diz que o texto é um rascunho inicial e não isenta empresas de responsabilidade.",
+          "bullets": [
+            "Cimino publicou a resposta em 19 de outubro.",
+            "Ele disse que o projeto não isenta as empresas de responsabilidade por danos.",
+            "A Anthropic quer tornar o texto \"o mais forte possível\" com formuladores de políticas."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "ByteDance, Alibaba e Tencent pedem mais de US$35 bi em placas da Nvidia",
+      "summary": "As três encomendaram mais de 3 milhões de RTX PRO 5500, mas a Nvidia diz que não pode garantir o atendimento dos pedidos.",
+      "bullets": [
+        "A Reuters relatou os pedidos em 20 de outubro, citando duas fontes.",
+        "Cada placa custa cerca de US$11.400; os pedidos totais de clientes na China passaram de 6 milhões de unidades.",
+        "Uma fonte disse que parceiros podem receber só de 5% a 10% das quantidades pedidas.",
+        "Outra fonte disse que a Nvidia pode produzir no máximo 3 milhões de RTX PRO 5500 no mundo em 2027.",
+        "As primeiras amostras chegam em dezembro e as entregas comerciais começam no primeiro trimestre de 2027.",
+        "O B300 não pode ser vendido à China e as exportações do H200 dependem de licença caso a caso."
+      ],
+      "body": "A RTX PRO 5500 é um chip para estações de trabalho, menos potente que o H200 e o B300, mas que pode ser exportado para a China dentro das restrições americanas. Os compradores chineses querem a placa principalmente para inferência de IA.\n\nA oferta é limitada porque, a partir de 2027, a Nvidia deve dedicar boa parte de sua capacidade na TSMC (fabricante taiwanesa de chips) à plataforma de data centers Rubin. Um porta-voz da Nvidia disse que empresas americanas seguem limitadas por \"controles de exportação americanos defasados, que cobrem produtos de games lançados há quase meia década, e pelo próprio limite da China às importações dos EUA\".",
+      "category": [
+        "technology",
+        "business",
+        "world"
+      ],
+      "entities": {
+        "organizations": [
+          "Nvidia",
+          "ByteDance",
+          "Alibaba",
+          "Tencent",
+          "TSMC",
+          "Reuters"
+        ],
+        "people": [],
+        "places": [
+          "China",
+          "United States"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://live.euronext.com/en/financial-news/exclusive-bytedance-alibaba-tencent-place-over-35-billion-worth-nvidia-chip-orders",
+          "title": "Exclusivo: ByteDance, Alibaba e Tencent fazem pedidos de mais de US$35 bilhões em chips da Nvidia",
+          "summary": "Reuters (via Euronext): revela o volume dos pedidos chineses e os limites de produção da Nvidia.",
+          "bullets": [
+            "As três empresas encomendaram mais de 3 milhões de placas RTX PRO 5500.",
+            "O preço de tabela somado passa de US$35 bilhões.",
+            "A Nvidia pode produzir no máximo 3 milhões dessas placas no mundo em 2027, segundo uma fonte."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://economictimes.indiatimes.com/tech/technology/bytedance-alibaba-tencent-place-over-35-billion-worth-of-nvidia-chip-orders/articleshow/135066129.cms",
+          "title": "ByteDance, Alibaba e Tencent fazem pedidos de mais de US$35 bilhões em chips da Nvidia",
+          "summary": "The Economic Times (Reuters): detalha preço, cronograma de entregas e as regras de exportação que cercam a RTX PRO 5500.",
+          "bullets": [
+            "Cada placa custa cerca de US$11.400.",
+            "As primeiras amostras chegam em dezembro; entregas comerciais no primeiro trimestre de 2027.",
+            "O B300 não pode ser vendido à China; o H200 depende de licença caso a caso."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.theverge.com/tech/1014223/nvidia-cant-fulfill-chinas-35-billion-chip-demands",
+          "title": "Nvidia não consegue atender à demanda de US$35 bilhões da China por chips",
+          "summary": "The Verge: foca na incapacidade da Nvidia de cumprir os pedidos e na crítica da empresa aos controles de exportação.",
+          "bullets": [
+            "A Nvidia disse a clientes que não pode garantir o atendimento dos pedidos.",
+            "Parceiros podem receber só de 5% a 10% do que pediram, segundo uma fonte.",
+            "A Nvidia chamou os controles de exportação americanos de \"defasados\"."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Nscale negocia segundo contrato de US$45 bi com a Anthropic",
+      "summary": "O acordo cobriria 460 MW com chips Nvidia Vera Rubin num segundo prédio do campus Monarch, na Virgínia Ocidental, segundo a Bloomberg.",
+      "bullets": [
+        "A Bloomberg relatou a negociação em 19 de outubro, citando fontes; o acordo pode sair em dias.",
+        "A Anthropic também teria direito de preferência sobre um terceiro prédio do campus.",
+        "O primeiro contrato, de agosto, é um arrendamento de seis anos e 460 MW, com entregas a partir do fim de 2027.",
+        "A Nscale busca valuation de cerca de US$30 bilhões no IPO; alguns investidores sugerem de US$16 bilhões a US$19 bilhões.",
+        "A Nscale teve prejuízo líquido de US$1 bilhão sobre receita de US$141 milhões no primeiro semestre de 2026.",
+        "No novo arranjo, a Anthropic compraria capacidade e a Nscale seria dona do data center e dos chips."
+      ],
+      "body": "A Nscale, empresa de infraestrutura de nuvem para IA, já tem acordos de infraestrutura com a Anthropic de até US$44,6 bilhões, segundo seu pedido de IPO. O novo contrato mudaria o formato da relação: em vez de arrendar a instalação, a Anthropic compraria poder computacional, e a Nscale seria dona e operadora do data center e dos chips.\n\nO prospecto de IPO de setembro informou que a Nscale não tinha compromissos firmes para financiar a construção do primeiro site da Anthropic. Os termos do novo acordo ainda podem mudar.",
+      "category": [
+        "technology",
+        "business",
+        "finance"
+      ],
+      "entities": {
+        "organizations": [
+          "Nscale",
+          "Anthropic",
+          "Nvidia",
+          "Bloomberg"
+        ],
+        "people": [],
+        "places": [
+          "West Virginia",
+          "United States"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.investing.com/news/stock-market-news/nscale-in-talks-for-45-billion-anthropic-ai-deal-as-ipo-looms-4958181",
+          "title": "Nscale negocia acordo de IA de US$45 bilhões com a Anthropic às vésperas do IPO",
+          "summary": "Investing.com: liga a negociação com a Anthropic ao IPO planejado da Nscale e à disputa sobre seu valuation.",
+          "bullets": [
+            "O contrato seria de cerca de US$45 bilhões e pode ser fechado em dias.",
+            "A Nscale busca valuation de cerca de US$30 bilhões no IPO.",
+            "Alguns investidores disseram aos bancos que US$16 bilhões a US$19 bilhões atrairiam mais compradores."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.livemint.com/companies/news/anthropic-eyes-second-45-billion-nscale-deal-as-460mw-ai-data-centre-plans-advance-ahead-of-potential-ipo-11792466448988.html",
+          "title": "Anthropic avalia segundo acordo de US$45 bilhões com a Nscale para data center de 460 MW",
+          "summary": "Mint: detalha a capacidade do segundo prédio e as finanças da Nscale.",
+          "bullets": [
+            "O segundo prédio do campus Monarch entregaria 460 MW com chips Nvidia Vera Rubin.",
+            "A Anthropic teria direito de preferência sobre um terceiro prédio.",
+            "A Nscale teve prejuízo de US$1 bilhão sobre receita de US$141 milhões no primeiro semestre."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://aiweekly.co/alerts/nscale-anthropic-in-talks-for-second-45b-west-virginia-deal",
+          "title": "Nscale e Anthropic negociam segundo acordo de US$45 bilhões na Virgínia Ocidental",
+          "summary": "AI Weekly: compara o novo arranjo de compra de capacidade com o arrendamento assinado em agosto.",
+          "bullets": [
+            "O primeiro contrato é um arrendamento de seis anos e 460 MW, com entregas a partir do fim de 2027.",
+            "No novo arranjo, a Anthropic compraria capacidade computacional.",
+            "A Nscale seria dona e operadora do data center e dos chips."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Ação da Elice cai 33% na estreia no Kosdaq, em Seul",
+      "summary": "É a pior estreia já registrada para um IPO coreano de ao menos US$100 milhões, segundo dados da Bloomberg.",
+      "bullets": [
+        "A ação fechou 20 de outubro a 60.500 wons (cerca de US$45,5), queda de 33,15% sobre o preço do IPO, de 90.500 wons.",
+        "No pregão, chegou a 56.500 wons (cerca de US$42,4).",
+        "O IPO levantou 201 bilhões de wons (US$151 milhões), o maior do Kosdaq em 2026.",
+        "A parcela de varejo teve demanda 400 vezes maior que a oferta.",
+        "O recorde anterior era a queda de 30% da W-Scope Chungju Plant em 2022.",
+        "No mesmo dia, o KOSPI caiu quase 4%, para 5.552 pontos."
+      ],
+      "body": "A Elice foi fundada em 2015 por três doutorandos do KAIST (instituto de ciência e tecnologia da Coreia do Sul) como plataforma de ensino de programação e mudou de foco para infraestrutura de nuvem para IA, com uma plataforma modular de data centers com energia de alta densidade e refrigeração líquida. A receita do primeiro semestre subiu 200%, para 34,4 bilhões de wons (cerca de US$25,8 milhões), e o IPO, precificado no topo da faixa, avaliou a empresa em cerca de US$755 milhões.\n\nA estreia no Kosdaq (mercado de ações de tecnologia e crescimento da Coreia do Sul) coincidiu com queda ampla: SK Hynix recuou cerca de 4% e Samsung Electronics, cerca de 3%. A Reuters comparou o mercado sul-coreano a um \"canário na mina de carvão\" do boom de investimentos em IA. A Bloomberg registrou que a australiana Permagrid desistiu de seu IPO e que a operadora de data centers AirTrunk adia seus planos de abrir capital.",
+      "category": [
+        "finance",
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Elice",
+          "Kosdaq",
+          "CoreWeave",
+          "SK Hynix",
+          "Samsung Electronics",
+          "Mirae Asset Securities",
+          "Samsung Securities",
+          "Permagrid",
+          "AirTrunk"
+        ],
+        "people": [],
+        "places": [
+          "South Korea",
+          "Seoul"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.businesstimes.com.sg/companies-markets/data-centre-infrastructure-firm-elices-33-plunge-ugly-debut-rekindles-ai-spending-doubts",
+          "title": "Queda de 33% da Elice na estreia reacende dúvidas sobre gastos em IA",
+          "summary": "The Business Times (Bloomberg): trata a estreia como a pior já registrada para um IPO coreano desse porte e cita outros recuos no setor.",
+          "bullets": [
+            "Pelos dados da Bloomberg, é a pior estreia para um IPO coreano de ao menos US$100 milhões.",
+            "O recorde anterior era a queda de 30% da W-Scope Chungju Plant em 2022.",
+            "A Permagrid desistiu de seu IPO e a AirTrunk adia seus planos de abrir capital."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://en.edaily.co.kr/news/eda202610205606/",
+          "title": "Elice fecha primeiro dia no Kosdaq com queda de 33%",
+          "summary": "Edaily: traz os preços do pregão de estreia e os números da oferta.",
+          "bullets": [
+            "A ação fechou a 60.500 wons, contra 90.500 wons no IPO.",
+            "Chegou a 56.500 wons durante o pregão.",
+            "A parcela de varejo teve demanda 400 vezes maior que a oferta.",
+            "Foi o maior IPO do Kosdaq em 2026."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.siliconreport.com/elice-drops-over-30-on-seoul-market-debut",
+          "title": "Elice cai mais de 30% na estreia na bolsa de Seul",
+          "summary": "SiliconReport: descreve o negócio da Elice e o dia de queda no mercado sul-coreano.",
+          "bullets": [
+            "A Elice começou como plataforma de ensino de programação e passou a fazer infraestrutura de nuvem para IA.",
+            "A receita do primeiro semestre subiu 200%, para 34,4 bilhões de wons.",
+            "O KOSPI caiu quase 4%, para 5.552 pontos, no mesmo dia."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Eka Robotics capta US$150 milhões em Série A, avaliada em US$1,45 bi",
+      "summary": "A startup usa um modelo \"visão-força-ação\" com garra sensível a força, treinado por aprendizado por reforço em simulação física.",
+      "bullets": [
+        "A rodada foi anunciada em 20 de outubro e co-liderada por a16z e F-Prime.",
+        "A Eka foi fundada por Pulkit Agrawal, professor do MIT, e Tuomas Haarnoja, ex-pesquisador do Google DeepMind.",
+        "Segundo a empresa, o robô pega cerca de 1.500 objetos de até 1 kg por hora, contra cerca de 600 de um humano.",
+        "A empresa diz que a pegada acerta em mais de 95% das vezes.",
+        "A garra custa menos de US$1.000 e é certificada para 5 milhões de ciclos; braços industriais chegam a 20 milhões."
+      ],
+      "body": "Em vez do modelo visão-linguagem-ação comum em robótica, a Eka usa um modelo \"visão-força-ação\", que funciona junto com uma garra sensível a força. O modelo é treinado por aprendizado por reforço em simulação física, sem depender de dados de demonstração humana.\n\nA empresa faz pilotos com clientes industriais em tarefas de pegar e posicionar peças e de manuseio de fios. A durabilidade ainda fica abaixo do padrão da indústria: a garra é certificada para 5 milhões de ciclos, contra até 20 milhões de braços industriais comuns.",
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Eka Robotics",
+          "a16z",
+          "F-Prime",
+          "MIT",
+          "Google DeepMind"
+        ],
+        "people": [
+          "Pulkit Agrawal",
+          "Tuomas Haarnoja",
+          "Raghu Raguram"
+        ],
+        "places": [
+          "Cambridge, Massachusetts"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/10/20/eka-is-worth-1-45-billion-thanks-to-a-physical-ai-model-that-has-experts-raving/",
+          "title": "Eka vale US$1,45 bilhão graças a um modelo de IA física que impressiona especialistas",
+          "summary": "TechCrunch: detalha a Série A da Eka, seus fundadores e o desempenho declarado do robô.",
+          "bullets": [
+            "Série A de US$150 milhões a valuation pós-money de US$1,45 bilhão, co-liderada por a16z e F-Prime.",
+            "Fundadores: Pulkit Agrawal (MIT) e Tuomas Haarnoja (ex-Google DeepMind).",
+            "O robô pega cerca de 1.500 objetos por hora, contra cerca de 600 de um humano, segundo a empresa."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://ekarobotics.com/",
+          "title": "Eka Robotics: manipulação robótica com sensor de força",
+          "summary": "Eka Robotics: o site da empresa apresenta o modelo visão-força-ação e a garra de baixo custo.",
+          "bullets": [
+            "O modelo é treinado por aprendizado por reforço em simulação física.",
+            "A garra custa menos de US$1.000 e é certificada para 5 milhões de ciclos.",
+            "Pilotos com clientes industriais incluem pegar e posicionar peças e manuseio de fios."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "DeepSeek trabalha com a Huawei no desenho de futuros chips Ascend",
+      "summary": "Engenheiros da Huawei estão nos escritórios da DeepSeek, que planeja treinar modelos no Ascend 950DT já no fim de 2026.",
+      "bullets": [
+        "O The Information relatou a parceria em 19 de outubro, citando duas fontes.",
+        "A Huawei planeja dar prioridade à DeepSeek na maior parte dos chips Ascend 960DT, esperados para o primeiro trimestre de 2027.",
+        "O 950DT deve sair no quarto trimestre de 2026, com 144 GB de HBM própria (HiZQ 2.0) e 4 TB/s de largura de banda.",
+        "Segundo a Epoch AI, o Nvidia B300 tem cerca de sete vezes o desempenho aritmético bruto do Ascend 950.",
+        "Treinar um modelo de fronteira pode exigir mais de 10.000 chips Huawei funcionando juntos por semanas.",
+        "A DeepSeek continua buscando acesso a processadores avançados da Nvidia."
+      ],
+      "body": "Os engenheiros da Huawei alocados na DeepSeek incorporam ao desenho dos chips o retorno da empresa sobre como seus modelos fazem cálculos e movem dados entre processadores. O 950DT terá HBM (memória de alta largura de banda) desenvolvida pela própria Huawei.\n\nA DeepSeek não está abandonando a Nvidia. A empresa também usa o TileLang, linguagem de código aberto que facilita adaptar software de IA a diferentes arquiteturas de chip, lançada para o Ascend 950 no mês passado.",
+      "category": [
+        "technology",
+        "world"
+      ],
+      "entities": {
+        "organizations": [
+          "DeepSeek",
+          "Huawei",
+          "Nvidia",
+          "Epoch AI",
+          "The Information"
+        ],
+        "people": [],
+        "places": [
+          "China"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.theinformation.com/articles/deepseek-shaping-huaweis-ai-chips-growing-challenge-nvidia",
+          "title": "DeepSeek molda os chips de IA da Huawei, um desafio crescente para a Nvidia",
+          "summary": "The Information: revela que engenheiros da Huawei trabalham dentro da DeepSeek para orientar o desenho dos próximos chips Ascend.",
+          "bullets": [
+            "Engenheiros da Huawei estão alocados nos escritórios da DeepSeek.",
+            "O retorno inclui como os modelos fazem cálculos e movem dados entre processadores.",
+            "A Huawei planeja priorizar a DeepSeek na maior parte dos chips Ascend 960DT."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        },
+        {
+          "url": "https://finance.yahoo.com/technology/ai/articles/deepseek-teams-huawei-challenge-nvidia-183703468.html",
+          "title": "DeepSeek se une à Huawei para desafiar a Nvidia",
+          "summary": "Yahoo Finance (Investing.com): compara o desempenho dos chips da Huawei aos da Nvidia e lembra que a DeepSeek segue buscando chips americanos.",
+          "bullets": [
+            "Segundo a Epoch AI, o B300 tem cerca de sete vezes o desempenho aritmético bruto do Ascend 950.",
+            "Treinar um modelo de fronteira pode exigir mais de 10.000 chips Huawei por semanas.",
+            "A DeepSeek continua buscando acesso aos processadores avançados da Nvidia."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        },
+        {
+          "url": "https://aiweekly.co/alerts/deepseek-to-pre-train-on-huawei-ascend-950dt-by-end-of-2026",
+          "title": "DeepSeek vai fazer pré-treinamento no Huawei Ascend 950DT até o fim de 2026",
+          "summary": "AI Weekly: foca no cronograma e nas especificações do Ascend 950DT.",
+          "bullets": [
+            "A DeepSeek planeja treinar modelos no Ascend 950DT já no fim de 2026.",
+            "O 950DT terá 144 GB de HBM HiZQ 2.0 e 4 TB/s de largura de banda de memória.",
+            "O TileLang foi lançado para o Ascend 950 no mês passado."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Meta detalha o supercluster Prometheus, em Ohio, que treinou o Muse Wonder",
+      "summary": "A primeira fase reúne centenas de milhares de GPUs; em escala completa, o cluster de New Albany terá cerca de 1 milhão.",
+      "bullets": [
+        "A Meta publicou o post de engenharia em 19 de outubro, anunciando a conclusão da primeira fase.",
+        "O cluster usa racks Nvidia GB200 NVL72 (Catalina) e GB300 NVL72 (Clemente); a próxima plataforma, San Miguel, terá Vera Rubin NVL72 de mais de 170 kW.",
+        "Cada rack de 72 GPUs treina com 64 e mantém 8 de reserva.",
+        "As interrupções, que chegaram a quase 1.000 por dia a cada 8.000 GPUs em meados de 2025, caíram 99% em um ano.",
+        "O pré-treinamento do Muse Wonder teve goodput acima de 85% e cerca de 47.000 horas de GPU entre interrupções; hoje são mais de 54.000.",
+        "O Prometheus é o modelo para o Hyperion, em Richland Parish, Louisiana."
+      ],
+      "body": "O Prometheus é o supercluster de escala de gigawatt da Meta em New Albany, Ohio, espalhado por vários prédios, incluindo estruturas de montagem rápida e capacidade alugada. A primeira fase treinou a família de modelos Muse. O goodput mede a fração do tempo de GPU convertida em treino útil.\n\nCargas sincronizadas de GPU causam oscilações de consumo de energia de 30% a 40%. A Meta as controla com o software Dynamo Dimmer, que reduz gradualmente o limite de potência das GPUs quando o cluster se aproxima do teto elétrico, além de baterias nos racks e armazenamento no nível do site. O Hyperion, próximo supercluster, está sendo projetado com refrigeração líquida em circuito fechado e conexão completa à rede da concessionária Entergy, paga pela Meta.",
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Meta",
+          "Nvidia",
+          "Meta Superintelligence Labs",
+          "Entergy"
+        ],
+        "people": [],
+        "places": [
+          "New Albany, Ohio",
+          "Richland Parish, Louisiana"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://engineering.fb.com/2026/10/19/data-center-engineering/inside-prometheus-meta-gigawatt-scale-supercluster/",
+          "title": "Por dentro do Prometheus, o supercluster de escala de gigawatt da Meta",
+          "summary": "Engineering at Meta: o post oficial descreve o hardware, a confiabilidade e o controle de energia do Prometheus.",
+          "bullets": [
+            "Racks GB200 NVL72 (Catalina) e GB300 NVL72 (Clemente); próxima plataforma San Miguel com Vera Rubin NVL72.",
+            "Interrupções caíram 99% em um ano de trabalho.",
+            "O Dynamo Dimmer limita gradualmente a potência das GPUs perto do teto elétrico."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        },
+        {
+          "url": "https://madrobot.blog/2026/10/19/meta-prometheus-supercluster-1-million-gpus-ohio-gigawatt-muse/",
+          "title": "Supercluster Prometheus da Meta terá 1 milhão de GPUs em Ohio",
+          "summary": "Mad Robot: destaca a escala do Prometheus e os planos para o Hyperion, na Louisiana.",
+          "bullets": [
+            "Em escala completa, o Prometheus terá cerca de 1 milhão de GPUs.",
+            "Hoje reúne centenas de milhares de GPUs em vários prédios.",
+            "O Hyperion terá refrigeração líquida em circuito fechado e conexão à Entergy paga pela Meta."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        },
+        {
+          "url": "https://dealroom.co/news/164242-inside-prometheus-meta-trained-muse-wonder-on-phase-one-of-its-gigawatt/",
+          "title": "Por dentro do Prometheus: Meta treinou o Muse Wonder na primeira fase de seu cluster de gigawatt",
+          "summary": "Dealroom News: foca nas métricas de treino do Muse Wonder na primeira fase do cluster.",
+          "bullets": [
+            "O pré-treinamento do Muse Wonder teve goodput acima de 85%.",
+            "Foram cerca de 47.000 horas de GPU entre interrupções, hoje mais de 54.000.",
+            "Cada rack de 72 GPUs treina com 64 e mantém 8 de reserva."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Amazon planeja investir mais de €16 bilhões na Alemanha em 2027",
+      "summary": "Do total, €4,8 bilhões vão para expandir a região AWS de Frankfurt; a Amazon também abre um segundo laboratório de robótica em Berlim.",
+      "bullets": [
+        "O anúncio foi feito em 20 de outubro, no Invest in Germany Summit, em Berlim.",
+        "€16 bilhões equivalem a cerca de US$18,7 bilhões; os €4,8 bilhões da AWS, a cerca de US$5,6 bilhões.",
+        "O novo laboratório de robótica e IA dobra a presença de pesquisa da Amazon em Berlim; o custo não foi divulgado.",
+        "O pacote inclui internet via satélite da Amazon Leo, logística e novas produções do Prime Video.",
+        "A Amazon diz ter investido mais de €100 bilhões (cerca de US$117 bilhões) na Alemanha desde 2010."
+      ],
+      "body": "A expansão da região AWS Europe (Frankfurt) atende à demanda por serviços de nuvem e IA. Para o novo laboratório em Berlim, a Amazon está contratando cientistas aplicados e engenheiros de hardware, software e sistemas de robótica.\n\nA ministra da Economia, Katherina Reiche, chamou o investimento de \"um claro voto de confiança na Alemanha\" e disse que data centers de alto desempenho são \"a base da economia digital\".",
+      "category": [
+        "technology",
+        "business",
+        "economy"
+      ],
+      "entities": {
+        "organizations": [
+          "Amazon",
+          "AWS",
+          "Amazon Leo",
+          "Prime Video"
+        ],
+        "people": [
+          "David Zapolsky",
+          "Katherina Reiche",
+          "Friedrich Merz",
+          "Rocco Bräuniger"
+        ],
+        "places": [
+          "Germany",
+          "Berlin",
+          "Frankfurt"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://press.aboutamazon.com/de/2026/10/invest-in-germany-summit-amazon-announces-16-billion-euro-investment-in-germany-in-2027",
+          "title": "Invest in Germany Summit: Amazon anuncia investimento de €16 bilhões na Alemanha em 2027",
+          "summary": "Amazon Press Center: o comunicado oficial lista os componentes do investimento anunciado no evento do governo alemão.",
+          "bullets": [
+            "O anúncio foi feito no Invest in Germany Summit, em Berlim.",
+            "€4,8 bilhões vão para a região AWS Europe (Frankfurt) em 2027.",
+            "A ministra Katherina Reiche chamou o investimento de \"um claro voto de confiança na Alemanha\"."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.aboutamazon.com/company-news/amazon-germany-investment",
+          "title": "Amazon detalha investimento na Alemanha",
+          "summary": "About Amazon: detalha os projetos incluídos no pacote e o histórico de investimentos da empresa no país.",
+          "bullets": [
+            "O pacote inclui internet via satélite da Amazon Leo, logística e novas produções do Prime Video.",
+            "A Amazon diz ter investido mais de €100 bilhões na Alemanha desde 2010.",
+            "Um segundo laboratório de robótica e IA será aberto em Berlim."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://thenextweb.com/news/amazon-plans-to-make-a-e16bn-investment-in-germany-in-2027",
+          "title": "Amazon planeja investimento de €16 bilhões na Alemanha em 2027",
+          "summary": "The Next Web: foca na expansão de nuvem e no novo laboratório de pesquisa em Berlim.",
+          "bullets": [
+            "A expansão em Frankfurt atende à demanda por nuvem e IA.",
+            "O novo laboratório dobra a presença de pesquisa da Amazon em Berlim.",
+            "A Amazon não divulgou o custo do laboratório."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Irã diz que mais dois petroleiros atingiram minas no Estreito de Hormuz",
+      "summary": "A Guarda Revolucionária diz que os navios pegaram fogo e pararam; o CentCom afirma que o estreito segue aberto ao tráfego.",
+      "bullets": [
+        "A IRGC fez o anúncio em 20 de outubro; segundo a Iran International, os navios atingiram as minas na noite de 19 de outubro.",
+        "A IRGC não identificou os navios nem informou vítimas, e disse ter derrubado um drone americano MQ-9 Reaper.",
+        "Na segunda-feira, a IRGC relatou outro petroleiro em chamas; no domingo, outros dois atingiram minas.",
+        "O almirante Brad Cooper, do CentCom, citou cerca de 400 travessias de navios mercantes na semana anterior.",
+        "O chefe do Exército do Paquistão, Asim Munir, chegou a Teerã em 20 de outubro com as negociações paradas.",
+        "O Brent estava acima de US$109,8 por barril e o WTI a US$98,71 na terça-feira."
+      ],
+      "body": "Segundo a Guarda Revolucionária do Irã (IRGC), as minas estavam no que Teerã chama de ponto de travessia ilegal, na parte sul do Estreito de Hormuz, e navios que cruzarem a passagem minada podem ser incendiados. O comandante do Comando Central dos EUA, almirante Brad Cooper, disse que o estreito é controlado pelos EUA e parceiros regionais, não pelo Irã, e que \"continua aberto aos negócios\".\n\nA Reuters informou em 20 de outubro, citando três altos funcionários iranianos e uma fonte interna, que o Irã prolonga deliberadamente as negociações com Washington para enfraquecer Trump antes das eleições de meio de mandato de 3 de novembro, e que o país se prepara para novos ataques de Israel e dos EUA, não para um acordo. O Paquistão foi um mediador central entre EUA e Irã neste ano. No mercado, os riscos da guerra compensavam a expectativa de mais oferta russa de petróleo.",
+      "category": [
+        "world",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "Islamic Revolutionary Guard Corps",
+          "US Central Command",
+          "Reuters"
+        ],
+        "people": [
+          "Brad Cooper",
+          "Asim Munir",
+          "Donald Trump"
+        ],
+        "places": [
+          "Strait of Hormuz",
+          "Iran",
+          "Tehran",
+          "Pakistan",
+          "United States"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "violent",
+      "sources": [
+        {
+          "url": "https://www.ndtv.com/world-news/iran-guards-say-2-violating-oil-tankers-set-ablaze-in-strait-of-hormuz-12210436",
+          "title": "Guarda do Irã diz ter incendiado dois petroleiros infratores no Estreito de Hormuz",
+          "summary": "NDTV (AFP): relata a declaração da IRGC sobre os dois petroleiros e o alerta a outros navios.",
+          "bullets": [
+            "Os petroleiros pegaram fogo e pararam após atingirem minas navais da IRGC.",
+            "As minas estavam no que Teerã chama de ponto de travessia ilegal, no sul do estreito.",
+            "A IRGC não identificou os navios nem informou vítimas."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.iranintl.com/en/liveblog/202610187555",
+          "title": "Ao vivo: Guarda Revolucionária relata petroleiros atingidos por minas em Hormuz",
+          "summary": "Iran International: cobertura ao vivo com o horário dos incidentes e a alegação de derrubada de um drone americano.",
+          "bullets": [
+            "A Marinha da IRGC disse que os petroleiros atingiram as minas na noite de 19 de outubro.",
+            "A IRGC disse ter derrubado um drone americano MQ-9 Reaper.",
+            "A IRGC alertou que navios que cruzarem a passagem minada podem ser incendiados."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://gulfnews.com/uae/us-israel-iran-war-lull-nears-breaking-point-us-israel-weighing-new-strikes-what-to-know-oct-20-2026-1.500716736",
+          "title": "Trégua na guerra EUA-Israel-Irã chega ao limite enquanto EUA e Israel avaliam novos ataques",
+          "summary": "Gulf News: resume a sequência de incidentes com petroleiros e a resposta do comando militar americano.",
+          "bullets": [
+            "A IRGC já havia relatado um petroleiro em chamas na segunda e dois atingidos por minas no domingo.",
+            "O almirante Brad Cooper disse que o estreito é controlado pelos EUA e parceiros regionais.",
+            "Cooper citou cerca de 400 travessias de navios mercantes na semana anterior."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.geo.tv/liveblog/israeliran-war-live-updates?12345=",
+          "title": "Ao vivo: guerra Israel-Irã",
+          "summary": "Geo News (Reuters): traz a reportagem sobre a estratégia iraniana nas negociações e a visita do chefe do Exército paquistanês.",
+          "bullets": [
+            "O Irã prolonga as negociações para enfraquecer Trump antes das eleições de 3 de novembro, segundo fontes da Reuters.",
+            "Um funcionário iraniano disse que o país se prepara para novos ataques de Israel e dos EUA.",
+            "O marechal de campo Asim Munir chegou a Teerã para se reunir com altos funcionários."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.aljazeera.com/news/liveblog/2026/10/20/draft-3",
+          "title": "Ao vivo: tensão em Hormuz e mercado de petróleo em 20 de outubro",
+          "summary": "Al Jazeera: cobertura ao vivo que acompanha o impacto da crise nos preços do petróleo.",
+          "bullets": [
+            "O Brent estava acima de US$109,8 por barril ao meio-dia em Pequim, alta de 0,26%.",
+            "O WTI estava a US$98,71 por barril.",
+            "Os riscos da guerra compensavam a expectativa de mais oferta russa."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Reino Unido enviará caças Typhoon para defender a Arábia Saudita dos houthis",
+      "summary": "Os jatos farão só missões defensivas; o pacote inclui um A400M, assessores militares e mais reabastecimento aéreo às operações sauditas.",
+      "bullets": [
+        "O Ministério da Defesa britânico anunciou o envio em 20 de outubro.",
+        "Os Typhoon protegerão cidades e infraestrutura crítica sauditas, sem ataques ofensivos contra os houthis.",
+        "O reabastecimento aéreo britânico se estende a operações sauditas contra alvos militares houthis no Iêmen.",
+        "O pacote amplia a ajuda de setembro, que incluía um avião RAF Voyager, mas nenhum caça.",
+        "Ataques houthis ao aeroporto de Riad mataram mais de uma dúzia de pessoas em outubro.",
+        "Um ataque houthi a um campo de treinamento do governo iemenita matou 58 pessoas, segundo autoridades do Iêmen."
+      ],
+      "body": "O apoio atende a um pedido do governo saudita. O primeiro-ministro Andy Burnham havia dito no início do mês que o Reino Unido estava disposto a considerar o pedido. Além dos caças da RAF, o Reino Unido fornecerá um avião de transporte A400M para movimentar material de defesa dentro da Arábia Saudita e enviará assessores militares para apoiar oficiais de estado-maior sauditas.\n\nO secretário de Defesa, Wes Streeting, chamou os ataques houthis à Arábia Saudita de \"absolutamente desprezíveis\" e citou os ataques ao aeroporto de Riad, que afetaram voos.",
+      "category": [
+        "world",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "UK Ministry of Defence",
+          "Royal Air Force",
+          "Houthis"
+        ],
+        "people": [
+          "Wes Streeting",
+          "Andy Burnham"
+        ],
+        "places": [
+          "United Kingdom",
+          "Saudi Arabia",
+          "Yemen",
+          "Riyadh"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "violent",
+      "sources": [
+        {
+          "url": "https://www.gov.uk/government/news/operational-update-20-october-uk-military-support-to-the-kingdom-of-saudi-arabia",
+          "title": "Atualização operacional, 20 de outubro: apoio militar do Reino Unido à Arábia Saudita",
+          "summary": "GOV.UK (Ministério da Defesa): o comunicado lista os meios que o Reino Unido enviará e o caráter defensivo da missão.",
+          "bullets": [
+            "Caças Typhoon farão missões defensivas de contra-ataque aéreo.",
+            "Um A400M da RAF moverá material de defesa dentro da Arábia Saudita.",
+            "Assessores militares apoiarão oficiais de estado-maior sauditas."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://cyprus-mail.com/2026/10/20/britain-says-it-will-carry-out-defensive-air-missions-over-saudi-arabia",
+          "title": "Reino Unido diz que fará missões aéreas defensivas sobre a Arábia Saudita",
+          "summary": "Cyprus Mail (Reuters): destaca a reação de Wes Streeting aos ataques houthis e o pedido saudita.",
+          "bullets": [
+            "Streeting chamou os ataques houthis de \"absolutamente desprezíveis\".",
+            "O apoio atende a um pedido do governo saudita.",
+            "Os Typhoon não farão ataques ofensivos contra os houthis."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.thenationalnews.com/news/uk/2026/10/20/uk-mission-to-defend-saudi-arabia-adds-typhoon-jets/",
+          "title": "Missão britânica de defesa da Arábia Saudita ganha caças Typhoon",
+          "summary": "The National: compara o novo pacote com a ajuda britânica anunciada em setembro.",
+          "bullets": [
+            "Em setembro, o Reino Unido enviou um avião de reabastecimento RAF Voyager, sem caças.",
+            "O reabastecimento aéreo se estende às operações sauditas contra os houthis no Iêmen.",
+            "Andy Burnham havia dito que o país consideraria o pedido saudita."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/10/20/uk-to-deploy-raf-fighter-jets-to-defend-saudi-arabia-from-houthi-attacks",
+          "title": "Reino Unido vai enviar caças da RAF para defender a Arábia Saudita de ataques houthis",
+          "summary": "Al Jazeera: situa o envio no contexto dos ataques houthis recentes na Arábia Saudita e no Iêmen.",
+          "bullets": [
+            "Ataques houthis ao aeroporto de Riad mataram mais de uma dúzia de pessoas em outubro.",
+            "Os ataques ao aeroporto afetaram voos.",
+            "Um ataque houthi a um campo de treinamento no Iêmen matou 58 pessoas."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Japão lança a sonda MMX para trazer amostras da lua marciana Fobos",
+      "summary": "A missão da JAXA quer coletar ao menos 10 gramas de solo de Fobos e trazer a cápsula de volta à Austrália em 2031.",
+      "bullets": [
+        "A MMX decolou em 19 de outubro às 15h41 de Nova York (4h41 de 20 de outubro no Japão), num foguete H3.",
+        "Foi o 10º voo do H3, a partir do Centro Espacial de Tanegashima.",
+        "A chegada perto de Marte está prevista para por volta de agosto de 2027.",
+        "A sonda leva o rover Idefix, da DLR e do CNES, que deve pousar em Fobos na virada de 2028 para 2029 e explorar por cerca de 100 dias.",
+        "A NASA investiu cerca de US$87 milhões e receberá pelo menos 15% da amostra.",
+        "A chinesa Tianwen-3, prevista para cerca de 2028, quer trazer amostras de Marte já em 2031."
+      ],
+      "body": "A JAXA (agência espacial japonesa) confirmou que a sonda Martian Moons eXploration se separou do foguete pouco mais de uma hora após a decolagem e está \"iniciando sua jornada rumo ao sistema marciano\". A MMX planeja dois pousos em Fobos; se der certo, será o primeiro retorno de amostras de uma lua de Marte.\n\nO Idefix, desenvolvido pela DLR (agência espacial alemã) e pelo CNES (agência espacial francesa), será o primeiro rover a circular numa lua de Marte. A NASA também forneceu o espectrômetro MEGANE e um coletor pneumático da Honeybee Robotics. A China pode trazer amostras de Marte antes do retorno da missão japonesa.",
+      "category": [
+        "science",
+        "world"
+      ],
+      "entities": {
+        "organizations": [
+          "JAXA",
+          "NASA",
+          "DLR",
+          "CNES",
+          "Mitsubishi Heavy Industries",
+          "Honeybee Robotics"
+        ],
+        "people": [],
+        "places": [
+          "Japan",
+          "Tanegashima Space Center",
+          "Mars",
+          "Phobos",
+          "Deimos",
+          "Australia"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.space.com/space-exploration/launches-spacecraft/japan-launches-historic-mmx-sample-return-mission-to-mars-moon-phobos",
+          "title": "Japão lança missão histórica MMX de retorno de amostras da lua marciana Fobos",
+          "summary": "Space.com: cobre o lançamento e a participação da NASA na missão.",
+          "bullets": [
+            "A sonda decolou num H3 do Centro Espacial de Tanegashima, no 10º voo do foguete.",
+            "A NASA investiu cerca de US$87 milhões e receberá pelo menos 15% da amostra.",
+            "A NASA forneceu o espectrômetro MEGANE e um coletor pneumático da Honeybee Robotics."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.dlr.de/en/latest/news/2026/mmx-mission-successfully-launched-idefix-rover-is-on-its-way-to-martian-moon-phobos",
+          "title": "Missão MMX lançada com sucesso: rover Idefix a caminho da lua marciana Fobos",
+          "summary": "DLR: a agência espacial alemã detalha o papel do rover Idefix, desenvolvido com o CNES.",
+          "bullets": [
+            "O Idefix deve pousar em Fobos por volta da virada de 2028 para 2029.",
+            "Será o primeiro rover a circular numa lua de Marte.",
+            "Deve explorar Fobos por cerca de 100 dias."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.nst.com.my/world/world/2026/10/1559338/japan-successfully-launches-probe-historic-mars-moon-mission",
+          "title": "Japão lança com sucesso sonda para missão histórica a lua de Marte",
+          "summary": "New Straits Times (AFP): relata a confirmação da JAXA e a corrida com a missão chinesa Tianwen-3.",
+          "bullets": [
+            "A sonda se separou do foguete pouco mais de uma hora após a decolagem.",
+            "A Tianwen-3 deve ser lançada por volta de 2028.",
+            "A missão chinesa pode trazer amostras de Marte antes do retorno japonês."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        },
+        {
+          "url": "https://apnews.com/article/japan-mars-moon-mission-fb51fbbf90374631e8ae658f9ca46154",
+          "title": "Japão lança missão à lua de Marte",
+          "summary": "AP News: resume o cronograma da missão, da chegada a Marte ao retorno da cápsula.",
+          "bullets": [
+            "O lançamento ocorreu às 15h41 de 19 de outubro, horário de Nova York.",
+            "A chegada perto de Marte está prevista para agosto de 2027.",
+            "A cápsula com ao menos 10 gramas de solo deve pousar na Austrália em 2031."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "FDA aprova Jemperli, da GSK, para câncer de reto localmente avançado",
+      "summary": "No estudo AZUR-1, quase três quartos dos pacientes não precisaram de cirurgia, radioterapia ou quimioterapia após mais de dois anos.",
+      "bullets": [
+        "A FDA concedeu aprovação acelerada em 19 de outubro, 4 meses antes da data-meta.",
+        "A aprovação vale para adultos com câncer de reto estágio II ou III, MSI-H ou dMMR, sem tratamento prévio.",
+        "O estudo de fase 2 AZUR-1 teve 154 pacientes.",
+        "68% dos pacientes avaliáveis (98 de 144) tiveram resposta clínica completa sustentada aos 12 meses, pela avaliação dos investigadores; 47% (54 de 116) pela revisão central.",
+        "Reações adversas graves ocorreram em 20% dos pacientes e 3% interromperam o tratamento.",
+        "O marcador MSI-H/dMMR aparece em cerca de 5% a 10% dos cânceres de reto."
+      ],
+      "body": "Segundo a GSK, o Jemperli (dostarlimab) é a primeira e única imunoterapia aprovada nos EUA para esses pacientes, cujos tumores têm deficiência de reparo de erros de pareamento do DNA (dMMR) ou alta instabilidade de microssatélites (MSI-H), confirmadas por teste autorizado pela FDA (agência americana que regula alimentos e medicamentos). Não houve recorrência da doença entre os pacientes que responderam até agora; os dados da revisão central independente ainda estão em maturação.\n\nO tratamento padrão, com quimioterapia, radioterapia e cirurgia, pode causar disfunções intestinais, urinárias e sexuais duradouras, cânceres secundários e infertilidade. A análise ocorreu dentro do programa piloto National Priority Voucher do comissário da FDA, e a GSK apresentará os dados interinos completos do AZUR-1 no Congresso da ESMO, em outubro de 2026.",
+      "category": [
+        "science",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "FDA",
+          "GSK",
+          "Memorial Sloan Kettering Cancer Center",
+          "AnaptysBio"
+        ],
+        "people": [
+          "Tony Wood",
+          "Andrea Cercek"
+        ],
+        "places": [
+          "United States"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-immunotherapy-may-allow-certain-patients-rectal-cancer-avoid-chemotherapy-radiation-and",
+          "title": "FDA aprova imunoterapia que pode permitir a certos pacientes com câncer de reto evitar quimioterapia, radioterapia e cirurgia",
+          "summary": "FDA: o comunicado destaca que a maioria dos pacientes do estudo evitou o tratamento padrão e que a revisão foi acelerada.",
+          "bullets": [
+            "Quase três quartos dos pacientes não precisaram de cirurgia, radioterapia ou quimioterapia.",
+            "A análise ocorreu no programa piloto National Priority Voucher do comissário da FDA.",
+            "A aprovação saiu 4 meses antes da data-meta."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        },
+        {
+          "url": "https://us.gsk.com/en-us/media/press-releases/jemperli-dostarlimab-gxly-approved-in-us-as-first-and-only-immunotherapy-for-adults-with-msi-hdmmr-locally-advanced-rectal-cancer/",
+          "title": "Jemperli é aprovado nos EUA como primeira e única imunoterapia para câncer de reto MSI-H/dMMR localmente avançado",
+          "summary": "GSK: o comunicado traz as taxas de resposta completa e os próximos passos para os dados do AZUR-1.",
+          "bullets": [
+            "68% dos pacientes avaliáveis (98 de 144) tiveram resposta clínica completa sustentada aos 12 meses.",
+            "Não houve recorrência entre os pacientes que responderam até agora.",
+            "Os dados completos serão apresentados no Congresso da ESMO, em outubro de 2026."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        },
+        {
+          "url": "https://ascopost.com/news/october-2026/fda-approves-dostarlimab-for-msi-hdmmr-locally-advanced-rectal-cancer/",
+          "title": "FDA aprova dostarlimab para câncer de reto MSI-H/dMMR localmente avançado",
+          "summary": "The ASCO Post: detalha a indicação, o desenho do estudo e o perfil de segurança.",
+          "bullets": [
+            "A indicação é para câncer de reto estágio II ou III sem tratamento prévio.",
+            "O estudo de fase 2 AZUR-1 teve 154 pacientes.",
+            "Reações adversas graves ocorreram em 20% dos pacientes; 3% interromperam o tratamento."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.fiercepharma.com/pharma/gsk-jemperli-scores-fda-approval-rectal-cancer-backed-high-complete-response-rate",
+          "title": "Jemperli, da GSK, obtém aprovação da FDA em câncer de reto com alta taxa de resposta completa",
+          "summary": "Fierce Pharma: compara as taxas de resposta pelos investigadores e pela revisão central e o tamanho da população elegível.",
+          "bullets": [
+            "Pela revisão central independente, a taxa de resposta completa foi de 47% (54 de 116).",
+            "O marcador MSI-H/dMMR aparece em cerca de 5% a 10% dos cânceres de reto.",
+            "O tratamento padrão pode causar disfunções duradouras e infertilidade."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "EUA sancionam a chinesa MiraclePlus por roubo de segredos de IA do Google",
+      "summary": "O Departamento de Estado designou cinco entidades chinesas, incluindo a Zhisuan, do ex-engenheiro do Google Linwei Ding.",
+      "bullets": [
+        "As designações saíram em 19 de outubro, com base no Protecting American Intellectual Property Act (PAIPA).",
+        "As entidades são a Shanghai Zhisuan Technology, a MiraclePlus e três fundos e entidades ligados a ela.",
+        "Ding foi condenado em 29 de janeiro por sete acusações de espionagem econômica e sete de roubo de segredos comerciais, e sentenciado em setembro a um ano de prisão.",
+        "As sanções incluem bloqueio de bens e proíbem crédito acima de US$10 milhões em 12 meses de instituições americanas.",
+        "O OFAC autorizou o encerramento de negócios com a MiraclePlus até 19 de janeiro de 2027.",
+        "A MiraclePlus investiu na SiliconFlow e na AgiBot, que estudam abrir capital em Hong Kong."
+      ],
+      "body": "A Zhisuan foi fundada em 2023 por Linwei Ding, que se candidatou à incubadora da MiraclePlus afirmando que a empresa poderia replicar a infraestrutura de IA do Google. A MiraclePlus deu capital semente à Zhisuan em troca de participação. As sanções também incluem restrições a transações bancárias e de câmbio e proíbem pessoas americanas de comprar participação relevante em ações ou dívida das entidades.\n\nA MiraclePlus foi fundada por Lu Qi, ex-executivo de IA da Microsoft e da Baidu, e sucedeu o programa chinês da Y Combinator, que foi abandonado. O OFAC (escritório do Tesouro americano que administra sanções) deu prazo até janeiro de 2027 para o encerramento de negócios com ela.",
+      "category": [
+        "world",
+        "politics",
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "US Department of State",
+          "OFAC",
+          "MiraclePlus",
+          "Shanghai Zhisuan Technology",
+          "Google",
+          "Y Combinator",
+          "SiliconFlow",
+          "AgiBot"
+        ],
+        "people": [
+          "Linwei Ding",
+          "Lu Qi"
+        ],
+        "places": [
+          "United States",
+          "China",
+          "Beijing",
+          "Shanghai"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.state.gov/releases/office-of-the-spokesman/2026/10/imposing-sanctions-to-protect-americans-from-intellectual-property-theft-fact-sheet",
+          "title": "Sanções para proteger os americanos contra roubo de propriedade intelectual",
+          "summary": "Departamento de Estado dos EUA: a ficha oficial lista as cinco entidades designadas e as restrições impostas.",
+          "bullets": [
+            "As designações se baseiam no Protecting American Intellectual Property Act.",
+            "As sanções incluem bloqueio de bens e restrições bancárias e de câmbio.",
+            "Pessoas americanas ficam proibidas de comprar participação relevante em ações ou dívida das entidades."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        },
+        {
+          "url": "https://exportcompliancedaily.com/article/2026/10/20/us-sanctions-five-chinese-entities-over-google-tradesecret-theft-2610190052?BC=bc_6ad6f2dec6ebe",
+          "title": "EUA sancionam cinco entidades chinesas por roubo de segredos comerciais do Google",
+          "summary": "Export Compliance Daily: detalha as restrições financeiras e a licença do OFAC para encerrar negócios.",
+          "bullets": [
+            "Instituições americanas não podem conceder crédito acima de US$10 milhões em 12 meses às entidades.",
+            "O OFAC autorizou o encerramento de negócios com a MiraclePlus até 19 de janeiro de 2027.",
+            "Entre as entidades estão a Shanghai Zhisuan Technology e a MiraclePlus."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://theedgemalaysia.com/node/822496",
+          "title": "EUA sancionam investidora chinesa ligada a caso de roubo de segredos do Google",
+          "summary": "The Edge Malaysia (Bloomberg): descreve a MiraclePlus e seus investimentos em empresas chinesas de IA.",
+          "bullets": [
+            "A MiraclePlus foi fundada por Lu Qi, ex-executivo da Microsoft e da Baidu.",
+            "Ela sucedeu o programa chinês da Y Combinator.",
+            "Investiu na SiliconFlow e na AgiBot, que estudam IPO em Hong Kong."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.scmp.com/news/china/diplomacy/article/3371434/us-sanctions-5-chinese-entities-over-ex-google-engineers-ai-trade-secrets-theft",
+          "title": "EUA sancionam 5 entidades chinesas por roubo de segredos de IA por ex-engenheiro do Google",
+          "summary": "South China Morning Post: reconstitui o caso de Linwei Ding e sua ligação com a MiraclePlus.",
+          "bullets": [
+            "Ding fundou a Zhisuan em 2023 e disse à MiraclePlus que podia replicar a infraestrutura de IA do Google.",
+            "A MiraclePlus deu capital semente à Zhisuan em troca de participação.",
+            "Ding foi condenado em janeiro e sentenciado em setembro a um ano de prisão."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Mynt, dona da GCash, estreia em Manila após o maior IPO das Filipinas",
+      "summary": "A operadora da carteira digital levantou 60,9 bilhões de pesos (cerca de US$967 milhões) e estreou valendo cerca de US$7 bilhões.",
+      "bullets": [
+        "A Mynt estreou na PSE em 20 de outubro com o ticker GCASH; o presidente Ferdinand Marcos Jr. abriu o pregão.",
+        "Vendeu cerca de 8,03 bilhões de ações a 6,60 pesos; o lote suplementar elevou a oferta de cerca de 53 bilhões para 60,9 bilhões de pesos.",
+        "O IPO superou o da Monde Nissin, de 55,89 bilhões de pesos, em 2021.",
+        "Com valor de mercado de 441,5 bilhões de pesos, virou a sétima maior empresa doméstica listada na PSE.",
+        "As ações subiram até 1,7%, para 6,71 pesos, e fecharam no preço do IPO, segundo a GMA News.",
+        "Mais de 20 investidores-âncora, incluindo BlackRock, Citadel, Fidelity International e IFC, comprometeram cerca de US$500 milhões."
+      ],
+      "body": "A alta no pregão de estreia ocorreu em meio a uma venda generalizada de ações ligadas a IA na Ásia, mas a ação terminou o dia no preço da oferta. Os investidores-âncora, entre eles a IFC (braço do Banco Mundial para o setor privado), responderam por quase 60% da oferta-base.\n\nSegundo o BusinessWorld, a Mynt planeja destinar 60% dos recursos líquidos da oferta primária ao seu negócio de crédito, o CreditTech. O restante vai para desenvolvimento de produtos e fins corporativos gerais.",
+      "category": [
+        "finance",
+        "business",
+        "world"
+      ],
+      "entities": {
+        "organizations": [
+          "Mynt",
+          "GCash",
+          "Philippine Stock Exchange",
+          "Ant Group",
+          "BlackRock",
+          "Citadel",
+          "Fidelity International",
+          "International Finance Corp."
+        ],
+        "people": [
+          "Ferdinand Marcos Jr.",
+          "Ramon Monzon",
+          "Evelyn Ng"
+        ],
+        "places": [
+          "Philippines",
+          "Manila"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.pse.com.ph/mynt-inc-raises-p60-9-b-in-historic-stock-market-debut/",
+          "title": "Mynt Inc. levanta 60,9 bilhões de pesos em estreia histórica na bolsa",
+          "summary": "Bolsa de Valores das Filipinas: o comunicado da PSE registra o recorde e a cerimônia de abertura com o presidente.",
+          "bullets": [
+            "A Mynt levantou 60,9 bilhões de pesos, o maior IPO da história da bolsa.",
+            "Ferdinand Marcos Jr. liderou a cerimônia de abertura do pregão.",
+            "O ticker é GCASH."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://bworldonline.com/top-stories/2026/10/20/788054/gcash-parent-mynt-makes-pse-debut-in-record-p60-9-b-ipo/",
+          "title": "Controladora da GCash, Mynt estreia na PSE com IPO recorde de 60,9 bilhões de pesos",
+          "summary": "BusinessWorld: detalha a estrutura da oferta e o destino dos recursos.",
+          "bullets": [
+            "Cerca de 8,03 bilhões de ações foram vendidas a 6,60 pesos cada.",
+            "O lote suplementar elevou a oferta de cerca de 53 bilhões para 60,9 bilhões de pesos.",
+            "60% dos recursos líquidos primários irão para o CreditTech."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.gmanetwork.com/news/money/companies/1006486/gcash-parent-debuts-at-pse-opens-with-p441-5b-market-capitalization/story/",
+          "title": "Controladora da GCash estreia na PSE com valor de mercado de 441,5 bilhões de pesos",
+          "summary": "GMA News: registra o valor de mercado de abertura e a posição da Mynt entre as maiores empresas listadas.",
+          "bullets": [
+            "A Mynt estreou com valor de mercado de 441,5 bilhões de pesos (cerca de US$7 bilhões).",
+            "Tornou-se a sétima maior empresa doméstica listada na PSE.",
+            "O IPO superou o da Monde Nissin, de 2021."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.gmanetwork.com/news/money/companies/1006573/gcash-parent-mynt-closes-at-ipo-price-on-market-debut-raises-p60-9-billion/story/",
+          "title": "Controladora da GCash fecha no preço do IPO na estreia e levanta 60,9 bilhões de pesos",
+          "summary": "GMA News: informa que a ação terminou o primeiro dia no preço da oferta.",
+          "bullets": [
+            "A ação fechou o primeiro dia a 6,60 pesos, o preço do IPO.",
+            "A oferta levantou 60,9 bilhões de pesos."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.channelnewsasia.com/business/philippines-gcash-mynt-shares-ipo-6474091",
+          "title": "Ações da Mynt, dona da GCash, sobem na estreia nas Filipinas",
+          "summary": "CNA (Reuters): relata a alta intradiária e o peso dos investidores-âncora na oferta.",
+          "bullets": [
+            "As ações subiram até 1,7%, para 6,71 pesos, em meio à venda de ações de IA na Ásia.",
+            "BlackRock, Citadel, Fidelity International e IFC estão entre os mais de 20 investidores-âncora.",
+            "Os âncoras comprometeram cerca de US$500 milhões, quase 60% da oferta-base."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "headline": "Índice de chips sobe 1,61% e encerra sequência de oito quedas em Wall Street",
+      "summary": "A sequência, de 15,7%, foi a maior desde outubro de 2008; o juro do Treasury de 10 anos subiu a 5,135% no mesmo dia.",
+      "bullets": [
+        "Em 19 de outubro, o Nasdaq subiu 1,11%, para 26.430,89 pontos, e o S&P 500 subiu 0,41%, para 7.690,73.",
+        "O Dow Jones caiu 0,07%, para 51.966,03 pontos.",
+        "A CoreWeave caiu mais 0,44%, após recuar mais de 25% na semana anterior por sua dívida de cerca de US$50 bilhões.",
+        "O rendimento de 10 anos subiu 3,8 pontos-base e está 1,148 ponto acima de um ano antes.",
+        "O WTI fechou em alta de 2,22%, a US$103,66, e o Brent caiu 0,28%, para US$109,55.",
+        "No início de terça, o S&P 500 caía 0,1% e o Nasdaq, 0,5%, com Meta, Micron e Intel em queda."
+      ],
+      "body": "O índice de semicondutores da Filadélfia havia recuado 15,7% em oito pregões seguidos de queda antes da alta de segunda-feira. O rendimento do título de 10 anos do Tesouro americano ficou 0,175 ponto abaixo da máxima de 52 semanas, de 5,31%, atingida em 5 de outubro.\n\nNo petróleo, os operadores acompanhavam ataques a navios no Golfo Pérsico e ataques entre Ucrânia e Rússia a infraestrutura de energia. Na terça-feira, as ações de IA voltaram a oscilar e as bolsas europeias voltaram a cair.",
+      "category": [
+        "economy",
+        "finance"
+      ],
+      "entities": {
+        "organizations": [
+          "Nasdaq",
+          "S&P 500",
+          "Philadelphia Semiconductor Index",
+          "CoreWeave",
+          "Nvidia",
+          "Meta Platforms",
+          "Micron",
+          "Intel"
+        ],
+        "people": [],
+        "places": [
+          "United States",
+          "New York"
+        ]
+      },
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2026/10/18/stock-market-today-live-updates.html",
+          "title": "Bolsa hoje: atualizações ao vivo",
+          "summary": "CNBC: acompanha o fechamento de segunda-feira e a recuperação das ações de semicondutores.",
+          "bullets": [
+            "O Nasdaq subiu 1,11% e o S&P 500, 0,41%.",
+            "O índice de semicondutores da Filadélfia subiu 1,61% e encerrou oito quedas seguidas.",
+            "A CoreWeave caiu mais 0,44%."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        },
+        {
+          "url": "https://biz.heraldcorp.com/article/10907970",
+          "title": "Ações de chips nos EUA interrompem a maior sequência de quedas desde 2008",
+          "summary": "The Herald Business: detalha a sequência de quedas do índice de chips e a situação da CoreWeave.",
+          "bullets": [
+            "O índice de semicondutores recuou 15,7% em oito pregões de queda.",
+            "Foi a maior sequência de quedas desde outubro de 2008.",
+            "A CoreWeave caiu mais de 25% na semana anterior por sua dívida de cerca de US$50 bilhões."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        },
+        {
+          "url": "https://www.morningstar.com/news/dow-jones/202610196209/10-year-treasury-yield-rises-to-5135-data-talk",
+          "title": "Rendimento do Treasury de 10 anos sobe para 5,135%",
+          "summary": "Morningstar (Dow Jones): registra a alta do juro de 10 anos e sua posição frente à máxima de 52 semanas.",
+          "bullets": [
+            "O rendimento subiu 3,8 pontos-base, para 5,135%.",
+            "Está 1,148 ponto percentual acima de um ano antes.",
+            "Está 0,175 ponto abaixo da máxima de 52 semanas, de 5,31%, de 5 de outubro."
+          ],
+          "published_at": "2026-10-19",
+          "image_url": ""
+        },
+        {
+          "url": "https://apnews.com/article/stock-markets-oil-ai-rates-inflation-b972b64127db5412a2b02c35ecf95c88",
+          "title": "Bolsas, petróleo, IA e juros: mercados oscilam",
+          "summary": "AP News: cobre o petróleo e a abertura de terça-feira, com nova oscilação das ações de IA.",
+          "bullets": [
+            "O WTI fechou em alta de 2,22%, a US$103,66, e o Brent caiu 0,28%, para US$109,55.",
+            "Operadores acompanhavam ataques no Golfo Pérsico e entre Ucrânia e Rússia.",
+            "Na terça, o S&P 500 caía 0,1% e o Nasdaq, 0,5%, com Meta, Micron e Intel em queda."
+          ],
+          "published_at": "2026-10-20",
+          "image_url": ""
+        }
+      ]
+    }
+  ]
+}

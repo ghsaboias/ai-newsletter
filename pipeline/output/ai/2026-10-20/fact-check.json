@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-20",
+  "fidelity_issues": [
+    {
+      "severity": "high",
+      "where": "facts.md+edition",
+      "claim": "Amazon vai investir mais de €16 bilhões (US$18,7 bilhões) na Alemanha em 2027",
+      "issue": "especificidade inventada",
+      "expected": "O research.json traz só valores em euro: 'more than €16 billion' em 2027, '€4.8 billion' para a AWS Frankfurt e 'over €100 billion' desde 2010. Não há nenhuma cifra em dólar nem câmbio de referência. O facts.md converteu a cerca de US$1,17/€ (€16 bi≈US$18,7 bi; €4,8 bi≈US$5,6 bi; €100 bi≈US$117 bi). Só a primeira conversão chegou à edição (Leia também), e sem o 'cerca de' que o facts.md tinha, o que a apresenta como cifra exata. A web não confirma o câmbio de 20/10/2026: a cotação datada mais recente encontrada é ~1,14 (meados de julho), mais ~1,16 deduzido de uma tabela de setembro. Logo, 1,17 é plausível, mas não está verificado. Opções: manter só '€16 bilhões', ou tirar o câmbio de uma fonte datada e repor o 'cerca de'."
+    },
+    {
+      "severity": "low",
+      "where": "facts.md+edition",
+      "claim": "caiu 33,15% na estreia no Kosdaq [...] para 60.500 wons (cerca de US$45,5)",
+      "issue": "não traça ao research.json",
+      "expected": "O research.json traz só '60,500 won'. A cifra em dólar é conversão feita pelo facts.md com o câmbio implícito na própria pesquisa (201 bilhões de wons = US$151 milhões, ~1.331 wons/US$), e a conta bate. O mesmo método gerou conversões que ficaram só no facts.md: Elice US$68,0, US$42,4 e US$25,8 milhões; Mynt US$0,10, US$842 milhões e US$887 milhões (pela paridade 60,9 bi de pesos = US$967 mi). A web não traz o câmbio do dia. É furo de rastreabilidade, não erro de valor."
+    }
+  ],
+  "dropped_facts": [],
+  "summary": "Fidelidade alta: todas as cifras, citações e datas das Grandes e Médias traçam ao research.json, e as duas referências 'na véspera' (pressão sobre o valuation de IPO da Nscale; oito quedas seguidas do índice de semicondutores) estão na edição de 19/10. O único finding grave é a conversão €→US$ da Amazon (US$18,7 bi), sem âncora e publicada sem 'cerca de'. Nenhum fato essencial caiu."
+}

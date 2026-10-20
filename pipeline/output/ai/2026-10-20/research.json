@@ -1,0 +1,1791 @@
+{
+  "date": "2026-10-20",
+  "stories": [
+    {
+      "id": "deepseek-open-sources-deepinfer",
+      "headline": "DeepSeek open-sources DeepInfer, the inference stack behind its production service",
+      "key_facts": [
+        {
+          "fact": "On Oct 20, 2026, DeepSeek open-sourced DeepInfer, its in-house inference framework that powers DeepSeek-V4.1-Flash at scale, saying it wants to help the community lower compute costs and energy use.",
+          "source_url": "https://x.com/deepseek_ai/status/2112476496283775135",
+          "excerpt": "Introducing DeepInfer, our in-house inference framework, now fully open source! Powering DeepSeek-V4.1-Flash at scale with high throughput and low latency. We're sharing our production stack to help the community lower compute costs, reduce energy use, and make AI more affordable."
+        },
+        {
+          "fact": "DeepInfer is released under the Apache 2.0 license and supports NVIDIA SM100 GPUs and Huawei Ascend 950 NPUs.",
+          "source_url": "https://github.com/deepseek-ai/DeepInfer",
+          "excerpt": "License: Apache License 2.0 ... Supported hardware: NVIDIA SM100 GPUs; Huawei Ascend 950 NPUs"
+        },
+        {
+          "fact": "Features include optimized kernels (FlashMLA, DeepGEMM, DeepEP), MoE expert parallelism, speculative decoding with draft tokens, SWA bounded replay, batch-invariant inference, deterministic sampling and structured outputs.",
+          "source_url": "https://github.com/deepseek-ai/DeepInfer",
+          "excerpt": "Optimized kernels: FlashMLA, DeepGEMM, DeepEP, TileKernels, DeepSelect ... DSpark and confidence-scheduled verification ... SWA bounded replay ... Batch-invariant inference ... Deterministic sampling ... Structured outputs"
+        },
+        {
+          "fact": "The release omits a KV cache system, prefill/decode disaggregation and load balancing across replicas, so it is not a complete serving stack.",
+          "source_url": "https://github.com/deepseek-ai/DeepInfer",
+          "excerpt": "Required for a complete inference service (not included in this release): A KV cache system; VE/Prefill/Decode disaggregation ...; Load balancing across data-parallel replicas"
+        },
+        {
+          "fact": "DeepSeek said inference code for its future models will also be published in DeepInfer, and it separately open-sourced deepseek-recipe, its production token encoding/decoding component aligned with the official API.",
+          "source_url": "https://x.com/deepseek_ai/status/2112476498598957056",
+          "excerpt": "Inference code for future DeepSeek models and ongoing optimizations will land here too."
+        },
+        {
+          "fact": "Bloomberg framed the release as potentially making DeepSeek's technology cheaper and easier for businesses to run.",
+          "source_url": "https://www.bloomberg.com/news/articles/2026-10-20/deepseek-unveils-open-source-tool-to-help-cut-ai-operating-costs",
+          "excerpt": "DeepSeek is opening up the software it uses to run its artificial intelligence models at scale, potentially making its technology cheaper and easier for businesses to run."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://x.com/deepseek_ai/status/2112476496283775135",
+          "outlet": "X",
+          "title": "Tweet by @deepseek_ai: Introducing DeepInfer, our in-house inference framework, now fully open source!",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "tweet"
+        },
+        {
+          "url": "https://x.com/deepseek_ai/status/2112476498598957056",
+          "outlet": "X",
+          "title": "Tweet by @deepseek_ai: Inside DeepInfer - High-performance kernels & optimized inference engine",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "tweet"
+        },
+        {
+          "url": "https://github.com/deepseek-ai/DeepInfer",
+          "outlet": "GitHub",
+          "title": "DeepInfer: High-performance, large-scale inference framework for DeepSeek models",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-10-20/deepseek-unveils-open-source-tool-to-help-cut-ai-operating-costs",
+          "outlet": "Bloomberg",
+          "title": "DeepSeek Unveils Open-Source Tool to Help Cut AI Operating Costs",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "DeepSeek",
+          "NVIDIA",
+          "Huawei"
+        ],
+        "people": [],
+        "places": [
+          "China"
+        ]
+      }
+    },
+    {
+      "id": "inception-mercury-3-diffusion-llm",
+      "headline": "Inception releases Mercury 3, a diffusion LLM running at 1,000+ tokens per second",
+      "key_facts": [
+        {
+          "fact": "On Oct 19, 2026, Inception released Mercury 3, which CEO Stefano Ermon called the most intelligent diffusion LLM ever released, claiming it outperforms GPT-6 Luna and Claude Haiku 5.5 on quality while running at over 1,000 tokens per second.",
+          "source_url": "https://www.marktechpost.com/2026/10/19/inception-mercury-3-diffusion-llm/",
+          "excerpt": "Today, we're releasing Mercury 3. Mercury 3 is by far our most powerful model and the most intelligent diffusion LLM ever released. It outperforms GPT-6 Luna and Haiku 5.5 on quality while running at 1000+ tok/sec. — Stefano Ermon, October 19, 2026"
+        },
+        {
+          "fact": "Unlike autoregressive models that generate one token at a time, Mercury 3 generates and refines multiple tokens in parallel; Inception claims it is 4x to 8x faster than Haiku 5.5, GPT-6 Luna and GLM-5.3 Flash while beating them on agentic benchmarks.",
+          "source_url": "https://www.thedeepview.com/articles/why-inception-s-mercury-3-upends-ai-economics",
+          "excerpt": "Inception claims that Mercury 3 performs 4x to 8x faster than Haiku 5.5, GPT-6 Luna, and GLM-5.3 Flash while performing better than all of them on agentic benchmarks."
+        },
+        {
+          "fact": "On Inception's own benchmark table, Mercury 3 leads GPT-6 Luna and Haiku 5.5 on 8 of 12 tests, including SWE-Bench Atlas (51.08 vs 33.33 and 32.26), but trails Haiku 5.5 on DeepSWE v1 (46.31 vs 51.62).",
+          "source_url": "https://www.marktechpost.com/2026/10/19/inception-mercury-3-diffusion-llm/",
+          "excerpt": "Leads 8 of 12 benchmarks vs GPT-6 Luna and Haiku 5.5 (self-reported, medium settings). Best: SWE-Bench Atlas 51.08, about 18 points ahead of both rivals. Worst: DeepSWE v1 46.31, 5.31 points behind Haiku 5.5 (51.62)."
+        },
+        {
+          "fact": "Mercury 3 has a 1M-token context window and more than 40 times the parameters of Mercury 1; Inception did not disclose the parameter count.",
+          "source_url": "https://www.marktechpost.com/2026/10/19/inception-mercury-3-diffusion-llm/",
+          "excerpt": "Size: Parameters not disclosed. Inception says it is more than 40x larger than Mercury 1. Context is 1M tokens."
+        },
+        {
+          "fact": "Launch pricing is $0.10 per million input tokens and $0.35 per million output tokens, 50% off the list price of $0.20/$0.70.",
+          "source_url": "https://www.marktechpost.com/2026/10/19/inception-mercury-3-diffusion-llm/",
+          "excerpt": "List pricing is $0.20 per 1M input and $0.70 per 1M output tokens. At launch it is 50% off: $0.10 and $0.35."
+        },
+        {
+          "fact": "Inception said it used swarms of Mercury 3 agents for recursive self-improvement, which increased the model's overall speed by 16% beyond the upgrades made by its team.",
+          "source_url": "https://www.thedeepview.com/articles/why-inception-s-mercury-3-upends-ai-economics",
+          "excerpt": "Inception also reported that it implemented swarms of Mercury 3 agents for recursive self improvement where they increased the overall speed of the model by 16% on top of the upgrades made by the Inception team itself."
+        },
+        {
+          "fact": "Mercury 3 is available via the Inception API, OpenRouter, Baseten and Vercel; it is API-only with no open weights.",
+          "source_url": "https://www.marktechpost.com/2026/10/19/inception-mercury-3-diffusion-llm/",
+          "excerpt": "Mercury 3 is live on the Inception API Platform, OpenRouter, Baseten and Vercel."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.thedeepview.com/articles/why-inception-s-mercury-3-upends-ai-economics",
+          "outlet": "The Deep View",
+          "title": "Why Inception's Mercury 3 upends AI economics",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.marktechpost.com/2026/10/19/inception-mercury-3-diffusion-llm/",
+          "outlet": "MarkTechPost",
+          "title": "Inception Releases Mercury 3 Diffusion LLM at 1,068 Tokens per Second",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Inception",
+          "OpenAI",
+          "Anthropic",
+          "Baseten",
+          "OpenRouter",
+          "Vercel"
+        ],
+        "people": [
+          "Stefano Ermon"
+        ],
+        "places": []
+      }
+    },
+    {
+      "id": "openai-cobol-legacy-languages",
+      "headline": "OpenAI says its new models jump in COBOL, Fortran and Visual Basic coding and migration",
+      "key_facts": [
+        {
+          "fact": "On Oct 19, 2026, OpenAI said its latest models bring stronger capabilities for building and migrating software in low-resource programming languages such as COBOL, Fortran and Visual Basic, which power software that banks, governments and businesses depend on.",
+          "source_url": "https://x.com/OpenAI/status/2112310345863930168",
+          "excerpt": "Our latest model advances bring stronger capabilities for building and migrating software in low-resource programming languages such as COBOL, Fortran, and Visual Basic. These languages power software that banks, governments, and businesses depend on."
+        },
+        {
+          "fact": "On OpenAI's new MultiLangBench, which asks a model to build a SQLite-compatible database engine in 20 languages, GPT-6 Astra averaged an 87.4% test pass rate, up from 26.8% for GPT-5.6 Sol; COBOL rose from 10.9% to 72.1%.",
+          "source_url": "https://www.engadget.com/2291457/openai-says-its-models-can-translate-cobol/",
+          "excerpt": "It said GPT-6 Astra had an average test pass rate of 87.4 percent across 20 languages, making it a lot of effective than GPT-5.6 Sol that had a 26.8 percent pass rate. COBOL remains the hardest language to crack, with Astra's pass rate being 72 percent."
+        },
+        {
+          "fact": "On a COBOL migration test to C++, Java, Kotlin, Python or Rust requiring byte-for-byte output parity, GPT-6.1 Sol scored 86.6% at low reasoning effort versus 5.4% for GPT-5.6 Sol, and 97.9% at higher effort.",
+          "source_url": "https://thecircuitry.to/article/openai-models-improve-coding-for-cobol-fortran-and-other-low-resource-languages-mvfw28o8",
+          "excerpt": "GPT-6.1 Sol scored 86.6% on COBOL migration at low effort. GPT-5.6 Sol scored 5.4% at the same setting, and GPT-6.1 Sol did it at 61% of the API cost. At higher reasoning effort, accuracy reached 97.9%"
+        },
+        {
+          "fact": "GPT-6 Luna reached 40.3% on MultiLangBench at an estimated $0.77 per sample, about 78% cheaper than GPT-5.6 Sol's $3.48.",
+          "source_url": "https://thecircuitry.to/article/openai-models-improve-coding-for-cobol-fortran-and-other-low-resource-languages-mvfw28o8",
+          "excerpt": "GPT-6 Luna reached 40.3% at an estimated average API cost of $0.77 per sample, compared with $3.48 for GPT-5.6 Sol, about 78% lower."
+        },
+        {
+          "fact": "OpenAI cites COBOL as supporting more than 40% of online banking systems and 95% of ATM transactions, and is releasing MultiLangBench on GitHub; it says production migrations still require expert review.",
+          "source_url": "https://mediarelease.co/us/mr02096-openai-advancing-coding-low-resource-programming-languages-19102026.html",
+          "excerpt": "COBOL supports more than 40% of online banking systems, 80% of in-person credit card transactions and 95% of ATM transactions ... On its new MultiLangBench evaluation, which OpenAI is releasing on GitHub"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://x.com/OpenAI/status/2112310345863930168",
+          "outlet": "X",
+          "title": "Tweet by @OpenAI: Our latest model advances bring stronger capabilities for building and migrating",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "tweet"
+        },
+        {
+          "url": "https://mediarelease.co/us/mr02096-openai-advancing-coding-low-resource-programming-languages-19102026.html",
+          "outlet": "MediaRelease.co (OpenAI release)",
+          "title": "Advancing coding in low-resource programming languages",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.engadget.com/2291457/openai-says-its-models-can-translate-cobol/",
+          "outlet": "Engadget",
+          "title": "OpenAI Says Its Models Can Help Banks Migrate From Old COBOL Programs",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://thecircuitry.to/article/openai-models-improve-coding-for-cobol-fortran-and-other-low-resource-languages-mvfw28o8",
+          "outlet": "The Circuitry",
+          "title": "OpenAI says its latest models are far better at COBOL, Fortran and Visual Basic",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "OpenAI"
+        ],
+        "people": [],
+        "places": []
+      }
+    },
+    {
+      "id": "dhs-orders-deepseek-removal-federal-it",
+      "headline": "US DHS orders DeepSeek technology removed from federal civilian IT systems",
+      "key_facts": [
+        {
+          "fact": "On Oct 19, 2026, DHS made public an order requiring federal civilian agencies to remove DeepSeek technology from their IT systems and barring future purchases of its products and services.",
+          "source_url": "https://www.wsj.com/tech/ai/dhs-orders-deepseek-technology-removed-from-federal-civilian-it-systems-060b6d3d",
+          "excerpt": "The Department of Homeland Security has ordered federal civilian agencies to remove artificial-intelligence technology developed by China's DeepSeek from their information technology systems. The order also bars future purchases of DeepSeek's products and services"
+        },
+        {
+          "fact": "The order, issued under the Federal Acquisition Supply Chain Security Act of 2018, also covers DeepSeek affiliates and third-party products and services built using DeepSeek implementations.",
+          "source_url": "https://www.federalregister.gov/documents/2026/10/20/2026-21447/notice-of-order-regarding-exclusion-and-removal-of-deepseek-products-from-federal-civilian-executive",
+          "excerpt": "Pursuant to the authority granted by the Federal Acquisition Supply Chain Security Act of 2018 ... removal of all DeepSeek and DeepSeek affiliate products, and third-party products and services developed using DeepSeek implementations, from civilian agency information technology."
+        },
+        {
+          "fact": "The order was originally issued on July 24 and applies to civilian agencies including Treasury, State and Justice, but excludes the Department of Defense; agencies can request exceptions within 60 days.",
+          "source_url": "https://www.cnbc.com/2026/10/20/us-deepseek-federal-agency-ban.html",
+          "excerpt": "The order, originally issued on July 24, applies to federal civilian agencies, including the Treasury, State and Justice departments, but it excludes the Department of Defense."
+        },
+        {
+          "fact": "DHS said DeepSeek models present 'multiple threat vectors' and that use 'may result in the transfer of sensitive data to the PRC', and that the models may contain malware or security vulnerabilities.",
+          "source_url": "https://www.thehindubusinessline.com/info-tech/us-orders-removal-of-deepseek-from-civilian-government-it-systems/article71603248.ece",
+          "excerpt": "DHS said DeepSeek models pose \"multiple threat vectors\" and raised concerns that use of the product \"may result in the transfer of sensitive data to the PRC if used by US government employees or vendors.\""
+        },
+        {
+          "fact": "Several US agencies, including Commerce and the Navy, and states such as New York, Tennessee and Virginia had previously restricted DeepSeek on government devices.",
+          "source_url": "https://www.thehindubusinessline.com/info-tech/us-orders-removal-of-deepseek-from-civilian-government-it-systems/article71603248.ece",
+          "excerpt": "Previously, several US agencies, including the Department of Commerce and the Navy, have banned the use of DeepSeek on government devices. Multiple states, including New York, Tennessee and Virginia, have taken similar steps."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.wsj.com/tech/ai/dhs-orders-deepseek-technology-removed-from-federal-civilian-it-systems-060b6d3d",
+          "outlet": "Wall Street Journal",
+          "title": "DHS Orders DeepSeek Technology Removed From Federal Civilian IT Systems",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.federalregister.gov/documents/2026/10/20/2026-21447/notice-of-order-regarding-exclusion-and-removal-of-deepseek-products-from-federal-civilian-executive",
+          "outlet": "Federal Register",
+          "title": "Notice of Order Regarding Exclusion and Removal of DeepSeek Products From Federal Civilian Executive Branch Information Technology Systems and Procurements",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "government_filing"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/10/20/us-deepseek-federal-agency-ban.html",
+          "outlet": "CNBC",
+          "title": "U.S. bans DeepSeek from government agency systems",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.thehindubusinessline.com/info-tech/us-orders-removal-of-deepseek-from-civilian-government-it-systems/article71603248.ece",
+          "outlet": "The Hindu BusinessLine (Reuters)",
+          "title": "US orders DeepSeek removal from civilian government IT systems over security concerns",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "Department of Homeland Security",
+          "DeepSeek",
+          "Department of Defense",
+          "Department of Commerce"
+        ],
+        "people": [],
+        "places": [
+          "United States",
+          "China"
+        ]
+      }
+    },
+    {
+      "id": "openai-races-to-raise-before-anthropic-ipo",
+      "headline": "OpenAI races to close ~$30B round at $1.4T+ valuation before Anthropic's IPO",
+      "key_facts": [
+        {
+          "fact": "OpenAI is racing to secure investor commitments before Anthropic's expected mid-November IPO, in a round of about $30 billion that could value it at more than $1.4 trillion, Reuters reported on Oct 19, 2026, citing sources.",
+          "source_url": "https://www.moneycontrol.com/artificial-intelligence/openai-seeks-to-accelerate-fundraising-ahead-of-anthropic-ipo-report-article-14055784.html",
+          "excerpt": "OpenAI is racing to secure investor commitments before rival Anthropic's expected public market debut in mid-November, in an unusually fast fundraising that could value the ChatGPT maker at over $1.4 trillion"
+        },
+        {
+          "fact": "SoftBank, Abu Dhabi's MGX and other existing backers are in talks to join the round.",
+          "source_url": "https://www.moneycontrol.com/artificial-intelligence/openai-seeks-to-accelerate-fundraising-ahead-of-anthropic-ipo-report-article-14055784.html",
+          "excerpt": "SoftBank Group, Abu Dhabi-based MGX and other existing backers of OpenAI are in talks to join the round of about $30 billion, one of the people said."
+        },
+        {
+          "fact": "OpenAI is telling investors it reached $50 billion in annualized revenue after the GPT-6 Astra launch and expects $70 billion by year-end; it has also cut prices on cheaper models and said it could lower prices further.",
+          "source_url": "https://www.cnbctv18.com/technology/openai-seeks-to-accelerate-fundraising-ahead-of-anthropic-ipo-report-20015427.htm",
+          "excerpt": "saying it had reached $50 billion in annualised revenue and expects that figure to rise to $70 billion by the end of the year ... OpenAI has also cut prices on its cheaper models, which it said has boosted usage, and told investors it could lower the prices of AI models further"
+        },
+        {
+          "fact": "OpenAI wants to close before Anthropic's financial disclosures invite side-by-side comparisons; it has accused Anthropic of inflating revenue by booking the gross value of cloud-resold contracts, which Anthropic denies.",
+          "source_url": "https://www.moneycontrol.com/artificial-intelligence/openai-seeks-to-accelerate-fundraising-ahead-of-anthropic-ipo-report-article-14055784.html",
+          "excerpt": "OpenAI is seeking to complete the fundraising before Anthropic's financial disclosures give investors a fuller picture of its business and invite comparisons between the two companies ... It has accused Anthropic of inflating its revenue by counting the full, gross value of contracts sold through third-party cloud providers. Anthropic told Reuters earlier that it follows established accounting practices."
+        },
+        {
+          "fact": "OpenAI was last valued at $852 billion in March after a $122 billion round; Anthropic's Q3 revenue rose to $16.8 billion from $11.6 billion in Q2, and some investors have argued for a ~$1.5 trillion IPO valuation instead of the $2 trillion sought.",
+          "source_url": "https://qz.com/openai-30-billion-funding-round-anthropic-ipo-102026",
+          "excerpt": "Anthropic informed investors that revenue for the third quarter climbed to $16.8 billion, versus $11.6 billion during the second quarter ... Some current and potential Anthropic investors have pushed for a listing valuation of about $1.5 trillion, not the $2 trillion the company is seeking"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.moneycontrol.com/artificial-intelligence/openai-seeks-to-accelerate-fundraising-ahead-of-anthropic-ipo-report-article-14055784.html",
+          "outlet": "Moneycontrol (Reuters)",
+          "title": "OpenAI seeks to accelerate fundraising ahead of Anthropic IPO: Report",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.cnbctv18.com/technology/openai-seeks-to-accelerate-fundraising-ahead-of-anthropic-ipo-report-20015427.htm",
+          "outlet": "CNBC TV18 (Reuters)",
+          "title": "OpenAI seeks to accelerate fundraising ahead of Anthropic IPO: Report",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://qz.com/openai-30-billion-funding-round-anthropic-ipo-102026",
+          "outlet": "Quartz",
+          "title": "OpenAI is racing to raise $30 billion before Anthropic IPO",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "business",
+        "finance",
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "OpenAI",
+          "Anthropic",
+          "SoftBank",
+          "MGX",
+          "Reuters"
+        ],
+        "people": [
+          "Sarah Friar"
+        ],
+        "places": []
+      }
+    },
+    {
+      "id": "ai-app-startups-arda-otter-town-raise",
+      "headline": "AI app startups raise big: Arda $230M at $1.5B, Otter.ai $320M, Town $108M at $1B",
+      "key_facts": [
+        {
+          "fact": "Arda, the AI manufacturing startup of former OpenAI research chief Bob McGrew, raised $230 million at a $1.5 billion valuation in a round led by Altimeter Capital, Accel and Khosla Ventures, it told CNBC on Oct 20, 2026.",
+          "source_url": "https://www.cnbc.com/2026/10/20/ex-openai-executive-builds-1point5-billion-ai-manufacturing-startup-arda.html",
+          "excerpt": "Bob McGrew's newest company, Arda, has raised $230 million at a $1.5 billion valuation, the company told CNBC in an exclusive interview Tuesday. The round was led by Altimeter Capital, Accel and Khosla Ventures."
+        },
+        {
+          "fact": "McGrew described Arda as 'a user interface and an agent that does for manufacturing engineers what Claude or Cursor does for programmers'; its models are already deployed with defense company Anduril.",
+          "source_url": "https://www.cnbc.com/2026/10/20/ex-openai-executive-builds-1point5-billion-ai-manufacturing-startup-arda.html",
+          "excerpt": "\"It's a user interface and an agent that does for manufacturing engineers what Claude or Cursor does for programmers,\" McGrew told CNBC. ... Arda's AI models have already been deployed with military tech company Anduril."
+        },
+        {
+          "fact": "In March 2026 Arda was seeking $70 million at a $700 million valuation, so its valuation more than doubled in about seven months.",
+          "source_url": "https://cryptobriefing.com/arda-raises-230-million-ai-manufacturing/",
+          "excerpt": "In March 2026, the company was seeking $70 million at a $700 million valuation. About seven months later, it has a raise more than three times that target. Its valuation has more than doubled."
+        },
+        {
+          "fact": "Meeting note-taker Otter.ai raised $320 million in non-dilutive capital from General Catalyst's Customer Value Fund; it had raised $50 million in total before, and says 40 million people have used its product, up from 25 million last year.",
+          "source_url": "https://techcrunch.com/2026/10/20/otter-ai-raises-320-million-from-general-catalysts-growth-fund-for-its-meeting-tool/",
+          "excerpt": "Otter.ai announced on Tuesday that it has raised $320 million from General Catalyst's Customer Value Fund (CVF), which provides capital to startups without diluting equity ... The company said that 40 million users have used its product to date, up from 25 million last year."
+        },
+        {
+          "fact": "Town, an enterprise AI assistant startup founded by former Plaid CTO Jean-Denis Greze, raised a $108 million Series B co-led by Forerunner Ventures and Menlo Ventures at a $1 billion valuation, four months after its public launch.",
+          "source_url": "https://techcrunch.com/2026/10/19/ai-assistant-startup-town-nabs-unicorn-valuation-four-months-after-launch/",
+          "excerpt": "Town ... nabbed a unicorn valuation on Monday, announcing a $108 million Series B funding round co-led by Forerunner Ventures and Menlo Ventures. The company launched publicly just four months ago"
+        },
+        {
+          "fact": "Town gives each employee an AI assistant ('Townie') connected to email, calendar and work systems; Townies can talk to each other, and Town has raised at least $160 million to date.",
+          "source_url": "https://techcrunch.com/2026/10/19/ai-assistant-startup-town-nabs-unicorn-valuation-four-months-after-launch/",
+          "excerpt": "giving each employee an AI assistant called a Townie that helps with tasks by connecting to tools such as emails and calendars ... It has raised at least $160 million to date"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2026/10/20/ex-openai-executive-builds-1point5-billion-ai-manufacturing-startup-arda.html",
+          "outlet": "CNBC",
+          "title": "Former OpenAI exec has quietly built $1.5 billion startup, betting AI can revive U.S. manufacturing",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://cryptobriefing.com/arda-raises-230-million-ai-manufacturing/",
+          "outlet": "Crypto Briefing",
+          "title": "Arda raises $230 million at $1.5 billion valuation to automate US manufacturing",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://techcrunch.com/2026/10/20/otter-ai-raises-320-million-from-general-catalysts-growth-fund-for-its-meeting-tool/",
+          "outlet": "TechCrunch",
+          "title": "Otter.ai raises $320 million from General Catalyst's growth fund for its meeting tool",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://techcrunch.com/2026/10/19/ai-assistant-startup-town-nabs-unicorn-valuation-four-months-after-launch/",
+          "outlet": "TechCrunch",
+          "title": "AI assistant startup Town nabs unicorn valuation 4 months after launch",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "business",
+        "finance",
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Arda",
+          "Altimeter Capital",
+          "Accel",
+          "Khosla Ventures",
+          "Anduril",
+          "Otter.ai",
+          "General Catalyst",
+          "Town",
+          "Forerunner Ventures",
+          "Menlo Ventures",
+          "OpenAI"
+        ],
+        "people": [
+          "Bob McGrew",
+          "Jean-Denis Greze"
+        ],
+        "places": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "anthropic-federal-ai-bill-backlash",
+      "headline": "Safety advocates slam Anthropic's leaked federal AI bill; company says it will revise it",
+      "key_facts": [
+        {
+          "fact": "A discussion draft of a federal AI bill Anthropic had circulated to lawmakers, published by Politico on Friday Oct 16, drew broad criticism from AI safety advocates as weaker than the bipartisan FRONTIER Act; Transformer published an analysis on Oct 19.",
+          "source_url": "https://www.transformernews.ai/p/anthropic-leaked-ai-bill-undermines-safety-first-approach",
+          "excerpt": "A leaked discussion draft of a federal AI bill which Anthropic has been circulating to lawmakers, published by Politico on Friday ... has been widely criticized by AI safety advocates, is much weaker than the Obernolte/Trahan FRONTIER Act"
+        },
+        {
+          "fact": "The draft requires third-party evaluators to assess catastrophic risk but sets no standards or licensing for them, allowing self-certification.",
+          "source_url": "https://www.transformernews.ai/p/anthropic-leaked-ai-bill-undermines-safety-first-approach",
+          "excerpt": "Like the FRONTIER Act, it requires third-party evaluators to assess AI companies' models and practices for catastrophic risk. Unlike FRONTIER, however, there are no standards or licensing requirements for evaluators, which can self-certify."
+        },
+        {
+          "fact": "To block a dangerous model, the Commerce Department would have to petition a federal court, which decides 'without deference' and must weigh the harm a blocking order would cause to the developer.",
+          "source_url": "https://www.transformernews.ai/p/anthropic-leaked-ai-bill-undermines-safety-first-approach",
+          "excerpt": "If the Commerce Department ... wants to stop one, it must petition a federal court ... The court decides every question \"without deference\" ... It must also \"consider the harm the [blocking] order would cause to the frontier developer, to users, and to the public.\""
+        },
+        {
+          "fact": "The bill would preempt state frontier-AI laws such as California's SB 53 and New York's RAISE Act while carving out child safety laws.",
+          "source_url": "https://www.transformernews.ai/p/anthropic-leaked-ai-bill-undermines-safety-first-approach",
+          "excerpt": "laws like California's SB 53, New York's RAISE and Illinois' SB 315 that seek to govern \"frontier AI\" would be preempted, while child safety and other laws are explicitly carved out."
+        },
+        {
+          "fact": "On Oct 19, Anthropic's head of federal affairs Anthony Cimino said the text was an early draft, that it does not absolve companies of liability, and that Anthropic wants to work with policymakers to make it 'as strong as it can be'; he had earlier said the preemption language would be adjusted.",
+          "source_url": "https://x.com/ajcimino/status/2112250250043732269",
+          "excerpt": "This was our early draft proposal for addressing specific types of catastrophic harm from AI at the federal level. We are not proposing it should be the sole accountability mechanism the government can use. Nor does the bill absolve companies of liability when they inflict harm. We are also interested in working with policymakers to revisit this to ensure it is as strong as it can be."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.transformernews.ai/p/anthropic-leaked-ai-bill-undermines-safety-first-approach",
+          "outlet": "Transformer",
+          "title": "Anthropic's weak AI bill undermines its 'safety first' approach",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://x.com/ajcimino/status/2112250250043732269",
+          "outlet": "X",
+          "title": "Tweet by @ajcimino: This was our early draft proposal for addressing specific types of catastrophic harm",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "tweet"
+        }
+      ],
+      "category": [
+        "technology",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "Anthropic",
+          "Politico",
+          "Department of Commerce",
+          "Encode",
+          "LawAI"
+        ],
+        "people": [
+          "Anthony Cimino",
+          "Nathan Calvin",
+          "Charlie Bullock"
+        ],
+        "places": [
+          "United States",
+          "California",
+          "New York"
+        ]
+      }
+    },
+    {
+      "id": "bytedance-alibaba-tencent-35b-nvidia-rtx-pro-5500-orders",
+      "headline": "ByteDance, Alibaba and Tencent order $35B+ of export-compliant Nvidia RTX PRO 5500 cards",
+      "key_facts": [
+        {
+          "fact": "ByteDance, Alibaba and Tencent have ordered more than 3 million of Nvidia's new RTX PRO 5500 graphics cards with a collective sticker price of over $35 billion, according to two people familiar with the matter cited by Reuters on Oct 20.",
+          "source_url": "https://live.euronext.com/en/financial-news/exclusive-bytedance-alibaba-tencent-place-over-35-billion-worth-nvidia-chip-orders",
+          "excerpt": "ByteDance, Alibaba and Tencent have ordered more than 3 million of Nvidia's new RTX PRO 5500 graphics cards with a collective sticker price of over $35 billion, two people familiar with the matter said, in a rush for a less powerful but export-compliant chip amid US restrictions on trade with China."
+        },
+        {
+          "fact": "Nvidia told customers and partners it cannot guarantee it can fill the orders; one source said partners might receive only 5% to 10% of quantities requested, and another said Nvidia could produce no more than 3 million RTX PRO 5500 cards globally in 2027. Total orders from China exceeded 6 million.",
+          "source_url": "https://live.euronext.com/en/financial-news/exclusive-bytedance-alibaba-tencent-place-over-35-billion-worth-nvidia-chip-orders",
+          "excerpt": "One source said Nvidia told partners they might receive only 5% to 10% of the quantities requested. Another said the company had indicated it could produce no more than 3 million RTX PRO 5500 cards globally in 2027. Total orders from customers in China have exceeded 6 million, two of the sources said."
+        },
+        {
+          "fact": "The cards are priced at about $11,400 each; the RTX PRO 5500 is a workstation chip, less powerful than the H200 and B300, and Chinese buyers want it mainly for AI inference.",
+          "source_url": "https://economictimes.indiatimes.com/tech/technology/bytedance-alibaba-tencent-place-over-35-billion-worth-of-nvidia-chip-orders/articleshow/135066129.cms",
+          "excerpt": "The three Chinese tech giants' orders are for cards priced at about $11,400 each... Chinese companies are seeking to use the cards primarily for AI inference"
+        },
+        {
+          "fact": "Nvidia's Blackwell-based B300 cannot be sold to Chinese buyers under US export controls, while H200 exports are reviewed case by case and subject to licensing conditions.",
+          "source_url": "https://economictimes.indiatimes.com/tech/technology/bytedance-alibaba-tencent-place-over-35-billion-worth-of-nvidia-chip-orders/articleshow/135066129.cms",
+          "excerpt": "Nvidia's Blackwell-based B300 data-centre chip is not allowed to be sold to Chinese buyers under US export controls, while exports of its Hopper-based H200 are reviewed on a case-by-case basis and are subject to licensing conditions."
+        },
+        {
+          "fact": "Starting in 2027 Nvidia is expected to devote much of its TSMC capacity to its Rubin data-center platform; customers were told to expect early RTX PRO 5500 samples in December and commercial deliveries from Q1 2027.",
+          "source_url": "https://economictimes.indiatimes.com/tech/technology/bytedance-alibaba-tencent-place-over-35-billion-worth-of-nvidia-chip-orders/articleshow/135066129.cms",
+          "excerpt": "Starting in 2027, Nvidia is expected to devote much of its capacity at Taiwan Semiconductor Manufacturing Co to Rubin... Nvidia has told customers to expect early samples in December, with commercial deliveries beginning in the first quarter of 2027"
+        },
+        {
+          "fact": "An Nvidia spokesperson blamed 'outdated US export controls, which cover gaming products released nearly a half a decade ago, and China's own limit on US imports' for restricting US firms.",
+          "source_url": "https://economictimes.indiatimes.com/tech/technology/bytedance-alibaba-tencent-place-over-35-billion-worth-of-nvidia-chip-orders/articleshow/135066129.cms",
+          "excerpt": "\"US firms continue to be restricted by a combination of outdated US export controls, which cover gaming products released nearly a half a decade ago, and China's own limit on US imports,\" the spokesperson said."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://live.euronext.com/en/financial-news/exclusive-bytedance-alibaba-tencent-place-over-35-billion-worth-nvidia-chip-orders",
+          "outlet": "Reuters (via Euronext)",
+          "title": "Exclusive-ByteDance, Alibaba, Tencent place over $35 billion worth of Nvidia chip orders",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://economictimes.indiatimes.com/tech/technology/bytedance-alibaba-tencent-place-over-35-billion-worth-of-nvidia-chip-orders/articleshow/135066129.cms",
+          "outlet": "The Economic Times (Reuters)",
+          "title": "ByteDance, Alibaba, Tencent place over $35 billion worth of Nvidia chip orders",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.theverge.com/tech/1014223/nvidia-cant-fulfill-chinas-35-billion-chip-demands",
+          "outlet": "The Verge",
+          "title": "Nvidia can't fulfill China's $35 billion chip demands.",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business",
+        "world"
+      ],
+      "entities": {
+        "organizations": [
+          "Nvidia",
+          "ByteDance",
+          "Alibaba",
+          "Tencent",
+          "TSMC",
+          "Reuters"
+        ],
+        "people": [],
+        "places": [
+          "China",
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "nscale-anthropic-second-45b-compute-deal-talks",
+      "headline": "Nscale in talks for second ~$45B compute deal with Anthropic at West Virginia campus",
+      "key_facts": [
+        {
+          "fact": "Nscale is in talks to sell Anthropic computing power in a deal worth about $45 billion, Bloomberg reported on Oct 19, citing people familiar with the negotiations; a deal could be finalized within days but terms could change.",
+          "source_url": "https://www.investing.com/news/stock-market-news/nscale-in-talks-for-45-billion-anthropic-ai-deal-as-ipo-looms-4958181",
+          "excerpt": "Nscale is in talks to secure a computing deal worth about $45 billion with Anthropic, Bloomberg News reported... A deal could be finalized within days, although discussions remain ongoing and terms could change."
+        },
+        {
+          "fact": "The deal would cover a second building at Nscale's Monarch campus in West Virginia, delivering 460 MW of capacity on Nvidia Vera Rubin chips; Anthropic would also get a right of first refusal on a third building.",
+          "source_url": "https://www.investing.com/news/stock-market-news/nscale-in-talks-for-45-billion-anthropic-ai-deal-as-ipo-looms-4958181",
+          "excerpt": "The proposed agreement would cover a second building at Nscale's Monarch data center campus in West Virginia, delivering 460 megawatts of computing capacity powered by Nvidia's next-generation Vera Rubin AI chips... The Claude developer also has a right of first refusal on the campus's anticipated third building"
+        },
+        {
+          "fact": "Anthropic already has infrastructure agreements with Nscale worth as much as $44.6 billion per Nscale's IPO filing; the first deal, signed in August, is a six-year, 460 MW lease at the same campus with delivery from late 2027.",
+          "source_url": "https://aiweekly.co/alerts/nscale-anthropic-in-talks-for-second-45b-west-virginia-deal",
+          "excerpt": "The first contract, signed in August, is a six-year, $45 billion, 460 MW lease at the same campus, with delivery beginning in late 2027."
+        },
+        {
+          "fact": "Nscale is seeking a roughly $30 billion valuation in its planned IPO; some investors have told bankers $16 billion to $19 billion would draw more buyers.",
+          "source_url": "https://aiweekly.co/alerts/nscale-anthropic-in-talks-for-second-45b-west-virginia-deal",
+          "excerpt": "Investors are pushing back on a roughly $30 billion valuation target, with some telling bankers that $16 billion to $19 billion would draw more buyers."
+        },
+        {
+          "fact": "Nscale reported a net loss of $1 billion on revenue of $141 million in the first half of 2026, and its September prospectus disclosed no binding commitments for the funding needed to build the first Anthropic site.",
+          "source_url": "https://www.livemint.com/companies/news/anthropic-eyes-second-45-billion-nscale-deal-as-460mw-ai-data-centre-plans-advance-ahead-of-potential-ipo-11792466448988.html",
+          "excerpt": "It reported a net loss of $1 billion on revenue of $141 million in the first half of 2026... Its September IPO prospectus disclosed that it had no binding commitments for the funding required to construct the site at that point."
+        },
+        {
+          "fact": "Under the arrangement Anthropic would buy computing capacity rather than lease the facility; Nscale would own and operate the data center and chips.",
+          "source_url": "https://www.livemint.com/companies/news/anthropic-eyes-second-45-billion-nscale-deal-as-460mw-ai-data-centre-plans-advance-ahead-of-potential-ipo-11792466448988.html",
+          "excerpt": "Anthropic would purchase computing capacity rather than lease the data centre itself. Under this arrangement, Nscale would own and operate the facility and its chips"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.investing.com/news/stock-market-news/nscale-in-talks-for-45-billion-anthropic-ai-deal-as-ipo-looms-4958181",
+          "outlet": "Investing.com",
+          "title": "Nscale in talks for $45 billion Anthropic AI deal as IPO looms",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.livemint.com/companies/news/anthropic-eyes-second-45-billion-nscale-deal-as-460mw-ai-data-centre-plans-advance-ahead-of-potential-ipo-11792466448988.html",
+          "outlet": "Mint",
+          "title": "Anthropic eyes second $45 billion Nscale deal as 460MW AI data centre plans advance ahead of potential IPO",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://aiweekly.co/alerts/nscale-anthropic-in-talks-for-second-45b-west-virginia-deal",
+          "outlet": "AI Weekly",
+          "title": "Nscale, Anthropic in Talks for Second $45B West Virginia Deal",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business",
+        "finance"
+      ],
+      "entities": {
+        "organizations": [
+          "Nscale",
+          "Anthropic",
+          "Nvidia",
+          "Bloomberg"
+        ],
+        "people": [],
+        "places": [
+          "West Virginia",
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "elice-kosdaq-debut-plunges-33-percent",
+      "headline": "Korean neocloud Elice sinks 33% in Kosdaq debut, worst for a $100M+ Korean IPO",
+      "key_facts": [
+        {
+          "fact": "Elice closed its Oct 20 Kosdaq debut at 60,500 won, down 33.15% from its 90,500-won IPO price, after falling as low as 56,500 won during the session.",
+          "source_url": "https://en.edaily.co.kr/news/eda202610205606/",
+          "excerpt": "Elice, which went public on the 20th, closed trading on the KOSDAQ market at 60,500 won, down 33.15% from its initial public offering (IPO) price of 90,500 won. During the session, the stock fell as low as 56,500 won."
+        },
+        {
+          "fact": "The IPO raised 201 billion won ($151 million), priced at the top of the range, with the retail tranche 400 times subscribed; it was the biggest Kosdaq IPO of 2026.",
+          "source_url": "https://www.businesstimes.com.sg/companies-markets/data-centre-infrastructure-firm-elices-33-plunge-ugly-debut-rekindles-ai-spending-doubts",
+          "excerpt": "the company raised 201 billion won (US$151 million) in an initial public offering priced at the top of the marketed range, with the retail tranche 400 times subscribed... Elice's IPO was the biggest on the Kosdaq in 2026"
+        },
+        {
+          "fact": "Per Bloomberg data, it is the worst first-day performance on record for a Korean IPO that raised at least $100 million, surpassing W-Scope Chungju Plant's 30% drop in 2022.",
+          "source_url": "https://www.businesstimes.com.sg/companies-markets/data-centre-infrastructure-firm-elices-33-plunge-ugly-debut-rekindles-ai-spending-doubts",
+          "excerpt": "if the 33 per cent drop holds, it would become the worst-ever debut after a Korea IPO that raised at least US$100 million, surpassing the 30 per cent plunge by W-Scope Chungju Plant in 2022."
+        },
+        {
+          "fact": "Founded in 2015 by three KAIST doctoral students as a coding-education platform, Elice pivoted to AI cloud infrastructure and built a modular data-center platform with high-density power and liquid cooling; first-half revenue rose 200% to 34.4 billion won.",
+          "source_url": "https://www.businesstimes.com.sg/companies-markets/data-centre-infrastructure-firm-elices-33-plunge-ugly-debut-rekindles-ai-spending-doubts",
+          "excerpt": "Founded in 2015 by three students in the doctorate program of Kaist... Elice began as a coding education platform before pivoting to AI cloud infrastructure... Elice touted a 200 per cent surge in first-half revenue to 34.4 billion won"
+        },
+        {
+          "fact": "The IPO valued Elice at roughly $755 million; the KOSPI fell almost 4% to 5,552 the same day, with SK Hynix down about 4%.",
+          "source_url": "https://www.siliconreport.com/elice-drops-over-30-on-seoul-market-debut",
+          "excerpt": "Elice raised $151 million in its initial public offering at a valuation of roughly $755 million... The benchmark KOSPI index dropped almost 4% to finish at 5,552, weighed down by losses of around 3% for Samsung Electronics and roughly 4% for memory chipmaker SK Hynix."
+        },
+        {
+          "fact": "Reuters likened South Korea's market to a 'canary in a coal mine' for the AI investment boom; Bloomberg noted Australia's Permagrid withdrew its IPO and AirTrunk is postponing its listing.",
+          "source_url": "https://en.edaily.co.kr/news/eda202610205606/",
+          "excerpt": "Reuters highlighted Ellis's plunge and likened the South Korean stock market to a \"canary in a coal mine.\"... Australia's Permagrid withdrew its planned IPO due to concerns over its valuation. Data center operator AirTrunk is postponing its listing plans"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.businesstimes.com.sg/companies-markets/data-centre-infrastructure-firm-elices-33-plunge-ugly-debut-rekindles-ai-spending-doubts",
+          "outlet": "The Business Times (Bloomberg)",
+          "title": "Data centre infrastructure firm Elice's 33% plunge in 'ugly debut' rekindles AI spending doubts",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://en.edaily.co.kr/news/eda202610205606/",
+          "outlet": "Edaily",
+          "title": "Ellis Plummets, Drawing Attention from Foreign Media… \"South Korean Stock Market Is the 'Canary in the AI Coal Mine'\"",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.siliconreport.com/elice-drops-over-30-on-seoul-market-debut",
+          "outlet": "SiliconReport",
+          "title": "Elice drops over 30% on Seoul market debut",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "finance",
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Elice",
+          "Kosdaq",
+          "CoreWeave",
+          "SK Hynix",
+          "Samsung Electronics",
+          "Mirae Asset Securities",
+          "Samsung Securities",
+          "Permagrid",
+          "AirTrunk"
+        ],
+        "people": [],
+        "places": [
+          "South Korea",
+          "Seoul"
+        ]
+      }
+    },
+    {
+      "id": "eka-robotics-150m-series-a-1-45b-valuation",
+      "headline": "Eka Robotics raises $150M Series A at $1.45B for force-sensing robot manipulation",
+      "key_facts": [
+        {
+          "fact": "Eka Robotics closed a $150 million Series A at a $1.45 billion post-money valuation, co-led by a16z and F-Prime, announced Oct 20.",
+          "source_url": "https://techcrunch.com/2026/10/20/eka-is-worth-1-45-billion-thanks-to-a-physical-ai-model-that-has-experts-raving/",
+          "excerpt": "the startup just closed an $150 million Series A round that values it at $1.45 billion post-money, led by venture funds a16z and F-Prime."
+        },
+        {
+          "fact": "Eka was founded by MIT professor Pulkit Agrawal and former Google DeepMind researcher Tuomas Haarnoja.",
+          "source_url": "https://techcrunch.com/2026/10/20/eka-is-worth-1-45-billion-thanks-to-a-physical-ai-model-that-has-experts-raving/",
+          "excerpt": "Founded by MIT professor Pulkit Agrawal and former Google DeepMind researcher Tuomas Haarnoja"
+        },
+        {
+          "fact": "Instead of a vision-language-action model, Eka uses a 'vision-force-action' model paired with a force-sensitive gripper, trained via reinforcement learning in physics simulation rather than human demonstration data.",
+          "source_url": "https://techcrunch.com/2026/10/20/eka-is-worth-1-45-billion-thanks-to-a-physical-ai-model-that-has-experts-raving/",
+          "excerpt": "Rather than a vision-language-action model... the schema here is a vision-force-action model... it comes down to using a physics simulator to model the multiple forces the robot will encounter"
+        },
+        {
+          "fact": "The robot can pick about 1,500 objects weighing up to 1 kg per hour, versus about 600 for a human, with more than 95% reliability, according to the company.",
+          "source_url": "https://techcrunch.com/2026/10/20/eka-is-worth-1-45-billion-thanks-to-a-physical-ai-model-that-has-experts-raving/",
+          "excerpt": "It can pick up about 1,500 objects that weigh up to 1 kg in an hour, compared to about 600 for a human; Eka says it reliably picks up objects more than 95% of the time."
+        },
+        {
+          "fact": "Eka's gripper costs less than $1,000 and is rated for 5 million duty cycles, short of the 20 million set by standard industrial arms; it is running pilots with industrial customers in pick-and-place and wire handling.",
+          "source_url": "https://techcrunch.com/2026/10/20/eka-is-worth-1-45-billion-thanks-to-a-physical-ai-model-that-has-experts-raving/",
+          "excerpt": "Eka's gripper hardware — which costs less than $1,000 — is rated for 5 million duty cycles, but the ultimate goal is to hit the 20 million cycle bar set by standard industrial arms."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/10/20/eka-is-worth-1-45-billion-thanks-to-a-physical-ai-model-that-has-experts-raving/",
+          "outlet": "TechCrunch",
+          "title": "Eka is worth $1.45B thanks to a physical AI model that has experts raving",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://ekarobotics.com/",
+          "outlet": "Eka Robotics",
+          "title": "The Era of Superhuman Robotics is at Hand",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "blog_post"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Eka Robotics",
+          "a16z",
+          "F-Prime",
+          "MIT",
+          "Google DeepMind"
+        ],
+        "people": [
+          "Pulkit Agrawal",
+          "Tuomas Haarnoja",
+          "Raghu Raguram"
+        ],
+        "places": [
+          "Cambridge, Massachusetts"
+        ]
+      }
+    },
+    {
+      "id": "deepseek-huawei-co-design-ascend-chips",
+      "headline": "DeepSeek co-designing Huawei AI chips, plans Ascend 950DT pre-training by end-2026",
+      "key_facts": [
+        {
+          "fact": "DeepSeek is working closely with Huawei to shape the design of future AI chips, two people familiar with the matter told The Information on Oct 19.",
+          "source_url": "https://www.theinformation.com/articles/deepseek-shaping-huaweis-ai-chips-growing-challenge-nvidia",
+          "excerpt": "DeepSeek is working closely with Huawei Technologies to shape the design of future AI chips, two people familiar with the matter said, in a collaboration that could help China build frontier AI models without Nvidia's technology."
+        },
+        {
+          "fact": "Huawei engineers are stationed at DeepSeek's offices, incorporating its feedback into chip designs, including how models perform calculations and move data between processors.",
+          "source_url": "https://finance.yahoo.com/technology/ai/articles/deepseek-teams-huawei-challenge-nvidia-183703468.html",
+          "excerpt": "Huawei engineers have been stationed at DeepSeek's offices, incorporating its feedback into chip designs, including how AI models perform calculations and transfer data between processors"
+        },
+        {
+          "fact": "DeepSeek plans to begin training on Huawei's Ascend 950DT as soon as end-2026, and Huawei plans to prioritize DeepSeek for most of its next-generation Ascend 960DT chips, expected in Q1 2027.",
+          "source_url": "https://finance.yahoo.com/technology/ai/articles/deepseek-teams-huawei-challenge-nvidia-183703468.html",
+          "excerpt": "DeepSeek plans to begin using Huawei's Ascend 950DT chips for model training as soon as the end of 2026. Huawei also plans to prioritize DeepSeek for most of its next-generation Ascend 960DT chips, expected in the first quarter of 2027."
+        },
+        {
+          "fact": "Nvidia's B300 delivers roughly seven times the raw arithmetic performance of Huawei's Ascend 950, per Epoch AI; training a frontier model could require more than 10,000 Huawei chips running together for weeks.",
+          "source_url": "https://finance.yahoo.com/technology/ai/articles/deepseek-teams-huawei-challenge-nvidia-183703468.html",
+          "excerpt": "Nvidia's B300 chips deliver roughly seven times the raw arithmetic performance of Huawei's Ascend 950 processors, according to research institute Epoch AI. Training a frontier model could require more than 10,000 Huawei chips operating together for weeks"
+        },
+        {
+          "fact": "Huawei plans to launch the 950DT in Q4 2026 with 144GB of its own HiZQ 2.0 HBM and 4 TB/s of memory bandwidth.",
+          "source_url": "https://aiweekly.co/alerts/deepseek-to-pre-train-on-huawei-ascend-950dt-by-end-of-2026",
+          "excerpt": "Huawei plans to launch the 950DT in the fourth quarter of 2026 with 144GB of its own HiZQ 2.0 HBM and 4 TB/s of memory bandwidth"
+        },
+        {
+          "fact": "DeepSeek is not abandoning Nvidia and continues to seek access to its advanced processors; it also uses TileLang, an open-source language that eases porting across chip architectures, released for Ascend 950 last month.",
+          "source_url": "https://finance.yahoo.com/technology/ai/articles/deepseek-teams-huawei-challenge-nvidia-183703468.html",
+          "excerpt": "DeepSeek is also using TileLang, an open-source programming language that can help developers adapt AI software across chip architectures... DeepSeek is not abandoning Nvidia and continues to seek access to its advanced processors"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.theinformation.com/articles/deepseek-shaping-huaweis-ai-chips-growing-challenge-nvidia",
+          "outlet": "The Information",
+          "title": "How DeepSeek Is Shaping Huawei's AI Chips in a Growing Challenge to Nvidia",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://finance.yahoo.com/technology/ai/articles/deepseek-teams-huawei-challenge-nvidia-183703468.html",
+          "outlet": "Yahoo Finance (Investing.com)",
+          "title": "DeepSeek teams up with Huawei to challenge Nvidia",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://aiweekly.co/alerts/deepseek-to-pre-train-on-huawei-ascend-950dt-by-end-of-2026",
+          "outlet": "AI Weekly",
+          "title": "DeepSeek to pre-train on Huawei Ascend 950DT by end of 2026",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "world"
+      ],
+      "entities": {
+        "organizations": [
+          "DeepSeek",
+          "Huawei",
+          "Nvidia",
+          "Epoch AI",
+          "The Information"
+        ],
+        "people": [],
+        "places": [
+          "China"
+        ]
+      }
+    },
+    {
+      "id": "meta-details-prometheus-gigawatt-supercluster",
+      "headline": "Meta details Prometheus, its Ohio supercluster headed to ~1M GPUs, with reliability data",
+      "key_facts": [
+        {
+          "fact": "In an engineering post on Oct 19, Meta said the first phase of Prometheus, its gigawatt-scale supercluster in New Albany, Ohio, is complete and trained the Muse family of models, including Muse Wonder.",
+          "source_url": "https://dealroom.co/news/164242-inside-prometheus-meta-trained-muse-wonder-on-phase-one-of-its-gigawatt/",
+          "excerpt": "Meta has published a detailed look at Prometheus, its gigawatt-scale AI supercluster in New Albany, Ohio. The first phase is complete and was used to train the Muse family of foundation models, including the Muse Wonder frontier models."
+        },
+        {
+          "fact": "Prometheus today spans hundreds of thousands of GPUs across multiple buildings, including rapid-deployment structures and leased capacity, and will reach roughly 1 million GPUs at full scale.",
+          "source_url": "https://madrobot.blog/2026/10/19/meta-prometheus-supercluster-1-million-gpus-ohio-gigawatt-muse/",
+          "excerpt": "Prometheus spans \"hundreds of thousands of GPUs\" across several buildings... At full scale it will hold \"roughly 1 million distributed GPUs, all functioning in lockstep\"."
+        },
+        {
+          "fact": "The cluster runs Nvidia GB200 NVL72 (Catalina) and GB300 NVL72 (Clemente) racks, with Vera Rubin NVL72 (San Miguel) racks of over 170 kW, fully liquid-cooled, arriving next; each 72-GPU rack trains on 64 GPUs and keeps 8 as spares.",
+          "source_url": "https://dealroom.co/news/164242-inside-prometheus-meta-trained-muse-wonder-on-phase-one-of-its-gigawatt/",
+          "excerpt": "Prometheus runs two NVIDIA platforms: Catalina, built on GB200 NVL72... and Clemente, built on GB300 NVL72... A third, San Miguel, based on NVIDIA's Vera Rubin NVL72 with fully liquid-cooled racks of over 170 kW, is arriving next. Each 72-GPU domain trains on a 64-GPU slice and keeps eight GPUs as in-rack spares"
+        },
+        {
+          "fact": "Interruptions peaked at nearly 1,000 a day per 8,000 GPUs when the cluster came online in mid-2025; a year of work cut that by 99%, and Muse Wonder pre-training ran above 85% goodput with ~47,000 GPU hours between interruptions, since raised above 54,000.",
+          "source_url": "https://madrobot.blog/2026/10/19/meta-prometheus-supercluster-1-million-gpus-ohio-gigawatt-muse/",
+          "excerpt": "When Prometheus first came online in mid-2025, Meta says interruptions peaked at nearly 1,000 a day for every 8,000 GPUs. A year of work... cut that by 99%... more than 85% \"goodput\" for pre-training... about 47,000 GPU hours between interruptions, since raised to over 54,000."
+        },
+        {
+          "fact": "Synchronized GPU workloads cause 30-40% power swings; Meta manages them with software called Dynamo Dimmer plus rack batteries and site-level storage.",
+          "source_url": "https://madrobot.blog/2026/10/19/meta-prometheus-supercluster-1-million-gpus-ohio-gigawatt-muse/",
+          "excerpt": "Prometheus produces power swings of 30% to 40%... Meta handles this with software called Dynamo Dimmer, which gradually lowers GPU power limits as the cluster nears its electrical ceiling... backed by rack batteries, capacitor trays and site-level battery storage."
+        },
+        {
+          "fact": "Prometheus is the blueprint for Hyperion, Meta's next supercluster in Richland Parish, Louisiana, designed with closed-loop liquid cooling and a full grid connection through Entergy paid for by Meta.",
+          "source_url": "https://dealroom.co/news/164242-inside-prometheus-meta-trained-muse-wonder-on-phase-one-of-its-gigawatt/",
+          "excerpt": "Prometheus is the blueprint for Hyperion, Meta's next supercluster in Richland Parish, Louisiana, which is being designed with closed-loop liquid cooling and a full grid connection through utility Entergy, paid for by Meta."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://engineering.fb.com/2026/10/19/data-center-engineering/inside-prometheus-meta-gigawatt-scale-supercluster/",
+          "outlet": "Engineering at Meta",
+          "title": "Inside Prometheus: Meta's Journey to a Gigawatt-Scale Supercluster",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://madrobot.blog/2026/10/19/meta-prometheus-supercluster-1-million-gpus-ohio-gigawatt-muse/",
+          "outlet": "Mad Robot",
+          "title": "Meta Prometheus: inside its million-GPU AI supercluster in Ohio",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://dealroom.co/news/164242-inside-prometheus-meta-trained-muse-wonder-on-phase-one-of-its-gigawatt/",
+          "outlet": "Dealroom News",
+          "title": "Inside Prometheus: Meta trained Muse Wonder on phase one of its gigawatt Ohio supercluster, now scaling towards ~1M GPUs",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Meta",
+          "Nvidia",
+          "Meta Superintelligence Labs",
+          "Entergy"
+        ],
+        "people": [],
+        "places": [
+          "New Albany, Ohio",
+          "Richland Parish, Louisiana"
+        ]
+      }
+    },
+    {
+      "id": "amazon-16b-euro-germany-2027-data-centers",
+      "headline": "Amazon pledges €16B+ in Germany for 2027, including €4.8B for AWS data centers",
+      "key_facts": [
+        {
+          "fact": "Amazon said on Oct 20 at the federal government's Invest in Germany Summit in Berlin that it plans to invest more than €16 billion in Germany in 2027.",
+          "source_url": "https://press.aboutamazon.com/de/2026/10/invest-in-germany-summit-amazon-announces-16-billion-euro-investment-in-germany-in-2027",
+          "excerpt": "Amazon plans to invest more than 16 billion euros in Germany in 2027... The company made this announcement on Tuesday at the \"Invest in Germany Summit\", held by the Federal Government in Berlin."
+        },
+        {
+          "fact": "Of the total, €4.8 billion is planned in 2027 to expand the AWS Europe (Frankfurt) Region for cloud and AI services.",
+          "source_url": "https://press.aboutamazon.com/de/2026/10/invest-in-germany-summit-amazon-announces-16-billion-euro-investment-in-germany-in-2027",
+          "excerpt": "the company plans to invest 4.8 billion euros in 2027 to expand its AWS Europe (Frankfurt) Region, continuing to meet customer demand for advanced cloud and AI services."
+        },
+        {
+          "fact": "Amazon is opening a second robotics and AI research lab in Berlin, doubling its research presence there, hiring robotics hardware, software and systems engineers.",
+          "source_url": "https://press.aboutamazon.com/de/2026/10/invest-in-germany-summit-amazon-announces-16-billion-euro-investment-in-germany-in-2027",
+          "excerpt": "Amazon is currently opening a second research lab for robotics and artificial intelligence in Berlin, doubling its research presence in the capital... including Applied Scientists, Robotics Hardware Engineers, Robotics Software Engineers, and Robotics Systems Engineers."
+        },
+        {
+          "fact": "The package also covers Amazon Leo satellite internet, logistics expansion and new Prime Video productions; Amazon says it has invested over €100 billion in Germany since 2010.",
+          "source_url": "https://www.aboutamazon.com/company-news/amazon-germany-investment",
+          "excerpt": "These include the expansion of data centers and AI infrastructure, high-speed satellite internet through Amazon Leo, new logistics projects across the country, and a major new production slate by Prime Video... since 2010, Amazon has invested over €100 billion in Germany"
+        },
+        {
+          "fact": "Economy minister Katherina Reiche called the investment 'a clear vote of confidence in Germany', saying high-performance data centers are 'the foundation of the digital economy'.",
+          "source_url": "https://www.aboutamazon.com/company-news/amazon-germany-investment",
+          "excerpt": "\"Amazon's investment is a clear vote of confidence in Germany as a location for the future. High-performance data centers are the foundation of the digital economy.\""
+        },
+        {
+          "fact": "Amazon has not disclosed the cost of the new Berlin robotics lab.",
+          "source_url": "https://thenextweb.com/news/amazon-plans-to-make-a-e16bn-investment-in-germany-in-2027",
+          "excerpt": "Amazon is also opening a second robotics and AI research lab in Berlin, doubling its research presence in the city, but it has not disclosed the cost of the new facility."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://press.aboutamazon.com/de/2026/10/invest-in-germany-summit-amazon-announces-16-billion-euro-investment-in-germany-in-2027",
+          "outlet": "Amazon Press Center",
+          "title": "\"Invest in Germany Summit\": Amazon Announces 16 Billion Euro Investment in Germany in 2027",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.aboutamazon.com/company-news/amazon-germany-investment",
+          "outlet": "About Amazon",
+          "title": "Amazon to invest €16 billion in Germany in 2027",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://thenextweb.com/news/amazon-plans-to-make-a-e16bn-investment-in-germany-in-2027",
+          "outlet": "The Next Web",
+          "title": "Amazon plans to make a €16bn investment in Germany in 2027",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business",
+        "economy"
+      ],
+      "entities": {
+        "organizations": [
+          "Amazon",
+          "AWS",
+          "Amazon Leo",
+          "Prime Video"
+        ],
+        "people": [
+          "David Zapolsky",
+          "Katherina Reiche",
+          "Friedrich Merz",
+          "Rocco Bräuniger"
+        ],
+        "places": [
+          "Germany",
+          "Berlin",
+          "Frankfurt"
+        ]
+      }
+    },
+    {
+      "id": "irgc-mines-two-more-tankers-hormuz-mq9",
+      "headline": "Iran's IRGC says mines set two more tankers ablaze near Hormuz, claims US MQ-9 downed",
+      "key_facts": [
+        {
+          "fact": "On Tuesday, October 20, Iran's Revolutionary Guards said two oil tankers were set ablaze and halted after hitting IRGC naval mines at what Tehran calls an illegal crossing point in the southern part of the Strait of Hormuz.",
+          "source_url": "https://www.ndtv.com/world-news/iran-guards-say-2-violating-oil-tankers-set-ablaze-in-strait-of-hormuz-12210436",
+          "excerpt": "\"Two violating oil tankers were set ablaze and halted due to the explosion of mines planted by the brave sailors of the IRGC Navy at an illegal crossing point in the southern part of the Strait of Hormuz,\" the Guards said in a statement published on their official Sepah News website."
+        },
+        {
+          "fact": "Iran International reported the IRGC Navy said the two tankers hit mines on Monday night (October 19), did not identify the vessels or report casualties, and warned that ships crossing the mined passage could be set ablaze.",
+          "source_url": "https://www.iranintl.com/en/liveblog/202610187555",
+          "excerpt": "Iran's IRGC Navy said on Tuesday that two oil tankers caught fire after hitting naval mines in a passage south of the Strait of Hormuz on Monday night, and were stopped... It warned that ships crossing the mined passage could be set ablaze, but did not identify the tankers or report any casualties."
+        },
+        {
+          "fact": "The Guards also said they shot down a US MQ-9 Reaper drone; this came a day after the IRGC said another tanker caught fire after hitting a mine, and two days after it said two other tankers had hit mines.",
+          "source_url": "https://www.ndtv.com/world-news/iran-guards-say-2-violating-oil-tankers-set-ablaze-in-strait-of-hormuz-12210436",
+          "excerpt": "The Revolutionary Guards also said they had shot down a US MQ-9 Reaper drone. On Monday, the Guards said a tanker caught fire after hitting a mine, while the day before it said two other tankers had hit mines."
+        },
+        {
+          "fact": "US Central Command chief Adm. Brad Cooper said the strait is controlled by the US and regional partners and 'remains open for business,' citing about 400 merchant ship transits in the previous week.",
+          "source_url": "https://gulfnews.com/uae/us-israel-iran-war-lull-nears-breaking-point-us-israel-weighing-new-strikes-what-to-know-oct-20-2026-1.500716736",
+          "excerpt": "CentCom chief Adm. Brad Cooper said in a video message the Strait of Hormuz \"is controlled by the United States and our regional partners, not Iran, and it remains open for business.\" He added about 400 merchant ships transited the strait in the previous week"
+        },
+        {
+          "fact": "Reuters reported on October 20, citing three senior Iranian officials and an insider, that Iran is deliberately prolonging talks with Washington to weaken Trump before the November 3 midterm elections while preparing for renewed US and Israeli strikes.",
+          "source_url": "https://www.iranintl.com/en/liveblog/202610187555",
+          "excerpt": "Iran has deliberately prolonged talks with the United States in an effort to weaken President Donald Trump politically before the November 3 midterm elections, Reuters reported on Tuesday, citing three senior Iranian officials and an Iranian insider. One unnamed Iranian official told Reuters: \"Iran is preparing for renewed Israeli and US attacks, not for a deal with America to end the war.\""
+        },
+        {
+          "fact": "Pakistan's army chief, Field Marshal Asim Munir, a key US-Iran mediator this year, arrived in Tehran on Tuesday to meet senior Iranian officials amid stalled talks.",
+          "source_url": "https://www.geo.tv/liveblog/israeliran-war-live-updates?12345=",
+          "excerpt": "Chief of Defence Forces (CDF) Field Marshal Asim Munir arrived in Tehran on Tuesday to meet senior Iranian officials... Pakistan has played a key mediating role between the US and Iran this year."
+        },
+        {
+          "fact": "Brent crude stood above $109.8 a barrel on Tuesday (Beijing midday) and WTI at $98.71, as Iran war risks offset hopes for more Russian supply.",
+          "source_url": "https://gulfnews.com/uae/us-israel-iran-war-lull-nears-breaking-point-us-israel-weighing-new-strikes-what-to-know-oct-20-2026-1.500716736",
+          "excerpt": "Brent oil remains above $109.8 per barrel (slightly up 0.26%) as of Tuesday (12.50pm Beijing on Tuesday, October 20, 2026), as Iran war risks offset hopes for more Russian supply. WTI crude stood at $98.71 per barrel"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.ndtv.com/world-news/iran-guards-say-2-violating-oil-tankers-set-ablaze-in-strait-of-hormuz-12210436",
+          "outlet": "NDTV (AFP)",
+          "title": "Iran Guards Say 2 \"Violating\" Oil Tankers Set Ablaze In Strait Of Hormuz",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.iranintl.com/en/liveblog/202610187555",
+          "outlet": "Iran International",
+          "title": "Live - IRGC threatens undersea internet cables in Strait of Hormuz",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://gulfnews.com/uae/us-israel-iran-war-lull-nears-breaking-point-us-israel-weighing-new-strikes-what-to-know-oct-20-2026-1.500716736",
+          "outlet": "Gulf News",
+          "title": "US-Israel-Iran war: Lull nears 'breaking point' — US, Israel weighing new strikes? What to know Oct. 20, 2026",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.geo.tv/liveblog/israeliran-war-live-updates?12345=",
+          "outlet": "Geo News (Reuters)",
+          "title": "US-IRAN CONFLICT: WAR AND DIPLOMACY",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.aljazeera.com/news/liveblog/2026/10/20/draft-3",
+          "outlet": "Al Jazeera",
+          "title": "Iran war live: 2 tankers on fire in Hormuz; air strikes target Houthis",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "world",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "Islamic Revolutionary Guard Corps",
+          "US Central Command",
+          "Reuters"
+        ],
+        "people": [
+          "Brad Cooper",
+          "Asim Munir",
+          "Donald Trump"
+        ],
+        "places": [
+          "Strait of Hormuz",
+          "Iran",
+          "Tehran",
+          "Pakistan",
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "uk-raf-typhoons-defend-saudi-arabia-houthis",
+      "headline": "UK sends RAF Typhoon jets to defend Saudi Arabia from escalating Houthi attacks",
+      "key_facts": [
+        {
+          "fact": "On October 20, the UK Ministry of Defence announced RAF Typhoon fighter jets will fly defensive counter-air missions to protect Saudi cities and critical national infrastructure from aerial attack, and will not conduct offensive strikes against the Houthis.",
+          "source_url": "https://www.gov.uk/government/news/operational-update-20-october-uk-military-support-to-the-kingdom-of-saudi-arabia",
+          "excerpt": "The UK will fly defensive counter air missions to support the protection of Saudi cities and critical national infrastructure against aerial attack, using RAF Typhoon fighter jets. These aircraft will operate in a defensive role and will not conduct offensive strikes against the Houthis."
+        },
+        {
+          "fact": "The UK will also provide an RAF A400M transport aircraft, military advisers to Saudi staff officers, and an extension of air-to-air refuelling support for Saudi air operations, including those to degrade Houthi targets in Yemen.",
+          "source_url": "https://www.gov.uk/government/news/operational-update-20-october-uk-military-support-to-the-kingdom-of-saudi-arabia",
+          "excerpt": "The UK will provide an RAF A400M to support the movement of defence materiel within Saudi Arabia, alongside UK military advisers to support Saudi staff officers... It also includes an extension of air-to-air refuelling support for Saudi defensive air operations including to degrade Houthi military targets in Yemen"
+        },
+        {
+          "fact": "Defence Secretary Wes Streeting called the Houthi attacks on Saudi Arabia 'absolutely despicable', citing the targeting of Riyadh's airport.",
+          "source_url": "https://www.gov.uk/government/news/operational-update-20-october-uk-military-support-to-the-kingdom-of-saudi-arabia",
+          "excerpt": "The continuing attacks from the Houthis on our ally Saudi Arabia are absolutely despicable. The targeting of the airport in Riyadh in particular shows the lengths the Houthis are going to escalate the situation in the region."
+        },
+        {
+          "fact": "The support follows a request from the Saudi government and expands a September package that included an RAF Voyager refuelling aircraft but no fighter jets.",
+          "source_url": "https://cyprus-mail.com/2026/10/20/britain-says-it-will-carry-out-defensive-air-missions-over-saudi-arabia",
+          "excerpt": "The additional support follows a request from Saudi Arabia's government, which Prime Minister Andy Burnham said earlier this month Britain was prepared to consider. Britain will also deploy an Atlas A400M transport aircraft and military advisers, expanding assistance announced in September which included an RAF Voyager air-to-air refuelling aircraft but not fighter jets."
+        },
+        {
+          "fact": "Houthi strikes on Riyadh's airport have killed more than a dozen people in October, and Yemeni authorities said on Monday a Houthi strike on a government security forces training camp killed 58 people.",
+          "source_url": "https://www.thenationalnews.com/news/uk/2026/10/20/uk-mission-to-defend-saudi-arabia-adds-typhoon-jets/",
+          "excerpt": "Houthi attacks have intensified in Saudi Arabia in recent weeks, with Yemen authorities saying on Monday that a strike on a government security forces training camp had killed 58 people. Strikes on Riyadh's airport have killed more than a dozen people and disrupted flights in October"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.gov.uk/government/news/operational-update-20-october-uk-military-support-to-the-kingdom-of-saudi-arabia",
+          "outlet": "GOV.UK (Ministry of Defence)",
+          "title": "Operational update 20 October – UK military support to the Kingdom of Saudi Arabia",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://cyprus-mail.com/2026/10/20/britain-says-it-will-carry-out-defensive-air-missions-over-saudi-arabia",
+          "outlet": "Cyprus Mail (Reuters)",
+          "title": "Britain says it will carry out defensive air missions over Saudi Arabia",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.thenationalnews.com/news/uk/2026/10/20/uk-mission-to-defend-saudi-arabia-adds-typhoon-jets/",
+          "outlet": "The National",
+          "title": "UK mission to defend Saudi Arabia adds Typhoon jets",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/10/20/uk-to-deploy-raf-fighter-jets-to-defend-saudi-arabia-from-houthi-attacks",
+          "outlet": "Al Jazeera",
+          "title": "UK to deploy Typhoon jets to help defend Saudi Arabia from Houthi attacks",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "world",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "UK Ministry of Defence",
+          "Royal Air Force",
+          "Houthis"
+        ],
+        "people": [
+          "Wes Streeting",
+          "Andy Burnham"
+        ],
+        "places": [
+          "United Kingdom",
+          "Saudi Arabia",
+          "Yemen",
+          "Riyadh"
+        ]
+      }
+    },
+    {
+      "id": "japan-mmx-launch-phobos-sample-return",
+      "headline": "Japan launches MMX, first mission aiming to bring back samples from Mars' moon Phobos",
+      "key_facts": [
+        {
+          "fact": "JAXA's Martian Moons eXploration (MMX) spacecraft launched on October 19 at 3:41 p.m. EDT (19:41 GMT) on an H3 rocket from Tanegashima Space Center, the 10th H3 flight.",
+          "source_url": "https://www.space.com/space-exploration/launches-spacecraft/japan-launches-historic-mmx-sample-return-mission-to-mars-moon-phobos",
+          "excerpt": "The Martian Moons eXploration (MMX) mission launched today (Oct. 19) from Tanegashima Space Center in Japan, riding an H3 rocket that lifted off ... at 3:41 p.m. EDT (1941 GMT; 4:41 a.m. local time in Japan on Oct. 20). It was the 10th liftoff of Japan's expendable, two-stage H3 rocket"
+        },
+        {
+          "fact": "JAXA confirmed the probe separated from the rocket over an hour after liftoff and was 'beginning its journey towards the Martian system'; arrival near Mars is expected around August 2027.",
+          "source_url": "https://www.nst.com.my/world/world/2026/10/1559338/japan-successfully-launches-probe-historic-mars-moon-mission",
+          "excerpt": "Over an hour later, JAXA announced during the livestream that the probe had successfully separated from the H3 and was \"beginning its journey towards the Martian system\". The spacecraft is due to arrive near Mars around August next year"
+        },
+        {
+          "fact": "MMX plans two touchdowns on Phobos to collect at least 10 grams of soil, with the sample capsule due to land in Australia in 2031; it would be the first sample return from a Martian moon.",
+          "source_url": "https://www.space.com/space-exploration/launches-spacecraft/japan-launches-historic-mmx-sample-return-mission-to-mars-moon-phobos",
+          "excerpt": "MMX will perform two separate touchdowns on Phobos to collect and stow samples in the spacecraft's return capsule... If all goes according to plan, the MMX sample-return capsule will land in Australia in 2031."
+        },
+        {
+          "fact": "The spacecraft carries the German-French Idefix rover (DLR and CNES), set to land on Phobos around the turn of 2028/2029 and become the first rover to drive on a Martian moon, exploring for about 100 days.",
+          "source_url": "https://www.dlr.de/en/latest/news/2026/mmx-mission-successfully-launched-idefix-rover-is-on-its-way-to-martian-moon-phobos",
+          "excerpt": "The Idefix rover, developed jointly by DLR and CNES, is scheduled to land on Mars' moon Phobos around the turn of the year 2028/2029 and explore it for approximately 100 days."
+        },
+        {
+          "fact": "NASA has invested about $87 million through the end of the mission and will receive at least 15% of the planned 10-gram Phobos sample; it contributed the MEGANE spectrometer and a Honeybee Robotics pneumatic sampler.",
+          "source_url": "https://www.space.com/space-exploration/launches-spacecraft/japan-launches-historic-mmx-sample-return-mission-to-mars-moon-phobos",
+          "excerpt": "NASA has also invested approximately $87 million through the end of the mission... At least 15% of the planned 10-gram (0.35 ounces) returned Phobos sample will be reserved for NASA's study."
+        },
+        {
+          "fact": "China's Tianwen-3 is scheduled to launch around 2028 and aims to return Mars samples as early as 2031, potentially before the Japanese mission.",
+          "source_url": "https://www.nst.com.my/world/world/2026/10/1559338/japan-successfully-launches-probe-historic-mars-moon-mission",
+          "excerpt": "China's Tianwen-3 spacecraft is scheduled for launch around 2028 and aims to return Mars samples to Earth as early as 2031 — potentially before the Japanese mission's return."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.space.com/space-exploration/launches-spacecraft/japan-launches-historic-mmx-sample-return-mission-to-mars-moon-phobos",
+          "outlet": "Space.com",
+          "title": "Japan launches historic MMX sample-return mission to Mars' moon Phobos (video)",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.dlr.de/en/latest/news/2026/mmx-mission-successfully-launched-idefix-rover-is-on-its-way-to-martian-moon-phobos",
+          "outlet": "DLR",
+          "title": "MMX mission successfully launched – Idefix rover on its way to Martian moon Phobos",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.nst.com.my/world/world/2026/10/1559338/japan-successfully-launches-probe-historic-mars-moon-mission",
+          "outlet": "New Straits Times (AFP)",
+          "title": "Japan successfully launches probe in historic Mars moon mission",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://apnews.com/article/japan-mars-moon-mission-fb51fbbf90374631e8ae658f9ca46154",
+          "outlet": "AP News",
+          "title": "Japan launches spacecraft to explore Martian moons and bring home soil",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "science",
+        "world"
+      ],
+      "entities": {
+        "organizations": [
+          "JAXA",
+          "NASA",
+          "DLR",
+          "CNES",
+          "Mitsubishi Heavy Industries",
+          "Honeybee Robotics"
+        ],
+        "people": [],
+        "places": [
+          "Japan",
+          "Tanegashima Space Center",
+          "Mars",
+          "Phobos",
+          "Deimos",
+          "Australia"
+        ]
+      }
+    },
+    {
+      "id": "fda-approves-gsk-jemperli-rectal-cancer",
+      "headline": "FDA approves GSK's Jemperli as first immunotherapy for some locally advanced rectal cancers",
+      "key_facts": [
+        {
+          "fact": "On October 19, the FDA granted accelerated approval to GSK's Jemperli (dostarlimab) alone for adults with previously untreated stage II or III locally advanced rectal cancer whose tumors are mismatch repair deficient (dMMR) or microsatellite instability-high (MSI-H).",
+          "source_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-immunotherapy-may-allow-certain-patients-rectal-cancer-avoid-chemotherapy-radiation-and",
+          "excerpt": "Today's approval is for Jemperli used alone in adults with previously untreated stage II or stage III locally advanced rectal cancer... patients' tumors must be mismatch repair deficient (dMMR) or microsatellite instability-high (MSI-H), as determined by an FDA-authorized test."
+        },
+        {
+          "fact": "In the 154-patient phase 2 AZUR-1 trial, after median follow-up of more than two years almost three-fourths of patients had not needed surgery, radiotherapy or chemotherapy.",
+          "source_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-immunotherapy-may-allow-certain-patients-rectal-cancer-avoid-chemotherapy-radiation-and",
+          "excerpt": "The FDA based its decision on interim results from AZUR-1... in 154 patients... After a median follow-up of more than 2 years... almost three-fourths of patients had not needed surgery, radiotherapy or chemotherapy."
+        },
+        {
+          "fact": "GSK said 68% of evaluable patients achieved a sustained clinical complete response at 12 months by investigator assessment (47% by independent central review, data still maturing), with no recurrences among responders to date.",
+          "source_url": "https://us.gsk.com/en-us/media/press-releases/jemperli-dostarlimab-gxly-approved-in-us-as-first-and-only-immunotherapy-for-adults-with-msi-hdmmr-locally-advanced-rectal-cancer/",
+          "excerpt": "Investigator-assessed data... showed 68% of evaluable patients (98/144...) achieved cCR12... 47% (54/116)... of evaluable patients have achieved cCR12... No disease recurrences have been reported among responders to date, after a median follow up of more than two years."
+        },
+        {
+          "fact": "The MSI-H/dMMR biomarker is found in around 5-10% of rectal cancers; standard treatment of chemotherapy, radiation and surgery can cause lasting bowel, urinary and sexual dysfunction and infertility.",
+          "source_url": "https://us.gsk.com/en-us/media/press-releases/jemperli-dostarlimab-gxly-approved-in-us-as-first-and-only-immunotherapy-for-adults-with-msi-hdmmr-locally-advanced-rectal-cancer/",
+          "excerpt": "Current standard of treatment for locally advanced rectal cancer includes chemotherapy, radiation and surgery, but these can have lasting consequences, including bowel, urinary and sexual dysfunction, secondary cancers and infertility. For patients with MSI-H/dMMR tumors, a biomarker found in around 5-10% of rectal cancers"
+        },
+        {
+          "fact": "The review ran under the FDA Commissioner's National Priority Voucher pilot program and the approval came 4 months ahead of the FDA goal date.",
+          "source_url": "https://ascopost.com/news/october-2026/fda-approves-dostarlimab-for-msi-hdmmr-locally-advanced-rectal-cancer/",
+          "excerpt": "The FDA approved this application 4 months ahead of the FDA goal date. This application is part of the FDA Commissioner's National Priority Review Voucher (CNPV) pilot program"
+        },
+        {
+          "fact": "Serious adverse reactions occurred in 20% of patients and 3% discontinued treatment; GSK will present full AZUR-1 interim data at the ESMO Congress in October 2026.",
+          "source_url": "https://us.gsk.com/en-us/media/press-releases/jemperli-dostarlimab-gxly-approved-in-us-as-first-and-only-immunotherapy-for-adults-with-msi-hdmmr-locally-advanced-rectal-cancer/",
+          "excerpt": "Serious adverse reactions occurred in 20% of patients receiving Jemperli... Jemperli was permanently discontinued due to adverse reactions in 3% of patients. Full data from the AZUR-1 interim analysis will be presented at the European Society for Medical Oncology (ESMO) Congress in October 2026."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-immunotherapy-may-allow-certain-patients-rectal-cancer-avoid-chemotherapy-radiation-and",
+          "outlet": "FDA",
+          "title": "FDA Approves Immunotherapy That May Allow Certain Patients with Rectal Cancer to Avoid Chemotherapy, Radiation and Surgery",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "government_filing"
+        },
+        {
+          "url": "https://us.gsk.com/en-us/media/press-releases/jemperli-dostarlimab-gxly-approved-in-us-as-first-and-only-immunotherapy-for-adults-with-msi-hdmmr-locally-advanced-rectal-cancer/",
+          "outlet": "GSK",
+          "title": "Jemperli (dostarlimab-gxly) approved in US as first and only immunotherapy for adults with MSI-H/dMMR locally advanced rectal cancer",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://ascopost.com/news/october-2026/fda-approves-dostarlimab-for-msi-hdmmr-locally-advanced-rectal-cancer/",
+          "outlet": "The ASCO Post",
+          "title": "FDA Approves Dostarlimab for MSI-H/dMMR Locally Advanced Rectal Cancer",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.fiercepharma.com/pharma/gsk-jemperli-scores-fda-approval-rectal-cancer-backed-high-complete-response-rate",
+          "outlet": "Fierce Pharma",
+          "title": "GSK's Jemperli scores FDA approval in rectal cancer, backed by high complete response rate",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "science",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "FDA",
+          "GSK",
+          "Memorial Sloan Kettering Cancer Center",
+          "AnaptysBio"
+        ],
+        "people": [
+          "Tony Wood",
+          "Andrea Cercek"
+        ],
+        "places": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "us-sanctions-miracleplus-zhisuan-google-secrets",
+      "headline": "US sanctions China's MiraclePlus VC firm over ex-Google engineer's AI trade-secret theft",
+      "key_facts": [
+        {
+          "fact": "On October 19, the US State Department designated five China-based entities under the Protecting American Intellectual Property Act (PAIPA): Shanghai Zhisuan Technology, venture firm MiraclePlus, and three MiraclePlus-linked funds and entities.",
+          "source_url": "https://www.state.gov/releases/office-of-the-spokesman/2026/10/imposing-sanctions-to-protect-americans-from-intellectual-property-theft-fact-sheet",
+          "excerpt": "Today, the Department of State announced the designations of five entities under the Protecting American Intellectual Property Act (PAIPA) in connection with theft of trade secrets from U.S. persons."
+        },
+        {
+          "fact": "Zhisuan was founded in 2023 by former Google engineer Linwei Ding, who pitched MiraclePlus's incubator by claiming Zhisuan could replicate Google's AI infrastructure; MiraclePlus gave seed capital in exchange for a stake.",
+          "source_url": "https://www.state.gov/releases/office-of-the-spokesman/2026/10/imposing-sanctions-to-protect-americans-from-intellectual-property-theft-fact-sheet",
+          "excerpt": "Ding applied on behalf of Zhisuan to a China-based startup incubation program known as MiraclePlus, touting his experience with and knowledge of Google's technology and internal systems and claiming that Zhisuan could replicate Google's SI infrastructure technology... MiraclePlus gave seed capital in exchange for an ownership stake in Zhisuan."
+        },
+        {
+          "fact": "Ding was convicted on January 29 of seven counts of economic espionage and seven counts of theft of trade secrets; he was sentenced to a year in jail in September.",
+          "source_url": "https://exportcompliancedaily.com/article/2026/10/20/us-sanctions-five-chinese-entities-over-google-tradesecret-theft-2610190052?BC=bc_6ad6f2dec6ebe",
+          "excerpt": "Ding, also known as Leon Ding, was convicted on Jan. 29 of seven counts of economic espionage and seven counts of theft of trade secrets, according to a DOJ press release."
+        },
+        {
+          "fact": "Sanctions include property blocking, banking and foreign-exchange restrictions, a cap on US loans above $10 million in 12 months, and a ban on US persons buying significant equity or debt; OFAC allowed wind-down of MiraclePlus dealings until January 19, 2027.",
+          "source_url": "https://exportcompliancedaily.com/article/2026/10/20/us-sanctions-five-chinese-entities-over-google-tradesecret-theft-2610190052?BC=bc_6ad6f2dec6ebe",
+          "excerpt": "the PAIPA sanctions apply to all five entities include property blocking and transaction prohibitions... restrictions on foreign-exchange and banking transactions... a prohibition on U.S. financial institutions providing loans or credit totaling more than $10 million in any 12-month period... General License 2 authorizes transactions ordinarily incident and necessary to wind down dealings involving MiraclePlus... through 12:01 a.m. ET on Jan. 19."
+        },
+        {
+          "fact": "MiraclePlus was founded by former Microsoft and Baidu AI executive Lu Qi as the successor to Y Combinator's abandoned China program, and has backed SiliconFlow and robotics maker AgiBot, both considering Hong Kong listings.",
+          "source_url": "https://theedgemalaysia.com/node/822496",
+          "excerpt": "Lu's MiraclePlus, the successor to a Chinese program run by Silicon Valley's Y Combinator, and three affiliates drew sanctions for providing seed financing to Zhisuan... It's since backed some of China's most promising startups, including AI inference platform SiliconFlow and robotics maker AgiBot, both of which are considering Hong Kong listings."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.state.gov/releases/office-of-the-spokesman/2026/10/imposing-sanctions-to-protect-americans-from-intellectual-property-theft-fact-sheet",
+          "outlet": "US Department of State",
+          "title": "Imposing Sanctions to Protect Americans from Intellectual Property Theft Fact Sheet",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "government_filing"
+        },
+        {
+          "url": "https://exportcompliancedaily.com/article/2026/10/20/us-sanctions-five-chinese-entities-over-google-tradesecret-theft-2610190052?BC=bc_6ad6f2dec6ebe",
+          "outlet": "Export Compliance Daily",
+          "title": "US Sanctions Five Chinese Entities Over Google Trade-Secret Theft",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://theedgemalaysia.com/node/822496",
+          "outlet": "The Edge Malaysia (Bloomberg)",
+          "title": "US sanctions China's Y Combinator in Google AI secrets case",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.scmp.com/news/china/diplomacy/article/3371434/us-sanctions-5-chinese-entities-over-ex-google-engineers-ai-trade-secrets-theft",
+          "outlet": "South China Morning Post",
+          "title": "US sanctions 5 Chinese entities over ex-Google engineer's AI trade secrets theft",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "world",
+        "politics",
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "US Department of State",
+          "OFAC",
+          "MiraclePlus",
+          "Shanghai Zhisuan Technology",
+          "Google",
+          "Y Combinator",
+          "SiliconFlow",
+          "AgiBot"
+        ],
+        "people": [
+          "Linwei Ding",
+          "Lu Qi"
+        ],
+        "places": [
+          "United States",
+          "China",
+          "Beijing",
+          "Shanghai"
+        ]
+      }
+    },
+    {
+      "id": "mynt-gcash-record-philippine-ipo-debut",
+      "headline": "GCash parent Mynt debuts in Manila after the Philippines' largest-ever IPO",
+      "key_facts": [
+        {
+          "fact": "Mynt Inc., operator of the GCash mobile wallet, listed on the Philippine Stock Exchange on October 20 under ticker GCASH after raising 60.9 billion pesos, the largest IPO in the exchange's history; President Ferdinand Marcos Jr. led the bell-ringing.",
+          "source_url": "https://www.pse.com.ph/mynt-inc-raises-p60-9-b-in-historic-stock-market-debut/",
+          "excerpt": "The bell ringing ceremony to mark its official listing on October 20, 2026, was spearheaded by President Ferdinand R. Marcos Jr. Trading under the ticker symbol GCASH, the company raised an astounding Php 60.9 billion"
+        },
+        {
+          "fact": "Mynt sold about 8.03 billion shares at 6.60 pesos each; the overallotment raised the deal from about 53 billion pesos to 60.9 billion pesos (about $967 million), surpassing Monde Nissin's 55.89 billion-peso IPO in 2021.",
+          "source_url": "https://bworldonline.com/top-stories/2026/10/20/788054/gcash-parent-mynt-makes-pse-debut-in-record-p60-9-b-ipo/",
+          "excerpt": "The offering surpassed Monde Nissin Corp.'s P55.89-billion IPO in 2021... Mynt sold approximately 8.03 billion common shares at P6.60 apiece... the exercise of an overallotment option covering about 1.20 billion additional secondary shares increased the total transaction size to P60.9 billion."
+        },
+        {
+          "fact": "Mynt debuted with a market capitalization of 441.5 billion pesos (about $7 billion), making it the seventh-largest domestic company on the PSE.",
+          "source_url": "https://www.gmanetwork.com/news/money/companies/1006486/gcash-parent-debuts-at-pse-opens-with-p441-5b-market-capitalization/story/",
+          "excerpt": "\"Today, Mynt debuts with a market capitalization of P441.5 billion, or about $7 billion,\" said Monzon. The PSE chief said Mynt is the seventh largest domestic company in the PSE"
+        },
+        {
+          "fact": "Shares rose as much as 1.7% to 6.71 pesos intraday amid a broader Asian sell-off in AI-related shares, but closed at the IPO price.",
+          "source_url": "https://www.channelnewsasia.com/business/philippines-gcash-mynt-shares-ipo-6474091",
+          "excerpt": "Shares of fintech firm Mynt, operator of mobile wallet GCash, rose 1.7 per cent in its market debut on Tuesday (Oct 20)... The stock opened at 6.60 pesos a share, in line with its offer price, before rising to 6.71 pesos... even as a broader sell-off in AI-related shares made investors more selective about new tech listings."
+        },
+        {
+          "fact": "GMA News reported Mynt closed its first trading day at the IPO price.",
+          "source_url": "https://www.gmanetwork.com/news/money/companies/1006573/gcash-parent-mynt-closes-at-ipo-price-on-market-debut-raises-p60-9-billion/story/",
+          "excerpt": "GCash parent Mynt closes at IPO price on market debut, raises P60.9 billion"
+        },
+        {
+          "fact": "More than 20 cornerstone investors including BlackRock, Citadel, Fidelity International and the IFC committed about $500 million, nearly 60% of the base deal.",
+          "source_url": "https://www.channelnewsasia.com/business/philippines-gcash-mynt-shares-ipo-6474091",
+          "excerpt": "The Mynt IPO attracted more than 20 cornerstone investors, who committed about US$500 million, or nearly 60 per cent of the base deal... Investors included BlackRock, Citadel, Fidelity International and the International Finance Corp."
+        },
+        {
+          "fact": "BusinessWorld reported Mynt plans to allocate 60% of net primary proceeds to its CreditTech business, with the rest for product development and general corporate purposes.",
+          "source_url": "https://bworldonline.com/top-stories/2026/10/20/788054/gcash-parent-mynt-makes-pse-debut-in-record-p60-9-b-ipo/",
+          "excerpt": "Based on its final IPO prospectus, Mynt plans to allocate 60% of the net proceeds from the primary offering to the expansion of its credit technology (CreditTech) business."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.pse.com.ph/mynt-inc-raises-p60-9-b-in-historic-stock-market-debut/",
+          "outlet": "Philippine Stock Exchange",
+          "title": "Mynt, Inc. raises P60.9B in historic stock market debut",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://bworldonline.com/top-stories/2026/10/20/788054/gcash-parent-mynt-makes-pse-debut-in-record-p60-9-b-ipo/",
+          "outlet": "BusinessWorld",
+          "title": "GCash parent Mynt makes PSE debut in record P60.9-B IPO",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.gmanetwork.com/news/money/companies/1006486/gcash-parent-debuts-at-pse-opens-with-p441-5b-market-capitalization/story/",
+          "outlet": "GMA News",
+          "title": "GCash parent debuts at PSE, opens with P441.5B market capitalization",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.gmanetwork.com/news/money/companies/1006573/gcash-parent-mynt-closes-at-ipo-price-on-market-debut-raises-p60-9-billion/story/",
+          "outlet": "GMA News",
+          "title": "GCash parent Mynt closes at IPO price on market debut, raises P60.9 billion",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.channelnewsasia.com/business/philippines-gcash-mynt-shares-ipo-6474091",
+          "outlet": "CNA (Reuters)",
+          "title": "GCash owner Mynt edges higher in record Philippine IPO amid Asian sell-off",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "finance",
+        "business",
+        "world"
+      ],
+      "entities": {
+        "organizations": [
+          "Mynt",
+          "GCash",
+          "Philippine Stock Exchange",
+          "Ant Group",
+          "BlackRock",
+          "Citadel",
+          "Fidelity International",
+          "International Finance Corp."
+        ],
+        "people": [
+          "Ferdinand Marcos Jr.",
+          "Ramon Monzon",
+          "Evelyn Ng"
+        ],
+        "places": [
+          "Philippines",
+          "Manila"
+        ]
+      }
+    },
+    {
+      "id": "wall-street-chip-rebound-treasury-yields-oil",
+      "headline": "Chip stocks snap 8-day slide as 10-year Treasury yield climbs back to 5.14%",
+      "key_facts": [
+        {
+          "fact": "On Monday, October 19, the Nasdaq rose 1.11% to 26,430.89 and the S&P 500 gained 0.41% to 7,690.73, while the Dow slipped 0.07% to 51,966.03.",
+          "source_url": "https://www.cnbc.com/2026/10/18/stock-market-today-live-updates.html",
+          "excerpt": "The tech-heavy index added 1.11% to end at 26,430.89 while the S&P 500 gained 0.41% to close at 7,690.73. The Dow Jones Industrial Average finished the day at 51,966.03, slipping 36.38 points, or 0.07%."
+        },
+        {
+          "fact": "The Philadelphia Semiconductor Index rose 1.61%, ending an eight-session losing streak in which it fell 15.7%, its longest since October 2008; CoreWeave fell another 0.44% after dropping more than 25% the prior week over its roughly $50 billion debt load.",
+          "source_url": "https://biz.heraldcorp.com/article/10907970",
+          "excerpt": "The Philadelphia Semiconductor Index had fallen 15.7 percent over the previous eight sessions — its longest consecutive losing streak since October 2008 — before rising 1.61 percent Monday to snap the run... CoreWeave... fell another 0.44 percent. The company's share price had dropped more than 25 percent last week amid concerns about its roughly $50 billion debt load."
+        },
+        {
+          "fact": "The 10-year Treasury yield rose 3.8 basis points to 5.135% on Monday, up 1.148 percentage points from a year earlier and 0.175 point below its 52-week high of 5.31% on October 5.",
+          "source_url": "https://www.morningstar.com/news/dow-jones/202610196209/10-year-treasury-yield-rises-to-5135-data-talk",
+          "excerpt": "The 10-year yield rose 0.038 percentage point to 5.135% today... Yield is off 0.175 percentage point from its 52-week high of 5.310% hit Monday, Oct. 5, 2026... Yield is up 1.148 percentage points from 52 weeks ago"
+        },
+        {
+          "fact": "WTI crude settled up 2.22% at $103.66 a barrel on Monday while Brent fell 0.28% to $109.55, with traders watching Persian Gulf ship attacks and Ukraine-Russia strikes on energy infrastructure.",
+          "source_url": "https://www.cnbc.com/2026/10/18/stock-market-today-live-updates.html",
+          "excerpt": "WTI settled up 2.22% at $103.66 per barrel, while Brent fell 0.28% to $109.55 per barrel... Traders were also keeping a wary eye on oil markets with ship attacks in the Persian Gulf picking up and Ukraine and Russia trading attacks on energy infrastructure."
+        },
+        {
+          "fact": "Early Tuesday, the S&P 500 slipped 0.1% and the Nasdaq fell 0.5% as AI stocks swung again, with Meta, Micron and Intel lower, while European indexes fell again.",
+          "source_url": "https://apnews.com/article/stock-markets-oil-ai-rates-inflation-b972b64127db5412a2b02c35ecf95c88",
+          "excerpt": "The S&P 500 slipped 0.1% early Tuesday to give back some of its gain from Monday. The losses for AI stocks sent the Nasdaq composite down 0.5%... Meta Platforms, Micron and Intel all fell... Stock indexes fell in Europe again."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2026/10/18/stock-market-today-live-updates.html",
+          "outlet": "CNBC",
+          "title": "Stock market news for Oct. 19, 2026",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://biz.heraldcorp.com/article/10907970",
+          "outlet": "The Herald Business",
+          "title": "Wall Street closes mixed as chip stocks rebound after 8-day slide",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.morningstar.com/news/dow-jones/202610196209/10-year-treasury-yield-rises-to-5135-data-talk",
+          "outlet": "Morningstar (Dow Jones)",
+          "title": "10-Year Treasury Yield Rises to 5.135% — Data Talk",
+          "published_at": "2026-10-19",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://apnews.com/article/stock-markets-oil-ai-rates-inflation-b972b64127db5412a2b02c35ecf95c88",
+          "outlet": "AP News",
+          "title": "Asian shares mostly decline after Wall Street rebounds",
+          "published_at": "2026-10-20",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "economy",
+        "finance"
+      ],
+      "entities": {
+        "organizations": [
+          "Nasdaq",
+          "S&P 500",
+          "Philadelphia Semiconductor Index",
+          "CoreWeave",
+          "Nvidia",
+          "Meta Platforms",
+          "Micron",
+          "Intel"
+        ],
+        "people": [],
+        "places": [
+          "United States",
+          "New York"
+        ]
+      }
+    }
+  ],
+  "story_count": 21,
+  "source_count": 73
+}

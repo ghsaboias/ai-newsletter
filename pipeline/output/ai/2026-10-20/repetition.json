@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-20",
+  "previous_dates": ["2026-10-19", "2026-10-15", "2026-10-14"],
+  "issues": [
+    {
+      "type": "story",
+      "severity": "medium",
+      "overlap": "receita de US$16,8 bilhões no terceiro trimestre, contra US$11,6 bilhões no segundo",
+      "current_text": "A rival [registrou receita de US$16,8 bilhões no terceiro trimestre, contra US$11,6 bilhões no segundo](https://www.moneycontrol.com/artificial-intelligence/openai-seeks-to-accelerate-fundraising-ahead-of-anthropic-ipo-report-article-14055784.html)",
+      "previous_text": "a receita do terceiro trimestre subiu 45%, para US$16,8 bilhões, contra US$11,6 bilhões no segundo trimestre",
+      "previous_date": "2026-10-15",
+      "suggestion": "O par de cifras foi a manchete da Grande de 15/10 e volta aqui como fato novo, com o mesmo contraste. O dado é contexto necessário para o argumento da OpenAI (a comparação lado a lado), então não corte: subordine-o ao fato novo de hoje e marque que já rodou (a receita que a Anthropic apresentou a investidores em 14 de outubro, conforme a edição de 15/10)."
+    },
+    {
+      "type": "phrasing",
+      "severity": "medium",
+      "overlap": "A Guarda Revolucionária (IRGC) disse ... petroleiros pegaram fogo ... após atingir ... minas navais",
+      "current_text": "A Guarda Revolucionária (IRGC) [disse em 20 de outubro que mais dois petroleiros pegaram fogo e pararam após atingir suas minas navais na parte sul do Estreito de Ormuz]",
+      "previous_text": "A Guarda Revolucionária do Irã (IRGC) disse que [dois petroleiros com cerca de 2 milhões de barris cada pegaram fogo após atingir minas navais no estreito]",
+      "previous_date": "2026-10-19",
+      "suggestion": "O fato é novo e o \"mais dois\" sinaliza continuidade, mas a abertura repete o molde da véspera palavra por palavra (sujeito, verbo de atribuição, \"pegaram fogo após atingir minas navais\"). Reescreva a frase de abertura com outra construção: abrir pela contagem acumulada ou pelo alerta da IRGC sobre navios que cruzarem a passagem, que é o elemento novo de hoje."
+    },
+    {
+      "type": "framing",
+      "severity": "low",
+      "overlap": "altos funcionários iranianos + Reuters + eleições de meio de mandato de 3 de novembro",
+      "current_text": "Segundo a Reuters, citando três altos funcionários iranianos e uma fonte interna, [o Irã prolonga deliberadamente as negociações com Washington para enfraquecer Trump antes das eleições de meio de mandato de 3 de novembro]",
+      "previous_text": "Dois altos funcionários iranianos disseram à Reuters que Teerã está mudando de tática contra navios para manter o petróleo caro e influenciar as eleições de meio de mandato dos EUA, em 3 de novembro.",
+      "previous_date": "2026-10-15",
+      "suggestion": "Mesma motivação eleitoral, mesma fonte e mesma construção de 15/10, agora aplicada às negociações. O fato é novo (a tática diplomática, não a naval), então não corte: explicite o diferencial e amarre ao relato anterior, que está na edição de 15/10 (a mesma motivação já tinha sido atribuída à mudança de tática contra navios)."
+    },
+    {
+      "type": "phrasing",
+      "severity": "low",
+      "overlap": "noticiada na véspera",
+      "current_text": "[subiu 1,61% na segunda-feira, 19 de outubro, e interrompeu a sequência de oito quedas noticiada na véspera]",
+      "previous_text": "a negociação ocorre em meio à pressão de investidores por um *valuation* menor no IPO, noticiada na véspera.",
+      "previous_date": "2026-10-20",
+      "suggestion": "Repetição dentro da própria edição: dois bullets (Nscale e Semicondutores) fecham com a mesma oração de continuidade. As duas âncoras são legítimas; varie a formulação de uma delas (ex.: \"como noticiado ontem\", ou integrar a referência ao fato, \"depois das oito quedas seguidas\")."
+    },
+    {
+      "type": "phrasing",
+      "severity": "low",
+      "overlap": "de infraestrutura de nuvem para IA",
+      "current_text": "A sul-coreana de infraestrutura de nuvem para IA [caiu 33,15% na estreia no Kosdaq",
+      "previous_text": "A empresa de infraestrutura de nuvem para IA [negocia vender à Anthropic poder computacional",
+      "previous_date": "2026-10-20",
+      "suggestion": "Aposição idêntica em dois bullets da mesma edição (Nscale e Elice). Não remova: varie o ângulo de uma delas (para a Elice, o fato de ser o maior IPO do Kosdaq em 2026; para a Nscale, o campus Monarch ou o IPO pretendido na NYSE)."
+    },
+    {
+      "type": "lexicon",
+      "severity": "low",
+      "overlap": "Num post de engenharia",
+      "current_text": "Num post de engenharia de 19 de outubro, a empresa",
+      "previous_text": null,
+      "previous_date": null,
+      "suggestion": "Estrangeirismo sem itálico. O generator.md exige itálico em todo termo em inglês mantido no texto; a edição de 14/10 já grafou \"*post* técnico\".",
+      "fix": "Num *post* de engenharia"
+    },
+    {
+      "type": "lexicon",
+      "severity": "low",
+      "overlap": "produtos de games",
+      "current_text": "que cobrem produtos de games lançados há quase meia década",
+      "previous_text": null,
+      "previous_date": null,
+      "suggestion": "Estrangeirismo sem itálico na tradução da fala do porta-voz da Nvidia; \"games\" não está na lista de exceções do generator.md.",
+      "fix": "produtos de *games*"
+    }
+  ],
+  "summary": "Repetição baixa a moderada: nenhuma história reciclada inteira, mas a Grande da OpenAI reexpõe as cifras de receita da Anthropic de 15/10 como novas, e o bullet do Irã repete a abertura da véspera e o ângulo eleitoral de 15/10; dois ecos internos e dois estrangeirismos sem itálico."
+}
