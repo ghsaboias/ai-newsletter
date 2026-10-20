@@ -25,10 +25,15 @@ TOPIC_PAYWALL_BANNER=""
 
 # Social-preview / email cover image, pre-set on every draft so the publish flow
 # doesn't fall back to the square logo/avatar suggestions (they crop badly at
-# 1.91:1). This is og-logo-icon.png from daily-journal-platform, uploaded once
-# to Substack's CDN via pipeline/tools/substack_upload.py (2026-08-31); the URL
-# is stable. --no-cover-image on substack-preview.sh skips it for a one-off.
-TOPIC_COVER_IMAGE="https://substack-post-media.s3.amazonaws.com/public/images/d2e78af2-0e47-437e-b916-73b9eb6b006e_2400x1260.png"
+# 1.91:1). This is og-logo-green.png from daily-journal-platform (white logo on
+# #044B2E), uploaded once to Substack's CDN via pipeline/tools/substack_upload.py
+# (2026-10-20); the URL is stable. --no-cover-image on substack-preview.sh skips
+# it for a one-off.
+# Keep it 3:2. Substack crops covers with c_fill,g_auto (smart crop, not
+# centered): the homepage hero and post-list thumbnails are 3:2, og:image is
+# 16:9. A 1.91:1 card loses its sides on the site and the crop pushed the logo
+# hard right; at 3:2 the site shows it uncropped.
+TOPIC_COVER_IMAGE="https://substack-post-media.s3.amazonaws.com/public/images/2bda46e2-0ffc-4262-a7a0-ecadadde43bc_2400x1600.png"
 
 # --- Research ---
 # Research tools managed in research.sh: built-in (Read,Write,Bash) + exa MCP (mcp__exa__web_search_exa, mcp__exa__web_fetch_exa)
