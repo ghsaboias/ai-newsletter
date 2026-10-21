@@ -1489,3 +1489,13 @@ https://www.youtube.com/watch?v=_b3LfMflIGs
 **OpenAI Bulk-Solves 722 Math Problems, Anthropic’s Cruelty Policy, & Elon’s Quadrillion-Dollar SpaceX**
 Discussão entre Peter H. Diamandis (fundador do XPRIZE, Singularity University e Fountain Life), Salim Ismail (fundador da OpenExO e gestor do Exponential VC), Dave Blundin (fundador da Link Ventures) e Dr. Alexander Wissner-Gross (AWG, cientista da computação e fundador da Reified) sobre os avanços recentes em inteligência artificial de fronteira, biologia sintética, nanotecnologia, interfaces cérebro-computador e a economia espacial
 https://www.youtube.com/watch?v=A5YVqEpbgaU
+
+## 2026-10-20
+
+**Why a $1M Startup Wasn’t Worth Building in the Age of AI**
+Alex Rampell, sócio da Andreessen Horowitz (a16z), conversa com Jean-Denis Greze, ex-CTO da Plaid e atual fundador e CEO da Town. A discussão aborda a decisão de encerrar uma startup de software tributário que faturava quase US$ 1 milhão no primeiro ano, a tese por trás da criação da Town (assistente corporativo de IA integrado a e-mail e calendário), os limites do modelo de Forward Deployed Engineers (FDE), a dinâmica competitiva contra fornecedores de modelos como OpenAI e Anthropic, e as transformações estruturais que agentes autônomos provocam no comércio eletrônico e no mercado publicitário
+https://www.youtube.com/watch?v=o_5f4N6Nq80
+
+**Why AI Can Write Code But Can’t Keep It Running (Yet)**
+Martin Casado, sócio-gerente da Andreessen Horowitz (a16z), conversa com Jad Naous, fundador e CEO da Grepr, sobre os limites da inteligência artificial aplicada ao desenvolvimento de software e às operações de sistemas distribuídos em produção. Ambos foram colegas de pós-graduação em Stanford sob a orientação do professor Nick McKeown. Naous trabalhou com OpenFlow, implementações em hardware de SHA-3, fez pós-doutorado no MIT com Nickolai Zeldovich em segurança de aplicações (tentando reverter estados de sistemas após invasões com Ramesh Chandra), passou pela AppDynamics (onde viveu o crescimento de 200 para 2.000 funcionários até a venda para a Cisco), atuou como executivo-residente na a16z e foi Chief Product Officer (CPO) na Imply, escalando a equipe de engenharia e produto de 15 para mais de 90 profissionais antes de fundar a Grepr em 2023
+https://www.youtube.com/watch?v=blkIGLlZePg
