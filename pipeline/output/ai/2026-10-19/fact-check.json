@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-19",
+  "fidelity_issues": [
+    {
+      "severity": "medium",
+      "where": "facts.md+edition",
+      "claim": "com *enterprise value* (valor da empresa incluindo dívida) de ¥320 bilhões (US$2,02 bilhões) [...] A unidade faturou ¥876 bilhões (US$5,54 bilhões) [...] mais de ¥1 trilhão (US$6,32 bilhões) em vendas",
+      "issue": "não traça ao research.json",
+      "expected": "O research.json só traz em dólar o preço da fatia: ¥115 bilhões (US$727 milhões), segundo Bloomberg/The Edge. EV de ¥320 bi, receita de ¥876 bi e meta de ¥1 tri aparecem apenas em ienes. Os valores em dólar foram calculados pelo facts à taxa implícita (¥115 bi = US$727 mi) e batem com essa conta, mas nenhuma fonte os publica, e uma busca na web não achou o US$2,02 bilhões. É conversão derivada, não dado de fonte. O facts.md tem outras do mesmo tipo (US$1,45 bi, US$341 mi, US$632 mi) que não entraram na edição."
+    },
+    {
+      "severity": "medium",
+      "where": "edition",
+      "claim": "O METR vai publicar os resultados, que a Anthropic não pode vetar, só pedir supressões pontuais de trechos",
+      "issue": "inversão de sentido (atenuação: require → pedir)",
+      "expected": "O research.json diz 'Anthropic cannot veto publication but can require narrow redactions'. O facts.md traduz certo ('pode exigir supressões pontuais'). A edição trocou 'exigir' por 'pedir', o que transforma um poder vinculante em simples pedido e diminui o controle que a Anthropic mantém sobre o texto."
+    },
+    {
+      "severity": "low",
+      "where": "facts.md",
+      "claim": "reparos acima de €10 milhões (cerca de US$11,7 milhões) [...] várias centenas de milhões de euros (centenas de milhões de dólares)",
+      "issue": "não traça ao research.json",
+      "expected": "O research.json só traz '€10 million' e 'several hundred million euros'. A conversão para dólar foi feita pelo facts e não aparece em nenhuma fonte. Ela não entrou na edição."
+    }
+  ],
+  "dropped_facts": [],
+  "summary": "Fidelidade alta: nenhuma especificidade inventada nem atribuição temporal fabricada, citações literais. Três furos médios ou baixos: conversões ¥/€→US$ derivadas que não aparecem nas fontes e 'exigir'→'pedir' no METR. Nenhum fato load-bearing caiu."
+}
