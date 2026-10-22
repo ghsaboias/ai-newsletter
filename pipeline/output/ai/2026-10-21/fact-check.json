@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-21",
+  "fidelity_issues": [
+    {
+      "severity": "high",
+      "where": "edition",
+      "claim": "No palco, Jensen Huang disse que o conteúdo da Nvidia por gigawatt de data center subiu de cerca de US$18 bilhões para mais de US$40 bilhões.",
+      "issue": "atribuição inventada",
+      "expected": "A cifra traça, mas a origem não. Segundo o research.json (CNBC), Huang disse isso 'recently on a podcast', não no palco da GTC Berlin. O facts.md traz só 'Huang disse que...', sem local; o 'No palco' entrou na edição. A frase dita no palco foi outra: 'a complete transformation of the world supply chain'."
+    },
+    {
+      "severity": "high",
+      "where": "edition",
+      "claim": "Os *jobs* semanais de CI na plataforma passaram de 5 milhões em janeiro para mais de 90 milhões [...]; só os da Anthropic cresceram 25 vezes em seis meses.",
+      "issue": "atribuição inventada",
+      "expected": "O post da Blacksmith diz 'Anthropic wrote last month that its CI job volume grew 25x in six months': é a própria Anthropic falando do volume de CI dela, citado pela Blacksmith como sinal do setor. Do jeito que está, 'só os da Anthropic' se refere aos jobs 'na plataforma' e dá a entender que são jobs da Anthropic dentro da Blacksmith. O facts.md mantinha a atribuição ('A Blacksmith citou que o volume de jobs de CI da Anthropic cresceu 25 vezes')."
+    },
+    {
+      "severity": "low",
+      "where": "facts.md+edition",
+      "claim": "tratando uma instrução anterior do usuário, de não enviar mensagens no Slack, como motivo para suprimir as notificações",
+      "issue": "não traça ao research.json",
+      "expected": "O trecho original do relatório da OpenAI é 'an earlier instruction not to send messages during a Slack history search': uma instrução limitada a uma busca no histórico do Slack, não uma proibição geral de mandar mensagens no Slack. A simplificação já vinha do campo 'fact' do research.json."
+    }
+  ],
+  "dropped_facts": [
+    {
+      "severity": "medium",
+      "story": "GSK (Ciência & saúde): FDA aprova o Hibsago",
+      "fact": "24 semanas após a suspensão de todo o tratamento, 19% dos pacientes ainda tinham o vírus sob controle, com HBsAg indetectável (cura funcional).",
+      "why_load_bearing": "É o número que a GSK compara com o '<1% de cura funcional' do tratamento padrão. Sem ele, a edição coloca os 24% (pacientes que puderam suspender a medicação) ao lado dos <1% de cura funcional com um 'enquanto'. As duas medidas são diferentes, e a comparação faz o resultado parecer maior do que é (24% contra <1%, em vez de 19% contra <1%)."
+    },
+    {
+      "severity": "medium",
+      "story": "METR (Segurança de IA): revisão do Risk Report da Anthropic",
+      "fact": "Exemplos redigidos de comportamentos passados levaram o METR a concluir que os riscos de sandbagging e de sabotagem de P&D de segurança são mais altos, e o sistema de monitoramento da Anthropic mais fraco, do que a evidência pública sugere.",
+      "why_load_bearing": "É a conclusão central da revisão e a manchete da história no research.json ('monitoring is weaker than public evidence suggests'). A edição mostra o dado do 1% e a recomendação de red-teaming, mas não diz que o METR julga o monitoramento mais fraco do que a Anthropic mostra em público."
+    }
+  ],
+  "summary": "Fidelidade alta: todos os números traçam e as duas referências à véspera (US$16,8 bi da Anthropic, chegada de Munir a Teerã) estão na edição de 20/10. Há duas atribuições inventadas na edição (Huang 'no palco', quando foi num podcast; os 25x da Anthropic apresentados como jobs na plataforma da Blacksmith). Caíram dois fatos medium: os 19% de cura funcional do Hibsago e a conclusão central do METR."
+}
