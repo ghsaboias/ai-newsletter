@@ -1499,3 +1499,13 @@ https://www.youtube.com/watch?v=o_5f4N6Nq80
 **Why AI Can Write Code But Can’t Keep It Running (Yet)**
 Martin Casado, sócio-gerente da Andreessen Horowitz (a16z), conversa com Jad Naous, fundador e CEO da Grepr, sobre os limites da inteligência artificial aplicada ao desenvolvimento de software e às operações de sistemas distribuídos em produção. Ambos foram colegas de pós-graduação em Stanford sob a orientação do professor Nick McKeown. Naous trabalhou com OpenFlow, implementações em hardware de SHA-3, fez pós-doutorado no MIT com Nickolai Zeldovich em segurança de aplicações (tentando reverter estados de sistemas após invasões com Ramesh Chandra), passou pela AppDynamics (onde viveu o crescimento de 200 para 2.000 funcionários até a venda para a Cisco), atuou como executivo-residente na a16z e foi Chief Product Officer (CPO) na Imply, escalando a equipe de engenharia e produto de 15 para mais de 90 profissionais antes de fundar a Grepr em 2023
 https://www.youtube.com/watch?v=blkIGLlZePg
+
+## 2026-10-21
+
+**Dylan Field: Is AI Replacing Designers?, Design is the New Code & Democratizing Creativity**
+Dylan Field, cofundador e CEO do Figma, discute os bastidores do cancelamento da aquisição de US$ 20 bilhões pela Adobe, o impacto das ferramentas de inteligência artificial no mercado de software, a tese do "SaaS apocalypse" e a preservação do valor da criatividade e do design humano diante da automação de código
+https://www.youtube.com/watch?v=2Zj6uMv3kTA
+
+**How AI Is Repricing Every Software Company**
+Christina Cacioppo, cofundadora e CEO da Vanta, conversa com Patrick O'Shaughnessy (CEO da Positive Sum e apresentador do Invest Like The Best) sobre a adaptação de empresas de software consolidadas à era dos agentes de inteligência artificial, a compressão de múltiplos no mercado de SaaS, as armadilhas de precificação de IA, a escalada nos salários técnicos no Vale do Silício e as transformações estruturais na cibersegurança
+https://www.youtube.com/watch?v=sQaM5oPlUYs
