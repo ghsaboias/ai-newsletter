@@ -1519,3 +1519,13 @@ https://www.youtube.com/watch?v=dthaDyttHns
 **Inside the Robot Data Factory: Mecka's Josh Gao on Sensorizing Humans to Train Robots**
 Josh Gao, fundador e CEO da Mecka AI, discute com Sonya Huang (sócia da Sequoia Capital) os desafios operacionais, de hardware e de modelagem na criação de fábricas de dados para robótica. Gao detalha por que a robótica não teve o benefício dos dados gratuitos da internet, como a Mecka constrói dispositivos vestíveis para transformar humanos em coletores de dados e qual é a receita de treinamento que a indústria está adotando para viabilizar a inteligência física
 https://www.youtube.com/watch?v=0idrTKCDhuE
+
+## 2026-10-23
+
+**Chamath: AGI Is Here, Anthropic’s $100B Giveaway, Elon’s SpaceX Shares for 72M Kids | EP #304**
+O episódio reúne Chamath Palihapitiya (CEO da Social Capital e coapresentador do All-In Podcast), Peter Diamandis (fundador da XPRIZE e Singularity University), Salim Ismail (fundador da Open ExO), Dave Blundin (sócio da Link Ventures) e Dr. Alexander Wissner-Gross (fundador da Reified) para debater o impacto econômico e estrutural da inteligência artificial de fronteira, gargalos energéticos globais, novos modelos de doação de patrimônio e a sustentabilidade fiscal dos Estados Unidos
+https://www.youtube.com/watch?v=kAwG9E1W_ME
+
+**Should You Trust ChatGPT With Your Health?**
+Jay Rughani, sócio da firma de capital de risco Andreessen Horowitz (a16z) com foco em investimentos em saúde e biotecnologia, conversa com Karan Singhal, líder de pesquisa em Inteligência Artificial para Saúde na OpenAI. A discussão aborda a estratégia técnica e de produtos da OpenAI para integrar conhecimento médico aos modelos de fronteira, os desafios de segurança e confiança clínica, integrações hospitalares e o impacto econômico e científico da IA no setor de saúde
+https://www.youtube.com/watch?v=9n0MI4D7TCM
