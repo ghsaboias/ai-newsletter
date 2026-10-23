@@ -1509,3 +1509,13 @@ https://www.youtube.com/watch?v=2Zj6uMv3kTA
 **How AI Is Repricing Every Software Company**
 Christina Cacioppo, cofundadora e CEO da Vanta, conversa com Patrick O'Shaughnessy (CEO da Positive Sum e apresentador do Invest Like The Best) sobre a adaptação de empresas de software consolidadas à era dos agentes de inteligência artificial, a compressão de múltiplos no mercado de SaaS, as armadilhas de precificação de IA, a escalada nos salários técnicos no Vale do Silício e as transformações estruturais na cibersegurança
 https://www.youtube.com/watch?v=sQaM5oPlUYs
+
+## 2026-10-22
+
+**Flying Tesla Car, Robot Brains Halving in Cost Every 3 Weeks, and Why Incentives Decide AI Alignment**
+Conversa entre Peter Diamandis (fundador da XPRIZE), Salim Ismail (fundador da Open ExO e gestor no Exponential Venture Capital), Emad Mostaque (fundador da Intelligent Internet) e Anousheh Ansari (CEO da XPRIZE e primeira mulher a realizar um voo espacial privado financiado). O debate parte de anúncios recentes de tecnologia de ponta: a demonstração do Tesla Roadster voador, o colapso dos custos de inteligência robótica e a resolução de problemas inéditos de física teórica por IA, e aprofunda no papel dos incentivos econômicos e sociais, no modelo de prêmios de inovação da XPRIZE, nos dilemas de alinhamento entre humanos e IA e na redefinição do propósito humano em um cenário de superinteligência e automação generalizada
+https://www.youtube.com/watch?v=dthaDyttHns
+
+**Inside the Robot Data Factory: Mecka's Josh Gao on Sensorizing Humans to Train Robots**
+Josh Gao, fundador e CEO da Mecka AI, discute com Sonya Huang (sócia da Sequoia Capital) os desafios operacionais, de hardware e de modelagem na criação de fábricas de dados para robótica. Gao detalha por que a robótica não teve o benefício dos dados gratuitos da internet, como a Mecka constrói dispositivos vestíveis para transformar humanos em coletores de dados e qual é a receita de treinamento que a indústria está adotando para viabilizar a inteligência física
+https://www.youtube.com/watch?v=0idrTKCDhuE
