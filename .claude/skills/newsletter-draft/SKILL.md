@@ -12,7 +12,8 @@ description: >-
   edition.md) → COMPLETA o draft:
   imagens/vídeos (newsletter-images auto, tudo aprovado), recomendações
   (newsletter-recs) e inserção de parceiro do dia, se o board Publicidade tiver uma
-  (newsletter-insertion, que cria o modelo quando falta). Para se algum passo de
+  (newsletter-insertion, que cria o modelo quando falta); às segundas, as rodadas
+  da semana revisadas (newsletter-rounds) no fim. Para se algum passo de
   CONTEÚDO falhar. Ao final devolve a URL do draft completo do Substack, pronto
   pra revisão humana NO EDITOR (só gosto: nada sinalizado fica pro Gui
   corrigir). NÃO inicia a revisão e — crítico — NÃO
@@ -39,7 +40,7 @@ generator, no draft-rewrite. It chains, in order:
    - **fix every finding**: `repetition-checker` ∥ `fact-verifier` (fired right after the edition gate, overlapping the LINK block) → `repetition.json` + `fact-check.json`; every finding, any severity, is fixed in `edition.md`
    - `rewrite-links --in edition.md --out edition-final.md` → DJ links baked into the md
    - `substack-preview.sh … --paywall-after-grandes` → **push ONE Substack draft** (DJ-linked + paywalled)
-4. **Complete the draft** (sequential, each edits the live draft): `newsletter-images <DATE> auto` → `newsletter-recs <DATE>` → `newsletter-insertion <DATE>`
+4. **Complete the draft** (sequential, each edits the live draft): `newsletter-images <DATE> auto` → `newsletter-recs <DATE>` → `newsletter-insertion <DATE>` → on Mondays, `newsletter-rounds <DATE>` (reviewers fired after research, section appended last)
 
 When it finishes, **the complete Substack draft (DJ-linked, paywalled, with images,
 recs and the day's partner insertion) is the artifact ready for the human review** (which happens *in Substack* now, and is
@@ -168,6 +169,15 @@ fi
 ```
 
 `HALT` → stop, do not run Step 2.
+
+### Step 1.5 — Monday: fire the rounds review (full run only)
+
+Only when `date -d <DATE> +%u` is `1`, and not in `mini`. Read
+`.claude/skills/newsletter-rounds/SKILL.md` and run its **Fase 1** now: the dump plus
+up to 5 Sonnet reviewers in the background. They need only the `deals` table, so
+they run under facts → edition → push; Step 4d does the Fase 2. Fired here and not
+at Step 0.5 so they don't share the window with the 3 researchers. A failed dump is
+a `WARN` for the roll-up, never a halt.
 
 ## Step 2: Facts (agent)
 
@@ -559,7 +569,7 @@ read straight from the Grandes into the Médias. It renders in the editor as an
 "SE / Público" box; leave it alone during review. `substack_post.py` builds it
 (`wrap_for_free_readers`), so nothing changes in the skill's commands.
 
-## Step 4: Complete the draft (images → recs → insertion)
+## Step 4: Complete the draft (images → recs → insertion → rounds)
 
 Full run only (mini has no draft). Requires `$D/.substack-draft-id`; without it the
 push failed, so **stop** and report. Run the three **one after another, never in
@@ -593,6 +603,10 @@ Skill({ skill: "newsletter-insertion", args: "<DATE>" })
 No insertion that day → it prints a skip and the paywall teaser stays. With an
 insertion, the ad replaces the teaser in the free-only block.
 
+**4d. Rounds (Mondays only).** Wait for the Step 1.5 reviewers, then run the
+`newsletter-rounds` **Fase 2**: consolidate `rounds/final.json`, build, append the
+section after the recs, verify on the server. Skip on other days.
+
 ## Step 5: Final roll-up
 
 One block, then the hand-off line:
@@ -608,6 +622,7 @@ echo "=== Draft Complete: <DATE> ==="
 [ -f "$D/paywall-meta.json" ] && echo "  Paywall:    $(jq '.teasers|length' "$D/paywall-meta.json") teasers"
 [ -f "$D/images-final.json" ] && echo "  Images:     $(jq '[.[] | select(.file)] | length' "$D/images-final.json") images, $(jq '[.[] | select(.videoId)] | length' "$D/images-final.json") videos"
 [ -f "$D/recs.json" ]     && echo "  Recs:       $(jq -r '[.items[].title] | join(" / ")' "$D/recs.json")"
+[ -f "$D/rounds/section.json" ] && echo "  Rounds:     $(jq -r '.[3].content[0].text' "$D/rounds/section.json")"
 [ -f "$D/insertions.json" ] && echo "  Insertion:  $(jq -r 'if .count == 0 then "none today" else ([.insertions[] | "#\(.number) \(.cliente)"] | join(", ")) end' "$D/insertions.json")"
 [ -f "$D/repetition.json" ] && echo "  Repetition: $(jq -r '"\(.issues|length) issues (high \([.issues[]|select(.severity=="high")]|length) / med \([.issues[]|select(.severity=="medium")]|length) / low \([.issues[]|select(.severity=="low")]|length))"' "$D/repetition.json") (all fixed)"
 [ -f "$D/fact-check.json" ] && echo "  Fact-check: $(jq '.fidelity_issues|length' "$D/fact-check.json") fidelity / $(jq '.dropped_facts|length' "$D/fact-check.json") dropped (all fixed)"
@@ -615,6 +630,7 @@ echo "  Duration:   $(( ($(date +%s) - START) / 60 ))m $(( ($(date +%s) - START)
 ```
 
 Then list what Step 3.5d fixed, one line per finding (what was flagged → what changed).
+On Mondays, add the `newsletter-rounds` Saída block (drops, fixes, decisions for Gui).
 
 Then print the hand-off (point at the **Substack draft** — the review happens
 there now). **The last line of the reply is the editor URL**:
@@ -657,7 +673,7 @@ summarized. The orchestrator adds only the gate lines and this roll-up.
   images/video/text must never be overwritten from local md.
 - **Stop before the human review.** Ends after the complete draft (Step 4),
   replying with the draft URL. Do not start the review.
-- **Step 4 runs serially.** Images, recs and insertion each read-modify-write the
+- **Step 4 runs serially.** Images, recs, insertion and rounds each read-modify-write the
   live draft; running two at once loses one's edits.
 - **Idempotent resume.** Re-running picks up at the first missing output. Force a
   rerun by deleting the output(s).
