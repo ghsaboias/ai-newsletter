@@ -1529,3 +1529,13 @@ https://www.youtube.com/watch?v=kAwG9E1W_ME
 **Should You Trust ChatGPT With Your Health?**
 Jay Rughani, sócio da firma de capital de risco Andreessen Horowitz (a16z) com foco em investimentos em saúde e biotecnologia, conversa com Karan Singhal, líder de pesquisa em Inteligência Artificial para Saúde na OpenAI. A discussão aborda a estratégia técnica e de produtos da OpenAI para integrar conhecimento médico aos modelos de fronteira, os desafios de segurança e confiança clínica, integrações hospitalares e o impacto econômico e científico da IA no setor de saúde
 https://www.youtube.com/watch?v=9n0MI4D7TCM
+
+## 2026-10-26
+
+**Amazon CEO Andy Jassy on the Infrastructure the AI Era Needs**
+Em conversa com Ben Horowitz (co-fundador da Andreessen Horowitz / a16z) e Erik Torenberg, Andy Jassy, CEO da Amazon, detalha a estratégia de alocação de capital da companhia diante da demanda por inteligência artificial, as restrições físicas e econômicas da infraestrutura global de data centers, o impacto do desenvolvimento de silício proprietário e a reorganização estrutural do trabalho corporativo e de engenharia
+https://www.youtube.com/watch?v=-YMMRQ1qscI
+
+**What will computer chips look like in 2045?**
+Dwarkesh Patel realizou uma visita de dois dias às fábricas e laboratórios de pesquisa da Intel, entrevistando a liderança técnica da companhia sobre a física de semicondutores, processos de fabricação, transição para litografia avançada, empacotamento 3D e os gargalos econômicos e industriais impostos pela explosão de demanda em inteligência artificial
+https://www.youtube.com/watch?v=frYSOKvNiiE
