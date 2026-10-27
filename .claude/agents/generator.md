@@ -153,6 +153,27 @@ Média, mas sai capada do fato que a explica.
   bullet carrega não só o fato-manchete daquela faceta, mas também os números,
   datas e especificidades que o `facts.md` traz para ela. Um leitor que ler só as
   Grandes deve sair com a história praticamente inteira.
+    - **Clareza vem antes da densidade.** O leitor é de tech, não especialista no
+      assunto. Em história naturalmente complexa (prova matemática, estrutura
+      financeira, regulação técnica), o **primeiro bullet** diz em linguagem comum
+      o que aconteceu e por que importa, antes de qualquer termo técnico: o que a
+      prova derruba, quem paga quem e o que cada lado ganha. Daí em diante, **uma
+      ideia por frase**, e todo mecanismo explicado pelo efeito ("os bancos compram
+      os chips e alugam à Anthropic"), não pelo nome técnico ("uma SPV com parcelas
+      *first lien* e *second lien*"). Corte o detalhe que só o especialista usa
+      (nome de cada conjectura secundária, percentual de cada parcela da dívida,
+      fórmula da garantia): um conceito explicado vale mais que três nomeados. No
+      máximo **um termo técnico por bullet**, sempre com o que ele significa; os
+      demais saem ou viram descrição ("uma conjectura de geometria de 1917", não
+      "a conjectura de Kakeya e a de restrição de Stein"). O teste: um leitor que
+      nunca ouviu falar do tema entende cada bullet sem reler.
+    - **A clareza mora no texto, não no rótulo.** O `**Rótulo.**` continua um
+      substantivo neutro que nomeia a faceta (`**Estrutura.**`, `**Dívida.**`,
+      `**Garantia.**`, `**Verificação.**`, `**Física.**`), nunca uma frase de
+      conversa ou de explicação (`O que aconteceu`, `O negócio`, `Quem empresta`,
+      `Por que importa`, `Na prática`). Os termos do texto também ficam neutros e
+      precisos: "a dívida com prioridade de pagamento", não "a parte dos bancos";
+      sem coloquialismo ("bancar", "na prática", "em resumo").
     - **Não relidere (frescor + não-repetição).** As Grandes são as **novidades**
       de maior peso *de hoje*. Uma história cujo evento central **já foi Grande** em
       alguma das edições recentes (a lista vem na sua task) **não volta a ser
