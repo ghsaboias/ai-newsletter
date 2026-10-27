@@ -188,7 +188,12 @@ Média, mas sai capada do fato que a explica.
   **fato secundário que dá peso** — o número, o contrato, a cifra do aporte, a
   especificação que se destaca (ex.: o contrato de US$20 bi da Cerebras com a
   OpenAI, a alta de mais de 150% do RTX 6000 Pro, os US$420 mi em caixa + US$200
-  mi de aporte da Agility). Um cluster pode ter 1 ou 2 bullets. Exemplos de
+  mi de aporte da Agility). A regra de clareza das Grandes vale aqui também: em
+  história complexa (processo judicial, regra regulatória, estrutura financeira),
+  dê primeiro o contexto que a torna compreensível (o que a regra fazia, quem
+  processou quem) e só depois a decisão de hoje; uma ideia por frase. Um bullet
+  de Média pode ganhar uma terceira frase quando sem ela o leitor não entende a
+  notícia. Um cluster pode ter 1 ou 2 bullets. Exemplos de
   clusters: Segurança · Infraestrutura & energia · Hardware & modelos · Rodadas ·
   Mundo.
 - **LEIA TAMBÉM — as menores.** Os itens genuinamente secundários (fato único,
@@ -334,6 +339,10 @@ vira página do Daily Journal — o leitor deve achar o mesmo tom no clique:
   de Paducah" é o certo. A regra vale também para **legendas de imagem** e
   qualquer texto que vá ao ar junto da edição.
 - Sem travessões (—): use vírgula, dois-pontos ou ponto.
+- **Datas da janela com dia da semana + dia entre parênteses:** "na segunda-feira
+  (26)" para a véspera, "nesta terça (27)" para o dia da edição. Nunca "em 26 de
+  outubro" nem "ontem"/"hoje" soltos. Datas fora da janela seguem por extenso
+  ("em 16 de outubro", "em junho").
 - Léxico: "programação", nunca "codificação"; "contra" no lugar da preposição "ante" (só a palavra isolada, não *antes/diante/mediante*); "stealth" (em itálico: *stealth*), nunca "modo furtivo" — para *stealth mode* / *came out of stealth* use "operava em *stealth*" / "saiu do *stealth*"; "*stack*" (em itálico), nunca "pilha" — para *tech stack* / *full stack* / *AI stack* mantenha "*stack*" (só o sentido de camada de tecnologia; "pilha" no sentido de bateria fica); **"poder computacional", nunca "compute"** — vale também para nome de cluster de Médias (`#### Poder computacional`, não `#### Compute`), já que o `paywall-teaser` herda o rótulo da seção; **preço de token em `*input*`/`*output*`**, nunca "entrada"/"saída" (`US$5 por milhão de tokens de *input* e US$25 de *output*`) — se o `facts.md` chegar com o calque, converta; **`*harness*` se glosa como "a camada que executa o modelo e o conecta às ferramentas"**, nunca "arcabouço" nem "framework" (é o wrapper de runtime que roda o modelo, não uma estrutura de design); **"*hedge fund*" (em itálico), nunca "fundo de hedge"** — o mercado brasileiro usa o termo em inglês, e a tradução parcial soa amadora (vale igual para o plural, "*hedge funds*", e para "fundos de hedge"); **"*valuation*" (em itálico), nunca "avaliação"** — no sentido de valor de mercado de uma empresa o termo fica em inglês ("um *valuation* de US$12 bilhões", "levantou US$300 milhões a um *valuation* de..."), porque "avaliação" em PT lê como apreciação/nota, não como preço da empresa (a palavra "avaliação" nos outros sentidos — avaliação de risco, de desempenho, de um modelo — segue normal); **"*guardrails*" (em itálico), nunca "salvaguardas"** — as travas de segurança de um modelo são "os *guardrails*" (masculino: "os *guardrails* foram contornados"). **"Google" é masculino: "o Google", "do Google"** — nunca "a Google"/"da Google".
 - **Sem rótulo ideológico.** "Extrema direita", "extrema esquerda", "populista",
   "radical" e afins não classificam partido nem político: o nome já identifica
