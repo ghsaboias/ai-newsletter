@@ -1539,3 +1539,13 @@ https://www.youtube.com/watch?v=-YMMRQ1qscI
 **What will computer chips look like in 2045?**
 Dwarkesh Patel realizou uma visita de dois dias às fábricas e laboratórios de pesquisa da Intel, entrevistando a liderança técnica da companhia sobre a física de semicondutores, processos de fabricação, transição para litografia avançada, empacotamento 3D e os gargalos econômicos e industriais impostos pela explosão de demanda em inteligência artificial
 https://www.youtube.com/watch?v=frYSOKvNiiE
+
+## 2026-10-27
+
+**The Frontier Ideas a16z Wants to Fund Now | Marc Andreessen, Ben Horowitz & Chris Dixon**
+Marc Andreessen e Ben Horowitz (fundadores da gestora de venture capital Andreessen Horowitz / a16z), Chris Dixon (sócio-geral da a16z) e Erik Torenberg (apresentador) discutem a expansão do fundo dedicado a16z Crypto para a16z Frontier, ampliando o mandato de investimento para tecnologias de ponta, além do impacto estrutural da inteligência artificial sobre hardware, software, entretenimento, ciência e a economia geral
+https://www.youtube.com/watch?v=-9XQMHhpypc
+
+**Arvind Krishna & Nikesh Arora: Quantum Threat, Open vs Frontier AI, AI Cyber Warfare & SaaS Collapse**
+Arvind Krishna, CEO da IBM, e Nikesh Arora, CEO da Palo Alto Networks, discutem com os apresentadores do All-In Podcast (Chamath Palihapitiya e David Friedberg) as principais transformações e ameaças na interseção entre computação quântica, inteligência artificial, cibersegurança e o mercado de software corporativo
+https://www.youtube.com/watch?v=yzk44lz-RGI
