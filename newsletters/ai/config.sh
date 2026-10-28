@@ -23,6 +23,14 @@ TOPIC_BYLINE="Por: Guilherme Saboia e Vinicius Gushiken"
 # (substack-preview.sh also takes --banner <file> for a one-off.)
 TOPIC_PAYWALL_BANNER=""
 
+# Free edition: one weekday (ISO, 1=Mon … 7=Sun) goes out with no paywall and its
+# own title prefix — Wednesday since 2026-07. substack-preview.sh enforces both
+# from the date, so the run can't forget: it drops any paywall flags and swaps
+# TOPIC_TITLE_PREFIX for TOPIC_FREE_TITLE_PREFIX in the pushed title (the slug
+# follows: /p/edicao-gratuita-bem-vindoa-a-DD-de). Empty weekday = no free day.
+TOPIC_FREE_WEEKDAY="3"
+TOPIC_FREE_TITLE_PREFIX="[Edição Gratuita]"
+
 # Social-preview / email cover image, pre-set on every draft so the publish flow
 # doesn't fall back to the square logo/avatar suggestions (they crop badly at
 # 1.91:1). This is og-logo-green.png from daily-journal-platform (white logo on

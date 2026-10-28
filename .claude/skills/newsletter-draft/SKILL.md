@@ -351,7 +351,9 @@ printf '%s\n' "${PREV[@]}"   # the list to paste into repetition-checker's promp
 ```
 
 Then **fire them in one message** (skip any whose output already exists; on a
-**mini** run skip `paywall-teaser` — there's no push to feed):
+**mini** run skip `paywall-teaser` — there's no push to feed; on the **free-edition
+day** — `date -d <DATE> +%u` equals `TOPIC_FREE_WEEKDAY` in `config.sh`, Wednesday —
+skip it too: that edition has no paywall, see Step 3.5f):
 
 ```
 Agent({                                          # FULL RUN ONLY
@@ -561,6 +563,13 @@ in a callout box, and (when the meta is present) bakes the paywall after the
 Grandes. The `draft` suffix persists the draft id to `.substack-draft-id` (the
 doc's `--id-out` target) and writes `substack-draft.json` with the review URL. The
 create-once guard above is what protects the hand-edited editor copy on any re-run.
+
+**Free-edition day (Wednesday).** `substack-preview.sh` reads the weekday off
+`<DATE>` and, when it is `TOPIC_FREE_WEEKDAY` (`newsletters/ai/config.sh`), drops
+any paywall flags and retitles line 1 of the md from `[Tech]` to
+`[Edição Gratuita]` before converting it. The push prints `Free edition (…)`;
+check that the `Title:` line it prints starts with `[Edição Gratuita]`. Nothing
+to pass by hand.
 
 The teaser blockquote goes inside a Substack **audience-specific content block**
 (`dynamicContent`, audiences `non_sub` + `free_sub`), so only readers who actually

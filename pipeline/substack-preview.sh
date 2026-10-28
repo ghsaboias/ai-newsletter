@@ -61,6 +61,15 @@ if [[ ! -f "$MD_FILE" ]]; then
   exit 1
 fi
 
+# --- Free-edition day: no paywall, free title prefix (config.sh) ---
+if [[ -n "${TOPIC_FREE_WEEKDAY:-}" ]] && [[ "$(date -d "$DATE" +%u)" == "$TOPIC_FREE_WEEKDAY" ]]; then
+  echo "  Free edition ($DATE): no paywall, title prefix ${TOPIC_FREE_TITLE_PREFIX}"
+  PAYWALL_META=""
+  PAYWALL_AFTER_GRANDES=false
+  # Retitle the md itself, so edition-final.md matches what ships.
+  sed -i "1s/^# $(printf '%s' "$TOPIC_TITLE_PREFIX" | sed 's/[][\.*^$/]/\\&/g')/# ${TOPIC_FREE_TITLE_PREFIX}/" "$MD_FILE"
+fi
+
 # --- Load credentials ---
 if [[ -z "${SUBSTACK_SID:-}" ]] || [[ -z "${SUBSTACK_PUB_HOST:-}" ]]; then
   ENV_FILE="$HOME/daily-journal-platform/.env.local"
