@@ -1549,3 +1549,13 @@ https://www.youtube.com/watch?v=-9XQMHhpypc
 **Arvind Krishna & Nikesh Arora: Quantum Threat, Open vs Frontier AI, AI Cyber Warfare & SaaS Collapse**
 Arvind Krishna, CEO da IBM, e Nikesh Arora, CEO da Palo Alto Networks, discutem com os apresentadores do All-In Podcast (Chamath Palihapitiya e David Friedberg) as principais transformações e ameaças na interseção entre computação quântica, inteligência artificial, cibersegurança e o mercado de software corporativo
 https://www.youtube.com/watch?v=yzk44lz-RGI
+
+## 2026-10-28
+
+**Competition, Intensity & Building a $115 Billion Global Bank | Nik Storonsky, Revolut**
+Nik Storonsky é cofundador e CEO do Revolut, banco digital avaliado em US$ 115 bilhões, com presença em 38 países e planos de expansão para 10 a 15 novos mercados a cada um ou dois anos. Nesta entrevista com David Senra, Storonsky detalha como sua mentalidade competitiva e sua experiência anterior como operador financeiro (trader) moldaram a gestão do Revolut como uma "máquina" orientada por dados, a governança algorítmica de apostas de produto, a reestruturação da empresa para inteligência artificial, o combate aos vícios do ecossistema de capital de risco e o objetivo de construir o banco número um em pelo menos 100 países
+https://www.youtube.com/watch?v=hT_MAAwFLIc
+
+**Why OpenAI Is Racing to Make Computer Use Superhuman**
+Ari Weinstein e James Sun, líderes de produto na OpenAI, juntam-se aos investidores Seema Amble e Fabrizio Serafini, da Andreessen Horowitz (a16z), para discutir o estágio atual, a arquitetura e as perspectivas dos agentes que operam computadores diretamente pela interface gráfica (computer use). Ambos os convidados, que foram fundadores de startups antes de ingressarem na OpenAI, detalham como o modelo Astra expande a velocidade e a confiabilidade dos agentes, os desafios de segurança corporativa e o impacto econômico sobre softwares legados e novas aplicações nativas de inteligência artificial
+https://www.youtube.com/watch?v=9v42ZOdiBJY
