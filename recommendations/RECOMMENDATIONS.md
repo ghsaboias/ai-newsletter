@@ -1559,3 +1559,13 @@ https://www.youtube.com/watch?v=hT_MAAwFLIc
 **Why OpenAI Is Racing to Make Computer Use Superhuman**
 Ari Weinstein e James Sun, líderes de produto na OpenAI, juntam-se aos investidores Seema Amble e Fabrizio Serafini, da Andreessen Horowitz (a16z), para discutir o estágio atual, a arquitetura e as perspectivas dos agentes que operam computadores diretamente pela interface gráfica (computer use). Ambos os convidados, que foram fundadores de startups antes de ingressarem na OpenAI, detalham como o modelo Astra expande a velocidade e a confiabilidade dos agentes, os desafios de segurança corporativa e o impacto econômico sobre softwares legados e novas aplicações nativas de inteligência artificial
 https://www.youtube.com/watch?v=9v42ZOdiBJY
+
+## 2026-10-29
+
+**Mark Cuban on Why AI Could Turn Solo Founders Into Trillionaires**
+Mark Cuban, empresário, investidor e cofundador da Mark Cuban Cost Plus Drug Company, discute a economia da saúde nos Estados Unidos, a estrutura e expansão de seus negócios e o papel da inteligência artificial na transformação do setor com Julie Yoo, sócia-geral da Andreessen Horowitz (a16z), e o apresentador Erik Torenberg. A conversa detalha as táticas contratuais dos grandes conglomerados de saúde, os limites da tecnologia frente a incentivos financeiros distorcidos e as oportunidades para fundadores e consumidores na era da IA
+https://www.youtube.com/watch?v=5UWDUD6qaM4
+
+**AI Cyber Panic, Ken Griffin’s Bubble Warning, The Fall of France?**
+Neste episódio do All-In Podcast, os investidores Jason Calacanis, Chamath Palihapitiya e David Friedberg (com a ausência de David Sacks) recebem Nikesh Arora, CEO da Palo Alto Networks, para debater o alerta de bolha em inteligência artificial emitido por Ken Griffin (Citadel), as recentes vulnerabilidades críticas de segurança em PHP identificadas e exploradas por IA, o impasse legal de agentes autônomos no setor bancário, e a crise fiscal, migratória e de agitação civil na França, além de propostas de reforma estrutural e política econômica nos Estados Unidos
+https://www.youtube.com/watch?v=6czo-C3FU7I
