@@ -110,4 +110,4 @@ paywall so `only_paid` posts come back in full.
 
 `SUBSTACK_SID` session cookie in `.env.local`. Expires periodically — if requests return HTML instead of JSON, refresh from browser DevTools → Application → Cookies → `substack.com`.
 
-CLI source: `~/.local/bin/sstats`
+CLI source: `~/agent-tools/sstats/sstats` (symlinked as `~/.local/bin/sstats`; same clone on Mac, Pi and lwcloud)
