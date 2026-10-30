@@ -1569,3 +1569,13 @@ https://www.youtube.com/watch?v=5UWDUD6qaM4
 **AI Cyber Panic, Ken Griffin’s Bubble Warning, The Fall of France?**
 Neste episódio do All-In Podcast, os investidores Jason Calacanis, Chamath Palihapitiya e David Friedberg (com a ausência de David Sacks) recebem Nikesh Arora, CEO da Palo Alto Networks, para debater o alerta de bolha em inteligência artificial emitido por Ken Griffin (Citadel), as recentes vulnerabilidades críticas de segurança em PHP identificadas e exploradas por IA, o impasse legal de agentes autônomos no setor bancário, e a crise fiscal, migratória e de agitação civil na França, além de propostas de reforma estrutural e política econômica nos Estados Unidos
 https://www.youtube.com/watch?v=6czo-C3FU7I
+
+## 2026-10-30
+
+**What's Still Valuable When Intelligence Is Free**
+Nesta conversa, Cliff Sosin, fundador e gestor da CAS Investment Partners, é entrevistado por Patrick O'Shaughnessy, CEO da Positive Sum, sobre as limitações fundamentais da inteligência artificial super-inteligente, a comoditização dos modelos de linguagem e os impactos econômicos de longo prazo quando a inteligência se torna barata e amplamente disponível. Sosin detalha sua tese de investimento focada nos complementos à inteligência, analisa a infraestrutura de IA, aborda a dinâmica de mercados de capitais e discute a tese de concentração extrema de seu portfólio em ativos como Carvana e Meta
+https://www.youtube.com/watch?v=EH6DsNT455M
+
+**The AI School Kids Love More Than Vacation | Alpha School's Joe Liemandt**
+Joe Liemandt, diretor da Alpha School e empreendedor de software, conversa com Erik Torenberg e Gagan Biyani (cofundador da Horowitz Andreessen Academy - HAA e da Udemy) sobre a transformação do modelo educacional tradicional por meio de inteligência artificial, ciência cognitiva e foco radical em motivação e habilidades práticas de vida
+https://www.youtube.com/watch?v=T4u2FoIm3pw
