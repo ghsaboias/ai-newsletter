@@ -1579,3 +1579,9 @@ https://www.youtube.com/watch?v=EH6DsNT455M
 **The AI School Kids Love More Than Vacation | Alpha School's Joe Liemandt**
 Joe Liemandt, diretor da Alpha School e empreendedor de software, conversa com Erik Torenberg e Gagan Biyani (cofundador da Horowitz Andreessen Academy - HAA e da Udemy) sobre a transformação do modelo educacional tradicional por meio de inteligência artificial, ciência cognitiva e foco radical em motivação e habilidades práticas de vida
 https://www.youtube.com/watch?v=T4u2FoIm3pw
+
+## 2026-11-02
+
+**Crusoe CEO Chase Lochmiller: Turning Stranded Energy Into Intelligence**
+Chase Lochmiller, cofundador e CEO da Crusoe (empresa de infraestrutura de inteligência artificial avaliada em US$ 31 bilhões), detalha a Brian Halligan (partner da Sequoia Capital e cofundador da HubSpot) a operação verticalizada da companhia, a transição estratégica da mineração de Bitcoin para computação em nuvem de IA, os modelos de gestão para liderar mais de 2.000 funcionários e os paralelos entre tomada de risco calculada em negócios e o montanhismo de alta altitude
+https://www.youtube.com/watch?v=64vUl9k-IAQ
