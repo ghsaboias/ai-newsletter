@@ -1585,3 +1585,13 @@ https://www.youtube.com/watch?v=T4u2FoIm3pw
 **Crusoe CEO Chase Lochmiller: Turning Stranded Energy Into Intelligence**
 Chase Lochmiller, cofundador e CEO da Crusoe (empresa de infraestrutura de inteligência artificial avaliada em US$ 31 bilhões), detalha a Brian Halligan (partner da Sequoia Capital e cofundador da HubSpot) a operação verticalizada da companhia, a transição estratégica da mineração de Bitcoin para computação em nuvem de IA, os modelos de gestão para liderar mais de 2.000 funcionários e os paralelos entre tomada de risco calculada em negócios e o montanhismo de alta altitude
 https://www.youtube.com/watch?v=64vUl9k-IAQ
+
+## 2026-11-03
+
+**What iPhone Packaging Reveals About the Robotics Opportunity**
+Josh Gruenstein, CEO e cofundador da Tutor Intelligence (empresa com cerca de 160 funcionários sediada em Boston e Watertown, Massachusetts), debate os gargalos práticos e a viabilidade econômica da robótica industrial com os sócios gerais da Andreessen Horowitz (a16z), Martin Casado e Raghu Raghuram. A tese central da Tutor é que a robótica não é apenas um problema de modelo de inteligência artificial ou de hardware isolado, mas um desafio sistêmico completo que integra IA de fronteira, fabricação própria de robôs, cadeia de suprimentos e modelos de negócios alinhados à economia real
+https://www.youtube.com/watch?v=lXkjXSul6yg
+
+**AI’s Stock Market Fallout, Google’s Profit Problem, and Altman’s “Hold My Beer” Moment | #307**
+Discussão entre Peter Diamandis, Salim Ismail, Dave Blundin, Alexander Wissner-Gross e Emad Mostaque sobre os desdobramentos recentes no setor de inteligência artificial, abrangendo o lançamento dos novos modelos do Google, a queda histórica das ações da Alphabet, as revelações de bastidores de Sam Altman na OpenAI, os avanços em robótica e veículos autônomos, o impacto nos cursos universitários e iniciativas de fabricação nacional de hardware
+https://www.youtube.com/watch?v=yHMU5ql7O6o
