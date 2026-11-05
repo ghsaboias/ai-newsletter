@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-30",
+  "fidelity_issues": [
+    {
+      "severity": "medium",
+      "where": "facts.md+edition",
+      "claim": "de até C$7 bilhões (cerca de US$5 bilhões) a um *valuation* de C$35,7 bilhões (cerca de US$25,7 bilhões) [...] O governo do Canadá entra com C$1,6 bilhão (cerca de US$1,15 bilhão)",
+      "issue": "não traça ao research.json",
+      "expected": "O research.json só traz os valores em dólares canadenses (CAD $7 billion, CAD $35.7 billion, $1.6-billion stake), sem nenhuma conversão para US$ nem câmbio CAD/USD. As três cifras em US$ são conversões calculadas pela base, e com taxas diferentes: cerca de 0,714 para os US$5 bi e cerca de 0,72 para os US$25,7 bi e US$1,15 bi. Duas buscas na web não acharam nenhuma fonte com esses valores em US$. As cifras em C$ estão corretas. Ou se confirma o câmbio usado, ou se publicam só os valores em C$."
+    },
+    {
+      "severity": "low",
+      "where": "facts.md+edition",
+      "claim": "O lucro ficou só cerca de 1% a 4% acima do 2º trimestre",
+      "issue": "não traça ao research.json",
+      "expected": "A faixa '1-4%' aparece só no campo 'fact' do research.json, e o excerpt (TrendForce) não a sustenta. O slug da URL da TrendForce ('3q-profit-growth-slows-to-1-4-qoq') indica '1.4% QoQ', uma estimativa de 20/10, anterior ao balanço. Pelas cifras da própria pesquisa, 54,4 contra 52,84 bilhões de yuans dá uma alta de cerca de 3%. A frase não engana o leitor, mas 'cerca de 3%' é o número que traça."
+    }
+  ],
+  "dropped_facts": [
+    {
+      "severity": "medium",
+      "story": "Intel (Processadores e memória)",
+      "fact": "As ações da Intel caíram mais de 20% no pregão estendido e caminhavam para o pior dia em dois anos, com perda de cerca de US$128 bilhões em valor de mercado.",
+      "why_load_bearing": "É a cifra que dá tamanho à história: a manchete da pesquisa é 'shares sink 20%+'. Sem a reação do mercado, a projeção abaixo do esperado parece só mais um balanço, quando foi o pior dia da ação em dois anos."
+    }
+  ],
+  "summary": "Fidelidade alta: os números, nomes, datas e citações traçam, e as duas referências à véspera ('teleconferência de quarta-feira (28)', NYT na quinta (29)) estão na edição de 29/10. Só as conversões de C$ para US$ da Cohere não traçam, e caiu da Intel a queda de mais de 20% da ação (US$128 bi)."
+}

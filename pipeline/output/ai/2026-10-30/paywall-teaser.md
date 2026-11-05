@@ -1,0 +1,6 @@
+**Abaixo, apenas para assinantes:**
+
+**Modelos.** Um novo modelo aberto francês voltado a programação, e um laboratório americano revendo as regras de comportamento dos seus modelos e como detecta quando eles agem contra o pretendido.
+**Dinheiro.** Uma rodada com dinheiro do governo para uma desenvolvedora canadense de modelos de IA, a estreia na bolsa de uma fabricante americana de robôs humanoides e a Nvidia negociando bancar o crédito de uma provedora britânica de nuvem para IA.
+**Silício.** O preço da memória pesando no balanço de uma fabricante americana de processadores e aparecendo nos números de fabricantes de memória dos EUA, do Japão e da China, com sinais de que a alta começa a perder força.
+**Segurança e reguladores.** Um grupo chinês usando agentes de IA para invadir organizações em vários países, um terceirizado que ligou seu agente pessoal de IA a um sistema militar dos EUA, uma gigante americana de chips explicando laços com uma empresa de Singapura citada numa investigação de espionagem e um regulador britânico abrindo investigação contra uma gigante americana de redes sociais.

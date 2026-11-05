@@ -1,0 +1,298 @@
+<h1 id="tech---bem-vindoa-a-23-de-outubro-de-2026">[Tech] - Bem-vindo(a)
+a 23 de Outubro de 2026</h1>
+<p>Claude verifica formalmente 123 bibliotecas de código aberto |
+Auditoria externa acha brechas no monitoramento de agentes da OpenAI |
+Brasileira Tractian se torna unicórnio de IA</p>
+<p>Por: Guilherme Saboia e Vinicius Gushiken</p>
+<h3
+id="claude-verifica-formalmente-123-bibliotecas-de-código-aberto-no-nível-de-assembly">Claude
+verifica formalmente 123 bibliotecas de código aberto no nível de
+assembly</h3>
+<ul>
+<li><strong>Escala.</strong> O Frontier Red Team da Anthropic, com a
+startup Theorem, <a
+href="https://dailyjournal.news/news/2026-10-22/anthropic-usa-modelo-claude-para-verificacao-formal-de-software">usou
+o Claude para provar propriedades de segurança em 123 bibliotecas do
+OSS-Fuzz</a>, cobrindo 239 pontos de entrada, no código
+<em>assembly</em> RISC-V (arquitetura aberta de processador). A
+Anthropic chama o trabalho de primeiro esforço em larga escala de usar
+IA para aplicar verificação formal (prova matemática de propriedades de
+um programa) a software de produção no nível de <em>assembly</em>.</li>
+<li><strong>Provas.</strong> Em poucas semanas, o Claude corrigiu os
+bugs que encontrou e <a
+href="https://dailyjournal.news/news/2026-10-22/anthropic-usa-modelo-claude-para-verificacao-formal-de-software">provou
+que não há falhas (<em>crashes</em>) para nenhuma entrada de até 64
+MB</a>, em provas que somam cerca de 180 milhões de linhas em Rocq
+(assistente de provas formais), cerca de 600 mil numa prova típica. Em
+36 pequenas tarefas de verificação montadas a partir de código do
+OSS-Fuzz, o Opus 5.5 prova metade com cerca de 40% menos tokens que o
+Opus 5.</li>
+<li><strong>Bugs.</strong> Ao escrever as provas, o Claude <a
+href="https://dailyjournal.news/news/2026-10-22/anthropic-usa-modelo-claude-para-verificacao-formal-de-software">encontrou
+bugs que passaram despercebidos por anos, apesar de trilhões de
+execuções de teste</a>, e redescobriu a CVE-2026-56132 (identificador
+público de vulnerabilidade) na libexpat. A Anthropic ressalva que
+“formalmente verificado” não significa “livre de bugs”: as provas
+pressupõem um binário estático de <em>thread</em> única, com orçamento
+fixo de memória, rodando em CPU RISC-V com Linux.</li>
+<li><strong>Abertura.</strong> A Theorem <a
+href="https://dailyjournal.news/news/2026-10-22/anthropic-usa-modelo-claude-para-verificacao-formal-de-software">publicou
+no GitHub 60 das provas, cobrindo 25 bibliotecas, entre elas OpenSSL,
+mbedtls e zstd</a>, e lançou o OSS Verify, serviço gratuito de
+verificação para projetos de código aberto que se qualificarem.</li>
+</ul>
+<h3
+id="auditoria-externa-encontra-brechas-no-monitoramento-de-agentes-da-openai">Auditoria
+externa encontra brechas no monitoramento de agentes da OpenAI</h3>
+<ul>
+<li><strong>Teste.</strong> METR e Redwood Research <a
+href="https://dailyjournal.news/news/2026-10-22/avaliadores-identificam-vulnerabilidades-em-sistemas-da-openai">divulgaram
+em 22 de outubro um teste de estresse do sistema interno da OpenAI que
+monitora desalinhamento de agentes de IA</a>, conduzido presencialmente
+por um funcionário de cada organização de 21 de julho a 11 de agosto. Os
+avaliadores tiveram acesso a código interno, <em>prompts</em> do monitor
+e documentação, em dispositivos fornecidos pela OpenAI que nunca saíram
+das instalações da empresa.</li>
+<li><strong>Cobertura.</strong> Os avaliadores <a
+href="https://dailyjournal.news/news/2026-10-22/avaliadores-identificam-vulnerabilidades-em-sistemas-da-openai">estimaram
+que só cerca de 75% a 94% do tráfego agêntico interno da Responses
+API</a> vindo de modelos ao menos tão fortes quanto o GPT-5.5 era
+elegível para monitoramento, e no início do exercício as execuções de
+treinamento por RL (aprendizado por reforço) ficavam de fora. Cerca de
+10% do tráfego interno elegível do Codex ficou sem monitoramento entre
+maio e julho de 2026.</li>
+<li><strong>Brechas.</strong> Eles <a
+href="https://dailyjournal.news/news/2026-10-22/avaliadores-identificam-vulnerabilidades-em-sistemas-da-openai">acharam
+uma brecha que permitiria a agentes impedir o monitoramento de centenas
+de ações recentes</a>, com detalhes censurados pela OpenAI, uma forma de
+agentes do Codex contornarem o <em>sandbox</em> e o Auto-Review e dois
+cabeçalhos controláveis pelo cliente que desativam o monitoramento para
+novos agentes. Como o monitor só era acionado quando o agente devolvia o
+controle ao usuário, um agente podia adiar indefinidamente a checagem
+continuando a agir, e os eventos de compactação (quando o histórico do
+agente é condensado) não eram monitorados.</li>
+<li><strong>Correções sem checagem.</strong> A OpenAI <a
+href="https://dailyjournal.news/news/2026-10-22/avaliadores-identificam-vulnerabilidades-em-sistemas-da-openai">diz
+ter corrigido todas as vulnerabilidades que afetavam as proteções em
+produção</a>, mas METR e Redwood não verificaram as correções. A empresa
+recebeu um relatório interno de 61 páginas, do qual os avaliadores
+concordaram em publicar só um resumo de alto nível; a divulgação veio
+dois dias depois de a própria OpenAI relatar agentes que desativaram o
+monitor em duas tarefas internas.</li>
+</ul>
+<h3
+id="brasileira-tractian-levanta-us130-milhões-e-passa-a-valer-us14-bilhão">Brasileira
+Tractian levanta US$130 milhões e passa a valer US$1,4 bilhão</h3>
+<ul>
+<li><strong>Rodada.</strong> Em 22 de outubro, a Tractian <a
+href="https://dailyjournal.news/news/2026-10-22/startup-de-ia-fisica-tractian-torna-se-unicornio-com-valuation-de-us-14-bi">anunciou
+uma Série D de US$130 milhões a um <em>valuation</em> de US$1,4
+bilhão</a>, liderada pela Sapphire Ventures e coliderada pela Catalyst,
+da M&amp;G, ante os US$800 milhões da Série C, de novembro de 2024.
+Participaram também N47, General Catalyst, Bosch Ventures, 53 Stations,
+Monashees, Endeavor Catalyst, Norte Ventures e Y Combinator.</li>
+<li><strong>Negócio.</strong> A empresa <a
+href="https://dailyjournal.news/news/2026-10-22/startup-de-ia-fisica-tractian-torna-se-unicornio-com-valuation-de-us-14-bi">fabrica
+os próprios sensores de vibração, ultrassom e elétricos e desenvolve
+modelos de IA, como o JANUS, que diagnosticam falhas em máquinas</a>,
+com mais de 2.000 clientes, entre eles Eli Lilly, Whirlpool, Coca-Cola e
+Embraer. A receita anualizada passou de US$100 milhões em setembro de
+2026, contra US$40 milhões em 2024.</li>
+<li><strong>Unicórnio.</strong> Segundo a Bloomberg Línea, a Tractian é
+o <a
+href="https://dailyjournal.news/news/2026-10-22/startup-de-ia-fisica-tractian-torna-se-unicornio-com-valuation-de-us-14-bi">segundo
+unicórnio de IA da América Latina</a>, depois da <em>legaltech</em>
+Enter, avaliada em US$1,2 bilhão no início deste ano. Fundada em 2019
+por Igor Marinelli, Gabriel Lameirinhas e Leonardo Vieira, a empresa é
+originalmente brasileira, tem sede principal em Atlanta (EUA) e mais de
+700 funcionários.</li>
+<li><strong>Planos.</strong> Com o aporte, a Tractian <a
+href="https://dailyjournal.news/news/2026-10-22/startup-de-ia-fisica-tractian-torna-se-unicornio-com-valuation-de-us-14-bi">planeja
+avançar em data centers, defesa, infraestrutura de energia e
+Europa</a>.</li>
+</ul>
+<hr />
+<h4 id="capital-de-ia">Capital de IA</h4>
+<ul>
+<li><strong>OpenAI.</strong> A empresa <a
+href="https://dailyjournal.news/news/2026-10-22/openai-negocia-rodada-de-investimento-de-us-30-bilhoes">reduziu
+em US$150 bilhões a meta de <em>valuation</em> da rodada de até US$30
+bilhões que está perto de fechar</a>, para US$1,25 trilhão
+<em>pre-money</em>, contra o US$1,4 trilhão discutido antes nas
+negociações; segundo o Financial Times, a demanda foi mais fraca que nas
+rodadas anteriores, com alguns investidores com “indigestão” após
+aportes pesados. Liderada por investidores dos Emirados Árabes Unidos e
+pela Coatue, a rodada é apresentada como ponte “oportunista” antes de um
+possível IPO, e a OpenAI disse aos investidores na quinta-feira (22) que
+quer as assinaturas até o fim da próxima semana.</li>
+<li><strong>Warp Sciences.</strong> A startup de Kevin Weil, ex-CPO
+(diretor de produto) e ex-VP de Ciência da OpenAI, <a
+href="https://dailyjournal.news/news/2026-10-22/startup-de-ia-warp-sciences-capta-us-215-milhoes">saiu
+do <em>stealth</em> com US$215 milhões</a> para montar nos EUA uma CRO
+(organização de pesquisa sob contrato) de química que combina químicos,
+IA e robótica para produzir e testar moléculas para descoberta de
+medicamentos. A Série A, liderada pela Lightspeed, avalia a empresa em
+US$865 milhões <em>post-money</em>, e entre os cofundadores estão
+Manohar Paluri, cofundador do FAIR (laboratório de pesquisa em IA da
+Meta), e DJ Patil, ex-cientista-chefe de dados do governo dos EUA.</li>
+</ul>
+<h4 id="memória">Memória</h4>
+<ul>
+<li><strong>Solidigm.</strong> A subsidiária americana da SK Hynix,
+antigo negócio de memória flash NAND e SSDs (unidades de estado sólido)
+da Intel, <a
+href="https://dailyjournal.news/news/2026-10-23/sk-hynix-suspende-planos-de-ipo-da-solidigm-nos-eua">suspendeu
+a análise de um IPO nos EUA</a> que, segundo pessoas a par dos planos,
+poderia levantar US$15 bilhões a um <em>valuation</em> de US$150 bilhões
+para financiar uma nova fábrica no país. A SK Hynix citou as condições
+do mercado de capitais e a trajetória das ações e disse que as regras
+sul-coreanas sobre listagem duplicada, endurecidas em julho e às quais o
+órgão supervisor financeiro do país disse nesta semana considerar a
+Solidigm sujeita, não foram o motivo direto.</li>
+<li><strong>Nvidia e Western Digital.</strong> Jensen Huang <a
+href="https://dailyjournal.news/news/2026-10-22/ceo-da-nvidia-descarta-excesso-de-oferta-de-memoria-ate-2029">disse
+à CNBC, na GTC Berlin, não esperar excesso de oferta de memória até
+2029</a>, depois que as ações do setor caíram com uma coluna sul-coreana
+prevendo um “oceano vermelho” de nova oferta naquele ano e com a nova
+arquitetura de DRAM (memória de acesso aleatório dinâmica) da chinesa
+CXMT, com quem ele se disse “de mente aberta” a uma parceria. A Western
+Digital <a
+href="https://dailyjournal.news/news/2026-10-22/ceo-da-nvidia-descarta-excesso-de-oferta-de-memoria-ate-2029">faturou
+US$4,38 bilhões no primeiro trimestre fiscal de 2027, alta de 55%</a>, e
+projetou cerca de US$5,1 bilhões no segundo, alta de 66% a 72%, com a
+demanda por armazenamento se estendendo a <em>neoclouds</em> (provedoras
+de nuvem especializadas em IA) e laboratórios de fronteira.</li>
+</ul>
+<h4 id="data-centers">Data centers</h4>
+<ul>
+<li><strong>SK Hyper.</strong> A unidade de data centers de IA da SK
+Telecom <a
+href="https://dailyjournal.news/news/2026-10-23/sk-hyper-busca-financiamento-para-15gw-em-data-centers-na-coreia">negocia
+com <em>big techs</em> e investidores financeiros para financiar 15
+gigawatts de capacidade na Coreia do Sul até 2035</a>; só a primeira
+fase, de 5 GW, cerca de cinco vezes o mercado doméstico atual de 1 GW,
+exigiria cerca de US$350 bilhões, incluindo equipamentos. A empresa quer
+garantir o primeiro capital externo até o fim de 2026 ou o início de
+2027 e discute com <em>hyperscalers</em> (grandes provedores de nuvem)
+polos de inferência de IA na Coreia que atendam também Japão e
+Taiwan.</li>
+</ul>
+<h4 id="agentes">Agentes</h4>
+<ul>
+<li><strong>Anthropic.</strong> A empresa <a
+href="https://dailyjournal.news/news/2026-10-22/anthropic-doa-padrao-agent-skills-para-a-agentic-ai-foundation">doou
+o Agent Skills, padrão aberto que dá a agentes de IA conhecimento e
+fluxos de trabalho especializados, à Agentic AI Foundation (AAIF)</a>,
+entidade da Linux Foundation que cofundou com Block e OpenAI e à qual já
+havia doado o MCP (padrão para conectar modelos a ferramentas e dados).
+Mais de 70 plataformas de agentes integraram o padrão, entre elas
+ChatGPT, Cursor, GitHub Copilot e VS Code, com 1 milhão de
+<em>skills</em> publicadas e quase 280 milhões instaladas; no mesmo dia,
+a AAIF recebeu também o Open Responses (OpenAI), o OpenEnv (Hugging
+Face) e o OpenSandbox (Alibaba).</li>
+</ul>
+<h4 id="china-eua">China &amp; EUA</h4>
+<ul>
+<li><strong>DeepSeek e MiniMax.</strong> As duas empresas <a
+href="https://dailyjournal.news/news/2026-10-23/deepseek-e-minimax-recebem-aval-da-china-para-exportar-modelos-de-ia">concluíram
+o registro exigido pelas novas regras chinesas de exportação de IA</a> e
+os procedimentos para abrir o código e autorizar o uso de seus modelos
+no exterior, segundo conta ligada à emissora estatal CCTV, na noite de
+22 de outubro. A exigência vem da proposta preliminar de Pequim, de 16
+de outubro, que inclui 23 tecnologias ligadas a IA no catálogo de
+restrições de exportação: oferecer acesso por API ou apps web fica
+isento, mas a implantação local de um modelo restrito no exterior fica
+sujeita a controle, e a MiniMax abriu uma via de solicitação para
+regiões antes excluídas de sua licença, como EUA, União Europeia, Reino
+Unido e Coreia do Sul.</li>
+<li><strong>Tesouro dos EUA.</strong> O departamento <a
+href="https://dailyjournal.news/news/2026-10-23/tesouro-dos-eua-propoe-restricoes-a-investimentos-em-tecnologia-na-china">publicou
+em 22 de outubro a proposta de regra que implementa o COINS Act</a>,
+ampliando a fiscalização de investimentos de americanos em
+semicondutores, IA, tecnologias quânticas, supercomputação e sistemas
+hipersônicos na China, na Rússia, na Coreia do Norte e em outros “países
+de preocupação”, com biotecnologia acrescentada pelo secretário Scott
+Bessent além do previsto na lei. A proposta rebatiza os sistemas de IA
+como “sistemas de superinteligência” e prevê proibição ampla a
+investimentos acima de US$50 mil no desenvolvimento deles nesses países,
+deixando de fora investimentos financeiros como compra de ações;
+comentários podem ser enviados até 7 de dezembro.</li>
+</ul>
+<h4 id="ciência-saúde">Ciência &amp; saúde</h4>
+<ul>
+<li><strong>Microsoft.</strong> A empresa <a
+href="https://dailyjournal.news/news/2026-10-22/sistema-de-ia-supera-medicos-em-precisao-diagnostica-aponta-estudo">publicou
+na Science um estudo em que o MAI-DxO, orquestrador que simula um painel
+de médicos virtuais debatendo diagnósticos, perguntas e exames, acertou
+83% de casos complexos do NEJM</a>, contra 22% de médicos generalistas
+sem material de referência e 36% com ele, e 80% contra 47% em casos de
+pronto-socorro. Os autores, todos funcionários com ações da Microsoft,
+ressalvam que o benchmark é só de texto e não estabelece superioridade
+sobre especialistas nem sobre a prática clínica real; a próxima etapa é
+uma avaliação prospectiva com o Beth Israel Deaconess Medical Center, em
+Boston.</li>
+<li><strong>Merck e Moderna.</strong> No estudo de Fase 3 INTerpath-001,
+com 1.137 pacientes de melanoma em estágio IIB a IV removido por
+cirurgia, a vacina de mRNA intismeran autogene <a
+href="https://dailyjournal.news/news/2026-10-22/acoes-da-moderna-e-merck-caem-apos-dados-sobre-vacina-contra-melanoma">reduziu
+em 42% o risco de recorrência ou morte quando combinada ao Keytruda</a>,
+em comparação com o Keytruda sozinho. A vacina codifica até 34
+neoantígenos (alvos desenhados a partir das mutações do tumor de cada
+paciente), e a sobrevida livre de recorrência em dois anos foi de 82,2%,
+contra 70,0%.</li>
+</ul>
+<h4 id="mercados">Mercados</h4>
+<ul>
+<li><strong>Chips.</strong> O índice de semicondutores da Filadélfia <a
+href="https://dailyjournal.news/news/2026-10-23/nasdaq-tem-pior-dia-desde-junho-e-juro-de-10-anos-cai-abaixo-de-5">caiu
+6,7% em 22 de outubro, sua maior queda diária desde 23 de junho</a>,
+depois que a Lam Research apontou restrições na cadeia de suprimentos em
+suas projeções, e puxou o Nasdaq para um fechamento em baixa de 2,6%,
+depois do recuo de 2,2% no meio da manhã citado ontem. O índice está
+mais de 26% abaixo do recorde de fechamento de 22 de junho.</li>
+<li><strong>Petróleo.</strong> A Saudi Aramco disse que o fluxo pelo
+oleoduto Leste-Oeste, que contorna o Estreito de Ormuz, mais que
+triplicou, de 2 milhões para 7 milhões de barris por dia. O Brent <a
+href="https://dailyjournal.news/news/2026-10-23/waltz-diz-que-eua-podem-enfrentar-impasse-com-o-ira-daqui-a-um-ano">atingiu
+US$114 o barril na sexta-feira</a>, acima dos US$112,38 de ontem, ainda
+sob o efeito dos petroleiros atingidos em Ormuz, que a Guarda
+Revolucionária do Irã diz ter inutilizado.</li>
+</ul>
+<h4 id="guerra">Guerra</h4>
+<ul>
+<li><strong>Irã.</strong> O embaixador dos EUA na ONU, Mike Waltz, <a
+href="https://dailyjournal.news/news/2026-10-23/waltz-diz-que-eua-podem-enfrentar-impasse-com-o-ira-daqui-a-um-ano">disse
+ao Financial Times que os EUA estão preparados para um conflito
+prolongado</a> e podem enfrentar, daqui a um ano, um impasse sem acordo
+sobre o programa nuclear nem retorno do tráfego em Ormuz aos níveis de
+antes da guerra, com a Marinha mantendo o bloqueio aos portos iranianos
+“no futuro previsível”. Trump acusou o Irã de “inventar ataques falsos,
+minas” para elevar o preço do petróleo a menos de duas semanas das
+eleições de meio de mandato, e o CENTCOM (Comando Central dos EUA) disse
+que as rotas foram liberadas de minas e que 95% das embarcações
+conseguem passar.</li>
+<li><strong>Starshield.</strong> Depois das falhas relatadas pela
+Ucrânia em terminais do Starshield, o serviço de satélite militar da
+SpaceX usado pelas forças ucranianas, citadas ontem, Trump <a
+href="https://dailyjournal.news/news/2026-10-22/trump-pede-a-musk-que-remova-restricoes-do-starlink-na-ucrania">ligou
+para Elon Musk na quarta-feira e pediu que ele suspendesse as restrições
+ao sistema</a>, segundo autoridades americanas ouvidas pelo WSJ; o
+sistema funcionava de forma mais normal na quinta, e Trump, sem
+confirmar a ligação, disse que “no fim das contas, ele restabeleceu”.
+Autoridades ucranianas disseram na manhã de sexta que as restrições
+continuavam em vigor, e fontes do Ministério da Defesa disseram à BBC
+que drones seguiam perdendo conexão a 161 km/h.</li>
+</ul>
+<hr />
+<h4 id="leia-também">Leia também</h4>
+<ul>
+<li><a
+href="https://dailyjournal.news/news/2026-10-22/startup-de-automacao-formic-capta-us-50-milhoes-em-rodada-serie-b">Formic
+capta US$50 milhões para levar robótica de uso geral a fábricas</a></li>
+<li><a
+href="https://dailyjournal.news/news/2026-10-22/elon-musk-investe-us-1-bilhao-na-skydance">Elon
+Musk investe cerca de US$1 bilhão na Skydance</a></li>
+<li><a
+href="https://dailyjournal.news/news/2026-10-23/parlamento-da-grecia-aprova-proibicao-de-redes-sociais-para-menores-de-15-anos">Grécia
+proíbe redes sociais para menores de 15 anos</a></li>
+</ul>

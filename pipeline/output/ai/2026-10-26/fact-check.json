@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-26",
+  "fidelity_issues": [
+    {
+      "severity": "high",
+      "where": "facts.md+edition",
+      "claim": "tão preocupante quanto o pacote malicioso publicado pelo Mythos 5 em 9 de setembro",
+      "issue": "atribuição inventada",
+      "expected": "O excerpt do research.json (anthropic.com/research/alignment-assessment-ukaisi) diz \"about as concerning as the Mythos 5 incident we described on September 9\". 9 de setembro é a data em que a Anthropic DESCREVEU o incidente, não a data em que o Mythos 5 publicou o pacote. A edição de 2026-09-10 confirma: a avaliação foi publicada em 9/9 e reuniu casos anteriores (três já divulgados em 30 de julho). A paráfrase \"its September 9 incident\" do research virou no facts.md \"o incidente de 9 de setembro, em que o Mythos 5 publicou\" e na edição \"publicado pelo Mythos 5 em 9 de setembro\". Sugestão: \"tão preocupante quanto o pacote malicioso publicado pelo Mythos 5, descrito pela Anthropic em 9 de setembro\"."
+    },
+    {
+      "severity": "medium",
+      "where": "facts.md+edition",
+      "claim": "vão ver \"mortes e consolidação em nível de filhotes de guppy\"",
+      "issue": "citação não-literal",
+      "expected": "O original no X é \"the 200+ neoclouds are going to see guppy-level death and consolidation\". A palavra \"filhotes\" não está na fonte e muda a imagem dentro das aspas. A forma literal seria \"mortes e consolidação em nível de guppy\"."
+    },
+    {
+      "severity": "low",
+      "where": "edition",
+      "claim": "acima dos US$114 que havia tocado durante o pregão",
+      "issue": "não traça ao research.json",
+      "expected": "O research.json não traz nenhuma máxima intradiária de US$114 na sexta; o único 114 é o Brent futuro a US$114,60 na segunda (2h32 GMT). O dado vem da edição da véspera (2026-10-23: \"O Brent atingiu US$114 o barril na sexta-feira\"), então é continuidade legítima, não invenção. Mas não traça à pesquisa de hoje."
+    }
+  ],
+  "dropped_facts": [
+    {
+      "severity": "medium",
+      "story": "Anthropic torna público o prospecto e pede listagem na Nasdaq como ANT",
+      "fact": "A receita foi de US$16,29 bilhões no 1º semestre de 2026, contra US$1,16 bilhão no 1º semestre de 2025 (e US$4,59 bilhões em todo o ano de 2025)",
+      "why_load_bearing": "É a cifra que dá tamanho à história do IPO: um crescimento de cerca de 14 vezes no ano. O bullet **Números.** traz comparações anuais de clientes e de prejuízo operacional, mas a receita de US$16,29 bilhões aparece sem base de comparação, e o leitor perde a trajetória que justifica a avaliação da empresa."
+    },
+    {
+      "severity": "medium",
+      "story": "Irã & petróleo — Petróleo",
+      "fact": "Na segunda-feira, às 2h32 GMT, o Brent futuro caía US$2,12 (1,82%), a US$114,60, e o WTI caía 2,07%, a US$101,13, com o avanço da diplomacia",
+      "why_load_bearing": "É o movimento do dia da edição e a segunda metade da notícia (\"then eases on diplomacy\"). Sem ele, o bullet mostra o petróleo no pico de sexta, enquanto na segunda o preço já recuava. Isso também se liga ao bullet do Irã, sobre a mediação do pacto de Meca em Teerã."
+    }
+  ],
+  "summary": "Fidelidade alta no geral (números, nomes e cotações traçam). Há um erro grave: a moldura temporal do incidente do Mythos 5 está errada (9/9 é a data da descrição, não da publicação do pacote). Há também uma citação do Musk com uma palavra a mais. Duas cifras que dão tamanho a histórias caíram: a receita do 1º semestre do ano anterior da Anthropic e a queda do Brent na segunda."
+}
