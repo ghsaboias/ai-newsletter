@@ -2,8 +2,8 @@
 name: extract
 description: >-
   Source-extraction specialist for the AI/Tech newsletter. The deterministic
-  half of the job (facts.md sections → entities, Fontes URLs → research.json
-  metadata join, categories/entities/counts) is done by
+  half of the job (one entity per research.json story, with its source URLs,
+  metadata, categories/entities/counts) is done by
   pipeline/tools/extract.py. This agent only writes the PT-BR prose fields —
   per-entity headline/summary/bullets/body and per-source
   title/summary/bullets — into sources-prose.json, then runs the script's
@@ -14,7 +14,7 @@ tools: Read, Write, Bash
 model: opus
 ---
 
-# Extração de Fontes (facts → sources.json)
+# Extração de Fontes (research → sources.json)
 
 A parte determinística do extract virou script. Seu trabalho é **só a prosa**.
 O fluxo é sempre:
@@ -27,12 +27,12 @@ O fluxo é sempre:
 
    (Se a task der caminhos fora do layout padrão `pipeline/output/ai/<DATE>/`,
    passe `--dir <DAY_DIR>`.) Isso escreve `sources-skeleton.json` no diretório
-   do dia: uma entidade por seção `##` do `facts.md`, com URLs, metadata
+   do dia: uma entidade por história do `research.json`, com URLs, metadata
    (`published_at`/`image_url`), `category` e `entities` já resolvidos, e os
-   campos de prosa vazios. Cada entidade traz `_section` com o título da seção
-   de origem, na mesma ordem do `facts.md`.
+   campos de prosa vazios. Cada entidade traz `_story` com a manchete da
+   história de origem, na mesma ordem do `research.json`.
 
-2. **Prosa** — leia `facts.md` e `sources-skeleton.json`, e escreva
+2. **Prosa** — leia `research.json` e `sources-skeleton.json`, e escreva
    `sources-prose.json` (no mesmo diretório) neste formato:
 
    ```json
@@ -72,9 +72,12 @@ O fluxo é sempre:
 
 ## Regras de prosa
 
-Todo conteúdo vem dos bullets atômicos da seção correspondente do `facts.md`
-(já em PT-BR, traduzidos e glosados). **Sem invenção**: todo número, nome,
-data e valor tem que estar nos fatos. Não adicione glosas novas.
+Todo conteúdo vem dos `key_facts` (fato + `excerpt` original) da história
+correspondente no `research.json`. A pesquisa está em inglês: escreva em PT-BR,
+traduzindo com fidelidade. **Sem invenção**: todo número, nome, data e valor
+tem que estar na pesquisa. Cada `key_fact` traz o `source_url` de onde saiu:
+use-o para saber o que cada fonte reporta. Fonte sem `key_fact` próprio: escreva a
+partir do título dela e dos fatos da história.
 
 ### Campos da entidade
 
@@ -82,7 +85,7 @@ data e valor tem que estar nos fatos. Não adicione glosas novas.
 |---|---|
 | `headline` | Título factual em PT-BR: o quê, quem, quando. **Ideal ≤65, máx. 80 caracteres.** Ver **Regras de manchete**. |
 | `summary` | Uma frase com o fato principal + consequência/número que o headline omite. **Máx. 150 caracteres.** |
-| `bullets` | 3–8 fatos concretos (número, nome ou data cada), condensados dos bullets atômicos da seção. |
+| `bullets` | 3–8 fatos concretos (número, nome ou data cada), condensados dos `key_facts` da história. |
 | `body` | 1–3 parágrafos sintetizando a notícia. Não repita headline/summary — expanda com contexto. Parágrafos separados por `\n\n`. |
 | `is_breaking` | `true` só para notícia genuinamente de última hora. Padrão `false`. |
 | `sensitivity` | `"normal"`, `"violent"`, `"adult"` ou `"political_high_risk"`. Padrão `"normal"`. |

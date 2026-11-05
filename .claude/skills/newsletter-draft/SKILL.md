@@ -1,11 +1,10 @@
 ---
 name: newsletter-draft
 description: >-
-  Orquestra a geração do draft da newsletter de AI/Tech pelo caminho novo
-  (research → facts → edition), inteiramente com sub-agentes em sessão, sem prosa
-  intermediária (pt.md). Encadeia: research (skill newsletter-research → 3
-  especialistas + dedup → research.json) → facts (agente facts → facts.md) →
-  edição (agente generator → edition.md) → LINK+PAYWALL+PUSH (extract+paywall-teaser →
+  Orquestra a geração do draft da newsletter de AI/Tech (research → edition),
+  inteiramente com sub-agentes em sessão. Encadeia: research (skill
+  newsletter-research → 3 especialistas + dedup → research.json) → edição
+  (agente generator, direto da pesquisa → edition.md) → LINK+PAYWALL+PUSH (extract+paywall-teaser →
   ingest --execute → rewrite-links → push de UM draft no Substack, DJ-linkado +
   com paywall; antes do push, checks repetition-checker ∥ fact-verifier →
   repetition.json + fact-check.json, e TODOS os findings são corrigidos no
@@ -26,15 +25,14 @@ allowed-tools: Skill, Read, Write, Bash, Agent
 
 ## When this skill runs
 
-User wants the day's draft built via the **agent chain** (`research → facts →
-edition`), the architecture decided in `AGENT_MIGRATION.md` — no prose `pt.md`, no
-generator, no draft-rewrite. It chains, in order:
+User wants the day's draft built via the **agent chain** (`research → edition`).
+The edition is written straight from the research; there is no intermediate fact
+base. It chains, in order:
 
 1. `newsletter-research`  (skill) → `research.json`
-2. `facts`               (agent)  → `facts.md`   (atomic fact base + `**Fontes:**` provenance)
-3. `generator`        (agent)  → `edition.md`       (3-tier edition: Grandes / Médias / Leia também)
-3.5. **LINK + PAYWALL + PUSH** (the product):
-   - `extract` (agent, facts.md-driven, fired in Step 3 *with* the generator) → `sources.json`; `paywall-teaser` (agent, fired right after the edition gate) → `paywall-meta.json`
+2. `generator`            (agent) → `edition.md`  (3-tier edition: Grandes / Médias / Leia também)
+3. **LINK + PAYWALL + PUSH** (the product):
+   - `extract` (agent, research.json-driven, fired in Step 2 *with* the generator) → `sources.json`; `paywall-teaser` (agent, fired right after the edition gate) → `paywall-meta.json`
    - `ingest --propose` → `cluster-candidates.json`; **you pick same-story matches** → `cluster-decisions.json` (cluster into an existing DJ news instead of minting a new image-less card)
    - `ingest --execute` → `links.json` + ~1 DJ news page per *unclustered* story
    - **fix every finding**: `repetition-checker` ∥ `fact-verifier` (fired right after the edition gate, overlapping the LINK block) → `repetition.json` + `fact-check.json`; every finding, any severity, is fixed in `edition.md`
@@ -61,7 +59,7 @@ the run ends by replying with the draft URL.
 Invoked as `/newsletter-draft [args]`. Parse from the user message:
 
 - `YYYY-MM-DD` — run for a specific date (overrides "today").
-- `mini` — pass-through to research (1 cluster, 3-story cap); facts/edition then run
+- `mini` — pass-through to research (1 cluster, 3-story cap); the edition then runs
   normally on those 3 stories. Fast end-to-end smoke test.
 - (no args) — today's date, full run.
 
@@ -84,7 +82,7 @@ DAY_DIR = $REPO/pipeline/output/ai/<DATE>
 E confira que `.claude/agents/` está **plano** — este é um GATE:
 
 ```bash
-REPO=/Users/guilherme/ai-newsletter   # exporte junto do START; os Steps 3.5d e 5 usam
+REPO=/Users/guilherme/ai-newsletter   # exporte junto do START; os Steps 3d e 5 usam
 find "$REPO/.claude/agents" -mindepth 2 -name '*.md' | grep . && echo "HALT: definição de agente em subdiretório"
 ```
 
@@ -119,17 +117,16 @@ print the skip. Never block the chain on this.
 This skill is **thin** and **gated**. Three jobs only:
 
 1. **Run each step in order**: research via the `newsletter-research` *skill*;
-   facts and the edition via the registered *agents* (`facts`, `generator`) dispatched
-   with the `Agent` tool. (Research is a skill because it's a 3-agent fan-out +
-   merge; facts and generator are single agents, so they're dispatched directly — there's
-   no facts/generator child skill to delegate to.) **Maximize the back-half overlap:**
-   `extract` reads only facts.md+research.json, so it's fired *with* the `generator`
-   (Step 3), not after the edition; and the moment the edition gate passes, the three
+   the edition via the registered `generator` *agent*, dispatched with the `Agent`
+   tool. (Research is a skill because it's a 3-agent fan-out + merge; the
+   generator is a single agent, so it's dispatched directly.) **Maximize the
+   back-half overlap:** `extract` reads only research.json, so it's fired *with* the `generator`
+   (Step 2), not after the edition; and the moment the edition gate passes, the three
    edition-only agents — `paywall-teaser` + the two checks (`repetition-checker`,
    `fact-verifier`) — are fired together and run in the background while
-   `ingest` (Step 3.5) proceeds. Their findings are fixed in `edition.md` at Step
-   3.5d, after ingest and before `rewrite-links` → push.
-2. **Gate between the CONTENT + LINK steps.** After research/facts/edition/extract/ingest,
+   `ingest` (Step 3) proceeds. Their findings are fixed in `edition.md` at Step
+   3d, after ingest and before `rewrite-links` → push.
+2. **Gate between the CONTENT + LINK steps.** After research/edition/extract/ingest,
    verify the output exists/validates *before* starting the next. Missing/invalid →
    **STOP the chain and report which step failed**. This reproduces `set -euo
    pipefail`. The push is **create-once** (skips if `.substack-draft-id` exists).
@@ -138,7 +135,7 @@ This skill is **thin** and **gated**. Three jobs only:
 
 **Idempotent.** Each output is checked first; if it already exists, skip that step
 (don't re-dispatch). Re-running resumes from the first incomplete step. To force a
-clean rerun, delete the outputs you want regenerated (`research.json`, `facts.md`,
+clean rerun, delete the outputs you want regenerated (`research.json`,
 `edition.md`, `sources.json`, `links.json`, `edition-final.md`, `paywall-meta.json`). **The
 push is the exception:** deleting outputs will **not** re-push — `.substack-draft-id`
 is the create-once lock, and it's deliberate (the editor copy is canonical). To
@@ -175,116 +172,63 @@ fi
 Only when `date -d <DATE> +%u` is `1`, and not in `mini`. Read
 `.claude/skills/newsletter-rounds/SKILL.md` and run its **Fase 1** now: the dump plus
 up to 5 Sonnet reviewers in the background. They need only the `deals` table, so
-they run under facts → edition → push; Step 4d does the Fase 2. Fired here and not
+they run under edition → push; Step 4d does the Fase 2. Fired here and not
 at Step 0.5 so they don't share the window with the 3 researchers. A failed dump is
 a `WARN` for the roll-up, never a halt.
 
-## Step 2: Facts (agent)
+## Step 2: Edition (agent) + the parallel fan-out
 
-Idempotency: if `$DAY_DIR/facts.md` exists, skip. Otherwise dispatch the `facts`
-agent with a **paths-only** prompt (its methodology lives in its own system
-prompt):
+Two outputs depend only on `research.json`: the **edition** (`generator`) and the
+**sources** (`extract`). `extract` is the LINK-block long pole (~5 min), so
+starting it here hides it under the edition + paywall + ingest + checks work.
+**Full run: fire BOTH in one message now.** Dispatch only whichever lacks its
+output (idempotency): `generator` if `edition.md` is missing, `extract` if
+`sources.json` is missing. **Mini run: dispatch `generator` only** — `extract`
+feeds the LINK block that mini skips.
 
-```
-Agent({
-  description: "Facts: research → facts.md",
-  subagent_type: "facts",
-  prompt: "Date: <DATE>.\nResearch (input): /Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>/research.json\nWrite the atomic fact base to: /Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>/facts.md"
-})
-```
-
-Gate (facts.md exists, has `##` story sections, and every section carries a
-`**Fontes:**` block — the link provenance the edition depends on):
-
-```bash
-D=/Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>
-SEC=$(grep -c '^## ' "$D/facts.md" 2>/dev/null || echo 0)
-FON=$(grep -c '^\*\*Fontes:\*\*' "$D/facts.md" 2>/dev/null || echo 0)
-if [ -s "$D/facts.md" ] && [ "$SEC" -gt 0 ] && [ "$FON" -eq "$SEC" ]; then
-  echo "OK facts: $SEC stories, $(grep -c '^- ' "$D/facts.md") fact bullets, $FON Fontes blocks"
-else
-  echo "HALT: facts.md missing, no sections, or Fontes blocks ($FON) != sections ($SEC)"
-fi
-```
-
-`HALT` → stop, do not run Step 3. (The Fontes==sections check matters: a section
-without a Fontes block leaves the edition with no links for that story.)
-
-Then **tokenize the Fontes blocks** so the next step cites short tokens instead of
-transcribing URLs (the fix for the URL-corruption class of bug):
-
-```bash
-python3 /Users/guilherme/ai-newsletter/pipeline/tools/link-tokens.py tokenize "$D/facts.md"
-```
-
-In place + idempotent — adds `[S<n>]` to each source line, prints the token count.
-
-## Step 3: Edition (agent) + the parallel fan-out
-
-Two outputs depend only on `facts.md` (+ `research.json`): the **edition**
-(`generator`) and the **sources** (`extract`). `extract` reads facts.md +
-research.json — **not** edition.md — and is the LINK-block long pole (~10 min), so
-starting it here (rather than after the edition) hides it under the edition +
-paywall + ingest + checks work. **Full run: fire BOTH in one message now.**
-Dispatch only whichever lacks its output (idempotency): `generator` if `edition.md`
-is missing, `extract` if `sources.json` is missing. **Mini run: dispatch
-`generator` only** — `extract` feeds the LINK block that mini skips.
-
-**First, gather the recent Grandes and the previous edition** — the lead (`###`)
-headlines of the last few editions, plus the **path** of the most recent edition
-file. The headlines feed the generator's **no-re-lead rule** (a story that
-already led as a Grande in the last few days must not lead again — it demotes to
-Média). The previous-edition path feeds its **continuity rule**: the generator
-reads the file and reframes any story that already ran yesterday (any tier, not
-just Grandes) as continuity instead of fresh news — that's what stops a Média
-from re-running two days straight as if new. `edition-final.md` is preferred
-over `edition.md` (it carries the human-reviewed tiering and headlines):
+**First, resolve the previous editions** — up to 3, walking back up to 7 days. The
+generator reads them as its reference for format, house style and what the reader
+has already seen; `repetition-checker` and `fact-verifier` get the same list later
+in this step:
 
 ```bash
 ROOT=/Users/guilherme/ai-newsletter/pipeline/output/ai
-RECENT_GRANDES=""; PREV_EDITION=""; CHECK=<DATE>
-for i in 1 2 3 4 5; do
+PREV=(); CHECK=<DATE>
+for i in 1 2 3 4 5 6 7; do
   CHECK=$(date -j -v-1d -f "%Y-%m-%d" "$CHECK" "+%Y-%m-%d" 2>/dev/null || date -d "$CHECK - 1 day" "+%Y-%m-%d")
-  for f in edition-final.md edition.md; do
-    [ -s "$ROOT/$CHECK/$f" ] || continue
-    RECENT_GRANDES+=$(grep '^### ' "$ROOT/$CHECK/$f" | sed "s/^### /- $CHECK: /")$'\n'
-    [ -n "$PREV_EDITION" ] || PREV_EDITION="$ROOT/$CHECK/$f"
-    break
-  done
+  [ -s "$ROOT/$CHECK/edition.md" ] && PREV+=("$CHECK: $ROOT/$CHECK/edition.md")
+  [ "${#PREV[@]}" -ge 3 ] && break
 done
-printf '%s' "${RECENT_GRANDES:-(nenhuma)}"   # paste into the generator prompt below
-printf '%s\n' "${PREV_EDITION:-(nenhuma)}"   # ditto — the continuity-rule path
+printf '%s\n' "${PREV[@]:-(nenhuma)}"   # most recent first — paste into the prompts below
 ```
 
 ```
 Agent({
-  description: "edition: facts → edition.md",
+  description: "edition: research → edition.md",
   subagent_type: "generator",
-  prompt: "Date: <DATE>.\nFact base (input): /Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>/facts.md\nWrite the three-tier edition to: /Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>/edition.md\n\nRecent Grandes (do NOT re-lead these — a story whose core event already led here demotes to Média, unless it has a genuinely new, dated in-window development to lead with):\n<paste RECENT_GRANDES, one 'YYYY-MM-DD: headline' per line — or '(nenhuma)'>\n\nEdição da véspera (READ this file before writing — any of today's stories whose core event already ran there, in ANY tier, must be framed as continuity per your Continuidade rule, never re-presented as fresh):\n<paste PREV_EDITION — the path — or '(nenhuma)'>"
+  prompt: "Date: <DATE> (<dia da semana>).\nPesquisa do dia (research.json): <DAY_DIR>/research.json\nEdições anteriores, da mais recente para a mais antiga:\n<the PREV list, one 'YYYY-MM-DD: path' per line — or '(nenhuma)'>\nPrincípios editoriais: /Users/guilherme/ai-newsletter/CLAUDE.md (seção \"Editorial Principles\")\nEscreva a edição em: <DAY_DIR>/edition.md"
 })
-Agent({                                    # FULL RUN ONLY — gated later at Step 3.5a
+Agent({                                    # FULL RUN ONLY — gated later at Step 3a
   description: "Extract sources → sources.json",
   subagent_type: "extract",
-  prompt: "Date: <DATE>.\nfacts.md (input): <DAY_DIR>/facts.md\nresearch.json (metadata join): <DAY_DIR>/research.json\nWrite sources.json to: <DAY_DIR>/sources.json"
+  prompt: "Date: <DATE>.\nresearch.json (input): <DAY_DIR>/research.json\nWrite sources.json to: <DAY_DIR>/sources.json"
 })
 ```
 
 Wait for the **edition** (the critical content step; `extract` keeps running in
-the background and is gated at Step 3.5a). After `edition.md` is written, **expand
-the link tokens** to real URLs:
+the background and is gated at Step 3a). After `edition.md` is written, **check
+its links**:
 
 ```bash
 D=/Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>
-python3 /Users/guilherme/ai-newsletter/pipeline/tools/link-tokens.py expand "$D/edition.md" "$D/facts.md"
+python3 /Users/guilherme/ai-newsletter/pipeline/tools/check-links.py "$D/edition.md" "$D/research.json"
 ```
 
-This replaces every `](S<n>)` with the source URL from `facts.md`'s token map and
-**hard-fails (non-zero exit) on any unknown token or raw-URL regression** — so
-every link in the edition traces to a Fontes URL *by construction* (this replaces
-the after-the-fact link-provenance lint). If `expand` exits non-zero, **STOP**: it
-prints the offending token(s). The fix is to re-run `generator` (delete `edition.md`
-first) — never hand-patch a URL. Idempotent: a clean re-run on an already-expanded
-`edition.md` is a no-op.
+The generator copies source URLs from `research.json`; this confirms every link
+target is one of them. A non-zero exit lists the offending targets with their line
+numbers: replace each with the right URL from that story's `sources` in
+`research.json` and run the check again. If many are wrong, delete `edition.md`
+and re-run `generator`.
 
 Gate (edition.md exists, **1-3 Grandes** `###` — capped at 3, no lower quota; the
 writer picks the number within that cap — plus clusters `####` and a "Leia
@@ -325,35 +269,21 @@ extract→ingest→push block (none of it touches the push, so none of it should
 for it):
 
 - `paywall-teaser` → `paywall-meta.json` (the push consumes it) — **full run only**
-- `repetition-checker` → `repetition.json` (fixed at Step 3.5d)
-- `fact-verifier` → `fact-check.json` (fixed at Step 3.5d). **Passe
-  a ele o caminho da edição da véspera** (o primeiro item da lista `PREV` logo
-  abaixo, que você já resolve para o `repetition-checker`). Sem esse arquivo ele
+- `repetition-checker` → `repetition.json` (fixed at Step 3d)
+- `fact-verifier` → `fact-check.json` (fixed at Step 3d). **Passe
+  a ele o caminho da edição da véspera** (o primeiro item da lista `PREV`
+  resolvida acima). Sem esse arquivo ele
   não consegue distinguir continuidade legítima de atribuição inventada e reporta
   como `high` toda referência correta a ontem — em 2026-08-19 os dois findings
   `high` eram falsos positivos e duas frases certas foram apagadas por causa
   disso.
 
-First resolve the previous editions `repetition-checker` compares against — walk
-back up to 3 prior days that have an edition file (prefer `edition.md`, fall back
-to `v2.md`/`pt.md`):
-
-```bash
-ROOT=/Users/guilherme/ai-newsletter/pipeline/output/ai
-PREV=(); CHECK=<DATE>
-for i in 1 2 3; do
-  CHECK=$(date -j -v-1d -f "%Y-%m-%d" "$CHECK" "+%Y-%m-%d" 2>/dev/null || date -d "$CHECK - 1 day" "+%Y-%m-%d")
-  for f in edition.md v2.md pt.md; do
-    if [ -s "$ROOT/$CHECK/$f" ]; then PREV+=("$CHECK: $ROOT/$CHECK/$f"); break; fi
-  done
-done
-printf '%s\n' "${PREV[@]}"   # the list to paste into repetition-checker's prompt
-```
+The previous editions are the `PREV` list resolved at the top of this step.
 
 Then **fire them in one message** (skip any whose output already exists; on a
 **mini** run skip `paywall-teaser` — there's no push to feed; on the **free-edition
 day** — `date -d <DATE> +%u` equals `TOPIC_FREE_WEEKDAY` in `config.sh`, Wednesday —
-skip it too: that edition has no paywall, see Step 3.5f):
+skip it too: that edition has no paywall, see Step 3f):
 
 ```
 Agent({                                          # FULL RUN ONLY
@@ -369,17 +299,17 @@ Agent({
 Agent({
   description: "Fact-verify the edition",
   subagent_type: "fact-verifier",
-  prompt: "Date: <DATE>.\nresearch.json: <DAY_DIR>/research.json\nfacts.md: <DAY_DIR>/facts.md\nEdition (edition.md): <DAY_DIR>/edition.md\nEdição da véspera (árbitro da classe 'atribuição inventada' — toda referência a 'na véspera'/'ontem'/'confirmada em <dia>' na edição de hoje tem de estar NESTE arquivo): <o primeiro item da lista PREV, só o caminho — ou '(nenhuma)'>\nWrite findings to: <DAY_DIR>/fact-check.json"
+  prompt: "Date: <DATE>.\nresearch.json: <DAY_DIR>/research.json\nEdition (edition.md): <DAY_DIR>/edition.md\nEdição da véspera (árbitro da classe 'atribuição inventada' — toda referência a 'na véspera'/'ontem'/'confirmada em <dia>' na edição de hoje tem de estar NESTE arquivo): <o primeiro item da lista PREV, só o caminho — ou '(nenhuma)'>\nWrite findings to: <DAY_DIR>/fact-check.json"
 })
 ```
 
-All three run in the background while you do Step 3.5; you fix the two checks'
-findings at Step 3.5d (by then they're done). The paywall meta finishes in well under
+All three run in the background while you do Step 3; you fix the two checks'
+findings at Step 3d (by then they're done). The paywall meta finishes in well under
 a minute — long before ingest+rewrite complete — so it's ready for the push. If
 **no** previous editions were found, still run `fact-verifier` (it needs none) and
 either skip `repetition-checker` with a note or pass it "(none found)".
 
-## Step 3.5: Link + paywall + push (the product)
+## Step 3: Link + paywall + push (the product)
 
 This is the **LINK + PUSH** block — it turns the content (`edition.md`) into the
 **DJ-linked + paywalled Substack draft** the human reviews. It runs a real
@@ -391,22 +321,22 @@ re-push clobbers the hand-added images/video/text).
 
 **Mini mode skips this entire block.** `mini` is a content-chain smoke test — it
 must **not** write to the production DB (`ingest --execute`) or push a live Substack
-draft. On a `mini` run, stop after the edition gate (Step 3) + the two checks; print
-"SKIP 3.5 (mini)".
+draft. On a `mini` run, stop after the edition gate (Step 2) + the two checks; print
+"SKIP 3 (mini)".
 
 **Create-once / idempotent-skip.** Every output here skips if it already exists.
 Critically: **if `$DAY_DIR/.substack-draft-id` exists, the draft was already pushed
 — DO NOT push again** (the editor copy is canonical now). Skipping the push on a
 re-run is correct behavior, not a failure.
 
-### Step 3.5a — gate extract (already dispatched in Step 3)
+### Step 3a — gate extract (already dispatched in Step 2)
 
-`extract` and `paywall-teaser` were already fired back in Step 3 — `extract`
+`extract` and `paywall-teaser` were already fired back in Step 2 — `extract`
 alongside the `generator`, `paywall-teaser` right after the edition gate. Here you
 just **wait for `extract` and gate it** before `ingest` consumes its `sources.json`
 (on a re-run where `sources.json` already exists, nothing was dispatched — just
 gate the file). Gate **extract** (sources.json exists, `source_count > 0`, and
-`url_count` equals the actual URL total — the facts→sources coverage contract):
+`url_count` equals the actual URL total — the research→sources coverage contract):
 
 ```bash
 D=/Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>
@@ -421,7 +351,7 @@ fi
 `paywall-meta.json` is missing, push *without* the paywall and warn — never halt
 the chain on a missing teaser file.
 
-### Step 3.5b — cluster candidates → you decide (homepage de-dup + image inheritance)
+### Step 3b — cluster candidates → you decide (homepage de-dup + image inheritance)
 
 **Why:** the newsletter's own `ingest` mints one `auto_created` DJ news per story.
 Those carry **no image** and **crowd the homepage** with duplicate cards for stories
@@ -470,7 +400,7 @@ Write your choices to `$D/cluster-decisions.json` (omit entities that should cre
 `"action": "create"`) mint a fresh news as before. Then proceed to ingest — it consumes
 this file.
 
-### Step 3.5c — ingest `--execute` (real production DB write)
+### Step 3c — ingest `--execute` (real production DB write)
 
 Idempotency: if `links.json` exists, the day was already ingested — **skip**.
 
@@ -481,7 +411,7 @@ noise). **Never** run it with `run_in_background`, `nohup`, or a detached `&`: i
 headless Slack harness, Bash background tasks are killed the moment the turn ends and
 their completion notification never arrives — a detached ingest finishes with nobody
 watching and the chain stalls. Staying foreground keeps the turn (and the run) alive.
-The same 10-min timeout applies to the `--propose` call in Step 3.5b.
+The same 10-min timeout applies to the `--propose` call in Step 3b.
 
 ```bash
 D=/Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>
@@ -503,7 +433,7 @@ step fails, treat it as a hard failure and stop before rewriting links or pushin
 the Substack draft; otherwise link previews can cache ISR 404s for freshly-created
 pages.
 
-### Step 3.5d — fix every finding in `edition.md`
+### Step 3d — fix every finding in `edition.md`
 
 Wait for both checks (`repetition.json`, `fact-check.json`). Then fix **every**
 finding, any severity, in `edition.md`, before the link rewrite, so the push
@@ -525,10 +455,10 @@ phrasing/framing, mark continuity for a repeated story, cut or correct the claim
 the fact-check flagged (against `research.json`), put back the dropped fact.
 Keep every link as it is. The roll-up lists what was fixed.
 
-`$REPO` é a raiz do repo (Step 0), **não** `$ROOT` — `ROOT`, nos Steps 3/3.5, é o
+`$REPO` é a raiz do repo (Step 0), **não** `$ROOT` — `ROOT`, nos Steps 2/3, é o
 diretório de *output*.
 
-### Step 3.5e — rewrite-links → `edition-final.md` (bake DJ links into the md)
+### Step 3e — rewrite-links → `edition-final.md` (bake DJ links into the md)
 
 ```bash
 D=/Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>
@@ -544,7 +474,7 @@ DJ=$(grep -oE 'https?://[^) ]*dailyjournal\.news[^) ]*' "$D/edition-final.md" | 
 echo "  edition-final.md: $DJ DJ links"; [ "$DJ" -eq 0 ] && echo "  WARN: no DJ links in edition-final.md"
 ```
 
-### Step 3.5f — push ONE Substack draft (DJ-linked + paywalled) — CREATE-ONCE
+### Step 3f — push ONE Substack draft (DJ-linked + paywalled) — CREATE-ONCE
 
 ```bash
 D=/Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>
@@ -624,7 +554,6 @@ One block, then the hand-off line:
 D=/Users/guilherme/ai-newsletter/pipeline/output/ai/<DATE>
 echo "=== Draft Complete: <DATE> ==="
 [ -f "$D/research.json" ] && echo "  Research:   $(jq '.story_count' "$D/research.json") stories"
-[ -f "$D/facts.md" ]      && echo "  Facts:      $(grep -c '^## ' "$D/facts.md") stories, $(grep -c '^- ' "$D/facts.md") bullets"
 [ -f "$D/edition.md" ]         && echo "  Edition:    $(grep -c '^### ' "$D/edition.md") grandes, $(grep -c '^#### ' "$D/edition.md") clusters/leia-também"
 [ -f "$D/sources.json" ]  && echo "  Sources:    $(jq '.source_count' "$D/sources.json") entities, $(jq '.url_count' "$D/sources.json") urls"
 [ -f "$D/links.json" ]    && echo "  Ingest:     $(jq 'length' "$D/links.json") DJ pages (executed)"
@@ -638,7 +567,7 @@ echo "=== Draft Complete: <DATE> ==="
 echo "  Duration:   $(( ($(date +%s) - START) / 60 ))m $(( ($(date +%s) - START) % 60 ))s"
 ```
 
-Then list what Step 3.5d fixed, one line per finding (what was flagged → what changed).
+Then list what Step 3d fixed, one line per finding (what was flagged → what changed).
 On Mondays, add the `newsletter-rounds` Saída block (drops, fixes, decisions for Gui).
 
 Then print the hand-off (point at the **Substack draft** — the review happens
@@ -662,18 +591,17 @@ summarized. The orchestrator adds only the gate lines and this roll-up.
 
 - **Sequential and gated.** Each step's input is the previous step's output. A
   missing/invalid output halts the chain — never run a downstream step on bad
-  input. (`facts` needs `research.json`; `generator` needs `facts.md` *with*
-  its Fontes blocks.)
+  input. (`generator` and `extract` both need `research.json`.)
 - **One DATE, passed explicitly to every step.** Resolve once in Step 0.
 - **Delegate / dispatch, don't reimplement.** Research → the `newsletter-research`
-  skill (owns the 3-agent fan-out + dedup). Facts/generator → the registered agents,
-  paths-only prompts (they own their methodology). This skill only sequences,
+  skill (owns the 3-agent fan-out + dedup). The edition → the registered `generator`
+  agent, paths-only prompt (it owns its methodology). This skill only sequences,
   gates, and rolls up.
 - **Every finding gets fixed.** `repetition-checker` and `fact-verifier` are fired
-  right after the edition gate (end of Step 3) and run in parallel *with* ingest.
-  Step 3.5d fixes all their findings in `edition.md` before the push. Nothing
+  right after the edition gate (end of Step 2) and run in parallel *with* ingest.
+  Step 3d fixes all their findings in `edition.md` before the push. Nothing
   flagged is left for the reviewer.
-- **Link before push; review in Substack.** Step 3.5 bakes DJ links + the paywall
+- **Link before push; review in Substack.** Step 3 bakes DJ links + the paywall
   into the md and pushes ONE Substack draft *before* the human review — that draft
   *is* the artifact reviewed. There is **no** separate finalize/re-push afterward.
 - **Create-once — never clobber the editor copy.** The push is guarded by
@@ -690,15 +618,12 @@ summarized. The orchestrator adds only the gate lines and this roll-up.
 
 ## Why this exists
 
-The old `newsletter-draft` chains the **prose path** (research → generate →
-draft-review → rewrite → `pt.md`). The migration (`AGENT_MIGRATION.md`) cut the
-prose generator and draft-rewriter and moved to **research → facts → edition directly**:
-`facts` absorbs translate+gloss, `generator` absorbs select+tier+trim+link, and
-human review shifts from rewriting prose to approving tiering. Step 3.5 also folds
-in what the old `finalize.sh` did — extract → ingest → rewrite-links → push — but
-**ahead of** the review (decision: link before push, review in Substack), so the
-reviewed artifact is a DJ-linked + paywalled Substack draft, not a local `.md`.
-This skill is the chain's orchestrator and the **cutover candidate** to replace
-both `newsletter-draft` *and* `newsletter-finalize`. Until the cutover is committed
-and the superseded `.sh` steps deleted, this runs alongside the old path, not
-instead of it.
+The first version of this pipeline chained a **prose path** (research → generate →
+draft-review → rewrite → `pt.md`). The migration in `AGENT_MIGRATION.md` replaced
+it with research → facts → edition. On 2026-11-05 the facts step went too:
+`research.json` already holds atomic, sourced facts, so the `generator` writes the
+edition straight from it, on a short principle-based prompt
+(`evals/runs/2026-11-04__simple/` is the replay that motivated it). The LINK block
+does what the old `finalize.sh` did — extract → ingest → rewrite-links → push — but
+**ahead of** the review, so the reviewed artifact is a DJ-linked + paywalled
+Substack draft, not a local `.md`.

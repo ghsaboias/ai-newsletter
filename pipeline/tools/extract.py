@@ -1,20 +1,15 @@
 #!/usr/bin/env python3
-"""extract.py — deterministic half of the facts→sources.json extract step.
+"""extract.py — deterministic half of the research→sources.json extract step.
 
-The extract agent used to do the whole job (join + prose) in one LLM pass.
-Now the split is:
-
-  skeleton  — parse facts.md sections + **Fontes:** blocks, join every URL
-              against research.json (metadata lookup), resolve the owner
-              story per section (category/entities), and write
-              sources-skeleton.json with every deterministic field filled
-              and the prose fields empty.
+  skeleton  — one entity per research.json story: its source URLs with their
+              metadata, category and entities, written to
+              sources-skeleton.json with the prose fields empty.
   merge     — combine sources-skeleton.json + sources-prose.json (the
               agent-written prose fields) into the final sources.json,
               validating structure, coverage and field constraints.
 
-The agent's job shrinks to: run skeleton, read facts.md + the skeleton,
-write sources-prose.json (prose only, no URLs, no metadata), run merge.
+The agent's job: run skeleton, read research.json + the skeleton, write
+sources-prose.json (prose only, no URLs, no metadata), run merge.
 
 Usage:
   extract.py skeleton <YYYY-MM-DD> [--dir DAY_DIR]
@@ -24,7 +19,6 @@ import argparse
 import json
 import re
 import sys
-import unicodedata
 from pathlib import Path
 
 TOPIC = "ai"
@@ -38,94 +32,49 @@ DJ_CATEGORIES = {
 ENTITY_PROSE_FIELDS = ("headline", "summary", "bullets", "body")
 SOURCE_PROSE_FIELDS = ("title", "summary", "bullets")
 
-FONTE_RE = re.compile(r"^-\s*(?:\[S\d+\]\s*)?(.+?)\s+—\s+(https?://\S+)\s*$")
-
-
-def parse_facts(path: Path):
-    """facts.md → [{title, urls: [(outlet, url), ...]}] per ## section."""
-    sections = []
-    cur = None
-    in_fontes = False
-    for line in path.read_text().splitlines():
-        if line.startswith("## "):
-            cur = {"title": line[3:].strip(), "urls": []}
-            sections.append(cur)
-            in_fontes = False
-        elif cur is not None and line.strip().startswith("**Fontes"):
-            in_fontes = True
-        elif in_fontes and cur is not None:
-            m = FONTE_RE.match(line.strip())
-            if m:
-                cur["urls"].append((m.group(1), m.group(2)))
-            elif line.strip() and not line.strip().startswith("-"):
-                in_fontes = False
-    return sections
-
-
-def build_lookup(research):
-    """url → (source_obj, story_obj). First hit wins on duplicates."""
-    lut = {}
-    for story in research.get("stories", []):
-        for s in story.get("sources", []):
-            lut.setdefault(s.get("url", ""), (s, story))
-    return lut
-
 
 def cmd_skeleton(day_dir: Path, date: str) -> int:
-    facts_path = day_dir / "facts.md"
     research_path = day_dir / "research.json"
-    for p in (facts_path, research_path):
-        if not p.is_file():
-            print(f"HALT: {p} missing", file=sys.stderr)
-            return 1
-    sections = parse_facts(facts_path)
-    if not sections:
-        print("HALT: no ## sections found in facts.md", file=sys.stderr)
+    if not research_path.is_file():
+        print(f"HALT: {research_path} missing", file=sys.stderr)
         return 1
-    research = json.load(open(research_path))
-    lut = build_lookup(research)
+    stories = json.load(open(research_path)).get("stories", [])
+    if not stories:
+        print("HALT: no stories in research.json", file=sys.stderr)
+        return 1
 
     entities = []
-    misses = []
-    for sec in sections:
+    for story in stories:
+        title = story.get("headline", "")
         srcs = []
-        owners = {}
         seen = set()
-        for outlet, url in sec["urls"]:
-            if url in seen:
+        for src in story.get("sources", []):
+            url = src.get("url")
+            if not url or url in seen:
                 continue
             seen.add(url)
-            hit = lut.get(url)
-            if hit is None:
-                misses.append({"section": sec["title"], "url": url})
-                srcs.append({
-                    "url": url, "title": "", "summary": "", "bullets": [],
-                    "published_at": date, "image_url": "",
-                })
-                continue
-            src, story = hit
-            key = id(story)
-            owners.setdefault(key, [0, story])[0] += 1
             srcs.append({
                 "url": url, "title": "", "summary": "", "bullets": [],
                 "published_at": src.get("published_at") or date,
                 "image_url": src.get("image_url") or "",
             })
-        owner = max(owners.values(), key=lambda v: v[0])[1] if owners else None
-        category = list(owner.get("category", [])) if owner else []
+        if not srcs:
+            print(f"WARN: story '{title}' has no sources, skipped", file=sys.stderr)
+            continue
+        category = list(story.get("category", []))
         bad = [c for c in category if c not in DJ_CATEGORIES]
         if bad:
-            print(f"WARN: section '{sec['title']}' has non-DJ categories {bad}",
+            print(f"WARN: story '{title}' has non-DJ categories {bad}",
                   file=sys.stderr)
         entities.append({
             "headline": "", "summary": "", "bullets": [], "body": "",
             "category": category,
-            "entities": owner.get("entities", {}) if owner else
+            "entities": story.get("entities") or
                         {"people": [], "organizations": [], "places": []},
             "is_breaking": False,
             "sensitivity": "normal",
             "sources": srcs,
-            "_section": sec["title"],
+            "_story": title,
         })
 
     out = {
@@ -137,11 +86,6 @@ def cmd_skeleton(day_dir: Path, date: str) -> int:
     }
     skel_path = day_dir / "sources-skeleton.json"
     skel_path.write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n")
-    if misses:
-        print(f"WARN: {len(misses)} Fontes URL(s) not found in research.json "
-              f"(fallback metadata used):", file=sys.stderr)
-        for m in misses:
-            print(f"  - [{m['section']}] {m['url']}", file=sys.stderr)
     print(f"skeleton OK: {out['source_count']} entities, {out['url_count']} sources "
           f"-> {skel_path}")
     return 0
@@ -173,7 +117,7 @@ def cmd_merge(day_dir: Path, date: str, out_path: Path | None) -> int:
 
     warnings = []
     for i, (se, pe) in enumerate(zip(sents, pents)):
-        label = f"entity {i} ('{se.get('_section', '?')}')"
+        label = f"entity {i} ('{se.get('_story', '?')}')"
         for f in ENTITY_PROSE_FIELDS:
             v = pe.get(f)
             ok = isinstance(v, list) and v if f == "bullets" else \
@@ -214,7 +158,7 @@ def cmd_merge(day_dir: Path, date: str, out_path: Path | None) -> int:
                     errors.append(f"{label}: source {ss['url']}: '{f}' missing/empty")
             for f in SOURCE_PROSE_FIELDS:
                 ss[f] = ps.get(f)
-        se.pop("_section", None)
+        se.pop("_story", None)
 
     if errors:
         return _fail(errors)

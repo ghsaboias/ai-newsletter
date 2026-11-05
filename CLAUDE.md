@@ -11,7 +11,7 @@ newsletters/
     prompts/RESEARCH.md        # research brief (injected into the researcher agents)
   ma/                          # M&A newsletter (dormant)
 .claude/agents/                # the in-session pipeline:
-                               #   researcher-{ai,hw,world}, facts, generator,
+                               #   researcher-{ai,hw,world}, generator,
                                #   extract, paywall-teaser, repetition-checker, fact-verifier,
                                #   insertion-designer
                                # FLAT — one .md per agent, no subdirs. Claude Code scans
@@ -21,11 +21,11 @@ newsletters/
 pipeline/                      # topic-agnostic helpers the agents call
   _lib.sh                      # loads topic config, shared utilities
   ingest.sh / rewrite-links.sh / substack-preview.sh
-  tools/                       # dedup-research.py, link-tokens.py, substack_post.py, …
+  tools/                       # dedup-research.py, check-links.py, substack_post.py, …
   output/<topic>/YYYY-MM-DD/   # namespaced by topic
 ```
 
-Skills, all in-repo (`.claude/skills/`): `newsletter-draft`, `newsletter-research`, `newsletter-images`, `newsletter-recs`, `newsletter-insertion`, `chart-post` (plus `sbq`, `sstats`). The full research → facts → edition pipeline is self-contained in the repo — `newsletter-draft` dispatches `newsletter-research`, which spawns the in-repo `researcher-{ai,hw,world}` agents and `pipeline/tools/dedup-research.py`.
+Skills, all in-repo (`.claude/skills/`): `newsletter-draft`, `newsletter-research`, `newsletter-images`, `newsletter-recs`, `newsletter-insertion`, `chart-post` (plus `sbq`, `sstats`). The full research → edition pipeline is self-contained in the repo — `newsletter-draft` dispatches `newsletter-research`, which spawns the in-repo `researcher-{ai,hw,world}` agents and `pipeline/tools/dedup-research.py`.
 All scripts default to topic `ai`. Override with `PIPELINE_TOPIC=ma`.
 
 ## Pipeline
@@ -33,10 +33,9 @@ All scripts default to topic `ai`. Override with `PIPELINE_TOPIC=ma`.
 One in-session agent chain, orchestrated by the `newsletter-draft` skill (`/newsletter-draft [YYYY-MM-DD] [mini]`). No intermediate prose (`pt.md`); the product is a three-tier edition (**Grandes** / **Médias** / **Leia também**).
 
 1. **research** — `newsletter-research` skill spawns 3 de-conflicted cluster researchers (ai / hw / world) + dedup → `research.json`
-2. **facts** — `facts` agent atomizes research into a sourced fact base → `facts.md`
-3. **edition** — `generator` agent writes the tiered edition → `edition.md`
-4. **checks + link + paywall + push** — `extract` ∥ `paywall-teaser` ∥ `repetition-checker` ∥ `fact-verifier` → `ingest --execute` → **every finding fixed in `edition.md`** → `rewrite-links` → `substack-preview.sh` pushes **one** DJ-linked, paywalled Substack draft
-5. **complete the draft** (serial, each edits the live draft) — `newsletter-images auto` (all picks approved) → `newsletter-recs` → `newsletter-insertion` (the day's partner ad from the Publicidade board, in the free-only block where the paywall teaser sits; creates the model via `insertion-designer` when the Cliente has none) → reply with the draft URL
+2. **edition** — `generator` agent writes the tiered edition straight from `research.json` → `edition.md`
+3. **checks + link + paywall + push** — `extract` ∥ `paywall-teaser` ∥ `repetition-checker` ∥ `fact-verifier` → `ingest --execute` → **every finding fixed in `edition.md`** → `rewrite-links` → `substack-preview.sh` pushes **one** DJ-linked, paywalled Substack draft
+4. **complete the draft** (serial, each edits the live draft) — `newsletter-images auto` (all picks approved) → `newsletter-recs` → `newsletter-insertion` (the day's partner ad from the Publicidade board, in the free-only block where the paywall teaser sits; creates the model via `insertion-designer` when the Cliente has none) → reply with the draft URL
 
 The artifact is a complete Substack draft: DJ-linked, paywalled, with images, recs and the day's insertion. "Run newsletter draft" is the whole daily job.
 
