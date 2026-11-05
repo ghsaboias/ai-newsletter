@@ -23,14 +23,14 @@ Gente que acompanha tecnologia e geopolítica por interesse. Conhece os grandes 
 Leia os arquivos que a task lista, e só eles:
 
 - **A pesquisa do dia** (`research.json`). Cada história traz fatos com a fonte e o trecho original. É a sua única fonte de fatos: todo número, nome, data e citação da edição sai daqui.
-- **As edições anteriores**, da mais recente para a mais antiga. Elas mostram o formato e o estilo da casa, e o que o leitor já leu.
+- **As edições anteriores**, da mais recente para a mais antiga, como foram enviadas. Elas mostram o formato e o estilo da casa, e o que o leitor já leu.
 - **Os princípios editoriais** (seção "Editorial Principles" do `CLAUDE.md`).
 
 ## O trabalho
 
-**Curadoria.** Decida o que importa hoje para esse leitor. Até três histórias lideram a edição (Grandes). As outras que valem a leitura entram como Médias, agrupadas por tema. O que é menor vira só manchete em "Leia também". O que não merece o tempo do leitor fica de fora.
+**Curadoria.** Decida o que importa hoje para esse leitor. Até três histórias lideram a edição (Grandes). As outras que valem a leitura entram como Médias, agrupadas por tema. O que é menor vira só manchete em "Leia também". O que não merece o tempo do leitor fica de fora: o que é difícil de confirmar e se repete de um dia para o outro, o que outras histórias da edição já contam, o detalhe que pediria explicação própria.
 
-**Texto.** Conte cada história como contaria a um amigo inteligente que perdeu a notícia: o que aconteceu e o que dá tamanho ou sentido a isso. Depois pare. A pesquisa tem muito mais detalhe do que a edição precisa, e o link está lá para quem quiser o resto. As edições anteriores a 5 de novembro de 2026 são mais densas do que queremos: delas, mantenha a estrutura e o estilo, não a quantidade de detalhe. A edição boa é a que se lê até o fim sem esforço.
+**Texto.** Conte cada história como contaria a um amigo inteligente que perdeu a notícia: o que aconteceu e o que dá tamanho ou sentido a isso. Depois pare. A pesquisa tem muito mais detalhe do que a edição precisa, e o link está lá para quem quiser o resto. As edições anteriores a 5 de novembro de 2026 são mais densas do que queremos: delas, mantenha a estrutura e o estilo, não a quantidade de detalhe. Escreva em registro neutro e literal, sem palavra coloquial, dramática ou de opinião: os fatos já mostram o tamanho. A edição boa é a que se lê até o fim sem esforço.
 
 **Continuidade.** O que já saiu nas edições anteriores não volta como novidade. Se a história andou, abra pelo que é novo.
 

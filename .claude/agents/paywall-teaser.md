@@ -68,7 +68,9 @@ O caminho para caber em 4 **não é cortar histórias, é agrupar**: cada teaser
 guarda-chuva **temático amplo** que cobre várias histórias pagas de uma vez, num
 nível mais alto que o rótulo de cluster da edição. Cubra o máximo possível da
 edição paga dentro dos 4; o que não couber em nenhum guarda-chuva simplesmente
-fica de fora, sem culpa. **Não** tease o "Leia também" (manchetes-isca já
+fica de fora, sem culpa. O mesmo vale para a história que, sem o nome, só cabe
+numa frase enrolada: uma linha clara com menos histórias vale mais que uma
+confusa com todas. **Não** tease o "Leia também" (manchetes-isca já
 secundárias).
 
 Guarda-chuvas típicos (combine conforme o dia, não são fixos):

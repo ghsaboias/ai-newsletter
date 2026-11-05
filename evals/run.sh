@@ -52,7 +52,9 @@ ROOT="$REPO/pipeline/output/ai"; PREVLIST=""; N=0; CHECK="$DATE"
 for i in 1 2 3 4 5 6 7; do
   CHECK=$(date -d "$CHECK - 1 day" "+%Y-%m-%d")
   [ -s "$ROOT/$CHECK/edition.md" ] || continue
-  PREVLIST+="$CHECK: $ROOT/$CHECK/edition.md"$'\n'; N=$((N+1))
+  # the edition as sent, when it has been pulled (pipeline/tools/prev-editions.py)
+  ED="$ROOT/$CHECK/edition-published.md"; [ -s "$ED" ] || ED="$ROOT/$CHECK/edition.md"
+  PREVLIST+="$CHECK: $ED"$'\n'; N=$((N+1))
   [ "$N" -ge 3 ] && break
 done
 

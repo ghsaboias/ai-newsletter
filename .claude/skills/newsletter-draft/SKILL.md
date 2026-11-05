@@ -189,17 +189,15 @@ feeds the LINK block that mini skips.
 **First, resolve the previous editions** — up to 3, walking back up to 7 days. The
 generator reads them as its reference for format, house style and what the reader
 has already seen; `repetition-checker` and `fact-verifier` get the same list later
-in this step:
+in this step. The reference is each edition **as it was sent**: the tool pulls the
+Substack post and renders it to `edition-published.md`, so Gui's edits in the
+editor are what the agents learn from. If a post can't be pulled it falls back to
+`edition.md` and says so on stderr; that is not a reason to halt.
 
 ```bash
-ROOT=/Users/guilherme/ai-newsletter/pipeline/output/ai
-PREV=(); CHECK=<DATE>
-for i in 1 2 3 4 5 6 7; do
-  CHECK=$(date -j -v-1d -f "%Y-%m-%d" "$CHECK" "+%Y-%m-%d" 2>/dev/null || date -d "$CHECK - 1 day" "+%Y-%m-%d")
-  [ -s "$ROOT/$CHECK/edition.md" ] && PREV+=("$CHECK: $ROOT/$CHECK/edition.md")
-  [ "${#PREV[@]}" -ge 3 ] && break
-done
-printf '%s\n' "${PREV[@]:-(nenhuma)}"   # most recent first — paste into the prompts below
+python3 /Users/guilherme/ai-newsletter/pipeline/tools/prev-editions.py <DATE>
+# prints the PREV list, most recent first, one 'YYYY-MM-DD: path' per line,
+# or '(nenhuma)' — paste into the prompts below
 ```
 
 ```

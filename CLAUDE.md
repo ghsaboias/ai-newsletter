@@ -33,7 +33,7 @@ All scripts default to topic `ai`. Override with `PIPELINE_TOPIC=ma`.
 One in-session agent chain, orchestrated by the `newsletter-draft` skill (`/newsletter-draft [YYYY-MM-DD] [mini]`). No intermediate prose (`pt.md`); the product is a three-tier edition (**Grandes** / **Médias** / **Leia também**).
 
 1. **research** — `newsletter-research` skill spawns 3 de-conflicted cluster researchers (ai / hw / world) + dedup → `research.json`
-2. **edition** — `generator` agent writes the tiered edition straight from `research.json` → `edition.md`
+2. **edition** — `generator` agent writes the tiered edition straight from `research.json` → `edition.md`. Its style reference is the previous editions **as sent**: `pipeline/tools/prev-editions.py` pulls each post back from Substack (`edition-published.md`), so edits made in the editor carry into the next run
 3. **checks + link + paywall + push** — `extract` ∥ `paywall-teaser` ∥ `repetition-checker` ∥ `fact-verifier` → `ingest --execute` → **every finding fixed in `edition.md`** → `rewrite-links` → `substack-preview.sh` pushes **one** DJ-linked, paywalled Substack draft
 4. **complete the draft** (serial, each edits the live draft) — `newsletter-images auto` (all picks approved) → `newsletter-recs` → `newsletter-insertion` (the day's partner ad from the Publicidade board, in the free-only block where the paywall teaser sits; creates the model via `insertion-designer` when the Cliente has none) → reply with the draft URL
 
