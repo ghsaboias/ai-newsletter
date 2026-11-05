@@ -1595,3 +1595,13 @@ https://www.youtube.com/watch?v=lXkjXSul6yg
 **AI’s Stock Market Fallout, Google’s Profit Problem, and Altman’s “Hold My Beer” Moment | #307**
 Discussão entre Peter Diamandis, Salim Ismail, Dave Blundin, Alexander Wissner-Gross e Emad Mostaque sobre os desdobramentos recentes no setor de inteligência artificial, abrangendo o lançamento dos novos modelos do Google, a queda histórica das ações da Alphabet, as revelações de bastidores de Sam Altman na OpenAI, os avanços em robótica e veículos autônomos, o impacto nos cursos universitários e iniciativas de fabricação nacional de hardware
 https://www.youtube.com/watch?v=yHMU5ql7O6o
+
+## 2026-11-04
+
+**High School Dropout to Multi-Billionaire: The Relentless Drive of Rafael Vivas**
+Rafael "Raf" Vivas é membro da equipe fundadora da AppLovin (plataforma de tecnologia de publicidade e marketing digital liderada por Adam Foroughi), onde ingressou em 2011 como primeiro contratado da área de negócios e cofundou a publicadora de jogos Lion Studios. Em conversa com David Senra, Vivas detalha sua trajetória desde o abandono do ensino médio na adolescência até a construção de um negócio de capital aberto avaliado em dezenas de bilhões de dólares, explicando as práticas operacionais, a cultura interna e as decisões táticas que moldaram a companhia
+https://www.youtube.com/watch?v=IdvsD61Rmmk
+
+**European Defense Sovereignty Starts in the Factory: Stark’s Uwe Horstmann and Johannes Schaback**
+Uwe Horstmann (CEO) e Johannes Schaback (CTO), cofundadores da Stark (empresa de tecnologia de defesa europeia fundada há dois anos), discutem com Pat Grady e Luciana Lixandru, sócios da Sequoia Capital, a estratégia operacional, industrial e tecnológica que permitiu à companhia atingir 700 funcionários e fechar bilhões de dólares em contratos governamentais em 18 meses de operação
+https://www.youtube.com/watch?v=qhIabMKHJlA
