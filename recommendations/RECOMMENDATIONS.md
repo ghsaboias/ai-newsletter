@@ -1615,3 +1615,9 @@ https://www.youtube.com/watch?v=XZxDawMm4lU
 **He Helped Build a16z & Is Now Rebuilding the Government | Scott Kupor**
 Scott Kupor é o diretor do Office of Personnel Management (OPM) dos Estados Unidos, a agência central de recursos humanos responsável por cerca de dois milhões de servidores públicos civis federais. Antes de assumir a função pública, Kupor foi o primeiro funcionário da gestora de venture capital Andreessen Horowitz (a16z), onde atuou por 16 anos e meio como sócio-gerente operacional e, posteriormente, investidor de estágio avançado na área de saúde. A conversa com David Senra detalha a mecânica de construção e escala da a16z a partir da adaptação do modelo da agência de talentos CAA, a ruptura das convenções do setor de venture capital e o diagnóstico operacional das reformas em curso no governo federal americano, incluindo meritocracia, incentivos de risco, programas de atração de jovens tecnólogos e a modernização de sistemas legados de previdência
 https://www.youtube.com/watch?v=yTzH8GOpjmw
+
+## 2026-11-06
+
+**A Model For Everyone: How Ronak From Trajectory Is Building Products For Continual Learning**
+Ronak Malde, cofundador da Trajectory (com passagens anteriores pela equipe do Windsurf e DeepMind), detalha os fundamentos técnicos, a arquitetura de produto e a visão de longo prazo para o aprendizado contínuo em agentes de inteligência artificial, em conversa com Pat Grady e Lauren Reeder, da Sequoia Capital
+https://www.youtube.com/watch?v=32vxW6GMeLY
