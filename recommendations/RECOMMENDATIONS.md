@@ -1605,3 +1605,13 @@ https://www.youtube.com/watch?v=IdvsD61Rmmk
 **European Defense Sovereignty Starts in the Factory: Stark’s Uwe Horstmann and Johannes Schaback**
 Uwe Horstmann (CEO) e Johannes Schaback (CTO), cofundadores da Stark (empresa de tecnologia de defesa europeia fundada há dois anos), discutem com Pat Grady e Luciana Lixandru, sócios da Sequoia Capital, a estratégia operacional, industrial e tecnológica que permitiu à companhia atingir 700 funcionários e fechar bilhões de dólares em contratos governamentais em 18 meses de operação
 https://www.youtube.com/watch?v=qhIabMKHJlA
+
+## 2026-11-05
+
+**What Happens When the AI Boom Slows Down**
+Martin Casado, General Partner na Andreessen Horowitz (a16z) e ex-cofundador da Nicira (adquirida pela VMware), analisa as transformações estruturais que a inteligência artificial impõe ao venture capital, à arquitetura de computação e aos mercados de capitais em conversa com Patrick O'Shaughnessy, CEO da Positive Sum. Casado defende que a IA não é mais um ciclo de software tradicional, mas sim uma revolução industrial na qual a engenharia deixou de ser o gargalo intransponível para se tornar um problema solucionável por injeção direta de capital
+https://www.youtube.com/watch?v=XZxDawMm4lU
+
+**He Helped Build a16z & Is Now Rebuilding the Government | Scott Kupor**
+Scott Kupor é o diretor do Office of Personnel Management (OPM) dos Estados Unidos, a agência central de recursos humanos responsável por cerca de dois milhões de servidores públicos civis federais. Antes de assumir a função pública, Kupor foi o primeiro funcionário da gestora de venture capital Andreessen Horowitz (a16z), onde atuou por 16 anos e meio como sócio-gerente operacional e, posteriormente, investidor de estágio avançado na área de saúde. A conversa com David Senra detalha a mecânica de construção e escala da a16z a partir da adaptação do modelo da agência de talentos CAA, a ruptura das convenções do setor de venture capital e o diagnóstico operacional das reformas em curso no governo federal americano, incluindo meritocracia, incentivos de risco, programas de atração de jovens tecnólogos e a modernização de sistemas legados de previdência
+https://www.youtube.com/watch?v=yTzH8GOpjmw
