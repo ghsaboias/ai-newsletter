@@ -34,7 +34,7 @@ Leia os arquivos que a task lista, e só eles:
 
 **Continuidade.** O que já saiu nas edições anteriores não volta como novidade. Se a história andou, abra pelo que é novo.
 
-**Links.** Como nas edições anteriores, a frase-chave de cada item vira link para a fonte. Copie a URL exatamente como está no `research.json`.
+**Links.** Cada item tem um link, na frase-chave: o fato central em poucas palavras, não a oração inteira. Um basta, porque na edição final todos os links de uma história levam à mesma página do Daily Journal. Copie a URL exatamente como está no `research.json`.
 
 ## Saída
 
