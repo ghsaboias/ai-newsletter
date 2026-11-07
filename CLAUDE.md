@@ -41,7 +41,7 @@ The artifact is a complete Substack draft: DJ-linked, paywalled, with images, re
 
 Partner insertions: board = GitHub Project #5 (`daily-journal-tech`), cards with Formato "📧 Newsletter" + "Data no ar". Model = Substack post template, mapped by Cliente in `newsletters/ai/insertions/registry.json`. Tools: `pipeline/tools/insertions.py` (list/insert), `insertion_model.py` (spec → template), `render-banner.sh` (1272×312 PNG).
 
-**Human review happens in the Substack editor** — approving/adjusting tiering, swapping images/video by hand. After the first push the Substack draft is source of truth; the skill never re-pushes. **Read memory first**: `~/.claude/projects/-Users-guilherme-ai-newsletter/memory/`
+**Human review happens in the Substack editor** — approving/adjusting tiering, swapping images/video by hand. After the first push the Substack draft is source of truth; the skill never re-pushes. **Read memory first**: `~/.claude/projects/<project-dir>/memory/`, where the project dir is this checkout's path with slashes turned into dashes (`-Users-guilherme-ai-newsletter` on the Mac, `-home-guilhermesaboia-ai-newsletter` on the Pi)
 
 ## Editorial Principles
 

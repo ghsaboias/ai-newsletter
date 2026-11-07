@@ -126,8 +126,9 @@ reaparece e leitores novos precisam do contexto. Severidade `low`.
 
 ## Checagem 4 — Léxico e estilo (`lexicon`)
 
-A fonte da verdade é o `generator.md` (as regras de escrita, seção de voz/estilo).
-**Leia-o e aplique a lista de lá**, não uma lista de memória. No mínimo:
+A lista abaixo é a fonte da verdade: o `generator.md` deixou de carregar o léxico
+na reescrita de 05/11/2026 (f7667e0), e `pipeline/tools/apply-lexicon.py` aplica os
+achados `lexicon` que esta checagem produz. Uma regra nova entra aqui, não lá.
 
 - **Travessões (—) são proibidos.** Qualquer `—` no texto da edição é finding de
   severidade `high`. Use vírgula, dois-pontos, parênteses ou ponto.
@@ -146,14 +147,14 @@ A fonte da verdade é o `generator.md` (as regras de escrita, seção de voz/est
   "campus". (Só `site` no sentido de página na web fica.)
 - **Itálico em estrangeirismo**: todo termo em inglês mantido no texto vai em
   itálico (`*valuation*`, `*circuit breaker*`, `*endpoint*`, `*sandbox*`…), com as
-  exceções consagradas listadas no `generator.md` (framework, wafer, IPO, chip,
-  data center, benchmark, startup, smartphone, software, hardware). Sinalize o
+  exceções consagradas (framework, wafer, IPO, chip, data center, benchmark,
+  startup, smartphone, software, hardware). Sinalize o
   estrangeirismo **sem** itálico como `lexicon`/`low`.
 
 Para `lexicon`, `previous_text` e `previous_date` não se aplicam: use `null`.
 
 **Escopo fechado.** A checagem 4 cobre **só** as regras de léxico/estilo listadas
-acima e no `generator.md`. Não é espaço para crítica editorial geral: não opine
+acima. Não é espaço para crítica editorial geral: não opine
 sobre escolha de verbo em manchete, precisão de casas decimais, tamanho de bullet
 ou tom. Se não é uma regra escrita, não é finding.
 
