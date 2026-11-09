@@ -48,6 +48,7 @@ const regions = new Intl.DisplayNames(['pt-BR'], { type: 'region' })
 function money(value, currency) {
   const s = SYMBOL[currency ?? 'USD'] ?? currency ?? 'US$'
   const a = Math.abs(value)
+  if (a >= 1e12) return `${s} ${two.format(a / 1e12)} ${a / 1e12 < 2 ? 'trilhão' : 'trilhões'}`
   if (a >= 1e9) return `${s} ${two.format(a / 1e9)} ${a / 1e9 < 2 ? 'bilhão' : 'bilhões'}`
   if (a >= 1e6) return `${s} ${one.format(a / 1e6)} ${a / 1e6 < 2 ? 'milhão' : 'milhões'}`
   if (a >= 1e3) return `${s} ${one.format(a / 1e3)} mil`
