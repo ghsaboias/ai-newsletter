@@ -1621,3 +1621,13 @@ https://www.youtube.com/watch?v=yTzH8GOpjmw
 **A Model For Everyone: How Ronak From Trajectory Is Building Products For Continual Learning**
 Ronak Malde, cofundador da Trajectory (com passagens anteriores pela equipe do Windsurf e DeepMind), detalha os fundamentos técnicos, a arquitetura de produto e a visão de longo prazo para o aprendizado contínuo em agentes de inteligência artificial, em conversa com Pat Grady e Lauren Reeder, da Sequoia Capital
 https://www.youtube.com/watch?v=32vxW6GMeLY
+
+## 2026-11-09
+
+**How to Win Deals & Grow a $250B Business | Nikesh Arora, Palo Alto Networks**
+Nikesh Arora é presidente e CEO da Palo Alto Networks, empresa líder em cibersegurança que expandiu de uma avaliação de US$ 18 bilhões em 2018 (focada exclusivamente em firewalls) para uma plataforma multibilionária com mais de 70 produtos e cerca de 35 aquisições realizadas. Anteriormente, Arora foi presidente do SoftBank e passou 10 anos no Google como Chief Business Officer e líder das operações na Europa, período em que a gigante de buscas cresceu de 2.000 para 60.000 funcionários e de US$ 2 bilhões para US$ 62 bilhões em receita anual. Em conversa com David Senra, Arora detalha os fundamentos econômicos de software corporativo, a metodologia por trás de suas aquisições, o impacto da inteligência artificial na cibersegurança e os princípios que guiam sua gestão e vida pessoal
+https://www.youtube.com/watch?v=BKz2Dy-mKEM
+
+**The Hidden Capital Crunch Behind Silicon Valley’s AI Boom**
+Ramtin Naimi, fundador e sócio-gestor da Abstract Ventures, analisa a dinâmica operacional, financeira e estrutural do ecossistema de capital de risco no Vale do Silício diante do avanço da inteligência artificial. A conversa detalha a aceleração dos ciclos de captação, o surgimento de mecanismos atípicos de precificação, a crise de liquidez enfrentada por fundos e LPs, a economia dos modelos de computação e dados, e a transição das métricas de valuation para empresas com potencial de atingir a escala de trilhões de dólares
+https://www.youtube.com/watch?v=r95bEutZUN4
