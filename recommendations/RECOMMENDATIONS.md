@@ -1631,3 +1631,13 @@ https://www.youtube.com/watch?v=BKz2Dy-mKEM
 **The Hidden Capital Crunch Behind Silicon Valley’s AI Boom**
 Ramtin Naimi, fundador e sócio-gestor da Abstract Ventures, analisa a dinâmica operacional, financeira e estrutural do ecossistema de capital de risco no Vale do Silício diante do avanço da inteligência artificial. A conversa detalha a aceleração dos ciclos de captação, o surgimento de mecanismos atípicos de precificação, a crise de liquidez enfrentada por fundos e LPs, a economia dos modelos de computação e dados, e a transição das métricas de valuation para empresas com potencial de atingir a escala de trilhões de dólares
 https://www.youtube.com/watch?v=r95bEutZUN4
+
+## 2026-11-10
+
+**Midterm Blood Bath, $4T AI Sell Off, Data Center Freeze, What’s Next for Trump**
+No episódio, os quatro apresentadores e investidores do All-In Podcast (Jason Calacanis, David Sacks, Chamath Palihapitiya e David Friedberg) analisam as eleições de meio de mandato de 2026 nos Estados Unidos, marcadas por uma derrota histórica do Partido Republicano (GOP), as estratégias possíveis para os últimos dois anos de mandato de Donald Trump, o colapso de quase US$ 4 trilhões nas ações do setor de tecnologia e inteligência artificial devido a entraves na infraestrutura de data centers, e um avanço teórico da OpenAI refutando a Hipótese do Tempo Exponencial (Exponential Time Hypothesis)
+https://www.youtube.com/watch?v=2v8b062QzTI
+
+**Anthropic’s IPO in Question, Midterms Hit AI, Nasdaq Drops 5%, and RSI Accelerates | #309**
+Salim Ismail (fundador da Open ExO e GP na Exponential Venture Capital), Dave Blundin (fundador e GP da Link Ventures) e o Dr. Alexander Wissner-Gross (cientista da computação e fundador da Reified) debatem os desdobramentos recentes na indústria de inteligência artificial, abrangendo desde os impactos políticos das eleições de meio de mandato nos EUA e o risco de atraso no IPO da Anthropic até a aceleração do autoaperfeiçoamento recursivo (RSI), a eficiência energética de modelos em relação ao PIB e a viabilidade da computação orbital
+https://www.youtube.com/watch?v=WF-ADiC7Khs
