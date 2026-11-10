@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-06",
+  "fidelity_issues": [
+    {
+      "severity": "high",
+      "where": "edition",
+      "claim": "Um dia depois da notícia sobre a Nscale, a Bloomberg informou que a empresa aperta a supervisão de projetos da Nebius, da IREN e da Nscale",
+      "issue": "atribuição inventada",
+      "expected": "As duas reportagens são do mesmo dia. O research.json de hoje diz 'Bloomberg reported on Nov. 5', e a edição da véspera diz que a recusa da opção da Nscale foi informada pelo FT 'nesta quinta (5)' (o research.json de 05/11 também traz 'The FT reported on Nov 5'). O intervalo de um dia confunde a data da edição com a data da notícia. Correto: 'No mesmo dia da notícia sobre a Nscale' ou 'Na quinta (5)'."
+    }
+  ],
+  "dropped_facts": [
+    {
+      "severity": "medium",
+      "story": "Data centers / Microsoft (supervisão das neoclouds)",
+      "fact": "Bloomberg diz que alguns líderes-chave da Microsoft estão arrependidos ('buyer's remorse') depois de assinar dezenas de bilhões de dólares em contratos com neoclouds.",
+      "why_load_bearing": "Cifra que dá tamanho: é a única medida da exposição da Microsoft a essas empresas, e sem ela o leitor não sabe quanto dinheiro está em jogo na revisão."
+    },
+    {
+      "severity": "medium",
+      "story": "Empresas / Tesla (Cybertruck)",
+      "fact": "Musk não disse se a produção irá para outro lugar, e a fábrica de Austin é a única conhecida equipada para fazer os componentes especiais do Cybertruck.",
+      "why_load_bearing": "Dá o sentido da notícia: sem isso, 'encerrará a produção no Texas' não diz se a picape acaba ou só muda de fábrica."
+    },
+    {
+      "severity": "low",
+      "story": "Mundo / Ucrânia (Kushner)",
+      "fact": "Os cinco objetivos de Kushner: consultas permanentes de segurança, comunicação confiável em crises, mais transparência militar, medidas recíprocas para reduzir o risco de escalada e um arcabouço de longo prazo para a segurança europeia.",
+      "why_load_bearing": "A frase anuncia 'listou cinco objetivos' e não informa nenhum deles; o veto citado em seguida é outra declaração de Kushner. Basta listar os objetivos ou retirar a contagem."
+    }
+  ],
+  "summary": "Fidelidade alta, com uma atribuição temporal inventada (Microsoft 'um dia depois' da Nscale, ambas de 5/11); nenhum fato essencial caiu, só dois fatos de tamanho ou sentido (medium) e um low."
+}

@@ -1,0 +1,1891 @@
+{
+  "date": "2026-11-05",
+  "stories": [
+    {
+      "id": "openai-cyber-pipeline-948-linux-root-exploits",
+      "headline": "OpenAI's unreleased cyber model built 948 Linux root exploits and patches for $1.2M in one run",
+      "key_facts": [
+        {
+          "fact": "OpenAI published on Nov 4 an autonomous pipeline that, in one mid-October run with an upcoming, unnamed cyber model, produced working exploits and patches for 948 unique Linux kernel local privilege escalation (LPE) bugs for $1,213,430 in API credits, or $1,279 each.",
+          "source_url": "https://openai.com/index/a-thousand-fewer-paths-to-root/",
+          "excerpt": "In a run in mid-October 2026, our pipeline using an upcoming cyber model dynamically reproduced 1,724 vulnerabilities and generated PoCs for 291 information leak vulnerabilities and 948 working local privilege escalation (LPE) exploits for a commonly used Linux distribution. The total run cost $1,213,430 in API credits, or $1,279 per LPE exploit."
+        },
+        {
+          "fact": "The pipeline identified 2,308 candidate findings and reproduced 1,724 of them (about 74.7%) within 30 hours; human researchers reviewed exploits and patches before reporting to maintainers.",
+          "source_url": "https://openai.com/index/a-thousand-fewer-paths-to-root/",
+          "excerpt": "Within 30 hours, our system reproduced 1724 vulnerabilities, ~74.7% of the 2,308 candidate findings."
+        },
+        {
+          "fact": "OpenAI says the newer model discovered more than 5x as many novel LPEs as a July run with GPT-5.6 Sol, despite three months of hardening between the scans.",
+          "source_url": "https://openai.com/index/a-thousand-fewer-paths-to-root/",
+          "excerpt": "Our analysis pipeline using the newer cyber model in mid-October discovered >5x more novel LPEs than a GPT-5.6 Sol run in July, despite three months of hardening between the scans."
+        },
+        {
+          "fact": "The late-July comparison run with GPT-5.6 Sol found 166 unique LPEs for $513,690.",
+          "source_url": "https://www.brocker.org/openai-cyber-model-pipeline-linux-kernel-948-lpe-exploits",
+          "excerpt": "A late-July run with GPT-5.6 Sol found 166 unique LPEs for $513,690."
+        },
+        {
+          "fact": "OpenAI values the 948 exploits at a hypothetical $18.9M to $66.3M using historical Pwn2Own ($20,000) and TyphoonPWN ($70,000) bounties, about 16x to 55x the pipeline's cost; targets ran a stock desktop OS, not a weakened one.",
+          "source_url": "https://openai.com/index/a-thousand-fewer-paths-to-root/",
+          "excerpt": "Applying those historical bounty amounts to the 948 exploits produces a hypothetical valuation of $18.9M—$66.3M, approximately 16x to 55x our pipeline's cost."
+        },
+        {
+          "fact": "On Google's hardened kernelCTF target, the pipeline obtained 21 LPE exploits for about $32,936, compared with 26 confirmed 0-day LPE exploits accepted by that program in all of 2026.",
+          "source_url": "https://openai.com/index/a-thousand-fewer-paths-to-root/",
+          "excerpt": "On an adapted kernelCTF environment, which is a version of the Linux kernel with reduced attack surface, our pipeline obtained 25 information leak PoCs and 21 LPE exploits. For comparison, 26 confirmed 0-day LPE exploits have been accepted by kernelCTF in 2026 at the time of writing."
+        },
+        {
+          "fact": "OpenAI warns that, near term, a low-privileged account on an unpatched OS should be considered functionally equivalent to root for a well-resourced attacker, and says automated patch generation is essential.",
+          "source_url": "https://openai.com/index/a-thousand-fewer-paths-to-root/",
+          "excerpt": "having access to a low-privileged account on an operating system, that isn't up-to-date on its latest available patches should be considered functionally equivalent to root access for a well-resourced threat actor."
+        },
+        {
+          "fact": "The figures are OpenAI's own and the model is not publicly available; in an early run, human review found 20 of 200 reported successes had reached root through a different 0-day than the one assigned.",
+          "source_url": "https://sysnote.net/news/openai-s-agents-found-948-linux-kernel-root-exploits-for-1-2m-and-1-in-10-early",
+          "excerpt": "In an early run, the exploitation stage reported 200 successful exploits. Human review found that 20 of them had reached root through a different 0-day than the one the agent had been assigned."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://openai.com/index/a-thousand-fewer-paths-to-root/",
+          "outlet": "OpenAI",
+          "title": "A thousand fewer paths to root",
+          "published_at": "2026-11-04",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://x.com/OpenAI/status/2118119451401048497",
+          "outlet": "X",
+          "title": "Tweet by @OpenAI: Our security researchers built an autonomous cyber vulnerability discovery, exploi",
+          "published_at": "2026-11-04",
+          "image_url": "",
+          "type": "tweet"
+        },
+        {
+          "url": "https://www.brocker.org/openai-cyber-model-pipeline-linux-kernel-948-lpe-exploits",
+          "outlet": "Brocker",
+          "title": "OpenAI cyber pipeline finds 948 unique Linux kernel LPEs",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://sysnote.net/news/openai-s-agents-found-948-linux-kernel-root-exploits-for-1-2m-and-1-in-10-early",
+          "outlet": "sysnote",
+          "title": "OpenAI's agents found 948 Linux kernel root exploits for $1.2M, and 1 in 10 early 'successes' used the wrong 0-day",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "OpenAI",
+          "Google"
+        ],
+        "people": [],
+        "places": []
+      }
+    },
+    {
+      "id": "openai-community-compact-data-centers-2027-capacity",
+      "headline": "OpenAI vows no NDAs with officials and to pay full power costs after midterm data center rout",
+      "key_facts": [
+        {
+          "fact": "OpenAI published a National Community Compact and a Compute Campus Policy Blueprint on Nov 5; it pledges to pay the full cost of its electricity and serving infrastructure, with financial assurances protecting other customers if a project is delayed, reduced or canceled.",
+          "source_url": "https://openai.com/index/setting-new-standard-responsible-ai-infrastructure/",
+          "excerpt": "We'll pay the full cost of the electricity we use and the infrastructure needed to serve us. Before major spending begins, we'll provide financial assurances so other customers are protected if a project is delayed, reduced, or canceled."
+        },
+        {
+          "fact": "OpenAI says it will not use NDAs with public officials, except narrow protections for security information, trade secrets or competitively sensitive information, and will publish site-level water and electricity use, construction plans and independent noise studies.",
+          "source_url": "https://openai.com/index/setting-new-standard-responsible-ai-infrastructure/",
+          "excerpt": "we will not use non-disclosure agreements (NDAs) with public officials, allowing only narrow protections covering legitimate security information, trade secrets, or proprietary or competitively sensitive information."
+        },
+        {
+          "fact": "The commitments apply only to future campuses that OpenAI owns and operates.",
+          "source_url": "https://cdn.openai.com/pdf/community-compact.pdf",
+          "excerpt": "Moving forward, every campus owned and operated by OpenAI will have its own locally tailored Community Compact... At future sites owned and operated by OpenAI, we will share clear, timely information about compute campus development"
+        },
+        {
+          "fact": "OpenAI's agreement with Georgia Power for its Effingham County campus lets the utility cut up to 1,000 MW delivered to it during periods of high demand.",
+          "source_url": "https://openai.com/index/setting-new-standard-responsible-ai-infrastructure/",
+          "excerpt": "At our planned Effingham County campus, for example, our agreement with Georgia Power allows the utility to reduce the power it delivers to us by up to 1,000 megawatts during periods of high demand."
+        },
+        {
+          "fact": "OpenAI's Lehane said the commitments build on earlier initiatives and the blueprint had been in the works since August; CNBC notes OpenAI has repeatedly pledged to protect ratepayers this year.",
+          "source_url": "https://www.cnbc.com/2026/11/05/openai-to-pay-for-data-center-power-after-election-shows-ai-concern.html",
+          "excerpt": "OpenAI has repeatedly pledged to protect ratepayers and invest in local communities this year, and Lehane said the company's latest commitments build on many of its previous initiatives. He said the policy blueprint has been in the works since August"
+        },
+        {
+          "fact": "The WSJ reports that by Wednesday morning senior OpenAI leaders were discussing whether the results meant resetting expectations for next year's data center capacity, after executives at Jensen Huang's election-night event voiced concern.",
+          "source_url": "https://www.techmeme.com/261105/p16",
+          "excerpt": "WSJ: By Wednesday morning, senior leaders at OpenAI were discussing whether the results meant the company would have to reset expectations regarding its data center capacity next year, according to a person familiar with the conversation."
+        },
+        {
+          "fact": "Axios counts restrictive measures across 10 states going 43-1 at the ballot box, with analysts saying about 60% of planned 2028 US capacity faces a risk of delay.",
+          "source_url": "https://www.axios.com/2026/11/05/ai-data-center-election-backlash-concessions",
+          "excerpt": "restrictive measures across 10 states going 43-1 at the ballot box... Analysts say about 60% of planned 2028 capacity across the U.S. faces a risk of delay."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://openai.com/index/setting-new-standard-responsible-ai-infrastructure/",
+          "outlet": "OpenAI",
+          "title": "Setting a new standard for responsible AI infrastructure",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://cdn.openai.com/pdf/community-compact.pdf",
+          "outlet": "OpenAI",
+          "title": "OpenAI's National Community Compact: Building With Communities, Not Just In Them",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/11/05/openai-to-pay-for-data-center-power-after-election-shows-ai-concern.html",
+          "outlet": "CNBC",
+          "title": "OpenAI to pay for data center power after election shows AI concern",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.wsj.com/tech/ai/the-election-day-revolt-that-threatens-americas-ai-boom-03a53b52",
+          "outlet": "The Wall Street Journal",
+          "title": "The Election Day Revolt That Threatens America's AI Boom",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.techmeme.com/261105/p16",
+          "outlet": "Techmeme",
+          "title": "Sources: at Jensen Huang's midterms event, tech executives expressed concern over anti-data center results; OpenAI discussed resetting its 2027 capacity plans",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.axios.com/2026/11/05/ai-data-center-election-backlash-concessions",
+          "outlet": "Axios",
+          "title": "Big tech turns to cash, concessions to offer new AI deal after smackdown",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "politics",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "OpenAI",
+          "Georgia Power",
+          "Nvidia"
+        ],
+        "people": [
+          "Lehane",
+          "Jensen Huang"
+        ],
+        "places": [
+          "United States",
+          "Effingham County",
+          "Georgia"
+        ]
+      }
+    },
+    {
+      "id": "kimi-k3-1-pro-weights-ripple-65b-open-models",
+      "headline": "Moonshot opens Kimi K3.1 Pro weights; Ricursive's $32M Ripple-65B claims US open-coding lead",
+      "key_facts": [
+        {
+          "fact": "Moonshot AI released the weights of Kimi K3.1 Pro on Hugging Face on Nov 4, as it had promised when it launched the model in October.",
+          "source_url": "https://gigazine.net/gsc_news/en/20261105-kimi-k3-1-pro-model-weight-release/",
+          "excerpt": "Moonshot AI's AI model ' Kimi K3.1 Pro ,' released on October 24, 2026, now has its 'weights' made available for free, as originally announced."
+        },
+        {
+          "fact": "The model has 2.8 trillion total and 104 billion active parameters, a 1,048,576-token context and a 1.56 TB download, ungated.",
+          "source_url": "https://themodelgap.com/new-ai-models",
+          "excerpt": "96 safetensors files totaling 1,561,293,160,568 bytes (1.56 TB). The card states MXFP4 weights and MXFP8 activations, 2.8T total parameters, 104B activated, 896 experts with 16 selected and 2 shared, a 1,048,576-token context, and text plus image input."
+        },
+        {
+          "fact": "The license is custom, not MIT or Apache: Model-as-a-Service use needs a separate Moonshot deal once the licensee's revenue exceeds $20M in any 12 months.",
+          "source_url": "https://themodelgap.com/new-ai-models",
+          "excerpt": "Model-as-a-Service use needs a separate Moonshot agreement once the licensee's aggregate revenue exceeds $20 million in any 12 months"
+        },
+        {
+          "fact": "Ricursive Intelligence released Ripple-65B Preview on Nov 4 under Apache 2.0: a 65-billion-parameter dense model trained from scratch on 12 trillion tokens, for a stated total R&D cost of $32M. The cost and benchmarks have not been independently verified.",
+          "source_url": "https://neuralbrew.ai/en/articles/2026/11/ricursive-ripple-65b-preview-open-model-agentic-code/",
+          "excerpt": "Its developer claims the top score among American open models on Terminal-Bench 2.1, with a total cost of $32 million. These figures have yet to be independently verified."
+        },
+        {
+          "fact": "Ricursive reports 80.5 on Terminal-Bench 2.1, a narrow lead over Reflection Beam (80.1), and 79.1 on SWE-bench Pro v2.0 Hard, but trails Meta's Muse Spark Open 44.3 to 60.0 on DeepSWE; Reflection's own comparison lists several Chinese models above Ripple's Terminal-Bench score.",
+          "source_url": "https://venturebeat.com/technology/ex-googlers-new-apache-2-0-model-ripple-65b-preview-claims-the-u-s-open-coding-lead-on-two-major-benchmarks",
+          "excerpt": "A broader coding crown would overstate that evidence. Reflection's own published comparison lists several Chinese-developed models above Ripple's reported Terminal-Bench result."
+        },
+        {
+          "fact": "Ripple is a general-purpose variant of the model behind Ricursive's chip-design platform; founders Anna Goldie and Azalia Mirhoseini helped create Google's AlphaChip, and the startup raised a $300M Series A at a $4B valuation in January.",
+          "source_url": "https://venturebeat.com/technology/ex-googlers-new-apache-2-0-model-ripple-65b-preview-claims-the-u-s-open-coding-lead-on-two-major-benchmarks",
+          "excerpt": "Ricursive announced a $300 million Series A in January, led by Lightspeed at a $4 billion valuation, with participation from investors including Nvidia's NVentures, DST Global and Sequoia."
+        },
+        {
+          "fact": "OpenRouter's GMI Cloud endpoint prices Ripple at $0.20 per million input tokens and $0.60 per million output tokens.",
+          "source_url": "https://venturebeat.com/technology/ex-googlers-new-apache-2-0-model-ripple-65b-preview-claims-the-u-s-open-coding-lead-on-two-major-benchmarks",
+          "excerpt": "OpenRouter's GMICloud endpoint charges $0.20 per million input tokens and $0.60 per million output tokens."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://x.com/Kimi_Moonshot/status/2118010528123773297",
+          "outlet": "X",
+          "title": "Tweet by @Kimi_Moonshot: Releasing the model weights of Kimi K3.1 Pro",
+          "published_at": "2026-11-04",
+          "image_url": "",
+          "type": "tweet"
+        },
+        {
+          "url": "https://themodelgap.com/new-ai-models",
+          "outlet": "The Model Gap",
+          "title": "AI model releases — November 2026",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "blog_post"
+        },
+        {
+          "url": "https://gigazine.net/gsc_news/en/20261105-kimi-k3-1-pro-model-weight-release/",
+          "outlet": "GIGAZINE",
+          "title": "The weight of the 'Kimi K3.1 Pro' will be made publicly available for free.",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://venturebeat.com/technology/ex-googlers-new-apache-2-0-model-ripple-65b-preview-claims-the-u-s-open-coding-lead-on-two-major-benchmarks",
+          "outlet": "VentureBeat",
+          "title": "Ex-Googlers' new Apache 2.0 model Ripple-65B Preview claims the U.S. open coding lead on two major benchmarks",
+          "published_at": "2026-11-04",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://neuralbrew.ai/en/articles/2026/11/ricursive-ripple-65b-preview-open-model-agentic-code/",
+          "outlet": "Neural Brew",
+          "title": "Ricursive Releases Ripple-65B Preview, an Open 65-Billion Parameter Model Built for Agentic Code",
+          "published_at": "2026-11-04",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "Moonshot AI",
+          "Ricursive Intelligence",
+          "Reflection",
+          "Meta",
+          "Hugging Face",
+          "OpenRouter"
+        ],
+        "people": [
+          "Anna Goldie",
+          "Azalia Mirhoseini"
+        ],
+        "places": []
+      }
+    },
+    {
+      "id": "openai-images-2-6-gifs-flare-sunburst",
+      "headline": "OpenAI launches Images 2.6 with GIF creation; users now make over 4B images a week",
+      "key_facts": [
+        {
+          "fact": "OpenAI launched Images 2.6 on Nov 4 in ChatGPT and Codex across all tiers on web, desktop and mobile.",
+          "source_url": "https://x.com/OpenAI/status/2118124966055223755",
+          "excerpt": "Images 2.6 is available today in ChatGPT, and Codex across all tiers on web, desktop, and mobile."
+        },
+        {
+          "fact": "ChatGPT can now natively generate animated GIFs from a prompt or uploaded photo, with controls for playback speed and individual frames.",
+          "source_url": "https://www.theverge.com/ai-artificial-intelligence/1026474/openai-chatgpt-animated-gifs-images-2-6",
+          "excerpt": "ChatGPT can now create GIFs using a prompt or a photo uploaded to the AI chatbot. The update, which is rolling out alongside OpenAI's new Images 2.6 model, allows you to adjust the GIF's animation speed, edit individual frames, and share it with others."
+        },
+        {
+          "fact": "OpenAI says users generate over 4 billion images per week across ChatGPT and its API, up from 3 billion reported in September.",
+          "source_url": "https://www.theverge.com/ai-artificial-intelligence/1026474/openai-chatgpt-animated-gifs-images-2-6",
+          "excerpt": "The company says users now generate over 4 billion images per week across ChatGPT and its API, a jump from the 3 billion per week it reported in September."
+        },
+        {
+          "fact": "Two API models launch: GPT-Image-2.6 Flare, which generates images in as little as six seconds, and Sunburst, aimed at higher quality and consistency across edits; image markup and SVG exports are also added.",
+          "source_url": "https://x.com/OpenAI/status/2118124964197114039",
+          "excerpt": "Two new image models for developers: GPT-Image-2.6 Flare and Sunburst. Flare generates images in as little as six seconds. Sunburst brings higher-quality generation and greater consistency across edits. Image markup and SVG exports give you more ways to refine and use what you create."
+        },
+        {
+          "fact": "OpenAI says the API models generate images 50% faster, and the ChatGPT update adds reference images.",
+          "source_url": "https://x.com/OpenAI/status/2118124944928432327",
+          "excerpt": "Images, upgraded—introducing ChatGPT Images 2.6. Now with GIFs and reference images. Plus, two new models are coming to the API with 50% faster image generation."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1026474/openai-chatgpt-animated-gifs-images-2-6",
+          "outlet": "The Verge",
+          "title": "ChatGPT will now make you animated GIFs",
+          "published_at": "2026-11-04",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://x.com/OpenAI/status/2118124944928432327",
+          "outlet": "X",
+          "title": "Tweet by @OpenAI: Images, upgraded—introducing ChatGPT Images 2.6. Now with GIFs and reference imag",
+          "published_at": "2026-11-04",
+          "image_url": "",
+          "type": "tweet"
+        },
+        {
+          "url": "https://x.com/OpenAI/status/2118124964197114039",
+          "outlet": "X",
+          "title": "Tweet by @OpenAI: Two new image models for developers: GPT-Image-2.6 Flare and Sunburst.",
+          "published_at": "2026-11-04",
+          "image_url": "",
+          "type": "tweet"
+        },
+        {
+          "url": "https://x.com/OpenAI/status/2118124966055223755",
+          "outlet": "X",
+          "title": "Tweet by @OpenAI: Images 2.6 is available today in ChatGPT, and Codex across all tiers on web, deskto",
+          "published_at": "2026-11-04",
+          "image_url": "",
+          "type": "tweet"
+        }
+      ],
+      "category": [
+        "technology"
+      ],
+      "entities": {
+        "organizations": [
+          "OpenAI"
+        ],
+        "people": [],
+        "places": []
+      }
+    },
+    {
+      "id": "isomorphic-labs-5b-50b-valuation-talks",
+      "headline": "Bloomberg: DeepMind spinout Isomorphic Labs in talks to raise ~$5B at ~$50B, with no human trials",
+      "key_facts": [
+        {
+          "fact": "Isomorphic Labs, the AI drug discovery company spun out of Google DeepMind, is in talks to raise about $5B at a valuation of about $50B, Bloomberg reported on Nov 4 citing people familiar; the financing has not closed and details could change.",
+          "source_url": "https://thenextweb.com/news/isomorphic-labs-5bn-funding-talks-50bn-valuation",
+          "excerpt": "Isomorphic Labs, the drug discovery company spun out of Google DeepMind, is in talks to raise about $5bn, Bloomberg reported on Wednesday. The round would put the Isomorphic Labs valuation at about $50bn, according to people familiar with the matter. The financing has not closed and the details could change"
+        },
+        {
+          "fact": "Bloomberg had reported in October early talks at $40B or more; in May the company raised $2.1B in a round led by Thrive Capital, with Alphabet among the other investors.",
+          "source_url": "https://thenextweb.com/news/isomorphic-labs-5bn-funding-talks-50bn-valuation",
+          "excerpt": "Bloomberg reported in October that Isomorphic was in early talks for a round valuing it at $40bn or more, and as high as $50bn. In May, the company raised $2.1bn in a round led by Thrive Capital, with Alphabet among the other investors."
+        },
+        {
+          "fact": "The company has no drug in human trials. Hassabis said in January that first trials should start by the end of 2026; on Monday, president Max Jaderberg said its drug work was still preclinical and described the company as in its 'first innings'.",
+          "source_url": "https://thenextweb.com/news/isomorphic-labs-5bn-funding-talks-50bn-valuation",
+          "excerpt": "In January, Hassabis said Isomorphic expected to start its first clinical trials by the end of 2026, Bloomberg reported. On Monday, at Bloomberg Tech in London, Isomorphic president Max Jaderberg said its drug work was still in preclinical stages. He described the company as in its \"first innings\"."
+        },
+        {
+          "fact": "If the round closes, total external funding would reach about $7.7B in under two years.",
+          "source_url": "https://techfundingnews.com/isomorphic-labs-5b-raise-50b-valuation-first-clinical-trial/",
+          "excerpt": "If the $5 billion round closes, total external funding will be around $ 7.7 billion in under 2 years."
+        },
+        {
+          "fact": "Rival Chai Discovery raised $400M at a $3.8B valuation in July, making Isomorphic's target about 13x higher.",
+          "source_url": "https://techfundingnews.com/isomorphic-labs-5b-raise-50b-valuation-first-clinical-trial/",
+          "excerpt": "Chai Discovery raised $400m at a $3.8 billion valuation in July, so Isomorphic's $50 billion valuation is some 13x higher."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-11-04/isomorphic-labs-in-talks-for-about-5-billion-in-funding",
+          "outlet": "Bloomberg",
+          "title": "Isomorphic Labs in Talks for About $5 Billion in Funding",
+          "published_at": "2026-11-04",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.tradingview.com/news/reuters.com,2026:newsml_FWN46L2YV:0-isomorphic-labs-in-talks-for-about-5-billion-in-funding-bloomberg-news/",
+          "outlet": "Reuters via TradingView",
+          "title": "Isomorphic Labs In Talks For About $5 Billion In Funding - Bloomberg News",
+          "published_at": "2026-11-04",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://thenextweb.com/news/isomorphic-labs-5bn-funding-talks-50bn-valuation",
+          "outlet": "The Next Web",
+          "title": "Isomorphic Labs in talks to raise $5bn at a $50bn valuation, Bloomberg reports",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://techfundingnews.com/isomorphic-labs-5b-raise-50b-valuation-first-clinical-trial/",
+          "outlet": "Tech Funding News",
+          "title": "Report: Isomorphic Labs in talks to raise $5B at $50B valuation",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business",
+        "science"
+      ],
+      "entities": {
+        "organizations": [
+          "Isomorphic Labs",
+          "Google DeepMind",
+          "Alphabet",
+          "Thrive Capital",
+          "Chai Discovery",
+          "Bloomberg"
+        ],
+        "people": [
+          "Demis Hassabis",
+          "Max Jaderberg"
+        ],
+        "places": [
+          "London"
+        ]
+      }
+    },
+    {
+      "id": "apple-cuts-employee-ai-spending-caps",
+      "headline": "Bloomberg: Apple cuts engineers' daily AI cap from $300 to $200; other teams could fall to $25",
+      "key_facts": [
+        {
+          "fact": "Apple lowered the daily AI spending cap for some engineers from $300 to $200 last month and is planning further cuts to as little as $100 for some teams, Bloomberg reported on Nov 4.",
+          "source_url": "https://www.bloomberg.com/news/articles/2026-11-04/apple-cuts-internal-ai-usage-budgets-in-move-to-reduce-spending",
+          "excerpt": "Last month, Apple quietly lowered the daily spending cap for some engineers using AI models to $200 from $300, according to people with knowledge of the change. The company is now planning further cuts for some engineering teams, potentially reducing their daily allowances to as little as $100"
+        },
+        {
+          "fact": "Many groups outside engineering already face a $100 daily cap, and Apple has considered dropping it to as little as $25 for some teams; staff can request exemptions.",
+          "source_url": "https://www.macworld.com/article/3277678/apple-reportedly-slashes-employee-ai-usage-limits-amid-cost-cutting-effort.html",
+          "excerpt": "Many groups outside of engineering already face a $100 daily cap, but Apple has considered reducing that limit to as little as $25 for some teams"
+        },
+        {
+          "fact": "Apple is asking some teams to use cheaper models or switch to on-device AI; employees have access to Claude, ChatGPT, Gemini and other models.",
+          "source_url": "https://www.macrumors.com/2026/11/04/apple-reducing-employee-ai-spending/",
+          "excerpt": "Apple is asking some teams to use less expensive models or switch to on-device AI. Employees who need a bigger budget will be able to ask executives for an increase."
+        },
+        {
+          "fact": "Sources told Bloomberg that few workers were using their full $300 allowances, so savings may be small.",
+          "source_url": "https://www.macworld.com/article/3277678/apple-reportedly-slashes-employee-ai-usage-limits-amid-cost-cutting-effort.html",
+          "excerpt": "Gurman's sources claim that \"few workers were using their full $300 daily allowances, making the previous limits unnecessarily generous,\" which suggests the savings obtained through the measure will be small."
+        },
+        {
+          "fact": "Apple has also hired outside productivity consultants for some divisions, and with the AI cost cuts those reviews have fueled worries about a possible restructuring.",
+          "source_url": "https://www.macrumors.com/2026/11/04/apple-reducing-employee-ai-spending/",
+          "excerpt": "Apple has also hired outside productivity consultants for some divisions. Combined with the AI cost cuts, the reviews have fueled worries about possible restructuring."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-11-04/apple-cuts-internal-ai-usage-budgets-in-move-to-reduce-spending",
+          "outlet": "Bloomberg",
+          "title": "Apple Cuts Internal AI Usage Budgets in Move to Reduce Spending",
+          "published_at": "2026-11-04",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.macrumors.com/2026/11/04/apple-reducing-employee-ai-spending/",
+          "outlet": "MacRumors",
+          "title": "Apple is Putting Employees on an AI Budget",
+          "published_at": "2026-11-04",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.macworld.com/article/3277678/apple-reportedly-slashes-employee-ai-usage-limits-amid-cost-cutting-effort.html",
+          "outlet": "Macworld",
+          "title": "Apple reportedly slashes employee AI usage limits amid 'cost-cutting effort'",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://techcrunch.com/2026/11/04/apple-is-reportedly-cutting-budgets-for-its-internal-ai-usage/",
+          "outlet": "TechCrunch",
+          "title": "Apple is reportedly cutting budgets for its internal AI usage",
+          "published_at": "2026-11-04",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Apple",
+          "Bloomberg",
+          "Anthropic",
+          "OpenAI",
+          "Google"
+        ],
+        "people": [
+          "Mark Gurman"
+        ],
+        "places": []
+      }
+    },
+    {
+      "id": "brockman-openai-q3-70-percent-ipo-cat-wu",
+      "headline": "Brockman: OpenAI revenue run rate rose 70% in Q3, 2027 IPO possible; Claude Code's PM head joins",
+      "key_facts": [
+        {
+          "fact": "Speaking at a WSJ tech conference in Napa on Nov 4, OpenAI president Greg Brockman, asked whether an IPO next year was possible, said 'I think so' and added that the company wants to list when the time is right.",
+          "source_url": "https://biz.chosun.com/en/en-it/2026/11/05/DT4TSXJ77BGHHEQLYULVY7FFA4/",
+          "excerpt": "Greg Brockman, OpenAI co-founder and president, was asked at the WSJ Tech Conference held in Napa, California, whether preparations for an IPO next year were possible, and said, \"I think so.\""
+        },
+        {
+          "fact": "Brockman called the first half 'pretty rough' as Anthropic gained on enterprise coding, saying OpenAI was not 'even in the conversation' in coding.",
+          "source_url": "https://financialcontextdaily.com/openai-ready-for-2027-ipo-as-president-brockman-says-enterprise-revenue-surging/",
+          "excerpt": "\"Q1 was pretty rough, Q2 was pretty rough. It felt like in many ways we were not even in the conversation,\" he said, referring to the company's position in the competition with Anthropic."
+        },
+        {
+          "fact": "He said annualized revenue grew 70% quarter over quarter in Q3.",
+          "source_url": "https://financialcontextdaily.com/openai-ready-for-2027-ipo-as-president-brockman-says-enterprise-revenue-surging/",
+          "excerpt": "He said OpenAI recorded 70% quarterly growth in annualized revenue, while its enterprise business surged during the period."
+        },
+        {
+          "fact": "Brockman called it a 'revenue inflection' driven by the enterprise business, helped by the release of GPT-5.6 Sol and ChatGPT Work.",
+          "source_url": "https://biz.chosun.com/en/en-it/2026/11/05/DT4TSXJ77BGHHEQLYULVY7FFA4/",
+          "excerpt": "he said revenue rose sharply in the third quarter, helped by the release of the AI model \"GPT-5.6 Sol\" and the enterprise service \"ChatGPT Work.\" Brockman called it \"an amazing revenue inflection point.\""
+        },
+        {
+          "fact": "Brockman said OpenAI is now 'somewhere around majority enterprise', meaning business customers generate more than half of revenue.",
+          "source_url": "https://financialcontextdaily.com/openai-ready-for-2027-ipo-as-president-brockman-says-enterprise-revenue-surging/",
+          "excerpt": "He said OpenAI recorded 70% quarterly growth in annualized revenue, while its enterprise business surged during the period. ... Now we are somewhere around majority enterprise."
+        },
+        {
+          "fact": "He disclosed expanded work with JPMorgan, particularly on cyber; Anthropic also has a cyber deal with the bank.",
+          "source_url": "https://x.com/ZeffMax/status/2118232357014753456",
+          "excerpt": "Oh yea, and he broke some news that OpenAI is expanding its work with JP Morgan, particularly on stuff like cyber. Anthropic also has a deal to work with JP Morgan on cyber"
+        },
+        {
+          "fact": "Cat Wu announced on the evening of Nov 4 (US time) that she is joining OpenAI to lead product management for Core Products.",
+          "source_url": "https://x.com/_catwu/status/2118137612577968402",
+          "excerpt": "Some news: I'm joining OpenAI to lead product management for Core Products!"
+        },
+        {
+          "fact": "Wu left Anthropic last week after two years as Head of Product for Claude Code, Business Insider reports.",
+          "source_url": "https://www.businessinsider.com/cat-wu-joins-openai-from-anthropic-product-lead-coup-2026-11",
+          "excerpt": "Cat Wu, who left Anthropic last week after becoming one of the company's highest-profile product managers, is joining OpenAI. (Techmeme summary: Wu was the Head of Product for Claude Code for two years.)"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.wsj.com/tech/openai-had-rough-first-half-of-year-before-coding-takeoff-brockman-says-6c97d9e5?st=hL3kyT&reflink=desktopwebshare_permalink",
+          "outlet": "Wall Street Journal",
+          "title": "OpenAI Had Rough First Half of Year Before Coding Takeoff, Brockman Says",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://biz.chosun.com/en/en-it/2026/11/05/DT4TSXJ77BGHHEQLYULVY7FFA4/",
+          "outlet": "Chosun Biz",
+          "title": "OpenAI eyes 2025 IPO as enterprise revenue tops half and growth rebounds",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://financialcontextdaily.com/openai-ready-for-2027-ipo-as-president-brockman-says-enterprise-revenue-surging/",
+          "outlet": "FinancialContextDaily",
+          "title": "OpenAI ready for 2027 IPO as president Brockman says enterprise revenue surging",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://x.com/ZeffMax/status/2118232357014753456",
+          "outlet": "X",
+          "title": "Tweet by @ZeffMax: Oh yea, and he broke some news that OpenAI is expanding its work with JP Morgan",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "tweet"
+        },
+        {
+          "url": "https://x.com/_catwu/status/2118137612577968402",
+          "outlet": "X",
+          "title": "Tweet by @_catwu: Some news: I'm joining OpenAI to lead product management for Core Products!",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "tweet"
+        },
+        {
+          "url": "https://www.businessinsider.com/cat-wu-joins-openai-from-anthropic-product-lead-coup-2026-11",
+          "outlet": "Business Insider",
+          "title": "Cat Wu joins OpenAI from Anthropic",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "OpenAI",
+          "Anthropic",
+          "JPMorgan",
+          "Wall Street Journal"
+        ],
+        "people": [
+          "Greg Brockman",
+          "Cat Wu"
+        ],
+        "places": [
+          "Napa"
+        ]
+      }
+    },
+    {
+      "id": "china-blocks-softbank-abb-robotics",
+      "headline": "China prohibits SoftBank's $5.4B takeover of ABB's robotics business in China; deal in doubt",
+      "key_facts": [
+        {
+          "fact": "ABB said on Nov 5 that SoftBank informed it that China's Office of the Working Mechanism for Foreign Investment Security Review prohibited the acquisition of the ABB Robotics business in China; ABB says the two are in close dialogue and working constructively on the transaction, signed in October 2025 at a $5.375B enterprise value.",
+          "source_url": "https://new.abb.com/news/detail/140154/update-on-divestment-of-abb-robotics",
+          "excerpt": "ABB confirms that it has been informed by SoftBank that the Office of the Working Mechanism for Foreign Investment Security Review in China has prohibited the acquisition of the ABB Robotics business in China. ABB and SoftBank are in close dialogue and are working constructively on the transaction."
+        },
+        {
+          "fact": "The FT first reported the prohibition on Nov 5, saying SoftBank expected the deal to go through until it was told last week that China's National Development and Reform Commission (NDRC) had prohibited it; SoftBank declined to comment and the NDRC did not immediately respond.",
+          "source_url": "https://www.straitstimes.com/business/china-blocks-softbanks-us5-4-billion-takeover-of-engineering-group-abbs-robotics-division",
+          "excerpt": "The prohibition was first reported by the Financial Times on Nov 5. SoftBank had expected the deal to go through until it was told last week that China's National Development and Reform Commission (NDRC) had prohibited the acquisition, the report said."
+        },
+        {
+          "fact": "Per the FT, the NDRC was concerned that robotics data could be transferred overseas and used to train AI models, including those of OpenAI, in which SoftBank is a major investor.",
+          "source_url": "https://www.straitstimes.com/business/china-blocks-softbanks-us5-4-billion-takeover-of-engineering-group-abbs-robotics-division",
+          "excerpt": "The NDRC was concerned about robotics data being transferred overseas, where it could be used to train AI models, including those developed by OpenAI, in which SoftBank is a major investor, the FT report added."
+        },
+        {
+          "fact": "China is ABB's largest robotics market, and more than 90% of robots for Chinese customers are built locally, including at a $150M Shanghai factory operating since 2022.",
+          "source_url": "https://www.swissinfo.ch/eng/swiss-industry/china-blocks-abbs-sale-of-its-robotics-division-to-softbank/92331115",
+          "excerpt": "China is the largest market for ABB's robotics division. More than 90% of the robots destined for Chinese customers are manufactured locally. ABB has been operating a robot factory in Shanghai since 2022, built at a cost of $150 million."
+        },
+        {
+          "fact": "It is the second major deal China has blocked this year, after Meta was ordered to unwind its $2B-plus acquisition of AI startup Manus.",
+          "source_url": "https://www.scmp.com/business/china-business/article/3373415/china-blocks-softbanks-us54-billion-takeover-abbs-robotics-division",
+          "excerpt": "The case marks the second major deal blocked by China this year after Meta Platforms was ordered to unwind its US$2 billion-plus acquisition of artificial intelligence start-up Manus."
+        },
+        {
+          "fact": "The FT says a spin-off of parts of the business to Chinese owners had been considered and that SoftBank is assessing whether a fresh attempt is possible; the European Commission had already approved the takeover.",
+          "source_url": "https://www.swissinfo.ch/eng/swiss-industry/china-blocks-abbs-sale-of-its-robotics-division-to-softbank/92331115",
+          "excerpt": "a spin-off of parts of the business to Chinese owners had also been considered. The report stated that the decision came as a surprise to SoftBank... It is now assessing whether a fresh attempt is possible... The European Commission had already approved the takeover."
+        },
+        {
+          "fact": "ABB expected about $5.3B in net proceeds from the sale and recently announced a $5.5B purchase of British automation specialist Rotork.",
+          "source_url": "https://www.swissinfo.ch/eng/swiss-industry/china-blocks-abbs-sale-of-its-robotics-division-to-softbank/92331115",
+          "excerpt": "ABB had previously anticipated net proceeds of around $5.3 billion... ABB recently announced the purchase of the British automation specialist Rotork for $5.5 billion."
+        },
+        {
+          "fact": "China represents around 30% of ABB's robot-related business, and ABB shares were down 1.1% in morning trading after the block became public.",
+          "source_url": "https://www.straitstimes.com/business/china-blocks-softbanks-us5-4-billion-takeover-of-engineering-group-abbs-robotics-division",
+          "excerpt": "ABB shares were down 1.1% in morning trading after the blocked takeover was made public... China is ABB's biggest robotics market, representing around 30% of its robot-related business."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://new.abb.com/news/detail/140154/update-on-divestment-of-abb-robotics",
+          "outlet": "ABB",
+          "title": "Update on divestment of ABB Robotics",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.straitstimes.com/business/china-blocks-softbanks-us5-4-billion-takeover-of-engineering-group-abbs-robotics-division",
+          "outlet": "The Straits Times",
+          "title": "China blocks SoftBank's US$5.4 billion takeover of engineering group ABB's robotics division",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.swissinfo.ch/eng/swiss-industry/china-blocks-abbs-sale-of-its-robotics-division-to-softbank/92331115",
+          "outlet": "SWI swissinfo.ch",
+          "title": "China blocks sale of ABB robotics division to SoftBank",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.scmp.com/business/china-business/article/3373415/china-blocks-softbanks-us54-billion-takeover-abbs-robotics-division",
+          "outlet": "South China Morning Post",
+          "title": "China blocks SoftBank's US$5.4 billion takeover of ABB's robotics division",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.ft.com/content/f10c3e24-45e4-47ff-bde2-24a8de90aec4",
+          "outlet": "Financial Times",
+          "title": "China blocks SoftBank's $5.4bn takeover of ABB's robotics division",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business",
+        "world"
+      ],
+      "entities": {
+        "organizations": [
+          "ABB",
+          "SoftBank",
+          "National Development and Reform Commission",
+          "OpenAI",
+          "Meta",
+          "Manus",
+          "Rotork",
+          "European Commission"
+        ],
+        "people": [],
+        "places": [
+          "China",
+          "Shanghai"
+        ]
+      }
+    },
+    {
+      "id": "micron-suspends-taiwan-fab-11e-labor-dispute",
+      "headline": "Bloomberg: Micron halts $4.5B Taiwan memory plant over labor dispute amid AI memory shortage",
+      "key_facts": [
+        {
+          "fact": "Micron has all but halted construction of its plant in Taoyuan, Taiwan, over a protracted labor dispute and has told Taiwanese officials and a supplier, according to people cited by Bloomberg.",
+          "source_url": "https://theedgemalaysia.com/node/824699",
+          "excerpt": "The US company has all but halted construction of a plant in the northern Taiwanese city of Taoyuan... Micron has informed Taiwanese officials and a supplier about its plans to suspend construction in the city, the people said."
+        },
+        {
+          "fact": "The site, Fab 11E, had a budget of $3B to $4.5B including ASML equipment, was due online in 2028 and was planned to make high-bandwidth memory (HBM) and DRAM.",
+          "source_url": "https://theedgemalaysia.com/node/824699",
+          "excerpt": "Micron had budgeted US$3 billion to US$4.5 billion towards the Taoyuan complex, which included purchases of ASML gear... Dubbed Fab 11E, it was previously scheduled to come online in 2028."
+        },
+        {
+          "fact": "Micron did not address the Taoyuan complex directly, saying operations continue as normal; the Taoyuan government says it has not been notified of a suspension.",
+          "source_url": "https://theedgemalaysia.com/node/824699",
+          "excerpt": "\"Taiwan plays an important role in Micron's global footprint, and our operations today continue as normal,\" Micron said in a statement, without addressing questions about the Taoyuan complex... The Taoyuan government said it hasn't been notified of a suspension."
+        },
+        {
+          "fact": "The Taoyuan union, fewer than 3,000 of Micron's 15,000 Taiwan staff, demands that 15% of operating profit go to employees, matching Samsung and SK Hynix, and is recruiting from the larger Taichung union to annul the pact that union signed in October.",
+          "source_url": "https://theedgemalaysia.com/node/824699",
+          "excerpt": "The Taoyuan group has demanded Micron distribute 15% of its operating profit to global employees, because Samsung and SK Hynix have adopted similar measures... The union is now trying to form a bigger group by recruiting members from the Taichung body -- to help try and annul the existing pact."
+        },
+        {
+          "fact": "Taiwan's economic ministry says the October deal would lift junior engineers' annual packages to about NT$4M ($121,450) on average and senior engineers' to NT$6M.",
+          "source_url": "https://theedgemalaysia.com/node/824699",
+          "excerpt": "the agreement would lift junior engineers' annual packages by more than two-fold to NT$4 million (US$121,450...), on average. Senior engineers would get a three-fold bump to NT$6 million."
+        },
+        {
+          "fact": "Taiwan produces three-fifths of Micron's conventional chips, and Micron has invested close to $50B there over three decades.",
+          "source_url": "https://theedgemalaysia.com/node/824699",
+          "excerpt": "an island that produces three-fifths of the US firm's conventional chips... Micron -- which has invested close to US$50 billion... in Taiwan over three decades"
+        },
+        {
+          "fact": "Micron and the Taoyuan union are set to meet again on Nov 6, after a one-day strike last month.",
+          "source_url": "https://www.tomshardware.com/tech-industry/semiconductors/microns-usd4-5-billion-taoyuan-plant-construction-halted-amidst-labor-dispute-company-and-union-still-havent-reached-agreement-as-latter-asks-for-clearer-profit-sharing-terms",
+          "excerpt": "the Taoyuan union is still holding out for better terms, with the two parties set to meet again on November 6. It even launched a one-day strike last month"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://theedgemalaysia.com/node/824699",
+          "outlet": "The Edge Malaysia (Bloomberg)",
+          "title": "Micron said to pause work on US$4.5 bil Taiwan plant after labour spat",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-11-05/micron-pauses-work-on-4-5-billion-taiwan-plant-after-labor-spat",
+          "outlet": "Bloomberg",
+          "title": "Micron Pauses Work on $4.5 Billion Taiwan Plant After Labor Spat",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.tomshardware.com/tech-industry/semiconductors/microns-usd4-5-billion-taoyuan-plant-construction-halted-amidst-labor-dispute-company-and-union-still-havent-reached-agreement-as-latter-asks-for-clearer-profit-sharing-terms",
+          "outlet": "Tom's Hardware",
+          "title": "Micron's $4.5 billion Taoyuan plant construction halted amidst labor dispute",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Micron",
+          "ASML",
+          "Samsung",
+          "SK Hynix",
+          "Nvidia",
+          "Taiwan Ministry of Economic Affairs"
+        ],
+        "people": [
+          "Jerry Lin"
+        ],
+        "places": [
+          "Taiwan",
+          "Taoyuan",
+          "Taichung"
+        ]
+      }
+    },
+    {
+      "id": "agility-robotics-nasdaq-aglt-spac",
+      "headline": "Agility closes SPAC, lists on Nasdaq as first US pure-play humanoid firm; $174K H1 revenue",
+      "key_facts": [
+        {
+          "fact": "Agility closed its merger with Churchill Capital Corp XI on Nov 4, with stock and warrants set to trade on Nasdaq from Nov 5 as AGLT and AGLTW; it bills itself as the only US-listed pure-play humanoid company with active commercial deployments.",
+          "source_url": "https://www.agilityrobotics.com/content/agility-robotics-and-churchill-capital-corp-xi-complete-business-combination",
+          "excerpt": "today announced the completion of its previously announced business combination with Churchill Capital Corp XI... expected to begin trading on Nasdaq on November 5, 2026, under the ticker symbols \"AGLT\" and \"AGLTW\"... the only U.S. publicly listed pure-play humanoid robotics company with proven, active commercial deployments"
+        },
+        {
+          "fact": "The deal and related financings raised about $465M gross, including a PIPE (private investment in public equity) led by Foxconn and $100M of equity received before closing.",
+          "source_url": "https://www.agilityrobotics.com/content/agility-becomes-first-u-s-publicly-listed-pure-play-humanoid-robotics-company-begins-trading-today-on-nasdaq-as-aglt",
+          "excerpt": "The business combination and related financings raised approximately $465 million in gross capital before transaction expenses, including proceeds from a private investment in public equity (PIPE) led by Foxconn and $100 million of equity funding received prior to closing."
+        },
+        {
+          "fact": "SPAC shareholder redemptions cut the capital raised in the deal to the final $465M.",
+          "source_url": "https://www.bizjournals.com/portland/news/2026/11/03/agility-robotics-de-spac-redemptions.html",
+          "excerpt": "With SPAC shareholder redemptions the capital raised in the deal drops to $465M."
+        },
+        {
+          "fact": "Agility earned just $174,000 in revenue in the first half of 2026, mostly from related parties, and lost $362M in the same period.",
+          "source_url": "https://techcrunch.com/2026/11/05/agility-is-the-first-pure-humanoid-robot-company-on-the-stock-market-are-you-buying/",
+          "excerpt": "the robot is actually doing real work, and earning money -- albeit just $174,000 in the first six months of 2026, and mostly from related parties. The company lost $362 million in the same time period"
+        },
+        {
+          "fact": "TechCrunch reports $300M in planned Digit 5 contracts from 30 customers; the CEO would not name them or say whether they are investors, and Digit 5 must hit undisclosed performance targets to close the deals.",
+          "source_url": "https://techcrunch.com/2026/11/05/agility-is-the-first-pure-humanoid-robot-company-on-the-stock-market-are-you-buying/",
+          "excerpt": "Agility has $300 million in planned contracts from 30 customers for its new generation of robot, Digit 5... could not yet reveal who the customers or say if they are investors. To close the deals, Johnson said that Digit 5 will have to hit undisclosed targets along several metrics"
+        },
+        {
+          "fact": "Its filing estimates a subscription at $25,000 upfront per robot plus $8,500 a month, or $200,000 to buy plus $20,000 for deployment and $36,000 a year; Digit 5's bill of materials starts at $150,000, targeted to fall to $30,000 at 10,000 robots a year.",
+          "source_url": "https://arstechnica.com/ai/2026/11/agility-robotics-nasdaq-debut-invites-scrutiny-of-humanoid-robot-market/",
+          "excerpt": "customers would pay a one-time cost of about $25,000 per robot for delivery and deployment... along with a recurring monthly fee of $8,500... purchase the robot's hardware outright for a one-time payment of $200,000... estimated each Digit v5 humanoid robot as initially costing Agility $150,000... eventually $30,000 per robot if the company can produce 10,000 robots per year."
+        },
+        {
+          "fact": "Digit 5 prototypes have not been shown publicly; the CEO says they will be demonstrated at CES 2027 and be widely available at the end of 2027.",
+          "source_url": "https://techcrunch.com/2026/11/05/agility-is-the-first-pure-humanoid-robot-company-on-the-stock-market-are-you-buying/",
+          "excerpt": "The company has yet to show off the prototypes of Digit 5, but Johnson said they will be demonstrated at CES 2027 and widely available at the end of that year."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.agilityrobotics.com/content/agility-becomes-first-u-s-publicly-listed-pure-play-humanoid-robotics-company-begins-trading-today-on-nasdaq-as-aglt",
+          "outlet": "Agility",
+          "title": "Agility Becomes First U.S. Publicly Listed Pure-Play Humanoid Robotics Company, Begins Trading Today on Nasdaq as AGLT",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.agilityrobotics.com/content/agility-robotics-and-churchill-capital-corp-xi-complete-business-combination",
+          "outlet": "Agility",
+          "title": "Agility Robotics and Churchill Capital Corp XI Complete Business Combination",
+          "published_at": "2026-11-04",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://techcrunch.com/2026/11/05/agility-is-the-first-pure-humanoid-robot-company-on-the-stock-market-are-you-buying/",
+          "outlet": "TechCrunch",
+          "title": "Agility is the first pure humanoid robot company on the stock market. Are you buying?",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://arstechnica.com/ai/2026/11/agility-robotics-nasdaq-debut-invites-scrutiny-of-humanoid-robot-market/",
+          "outlet": "Ars Technica",
+          "title": "Agility Robotics' Nasdaq debut invites scrutiny of humanoid robot market",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.bizjournals.com/portland/news/2026/11/03/agility-robotics-de-spac-redemptions.html",
+          "outlet": "Portland Business Journal",
+          "title": "Agility Robotics de-SPAC set, gross capital raised drops",
+          "published_at": "2026-11-03",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "finance",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Agility Robotics",
+          "Churchill Capital Corp XI",
+          "Foxconn",
+          "Nasdaq",
+          "GXO",
+          "Schaeffler",
+          "Toyota Motor Manufacturing Canada"
+        ],
+        "people": [
+          "Peggy Johnson"
+        ],
+        "places": [
+          "Salem",
+          "Oregon"
+        ]
+      }
+    },
+    {
+      "id": "microsoft-rejects-nscale-texas-option-ipo",
+      "headline": "FT: Microsoft declined option to more than double Nscale Texas deal, a blow before $35B IPO",
+      "key_facts": [
+        {
+          "fact": "The FT reported on Nov 5 that Microsoft rejected an option to more than double its contract to rent computing power at Nscale's Ward County, Texas site, a potential deal worth tens of billions of dollars.",
+          "source_url": "https://www.investing.com/news/stock-market-news/microsoft-declines-nscale-texas-expansion-ahead-of-35-bln-ipo--report-5002260",
+          "excerpt": "Microsoft rejected an option that would have more than doubled the size of its existing contract to rent computing power at the Ward County site, a potential deal worth tens of billions of dollars, the report said citing three people familiar with the matter."
+        },
+        {
+          "fact": "A source told Reuters the decision was made several months ago, before Nscale filed for its IPO in September, that the existing Texas contract is unaffected and that Nscale's total contract value of about $103B does not change.",
+          "source_url": "https://www.streetinsider.com/Reuters/Microsoft+rejects+multibillion-dollar+AI+deal+with+UK%27s+Nscale%2C+FT+reports/27292508.html",
+          "excerpt": "Microsoft's decision to not expand the contract was made several months ago, before Nscale filed for its IPO in September, and added that its existing Texas contract with Microsoft was not affected... no impact on Nscale's total contract value of about $103 billion"
+        },
+        {
+          "fact": "The option was announced as a 700 MW second phase in October 2025; Nscale told the FT this week it was closer to 500 MW.",
+          "source_url": "https://www.investing.com/news/stock-market-news/microsoft-declines-nscale-texas-expansion-ahead-of-35-bln-ipo--report-5002260",
+          "excerpt": "In October 2025, Nscale announced a deal to lease to Microsoft about 240 megawatts... with an option on a second phase of 700 megawatts. Nscale told the FT this week the option was closer to 500 megawatts"
+        },
+        {
+          "fact": "Nscale, preparing a roughly $35B IPO, lost $1B on revenue of $141M in the first half of 2026.",
+          "source_url": "https://www.investing.com/news/stock-market-news/microsoft-declines-nscale-texas-expansion-ahead-of-35-bln-ipo--report-5002260",
+          "excerpt": "as it prepares a roughly $35 billion IPO... Nscale made a net loss of $1 billion on revenue of $141 million in the first half of 2026."
+        },
+        {
+          "fact": "This follows Microsoft pulling out in October of a deal to anchor Nscale's Loughton, Essex site after grid delays pushed its power supply into the 2030s.",
+          "source_url": "https://thenextweb.com/news/microsoft-rejects-nscale-texas-option",
+          "excerpt": "In October, Microsoft pulled out of a deal to anchor Nscale's site in Loughton, Essex, billed as the UK's largest AI data centre. Grid delays had pushed its power supply into the 2030s."
+        },
+        {
+          "fact": "Nscale's flagship West Virginia site, central to its $45B computing deal with Anthropic, faces construction delays and local opposition; Nscale is in talks with Anthropic to lease a second 460 MW data center there.",
+          "source_url": "https://www.investing.com/news/stock-market-news/microsoft-declines-nscale-texas-expansion-ahead-of-35-bln-ipo--report-5002260",
+          "excerpt": "Nscale's flagship West Virginia site, central to its $45 billion computing deal with Anthropic, has also faced construction delays and local opposition... in talks with Anthropic to expand its deal to lease a second 460-megawatt data center there."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.ft.com/content/668e6ef8-88a1-4bef-8664-8f495baf09f8",
+          "outlet": "Financial Times",
+          "title": "Fresh blow ahead of start-up's IPO as tech giant turns down option to more than double Texas data centre contract",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.investing.com/news/stock-market-news/microsoft-declines-nscale-texas-expansion-ahead-of-35-bln-ipo--report-5002260",
+          "outlet": "Investing.com",
+          "title": "Microsoft declines Nscale Texas expansion ahead of $35 bln IPO - report",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.streetinsider.com/Reuters/Microsoft+rejects+multibillion-dollar+AI+deal+with+UK%27s+Nscale%2C+FT+reports/27292508.html",
+          "outlet": "StreetInsider (Reuters)",
+          "title": "Microsoft will not expand Texas data center deal with UK's Nscale, source says",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://thenextweb.com/news/microsoft-rejects-nscale-texas-option",
+          "outlet": "The Next Web",
+          "title": "Microsoft reportedly rejects option to expand Nscale's Texas AI deal",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "finance",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Microsoft",
+          "Nscale",
+          "Anthropic",
+          "Ionic Digital",
+          "Nvidia"
+        ],
+        "people": [],
+        "places": [
+          "Texas",
+          "Ward County",
+          "West Virginia",
+          "Essex",
+          "Loughton"
+        ]
+      }
+    },
+    {
+      "id": "qualcomm-q4-handsets-26-percent-margin-shares-fall",
+      "headline": "Qualcomm drops about 9% premarket as handset chip sales fall 26% in memory crunch",
+      "key_facts": [
+        {
+          "fact": "Qualcomm's fiscal Q4 handset revenue fell 26% to $5.14B, missing the $5.25B estimate, and pulled chip segment revenue down 8% to $9.02B.",
+          "source_url": "https://www.channelnewsasia.com/business/qualcomm-shares-slide-smartphone-weakness-clouds-growth-push-6525471",
+          "excerpt": "Revenue from Qualcomm's handset unit, which makes chips for smartphones, fell 26 per cent to $5.14 billion in the fourth quarter, dragging the chip segment's revenue down 8 per cent to $9.02 billion. Analysts polled by Visible Alpha expected handset revenue of $5.25 billion."
+        },
+        {
+          "fact": "Adjusted revenue of $10.44B fell 7% but beat the $10.12B estimate; adjusted EPS was $2.17 versus $2.16 expected; gross margin of 52.4% missed the 53.2% estimate.",
+          "source_url": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-shares-drop-10-rising-113057199.html",
+          "excerpt": "Adjusted revenue reached $10.44 billion, exceeding expectations of $10.12 billion but declining 7% from $11.27 billion a year earlier... Qualcomm reported a fourth-quarter gross margin of 52.4%, compared with analysts' expectations of 53.2%."
+        },
+        {
+          "fact": "Shares dropped about 9% premarket on Nov 5, on track to erase about $17.5B of market value if losses held.",
+          "source_url": "https://www.investing.com/news/stock-market-news/qualcomm-slumps-as-weak-smartphone-chip-sales-overshadow-datacenter-momentum-5002833",
+          "excerpt": "Qualcomm shares dropped about 9% in premarket trading on Thursday... If premarket losses hold, Qualcomm is on track to shed about $17.5 billion in market value."
+        },
+        {
+          "fact": "For fiscal Q1 it guided revenue to $10.4B-$11.2B, a midpoint above consensus, but EPS to $2.15-$2.35, with a midpoint of $2.25 below the $2.32 expected; pricing moves against higher input costs only reach full benefit in the second half of fiscal 2027.",
+          "source_url": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-shares-drop-10-rising-113057199.html",
+          "excerpt": "Qualcomm projected revenue between $10.4 billion and $11.2 billion... adjusted earnings forecast of $2.15 to $2.35 per share had a midpoint of $2.25, below analysts' expectations of $2.32... the full financial benefit is not expected until the second half of fiscal 2027."
+        },
+        {
+          "fact": "CEO Cristiano Amon said the Q1 forecast includes no further Apple sales and that Android handset sales have bottomed out and are ticking up.",
+          "source_url": "https://www.channelnewsasia.com/business/qualcomm-shares-slide-smartphone-weakness-clouds-growth-push-6525471",
+          "excerpt": "Amon said the first-quarter fiscal 2027 forecast given on Wednesday includes no further sales from Apple... Qualcomm CEO Cristiano Amon said sales of Android handsets had bottomed out and were ticking upward again."
+        },
+        {
+          "fact": "Global smartphone shipments fell 20% in the September quarter to a 14-year low, per Counterpoint, as memory costs drove up device prices.",
+          "source_url": "https://www.channelnewsasia.com/business/qualcomm-shares-slide-smartphone-weakness-clouds-growth-push-6525471",
+          "excerpt": "Global smartphone shipments fell 20 per cent in the September quarter to a 14-year low, according to Counterpoint Research, as surging memory chip costs drove up device prices"
+        },
+        {
+          "fact": "Automotive revenue rose 89% to $1.99B and IoT 4% to $1.89B; Amon says fiscal 2027 marks the start of a non-handset revenue inflection, including the data center ramp.",
+          "source_url": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-shares-drop-10-rising-113057199.html",
+          "excerpt": "Qualcomm's automotive business reported revenue of $1.99 billion, an increase of 89% year over year... \"Fiscal 2027 marks the start of our non-handset revenue inflection, including the ramp of our Data Center business,\" Amon said."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.channelnewsasia.com/business/qualcomm-shares-slide-smartphone-weakness-clouds-growth-push-6525471",
+          "outlet": "CNA (Reuters)",
+          "title": "Qualcomm shares slide as smartphone weakness clouds growth push",
+          "published_at": "2026-11-04",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-shares-drop-10-rising-113057199.html",
+          "outlet": "Yahoo Finance",
+          "title": "Qualcomm Shares Drop 10% as Rising Chip Costs and Handset Revenue Decline Pressure Margins",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.investing.com/news/stock-market-news/qualcomm-slumps-as-weak-smartphone-chip-sales-overshadow-datacenter-momentum-5002833",
+          "outlet": "Investing.com (Reuters)",
+          "title": "Qualcomm slumps as weak smartphone chip sales overshadow data-center momentum",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/11/04/qualcomm-qcom-earnings-report-q4-2026.html",
+          "outlet": "CNBC",
+          "title": "Qualcomm (QCOM) earnings report Q4 2026",
+          "published_at": "2026-11-04",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business",
+        "finance"
+      ],
+      "entities": {
+        "organizations": [
+          "Qualcomm",
+          "Apple",
+          "Counterpoint Research"
+        ],
+        "people": [
+          "Cristiano Amon"
+        ],
+        "places": []
+      }
+    },
+    {
+      "id": "arm-q2-1-44b-agi-cpu-2b-shares-slip",
+      "headline": "Arm beats with $1.44B quarter and backs $2B AGI CPU goal, but thin guide sinks shares",
+      "key_facts": [
+        {
+          "fact": "Arm's fiscal Q2 revenue rose 27% to $1.44B, a record for a second quarter and above the $1.38B estimate; adjusted EPS of 52 cents beat the 47 cents expected.",
+          "source_url": "https://www.investing.com/news/stock-market-news/arm-beats-secondquarter-revenue-estimates-on-ai-and-datacenter-demand-5001267",
+          "excerpt": "The company's second-quarter revenue of $1.44 billion beat analysts' average estimate of $1.38 billion... Arm's adjusted profit of 52 cents per share surpassed estimates of 47 cents per share."
+        },
+        {
+          "fact": "Licensing revenue rose 50% to $773M against a $625.1M estimate, while royalties rose only 8% to $670M, below the $720.8M estimate.",
+          "source_url": "https://www.investing.com/news/stock-market-news/arm-beats-secondquarter-revenue-estimates-on-ai-and-datacenter-demand-5001267",
+          "excerpt": "Revenue from royalties... rose 8% to $670 million for the second quarter, compared with estimates of $720.8 million. Licensing revenue... was $773 million, compared with estimates of $625.1 million."
+        },
+        {
+          "fact": "Arm guided fiscal Q3 revenue to $1.54B, plus or minus $50M, against a $1.53B consensus, and shares fell more than 3% premarket on Nov 5.",
+          "source_url": "https://www.investing.com/news/earnings/arm-stock-slips-after-hours-despite-quarterly-results-and-guidance-beat-5001212",
+          "excerpt": "U.S.-listed shares of the British chip designer fell more than 3% in premarket trading Thursday... For its fiscal Q3 2027, ARM sees adjusted profit per share of 56 cents plus/minus 4 cents on revenue of $1.54 billion plus/minus $50 million. The consensus estimates had been for a profit of 55 cents per share on revenue of $1.53 billion."
+        },
+        {
+          "fact": "Arm says its confidence in up to $2B of revenue from its own chip, the AGI CPU, across fiscal 2027 and 2028 has increased, with purchase orders from multiple customers through calendar 2027 and first commercial deliveries on track for fiscal Q4.",
+          "source_url": "https://newsroom.arm.com/news/arm-q2-fye27-results",
+          "excerpt": "Arm's confidence in achieving up to $2 billion in Arm AGI CPU revenue over FYE27 and FYE28 has increased over the past 90 days... Purchase orders for Arm AGI CPU have been secured from multiple customers extending through calendar 2027, and the first commercial deliveries are on track for Q4 FYE27."
+        },
+        {
+          "fact": "Data center royalties doubled year over year, and Arm says its server share at top hyperscalers exceeded 50% in 2025 and will pass 60% by the end of 2026.",
+          "source_url": "https://newsroom.arm.com/news/arm-q2-fye27-results",
+          "excerpt": "Arm-based server market share at the top hyperscalers more than tripled -- from 15% in calendar 2024 to more than 50% in calendar 2025... Arm expects that share to exceed 60% by the end of calendar 2026"
+        },
+        {
+          "fact": "Partners shipped more than 10 billion Arm-based chips in a quarter for the first time, up 1.5 billion from a year earlier.",
+          "source_url": "https://newsroom.arm.com/news/arm-q2-fye27-results",
+          "excerpt": "For the first time, Arm's partners reported more than 10 billion Arm-based chips shipped during the quarter -- an increase of 1.5 billion chips year over year"
+        },
+        {
+          "fact": "Analysts surveyed by Bloomberg averaged $1.53B for the quarter, though some projections neared $1.7B.",
+          "source_url": "https://www.cnbctv18.com/market/arm-holdings-share-price-ai-data-centre-revenue-forecast-wall-street-estimates-q3-2026-20027462.htm",
+          "excerpt": "Analysts surveyed by Bloomberg had expected $1.53 billion on average, although some projections neared $1.7 billion."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://newsroom.arm.com/news/arm-q2-fye27-results",
+          "outlet": "Arm Newsroom",
+          "title": "Arm delivers a record second quarter, reaching $1.44 billion in total revenue",
+          "published_at": "2026-11-04",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.investing.com/news/stock-market-news/arm-beats-secondquarter-revenue-estimates-on-ai-and-datacenter-demand-5001267",
+          "outlet": "Investing.com (Reuters)",
+          "title": "Arm forecasts third-quarter revenue above estimates on AI spending boom",
+          "published_at": "2026-11-04",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.investing.com/news/earnings/arm-stock-slips-after-hours-despite-quarterly-results-and-guidance-beat-5001212",
+          "outlet": "Investing.com",
+          "title": "Arm stock dips as lack of blowout guidance offsets quarterly results",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.cnbctv18.com/market/arm-holdings-share-price-ai-data-centre-revenue-forecast-wall-street-estimates-q3-2026-20027462.htm",
+          "outlet": "CNBC TV18",
+          "title": "Arm Holdings shares close over 5% lower as AI data centre revenue forecast barely beats estimates",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "technology",
+        "business",
+        "finance"
+      ],
+      "entities": {
+        "organizations": [
+          "Arm",
+          "TSMC",
+          "Oracle",
+          "Qualcomm"
+        ],
+        "people": [
+          "Rene Haas"
+        ],
+        "places": []
+      }
+    },
+    {
+      "id": "iran-tanker-qatar-draft-deal-vance-war-midterms",
+      "headline": "Tanker hit off Qatar as mediators push US-Iran draft; Vance blames war for midterm loss",
+      "key_facts": [
+        {
+          "fact": "A tanker was struck by two unidentified projectiles about 50 nautical miles north of Madinat ash Shamal, Qatar, at 23:20 UTC on Wednesday, Nov. 4, according to UK Maritime Trade Operations; crew status and damage were unknown.",
+          "source_url": "https://gulfnews.com/world/mena/trump-weighs-iran-strikes-or-deal-after-midterm-loss-as-vance-urges-agreement-qatar-mediates-brent-oil-falls-to-93-1.500736556",
+          "excerpt": "A tanker was struck by two unidentified projectiles about 50 nautical miles north of Madinat ash Shamal, Qatar... The incident took place at 11.20pm UTC on Wednesday... The status of the crew, the extent of the damage and any environmental impact are not yet known."
+        },
+        {
+          "fact": "Iran's Revolutionary Guards said two tankers and a tugboat caught fire overnight on an 'unauthorised' route, and that another tanker hit a mine early Thursday, warning that the Strait of Hormuz is 'unsafe and closed' to ships transiting without coordination. These are Iranian claims.",
+          "source_url": "https://www.newarab.com/news/after-us-midterms-focus-returns-iran-and-hormuz",
+          "excerpt": "A tanker caught fire after hitting a naval mine east of the Strait of Hormuz early on Thursday... The Guards warned shipowners that the Strait of Hormuz was 'unsafe and closed' to vessels attempting to transit without coordination."
+        },
+        {
+          "fact": "Vice President JD Vance wrote that 'the reason we lost is the war'; Trump called that 'largely true because it drove gasoline up a little bit' but added 'if I had to do it again, I'd do it again.'",
+          "source_url": "https://www.itv.com/news/2026-11-05/trump-weighs-next-move-on-iran-as-conflict-is-blamed-for-election-loss",
+          "excerpt": "'The reason we lost,' Vance said of the midterm elections in a lengthy social media post, 'is the war.' ... 'It's largely true because it drove gasoline up a little bit,' Trump said... 'At the same time, if I had to do it again, I'd do it again.'"
+        },
+        {
+          "fact": "Qatari mediators are seeking US and Iranian backing for a draft agreement with a three-day sequence of confidence-building steps that could restart direct talks within days; Iran demands an end to the US naval blockade, sanctions relief and release of frozen funds before reopening Hormuz.",
+          "source_url": "https://gulfnews.com/world/mena/trump-weighs-iran-strikes-or-deal-after-midterm-loss-as-vance-urges-agreement-qatar-mediates-brent-oil-falls-to-93-1.500736556",
+          "excerpt": "Qatari mediators are trying to win US and Iranian backing for a draft agreement meant to head off renewed fighting and possibly restart direct talks 'within days'. Earlier reporting said the draft outlines a three-day sequence of confidence-building steps. Iran has demanded an end to the US naval blockade, sanctions relief and release of frozen funds before it will reopen Hormuz."
+        },
+        {
+          "fact": "Oman said its foreign minister and Iran's Abbas Araghchi discussed on Thursday joint technical mechanisms for Hormuz traffic 'in a manner that would end the state of war.'",
+          "source_url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-midterms-strait-of-hormuz/",
+          "excerpt": "both men 'stressed the importance of moving from the stage of de-escalating tensions to one of establishing sustainable understandings based on practical arrangements to ensure the safety of maritime routes and joint technical mechanisms ... in a manner that would end the state of war and prevent renewed confrontations in the region.'"
+        },
+        {
+          "fact": "US officials told Axios the military is finishing preparations for a possible resumption of major combat, including sending more assets to the region; the preparations are not an order to attack.",
+          "source_url": "https://gulfnews.com/world/mena/trump-weighs-iran-strikes-or-deal-after-midterm-loss-as-vance-urges-agreement-qatar-mediates-brent-oil-falls-to-93-1.500736556",
+          "excerpt": "US officials told Axios the military is finishing preparations for a possible resumption of major combat operations, including sending more assets to the region. Preparations are not an order."
+        },
+        {
+          "fact": "The Financial Times reported on Thursday that Russia agreed to supply Iran with 90 helicopter-mounted launchers for precision-guided missiles widely used by Russian forces in Ukraine.",
+          "source_url": "https://www.iranintl.com/en/liveblog/202610312594",
+          "excerpt": "Russia agreed to supply Iran with 90 helicopter-mounted launchers for precision-guided missiles widely used by Russian forces in Ukraine, the Financial Times reported on Thursday."
+        },
+        {
+          "fact": "Trump told ABC News on Thursday he intends to keep Defense Secretary Pete Hegseth despite criticism of his leadership after the Iran war and the midterm losses: 'I have every intention to keep him.'",
+          "source_url": "https://www.iranintl.com/en/liveblog/202610312594",
+          "excerpt": "US President Donald Trump said on Thursday he intended to retain Defense Secretary Pete Hegseth despite criticism of his leadership following the Iran war and Republicans' midterm election losses. 'I have every intention to keep him,' Trump told ABC News."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://gulfnews.com/world/mena/trump-weighs-iran-strikes-or-deal-after-midterm-loss-as-vance-urges-agreement-qatar-mediates-brent-oil-falls-to-93-1.500736556",
+          "outlet": "Gulf News",
+          "title": "Trump Weighs Iran Strikes or Deal After Midterm Loss as Oil Prices Drop to $93",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.newarab.com/news/after-us-midterms-focus-returns-iran-and-hormuz",
+          "outlet": "The New Arab",
+          "title": "After US midterms, focus returns to Iran and Hormuz",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.itv.com/news/2026-11-05/trump-weighs-next-move-on-iran-as-conflict-is-blamed-for-election-loss",
+          "outlet": "ITV News",
+          "title": "Trump weighs next move on Iran as Middle East conflict is blamed for election loss",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-midterms-strait-of-hormuz/",
+          "outlet": "CBS News",
+          "title": "Live Updates: Iran says U.S. election results show Americans reject war, as Trump says he'd do it again",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.iranintl.com/en/liveblog/202610312594",
+          "outlet": "Iran International",
+          "title": "Iran braces for renewed US strikes as diplomacy hangs in the balance",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://apnews.com/article/mideast-iran-war-hormuz-tankers-a35d13806844d99fda93de0a19de57fa",
+          "outlet": "Associated Press",
+          "title": "Tanker struck by projectiles in the Persian Gulf off Qatar, and other Mideast news",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "world",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "Islamic Revolutionary Guard Corps",
+          "UK Maritime Trade Operations",
+          "Financial Times",
+          "Axios",
+          "ABC News"
+        ],
+        "people": [
+          "Donald Trump",
+          "JD Vance",
+          "Abbas Araghchi",
+          "Pete Hegseth"
+        ],
+        "places": [
+          "Iran",
+          "Qatar",
+          "Oman",
+          "Strait of Hormuz",
+          "Russia",
+          "Madinat ash Shamal"
+        ]
+      }
+    },
+    {
+      "id": "houthis-51b-saudi-demand-medina-missile",
+      "headline": "Saudi coalition downs Houthi missile aimed at Medina; WSJ says Houthis demand $51B to end war",
+      "key_facts": [
+        {
+          "fact": "The Saudi-led coalition said on Thursday, Nov. 5, that its air defenses intercepted and destroyed a ballistic missile launched by the Houthis toward the Medina region.",
+          "source_url": "https://www.iranintl.com/en/liveblog/202610312594",
+          "excerpt": "The Saudi-led coalition said on Thursday that its air defenses intercepted and destroyed a ballistic missile launched by Houthi forces toward the Medina region."
+        },
+        {
+          "fact": "Saudi Civil Defence issued an all-clear for Yanbu, in the Medina region, and warned that filming or sharing information about interceptions or impact sites could lead to legal action.",
+          "source_url": "https://gulfnews.com/world/mena/trump-weighs-iran-strikes-or-deal-after-midterm-loss-as-vance-urges-agreement-qatar-mediates-brent-oil-falls-to-93-1.500736556",
+          "excerpt": "Saudi Arabia's Civil Defence said the danger has passed in Yanbu Governorate... The authority also warned that filming, publishing or sharing information about the interception of missiles and drones, or the sites where they fall, could lead to legal action."
+        },
+        {
+          "fact": "The Wall Street Journal reported that the Houthis are demanding $51 billion from Saudi Arabia plus official recognition as Yemen's rulers as baseline conditions for ending the war; other amounts have been discussed, with a deal's price still in the tens of billions.",
+          "source_url": "https://gulfnews.com/world/mena/trump-weighs-iran-strikes-or-deal-after-midterm-loss-as-vance-urges-agreement-qatar-mediates-brent-oil-falls-to-93-1.500736556",
+          "excerpt": "Yemen's Houthis are demanding $51 billion from Saudi Arabia as compensation for years of airstrikes and blockade, along with official recognition of Ansarallah as Yemen's rulers... Other amounts have since been discussed, but the price of a deal remains in the tens of billions."
+        },
+        {
+          "fact": "Per the same report, Riyadh made contact after Houthi attacks on Aramco facilities, the East-West Pipeline, King Khalid International Airport and Red Sea tankers, and after Houthi territorial gains around Bab el-Mandeb.",
+          "source_url": "https://gulfnews.com/world/mena/trump-weighs-iran-strikes-or-deal-after-midterm-loss-as-vance-urges-agreement-qatar-mediates-brent-oil-falls-to-93-1.500736556",
+          "excerpt": "Riyadh reportedly made contact after Houthi attacks on Aramco facilities, the East-West Pipeline, King Khalid International Airport and Red Sea tankers, as well as territorial gains around Bab el-Mandeb."
+        },
+        {
+          "fact": "CBS News reports Houthi missile strikes on Saudi airports have killed at least 20 people; Iran's foreign ministry on Thursday again denied that Iranian military experts are in Yemen, after EU foreign policy chief Kaja Kallas called on Iran to stop supporting the group.",
+          "source_url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-midterms-strait-of-hormuz/",
+          "excerpt": "Since then, Houthi missile strikes on Saudi Arabian airports have killed at least 20 people... Baqaei called the latest accusation ... 'baseless,' and said Iran 'strongly denied claims that Iranian military experts were present in Yemen.'"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.iranintl.com/en/liveblog/202610312594",
+          "outlet": "Iran International",
+          "title": "Iran braces for renewed US strikes as diplomacy hangs in the balance",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://gulfnews.com/world/mena/trump-weighs-iran-strikes-or-deal-after-midterm-loss-as-vance-urges-agreement-qatar-mediates-brent-oil-falls-to-93-1.500736556",
+          "outlet": "Gulf News",
+          "title": "Trump Weighs Iran Strikes or Deal After Midterm Loss as Oil Prices Drop to $93",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-midterms-strait-of-hormuz/",
+          "outlet": "CBS News",
+          "title": "Live Updates: Iran says U.S. election results show Americans reject war, as Trump says he'd do it again",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.aljazeera.com/news/liveblog/2026/11/5/iran-war-live-trump-admits-war-caused-election-loss-but-had-to-do-it",
+          "outlet": "Al Jazeera",
+          "title": "Iran war live: 3 tankers on fire in Hormuz; Saudi intercepts Houthi missile",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "world"
+      ],
+      "entities": {
+        "organizations": [
+          "Houthis",
+          "Saudi-led coalition",
+          "Aramco",
+          "The Wall Street Journal",
+          "Saudi Civil Defence"
+        ],
+        "people": [
+          "Kaja Kallas",
+          "Esmaeil Baghaei"
+        ],
+        "places": [
+          "Saudi Arabia",
+          "Yemen",
+          "Medina",
+          "Yanbu",
+          "Bab el-Mandeb",
+          "Red Sea"
+        ]
+      }
+    },
+    {
+      "id": "bank-of-england-hikes-4-percent-8-1",
+      "headline": "Bank of England raises rates to 4% in 8-1 vote, sees inflation near 5% on energy shock",
+      "key_facts": [
+        {
+          "fact": "The Bank of England's Monetary Policy Committee voted 8-1 to raise Bank Rate by 0.25 percentage points to 4%, with one member voting for a half-point rise to 4.25%; the decision was published Nov. 5.",
+          "source_url": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/november-2026",
+          "excerpt": "At its meeting ending on 4 November 2026, the Monetary Policy Committee (MPC) voted by a majority of 8-1 to increase Bank Rate by 0.25 percentage points, to 4%. One member voted to increase Bank Rate by 0.5 percentage points, to 4.25%."
+        },
+        {
+          "fact": "UK CPI inflation reached 3.5% in September and the Bank now expects it to rise to around 5% by the middle of next year before falling.",
+          "source_url": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/november-2026",
+          "excerpt": "UK CPI inflation increased to 3.5% in September. It is now expected to rise to around 5% by the middle of next year."
+        },
+        {
+          "fact": "The Bank said the Middle East conflict is in its ninth month and that pipeline inflation pressure now warrants a hike, though it sees 'limited evidence' of knock-on effects on other prices and wages.",
+          "source_url": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/november-2026",
+          "excerpt": "there remains limited evidence of knock-on effects on other prices and wages. However, the degree of inflationary pressure in the pipeline is now sufficient to warrant an increase in Bank Rate."
+        },
+        {
+          "fact": "The minutes put Brent at an average of $108 a barrel over the 15 UK working days to Oct. 27, 38% above the level at the July report; UK natural gas averaged 216 pence per therm, 81% higher.",
+          "source_url": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/november-2026",
+          "excerpt": "The front-month Brent crude oil futures contract and the UK front-month natural gas futures contract averaged $108 per barrel and 216 pence per therm, respectively, over the 15 UK working days ending 27 October. These were 38% and 81% higher than at the time of the July Monetary Policy Report."
+        },
+        {
+          "fact": "Reuters noted before the decision that a hike would be the Bank's first in more than three years, joining most G10 peers, with around 100 basis points of tightening priced in by the end of next year.",
+          "source_url": "https://www.investing.com/news/economy-news/trading-day-oil-tanks-stocks-leap-on-us-midterms-5001616",
+          "excerpt": "The Bank of England decides interest rates on Thursday, and is expected to finally join most of its G10 peers in raising borrowing costs... It would be the Bank's first hike in more than three years... Around 100 basis points of tightening is priced in by the end of next year."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/november-2026",
+          "outlet": "Bank of England",
+          "title": "Bank rate increased to 4% - November 2026 Monetary Policy Summary and Minutes",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "press_release"
+        },
+        {
+          "url": "https://www.investing.com/news/economy-news/trading-day-oil-tanks-stocks-leap-on-us-midterms-5001616",
+          "outlet": "Reuters via Investing.com",
+          "title": "Trading Day: Oil tanks, stocks leap on US midterms",
+          "published_at": "2026-11-04",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "economy",
+        "finance"
+      ],
+      "entities": {
+        "organizations": [
+          "Bank of England",
+          "Monetary Policy Committee"
+        ],
+        "people": [],
+        "places": [
+          "United Kingdom"
+        ]
+      }
+    },
+    {
+      "id": "dow-best-day-oil-plunges-8-percent-iran-bets",
+      "headline": "Dow jumps 3%, best day since April 2025, as oil plunges 8% on bets the Iran war will end",
+      "key_facts": [
+        {
+          "fact": "On Wednesday, Nov. 4, the Dow rose 1,569.40 points, or 3.03%, to 53,356.12, its best day since April 9, 2025; the S&P 500 gained 1.58% to 7,688.62 and the Nasdaq Composite 1.44% to 25,736.51.",
+          "source_url": "https://www.cnbc.com/2026/11/03/stock-market-today-live-updates.html",
+          "excerpt": "The Dow Jones Industrial Average jumped 1,569.40 points, or 3.03%, to close at 53,356.12... posted its best day since April 9, 2025... The S&P 500 gained 1.58% to end at 7,688.62, while the Nasdaq Composite jumped 1.44% to 25,736.51."
+        },
+        {
+          "fact": "Brent and WTI fell about 8% on Wednesday; Reuters said Brent was down nearly 20% on the week so far and on course for the biggest weekly decline since April 2020.",
+          "source_url": "https://www.investing.com/news/economy-news/trading-day-oil-tanks-stocks-leap-on-us-midterms-5001616",
+          "excerpt": "the plunge in oil prices on Wednesday puts Brent and WTI crude futures on course for their biggest weekly decline since the white heat of the global pandemic in April 2020. Brent is down nearly 20% so far this week, WTI is down 15%."
+        },
+        {
+          "fact": "On Thursday, Brent recovered to $96.15, up 1.6%, while Eurasia Group put the odds of renewed US strikes on Iran at 60%, down from 65%, and cut the odds of a deal to 10% from 20%.",
+          "source_url": "https://www.cnbc.com/2026/11/05/oil-falls-for-a-fourth-day-on-expectations-for-lower-risk-of-iran-war-escalation.html",
+          "excerpt": "Brent futures were up $1.53, or 1.6%, at $96.15 a barrel... Eurasia Group lowered its estimate for the chance of renewed US strikes on Iran to 60% from 65%, but also cut the probability of a deal to 10% from 20%."
+        },
+        {
+          "fact": "JPMorgan estimates the oil market returned to a surplus of 1.1 million barrels per day in September, widening to 1.4 million in October, as Gulf supply resumed.",
+          "source_url": "https://www.cnbc.com/2026/11/05/oil-falls-for-a-fourth-day-on-expectations-for-lower-risk-of-iran-war-escalation.html",
+          "excerpt": "JPMorgan estimates the market returned to a surplus of 1.1 million barrels per day in September, widening to 1.4 million bpd in October."
+        },
+        {
+          "fact": "The 10-year Treasury yield fell 7.4 basis points to 4.888%, yet markets still priced an 81% chance of a 25-basis-point Fed rate hike at the Dec. 8-9 meeting; the 10-year breakeven inflation rate fell to 2.248%.",
+          "source_url": "https://finance.yahoo.com/markets/stocks/articles/stocks-surge-midterm-election-optimism-213549600.html",
+          "excerpt": "The 10-year T-note yield fell -7.4 bp to 4.888%... The markets are now pricing in an 81% chance of a +25 bp rate hike at the FOMC's next meeting on December 8-9."
+        },
+        {
+          "fact": "ADP reported that private employers added 86,000 jobs in October, above estimates.",
+          "source_url": "https://www.cnbc.com/2026/11/03/stock-market-today-live-updates.html",
+          "excerpt": "The payrolls processing firm said companies added 86,000 jobs during the month, the same as the downwardly revised total for September and slightly ahead of the Dow Jones estimate for 75,000."
+        },
+        {
+          "fact": "Energy was the worst S&P 500 sector, down 4.8%, while consumer discretionary rose about 4.3%; Microsoft gained 6.7% and Amazon 6.1%, while Hut 8 fell 23%, IREN 11% and Core Scientific 10% on fears of tighter AI regulation.",
+          "source_url": "https://www.streetinsider.com/General%2BNews/Wall%2BStreet%2Bends%2Bhigher%2Bafter%2BDemocrats%2Bwin%2BCongress;%2Bdata%2Bcenter%2Bstocks%2Btumble/27284408.html",
+          "excerpt": "Microsoft rose 6.7%, Amazon.com added 6.1%... Hut 8 down 23%, IREN off 11%, Core Scientific falling 10%... consumer discretionary jumping 4.3% and energy falling 4.8%."
+        },
+        {
+          "fact": "Health insurer and hospital shares rallied on speculation that a Democratic Congress could roll back Medicaid cuts, with Centene up more than 12% and HCA Healthcare more than 10%.",
+          "source_url": "https://finance.yahoo.com/markets/stocks/articles/stocks-surge-midterm-election-optimism-213549600.html",
+          "excerpt": "Health insurance stocks moved higher Wednesday on speculation that a Democratic controlled Congress could roll back the Medicaid cuts... Centene (CNC) closed up more than +12%, and HCA Healthcare (HCA) and United Health Services (UHS) closed up more than +10%."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2026/11/03/stock-market-today-live-updates.html",
+          "outlet": "CNBC",
+          "title": "Stock market news for Nov. 4, 2026",
+          "published_at": "2026-11-04",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.investing.com/news/economy-news/trading-day-oil-tanks-stocks-leap-on-us-midterms-5001616",
+          "outlet": "Reuters via Investing.com",
+          "title": "Trading Day: Oil tanks, stocks leap on US midterms",
+          "published_at": "2026-11-04",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/11/05/oil-falls-for-a-fourth-day-on-expectations-for-lower-risk-of-iran-war-escalation.html",
+          "outlet": "Reuters via CNBC",
+          "title": "Oil rises as investors weigh uncertainties around Iran war",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://finance.yahoo.com/markets/stocks/articles/stocks-surge-midterm-election-optimism-213549600.html",
+          "outlet": "Barchart via Yahoo Finance",
+          "title": "Stocks Surge on Midterm Election Optimism",
+          "published_at": "2026-11-04",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.streetinsider.com/General%2BNews/Wall%2BStreet%2Bends%2Bhigher%2Bafter%2BDemocrats%2Bwin%2BCongress;%2Bdata%2Bcenter%2Bstocks%2Btumble/27284408.html",
+          "outlet": "Reuters via StreetInsider",
+          "title": "Wall Street ends higher after Democrats win Congress; data center stocks tumble",
+          "published_at": "2026-11-04",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "finance",
+        "economy"
+      ],
+      "entities": {
+        "organizations": [
+          "Eurasia Group",
+          "JPMorgan",
+          "ADP",
+          "Federal Reserve",
+          "Microsoft",
+          "Amazon",
+          "Hut 8",
+          "IREN",
+          "Core Scientific",
+          "Centene",
+          "HCA Healthcare"
+        ],
+        "people": [],
+        "places": [
+          "United States",
+          "Iran"
+        ]
+      }
+    },
+    {
+      "id": "challenger-october-cuts-ai-lowest-economy-overtakes",
+      "headline": "US job cuts hit 43,994 in October; AI cited for just 1,265 as economy overtakes it as top reason",
+      "key_facts": [
+        {
+          "fact": "US employers announced 43,994 job cuts in October, up 2% from September, down 71% from 153,074 a year earlier, and the lowest October total since 2023, Challenger, Gray & Christmas reported Nov. 5.",
+          "source_url": "https://www.challengergray.com/blog/october-layoffs-at-three-year-low-seasonal-hiring-plans-up-26/",
+          "excerpt": "U.S.-based employers announced 43,994 job cuts in October, up 2% from the 43,281 cuts announced in September. It is down 71% from the 153,074 job cuts announced in October 2025."
+        },
+        {
+          "fact": "AI was cited for 1,265 cuts in October, its lowest monthly total this year; it has been cited for 121,401 cuts in 2026, about 20% of the total, and 193,226 since Challenger began tracking it in 2023.",
+          "source_url": "https://www.challengergray.com/blog/october-layoffs-at-three-year-low-seasonal-hiring-plans-up-26/",
+          "excerpt": "AI was cited for 1,265 cuts in October, its lowest monthly total this year. AI has been cited in 121,401 job cut announcements so far in 2026, approximately 20% of all cuts. Since 2023... it has been cited in 193,226 job cuts."
+        },
+        {
+          "fact": "Market/economic conditions led October's reasons with 16,407 cuts, or 37%, and with 130,531 cuts this year has overtaken AI as 2026's leading reason.",
+          "source_url": "https://www.challengergray.com/blog/october-layoffs-at-three-year-low-seasonal-hiring-plans-up-26/",
+          "excerpt": "Market/Economic Conditions led all reasons in October for the second consecutive month, cited for 16,407 cuts, or 37% of the total. With 130,531 cuts so far this year, Market/Economic Conditions has overtaken Artificial Intelligence (AI) as the leading reason for job cuts in 2026."
+        },
+        {
+          "fact": "Year-to-date cuts total 617,189, down 44%; technology still leads with 171,501, up 21%, even though its 5,576 October cuts were its lowest monthly total of the year.",
+          "source_url": "https://www.challengergray.com/blog/october-layoffs-at-three-year-low-seasonal-hiring-plans-up-26/",
+          "excerpt": "Through October, employers have announced 617,189 job cuts, down 44%... Technology announced 5,576 cuts in October, its lowest monthly total of the year. Even so, the sector leads all industries with 171,501 cuts through October, up 21%."
+        },
+        {
+          "fact": "Microsoft's voluntary exit offers to 60,000 employees in October are not counted in the total; Andy Challenger said such offers 'tend to signal more layoffs to come.'",
+          "source_url": "https://www.challengergray.com/blog/october-layoffs-at-three-year-low-seasonal-hiring-plans-up-26/",
+          "excerpt": "Microsoft also announced voluntary exit offers (VEOs) to 60,000 employees in October... the offers are not included in October's total. 'These offers tend to signal more layoffs to come.'"
+        },
+        {
+          "fact": "Seasonal hiring plans reached 470,400 through October, up 26%, led by Amazon's 300,000, the largest single seasonal announcement Challenger has tracked; only five companies have announced seasonal hiring, versus 11 at this point last year.",
+          "source_url": "https://www.challengergray.com/blog/october-layoffs-at-three-year-low-seasonal-hiring-plans-up-26/",
+          "excerpt": "470,400 seasonal hiring plans through October... up 26%... Amazon led seasonal announcements with plans to hire 300,000 workers... It is the largest single seasonal hiring announcement Challenger has tracked... five companies have announced seasonal hiring so far this year, compared with 11 at this point last year."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.challengergray.com/blog/october-layoffs-at-three-year-low-seasonal-hiring-plans-up-26/",
+          "outlet": "Challenger, Gray & Christmas",
+          "title": "October Layoffs at Three-Year Low; Seasonal Hiring Plans Up 26%",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "press_release"
+        }
+      ],
+      "category": [
+        "economy",
+        "business"
+      ],
+      "entities": {
+        "organizations": [
+          "Challenger, Gray & Christmas",
+          "Microsoft",
+          "Amazon",
+          "UPS"
+        ],
+        "people": [
+          "Andy Challenger"
+        ],
+        "places": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "id": "ukraine-abu-dhabi-talks-nov-10-brussels-witkoff-kushner",
+      "headline": "US, Ukraine and Europeans meet in Brussels ahead of Nov. 10-11 Abu Dhabi talks with Russia",
+      "key_facts": [
+        {
+          "fact": "The European Commission hosted talks on Nov. 4 with the US, Ukraine, NATO and several European countries to coordinate positions before trilateral talks among Ukraine, Russia and the US scheduled for Nov. 10-11 in Abu Dhabi.",
+          "source_url": "https://kyivindependent.com/ukraine-partners-coordinate-peace-efforts-ahead-of-abu-dhabi-talks-with-russia-2/",
+          "excerpt": "The European Commission hosted talks on Ukraine in Brussels on Nov. 4, bringing together representatives from the U.S., Ukraine, NATO, and several European countries... ahead of the next round of trilateral talks between Ukraine, Russia, and the U.S., scheduled for Nov. 10-11 in Abu Dhabi."
+        },
+        {
+          "fact": "Zelensky held a 90-minute call on Nov. 4 with US envoys Steve Witkoff and Jared Kushner covering air defense munitions, the US-Ukraine drone deal and post-war guarantees, saying 'We need interceptors for Patriot systems' and that guarantees 'must be truly ironclad.'",
+          "source_url": "https://kyivindependent.com/security-guarantees-must-be-ironclad-zelensky-speaks-to-trumps-envoys-ahead-of-trilateral-peace-talks/",
+          "excerpt": "Zelensky said he 'had a very detailed conversation' with Witkoff and Kushner that lasted an hour and a half. Among the primary topics were air defense munitions, the U.S.-Ukraine Drone Deal, and post-war security guarantees."
+        },
+        {
+          "fact": "The Abu Dhabi round will be at team level, with technical negotiations that could lead to a summit of Zelensky, Putin and Trump.",
+          "source_url": "https://kyivindependent.com/security-guarantees-must-be-ironclad-zelensky-speaks-to-trumps-envoys-ahead-of-trilateral-peace-talks/",
+          "excerpt": "The Abu Dhabi talks will be held at the team level, with delegates from all three countries holding technical negotiations that could lead to a leader-level summit involving Zelensky, Russian President Vladimir Putin, and U.S. President Donald Trump."
+        },
+        {
+          "fact": "The trilateral meeting was initially expected in October, but the Kremlin declined to participate after agreeing in principle; Moscow continues to demand that Ukraine cede Donbas.",
+          "source_url": "https://kyivindependent.com/ukraine-partners-coordinate-peace-efforts-ahead-of-abu-dhabi-talks-with-russia-2/",
+          "excerpt": "The trilateral meeting with Russia was initially expected to take place in October... The visits resulted in an agreement in principle to hold negotiations, but the Kremlin later declined to participate... while continuing to demand that Ukraine cede Donbas."
+        },
+        {
+          "fact": "China's foreign ministry said Wednesday that Beijing is 'in communication with relevant parties' about a possible Trump-Xi-Putin meeting at the APEC leaders' gathering in Shenzhen later this month; no agenda has been announced.",
+          "source_url": "https://www.cnbc.com/2026/11/05/trump-russia-china-summit-apec-midterms.html",
+          "excerpt": "Chinese Foreign Ministry spokesperson Mao Ning said Wednesday that Beijing was 'in communication with relevant parties regarding a meeting between the three heads of state,' although no agenda has been announced."
+        },
+        {
+          "fact": "Overnight into Nov. 5, Russia launched two guided missiles and 128 long-range drones, of which Ukraine said it intercepted 105 drones; Russian attacks killed nine people and injured 19 over the past day, local authorities said.",
+          "source_url": "https://kyivindependent.com/russian-attacks-kill-9-injure-19-across-ukraine-over-past-day-as-casualty-toll-from-russian-strikes-in-kherson-oblast-rises-following-end-of-ceasefire/",
+          "excerpt": "Russian forces launched two guided missiles from the Black Sea and 128 long-range attack drones at Ukraine overnight on Nov. 5... Ukrainian air defenses had intercepted 105 Russian drones... killed nine people and injured 19 others."
+        },
+        {
+          "fact": "The confirmed toll from the Nov. 2 Russian aerial-bomb strike on Komyshuvakha, in Zaporizhzhia Oblast, reached 42 dead with 33 still missing as of Nov. 5, police said.",
+          "source_url": "https://kyivindependent.com/42-bodies-recovered-from-rubble-after-russian-strike-on-komyshuvakha-as-search-continues-police-say/",
+          "excerpt": "The bodies of 42 Ukrainians have been recovered from the rubble in the village of Komyshuvakha in Zaporizhzhia Oblast, with 33 more people still missing as of Nov. 5, three days after Russian forces attacked the settlement with heavy aerial bombs."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://kyivindependent.com/ukraine-partners-coordinate-peace-efforts-ahead-of-abu-dhabi-talks-with-russia-2/",
+          "outlet": "The Kyiv Independent",
+          "title": "Ukraine, partners coordinate peace efforts ahead of Abu Dhabi talks with Russia",
+          "published_at": "2026-11-04",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://kyivindependent.com/security-guarantees-must-be-ironclad-zelensky-speaks-to-trumps-envoys-ahead-of-trilateral-peace-talks/",
+          "outlet": "The Kyiv Independent",
+          "title": "'Security guarantees must be ironclad' — Zelensky speaks to Trump's envoys ahead of trilateral peace talks",
+          "published_at": "2026-11-04",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/11/05/trump-russia-china-summit-apec-midterms.html",
+          "outlet": "CNBC",
+          "title": "Russia, China may be more aggressive if they feel Trump is on 'his way out': Brookings",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://kyivindependent.com/russian-attacks-kill-9-injure-19-across-ukraine-over-past-day-as-casualty-toll-from-russian-strikes-in-kherson-oblast-rises-following-end-of-ceasefire/",
+          "outlet": "The Kyiv Independent",
+          "title": "Russian attacks kill 9, injure 19 across Ukraine over past day, as casualty toll from Russian strikes in Kherson Oblast rises following end of ceasefire",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://kyivindependent.com/42-bodies-recovered-from-rubble-after-russian-strike-on-komyshuvakha-as-search-continues-police-say/",
+          "outlet": "The Kyiv Independent",
+          "title": "42 bodies recovered from rubble after Russian strike on Komyshuvakha as search continues, police say",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://apnews.com/article/russia-ukraine-war-airstrikes-negotiations-kushner-0b975a30f862731346e7e1d098a8d538",
+          "outlet": "Associated Press",
+          "title": "Russia and Ukraine trade airstrikes as reconstruction and security talks resume in Brussels",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "world",
+        "politics"
+      ],
+      "entities": {
+        "organizations": [
+          "European Commission",
+          "NATO",
+          "APEC",
+          "Chinese Foreign Ministry"
+        ],
+        "people": [
+          "Volodymyr Zelensky",
+          "Steve Witkoff",
+          "Jared Kushner",
+          "Vladimir Putin",
+          "Donald Trump",
+          "Mao Ning",
+          "Xi Jinping"
+        ],
+        "places": [
+          "Brussels",
+          "Abu Dhabi",
+          "Ukraine",
+          "Russia",
+          "Shenzhen",
+          "Komyshuvakha",
+          "Zaporizhzhia Oblast"
+        ]
+      }
+    },
+    {
+      "id": "boehringer-sino-biopharm-six-cancer-programs-7b",
+      "headline": "Boehringer licenses six Chinese cancer programs from Sino Biopharm in deal worth up to $7B",
+      "key_facts": [
+        {
+          "fact": "Boehringer Ingelheim signed a licensing and development agreement with Sino Biopharmaceutical covering six preclinical cancer programs: antibody-drug conjugates and T-cell engagers.",
+          "source_url": "https://european-biotechnology.com/latest-news/boehringer-secures-six-chinese-cancer-programs-in-deal-worth-up-to-7b/",
+          "excerpt": "The German pharmaceutical company has signed a comprehensive licensing and development agreement with Sino Biopharmaceutical (SBP Group) covering six preclinical cancer therapy programs. The deal focuses on two drug classes... antibody-drug conjugates (ADCs) and T-cell engagers."
+        },
+        {
+          "fact": "Sino Biopharm receives $358 million in upfront and near-term payments, with up to $7 billion more in milestones plus tiered royalties; the milestone sum is contingent, not a guaranteed payment.",
+          "source_url": "https://european-biotechnology.com/latest-news/boehringer-secures-six-chinese-cancer-programs-in-deal-worth-up-to-7b/",
+          "excerpt": "SBP will initially receive $358 million in upfront and near-term payments. The agreement also includes potential milestone payments of up to $7 billion and tiered royalties... the $7 billion is neither a purchase price nor a guaranteed payment."
+        },
+        {
+          "fact": "Sino Biopharm leads early development, and Boehringer can exercise options after clinical milestones: rights to four programs exclude mainland China, Hong Kong and Macau, while rights to two could be worldwide.",
+          "source_url": "https://thebench.bio/news/summaries/2026-11-05",
+          "excerpt": "Sino will lead early development. Boehringer can exercise options after clinical milestones. Boehringer's potential rights to four programs exclude mainland China, Hong Kong, and Macau. Rights to the other two could be worldwide."
+        },
+        {
+          "fact": "Five candidates come from Shanghai-based LaNova Medicines and one from Beijing Tide Pharmaceutical, both Sino Biopharm subsidiaries; targets and indications have not been disclosed.",
+          "source_url": "https://european-biotechnology.com/latest-news/boehringer-secures-six-chinese-cancer-programs-in-deal-worth-up-to-7b/",
+          "excerpt": "Five of the six preclinical programs originate from Shanghai-based LaNova Medicines, a wholly owned subsidiary of SBP. The sixth comes from Beijing Tide Pharmaceutical... The companies have not yet disclosed further details about the specific targets, indications or development stages."
+        },
+        {
+          "fact": "The deal follows Boehringer's opening of a China R&D center in Shanghai on Oct. 12.",
+          "source_url": "https://european-biotechnology.com/latest-news/boehringer-secures-six-chinese-cancer-programs-in-deal-worth-up-to-7b/",
+          "excerpt": "On October 12, Boehringer opened a new China Research and Development Center in Shanghai."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://european-biotechnology.com/latest-news/boehringer-secures-six-chinese-cancer-programs-in-deal-worth-up-to-7b/",
+          "outlet": "European Biotechnology",
+          "title": "Boehringer secures six Chinese cancer programs in deal worth up to $7B",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        },
+        {
+          "url": "https://thebench.bio/news/summaries/2026-11-05",
+          "outlet": "TheBench.Bio",
+          "title": "Life Sciences Daily Summary: What Happened on November 5, 2026",
+          "published_at": "2026-11-05",
+          "image_url": "",
+          "type": "news_article"
+        }
+      ],
+      "category": [
+        "business",
+        "science"
+      ],
+      "entities": {
+        "organizations": [
+          "Boehringer Ingelheim",
+          "Sino Biopharmaceutical",
+          "LaNova Medicines",
+          "Beijing Tide Pharmaceutical"
+        ],
+        "people": [],
+        "places": [
+          "China",
+          "Shanghai",
+          "Germany",
+          "Hong Kong",
+          "Macau"
+        ]
+      }
+    }
+  ],
+  "story_count": 20,
+  "source_count": 84
+}

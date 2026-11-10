@@ -1,0 +1,1183 @@
+{
+  "entities": [
+    {
+      "headline": "Modelo inédito da OpenAI cria 948 exploits de root no Linux por US$ 1,2 mi",
+      "summary": "Cada exploit de escalonamento de privilégio custou US$ 1.279 em créditos de API; o modelo de cibersegurança ainda não está disponível ao público.",
+      "bullets": [
+        "A OpenAI publicou em 4 de novembro os resultados de um pipeline autônomo que, em meados de outubro, gerou 948 exploits funcionais de escalonamento local de privilégio (LPE, falha que leva uma conta comum a root) no kernel do Linux.",
+        "A execução custou US$ 1.213.430 em créditos de API, ou US$ 1.279 por exploit.",
+        "O sistema identificou 2.308 achados candidatos e reproduziu 1.724 deles, cerca de 74,7%, em 30 horas.",
+        "O novo modelo descobriu mais de cinco vezes mais LPEs inéditos do que uma execução de julho com o GPT-5.6 Sol, que encontrou 166 por US$ 513.690.",
+        "No kernelCTF, alvo reforçado do Google, o pipeline obteve 21 exploits por cerca de US$ 32.936; o programa aceitou 26 exploits de dia zero confirmados em 2026 até a publicação.",
+        "A OpenAI estima o valor hipotético dos 948 exploits entre US$ 18,9 mi e US$ 66,3 mi, com base em recompensas históricas do Pwn2Own (US$ 20.000) e do TyphoonPWN (US$ 70.000).",
+        "Em uma execução inicial, a revisão humana constatou que 20 de 200 sucessos relatados chegaram a root por um dia zero diferente do atribuído ao agente."
+      ],
+      "body": "O modelo usado na execução de outubro não tem nome e não está disponível ao público, e os números são da própria OpenAI. Pesquisadores humanos revisaram exploits e correções antes de reportá-los aos mantenedores do kernel. Além dos 948 exploits, o sistema gerou provas de conceito para 291 vulnerabilidades de vazamento de informação. Os alvos rodavam um sistema operacional de desktop padrão, sem enfraquecimento proposital, e o ganho sobre a execução de julho veio apesar de três meses de reforço de segurança entre as duas varreduras.\n\nA conclusão da empresa é que, no curto prazo, uma conta de baixo privilégio em um sistema sem as últimas atualizações deve ser tratada como funcionalmente equivalente a acesso root para um atacante com muitos recursos. Por isso, a OpenAI defende que a geração automatizada de correções é essencial.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://openai.com/index/a-thousand-fewer-paths-to-root/",
+          "title": "Mil caminhos a menos até o root",
+          "summary": "OpenAI: o post detalha custos e resultados do pipeline autônomo e alerta que contas sem atualização equivalem, na prática, a acesso root.",
+          "bullets": [
+            "A execução de meados de outubro reproduziu 1.724 vulnerabilidades e gerou 948 exploits de LPE e 291 provas de conceito de vazamento de informação.",
+            "O custo total foi de US$ 1.213.430, ou US$ 1.279 por exploit de LPE.",
+            "O valor hipotético dos exploits fica entre US$ 18,9 mi e US$ 66,3 mi, de 16 a 55 vezes o custo do pipeline.",
+            "No ambiente adaptado do kernelCTF, o sistema obteve 25 provas de conceito de vazamento e 21 exploits de LPE."
+          ]
+        },
+        {
+          "url": "https://x.com/OpenAI/status/2118119451401048497",
+          "title": "Post da OpenAI no X: pesquisadores de segurança criam sistema autônomo de descoberta de vulnerabilidades",
+          "summary": "OpenAI no X: a empresa anuncia que seus pesquisadores de segurança construíram um sistema autônomo para descobrir e explorar vulnerabilidades.",
+          "bullets": [
+            "O anúncio foi feito em 4 de novembro, junto com o post técnico da empresa.",
+            "O sistema gerou 948 exploits funcionais de LPE para o kernel do Linux em uma única execução."
+          ]
+        },
+        {
+          "url": "https://www.brocker.org/openai-cyber-model-pipeline-linux-kernel-948-lpe-exploits",
+          "title": "Pipeline de cibersegurança da OpenAI encontra 948 LPEs únicos no kernel do Linux",
+          "summary": "Brocker: a reportagem compara a execução de outubro com a de julho, feita com o GPT-5.6 Sol.",
+          "bullets": [
+            "A execução do fim de julho com o GPT-5.6 Sol encontrou 166 LPEs únicos por US$ 513.690.",
+            "A execução de outubro chegou a 948 LPEs únicos por US$ 1.213.430."
+          ]
+        },
+        {
+          "url": "https://sysnote.net/news/openai-s-agents-found-948-linux-kernel-root-exploits-for-1-2m-and-1-in-10-early",
+          "title": "Agentes da OpenAI acham 948 exploits de root no kernel do Linux por US$ 1,2 mi, e 1 em cada 10 primeiros sucessos usou o dia zero errado",
+          "summary": "sysnote: o texto destaca as ressalvas do resultado, como a dependência de revisão humana e os números divulgados só pela própria OpenAI.",
+          "bullets": [
+            "Em uma execução inicial, o estágio de exploração relatou 200 exploits bem-sucedidos.",
+            "A revisão humana constatou que 20 deles chegaram a root por um dia zero diferente do atribuído.",
+            "Os números são da OpenAI, e o modelo não está disponível ao público."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "OpenAI promete pagar custo de energia de data centers após revés nas urnas",
+      "summary": "A empresa também promete não usar acordos de confidencialidade com autoridades, mas os compromissos valem só para futuros campi próprios.",
+      "bullets": [
+        "A OpenAI publicou em 5 de novembro um National Community Compact e um Compute Campus Policy Blueprint.",
+        "A empresa promete pagar o custo integral da eletricidade e da infraestrutura, com garantias financeiras caso um projeto seja atrasado, reduzido ou cancelado.",
+        "A OpenAI diz que não usará acordos de confidencialidade (NDAs) com autoridades públicas, salvo para segurança, segredos comerciais ou informação competitivamente sensível.",
+        "No campus planejado em Effingham County, a Georgia Power pode cortar até 1.000 MW do fornecimento em períodos de alta demanda.",
+        "O WSJ relata que líderes da OpenAI discutiram na quarta-feira se precisariam rever as expectativas de capacidade de data center para o próximo ano.",
+        "A Axios contabiliza medidas restritivas em 10 estados com placar de 43 a 1 nas urnas; analistas dizem que cerca de 60% da capacidade planejada para 2028 nos EUA corre risco de atraso."
+      ],
+      "body": "Os compromissos incluem a publicação, por local, do uso de água e eletricidade, dos planos de construção e de estudos independentes de ruído. Cada campus próprio terá um Community Compact adaptado à sua região, mas o texto se aplica apenas a futuras instalações que a OpenAI possuir e operar.\n\nLehane, da OpenAI, disse que os compromissos ampliam iniciativas anteriores e que o blueprint estava em preparação desde agosto. A CNBC lembra que a empresa já prometeu proteger os consumidores de energia várias vezes neste ano.\n\nO anúncio vem depois de uma eleição em que medidas contra data centers foram aprovadas em série. Segundo o WSJ, executivos de tecnologia demonstraram preocupação com os resultados em um evento de Jensen Huang na noite da eleição.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://openai.com/index/setting-new-standard-responsible-ai-infrastructure/",
+          "title": "Um novo padrão para infraestrutura de IA responsável",
+          "summary": "OpenAI: o post lista os compromissos sobre custo de energia, transparência e relação com autoridades locais.",
+          "bullets": [
+            "A empresa pagará o custo integral da eletricidade e da infraestrutura necessária, com garantias financeiras antes de grandes gastos.",
+            "Não haverá NDAs com autoridades públicas, salvo proteções estreitas para segurança, segredos comerciais ou informação sensível.",
+            "A OpenAI publicará o uso de água e eletricidade por local, planos de construção e estudos independentes de ruído.",
+            "Em Effingham County, a Georgia Power pode reduzir o fornecimento em até 1.000 MW em períodos de alta demanda."
+          ]
+        },
+        {
+          "url": "https://cdn.openai.com/pdf/community-compact.pdf",
+          "title": "National Community Compact da OpenAI: construindo com as comunidades, não apenas nelas",
+          "summary": "OpenAI: o documento define o alcance dos compromissos, limitados a futuros campi que a empresa possuir e operar.",
+          "bullets": [
+            "Cada campus próprio terá um Community Compact adaptado ao local.",
+            "A divulgação de informações sobre o desenvolvimento dos campi vale para futuros locais da OpenAI."
+          ]
+        },
+        {
+          "url": "https://www.cnbc.com/2026/11/05/openai-to-pay-for-data-center-power-after-election-shows-ai-concern.html",
+          "title": "OpenAI vai pagar pela energia de data centers depois que eleição mostra preocupação com IA",
+          "summary": "CNBC: a reportagem traz o argumento de Lehane e lembra que as promessas aos consumidores de energia não são novas.",
+          "bullets": [
+            "Lehane disse que os novos compromissos ampliam muitas iniciativas anteriores da empresa.",
+            "Segundo ele, o blueprint de políticas estava em preparação desde agosto.",
+            "A OpenAI já prometeu repetidas vezes neste ano proteger consumidores de energia e investir em comunidades locais."
+          ]
+        },
+        {
+          "url": "https://www.wsj.com/tech/ai/the-election-day-revolt-that-threatens-americas-ai-boom-03a53b52",
+          "title": "A revolta do dia da eleição que ameaça o boom de IA nos EUA",
+          "summary": "The Wall Street Journal: a reportagem descreve a reação de executivos de tecnologia e da OpenAI aos resultados contra data centers.",
+          "bullets": [
+            "Executivos presentes no evento de Jensen Huang na noite da eleição demonstraram preocupação com os resultados.",
+            "Na manhã de quarta-feira, líderes da OpenAI discutiam rever as expectativas de capacidade de data center para o próximo ano, segundo uma pessoa a par da conversa."
+          ]
+        },
+        {
+          "url": "https://www.techmeme.com/261105/p16",
+          "title": "Fontes: executivos expressam preocupação com resultados contra data centers em evento de Jensen Huang; OpenAI discute rever planos de capacidade para 2027",
+          "summary": "Techmeme: o agregador resume a reportagem do WSJ sobre o evento de Jensen Huang e a discussão interna da OpenAI.",
+          "bullets": [
+            "Executivos de tecnologia demonstraram preocupação com os resultados no evento de Huang durante as midterms.",
+            "Líderes da OpenAI discutiram se teriam de rever as expectativas de capacidade para 2027."
+          ]
+        },
+        {
+          "url": "https://www.axios.com/2026/11/05/ai-data-center-election-backlash-concessions",
+          "title": "Big techs recorrem a dinheiro e concessões para oferecer novo acordo sobre IA após derrota nas urnas",
+          "summary": "Axios: o texto mede a dimensão da derrota eleitoral e o risco para a capacidade planejada de data centers.",
+          "bullets": [
+            "Medidas restritivas em 10 estados registraram placar de 43 a 1 nas urnas.",
+            "Analistas dizem que cerca de 60% da capacidade planejada para 2028 nos EUA corre risco de atraso."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Moonshot abre pesos do Kimi K3.1 Pro e Ricursive lança o Ripple-65B",
+      "summary": "O Ripple custou US$ 32 mi, diz a Ricursive, e reivindica a liderança entre modelos abertos dos EUA em programação, sem verificação independente.",
+      "bullets": [
+        "A Moonshot AI liberou os pesos do Kimi K3.1 Pro no Hugging Face em 4 de novembro, como prometido no lançamento do modelo, em outubro.",
+        "O Kimi K3.1 Pro tem 2,8 trilhões de parâmetros totais, 104 bilhões ativos, contexto de 1.048.576 tokens e download de 1,56 TB.",
+        "A licença do Kimi é própria: uso como Model-as-a-Service exige acordo com a Moonshot quando a receita do licenciado passa de US$ 20 mi em 12 meses.",
+        "A Ricursive Intelligence lançou em 4 de novembro o Ripple-65B Preview, sob Apache 2.0, com 65 bilhões de parâmetros, treinado do zero com 12 trilhões de tokens.",
+        "O Ripple marca 80,5 no Terminal-Bench 2.1, contra 80,1 do Reflection Beam, mas perde por 44,3 a 60,0 para o Muse Spark Open, da Meta, no DeepSWE.",
+        "O endpoint da GMI Cloud no OpenRouter cobra US$ 0,20 por milhão de tokens de entrada e US$ 0,60 por milhão de saída no Ripple."
+      ],
+      "body": "Os dois lançamentos saíram no mesmo dia, com escalas e licenças bem diferentes. O Kimi K3.1 Pro, da Moonshot, foi lançado em 24 de outubro e agora pode ser baixado sem restrição de acesso, em 96 arquivos. O Ripple é uma variante de uso geral do modelo por trás da plataforma de design de chips da Ricursive.\n\nOs números do Ripple vêm da própria empresa: custo total de pesquisa e desenvolvimento de US$ 32 mi e 79,1 no SWE-bench Pro v2.0 Hard, sem verificação independente. A VentureBeat ressalva que a comparação publicada pela Reflection lista vários modelos chineses acima do resultado do Ripple no Terminal-Bench.\n\nAs fundadoras Anna Goldie e Azalia Mirhoseini ajudaram a criar o AlphaChip, do Google. A startup captou US$ 300 mi em uma Série A com avaliação de US$ 4 bi em janeiro.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://x.com/Kimi_Moonshot/status/2118010528123773297",
+          "title": "Post da Moonshot no X: liberando os pesos do modelo Kimi K3.1 Pro",
+          "summary": "Kimi Moonshot no X: a empresa anuncia a liberação dos pesos do Kimi K3.1 Pro.",
+          "bullets": [
+            "O anúncio saiu em 4 de novembro.",
+            "Os pesos foram publicados no Hugging Face, como prometido no lançamento de outubro."
+          ]
+        },
+        {
+          "url": "https://themodelgap.com/new-ai-models",
+          "title": "Lançamentos de modelos de IA em novembro de 2026",
+          "summary": "The Model Gap: o guia detalha as especificações técnicas e a licença do Kimi K3.1 Pro.",
+          "bullets": [
+            "São 96 arquivos safetensors, em um total de 1,56 TB.",
+            "O modelo tem 2,8 trilhões de parâmetros totais, 104 bilhões ativos e contexto de 1.048.576 tokens.",
+            "Uso como Model-as-a-Service exige acordo à parte quando a receita agregada do licenciado passa de US$ 20 mi em 12 meses."
+          ]
+        },
+        {
+          "url": "https://gigazine.net/gsc_news/en/20261105-kimi-k3-1-pro-model-weight-release/",
+          "title": "Pesos do Kimi K3.1 Pro são disponibilizados gratuitamente",
+          "summary": "GIGAZINE: o site informa que a Moonshot cumpriu a promessa de abrir o modelo lançado em outubro.",
+          "bullets": [
+            "O Kimi K3.1 Pro foi lançado em 24 de outubro de 2026.",
+            "Os pesos agora estão disponíveis de graça, como anunciado originalmente."
+          ]
+        },
+        {
+          "url": "https://venturebeat.com/technology/ex-googlers-new-apache-2-0-model-ripple-65b-preview-claims-the-u-s-open-coding-lead-on-two-major-benchmarks",
+          "title": "Novo modelo Apache 2.0 de ex-funcionárias do Google, o Ripple-65B Preview reivindica a liderança aberta dos EUA em programação em dois benchmarks",
+          "summary": "VentureBeat: a reportagem detalha os benchmarks do Ripple e questiona a ideia de uma liderança geral em programação.",
+          "bullets": [
+            "O Ripple marca 80,5 no Terminal-Bench 2.1, contra 80,1 do Reflection Beam, e 79,1 no SWE-bench Pro v2.0 Hard.",
+            "No DeepSWE, perde por 44,3 a 60,0 para o Muse Spark Open, da Meta.",
+            "A comparação da Reflection lista vários modelos chineses acima do Ripple no Terminal-Bench.",
+            "A Série A de US$ 300 mi, em janeiro, foi liderada pela Lightspeed com avaliação de US$ 4 bi.",
+            "O endpoint da GMI Cloud no OpenRouter cobra US$ 0,20 e US$ 0,60 por milhão de tokens de entrada e saída."
+          ]
+        },
+        {
+          "url": "https://neuralbrew.ai/en/articles/2026/11/ricursive-ripple-65b-preview-open-model-agentic-code/",
+          "title": "Ricursive lança o Ripple-65B Preview, modelo aberto de 65 bilhões de parâmetros feito para programação com agentes",
+          "summary": "Neural Brew: o texto descreve o modelo e ressalta que custo e benchmarks ainda não têm verificação independente.",
+          "bullets": [
+            "O modelo denso de 65 bilhões de parâmetros foi treinado do zero com 12 trilhões de tokens, sob Apache 2.0.",
+            "A desenvolvedora declara custo total de US$ 32 mi.",
+            "Os números ainda não foram verificados de forma independente."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "OpenAI lança Images 2.6 com criação de GIFs no ChatGPT",
+      "summary": "Usuários já geram mais de 4 bilhões de imagens por semana, contra 3 bilhões em setembro; a API ganha os modelos Flare e Sunburst.",
+      "bullets": [
+        "O Images 2.6 chegou em 4 de novembro ao ChatGPT e ao Codex, em todos os planos, na web, no desktop e no celular.",
+        "O ChatGPT agora gera GIFs animados a partir de um prompt ou de uma foto enviada, com ajuste de velocidade e edição de quadros individuais.",
+        "A OpenAI diz que os usuários geram mais de 4 bilhões de imagens por semana no ChatGPT e na API, contra 3 bilhões relatados em setembro.",
+        "O GPT-Image-2.6 Flare gera imagens em até seis segundos.",
+        "O Sunburst busca mais qualidade e consistência entre edições.",
+        "A atualização adiciona imagens de referência, marcação em imagens e exportação em SVG, e a OpenAI diz que os modelos da API geram imagens 50% mais rápido."
+      ],
+      "body": "A novidade mais visível para o usuário comum é o GIF nativo: o ChatGPT cria a animação a partir de um prompt ou de uma foto e permite ajustar a velocidade, editar quadros e compartilhar o resultado. O produto também passa a aceitar imagens de referência.\n\nPara desenvolvedores, a OpenAI dividiu a oferta em dois modelos de API: o Flare, voltado à velocidade, e o Sunburst, voltado à qualidade e à consistência entre edições. O volume de 4 bilhões de imagens por semana mostra alta de ao menos 1 bilhão desde o número divulgado em setembro.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1026474/openai-chatgpt-animated-gifs-images-2-6",
+          "title": "ChatGPT agora vai criar GIFs animados para você",
+          "summary": "The Verge: a reportagem explica como funciona o recurso de GIFs e traz o novo volume semanal de imagens.",
+          "bullets": [
+            "Os GIFs podem partir de um prompt ou de uma foto enviada ao chatbot.",
+            "O usuário pode ajustar a velocidade, editar quadros individuais e compartilhar o resultado.",
+            "O volume passou de 3 bilhões de imagens por semana em setembro para mais de 4 bilhões."
+          ]
+        },
+        {
+          "url": "https://x.com/OpenAI/status/2118124944928432327",
+          "title": "Post da OpenAI no X: apresentando o ChatGPT Images 2.6, agora com GIFs e imagens de referência",
+          "summary": "OpenAI no X: o post principal apresenta o Images 2.6 e antecipa dois novos modelos para a API.",
+          "bullets": [
+            "O ChatGPT passa a oferecer GIFs e imagens de referência.",
+            "A API recebe dois novos modelos, com geração de imagens 50% mais rápida."
+          ]
+        },
+        {
+          "url": "https://x.com/OpenAI/status/2118124964197114039",
+          "title": "Post da OpenAI no X: dois novos modelos de imagem para desenvolvedores, GPT-Image-2.6 Flare e Sunburst",
+          "summary": "OpenAI no X: o post descreve o que diferencia os dois modelos voltados a desenvolvedores.",
+          "bullets": [
+            "O Flare gera imagens em até seis segundos.",
+            "O Sunburst traz mais qualidade e consistência entre edições.",
+            "A marcação em imagens e a exportação em SVG ampliam as formas de ajustar e usar o resultado."
+          ]
+        },
+        {
+          "url": "https://x.com/OpenAI/status/2118124966055223755",
+          "title": "Post da OpenAI no X: Images 2.6 já está disponível no ChatGPT e no Codex em todos os planos",
+          "summary": "OpenAI no X: o post informa onde o Images 2.6 está disponível a partir de 4 de novembro.",
+          "bullets": [
+            "O recurso chega ao ChatGPT e ao Codex.",
+            "A disponibilidade abrange todos os planos, na web, no desktop e no celular."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Isomorphic Labs negocia US$ 5 bi com avaliação de US$ 50 bi, diz Bloomberg",
+      "summary": "A empresa de descoberta de remédios com IA, criada a partir do Google DeepMind, ainda não tem nenhum medicamento em testes em humanos.",
+      "bullets": [
+        "A Bloomberg informou em 4 de novembro que a Isomorphic Labs negocia cerca de US$ 5 bi com avaliação de cerca de US$ 50 bi, citando pessoas a par do assunto.",
+        "A rodada não foi fechada, e os detalhes ainda podem mudar.",
+        "Em outubro, a Bloomberg havia relatado conversas iniciais com avaliação de US$ 40 bi ou mais.",
+        "Em maio, a empresa captou US$ 2,1 bi em rodada liderada pela Thrive Capital, com participação da Alphabet.",
+        "Se a rodada fechar, o financiamento externo total chegará a cerca de US$ 7,7 bi em menos de dois anos.",
+        "A rival Chai Discovery captou US$ 400 mi com avaliação de US$ 3,8 bi em julho; a meta da Isomorphic é cerca de 13 vezes maior."
+      ],
+      "body": "A avaliação discutida contrasta com o estágio dos remédios da empresa. Demis Hassabis disse em janeiro que os primeiros testes clínicos deveriam começar até o fim de 2026. Na segunda-feira, em um evento da Bloomberg em Londres, o presidente da Isomorphic, Max Jaderberg, afirmou que o trabalho com medicamentos segue em fase pré-clínica e descreveu a empresa como estando em seus \"primeiros innings\", ou seja, no começo do jogo.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-11-04/isomorphic-labs-in-talks-for-about-5-billion-in-funding",
+          "title": "Isomorphic Labs negocia cerca de US$ 5 bilhões em financiamento",
+          "summary": "Bloomberg: a agência revelou as negociações, citando pessoas a par do assunto.",
+          "bullets": [
+            "A rodada seria de cerca de US$ 5 bi, com avaliação de cerca de US$ 50 bi.",
+            "O financiamento ainda não foi fechado, e os detalhes podem mudar."
+          ]
+        },
+        {
+          "url": "https://www.tradingview.com/news/reuters.com,2026:newsml_FWN46L2YV:0-isomorphic-labs-in-talks-for-about-5-billion-in-funding-bloomberg-news/",
+          "title": "Isomorphic Labs negocia cerca de US$ 5 bilhões em financiamento, diz Bloomberg News",
+          "summary": "Reuters via TradingView: a agência repercute a reportagem da Bloomberg sobre a captação.",
+          "bullets": [
+            "A captação discutida é de cerca de US$ 5 bi.",
+            "A informação é atribuída à Bloomberg News."
+          ]
+        },
+        {
+          "url": "https://thenextweb.com/news/isomorphic-labs-5bn-funding-talks-50bn-valuation",
+          "title": "Isomorphic Labs negocia captação de US$ 5 bi com avaliação de US$ 50 bi, informa Bloomberg",
+          "summary": "The Next Web: o texto reconstitui a sequência de rodadas e contrasta a avaliação com o estágio pré-clínico.",
+          "bullets": [
+            "Em outubro, a Bloomberg relatou conversas iniciais com avaliação de US$ 40 bi ou mais.",
+            "Em maio, a empresa captou US$ 2,1 bi em rodada liderada pela Thrive Capital.",
+            "Hassabis previu em janeiro os primeiros testes clínicos até o fim de 2026.",
+            "Max Jaderberg disse na segunda-feira que o trabalho com medicamentos segue em fase pré-clínica."
+          ]
+        },
+        {
+          "url": "https://techfundingnews.com/isomorphic-labs-5b-raise-50b-valuation-first-clinical-trial/",
+          "title": "Isomorphic Labs negocia captação de US$ 5 bi com avaliação de US$ 50 bi, segundo reportagem",
+          "summary": "Tech Funding News: o texto soma o capital externo da empresa e a compara com a rival Chai Discovery.",
+          "bullets": [
+            "Se a rodada fechar, o financiamento externo chegará a cerca de US$ 7,7 bi em menos de dois anos.",
+            "A Chai Discovery captou US$ 400 mi com avaliação de US$ 3,8 bi em julho.",
+            "A avaliação da Isomorphic seria cerca de 13 vezes maior."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Apple reduz limite diário de IA de engenheiros de US$ 300 para US$ 200",
+      "summary": "Bloomberg relata novos cortes, para até US$ 100 em equipes de engenharia; fora dessa área, o teto pode cair a US$ 25 em alguns times.",
+      "bullets": [
+        "A Apple baixou em outubro o limite diário de gasto com modelos de IA de alguns engenheiros de US$ 300 para US$ 200, informou a Bloomberg em 4 de novembro.",
+        "A empresa planeja novos cortes para até US$ 100 em algumas equipes de engenharia.",
+        "Muitos grupos fora da engenharia já têm limite de US$ 100, e a Apple avaliou reduzi-lo a até US$ 25 em alguns times.",
+        "A Apple pede a algumas equipes que usem modelos mais baratos ou migrem para IA no próprio aparelho.",
+        "Funcionários têm acesso a Claude, ChatGPT, Gemini e outros modelos, e podem pedir exceções aos limites.",
+        "Fontes da Bloomberg dizem que poucos funcionários usavam os US$ 300 diários por inteiro, o que sugere economia pequena."
+      ],
+      "body": "O corte tem efeito financeiro incerto: como poucos funcionários chegavam ao limite de US$ 300, a medida pode render pouca economia. Quem precisar de mais orçamento poderá pedir aumento aos executivos.\n\nA redução ocorre em um momento de revisão interna. A Apple contratou consultores externos de produtividade para algumas divisões, e essas análises, somadas aos cortes de custo com IA, alimentaram o temor de uma possível reestruturação.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-11-04/apple-cuts-internal-ai-usage-budgets-in-move-to-reduce-spending",
+          "title": "Apple corta orçamentos internos de uso de IA para reduzir gastos",
+          "summary": "Bloomberg: a agência revelou o corte do limite diário e os planos de novas reduções, citando pessoas a par da mudança.",
+          "bullets": [
+            "O limite de alguns engenheiros caiu de US$ 300 para US$ 200 no mês passado.",
+            "Novos cortes podem levar algumas equipes de engenharia a até US$ 100 por dia."
+          ]
+        },
+        {
+          "url": "https://www.macrumors.com/2026/11/04/apple-reducing-employee-ai-spending/",
+          "title": "Apple coloca funcionários em um orçamento de IA",
+          "summary": "MacRumors: o site descreve como a Apple orienta as equipes e o clima interno diante dos cortes.",
+          "bullets": [
+            "Algumas equipes devem usar modelos mais baratos ou migrar para IA no próprio aparelho.",
+            "Funcionários que precisarem de mais orçamento poderão pedir aumento aos executivos.",
+            "Consultores externos de produtividade, somados aos cortes, alimentaram o temor de reestruturação."
+          ]
+        },
+        {
+          "url": "https://www.macworld.com/article/3277678/apple-reportedly-slashes-employee-ai-usage-limits-amid-cost-cutting-effort.html",
+          "title": "Apple reduz limites de uso de IA de funcionários em esforço de corte de custos, segundo reportagem",
+          "summary": "Macworld: o texto traz os limites fora da engenharia e questiona o tamanho da economia.",
+          "bullets": [
+            "Muitos grupos fora da engenharia já têm limite diário de US$ 100.",
+            "A Apple avaliou reduzir esse limite a até US$ 25 em alguns times.",
+            "Segundo fontes de Mark Gurman, poucos funcionários usavam os US$ 300 por inteiro."
+          ]
+        },
+        {
+          "url": "https://techcrunch.com/2026/11/04/apple-is-reportedly-cutting-budgets-for-its-internal-ai-usage/",
+          "title": "Apple estaria cortando orçamentos para uso interno de IA",
+          "summary": "TechCrunch: o site repercute a reportagem da Bloomberg sobre os cortes nos orçamentos internos de IA da Apple.",
+          "bullets": [
+            "O limite de alguns engenheiros caiu de US$ 300 para US$ 200 por dia.",
+            "A informação é atribuída à Bloomberg."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Receita anualizada da OpenAI sobe 70% no 3º trimestre, diz Brockman",
+      "summary": "O presidente da empresa vê IPO como possível em 2027 e diz que clientes corporativos já somam mais da metade da receita.",
+      "bullets": [
+        "Greg Brockman, presidente da OpenAI, falou em 4 de novembro em uma conferência de tecnologia do WSJ em Napa, na Califórnia.",
+        "Perguntado sobre a possibilidade de um IPO no próximo ano, respondeu \"acho que sim\" e disse que a empresa quer abrir o capital na hora certa.",
+        "A receita anualizada cresceu 70% de um trimestre para o outro no 3º trimestre.",
+        "Brockman atribuiu a virada ao negócio corporativo, com ajuda do GPT-5.6 Sol e do ChatGPT Work.",
+        "Segundo ele, a OpenAI hoje é \"mais ou menos majoritariamente corporativa\", com mais da metade da receita vinda de empresas.",
+        "A OpenAI amplia o trabalho com o JPMorgan, em especial em cibersegurança; a Anthropic também tem acordo com o banco nessa área.",
+        "Cat Wu, chefe de produto do Claude Code por dois anos, deixou a Anthropic na semana passada e vai liderar a gestão de produto de Core Products na OpenAI."
+      ],
+      "body": "Brockman descreveu o primeiro semestre como \"bem difícil\", com a Anthropic avançando em programação no mercado corporativo. Disse que, em programação, a OpenAI \"nem estava na conversa\". O 3º trimestre, em sua descrição, trouxe uma virada de receita puxada por empresas.\n\nA contratação de Cat Wu, anunciada por ela mesma na noite de 4 de novembro, horário dos EUA, reforça essa disputa. Ela era uma das gerentes de produto de maior destaque da Anthropic, segundo o Business Insider.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.wsj.com/tech/openai-had-rough-first-half-of-year-before-coding-takeoff-brockman-says-6c97d9e5?st=hL3kyT&reflink=desktopwebshare_permalink",
+          "title": "OpenAI teve primeiro semestre difícil antes da decolagem em programação, diz Brockman",
+          "summary": "Wall Street Journal: o jornal relata a fala de Brockman em sua conferência sobre o primeiro semestre e a recuperação em programação.",
+          "bullets": [
+            "Brockman falou na conferência de tecnologia do WSJ em Napa em 4 de novembro.",
+            "Ele descreveu o primeiro semestre como difícil para a OpenAI.",
+            "A receita anualizada cresceu 70% no 3º trimestre, segundo ele."
+          ]
+        },
+        {
+          "url": "https://biz.chosun.com/en/en-it/2026/11/05/DT4TSXJ77BGHHEQLYULVY7FFA4/",
+          "title": "OpenAI mira IPO com receita corporativa acima da metade e crescimento retomado",
+          "summary": "Chosun Biz: o site destaca a resposta sobre o IPO e os produtos que Brockman associa à alta de receita.",
+          "bullets": [
+            "Perguntado sobre preparar um IPO no próximo ano, Brockman respondeu \"acho que sim\".",
+            "A receita subiu com o lançamento do GPT-5.6 Sol e do ChatGPT Work.",
+            "Brockman chamou o período de \"um incrível ponto de inflexão de receita\"."
+          ]
+        },
+        {
+          "url": "https://financialcontextdaily.com/openai-ready-for-2027-ipo-as-president-brockman-says-enterprise-revenue-surging/",
+          "title": "OpenAI está pronta para IPO em 2027, e presidente Brockman diz que receita corporativa está em forte alta",
+          "summary": "FinancialContextDaily: o texto traz as declarações de Brockman sobre a concorrência com a Anthropic e o peso das empresas na receita.",
+          "bullets": [
+            "Brockman disse que o 1º e o 2º trimestres foram \"bem difíceis\" na disputa com a Anthropic.",
+            "A receita anualizada cresceu 70% em um trimestre.",
+            "A OpenAI seria hoje \"mais ou menos majoritariamente corporativa\"."
+          ]
+        },
+        {
+          "url": "https://x.com/ZeffMax/status/2118232357014753456",
+          "title": "Post de @ZeffMax no X: Brockman revela ampliação do trabalho da OpenAI com o JPMorgan",
+          "summary": "@ZeffMax no X: o post relata a novidade dada por Brockman sobre o JPMorgan e lembra o acordo da Anthropic com o banco.",
+          "bullets": [
+            "A OpenAI amplia o trabalho com o JPMorgan, em especial em cibersegurança.",
+            "A Anthropic também tem acordo com o JPMorgan nessa área."
+          ]
+        },
+        {
+          "url": "https://x.com/_catwu/status/2118137612577968402",
+          "title": "Post de Cat Wu no X: vou para a OpenAI liderar a gestão de produto de Core Products",
+          "summary": "Cat Wu no X: a executiva anuncia a própria ida para a OpenAI.",
+          "bullets": [
+            "O anúncio saiu na noite de 4 de novembro, no horário dos EUA.",
+            "Wu vai liderar a gestão de produto de Core Products."
+          ]
+        },
+        {
+          "url": "https://www.businessinsider.com/cat-wu-joins-openai-from-anthropic-product-lead-coup-2026-11",
+          "title": "Cat Wu vai da Anthropic para a OpenAI",
+          "summary": "Business Insider: a reportagem situa a saída de Wu da Anthropic, onde era uma das gerentes de produto mais conhecidas.",
+          "bullets": [
+            "Wu deixou a Anthropic na semana passada.",
+            "Ela foi chefe de produto do Claude Code por dois anos."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "China proíbe compra do negócio de robótica da ABB pela SoftBank no país",
+      "summary": "Acordo de US$ 5,4 bi fica em dúvida; segundo o FT, Pequim temia que dados de robótica fossem levados ao exterior para treinar IA, inclusive da OpenAI.",
+      "bullets": [
+        "A ABB disse em 5 de novembro que a SoftBank a informou da proibição, emitida pelo órgão chinês de revisão de segurança de investimentos estrangeiros.",
+        "O negócio foi assinado em outubro de 2025, com valor de empresa de US$ 5,375 bi; a ABB diz que as duas seguem em diálogo próximo.",
+        "O FT diz que a SoftBank esperava concluir a compra até ser avisada, na semana passada, da decisão da Comissão Nacional de Desenvolvimento e Reforma (NDRC).",
+        "A China é o maior mercado de robótica da ABB, com cerca de 30% do negócio, e mais de 90% dos robôs para clientes chineses são feitos no país.",
+        "É o segundo grande negócio bloqueado pela China neste ano, depois de a Meta receber ordem para desfazer a compra da Manus, de mais de US$ 2 bi.",
+        "A ABB previa cerca de US$ 5,3 bi líquidos com a venda e anunciou há pouco a compra da britânica Rotork por US$ 5,5 bi.",
+        "As ações da ABB caíam 1,1% pela manhã depois que o bloqueio veio a público."
+      ],
+      "body": "A proibição atinge a parte chinesa da divisão, mas pesa sobre toda a transação, já que a China é o principal mercado de robôs da ABB. O grupo mantém uma fábrica em Xangai desde 2022, construída por US$ 150 mi. A Comissão Europeia já havia aprovado a compra.\n\nSegundo o FT, a preocupação da NDRC era a transferência de dados de robótica para fora do país, onde poderiam treinar modelos de IA, incluindo os da OpenAI, da qual a SoftBank é grande investidora. A SoftBank não comentou e a NDRC não respondeu de imediato.\n\nUma cisão de partes do negócio para donos chineses chegou a ser considerada, e a SoftBank avalia se é possível fazer uma nova tentativa, de acordo com o FT.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://new.abb.com/news/detail/140154/update-on-divestment-of-abb-robotics",
+          "title": "Atualização sobre a venda da ABB Robotics",
+          "summary": "ABB: o comunicado confirma a proibição na China e diz que as duas empresas continuam trabalhando na transação.",
+          "bullets": [
+            "A SoftBank informou a ABB sobre a decisão do órgão chinês de revisão de segurança de investimentos estrangeiros.",
+            "A proibição se refere ao negócio da ABB Robotics na China.",
+            "ABB e SoftBank dizem estar em diálogo próximo e trabalhando de forma construtiva."
+          ]
+        },
+        {
+          "url": "https://www.straitstimes.com/business/china-blocks-softbanks-us5-4-billion-takeover-of-engineering-group-abbs-robotics-division",
+          "title": "China bloqueia compra da divisão de robótica da ABB pela SoftBank, de US$ 5,4 bilhões",
+          "summary": "The Straits Times: o jornal resume a reportagem do FT sobre a motivação da NDRC e registra a reação das ações.",
+          "bullets": [
+            "O FT revelou a proibição em 5 de novembro.",
+            "A SoftBank soube da decisão da NDRC na semana passada.",
+            "A NDRC temia o uso de dados de robótica para treinar IA, inclusive da OpenAI.",
+            "As ações da ABB caíam 1,1% pela manhã.",
+            "A China responde por cerca de 30% do negócio de robôs da ABB."
+          ]
+        },
+        {
+          "url": "https://www.swissinfo.ch/eng/swiss-industry/china-blocks-abbs-sale-of-its-robotics-division-to-softbank/92331115",
+          "title": "China bloqueia venda da divisão de robótica da ABB para a SoftBank",
+          "summary": "SWI swissinfo.ch: o site detalha a produção local da ABB e os efeitos financeiros do bloqueio para o grupo.",
+          "bullets": [
+            "Mais de 90% dos robôs para clientes chineses são fabricados localmente.",
+            "A fábrica de Xangai opera desde 2022 e custou US$ 150 mi.",
+            "A SoftBank avalia uma nova tentativa, e uma cisão para donos chineses chegou a ser considerada.",
+            "A ABB previa cerca de US$ 5,3 bi líquidos e anunciou a compra da Rotork por US$ 5,5 bi."
+          ]
+        },
+        {
+          "url": "https://www.scmp.com/business/china-business/article/3373415/china-blocks-softbanks-us54-billion-takeover-abbs-robotics-division",
+          "title": "China bloqueia compra da divisão de robótica da ABB pela SoftBank, de US$ 5,4 bilhões",
+          "summary": "South China Morning Post: o jornal coloca o caso ao lado de outro bloqueio chinês neste ano, o da compra da Manus pela Meta.",
+          "bullets": [
+            "É o segundo grande negócio bloqueado pela China em 2026.",
+            "A Meta recebeu ordem para desfazer a compra da startup de IA Manus, de mais de US$ 2 bi."
+          ]
+        },
+        {
+          "url": "https://www.ft.com/content/f10c3e24-45e4-47ff-bde2-24a8de90aec4",
+          "title": "China bloqueia compra da divisão de robótica da ABB pela SoftBank, de US$ 5,4 bi",
+          "summary": "Financial Times: o jornal revelou a proibição e o temor chinês sobre o uso de dados de robótica no treino de IA.",
+          "bullets": [
+            "A SoftBank esperava concluir o negócio até ser avisada da decisão na semana passada.",
+            "A NDRC temia a transferência de dados de robótica para o exterior.",
+            "A SoftBank não comentou, e a NDRC não respondeu de imediato."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Micron suspende obra de fábrica de até US$ 4,5 bi em Taiwan, diz Bloomberg",
+      "summary": "Sindicato de Taoyuan pede 15% do lucro operacional aos funcionários; Micron diz operar normalmente e governo local afirma não ter sido notificado.",
+      "bullets": [
+        "A Micron praticamente parou a obra em Taoyuan e avisou autoridades taiwanesas e um fornecedor, segundo pessoas ouvidas pela Bloomberg.",
+        "A Fab 11E tinha orçamento de US$ 3 bi a US$ 4,5 bi, incluindo equipamentos da ASML, e deveria entrar em operação em 2028.",
+        "A unidade produziria DRAM e memória de alta largura de banda (HBM), usada em chips de IA.",
+        "O sindicato de Taoyuan reúne menos de 3.000 dos 15.000 funcionários da Micron em Taiwan e pede 15% do lucro operacional, como fazem Samsung e SK Hynix.",
+        "O acordo de outubro, segundo o Ministério da Economia, elevaria os pacotes anuais de engenheiros juniores a cerca de NT$ 4 mi (US$ 121.450) em média e os de seniores a NT$ 6 mi.",
+        "Taiwan produz três quintos dos chips convencionais da Micron, que investiu perto de US$ 50 bi na ilha em três décadas.",
+        "Micron e sindicato voltam a se reunir em 6 de novembro, depois de uma greve de um dia no mês passado."
+      ],
+      "body": "A Micron não tratou diretamente do complexo de Taoyuan e disse apenas que suas operações seguem normais em Taiwan. O governo de Taoyuan afirma que não foi notificado de nenhuma suspensão.\n\nA disputa divide os trabalhadores da empresa na ilha. O sindicato de Taichung, maior, assinou um acordo em outubro, enquanto o de Taoyuan segue negociando e tenta recrutar membros do outro grupo para anular o pacto. O grupo de Taoyuan cobra uma regra mais clara de participação nos lucros, nos moldes de Samsung e SK Hynix.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://theedgemalaysia.com/node/824699",
+          "title": "Micron pausaria obra de fábrica de US$ 4,5 bi em Taiwan após disputa trabalhista",
+          "summary": "The Edge Malaysia (Bloomberg): o texto reproduz a apuração completa, com orçamento da fábrica, demandas sindicais e respostas oficiais.",
+          "bullets": [
+            "A Micron informou autoridades taiwanesas e um fornecedor sobre os planos de suspender a obra.",
+            "A Fab 11E tinha orçamento de US$ 3 bi a US$ 4,5 bi e previsão de operar em 2028.",
+            "O grupo de Taoyuan pede a distribuição de 15% do lucro operacional.",
+            "A Micron diz que as operações seguem normais, e o governo de Taoyuan afirma não ter sido notificado."
+          ]
+        },
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-11-05/micron-pauses-work-on-4-5-billion-taiwan-plant-after-labor-spat",
+          "title": "Micron pausa obra de fábrica de US$ 4,5 bilhões em Taiwan após disputa trabalhista",
+          "summary": "Bloomberg: a agência revelou a suspensão da obra em Taoyuan, citando pessoas a par do assunto.",
+          "bullets": [
+            "A Micron praticamente parou a construção da fábrica em Taoyuan.",
+            "A causa é uma disputa trabalhista prolongada com o sindicato local."
+          ]
+        },
+        {
+          "url": "https://www.tomshardware.com/tech-industry/semiconductors/microns-usd4-5-billion-taoyuan-plant-construction-halted-amidst-labor-dispute-company-and-union-still-havent-reached-agreement-as-latter-asks-for-clearer-profit-sharing-terms",
+          "title": "Obra da fábrica de US$ 4,5 bilhões da Micron em Taoyuan é interrompida em meio a disputa trabalhista",
+          "summary": "Tom's Hardware: o site foca o impasse entre empresa e sindicato, que ainda não chegaram a um acordo.",
+          "bullets": [
+            "O sindicato de Taoyuan ainda busca condições melhores.",
+            "As partes voltam a se reunir em 6 de novembro.",
+            "O sindicato fez uma greve de um dia no mês passado."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Agility fecha SPAC e estreia na Nasdaq como empresa de humanoides",
+      "summary": "A fabricante do robô Digit levantou US$ 465 mi brutos, mas faturou US$ 174 mil e perdeu US$ 362 mi no 1º semestre de 2026.",
+      "bullets": [
+        "A Agility concluiu em 4 de novembro a fusão com a Churchill Capital Corp XI, uma SPAC (empresa criada para abrir o capital de outra), e negocia desde 5 de novembro na Nasdaq como AGLT e AGLTW.",
+        "A empresa se apresenta como a única listada nos EUA dedicada só a humanoides e com implantações comerciais ativas.",
+        "A operação levantou cerca de US$ 465 mi brutos, incluindo uma colocação privada liderada pela Foxconn e US$ 100 mi recebidos antes do fechamento; resgates de acionistas da SPAC reduziram o valor.",
+        "A receita do 1º semestre de 2026 foi de US$ 174.000, em grande parte de partes relacionadas, com prejuízo de US$ 362 mi.",
+        "O TechCrunch relata US$ 300 mi em contratos planejados do Digit 5, de 30 clientes não identificados.",
+        "O Digit 5 deve custar US$ 25.000 iniciais mais US$ 8.500 por mês em assinatura, ou US$ 200.000 na compra direta, mais US$ 20.000 de implantação e US$ 36.000 por ano.",
+        "O custo de materiais do Digit 5 começa em US$ 150.000, com meta de US$ 30.000 a 10.000 robôs por ano."
+      ],
+      "body": "A estreia chama atenção para a distância entre os contratos planejados e a receita atual da empresa. Os contratos do Digit 5 dependem de o robô atingir metas de desempenho não divulgadas, e a CEO, Peggy Johnson, não disse quem são os clientes nem se são também investidores.\n\nOs protótipos do Digit 5 ainda não foram mostrados ao público. Johnson diz que eles serão demonstrados na CES 2027 e estarão amplamente disponíveis no fim de 2027.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.agilityrobotics.com/content/agility-becomes-first-u-s-publicly-listed-pure-play-humanoid-robotics-company-begins-trading-today-on-nasdaq-as-aglt",
+          "title": "Agility se torna a primeira empresa de robótica humanoide de atuação exclusiva listada nos EUA e começa a negociar na Nasdaq como AGLT",
+          "summary": "Agility: o comunicado marca a estreia na Nasdaq e detalha o capital levantado na operação.",
+          "bullets": [
+            "A operação e os financiamentos associados levantaram cerca de US$ 465 mi brutos, antes de despesas.",
+            "O total inclui uma colocação privada (PIPE) liderada pela Foxconn.",
+            "Também inclui US$ 100 mi em capital recebidos antes do fechamento."
+          ]
+        },
+        {
+          "url": "https://www.agilityrobotics.com/content/agility-robotics-and-churchill-capital-corp-xi-complete-business-combination",
+          "title": "Agility Robotics e Churchill Capital Corp XI concluem combinação de negócios",
+          "summary": "Agility: o comunicado confirma o fechamento da fusão com a SPAC e os códigos de negociação.",
+          "bullets": [
+            "A combinação foi concluída em 4 de novembro.",
+            "As negociações na Nasdaq estavam previstas para 5 de novembro, como AGLT e AGLTW.",
+            "A empresa se descreve como a única de atuação exclusiva em humanoides listada nos EUA com implantações comerciais ativas."
+          ]
+        },
+        {
+          "url": "https://techcrunch.com/2026/11/05/agility-is-the-first-pure-humanoid-robot-company-on-the-stock-market-are-you-buying/",
+          "title": "Agility é a primeira empresa só de robôs humanoides na bolsa; você compraria?",
+          "summary": "TechCrunch: a reportagem confronta a receita mínima da Agility com os contratos planejados para o Digit 5.",
+          "bullets": [
+            "A receita foi de US$ 174.000 no 1º semestre de 2026, com prejuízo de US$ 362 mi.",
+            "Há US$ 300 mi em contratos planejados de 30 clientes.",
+            "O Digit 5 precisa atingir metas não divulgadas para fechar os negócios.",
+            "A demonstração está prevista para a CES 2027, com ampla disponibilidade no fim daquele ano."
+          ]
+        },
+        {
+          "url": "https://arstechnica.com/ai/2026/11/agility-robotics-nasdaq-debut-invites-scrutiny-of-humanoid-robot-market/",
+          "title": "Estreia da Agility Robotics na Nasdaq atrai escrutínio sobre o mercado de robôs humanoides",
+          "summary": "Ars Technica: o texto examina os documentos da empresa em busca da economia do Digit 5.",
+          "bullets": [
+            "A assinatura prevê cerca de US$ 25.000 por robô na entrega e implantação, mais US$ 8.500 por mês.",
+            "A compra direta do hardware custa US$ 200.000.",
+            "Cada Digit v5 custaria inicialmente US$ 150.000 à Agility, e US$ 30.000 a 10.000 robôs por ano."
+          ]
+        },
+        {
+          "url": "https://www.bizjournals.com/portland/news/2026/11/03/agility-robotics-de-spac-redemptions.html",
+          "title": "De-SPAC da Agility Robotics é definido, e capital bruto levantado cai",
+          "summary": "Portland Business Journal: o jornal informa, antes do fechamento, o efeito dos resgates de acionistas da SPAC.",
+          "bullets": [
+            "Os resgates de acionistas da SPAC reduziram o capital levantado.",
+            "O valor da operação caiu para US$ 465 mi."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Microsoft recusa opção de ampliar contrato com a Nscale no Texas, diz FT",
+      "summary": "A expansão poderia valer dezenas de bilhões de dólares; fonte diz à Reuters que decisão é antiga e não muda os US$ 103 bi em contratos da Nscale.",
+      "bullets": [
+        "O FT informou em 5 de novembro que a Microsoft recusou a opção de mais que dobrar o aluguel de capacidade de computação da Nscale em Ward County, no Texas.",
+        "A Nscale, empresa britânica de infraestrutura de IA, prepara um IPO de cerca de US$ 35 bi.",
+        "Uma fonte disse à Reuters que a decisão foi tomada meses atrás, antes do pedido de IPO em setembro, e que o contrato atual no Texas não muda.",
+        "A opção foi anunciada em outubro de 2025 como segunda fase de 700 MW, além de cerca de 240 MW já contratados; a Nscale disse ao FT que estava mais perto de 500 MW.",
+        "A Nscale teve prejuízo líquido de US$ 1 bi sobre receita de US$ 141 mi no 1º semestre de 2026.",
+        "Em outubro, a Microsoft desistiu de ancorar o projeto de Loughton, em Essex, depois que atrasos na rede elétrica empurraram o fornecimento para a década de 2030."
+      ],
+      "body": "FT e Reuters divergem sobre o peso da decisão. O FT trata a recusa como um novo revés às vésperas da abertura de capital, enquanto a fonte ouvida pela Reuters afirma que ela não altera o valor total de cerca de US$ 103 bi em contratos da empresa.\n\nOutros projetos da Nscale também enfrentam dificuldades. O local principal, na Virgínia Ocidental, central para o contrato de computação de US$ 45 bi com a Anthropic, tem atrasos de obra e oposição local. Ainda assim, a Nscale negocia com a Anthropic o aluguel de um segundo data center de 460 MW no estado.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.ft.com/content/668e6ef8-88a1-4bef-8664-8f495baf09f8",
+          "title": "Novo revés antes do IPO da start-up, com gigante de tecnologia recusando opção de mais que dobrar contrato de data center no Texas",
+          "summary": "Financial Times: o jornal revelou a recusa da Microsoft e a trata como novo revés antes do IPO da Nscale.",
+          "bullets": [
+            "A Microsoft recusou a opção em Ward County, segundo três pessoas a par do assunto.",
+            "O negócio potencial valeria dezenas de bilhões de dólares.",
+            "A Nscale disse ao jornal que a opção estava mais perto de 500 MW."
+          ]
+        },
+        {
+          "url": "https://www.investing.com/news/stock-market-news/microsoft-declines-nscale-texas-expansion-ahead-of-35-bln-ipo--report-5002260",
+          "title": "Microsoft recusa expansão da Nscale no Texas antes de IPO de US$ 35 bilhões, diz reportagem",
+          "summary": "Investing.com: o site resume a reportagem do FT, com os números da empresa e os problemas em outros locais.",
+          "bullets": [
+            "O contrato de outubro de 2025 previa cerca de 240 MW e opção de 700 MW.",
+            "A Nscale perdeu US$ 1 bi sobre receita de US$ 141 mi no 1º semestre de 2026.",
+            "O local na Virgínia Ocidental, central para o contrato de US$ 45 bi com a Anthropic, enfrenta atrasos e oposição local.",
+            "A Nscale negocia com a Anthropic um segundo data center de 460 MW no estado."
+          ]
+        },
+        {
+          "url": "https://www.streetinsider.com/Reuters/Microsoft+rejects+multibillion-dollar+AI+deal+with+UK%27s+Nscale%2C+FT+reports/27292508.html",
+          "title": "Microsoft não vai ampliar contrato de data center no Texas com a britânica Nscale, diz fonte",
+          "summary": "StreetInsider (Reuters): a agência traz uma fonte que relativiza o impacto da decisão sobre a Nscale.",
+          "bullets": [
+            "A decisão foi tomada meses atrás, antes do pedido de IPO da Nscale, em setembro.",
+            "O contrato atual no Texas com a Microsoft não é afetado.",
+            "Não há impacto sobre o valor total de contratos de cerca de US$ 103 bi."
+          ]
+        },
+        {
+          "url": "https://thenextweb.com/news/microsoft-rejects-nscale-texas-option",
+          "title": "Microsoft teria recusado opção de expandir contrato de IA da Nscale no Texas",
+          "summary": "The Next Web: o site liga a recusa à desistência anterior da Microsoft do projeto da Nscale em Essex.",
+          "bullets": [
+            "Em outubro, a Microsoft deixou de ancorar o projeto de Loughton, em Essex.",
+            "O local era apresentado como o maior data center de IA do Reino Unido.",
+            "Atrasos na rede elétrica empurraram o fornecimento para a década de 2030."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Qualcomm cai cerca de 9% no pré-mercado com queda de 26% em chips de celular",
+      "summary": "A receita de celulares somou US$ 5,14 bi, abaixo da estimativa; margem bruta de 52,4% e previsão de lucro também ficaram aquém do esperado.",
+      "bullets": [
+        "A receita da unidade de celulares caiu 26%, para US$ 5,14 bi, contra estimativa de US$ 5,25 bi, e puxou o segmento de chips para baixo em 8%, a US$ 9,02 bi.",
+        "A receita ajustada de US$ 10,44 bi caiu 7%, mas superou a estimativa de US$ 10,12 bi; o lucro ajustado foi de US$ 2,17 por ação, contra US$ 2,16 esperados.",
+        "A margem bruta de 52,4% ficou abaixo dos 53,2% esperados.",
+        "As ações caíam cerca de 9% no pré-mercado de 5 de novembro, o que eliminaria cerca de US$ 17,5 bi em valor de mercado se a perda se mantivesse.",
+        "Para o 1º trimestre fiscal, a previsão é de receita de US$ 10,4 bi a US$ 11,2 bi e lucro de US$ 2,15 a US$ 2,35 por ação, com ponto médio abaixo dos US$ 2,32 esperados.",
+        "Os embarques globais de smartphones caíram 20% no trimestre de setembro, para o menor nível em 14 anos, com o custo de memória elevando preços, segundo a Counterpoint.",
+        "A receita automotiva subiu 89%, para US$ 1,99 bi, e a de IoT (dispositivos conectados), 4%, para US$ 1,89 bi."
+      ],
+      "body": "A queda das ações reflete o peso dos celulares e o custo mais alto de insumos. O ponto médio da previsão de receita fica acima do consenso, mas os ajustes de preço feitos para compensar esse custo só terão efeito completo no segundo semestre do ano fiscal de 2027.\n\nO CEO Cristiano Amon diz que a previsão do 1º trimestre fiscal não inclui mais vendas para a Apple e que as vendas de celulares Android chegaram ao fundo do poço e voltaram a subir. Segundo ele, o ano fiscal de 2027 marca o início de uma virada nas receitas fora de celulares, incluindo o avanço do negócio de data centers.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.channelnewsasia.com/business/qualcomm-shares-slide-smartphone-weakness-clouds-growth-push-6525471",
+          "title": "Ações da Qualcomm caem com fraqueza de smartphones ofuscando plano de crescimento",
+          "summary": "CNA (Reuters): a reportagem liga a queda da receita de celulares ao mercado de smartphones e traz a visão do CEO.",
+          "bullets": [
+            "A unidade de celulares faturou US$ 5,14 bi, queda de 26%, contra US$ 5,25 bi esperados pela Visible Alpha.",
+            "A previsão do 1º trimestre fiscal de 2027 não inclui mais vendas para a Apple.",
+            "Amon diz que as vendas de celulares Android chegaram ao fundo do poço.",
+            "Os embarques de smartphones caíram 20% no trimestre de setembro, para o menor nível em 14 anos."
+          ]
+        },
+        {
+          "url": "https://finance.yahoo.com/markets/stocks/articles/qualcomm-shares-drop-10-rising-113057199.html",
+          "title": "Ações da Qualcomm caem 10% com alta no custo de chips e queda na receita de celulares pressionando margens",
+          "summary": "Yahoo Finance: o texto detalha margens, previsão de lucro e o desempenho dos negócios fora de celulares.",
+          "bullets": [
+            "A margem bruta de 52,4% ficou abaixo dos 53,2% esperados.",
+            "O lucro previsto tem ponto médio de US$ 2,25 por ação, contra US$ 2,32 esperados.",
+            "O efeito completo dos ajustes de preço só virá no segundo semestre do ano fiscal de 2027.",
+            "A receita automotiva subiu 89% em um ano, para US$ 1,99 bi."
+          ]
+        },
+        {
+          "url": "https://www.investing.com/news/stock-market-news/qualcomm-slumps-as-weak-smartphone-chip-sales-overshadow-datacenter-momentum-5002833",
+          "title": "Qualcomm cai com vendas fracas de chips de smartphone ofuscando avanço em data centers",
+          "summary": "Investing.com (Reuters): o texto mede o efeito da queda das ações no valor de mercado da empresa.",
+          "bullets": [
+            "As ações caíam cerca de 9% no pré-mercado de quinta-feira.",
+            "A Qualcomm perderia cerca de US$ 17,5 bi em valor de mercado se a queda se mantivesse."
+          ]
+        },
+        {
+          "url": "https://www.cnbc.com/2026/11/04/qualcomm-qcom-earnings-report-q4-2026.html",
+          "title": "Balanço do 4º trimestre de 2026 da Qualcomm (QCOM)",
+          "summary": "CNBC: a reportagem apresenta o balanço do 4º trimestre fiscal da Qualcomm, divulgado em 4 de novembro.",
+          "bullets": [
+            "A receita ajustada somou US$ 10,44 bi no 4º trimestre fiscal.",
+            "O lucro ajustado foi de US$ 2,17 por ação."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Arm supera estimativas com receita de US$ 1,44 bi, mas ações caem",
+      "summary": "A previsão de US$ 1,54 bi ficou perto do consenso; empresa diz estar mais confiante em até US$ 2 bi de receita com seu chip próprio, o AGI CPU.",
+      "bullets": [
+        "A receita do 2º trimestre fiscal da Arm, que licencia projetos de chips, subiu 27%, para US$ 1,44 bi, recorde para o período, contra estimativa de US$ 1,38 bi.",
+        "O lucro ajustado foi de 52 centavos por ação, contra 47 centavos esperados.",
+        "A receita de licenciamento subiu 50%, para US$ 773 mi, contra US$ 625,1 mi estimados; os royalties subiram 8%, para US$ 670 mi, abaixo dos US$ 720,8 mi estimados.",
+        "A previsão para o 3º trimestre fiscal é de US$ 1,54 bi, com margem de US$ 50 mi, contra consenso de US$ 1,53 bi; algumas projeções chegavam perto de US$ 1,7 bi.",
+        "As ações caíam mais de 3% no pré-mercado de 5 de novembro.",
+        "Os royalties de data centers dobraram em um ano, e a Arm diz que sua fatia em servidores dos maiores provedores de nuvem passou de 50% em 2025 e superará 60% até o fim de 2026.",
+        "Parceiros embarcaram mais de 10 bilhões de chips baseados em Arm em um trimestre pela primeira vez, alta de 1,5 bilhão em um ano."
+      ],
+      "body": "O resultado superou as estimativas, mas a composição chamou atenção: a alta veio do licenciamento, enquanto os royalties ficaram abaixo do esperado. A previsão ficou praticamente em linha com a média dos analistas ouvidos pela Bloomberg, e parte do mercado esperava bem mais.\n\nA Arm tenta construir uma nova fonte de receita com seu próprio chip, o AGI CPU. A empresa afirma que sua confiança em até US$ 2 bi de receita nos anos fiscais de 2027 e 2028 aumentou, com pedidos de vários clientes até o fim de 2027 e primeiras entregas comerciais previstas para o 4º trimestre fiscal.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://newsroom.arm.com/news/arm-q2-fye27-results",
+          "title": "Arm tem segundo trimestre recorde e atinge US$ 1,44 bilhão em receita total",
+          "summary": "Arm Newsroom: o comunicado destaca o avanço do AGI CPU, a fatia em servidores e o volume de chips embarcados.",
+          "bullets": [
+            "A confiança em até US$ 2 bi de receita com o AGI CPU aumentou nos últimos 90 dias.",
+            "Há pedidos de vários clientes até o fim de 2027, com primeiras entregas no 4º trimestre fiscal.",
+            "A fatia em servidores dos maiores provedores de nuvem foi de 15% em 2024 para mais de 50% em 2025.",
+            "Parceiros embarcaram mais de 10 bilhões de chips no trimestre, pela primeira vez."
+          ]
+        },
+        {
+          "url": "https://www.investing.com/news/stock-market-news/arm-beats-secondquarter-revenue-estimates-on-ai-and-datacenter-demand-5001267",
+          "title": "Arm prevê receita do terceiro trimestre acima das estimativas com alta de gastos em IA",
+          "summary": "Investing.com (Reuters): o texto compara cada linha do resultado com as estimativas dos analistas.",
+          "bullets": [
+            "A receita de US$ 1,44 bi superou a estimativa média de US$ 1,38 bi.",
+            "O lucro ajustado de 52 centavos por ação superou os 47 centavos esperados.",
+            "Os royalties somaram US$ 670 mi, contra US$ 720,8 mi estimados.",
+            "O licenciamento somou US$ 773 mi, contra US$ 625,1 mi estimados."
+          ]
+        },
+        {
+          "url": "https://www.investing.com/news/earnings/arm-stock-slips-after-hours-despite-quarterly-results-and-guidance-beat-5001212",
+          "title": "Ações da Arm caem com falta de previsão muito acima do esperado, apesar do resultado trimestral",
+          "summary": "Investing.com: o texto atribui a queda das ações à distância pequena entre a previsão e o consenso.",
+          "bullets": [
+            "As ações caíam mais de 3% no pré-mercado de quinta-feira.",
+            "A previsão é de lucro de 56 centavos por ação, com margem de 4 centavos, contra consenso de 55 centavos.",
+            "A previsão de receita é de US$ 1,54 bi, contra consenso de US$ 1,53 bi."
+          ]
+        },
+        {
+          "url": "https://www.cnbctv18.com/market/arm-holdings-share-price-ai-data-centre-revenue-forecast-wall-street-estimates-q3-2026-20027462.htm",
+          "title": "Ações da Arm fecham em queda de mais de 5% com previsão de receita de data center de IA pouco acima das estimativas",
+          "summary": "CNBC TV18: o site mostra que a previsão ficou na média dos analistas, mas abaixo das projeções mais altas.",
+          "bullets": [
+            "Analistas ouvidos pela Bloomberg esperavam US$ 1,53 bi em média.",
+            "Algumas projeções chegavam perto de US$ 1,7 bi."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Petroleiro é atingido perto do Catar e mediadores buscam acordo EUA-Irã",
+      "summary": "Vance atribui a derrota nas midterms à guerra; Trump diz que isso é \"em grande parte verdade\", mas que faria tudo de novo.",
+      "bullets": [
+        "Dois projéteis não identificados atingiram um petroleiro a cerca de 50 milhas náuticas ao norte de Madinat ash Shamal, no Catar, às 23h20 UTC de 4 de novembro, segundo a UK Maritime Trade Operations.",
+        "A Guarda Revolucionária do Irã diz que dois petroleiros e um rebocador pegaram fogo em rota \"não autorizada\" e que outro petroleiro atingiu uma mina na quinta-feira.",
+        "O Catar busca apoio de EUA e Irã a um rascunho de acordo com três dias de medidas de confiança, que poderia retomar conversas diretas em dias.",
+        "O Irã exige o fim do bloqueio naval dos EUA, alívio de sanções e liberação de fundos congelados antes de reabrir Ormuz.",
+        "Autoridades dos EUA disseram à Axios que os militares concluem preparativos para uma possível retomada de grandes combates, sem ordem de ataque.",
+        "O FT informou na quinta-feira que a Rússia aceitou fornecer ao Irã 90 lançadores de mísseis guiados de precisão montados em helicópteros.",
+        "Trump disse à ABC News que pretende manter o secretário de Defesa, Pete Hegseth: \"Tenho toda a intenção de mantê-lo\"."
+      ],
+      "body": "O vice-presidente JD Vance escreveu que \"a razão pela qual perdemos é a guerra\". Trump respondeu que isso é \"em grande parte verdade, porque fez a gasolina subir um pouco\", mas acrescentou: \"se tivesse de fazer de novo, faria de novo\".\n\nA situação no mar segue tensa enquanto a diplomacia avança. A situação do petroleiro atingido perto do Catar, inclusive da tripulação, não era conhecida. A Guarda Revolucionária avisou os armadores de que Ormuz está \"inseguro e fechado\" para navios sem coordenação; as alegações sobre os incêndios e a mina são iranianas.\n\nNa frente diplomática, Omã informou que seu chanceler e o iraniano Abbas Araghchi discutiram na quinta-feira mecanismos técnicos conjuntos para o tráfego em Ormuz, de modo a encerrar o estado de guerra.",
+      "is_breaking": false,
+      "sensitivity": "violent",
+      "sources": [
+        {
+          "url": "https://gulfnews.com/world/mena/trump-weighs-iran-strikes-or-deal-after-midterm-loss-as-vance-urges-agreement-qatar-mediates-brent-oil-falls-to-93-1.500736556",
+          "title": "Trump avalia ataques ao Irã ou acordo após derrota nas midterms, com petróleo caindo a US$ 93",
+          "summary": "Gulf News: o texto reúne o ataque ao petroleiro, a mediação do Catar e os preparativos militares dos EUA.",
+          "bullets": [
+            "O petroleiro foi atingido às 23h20 UTC de quarta-feira, a cerca de 50 milhas náuticas ao norte de Madinat ash Shamal.",
+            "O rascunho do Catar prevê três dias de medidas de confiança.",
+            "O Irã exige o fim do bloqueio naval, alívio de sanções e liberação de fundos congelados.",
+            "Os preparativos militares dos EUA não são uma ordem de ataque, disseram autoridades à Axios."
+          ]
+        },
+        {
+          "url": "https://www.newarab.com/news/after-us-midterms-focus-returns-iran-and-hormuz",
+          "title": "Depois das midterms nos EUA, foco volta ao Irã e a Ormuz",
+          "summary": "The New Arab: o texto relata as alegações da Guarda Revolucionária sobre incidentes com navios e o aviso aos armadores.",
+          "bullets": [
+            "Um petroleiro pegou fogo depois de atingir uma mina a leste do Estreito de Ormuz na quinta-feira, segundo a Guarda.",
+            "A Guarda disse que Ormuz está \"inseguro e fechado\" a navios sem coordenação."
+          ]
+        },
+        {
+          "url": "https://www.itv.com/news/2026-11-05/trump-weighs-next-move-on-iran-as-conflict-is-blamed-for-election-loss",
+          "title": "Trump avalia próximo passo sobre o Irã enquanto conflito é apontado como causa da derrota eleitoral",
+          "summary": "ITV News: a reportagem foca as declarações de Vance e Trump sobre o peso da guerra nas eleições.",
+          "bullets": [
+            "Vance disse em uma longa postagem que \"a razão pela qual perdemos é a guerra\".",
+            "Trump respondeu que isso é \"em grande parte verdade\" porque a gasolina subiu.",
+            "Trump acrescentou que, se tivesse de fazer de novo, faria de novo."
+          ]
+        },
+        {
+          "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-midterms-strait-of-hormuz/",
+          "title": "Ao vivo: Irã diz que resultado eleitoral mostra rejeição dos americanos à guerra, e Trump diz que faria de novo",
+          "summary": "CBS News: o acompanhamento ao vivo traz a conversa entre Omã e Irã sobre o tráfego em Ormuz.",
+          "bullets": [
+            "O chanceler de Omã e Abbas Araghchi falaram na quinta-feira.",
+            "Os dois discutiram mecanismos técnicos conjuntos para a segurança das rotas marítimas e o fim do estado de guerra.",
+            "O Irã afirma que os resultados eleitorais mostram que os americanos rejeitam a guerra."
+          ]
+        },
+        {
+          "url": "https://www.iranintl.com/en/liveblog/202610312594",
+          "title": "Irã se prepara para novos ataques dos EUA enquanto diplomacia segue indefinida",
+          "summary": "Iran International: o acompanhamento ao vivo registra o acordo de armas entre Rússia e Irã e a decisão de Trump sobre Hegseth.",
+          "bullets": [
+            "A Rússia aceitou fornecer 90 lançadores de mísseis guiados montados em helicópteros, segundo o FT.",
+            "Trump disse à ABC News que pretende manter Pete Hegseth no cargo."
+          ]
+        },
+        {
+          "url": "https://apnews.com/article/mideast-iran-war-hormuz-tankers-a35d13806844d99fda93de0a19de57fa",
+          "title": "Petroleiro é atingido por projéteis no Golfo Pérsico perto do Catar, e outras notícias do Oriente Médio",
+          "summary": "Associated Press: a agência relata o ataque com projéteis ao petroleiro perto do Catar e outros fatos da região.",
+          "bullets": [
+            "O petroleiro foi atingido por projéteis no Golfo Pérsico, perto do Catar.",
+            "A situação da tripulação e a extensão dos danos não eram conhecidas de início."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Coalizão saudita intercepta míssil houthi lançado contra região de Medina",
+      "summary": "O WSJ diz que os houthis exigem US$ 51 bi da Arábia Saudita e reconhecimento como governantes do Iêmen para encerrar a guerra.",
+      "bullets": [
+        "A coalizão liderada pela Arábia Saudita disse em 5 de novembro que suas defesas aéreas destruíram um míssil balístico lançado pelos houthis em direção à região de Medina.",
+        "A Defesa Civil saudita declarou fim do perigo em Yanbu e avisou que filmar ou divulgar interceptações e locais de impacto pode gerar ação legal.",
+        "Segundo o WSJ, os houthis exigem US$ 51 bi como compensação e o reconhecimento oficial como governantes do Iêmen.",
+        "Outros valores já foram discutidos, mas o preço de um acordo segue na casa das dezenas de bilhões de dólares, de acordo com a reportagem.",
+        "A CBS News relata que mísseis houthis contra aeroportos sauditas mataram ao menos 20 pessoas.",
+        "O Irã voltou a negar na quinta-feira a presença de especialistas militares iranianos no Iêmen."
+      ],
+      "body": "Segundo o WSJ, Riad procurou os houthis depois de ataques a instalações da Aramco, ao Oleoduto Leste-Oeste, ao Aeroporto Internacional Rei Khalid e a petroleiros no Mar Vermelho, além de ganhos territoriais do grupo em torno de Bab el-Mandeb. A compensação pedida se refere a anos de ataques aéreos e bloqueio.\n\nA negativa do Irã, feita pelo porta-voz da chancelaria, veio depois de a chefe da política externa da UE, Kaja Kallas, pedir que Teerã pare de apoiar o grupo. O porta-voz chamou a acusação de \"infundada\".",
+      "is_breaking": false,
+      "sensitivity": "violent",
+      "sources": [
+        {
+          "url": "https://www.iranintl.com/en/liveblog/202610312594",
+          "title": "Irã se prepara para novos ataques dos EUA enquanto diplomacia segue indefinida",
+          "summary": "Iran International: o acompanhamento ao vivo registra o anúncio da coalizão sobre a interceptação do míssil houthi.",
+          "bullets": [
+            "A coalizão anunciou a interceptação na quinta-feira.",
+            "O míssil balístico foi lançado em direção à região de Medina e destruído pelas defesas aéreas."
+          ]
+        },
+        {
+          "url": "https://gulfnews.com/world/mena/trump-weighs-iran-strikes-or-deal-after-midterm-loss-as-vance-urges-agreement-qatar-mediates-brent-oil-falls-to-93-1.500736556",
+          "title": "Trump avalia ataques ao Irã ou acordo após derrota nas midterms, com petróleo caindo a US$ 93",
+          "summary": "Gulf News: o texto traz o alerta da Defesa Civil saudita e resume a reportagem do WSJ sobre as exigências houthis.",
+          "bullets": [
+            "A Defesa Civil declarou o fim do perigo em Yanbu.",
+            "Divulgar imagens de interceptações pode gerar ação legal.",
+            "Os houthis exigem US$ 51 bi e o reconhecimento como governantes do Iêmen, segundo o WSJ.",
+            "Riad teria feito contato depois de ataques à Aramco, ao Oleoduto Leste-Oeste e a petroleiros no Mar Vermelho."
+          ]
+        },
+        {
+          "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-midterms-strait-of-hormuz/",
+          "title": "Ao vivo: Irã diz que resultado eleitoral mostra rejeição dos americanos à guerra, e Trump diz que faria de novo",
+          "summary": "CBS News: o acompanhamento ao vivo traz as mortes em aeroportos sauditas e a negativa iraniana sobre o Iêmen.",
+          "bullets": [
+            "Mísseis houthis contra aeroportos sauditas mataram ao menos 20 pessoas.",
+            "O porta-voz da chancelaria iraniana chamou a acusação de \"infundada\" e negou militares iranianos no Iêmen."
+          ]
+        },
+        {
+          "url": "https://www.aljazeera.com/news/liveblog/2026/11/5/iran-war-live-trump-admits-war-caused-election-loss-but-had-to-do-it",
+          "title": "Guerra no Irã ao vivo: 3 petroleiros em chamas em Ormuz; Arábia Saudita intercepta míssil houthi",
+          "summary": "Al Jazeera: o acompanhamento ao vivo inclui a interceptação do míssil houthi pela Arábia Saudita entre os fatos do dia.",
+          "bullets": [
+            "A Arábia Saudita interceptou um míssil houthi em 5 de novembro.",
+            "O canal também relata três petroleiros em chamas em Ormuz."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Banco da Inglaterra sobe juros a 4% em votação de 8 a 1",
+      "summary": "A inflação, de 3,5% em setembro, deve chegar a cerca de 5% em meados do próximo ano; um membro do comitê queria alta de meio ponto, a 4,25%.",
+      "bullets": [
+        "O Comitê de Política Monetária votou por 8 a 1 por elevar a taxa em 0,25 ponto percentual, a 4%, em decisão publicada em 5 de novembro.",
+        "Um membro votou por uma alta de 0,5 ponto, a 4,25%.",
+        "A inflação ao consumidor no Reino Unido chegou a 3,5% em setembro e deve subir a cerca de 5% até meados do próximo ano.",
+        "O Brent teve média de US$ 108 o barril nos 15 dias úteis até 27 de outubro, 38% acima do nível do relatório de julho.",
+        "O gás natural britânico teve média de 216 pence por therm no mesmo período, alta de 81%.",
+        "A Reuters havia indicado que a alta seria a primeira do banco em mais de três anos, com cerca de 100 pontos-base de aperto precificados até o fim do próximo ano."
+      ],
+      "body": "O banco diz que o conflito no Oriente Médio chegou ao nono mês e que a pressão inflacionária já contratada é suficiente para justificar a alta, embora veja \"evidências limitadas\" de efeitos secundários sobre outros preços e salários.\n\nCom a decisão, o Banco da Inglaterra se junta à maioria de seus pares do G10, que já vinham elevando os juros, como a Reuters havia antecipado antes do anúncio.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/november-2026",
+          "title": "Taxa básica sobe para 4%: resumo de política monetária e ata de novembro de 2026",
+          "summary": "Bank of England: a ata registra a votação, a nova projeção de inflação e o salto dos preços de energia.",
+          "bullets": [
+            "A reunião terminou em 4 de novembro, com votação de 8 a 1 por 4%.",
+            "A inflação deve subir a cerca de 5% até meados do próximo ano.",
+            "O Brent teve média de US$ 108 e o gás, de 216 pence por therm, altas de 38% e 81% desde julho.",
+            "O banco vê evidências limitadas de efeitos sobre outros preços e salários."
+          ]
+        },
+        {
+          "url": "https://www.investing.com/news/economy-news/trading-day-oil-tanks-stocks-leap-on-us-midterms-5001616",
+          "title": "Trading Day: petróleo recua forte e ações sobem com midterms nos EUA",
+          "summary": "Reuters via Investing.com: a coluna de mercado antecipou a decisão do banco e o que os investidores já precificavam.",
+          "bullets": [
+            "A alta seria a primeira do banco em mais de três anos.",
+            "O banco se juntaria à maioria dos pares do G10.",
+            "O mercado precificava cerca de 100 pontos-base de aperto até o fim do próximo ano."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Dow sobe 3%, melhor dia desde abril de 2025, com queda de 8% do petróleo",
+      "summary": "Brent e WTI recuaram cerca de 8% na quarta; o Brent caía quase 20% na semana, rumo à maior baixa semanal desde abril de 2020.",
+      "bullets": [
+        "O Dow subiu 1.569,40 pontos em 4 de novembro, ou 3,03%, para 53.356,12, seu melhor dia desde 9 de abril de 2025.",
+        "O S&P 500 subiu 1,58%, para 7.688,62, e o Nasdaq Composite, 1,44%, para 25.736,51.",
+        "O Brent voltou a US$ 96,15 na quinta-feira, alta de 1,6%; a Eurasia Group reduziu a chance de novos ataques dos EUA ao Irã de 65% para 60% e a de acordo, de 20% para 10%.",
+        "O JPMorgan estima que o mercado de petróleo voltou a ter excedente de 1,1 milhão de barris por dia em setembro e de 1,4 milhão em outubro.",
+        "O juro do Treasury de 10 anos caiu 7,4 pontos-base, a 4,888%, e o mercado ainda via 81% de chance de alta de 25 pontos-base do Fed em 8 e 9 de dezembro.",
+        "A ADP informou que empresas privadas criaram 86.000 vagas em outubro, acima da estimativa de 75.000.",
+        "A Microsoft subiu 6,7% e a Amazon, 6,1%, enquanto Hut 8 caiu 23%, IREN, 11% e Core Scientific, 10%, com temor de regulação mais dura para IA."
+      ],
+      "body": "A alta veio no dia seguinte à vitória democrata no Congresso, com apostas de que a guerra no Irã pode terminar. Energia foi o pior setor do S&P 500, com queda de 4,8%, enquanto consumo discricionário subiu cerca de 4,3%.\n\nA eleição também mexeu com setores específicos. Ações de planos de saúde e hospitais subiram com a especulação de que um Congresso democrata possa reverter cortes no Medicaid: a Centene ganhou mais de 12% e a HCA Healthcare, mais de 10%. Já as empresas ligadas a data centers caíram.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2026/11/03/stock-market-today-live-updates.html",
+          "title": "Notícias do mercado de ações de 4 de novembro de 2026",
+          "summary": "CNBC: a cobertura traz o fechamento dos índices e o dado de emprego da ADP.",
+          "bullets": [
+            "O Dow subiu 1.569,40 pontos, ou 3,03%, para 53.356,12.",
+            "O S&P 500 fechou em 7.688,62 e o Nasdaq Composite, em 25.736,51.",
+            "A ADP registrou 86.000 vagas em outubro, contra estimativa de 75.000."
+          ]
+        },
+        {
+          "url": "https://www.investing.com/news/economy-news/trading-day-oil-tanks-stocks-leap-on-us-midterms-5001616",
+          "title": "Trading Day: petróleo recua forte e ações sobem com midterms nos EUA",
+          "summary": "Reuters via Investing.com: a coluna de mercado coloca a queda do petróleo em perspectiva histórica.",
+          "bullets": [
+            "Brent e WTI caminhavam para a maior queda semanal desde abril de 2020.",
+            "O Brent caía quase 20% na semana até então, e o WTI, 15%."
+          ]
+        },
+        {
+          "url": "https://www.cnbc.com/2026/11/05/oil-falls-for-a-fourth-day-on-expectations-for-lower-risk-of-iran-war-escalation.html",
+          "title": "Petróleo sobe enquanto investidores pesam incertezas sobre a guerra no Irã",
+          "summary": "Reuters via CNBC: a reportagem mostra a recuperação do Brent na quinta-feira e as novas probabilidades da Eurasia Group.",
+          "bullets": [
+            "O Brent subia US$ 1,53, ou 1,6%, a US$ 96,15 o barril.",
+            "A Eurasia Group reduziu a chance de novos ataques ao Irã para 60% e a de acordo para 10%.",
+            "O JPMorgan estima excedente de 1,4 milhão de barris por dia em outubro."
+          ]
+        },
+        {
+          "url": "https://finance.yahoo.com/markets/stocks/articles/stocks-surge-midterm-election-optimism-213549600.html",
+          "title": "Ações sobem com otimismo sobre as midterms",
+          "summary": "Barchart via Yahoo Finance: o texto cobre juros, apostas sobre o Fed e a alta de ações de saúde.",
+          "bullets": [
+            "O juro do Treasury de 10 anos caiu 7,4 pontos-base, para 4,888%.",
+            "O mercado via 81% de chance de alta de 25 pontos-base em 8 e 9 de dezembro.",
+            "Centene subiu mais de 12%, e HCA Healthcare, mais de 10%."
+          ]
+        },
+        {
+          "url": "https://www.streetinsider.com/General%2BNews/Wall%2BStreet%2Bends%2Bhigher%2Bafter%2BDemocrats%2Bwin%2BCongress;%2Bdata%2Bcenter%2Bstocks%2Btumble/27284408.html",
+          "title": "Wall Street fecha em alta depois de democratas vencerem no Congresso; ações de data centers recuam",
+          "summary": "Reuters via StreetInsider: a reportagem detalha ganhadores e perdedores por setor e por empresa.",
+          "bullets": [
+            "Microsoft subiu 6,7%, e Amazon, 6,1%.",
+            "Hut 8 caiu 23%, IREN, 11% e Core Scientific, 10%.",
+            "Consumo discricionário subiu 4,3%, e energia caiu 4,8%."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Demissões anunciadas nos EUA somam 43.994 em outubro, com IA citada em 1.265",
+      "summary": "Condições econômicas e de mercado superam a IA como principal motivo de cortes em 2026; o total de outubro é o menor para o mês desde 2023.",
+      "bullets": [
+        "Os empregadores dos EUA anunciaram 43.994 cortes em outubro, alta de 2% sobre setembro e queda de 71% sobre os 153.074 de um ano antes.",
+        "A IA foi citada em 1.265 cortes em outubro, seu menor total mensal no ano.",
+        "A IA soma 121.401 cortes em 2026, cerca de 20% do total, e 193.226 desde 2023, quando a Challenger começou a acompanhá-la.",
+        "Condições econômicas e de mercado lideraram em outubro, com 16.407 cortes, ou 37%, e somam 130.531 no ano.",
+        "O total do ano chega a 617.189 cortes, queda de 44%; tecnologia lidera com 171.501, alta de 21%, apesar de seus 5.576 cortes em outubro serem o menor número mensal do ano.",
+        "Os planos de contratação sazonal chegam a 470.400, alta de 26%, liderados pelos 300.000 da Amazon."
+      ],
+      "body": "O relatório da Challenger, Gray & Christmas, consultoria de recolocação profissional, mostra a IA perdendo o posto de principal motivo declarado para cortes em 2026. O número de outubro, porém, não capta todo o movimento de redução de pessoal: as ofertas de saída voluntária da Microsoft a 60.000 funcionários ficaram fora da conta. Andy Challenger diz que esse tipo de oferta \"costuma sinalizar mais demissões à frente\".\n\nNa contratação sazonal, a alta se concentra em poucas empresas. O anúncio da Amazon é o maior já registrado pela Challenger, e apenas cinco empresas anunciaram vagas sazonais até agora, contra 11 no mesmo ponto do ano passado.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.challengergray.com/blog/october-layoffs-at-three-year-low-seasonal-hiring-plans-up-26/",
+          "title": "Demissões de outubro no menor nível em três anos; planos de contratação sazonal sobem 26%",
+          "summary": "Challenger, Gray & Christmas: o relatório mensal mostra cortes em baixa e as condições econômicas à frente da IA como motivo em 2026.",
+          "bullets": [
+            "Os 43.994 cortes de outubro representam alta de 2% sobre os 43.281 de setembro.",
+            "A IA soma 121.401 cortes em 2026, abaixo dos 130.531 atribuídos a condições econômicas e de mercado.",
+            "A tecnologia lidera os setores no ano, com 171.501 cortes.",
+            "As ofertas de saída voluntária da Microsoft a 60.000 funcionários não entram no total.",
+            "A Amazon planeja 300.000 contratações sazonais, o maior anúncio já registrado pela Challenger."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "EUA, Ucrânia e europeus se reúnem em Bruxelas antes de negociação em Abu Dhabi",
+      "summary": "A rodada trilateral com a Rússia está marcada para 10 e 11 de novembro; Zelensky pediu interceptadores Patriot a Witkoff e Kushner.",
+      "bullets": [
+        "A Comissão Europeia recebeu em 4 de novembro representantes de EUA, Ucrânia, Otan e vários países europeus para coordenar posições.",
+        "Ucrânia, Rússia e EUA têm rodada trilateral marcada para 10 e 11 de novembro em Abu Dhabi, em nível de equipes técnicas.",
+        "Zelensky falou por 90 minutos em 4 de novembro com os enviados americanos Steve Witkoff e Jared Kushner sobre munição de defesa aérea, acordo de drones e garantias de segurança.",
+        "A reunião era esperada em outubro, mas o Kremlin recusou participar depois de aceitar em princípio; Moscou segue exigindo que a Ucrânia ceda o Donbas.",
+        "A China diz estar \"em comunicação com as partes\" sobre um possível encontro de Trump, Xi e Putin na APEC em Shenzhen, ainda neste mês.",
+        "Na noite para 5 de novembro, a Rússia lançou dois mísseis guiados e 128 drones de longo alcance, dos quais 105 foram interceptados, segundo a Ucrânia.",
+        "O ataque de 2 de novembro a Komyshuvakha, em Zaporizhzhia, deixou 42 mortos confirmados, e 33 pessoas seguiam desaparecidas em 5 de novembro."
+      ],
+      "body": "As negociações técnicas de Abu Dhabi podem abrir caminho para uma cúpula entre Zelensky, Putin e Trump. Antes delas, Zelensky insistiu em dois pontos com os enviados americanos: \"Precisamos de interceptadores para os sistemas Patriot\" e garantias que sejam \"realmente blindadas\".\n\nOs ataques continuam durante os preparativos. Autoridades locais relataram nove mortos e 19 feridos em ataques russos em um dia, e as buscas seguem em Komyshuvakha, atingida por bombas aéreas pesadas. Sobre o encontro na APEC, a chancelaria chinesa não divulgou nenhuma agenda.",
+      "is_breaking": false,
+      "sensitivity": "violent",
+      "sources": [
+        {
+          "url": "https://kyivindependent.com/ukraine-partners-coordinate-peace-efforts-ahead-of-abu-dhabi-talks-with-russia-2/",
+          "title": "Ucrânia e parceiros coordenam esforços de paz antes de negociação com a Rússia em Abu Dhabi",
+          "summary": "The Kyiv Independent: a reportagem cobre a reunião de Bruxelas e lembra por que a rodada trilateral de outubro não ocorreu.",
+          "bullets": [
+            "A Comissão Europeia recebeu EUA, Ucrânia, Otan e vários países europeus em 4 de novembro.",
+            "A rodada trilateral está marcada para 10 e 11 de novembro.",
+            "O Kremlin recusou participar em outubro e segue exigindo o Donbas."
+          ]
+        },
+        {
+          "url": "https://kyivindependent.com/security-guarantees-must-be-ironclad-zelensky-speaks-to-trumps-envoys-ahead-of-trilateral-peace-talks/",
+          "title": "\"Garantias de segurança devem ser blindadas\": Zelensky fala com enviados de Trump antes de negociação trilateral",
+          "summary": "The Kyiv Independent: o texto relata a conversa de Zelensky com Witkoff e Kushner e o formato da rodada em Abu Dhabi.",
+          "bullets": [
+            "A conversa durou uma hora e meia.",
+            "Os temas foram munição de defesa aérea, o acordo de drones e garantias de segurança no pós-guerra.",
+            "As conversas técnicas podem levar a uma cúpula de Zelensky, Putin e Trump."
+          ]
+        },
+        {
+          "url": "https://www.cnbc.com/2026/11/05/trump-russia-china-summit-apec-midterms.html",
+          "title": "Rússia e China podem ser mais agressivas se sentirem que Trump está \"de saída\", diz Brookings",
+          "summary": "CNBC: a reportagem trata da possível reunião de Trump, Xi e Putin na APEC depois das midterms.",
+          "bullets": [
+            "A porta-voz Mao Ning disse que Pequim está em comunicação com as partes sobre o encontro dos três líderes.",
+            "A reunião ocorreria na APEC em Shenzhen, ainda neste mês.",
+            "Nenhuma agenda foi anunciada."
+          ]
+        },
+        {
+          "url": "https://kyivindependent.com/russian-attacks-kill-9-injure-19-across-ukraine-over-past-day-as-casualty-toll-from-russian-strikes-in-kherson-oblast-rises-following-end-of-ceasefire/",
+          "title": "Ataques russos matam 9 e ferem 19 na Ucrânia em um dia, e número de vítimas em Kherson sobe após fim de cessar-fogo",
+          "summary": "The Kyiv Independent: o balanço diário registra os ataques russos da noite e as vítimas das últimas 24 horas.",
+          "bullets": [
+            "A Rússia lançou dois mísseis guiados a partir do Mar Negro e 128 drones de longo alcance.",
+            "A defesa aérea ucraniana interceptou 105 drones.",
+            "Os ataques mataram nove pessoas e feriram 19."
+          ]
+        },
+        {
+          "url": "https://kyivindependent.com/42-bodies-recovered-from-rubble-after-russian-strike-on-komyshuvakha-as-search-continues-police-say/",
+          "title": "42 corpos são retirados dos escombros após ataque russo a Komyshuvakha, e buscas continuam, diz a polícia",
+          "summary": "The Kyiv Independent: a reportagem atualiza o número de mortos no ataque a Komyshuvakha, em Zaporizhzhia.",
+          "bullets": [
+            "Foram recuperados 42 corpos até 5 de novembro.",
+            "Outras 33 pessoas seguem desaparecidas, três dias depois do ataque com bombas aéreas pesadas."
+          ]
+        },
+        {
+          "url": "https://apnews.com/article/russia-ukraine-war-airstrikes-negotiations-kushner-0b975a30f862731346e7e1d098a8d538",
+          "title": "Rússia e Ucrânia trocam ataques aéreos enquanto conversas sobre reconstrução e segurança são retomadas em Bruxelas",
+          "summary": "Associated Press: a agência relata a troca de ataques aéreos em paralelo à retomada das conversas em Bruxelas.",
+          "bullets": [
+            "As conversas em Bruxelas tratam de reconstrução e segurança.",
+            "Rússia e Ucrânia seguem em troca de ataques aéreos durante as negociações."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Boehringer licencia seis programas chineses contra câncer por até US$ 7 bi",
+      "summary": "A Sino Biopharm recebe US$ 358 mi em pagamentos iniciais e de curto prazo; os US$ 7 bi dependem de marcos e não são pagamento garantido.",
+      "bullets": [
+        "A alemã Boehringer Ingelheim assinou com a Sino Biopharmaceutical um acordo de licenciamento e desenvolvimento para seis programas pré-clínicos contra câncer.",
+        "Os programas envolvem conjugados anticorpo-fármaco, que levam a droga direto à célula tumoral, e engajadores de células T, que direcionam o sistema imune ao tumor.",
+        "A Sino Biopharm recebe US$ 358 mi em pagamentos iniciais e de curto prazo, além de até US$ 7 bi em marcos e royalties escalonados.",
+        "Os direitos potenciais sobre quatro programas excluem China continental, Hong Kong e Macau; os outros dois podem ser mundiais.",
+        "Cinco candidatos vêm da LaNova Medicines, de Xangai, e um da Beijing Tide Pharmaceutical, ambas subsidiárias da Sino Biopharm.",
+        "O acordo vem depois de a Boehringer abrir um centro de pesquisa e desenvolvimento em Xangai, em 12 de outubro."
+      ],
+      "body": "A Sino Biopharm lidera o desenvolvimento inicial, e a Boehringer pode exercer opções depois de marcos clínicos. A estrutura limita o compromisso inicial da empresa alemã: os US$ 7 bi não são preço de compra nem pagamento garantido.\n\nAs empresas ainda não divulgaram os alvos, as indicações nem os estágios específicos dos programas.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://european-biotechnology.com/latest-news/boehringer-secures-six-chinese-cancer-programs-in-deal-worth-up-to-7b/",
+          "title": "Boehringer garante seis programas chineses contra câncer em acordo de até US$ 7 bi",
+          "summary": "European Biotechnology: o texto detalha valores, classes de medicamentos e origem dos seis programas.",
+          "bullets": [
+            "A Sino Biopharm recebe US$ 358 mi iniciais e pode receber até US$ 7 bi em marcos.",
+            "O acordo cobre conjugados anticorpo-fármaco e engajadores de células T.",
+            "Cinco programas vêm da LaNova Medicines e um da Beijing Tide Pharmaceutical.",
+            "A Boehringer abriu um centro de pesquisa e desenvolvimento em Xangai em 12 de outubro."
+          ]
+        },
+        {
+          "url": "https://thebench.bio/news/summaries/2026-11-05",
+          "title": "Resumo diário de ciências da vida: o que aconteceu em 5 de novembro de 2026",
+          "summary": "TheBench.Bio: o resumo diário explica a divisão de trabalho e de direitos entre as duas empresas.",
+          "bullets": [
+            "A Sino Biopharm lidera o desenvolvimento inicial, e a Boehringer tem opções depois de marcos clínicos.",
+            "Os direitos sobre quatro programas excluem China continental, Hong Kong e Macau.",
+            "Os direitos sobre os outros dois podem ser mundiais."
+          ]
+        }
+      ]
+    }
+  ]
+}

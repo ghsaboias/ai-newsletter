@@ -1,0 +1,6 @@
+**Abaixo, apenas para assinantes:**
+
+**Modelos.** Os planos do governo americano para a segurança de IA e um alerta vindo da China sobre modelos abertos, além de um app chinês de agentes em alta e uma big tech americana com pressa de renovar seu assistente.
+**Silício.** Uma big tech americana amplia sua linha de chips próprios, e uma fabricante taiwanesa estuda entrar em memória a pedido de uma grande cliente.
+**Data centers.** Uma compra de geração a gás por um laboratório americano de IA, protestos contra obras na Europa e os planos de uma gigante chinesa no Brasil.
+**Mundo.** Uma nova força-tarefa americana para apertar o cerco ao Irã e mudanças na mesa de negociação da guerra na Ucrânia.
