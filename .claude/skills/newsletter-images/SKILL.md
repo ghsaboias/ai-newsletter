@@ -1,7 +1,7 @@
 ---
 name: newsletter-images
 description: >-
-  Monta a pré-seleção assistida de imagem/vídeo por história da newsletter de AI/Tech. Lê a edição do dia (edition-final.md), decide o sujeito visual + arquétipo + query de busca por história, junta candidatos (og:image das fontes de research.json + busca por palavra-chave), o Claude ranqueia estrito-ao-arquétipo com preferência por paisagem, propõe legenda e sobe as escolhas no thread do Slack (a imagem em si; vídeo só como link). Gui aprova/troca; as escolhas viram images-final.json, que o substack_mirror.py media empurra pro draft ao vivo do Substack (imagens em 520px, com legenda, na posição de cada história). Exclui a seção Leia também. Aciona quando o usuário diz "escolher as imagens", "rodar images", "montar as imagens", "/newsletter-images".
+  Monta a pré-seleção assistida de imagem/vídeo por história da newsletter de AI/Tech. Lê a edição do dia (edition-final.md), decide o sujeito visual + arquétipo + query de busca por história, junta candidatos (og:image das fontes de research.json + busca por palavra-chave), o Claude ranqueia estrito-ao-arquétipo com preferência por paisagem, propõe legenda e sobe as escolhas no thread do Slack (a imagem em si; vídeo e post do X só como link). Gui aprova/troca; as escolhas viram images-final.json, que o substack_mirror.py media empurra pro draft ao vivo do Substack (imagens em 520px, com legenda, na posição de cada história). Exclui a seção Leia também. Aciona quando o usuário diz "escolher as imagens", "rodar images", "montar as imagens", "/newsletter-images".
 allowed-tools: Read, Write, Bash
 ---
 
@@ -27,7 +27,8 @@ A seção **"Leia também"** (headlines + qualquer embed de recomendação) fica
 
 **`auto`** (é como o `newsletter-draft` chama): o Gui pré-aprovou tudo. Pule o passo 4
 inteiro (nada de subir imagens no Slack, nada de esperar OK): toda escolha entra,
-**fortes e opcionais**, e todo vídeo oficial encontrado entra junto (`videoId`). O
+**fortes e opcionais**, e todo vídeo oficial encontrado entra junto (`videoId`), assim
+como todo post oficial do X que se qualifica (`tweet`). O
 julgamento continua igual (arquétipo, conferência visual com Read, pular com motivo); só
 a aprovação some. Vá direto ao passo 5 e devolva uma linha por mídia empurrada + as
 puladas com motivo.
@@ -65,11 +66,15 @@ Julgamento é seu; garimpo é mecânico. **Uma mídia por bloco forte, não por 
 
 **Vídeo** (link do YouTube, embed no draft): quando o produto **é** mídia/gerativo, **ou** quando existe **demo oficial forte** (robótica quase sempre entra; lançamento/demo geralmente). **Só oficial** — vídeo de reviewer/terceiro não conta. Se só existe clipe genérico de feira, pivote pro fundador (`protagonist`) em vez de forçar.
 
+**Post do X** (embed no draft, **no lugar da imagem**): quando a própria empresa ou quem fala por ela (fundador, CEO, executivo) anunciou a história num post com mídia: vídeo de lançamento ou demo, imagem forte, gráfico. O post traz o anúncio na voz de quem anunciou, com a mídia dele, e vira a única mídia da história. Foi o que o Gui fez em 10/11: trocou a arte de lançamento do Claude Fable 5.2 pelo post da @claudeai com o vídeo. Post de terceiro, comentário ou post só de texto não conta. Se a história tem post do X e vídeo do YouTube, ambos oficiais, fique com a peça mais limpa e mais oficial.
+
 ## Garimpo (mecânica)
 
 Duas armas por história, reaproveitando as URLs de `research.json`:
 1. **`og:image`/`twitter:image` das fontes** do bloco (as páginas de research, **não** os links do DJ). `curl` com UA de navegador + `grep` do meta; se a página bloquear, use scrape/screenshot. Se a história é anúncio e as fontes são só cobertura de terceiros, busque também a **fonte primária** (blog/newsroom/press kit da empresa).
 2. **Busca por palavra-chave** (o flow preferido do Gui): as palavras-chave da história em busca de imagem, e pega 2-3 candidatos.
+
+Pro post do X: `bird search "from:<conta> <termo>" --json` nas contas oficiais (o campo `media` diz se tem vídeo ou foto). Pegue o post que abre o anúncio, não as respostas do thread (as que têm `inReplyToStatusId`).
 
 **Precedência:** fonte primária › fontes da história › busca. Candidato de fonte que bate com o arquétipo vence o da busca.
 
@@ -81,7 +86,7 @@ Baixe os candidatos, **Read cada imagem**, e ranqueie estrito ao arquétipo (des
 - Scratch: um dir por edição no scratchpad da sessão (ex.: `<scratchpad>/media-<DATE>/`) — fora do repo.
 - Cada agente grava **um** arquivo com nome-slug fixo (`openai.jpeg`, `apptronik.jpg`, …); esse path entra depois no `images-final.json`.
 - O prompt de cada agente leva: a história (título + fatos-chave), o arquétipo + query já decididos no mapeamento, as URLs de fonte do `research.json`, e os critérios de descarte acima.
-- O agente devolve: o arquivo baixado + de onde veio (página de origem + crédito pra legenda + data da imagem, se aferível) + candidato a **vídeo oficial** se existir (só o link do YouTube — nunca baixar vídeo).
+- O agente devolve: o arquivo baixado + de onde veio (página de origem + crédito pra legenda + data da imagem, se aferível) + candidato a **vídeo oficial** se existir (só o link do YouTube — nunca baixar vídeo) + candidato a **post oficial do X** se existir (o link `x.com/<conta>/status/<id>` e o tipo de mídia).
 
 > Nota: o helper `gather.py` desta pasta é **legado** — ele ainda assume o `pt.md`, paths de Mac (`/Users/guilherme/...`) e injeta em `substack.html`. Não use como está; precisa ser portado pro layout novo (edition-final.md + push via mirror). O garimpo acima (og + busca, em sub-agentes) é o método atual.
 
@@ -99,7 +104,7 @@ npx tsx src/cli-send.ts file <channel> <scratch>/openai.jpeg --thread <thread_ts
 
 Depois das imagens, **uma** mensagem de resumo com:
 - as escolhas divididas em **fortes** vs **opcionais** (cada opcional com sua ressalva e alternativa, se houver);
-- os **vídeos como link** do YouTube — nunca subir arquivo de vídeo; o embed acontece só no push, via `videoId`;
+- os **vídeos como link** do YouTube e os **posts do X como link** — nunca subir arquivo de vídeo; o embed acontece só no push, via `videoId` / `tweet`;
 - as histórias **puladas, com motivo** (uma linha cada);
 - as **decisões pendentes** pro Gui (trocas, opcionais entram ou não).
 
@@ -122,7 +127,10 @@ Depois do OK do Gui, escreva `pipeline/output/${PIPELINE_TOPIC:-ai}/<DATE>/image
   { "heading": "Robót", "after_bullet": "Apptronik", "file": "/abs/path/apptronik.jpg",
     "alt": "Robô humanoide Apollo 2 da Apptronik",
     "caption": "Robô humanoide Apollo 2, da Apptronik. Imagem: Apptronik",
-    "videoId": "iPyxwELiD9Q" }
+    "videoId": "iPyxwELiD9Q" },
+
+  { "heading": "Claude Fable 5.2",
+    "tweet": "https://x.com/claudeai/status/2119867114450268322" }
 ]
 ```
 
@@ -132,8 +140,9 @@ Campos:
 - **`file`** = caminho local da imagem escolhida (é subida pro CDN do Substack a 520px). Omita para entrada **só de vídeo**.
 - **`alt`** / **`caption`** = alt + legenda (`{Sujeito}, {contexto}. Imagem: {Fonte}`).
 - **`videoId`** = id do YouTube (opcional), embutido logo depois da imagem.
+- **`tweet`** = URL do post do X (opcional). Como o post toma o lugar da imagem, a entrada normalmente não tem `file`, `alt` nem `caption`.
 
-Empurra tudo num tiro só (sobe as imagens, monta os nós `captionedImage`+legenda a 520px, divide os bullet_lists, embute os vídeos, e dá PUT preservando byline/paywall/banner):
+Empurra tudo num tiro só (sobe as imagens, monta os nós `captionedImage`+legenda a 520px, divide os bullet_lists, embute os vídeos e os posts do X, e dá PUT preservando byline/paywall/banner):
 
 ```bash
 python3 pipeline/tools/substack_mirror.py media --plan pipeline/output/ai/<DATE>/images-final.json --dir pipeline/output/ai/<DATE> --replace
@@ -146,7 +155,7 @@ python3 pipeline/tools/substack_mirror.py media --plan pipeline/output/ai/<DATE>
 ## Regras
 
 - **Garimpo automático, escolha humana.** Nunca finalize a seleção sozinho; proponha e deixe Gui decidir. A exceção é `auto`, em que o Gui já aprovou tudo de antemão.
-- **Leia também / recomendações fora de escopo.** Só imagens/vídeos por história do corpo.
+- **Leia também / recomendações fora de escopo.** Só imagens, vídeos e posts do X por história do corpo.
 - **Não invente fonte/legenda.** "fonte?" em vez de chutar.
 - **Pule histórias sem imagem boa, com motivo.** Nem toda história precisa de imagem.
 - **Editorial = 520px; o banner do paywall (com `href`) fica em largura cheia** — o `media` já distingue pelo `href`.

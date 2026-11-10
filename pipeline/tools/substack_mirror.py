@@ -15,7 +15,7 @@ manual tweaks). This tool gives a safe local edit loop for that live draft:
   media -> insert per-story images/videos into the live draft from an
            images-final.json plan (upload each image to CDN at 520px, add its
            caption, split the story's bullet_list at the right spot, embed
-           videos), then push. Unified "add media to the draft" path that
+           YouTube videos and X posts), then push. Unified "add media to the draft" path that
            replaces injecting into substack.html. Re-runnable with --replace.
 
 Edit the mirror JSON between pull and push — the `body` is the ProseMirror doc
@@ -27,7 +27,9 @@ images-final.json (for `media`) is a list, one entry per story that gets media:
                                     # for a category, the bold label of the bullet to sit under
     "file": "/abs/path/img.jpg",   # local image (uploaded to CDN); omit for video-only
     "alt": "...", "caption": "Sujeito, contexto. Imagem: Fonte",
-    "videoId": "iPyxwELiD9Q" }     # optional YouTube id, embedded right after the image
+    "videoId": "iPyxwELiD9Q",      # optional YouTube id, embedded right after the image
+    "tweet": "https://x.com/…/status/…" }  # optional X post, embedded (twitter2) after the image;
+                                    # usually the story's only media, so file is omitted
 
 Usage:
   substack_mirror.py pull  [--id DRAFT_ID] [--dir EDITION_DIR] [--file PATH]
@@ -50,6 +52,7 @@ import base64
 import mimetypes
 import argparse
 import datetime
+import urllib.parse
 import urllib.request
 import urllib.error
 
@@ -201,6 +204,16 @@ def video_node(video_id):
     return {"type": "youtube2", "attrs": {"videoId": video_id, "startTime": None, "endTime": None}}
 
 
+def tweet_node(host, sid, url):
+    """Embed an X post the way the editor does: Substack's tweet endpoint returns
+    the node's attrs (text, author, counts, rehosted photo/video preview)."""
+    req = urllib.request.Request(
+        f"https://{host}/api/v1/tweet?url=" + urllib.parse.quote(url, safe=""),
+        headers={"Cookie": f"substack.sid={sid}", "User-Agent": UA})
+    attrs = json.loads(urllib.request.urlopen(req).read().decode("utf-8"))
+    return {"type": "twitter2", "attrs": {**attrs, "belowTheFold": False}}
+
+
 def _heading_idx(content, sub):
     # Exact heading match wins over substring, so a short category name that is
     # also a substring of an earlier, longer heading resolves to its own section
@@ -270,7 +283,7 @@ def insert_after_bullet(doc, heading_sub, label, media):
 def strip_editorial_media(doc):
     """Remove previously-inserted editorial media so `media` is re-runnable.
     Drops top-level captionedImage without href (ads keep their href) and
-    youtube2/video embeds — but STOPS at the recommendations boundary
+    youtube2/video/twitter2 embeds — but STOPS at the recommendations boundary
     (a calloutBlock, or a paragraph mentioning 'Recomendações'/'Leia também'),
     so curated recommendation embeds are preserved.
     """
@@ -284,7 +297,7 @@ def strip_editorial_media(doc):
             break
         if t == "captionedImage" and not n["content"][0]["attrs"].get("href"):
             removed += 1; continue
-        if t in ("youtube2", "video"):
+        if t in ("youtube2", "video", "twitter2"):
             removed += 1; continue
         out.append(n)
     doc["content"] = out
@@ -316,8 +329,10 @@ def cmd_media(args):
             media.append(image_node(spec, e.get("caption", "")))
         if e.get("videoId"):
             media.append(video_node(e["videoId"]))
+        if e.get("tweet"):
+            media.append(tweet_node(host, sid, e["tweet"]))
         if not media:
-            results.append((e.get("heading"), "no file/videoId — skipped")); continue
+            results.append((e.get("heading"), "no file/videoId/tweet — skipped")); continue
         if e.get("after_bullet"):
             r = insert_after_bullet(doc, e["heading"], e["after_bullet"], media)
         else:
@@ -326,7 +341,7 @@ def cmd_media(args):
 
     for name, r in results:
         print(f"  insert [{name}] -> {r}")
-    ok = all(r == "ok" for _, r in results if r not in ("no file/videoId — skipped",))
+    ok = all(r == "ok" for _, r in results if r not in ("no file/videoId/tweet — skipped",))
 
     if args.dry_run:
         print(f"\n[dry-run] no push. body would have {len(doc['content'])} nodes.")
