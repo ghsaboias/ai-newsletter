@@ -1641,3 +1641,13 @@ https://www.youtube.com/watch?v=2v8b062QzTI
 **Anthropic’s IPO in Question, Midterms Hit AI, Nasdaq Drops 5%, and RSI Accelerates | #309**
 Salim Ismail (fundador da Open ExO e GP na Exponential Venture Capital), Dave Blundin (fundador e GP da Link Ventures) e o Dr. Alexander Wissner-Gross (cientista da computação e fundador da Reified) debatem os desdobramentos recentes na indústria de inteligência artificial, abrangendo desde os impactos políticos das eleições de meio de mandato nos EUA e o risco de atraso no IPO da Anthropic até a aceleração do autoaperfeiçoamento recursivo (RSI), a eficiência energética de modelos em relação ao PIB e a viabilidade da computação orbital
 https://www.youtube.com/watch?v=WF-ADiC7Khs
+
+## 2026-11-11
+
+**Anthropic S-1 Shocker, Greatest Business Ever? Google’s $500B Wipeout, Midterm Predictions**
+No episódio 295 do All-In Podcast, os apresentadores Jason Calacanis, David Sacks, David Friedberg e Chamath Palihapitiya analisam o registro de S-1 da Anthropic para seu IPO, o risco sistêmico do capex em inteligência artificial concorrendo com os títulos do Tesouro dos EUA, o colapso de US$ 500 bilhões em valor de mercado da Alphabet após o balanço do terceiro trimestre e as previsões finais para as midterms
+https://www.youtube.com/watch?v=p1Dy4e4ff0s
+
+**Inside Salesforce’s Acquisition Strategy for the AI Era**
+John Somorjai, executivo à frente de M&A e do braço de investimentos Salesforce Ventures há mais de duas décadas, e Alex Immerman, General Partner da Andreessen Horowitz (a16z), discutem as diretrizes estratégicas que orientaram cerca de US$ 100 bilhões em aquisições pela Salesforce, a evolução do modelo de negócios para software corporativo na era da inteligência artificial e a dinâmica de valuation no mercado de capital de risco
+https://www.youtube.com/watch?v=y4BdOtm40SA
