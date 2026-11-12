@@ -1651,3 +1651,13 @@ https://www.youtube.com/watch?v=p1Dy4e4ff0s
 **Inside Salesforce’s Acquisition Strategy for the AI Era**
 John Somorjai, executivo à frente de M&A e do braço de investimentos Salesforce Ventures há mais de duas décadas, e Alex Immerman, General Partner da Andreessen Horowitz (a16z), discutem as diretrizes estratégicas que orientaram cerca de US$ 100 bilhões em aquisições pela Salesforce, a evolução do modelo de negócios para software corporativo na era da inteligência artificial e a dinâmica de valuation no mercado de capital de risco
 https://www.youtube.com/watch?v=y4BdOtm40SA
+
+## 2026-11-12
+
+**Why HubSpot’s Co-Founder Is Betting Against the SaaSpocalypse**
+Dharmesh Shah, cofundador e CTO da HubSpot, e Joe Schmidt, sócio da gestora de venture capital a16z, analisam a transformação que a inteligência artificial impõe ao setor de software. A conversa desenvolve a tese do ensaio de Schmidt, Avoiding Death on the Yellow Brick Road, explorando por que os avanços dos laboratórios de modelos de IA avançados expandem radicalmente o mercado endereçável para quem constrói aplicações
+https://www.youtube.com/watch?v=s4lXP9IuHjk
+
+**Freedom vs. Safety: Axon CEO Rick Smith on the Future of Policing**
+David Friedberg entrevista Rick Smith, fundador e CEO da Axon (empresa originalmente chamada TASER International, avaliada entre US$ 35 bilhões e US$ 40 bilhões), sobre a história de quase falência da empresa, a criação da arma de choque e das câmeras corporais, as batalhas jurídicas e regulatórias, e a visão de longo prazo para o uso de inteligência artificial, drones autônomos e robótica na segurança pública
+https://www.youtube.com/watch?v=8h-gfrVYyAU
