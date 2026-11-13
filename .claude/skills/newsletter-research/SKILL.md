@@ -1,7 +1,7 @@
 ---
 name: newsletter-research
 description: >-
-  Roda a etapa de research da newsletter de AI/Tech. Pesquisa as notícias do dia em 3 clusters paralelos (ai, hw, world) usando os 3 sub-agentes especialistas (researcher-ai/-hw/-world, cada um com seu beat de-conflitado no próprio system prompt), depois mergeia com dedup semântico (pipeline/tools/dedup-research.py) num único research.json. Substitui pipeline/research.sh. Aciona quando o usuário diz "rodar research", "pesquisa do dia", "research da newsletter", "/newsletter-research", ou pede explicitamente para rodar a pesquisa. Aceita flag `mini` para teste rápido (1 cluster, 3 stories).
+  Roda a etapa de research da newsletter de AI/Tech. Pesquisa as notícias do dia em 3 clusters paralelos (ai, hw, world) usando os 3 sub-agentes especialistas (researcher-ai/-hw/-world, cada um com seu beat de-conflitado no próprio system prompt), depois mergeia com dedup semântico (pipeline/tools/dedup-research.py) num único research.json e passa pela checagem de recall (pipeline/tools/recall-check.py + agente recall-triage: o que a imprensa mais cobriu na janela e a pesquisa não tem). Substitui pipeline/research.sh. Aciona quando o usuário diz "rodar research", "pesquisa do dia", "research da newsletter", "/newsletter-research", ou pede explicitamente para rodar a pesquisa. Aceita flag `mini` para teste rápido (1 cluster, 3 stories).
 allowed-tools: Read, Write, Bash, Agent
 ---
 
@@ -35,11 +35,15 @@ script in Step 2 — you don't compute it.
 
 ```
 REPO     = $(git -C "$(dirname "$0")" rev-parse --show-toplevel)   # the repo root; on the Pi: /home/guilhermesaboia/ai-newsletter
-DAY_DIR  = $REPO/pipeline/output/ai/$DATE
+DAY_DIR  = ${PIPELINE_OUTPUT:-$REPO/pipeline/output/ai}/$DATE
 OUTFILE  = $DAY_DIR/research.json
 ```
 
-`mkdir -p "$DAY_DIR"`. **If `$OUTFILE` already exists**: print its story/source count and stop. Idempotent — the user deletes it to re-run.
+`PIPELINE_OUTPUT` is set only for backtests (an output root outside
+`pipeline/output/ai`); when it is set, export it for every script below so they
+all write under it.
+
+`mkdir -p "$DAY_DIR"`. **If `$OUTFILE` already exists** with `"recall_merged": true`: print its story/source count and stop. If it exists without that flag, the merge ran but the recall check didn't: go straight to Step 4.5. Idempotent — the user deletes it to re-run.
 
 ## Step 2: Build the shared brief (ONE file, ONE fetch)
 
@@ -115,18 +119,54 @@ After the agents return, collect the partials and verify each is valid JSON (`jq
 Merge with the semantic-dedup tool (catches the same story slugged differently across clusters — which plain `unique_by(.id)` misses — and reports cross-cluster overlap):
 
 ```bash
-D="$REPO/pipeline/output/ai/$DATE"
+D="$DAY_DIR"
 python3 "$REPO/pipeline/tools/dedup-research.py" "$DATE" "$D/research.json" \
   ai:"$D/research-ai.json" hw:"$D/research-hw.json" world:"$D/research-world.json"
 ```
 
 Pass one `cluster:file` arg **per valid partial only** — drop any cluster that failed. In mini mode pass just `ai:...`. The tool writes `research.json` (deduped, with `story_count`/`source_count`) and prints how many dups it collapsed, tagged intra/CROSS. **A non-zero CROSS count means the beats are drifting** — surface it.
 
+## Step 4.5: Recall check
+
+The researchers are the pipeline's only recall, and each sees one beat. This step
+compares the merged research against an independent list of the window's most
+covered stories — Daily Journal's own news clusters ranked by articles gained in
+the window, plus the Techmeme top — and adds what is missing.
+
+```bash
+python3 "$REPO/pipeline/tools/recall-check.py" candidates "$DATE"     # → $D/recall-candidates.json
+```
+
+A failed DB query is a `WARN` for the report, not a HALT: skip to Step 5.
+
+Then dispatch the triage agent (one call, Sonnet, no web access):
+
+```
+Agent({
+  description: "Recall triage",
+  subagent_type: "recall-triage",
+  prompt: "Date: <DATE>.\nCandidates: <D>/recall-candidates.json\nResearch: <D>/research.json\nPrevious edition research: <LOOP_DIR>/<PREV_DATE>/research.json\nBrief (for the window and the Agenda rule only): <D>/research-brief.md\nOutput: <D>/recall.json"
+})
+```
+
+`PREV_DATE` is the one the brief printed on stderr in Step 2. Then merge:
+
+```bash
+python3 "$REPO/pipeline/tools/recall-check.py" merge "$DATE"
+```
+
+The merge validates every added story (sources only from the candidates' URLs,
+every fact pointing at a listed source), appends it to `research.json` with
+`"origin": "recall"`, tags matched stories with `salience`, and sets
+`recall_merged`. It prints each add and each rejection with its reason — keep
+that output for the report.
+
 ## Step 5: Report
 
 One tight block, no narration of internal steps:
 - Total stories / sources
 - Cross-cluster duplicates collapsed (expect 0; flag if >0)
+- Recall: covered / added / rejected, with the headline of each added story
 - Headlines (`jq -r '.stories[] | "  • " + .headline' research.json`)
 - Which clusters succeeded / failed
 

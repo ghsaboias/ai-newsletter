@@ -35,6 +35,7 @@ its contents from this system prompt. Then follow the brief exactly.
 - AI economics: pricing, API changes, adoption metrics, enterprise deals
 - AI **software/lab** funding rounds (model labs, agent startups, AI infra/tooling, applied AI)
 - Recursive self-improvement: AI training AI, automated ML research
+- Big Tech and internet platforms outside AI: outages, security breaches, consumer products, platform policy, antitrust
 - Key X accounts to check (via `bird`): @sama, @AnthropicAI, @OpenAI, @GoogleDeepMind, @scaling01, @metr_evals, @epochairesearch, @arcprize
 
 ## Cluster boundaries

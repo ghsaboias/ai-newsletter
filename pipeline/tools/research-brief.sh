@@ -9,7 +9,7 @@
 #   → prints the brief path on stdout; a one-line summary on stderr
 #
 # Content, in order: newsletters/<topic>/prompts/RESEARCH.md with {{DATE}} /
-# {{PREV_DATE}} substituted, the previous edition's headlines (most recent
+# {{PREV_DATE}} / {{WINDOW_HOURS}} / {{NEXT_DATE}} substituted, the previous edition's headlines (most recent
 # earlier day with research.json, up to 7 days back), the Techmeme scan, and
 # the MINI MODE cap when asked. Idempotent: an existing techmeme.md is reused
 # (same landscape for a re-run); the brief itself is always rewritten.
@@ -32,6 +32,17 @@ for _ in 1 2 3 4 5 6 7; do
 done
 [[ -n "$PREV_DATE" ]] || PREV_DATE=$(date -j -v-1d -f "%Y-%m-%d" "$DATE" "+%Y-%m-%d" 2>/dev/null || date -d "$DATE - 1 day" "+%Y-%m-%d")
 
+# Window length (Monday's runs from Friday: 72h) and the next edition's date
+# (next weekday; editions go out Mon–Fri), the horizon of the Agenda rule.
+_epoch() { date -j -f "%Y-%m-%d %H:%M" "$1 10:00" +%s 2>/dev/null || date -d "$1 10:00" +%s; }
+WINDOW_HOURS=$(( ( $(_epoch "$DATE") - $(_epoch "$PREV_DATE") ) / 3600 ))
+NEXT_DATE="$DATE"
+for _ in 1 2 3; do
+  NEXT_DATE=$(date -j -v+1d -f "%Y-%m-%d" "$NEXT_DATE" "+%Y-%m-%d" 2>/dev/null || date -d "$NEXT_DATE + 1 day" "+%Y-%m-%d")
+  DOW=$(date -j -f "%Y-%m-%d" "$NEXT_DATE" +%u 2>/dev/null || date -d "$NEXT_DATE" +%u)
+  [[ "$DOW" -le 5 ]] && break
+done
+
 PREV_HEADLINES="(none)"
 if [[ -s "$LOOP_DIR/$PREV_DATE/research.json" ]]; then
   PREV_HEADLINES=$(jq -r '.stories[] | "- " + .id + ": " + .headline' "$LOOP_DIR/$PREV_DATE/research.json" 2>/dev/null || echo "(none)")
@@ -50,8 +61,9 @@ else
 fi
 
 {
-  sed -e "s/{{DATE}}/$DATE/g" -e "s/{{PREV_DATE}}/$PREV_DATE/g" "$PROMPT"
-  printf '\n---\n\n**Date:** %s\n**Research window:** %s 10:00 BRT → %s 10:00 BRT\n' "$DATE" "$PREV_DATE" "$DATE"
+  sed -e "s/{{DATE}}/$DATE/g" -e "s/{{PREV_DATE}}/$PREV_DATE/g" \
+      -e "s/{{WINDOW_HOURS}}/$WINDOW_HOURS/g" -e "s/{{NEXT_DATE}}/$NEXT_DATE/g" "$PROMPT"
+  printf '\n---\n\n**Date:** %s\n**Research window:** %s 10:00 BRT → %s 10:00 BRT (%sh)\n**Agenda horizon (next edition):** %s 10:00 BRT\n' "$DATE" "$PREV_DATE" "$DATE" "$WINDOW_HOURS" "$NEXT_DATE"
   printf '\n**Previous edition headlines (%s — skip unless genuinely new development):**\n%s\n' "$PREV_DATE" "$PREV_HEADLINES"
   printf '\n**Pre-research scan** (Techmeme, fetched once for all three clusters — review before searching):\n\n%s\n' "$SCAN"
   if [[ "$MINI" == 1 ]]; then

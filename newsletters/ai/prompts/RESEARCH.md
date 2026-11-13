@@ -1,6 +1,6 @@
 # Research — News Cluster
 
-Search for news **events that occurred** between **{{PREV_DATE}} 10:00 BRT** and **{{DATE}} 10:00 BRT** (a 24-hour window). Produce a JSON file of verified stories with sources. An event belongs in this window if it *happened* during it — announcements, launches, deals, incidents. Articles covering the event may be published slightly after the window closes; that's fine as a source, but the underlying event must fall within it.
+Search for news **events that occurred** between **{{PREV_DATE}} 10:00 BRT** and **{{DATE}} 10:00 BRT** (a {{WINDOW_HOURS}}-hour window). Produce a JSON file of verified stories with sources. An event belongs in this window if it *happened* during it — announcements, launches, deals, incidents. Articles covering the event may be published slightly after the window closes; that's fine as a source, but the underlying event must fall within it. One exception, the **agenda**: an event scheduled to happen before the next edition goes out ({{NEXT_DATE}} 10:00 BRT) — see the Agenda rule below.
 
 Your output will be merged with other clusters into the final research file.
 
@@ -21,6 +21,9 @@ story a sibling owns** — even a strong one.
 | Semiconductor export controls (ASML/EUV, sanctions) | **hw** |
 | Geopolitics, military/defense, macro & central banks, markets, biotech/pharma, health policy, space, climate/energy | **world** |
 | Non-tech funding / IPOs / M&A / SPACs (any company that isn't an AI or hardware company) | **world** |
+| Big Tech and internet platforms outside AI — outages, security breaches, consumer products, platform policy, antitrust | **ai** |
+
+A story type the table doesn't list goes to **ai** if it is about a software or internet company, **hw** if it is about physical hardware, **world** otherwise. Every story has an owner; none falls between beats.
 
 Apply the column for **your** cluster (named in your system prompt). The other
 columns are off-limits — a sibling has them covered.
@@ -30,6 +33,8 @@ columns are off-limits — a sibling has them covered.
 - Up to 7 stories. Fewer is fine if the news day is thin for your cluster.
 - Every URL must come from a search result or fetched page. Never invent URLs.
 - **Recency — the *event*, not the article.** The underlying event (announcement, launch, deal, signing, incident) must have *happened* within the window ({{PREV_DATE}} 10:00 BRT to {{DATE}} 10:00 BRT). A fresh *article* is not a fresh *event*: a write-up published today that only repackages an older or long-known project — specs that have been circulating, a buildout already public, a deal signed weeks ago — does **not** qualify. Before you include a story, name the dated in-window event behind it; if the newest concrete event you can point to predates the window, **drop the story**. Sources published shortly after the window closes are fine, but the event must fall inside it.
+- **Agenda — what happens before the next edition.** A high-profile event in your beat with a set date between now and {{NEXT_DATE}} 10:00 BRT (a launch, a vote, a ruling, an earnings release, a keynote, a summit) qualifies when its latest concrete confirmation (date set, license granted, vehicle on the pad, final schedule published) falls in the window. The reader opens the edition before the event and should know it is coming. Write it as a preview: what is planned, when (with the time and timezone from the source), and what is at stake. Add `"scheduled_at"` (ISO 8601 with offset) to the story. A launch, test or vote that is the first of its kind or the next step of a story the newsletter follows is high-profile; routine ones are not.
+- **Salience over beat balance.** Before you pick, ask: what in my beat will a reader who follows tech and geopolitics hear about everywhere today? Those stories go in first, whatever the sub-area. A slot left empty while such a story sits in your search results is a miss.
 - **Sourcing — a rehash has no primary source.** Anchor each story on a **primary source** (company/government release, filing, the principal's own post) or a **tier-1 outlet**. If the only coverage is thin aggregators or SEO trade blogs with no primary or tier-1 confirmation, treat that as a red flag the item is a rehash of old news, not a fresh event — find a primary/tier-1 source or skip it. Never let a lone aggregator write-up be the sole basis for a story.
 - Every fact in `key_facts` must come from a **listed source** — one that appears in the story's `sources` array. No background knowledge, no facts from pages you visited but didn't cite. If you found a fact via a tweet, search snippet, or secondary article, add that URL to `sources`.
 - `headline` and `key_facts` in English.
@@ -51,10 +56,10 @@ reuters.com, bloomberg.com, axios.com, cnbc.com, politico.eu, seekingalpha.com, 
 ## Workflow
 
 1. Check the previous edition headlines at the end of this prompt.
-2. **Landscape scan**: Review the Techmeme scan, then run 5 searches to fill gaps. Stop searching.
+2. **Landscape scan**: Review the Techmeme scan, then run 5 searches to fill gaps. One of the 5 is the **agenda search**: what in your beat is scheduled between now and {{NEXT_DATE}} 10:00 BRT. Stop searching.
 3. **Pick your 7 stories.** From what you found, choose 7. This is your final list — do not add stories after this point.
 4. **Fetch only where needed**: For stories where search snippets lack exact numbers or quotes, fetch the source. Most stories won't need this.
-5. Write the JSON output file.
+5. Write the JSON output file, with the `rejected` log (below).
 
 ## Output
 
@@ -90,10 +95,15 @@ Write to the file path given below. Format:
         "places": []
       }
     }
+  ],
+  "rejected": [
+    {"headline": "What the candidate story was", "reason": "Why it stayed out (beat owner, no in-window event, minor, already covered, slot taken by …)"}
   ]
 }
 ```
 
-**Story fields**: `id` (unique kebab slug), `headline` (<100 chars), `key_facts` (3-8 sourced facts, each with `source_url` pointing to a listed source and `excerpt` with the supporting text), `sources`, `category` (1-3 from: technology, science, world, economy, finance, business, politics, brazil, sports, entertainment), `entities` ({organizations, people, places} — named entities from sources only).
+**Story fields**: `id` (unique kebab slug), `headline` (<100 chars), `key_facts` (3-8 sourced facts, each with `source_url` pointing to a listed source and `excerpt` with the supporting text), `sources`, `category` (1-3 from: technology, science, world, economy, finance, business, politics, brazil, sports, entertainment), `entities` ({organizations, people, places} — named entities from sources only). Optional `scheduled_at` (ISO 8601 with offset) for an agenda story that hasn't happened yet.
+
+**`rejected`**: every story you considered and left out — anything in your beat that showed up in the Techmeme scan or your search results with real coverage. One line of reason each. It is how a missed story gets diagnosed later, so be specific.
 
 **Source fields**: `url`, `outlet`, `title` (tweets: "Tweet by @handle: [first 80 chars]"), `published_at` (YYYY-MM-DD, fallback today), `image_url` ("" if unavailable), `type` (news_article|tweet|blog_post|paper|press_release|video|government_filing).
