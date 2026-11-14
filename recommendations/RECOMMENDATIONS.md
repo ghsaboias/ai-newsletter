@@ -1661,3 +1661,13 @@ https://www.youtube.com/watch?v=s4lXP9IuHjk
 **Freedom vs. Safety: Axon CEO Rick Smith on the Future of Policing**
 David Friedberg entrevista Rick Smith, fundador e CEO da Axon (empresa originalmente chamada TASER International, avaliada entre US$ 35 bilhões e US$ 40 bilhões), sobre a história de quase falência da empresa, a criação da arma de choque e das câmeras corporais, as batalhas jurídicas e regulatórias, e a visão de longo prazo para o uso de inteligência artificial, drones autônomos e robótica na segurança pública
 https://www.youtube.com/watch?v=8h-gfrVYyAU
+
+## 2026-11-13
+
+**Building Robinhood, Surviving GameStop & A $500 Million Phone Call | Vlad Tenev**
+Vlad Tenev, cofundador e CEO da Robinhood, detalha a trajetória da corretora desde a sua concepção técnica até a crise de liquidez durante o frenesi das meme stocks em janeiro de 2021. Tenev aborda sua infância na Bulgária pós-comunista, o impacto da hiperinflação sobre sua família, a transição de um doutorado em matemática pura na UCLA para o empreendedorismo e a mecânica das decisões financeiras que salvaram a empresa do colapso regulatório
+https://www.youtube.com/watch?v=cU9uOHRWDmE
+
+**Mike Volpi on Why AI Infrastructure Will Outlast the Hype Cycle**
+Mike Volpi (fundador da Hanabi Capital e ex-executivo responsável por estratégia e M&A da Cisco durante a expansão da internet nos anos 1990/2000) discute os paralelos e diferenças entre a infraestrutura de telecomunicações do final dos anos 1990 e a construção da infraestrutura de inteligência artificial atual. Participam da conversa Raghu Raghuram (ex-CEO da VMware) e Guido Appenzeller, ambos sócios da Andreessen Horowitz (a16z)
+https://www.youtube.com/watch?v=LI3lxzHfRrU
