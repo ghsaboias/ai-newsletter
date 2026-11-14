@@ -21,9 +21,9 @@ story a sibling owns** — even a strong one.
 | Semiconductor export controls (ASML/EUV, sanctions) | **hw** |
 | Geopolitics, military/defense, macro & central banks, markets, biotech/pharma, health policy, space, climate/energy | **world** |
 | Non-tech funding / IPOs / M&A / SPACs (any company that isn't an AI or hardware company) | **world** |
-| Big Tech and internet platforms outside AI — outages, security breaches, consumer products, platform policy, antitrust | **ai** |
+| Big Tech and internet platforms outside AI — outages, security breaches, consumer products, platform policy, antitrust (not their financing: that follows the funding rows) | **ai** |
 
-A story type the table doesn't list goes to **ai** if it is about a software or internet company, **hw** if it is about physical hardware, **world** otherwise. Every story has an owner; none falls between beats.
+The rows above win. Only a story type no row covers goes to **ai** if it is about a software or internet company, **hw** if it is about physical hardware, **world** otherwise. A funding round, IPO or M&A of a company that is neither AI nor hardware (fintech, prediction markets, internet platforms) is always **world**. Every story has exactly one owner; when you defer a story, name the owner in your `rejected` reason, and if no sibling owns it, it is yours.
 
 Apply the column for **your** cluster (named in your system prompt). The other
 columns are off-limits — a sibling has them covered.
