@@ -42,6 +42,12 @@ class HTMLToProseMirror(HTMLParser):
         self._table = None
         self._row = None
         self._row_is_header = False
+        # One flag per open <p>: True when it was absorbed into a list item's own
+        # paragraph. A "loose" markdown list (blank line between items) makes
+        # pandoc emit <li><p>…</p></li>; pushing a paragraph there nested a
+        # paragraph inside the item's paragraph, which split nothing visible but
+        # hid the items from substack_mirror's bullet lookup (2026-11-12).
+        self._p_absorbed = []
 
     def _push_block(self, node):
         self._current_block = node
@@ -91,7 +97,11 @@ class HTMLToProseMirror(HTMLParser):
         attrs_dict = dict(attrs)
 
         if tag == "p":
-            self._push_block({"type": "paragraph"})
+            top = self._stack[-1] if self._stack else None
+            absorbed = top is not None and top.get("type") == "list_item_para" and not top.get("content")
+            self._p_absorbed.append(absorbed)
+            if not absorbed:
+                self._push_block({"type": "paragraph"})
         elif tag in ("h1", "h2", "h3", "h4", "h5", "h6"):
             self._push_block({"type": "heading", "attrs": {"level": int(tag[1])}})
         elif tag == "ul":
@@ -131,6 +141,8 @@ class HTMLToProseMirror(HTMLParser):
             self._current_block = cell
 
     def handle_endtag(self, tag):
+        if tag == "p" and self._p_absorbed and self._p_absorbed.pop():
+            return
         if tag in ("p", "h1", "h2", "h3", "h4", "h5", "h6", "ul", "ol", "blockquote"):
             self._pop_block()
         elif tag == "li":
