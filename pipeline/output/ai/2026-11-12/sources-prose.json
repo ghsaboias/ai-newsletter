@@ -1,0 +1,1144 @@
+{
+  "entities": [
+    {
+      "headline": "Google DeepMind lança AlphaGenome 2 para ler o DNA por tipo de célula",
+      "summary": "O modelo identifica quase o dobro de variantes que alteram a expressão gênica em relação ao antecessor e já está aberto à pesquisa não comercial.",
+      "bullets": [
+        "Anunciado em 11 de novembro de 2026, o AlphaGenome 2 prevê como sequências de DNA e suas variantes afetam tipos específicos de células humanas.",
+        "Foi treinado com mais de 100 milhões de perfis de células individuais em 68 tecidos.",
+        "No conjunto TenK10K, com 28 tipos de células imunes, identificou 30% das variantes causais (contra 16% do AlphaGenome original) e 43% dos efeitos direcionais sobre genes (contra 23%).",
+        "Adapta-se a novos experimentos de célula única com poucas dezenas de células, sem novo treino, e passa a prever a metilação do DNA.",
+        "Segundo a Nature, foi treinado com 637 tipos de células humanas e 311 de camundongo, mas não se limita a eles.",
+        "Está disponível pela API do AlphaGenome para pesquisa não comercial, com prévia privada para pesquisa comercial."
+      ],
+      "body": "O Google DeepMind, laboratório de inteligência artificial do Google, apresentou a segunda geração do AlphaGenome, modelo que estima o efeito de variações no DNA sobre o funcionamento das células. A diferença central em relação à versão anterior é a resolução: em vez de prever efeitos médios, o modelo trabalha por tipo de célula, o que ajuda a localizar onde uma variante genética ligada a uma doença de fato atua.\n\nO AlphaGenome 2 é um modelo condicional: o pesquisador envia um retrato da atividade gênica de poucas dezenas de células (RNA-seq de célula única, técnica que mede quais genes estão ativos em cada célula) e o modelo se ajusta a esse contexto sem precisar ser treinado de novo. Além das leituras experimentais que a primeira versão já previa, passa a estimar a metilação do DNA, marca química que regula a atividade dos genes.\n\nO acesso começa pela API do AlphaGenome, gratuita para pesquisa não comercial; o uso comercial fica restrito, por ora, a uma prévia privada.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
+          "title": "AlphaGenome 2: prevendo como o DNA molda células e doenças",
+          "summary": "Google DeepMind: o anúncio oficial detalha o treino do modelo e os ganhos medidos contra o AlphaGenome original.",
+          "bullets": [
+            "Treinado com mais de 100 milhões de perfis de células individuais em 68 tecidos.",
+            "Identifica quase o dobro de variantes que mudam a expressão gênica em relação ao modelo anterior.",
+            "No TenK10K, acertou 30% das variantes causais contra 16% e 43% dos efeitos direcionais contra 23%.",
+            "Funciona com dados de poucas dezenas de células, sem novo treino, e prevê a metilação do DNA."
+          ]
+        },
+        {
+          "url": "https://www.nature.com/articles/d41586-026-03673-0",
+          "title": "IA ultrapoderosa da DeepMind para mapear o genoma impressiona cientistas",
+          "summary": "Nature: a revista científica relata a recepção do modelo entre pesquisadores e o alcance dos tipos celulares cobertos.",
+          "bullets": [
+            "O modelo foi treinado com 637 tipos de células humanas e 311 de camundongo.",
+            "As previsões não se limitam aos tipos de célula usados no treino."
+          ]
+        },
+        {
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1031524/google-deepmind-alphagenome-2-genetic-ai-model",
+          "title": "AlphaGenome 2, do Google, examina as raízes celulares das doenças",
+          "summary": "The Verge: o site foca em como o modelo liga variantes genéticas a doenças e em como pesquisadores podem acessá-lo.",
+          "bullets": [
+            "O Google disponibiliza o AlphaGenome 2 pela API do AlphaGenome para pesquisa não comercial a partir de 11 de novembro.",
+            "O uso em pesquisa comercial fica restrito a uma prévia privada limitada."
+          ]
+        },
+        {
+          "url": "https://x.com/GoogleDeepMind/status/2120532824465805749",
+          "title": "Google DeepMind anuncia o AlphaGenome 2 no X",
+          "summary": "X: o perfil do Google DeepMind divulgou o lançamento partindo da pergunta de como órgãos com o mesmo DNA funcionam de forma diferente.",
+          "bullets": [
+            "A publicação lembra que coração, cérebro e sistema imune compartilham a mesma sequência de DNA.",
+            "Apresenta o AlphaGenome 2 como modelo que prevê o efeito do DNA em tipos específicos de células."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Google lança API de decisões com o modelo Gemini Decision 1",
+      "summary": "O modelo responde até 1.000 perguntas fechadas sobre uma única entrada em 150 a 250 ms, a US$ 0,10 por milhão de tokens de entrada.",
+      "bullets": [
+        "A Gemini Decisions API foi lançada em 11 de novembro de 2026 no Google AI Studio, movida pelo modelo Gemini Decision 1 (gemini-decision-1).",
+        "Avalia até 1.000 perguntas de sim/não, múltipla escolha ou rubrica sobre uma entrada multimodal de até 256 mil tokens, numa única passagem.",
+        "A latência de ponta a ponta fica entre 150 e 250 milissegundos, com probabilidades e índices de confiança na resposta.",
+        "O preço é US$ 0,10 por milhão de tokens de entrada, sem cobrança pelos tokens de saída.",
+        "O alvo são as decisões curtas dentro de agentes: roteamento, checagem de políticas, escolha de ferramenta e avaliação.",
+        "O Google entra num mercado com o Jev, da TypeSafe, a Decisions API da OpenAI (sobre o GPT-6 Luna) e o Strands Decider, da Amazon."
+      ],
+      "body": "Em vez de gerar texto, o Gemini Decision 1 devolve probabilidades para respostas de um conjunto fechado. O desenvolvedor envia um único conteúdo, que pode combinar texto, imagens, áudio, vídeo e PDFs, junto com até mil perguntas independentes, e recebe de volta a pontuação de cada alternativa com um grau de confiança.\n\nA proposta é baratear as pequenas bifurcações que um agente de IA precisa resolver dezenas de vezes por tarefa, como decidir para onde encaminhar um pedido, se uma ação viola uma regra ou qual ferramenta acionar. Como a cobrança incide só sobre a entrada, o custo de cada lote de perguntas não cresce com o tamanho da resposta.\n\nO segmento já tem concorrentes: o Jev, da TypeSafe, faz classificação barata; a OpenAI oferece sua própria API de decisões sobre o GPT-6 Luna; e o Strands Decider, da Amazon, permite rodar o modelo na infraestrutura do próprio cliente.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+          "title": "Gemini Decisions API: decisões multimodais rápidas e calibradas",
+          "summary": "Google: o anúncio oficial descreve o novo endpoint, a capacidade por chamada, a latência e o preço.",
+          "bullets": [
+            "Endpoint para decisões rápidas em conjunto fechado, disponível pela API do Gemini no Google AI Studio.",
+            "Aceita uma entrada multimodal de até 256 mil tokens com até 1.000 perguntas independentes.",
+            "Devolve probabilidades e índices de confiança em 150 a 250 ms.",
+            "Custa US$ 0,10 por milhão de tokens de entrada e zero pelos de saída."
+          ]
+        },
+        {
+          "url": "https://venturebeat.com/technology/googles-gemini-decision-1-model-scores-up-to-1-000-questions-in-one-api-call",
+          "title": "Modelo Gemini Decision 1, do Google, pontua até 1.000 perguntas em uma chamada de API",
+          "summary": "VentureBeat: o site situa o lançamento num mercado de modelos de decisão que já tem OpenAI, Amazon e TypeSafe.",
+          "bullets": [
+            "O Jev, da TypeSafe, já faz classificação a baixo custo.",
+            "A Decisions API da OpenAI roda sobre o GPT-6 Luna.",
+            "O Strands Decider, da Amazon, permite rodar o modelo na infraestrutura do próprio cliente."
+          ]
+        },
+        {
+          "url": "https://www.marktechpost.com/2026/11/11/google-gemini-decisions-api-gemini-decision-1/",
+          "title": "Google lança Gemini Decisions API com o Gemini Decision 1 a US$ 0,10 por milhão de tokens",
+          "summary": "MarkTechPost: o site explica para quais tarefas de agentes de IA o novo modelo foi pensado.",
+          "bullets": [
+            "O alvo são as pequenas chamadas de bifurcação dentro de agentes.",
+            "Os usos citados são roteamento, checagem de políticas, escolha de ferramenta e avaliação.",
+            "O preço é de US$ 0,10 por milhão de tokens de entrada."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "AWS lança emulador local da nuvem escrito só por agentes de IA",
+      "summary": "A ferramenta gratuita roda serviços da AWS sem conta na nuvem; a equipe diz não ter escrito nem revisado nenhuma linha do código.",
+      "bullets": [
+        "O AWS Emulator foi lançado em 11 de novembro de 2026 e roda no computador do desenvolvedor ou em ambientes de integração contínua, sem conta AWS nem taxa.",
+        "Milhares de agentes autônomos de IA escreveram todo o código, segundo a AWS.",
+        "Os agentes rodam no Amazon Bedrock AgentCore em três equipes: uma escreve testes de fidelidade contra a AWS real, outra registra as falhas e a terceira as corrige.",
+        "Centenas de agentes corrigem milhares de problemas por dia, segundo Matthew Goldberg.",
+        "O emulador parte de mais de 400 modelos de API e cobre mais de 200 serviços da AWS.",
+        "O código está no GitHub em domínio público (CC0), e a AWS alerta que ele não avalia políticas de IAM e não serve para testes de segurança."
+      ],
+      "body": "A Amazon Web Services (AWS), divisão de nuvem da Amazon, passou a oferecer uma réplica local de seus serviços para que desenvolvedores e agentes de programação testem aplicações sem publicá-las na nuvem. O emulador roda na máquina do usuário ou no pipeline de integração contínua e dispensa conta na AWS.\n\nO ponto incomum é a autoria: a empresa afirma que o projeto foi escrito e é mantido por agentes de IA, sem que a equipe tenha escrito ou revisado o código. O trabalho é dividido entre três grupos de agentes no Amazon Bedrock AgentCore, com um agente por problema, num ciclo de testar contra a AWS real, registrar a divergência e corrigi-la.\n\nA AWS faz uma ressalva explícita: o emulador não reproduz a avaliação de políticas de IAM (Identity and Access Management, o sistema de permissões da AWS) nem de políticas baseadas em recursos, e por isso não deve ser usado para verificar se uma aplicação é segura.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.aboutamazon.com/news/aws/how-autonomous-ai-agents-built-aws-emulator",
+          "title": "AWS Emulator: um emulador local construído 100% por agentes autônomos de IA",
+          "summary": "About Amazon: o blog corporativo conta como agentes autônomos construíram e mantêm o emulador.",
+          "bullets": [
+            "O emulador foi escrito inteiramente por agentes autônomos.",
+            "A equipe afirma não ter escrito nem revisado nenhuma parte do código.",
+            "Milhares de agentes participaram da construção."
+          ]
+        },
+        {
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-emulator-now-available/",
+          "title": "AWS Emulator está disponível para criar e testar aplicações AWS localmente",
+          "summary": "Amazon Web Services: o comunicado de disponibilidade explica onde o emulador roda e o que dispensa.",
+          "bullets": [
+            "Disponível a partir de 11 de novembro de 2026.",
+            "Roda no computador do desenvolvedor ou em ambiente de integração contínua.",
+            "Não exige implantação na nuvem nem conta AWS."
+          ]
+        },
+        {
+          "url": "https://aws.amazon.com/blogs/aws/test-your-applications-against-aws-locally-with-aws-emulator/",
+          "title": "Teste suas aplicações contra a AWS localmente com o AWS Emulator",
+          "summary": "AWS News Blog: o guia técnico mostra como usar o emulador e onde estão seus limites.",
+          "bullets": [
+            "O código-fonte está no GitHub sob dedicação ao domínio público CC0.",
+            "O emulador não avalia políticas de IAM nem políticas baseadas em recursos como a AWS faz.",
+            "A AWS recomenda não usá-lo para testar a segurança de aplicações."
+          ]
+        },
+        {
+          "url": "https://www.geekwire.com/2026/aws-gives-developers-a-free-local-stand-in-for-its-cloud-built-from-scratch-by-ai-agents/",
+          "title": "AWS dá aos desenvolvedores um substituto local e gratuito de sua nuvem, construído do zero por agentes de IA",
+          "summary": "GeekWire: o site detalha a organização dos agentes e a escala do trabalho de manutenção.",
+          "bullets": [
+            "Os agentes rodam no Amazon Bedrock AgentCore em três equipes: testes, registro de falhas e correção.",
+            "Cada problema é tratado por um agente.",
+            "Centenas de agentes corrigem milhares de problemas por dia, segundo Matthew Goldberg.",
+            "O emulador parte de mais de 400 modelos de API e cobre mais de 200 serviços."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "United proíbe agentes de IA de terceiros de reservar voos",
+      "summary": "Nova regra permite à companhia cancelar reservas feitas por agentes; o CEO Scott Kirby diz não querer criar “mais um intermediário”.",
+      "bullets": [
+        "Em 11 de novembro de 2026, a United Airlines restringiu agentes de IA de terceiros não autorizados em seus canais digitais, diretamente e via agências e agregadores.",
+        "A revisão do contrato de transporte proíbe usar agentes de IA para comprar, alterar ou administrar uma passagem, mesmo com supervisão humana.",
+        "A regra 5.H dá à United o direito de cancelar reservas feitas dessa forma.",
+        "Agentes ainda podem exibir voos e preços da United, mas não concluir a compra.",
+        "A empresa cita risco de violar regras da FAA e do DOT, como o check-in automático que pula a declaração sobre materiais perigosos.",
+        "Reservas feitas por agentes antes de 11 de novembro de 2026 não serão canceladas."
+      ],
+      "body": "A United Airlines alega segurança de dados e conformidade regulatória para barrar agentes de IA que compram passagens em nome dos clientes. Segundo a companhia, ações automatizadas podem violar normas da FAA (agência de aviação civil dos EUA) e do DOT (Departamento de Transportes): no check-in, por exemplo, o passageiro precisa confirmar pessoalmente que a bagagem não leva substâncias proibidas, como explosivos.\n\nO presidente-executivo Scott Kirby deu também uma razão comercial. Num evento na terça-feira, segundo o Wall Street Journal, disse: “Para ser sincero, não quero criar mais um intermediário”.\n\nA decisão se soma a uma disputa mais ampla sobre o acesso de agentes ao varejo: a Amazon bloqueou o Muse, agente de IA da Meta, enquanto o Walmart fechou parceria com ele, e as agências de viagem online Expedia e Booking trabalham com a OpenAI.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.united.com/en/us/fly/help-center/digital-trust-center/artificial-intelligence/third-party-ai-agents.html",
+          "title": "Agentes ou assistentes de IA de terceiros não autorizados",
+          "summary": "United Airlines: a página oficial explica o que os agentes ainda podem fazer e por que a compra foi vetada.",
+          "bullets": [
+            "Agentes podem exibir voos e preços, mas não concluir a transação.",
+            "Ações automatizadas podem violar regras da FAA e do DOT.",
+            "O check-in exige confirmação humana de que a bagagem não contém substâncias proibidas, como explosivos.",
+            "Reservas feitas por agentes antes de 11 de novembro de 2026 não serão canceladas."
+          ]
+        },
+        {
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1031623/united-unauthorized-ai-agents",
+          "title": "A United não vai deixar seu agente de IA reservar seu voo",
+          "summary": "The Verge: o site destaca a motivação comercial apresentada pelo CEO da companhia.",
+          "bullets": [
+            "Scott Kirby disse: “Para ser sincero, não quero criar mais um intermediário”.",
+            "A declaração foi feita num evento na terça-feira, segundo o Wall Street Journal."
+          ]
+        },
+        {
+          "url": "https://www.cnbc.com/2026/11/11/united-airlines-ai-agents.html",
+          "title": "United Airlines bloqueia agentes de IA em sua plataforma por segurança",
+          "summary": "CNBC (Reuters): a reportagem relata a justificativa de segurança de dados e o contexto do varejo com agentes.",
+          "bullets": [
+            "A United restringe o acesso de robôs de IA citando segurança de dados.",
+            "O bloqueio vale para os canais próprios e para agências de viagem e agregadores.",
+            "A Amazon bloqueou o agente Muse, da Meta, e o Walmart fez parceria com ele.",
+            "Expedia e Booking trabalham com a OpenAI."
+          ]
+        },
+        {
+          "url": "https://viewfromthewing.com/united-airlines-ceo-scott-kirby-bans-ai-agents-from-booking-tickets-doesnt-want-another-middleman/",
+          "title": "CEO da United, Scott Kirby, proíbe agentes de IA de comprar passagens e não quer “mais um intermediário”",
+          "summary": "View from the Wing: o blog de aviação detalha as cláusulas do contrato de transporte revisadas em 11 de novembro.",
+          "bullets": [
+            "A regra 6.J.6 proíbe usar agentes de IA para comprar, alterar ou administrar uma passagem.",
+            "Supervisão ou aprovação humana não contorna a proibição.",
+            "A regra 5.H dá à United o direito de cancelar essas reservas."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Pony Ma quer metade da equipe da Tencent em negócios nativos de IA",
+      "summary": "A Tencent nega cortes: seu diretor de relações públicas chamou de “completamente falso” o boato de demissão de 50% e falou em realocação.",
+      "bullets": [
+        "O fundador Pony Ma disse estar disposto a deslocar metade dos cerca de 100 mil funcionários para negócios nativos de IA.",
+        "Ma comparou os negócios centrais a um exército e as iniciativas de IA a uma marinha, para onde iriam 50% do pessoal.",
+        "Ele também defendeu uma estrutura mais ágil, com menos gerência intermediária.",
+        "A Tencent tinha 115.927 funcionários em junho, ante 111.221 um ano antes.",
+        "A fala ocorreu no evento transmitido ao vivo pelos 28 anos da empresa, em 11 de novembro.",
+        "Em 12 de novembro, o diretor de relações públicas Zhang Jun negou no Weibo o boato de demissão de 50%."
+      ],
+      "body": "Pony Ma, fundador da Tencent, gigante chinesa de tecnologia com sede em Shenzhen, usou o discurso anual de aniversário da empresa para pedir que os funcionários abracem a IA. Na metáfora que apresentou, o “exército” dos negócios atuais deve usar IA para ganhar eficiência, enquanto metade do pessoal migra para a “marinha” dos negócios nativos de IA. Ma, de 55 anos, também pediu uma estrutura corporativa mais enxuta, com menos gerência intermediária.\n\nA declaração logo circulou como plano de demitir metade do quadro. A empresa reagiu no dia seguinte: o diretor de relações públicas Zhang Jun escreveu no Weibo, rede social chinesa, que a versão é “completamente falsa” e que as falas descrevem uma redistribuição de recursos para a era da IA. Segundo a Yicai, a liderança sinalizou no evento a necessidade de acelerar a reforma organizacional.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-11-12/tencent-founder-rallies-half-of-staff-behind-ai-native-push",
+          "title": "Fundador da Tencent mobiliza metade da equipe para ofensiva em IA nativa",
+          "summary": "Bloomberg: a agência reproduz, com base em presentes ao evento, a metáfora de Ma sobre exército e marinha.",
+          "bullets": [
+            "Ma disse que o “exército” deve usar IA para maximizar a eficiência.",
+            "Segundo ele, 50% do pessoal seria realocado para a “marinha” dos negócios nativos de IA.",
+            "O relato vem de pessoas com conhecimento do evento."
+          ]
+        },
+        {
+          "url": "https://theedgemalaysia.com/node/825480",
+          "title": "Fundador da Tencent mobiliza metade da equipe para ofensiva em IA nativa",
+          "summary": "The Edge Malaysia (Bloomberg): a reprodução da reportagem acrescenta o tamanho do quadro e o pedido por menos gerência.",
+          "bullets": [
+            "Ma disse estar disposto a deslocar metade da força de trabalho de cerca de 100 mil pessoas.",
+            "Ma, de 55 anos, pediu estrutura mais ágil e menos gerência intermediária.",
+            "A Tencent tinha 115.927 funcionários em junho, ante 111.221 um ano antes."
+          ]
+        },
+        {
+          "url": "https://www.zaobao.com.sg/news/china/story20261112-9986323",
+          "title": "Tencent vai deslocar metade dos funcionários para negócios nativos de IA",
+          "summary": "Lianhe Zaobao: o jornal de Singapura registra o desmentido da Tencent sobre demissões.",
+          "bullets": [
+            "O diretor de relações públicas Zhang Jun publicou no Weibo em 12 de novembro.",
+            "Ele chamou de “completamente falso” o boato de demissão de 50%.",
+            "Segundo Zhang, trata-se de uma redistribuição de recursos para a era da IA."
+          ]
+        },
+        {
+          "url": "https://www.yicaiglobal.com/news/fact-check-tencent-has-no-plans-to-cut-50-of-workforce-eyes-faster-organizational-reforms-sources-say",
+          "title": "Checagem: boato de que a Tencent cortará metade do quadro é falso, diz fonte",
+          "summary": "Yicai Global: o veículo chinês checa o boato e situa a fala no evento de aniversário da empresa.",
+          "bullets": [
+            "A fala ocorreu em evento transmitido ao vivo pelos 28 anos da Tencent, em 11 de novembro.",
+            "A liderança sinalizou a necessidade de acelerar a reforma organizacional.",
+            "Uma fonte negou que haja plano de cortar 50% do quadro."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Applied Intuition negocia US$ 1,5 bi com avaliação de US$ 30 bi",
+      "summary": "A rodada liderada pela General Catalyst dobraria o valor da empresa de software para veículos autônomos em relação a junho de 2025.",
+      "bullets": [
+        "A Applied Intuition negocia captar ao menos US$ 1,5 bilhão numa rodada liderada pela General Catalyst, informou a Bloomberg em 11 de novembro de 2026.",
+        "A avaliação seria de cerca de US$ 30 bilhões antes do aporte, o dobro de junho de 2025.",
+        "A General Catalyst planeja investir US$ 250 milhões.",
+        "A meta de receita para o ano fiscal de 2026 supera US$ 560 milhões, cerca de 19% acima dos US$ 474 milhões do ano anterior.",
+        "A empresa projeta mais de US$ 1 bilhão em 2027 e US$ 1,8 bilhão em 2028.",
+        "Fundada em 2017, faz sistemas operacionais de automação e ferramentas de simulação para defesa, transporte de cargas e construção."
+      ],
+      "body": "A Applied Intuition, startup do Vale do Silício que desenvolve software para veículos autônomos e atua como fornecedora de defesa, está em conversas para uma nova rodada de pelo menos US$ 1,5 bilhão. A General Catalyst lidera a operação e pretende colocar US$ 250 milhões; os termos ainda podem mudar.\n\nO valor de cerca de US$ 30 bilhões, sem contar o dinheiro novo, dobra a avaliação de junho de 2025. As projeções apresentadas pela empresa ajudam a explicar o salto: depois de uma alta de cerca de 19% na receita em 2026, a Applied Intuition espera passar de US$ 1 bilhão em 2027 e chegar a US$ 1,8 bilhão em 2028.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-11-11/applied-intuition-in-talks-to-raise-1-5-billion-at-30-billion-value",
+          "title": "Applied Intuition negocia captar US$ 1,5 bilhão com avaliação de US$ 30 bilhões",
+          "summary": "Bloomberg: a agência revelou as negociações, o líder da rodada e o tamanho do aporte previsto.",
+          "bullets": [
+            "A rodada de ao menos US$ 1,5 bilhão é liderada pela General Catalyst.",
+            "A avaliação seria de cerca de US$ 30 bilhões antes do aporte, o dobro de junho de 2025.",
+            "A General Catalyst planeja investir US$ 250 milhões."
+          ]
+        },
+        {
+          "url": "https://www.investing.com/news/stock-market-news/applied-intuition-in-talks-to-raise-15b-at-30b-valuation-bloomberg-reports-5019616",
+          "title": "Applied Intuition negocia captar US$ 1,5 bi com avaliação de US$ 30 bi, diz Bloomberg",
+          "summary": "Investing.com: o site acrescenta as metas de receita e o perfil de atuação da startup.",
+          "bullets": [
+            "A meta para o ano fiscal de 2026 é superar US$ 560 milhões, cerca de 19% acima de US$ 474 milhões.",
+            "A empresa projeta mais de US$ 1 bilhão em 2027 e US$ 1,8 bilhão em 2028.",
+            "Fundada em 2017, atende defesa, transporte de cargas e construção."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Rox capta US$ 100 mi a US$ 1,3 bi para enfrentar a Salesforce",
+      "summary": "A startup de agentes de IA para vendas diz ter multiplicado por mais de 10 a receita recorrente anual no primeiro ano no mercado.",
+      "bullets": [
+        "A Rox anunciou em 11 de novembro de 2026 uma rodada Série B de US$ 100 milhões, com avaliação de US$ 1,3 bilhão.",
+        "General Catalyst e March Capital lideram a rodada; Sequoia Capital e Factory ampliaram a aposta, e Databricks Ventures e Prosperity7 Ventures entraram.",
+        "A empresa relata retenção líquida de receita acima de 700% entre clientes corporativos.",
+        "Os agentes pesquisam contas, priorizam potenciais clientes e preparam abordagens.",
+        "Entre os clientes estão Ramp, New Relic, Trafigura, MongoDB e Groq.",
+        "A Rox quer quintuplicar a equipe comercial nos EUA no próximo ano para disputar com o Agentforce, que a Salesforce diz ter passado de US$ 1,5 bilhão em receita recorrente anual."
+      ],
+      "body": "A Rox, de São Francisco, vende agentes de IA que fazem parte do trabalho de um vendedor: levantam informações sobre empresas-alvo, decidem quais contatos priorizar e preparam a abordagem. O dinheiro novo vai para crescer entre as 2.000 maiores empresas do mundo, público citado no anúncio.\n\nOs números apresentados são da própria empresa: receita recorrente anual (ARR) mais de dez vezes maior no primeiro ano e retenção líquida de receita acima de 700%, indicador que mede quanto os clientes existentes passam a gastar. O adversário declarado é o Agentforce, linha de agentes da Salesforce, que a dona do produto afirma ter ultrapassado US$ 1,5 bilhão em ARR.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/rox-raises-100-million-series-b-at-1-3-billion-valuation-to-grow-revenue-for-the-global-2000--302936434.html",
+          "title": "Rox capta US$ 100 milhões em Série B com avaliação de US$ 1,3 bilhão para ampliar receita das Global 2000",
+          "summary": "PR Newswire: o comunicado da empresa traz os investidores da rodada e as métricas de crescimento.",
+          "bullets": [
+            "General Catalyst e March Capital lideram a Série B de US$ 100 milhões.",
+            "Sequoia Capital e Factory dobraram a aposta; Databricks Ventures e Prosperity7 Ventures são novos investidores.",
+            "A receita recorrente anual cresceu mais de 10 vezes no primeiro ano.",
+            "A retenção líquida de receita passa de 700% entre clientes corporativos."
+          ]
+        },
+        {
+          "url": "https://fortune.com/2026/11/11/rox-series-b-100-million-funding-take-on-salesforce/",
+          "title": "Conheça a Rox, startup de vendas com IA de US$ 1,3 bilhão que aposta poder enfrentar a Salesforce",
+          "summary": "Fortune: a revista descreve o que os agentes da Rox fazem, quem os usa e os planos de expansão.",
+          "bullets": [
+            "Os agentes pesquisam contas, priorizam potenciais clientes e preparam abordagens.",
+            "Entre os primeiros clientes estão Ramp, New Relic, Trafigura, MongoDB e Groq.",
+            "A Rox quer quintuplicar a equipe de vendas, marketing e comercial nos EUA no próximo ano."
+          ]
+        },
+        {
+          "url": "https://businessofgtm.com/articles/rox-series-b-salesforce-sales-agents",
+          "title": "Rox capta US$ 100 milhões em Série B a US$ 1,3 bilhão para desafiar a Salesforce",
+          "summary": "Business of GTM: o site enquadra a rodada como desafio direto ao Agentforce, da Salesforce.",
+          "bullets": [
+            "O rival a ser batido é o Agentforce, da Salesforce.",
+            "A Salesforce diz que o Agentforce passou de US$ 1,5 bilhão em receita recorrente anual.",
+            "A Rox vai quintuplicar sua equipe comercial nos EUA no próximo ano."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Conselho da Nvidia se reúne para decidir se afasta Jensen Huang",
+      "summary": "Parte do conselho defende a diretora financeira Colette Kress como CEO interina; as ações caíram mais de 8% fora do pregão.",
+      "bullets": [
+        "O conselho se reuniu na quarta-feira, 11 de novembro, após o Wall Street Journal relatar que se preparava para afastar Huang; até a manhã de quinta não havia decisão anunciada.",
+        "O New York Times revelou um segundo relacionamento extraconjugal de Huang, com Kimberly Powell, vice-presidente de saúde da Nvidia e sua subordinada.",
+        "Antes, Huang admitira um caso com Alice Huang, executiva da Megaspeed suspeita pela inteligência americana de espionar para a China.",
+        "Alguns conselheiros defendem Colette Kress como CEO interina; a Nvidia contratou uma firma de recrutamento, e Johny Srouji, chefe de hardware da Apple, está entre os nomes avaliados.",
+        "Pelo estatuto, a maioria dos 11 conselheiros pode destituir Huang, de 63 anos e dono de cerca de 3,6% das ações, com ou sem justa causa.",
+        "As ações da Nvidia caíram mais de 8% após o fechamento, ao menor nível em 52 semanas, enquanto AMD subiu 7,3% e Broadcom 4%.",
+        "A Nvidia divulga resultados em 17 de novembro; no Polymarket, a chance de Huang sair até o fim do ano chegou a 88%."
+      ],
+      "body": "A crise na liderança da Nvidia se agravou com a reportagem do New York Times sobre um segundo relacionamento extraconjugal de Jensen Huang, desta vez com uma executiva que responde diretamente a ele. O caso anterior, que o próprio Huang admitiu, envolvia Alice Huang, executiva da Megaspeed, empresa que a inteligência dos EUA suspeita de espionagem para a China.\n\nO conselho discutiu a sucessão sem anunciar decisão. Segundo a Semafor, parte dos conselheiros prefere a diretora financeira Colette Kress como interina, e houve debate sobre criar um cargo de diretor de operações ao lado dela; a empresa informou a Casa Branca sobre a reunião. Huang não tem sucessor óbvio, e o estatuto permite sua destituição por maioria simples dos 11 conselheiros, todos independentes exceto ele.\n\nO mercado reagiu antes de qualquer anúncio: a Nvidia caiu mais de 8% no pregão estendido, enquanto rivais como AMD e Broadcom subiram. O próximo teste é o balanço trimestral de 17 de novembro.",
+      "is_breaking": false,
+      "sensitivity": "political_high_risk",
+      "sources": [
+        {
+          "url": "https://www.nytimes.com/2026/11/11/technology/nvidia-jensen-huang.html",
+          "title": "Conselho da Nvidia avalia o futuro de Jensen Huang",
+          "summary": "The New York Times: o jornal relata a reunião do conselho e a ausência de decisão sobre o presidente-executivo.",
+          "bullets": [
+            "O conselho se reuniu na quarta-feira para discutir a situação de Huang.",
+            "Nenhuma decisão sobre o líder de longa data da Nvidia foi anunciada.",
+            "A reunião seguiu reportagem do Wall Street Journal de que o conselho se preparava para afastá-lo."
+          ]
+        },
+        {
+          "url": "https://www.theguardian.com/technology/2026/nov/12/nvidia-board-decision-ceo-jensen-huang-alleged-second-affair",
+          "title": "Conselho da Nvidia decide se afasta o CEO Jensen Huang enquanto ações despencam",
+          "summary": "The Guardian: o jornal britânico liga o enfraquecimento de Huang à revelação de um segundo caso extraconjugal.",
+          "bullets": [
+            "O New York Times relatou um caso de Huang com Kimberly Powell, funcionária da empresa.",
+            "Powell é vice-presidente de saúde da Nvidia e responde a Huang.",
+            "Huang já havia admitido um caso com Alice Huang, executiva da Megaspeed."
+          ]
+        },
+        {
+          "url": "https://www.semafor.com/article/11/11/2026/nvidia-board-preparing-to-oust-ceo-jensen-huang-name-interim-ceo",
+          "title": "Conselho da Nvidia se prepara para afastar Jensen Huang e nomear CEO interino",
+          "summary": "Semafor: o site detalha as opções de sucessão discutidas pelo conselho.",
+          "bullets": [
+            "Alguns conselheiros defendem a diretora financeira Colette Kress como CEO interina.",
+            "O conselho debateu criar um diretor de operações ao lado do interino.",
+            "A Nvidia contratou firma externa de recrutamento; Johny Srouji, da Apple, está entre os avaliados.",
+            "A empresa informou a Casa Branca sobre a reunião."
+          ]
+        },
+        {
+          "url": "https://www.rte.ie/news/business/2026/1112/1598921-nvidia-board-meets-to-decide-ceo-huangs-future/",
+          "title": "Conselho da Nvidia se reúne para decidir o futuro de Huang com o aprofundamento da crise",
+          "summary": "RTÉ (Reuters): a reportagem explica as regras de governança que permitem a destituição.",
+          "bullets": [
+            "O estatuto permite destituir Huang com ou sem justa causa por maioria dos conselheiros.",
+            "A Nvidia tem 11 conselheiros, todos independentes exceto Huang.",
+            "Huang, de 63 anos, tem cerca de 3,6% das ações e nenhum sucessor óbvio."
+          ]
+        },
+        {
+          "url": "https://finance.yahoo.com/technology/articles/nvidia-board-prepares-oust-ceo-032749113.html",
+          "title": "Conselho da Nvidia se prepara para afastar o CEO e nomear interino",
+          "summary": "Semafor via Yahoo Finance: a republicação destaca a reação imediata das ações à notícia.",
+          "bullets": [
+            "As ações da Nvidia caíram mais de 8% no pregão estendido.",
+            "O papel atingiu o menor nível em 52 semanas.",
+            "A queda seguiu a reportagem do Wall Street Journal sobre o afastamento."
+          ]
+        },
+        {
+          "url": "https://www.ft.com/content/a93307a7-e2cd-4abd-bd89-c38832d8c40e",
+          "title": "Ações de AMD e Broadcom sobem enquanto conselho da Nvidia avalia afastar Jensen Huang",
+          "summary": "Financial Times: o jornal mostra como concorrentes da Nvidia ganharam na bolsa com a crise.",
+          "bullets": [
+            "A AMD fechou em alta de 7,3% e subia mais de 4% no pré-mercado.",
+            "A Broadcom ganhou 4% e subia 2,4% no pré-mercado."
+          ]
+        },
+        {
+          "url": "https://thenextweb.com/news/nvidia-board-meeting-jensen-huang-ouster-no-decision",
+          "title": "Destino de Jensen Huang depende do conselho da Nvidia após reunião durante a noite",
+          "summary": "The Next Web: o site registra a falta de decisão e o calendário que pressiona o conselho.",
+          "bullets": [
+            "A reunião terminou sem decisão anunciada.",
+            "A Nvidia divulga resultados trimestrais em 17 de novembro.",
+            "O Polymarket dava 88% de chance de Huang renunciar ou ser afastado até o fim do ano."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Comércio dos EUA prepara regra contra acesso remoto da China a chips",
+      "summary": "Empresas chinesas de IA correm para alugar capacidade com chips Nvidia fora da China; a Alibaba chegou a cair 7,1% em Hong Kong.",
+      "bullets": [
+        "O Departamento de Comércio dos EUA finaliza regra para impedir que empresas chinesas usem chips avançados por data centers em outros países, segundo a The Information.",
+        "Um grande provedor de nuvem chinês discutiu garantir capacidade no exterior, e laboratórios menores procuram locadores de computação no Sudeste Asiático, segundo a Reuters.",
+        "As empresas temem que o escândalo de Jensen Huang impulsione o Remote Access Security Act, aprovado pela Câmara por 369 a 22 em janeiro e parado no Senado.",
+        "Intermediários do mercado paralelo chinês começaram a estocar chips Nvidia restritos.",
+        "Em Hong Kong, a Alibaba caiu até 7,1% na quinta-feira, e Z.ai e MiniMax perderam 7% ou mais.",
+        "A Megaspeed disse ter colaborado com inspetores do Bureau of Industry and Security e contratado escritório americano para catalogar suas GPUs."
+      ],
+      "body": "O Departamento de Comércio, responsável pelos controles de exportação de tecnologia dos EUA, prepara uma atualização que fecharia a principal brecha das regras atuais: o acesso remoto. Hoje, empresas chinesas que não podem comprar chips avançados conseguem alugar capacidade em data centers fora da China. A regra ainda passa por consulta a outras agências, e um advogado do Baker McKenzie disse à The Information que o departamento não tem autoridade legal para regular esse acesso com a legislação atual.\n\nA perspectiva de aperto já mexe com o mercado. Segundo a Reuters, empresas chinesas de IA tentam reservar capacidade com chips Nvidia no exterior antes de uma eventual proibição, e o mercado paralelo passou a estocar processadores restritos. O gatilho é o caso de Jensen Huang, CEO da Nvidia, ligado a uma executiva da Megaspeed suspeita de espionagem; a Megaspeed nega ter enviado chips ilegalmente à China.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.theinformation.com/articles/commerce-department-finalizing-long-awaited-ai-remote-access-rule",
+          "title": "Departamento de Comércio finaliza regra aguardada sobre acesso remoto a chips de IA",
+          "summary": "The Information: o site revelou que o governo americano está perto de concluir a regra de acesso remoto.",
+          "bullets": [
+            "A atualização impediria o acesso remoto a chips avançados via data centers fora da China.",
+            "A regra também mira o contrabando de chips para a China.",
+            "Um advogado do Baker McKenzie disse que o departamento não tem autoridade legal para isso com a lei atual."
+          ]
+        },
+        {
+          "url": "https://www.investing.com/news/economy-news/exclusivechinese-ai-firms-rush-to-secure-nvidia-chip-capacity-as-spy-scandal-stirs-fear-of-us-curbs-5020406",
+          "title": "Exclusivo: empresas chinesas de IA correm para garantir capacidade Nvidia com escândalo de espionagem e temor de restrições",
+          "summary": "Reuters (via Investing.com): a agência ouviu três fontes sobre a corrida chinesa por capacidade computacional no exterior.",
+          "bullets": [
+            "Um grande provedor de nuvem chinês discutiu garantir capacidade Nvidia no exterior.",
+            "Empresas procuraram operadores de data centers para reservar capacidade.",
+            "O Remote Access Security Act passou na Câmara por 369 a 22 em janeiro e aguarda o Senado.",
+            "Intermediários do mercado paralelo chinês começaram a estocar chips Nvidia restritos."
+          ]
+        },
+        {
+          "url": "https://qz.com/chinese-ai-firms-overseas-nvidia-capacity-crackdown-111226",
+          "title": "Empresas chinesas de IA correm para garantir capacidade Nvidia no exterior antes de possível ofensiva dos EUA",
+          "summary": "Quartz: o site registra a queda das ações chinesas de IA e a resposta da Megaspeed.",
+          "bullets": [
+            "A Alibaba caiu até 7,1% em Hong Kong na quinta-feira.",
+            "Z.ai e MiniMax perderam 7% ou mais cada uma.",
+            "A Megaspeed disse ter colaborado com inspetores do Bureau of Industry and Security.",
+            "A empresa contratou escritório de advocacia americano para catalogar suas GPUs."
+          ]
+        },
+        {
+          "url": "https://mlq.ai/news/chinese-ai-firms-rush-to-lock-in-overseas-nvidia-capacity-as-commerce-readies-a-rule-on-remote-chip-access/",
+          "title": "Empresas chinesas de IA correm por capacidade Nvidia no exterior enquanto Comércio prepara regra de acesso remoto",
+          "summary": "MLQ.ai: o site reúne a corrida chinesa e as dúvidas jurídicas sobre a regra em preparação.",
+          "bullets": [
+            "Um advogado do Baker McKenzie questionou a autoridade legal do Departamento de Comércio.",
+            "O departamento ainda consulta outras agências antes de finalizar a regra."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Lutnick atrasou três vezes ação contra desvio de chips à China, diz Axios",
+      "summary": "Trump aprovou medidas em maio, agosto e 5 de novembro; o Departamento de Comércio nega o confronto relatado entre Bessent e Lutnick.",
+      "bullets": [
+        "Segundo a Axios, o secretário de Comércio, Howard Lutnick, resistiu a restringir empresas suspeitas de desviar chips Nvidia para a China.",
+        "Trump aprovou agir ao menos três vezes, em maio, agosto e 5 de novembro.",
+        "Na Sala de Situação, o secretário do Tesouro, Scott Bessent, cobrou de Lutnick por que a Megaspeed não estava na Entity List; Hegseth, Greer e Rubio apoiaram Bessent.",
+        "Trump consultou Elon Musk, que apoiou as restrições; Lutnick alertou que elas “vão começar uma guerra comercial com a China”.",
+        "Os EUA não incluem nomes na Entity List desde outubro de 2025, o maior intervalo em mais de uma década.",
+        "Os senadores Chris Coons e Elizabeth Warren pediram a Lutnick, Rubio e Stephen Miller que preservem documentos sobre exportações da Nvidia à China."
+      ],
+      "body": "A Axios relata que o Departamento de Comércio segurou uma ofensiva contra o desvio de chips da Nvidia para a China que o próprio presidente Donald Trump havia autorizado. Lutnick e o subsecretário Jeffrey Kessler resistiram à pressão para agir, segundo o site. A ferramenta em jogo é a Entity List, lista de empresas que só podem receber tecnologia americana com licença especial, e o alvo citado é a Megaspeed, cliente da Nvidia.\n\nNa reunião mais recente, depois das eleições de meio de mandato, o secretário do Tesouro, Scott Bessent, teria pressionado Lutnick com apoio do secretário de Defesa, Pete Hegseth, do representante comercial Jamieson Greer e do secretário de Estado, Marco Rubio. Quando Trump disse “vamos fazer”, Lutnick propôs desenvolver “opções”. A porta-voz Kristen Eichamer disse que a conversa entre Bessent e Lutnick “não aconteceu”.\n\nO caso ganhou peso no Congresso: os senadores democratas Chris Coons e Elizabeth Warren pediram que membros do governo preservem documentos sobre as exportações da Nvidia e sobre Jensen Huang e a suposta agente chinesa.",
+      "is_breaking": false,
+      "sensitivity": "political_high_risk",
+      "sources": [
+        {
+          "url": "https://www.axios.com/2026/11/11/trump-lutnick-nvidia-china-chip-export-controls",
+          "title": "Trump apoiou três vezes controles sobre chips da Nvidia para a China enquanto Lutnick travava",
+          "summary": "Axios: o site reconstitui as três autorizações de Trump e a resistência do Departamento de Comércio.",
+          "bullets": [
+            "Trump aprovou agir contra desvios em maio, agosto e 5 de novembro.",
+            "Lutnick e o subsecretário Jeffrey Kessler resistiram à pressão.",
+            "Musk apoiou Rubio, Bessent, Greer e Hegseth; Lutnick alertou para uma guerra comercial com a China.",
+            "Depois de Trump dizer “vamos fazer”, Lutnick propôs desenvolver “opções”."
+          ]
+        },
+        {
+          "url": "https://www.axios.com/2026/11/11/bessent-lutnick-megaspeed-nvidia-china-chips",
+          "title": "Bessent confrontou Lutnick sobre a Megaspeed, cliente da Nvidia, dizem fontes",
+          "summary": "Axios: a segunda reportagem descreve o embate na Sala de Situação e o desmentido do Comércio.",
+          "bullets": [
+            "Na reunião após as eleições de meio de mandato, Bessent cobrou por que a Megaspeed não estava na Entity List.",
+            "Lutnick respondeu que iria “verificar”.",
+            "A porta-voz Kristen Eichamer disse que a conversa entre os dois secretários não ocorreu."
+          ]
+        },
+        {
+          "url": "https://www.bnnbloomberg.ca/business/company-news/2026/11/12/lutnick-stalled-trump-crackdown-on-diversion-of-nvidia-chips-to-china-axios-reports/",
+          "title": "Nvidia: Lutnick travou ofensiva de Trump, informa Axios",
+          "summary": "BNN Bloomberg (Reuters): a reprodução da reportagem acrescenta o histórico da Entity List.",
+          "bullets": [
+            "Os EUA não publicam inclusões na Entity List desde outubro de 2025.",
+            "É o maior intervalo entre novas inclusões em mais de uma década."
+          ]
+        },
+        {
+          "url": "https://finance.yahoo.com/technology/articles/nvidia-board-prepares-oust-ceo-032749113.html",
+          "title": "Conselho da Nvidia se prepara para afastar o CEO e nomear interino",
+          "summary": "Semafor via Yahoo Finance: a reportagem registra a reação de senadores democratas ao caso.",
+          "bullets": [
+            "Chris Coons e Elizabeth Warren enviaram carta a membros do gabinete na quarta-feira.",
+            "Pediram a Lutnick, Rubio e Stephen Miller que preservem documentos sobre exportações da Nvidia à China.",
+            "A carta inclui documentos sobre Huang e a suposta agente chinesa."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Receita da SMIC sobe 33,9% no terceiro trimestre e lucro mais que dobra",
+      "summary": "A fabricante chinesa de chips prevê margem bruta de volta a 26%-28% no quarto trimestre, depois de 29,9% no terceiro.",
+      "bullets": [
+        "A receita do terceiro trimestre de 2026 foi de US$ 3,19 bilhões, alta de 6,1% sobre o segundo trimestre e de 33,9% em um ano.",
+        "O lucro atribuível aos acionistas subiu 123,4% em um ano, para US$ 428,4 milhões, mas caiu 10,6% ante o segundo trimestre.",
+        "A margem bruta foi de 29,9%, acima dos 25,3% do trimestre anterior e da orientação de 26% a 28%.",
+        "A utilização das fábricas subiu para 97,3%, ante 93,7%.",
+        "Para o quarto trimestre, a empresa prevê receita de 4% a 6% maior e margem bruta de 26% a 28%.",
+        "A China respondeu por 90,8% da receita, e o investimento do trimestre caiu para US$ 1,09 bilhão, ante US$ 1,84 bilhão."
+      ],
+      "body": "A SMIC, fabricante chinesa de chips, superou as estimativas compiladas pela LSEG com o aumento de embarques de wafers (os discos de silício onde os chips são produzidos). A margem melhorou com fábricas quase lotadas, a 97,3% da capacidade, e uma mudança no mix de produtos.\n\nO lucro ficou bem acima do ano anterior, mas recuou em relação ao segundo trimestre por causa de ganhos menores com investimentos. A orientação para o fim do ano é mais contida: receita ainda em alta, mas margem de volta à faixa de 26% a 28%. A capacidade mensal subiu 1,8%, para 1,1 milhão de wafers equivalentes de 8 polegadas, e a China segue como mercado quase exclusivo da empresa.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1112/2026111200682.pdf",
+          "title": "SMIC divulga resultados não auditados do trimestre encerrado em 30 de setembro de 2026",
+          "summary": "HKEX (comunicado da SMIC): o documento oficial traz receita, lucro e a orientação para o quarto trimestre.",
+          "bullets": [
+            "Receita de US$ 3.190,0 milhões, ante US$ 3.005,6 milhões no segundo trimestre e US$ 2.381,8 milhões um ano antes.",
+            "Lucro atribuível de US$ 428,4 milhões, alta de 123,4% em um ano e queda de 10,6% no trimestre.",
+            "Orientação de receita 4% a 6% maior no quarto trimestre, com margem bruta de 26% a 28%."
+          ]
+        },
+        {
+          "url": "https://www.investing.com/news/stock-market-news/smic-q4-margin-forecast-falls-short-of-q3-level-despite-revenue-growth-outlook-93CH-5021126",
+          "title": "Previsão de margem da SMIC para o quarto trimestre fica abaixo do terceiro apesar de receita em alta",
+          "summary": "Investing.com: o site destaca o salto da margem bruta e o recuo previsto para o fim do ano.",
+          "bullets": [
+            "A margem bruta subiu para 29,9%, ante 25,3% no trimestre anterior e 22% um ano antes.",
+            "A utilização das fábricas passou de 93,7% para 97,3%.",
+            "A mudança no mix de produtos também ajudou a margem."
+          ]
+        },
+        {
+          "url": "https://se.marketscreener.com/nyheter/smic-redovisar-vinstlyft-p-123-4-procent-for-tredje-kvartalet-ce785ed8da8cf324",
+          "title": "SMIC registra alta de 123,4% no lucro do terceiro trimestre",
+          "summary": "Reuters (via MarketScreener): a reportagem detalha a dependência do mercado chinês e o corte no investimento.",
+          "bullets": [
+            "A China respondeu por 90,8% da receita.",
+            "A capacidade mensal subiu 1,8%, para 1,1 milhão de wafers equivalentes de 8 polegadas.",
+            "O investimento caiu para US$ 1,09 bilhão, ante US$ 1,84 bilhão no segundo trimestre.",
+            "Os resultados superaram as estimativas da LSEG."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Lucro da Foxconn sobe 34% no terceiro trimestre com servidores de IA",
+      "summary": "A maior montadora de servidores da Nvidia prevê crescimento de “dois dígitos altos” nos embarques de racks de IA em 2027.",
+      "bullets": [
+        "O lucro líquido de julho a setembro subiu 34%, para NT$ 77,5 bilhões (US$ 2,35 bilhões), acima do consenso LSEG de NT$ 69,6 bilhões.",
+        "A receita cresceu 46%, para NT$ 3,02 trilhões, e o lucro operacional saltou 64%, para NT$ 115,35 bilhões.",
+        "Produtos de nuvem e redes chegaram a 54% das vendas.",
+        "O presidente do conselho, Young Liu, espera que nuvem e redes passem de 60% da receita em três a cinco anos.",
+        "Liu alertou que chips, memória e alguns componentes estão escassos e que a demanda deve superar a oferta no próximo ano.",
+        "A empresa constrói fábricas no México e no Texas para produzir servidores de IA para a Nvidia."
+      ],
+      "body": "A Foxconn, maior montadora de servidores da Nvidia e principal montadora de iPhones da Apple, teve trimestre puxado pelos servidores de IA, que Young Liu chamou de “o motor de crescimento mais importante” da empresa. A empresa não dá projeções numéricas, mas disse esperar crescimento de “dois dígitos altos” nos embarques de racks de IA em 2027.\n\nO gargalo, segundo Liu, está nos componentes. Ele afirmou que os problemas de oferta devem diminuir à medida que nova capacidade entra em operação, mas que a demanda deve continuar acima da oferta no próximo ano e o aperto pode durar algum tempo. Para atender a Nvidia, a Foxconn ergue fábricas no México e no Texas.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.investing.com/news/stock-market-news/taiwans-foxconn-reports-34-rise-in-q3-profit-beats-forecasts-5020447",
+          "title": "Foxconn, de Taiwan, tem alta de 34% no lucro do terceiro trimestre e supera previsões",
+          "summary": "Reuters (via Investing.com): a agência compara o lucro ao consenso e registra o alerta de Liu sobre a oferta.",
+          "bullets": [
+            "Lucro de NT$ 77,5 bilhões (US$ 2,35 bilhões), contra consenso LSEG de NT$ 69,6 bilhões.",
+            "A Foxconn prevê crescimento de “dois dígitos altos” nos embarques de racks de IA em 2027.",
+            "Liu disse que a demanda deve superar a oferta no próximo ano."
+          ]
+        },
+        {
+          "url": "https://www.webpronews.com/foxconn-q3-2026-record-profit-ai-servers-racks-2027/",
+          "title": "Servidores de IA levam a Foxconn a trimestre recorde, e embarques de racks devem subir de novo em 2027",
+          "summary": "WebProNews: o site detalha receita, lucro operacional e o peso de nuvem e redes nas vendas.",
+          "bullets": [
+            "A receita subiu 46%, para NT$ 3,02 trilhões.",
+            "O lucro operacional saltou 64%, para NT$ 115,35 bilhões.",
+            "Nuvem e redes chegaram a 54% das vendas e devem passar de 60% em três a cinco anos."
+          ]
+        },
+        {
+          "url": "https://www.france24.com/en/live-news/20261112-tech-giant-foxconn-beats-forecasts-with-third-quarter-profit-jump",
+          "title": "Gigante de tecnologia Foxconn supera previsões com alta no lucro do terceiro trimestre",
+          "summary": "France 24 (AFP): a agência destaca a fala de Liu sobre servidores de IA e a expansão fabril.",
+          "bullets": [
+            "Liu disse que servidores de IA se tornaram o motor de crescimento mais importante da Foxconn.",
+            "A empresa constrói fábricas no México e no Texas para fazer servidores de IA para a Nvidia."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Agile Robots capta US$ 500 mi com SoftBank e passa a valer US$ 8,5 bi",
+      "summary": "Nvidia, Hitachi e T.Capital também entraram na rodada, que leva a cerca de US$ 2 bilhões o total captado pela empresa de Munique.",
+      "bullets": [
+        "A Agile Robots levantou US$ 500 milhões numa rodada liderada pelo SoftBank, com avaliação de US$ 8,5 bilhões.",
+        "Nvidia, Hitachi e T.Capital também participaram, e o total captado chega a cerca de US$ 2 bilhões.",
+        "A empresa faz braços e mãos robóticos, robôs móveis autônomos e humanoides, além do software e dos modelos de IA.",
+        "Surgiu em 2018 como spin-off do Centro Aeroespacial Alemão.",
+        "Diz ter cerca de 20 mil robôs instalados e abriu neste ano, perto de Munique, fábrica para até 10 mil humanoides por ano.",
+        "A avaliação supera a da rival alemã Neura Robotics, de cerca de US$ 7 bilhões em junho."
+      ],
+      "body": "A Agile Robots, fabricante de robôs com sede em Munique, vai usar o dinheiro para expandir nos Estados Unidos, aumentar a produção na Alemanha e entrar em novos mercados, segundo o fundador Zhaopeng Chen, que cita uma possível abertura de capital no futuro. A empresa trabalha com parceiros como o Google DeepMind.\n\nSeus robôs já operam em setores como automotivo, eletrônicos de consumo e logística. Com a nova avaliação, a Agile passa à frente da conterrânea Neura Robotics, avaliada em cerca de US$ 7 bilhões em junho. Em junho, as conversas com investidores giravam em torno de uma captação de cerca de US$ 800 milhões.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-11-12/softbank-backs-agile-robots-in-500-million-humanoid-push",
+          "title": "SoftBank apoia Agile Robots em aposta de US$ 500 milhões em humanoides",
+          "summary": "Bloomberg: a agência traz o tamanho da rodada, os participantes e o total captado pela empresa.",
+          "bullets": [
+            "A Agile levantou US$ 500 milhões e soma cerca de US$ 2 bilhões captados.",
+            "Nvidia, Hitachi e T.Capital participaram da rodada.",
+            "O SoftBank liderou o aporte."
+          ]
+        },
+        {
+          "url": "https://tech.eu/2026/11/12/softbank-leads-500m-funding-round-in-agile-robots/",
+          "title": "SoftBank lidera rodada de US$ 500 milhões na Agile Robots",
+          "summary": "Tech.eu: o site descreve a linha de produtos da empresa e sua origem.",
+          "bullets": [
+            "A empresa fabrica braços e mãos robóticos, robôs móveis autônomos e humanoides.",
+            "Também desenvolve o software e os modelos de IA por trás dos robôs.",
+            "É um spin-off do Centro Aeroespacial Alemão, de 2018."
+          ]
+        },
+        {
+          "url": "https://www.france24.com/en/live-news/20261112-german-ai-robotics-start-up-valued-at-8-5-bn-after-new-fundraising",
+          "title": "Startup alemã de robótica com IA é avaliada em US$ 8,5 bilhões após nova captação",
+          "summary": "France 24 (AFP): a agência detalha a base instalada e a capacidade de produção de humanoides.",
+          "bullets": [
+            "A empresa diz ter cerca de 20 mil robôs instalados.",
+            "Os clientes estão nos setores automotivo, de eletrônicos de consumo e logística.",
+            "A fábrica aberta neste ano perto de Munique pode produzir até 10 mil humanoides por ano."
+          ]
+        },
+        {
+          "url": "https://www.nytimes.com/2026/11/12/business/softbank-nvidia-agile-robots.html",
+          "title": "Gigantes de tecnologia investem em startup alemã de robótica avaliada em US$ 8,5 bilhões",
+          "summary": "The New York Times: o jornal registra os planos do fundador para o dinheiro novo.",
+          "bullets": [
+            "Zhaopeng Chen disse que o aporte financia expansão nos EUA e mais produção na Alemanha.",
+            "A empresa cita uma possível abertura de capital no futuro.",
+            "O Google DeepMind está entre os parceiros da Agile."
+          ]
+        },
+        {
+          "url": "https://thenextweb.com/news/agile-robots-softbank-500m-humanoid",
+          "title": "SoftBank lidera rodada de US$ 500 milhões que avalia a Agile Robots em US$ 8,5 bilhões",
+          "summary": "The Next Web: o site compara a avaliação à da rival alemã e às negociações anteriores.",
+          "bullets": [
+            "A Agile passa à frente da Neura Robotics, avaliada em cerca de US$ 7 bilhões em junho.",
+            "Em junho, as conversas previam uma captação de cerca de US$ 800 milhões."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "CoreWeave prepara empréstimo de US$ 4 bi com grau de investimento",
+      "summary": "O rendimento inicial de 7% a 7,5% equivale a cerca de metade do que pagam hoje os títulos de alto risco da empresa.",
+      "bullets": [
+        "A CoreWeave prepara empréstimo de ao menos US$ 4 bilhões com grau de investimento, liderado por Morgan Stanley e MUFG, informou a Bloomberg em 11 de novembro.",
+        "A operação pode ser lançada já na próxima semana, em fases, e os termos ainda podem mudar.",
+        "As conversas preliminares apontam rendimento de 7% a 7,5%.",
+        "As notas de 9,625% com vencimento em 2032 eram negociadas a rendimento de 14,21% em 11 de novembro.",
+        "O empréstimo tem como garantia os equipamentos de computação e os contratos de clientes, como a linha de US$ 8,5 bilhões lastreada em contratos da Meta em março.",
+        "O CEO Michael Intrator disse que a empresa não vai recorrer a dívida sem garantia aos rendimentos atuais e cancelou seu plano de venda de ações."
+      ],
+      "body": "A CoreWeave tem classificação de crédito especulativa, o que encarece sua dívida comum. Para pagar menos, a empresa estrutura o novo empréstimo com garantia em seu próprio hardware e nos contratos firmados com clientes, o que permite obter grau de investimento. A fórmula repete a de março, quando levantou US$ 8,5 bilhões com lastro em contratos da Meta.\n\nA diferença de custo é grande: o empréstimo deve sair a 7% a 7,5%, enquanto os títulos de alto risco já emitidos rendiam 14,21% no mercado secundário. Michael Intrator disse que, nesses níveis, a empresa não vai recorrer à dívida sem garantia, nem precisa dela, e cancelou o plano pré-agendado de venda de suas ações.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.investing.com/news/stock-market-news/coreweave-plans-4-billion-highgrade-loan-bloomberg-reports-5020048",
+          "title": "CoreWeave planeja empréstimo de US$ 4 bilhões com grau de investimento, diz Bloomberg",
+          "summary": "Investing.com: o site detalha bancos, calendário e a estrutura de garantias da operação.",
+          "bullets": [
+            "Morgan Stanley e MUFG lideram a operação, que será sindicalizada em fases.",
+            "O lançamento pode ocorrer já na próxima semana.",
+            "A estrutura usa hardware e contratos de clientes, como a operação de US$ 8,5 bilhões de março."
+          ]
+        },
+        {
+          "url": "https://www.aiaffairs.com/markets/coreweave-plans-4-billion-investment-grade-loan/",
+          "title": "CoreWeave planeja empréstimo de ao menos US$ 4 bilhões com custo menor",
+          "summary": "AI Affairs: o site compara o custo previsto do empréstimo com o da dívida atual da empresa.",
+          "bullets": [
+            "O rendimento previsto é de 7% a 7,5%, cerca de metade do dos títulos de alto risco.",
+            "As notas de 9,625% com vencimento em julho de 2032 rendiam 14,21% em 11 de novembro."
+          ]
+        },
+        {
+          "url": "https://stocktwits.com/news-articles/markets/equity/core-weave-reportedly-plans-4-b-investment-grade-loan-after-strong-earnings-beat-but-shares-fall-after-hours-on-nvidia-ceo-drama/cNGzQDlR99J",
+          "title": "CoreWeave planeja empréstimo de US$ 4 bi com grau de investimento após balanço forte, mas ações caem com crise na Nvidia",
+          "summary": "Stocktwits: o site reúne as declarações do CEO à CNBC sobre financiamento e venda de ações.",
+          "bullets": [
+            "Michael Intrator cancelou seu plano pré-agendado de venda de ações da empresa.",
+            "Ele disse que a CoreWeave não vai usar o mercado de dívida sem garantia aos rendimentos atuais.",
+            "As ações caíram no pregão estendido em meio à crise na liderança da Nvidia."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Zelensky diz que limite de velocidade do Starshield voltou na Ucrânia",
+      "summary": "Com o teto de 161 km/h, interceptadores não alcançam drones russos a jato, e alguns ataques já passaram, segundo o presidente.",
+      "bullets": [
+        "Em 12 de novembro de 2026, Zelensky disse que tropas ucranianas registram há vários dias falhas no Starshield em toda a linha de frente e nos territórios ocupados.",
+        "O Starshield, versão militar do Starlink da SpaceX, corta a conexão de equipamentos acima de 161 km/h.",
+        "Zelensky afirmou que não são falhas aleatórias, mas “restrições sistemáticas de velocidade”.",
+        "O drone russo a jato Geran-4 costuma voar entre 300 e 400 km/h, segundo a inteligência de defesa ucraniana.",
+        "O limite volta menos de três semanas depois de o Ministério da Defesa anunciar, em 24 de outubro, conexão restabelecida acima de 400 km/h.",
+        "O acordo da Ucrânia com Washington para acesso ao Starshield vence em meados de 2027."
+      ],
+      "body": "O Starshield é a rede de satélites militar da SpaceX usada pelas tropas ucranianas. Com a conexão cortada acima de 161 km/h, os interceptadores ucranianos não conseguem atingir a velocidade necessária para alcançar os drones russos a jato, e Zelensky disse que alguns ataques já passaram por causa disso. O primeiro limite foi registrado na noite de 13 para 14 de outubro, e a conexão foi restabelecida em 24 de outubro.\n\nNinguém assumiu a responsabilidade. Elon Musk escreveu que os sistemas Starshield são “de propriedade e controle do governo dos EUA” e que as decisões cabem aos militares e, em última instância, ao presidente. Autoridades ucranianas disseram ao Financial Times acreditar que a restrição foi imposta para pressionar Kiev nas negociações de paz com a Rússia; o governo ucraniano diz tentar esclarecer as circunstâncias com os EUA enquanto busca estender o acordo de acesso.",
+      "is_breaking": false,
+      "sensitivity": "violent",
+      "sources": [
+        {
+          "url": "https://kyivindependent.com/starshield-speed-restrictions-return-hampering-efforts-to-intercept-russian-drones-zelensky-says/",
+          "title": "Restrições de velocidade do Starshield voltam e atrapalham interceptação de drones russos, diz Zelensky",
+          "summary": "The Kyiv Independent: o jornal ucraniano relata a extensão das falhas registradas pelas tropas.",
+          "bullets": [
+            "Zelensky falou em 12 de novembro sobre falhas significativas há vários dias.",
+            "O Starshield é a versão militarizada do Starlink.",
+            "As falhas atingem toda a linha de frente e os territórios ocupados."
+          ]
+        },
+        {
+          "url": "https://www.euronews.com/2026/11/12/zelenskyy-starlink-again-facing-restrictions-in-ukraine-hampering-russian-drone-intercepti",
+          "title": "Zelensky: Starlink volta a enfrentar restrições na Ucrânia e atrapalha interceptação de drones russos",
+          "summary": "Euronews: o canal reconstitui o histórico do limite e a posição de Musk e Washington.",
+          "bullets": [
+            "Zelensky escreveu no X que o limite é de 161 km/h e não resulta de erros técnicos aleatórios.",
+            "O primeiro limite surgiu em 13 e 14 de outubro, e a conexão foi restabelecida acima de 400 km/h em 24 de outubro.",
+            "Musk disse que os sistemas Starshield pertencem ao governo dos EUA e são controlados por ele.",
+            "O acordo de acesso vence em meados de 2027."
+          ]
+        },
+        {
+          "url": "https://www.aerotime.aero/articles/zelenskyy-says-starshield-speed-cap-returns-hindering-russian-drone-interceptions",
+          "title": "Zelensky diz que limite de velocidade do Starshield voltou na Ucrânia",
+          "summary": "AeroTime: o site de aviação explica por que o teto afeta a interceptação de drones a jato.",
+          "bullets": [
+            "O limite atrapalha principalmente a interceptação de drones russos a jato.",
+            "O Geran-4 costuma voar entre 300 e 400 km/h, segundo a inteligência de defesa ucraniana."
+          ]
+        },
+        {
+          "url": "https://www.ft.com/content/6cd890f1-2e4d-468a-807f-529f45e1678e",
+          "title": "Zelensky diz que o Starshield sofreu “restrições sistemáticas de velocidade” em meio a negociações de paz",
+          "summary": "Financial Times: o jornal ouviu autoridades ucranianas que ligam a restrição às negociações de paz.",
+          "bullets": [
+            "Autoridades ucranianas de alto escalão acreditam que o limite busca pressionar Kiev.",
+            "A suspeita se refere à rodada mais recente de negociações com a Rússia."
+          ]
+        },
+        {
+          "url": "https://www.cnbc.com/2026/11/12/starlink-starshield-ukraine-restrictions-spacex.html",
+          "title": "Ucrânia diz que Starshield, da SpaceX, sofre restrições de velocidade",
+          "summary": "CNBC: a emissora registra a denúncia ucraniana e a falta de resposta oficial dos EUA e da SpaceX.",
+          "bullets": [
+            "O limite corta a conexão de equipamentos acima de 161 km/h.",
+            "Nem Washington nem a SpaceX assumiram a responsabilidade.",
+            "Kiev diz tentar esclarecer as circunstâncias com os EUA."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Witkoff e Kushner se reúnem com Putin e seguem para Dublin",
+      "summary": "Os enviados dos EUA levam a Putin propostas alinhadas com Ucrânia e Europa e depois informam Zelensky, que está na capital irlandesa.",
+      "bullets": [
+        "A reunião de Putin com o enviado especial Steve Witkoff e Jared Kushner começou no Kremlin em 12 de novembro de 2026.",
+        "A comitiva chegou pouco depois das 13h de Moscou (10h GMT).",
+        "Os assessores Vladimir Medinsky, Kirill Dmitriev e Yuri Ushakov participaram do encontro.",
+        "Segundo a mídia russa, Putin agradeceu a Trump por organizar os contatos com a Ucrânia e citou avanço na frente humanitária.",
+        "Kushner disse que EUA, Ucrânia e europeus alinharam propostas, mas que “diferenças significativas permanecem”.",
+        "Zelensky disse em Dublin que pode haver uma “janela de oportunidade” para encerrar a guerra antes de 2027."
+      ],
+      "body": "A visita a Moscou vem logo depois das conversas em Abu Dhabi. Segundo Kushner, as propostas levadas a Putin foram coordenadas com Kiev e com os parceiros europeus, e os enviados pediriam ao presidente russo que “dê sua bênção” à participação de representantes europeus em futuras negociações, ideia à qual a Rússia tem se oposto.\n\nDo Kremlin, Witkoff e Kushner seguem para Dublin, onde Zelensky se reúne com líderes europeus. “O importante é que os americanos foram a Putin com propostas concretas. Gostaria muito que voltassem a Dublin com respostas concretas”, disse o presidente ucraniano ao chegar à Irlanda.",
+      "is_breaking": false,
+      "sensitivity": "violent",
+      "sources": [
+        {
+          "url": "http://kremlin.ru/events/president/news/81246",
+          "title": "Encontro com o enviado especial do presidente dos EUA, Steve Witkoff, e com Jared Kushner",
+          "summary": "Kremlin: o comunicado oficial confirma o início da reunião com os enviados americanos.",
+          "bullets": [
+            "A reunião começou no Kremlin em 12 de novembro de 2026.",
+            "O Kremlin apresenta Witkoff como enviado especial do presidente dos EUA e Kushner como empresário."
+          ]
+        },
+        {
+          "url": "https://www.afp.com/en/us-envoys-arrive-kremlin-putin-meeting-after-ukraine-talks",
+          "title": "Enviados dos EUA chegam ao Kremlin para reunião com Putin após negociações sobre a Ucrânia",
+          "summary": "AFP: a agência acompanhou a chegada da comitiva e o roteiro dos enviados depois de Moscou.",
+          "bullets": [
+            "A comitiva chegou ao Kremlin pouco depois das 13h (10h GMT).",
+            "Os enviados voam depois a Dublin para informar Zelensky.",
+            "Zelensky falou em “janela de oportunidade” para acabar com a guerra antes de 2027."
+          ]
+        },
+        {
+          "url": "https://unn.ua/en/news/witkoff-and-kushner-began-talks-with-putin-in-moscow-first-details",
+          "title": "Witkoff e Kushner iniciam conversas com Putin no Kremlin",
+          "summary": "UNN: a agência ucraniana reúne os primeiros detalhes da reunião relatados pela mídia russa.",
+          "bullets": [
+            "Medinsky, Dmitriev e Ushakov participam do encontro.",
+            "Putin pediu que os enviados transmitam a Trump agradecimento pela organização dos contatos com a Ucrânia.",
+            "Putin teria citado progresso na frente humanitária."
+          ]
+        },
+        {
+          "url": "https://abcnews.com/International/witkoff-kushner-arrive-moscow-meet-putin-discuss-ukraine/story?id=138070892",
+          "title": "Witkoff e Kushner chegam a Moscou para encontrar Putin e discutir a paz na Ucrânia",
+          "summary": "ABC News: a emissora reproduz a mensagem de Kushner sobre as propostas levadas a Moscou.",
+          "bullets": [
+            "Kushner disse que as propostas foram alinhadas com a Ucrânia e os parceiros europeus.",
+            "Ele reconheceu que “diferenças significativas permanecem”.",
+            "Depois de Moscou, os enviados fazem consultas com Zelensky."
+          ]
+        },
+        {
+          "url": "https://www.bbc.com/news/articles/cwrkgmymk55zo",
+          "title": "Enviados dos EUA chegam a Moscou para negociar a Ucrânia com Vladimir Putin",
+          "summary": "BBC: a emissora destaca o pedido americano para incluir a Europa nas próximas rodadas.",
+          "bullets": [
+            "Kushner disse que pediriam a Putin que “dê sua bênção” à presença de europeus em futuras negociações.",
+            "A Rússia tem se oposto a essa ideia."
+          ]
+        },
+        {
+          "url": "https://apnews.com/article/russia-ukraine-war-putin-kushner-witkoff-683810203340077f33611fd1d1757b23",
+          "title": "Enviados dos EUA vão ao Kremlin encontrar Putin após negociações sobre a Ucrânia em Abu Dhabi",
+          "summary": "AP: a agência situa a viagem a Moscou como sequência das conversas em Abu Dhabi.",
+          "bullets": [
+            "Witkoff e Kushner foram ao Kremlin depois das negociações em Abu Dhabi.",
+            "A reunião com Putin ocorreu em 12 de novembro de 2026."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Uforce, de drones ucranianos, capta US$ 700 mi e passa a valer US$ 6 bi",
+      "summary": "O National Wealth Fund, fundo soberano britânico, aportou US$ 150 milhões, seu maior investimento em defesa até hoje.",
+      "bullets": [
+        "A Uforce, fundada na Ucrânia e sediada em Londres, anunciou em 12 de novembro de 2026 uma Série A de US$ 700 milhões com avaliação de US$ 6 bilhões.",
+        "A rodada é liderada pela Valor Equity Partners, de Antonio Gracias, aliado de Elon Musk, e pelo National Wealth Fund do Reino Unido.",
+        "Com os US$ 150 milhões do fundo, a Uforce se torna a startup de defesa mais valiosa do Reino Unido.",
+        "A avaliação é cerca de seis vezes a de março, quando captou US$ 50 milhões a cerca de US$ 1 bilhão.",
+        "A empresa diz que seus drones Nemesis fizeram mais de 300 mil voos de combate e que os drones navais Magura ajudaram a destruir mais de uma dúzia de navios russos no Mar Negro.",
+        "Startups de defesa da OTAN e aliados captaram US$ 27,1 bilhões até setembro de 2026, quase o dobro de todo o ano de 2025."
+      ],
+      "body": "A Uforce, empresa de tecnologia de defesa criada na Ucrânia, com polos em Kiev e Washington, vai usar o dinheiro para ampliar a produção na Ucrânia e em países aliados nos EUA, na Europa, na Ásia-Pacífico e no Oriente Médio. O fundo de reconstrução EUA-Ucrânia também entrou na rodada, e o general reformado Christopher Cavoli, ex-comandante supremo da OTAN na Europa e sócio da Valor, passa a integrar o conselho.\n\nSegundo o CEO Oleg Rogynskyy, as encomendas mais que dobraram no último ano, a partir de uma base de várias centenas de milhões de dólares. A captação acompanha o ritmo do setor: segundo relatório de outubro da Dealroom e da Resilience Media, startups de defesa da OTAN e de países aliados já levantaram em 2026 quase o dobro do total de 2025.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/uforce-raises-700m-at-6-billion-valuation-from-leading-tech-and-sovereign-wealth-funds-to-scale-combat-proven-defence-systems-for-ukraine-and-allied-nations-302937236.html",
+          "title": "Uforce capta US$ 700 milhões com avaliação de US$ 6 bilhões para ampliar sistemas de defesa para a Ucrânia e aliados",
+          "summary": "PR Newswire: o comunicado da empresa traz os termos da rodada, os investidores e a mudança no conselho.",
+          "bullets": [
+            "Série A de US$ 700 milhões com avaliação de US$ 6 bilhões, anunciada em 12 de novembro de 2026.",
+            "A empresa tem sede em Londres e polos em Kiev e Washington.",
+            "O fundo de reconstrução EUA-Ucrânia participou da rodada.",
+            "O general reformado Christopher Cavoli entra no conselho."
+          ]
+        },
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-11-12/drone-startup-uforce-valued-at-6-billion-with-uk-wealth-fund-backing",
+          "title": "Startup de drones Uforce é avaliada em US$ 6 bilhões com apoio de fundo soberano britânico",
+          "summary": "Bloomberg: a agência destaca o peso do aporte do National Wealth Fund e da Valor.",
+          "bullets": [
+            "O National Wealth Fund fez seu maior investimento em defesa, de US$ 150 milhões.",
+            "A Valor Equity Partners é comandada por Antonio Gracias, aliado de Elon Musk.",
+            "A Uforce se torna a startup de defesa mais valiosa do Reino Unido."
+          ]
+        },
+        {
+          "url": "https://www.cnbc.com/2026/11/12/uforce-defense-tech-drones-warfare-ukraine.html",
+          "title": "Fabricante ucraniana de drones Uforce chega a avaliação de US$ 6 bilhões",
+          "summary": "CNBC: a emissora ouviu o CEO e detalha o histórico de captação e o uso dos drones em combate.",
+          "bullets": [
+            "Em março, a Uforce captou US$ 50 milhões a uma avaliação de cerca de US$ 1 bilhão.",
+            "As encomendas mais que dobraram no último ano, segundo Oleg Rogynskyy.",
+            "Os drones Nemesis fizeram mais de 300 mil voos de combate.",
+            "Startups de defesa da OTAN e aliados captaram US$ 27,1 bilhões até setembro."
+          ]
+        },
+        {
+          "url": "https://sifted.eu/articles/drone-startup-uforce-fundraise-uk-national-wealth-fund-scoop",
+          "title": "Startup de drones Uforce capta US$ 700 milhões com Valor Equity Partners e National Wealth Fund",
+          "summary": "Sifted: o site de startups europeias antecipou a rodada e seus dois líderes.",
+          "bullets": [
+            "A rodada de US$ 700 milhões tem apoio da Valor Equity Partners.",
+            "O National Wealth Fund do Reino Unido também lidera o aporte."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Iene se aproxima de 160 por dólar e Tóquio alerta para intervenção",
+      "summary": "O dólar chegou a 159,94 ienes com apostas de alta de juros nos EUA; Atsushi Mimura disse ser “cedo para esquecer” as intervenções do verão.",
+      "bullets": [
+        "O dólar subiu a 159,94 ienes em 12 de novembro, o maior nível em mais de dois meses, após dados de inflação fortes nos EUA.",
+        "Atsushi Mimura, principal autoridade cambial do Japão, disse que os movimentos recentes foram rápidos demais, em sua primeira fala sobre câmbio desde o fim de setembro.",
+        "O Japão gastou o recorde de 15,4 trilhões de ienes em intervenções em três dias entre 30 de julho e 3 de agosto, quando o iene chegou perto de 164 por dólar.",
+        "O índice de preços de importação em ienes saltou 24,8% em outubro, na comparação anual.",
+        "O índice do dólar atingiu 103,08, o maior desde abril de 2025, e o mercado precifica integralmente uma alta de juros do Fed em dezembro.",
+        "Analistas da Mizuho dizem que Tóquio pode intervir sozinho se o dólar passar de 160 e o iene fraco alimentar a inflação."
+      ],
+      "body": "A alta do dólar ganhou força com as apostas de que o Federal Reserve, o banco central americano, vai subir os juros em dezembro, depois de dados de inflação acima do esperado nos EUA. A maior parte do mercado espera alta de 0,25 ponto percentual, com pequena chance de 0,5 ponto. No dia 11, o euro caiu à mínima em 19 meses, as bolsas europeias fecharam em recorde e o ouro voltou para baixo de US$ 4.000 a onça.\n\nNo Japão, o iene fraco já pressiona os preços: os importados ficaram 24,8% mais caros em outubro. Mimura lembrou ao mercado as intervenções de julho e agosto, que incluíram uma operação conjunta com os EUA. Para a Mizuho, uma intervenção isolada se torna provável se o dólar romper 160 ienes e a inflação ameaçar o apoio ao governo da primeira-ministra Sanae Takaichi.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://finance.yahoo.com/markets/currencies/articles/japans-mimura-reminds-markets-intervention-082838056.html",
+          "title": "Mimura, do Japão, lembra o mercado do risco de intervenção com o iene perto de 160",
+          "summary": "Reuters (via Yahoo Finance): a agência traz a fala de Mimura, o histórico de intervenções e a leitura da Mizuho.",
+          "bullets": [
+            "O dólar chegou a 159,94 ienes, o maior nível em mais de dois meses.",
+            "Mimura disse ser “cedo demais para esquecer o que aconteceu neste verão”.",
+            "O Japão gastou o recorde de 15,4 trilhões de ienes em intervenções entre 30 de julho e 3 de agosto.",
+            "Os preços de importação em ienes subiram 24,8% em outubro."
+          ]
+        },
+        {
+          "url": "https://www.japantimes.co.jp/business/2026/11/12/markets/yen-near-160-renewed-intervention-risks/",
+          "title": "Iene se aproxima do nível-chave de 160 após dados de inflação dos EUA e reacende risco de intervenção",
+          "summary": "The Japan Times (Bloomberg): o jornal liga a queda do iene aos dados de inflação americanos e ao risco de nova intervenção.",
+          "bullets": [
+            "O iene se aproximou de 160 por dólar após os dados de inflação dos EUA.",
+            "A desvalorização reacendeu o risco de intervenção de Tóquio no câmbio."
+          ]
+        },
+        {
+          "url": "https://www.octabroker.com/markets/news/view/1285024/",
+          "title": "Iene ganha alívio com alertas de autoridades contra movimentos cambiais rápidos",
+          "summary": "Octa: a corretora registra o pico do índice do dólar e a precificação da alta do Fed.",
+          "bullets": [
+            "O índice do dólar atingiu 103,08, o maior desde abril de 2025, e recuou para perto de 102,88.",
+            "O mercado precifica integralmente uma alta de juros do Fed em dezembro.",
+            "A alta de 0,25 ponto é a mais provável, com pequena chance de 0,5 ponto."
+          ]
+        },
+        {
+          "url": "https://www.investing.com/news/economy-news/ai-cheer-banishes-rate-hike-fear-5019950",
+          "title": "Dia de mercado: otimismo com IA afasta o medo de alta de juros",
+          "summary": "Reuters (via Investing.com): o resumo de mercado de 11 de novembro mostra o dólar forte e as bolsas europeias em recorde.",
+          "bullets": [
+            "O dólar atingiu a máxima em 19 meses e o euro, a mínima em 19 meses.",
+            "As bolsas europeias subiram 0,7% e fecharam em recorde.",
+            "O ouro caiu 1% e voltou para baixo de US$ 4.000 a onça."
+          ]
+        },
+        {
+          "url": "https://asia.nikkei.com/business/markets/currencies/fed-hike-certainty-pushes-asian-currencies-lower-with-yen-down-near-160",
+          "title": "“Certeza” de alta do Fed derruba moedas asiáticas, e iene cai para perto de 160",
+          "summary": "Nikkei Asia: o jornal mostra o efeito da expectativa de alta do Fed sobre as moedas da Ásia.",
+          "bullets": [
+            "A expectativa de alta de juros do Fed pressionou as moedas asiáticas.",
+            "O iene caiu para perto de 160 por dólar."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "ICE, dona da NYSE, e OKX abrem ações tokenizadas em 23 de novembro",
+      "summary": "A plataforma terá mais de 70 ativos, enquanto 67 empresas, entre elas Apple, Amazon e Tesla, se opuseram à tokenização de suas ações.",
+      "bullets": [
+        "Em 11 de novembro de 2026, a OKXICE, joint venture meio a meio da ICE e da corretora de criptomoedas OKX, marcou para 23 de novembro, às 9h (horário de Nova York), a abertura de sua plataforma.",
+        "Mais de 70 ativos estão confirmados, entre eles Coinbase, Circle, Robinhood e Strategy, além de 59 ETFs da Direxion, mas nem todos serão negociados no primeiro dia.",
+        "Aviso da própria empresa, de 5 de novembro, lista 67 emissores que se opuseram à tokenização, entre eles Apple, Amazon, Tesla, Meta e Goldman Sachs.",
+        "A plataforma opera sob a “isenção de inovação” de cinco anos da SEC, de 17 de setembro, e é a segunda a estrear sob essa regra.",
+        "A negociação será 24 horas por dia, em pools da Uniswap v4 na rede X Layer, com a Securitize tokenizando as ações na proporção de uma para uma.",
+        "A ICE investiu na OKX com avaliação de US$ 25 bilhões em março, e as duas criaram a joint venture em junho."
+      ],
+      "body": "A plataforma permite negociar versões digitais de ações americanas (tokens registrados em blockchain) sem que a operadora precise se registrar como bolsa tradicional, graças à isenção criada pela SEC, a comissão de valores mobiliários dos EUA, em setembro. Cada token corresponde a uma ação real, e quem o mantém em carteira própria conserva dividendos, direito a voto e participação em eventos corporativos.\n\nA abertura enfrenta resistência de parte das empresas listadas: 67 emissores, incluindo algumas das maiores companhias americanas, avisaram que se opõem a ter suas ações tokenizadas. A OKXICE é copresidida pelo ex-governador de Nova York Andrew Cuomo e por Trabue Bland.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://finance.yahoo.com/markets/crypto/articles/okxice-tokenized-stock-venue-open-130000166.html",
+          "title": "Plataforma de ações tokenizadas da OKXICE abre em 23 de novembro com Circle, Coinbase e Robinhood entre mais de 70 ativos",
+          "summary": "Unchained (via Yahoo Finance): o site traz a data de abertura, a lista de objeções e a origem da joint venture.",
+          "bullets": [
+            "A plataforma abre às 9h (horário de Nova York) de 23 de novembro.",
+            "O aviso de 5 de novembro lista 67 emissores contrários, como Apple, Amazon, Tesla, Meta e Goldman Sachs.",
+            "Andrew Cuomo copreside a OKXICE com Trabue Bland.",
+            "A ICE investiu na OKX com avaliação de US$ 25 bilhões em março."
+          ]
+        },
+        {
+          "url": "https://www.theblock.co/news/regulation/2026-11-11-okxice-sets-nov-23-launch-for-tokenized-securities-venue-under-sec-innovation-exemption-437342",
+          "title": "OKXICE marca para 23 de novembro lançamento de plataforma de valores tokenizados sob isenção de inovação da SEC",
+          "summary": "The Block: o site explica o enquadramento regulatório que permite a operação.",
+          "bullets": [
+            "A plataforma opera sob a isenção de inovação de cinco anos da SEC, criada em setembro.",
+            "A isenção dispensa o registro como bolsa tradicional.",
+            "O objetivo declarado da regra é levar o mercado de capitais dos EUA para blockchain."
+          ]
+        },
+        {
+          "url": "https://bitcoinmagazine.com/news/ice-okx-nov-23-tokenized-stock-launch",
+          "title": "ICE e OKX marcam estreia de ações tokenizadas para 23 de novembro após 67 empresas recusarem participação",
+          "summary": "Bitcoin Magazine: o site detalha os ativos listados e a mecânica de negociação.",
+          "bullets": [
+            "Mais de 70 ativos, incluindo Better.com, BitGo, Circle, Coinbase, Robinhood, Securitize e Strategy, além de 59 ETFs da Direxion.",
+            "A negociação ocorre em pools da Uniswap v4 na rede X Layer.",
+            "Cada token é lastreado uma para uma por uma ação americana.",
+            "Os detentores mantêm dividendos, voto e eventos corporativos."
+          ]
+        },
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-11-11/crypto-s-bid-to-shake-up-stock-trading-revs-up-despite-backlash",
+          "title": "Ofensiva das criptomoedas para mudar a negociação de ações acelera apesar da reação contrária",
+          "summary": "Bloomberg: a agência enquadra o lançamento como avanço do setor cripto sobre o mercado de ações, apesar da resistência.",
+          "bullets": [
+            "A OKXICE marcou a abertura da plataforma para 23 de novembro.",
+            "O avanço ocorre apesar da oposição de emissores à tokenização de suas ações."
+          ]
+        }
+      ]
+    },
+    {
+      "headline": "Telescópio Euclid divulga dados de mais de 900 milhões de galáxias",
+      "summary": "A primeira grande liberação de dados da missão europeia cobre 14% da área que será mapeada para estudar a energia e a matéria escuras.",
+      "bullets": [
+        "Em 12 de novembro de 2026, a ESA divulgou o DR1-Foundation, primeiro grande lote de dados do telescópio espacial Euclid.",
+        "O lote reúne luz de mais de 1 bilhão de objetos numa área do céu equivalente a 9.500 luas cheias.",
+        "Inclui mais de 900 milhões de galáxias, cerca de 15 mil candidatas a lentes gravitacionais fortes, mais de 60 milhões de candidatos a quasar e espectros de mais de 160 milhões de fontes.",
+        "São cerca de 13 meses de observação, 1.900 graus quadrados e 1,7 milhão de GB de dados.",
+        "A missão de 1,4 bilhão de euros investiga a energia escura e a matéria escura, que somariam cerca de 70% e 25% do universo.",
+        "A versão completa do Data Release 1 está prevista para meados de 2027."
+      ],
+      "body": "O Euclid, telescópio espacial da Agência Espacial Europeia (ESA), foi construído para mapear em três dimensões a distribuição de galáxias e, a partir dela, medir os efeitos da energia escura e da matéria escura, componentes que dominam o universo mas não são observados diretamente. O DR1-Foundation é a base desse mapa: ainda cobre só cerca de 14% da área que a missão vai observar.\n\nA diretora de ciência da ESA, Carole Mundell, chamou o lote de “o maior levantamento espacial do tipo”. O Data Release 1 completo, previsto para meados de 2027, acrescentará medições de lentes gravitacionais fracas e de aglomerados de galáxias.",
+      "is_breaking": false,
+      "sensitivity": "normal",
+      "sources": [
+        {
+          "url": "https://www.esa.int/articles/about-us/directorates/science/euclid/euclid-lays-the-foundation-for-its-best-ever-3d-map-of-the-universe",
+          "title": "Euclid lança as bases do melhor mapa 3D do universo já feito",
+          "summary": "ESA: o comunicado oficial lista o conteúdo do primeiro grande lote de dados da missão.",
+          "bullets": [
+            "O lote capta a luz de mais de 1 bilhão de objetos numa área de 9.500 luas cheias.",
+            "Inclui mais de 900 milhões de galáxias e cerca de 15 mil candidatas a lentes gravitacionais fortes.",
+            "Traz mais de 60 milhões de candidatos a quasar e espectros de mais de 160 milhões de fontes."
+          ]
+        },
+        {
+          "url": "https://physicsworld.com/a/esas-euclid-mission-unveils-treasure-trove-of-cosmic-data/",
+          "title": "Missão Euclid, da ESA, revela tesouro de dados cósmicos",
+          "summary": "Physics World: a revista detalha o volume do lote e o calendário das próximas liberações.",
+          "bullets": [
+            "O DR1-Foundation tem 1,7 milhão de GB e cerca de 13 meses de observações.",
+            "Cobre cerca de 14% da área total que o Euclid vai observar.",
+            "Carole Mundell chamou o lote de o maior levantamento espacial do tipo.",
+            "A primeira liberação completa está prevista para meados de 2027."
+          ]
+        },
+        {
+          "url": "https://www.theguardian.com/science/2026/nov/12/european-euclid-mission-reveals-900m-galaxies-secrets-dark-universe",
+          "title": "Levantamento europeu revela 900 milhões de galáxias e, talvez, segredos do “universo escuro”",
+          "summary": "The Guardian: o jornal explica o objetivo científico e o custo da missão.",
+          "bullets": [
+            "O Euclid é uma missão de 1,4 bilhão de euros.",
+            "O objetivo é investigar a natureza da energia escura e da matéria escura.",
+            "As duas somariam cerca de 70% e 25% do universo, respectivamente."
+          ]
+        }
+      ]
+    }
+  ]
+}
