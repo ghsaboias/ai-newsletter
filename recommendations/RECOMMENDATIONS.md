@@ -1671,3 +1671,13 @@ https://www.youtube.com/watch?v=cU9uOHRWDmE
 **Mike Volpi on Why AI Infrastructure Will Outlast the Hype Cycle**
 Mike Volpi (fundador da Hanabi Capital e ex-executivo responsável por estratégia e M&A da Cisco durante a expansão da internet nos anos 1990/2000) discute os paralelos e diferenças entre a infraestrutura de telecomunicações do final dos anos 1990 e a construção da infraestrutura de inteligência artificial atual. Participam da conversa Raghu Raghuram (ex-CEO da VMware) e Guido Appenzeller, ambos sócios da Andreessen Horowitz (a16z)
 https://www.youtube.com/watch?v=LI3lxzHfRrU
+
+## 2026-11-16
+
+**Jensen OUT as Nvidia CEO: "Spy" Scandal, Export Restrictions, Market Impact**
+O episódio reúne os investidores Jason Calacanis, David Sacks, Chamath Palihapitiya e David Friedberg para analisar os desdobramentos da renúncia de Jensen Huang do cargo de CEO da Nvidia após 33 anos, as alegações de espionagem e violação de controles de exportação envolvendo a empresa de Singapura Megaspeed, os impactos macroeconômicos e geopolíticos no setor de semicondutores e os números do prospecto do IPO da Anthropic
+https://www.youtube.com/watch?v=Uv2w4VTU-iQ
+
+**Recursive self-improvement has started**
+Dwarkesh Patel, apresentador do podcast de tecnologia e inteligência artificial Dwarkesh Podcast, detalha sua revisão de perspectiva sobre o horizonte temporal para a superinteligência e o autoaperfeiçoamento recursivo (RSI, na sigla em inglês). Anteriormente projetando a chegada da superinteligência para a próxima década, Patel atualizou seu cenário mediano para 2028 (com chances plausíveis já em 2027 e cerca de 25% de probabilidade de ocorrer após 2032), impulsionado pela velocidade de avanço da IA em domínios verificáveis e sua aplicação direta à própria pesquisa de aprendizado de máquina
+https://www.youtube.com/watch?v=1NHPDzpfR6Y
