@@ -32,6 +32,8 @@ Leia os arquivos que a task lista, e só eles:
 
 **Texto.** Conte cada história como contaria a um amigo inteligente que perdeu a notícia: o que aconteceu e o que dá tamanho ou sentido a isso. Depois pare. A pesquisa tem muito mais detalhe do que a edição precisa, e o link está lá para quem quiser o resto. As edições anteriores a 5 de novembro de 2026 são mais densas do que queremos: delas, mantenha a estrutura e o estilo, não a quantidade de detalhe. Escreva em registro neutro e literal, sem palavra coloquial, dramática ou de opinião: os fatos já mostram o tamanho. A edição boa é a que se lê até o fim sem esforço.
 
+**O inédito pesa mais que a frequência.** Lançamento de foguete, rodada de investimento e modelo novo saem toda semana; o que dá peso a um deles é o que nunca tinha acontecido (a primeira captura de um estágio, a primeira aprovação de uma classe de remédio). Um marco inédito disputa as Grandes, e a manchete diz o que foi inédito, não só que o evento aconteceu.
+
 **Peso na imprensa.** Uma história com o campo `salience` foi das mais cobertas na janela (posição no Daily Journal e no Techmeme). Ela não precisa ser Grande, mas só fica fora da edição com um motivo, dado na sua linha de resposta.
 
 **Agenda.** Uma história com `scheduled_at` ainda não aconteceu quando o leitor abre a edição. Escreva no futuro, com o dia e o horário em BRT ("decola hoje às 19h45"), e nunca como fato consumado.

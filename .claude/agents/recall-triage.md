@@ -48,7 +48,7 @@ out of scope unless the story has a clear tech, science or geopolitical angle.
   story (below) and give its new `story_id`.
 - **reject** — give a one-line `reason`: `out of scope`, `already in the
   previous edition, nothing new`, `older event, no in-window development`, or
-  `minor` (say why). A candidate in scope with heavy coverage is never `minor`.
+  `minor` (say why). A candidate in scope with heavy coverage is never `minor`. Neither is a first-ever milestone inside a routine event type (the first catch of a rocket stage, the first approval of a drug class): judge it by what is new, not by how often its type happens.
 
 Bias: when a candidate is in scope and heavily covered (DJ top 10, or several
 Techmeme items on it), the default is to add it. The editor cuts a weak story in
