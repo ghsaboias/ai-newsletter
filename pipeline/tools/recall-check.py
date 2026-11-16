@@ -171,10 +171,13 @@ def cmd_merge(a):
             c = cands.get(k)
             if not c:
                 continue
+            # several candidates can map to one story: keep the strongest signal
             if c["source"] == "dj":
-                sal["dj_rank"], sal["dj_articles"] = c["rank"], c["articles_in_window"]
+                if c["rank"] < sal.get("dj_rank", 10**6):
+                    sal["dj_rank"] = c["rank"]
+                sal["dj_articles"] = max(sal.get("dj_articles", 0), c["articles_in_window"])
             else:
-                sal["techmeme_rank"] = c["rank"]
+                sal["techmeme_rank"] = min(sal.get("techmeme_rank", 10**6), c["rank"])
         return sal
 
     by_id = {s["id"]: s for s in research["stories"]}
