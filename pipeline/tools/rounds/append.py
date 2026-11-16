@@ -1,10 +1,18 @@
-"""Put the Funding Rounds section at the end of a pulled Substack mirror (substack-body.json).
-Idempotent: an existing section (rule + heading + its centered paragraphs) is replaced in place.
+"""Put the Funding Rounds section at the end of a pulled Substack mirror (substack-body.json),
+and announce it as the last line of the paywall teaser ("Abaixo, apenas para assinantes:").
+Idempotent: an existing section (rule + heading + its centered paragraphs) is replaced in place,
+and the teaser line is never added twice. On an ad day the insertion has replaced the teaser,
+so there is no block to add the line to.
 usage: python3 append.py <substack-body.json> <section.json>"""
 import json
 import sys
 
 HEADING = 'Funding Rounds da Semana'
+TEASER_PREFIX = 'Abaixo, apenas para assinantes'
+TEASER_LINE = {'type': 'paragraph', 'attrs': {'textAlign': None}, 'content': [
+    {'type': 'text', 'marks': [{'type': 'strong'}], 'text': f'{HEADING}:'},
+    {'type': 'text', 'text': ' todos os investimentos em startups no mundo.'},
+]}
 
 
 def txt(n):
@@ -31,6 +39,17 @@ if heads:
 else:
     content.extend(section)
     print('appended at the end')
+
+teasers = [q for n in content if n['type'] == 'dynamicContent'
+           for m in n.get('content', []) for q in m.get('content', [])
+           if q['type'] == 'blockquote' and txt(q).strip().startswith(TEASER_PREFIX)]
+if teasers:
+    lines = teasers[0]['content']
+    lines[:] = [p for p in lines if not txt(p).strip().startswith(HEADING)] + [TEASER_LINE]
+    print('teaser: rounds line is the last one')
+else:
+    print('teaser: none in the draft (ad day?), no rounds line')
+
 mirror['body'] = json.dumps(doc, ensure_ascii=False) if isinstance(body, str) else doc
 json.dump(mirror, open(mirror_path, 'w'), ensure_ascii=False, indent=1)
 print(f'{len(content)} nodes, section {len(section)} nodes')

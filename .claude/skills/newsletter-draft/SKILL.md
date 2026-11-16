@@ -542,7 +542,8 @@ insertion, the ad replaces the teaser in the free-only block.
 
 **4d. Rounds (Mondays only).** Wait for the Step 1.5 reviewers, then run the
 `newsletter-rounds` **Fase 2**: consolidate `rounds/final.json`, build, append the
-section after the recs, verify on the server. Skip on other days.
+section after the recs and its line at the end of the paywall teaser, verify on
+the server. Skip on other days.
 
 ## Step 5: Final roll-up
 

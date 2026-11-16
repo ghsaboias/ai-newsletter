@@ -23,6 +23,10 @@ Valuation; resumo; link "Notícia no Daily Journal" e a data do anúncio. Fica a
 do paywall que já existe (o Substack aceita um só). O `build.mjs` reproduz nó a nó a
 seção publicada em 2026-10-19.
 
+O teaser do paywall ganha uma última linha, "**Funding Rounds da Semana:** todos os
+investimentos em startups no mundo.", posta pelo mesmo `append.py`. Em dia de
+inserção o anúncio ocupa o lugar do teaser e a linha não entra.
+
 A fonte é a tabela `deals` do DJ, a mesma que alimenta o post do job no Slack, e a
 janela é a dele: os 7 dias antes de segunda 12:00 UTC. Por isso os itens e a
 numeração batem com a thread do Slack que o Gui vê às 9h.
@@ -145,9 +149,10 @@ cd "$REPO" && python3 pipeline/tools/substack_mirror.py pull --dir "$D" \
   && python3 pipeline/tools/substack_mirror.py pull --dir "$D" --file "$R/after.json"
 ```
 
-Em `after.json`: a seção existe uma vez, há um só nó `paywall`, e a contagem de
+Em `after.json`: a seção existe uma vez, a linha das rodadas fecha o teaser (se há
+teaser), há um só nó `paywall`, e a contagem de
 `captionedImage` é a mesma de antes do push. O `append.py` troca a seção se ela já
-existe, então rodar de novo não duplica.
+existe e não repete a linha do teaser, então rodar de novo não duplica.
 
 Sem `.substack-draft-id` (rodada sozinha num dia sem draft) → pare depois do
 `build.mjs` e entregue o `preview.md`.
