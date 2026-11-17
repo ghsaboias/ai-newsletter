@@ -1681,3 +1681,13 @@ https://www.youtube.com/watch?v=Uv2w4VTU-iQ
 **Recursive self-improvement has started**
 Dwarkesh Patel, apresentador do podcast de tecnologia e inteligência artificial Dwarkesh Podcast, detalha sua revisão de perspectiva sobre o horizonte temporal para a superinteligência e o autoaperfeiçoamento recursivo (RSI, na sigla em inglês). Anteriormente projetando a chegada da superinteligência para a próxima década, Patel atualizou seu cenário mediano para 2028 (com chances plausíveis já em 2027 e cerca de 25% de probabilidade de ocorrer após 2032), impulsionado pela velocidade de avanço da IA em domínios verificáveis e sua aplicação direta à própria pesquisa de aprendizado de máquina
 https://www.youtube.com/watch?v=1NHPDzpfR6Y
+
+## 2026-11-17
+
+**What It Means to Be a “Real” Entrepreneur | Michael Rubin, Fanatics**
+Michael Rubin é fundador e CEO da Fanatics, plataforma digital de esportes avaliada em dezenas de bilhões de dólares, com faturamento anual de US$ 14 bilhões e mais de 22 mil funcionários. Em conversa com David Senra (apresentador do podcast Founders), Rubin detalha sua formação como empreendedor desde a infância na Filadélfia, os momentos em que esteve a horas da insolvência financeira, a tese que transformou a indústria de colecionáveis esportivos em um negócio de US$ 5,5 bilhões anuais e os princípios que guiam suas parcerias com ligas esportivas, atletas e investidores
+https://www.youtube.com/watch?v=bkEXqYGa3oo
+
+**GLP-1s Are a Bigger Business Than AI**
+Zach Reitano é cofundador e CEO da Ro, plataforma de telessaúde e distribuição de tratamentos de saúde direta ao consumidor. Em conversa com Patrick O'Shaughnessy (CEO da Positive Sum), Reitano detalha como a Ro passou de um crescimento estagnado de 9% em 2021 para um run rate de mais de US$ 3 bilhões com equipe reduzida, analisa a revolução dos agonistas de GLP-1 na medicina preventiva, defende a primazia dos desfechos clínicos sobre a proteção de estruturas tradicionais de emprego e descreve a estratégia de marketing voltada a desestigmatizar condições crônicas
+https://www.youtube.com/watch?v=aOSuI2qPeB8
