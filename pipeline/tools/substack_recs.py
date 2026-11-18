@@ -142,6 +142,14 @@ def main():
         if not draft_id:
             sys.exit("need --id, --dir, or --duplicate-from")
 
+    # House style: no em dash in the caption (Gui swapped them by hand on 2026-11-18).
+    # The skill turns each into a comma or parentheses; this keeps a miss off the draft.
+    dashed = [it["title"] for it in items
+              if "—" in (it.get("description_pt") or it.get("blurb_pt") or "")]
+    if dashed:
+        sys.exit("em dash (—) left in description_pt of: " + "; ".join(dashed)
+                 + " — replace with a comma or parentheses (newsletter-recs Step 4)")
+
     live = get_draft(host, sid, draft_id)
     body = live["draft_body"]
     doc = json.loads(body) if isinstance(body, str) else body

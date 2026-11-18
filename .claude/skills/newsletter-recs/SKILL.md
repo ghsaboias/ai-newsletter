@@ -88,7 +88,12 @@ segundos** (`start_seconds`). Sem capítulos claros → `null`. Ex.:
 `00:00 Intro / 01:00 Why Nobody...` → `start_seconds: 60`.
 
 A descrição **não** se escreve — é o `description_pt` do candidato (1º parágrafo do DJ),
-usado como está.
+usado como está, com uma exceção: **nenhum travessão (—)**. Troque cada um por vírgula
+(o caso comum: "Ali Ghodsi, CEO da Databricks — empresa … ao ano —, discute" →
+"…Databricks, empresa … ao ano, discute"; "Nesta análise — apresentada a título
+pessoal —, Christiano" → "Nesta análise, apresentada a título pessoal, Christiano") ou,
+quando o trecho é um aposto curto que explica um termo, por parênteses. O
+`substack_recs.py` recusa o push se sobrar um travessão.
 
 ## Step 5: Gravar a seleção
 
@@ -99,14 +104,14 @@ Grave `<OUTDIR>/recs.json`:
   "date": "<DATE>",
   "section_title": "Recomendações de hoje:",
   "items": [
-    {"title": "<título original do vídeo>", "description_pt": "<1º parágrafo do DJ, verbatim>",
+    {"title": "<título original do vídeo>", "description_pt": "<1º parágrafo do DJ, verbatim, sem travessão>",
      "youtube_id": "...", "start_seconds": 60, "channel": "...", "published_at": "...",
      "url": "https://www.youtube.com/watch?v=..."}
   ]
 }
 ```
 
-`title` = título original do vídeo (não traduza). `description_pt` = copie do candidato.
+`title` = título original do vídeo (não traduza). `description_pt` = copie do candidato, trocando travessões (Step 4).
 
 Preview opcional do HTML (mesmo formato do Substack, pra conferência):
 
@@ -139,7 +144,7 @@ Cria um draft `[TESTE] …` idêntico, troca as recs pela seleção nova, e impr
 ## Regras de comportamento
 
 - **Autoridade + recência mandam**, nessa ordem. Figura importante da tech > painel genérico.
-- **Descrição = DJ (1º parágrafo), verbatim.** Não reescreva.
+- **Descrição = DJ (1º parágrafo), verbatim.** Não reescreva; só troque travessão por vírgula ou parênteses.
 - **Título original.** Não traduza.
 - **Já-recomendado nunca volta** — inclusive recs de drafts ainda não publicados, que o
   sync não enxerga (ver Step 3).

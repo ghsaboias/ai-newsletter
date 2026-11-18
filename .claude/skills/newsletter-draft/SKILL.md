@@ -385,6 +385,11 @@ sector). Decide per entity:
   top-similarity candidate is sometimes a generic attractor with `shared_entities: 0`.
 - **Prefer** a matching candidate with `has_image: true` (that's the payoff), but **never**
   cluster a non-matching story just to grab an image.
+- **Two events in one entity** (the headline joins two facts, often with ";", or two
+  companies doing different things): cluster only into a candidate that covers **both**.
+  Clustering keeps the existing page's text, and every source of the entity links to it,
+  so the event the candidate lacks gets a link to a page that never mentions it.
+  One event only → create.
 - **When in doubt, create.** A wrong cluster points the edition's link at the wrong story;
   that's worse than an extra homepage card.
 
