@@ -1691,3 +1691,13 @@ https://www.youtube.com/watch?v=bkEXqYGa3oo
 **GLP-1s Are a Bigger Business Than AI**
 Zach Reitano é cofundador e CEO da Ro, plataforma de telessaúde e distribuição de tratamentos de saúde direta ao consumidor. Em conversa com Patrick O'Shaughnessy (CEO da Positive Sum), Reitano detalha como a Ro passou de um crescimento estagnado de 9% em 2021 para um run rate de mais de US$ 3 bilhões com equipe reduzida, analisa a revolução dos agonistas de GLP-1 na medicina preventiva, defende a primazia dos desfechos clínicos sobre a proteção de estruturas tradicionais de emprego e descreve a estratégia de marketing voltada a desestigmatizar condições crônicas
 https://www.youtube.com/watch?v=aOSuI2qPeB8
+
+## 2026-11-18
+
+**AIs might overthrow the government within a year – Paul Christiano**
+Paul Christiano é diretor do Alignment Research Center (ARC), membro do conselho da OpenAI, ex-diretor de segurança de IA no US AI Safety Institute e ex-líder da equipe de alinhamento da OpenAI, onde foi um dos criadores do aprendizado por reforço com feedback humano (RLHF). Nesta análise, apresentada a título pessoal, sem representar o conselho da OpenAI, Christiano argumenta que, na trajetória atual de desenvolvimento sem desaceleração, existe cerca de 1/3 de probabilidade de a humanidade criar uma superinteligência capaz de derrubar governos dentro do prazo de um ano, e situa o risco de perda total de controle ou catástrofe humana em torno de 10% nos próximos 6 a 12 meses
+https://www.youtube.com/watch?v=SyHM5hNPAEo
+
+**Databricks CEO: AGI Is Already Here, Why Companies Are Behind, and the Superintelligence Debate**
+Ali Ghodsi, CEO e cofundador da Databricks, empresa privada de software de dados e inteligência artificial avaliada em dezenas de bilhões de dólares, com receita run rate de US$ 7 bilhões e crescimento de 70% a 80% ao ano, discute a evolução da IA corporativa, o mito do aprimoramento recursivo acelerado (RSI), a governança interna por meio de agentes e os motivos estratégicos para postergar a abertura de capital (IPO)
+https://www.youtube.com/watch?v=1bR0gtecoHU
