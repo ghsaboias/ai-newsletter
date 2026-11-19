@@ -67,17 +67,12 @@ replaced=0
 skipped=0
 
 while IFS=$'\t' read -r source_url dj_url; do
-  # Use | as sed delimiter since URLs don't contain it
-  # Escape & in URLs (special in sed replacement)
-  escaped_source=$(printf '%s' "$source_url" | sed 's/[&]/\\&/g')
-  escaped_dj=$(printf '%s' "$dj_url" | sed 's/[&]/\\&/g')
-
   if grep -qF "$source_url" "$OUT_FILE"; then
-    if [[ "$(uname)" == "Darwin" ]]; then
-      sed -i '' "s|${escaped_source}|${escaped_dj}|g" "$OUT_FILE"
-    else
-      sed -i "s|${escaped_source}|${escaped_dj}|g" "$OUT_FILE"
-    fi
+    # Literal replace, not sed: a URL is not a regex. sed read the `*` in
+    # Folha's redir.folha.com.br/.../rss091/*https://... as a quantifier and
+    # left the link unrewritten (2026-11-17).
+    python3 -c 'import sys; p, a, b = sys.argv[1:4]; s = open(p).read(); open(p, "w").write(s.replace(a, b))' \
+      "$OUT_FILE" "$source_url" "$dj_url"
     replaced=$((replaced + 1))
   else
     skipped=$((skipped + 1))
