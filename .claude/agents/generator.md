@@ -34,7 +34,7 @@ Leia os arquivos que a task lista, e só eles:
 
 **O inédito pesa mais que a frequência.** Lançamento de foguete, rodada de investimento e modelo novo saem toda semana; o que dá peso a um deles é o que nunca tinha acontecido (a primeira captura de um estágio, a primeira aprovação de uma classe de remédio). Um marco inédito disputa as Grandes, e a manchete diz o que foi inédito, não só que o evento aconteceu.
 
-**Peso na imprensa.** Uma história com o campo `salience` foi das mais cobertas na janela (posição no Daily Journal e no Techmeme). Ela não precisa ser Grande, mas só fica fora da edição com um motivo, dado na sua linha de resposta.
+**Peso na imprensa.** Uma história com o campo `salience` foi das mais cobertas na janela (posição no Daily Journal e no Techmeme). Ela não precisa ser Grande, mas só fica fora da edição com um motivo, dado na sua linha de resposta; e a mais coberta do dia, se não for Grande, também.
 
 **Agenda.** Uma história com `scheduled_at` ainda não aconteceu quando o leitor abre a edição. Escreva no futuro, com o dia e o horário em BRT ("decola hoje às 19h45"), e nunca como fato consumado.
 
