@@ -1701,3 +1701,13 @@ https://www.youtube.com/watch?v=SyHM5hNPAEo
 **Databricks CEO: AGI Is Already Here, Why Companies Are Behind, and the Superintelligence Debate**
 Ali Ghodsi, CEO e cofundador da Databricks, empresa privada de software de dados e inteligência artificial avaliada em dezenas de bilhões de dólares, com receita run rate de US$ 7 bilhões e crescimento de 70% a 80% ao ano, discute a evolução da IA corporativa, o mito do aprimoramento recursivo acelerado (RSI), a governança interna por meio de agentes e os motivos estratégicos para postergar a abertura de capital (IPO)
 https://www.youtube.com/watch?v=1bR0gtecoHU
+
+## 2026-11-19
+
+**Why Now Is The Golden Age of Building | Brian Armstrong, Coinbase**
+Brian Armstrong, cofundador e CEO da Coinbase, discute com David Senra como reconfigura hábitos mentais por meio da repetição escrita, a transição operacional da Coinbase para um fluxo de trabalho centrado em agentes autônomos de inteligência artificial, a tese em torno das finanças agênticas (agentic finance), o mercado inexplorado do setor bancário tradicional e os próximos saltos tecnológicos em robótica e biotecnologia
+https://www.youtube.com/watch?v=NuoEkfIkKX4
+
+**Robotic Deep-Dive: Beating China, the Race Against Tesla, & New Robotics Timeline With Brett Adcock**
+Brett Adcock, fundador e CEO da Figure AI e da Hark AI (e anteriormente fundador da Archer Aviation e da Vettery), detalha em conversa com Peter Diamandis e Dave Blundin o estágio atual do desenvolvimento de robôs humanoides, a evolução dos modelos de inteligência artificial física, a competição contra a China e a Tesla, e as projeções operacionais e industriais para os próximos anos
+https://www.youtube.com/watch?v=E864U582FVY
