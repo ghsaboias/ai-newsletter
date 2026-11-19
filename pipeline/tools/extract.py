@@ -97,7 +97,7 @@ def _fail(errors):
     return 1
 
 
-def cmd_merge(day_dir: Path, date: str, out_path: Path | None) -> int:
+def cmd_merge(day_dir: Path, date: str, out_path: "Path | None") -> int:
     skel_path = day_dir / "sources-skeleton.json"
     prose_path = day_dir / "sources-prose.json"
     errors = []

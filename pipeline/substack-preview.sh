@@ -62,7 +62,7 @@ if [[ ! -f "$MD_FILE" ]]; then
 fi
 
 # --- Free-edition day: no paywall, free title prefix (config.sh) ---
-if [[ -n "${TOPIC_FREE_WEEKDAY:-}" ]] && [[ "$(date -d "$DATE" +%u)" == "$TOPIC_FREE_WEEKDAY" ]]; then
+if [[ -n "${TOPIC_FREE_WEEKDAY:-}" ]] && [[ "$(date -d "$DATE" +%u 2>/dev/null || date -j -f %F "$DATE" +%u)" == "$TOPIC_FREE_WEEKDAY" ]]; then
   echo "  Free edition ($DATE): no paywall, title prefix ${TOPIC_FREE_TITLE_PREFIX}"
   PAYWALL_META=""
   PAYWALL_AFTER_GRANDES=false
