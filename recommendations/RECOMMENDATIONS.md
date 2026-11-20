@@ -1711,3 +1711,13 @@ https://www.youtube.com/watch?v=NuoEkfIkKX4
 **Robotic Deep-Dive: Beating China, the Race Against Tesla, & New Robotics Timeline With Brett Adcock**
 Brett Adcock, fundador e CEO da Figure AI e da Hark AI (e anteriormente fundador da Archer Aviation e da Vettery), detalha em conversa com Peter Diamandis e Dave Blundin o estágio atual do desenvolvimento de robôs humanoides, a evolução dos modelos de inteligência artificial física, a competição contra a China e a Tesla, e as projeções operacionais e industriais para os próximos anos
 https://www.youtube.com/watch?v=E864U582FVY
+
+## 2026-11-20
+
+**Why Nick Bostrom Thinks Superintelligence Could End Aging**
+O filósofo Nick Bostrom, autor de Superintelligence e Deep Utopia e pesquisador da Macrostrategy Research Initiative, discute os dilemas estratégicos, temporais e de governança no desenvolvimento de inteligência artificial avançada em conversa com Eddy Lazzarin e Elena Burger, do fundo de capital de risco Andreessen Horowitz (a16z). Bostrom analisa por que o alinhamento se torna mais complexo conforme os modelos desenvolvem consciência situacional, defende uma estratégia de modulação de ritmo (pacing the frontier) em vez de pausas permanentes, e apresenta os cálculos de seu estudo sobre o tempo ideal de desenvolvimento da superinteligência em função das mortes evitáveis por envelhecimento
+https://www.youtube.com/watch?v=gDW9An30_c0
+
+**The Boomerang CEO(s): With MongoDB’s Dev Ittycheria**
+Dev Ittycheria liderou a MongoDB por 11 anos, escalando a receita de cerca de US$ 35 milhões para mais de US$ 2,3 bilhões, antes de se aposentar. Dez meses depois, após a renúncia de seu sucessor, retornou ao cargo de CEO. Brian Halligan, cofundador da HubSpot e sócio da Sequoia Capital, conduz a conversa e traça paralelos diretos com sua própria decisão de retornar à posição de CEO da HubSpot
+https://www.youtube.com/watch?v=uMO3zS5FLoc
