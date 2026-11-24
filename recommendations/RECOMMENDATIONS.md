@@ -1721,3 +1721,13 @@ https://www.youtube.com/watch?v=gDW9An30_c0
 **The Boomerang CEO(s): With MongoDB’s Dev Ittycheria**
 Dev Ittycheria liderou a MongoDB por 11 anos, escalando a receita de cerca de US$ 35 milhões para mais de US$ 2,3 bilhões, antes de se aposentar. Dez meses depois, após a renúncia de seu sucessor, retornou ao cargo de CEO. Brian Halligan, cofundador da HubSpot e sócio da Sequoia Capital, conduz a conversa e traça paralelos diretos com sua própria decisão de retornar à posição de CEO da HubSpot
 https://www.youtube.com/watch?v=uMO3zS5FLoc
+
+## 2026-11-23
+
+**Why Founders Like Jensen Huang Are Irreplaceable | Tobi Lütke, Shopify**
+Em conversa com David Senra, Tobi Lütke, fundador e CEO da Shopify, discute por que fundadores de tecnologia são forças insubstituíveis e impossíveis de suceder por gestores convencionais. Ele detalha a transformação profunda que a inteligência artificial impõe à engenharia de software, decretando o fim da profissão de programador tradicional nascida na Web 2.0, explica os conceitos de verificação formal de código e fábricas agênticas, e defende o papel do empreendedorismo e dos livres mercados na geração de prosperidade material
+https://www.youtube.com/watch?v=w0oOxs0WKNk
+
+**Why AI Has DHH Working 16-Hour Days**
+David Heinemeier Hansson (DHH), criador do Ruby on Rails e cofundador da 37signals (Basecamp, HEY), conversa com os sócios-gerais da Andreessen Horowitz (a16z), Martin Casado e Anish Acharya, sobre sua nova distribuição Linux, Omarchy, a viabilidade de quebrar o duopólio de sistemas operacionais na era dos agentes de inteligência artificial, o papel do refinamento e do gosto quando o código se torna abundante, e o renascimento da cultura hacker dos anos 1990
+https://www.youtube.com/watch?v=TtOoLanFzGw
