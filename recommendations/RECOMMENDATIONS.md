@@ -1731,3 +1731,9 @@ https://www.youtube.com/watch?v=w0oOxs0WKNk
 **Why AI Has DHH Working 16-Hour Days**
 David Heinemeier Hansson (DHH), criador do Ruby on Rails e cofundador da 37signals (Basecamp, HEY), conversa com os sócios-gerais da Andreessen Horowitz (a16z), Martin Casado e Anish Acharya, sobre sua nova distribuição Linux, Omarchy, a viabilidade de quebrar o duopólio de sistemas operacionais na era dos agentes de inteligência artificial, o papel do refinamento e do gosto quando o código se torna abundante, e o renascimento da cultura hacker dos anos 1990
 https://www.youtube.com/watch?v=TtOoLanFzGw
+
+## 2026-11-24
+
+**Steve Jurvetson: IPO-ing the Singularity, SpaceX Bet VCs Rejected, & Voyager’s 1 Light Day | EP #314**
+O investidor de risco Steve Jurvetson, cofundador da Future Ventures e conselheiro da SpaceX e da Tesla, detalha bastidores do financiamento de empresas de tecnologia de ponta, a economia das rodadas de capital e IPOs na fronteira da inteligência artificial, a reconfiguração da infraestrutura física de computação e telecomunicações por Elon Musk e as perspectivas para a exploração espacial profunda. Participam da conversa Peter Diamandis, Dave Blundin, Salim Ismail, Dr. Alexander Wissner-Gross e Emad Mostaque
+https://www.youtube.com/watch?v=_7FICfOHTV8
