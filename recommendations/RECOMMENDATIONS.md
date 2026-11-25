@@ -1737,3 +1737,13 @@ https://www.youtube.com/watch?v=TtOoLanFzGw
 **Steve Jurvetson: IPO-ing the Singularity, SpaceX Bet VCs Rejected, & Voyager’s 1 Light Day | EP #314**
 O investidor de risco Steve Jurvetson, cofundador da Future Ventures e conselheiro da SpaceX e da Tesla, detalha bastidores do financiamento de empresas de tecnologia de ponta, a economia das rodadas de capital e IPOs na fronteira da inteligência artificial, a reconfiguração da infraestrutura física de computação e telecomunicações por Elon Musk e as perspectivas para a exploração espacial profunda. Participam da conversa Peter Diamandis, Dave Blundin, Salim Ismail, Dr. Alexander Wissner-Gross e Emad Mostaque
 https://www.youtube.com/watch?v=_7FICfOHTV8
+
+## 2026-11-25
+
+**OpenAI’s Noam Brown: Why Game Theory Didn’t Lead to General Intelligence (Live at No Limit Finals)**
+Noam Brown, pesquisador da OpenAI e desenvolvedor de sistemas pioneiros de inteligência artificial para jogos como Libratus e Pluribus (pôquer), Cicero (Diplomacy) e a linha de modelos de raciocínio o1, conversou com Alfred Lin, sócio da Sequoia Capital, durante as finais do torneio de programação de pokerbots No Limit promovido pela gestora
+https://www.youtube.com/watch?v=tRaFbDFBl_A
+
+**This Is the Dark Age for Cybersecurity**
+Scott Wu, cofundador e CEO da Cognition, criadora do engenheiro de software autônomo Devin, analisa a evolução do produto, a dinâmica de mercado de inteligência artificial, segurança cibernética, restrições de infraestrutura de computação e a transformação interna das equipes de engenharia de software em conversa com Patrick O'Shaughnessy, CEO da Positive Sum
+https://www.youtube.com/watch?v=efoZj_7oVJs
