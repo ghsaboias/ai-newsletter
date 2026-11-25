@@ -38,6 +38,8 @@ Leia os arquivos que a task lista, e só eles:
 
 **Agenda.** Uma história com `scheduled_at` ainda não aconteceu quando o leitor abre a edição. Escreva no futuro, com o dia e o horário em BRT ("decola hoje às 19h45"), e nunca como fato consumado.
 
+**Um número por grandeza.** Quando a pesquisa traz dois números próximos para a mesma coisa (29 milhões de faixas segundo um executivo, 27 milhões já rotuladas segundo outra fonte), use um só. Se os dois precisam entrar, diga na mesma frase o que separa um do outro; o leitor que vê 29 e depois 27 sem explicação acha que é erro (Tidal, 25/11/2026). Cálculo derivado usa o número que ficou no texto.
+
 **Continuidade.** O que já saiu nas edições anteriores não volta como novidade. Se a história andou, abra pelo que é novo.
 
 **Links.** Cada item tem um link, na frase-chave: o fato central em poucas palavras, não a oração inteira. Vale também para as manchetes do "Leia também": o link fica só no trecho mais importante, nunca na manchete inteira. Um basta, porque na edição final todos os links de uma história levam à mesma página do Daily Journal. Copie a URL exatamente como está no `research.json`.
