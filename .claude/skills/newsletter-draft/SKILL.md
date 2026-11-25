@@ -573,6 +573,16 @@ echo "  Duration:   $(( ($(date +%s) - START) / 60 ))m $(( ($(date +%s) - START)
 ```
 
 Then list what Step 3d fixed, one line per finding (what was flagged → what changed).
+
+Then the day's story list, so Gui reviews the selection next to the draft: what
+is in the edition by tier, what the research found and the writer left out, and
+the window's most-covered stories the recall check rejected, each with its
+coverage and reason. Paste its output as printed, without summarizing it (the
+full file, with everything the researchers dropped, stays in `stories.md`):
+
+```bash
+python3 "$REPO/pipeline/tools/story-list.py" <DATE>
+```
 On Mondays, add the `newsletter-rounds` Saída block (drops, fixes, decisions for Gui).
 
 Then print the hand-off (point at the **Substack draft** — the review happens
@@ -591,6 +601,18 @@ If a model was created today, show its banner PNG and copy too (see
 
 Do **not** re-print each step's output — research's skill and the agents already
 summarized. The orchestrator adds only the gate lines and this roll-up.
+
+## After the hand-off: swapping a story in
+
+When Gui replies that a left-out story from the list should go in (in place of
+another, or added), write it into the **live draft**, never by re-pushing:
+`substack_mirror.py pull --dir "$D"` → edit `substack-body.json` → `push --dir
+"$D"`. Write it like the generator would: house style, facts only from the
+story's `research.json` entry (for a recall candidate, its `recall-candidates.json`
+entry), the link on the key phrase. The link is the story's DJ page: for a
+researched story, its sources' entry in `links.json`; for a DJ candidate, its
+`dj_url`; otherwise the best source URL. Remove what Gui said it replaces, then
+pull again to confirm the change landed.
 
 ## Behavioral rules
 
