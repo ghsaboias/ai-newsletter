@@ -2,10 +2,10 @@
 name: newsletter-insertion
 description: >-
   Coloca a inserção de parceiro (anúncio) do dia no draft do Substack da newsletter
-  de AI/Tech. Lê o board Publicidade (GitHub Project #5) atrás de cards "📧 Newsletter"
-  com Data no ar = hoje; para cada um, acha o modelo do Cliente (post template do
-  Substack, via newsletters/ai/insertions/registry.json) ou, se não houver, manda o
-  agente insertion-designer criar a partir do card; depois insere no bloco
+  de AI/Tech. Lê as entregas do CRM comercial (dj-comercial, tabela deal_deliveries)
+  de formato newsletter com data = hoje; para cada uma, acha o modelo do Cliente (post
+  template do Substack, via newsletters/ai/insertions/registry.json) ou, se não houver,
+  manda o agente insertion-designer criar a partir da entrega; depois insere no bloco
   só-para-não-assinantes+free, no lugar do teaser do paywall. Chamada pelo
   newsletter-draft; também roda sozinha. Aciona com "inserção do dia", "colocar o
   anúncio", "/newsletter-insertion". Aceita `YYYY-MM-DD` (default: hoje).
@@ -23,7 +23,7 @@ banner 1272×312 com `href` → parágrafos centralizados (dado em negrito + com
 
 O modelo de cada Cliente é um **post template do Substack** (menu Templates do
 editor; `sstats templates`). `newsletters/ai/insertions/registry.json` liga o
-Cliente do board ao `template_id`. O template é a fonte da verdade: se o Gui edita a
+Cliente (a empresa do deal no CRM) ao `template_id`. O template é a fonte da verdade: se o Gui edita a
 copy lá, é a versão editada que entra.
 
 ## Args
@@ -39,15 +39,17 @@ python3 "$REPO/pipeline/tools/insertions.py" list --date <DATE> > "$D/insertions
 jq -c '{count, warnings, i: [.insertions[] | {number, cliente, status, model: (.model.template_id // null)}]}' "$D/insertions.json"
 ```
 
-Só contam cards **abertos**: card fechado já foi entregue ou foi cancelado. Para
-cancelar uma inserção, basta fechar o card.
+A fonte é o CRM (https://dj-comercial.vercel.app/entregas): entregas com formato
+`newsletter`, `due_date` = DATE e `delivered_at` nulo. O board do GitHub (Project #5)
+saiu de uso em 04/11/2026; não leia nem mexa nele. Trocar a inserção de dia é mudar a
+data da entrega no CRM.
 
-- `count == 0` → `SKIP insertion: nada no board para <DATE>` e pare. Dia comum: o
+- `count == 0` → `SKIP insertion: nada no CRM para <DATE>` e pare. Dia comum: o
   teaser do paywall fica.
-- `warnings` (card sem Cliente, dois cards do mesmo Cliente no mesmo dia) → reporte
-  na roll-up. Card duplicado é erro do board, não escolha um sozinho: se os dois
-  apontam pro mesmo Cliente, a inserção sai uma vez (o modelo é o mesmo) e o aviso
-  vai pro Gui.
+- `warnings` (entrega sem empresa no deal, duas entregas do mesmo Cliente no mesmo
+  dia) → reporte na roll-up. Entrega duplicada é erro do CRM, não escolha uma sozinho:
+  se as duas apontam pro mesmo Cliente, a inserção sai uma vez (o modelo é o mesmo) e
+  o aviso vai pro Gui.
 
 ## Step 2: Modelo que falta → insertion-designer
 
@@ -58,7 +60,7 @@ tiro só, se houver mais de um):
 Agent({
   description: "Modelo de inserção: <Cliente>",
   subagent_type: "insertion-designer",
-  prompt: "Card: #<number> (daily-journal-tech/publicidade).\nCliente (chave do registry): <cliente>\nData no ar: <DATE>\nCrie o modelo de inserção e registre-o."
+  prompt: "Entrega do CRM: <id> (<url>).\nCliente (chave do registry): <cliente>\nData no ar: <DATE>\nCrie o modelo de inserção e registre-o."
 })
 ```
 
@@ -80,13 +82,13 @@ cd "$REPO" && git add newsletters/ai/insertions/registry.json newsletters/ai/ins
 python3 "$REPO/pipeline/tools/insertions.py" insert --date <DATE> --dir "$D"
 ```
 
-Relê o board, busca cada template, troca o teaser (ou uma inserção anterior) pelos
+Relê o CRM, busca cada template, troca o teaser (ou uma inserção anterior) pelos
 blocos do dia e confere server-side. Idempotente: rodar de novo troca, não empilha.
-Recusa post já publicado. Se algum card ainda está sem modelo, sai com erro sem tocar
+Recusa post já publicado. Se alguma entrega ainda está sem modelo, sai com erro sem tocar
 no draft: aí a inserção do dia não entra, e isso vai em destaque na roll-up.
 
 Com duas inserções no mesmo dia (ex.: Locaweb e Praso em 21/10), as duas entram no
-mesmo lugar, uma embaixo da outra, cada uma no seu bloco, na ordem dos cards.
+mesmo lugar, uma embaixo da outra, cada uma no seu bloco, na ordem das entregas no CRM.
 
 ## Saída
 
@@ -94,5 +96,5 @@ Uma linha por inserção: `Inserção: #<n> <Cliente> (template <id>[, modelo NO
 mais os avisos. Modelo novo: mostre o PNG do banner e o `sstats template <id> --text`,
 porque o Gui vai querer ver o que foi ao ar no nome do parceiro.
 
-Não mexa no status do card no board: ele vira Done quando a edição é publicada, pelo
-fluxo do #dj-publicidade.
+Não mexa no status da entrega no CRM: ela é marcada como entregue quando a edição é
+publicada, pelo fluxo do #dj-publicidade.

@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
 """
-Partner insertions (ads) for the day's newsletter, from the Publicidade board.
+Partner insertions (ads) for the day's newsletter, from the comercial CRM.
 
-  list   --date D      Open cards on the Publicidade board (GitHub Project #5) with
-                       Formato "📧 Newsletter" and "Data no ar" == D, each joined
+  list   --date D      The CRM's newsletter deliveries (deal_deliveries, format
+                       'newsletter', due_date == D, not delivered), each joined
                        with its model from newsletters/ai/insertions/registry.json
-                       (keyed by the card's Cliente). JSON on stdout.
+                       (keyed by the deal's company name). JSON on stdout.
+                       The GitHub board (Project #5) went out of use on 04/11/2026.
   insert --date D      Put every model of the day into the live Substack draft,
                        each in its own free-only block (dynamicContent, audiences
                        non_sub + free_sub), in the slot after the Grandes. On an
                        ad day the ad takes the paywall teaser's place, so the
                        "Abaixo, apenas para assinantes:" block is removed.
                        Re-runnable: prior ad blocks are swapped, never stacked.
-                       Exits non-zero, draft untouched, if any card lacks a model.
+                       Exits non-zero, draft untouched, if any delivery lacks a model.
 
 The model is the Substack post template (editor "Templates" menu), read with
 `sstats template <id> --body`, so edits Gui makes there are what goes out.
@@ -33,60 +34,63 @@ from substack_mirror import load_creds, get_draft, put_draft, DEFAULT_BYLINE  # 
 
 REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 REGISTRY = os.path.join(REPO, "newsletters", "ai", "insertions", "registry.json")
-BOARD_OWNER, BOARD_NUMBER = "daily-journal-tech", "5"
-NEWSLETTER_FORMAT = "📧 Newsletter"
+COMERCIAL_PATH = os.environ.get("COMERCIAL_PATH", os.path.expanduser("~/comercial"))
+CRM_URL = "https://dj-comercial.vercel.app"
 FREE_AUDIENCES = ["non_sub", "free_sub"]
 TEASER_PREFIX = "Abaixo, apenas para assinantes"
 
 
-def board_items():
-    out = subprocess.run(
-        ["gh", "project", "item-list", BOARD_NUMBER, "--owner", BOARD_OWNER,
-         "--format", "json", "-L", "1000"],
-        capture_output=True, text=True, check=True).stdout
-    return json.loads(out)["items"]
-
-
-def open_issue_numbers():
-    """The board listing doesn't carry issue state, so ask the repo. A closed card
-    was either delivered or cancelled; neither should put the ad in again."""
-    out = subprocess.run(
-        ["gh", "issue", "list", "-R", f"{BOARD_OWNER}/publicidade", "--state", "open",
-         "--json", "number", "-L", "1000"],
-        capture_output=True, text=True, check=True).stdout
-    return {i["number"] for i in json.loads(out)}
+def crm_rows(sql):
+    """SELECT against the comercial CRM (Supabase), through the CRM repo's own
+    read-only runner, which loads that repo's .env.local."""
+    out = subprocess.run(["bun", "run", "scripts/query.ts", sql], cwd=COMERCIAL_PATH,
+                         capture_output=True, text=True)
+    if out.returncode != 0 or out.stdout.startswith("HTTP"):
+        sys.exit(f"Error: consulta ao CRM falhou: {(out.stdout + out.stderr).strip()[:300]}")
+    return json.loads(out.stdout)
 
 
 def day_insertions(date):
+    """The day's newsletter deliveries in the CRM (deal_deliveries): format
+    'newsletter', due_date == date, not yet delivered. The Cliente is the deal's
+    company name, the key of registry.json."""
     registry = json.load(open(REGISTRY, encoding="utf-8"))
-    open_numbers = open_issue_numbers()
+    if not (len(date) == 10 and date[4] == date[7] == "-" and date.replace("-", "").isdigit()):
+        sys.exit(f"Error: data inválida: {date}")
+    rows = crm_rows(
+        "select x.id, x.label, x.group_label, x.status, x.note, x.position, x.github_issue,"
+        " d.name deal, d.description, c.name company"
+        " from deal_deliveries x join deals d on d.id = x.deal_id"
+        " left join companies c on c.id = d.company_id"
+        f" where x.format = 'newsletter' and x.due_date = '{date}' and x.delivered_at is null"
+        " order by x.position, x.id")
     found = []
-    for it in board_items():
-        if it.get("formato") != NEWSLETTER_FORMAT or it.get("data no ar") != date:
-            continue
-        c = it.get("content") or {}
-        if c.get("number") not in open_numbers:
-            continue
-        cliente = it.get("cliente")
+    for r in rows:
+        cliente = r.get("company")
         model = registry.get(cliente) if cliente else None
+        label = " ".join(v for v in (r.get("label"), r.get("group_label")) if v)
+        body = "\n\n".join(v for v in (
+            f"Deal: {r.get('deal')}", r.get("description") or "",
+            f"Nota da entrega: {r['note']}" if r.get("note") else "") if v)
         found.append({
-            "number": c.get("number"),
-            "title": it.get("title"),
-            "url": c.get("url"),
+            "number": r["id"][:8],
+            "id": r["id"],
+            "title": f"{cliente} — {label}" if cliente else label,
+            "url": f"{CRM_URL}/entregas/{r['id']}",
             "cliente": cliente,
-            "status": it.get("status"),
-            "body": c.get("body", ""),
+            "status": r.get("status"),
+            "github_issue": r.get("github_issue"),
+            "body": body,
             "model": model if isinstance(model, dict) else None,
         })
-    found.sort(key=lambda x: x["number"] or 0)
     warnings = []
     seen = {}
     for f in found:
         if not f["cliente"]:
-            warnings.append(f"#{f['number']} sem Cliente no board — não dá pra achar o modelo")
+            warnings.append(f"#{f['number']} sem empresa no deal do CRM — não dá pra achar o modelo")
         elif f["cliente"] in seen:
-            warnings.append(f"#{seen[f['cliente']]} e #{f['number']}: dois cards de {f['cliente']} "
-                            f"no mesmo dia — card duplicado no board?")
+            warnings.append(f"#{seen[f['cliente']]} e #{f['number']}: duas entregas de {f['cliente']} "
+                            f"no mesmo dia — entrega duplicada no CRM?")
         else:
             seen[f["cliente"]] = f["number"]
     return found, warnings
@@ -168,7 +172,7 @@ def cmd_insert(args):
     for w in warnings:
         print(f"WARN: {w}")
     if not found:
-        print(f"Nenhuma inserção de newsletter no board para {args.date}.")
+        print(f"Nenhuma inserção de newsletter no CRM para {args.date}.")
         return
     missing = [f for f in found if not f["model"]]
     if missing:
@@ -177,7 +181,7 @@ def cmd_insert(args):
 
     unique = {}
     for f in found:
-        unique.setdefault(f["cliente"], f)  # one block per Cliente, first card wins
+        unique.setdefault(f["cliente"], f)  # one block per Cliente, first delivery wins
     found = list(unique.values())
     blocks = [free_only(template_nodes(f["model"]["template_id"])) for f in found]
 
@@ -231,7 +235,7 @@ def cmd_insert(args):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Partner insertions from the Publicidade board.")
+    ap = argparse.ArgumentParser(description="Partner insertions from the comercial CRM.")
     sub = ap.add_subparsers(dest="cmd", required=True)
     p = sub.add_parser("list")
     p.add_argument("--date", required=True)

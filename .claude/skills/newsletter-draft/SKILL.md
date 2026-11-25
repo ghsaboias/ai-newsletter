@@ -96,7 +96,7 @@ arquivos não conserta a sessão em curso — arrume e rode numa **sessão nova*
 
 ### Step 0.5 — partner insertion preflight (full run only)
 
-The day's partner insertion needs only the Publicidade board, so check it now. If a
+The day's partner insertion needs only the comercial CRM (newsletter deliveries dated today), so check it now. If a
 model has to be created, that runs in the background under the whole research →
 push chain instead of adding ~10 min at the end:
 
@@ -104,7 +104,7 @@ push chain instead of adding ~10 min at the end:
 D=$REPO/pipeline/output/ai/<DATE>; mkdir -p "$D"
 python3 "$REPO/pipeline/tools/insertions.py" list --date <DATE> > "$D/insertions.json" \
   && jq -c '{count, warnings, missing: [.insertions[] | select(.model == null) | {number, cliente}]}' "$D/insertions.json" \
-  || echo "WARN insertion preflight: board query failed — Step 4c retries"
+  || echo "WARN insertion preflight: CRM query failed — Step 4c retries"
 ```
 
 For each `missing` entry, fire the `insertion-designer` agent now, in the background,
