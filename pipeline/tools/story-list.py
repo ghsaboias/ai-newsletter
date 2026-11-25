@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""story-list.py — the day's stories, in the edition and left out, for Gui.
+"""story-list.py — the day's stories left out of the edition, for Gui.
 
 Sent with the draft URL so Gui reviews the selection next to the draft: what
-went in (by tier), what the writer left out of the research, the window's
-most-covered stories the recall check rejected, and what the researchers
-considered and dropped. Every left-out story carries its reason and coverage.
-Reads only files the run already wrote; makes no calls.
+the writer left out of the research, the window's most-covered stories the
+recall check rejected, and what the researchers considered and dropped. Every
+story carries its reason and coverage. Reads only files the run already wrote;
+makes no calls.
 
-Writes <DAY_DIR>/stories.md (everything) and prints the first three sections.
+Writes <DAY_DIR>/stories.md (everything) and prints the first two sections.
 
 Usage: story-list.py <YYYY-MM-DD> [--dir DAY_DIR] [--top N]
 """
@@ -83,34 +83,19 @@ def main():
     stories = research.get("stories", [])
     url_story = {s["url"]: st for st in stories for s in st.get("sources", []) if s.get("url")}
 
-    out = [f"# Histórias de {a.date}", ""]
+    out = [f"# Fora da edição de {a.date}", ""]
 
-    # 1. In the edition, by tier
-    items = edition_items(edition)
-    used = set()
-    out.append(f"## Na edição ({len(items)})")
-    for tier in ("Grande", "Média", "Leia também"):
-        tier_items = [i for i in items if i["tier"] == tier]
-        if not tier_items:
-            continue
-        out += ["", f"**{tier}s**" if tier != "Leia também" else "**Leia também**"]
-        for i in tier_items:
-            st = next((url_story[u] for u in i["urls"] if u in url_story), None)
-            if st:
-                used.add(st["id"])
-            theme = f"[{i['theme']}] " if tier == "Média" else ""
-            out.append(f"- {theme}{i['text']}{coverage(st.get('salience') if st else None)}")
-
-    # 2. Researched, left out by the writer
+    # 1. Researched, left out by the writer
+    used = {url_story[u]["id"] for i in edition_items(edition) for u in i["urls"] if u in url_story}
     left = [st for st in stories if st["id"] not in used]
-    out += ["", f"## Pesquisadas, fora da edição ({len(left)})"]
+    out.append(f"## Pesquisadas, fora da edição ({len(left)})")
     for st in left:
         origin = " · via recall" if st.get("origin") == "recall" else ""
         out.append(f"- {st['headline']}{coverage(st.get('salience'))}{origin}")
     if not left:
         out.append("- (nenhuma)")
 
-    # 3. The window's most-covered stories the recall check rejected
+    # 2. The window's most-covered stories the recall check rejected
     cands = {c["key"]: c for c in (load(d / "recall-candidates.json") or {}).get("candidates", [])}
     recall = load(d / "recall.json") or {}
     rejected = []
@@ -130,7 +115,7 @@ def main():
     out += [line for _, line in shown] or ["- (nenhuma)"]
     head_part = "\n".join(out)
 
-    # 4. Everything the researchers considered and dropped (file only)
+    # 3. Everything the researchers considered and dropped (file only)
     out += ["", "## Consideradas e recusadas pelos pesquisadores"]
     seen = set()
     for cl in ("ai", "hw", "world"):

@@ -574,10 +574,9 @@ echo "  Duration:   $(( ($(date +%s) - START) / 60 ))m $(( ($(date +%s) - START)
 
 Then list what Step 3d fixed, one line per finding (what was flagged → what changed).
 
-Then the day's story list, so Gui reviews the selection next to the draft: what
-is in the edition by tier, what the research found and the writer left out, and
-the window's most-covered stories the recall check rejected, each with its
-coverage and reason. Paste its output as printed, without summarizing it (the
+Then the day's left-out stories, so Gui reviews the selection next to the draft:
+what the research found and the writer left out, and the window's most-covered
+stories the recall check rejected, each with its coverage and reason. Paste its output as printed, without summarizing it (the
 full file, with everything the researchers dropped, stays in `stories.md`):
 
 ```bash
