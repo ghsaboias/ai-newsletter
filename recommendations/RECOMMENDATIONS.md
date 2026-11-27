@@ -1747,3 +1747,13 @@ https://www.youtube.com/watch?v=tRaFbDFBl_A
 **This Is the Dark Age for Cybersecurity**
 Scott Wu, cofundador e CEO da Cognition, criadora do engenheiro de software autônomo Devin, analisa a evolução do produto, a dinâmica de mercado de inteligência artificial, segurança cibernética, restrições de infraestrutura de computação e a transformação interna das equipes de engenharia de software em conversa com Patrick O'Shaughnessy, CEO da Positive Sum
 https://www.youtube.com/watch?v=efoZj_7oVJs
+
+## 2026-11-26
+
+**CrowdStrike CEO: AI Cyberattack Wave, Hyperspeed Hacks, & The Patching Problem**
+O ecossistema global de segurança da informação passa por uma transformação crítica provocada pelo avanço dos modelos de inteligência artificial de fronteira e pela proliferação de sistemas autônomos de ataque. George Kurtz, CEO e cofundador da CrowdStrike, detalha como a IA está democratizando capacidades que antes pertenciam exclusivamente a agências de inteligência estatais, o impacto dessa velocidade na infraestrutura corporativa e os motivos reais por trás da recente onda de apagões em grandes empresas de tecnologia e serviços públicos
+https://www.youtube.com/watch?v=o6KIjtkRdOI
+
+**The strongest objections to RSI**
+Dwarkesh Patel, apresentador do podcast, e Max Farrens, gerente-geral de sua equipe, analisam e respondem sistematicamente às principais críticas e objeções feitas ao ensaio de Dwarkesh sobre Autoaperfeiçoamento Recursivo (RSI, na sigla em inglês) e a tese de que a superinteligência artificial (ASI) deve ser alcançada até 2030. A tese central sustenta que o ano mediano para a automação completa dos melhores pesquisadores de aprendizado de máquina (ML) humanos é 2028, desencadeando uma explosão de inteligência e superinteligência por volta de 2029 ou 2030
+https://www.youtube.com/watch?v=Em6tbhj9o6A
